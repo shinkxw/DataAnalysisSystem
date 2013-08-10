@@ -1,0 +1,42 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_ZXJX" provider="reallocate_namespace" generation_time="">
+    <table name="EDU_ZXJX_01_01_KC" explanation="课程数据类">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="T" identity="F" remark="学校自编" />
+            <name="KCMC" explanation="课程名称" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
+            <name="KCM" explanation="课程码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：JY/T1001ZXXKC中小学课程代码 " />
+            <name="KCDJM" explanation="课程等级码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001ZXXKCDJ中小学课程等级代码 " />
+            <name="KCBM" explanation="课程别名" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+            <name="KCJJ" explanation="课程简介" type="text" null="T" p="F" identity="F" remark="解释/举例：课程学习的主要内容 " />
+            <name="KCYQ" explanation="课程要求" type="text" null="T" p="F" identity="F" remark="解释/举例：对课程的教学要求 " />
+            <name="ZXS" explanation="总学时" type="decimal(3)" null="T" p="F" identity="F" remark="解释/举例：单位：学时 " />
+            <name="ZHXS" explanation="周学时" type="decimal(2)" null="T" p="F" identity="F" remark="解释/举例：每周安排的学时数，单位：学时 " />
+            <name="ZXXS" explanation="自学学时" type="decimal(3)" null="T" p="F" identity="F" remark="解释/举例：单位：学时 " />
+            <name="SKFSM" explanation="授课方式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SKFS授课方式代码 " />
+            <name="JCBM" explanation="教材编码" type="text" null="T" p="F" identity="F" remark="解释/举例：课程使用的教材 " />
+            <name="CKSM" explanation="参考书目" type="text" null="T" p="F" identity="F" remark=" 解释/举例：课程使用的参考书目 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_03_01_JXJH" explanation="教学计划数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="T" identity="F" remark="解释/举例：课程及活动的编号，学校自编" />
+            <name="SKNJ" explanation="授课年级" type="nvarchar(10)" null="F" p="F" identity="F" remark="解释/举例：本门课程面向的年级" />
+            <name="SKXN" explanation="上课学年" type="nvarchar(9)" null="F" p="F" identity="F" remark="格式：YYYY-YYYY，如：2001-2002" />
+            <name="SKXQM" explanation="上课学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001XQ学期代码" />
+            <name="KSFSM" explanation="考试方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：JY/T1001KSFS考试方式代码 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_04_01_PK" explanation="排课数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="KCH" explanation="课程号" type="nvarchar(2)" null="F" p="T" identity="F" remark="" />
+            <name="SKJSGH" explanation="授课教师工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="FJBH" explanation="房间编号" type="" null="T" p="F" identity="F" remark="" />
+            <name="SKRQ" explanation="授课日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
+            <name="KSKJS" explanation="开始课节数" type="decimal(2)" null="F" p="F" identity="F" remark="" />
+            <name="JSKJS" explanation="结束课节数" type="decimal(2)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+</namespace>

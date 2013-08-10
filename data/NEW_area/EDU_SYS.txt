@@ -1,0 +1,177 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_SYS" provider="reallocate_namespace" generation_time="2013/07/29 10:16:32">
+    <table name="EDU_SYS_01_YH" explanation="用户表">
+        <field_area>
+            <name="YHM" explanation="用户名" type="nvarchar(20)" null="F" p="T" identity="F" remark="" />
+            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" remark="" />
+            <name="MM" explanation="密码" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="YHZT" explanation="用户状态" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_SYS_01_XTSZ" explanation="系统设置表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="" />
+            <name="YYMC" explanation="应用名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="SZM" explanation="设置名" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="SZZ" explanation="设置值" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_SYS_01_XTRZ" explanation="系统日志表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="" />
+            <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CZSJ" explanation="操作时间" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CZYY" explanation="操作应用" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CZLX" explanation="操作类型" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="CZJTXX" explanation="操作具体信息" type="nvarchar(200)" null="T" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_SYS_01_XTLL" explanation="系统履历表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="" />
+            <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="CZYY" explanation="操作应用" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CZBM" explanation="操作表名" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
+            <name="CZXX" explanation="操作信息" type="text" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_SYS_01_XN" explanation="学年表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
+            <name="XN" explanation="学年" type="nvarchar(9)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+        <data_area key_type="field_name">
+            <ID="2012" SCHOOLID="0" XN="2012学年" />
+            <ID="2013" SCHOOLID="0" XN="2013学年" />
+            <ID="2014" SCHOOLID="0" XN="2014学年" />
+            <ID="2015" SCHOOLID="0" XN="2015学年" />
+            <ID="2016" SCHOOLID="0" XN="2016学年" />
+            <ID="2017" SCHOOLID="0" XN="2017学年" />
+            <ID="2018" SCHOOLID="0" XN="2018学年" />
+            <ID="2019" SCHOOLID="0" XN="2019学年" />
+            <ID="2020" SCHOOLID="0" XN="2020学年" />
+            <ID="2021" SCHOOLID="0" XN="2021学年" />
+            <ID="2022" SCHOOLID="0" XN="2022学年" />
+            <ID="2023" SCHOOLID="0" XN="2023学年" />
+            <ID="2024" SCHOOLID="0" XN="2024学年" />
+            <ID="2025" SCHOOLID="0" XN="2025学年" />
+            <ID="2026" SCHOOLID="0" XN="2026学年" />
+            <ID="2027" SCHOOLID="0" XN="2027学年" />
+            <ID="2028" SCHOOLID="0" XN="2028学年" />
+            <ID="2029" SCHOOLID="0" XN="2029学年" />
+        </data_area>
+    </table>
+    <table name="EDU_SYS_01_MODULE" explanation="">
+        <field_area>
+            <name="ID" explanation="" type="int" null="F" p="T" identity="F" remark="" />
+            <name="APPID" explanation="" type="int" null="F" p="T" identity="F" remark="" />
+            <name="NAME" explanation="" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="Depth" explanation="" type="int" null="F" p="F" identity="F" remark="" />
+            <name="PID" explanation="" type="int" null="F" p="F" identity="F" remark="" />
+            <name="MenuDisp" explanation="" type="int" null="F" p="F" identity="F" remark="" />
+            <name="MenuUserType" explanation="" type="int" null="F" p="F" identity="F" remark="" />
+            <name="Link" explanation="" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+        <data_area key_type="field_name">
+            <ID="150000" APPID="1" NAME="招生管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="150000" APPID="2" NAME="内部邮件" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="150000" APPID="3" NAME="教工管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="150000" APPID="4" NAME="招生迎新" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="150000" APPID="5" NAME="门户网站" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="150001" APPID="5" NAME="栏目管理" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/wzlm/index?webid=1" />
+            <ID="150002" APPID="5" NAME="文章管理" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/wzwz/index?webid=1" />
+            <ID="150003" APPID="5" NAME="链接管理" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/yqlj/index?webid=1" />
+            <ID="150004" APPID="5" NAME="链接类型" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/yqljlx/index?webid=1" />
+            <ID="150005" APPID="5" NAME="会员管理" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/vip/index?webid=1" />
+            <ID="150006" APPID="5" NAME="发布权限" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/fbqx/index?webid=1" />
+            <ID="150007" APPID="5" NAME="访问履历" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/fwll/index?webid=1" />
+            <ID="150008" APPID="5" NAME="广告管理" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/wzgg/index?webid=1" />
+            <ID="150009" APPID="5" NAME="投票设置" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/tpgl/tpsz/index?webid=1" />
+            <ID="150010" APPID="5" NAME="文章审核" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/admin/wzwz/auditindex?webid=1" />
+            <ID="150200" APPID="5" NAME="专题网站" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="150201" APPID="5" NAME="栏目管理" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/wzlm/index?webid=2" />
+            <ID="150202" APPID="5" NAME="文章管理" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/wzwz/index?webid=2" />
+            <ID="150203" APPID="5" NAME="链接管理" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/yqlj/index?webid=2" />
+            <ID="150204" APPID="5" NAME="链接类型" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/yqljlx/index?webid=2" />
+            <ID="150205" APPID="5" NAME="会员管理" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/vip/index?webid=2" />
+            <ID="150206" APPID="5" NAME="发布权限" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/fbqx/index?webid=2" />
+            <ID="150207" APPID="5" NAME="访问履历" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/fwll/index?webid=2" />
+            <ID="150208" APPID="5" NAME="广告管理" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/wzgg/index?webid=2" />
+            <ID="150209" APPID="5" NAME="投票设置" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/tpgl/tpsz/index?webid=2" />
+            <ID="150210" APPID="5" NAME="文章审核" Depth="2" PID="150200" MenuDisp="1" MenuUserType="0" Link="/admin/wzwz/auditindex?webid=2" />
+            <ID="150600" APPID="1" NAME="新生登记" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/zsgl/xsdj/index" />
+            <ID="150601" APPID="1" NAME="新生添加" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/create" />
+            <ID="150601" APPID="3" NAME="教工列表" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/rsgl/jggl/index" />
+            <ID="150601" APPID="4" NAME="招生计划" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/zsgl/zsjh/index" />
+            <ID="150602" APPID="1" NAME="新生编辑" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/edit" />
+            <ID="150602" APPID="4" NAME="新生登记" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/zsgl/xsdj/index" />
+            <ID="150603" APPID="1" NAME="新生删除" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/delete" />
+            <ID="150603" APPID="4" NAME="新生添加" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/create" />
+            <ID="150604" APPID="1" NAME="新生导入" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/importdata" />
+            <ID="150604" APPID="4" NAME="新生编辑" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/edit" />
+            <ID="150605" APPID="4" NAME="新生删除" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/delete" />
+            <ID="150606" APPID="4" NAME="新生导入" Depth="2" PID="150000" MenuDisp="0" MenuUserType="0" Link="/zsgl/xsdj/importdata" />
+            <ID="150607" APPID="4" NAME="迎新设置" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/yxsz" />
+            <ID="150608" APPID="4" NAME="自动分班" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/zsgl/zdfb/AytomaticClass" />
+            <ID="150609" APPID="4" NAME="新生报到" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/zsgl/xsdj/IndexReport" />
+            <ID="150610" APPID="4" NAME="自动分学号" Depth="2" PID="150000" MenuDisp="1" MenuUserType="0" Link="/zsgl/zdfb/AutomaticNumber" />
+            <ID="200000" APPID="2" NAME="通知公告" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="200000" APPID="4" NAME="学籍管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="200601" APPID="4" NAME="学生注册" Depth="2" PID="200000" MenuDisp="1" MenuUserType="0" Link="/xjgl/xszcxx/index" />
+            <ID="200602" APPID="4" NAME="学籍管理" Depth="2" PID="200000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xjgl/Index" />
+            <ID="200603" APPID="4" NAME="学籍异动" Depth="2" PID="200000" MenuDisp="1" MenuUserType="0" Link="/xjgl/xjyd/index" />
+            <ID="200604" APPID="4" NAME="学籍统计" Depth="2" PID="200000" MenuDisp="1" MenuUserType="0" Link="/xjgl/xjtj/index" />
+            <ID="250000" APPID="2" NAME="办公流程" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="250000" APPID="4" NAME="教学计划" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="250600" APPID="4" NAME="教学大纲" Depth="2" PID="250000" MenuDisp="1" MenuUserType="0" Link="/jxjh/jsrk/jxdgindex" />
+            <ID="250601" APPID="4" NAME="教学计划" Depth="2" PID="250000" MenuDisp="1" MenuUserType="0" Link="/jxjh/ztjxjh/index" />
+            <ID="250603" APPID="4" NAME="课程库" Depth="2" PID="250000" MenuDisp="1" MenuUserType="0" Link="/jxjh/kc/index" />
+            <ID="250604" APPID="4" NAME="学期学分" Depth="2" PID="250000" MenuDisp="1" MenuUserType="0" Link="/jxjh/xqxfgl/index" />
+            <ID="250606" APPID="4" NAME="教师任课" Depth="2" PID="250000" MenuDisp="1" MenuUserType="0" Link="/jxjh/jsrk/index" />
+            <ID="950000" APPID="1" NAME="系统管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="950000" APPID="2" NAME="系统管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="950000" APPID="3" NAME="系统管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="950000" APPID="4" NAME="系统管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="950000" APPID="5" NAME="系统管理" Depth="1" PID="0" MenuDisp="1" MenuUserType="0" Link="" />
+            <ID="950601" APPID="1" NAME="迎新设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/yxsz" />
+            <ID="950602" APPID="1" NAME="修改密码" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/changepwd" />
+            <ID="950602" APPID="2" NAME="修改密码" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/changepwd" />
+            <ID="950602" APPID="3" NAME="修改密码" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/changepwd" />
+            <ID="950602" APPID="4" NAME="修改密码" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/changepwd" />
+            <ID="950602" APPID="5" NAME="修改密码" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/changepwd" />
+            <ID="950603" APPID="1" NAME="机构设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/yxsz/index" />
+            <ID="950603" APPID="4" NAME="机构设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/yxsz/index" />
+            <ID="950604" APPID="1" NAME="专业设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/zysz/index" />
+            <ID="950604" APPID="4" NAME="专业设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/zysz/index" />
+            <ID="950605" APPID="1" NAME="招生计划" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/zsgl/zsjh/index" />
+            <ID="950606" APPID="1" NAME="自动分班" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/zdfb/Create" />
+            <ID="950607" APPID="1" NAME="学籍管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xjgl/Index" />
+            <ID="950608" APPID="1" NAME="角色管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/index" />
+            <ID="950608" APPID="2" NAME="角色管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/index" />
+            <ID="950608" APPID="3" NAME="角色管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/index" />
+            <ID="950608" APPID="4" NAME="角色管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/index" />
+            <ID="950608" APPID="5" NAME="角色管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/index" />
+            <ID="950609" APPID="1" NAME="权限分配" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/RoleManage" />
+            <ID="950609" APPID="2" NAME="权限分配" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/RoleManage" />
+            <ID="950609" APPID="3" NAME="权限分配" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/RoleManage" />
+            <ID="950609" APPID="4" NAME="权限分配" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/RoleManage" />
+            <ID="950609" APPID="5" NAME="权限分配" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/role/RoleManage" />
+            <ID="950610" APPID="1" NAME="用户管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/index" />
+            <ID="950610" APPID="2" NAME="用户管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/index" />
+            <ID="950610" APPID="3" NAME="用户管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/index" />
+            <ID="950610" APPID="4" NAME="用户管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/index" />
+            <ID="950610" APPID="5" NAME="用户管理" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/user/index" />
+            <ID="950611" APPID="1" NAME="当前学期学年设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/xnsz" />
+            <ID="950611" APPID="2" NAME="当前学期学年设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/xnsz" />
+            <ID="950611" APPID="3" NAME="当前学期学年设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/xnsz" />
+            <ID="950611" APPID="4" NAME="当前学期学年设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/xnsz" />
+            <ID="950611" APPID="5" NAME="当前学期学年设置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/xtgl/xtsz/xnsz" />
+            <ID="950612" APPID="5" NAME="网站配置" Depth="2" PID="950000" MenuDisp="1" MenuUserType="0" Link="/admin/wzpz/index" />
+        </data_area>
+    </table>
+</namespace>

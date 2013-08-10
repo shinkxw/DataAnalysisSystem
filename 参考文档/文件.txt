@@ -1,0 +1,131 @@
+一、新建文件
+ 	f=File.new(File.join("C:","Test.txt"), "w+")
+ 	f.puts("I am Jack")
+ 	f.puts("Hello World")
+文件模式
+"r" ：Read-only. Starts at beginning of file (default mode).
+"r+" ：Read-write. Starts at beginning of file.
+"w" ：Write-only. Truncates existing file to zero length or creates a new file for writing.
+"w+" ：Read-write. Truncates existing file to zero length or creates a new file for reading and writing.
+"a" ：Write-only. Starts at end of file if file exists; otherwise, creates a new file for writing.
+"a+" ：Read-write. Starts at end of file if file exists; otherwise, creates a new file for reading and writing.
+"b" ：(DOS/Windows only.) Binary file mode. May appear with any of the key letters listed above
+二、读取文件
+ 	file=File.open(File.join("C:","Test.txt"),"r")
+ 	file.each { |line| print "#{file.lineno}.", line }
+ 	file.close
+三、新建、删除、重命名文件
+ 	File.new( "books.txt", "w" )
+ 	File.rename( "books.txt", "chaps.txt" )
+ 	File.delete( "chaps.txt" )
+四、目录操作
+1	创建目录
+ 	Dir.mkdir("c:/testdir")
+04	#删除目录
+05	Dir.rmdir("c:/testdir")
+07	#查询目录里的文件
+08	p Dir.entries(File.join("C:","Ruby")).join(' ')
+10	#遍历目录
+11	Dir.entries(File.join("C:","Ruby")).each {
+ 	      |e| puts e
+ 	}
+2、文件信息查询
+ 	#文件是否存在
+ 	p File::exists?( "cnblogslink.txt" ) # => true
+ 	#是否是文件
+ 	p File.file?( "cnblogslink.txt" ) # => true
+ 	#是否是目录
+ 	p File::directory?( "c:/ruby" ) # => true
+ 	p File::directory?( "cnblogslink.txt" ) # => false
+ 	#文件权限
+ 	p File.readable?( "cnblogslink.txt" ) # => true
+ 	p File.writable?( "cnblogslink.txt" ) # => true
+ 	p File.executable?( "cnblogslink.txt" ) # => false
+ 	#是否是零长度
+ 	p File.zero?( "cnblogslink.txt" ) # => false
+ 	#文件大小 bytes
+ 	p File.size?( "cnblogslink.txt" ) # => 74
+ 	p File.size( "cnblogslink.txt" ) # => 74
+ 	#文件或文件夹
+ 	p File::ftype( "cnblogslink.txt" ) # => "file"
+ 	#文件创建、修改、最后一次存取时间
+ 	p File::ctime( "cnblogslink.txt" ) # => Sat Sep 19 08:05:07 +0800 2009
+ 	p File::mtime( "cnblogslink.txt" ) # => Sat Sep 19 08:06:34 +0800 2009
+ 	p File::atime( "cnblogslink.txt" ) # => Sat Sep 19 08:05:07 +0800 2009
+
+File类自身有很多类方法，用的较多的包括：
+File.basename("/path/a.txt")
+
+得到一个文件的基本名。
+
+File.dirname("/path/a.txt")
+
+得到一个文件的目录名。
+
+File.unlink("a.txt")
+
+删除一个文件。
+
+File.rename("a.txt","b.txt")
+
+将文件改名。
+
+File.truncate("a.txt",0)
+
+截断文件，第二个参数是要保留的字节数量。
+
+File.size("a.txt")
+
+文件的大小。
+
+文件测试可以用FileTest这个内置模块，它有一些实用的模块方法：
+FileTest::exist?      # 对象是否存在
+FileTest::directory?  # 是否一个目录
+FileTest::file?       # 是否一个文件
+FileTest::readable?   # 是否可读
+FileTest::writable?   # 是否可写
+FileTest::executable? # 是否可执行
+
+
+不过FileTest的大多数方法，File类自身也包含了。
+
+你可能还对File.stat感兴趣，例如：
+File.stat("a.txt").mtime
+
+文件的修改时间。
+
+
+改变目录用Dir.chdir方法：
+Dir.chdir "/path"
+
+
+列出一个目录里的所有文件，使用Dir.entries方法：
+Dir.entries("/path")
+
+它返回一个包括目录里所有文件和子目录的数组。
+
+或者用Dir.foreach遍历目录：
+irb(main):093:0> Dir.foreach("/path") do |d|
+irb(main):094:1*     puts d
+irb(main):095:1> end
+
+
+可以更简单：
+Dir["/path/*"]
+
+它返回的数组包括/path下的所有文件和子目录，但是不包含隐藏的。
+当然还可以Dir["/path/*.txt"]，匹配txt结尾的文件等。
+
+创建目录：
+Dir.mkdir "aaatest"
+
+
+上述mkdir再执行一次会出错，因为目录已存在了。
+如何实现unix的mkdir -p的效果呢？
+使用fileutils，这个类有非常多的实用方法，例如：
+require "fileutils"
+FileUtils.makedirs("/path/to/dir")
+
+
+还有remove_dir可以模拟rm -rf效果，强行删除目录：
+FileUtils.remove_dir("/path/to/dir")
