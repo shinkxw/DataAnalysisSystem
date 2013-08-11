@@ -1,0 +1,214 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_ZXBG" provider="reallocate_namespace" generation_time="">
+    <table name="EDU_ZXBG_01_01_" explanation="文件基本数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="WJBH" explanation="文件编号" type="nvarchar(10)" null="F" p="T" identity="F" remark="文件编号 编号：ZXBG010001 解释/举例：学校自编的文件序号 " />
+            <name="WJWH" explanation="文件文号" type="nvarchar(24)" null="F" p="F" identity="F" remark="文件文号 编号：ZXBG010002 解释/举例：收、发文的文号 " />
+            <name="BT" explanation="标题" type="nvarchar(60)" null="F" p="F" identity="F" remark="标题 编号：ZXBG010003 解释/举例：文件的标题名称 " />
+            <name="ZTC" explanation="主题词" type="text" null="F" p="F" identity="F" remark="主题词 编号：ZXBG010004 解释/举例：文件的主题词，多个主题词用逗号隔开 " />
+            <name="MJM" explanation="密级码" type="nvarchar(1)" null="T" p="F" identity="F" remark="密级码 编号：ZXKY010109 值空间：GB/T7156 " />
+            <name="JJCDM" explanation="紧急程度码" type="nvarchar(1)" null="F" p="F" identity="F" remark="紧急程度码 编号：ZXBG010005 值空间：JY/T1001JJCD紧急程度代码 " />
+            <name="YS" explanation="页数" type="decimal(6)" null="T" p="F" identity="F" remark="页数 编号：ZXBG010006 解释/举例：文件的总页数，单位：页 " />
+            <name="WJFLM" explanation="文件分类码" type="nvarchar(2)" null="F" p="F" identity="F" remark="文件分类码 编号：ZXBG010007 值空间：JY/T1001WJFL文件分类代码 " />
+            <name="ZW" explanation="正文" type="text" null="F" p="F" identity="F" remark="正文 编号：ZXBG010008 解释/举例：文件的具体内容 " />
+            <name="FJ" explanation="附件" type="text" null="F" p="F" identity="F" remark="附件 编号：ZXBG010009 解释/举例：文件所带附件的具体内容 " />
+            <name="FWRQ" explanation="发文日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="发文日期 编号：ZXBG010010 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CSDW" explanation="抄送单位" type="text" null="F" p="F" identity="F" remark="抄送单位 编号：ZXBG010011 解释/举例：多个单位用逗号隔开 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_02_01_" explanation="收文处理子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="QSRGH" explanation="签收人工号" type="nvarchar(20)" null="F" p="T" identity="F" remark="签收人工号 编号：ZXBG020101 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="CFRGH" explanation="拆封人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="拆封人工号 编号：ZXBG020102 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="DJRGH" explanation="登记人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="登记人工号 编号：ZXBG020103 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="SWRQ" explanation="收文日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="收文日期 编号：ZXBG020104 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="LWDW" explanation="来文单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="来文单位 编号：ZXBG020105 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="FS" explanation="份数" type="decimal(3)" null="F" p="F" identity="F" remark="份数 编号：ZXBG020106 解释/举例：收到文件的份数，单位：份 " />
+            <name="CLQK" explanation="处理情况" type="text" null="F" p="F" identity="F" remark="处理情况 编号：ZXBG020107 解释/举例：填写文件需要处理的情况和结果，包括领导批示、承办部门等 " />
+            <name="FYFS" explanation="翻印份数" type="decimal(4)" null="T" p="F" identity="F" remark="翻印份数 编号：ZXBG020108 解释/举例：复印或翻印文件的份数，单位：份 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_02_02_" explanation="文件阅办子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="YBLBM" explanation="阅办类别码" type="nvarchar(1)" null="T" p="F" identity="F" remark="阅办类别码 编号：ZXBG020201 值空间：JY/T1001YBLB阅办类别代码 " />
+            <name="YBJB" explanation="阅办级别" type="nvarchar(30)" null="T" p="F" identity="F" remark="阅办级别 编号：ZXBG020202 解释/举例：指文件阅办指定的级别和范围 " />
+            <name="YBDW" explanation="阅办单位" type="nvarchar(60)" null="T" p="F" identity="F" remark="阅办单位 编号：ZXBG020203 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="JGH" explanation="阅办单位编号" type="nvarchar(10)" null="T" p="F" identity="F" remark="阅办单位编号 编号：ZXBG020204 解释/举例：阅办单位号 引用自JCTB010301 DWH 单位号 C 10 NULL NULL 自行编码 NULL" />
+            <name="YBRGH" explanation="阅办人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="阅办人工号 编号：ZXBG020205 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="YBYJ" explanation="阅办意见" type="text" null="F" p="F" identity="F" remark="阅办意见 编号：ZXBG020206 解释/举例：文件阅办后填写的相关意见 " />
+            <name="YBRQ" explanation="阅办日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="阅办日期 编号：ZXBG020207 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_03_01_" explanation="发文处理子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="NGRGH" explanation="拟稿人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="拟稿人工号 编号：ZXBG030101 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="NGRQ" explanation="拟稿日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="拟稿日期 编号：ZXBG030102 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="QFRGH" explanation="签发人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="签发人工号 编号：ZXBG030103 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="QFRQ" explanation="签发日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="签发日期 编号：ZXBG030104 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FSFW" explanation="发送范围" type="nvarchar(60)" null="F" p="F" identity="F" remark="发送范围 编号：ZXBG030105 解释/举例：签发文件的指定发送范围 " />
+            <name="FSFSM" explanation="发送方式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="发送方式码 编号：ZXBG030106 值空间：JY/T1001FSFS发送方式代码 " />
+            <name="DJRGH" explanation="登记人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="登记人工号 编号：ZXBG030107 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="DJRQ" explanation="登记日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="登记日期 编号：ZXBG030108 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FWJS" explanation="发文件数" type="decimal(4)" null="F" p="F" identity="F" remark="发文件数 编号：ZXBG030109 解释/举例：发送文件的数量，单位：份 " />
+            <name="FWRQ" explanation="发文日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="发文日期 编号：ZXBG030110 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CLQK" explanation="处理情况" type="text" null="F" p="F" identity="F" remark="处理情况 编号：ZXBG020107 解释/举例：文件需要处理的情况和结果，包括领导批示、承办部门等 引用自ZXBG020107 CLQK 处理情况 T NULL M NULL 填写文件需要处理的情况和结果，包括领导批示、承办部门等 NULL" />
+            <name="DZRGH" explanation="打字人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="打字人工号 编号：ZXBG030111 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JDRGH" explanation="校对人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="校对人工号 编号：ZXBG030112 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="FZFSM" explanation="封装方式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="封装方式码 编号：ZXBG030113 值空间：JY/T1001GWFZFS封装方式代码 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_03_02_" explanation="核稿子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="HGRGH" explanation="核稿人工号" type="nvarchar(20)" null="F" p="T" identity="F" remark="核稿人工号 编号：ZXBG030201 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="HGDW" explanation="核稿单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="核稿单位 编号：ZXBG030202 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="HGYJ" explanation="核稿意见" type="text" null="F" p="F" identity="F" remark="核稿意见 编号：ZXBG030203 解释/举例：核对文件的相关意见 " />
+            <name="HGRQ" explanation="核稿日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="核稿日期 编号：ZXBG030204 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_03_03_" explanation="会签子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="HQR" explanation="会签人" type="nvarchar(36)" null="F" p="T" identity="F" remark="会签人 编号：ZXBG030301 解释/举例：会签人姓名 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="HQDW" explanation="会签单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="会签单位 编号：ZXBG030302 解释/举例：多个单位会签可逐个填写 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="HQYJ" explanation="会签意见" type="text" null="F" p="F" identity="F" remark="会签意见 编号：ZXBG030303 解释/举例：会签文件的相关意见 " />
+            <name="HQRQ" explanation="会签日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="会签日期 编号：ZXBG030304 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_03_04_" explanation="呈批子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="PFR" explanation="批复人" type="nvarchar(36)" null="F" p="T" identity="F" remark="批复人 编号：ZXBG030401 解释/举例：批复人姓名 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="PFDW" explanation="批复单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="批复单位 编号：ZXBG030402 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="PFYJ" explanation="批复意见" type="text" null="F" p="F" identity="F" remark="批复意见 编号：ZXBG030403 解释/举例：文件批复的具体意见 " />
+            <name="PFRQ" explanation="批复日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="批复日期 编号：ZXBG030404 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_04_01_" explanation="文件清退数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="QTRQ" explanation="清退日期" type="nvarchar(8)" null="F" p="T" identity="F" remark="清退日期 编号：ZXBG040001 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="QTFW" explanation="清退范围" type="nvarchar(180)" null="F" p="F" identity="F" remark="清退范围 编号：ZXBG040002 解释/举例：文件清退所指定的范围 " />
+            <name="QTSM" explanation="清退说明" type="text" null="T" p="F" identity="F" remark="清退说明 编号：ZXBG040003 解释/举例：文件清退相关说明或结果 " />
+            <name="JBRGH" explanation="经办人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="经办人工号 编号：ZXBG040004 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_05_01_" explanation="文件销毁数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="XHRQ" explanation="销毁日期" type="nvarchar(8)" null="F" p="T" identity="F" remark="销毁日期 编号：ZXBG050001 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XHSPRGH" explanation="销毁审批人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="销毁审批人工号 编号：ZXBG050002 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="XHSM" explanation="销毁说明" type="text" null="T" p="F" identity="F" remark="销毁说明 编号：ZXBG050003 解释/举例：销毁文件的相关说明 " />
+            <name="JBRGH" explanation="经办人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="经办人工号 编号：ZXBG040004 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_06_01_" explanation="文件借阅数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="JYR" explanation="借阅人" type="nvarchar(36)" null="F" p="T" identity="F" remark="借阅人 编号：ZXBG060001 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="JYRQ" explanation="借阅日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="借阅日期 编号：ZXBG060002 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JYSPRGH" explanation="借阅审批人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="借阅审批人工号 编号：ZXBG060003 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JYJBRGH" explanation="借阅经办人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="借阅经办人工号 编号：ZXBG060004 解释/举例：借阅文件的经手人员或保管人员的工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JYYY" explanation="借阅原因" type="nvarchar(80)" null="T" p="F" identity="F" remark="借阅原因 编号：ZXBG060005 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_07_01_" explanation="文件归档数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="GDRGH" explanation="归档人工号" type="nvarchar(20)" null="F" p="T" identity="F" remark="归档人工号 编号：ZXBG070001 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="GDRQ" explanation="归档日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="归档日期 编号：ZXBG070002 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BZ" explanation="备注" type="text" null="T" p="F" identity="F" remark="备注 编号：ZXBG070003 解释/举例：文件归档的相关说明 " />
+            <name="QZH" explanation="全宗号" type="nvarchar(10)" null="F" p="F" identity="F" remark="全宗号 编号：ZXBG070004 解释/举例：是单位对全部档案自编的全宗编号，长期固定不变 " />
+            <name="MLH" explanation="目录号" type="nvarchar(5)" null="F" p="F" identity="F" remark="目录号 编号：ZXBG070005 解释/举例：是全宗内每一案卷目录的编号 " />
+            <name="AJH" explanation="案卷号" type="nvarchar(5)" null="F" p="F" identity="F" remark="案卷号 编号：ZXBG070006 解释/举例：是案卷目录内每一案卷的编号 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_08_01_" explanation="档案登记数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="QZH" explanation="全宗号" type="nvarchar(10)" null="F" p="T" identity="F" remark="全宗号 编号：ZXBG070004 解释/举例：是单位对全部档案自编的全宗编号，长期固定不变 引用自ZXBG070004 QZH 全宗号 C 10 M NULL 是单位对全部档案自编的全宗编号，长期固定不变 NULL" />
+            <name="ND" explanation="年度" type="nvarchar(4)" null="F" p="F" identity="F" remark="年度 编号：ZXBG080001 解释/举例：档案登记的年度 引用自JCTB010201 ND 年度（年份、年） C 4 NULL GB/T7408 格式：YYYY，如：2008 NULL" />
+            <name="MLH" explanation="目录号" type="nvarchar(5)" null="F" p="F" identity="F" remark="目录号 编号：ZXBG070005 解释/举例：是全宗内每一案卷目录的编号 引用自ZXBG070005 MLH 目录号 C 5 M NULL 是全宗内每一案卷目录的编号 NULL" />
+            <name="AJH" explanation="案卷号" type="nvarchar(5)" null="F" p="F" identity="F" remark="案卷号 编号：ZXBG070006 解释/举例：是案卷目录内每一案卷的编号 引用自ZXBG070006 AJH 案卷号 C 5 M NULL 是案卷目录内每一案卷的编号 NULL" />
+            <name="TM" explanation="题名" type="nvarchar(120)" null="F" p="F" identity="F" remark="题名 编号：ZXBG080002 解释/举例：文件的标题名称 " />
+            <name="ZTC" explanation="主题词" type="text" null="F" p="F" identity="F" remark="主题词 编号：ZXBG010004 解释/举例：文件的主题词，多个主题词用逗号隔开 引用自ZXBG010004 ZTC 主题词 T NULL M NULL 文件的主题词，多个主题词用逗号隔开 NULL" />
+            <name="QSRQ" explanation="起始日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="起始日期 编号：ZXBG080003 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JZRQ" explanation="截止日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="截止日期 编号：ZXBG080004 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BGQXM" explanation="保管期限码" type="nvarchar(1)" null="F" p="F" identity="F" remark="保管期限码 编号：ZXBG080005 值空间：JY/T1001DABGQX档案保管期限代码 " />
+            <name="MJM" explanation="密级码" type="nvarchar(1)" null="T" p="F" identity="F" remark="密级码 编号：ZXKY010109 值空间：GB/T7156 引用自ZXKY010109 MJM 密级码 C 1 O GB/T7156 NULL NULL" />
+            <name="YS" explanation="页数" type="decimal(6)" null="T" p="F" identity="F" remark="页数 编号：ZXBG010006 解释/举例：文件的总页数，单位：页 " />
+            <name="FS" explanation="份数" type="decimal(3)" null="F" p="F" identity="F" remark="份数 编号：ZXBG020106 解释/举例：收到文件的份数，单位：份 " />
+            <name="BZDW" explanation="编制单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="编制单位 编号：ZXBG080006 解释/举例：完成档案登记的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="CFWZ" explanation="存放位置" type="nvarchar(60)" null="F" p="F" identity="F" remark="存放位置 编号：ZXBG080007 解释/举例：指文件存放的地点或架号 " />
+            <name="DAFLM" explanation="档案分类码" type="nvarchar(2)" null="F" p="F" identity="F" remark="档案分类码 编号：ZXBG080008 值空间：DA/T10 解释/举例：取前两位 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_09_01_" explanation="会议管理数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="HYBH" explanation="会议编号" type="nvarchar(10)" null="F" p="T" identity="F" remark="会议编号 编号：ZXBG090001 解释/举例：由教育行政部门自编 " />
+            <name="HYMC" explanation="会议名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="会议名称 编号：ZXBG090002 " />
+            <name="HYFW" explanation="会议范围" type="text" null="F" p="F" identity="F" remark="会议范围 编号：ZXBG090003 解释/举例：对参会人员的范围要求 " />
+            <name="HYZYNR" explanation="会议主要内容" type="text" null="F" p="F" identity="F" remark="会议主要内容 编号：ZXBG090004 " />
+            <name="HYZCR" explanation="会议主持人" type="nvarchar(30)" null="F" p="F" identity="F" remark="会议主持人 编号：ZXBG090005 " />
+            <name="HYKSSJ" explanation="会议开始时间" type="nvarchar(12)" null="F" p="F" identity="F" remark="会议开始时间 编号：ZXBG090006 解释/举例：格式：CCYYMMDDhhmm " />
+            <name="HYJSSJ" explanation="会议结束时间" type="nvarchar(12)" null="T" p="F" identity="F" remark="会议结束时间 编号：ZXBG090007 解释/举例：格式：CCYYMMDDhhmm " />
+            <name="HYDD" explanation="会议地点" type="nvarchar(60)" null="F" p="F" identity="F" remark="会议地点 编号：ZXBG090008 " />
+            <name="HYJY" explanation="会议纪要" type="text" null="F" p="F" identity="F" remark="会议纪要 编号：ZXBG090009 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_10_01_" explanation="制章类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="GZBH" explanation="公章编号" type="nvarchar(4)" null="F" p="T" identity="F" remark="公章编号 编号：ZXBG100001 " />
+            <name="MC" explanation="名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="名称 编号：ZXBG100002 " />
+            <name="BGDWMC" explanation="保管单位名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="保管单位名称 编号：ZXBG100003 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="BGRGH" explanation="保管人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="保管人工号 编号：ZXBG100004 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="PZDW" explanation="批准单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="批准单位 编号：ZXBG100005 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="PZRGH" explanation="批准人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="批准人工号 编号：ZXBG100006 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="PZWH" explanation="批准文号" type="nvarchar(10)" null="F" p="F" identity="F" remark="批准文号 编号：ZXBG100007 " />
+            <name="PZRQ" explanation="批准日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="批准日期 编号：ZXBG100008 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SXRQ" explanation="生效日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="生效日期 编号：ZXBG100009 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="ZFPZWH" explanation="作废批准文号" type="nvarchar(10)" null="F" p="F" identity="F" remark="作废批准文号 编号：ZXBG100010 " />
+            <name="ZFRQ" explanation="作废日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="作废日期 编号：ZXBG100011 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="ZFPZRH" explanation="作废批准人号" type="nvarchar(20)" null="F" p="F" identity="F" remark="作废批准人号 编号：ZXBG100012 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="YZPY" explanation="印章图样" type="nvarchar(200)" null="F" p="F" identity="F" remark="印章图样 编号：ZXBG100013 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_11_01_" explanation="用印类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="YYDJH" explanation="用印登记号" type="nvarchar(15)" null="F" p="T" identity="F" remark="用印登记号 编号：ZXBG110001 解释/举例：YYYY-ZZZZ-LLLLL年号-印号-流水号 " />
+            <name="GZBH" explanation="公章编号" type="nvarchar(4)" null="F" p="F" identity="F" remark="公章编号 编号：ZXBG110002 " />
+            <name="YYSY" explanation="用印事由" type="nvarchar(200)" null="T" p="F" identity="F" remark="用印事由 编号：ZXBG110003 " />
+            <name="SYGLH" explanation="事由关联号" type="nvarchar(50)" null="T" p="F" identity="F" remark="事由关联号 编号：ZXBG110004 解释/举例：发文,放发文号，开介绍信放介绍信号等等 " />
+            <name="YYCS" explanation="用印次数" type="decimal(5)" null="T" p="F" identity="F" remark="用印次数 编号：ZXBG110005 解释/举例：批量用印，如发毕业证时一次用印次数 " />
+            <name="YRPZRH" explanation="用印批准人号" type="nvarchar(20)" null="F" p="F" identity="F" remark="用印批准人号 编号：ZXBG110006 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="YYPZRQ" explanation="用印批准日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="用印批准日期 编号：ZXBG110007 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="YYRQ" explanation="用印日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="用印日期 编号：ZXBG110008 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="YYSQ" explanation="用印申请日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="用印申请日期 编号：ZXBG110009 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SQRGH" explanation="申请人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="申请人工号 编号：ZXBG110010 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="ZSRGH" explanation="执行人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="执行人工号 编号：ZXBG110011 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXBG_12_01_" explanation="数据发布类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="FBH" explanation="发布号" type="nvarchar(10)" null="F" p="T" identity="F" remark="发布号 编号：ZXBG120001 解释/举例：学校自编，建议4位年号＋2位类别号＋4位流水号 " />
+            <name="XXBT" explanation="数据标题" type="nvarchar(100)" null="F" p="F" identity="F" remark="数据标题 编号：ZXBG120002 " />
+            <name="FBLMH" explanation="发布栏目号" type="nvarchar(2)" null="F" p="F" identity="F" remark="发布栏目号 编号：ZXBG120003 " />
+            <name="XXNR" explanation="数据内容" type="text" null="F" p="F" identity="F" remark="数据内容 编号：ZXBG120004 " />
+            <name="FJS" explanation="附件数" type="decimal(2)" null="F" p="F" identity="F" remark="附件数 编号：ZXBG120005 " />
+            <name="FBRQ" explanation="发布日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="发布日期 编号：ZXBG120006 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FBDW" explanation="发布单位号" type="nvarchar(10)" null="F" p="F" identity="F" remark="发布单位号 编号：ZXBG120007 引用自JCTB010301 DWH 单位号 C 10 NULL NULL 自行编码 NULL" />
+            <name="FBRGH" explanation="发布人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="发布人工号 编号：ZXBG120008 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="FBFW" explanation="发布范围" type="nvarchar(200)" null="T" p="F" identity="F" remark="发布范围 编号：ZXBG120009 解释/举例：发布范围描述 " />
+            <name="FBPZRH" explanation="发布批准人号" type="nvarchar(10)" null="F" p="F" identity="F" remark="发布批准人号 编号：ZXBG120010 " />
+            <name="XXZT" explanation="数据状态" type="nvarchar(10)" null="F" p="F" identity="F" remark="数据状态 编号：ZXBG120011 解释/举例：待审批/已审批 " />
+        </field_area>
+    </table>
+</namespace>

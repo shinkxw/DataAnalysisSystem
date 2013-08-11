@@ -1,0 +1,3 @@
+metadata 元数据类
+string_parsing_class 业务表数据类
+open_class 打开类，对系统类的补强

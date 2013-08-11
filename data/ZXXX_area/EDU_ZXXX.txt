@@ -1,0 +1,87 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_ZXXX" provider="reallocate_namespace" generation_time="">
+    <table name="EDU_ZXXX_01_01_ZXXX" explanation="学校基本数据子类表">
+        <field_area>
+            <name="ID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="XXDM" explanation="学校代码" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="XXMC" explanation="学校名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+            <name="XXYWMC" explanation="学校英文名称" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
+            <name="XXDZ" explanation="学校地址" type="nvarchar(180)" null="F" p="F" identity="F" remark="" />
+            <name="XXYZBM" explanation="学校邮政编码" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="XZQHM" explanation="行政区划码" type="nvarchar(6)" null="F" p="F" identity="F" remark="学校所在地行政区划码" />
+            <name="JXNY" explanation="建校年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="如：200604表示2006年4月" />
+            <name="XQR" explanation="校庆日" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+            <name="XXBXLXM" explanation="学校办学类型码" type="nvarchar(3)" null="F" p="F" identity="F" remark="JY/T1001BXLX办学类型代码" />
+            <name="XXZGBMM" explanation="学校主管部门码" type="nvarchar(3)" null="F" p="F" identity="F" remark="JY/T1001XXJYJGJBZ学校（教育机构）举办者代码" />
+            <name="FDDBRH" explanation="法定代表人号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="FRZSH" explanation="法人证书号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="XZGH" explanation="校长工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="XZXM" explanation="校长姓名" type="nvarchar(36)" null="F" p="F" identity="F" remark="" />
+            <name="DWFZRH" explanation="党委负责人号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="ZZJGM" explanation="组织机构码" type="nvarchar(10)" null="T" p="F" identity="F" remark="学校组织机构代码(中华人民共和国事业法人代码)，由八位本体代码和一位校验码组成" />
+            <name="LXDH" explanation="联系电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="即电话号码" />
+            <name="CZDH" explanation="传真电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="传真电话" />
+            <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="F" p="F" identity="F" remark="电子邮件地址" />
+            <name="ZYDZ" explanation="主页地址" type="nvarchar(60)" null="F" p="F" identity="F" remark="如主页、博客、微博网址" />
+            <name="LSYG" explanation="历史沿革" type="text" null="F" p="F" identity="F" remark="指学校发展过程中的重大变化或事件" />
+            <name="XXBBM" explanation="学校办别码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：JY/T1001XXBB学校办别代码 " />
+            <name="SSZGDWM" explanation="所属主管单位码" type="nvarchar(6)" null="F" p="F" identity="F" remark="值空间：GB/T2260 " />
+            <name="SZDCXLXM" explanation="所在地城乡类型码" type="" null="F" p="F" identity="F" remark="值空间：JY/T1001SZDCXLX所在地城乡类型代码 " />
+            <name="SZDJJSXM" explanation="所在地经济属性码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SZDJJSX所在地经济属性代码 " />
+            <name="SZDMZSX" explanation="所在地民族属性" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 解释/举例：1民族自治县0非民族自治县 " />
+            <name="XXXZ" explanation="小学学制" type="decimal(3,1)" null="F" p="F" identity="F" remark="" />
+            <name="XXRXNL" explanation="小学入学年龄" type="decimal(1)" null="F" p="F" identity="F" remark="" />
+            <name="CZXZ" explanation="初中学制" type="decimal(3,1)" null="F" p="F" identity="F" remark="" />
+            <name="CZRXNL" explanation="初中入学年龄" type="decimal(2)" null="F" p="F" identity="F" remark="" />
+            <name="GZXZ" explanation="高中学制" type="decimal(3,1)" null="F" p="F" identity="F" remark="" />
+            <name="ZJXYYM" explanation="主教学语言码" type="nvarchar(3)" null="F" p="F" identity="F" remark="值空间：GB/T4881 解释/举例：用三位数字代码 " />
+            <name="FJXYYM" explanation="辅教学语言码" type="nvarchar(3)" null="F" p="F" identity="F" remark="值空间：GB/T4881 解释/举例：用三位数字代码 " />
+            <name="ZSBJ" explanation="招生半径" type="nvarchar(30)" null="T" p="F" identity="F" remark="解释/举例：招生的地区范围 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_02_01_NJ" explanation="年级数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="NJ" explanation="年级号" type="nvarchar(10)" null="F" p="T" identity="F" remark="" />
+            <name="NJMC" explanation="年级名称" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_03_01_BJ" explanation="班级数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="BH" explanation="班号" type="nvarchar(10)" null="F" p="T" identity="F" remark="学校自编" />
+            <name="BJ" explanation="班级名称" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="JBNY" explanation="建班年月" type="nvarchar(6)" null="T" p="F" identity="F" remark="如：200604表示2006年4月" />
+            <name="BZRGH" explanation="班主任工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="BZXH" explanation="班长学号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="BJRYCH" explanation="班级荣誉称号" type="nvarchar(40)" null="T" p="F" identity="F" remark="解释/举例：班级获得的荣誉称号 " />
+            <name="XZ" explanation="学制" type="decimal(3,1)" null="T" p="F" identity="F" remark="解释/举例：接受学历教育在校学习完成学业规定的年限" />
+            <name="BJLXM" explanation="班级类型码" type="nvarchar(2)" null="T" p="F" identity="F" remark="值空间：JY/T1001ZXXBJLX中小学班级类型代码 " />
+            <name="WLLX" explanation="文理类型" type="nvarchar(2)" null="T" p="F" identity="F" remark="解释/举例：文理类型:高中阶段文理科分班 " />
+            <name="BYRQ" explanation="毕业日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="如：20060412表示2006年4月12日" />
+            <name="SFSSMZSYJXB" explanation="是否少数民族双语教学班" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SYJXMSM" explanation="双语教学模式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SSMZSYJXMS少数民族双语教学模式代码 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_04_01_JG" explanation="机构数据类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="JGH" explanation="机构号" type="nvarchar(10)" null="F" p="T" identity="F" remark="解释/举例：指教研室、研究室及党政各机构的代码，学校自编 " />
+            <name="LSJGH" explanation="隶属机构号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="JGMC" explanation="机构名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+            <name="JGJC" explanation="机构简称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="FZRGH" explanation="负责人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_05_A01_ZXXQ" explanation="学期数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SchoolID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
+            <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="EDU_SYS_01_XN" />
+            <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_XQ" />
+            <name="XQMC" explanation="学期名称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="XQKSRQ" explanation="学期开始日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
+            <name="XQJSRQ" explanation="学期结束日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+</namespace>

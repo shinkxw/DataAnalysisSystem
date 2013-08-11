@@ -1,0 +1,154 @@
+require 'win32ole'
+打开excel文件,对其中的sheet进行访问:
+excel = WIN32OLE::new('excel.Application')
+workbook = excel.Workbooks.Open('c:\examples\spreadsheet.xls')
+worksheet = workbook.Worksheets(1) #定位到第一个sheet
+worksheet.Select
+读取数据:
+worksheet.Range('a12')['Value']  #读取a12中的数据
+data = worksheet.Range('a1:c12')['Value'] #将数据读入到一个二维表
+
+找到第一处a列的值为空值
+line = 1
+while worksheet.Range("a#{line}")['Value']
+   line=line+1
+end #line的值为第一处空白行的行数
+
+将第一列的值读入到一个数组中
+line = '1'
+data = []
+while worksheet.Range("a#{line}")['Value']
+   data << worksheet.Range("a#{line}:d#{line}")['Value']
+   line.succ!
+end
+
+将数据写入到excel表格中
+worksheet.Range('e2')['Value'] = Time.now.strftime '%d/%m/%Y' #单个值
+worksheet.Range('a5:c5')['Value'] = ['Test', '25', 'result']  #将一个数组写入
+
+调用宏定义
+excel.Run('SortByNumber')
+设置背景色
+worksheet.Range('a3:f5').Interior['ColorIndex'] = 36 #pale yellow
+# 将背景色恢复成无色
+worksheet.Range('a3:f5').Interior['ColorIndex'] = -4142 # XlColorIndexNone constant
+# 使用Excel constant 将背景色恢复成无色
+worksheet.Range('a3:f5').Interior['ColorIndex'] = ExcelConst::XlColorIndexNone
+
+保存
+workbook.Close(1)
+# 或
+workbook.SaveAs 'myfile.xls'
+# 默认路径是系统定义的"我的文档"
+
+结束会话
+excel.Quit
+一些相对完整的代码片段
+创建一个excel文件并保存
+require 'win32ole'
+excel = WIN32OLE.new("excel.application")
+excel.visible = true     # in case you want to see what happens 
+workbook = excel.workbooks.add
+workbook.saveas('c:\examples\spreadsheet1.xls')
+workbook.close
+操作excel文件的几个重要元素
+Excel => workbook => worksheet => range(cell)
+我理解的是excel为类名,workbook为一个具体的(excel文件)实例,创建好实例后,worksheet是实例(workbook,工作簿)中的一个工作表,然后可
+以对工作表中的每个单元格(range(cell))进行具体的读写------------------按照这样操作肯定没有错,不过下面的这些语句又让我有些疑惑
+
+excel.workbooks("Mappe1").worksheets("Tabelle1").range("a1").value #读取名为Mappe1的excel文件中工作表名为Tabelle1的a1单元格中的值
+excel.worksheets("Tabelle1").range("a1").value #作用同第一条语句
+excel.activeworkbook.activesheet.range("a1").value #作用同第一条语句
+excel.activesheet.range("a1").value #作用同第一条语句
+excel.range("a1").value #作用同第一条语句
+excel可以直接操作所有的属性,默认为当前活跃的工作簿/工作表
+
+对单元格的操作:
+某个单元格: sheet.range("a1")
+a1到c3的值:   sheet.range("a1", "c3")  或 sheet.range("a1:c3")
+第一列:    sheet.range("a:a")
+第三行:    sheet.range("3:3")
+获得单元格的值:
+range.text  #读取值,返回为字符串格式,如果单元格内为数字,有可能会被截断小数点后的位数
+sheet.range("a1").text  
+range.value  #读取值,数字不会截断
+sheet.range("a1").value      
+对单元格设置值
+sheet.range("a1").value = 1.2345
+或
+sheet.range("a1").value = '1.2345'
+迭代访问:
+sheet.range("a1:a10").each{|cell|puts cell.value}
+如果范围是一个矩形,则会按行循环迭代访问
+sheet.range("a1:b5").each{|cell|puts cell.value}
+block迭代,并打印出每行的第一个值
+sheet.range("b3:c7").rows.each{|r|puts r.cells(1,1).value}
+
+
+require 'win32ole'
+$col_map =["","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+class Excel_Row
+    attr_accessor :file_name
+    attr_accessor :range
+          
+    def initialize(file_name)
+      @file_name = file_name
+      @range = {}
+    end
+end
+def load_data(filename)
+    obj = nil
+    File.open(filename, "rb") {|f| obj = Marshal.load(f)}
+    return obj
+end
+      
+def save_data(obj, filename)
+    File.open(filename, "wb") {|f| Marshal.dump(obj, f)}
+end
+
+def get_range_name(row, col)
+    return "ERR" if (col < 1) || (row < 1) || (col > 26 * 27) || (row > 65536)
+    c2 = col % 26
+    c2 = 26 if c2 == 0
+    c1 = (col - c2) / 26
+    return $col_map[c2] + row.to_s if c1 == 0
+    return $col_map[c1] + $col_map[c2] + row.to_s
+end
+def read_excel(e_name, s_name)
+    $excel.WorkBooks.Open("#{$MY_LOCATION}/" + e_name)
+    
+    $excel.WorkSheets(s_name).Activate
+    $excel_info = Excel_Row.new(e_name)
+    
+    rows = $max_rows
+    cols = $max_cols
+    rows = $excel.WorkSheets(s_name).UsedRange.Rows.Count if rows == 0
+      
+    for row in 1..rows
+      for col in 1..cols
+        $excel_info.range[get_range_name(row, col)] = $excel.Cells(row, col).value.to_s
+      end
+    end
+    
+    $excel.WorkBooks.Close()
+
+end
+
+$MY_LOCATION = Dir.getwd
+$excel = WIN32OLE.new("excel.application")
+$excel.Visible = false
+
+$max_cols = 2
+$max_rows = 0
+
+read_excel("test.xls","Sheet1")
+save_data($excel_info, "excel_info.obj")
+
+info = load_data("excel_info.obj")
+puts info.file_name
+puts info.range["A1"]
+puts info.range["A2"]
+puts info.range["B1"]
+puts info.range["B2"]
+$excel.Quit()
