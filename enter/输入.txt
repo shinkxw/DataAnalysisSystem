@@ -1,7 +1,0 @@
-用于存放各种格式的输入数据
-sss
-SQL Server Script 数据库生成的脚本
-pds
-power desinger 生成的脚本
-relation
-表关联文件
