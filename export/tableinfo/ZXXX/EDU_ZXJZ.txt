@@ -14,24 +14,24 @@ EDU_ZXJZ_01_01_JZGJBSJ  教职工基本数据子类表
   GJDQM       国籍/地区码            nvarchar(3)    非主     世界各国和地区名称代码
   SFZJLXM     身份证件类型码          nvarchar(1)    非主     身份证件类型代码表
   SFZJH       身份证件号              nvarchar(20)   非主
-  HYZKM       婚姻状况码              nvarchar(2)    非主
+  HYZKM       婚姻状况码              nvarchar(2)    非主     婚姻状况代码
   GATQWM      港澳台侨外码            nvarchar(2)    非主     港澳台侨外代码表
   ZZMMM       政治面貌码              nvarchar(2)    非主     政治面貌代码
   JKZKM       健康状况码              nvarchar(1)    非主     健康状况1位数字代码
   XYZJM       信仰宗教码              nvarchar(2)    非主     宗教信仰代码
   XXM         血型码                  nvarchar(1)    非主     血型代码表
   ZP          照片                    nvarchar(200)  非主
-  SFZJYXQ     身份证件有效期          nvarchar(1)    非主
+  SFZJYXQ     身份证件有效期          nvarchar(8)    非主
   JGH         机构号                  nvarchar(40)   非主
   JTZZ        家庭住址                nvarchar(180)  非主
   XZZ         现住址                  nvarchar(180)  非主
   HKSZD       户口所在地              nvarchar(180)  非主
-  HKXZM       户口性质码              nvarchar(1)    非主
-  XLM         学历码                  nvarchar(2)    非主
+  HKXZM       户口性质码              nvarchar(1)    非主     户口类别代码
+  XLM         学历码                  nvarchar(2)    非主     学历代码
   GZNY        参加工作年月            nvarchar(6)    非主
   LXNY        来校年月                nvarchar(6)    非主
   CJNY        从教年月                nvarchar(6)    非主
-  BZLBM       编制类别码              nvarchar(1)    非主
+  BZLBM       编制类别码              nvarchar(1)    非主     中小学编制类别代码表
   DABH        档案编号                nvarchar(10)   非主
   DAWB        档案文本                text           非主
   TXDZ        通信地址                nvarchar(180)  非主
@@ -40,6 +40,6 @@ EDU_ZXJZ_01_01_JZGJBSJ  教职工基本数据子类表
   DZXX        电子信箱                nvarchar(40)   非主
   ZYDZ        主页地址                nvarchar(60)   非主
   TC          特长                    text           非主
-  GWZYM       岗位职业码              nvarchar(2)    非主
-  ZYRKXD      主要任课学段            nvarchar(1)    非主
+  GWZYM       岗位职业码              nvarchar(2)    非主     岗位职业代码表
+  ZYRKXD      主要任课学段            nvarchar(1)    非主     任课学段代码表
 

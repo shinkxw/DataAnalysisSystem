@@ -190,7 +190,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "所属主管单位码")]
-            [StringLength(6)]
+            [StringLength(3)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SSZGDWM { get; set; }
 

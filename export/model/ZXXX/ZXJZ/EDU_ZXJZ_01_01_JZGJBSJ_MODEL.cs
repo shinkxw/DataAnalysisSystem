@@ -167,7 +167,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "身份证件有效期")]
-            [StringLength(1)]
+            [StringLength(8)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SFZJYXQ { get; set; }
 

@@ -51,7 +51,7 @@ CREATE TABLE [dbo].[EDU_ZXXX_01_01_ZXXX](
 	[ZYDZ]  nvarchar(60)  NOT NULL,--主页地址
 	[LSYG]  text  NOT NULL,--历史沿革
 	[XXBBM]  nvarchar(2)  NOT NULL,--学校办别码
-	[SSZGDWM]  nvarchar(6)  NOT NULL,--所属主管单位码
+	[SSZGDWM]  nvarchar(3)  NOT NULL,--所属主管单位码
 	[SZDCXLXM]  nvarchar(3)  NOT NULL,--所在地城乡类型码
 	[SZDJJSXM]  nvarchar(1)  NOT NULL,--所在地经济属性码
 	[SZDMZSX]  nvarchar(1)  NOT NULL,--所在地民族属性

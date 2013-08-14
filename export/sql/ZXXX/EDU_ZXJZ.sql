@@ -30,7 +30,7 @@ CREATE TABLE [dbo].[EDU_ZXJZ_01_01_JZGJBSJ](
 	[XYZJM]  nvarchar(2)  NULL,--信仰宗教码
 	[XXM]  nvarchar(1)  NULL,--血型码
 	[ZP]  nvarchar(200)  NULL,--照片
-	[SFZJYXQ]  nvarchar(1)  NULL,--身份证件有效期
+	[SFZJYXQ]  nvarchar(8)  NULL,--身份证件有效期
 	[JGH]  nvarchar(40)  NOT NULL,--机构号
 	[JTZZ]  nvarchar(180)  NULL,--家庭住址
 	[XZZ]  nvarchar(180)  NULL,--现住址

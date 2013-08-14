@@ -24,7 +24,7 @@
             <name="XYZJM" explanation="信仰宗教码" type="nvarchar(2)" null="T" p="F" identity="F" remark="信仰宗教码 编号：JCTB020117 引用自JCTB020117 XYZJM 信仰宗教码 C 2 NULL GA214.12 NULL NULL" />
             <name="XXM" explanation="血型码" type="nvarchar(1)" null="T" p="F" identity="F" remark="血型码 编号：JCTB020118 引用自JCTB020118 XXM 血型码 C 1 NULL JY/T1001XX血型代码 NULL NULL" />
             <name="ZP" explanation="照片" type="nvarchar(200)" null="T" p="F" identity="F" remark="照片 编号：JCTB020119 引用自JCTB020119 ZP 照片 B NULL NULL NULL 近期正面免冠证件照片 NULL" />
-            <name="SFZJYXQ" explanation="身份证件有效期" type="nvarchar(1)" null="T" p="F" identity="F" remark="身份证件有效期 编号：JCTB020122 引用自JCTB020122 SFDSZN 是否独生子女 C 1 NULL JY/T1001SFBZ是否标志代码 1是独生子女0不是独生子女 NULL" />
+            <name="SFZJYXQ" explanation="身份证件有效期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
             <name="JGH" explanation="机构号" type="nvarchar(40)" null="F" p="F" identity="F" remark="机构号 编号：ZXJZ010101 解释/举例：本人所属机构号 引用自ZXXX030001 BJRYCH 班级荣誉称号 C 40 O NULL 班级获得的荣誉称号 NULL" />
             <name="JTZZ" explanation="家庭住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="家庭住址 编号：ZXJZ010102 解释/举例：指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）的详细地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
             <name="XZZ" explanation="现住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="现住址 编号：ZXJZ010103 解释/举例：指本人当前的常住地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />

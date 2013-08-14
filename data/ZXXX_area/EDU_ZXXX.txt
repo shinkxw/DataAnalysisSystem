@@ -25,7 +25,7 @@
             <name="ZYDZ" explanation="主页地址" type="nvarchar(60)" null="F" p="F" identity="F" remark="如主页、博客、微博网址" />
             <name="LSYG" explanation="历史沿革" type="text" null="F" p="F" identity="F" remark="指学校发展过程中的重大变化或事件" />
             <name="XXBBM" explanation="学校办别码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：JY/T1001XXBB学校办别代码 " />
-            <name="SSZGDWM" explanation="所属主管单位码" type="nvarchar(6)" null="F" p="F" identity="F" remark="值空间：GB/T2260 " />
+            <name="SSZGDWM" explanation="所属主管单位码" type="nvarchar(3)" null="F" p="F" identity="F" remark="值空间：GB/T2260 " />
             <name="SZDCXLXM" explanation="所在地城乡类型码" type="nvarchar(3)" null="F" p="F" identity="F" remark="值空间：JY/T1001SZDCXLX所在地城乡类型代码 " />
             <name="SZDJJSXM" explanation="所在地经济属性码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SZDJJSX所在地经济属性代码 " />
             <name="SZDMZSX" explanation="所在地民族属性" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 解释/举例：1民族自治县0非民族自治县 " />
