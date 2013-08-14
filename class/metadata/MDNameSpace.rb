@@ -52,14 +52,7 @@ class MDNameSpace
   end
   #判断命名空间数据是否有效
   def is_valid?
-    each do |table|
-      p "MDNameSpace: 表#{table.name}没有字段" if table.get_field_size == 0
-      p "MDNameSpace: 表#{table.name}字段名重复" if table.get_field_name_arr.uniq! != nil
-      table.each_field do |field|
-        p "MDNameSpace: 字段#{field.name}不是主键却有自增属性" if field.identity == "T" && field.p == "F"
-        p "MDNameSpace: 字段#{field.name}为主键不能为空" if field.p == "T" && field.null == "T"
-      end#单数据键值重复 数据的键值应属于字段 非空字段值判断
-    end
+    each{|table| table.is_valid?}
     true
   end
   #返回命名空间中表的数量

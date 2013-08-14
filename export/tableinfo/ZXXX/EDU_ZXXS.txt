@@ -39,6 +39,42 @@ EDU_ZXXS_01_01_XSXX  学生基本数据子类表
   ZYDZ        主页地址                nvarchar(60)   非主
   XJH         学籍号                  nvarchar(30)   非主
 
+EDU_ZXXS_01_06_XSJTCY  学生家庭成员数据表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  XSXXID      学生信息数据表          int            非主     学生基本数据子类表
+  GXM         关系码                  nvarchar(2)    主键     家庭关系代码
+  CYXM        成员姓名                nvarchar(36)   非主
+  CSNY        出生年月                nvarchar(6)    非主
+  MZM         民族码                  nvarchar(2)    非主     中国各民族名称的罗马字母拼写法和代码
+  GJDQM       国籍/地区码            nvarchar(3)    非主     世界各国和地区名称代码
+  JKZKM       健康状况码              nvarchar(1)    非主     健康状况1位数字代码
+  CYGZDW      成员工作单位            nvarchar(60)   非主
+  CYEM        从业码                  nvarchar(2)    非主
+  ZYJSZWM     专业技术职务码          nvarchar(3)    非主
+  ZWJBM       职务级别码              nvarchar(2)    非主
+  DH          电话                    nvarchar(30)   非主
+  DZXX        电子信箱                nvarchar(40)   非主
+  SFJHR       是否监护人              nvarchar(1)    非主
+  XBM         性别码                  nvarchar(1)    非主     人的性别代码
+  XLM         学历码                  nvarchar(2)    非主
+  LXDZ        联系地址                nvarchar(180)  非主
+  SJHM        手机号码                nvarchar(30)   非主
+
+EDU_ZXXS_02_A01_XSJTXX  学生家庭信息数据表
+  XSXXID      学生信息数据表          int            主键     学生基本数据子类表
+  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  JTZZ        家庭住址                nvarchar(180)  非主
+  JTYZBM      家庭邮政编码            nvarchar(6)    非主
+  JTDH        家庭电话                nvarchar(30)   非主
+  JTLXR       家庭联系人              nvarchar(36)   非主
+  JTDZXX      家庭电子信箱            nvarchar(40)   非主
+  JTRK        家庭人口                int            非主
+  JTZYSRLY    家庭主要收入来源        nvarchar(180)  非主
+  JTYSRJE     家庭月收入金额          money          非主
+  JTNSRJE     家庭年收入金额          money          非主
+  LJZJHCZ     离家最近火车站          nvarchar(30)   非主
+
 EDU_ZXXS_07_A02_XJYD  学籍异动数据子类表
   ID          学籍异动表编号          int            主键
   XSXXID      学生ID                int            非主     学生基本数据子类表

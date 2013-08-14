@@ -38,10 +38,6 @@
             <name="ZP" explanation="照片(路径)" type="nvarchar(100)" null="T" p="F" identity="F" remark="" />
             <name="DQZTM" explanation="当前状态码" type="nvarchar(2)" null="F" p="F" identity="F" remark="EDU_JY_JZGDQZT" />
         </field_area>
-        <data_area>
-            <ID="1" SCHOOLID="0" GH="1" XM="1" YWXM="1" XMPY="1" CYM="1" SFZJLXM="1" SFZJH="1" CSRQ="1" XBM="1" MZM="1" XXM="1" JKZKM="1" HYZTM="1" ZZMMM="1" GATQWM="1" JG="1" GJDQM="1" CSDXZQHM="1" XYZJM="1" JZGHKSZDXZQHM="1" HKLBM="1" DQZZ="1" DQZZYZBM="1" CJGZNY="1" CJNY="1" LXNY="1" BZLBM="1" JZGLBM="1" GWLBM="1" SFJZJS="1" SFSSXJS="1" ZP="1" DQZTM="1" />
-            <ID="2" SCHOOLID="0" GH="1" XM="2" YWXM="1" XMPY="1" CYM="1" SFZJLXM="1" SFZJH="1" CSRQ="1" XBM="1" MZM="1" XXM="1" JKZKM="1" HYZTM="1" ZZMMM="1" GATQWM="1" JG="1" GJDQM="1" CSDXZQHM="1" XYZJM="1" JZGHKSZDXZQHM="1" HKLBM="1" DQZZ="1" DQZZYZBM="1" CJGZNY="1" CJNY="1" LXNY="1" BZLBM="1" JZGLBM="1" GWLBM="1" SFJZJS="1" SFSSXJS="1" ZP="1" DQZTM="1" />
-        </data_area>
     </table>
     <table name="EDU_ZZJG_02_01_JZGLXFS" explanation="教职工联系方式数据子类表">
         <field_area>

@@ -54,6 +54,13 @@ class MDTable
     @remark = new_table.remark if new_table.remark != ""
     @data_area = new_table.data_area#数据更新
   end
+  #判断表数据是否有效
+  def is_valid?
+    p "MDNameSpace: 表#{@name}没有字段" if get_field_size == 0
+    p "MDNameSpace: 表#{@name}字段名重复" if get_field_name_arr.uniq! != nil
+    each_field{|field| field.is_valid?}
+    true#单数据键值重复 数据的键值应属于字段 非空字段值判断
+  end
   #返回表名的最后一个字段
   def lname;@name.split("_")[-1] end
   #返回表名的最后一个字段的小写形式

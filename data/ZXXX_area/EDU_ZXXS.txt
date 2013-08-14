@@ -43,6 +43,46 @@
             <name="XJH" explanation="学籍号" type="nvarchar(30)" null="T" p="F" identity="F" remark="全国唯一的学籍号" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_01_06_XSJTCY" explanation="学生家庭成员数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="F" identity="F" remark="" />
+            <name="GXM" explanation="关系码" type="nvarchar(2)" null="F" p="T" identity="F" remark="值空间：GB/T4761 解释/举例：采用两位代码 " />
+            <name="CYXM" explanation="成员姓名" type="nvarchar(36)" null="F" p="F" identity="F" remark="" />
+            <name="CSNY" explanation="出生年月" type="nvarchar(6)" null="T" p="F" identity="F" remark="" />
+            <name="MZM" explanation="民族码" type="nvarchar(2)" null="T" p="F" identity="F" remark="引用自JCTB020109 MZM 取用2位数字代码" />
+            <name="GJDQM" explanation="国籍/地区码" type="nvarchar(3)" null="T" p="F" identity="F" remark="GB/T2659 采用三字母代码" />
+            <name="JKZKM" explanation="健康状况码" type="nvarchar(1)" null="T" p="F" identity="F" remark="GB/T2261.3 采用1位数字代码" />
+            <name="CYGZDW" explanation="成员工作单位" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
+            <name="CYEM" explanation="从业码" type="nvarchar(2)" null="T" p="F" identity="F" remark="GB/T2261.4" />
+            <name="ZYJSZWM" explanation="专业技术职务码" type="nvarchar(3)" null="T" p="F" identity="F" remark="值空间：GB/T8561 " />
+            <name="ZWJBM" explanation="职务级别码" type="nvarchar(2)" null="T" p="F" identity="F" remark="值空间：GB/T12407" />
+            <name="DH" explanation="电话" type="nvarchar(30)" null="T" p="F" identity="F" remark="" />
+            <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="T" p="F" identity="F" remark="" />
+            <name="SFJHR" explanation="是否监护人" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="XBM" explanation="性别码" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：GB/T2261.1" />
+            <name="XLM" explanation="学历码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：参见GB/T4658" />
+            <name="LXDZ" explanation="联系地址" type="nvarchar(180)" null="T" p="F" identity="F" remark="" />
+            <name="SJHM" explanation="手机号码" type="nvarchar(30)" null="T" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_02_A01_XSJTXX" explanation="学生家庭信息数据表">
+        <field_area>
+            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
+            <name="JTZZ" explanation="家庭住址" type="nvarchar(180)" null="F" p="F" identity="F" remark="" />
+            <name="JTYZBM" explanation="家庭邮政编码" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="JTDH" explanation="家庭电话" type="nvarchar(30)" null="T" p="F" identity="F" remark="" />
+            <name="JTLXR" explanation="家庭联系人" type="nvarchar(36)" null="F" p="F" identity="F" remark="" />
+            <name="JTDZXX" explanation="家庭电子信箱" type="nvarchar(40)" null="T" p="F" identity="F" remark="" />
+            <name="JTRK" explanation="家庭人口" type="int" null="T" p="F" identity="F" remark="" />
+            <name="JTZYSRLY" explanation="家庭主要收入来源" type="nvarchar(180)" null="T" p="F" identity="F" remark="" />
+            <name="JTYSRJE" explanation="家庭月收入金额" type="money" null="T" p="F" identity="F" remark="" />
+            <name="JTNSRJE" explanation="家庭年收入金额" type="money" null="T" p="F" identity="F" remark="" />
+            <name="LJZJHCZ" explanation="离家最近火车站" type="nvarchar(30)" null="T" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
     <table name="EDU_ZXXS_07_A02_XJYD" explanation="学籍异动数据子类表">
         <field_area>
             <name="ID" explanation="学籍异动表编号" type="int" null="F" p="T" identity="F" remark="" />

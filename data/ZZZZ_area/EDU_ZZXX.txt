@@ -17,13 +17,6 @@
             <name="JGYZBM" explanation="机构邮政编码" type="nvarchar(6)" null="T" p="F" identity="F" remark="" />
             <name="FZRH" explanation="负责人号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
         </field_area>
-        <data_area>
-            <JGH="000001" SCHOOLID="0" JGMC="机械制造" JGJC="机械制造" JGJP="JXZZ" JGDZ="" LSSJJGH="000000" LSXQH="00" JGYXBS="1" SFST="0" FZRH="0" />
-            <JGH="000002" SCHOOLID="0" JGMC="电气工程" JGJC="电气工程" JGJP="DQGC" JGDZ="" LSSJJGH="000000" LSXQH="00" JGYXBS="1" SFST="0" FZRH="0" />
-            <JGH="000003" SCHOOLID="0" JGMC="信息技术" JGJC="信息技术" JGJP="XXJS" JGDZ="" LSSJJGH="000000" LSXQH="00" JGYXBS="1" SFST="0" FZRH="0" />
-            <JGH="000004" SCHOOLID="0" JGMC="财经管理" JGJC="财经管理" JGJP="CJGL" JGDZ="" LSSJJGH="000000" LSXQH="00" JGYXBS="1" SFST="0" FZRH="0" />
-            <JGH="000005" SCHOOLID="0" JGMC="商贸旅游" JGJC="商贸旅游" JGJP="SMLY" JGDZ="" LSSJJGH="000000" LSXQH="00" JGYXBS="1" SFST="0" FZRH="0" />
-        </data_area>
     </table>
     <table name="EDU_ZZXX_01_01_ZZXX" explanation="学校基本数据表">
         <field_area>
