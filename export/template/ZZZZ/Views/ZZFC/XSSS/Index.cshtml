@@ -1,0 +1,38 @@
+@model HanRuEdu.LDAL.EDU_ZZFC_08_01_XSSS
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/XSSS/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--宿舍ID-->
+            <th field="SSLID" width="50" sortable="true">@Html.LabelFor(m => m.SSLID)</th><!--宿舍楼ID-->
+            <th field="SSLBM" width="50" sortable="true">@Html.LabelFor(m => m.SSLBM)</th><!--宿舍楼编号-->
+            <th field="FJBM" width="50" sortable="true">@Html.LabelFor(m => m.FJBM)</th><!--房间编号-->
+            <th field="RZXB" width="50" sortable="true">@Html.LabelFor(m => m.RZXB)</th><!--入住性别-->
+            <th field="SFKY" width="50" sortable="true">@Html.LabelFor(m => m.SFKY)</th><!--是否可用-->
+            <th field="KZRS" width="50" sortable="true">@Html.LabelFor(m => m.KZRS)</th><!--可住人数-->
+            <th field="WLDK" width="50" sortable="true">@Html.LabelFor(m => m.WLDK)</th><!--网络端口-->
+            <th field="AZDSJ" width="50" sortable="true">@Html.LabelFor(m => m.AZDSJ)</th><!--安装电视机-->
+            <th field="DHDK" width="50" sortable="true">@Html.LabelFor(m => m.DHDK)</th><!--电话端口-->
+            <th field="DHHM" width="50" sortable="true">@Html.LabelFor(m => m.DHHM)</th><!--电话号码-->
+            <th field="SBDS" width="50" sortable="true">@Html.LabelFor(m => m.SBDS)</th><!--水表底数-->
+            <th field="DBDS" width="50" sortable="true">@Html.LabelFor(m => m.DBDS)</th><!--电表底数-->
+            <th field="SSBZ" width="50" sortable="true">@Html.LabelFor(m => m.SSBZ)</th><!--宿舍备注-->
+            <th field="SZLZ" width="50" sortable="true">@Html.LabelFor(m => m.SZLZ)</th><!--所在楼层-->
+            <th field="SSM" width="50" sortable="true">@Html.LabelFor(m => m.SSM)</th><!--宿舍名-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzfc/xsss/create");
+    ViewData["index_edit"] = Url.Content("~/zzfc/xsss/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzfc/xsss/details";)
+    //ViewData["index_del"] = Url.Content("~/zzfc/xsss/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzfc/xsss/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

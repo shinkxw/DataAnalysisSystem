@@ -9,12 +9,12 @@ class TemplateBuilder < BaseBuilder
   attr_reader :ignore_name_space_arr#不需要生成模板的命名空间
   attr_accessor :tab#缩进
   #初始化
-  def initialize(table_name = nil,tab = "    ",log = Log.new)
+  def initialize(tab = "    ",log = Log.new)
     @area = nil
     @file_hash = nil
     @builder_version = "0.1"
     @tab = Indent.new(tab)
-    @app_name = "OAXT"
+    @app_name = "XGXT"
     @ignore_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
     @controller_preset_text = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
     @controller_preset_text << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"

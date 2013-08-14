@@ -1,0 +1,75 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_01_03_ZZXQ
+@using (Html.BeginForm())
+{
+    @Html.Partial("SingleZTree")
+    <div id="dlg" class="easyui-panel" title="添加" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">添加</span></h1></center>
+
+        <table class="admintable">
+            <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ID) </td> <!--编号-->
+                <td>
+                    @Html.TextBoxFor(m => m.ID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SchoolID) </td> <!--学校名-->
+                <td>
+                    @Html.TextBoxFor(m => m.SchoolID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.SchoolID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XNID) </td> <!--学年-->
+                <td>
+                    @Html.TextBoxFor(m => m.XNID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.XNID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XQM) </td> <!--学期码-->
+                <td>
+                    @Html.TextBoxFor(m => m.XQM, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.XQM)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XQMC) </td> <!--学期名称-->
+                <td>
+                    @Html.TextBoxFor(m => m.XQMC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.XQMC)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XQKSRQ) </td> <!--学期开始日期-->
+                <td>
+                    @Html.TextBoxFor(m => m.XQKSRQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.XQKSRQ)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XQJSRQ) </td> <!--学期结束日期-->
+                <td>
+                    @Html.TextBoxFor(m => m.XQJSRQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.XQJSRQ)
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        @{ ViewData["ce_cancel"] = Url.Content("~/xtgl/zzxq/index");}
+        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
+    </div>
+}

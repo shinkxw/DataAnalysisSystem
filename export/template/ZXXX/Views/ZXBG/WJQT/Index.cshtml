@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZXBG_04_01_WJQT
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/WJQT/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WJID" width="50" sortable="true">@Html.LabelFor(m => m.WJID)</th><!--文件ID-->
+            <th field="JBRID" width="50" sortable="true">@Html.LabelFor(m => m.JBRID)</th><!--经办人ID-->
+            <th field="QTRQ" width="50" sortable="true">@Html.LabelFor(m => m.QTRQ)</th><!--清退日期-->
+            <th field="QTFW" width="50" sortable="true">@Html.LabelFor(m => m.QTFW)</th><!--清退范围-->
+            <th field="QTSM" width="50" sortable="true">@Html.LabelFor(m => m.QTSM)</th><!--清退说明-->
+            <th field="JBRGH" width="50" sortable="true">@Html.LabelFor(m => m.JBRGH)</th><!--经办人工号-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zxbg/wjqt/create");
+    ViewData["index_edit"] = Url.Content("~/zxbg/wjqt/edit");
+    //ViewData["index_detail"] = Url.Content("~/zxbg/wjqt/details";)
+    //ViewData["index_del"] = Url.Content("~/zxbg/wjqt/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zxbg/wjqt/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

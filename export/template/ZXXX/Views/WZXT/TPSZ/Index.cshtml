@@ -1,0 +1,30 @@
+@model HanRuEdu.LDAL.EDU_WZXT_TPXT_TPSZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/TPSZ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--投票设置ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="TITLE" width="50" sortable="true">@Html.LabelFor(m => m.TITLE)</th><!--标题-->
+            <th field="CONTENT" width="50" sortable="true">@Html.LabelFor(m => m.CONTENT)</th><!--内容-->
+            <th field="SHOWSTYLEID" width="50" sortable="true">@Html.LabelFor(m => m.SHOWSTYLEID)</th><!--显示方式-->
+            <th field="CSSID" width="50" sortable="true">@Html.LabelFor(m => m.CSSID)</th><!--显示样式-->
+            <th field="LOGINNAMELIST" width="50" sortable="true">@Html.LabelFor(m => m.LOGINNAMELIST)</th><!--投票人-->
+            <th field="STARTSTATU" width="50" sortable="true">@Html.LabelFor(m => m.STARTSTATU)</th><!--是否开启-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/wzxt/tpsz/create");
+    ViewData["index_edit"] = Url.Content("~/wzxt/tpsz/edit");
+    //ViewData["index_detail"] = Url.Content("~/wzxt/tpsz/details";)
+    //ViewData["index_del"] = Url.Content("~/wzxt/tpsz/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/wzxt/tpsz/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

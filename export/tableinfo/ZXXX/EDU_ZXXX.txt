@@ -1,0 +1,75 @@
+EDU_ZXXX_01_01_ZXXX  学校基本数据子类表
+  ID          学校ID                int            主键
+  XXDM        学校代码                nvarchar(10)   非主
+  XXMC        学校名称                nvarchar(60)   非主
+  XXYWMC      学校英文名称            nvarchar(60)   非主
+  XXDZ        学校地址                nvarchar(180)  非主
+  XXYZBM      学校邮政编码            nvarchar(6)    非主
+  XZQHM       行政区划码              nvarchar(6)    非主
+  JXNY        建校年月                nvarchar(6)    非主
+  XQR         校庆日                  nvarchar(60)   非主
+  XXBXLXM     学校办学类型码          nvarchar(3)    非主
+  XXZGBMM     学校主管部门码          nvarchar(3)    非主
+  FDDBRH      法定代表人号            nvarchar(20)   非主
+  FRZSH       法人证书号              nvarchar(20)   非主
+  XZGH        校长工号                nvarchar(20)   非主
+  XZXM        校长姓名                nvarchar(36)   非主
+  DWFZRH      党委负责人号            nvarchar(20)   非主
+  ZZJGM       组织机构码              nvarchar(10)   非主
+  LXDH        联系电话                nvarchar(30)   非主
+  CZDH        传真电话                nvarchar(30)   非主
+  DZXX        电子信箱                nvarchar(40)   非主
+  ZYDZ        主页地址                nvarchar(60)   非主
+  LSYG        历史沿革                text           非主
+  XXBBM       学校办别码              nvarchar(2)    非主
+  SSZGDWM     所属主管单位码          nvarchar(6)    非主
+  SZDCXLXM    所在地城乡类型码        nvarchar(3)    非主
+  SZDJJSXM    所在地经济属性码        nvarchar(1)    非主
+  SZDMZSX     所在地民族属性          nvarchar(1)    非主
+  XXXZ        小学学制                decimal(3,1)   非主
+  XXRXNL      小学入学年龄            decimal(1)     非主
+  CZXZ        初中学制                decimal(3,1)   非主
+  CZRXNL      初中入学年龄            decimal(2)     非主
+  GZXZ        高中学制                decimal(3,1)   非主
+  ZJXYYM      主教学语言码            nvarchar(3)    非主
+  FJXYYM      辅教学语言码            nvarchar(3)    非主
+  ZSBJ        招生半径                nvarchar(30)   非主
+
+EDU_ZXXX_02_01_NJ  年级数据类表
+  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  NJ          年级号                  nvarchar(10)   主键
+  NJMC        年级名称                nvarchar(30)   非主
+
+EDU_ZXXX_03_01_BJ  班级数据类表
+  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  BH          班号                    nvarchar(10)   主键
+  NJ          年级号                  nvarchar(10)   非主     年级数据类表
+  BJ          班级名称                nvarchar(20)   非主
+  JBNY        建班年月                nvarchar(6)    非主
+  BZRGH       班主任工号              nvarchar(20)   非主
+  BZXH        班长学号                nvarchar(20)   非主
+  BJRYCH      班级荣誉称号            nvarchar(40)   非主
+  XZ          学制                    decimal(3,1)   非主
+  BJLXM       班级类型码              nvarchar(2)    非主
+  WLLX        文理类型                nvarchar(2)    非主
+  BYRQ        毕业日期                nvarchar(8)    非主
+  SFSSMZSYJXB 是否少数民族双语教学班  nvarchar(1)    非主
+  SYJXMSM     双语教学模式码          nvarchar(1)    非主
+
+EDU_ZXXX_04_01_JG  机构数据类表
+  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  JGH         机构号                  nvarchar(10)   主键
+  LSJGH       隶属机构号              nvarchar(10)   非主     机构数据类表
+  JGMC        机构名称                nvarchar(60)   非主
+  JGJC        机构简称                nvarchar(10)   非主
+  FZRGH       负责人工号              nvarchar(20)   非主
+
+EDU_ZXXX_05_A01_ZXXQ  学期数据表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  XNID        学年                    int            非主
+  XQM         学期码                  nvarchar(1)    非主
+  XQMC        学期名称                nvarchar(10)   非主
+  XQKSRQ      学期开始日期            nvarchar(8)    非主
+  XQJSRQ      学期结束日期            nvarchar(8)    非主
+

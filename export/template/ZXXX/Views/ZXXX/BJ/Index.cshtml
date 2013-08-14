@@ -1,0 +1,35 @@
+@model HanRuEdu.LDAL.EDU_ZXXX_03_01_BJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/BJ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="BH" width="50" sortable="true">@Html.LabelFor(m => m.BH)</th><!--班号-->
+            <th field="NJ" width="50" sortable="true">@Html.LabelFor(m => m.NJ)</th><!--年级号-->
+            <th field="BJ" width="50" sortable="true">@Html.LabelFor(m => m.BJ)</th><!--班级名称-->
+            <th field="JBNY" width="50" sortable="true">@Html.LabelFor(m => m.JBNY)</th><!--建班年月-->
+            <th field="BZRGH" width="50" sortable="true">@Html.LabelFor(m => m.BZRGH)</th><!--班主任工号-->
+            <th field="BZXH" width="50" sortable="true">@Html.LabelFor(m => m.BZXH)</th><!--班长学号-->
+            <th field="BJRYCH" width="50" sortable="true">@Html.LabelFor(m => m.BJRYCH)</th><!--班级荣誉称号-->
+            <th field="XZ" width="50" sortable="true">@Html.LabelFor(m => m.XZ)</th><!--学制-->
+            <th field="BJLXM" width="50" sortable="true">@Html.LabelFor(m => m.BJLXM)</th><!--班级类型码-->
+            <th field="WLLX" width="50" sortable="true">@Html.LabelFor(m => m.WLLX)</th><!--文理类型-->
+            <th field="BYRQ" width="50" sortable="true">@Html.LabelFor(m => m.BYRQ)</th><!--毕业日期-->
+            <th field="SFSSMZSYJXB" width="50" sortable="true">@Html.LabelFor(m => m.SFSSMZSYJXB)</th><!--是否少数民族双语教学班-->
+            <th field="SYJXMSM" width="50" sortable="true">@Html.LabelFor(m => m.SYJXMSM)</th><!--双语教学模式码-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zxxx/bj/create");
+    ViewData["index_edit"] = Url.Content("~/zxxx/bj/edit");
+    //ViewData["index_detail"] = Url.Content("~/zxxx/bj/details";)
+    //ViewData["index_del"] = Url.Content("~/zxxx/bj/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zxxx/bj/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

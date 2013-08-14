@@ -1,0 +1,83 @@
+@model HanRuEdu.LDAL.EDU_ELE_01_APP
+@using (Html.BeginForm())
+{
+    @Html.Partial("SingleZTree")
+    <div id="dlg" class="easyui-panel" title="编辑" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">编辑</span></h1></center>
+
+        <table class="admintable">
+            <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ID) </td> <!--应用ID-->
+                <td>
+                    @Html.TextBoxFor(m => m.ID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校ID-->
+                <td>
+                    @Html.TextBoxFor(m => m.SCHOOLID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.SCHOOLID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.NAME) </td> <!--应用名称-->
+                <td>
+                    @Html.TextBoxFor(m => m.NAME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.NAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.URL) </td> <!--网址-->
+                <td>
+                    @Html.TextBoxFor(m => m.URL, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.URL)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUTHIP) </td> <!--限用IP-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUTHIP, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUTHIP)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SM) </td> <!--说明-->
+                <td>
+                    @Html.TextBoxFor(m => m.SM, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.SM)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.DLFS) </td> <!--登录方式-->
+                <td>
+                    @Html.TextBoxFor(m => m.DLFS, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.DLFS)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.STATUS) </td> <!--应用状态-->
+                <td>
+                    @Html.TextBoxFor(m => m.STATUS, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.STATUS)
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        @{ ViewData["ce_cancel"] = Url.Content("~/xtgl/app/index");}
+        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
+    </div>
+}

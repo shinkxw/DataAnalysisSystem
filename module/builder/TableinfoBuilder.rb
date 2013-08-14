@@ -30,12 +30,13 @@ class TableinfoBuilder < BaseBuilder
         table.field_area.each do |field|
           @info_str << "#{@tab}#{field.name.ljust(12)}#{field.explanation.fill_cn(12)}#{field.type.ljust(15)}"
           @info_str.concat(field.p == "T" ? "Ö÷¼ü" : "·ÇÖ÷")
+					@info_str << "     #{field.relation.table.explanation}" if field.relation != nil
           @info_str << "\n"
         end
-        table.get_relation.each do |field|
-          @info_str << "#{@tab}#{@tab}"
-          @info_str << "#{field.relation.table.name.ljust(25)}#{field.relation.table.explanation.fill_cn(18)}#{field.relation.name.ljust(12)}#{field.relation.explanation}\n"
-        end      
+        #~ table.get_relation.each do |field|
+          #~ @info_str << "#{@tab}#{@tab}"
+          #~ @info_str << "#{field.relation.table.name.ljust(25)}#{field.relation.table.explanation.fill_cn(18)}#{field.relation.name.ljust(12)}#{field.relation.explanation}\n"
+        #~ end      
         @info_str << "\n"
       end
       @hash["#{name_space.name}.txt"] = @info_str

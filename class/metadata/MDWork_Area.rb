@@ -13,6 +13,7 @@ class MDWork_Area
   def initialize(area)
     @area = area
     @doc = nil
+    @area.is_valid?
     save_to_temporary
     backup_work_area
   end
@@ -22,6 +23,7 @@ class MDWork_Area
     sql_area = SqlSSAnalyzer.new().analyze(str_arr)
     sql_area.reallocate_namespace
     @area.update_by(sql_area)
+    @area.is_valid?
     reset_doc
   end
   #自daf格式文件更新数据
@@ -31,6 +33,7 @@ class MDWork_Area
     daf_area = DafAnalyzer.new().analyze(str_arr)
     daf_area.reallocate_namespace
     @area.update_by(daf_area)
+    @area.is_valid?
     reset_doc
     out_hash["sql_update.sql"] = SqlBuilder.new().build_update(@work_area,$update_table_name_arr.uniq)
     FolderWriter.new("#{$root}/export/update/#{@work_area.name}_#{Time.now.strftime("%m%d")}/",true).write_str_hash(out_hash)
@@ -72,23 +75,23 @@ class MDWork_Area
       end
     end
   end
-  #使用元数据生成Sql脚本
-  def bulid_sql(build_folder = true, need_delete = true, need_data = false)
+  #输出Sql脚本
+  def export_sql(build_folder = true, need_delete = true, need_data = false)
     builder = SqlBuilder.new(need_delete,need_data)
-    builder.need_data_name_space_arr = ["EDU_SYS","EDU_ELE","EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
+    builder.need_data_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
     build_folder ? builder.build_hash(@area).export : builder.build(@area).export
   end
-  #使用元数据生成创建视图语句
-  def bulid_view(build_folder = true)
-    builder = ViewBuilder.new(nil)
+  #输出创建视图语句
+  def export_view(build_folder = true, need_delete = true)
+    builder = ViewBuilder.new(need_delete)
     build_folder ? builder.build_hash(@area).export : builder.build(@area).export
   end
-  #使用元数据生成实体验证数据
-  def bulid_model;ModelBuilder.new.build(@area).export end
-  #使用元数据生成模板数据
-  def bulid_template;TemplateBuilder.new.build(@area).export end
-  #使用元数据生成表信息
-  def bulid_tableinfo;TableinfoBuilder.new.build(@area).export end
-  #重新生成元数据文档
-  def reset_doc;@doc = DafBuilder.new(true).build(@area) end
+  #输出实体验证数据
+  def export_model;ModelBuilder.new.build(@area).export end
+  #输出模板数据
+  def export_template;TemplateBuilder.new.build(@area).export end
+  #输出表信息
+  def export_tableinfo;TableinfoBuilder.new.build(@area).export end
+  private#重新生成元数据文档
+  def reset_doc;@doc = DafBuilder.new.build(@area) end
 end

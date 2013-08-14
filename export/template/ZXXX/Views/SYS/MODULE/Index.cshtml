@@ -1,0 +1,29 @@
+@model HanRuEdu.LDAL.EDU_SYS_01_MODULE
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/MODULE/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!---->
+            <th field="APPID" width="50" sortable="true">@Html.LabelFor(m => m.APPID)</th><!---->
+            <th field="NAME" width="50" sortable="true">@Html.LabelFor(m => m.NAME)</th><!---->
+            <th field="Depth" width="50" sortable="true">@Html.LabelFor(m => m.Depth)</th><!---->
+            <th field="PID" width="50" sortable="true">@Html.LabelFor(m => m.PID)</th><!---->
+            <th field="MenuDisp" width="50" sortable="true">@Html.LabelFor(m => m.MenuDisp)</th><!---->
+            <th field="MenuUserType" width="50" sortable="true">@Html.LabelFor(m => m.MenuUserType)</th><!---->
+            <th field="Link" width="50" sortable="true">@Html.LabelFor(m => m.Link)</th><!---->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/sys/module/create");
+    ViewData["index_edit"] = Url.Content("~/sys/module/edit");
+    //ViewData["index_detail"] = Url.Content("~/sys/module/details";)
+    //ViewData["index_del"] = Url.Content("~/sys/module/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/sys/module/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

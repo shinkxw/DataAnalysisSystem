@@ -11,7 +11,7 @@ class ViewBuilder < BaseBuilder
   attr_reader :builder_version#生成器版本
   @@Short_name = ["b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
   #初始化
-  def initialize(bulid_table_name_arr = nil,need_delete = true,log = Log.new)
+  def initialize(need_delete = true,bulid_table_name_arr = nil,log = Log.new)
     @area = nil
     @table_arr = nil
     @view_str = nil
@@ -31,7 +31,7 @@ class ViewBuilder < BaseBuilder
     @table_arr.each do |table|
       add_table_view(table)
     end
-    MDDoc.new("view",@area.name << "_view",@view_str,"sql")
+    MDDoc.new("view","#{@area.name}_view",@view_str,"sql")
   end
   #生成view脚本哈希表
   def build_hash(area)

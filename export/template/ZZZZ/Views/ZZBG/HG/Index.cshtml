@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZZBG_03_02_HG
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/HG/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WJID" width="50" sortable="true">@Html.LabelFor(m => m.WJID)</th><!--文件ID-->
+            <th field="HGRID" width="50" sortable="true">@Html.LabelFor(m => m.HGRID)</th><!--核稿人ID-->
+            <th field="HGRGH" width="50" sortable="true">@Html.LabelFor(m => m.HGRGH)</th><!--核稿人工号-->
+            <th field="HGDW" width="50" sortable="true">@Html.LabelFor(m => m.HGDW)</th><!--核稿单位-->
+            <th field="HGYJ" width="50" sortable="true">@Html.LabelFor(m => m.HGYJ)</th><!--核稿意见-->
+            <th field="HGRQ" width="50" sortable="true">@Html.LabelFor(m => m.HGRQ)</th><!--核稿日期-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzbg/hg/create");
+    ViewData["index_edit"] = Url.Content("~/zzbg/hg/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzbg/hg/details";)
+    //ViewData["index_del"] = Url.Content("~/zzbg/hg/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzbg/hg/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

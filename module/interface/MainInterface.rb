@@ -28,12 +28,11 @@ class MainInterface < BaseInterface
   #菜单判断
   def menu_determine
     case @input
-    when "c"
-      cli = ManageAreaInterface.new
-      cli.main
-    when "t"
+    when "c"#选择工作区
+      ManageAreaInterface.new
+    when "t"#直接转换
       puts "暂时不提供此功能。"
-    when "q"
+    when "q"#退出
       @statu = "quit"
     else
       puts "该输入无效。"
@@ -42,7 +41,7 @@ class MainInterface < BaseInterface
   #显示菜单
   def show_menu
     puts "----------------------------"
-    puts "   输入c将选择工作环境      "
+    puts "   输入c将选择工作区        "
     puts "   输入t可直接进行转换      "
     puts "   输入q退出系统            "
     puts "----------------------------"

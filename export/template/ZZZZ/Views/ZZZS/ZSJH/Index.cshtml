@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_ZZZS_01_A01_ZSJH
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/ZSJH/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="ZYXXID" width="50" sortable="true">@Html.LabelFor(m => m.ZYXXID)</th><!--专业基本信息-->
+            <th field="XNID" width="50" sortable="true">@Html.LabelFor(m => m.XNID)</th><!--学年-->
+            <th field="ZSJHRS" width="50" sortable="true">@Html.LabelFor(m => m.ZSJHRS)</th><!--招生计划-->
+            <th field="BZ" width="50" sortable="true">@Html.LabelFor(m => m.BZ)</th><!--备注-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzzs/zsjh/create");
+    ViewData["index_edit"] = Url.Content("~/zzzs/zsjh/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzzs/zsjh/details";)
+    //ViewData["index_del"] = Url.Content("~/zzzs/zsjh/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzzs/zsjh/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

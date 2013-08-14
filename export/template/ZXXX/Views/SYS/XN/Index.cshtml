@@ -1,0 +1,24 @@
+@model HanRuEdu.LDAL.EDU_SYS_01_XN
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/XN/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="XN" width="50" sortable="true">@Html.LabelFor(m => m.XN)</th><!--学年-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/sys/xn/create");
+    ViewData["index_edit"] = Url.Content("~/sys/xn/edit");
+    //ViewData["index_detail"] = Url.Content("~/sys/xn/details";)
+    //ViewData["index_del"] = Url.Content("~/sys/xn/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/sys/xn/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

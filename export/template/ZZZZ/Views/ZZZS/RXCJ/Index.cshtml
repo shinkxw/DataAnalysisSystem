@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_ZZZS_02_01_RXCJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/RXCJ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--学生信息数据表-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="RXZF" width="50" sortable="true">@Html.LabelFor(m => m.RXZF)</th><!--入学总分-->
+            <th field="GKZF" width="50" sortable="true">@Html.LabelFor(m => m.GKZF)</th><!--中考总分-->
+            <th field="FJF" width="50" sortable="true">@Html.LabelFor(m => m.FJF)</th><!--附加分-->
+            <th field="FJFLBM" width="50" sortable="true">@Html.LabelFor(m => m.FJFLBM)</th><!--附加分类别码-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzzs/rxcj/create");
+    ViewData["index_edit"] = Url.Content("~/zzzs/rxcj/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzzs/rxcj/details";)
+    //ViewData["index_del"] = Url.Content("~/zzzs/rxcj/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzzs/rxcj/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

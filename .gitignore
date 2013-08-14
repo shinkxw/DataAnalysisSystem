@@ -12,7 +12,6 @@ test/tmp
 test/version_tmp
 tmp
 data/backup
-export
 
 
 # YARD artifacts

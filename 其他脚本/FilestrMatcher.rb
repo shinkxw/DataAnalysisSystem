@@ -74,7 +74,7 @@ class FilestrMatcher
   end
   #覆盖文件
   def cover_file(file_path,file_str)
-    File.open(file_path,"w:UTF-8"){|file| file.puts(file_str)}
+    File.open(file_path,"w:GBK"){|file| file.puts(file_str)}
   end
 end
 fm = FilestrMatcher.new("G:/瀚孺/DataAnalysisSystem".encode('GBK'))

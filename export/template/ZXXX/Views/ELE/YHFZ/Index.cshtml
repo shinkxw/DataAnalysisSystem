@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ELE_02_YHFZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/YHFZ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--分组ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="APPID" width="50" sortable="true">@Html.LabelFor(m => m.APPID)</th><!--应用ID-->
+            <th field="YHID" width="50" sortable="true">@Html.LabelFor(m => m.YHID)</th><!--用户ID-->
+            <th field="SJFZID" width="50" sortable="true">@Html.LabelFor(m => m.SJFZID)</th><!--上级分组ID-->
+            <th field="FZMC" width="50" sortable="true">@Html.LabelFor(m => m.FZMC)</th><!--分组名称-->
+            <th field="FZYHID" width="50" sortable="true">@Html.LabelFor(m => m.FZYHID)</th><!--分组用户ID列表-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/ele/yhfz/create");
+    ViewData["index_edit"] = Url.Content("~/ele/yhfz/edit");
+    //ViewData["index_detail"] = Url.Content("~/ele/yhfz/details";)
+    //ViewData["index_del"] = Url.Content("~/ele/yhfz/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/ele/yhfz/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

@@ -1,0 +1,195 @@
+EDU_WZXT_VIP  网站会员
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  LOGINNAME   用户名                  nvarchar(50)   主键
+  LOGINPWD    密码                    nvarchar(64)   非主
+  REALNAME    姓名                    nvarchar(50)   非主
+  EMAIL       电子邮箱                nvarchar(50)   非主
+  MOBILE      联系电话                nvarchar(20)   非主
+  QQ          QQ号码                nvarchar(20)   非主
+  AUDITSTATU  审核状态                int            非主
+  AUDITOR     审核人ID              nvarchar(50)   非主
+  AUDITORNAME 审核人                  nvarchar(50)   非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+
+EDU_WZXT_TPXT_TPYS  投票样式库
+  ID          样式ID                int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  NAME        样式名                  nvarchar(50)   非主
+  SHOWIMG     效果图                  nvarchar(500)  非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+
+EDU_WZXT_TPXT_TPXX  投票题目选项
+  ID          投票题目选项ID        int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  TPID        投票                    int            非主
+  TMID        投票题目                int            非主
+  TITLE       标题                    nvarchar(500)  非主
+  SUMTP       已选人数                int            非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_TPXT_TPSZ       投票设置                            ID          投票设置ID
+    EDU_WZXT_TPXT_TPTM       投票题目                            ID          投票题目ID
+
+EDU_WZXT_TPXT_TPTM  投票题目
+  ID          投票题目ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  TPID        投票                    int            非主
+  TYPEID      投票形式                int            非主
+  TITLE       标题                    nvarchar(500)  非主
+  CONTENT     内容                    text           非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_TPXT_TPSZ       投票设置                            ID          投票设置ID
+
+EDU_WZXT_TPXT_TPSZ  投票设置
+  ID          投票设置ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  TITLE       标题                    nvarchar(500)  非主
+  CONTENT     内容                    text           非主
+  SHOWSTYLEID 显示方式                int            非主
+  CSSID       显示样式                int            非主
+  LOGINNAMELIST投票人                  text           非主
+  STARTSTATU  是否开启                int            非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_TPXT_TPYS       投票样式库                          ID          样式ID
+
+EDU_WZXT_TPXT_TPJL  投票记录
+  ID          投票记录ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  TPID        投票                    int            非主
+  TPIP        投票人                  nvarchar(128)  非主
+  TPTIME      投票时间                datetime       非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_TPXT_TPSZ       投票设置                            ID          投票设置ID
+
+EDU_WZXT_MHXT_YQLJLX  友情链接类型
+  ID          友情链接类型ID        int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  NAME        类型名                  nvarchar(50)   非主
+  SHOWSTYLE   显示方式                int            非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+
+EDU_WZXT_MHXT_YQLJ  友情链接
+  ID          友情链接ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  TITLE       标题                    nvarchar(50)   非主
+  TYPEID      类型                    int            非主
+  IMAGEURL    图片                    nvarchar(500)  非主
+  URL         链接                    nvarchar(300)  非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_MHXT_YQLJLX     友情链接类型                        ID          友情链接类型ID
+
+EDU_WZXT_MHXT_WZYS  样式库
+  ID          样式库ID              int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  NAME        样式名                  nvarchar(50)   非主
+  SHOWIMG     效果图                  nvarchar(500)  非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+
+EDU_WZXT_MHXT_WZWZ  网站文章
+  ID          网站文章ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  TYPENAME    类型名称                nvarchar(20)   非主
+  LMID        栏目                    int            非主
+  TITLE       标题                    nvarchar(100)  非主
+  PUBLISHERNAME发布人                  nvarchar(50)   非主
+  AUTHOR      作者                    nvarchar(50)   非主
+  AUTHORDEPART作者部门                nvarchar(50)   非主
+  PUBLISHDATE 发布时间                datetime       非主
+  CONTENT     内容                    text           非主
+  URL         链接                    nvarchar(300)  非主
+  IMAGEURL    图片                    nvarchar(300)  非主
+  ATTACHMENTNAME附件名                  nvarchar(100)  非主
+  ATTACHMENT  附件                    nvarchar(300)  非主
+  CHICKNUB    点击量                  int            非主
+  AUDITSTATU  审核状态                int            非主
+  AUDITOR     审核人ID              nvarchar(50)   非主
+  AUDITORNAME 审核人                  nvarchar(50)   非主
+  AUDITTIME   审核时间                datetime       非主
+  REMARK      备注                    nvarchar(300)  非主
+  SUMMARY     摘要                    text           非主
+  DISPLAYTYPE 是否显示                int            非主
+  OPENFLAG    内外网                  int            非主
+  LLQX        浏览权限                nvarchar(50)   非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_MHXT_WZLM       网站栏目（导航）                    ID          网站栏目（导航）ID
+
+EDU_WZXT_MHXT_WZPZ  网站配置
+  WEBID       网站ID                int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBNAME     网站名                  nvarchar(500)  非主
+  STATUID     是否开启                int            非主
+  WEBURL      网址                    nvarchar(500)  非主
+  CSSID       网站样式                int            非主
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZYS       样式库                              ID          样式库ID
+
+EDU_WZXT_MHXT_WZLM  网站栏目（导航）
+  ID          网站栏目（导航）ID    int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  LMSHOWSTYLE 栏目使用类型            int            非主
+  NAME        栏目名称                nvarchar(50)   非主
+  URL         栏目链接                nvarchar(300)  非主
+  IMAGEURL    图片链接                nvarchar(300)  非主
+  DEPTH       层级                    int            非主
+  PID         父目录                  int            非主
+  LISTSHOWSTYLE列表显示型式            int            非主
+  ORDERTYPE   排序方式                int            非主
+  SHOWNUMBER  显示个数                int            非主
+  OPENFLAG    内外网                  int            非主
+  LLQX        浏览权限                nvarchar(50)   非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+    EDU_WZXT_MHXT_WZLM       网站栏目（导航）                    ID          网站栏目（导航）ID
+
+EDU_WZXT_MHXT_WZGG  网站广告
+  ID          网站广告ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  SHOWTYPE    显示型式                int            非主
+  ADCONTENT   广告内容                text           非主
+  GGLJ        广告链接                nvarchar(150)  非主
+  SHOWSTATU   是否显示                int            非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+
+EDU_WZXT_MHXT_FWLL  访问履历
+  ID          访问履历ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  ACCESSIP    访问IP                nvarchar(150)  非主
+  ACCESSURL   访问链接                nvarchar(500)  非主
+  ACCESSTIME  访问时间                datetime       非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+
+EDU_WZXT_MHXT_FBQX  发布权限
+  ID          发布权限ID            int            主键
+  SCHOOLID    学校名                  int            主键
+  WEBID       网站ID                int            主键
+  LOGINNAME   用户名                  nvarchar(50)   非主
+  LMLIST      栏目                    nvarchar(500)  非主
+  LMNAMELIST  栏目文字                nvarchar(500)  非主
+    EDU_ZZXX_01_01_ZZXX      学校基本数据表                      ID          编号
+    EDU_WZXT_MHXT_WZPZ       网站配置                            WEBID       网站ID
+

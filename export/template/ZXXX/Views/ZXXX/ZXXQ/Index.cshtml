@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZXXX_05_A01_ZXXQ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/ZXXQ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="XNID" width="50" sortable="true">@Html.LabelFor(m => m.XNID)</th><!--学年-->
+            <th field="XQM" width="50" sortable="true">@Html.LabelFor(m => m.XQM)</th><!--学期码-->
+            <th field="XQMC" width="50" sortable="true">@Html.LabelFor(m => m.XQMC)</th><!--学期名称-->
+            <th field="XQKSRQ" width="50" sortable="true">@Html.LabelFor(m => m.XQKSRQ)</th><!--学期开始日期-->
+            <th field="XQJSRQ" width="50" sortable="true">@Html.LabelFor(m => m.XQJSRQ)</th><!--学期结束日期-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zxxx/zxxq/create");
+    ViewData["index_edit"] = Url.Content("~/zxxx/zxxq/edit");
+    //ViewData["index_detail"] = Url.Content("~/zxxx/zxxq/details";)
+    //ViewData["index_del"] = Url.Content("~/zxxx/zxxq/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zxxx/zxxq/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

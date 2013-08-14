@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_WZXT_MHXT_FWLL
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/FWLL/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--访问履历ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="ACCESSIP" width="50" sortable="true">@Html.LabelFor(m => m.ACCESSIP)</th><!--访问IP-->
+            <th field="ACCESSURL" width="50" sortable="true">@Html.LabelFor(m => m.ACCESSURL)</th><!--访问链接-->
+            <th field="ACCESSTIME" width="50" sortable="true">@Html.LabelFor(m => m.ACCESSTIME)</th><!--访问时间-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/wzxt/fwll/create");
+    ViewData["index_edit"] = Url.Content("~/wzxt/fwll/edit");
+    //ViewData["index_detail"] = Url.Content("~/wzxt/fwll/details";)
+    //ViewData["index_del"] = Url.Content("~/wzxt/fwll/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/wzxt/fwll/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

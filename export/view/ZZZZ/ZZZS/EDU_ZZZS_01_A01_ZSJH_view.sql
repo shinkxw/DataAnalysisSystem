@@ -1,0 +1,67 @@
+
+--招生计划数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZZZS_01_A01_ZSJH_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[ZYXXID]--专业基本信息
+      ,a.[XNID]--学年
+      ,a.[ZSJHRS]--招生计划
+      ,a.[BZ]--备注
+      ,b.XXDM as b_ZZXX_XXDM--学校代码
+      ,b.XXMC as b_ZZXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZZXX_XXYWMC--学校英文名称
+      ,b.XXJBZM as b_ZZXX_XXJBZM--学校举办者码
+      ,bb.MC as b_ZZXX_XXJBZM_MC--名称
+      ,bb.SM as b_ZZXX_XXJBZM_SM--说明
+      ,b.XXZGBMM as b_ZZXX_XXZGBMM--学校主管部门码
+      ,bc.MC as b_ZZXX_XXZGBMM_MC--名称
+      ,bc.SM as b_ZZXX_XXZGBMM_SM--说明
+      ,b.XXDZ as b_ZZXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZZXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZZXX_XZQHM--行政区划码
+      ,bd.MC as b_ZZXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZZXX_JXNY--建校年月
+      ,b.XQR as b_ZZXX_XQR--校庆日
+      ,b.CLBJ as b_ZZXX_CLBJ--成立背景
+      ,b.LSYG as b_ZZXX_LSYG--历史沿革
+      ,b.XXXQS as b_ZZXX_XXXQS--学校校区数
+      ,b.XXPGLX as b_ZZXX_XXPGLX--学校评估类型
+      ,be.MC as b_ZZXX_XXPGLX_MC--名称
+      ,b.XXPGQKSM as b_ZZXX_XXPGQKSM--学校评估情况说明
+      ,b.ZYDZ as b_ZZXX_ZYDZ--主页地址
+      ,b.FDDBRH as b_ZZXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZZXX_FRZSH--法人证书号
+      ,b.LXDH as b_ZZXX_LXDH--联系电话
+      ,b.CZDH as b_ZZXX_CZDH--传真电话
+      ,b.DZXX as b_ZZXX_DZXX--电子信箱
+      ,c.SCHOOLID as c_ZYXX_SCHOOLID--学校名
+      ,c.ZYDM as c_ZYXX_ZYDM--专业代码
+      ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--专业目录类别
+      ,cb.MC as c_ZYXX_ZYDM_MC--名称
+      ,c.ZYMC as c_ZYXX_ZYMC--专业名称
+      ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业英文名称
+      ,c.XZ as c_ZYXX_XZ--学制
+      ,c.ZYFXMC as c_ZYXX_ZYFXMC--专业方向名称
+      ,c.ZYJC as c_ZYXX_ZYJC--专业简称
+      ,c.JLNY as c_ZYXX_JLNY--建立年月
+      ,c.ZYJSS as c_ZYXX_ZYJSS--专业教师数
+      ,c.KSJGH as c_ZYXX_KSJGH--开设机构号
+      ,c.ZXF as c_ZYXX_ZXF--总学分
+      ,c.SSZYML as c_ZYXX_SSZYML--所属专业目录
+      ,cc.MC as c_ZYXX_SSZYML_MC--名称
+      ,c.ZYLB as c_ZYXX_ZYLB--专业类别名称
+      ,d.SCHOOLID as d_XN_SCHOOLID--学校名
+      ,d.XN as d_XN_XN--学年
+
+FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
+      dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bd ON b.XZQHM = bd.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_PGQK AS be ON b.XXPGLX = be.DM /*学校评估类型*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS cc ON c.SSZYML = cc.DM /*所属专业目录*/
+GO

@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_WZXT_TPXT_TPJL
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/TPJL/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--投票记录ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="TPID" width="50" sortable="true">@Html.LabelFor(m => m.TPID)</th><!--投票-->
+            <th field="TPIP" width="50" sortable="true">@Html.LabelFor(m => m.TPIP)</th><!--投票人-->
+            <th field="TPTIME" width="50" sortable="true">@Html.LabelFor(m => m.TPTIME)</th><!--投票时间-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/wzxt/tpjl/create");
+    ViewData["index_edit"] = Url.Content("~/wzxt/tpjl/edit");
+    //ViewData["index_detail"] = Url.Content("~/wzxt/tpjl/details";)
+    //ViewData["index_del"] = Url.Content("~/wzxt/tpjl/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/wzxt/tpjl/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

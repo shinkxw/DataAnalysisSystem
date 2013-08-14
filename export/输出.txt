@@ -1,0 +1,8 @@
+用于存放工具所生成的各类格式文件
+sql           数据库脚本
+daf           daf格式
+model         数据验证
+template      模板文件
+view          视图生成脚本
+update        数据更新追加包
+tableinfo     表分析数据

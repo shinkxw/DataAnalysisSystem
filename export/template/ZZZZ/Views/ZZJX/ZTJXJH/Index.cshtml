@@ -1,0 +1,32 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_03_01_ZTJXJH
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/ZTJXJH/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="JHBH" width="50" sortable="true">@Html.LabelFor(m => m.JHBH)</th><!--计划编号-->
+            <th field="JHNJ" width="50" sortable="true">@Html.LabelFor(m => m.JHNJ)</th><!--计划年级-->
+            <th field="ZYXXID" width="50" sortable="true">@Html.LabelFor(m => m.ZYXXID)</th><!--专业编号-->
+            <th field="JHZYMC" width="50" sortable="true">@Html.LabelFor(m => m.JHZYMC)</th><!--计划专业名称-->
+            <th field="ZXFYQ" width="50" sortable="true">@Html.LabelFor(m => m.ZXFYQ)</th><!--总学分要求-->
+            <th field="JLNY" width="50" sortable="true">@Html.LabelFor(m => m.JLNY)</th><!--建立年月-->
+            <th field="SYXZ" width="50" sortable="true">@Html.LabelFor(m => m.SYXZ)</th><!--适用学制-->
+            <th field="PYMB" width="50" sortable="true">@Html.LabelFor(m => m.PYMB)</th><!--培养目标-->
+            <th field="SFKY" width="50" sortable="true">@Html.LabelFor(m => m.SFKY)</th><!--是否可用-->
+            <th field="FJ" width="50" sortable="true">@Html.LabelFor(m => m.FJ)</th><!--附件-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzjx/ztjxjh/create");
+    ViewData["index_edit"] = Url.Content("~/zzjx/ztjxjh/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzjx/ztjxjh/details";)
+    //ViewData["index_del"] = Url.Content("~/zzjx/ztjxjh/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzjx/ztjxjh/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

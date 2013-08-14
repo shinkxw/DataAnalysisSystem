@@ -8,7 +8,7 @@ class DafBuilder < BaseBuilder
   attr_reader :is_hash#输出是否为哈希表，否则为字符串
   attr_accessor :tab#缩进
   #初始化
-  def initialize(is_hash = false,log = Log.new,tab = "    ")
+  def initialize(is_hash = true,log = Log.new,tab = "    ")
     @area = nil
     @daf_str = nil
     @result = nil

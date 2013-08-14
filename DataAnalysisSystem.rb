@@ -16,19 +16,21 @@ class DataAnalysisSystem
   end
 end
 DataAnalysisSystem.new
-#cli = MainInterface.new.main
+#MainInterface.new
+#ManageAreaInterface.new
 
 t = Time.now
-@work_area = AreaManager.load_work_area("ZZZZ")
-@work_area.area.is_valid?
+@work_area = AreaManager.load_work_area("ZXXX")
 #@work_area.work_area.reallocate_namespace
 #@work_area.update_by_sql("table")
-#das.update_by_daf("EDU_ELE")
-@work_area.bulid_sql
-@work_area.bulid_view
-@work_area.bulid_model
-@work_area.bulid_template
-@work_area.bulid_tableinfo
+#@work_area.update_by_daf("EDU_ELE")
+
+@work_area.export_sql
+@work_area.export_view(false)
+@work_area.export_model
+@work_area.export_template
+
+@work_area.export_tableinfo
 @work_area.save_and_close_work_area
 p Time.now - t
 

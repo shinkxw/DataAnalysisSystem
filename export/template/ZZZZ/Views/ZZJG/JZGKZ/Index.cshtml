@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZZJG_01_A01_JZGKZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/JZGKZ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="JZGJBSJID" width="50" sortable="true">@Html.LabelFor(m => m.JZGJBSJID)</th><!--教工基本信息ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="JL" width="50" sortable="true">@Html.LabelFor(m => m.JL)</th><!--教龄-->
+            <th field="GL" width="50" sortable="true">@Html.LabelFor(m => m.GL)</th><!--工龄-->
+            <th field="GZJY" width="50" sortable="true">@Html.LabelFor(m => m.GZJY)</th><!--工作经验-->
+            <th field="LDJN" width="50" sortable="true">@Html.LabelFor(m => m.LDJN)</th><!--劳动技能-->
+            <th field="XXJL" width="50" sortable="true">@Html.LabelFor(m => m.XXJL)</th><!--学习经历-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzjg/jzgkz/create");
+    ViewData["index_edit"] = Url.Content("~/zzjg/jzgkz/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzjg/jzgkz/details";)
+    //ViewData["index_del"] = Url.Content("~/zzjg/jzgkz/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzjg/jzgkz/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

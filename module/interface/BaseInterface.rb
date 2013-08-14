@@ -8,6 +8,7 @@ class BaseInterface
   def initialize
     @statu = nil
     @input = nil
+    main
   end
   #主循环
   def main
@@ -28,12 +29,17 @@ class BaseInterface
   end
   #获得输入
   def get_input
-    @input = gets.delete("\n")
+    @input = gets.chop!
   end
   #输入后操作
   def after_input
   end
-  # 结束处理
+  #结束处理
   def terminate
+  end
+  #根据是否输入Y或y来返回布尔值
+  def get_bool
+    get_input
+    @input == "Y" || @input == "y"
   end
 end

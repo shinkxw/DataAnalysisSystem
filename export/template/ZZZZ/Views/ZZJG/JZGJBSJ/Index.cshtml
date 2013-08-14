@@ -1,0 +1,56 @@
+@model HanRuEdu.LDAL.EDU_ZZJG_01_01_JZGJBSJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/JZGJBSJ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="GH" width="50" sortable="true">@Html.LabelFor(m => m.GH)</th><!--工号-->
+            <th field="XM" width="50" sortable="true">@Html.LabelFor(m => m.XM)</th><!--姓名-->
+            <th field="YWXM" width="50" sortable="true">@Html.LabelFor(m => m.YWXM)</th><!--英文姓名-->
+            <th field="XMPY" width="50" sortable="true">@Html.LabelFor(m => m.XMPY)</th><!--姓名拼音-->
+            <th field="CYM" width="50" sortable="true">@Html.LabelFor(m => m.CYM)</th><!--曾用名-->
+            <th field="SFZJLXM" width="50" sortable="true">@Html.LabelFor(m => m.SFZJLXM)</th><!--身份证件类型码-->
+            <th field="SFZJH" width="50" sortable="true">@Html.LabelFor(m => m.SFZJH)</th><!--身份证件号-->
+            <th field="CSRQ" width="50" sortable="true">@Html.LabelFor(m => m.CSRQ)</th><!--出生日期-->
+            <th field="XBM" width="50" sortable="true">@Html.LabelFor(m => m.XBM)</th><!--性别码-->
+            <th field="MZM" width="50" sortable="true">@Html.LabelFor(m => m.MZM)</th><!--民族码-->
+            <th field="XXM" width="50" sortable="true">@Html.LabelFor(m => m.XXM)</th><!--血型码-->
+            <th field="JKZKM" width="50" sortable="true">@Html.LabelFor(m => m.JKZKM)</th><!--健康状况码-->
+            <th field="HYZTM" width="50" sortable="true">@Html.LabelFor(m => m.HYZTM)</th><!--婚姻状态码-->
+            <th field="ZZMMM" width="50" sortable="true">@Html.LabelFor(m => m.ZZMMM)</th><!--政治面貌码-->
+            <th field="GATQWM" width="50" sortable="true">@Html.LabelFor(m => m.GATQWM)</th><!--港澳台侨外码-->
+            <th field="JG" width="50" sortable="true">@Html.LabelFor(m => m.JG)</th><!--籍贯-->
+            <th field="GJDQM" width="50" sortable="true">@Html.LabelFor(m => m.GJDQM)</th><!--国籍/地区码-->
+            <th field="CSDXZQHM" width="50" sortable="true">@Html.LabelFor(m => m.CSDXZQHM)</th><!--出生地行政区划码-->
+            <th field="XYZJM" width="50" sortable="true">@Html.LabelFor(m => m.XYZJM)</th><!--信仰宗教码-->
+            <th field="JZGHKSZDXZQHM" width="50" sortable="true">@Html.LabelFor(m => m.JZGHKSZDXZQHM)</th><!--教职工户口所在地行政区划码-->
+            <th field="HKLBM" width="50" sortable="true">@Html.LabelFor(m => m.HKLBM)</th><!--户口类别码-->
+            <th field="DQZZ" width="50" sortable="true">@Html.LabelFor(m => m.DQZZ)</th><!--当前住址-->
+            <th field="DQZZYZBM" width="50" sortable="true">@Html.LabelFor(m => m.DQZZYZBM)</th><!--当前住址邮政编码-->
+            <th field="CJGZNY" width="50" sortable="true">@Html.LabelFor(m => m.CJGZNY)</th><!--参加工作年月-->
+            <th field="CJNY" width="50" sortable="true">@Html.LabelFor(m => m.CJNY)</th><!--从教年月-->
+            <th field="LXNY" width="50" sortable="true">@Html.LabelFor(m => m.LXNY)</th><!--来校年月-->
+            <th field="BZLBM" width="50" sortable="true">@Html.LabelFor(m => m.BZLBM)</th><!--编制类别码-->
+            <th field="JZGLBM" width="50" sortable="true">@Html.LabelFor(m => m.JZGLBM)</th><!--教职工类别码-->
+            <th field="GWLBM" width="50" sortable="true">@Html.LabelFor(m => m.GWLBM)</th><!--岗位类别码-->
+            <th field="SFJZJS" width="50" sortable="true">@Html.LabelFor(m => m.SFJZJS)</th><!--是否兼职教师-->
+            <th field="SFSSXJS" width="50" sortable="true">@Html.LabelFor(m => m.SFSSXJS)</th><!--是否双师型教-->
+            <th field="ZP" width="50" sortable="true">@Html.LabelFor(m => m.ZP)</th><!--照片(路径)-->
+            <th field="DQZTM" width="50" sortable="true">@Html.LabelFor(m => m.DQZTM)</th><!--当前状态码-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzjg/jzgjbsj/create");
+    ViewData["index_edit"] = Url.Content("~/zzjg/jzgjbsj/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzjg/jzgjbsj/details";)
+    //ViewData["index_del"] = Url.Content("~/zzjg/jzgjbsj/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzjg/jzgjbsj/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

@@ -1,0 +1,29 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_07_A09_SXRZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'/xtgl/SXRZ/index_jsonstr',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--实习日志ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--学生信息ID-->
+            <th field="SXJHID" width="50" sortable="true">@Html.LabelFor(m => m.SXJHID)</th><!--实习计划ID-->
+            <th field="SXJDID" width="50" sortable="true">@Html.LabelFor(m => m.SXJDID)</th><!--实习阶段ID-->
+            <th field="SXZYID" width="50" sortable="true">@Html.LabelFor(m => m.SXZYID)</th><!--实习周/月表ID-->
+            <th field="RZBT" width="50" sortable="true">@Html.LabelFor(m => m.RZBT)</th><!--日志标题-->
+            <th field="NR" width="50" sortable="true">@Html.LabelFor(m => m.NR)</th><!--内容-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/zzjx/sxrz/create");
+    ViewData["index_edit"] = Url.Content("~/zzjx/sxrz/edit");
+    //ViewData["index_detail"] = Url.Content("~/zzjx/sxrz/details";)
+    //ViewData["index_del"] = Url.Content("~/zzjx/sxrz/delete";)
+    ViewData["index_multi_del"] = Url.Content("~/zzjx/sxrz/delete";)
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)
