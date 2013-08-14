@@ -20,8 +20,9 @@ DataAnalysisSystem.new
 #ManageAreaInterface.new
 
 t = Time.now
-@work_area = AreaManager.load_work_area("ZZZZ")
-#@work_area.work_area.reallocate_namespace
+@work_area = AreaManager.load_work_area("ZXXX")
+#@work_area.area.reallocate_namespace
+#@work_area.area.delete_all_table_data
 #@work_area.update_by_sql("table")
 #@work_area.update_by_daf("EDU_ELE")
 

@@ -220,7 +220,7 @@
   JKZKM          EDU_GB_JKZKYWSZ          DM
   XYZJM          EDU_GB_ZJXY              DM
   XXM            EDU_JY_XX                DM
-<EDU_ZXXS_07_02_XJYD
+<EDU_ZXXS_07_A02_XJYD
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
   YDLBM          EDU_JY_XJYDLB            DM

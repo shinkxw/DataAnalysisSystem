@@ -207,9 +207,9 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_01_01_
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_01_01_XSXX_DISP
 go
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_07_02_XJYD_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_07_A02_XJYD_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXXS_07_02_XJYD_DISP
+   drop view VIEW_EDU_ZXXS_07_A02_XJYD_DISP
 go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_02_01_NJ_DISP')
             and   type = 'V')
@@ -4944,7 +4944,7 @@ FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
 GO
 
 --学籍异动数据子类表
-CREATE VIEW [dbo].[VIEW_EDU_ZXXS_07_02_XJYD_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_07_A02_XJYD_DISP]
 AS
 SELECT a.[ID]--学籍异动表编号
       ,a.[XSXXID]--学生ID
@@ -4959,10 +4959,8 @@ SELECT a.[ID]--学籍异动表编号
       ,a.[YDLYXXM]--异动来源学校码
       ,a.[YDQXXXM]--异动去向学校码
       ,a.[YDSM]--异动说明
-      ,a.[YZYID]--原专业ID
       ,a.[YBH]--原班号
       ,a.[YNJ]--原年级
-      ,a.[XZYID]--现专业ID
       ,a.[XBH]--现班号
       ,a.[XNJ]--现年级
       ,b.SCHOOLID as b_XSXX_SCHOOLID--学校名
@@ -5121,7 +5119,7 @@ SELECT a.[ID]--学籍异动表编号
       ,h.SCHOOLID as h_NJ_SCHOOLID--学校名
       ,h.NJMC as h_NJ_NJMC--年级名称
 
-FROM dbo.EDU_ZXXS_07_02_XJYD AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS c ON a.SCHOOLID = c.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XJYDLB AS d ON a.YDLBM = d.DM /*异动类别码*/ LEFT OUTER JOIN

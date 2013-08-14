@@ -4,10 +4,10 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXXS_07_02_XJYD_metadata))]
-    public partial class EDU_ZXXS_07_02_XJYD
+    [MetadataType(typeof(EDU_ZXXS_07_A02_XJYD_metadata))]
+    public partial class EDU_ZXXS_07_A02_XJYD
     {
-        public EDU_ZXXS_07_02_XJYD()
+        public EDU_ZXXS_07_A02_XJYD()
         {
             YDLBM = "";
             YDRQ = "";
@@ -17,7 +17,7 @@ namespace HanRuEdu.LDAL
             XBH = "";
             XNJ = "";
         }
-        public class EDU_ZXXS_07_02_XJYD_metadata
+        public class EDU_ZXXS_07_A02_XJYD_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学籍异动表编号")]
@@ -94,11 +94,6 @@ namespace HanRuEdu.LDAL
             public String YDSM { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "原专业")]
-            public Int32 YZYID { get; set; }
-
-
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "原班号")]
             [StringLength(10)]
@@ -111,11 +106,6 @@ namespace HanRuEdu.LDAL
             [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String YNJ { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "现专业")]
-            public Int32 XZYID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

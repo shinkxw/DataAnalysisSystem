@@ -39,7 +39,7 @@ EDU_ZXXS_01_01_XSXX  学生基本数据子类表
   ZYDZ        主页地址                nvarchar(60)   非主
   XJH         学籍号                  nvarchar(30)   非主
 
-EDU_ZXXS_07_02_XJYD  学籍异动数据子类表
+EDU_ZXXS_07_A02_XJYD  学籍异动数据子类表
   ID          学籍异动表编号          int            主键
   XSXXID      学生ID                int            非主     学生基本数据子类表
   SCHOOLID    学校ID                int            主键     学校基本数据子类表
@@ -53,10 +53,8 @@ EDU_ZXXS_07_02_XJYD  学籍异动数据子类表
   YDLYXXM     异动来源学校码          nvarchar(10)   非主
   YDQXXXM     异动去向学校码          nvarchar(10)   非主
   YDSM        异动说明                text           非主
-  YZYID       原专业ID              int            非主
   YBH         原班号                  nvarchar(10)   非主
   YNJ         原年级                  nvarchar(10)   非主     年级数据类表
-  XZYID       现专业ID              int            非主
   XBH         现班号                  nvarchar(10)   非主
   XNJ         现年级                  nvarchar(10)   非主     年级数据类表
 

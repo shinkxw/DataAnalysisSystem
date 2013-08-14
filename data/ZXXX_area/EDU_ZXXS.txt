@@ -43,7 +43,7 @@
             <name="XJH" explanation="学籍号" type="nvarchar(30)" null="T" p="F" identity="F" remark="全国唯一的学籍号" />
         </field_area>
     </table>
-    <table name="EDU_ZXXS_07_02_XJYD" explanation="学籍异动数据子类表">
+    <table name="EDU_ZXXS_07_A02_XJYD" explanation="学籍异动数据子类表">
         <field_area>
             <name="ID" explanation="学籍异动表编号" type="int" null="F" p="T" identity="F" remark="" />
             <name="XSXXID" explanation="学生ID" type="int" null="F" p="F" identity="F" remark="" />
@@ -58,10 +58,8 @@
             <name="YDLYXXM" explanation="异动来源学校码" type="nvarchar(10)" null="T" p="F" identity="F" remark="" />
             <name="YDQXXXM" explanation="异动去向学校码" type="nvarchar(10)" null="T" p="F" identity="F" remark="" />
             <name="YDSM" explanation="异动说明" type="text" null="T" p="F" identity="F" remark="" />
-            <name="YZYID" explanation="原专业ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="YBH" explanation="原班号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="YNJ" explanation="原年级" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="XZYID" explanation="现专业ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="XBH" explanation="现班号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="XNJ" explanation="现年级" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
         </field_area>

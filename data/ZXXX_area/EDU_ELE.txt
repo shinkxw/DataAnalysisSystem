@@ -40,9 +40,6 @@
             <name="MatchURL" explanation="匹配url" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
             <name="LogLevel" explanation="日志级别" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
-        <data_area>
-            <SCHOOLID="0" XNID="2013" XQID="1" />
-        </data_area>
     </table>
     <table name="EDU_ELE_01_ROLE" explanation="应用系统角色表">
         <field_area>
@@ -53,15 +50,6 @@
             <name="PID" explanation="角色所属父ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="ModIDLst" explanation="角色能访问的模块列表" type="text" null="F" p="F" identity="F" remark="" />
         </field_area>
-        <data_area>
-            <ID="0" SCHOOLID="0" APPID="1" NAME="系统管理员" PID="0" ModIDLst="" />
-            <ID="0" SCHOOLID="0" APPID="2" NAME="系统管理员" PID="0" ModIDLst="" />
-            <ID="0" SCHOOLID="0" APPID="3" NAME="系统管理员" PID="0" ModIDLst="" />
-            <ID="0" SCHOOLID="0" APPID="4" NAME="系统管理员" PID="0" ModIDLst="" />
-            <ID="0" SCHOOLID="0" APPID="5" NAME="系统管理员" PID="0" ModIDLst="" />
-            <ID="2" SCHOOLID="0" APPID="1" NAME="kkk" PID="0" ModIDLst="950000,950603,950602,950601,950606,950610,950609,950608,950607,950605,950604,150000,150604,150603,150602,150601,150600" />
-            <ID="3" SCHOOLID="0" APPID="1" NAME="不招生" PID="0" ModIDLst="950000,950603,950602,950601,950610,950609,950608,950607,950606,950605,950604" />
-        </data_area>
     </table>
     <table name="EDU_ELE_01_CONFIG" explanation="应用系统配置表">
         <field_area>
@@ -70,12 +58,6 @@
             <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="VALUE" explanation="配置值" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
         </field_area>
-        <data_area>
-            <ID="1" SCHOOLID="0" APPID="1" VALUE="Start" />
-            <ID="1" SCHOOLID="0" APPID="4" VALUE="End" />
-            <ID="2" SCHOOLID="0" APPID="1" VALUE="" />
-            <ID="2" SCHOOLID="0" APPID="4" VALUE="123445" />
-        </data_area>
     </table>
     <table name="EDU_ELE_03_APPRZ" explanation="应用日志表">
         <field_area>
