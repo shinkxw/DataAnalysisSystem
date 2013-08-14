@@ -4935,6 +4935,26 @@ SELECT a.[ID]--编号
       ,l.MC as l_ZJXY_MC--名称
       ,m.MC as m_XX_MC--名称
       ,m.JC as m_XX_JC--简称
+      ,n.MC as n_SFBZ_MC--名称
+      ,o.SCHOOLID as o_NJ_SCHOOLID--学校名
+      ,o.NJMC as o_NJ_NJMC--年级名称
+      ,p.SCHOOLID as p_BJ_SCHOOLID--学校名
+      ,p.NJ as p_BJ_NJ--年级号
+      ,p.BJ as p_BJ_BJ--班级名称
+      ,p.JBNY as p_BJ_JBNY--建班年月
+      ,p.BZRGH as p_BJ_BZRGH--班主任工号
+      ,p.BZXH as p_BJ_BZXH--班长学号
+      ,p.BJRYCH as p_BJ_BJRYCH--班级荣誉称号
+      ,p.XZ as p_BJ_XZ--学制
+      ,p.BJLXM as p_BJ_BJLXM--班级类型码
+      ,p.WLLX as p_BJ_WLLX--文理类型
+      ,p.BYRQ as p_BJ_BYRQ--毕业日期
+      ,p.SFSSMZSYJXB as p_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,p.SYJXMSM as p_BJ_SYJXMSM--双语教学模式码
+      ,q.MC as q_XSLB_MC--名称
+      ,q.SM as q_XSLB_SM--说明
+      ,r.MC as r_HKLB_MC--名称
+      ,s.MC as s_SFBZ_MC--名称
 
 FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
@@ -4948,7 +4968,13 @@ FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZZMM AS j ON a.ZZMMM = j.DM /*政治面貌码*/ LEFT OUTER JOIN
       dbo.EDU_GB_JKZKYWSZ AS k ON a.JKZKM = k.DM /*健康状况码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZJXY AS l ON a.XYZJM = l.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS m ON a.XXM = m.DM /*血型码*/
+      dbo.EDU_JY_XX AS m ON a.XXM = m.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS n ON a.DSZYBZ = n.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS o ON a.NJ = o.NJ /*年级*/ AND a.SCHOOLID = o.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS p ON a.BH = p.BH /*班号*/ AND a.SCHOOLID = p.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS q ON a.XSLBM = q.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS r ON a.HKXZM = r.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS s ON a.SFLDRK = s.DM /*是否流动人口*/
 GO
 
 --学生家庭成员数据表
@@ -4964,7 +4990,7 @@ SELECT a.[ID]--编号
       ,a.[GJDQM]--国籍/地区码
       ,a.[JKZKM]--健康状况码
       ,a.[CYGZDW]--成员工作单位
-      ,a.[CYEM]--从业码
+      ,a.[CYM]--从业码
       ,a.[ZYJSZWM]--专业技术职务码
       ,a.[ZWJBM]--职务级别码
       ,a.[DH]--电话
@@ -5049,14 +5075,19 @@ SELECT a.[ID]--编号
       ,c.ZP as c_XSXX_ZP--照片
       ,c.SFZJYXQ as c_XSXX_SFZJYXQ--身份证件有效期
       ,c.DSZYBZ as c_XSXX_DSZYBZ--独生子女标志
+      ,cm.MC as c_XSXX_DSZYBZ_MC--名称
       ,c.RXNY as c_XSXX_RXNY--入学年月
       ,c.NJ as c_XSXX_NJ--年级
       ,c.BH as c_XSXX_BH--班号
       ,c.XSLBM as c_XSXX_XSLBM--学生类别码
+      ,cn.MC as c_XSXX_XSLBM_MC--名称
+      ,cn.SM as c_XSXX_XSLBM_SM--说明
       ,c.XZZ as c_XSXX_XZZ--现住址
       ,c.HKSZD as c_XSXX_HKSZD--户口所在地
       ,c.HKXZM as c_XSXX_HKXZM--户口性质码
+      ,co.MC as c_XSXX_HKXZM_MC--名称
       ,c.SFLDRK as c_XSXX_SFLDRK--是否流动人口
+      ,cp.MC as c_XSXX_SFLDRK_MC--名称
       ,c.TC as c_XSXX_TC--特长
       ,c.LXDH as c_XSXX_LXDH--联系电话
       ,c.TXDZ as c_XSXX_TXDZ--通信地址
@@ -5072,7 +5103,13 @@ SELECT a.[ID]--编号
       ,f.SZMDM as f_SJGGHDQMC_SZMDM--三字母代码
       ,g.MC as g_JKZKYWSZ_MC--名称
       ,g.SM as g_JKZKYWSZ_SM--说明
-      ,h.MC as h_RDXB_MC--名称
+      ,h.MC as h_CYZK_MC--名称
+      ,h.SM as h_CYZK_SM--说明
+      ,i.MC as i_ZYJSZW_MC--名称
+      ,j.MC as j_ZWJBDM_MC--名称
+      ,k.MC as k_SFBZ_MC--名称
+      ,l.MC as l_RDXB_MC--名称
+      ,m.MC as m_XL_MC--名称
 
 FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
@@ -5081,7 +5118,12 @@ FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS e ON a.MZM = e.DM /*民族码*/ LEFT OUTER JOIN
       dbo.EDU_GB_SJGGHDQMC AS f ON a.GJDQM = f.DM /*国籍/地区码*/ LEFT OUTER JOIN
       dbo.EDU_GB_JKZKYWSZ AS g ON a.JKZKM = g.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS h ON a.XBM = h.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_CYZK AS h ON a.CYM = h.DM /*从业码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZYJSZW AS i ON a.ZYJSZWM = i.DM /*专业技术职务码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZWJBDM AS j ON a.ZWJBM = j.DM /*职务级别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS k ON a.SFJHR = k.DM /*是否监护人*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS l ON a.XBM = l.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS m ON a.XLM = m.DM /*学历码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
@@ -5092,7 +5134,11 @@ FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
       dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/
+      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cm ON c.DSZYBZ = cm.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS cn ON c.XSLBM = cn.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS co ON c.HKXZM = co.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cp ON c.SFLDRK = cp.DM /*是否流动人口*/
 GO
 
 --学生家庭信息数据表
@@ -5151,14 +5197,19 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.ZP as b_XSXX_ZP--照片
       ,b.SFZJYXQ as b_XSXX_SFZJYXQ--身份证件有效期
       ,b.DSZYBZ as b_XSXX_DSZYBZ--独生子女标志
+      ,bm.MC as b_XSXX_DSZYBZ_MC--名称
       ,b.RXNY as b_XSXX_RXNY--入学年月
       ,b.NJ as b_XSXX_NJ--年级
       ,b.BH as b_XSXX_BH--班号
       ,b.XSLBM as b_XSXX_XSLBM--学生类别码
+      ,bn.MC as b_XSXX_XSLBM_MC--名称
+      ,bn.SM as b_XSXX_XSLBM_SM--说明
       ,b.XZZ as b_XSXX_XZZ--现住址
       ,b.HKSZD as b_XSXX_HKSZD--户口所在地
       ,b.HKXZM as b_XSXX_HKXZM--户口性质码
+      ,bo.MC as b_XSXX_HKXZM_MC--名称
       ,b.SFLDRK as b_XSXX_SFLDRK--是否流动人口
+      ,bp.MC as b_XSXX_SFLDRK_MC--名称
       ,b.TC as b_XSXX_TC--特长
       ,b.LXDH as b_XSXX_LXDH--联系电话
       ,b.TXDZ as b_XSXX_TXDZ--通信地址
@@ -5214,7 +5265,11 @@ FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZZMM AS bi ON b.ZZMMM = bi.DM /*政治面貌码*/ LEFT OUTER JOIN
       dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZJXY AS bk ON b.XYZJM = bk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/
+      dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bm ON b.DSZYBZ = bm.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS bn ON b.XSLBM = bn.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS bo ON b.HKXZM = bo.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bp ON b.SFLDRK = bp.DM /*是否流动人口*/
 GO
 
 --学籍异动数据子类表
@@ -5278,14 +5333,19 @@ SELECT a.[ID]--学籍异动表编号
       ,b.ZP as b_XSXX_ZP--照片
       ,b.SFZJYXQ as b_XSXX_SFZJYXQ--身份证件有效期
       ,b.DSZYBZ as b_XSXX_DSZYBZ--独生子女标志
+      ,bm.MC as b_XSXX_DSZYBZ_MC--名称
       ,b.RXNY as b_XSXX_RXNY--入学年月
       ,b.NJ as b_XSXX_NJ--年级
       ,b.BH as b_XSXX_BH--班号
       ,b.XSLBM as b_XSXX_XSLBM--学生类别码
+      ,bn.MC as b_XSXX_XSLBM_MC--名称
+      ,bn.SM as b_XSXX_XSLBM_SM--说明
       ,b.XZZ as b_XSXX_XZZ--现住址
       ,b.HKSZD as b_XSXX_HKSZD--户口所在地
       ,b.HKXZM as b_XSXX_HKXZM--户口性质码
+      ,bo.MC as b_XSXX_HKXZM_MC--名称
       ,b.SFLDRK as b_XSXX_SFLDRK--是否流动人口
+      ,bp.MC as b_XSXX_SFLDRK_MC--名称
       ,b.TC as b_XSXX_TC--特长
       ,b.LXDH as b_XSXX_LXDH--联系电话
       ,b.TXDZ as b_XSXX_TXDZ--通信地址
@@ -5388,10 +5448,36 @@ SELECT a.[ID]--学籍异动表编号
       ,f.TC as f_JZGJBSJ_TC--特长
       ,f.GWZYM as f_JZGJBSJ_GWZYM--岗位职业码
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--主要任课学段
-      ,g.SCHOOLID as g_NJ_SCHOOLID--学校名
-      ,g.NJMC as g_NJ_NJMC--年级名称
+      ,g.SCHOOLID as g_BJ_SCHOOLID--学校名
+      ,g.NJ as g_BJ_NJ--年级号
+      ,g.BJ as g_BJ_BJ--班级名称
+      ,g.JBNY as g_BJ_JBNY--建班年月
+      ,g.BZRGH as g_BJ_BZRGH--班主任工号
+      ,g.BZXH as g_BJ_BZXH--班长学号
+      ,g.BJRYCH as g_BJ_BJRYCH--班级荣誉称号
+      ,g.XZ as g_BJ_XZ--学制
+      ,g.BJLXM as g_BJ_BJLXM--班级类型码
+      ,g.WLLX as g_BJ_WLLX--文理类型
+      ,g.BYRQ as g_BJ_BYRQ--毕业日期
+      ,g.SFSSMZSYJXB as g_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,g.SYJXMSM as g_BJ_SYJXMSM--双语教学模式码
       ,h.SCHOOLID as h_NJ_SCHOOLID--学校名
       ,h.NJMC as h_NJ_NJMC--年级名称
+      ,i.SCHOOLID as i_BJ_SCHOOLID--学校名
+      ,i.NJ as i_BJ_NJ--年级号
+      ,i.BJ as i_BJ_BJ--班级名称
+      ,i.JBNY as i_BJ_JBNY--建班年月
+      ,i.BZRGH as i_BJ_BZRGH--班主任工号
+      ,i.BZXH as i_BJ_BZXH--班长学号
+      ,i.BJRYCH as i_BJ_BJRYCH--班级荣誉称号
+      ,i.XZ as i_BJ_XZ--学制
+      ,i.BJLXM as i_BJ_BJLXM--班级类型码
+      ,i.WLLX as i_BJ_WLLX--文理类型
+      ,i.BYRQ as i_BJ_BYRQ--毕业日期
+      ,i.SFSSMZSYJXB as i_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,i.SYJXMSM as i_BJ_SYJXMSM--双语教学模式码
+      ,j.SCHOOLID as j_NJ_SCHOOLID--学校名
+      ,j.NJMC as j_NJ_NJMC--年级名称
 
 FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -5399,8 +5485,10 @@ FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_JY_XJYDLB AS d ON a.YDLBM = d.DM /*异动类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XJYDYY AS e ON a.YDYYM = e.DM /*异动原因码*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS f ON a.JBRID = f.ID /*经办人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_02_01_NJ AS g ON a.YNJ = g.NJ /*原年级*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_02_01_NJ AS h ON a.XNJ = h.NJ /*现年级*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS g ON a.YBH = g.BH /*原班号*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS h ON a.YNJ = h.NJ /*原年级*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS i ON a.XBH = i.BH /*现班号*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS j ON a.XNJ = j.NJ /*现年级*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bc ON b.CSDM = bc.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN
@@ -5412,6 +5500,10 @@ FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZJXY AS bk ON b.XYZJM = bk.DM /*信仰宗教码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bm ON b.DSZYBZ = bm.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS bn ON b.XSLBM = bn.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS bo ON b.HKXZM = bo.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bp ON b.SFLDRK = bp.DM /*是否流动人口*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS fc ON f.CSDM = fc.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN

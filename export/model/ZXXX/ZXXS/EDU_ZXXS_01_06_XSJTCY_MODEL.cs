@@ -78,7 +78,7 @@ namespace HanRuEdu.LDAL
             [Display(Name = "从业码")]
             [StringLength(2)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CYEM { get; set; }
+            public String CYM { get; set; }
 
 
             [Display(Name = "专业技术职务码")]
@@ -88,7 +88,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "职务级别码")]
-            [StringLength(2)]
+            [StringLength(3)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZWJBM { get; set; }
 

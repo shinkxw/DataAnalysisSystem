@@ -22,15 +22,15 @@ EDU_ZXXS_01_01_XSXX  学生基本数据子类表
   XXM         血型码                  nvarchar(1)    非主     血型代码表
   ZP          照片                    nvarchar(200)  非主
   SFZJYXQ     身份证件有效期          nvarchar(17)   非主
-  DSZYBZ      独生子女标志            nvarchar(1)    非主
+  DSZYBZ      独生子女标志            nvarchar(1)    非主     是否标志代码表
   RXNY        入学年月                nvarchar(6)    非主
-  NJ          年级                    nvarchar(10)   非主
-  BH          班号                    nvarchar(10)   非主
-  XSLBM       学生类别码              nvarchar(2)    非主
+  NJ          年级                    nvarchar(10)   非主     年级数据类表
+  BH          班号                    nvarchar(10)   非主     班级数据类表
+  XSLBM       学生类别码              nvarchar(5)    非主     学生类别代码表
   XZZ         现住址                  nvarchar(180)  非主
   HKSZD       户口所在地              nvarchar(180)  非主
-  HKXZM       户口性质码              nvarchar(1)    非主
-  SFLDRK      是否流动人口            nvarchar(1)    非主
+  HKXZM       户口性质码              nvarchar(1)    非主     户口类别代码
+  SFLDRK      是否流动人口            nvarchar(1)    非主     是否标志代码表
   TC          特长                    text           非主
   LXDH        联系电话                nvarchar(30)   非主
   TXDZ        通信地址                nvarchar(180)  非主
@@ -43,21 +43,21 @@ EDU_ZXXS_01_06_XSJTCY  学生家庭成员数据表
   ID          编号                    int            主键
   SCHOOLID    学校名                  int            主键     学校基本数据子类表
   XSXXID      学生信息数据表          int            非主     学生基本数据子类表
-  GXM         关系码                  nvarchar(2)    主键     家庭关系代码
+  GXM         关系码                  nvarchar(2)    非主     家庭关系代码
   CYXM        成员姓名                nvarchar(36)   非主
   CSNY        出生年月                nvarchar(6)    非主
   MZM         民族码                  nvarchar(2)    非主     中国各民族名称的罗马字母拼写法和代码
   GJDQM       国籍/地区码            nvarchar(3)    非主     世界各国和地区名称代码
   JKZKM       健康状况码              nvarchar(1)    非主     健康状况1位数字代码
   CYGZDW      成员工作单位            nvarchar(60)   非主
-  CYEM        从业码                  nvarchar(2)    非主
-  ZYJSZWM     专业技术职务码          nvarchar(3)    非主
-  ZWJBM       职务级别码              nvarchar(2)    非主
+  CYM         从业码                  nvarchar(2)    非主     从业状况（个人身份）代码
+  ZYJSZWM     专业技术职务码          nvarchar(3)    非主     专业技术职务代码
+  ZWJBM       职务级别码              nvarchar(3)    非主     职务级别代码
   DH          电话                    nvarchar(30)   非主
   DZXX        电子信箱                nvarchar(40)   非主
-  SFJHR       是否监护人              nvarchar(1)    非主
+  SFJHR       是否监护人              nvarchar(1)    非主     是否标志代码表
   XBM         性别码                  nvarchar(1)    非主     人的性别代码
-  XLM         学历码                  nvarchar(2)    非主
+  XLM         学历码                  nvarchar(2)    非主     学历代码
   LXDZ        联系地址                nvarchar(180)  非主
   SJHM        手机号码                nvarchar(30)   非主
 
@@ -89,8 +89,8 @@ EDU_ZXXS_07_A02_XJYD  学籍异动数据子类表
   YDLYXXM     异动来源学校码          nvarchar(10)   非主
   YDQXXXM     异动去向学校码          nvarchar(10)   非主
   YDSM        异动说明                text           非主
-  YBH         原班号                  nvarchar(10)   非主
+  YBH         原班号                  nvarchar(10)   非主     班级数据类表
   YNJ         原年级                  nvarchar(10)   非主     年级数据类表
-  XBH         现班号                  nvarchar(10)   非主
+  XBH         现班号                  nvarchar(10)   非主     班级数据类表
   XNJ         现年级                  nvarchar(10)   非主     年级数据类表
 

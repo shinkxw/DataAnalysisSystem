@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_01_01_XSXX](
 	[RXNY]  nvarchar(6)  NOT NULL,--入学年月
 	[NJ]  nvarchar(10)  NOT NULL,--年级
 	[BH]  nvarchar(10)  NOT NULL,--班号
-	[XSLBM]  nvarchar(2)  NOT NULL,--学生类别码
+	[XSLBM]  nvarchar(5)  NOT NULL,--学生类别码
 	[XZZ]  nvarchar(180)  NULL,--现住址
 	[HKSZD]  nvarchar(180)  NULL,--户口所在地
 	[HKXZM]  nvarchar(1)  NULL,--户口性质码
@@ -85,9 +85,9 @@ CREATE TABLE [dbo].[EDU_ZXXS_01_06_XSJTCY](
 	[GJDQM]  nvarchar(3)  NULL,--国籍/地区码
 	[JKZKM]  nvarchar(1)  NULL,--健康状况码
 	[CYGZDW]  nvarchar(60)  NULL,--成员工作单位
-	[CYEM]  nvarchar(2)  NULL,--从业码
+	[CYM]  nvarchar(2)  NULL,--从业码
 	[ZYJSZWM]  nvarchar(3)  NULL,--专业技术职务码
-	[ZWJBM]  nvarchar(2)  NULL,--职务级别码
+	[ZWJBM]  nvarchar(3)  NULL,--职务级别码
 	[DH]  nvarchar(30)  NULL,--电话
 	[DZXX]  nvarchar(40)  NULL,--电子信箱
 	[SFJHR]  nvarchar(1)  NOT NULL,--是否监护人
@@ -98,8 +98,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_01_06_XSJTCY](
 CONSTRAINT [PK_EDU_ZXXS_01_06_XSJTCY] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
-	[SCHOOLID] ASC,
-	[GXM] ASC
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -263,7 +262,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'健康状况码' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成员工作单位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_06_XSJTCY', @level2type=N'COLUMN',@level2name=N'CYGZDW'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'从业码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_06_XSJTCY', @level2type=N'COLUMN',@level2name=N'CYEM'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'从业码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_06_XSJTCY', @level2type=N'COLUMN',@level2name=N'CYM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业技术职务码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_06_XSJTCY', @level2type=N'COLUMN',@level2name=N'ZYJSZWM'
 GO

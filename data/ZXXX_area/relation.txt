@@ -220,6 +220,12 @@
   JKZKM          EDU_GB_JKZKYWSZ          DM
   XYZJM          EDU_GB_ZJXY              DM
   XXM            EDU_JY_XX                DM
+  DSZYBZ         EDU_JY_SFBZ              DM
+  NJ             EDU_ZXXX_02_01_NJ        NJ
+  BH             EDU_ZXXX_03_01_BJ        BH
+  XSLBM          EDU_JY_XSLB              DM
+  HKXZM          EDU_GB_HKLB              DM
+  SFLDRK         EDU_JY_SFBZ              DM
 <EDU_ZXXS_01_06_XSJTCY
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
@@ -227,7 +233,12 @@
   MZM            EDU_GB_ZGGMZMCDLMZMPXF   DM
   GJDQM          EDU_GB_SJGGHDQMC         DM
   JKZKM          EDU_GB_JKZKYWSZ          DM
+  CYM            EDU_GB_CYZK              DM
+  ZYJSZWM        EDU_GB_ZYJSZW            DM
+  ZWJBM          EDU_GB_ZWJBDM            DM
+  SFJHR          EDU_JY_SFBZ              DM
   XBM            EDU_GB_RDXB              DM
+  XLM            EDU_GB_XL                DM
 <EDU_ZXXS_02_A01_XSJTXX
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
@@ -237,7 +248,9 @@
   YDLBM          EDU_JY_XJYDLB            DM
   YDYYM          EDU_JY_XJYDYY            DM
   JBRID          EDU_ZXJZ_01_01_JZGJBSJ   ID
+  YBH            EDU_ZXXX_03_01_BJ        BH
   YNJ            EDU_ZXXX_02_01_NJ        NJ
+  XBH            EDU_ZXXX_03_01_BJ        BH
   XNJ            EDU_ZXXX_02_01_NJ        NJ
 <EDU_ZXXX_02_01_NJ
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID

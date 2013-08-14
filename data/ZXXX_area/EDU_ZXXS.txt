@@ -29,7 +29,7 @@
             <name="RXNY" explanation="入学年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
             <name="NJ" explanation="年级" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="BH" explanation="班号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="XSLBM" explanation="学生类别码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：JY/T1001XSLB学生类别代码 " />
+            <name="XSLBM" explanation="学生类别码" type="nvarchar(5)" null="F" p="F" identity="F" remark="值空间：JY/T1001XSLB学生类别代码 " />
             <name="XZZ" explanation="现住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="解释/举例：指本人的常住地址" />
             <name="HKSZD" explanation="户口所在地" type="nvarchar(180)" null="T" p="F" identity="F" remark="解释/举例：指户口所在地址" />
             <name="HKXZM" explanation="户口性质码" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：GA324.1 解释/举例：指公安户籍部门确认的农业户口或非农业户口 " />
@@ -48,16 +48,16 @@
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="F" identity="F" remark="" />
-            <name="GXM" explanation="关系码" type="nvarchar(2)" null="F" p="T" identity="F" remark="值空间：GB/T4761 解释/举例：采用两位代码 " />
+            <name="GXM" explanation="关系码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：GB/T4761 解释/举例：采用两位代码 " />
             <name="CYXM" explanation="成员姓名" type="nvarchar(36)" null="F" p="F" identity="F" remark="" />
             <name="CSNY" explanation="出生年月" type="nvarchar(6)" null="T" p="F" identity="F" remark="" />
             <name="MZM" explanation="民族码" type="nvarchar(2)" null="T" p="F" identity="F" remark="引用自JCTB020109 MZM 取用2位数字代码" />
             <name="GJDQM" explanation="国籍/地区码" type="nvarchar(3)" null="T" p="F" identity="F" remark="GB/T2659 采用三字母代码" />
             <name="JKZKM" explanation="健康状况码" type="nvarchar(1)" null="T" p="F" identity="F" remark="GB/T2261.3 采用1位数字代码" />
             <name="CYGZDW" explanation="成员工作单位" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
-            <name="CYEM" explanation="从业码" type="nvarchar(2)" null="T" p="F" identity="F" remark="GB/T2261.4" />
+            <name="CYM" explanation="从业码" type="nvarchar(2)" null="T" p="F" identity="F" remark="GB/T2261.4" />
             <name="ZYJSZWM" explanation="专业技术职务码" type="nvarchar(3)" null="T" p="F" identity="F" remark="值空间：GB/T8561 " />
-            <name="ZWJBM" explanation="职务级别码" type="nvarchar(2)" null="T" p="F" identity="F" remark="值空间：GB/T12407" />
+            <name="ZWJBM" explanation="职务级别码" type="nvarchar(3)" null="T" p="F" identity="F" remark="值空间：GB/T12407" />
             <name="DH" explanation="电话" type="nvarchar(30)" null="T" p="F" identity="F" remark="" />
             <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="T" p="F" identity="F" remark="" />
             <name="SFJHR" explanation="是否监护人" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />

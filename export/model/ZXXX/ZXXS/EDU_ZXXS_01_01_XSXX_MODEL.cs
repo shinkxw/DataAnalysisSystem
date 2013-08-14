@@ -198,7 +198,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "学生类别码")]
-            [StringLength(2)]
+            [StringLength(5)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XSLBM { get; set; }
 
