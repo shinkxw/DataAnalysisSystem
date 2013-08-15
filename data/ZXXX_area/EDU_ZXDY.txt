@@ -36,7 +36,7 @@
         <field_area>
             <name="ID" explanation="岗位分配模板表ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="MBMC" explanation="模板名称" type="int" null="F" p="F" identity="F" remark="" />
+            <name="MBMC" explanation="模板名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A05_TBZZJS" explanation="特别值周教师表">

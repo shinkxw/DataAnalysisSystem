@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXDY_04_A04_GWFPMB()
         {
+            MBMC = "";
         }
         public class EDU_ZXDY_04_A04_GWFPMB_metadata
         {
@@ -22,9 +23,11 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "模板名称")]
-            public Int32 MBMC { get; set; }
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String MBMC { get; set; }
 
 
         }

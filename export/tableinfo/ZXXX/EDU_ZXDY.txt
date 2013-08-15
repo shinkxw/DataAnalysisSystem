@@ -27,7 +27,7 @@ EDU_ZXDY_04_A03_ZZGWFP  值周岗位分配表
 EDU_ZXDY_04_A04_GWFPMB  岗位分配模板表
   ID          岗位分配模板表ID      int            主键
   SCHOOLID    学校ID                int            非主     学校基本数据子类表
-  MBMC        模板名称                int            非主
+  MBMC        模板名称                nvarchar(20)   非主
 
 EDU_ZXDY_04_A05_TBZZJS  特别值周教师表
   ID          特别值周教师表ID      int            主键
