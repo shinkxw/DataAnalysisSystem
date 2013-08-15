@@ -45,6 +45,11 @@ namespace HanRuEdu.LDAL
             public String XSIDLB { get; set; }
 
 
+            [Display(Name = "学生名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XSMCLB { get; set; }
+
+
             [Required(ErrorMessage = "必填")]
             [Display(Name = "所属细则")]
             public Int32 SSXZID { get; set; }

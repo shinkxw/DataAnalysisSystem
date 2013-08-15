@@ -14,6 +14,7 @@ EDU_ZXDY_04_A02_ZZRYAP  值周人员安排表
   ZZBJ        值周班级班号            nvarchar(10)   非主     班级数据类表
   ZZID        组长ID                nvarchar(20)   非主     应用系统用户表
   ZYIDLB      组员ID列表            text           非主
+  ZYMCLB      组员名称列表            text           非主
 
 EDU_ZXDY_04_A03_ZZGWFP  值周岗位分配表
   ID          值周岗位分配表ID      int            主键
@@ -72,6 +73,7 @@ EDU_ZXDY_05_A03_ZZDFD  值周打分单表
   ZCID        周次ID                int            非主     值周周次表
   BJ          班级                    nvarchar(10)   非主     班级数据类表
   XSIDLB      学生ID列表            text           非主
+  XSMCLB      学生名称列表            text           非主
   SSXZID      所属细则                int            非主     值周打分细则表
   DFFZ        打分分值                decimal(2, 1)  非主
   FSSJ        发生时间                datetime       非主

@@ -5342,6 +5342,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,a.[ZZBJ]--值周班级班号
       ,a.[ZZID]--组长ID
       ,a.[ZYIDLB]--组员ID列表
+      ,a.[ZYMCLB]--组员名称列表
       ,b.XXDM as b_ZXXX_XXDM--学校代码
       ,b.XXMC as b_ZXXX_XXMC--学校名称
       ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
@@ -6001,6 +6002,7 @@ SELECT a.[ID]--值周打分单表ID
       ,a.[ZCID]--周次ID
       ,a.[BJ]--班级
       ,a.[XSIDLB]--学生ID列表
+      ,a.[XSMCLB]--学生名称列表
       ,a.[SSXZID]--所属细则
       ,a.[DFFZ]--打分分值
       ,a.[FSSJ]--发生时间

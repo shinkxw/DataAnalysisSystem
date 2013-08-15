@@ -88,6 +88,7 @@ CREATE TABLE [dbo].[EDU_ZXDY_04_A02_ZZRYAP](
 	[ZZBJ]  nvarchar(10)  NOT NULL,--值周班级班号
 	[ZZID]  nvarchar(20)  NOT NULL,--组长ID
 	[ZYIDLB]  text  NOT NULL,--组员ID列表
+	[ZYMCLB]  text  NOT NULL,--组员名称列表
 CONSTRAINT [PK_EDU_ZXDY_04_A02_ZZRYAP] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -226,6 +227,7 @@ CREATE TABLE [dbo].[EDU_ZXDY_05_A03_ZZDFD](
 	[ZCID]  int  NOT NULL,--周次ID
 	[BJ]  nvarchar(10)  NULL,--班级
 	[XSIDLB]  text  NULL,--学生ID列表
+	[XSMCLB]  text  NULL,--学生名称列表
 	[SSXZID]  int  NOT NULL,--所属细则
 	[DFFZ]  decimal(2, 1)  NOT NULL,--打分分值
 	[FSSJ]  datetime  NOT NULL,--发生时间
@@ -306,6 +308,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'组长ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_04_A02_ZZRYAP', @level2type=N'COLUMN',@level2name=N'ZZID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'组员ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_04_A02_ZZRYAP', @level2type=N'COLUMN',@level2name=N'ZYIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'组员名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_04_A02_ZZRYAP', @level2type=N'COLUMN',@level2name=N'ZYMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'值周岗位分配表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_04_A03_ZZGWFP'
 GO
@@ -406,6 +410,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_05_A03_ZZDFD', @level2type=N'COLUMN',@level2name=N'BJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_05_A03_ZZDFD', @level2type=N'COLUMN',@level2name=N'XSIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_05_A03_ZZDFD', @level2type=N'COLUMN',@level2name=N'XSMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属细则' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXDY_05_A03_ZZDFD', @level2type=N'COLUMN',@level2name=N'SSXZID'
 GO

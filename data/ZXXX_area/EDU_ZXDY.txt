@@ -19,6 +19,7 @@
             <name="ZZBJ" explanation="值周班级班号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="ZZID" explanation="组长ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="ZYIDLB" explanation="组员ID列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ZYMCLB" explanation="组员名称列表" type="text" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A03_ZZGWFP" explanation="值周岗位分配表">
@@ -93,6 +94,7 @@
             <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="BJ" explanation="班级" type="nvarchar(10)" null="T" p="F" identity="F" remark="" />
             <name="XSIDLB" explanation="学生ID列表" type="text" null="T" p="F" identity="F" remark="" />
+            <name="XSMCLB" explanation="学生名称列表" type="text" null="T" p="F" identity="F" remark="" />
             <name="SSXZID" explanation="所属细则" type="int" null="F" p="F" identity="F" remark="" />
             <name="DFFZ" explanation="打分分值" type="decimal(2, 1)" null="F" p="F" identity="F" remark="" />
             <name="FSSJ" explanation="发生时间" type="datetime" null="F" p="F" identity="F" remark="" />
