@@ -127,6 +127,21 @@
             <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_WZXT_MHXT_WZPJ" explanation="文章评价表">
+        <field_area>
+            <name="ID" explanation="评价ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="WZID" explanation="网站文章ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="PJR" explanation="评价人" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
+            <name="YJDZ" explanation="邮件地址" type="nvarchar(40)" null="F" p="F" identity="F" remark="" />
+            <name="PJSJ" explanation="评价时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="PJNR" explanation="评价内容" type="text" null="F" p="F" identity="F" remark="" />
+            <name="PJZT" explanation="评价状态" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SHR" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
+            <name="HF" explanation="回复" type="text" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
     <table name="EDU_WZXT_MHXT_WZPZ" explanation="网站配置">
         <field_area>
             <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />

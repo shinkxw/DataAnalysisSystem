@@ -105,6 +105,19 @@ EDU_WZXT_MHXT_WZWZ  网站文章
   OPENFLAG    内外网                  int            非主
   LLQX        浏览权限                nvarchar(50)   非主
 
+EDU_WZXT_MHXT_WZPJ  文章评价表
+  ID          评价ID                int            主键
+  SCHOOLID    学校ID                int            非主     学校基本数据表
+  WEBID       网站ID                int            非主     网站配置
+  WZID        网站文章ID            int            非主     网站文章
+  PJR         评价人                  nvarchar(50)   非主
+  YJDZ        邮件地址                nvarchar(40)   非主
+  PJSJ        评价时间                datetime       非主
+  PJNR        评价内容                text           非主
+  PJZT        评价状态                int            非主
+  SHR         审核人                  nvarchar(50)   非主
+  HF          回复                    text           非主
+
 EDU_WZXT_MHXT_WZPZ  网站配置
   WEBID       网站ID                int            主键     网站配置
   SCHOOLID    学校名                  int            主键     学校基本数据表

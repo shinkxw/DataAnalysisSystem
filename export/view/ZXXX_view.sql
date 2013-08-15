@@ -63,6 +63,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_W
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZWZ_DISP
 go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZPJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_WZXT_MHXT_WZPJ_DISP
+go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZPZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZPZ_DISP
@@ -1617,6 +1621,115 @@ FROM dbo.EDU_WZXT_MHXT_WZWZ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZLM AS d ON a.LMID = d.ID /*栏目*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--文章评价表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_WZPJ_DISP]
+AS
+SELECT a.[ID]--评价ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[WEBID]--网站ID
+      ,a.[WZID]--网站文章ID
+      ,a.[PJR]--评价人
+      ,a.[YJDZ]--邮件地址
+      ,a.[PJSJ]--评价时间
+      ,a.[PJNR]--评价内容
+      ,a.[PJZT]--评价状态
+      ,a.[SHR]--审核人
+      ,a.[HF]--回复
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站名
+      ,c.STATUID as c_WZPZ_STATUID--是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网址
+      ,c.CSSID as c_WZPZ_CSSID--网站样式
+      ,d.SCHOOLID as d_WZWZ_SCHOOLID--学校名
+      ,d.WEBID as d_WZWZ_WEBID--网站ID
+      ,d.TYPENAME as d_WZWZ_TYPENAME--类型名称
+      ,d.LMID as d_WZWZ_LMID--栏目
+      ,d.TITLE as d_WZWZ_TITLE--标题
+      ,d.PUBLISHERNAME as d_WZWZ_PUBLISHERNAME--发布人
+      ,d.AUTHOR as d_WZWZ_AUTHOR--作者
+      ,d.AUTHORDEPART as d_WZWZ_AUTHORDEPART--作者部门
+      ,d.PUBLISHDATE as d_WZWZ_PUBLISHDATE--发布时间
+      ,d.CONTENT as d_WZWZ_CONTENT--内容
+      ,d.URL as d_WZWZ_URL--链接
+      ,d.IMAGEURL as d_WZWZ_IMAGEURL--图片
+      ,d.ATTACHMENTNAME as d_WZWZ_ATTACHMENTNAME--附件名
+      ,d.ATTACHMENT as d_WZWZ_ATTACHMENT--附件
+      ,d.CHICKNUB as d_WZWZ_CHICKNUB--点击量
+      ,d.AUDITSTATU as d_WZWZ_AUDITSTATU--审核状态
+      ,d.AUDITOR as d_WZWZ_AUDITOR--审核人ID
+      ,d.AUDITORNAME as d_WZWZ_AUDITORNAME--审核人
+      ,d.AUDITTIME as d_WZWZ_AUDITTIME--审核时间
+      ,d.REMARK as d_WZWZ_REMARK--备注
+      ,d.SUMMARY as d_WZWZ_SUMMARY--摘要
+      ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--是否显示
+      ,d.OPENFLAG as d_WZWZ_OPENFLAG--内外网
+      ,d.LLQX as d_WZWZ_LLQX--浏览权限
+
+FROM dbo.EDU_WZXT_MHXT_WZPJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZWZ AS d ON a.WZID = d.ID /*网站文章ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.WEBID = d.WEBID /*网站ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
