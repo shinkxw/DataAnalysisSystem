@@ -2,7 +2,6 @@
 # encoding: GBK
 #模板数据生成器
 class TemplateBuilder < BaseBuilder
-
   attr_reader :area#待生成的元数据
   attr_reader :template_str#生成的模板语句
   attr_reader :builder_version#生成器版本
@@ -81,16 +80,16 @@ class TemplateBuilder < BaseBuilder
     str << "{\n#{@tab.l}//设置默认值\n"
     table.each_field do |field|
       if field.split_type[0] == "String"
-        str << "#{@tab.t}if (string.IsNullOrEmpty(#{table.lname_dc}.#{field.name})) #{table.lname_dc}.#{field.name} = \"\";//#{field.explanation}#{field.remark}\n"
+        str << "#{@tab.t}if (string.IsNullOrEmpty(#{table.lname_dc}.#{field.name})) #{table.lname_dc}.#{field.name} = \"\";//#{field.explanation}#{out_relation(field)}\n"
       else
-        str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{field.remark}\n"
+        str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{out_relation(field)}\n"
       end
     end
     str << "#{@tab.t}#{table.name} #{table.lname_dc}_model = db_#{table.library_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
     str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n\n#{@tab.t}if (#{table.lname_dc}_model != null)\n#{@tab.t}"
     str << "{\n#{@tab.long}"
     table.each_field do |field|
-      str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{field.remark}\n"
+      str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{out_relation(field)}\n"
     end
     str << "#{@tab.t}db_#{table.library_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
@@ -231,5 +230,8 @@ class TemplateBuilder < BaseBuilder
       edit_str << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
     edit_str << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/xtgl/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
+  end
+  def out_relation(field)
+    field.relation ? "   " << field.relation.table.explanation : ""
   end
 end
