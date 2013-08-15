@@ -25,7 +25,7 @@
             <name="XXM" explanation="血型码" type="nvarchar(1)" null="T" p="F" identity="F" remark="血型码 编号：JCTB020118 引用自JCTB020118 XXM 血型码 C 1 NULL JY/T1001XX血型代码 NULL NULL" />
             <name="ZP" explanation="照片" type="nvarchar(200)" null="T" p="F" identity="F" remark="照片 编号：JCTB020119 引用自JCTB020119 ZP 照片 B NULL NULL NULL 近期正面免冠证件照片 NULL" />
             <name="SFZJYXQ" explanation="身份证件有效期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
-            <name="JGH" explanation="机构号" type="nvarchar(40)" null="F" p="F" identity="F" remark="机构号 编号：ZXJZ010101 解释/举例：本人所属机构号 引用自ZXXX030001 BJRYCH 班级荣誉称号 C 40 O NULL 班级获得的荣誉称号 NULL" />
+            <name="JGH" explanation="机构号" type="nvarchar(40)" null="F" p="F" identity="F" remark="机构号 编号：ZXJZ010101 解释/举例：本人所属机构号" />
             <name="JTZZ" explanation="家庭住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="家庭住址 编号：ZXJZ010102 解释/举例：指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）的详细地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
             <name="XZZ" explanation="现住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="现住址 编号：ZXJZ010103 解释/举例：指本人当前的常住地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
             <name="HKSZD" explanation="户口所在地" type="nvarchar(180)" null="T" p="F" identity="F" remark="户口所在地 编号：ZXJZ010104 解释/举例：指户口所在地址，包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）详细地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
@@ -45,6 +45,19 @@
             <name="TC" explanation="特长" type="text" null="T" p="F" identity="F" remark="特长 编号：ZXJZ010118 解释/举例：指本人在某一方面的特殊能力或技能 " />
             <name="GWZYM" explanation="岗位职业码" type="nvarchar(2)" null="F" p="F" identity="F" remark="岗位职业码 编号：ZXJZ010119 值空间：JY/T1001GWZY岗位职业代码 " />
             <name="ZYRKXD" explanation="主要任课学段" type="nvarchar(1)" null="F" p="F" identity="F" remark="主要任课学段 编号：ZXJZ010120 值空间：JY/T1001RKXD任课学段代码 " />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_02_A01_XNGWSJ" explanation="校内岗位数据子类表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
+            <name="GWID" explanation="岗位表ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" remark="" />
+            <name="GWQSNY" explanation="岗位起始年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="GWJSNY" explanation="岗位结束年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="SFZG" explanation="是否在岗" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
+            <name="ZWMC" explanation="职务名称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

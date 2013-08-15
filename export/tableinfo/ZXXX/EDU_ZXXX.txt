@@ -64,6 +64,14 @@ EDU_ZXXX_04_01_JG  机构数据类表
   JGJC        机构简称                nvarchar(10)   非主
   FZRGH       负责人工号              nvarchar(20)   非主
 
+EDU_ZXXX_04_A01_JGGW  机构岗位表
+  ID          岗位表ID              int            主键
+  SCHOOLID    学校ID                int            主键     学校基本数据子类表
+  JGH         机构号                  nvarchar(6)    非主
+  GWBH        岗位编号                nvarchar(50)   非主
+  GWMC        岗位名称                nvarchar(50)   非主
+  GWSM        岗位说明                text           非主
+
 EDU_ZXXX_05_A01_ZXXQ  学期数据表
   ID          编号                    int            主键
   SCHOOLID    学校名                  int            主键     学校基本数据子类表
