@@ -77,7 +77,7 @@ CREATE TABLE [dbo].[EDU_ZXJZ_02_A01_XNGWSJ](
 	[GWJSNY]  nvarchar(6)  NOT NULL,--岗位结束年月
 	[SFZG]  nvarchar(1)  NOT NULL,--是否在岗
 	[ZWMC]  nvarchar(10)  NOT NULL,--职务名称
-	[JGH]  nvarchar(6)  NOT NULL,--机构号
+	[JGH]  nvarchar(10)  NOT NULL,--机构号
 CONSTRAINT [PK_EDU_ZXJZ_02_A01_XNGWSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

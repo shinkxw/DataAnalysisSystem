@@ -144,7 +144,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXXX_04_A01_JGGW](
 	[ID]  int  NOT NULL,--岗位表ID
 	[SCHOOLID]  int  NOT NULL,--学校ID
-	[JGH]  nvarchar(6)  NOT NULL,--机构号
+	[JGH]  nvarchar(10)  NOT NULL,--机构号
 	[GWBH]  nvarchar(50)  NOT NULL,--岗位编号
 	[GWMC]  nvarchar(50)  NULL,--岗位名称
 	[GWSM]  text  NOT NULL,--岗位说明

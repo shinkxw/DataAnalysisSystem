@@ -6587,12 +6587,18 @@ SELECT a.[ID]--编号
       ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--主要任课学段
       ,dq.MC as d_JZGJBSJ_ZYRKXD_MC--名称
       ,e.MC as e_SFBZ_MC--名称
+      ,f.SCHOOLID as f_JG_SCHOOLID--学校名
+      ,f.LSJGH as f_JG_LSJGH--隶属机构号
+      ,f.JGMC as f_JG_JGMC--机构名称
+      ,f.JGJC as f_JG_JGJC--机构简称
+      ,f.FZRGH as f_JG_FZRGH--负责人工号
 
 FROM dbo.EDU_ZXJZ_02_A01_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_04_A01_JGGW AS c ON a.GWID = c.ID /*岗位表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_01_JG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -7794,9 +7800,15 @@ SELECT a.[ID]--岗位表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_JG_SCHOOLID--学校名
+      ,c.LSJGH as c_JG_LSJGH--隶属机构号
+      ,c.JGMC as c_JG_JGMC--机构名称
+      ,c.JGJC as c_JG_JGJC--机构简称
+      ,c.FZRGH as c_JG_FZRGH--负责人工号
 
 FROM dbo.EDU_ZXXX_04_A01_JGGW AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN

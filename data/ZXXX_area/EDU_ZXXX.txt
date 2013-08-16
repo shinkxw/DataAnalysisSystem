@@ -78,7 +78,7 @@
         <field_area>
             <name="ID" explanation="岗位表ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="JGH" explanation="机构号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="GWBH" explanation="岗位编号" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
             <name="GWMC" explanation="岗位名称" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
             <name="GWSM" explanation="岗位说明" type="text" null="F" p="F" identity="F" remark="" />

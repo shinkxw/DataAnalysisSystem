@@ -67,7 +67,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
             [Display(Name = "»ú¹¹ºÅ")]
-            [StringLength(6)]
+            [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String JGH { get; set; }
 

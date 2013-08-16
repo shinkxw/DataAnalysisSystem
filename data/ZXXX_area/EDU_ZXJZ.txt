@@ -57,7 +57,7 @@
             <name="GWJSNY" explanation="岗位结束年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
             <name="SFZG" explanation="是否在岗" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
             <name="ZWMC" explanation="职务名称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="JGH" explanation="机构号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

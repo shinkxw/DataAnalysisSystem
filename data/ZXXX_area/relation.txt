@@ -222,6 +222,7 @@
   GWID           EDU_ZXXX_04_A01_JGGW     ID
   JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ   ID
   SFZG           EDU_JY_SFBZ              DM
+  JGH            EDU_ZXXX_04_01_JG        JGH
 <EDU_ZXXS_01_01_XSXX
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
   XBM            EDU_GB_RDXB              DM
@@ -291,6 +292,7 @@
   LSJGH          EDU_ZXXX_04_01_JG        JGH
 <EDU_ZXXX_04_A01_JGGW
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  JGH            EDU_ZXXX_04_01_JG        JGH
 <EDU_ZXXX_05_A01_ZXXQ
   SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
   XNID           EDU_SYS_01_XN            ID

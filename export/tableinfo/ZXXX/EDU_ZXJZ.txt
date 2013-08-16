@@ -52,5 +52,5 @@ EDU_ZXJZ_02_A01_XNGWSJ  校内岗位数据子类表
   GWJSNY      岗位结束年月            nvarchar(6)    非主
   SFZG        是否在岗                nvarchar(1)    非主     是否标志代码表
   ZWMC        职务名称                nvarchar(10)   非主
-  JGH         机构号                  nvarchar(6)    非主
+  JGH         机构号                  nvarchar(10)   非主     机构数据类表
 
