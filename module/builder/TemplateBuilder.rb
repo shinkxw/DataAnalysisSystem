@@ -189,7 +189,7 @@ class TemplateBuilder < BaseBuilder
     index_str = ""
     index_str << "@model HanRuEdu.LDAL.#{table.name}\n"
     index_str << "<table id=\"dg\" title=\"  \" class=\"easyui-datagrid\" style=\"width:900px;height:500px\"\n"
-    index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'/#{@directory_name}/#{table.lname}/index_jsonstr',\n"
+    index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname}/index_jsonstr\")',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
