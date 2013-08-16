@@ -155,6 +155,152 @@
   WEBID          EDU_WZXT_MHXT_WZPZ       WEBID
 <EDU_ZJ_ZJZY
   ZYMLLB         EDU_ZJ_ZYML              DM
+<EDU_ZXDY_04_A01_ZZGW
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+<EDU_ZXDY_04_A02_ZZRYAP
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+  ZCID           EDU_ZXDY_04_A06_ZZZC     ID
+  ZZBJ           EDU_ZXXX_03_01_BJ        BH
+  ZZID           EDU_ELE_01_USER          LOGINNAME
+<EDU_ZXDY_04_A03_ZZGWFP
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+  ZCID           EDU_ZXDY_04_A06_ZZZC     ID
+  GWID           EDU_ZXDY_04_A01_ZZGW     ID
+  JSID           EDU_ELE_01_USER          LOGINNAME
+<EDU_ZXDY_04_A04_GWFPMB
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+<EDU_ZXDY_04_A05_TBZZJS
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+  JSID           EDU_ELE_01_USER          LOGINNAME
+<EDU_ZXDY_04_A06_ZZZC
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+<EDU_ZXDY_04_A07_MBFPNR
+  MBID           EDU_ZXDY_04_A04_GWFPMB   ID
+  GWID           EDU_ZXDY_04_A01_ZZGW     ID
+<EDU_ZXDY_05_A01_ZZDFDL
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+<EDU_ZXDY_05_A02_ZZDFXZ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  SSDLID         EDU_ZXDY_05_A01_ZZDFDL   ID
+<EDU_ZXDY_05_A03_ZZDFD
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+  ZCID           EDU_ZXDY_04_A06_ZZZC     ID
+  BJ             EDU_ZXXX_03_01_BJ        BH
+  SSXZID         EDU_ZXDY_05_A02_ZZDFXZ   ID
+  DFJSID         EDU_ELE_01_USER          LOGINNAME
+<EDU_ZXDY_06_A01_ZZXJ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+  ZCID           EDU_ZXDY_04_A06_ZZZC     ID
+<EDU_ZXDY_06_A02_GQXJH
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XQID           EDU_ZXXX_05_A01_ZXXQ     ID
+  ZCID           EDU_ZXDY_04_A06_ZZZC     ID
+<EDU_ZXJZ_01_01_JZGJBSJ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XBM            EDU_GB_RDXB              DM
+  CSDM           EDU_GB_ZHRMGHGXZQH       DM
+  MZM            EDU_GB_ZGGMZMCDLMZMPXF   DM
+  GJDQM          EDU_GB_SJGGHDQMC         DM
+  SFZJLXM        EDU_JY_SFZJLX            DM
+  HYZKM          EDU_GB_HYZZ              DM
+  GATQWM         EDU_JY_GATQW             DM
+  ZZMMM          EDU_GB_ZZMM              DM
+  JKZKM          EDU_GB_JKZKYWSZ          DM
+  XYZJM          EDU_GB_ZJXY              DM
+  XXM            EDU_JY_XX                DM
+  HKXZM          EDU_GB_HKLB              DM
+  XLM            EDU_GB_XL                DM
+  BZLBM          EDU_JY_ZXXBZLB           DM
+  GWZYM          EDU_JY_GWZY              DM
+  ZYRKXD         EDU_JY_RKXD              DM
+<EDU_ZXJZ_02_A01_XNGWSJ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  GWID           EDU_ZXXX_04_A01_JGGW     ID
+  JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ   ID
+  SFZG           EDU_JY_SFBZ              DM
+  JGH            EDU_ZXXX_04_01_JG        JGH
+<EDU_ZXXS_01_01_XSXX
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XBM            EDU_GB_RDXB              DM
+  CSDM           EDU_GB_ZHRMGHGXZQH       DM
+  MZM            EDU_GB_ZGGMZMCDLMZMPXF   DM
+  GJDQM          EDU_GB_SJGGHDQMC         DM
+  SFZJLXM        EDU_JY_SFZJLX            DM
+  HYZKM          EDU_GB_HYZZ              DM
+  GATQWM         EDU_JY_GATQW             DM
+  ZZMMM          EDU_GB_ZZMM              DM
+  JKZKM          EDU_GB_JKZKYWSZ          DM
+  XYZJM          EDU_GB_ZJXY              DM
+  XXM            EDU_JY_XX                DM
+  DSZYBZ         EDU_JY_SFBZ              DM
+  NJ             EDU_ZXXX_02_01_NJ        NJ
+  BH             EDU_ZXXX_03_01_BJ        BH
+  XSLBM          EDU_JY_XSLB              DM
+  HKXZM          EDU_GB_HKLB              DM
+  SFLDRK         EDU_JY_SFBZ              DM
+<EDU_ZXXS_01_06_XSJTCY
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XSXXID         EDU_ZXXS_01_01_XSXX      ID
+  GXM            EDU_GB_JTGX              DM
+  MZM            EDU_GB_ZGGMZMCDLMZMPXF   DM
+  GJDQM          EDU_GB_SJGGHDQMC         DM
+  JKZKM          EDU_GB_JKZKYWSZ          DM
+  CYM            EDU_GB_CYZK              DM
+  ZYJSZWM        EDU_GB_ZYJSZW            DM
+  ZWJBM          EDU_GB_ZWJBDM            DM
+  SFJHR          EDU_JY_SFBZ              DM
+  XBM            EDU_GB_RDXB              DM
+  XLM            EDU_GB_XL                DM
+<EDU_ZXXS_02_A01_XSJTXX
+  XSXXID         EDU_ZXXS_01_01_XSXX      ID
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+<EDU_ZXXS_07_A02_XJYD
+  XSXXID         EDU_ZXXS_01_01_XSXX      ID
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  YDLBM          EDU_JY_XJYDLB            DM
+  YDYYM          EDU_JY_XJYDYY            DM
+  JBRID          EDU_ZXJZ_01_01_JZGJBSJ   ID
+  YBH            EDU_ZXXX_03_01_BJ        BH
+  YNJ            EDU_ZXXX_02_01_NJ        NJ
+  XBH            EDU_ZXXX_03_01_BJ        BH
+  XNJ            EDU_ZXXX_02_01_NJ        NJ
+<EDU_ZXXX_01_01_ZXXX
+  XZQHM          EDU_GB_ZHRMGHGXZQH       DM
+  XXBXLXM        EDU_JY_BXLX              DM
+  XXZGBMM        EDU_JY_XXJYJGJBZ         DM
+  XXBBM          EDU_JY_XXBB              DM
+  SSZGDWM        EDU_JY_XXJYJGJBZ         DM
+  SZDCXLXM       EDU_JY_SZDCXLX           DM
+  SZDJJSXM       EDU_JY_SZDQJJSX          DM
+  SZDMZSX        EDU_JY_SFBZ              DM
+  ZJXYYM         EDU_GB_ZGYZ              DM
+  FJXYYM         EDU_GB_ZGYZ              DM
+<EDU_ZXXX_02_01_NJ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+<EDU_ZXXX_03_01_BJ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  NJ             EDU_ZXXX_02_01_NJ        NJ
+  BJLXM          EDU_JY_ZXXBJLX           DM
+  SFSSMZSYJXB    EDU_JY_SFBZ              DM
+  SYJXMSM        EDU_JY_SSMZSYJXMS        DM
+<EDU_ZXXX_04_01_JG
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  LSJGH          EDU_ZXXX_04_01_JG        JGH
+<EDU_ZXXX_04_A01_JGGW
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  JGH            EDU_ZXXX_04_01_JG        JGH
+<EDU_ZXXX_05_A01_ZXXQ
+  SCHOOLID       EDU_ZXXX_01_01_ZXXX      ID
+  XNID           EDU_SYS_01_XN            ID
+  XQM            EDU_JY_XQ                DM
 <EDU_ZZFC_02_01_JZWJBSJ
   SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
   SYZKM          EDU_JY_SYZK              DM
@@ -476,8 +622,3 @@
   XSXXID         EDU_ZZXS_01_01_XSXX      ID
   SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
   KMM            EDU_ZZ_ZKKM              DM
-
-以下为出错的关联语句:
-
-<EDU_ZZJX_01_03_ZZXQ
-  SchoolID       EDU_ZZXX_01_01_ZZXX      ID

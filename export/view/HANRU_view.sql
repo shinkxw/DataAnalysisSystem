@@ -159,6 +159,102 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DIS
             and   type = 'V')
    drop view VIEW_EDU_ZJ_ZJZY_DISP
 go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A01_ZZGW_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A01_ZZGW_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A02_ZZRYAP_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A02_ZZRYAP_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A03_ZZGWFP_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A03_ZZGWFP_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A06_ZZZC_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A06_ZZZC_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A07_MBFPNR_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_04_A07_MBFPNR_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_05_A01_ZZDFDL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_05_A01_ZZDFDL_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_05_A02_ZZDFXZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_05_A02_ZZDFXZ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_05_A03_ZZDFD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_05_A03_ZZDFD_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_06_A01_ZZXJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_06_A01_ZZXJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_06_A02_GQXJH_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXDY_06_A02_GQXJH_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_01_01_XSXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXS_01_01_XSXX_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_01_06_XSJTCY_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXS_01_06_XSJTCY_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_02_A01_XSJTXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXS_02_A01_XSJTXX_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_07_A02_XJYD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXS_07_A02_XJYD_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_01_01_ZXXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXX_01_01_ZXXX_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_02_01_NJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXX_02_01_NJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_03_01_BJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXX_03_01_BJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_01_JG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXX_04_01_JG_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_A01_JGGW_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXX_04_A01_JGGW_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_05_A01_ZXXQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXX_05_A01_ZXXQ_DISP
+go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP
@@ -2239,6 +2335,2656 @@ SELECT a.[DM]--代码
 
 FROM dbo.EDU_ZJ_ZJZY AS a LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS b ON a.ZYMLLB = b.DM /*专业目录类别*/
+GO
+
+--值周岗位数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A01_ZZGW_DISP]
+AS
+SELECT a.[ID]--值周岗位表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[GWGZNR]--岗位工作内容
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+
+FROM dbo.EDU_ZXDY_04_A01_ZZGW AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--值周人员安排表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A02_ZZRYAP_DISP]
+AS
+SELECT a.[ID]--值周人员安排表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCID]--周次ID
+      ,a.[KSRQ]--开始日期
+      ,a.[JSRQ]--结束日期
+      ,a.[ZZBJ]--值周班级班号
+      ,a.[ZZID]--组长ID
+      ,a.[ZYIDLB]--组员ID列表
+      ,a.[ZYMCLB]--组员名称列表
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
+      ,d.XQID as d_ZZZC_XQID--学期ID
+      ,d.ZCM as d_ZZZC_ZCM--周次名
+      ,d.XQKSRQ as d_ZZZC_XQKSRQ--开始日期
+      ,d.XQJSRQ as d_ZZZC_XQJSRQ--结束日期
+      ,e.SCHOOLID as e_BJ_SCHOOLID--学校名
+      ,e.NJ as e_BJ_NJ--年级号
+      ,e.BJ as e_BJ_BJ--班级名称
+      ,e.JBNY as e_BJ_JBNY--建班年月
+      ,e.BZRGH as e_BJ_BZRGH--班主任工号
+      ,e.BZXH as e_BJ_BZXH--班长学号
+      ,e.BJRYCH as e_BJ_BJRYCH--班级荣誉称号
+      ,e.XZ as e_BJ_XZ--学制
+      ,e.BJLXM as e_BJ_BJLXM--班级类型码
+      ,eb.MC as e_BJ_BJLXM_MC--名称
+      ,e.WLLX as e_BJ_WLLX--文理类型
+      ,e.BYRQ as e_BJ_BYRQ--毕业日期
+      ,e.SFSSMZSYJXB as e_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,ec.MC as e_BJ_SFSSMZSYJXB_MC--名称
+      ,e.SYJXMSM as e_BJ_SYJXMSM--双语教学模式码
+      ,ed.MC as e_BJ_SYJXMSM_MC--名称
+      ,ed.SM as e_BJ_SYJXMSM_SM--说明
+      ,f.SCHOOLID as f_USER_SCHOOLID--学校ID
+      ,f.APPID as f_USER_APPID--应用ID
+      ,f.PWD as f_USER_PWD--密码
+      ,f.STATUS as f_USER_STATUS--用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--用户类别
+      ,f.USERID as f_USER_USERID--用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--用户角色
+      ,f.XM as f_USER_XM--姓名
+      ,f.XB as f_USER_XB--性别
+      ,f.QQ as f_USER_QQ--QQ
+      ,f.DZYJ as f_USER_DZYJ--电子邮件
+      ,f.LXDH as f_USER_LXDH--联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--用户创建时间
+
+FROM dbo.EDU_ZXDY_04_A02_ZZRYAP AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS e ON a.ZZBJ = e.BH /*值周班级班号*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.ZZID = f.LOGINNAME /*组长ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS eb ON e.BJLXM = eb.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ec ON e.SFSSMZSYJXB = ec.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS ed ON e.SYJXMSM = ed.DM /*双语教学模式码*/
+GO
+
+--值周岗位分配表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A03_ZZGWFP_DISP]
+AS
+SELECT a.[ID]--值周岗位分配表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCID]--周次ID
+      ,a.[GZR]--工作日
+      ,a.[GWID]--岗位ID
+      ,a.[JSID]--教师ID
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
+      ,d.XQID as d_ZZZC_XQID--学期ID
+      ,d.ZCM as d_ZZZC_ZCM--周次名
+      ,d.XQKSRQ as d_ZZZC_XQKSRQ--开始日期
+      ,d.XQJSRQ as d_ZZZC_XQJSRQ--结束日期
+      ,e.SCHOOLID as e_ZZGW_SCHOOLID--学校ID
+      ,e.XQID as e_ZZGW_XQID--学期ID
+      ,e.GWGZNR as e_ZZGW_GWGZNR--岗位工作内容
+      ,f.SCHOOLID as f_USER_SCHOOLID--学校ID
+      ,f.APPID as f_USER_APPID--应用ID
+      ,f.PWD as f_USER_PWD--密码
+      ,f.STATUS as f_USER_STATUS--用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--用户类别
+      ,f.USERID as f_USER_USERID--用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--用户角色
+      ,f.XM as f_USER_XM--姓名
+      ,f.XB as f_USER_XB--性别
+      ,f.QQ as f_USER_QQ--QQ
+      ,f.DZYJ as f_USER_DZYJ--电子邮件
+      ,f.LXDH as f_USER_LXDH--联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--用户创建时间
+
+FROM dbo.EDU_ZXDY_04_A03_ZZGWFP AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A01_ZZGW AS e ON a.GWID = e.ID /*岗位ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.JSID = f.LOGINNAME /*教师ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--岗位分配模板表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP]
+AS
+SELECT a.[ID]--岗位分配模板表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[MBMC]--模板名称
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+
+FROM dbo.EDU_ZXDY_04_A04_GWFPMB AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--特别值周教师表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP]
+AS
+SELECT a.[ID]--特别值周教师表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[JSLX]--教师类型
+      ,a.[JSID]--教师ID
+      ,a.[YXRQ]--有效日期
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_USER_SCHOOLID--学校ID
+      ,d.APPID as d_USER_APPID--应用ID
+      ,d.PWD as d_USER_PWD--密码
+      ,d.STATUS as d_USER_STATUS--用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--用户类别
+      ,d.USERID as d_USER_USERID--用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--用户角色
+      ,d.XM as d_USER_XM--姓名
+      ,d.XB as d_USER_XB--性别
+      ,d.QQ as d_USER_QQ--QQ
+      ,d.DZYJ as d_USER_DZYJ--电子邮件
+      ,d.LXDH as d_USER_LXDH--联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--用户创建时间
+
+FROM dbo.EDU_ZXDY_04_A05_TBZZJS AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.JSID = d.LOGINNAME /*教师ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--值周周次表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A06_ZZZC_DISP]
+AS
+SELECT a.[ID]--周次表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCM]--周次名
+      ,a.[XQKSRQ]--开始日期
+      ,a.[XQJSRQ]--结束日期
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+
+FROM dbo.EDU_ZXDY_04_A06_ZZZC AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--模板分配内容表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A07_MBFPNR_DISP]
+AS
+SELECT a.[ID]--模板内容表ID
+      ,a.[MBID]--模板表ID
+      ,a.[GZR]--工作日
+      ,a.[GWID]--岗位ID
+      ,a.[DYRYH]--对应人员号
+      ,b.SCHOOLID as b_GWFPMB_SCHOOLID--学校ID
+      ,b.MBMC as b_GWFPMB_MBMC--模板名称
+      ,c.SCHOOLID as c_ZZGW_SCHOOLID--学校ID
+      ,c.XQID as c_ZZGW_XQID--学期ID
+      ,c.GWGZNR as c_ZZGW_GWGZNR--岗位工作内容
+
+FROM dbo.EDU_ZXDY_04_A07_MBFPNR AS a LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A04_GWFPMB AS b ON a.MBID = b.ID /*模板表ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A01_ZZGW AS c ON a.GWID = c.ID /*岗位ID*/
+GO
+
+--值周打分大类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_05_A01_ZZDFDL_DISP]
+AS
+SELECT a.[ID]--值周打分大类表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[DLMC]--大类名称
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+
+FROM dbo.EDU_ZXDY_05_A01_ZZDFDL AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--值周打分细则表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_05_A02_ZZDFXZ_DISP]
+AS
+SELECT a.[ID]--值周打分细则表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[SSDLID]--所属大类ID
+      ,a.[XZNR]--细则内容
+      ,a.[XZFZ]--细则分值
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZZDFDL_SCHOOLID--学校ID
+      ,c.XQID as c_ZZDFDL_XQID--学期ID
+      ,c.DLMC as c_ZZDFDL_DLMC--大类名称
+
+FROM dbo.EDU_ZXDY_05_A02_ZZDFXZ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_05_A01_ZZDFDL AS c ON a.SSDLID = c.ID /*所属大类ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--值周打分单表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_05_A03_ZZDFD_DISP]
+AS
+SELECT a.[ID]--值周打分单表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCID]--周次ID
+      ,a.[BJ]--班级
+      ,a.[XSIDLB]--学生ID列表
+      ,a.[XSMCLB]--学生名称列表
+      ,a.[SSXZID]--所属细则
+      ,a.[DFFZ]--打分分值
+      ,a.[FSSJ]--发生时间
+      ,a.[DFSJ]--打分时间
+      ,a.[DFJSID]--打分教师ID
+      ,a.[BZ]--备注
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
+      ,d.XQID as d_ZZZC_XQID--学期ID
+      ,d.ZCM as d_ZZZC_ZCM--周次名
+      ,d.XQKSRQ as d_ZZZC_XQKSRQ--开始日期
+      ,d.XQJSRQ as d_ZZZC_XQJSRQ--结束日期
+      ,e.SCHOOLID as e_BJ_SCHOOLID--学校名
+      ,e.NJ as e_BJ_NJ--年级号
+      ,e.BJ as e_BJ_BJ--班级名称
+      ,e.JBNY as e_BJ_JBNY--建班年月
+      ,e.BZRGH as e_BJ_BZRGH--班主任工号
+      ,e.BZXH as e_BJ_BZXH--班长学号
+      ,e.BJRYCH as e_BJ_BJRYCH--班级荣誉称号
+      ,e.XZ as e_BJ_XZ--学制
+      ,e.BJLXM as e_BJ_BJLXM--班级类型码
+      ,eb.MC as e_BJ_BJLXM_MC--名称
+      ,e.WLLX as e_BJ_WLLX--文理类型
+      ,e.BYRQ as e_BJ_BYRQ--毕业日期
+      ,e.SFSSMZSYJXB as e_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,ec.MC as e_BJ_SFSSMZSYJXB_MC--名称
+      ,e.SYJXMSM as e_BJ_SYJXMSM--双语教学模式码
+      ,ed.MC as e_BJ_SYJXMSM_MC--名称
+      ,ed.SM as e_BJ_SYJXMSM_SM--说明
+      ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--学校ID
+      ,f.SSDLID as f_ZZDFXZ_SSDLID--所属大类ID
+      ,f.XZNR as f_ZZDFXZ_XZNR--细则内容
+      ,f.XZFZ as f_ZZDFXZ_XZFZ--细则分值
+      ,g.SCHOOLID as g_USER_SCHOOLID--学校ID
+      ,g.APPID as g_USER_APPID--应用ID
+      ,g.PWD as g_USER_PWD--密码
+      ,g.STATUS as g_USER_STATUS--用户状态
+      ,g.USERTYPE as g_USER_USERTYPE--用户类别
+      ,g.USERID as g_USER_USERID--用户ID
+      ,g.ROLEIDLst as g_USER_ROLEIDLst--用户角色
+      ,g.XM as g_USER_XM--姓名
+      ,g.XB as g_USER_XB--性别
+      ,g.QQ as g_USER_QQ--QQ
+      ,g.DZYJ as g_USER_DZYJ--电子邮件
+      ,g.LXDH as g_USER_LXDH--联系电话
+      ,g.ZJDLSJ as g_USER_ZJDLSJ--最近一次登录时间
+      ,g.DLCGCS as g_USER_DLCGCS--登录成功次数
+      ,g.YHCJSJ as g_USER_YHCJSJ--用户创建时间
+
+FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS e ON a.BJ = e.BH /*班级*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_05_A02_ZZDFXZ AS f ON a.SSXZID = f.ID /*所属细则*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS g ON a.DFJSID = g.LOGINNAME /*打分教师ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS eb ON e.BJLXM = eb.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ec ON e.SFSSMZSYJXB = ec.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS ed ON e.SYJXMSM = ed.DM /*双语教学模式码*/
+GO
+
+--值周小结表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_06_A01_ZZXJ_DISP]
+AS
+SELECT a.[ID]--值周小结表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCID]--周次ID
+      ,a.[SZDS]--上周大事
+      ,a.[ZZJCQKFK]--值周检查情况反馈
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
+      ,d.XQID as d_ZZZC_XQID--学期ID
+      ,d.ZCM as d_ZZZC_ZCM--周次名
+      ,d.XQKSRQ as d_ZZZC_XQKSRQ--开始日期
+      ,d.XQJSRQ as d_ZZZC_XQJSRQ--结束日期
+
+FROM dbo.EDU_ZXDY_06_A01_ZZXJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--国旗下讲话表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_06_A02_GQXJH_DISP]
+AS
+SELECT a.[ID]--国旗下讲话表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCID]--周次ID
+      ,a.[JHZT]--讲话主题
+      ,a.[JHNR]--讲话内容
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
+      ,c.XNID as c_ZXXQ_XNID--学年
+      ,c.XQM as c_ZXXQ_XQM--学期码
+      ,cb.MC as c_ZXXQ_XQM_MC--名称
+      ,c.XQMC as c_ZXXQ_XQMC--学期名称
+      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
+      ,d.XQID as d_ZZZC_XQID--学期ID
+      ,d.ZCM as d_ZZZC_ZCM--周次名
+      ,d.XQKSRQ as d_ZZZC_XQKSRQ--开始日期
+      ,d.XQJSRQ as d_ZZZC_XQJSRQ--结束日期
+
+FROM dbo.EDU_ZXDY_06_A02_GQXJH AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--教职工基本数据子类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[GH]--工号
+      ,a.[XM]--姓名
+      ,a.[YWXM]--英文姓名
+      ,a.[XMPY]--姓名拼音
+      ,a.[CYM]--曾用名
+      ,a.[XBM]--性别码
+      ,a.[CSRQ]--出生日期
+      ,a.[CSDM]--出生地码
+      ,a.[JG]--籍贯
+      ,a.[MZM]--民族码
+      ,a.[GJDQM]--国籍/地区码
+      ,a.[SFZJLXM]--身份证件类型码
+      ,a.[SFZJH]--身份证件号
+      ,a.[HYZKM]--婚姻状况码
+      ,a.[GATQWM]--港澳台侨外码
+      ,a.[ZZMMM]--政治面貌码
+      ,a.[JKZKM]--健康状况码
+      ,a.[XYZJM]--信仰宗教码
+      ,a.[XXM]--血型码
+      ,a.[ZP]--照片
+      ,a.[SFZJYXQ]--身份证件有效期
+      ,a.[JGH]--机构号
+      ,a.[JTZZ]--家庭住址
+      ,a.[XZZ]--现住址
+      ,a.[HKSZD]--户口所在地
+      ,a.[HKXZM]--户口性质码
+      ,a.[XLM]--学历码
+      ,a.[GZNY]--参加工作年月
+      ,a.[LXNY]--来校年月
+      ,a.[CJNY]--从教年月
+      ,a.[BZLBM]--编制类别码
+      ,a.[DABH]--档案编号
+      ,a.[DAWB]--档案文本
+      ,a.[TXDZ]--通信地址
+      ,a.[LXDH]--联系电话
+      ,a.[YZBM]--邮政编码
+      ,a.[DZXX]--电子信箱
+      ,a.[ZYDZ]--主页地址
+      ,a.[TC]--特长
+      ,a.[GWZYM]--岗位职业码
+      ,a.[ZYRKXD]--主要任课学段
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.MC as c_RDXB_MC--名称
+      ,d.MC as d_ZHRMGHGXZQH_MC--名称
+      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--民族名称
+      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--字母代码
+      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--国家/地区名称简称
+      ,f.EZMDM as f_SJGGHDQMC_EZMDM--二字母代码
+      ,f.SZMDM as f_SJGGHDQMC_SZMDM--三字母代码
+      ,g.MC as g_SFZJLX_MC--名称
+      ,h.MC as h_HYZZ_MC--名称
+      ,i.MC as i_GATQW_MC--名称
+      ,i.SM as i_GATQW_SM--说明
+      ,j.MC as j_ZZMM_MC--名称
+      ,j.JC as j_ZZMM_JC--简称
+      ,k.MC as k_JKZKYWSZ_MC--名称
+      ,k.SM as k_JKZKYWSZ_SM--说明
+      ,l.MC as l_ZJXY_MC--名称
+      ,m.MC as m_XX_MC--名称
+      ,m.JC as m_XX_JC--简称
+      ,n.MC as n_HKLB_MC--名称
+      ,o.MC as o_XL_MC--名称
+      ,p.MC as p_ZXXBZLB_MC--名称
+      ,q.MC as q_GWZY_MC--名称
+      ,r.MC as r_RKXD_MC--名称
+
+FROM dbo.EDU_ZXJZ_01_01_JZGJBSJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS d ON a.CSDM = d.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS e ON a.MZM = e.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS f ON a.GJDQM = f.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS g ON a.SFZJLXM = g.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS h ON a.HYZKM = h.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS i ON a.GATQWM = i.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS j ON a.ZZMMM = j.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS k ON a.JKZKM = k.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS l ON a.XYZJM = l.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS m ON a.XXM = m.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS n ON a.HKXZM = n.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS o ON a.XLM = o.DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS p ON a.BZLBM = p.DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS q ON a.GWZYM = q.DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS r ON a.ZYRKXD = r.DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--校内岗位数据子类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[GWID]--岗位表ID
+      ,a.[JZGJBSJID]--教职工基本数据子类表
+      ,a.[GWQSNY]--岗位起始年月
+      ,a.[GWJSNY]--岗位结束年月
+      ,a.[SFZG]--是否在岗
+      ,a.[ZWMC]--职务名称
+      ,a.[JGH]--机构号
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_JGGW_SCHOOLID--学校ID
+      ,c.JGH as c_JGGW_JGH--机构号
+      ,c.GWBH as c_JGGW_GWBH--岗位编号
+      ,c.GWMC as c_JGGW_GWMC--岗位名称
+      ,c.GWSM as c_JGGW_GWSM--岗位说明
+      ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--学校名
+      ,d.GH as d_JZGJBSJ_GH--工号
+      ,d.XM as d_JZGJBSJ_XM--姓名
+      ,d.YWXM as d_JZGJBSJ_YWXM--英文姓名
+      ,d.XMPY as d_JZGJBSJ_XMPY--姓名拼音
+      ,d.CYM as d_JZGJBSJ_CYM--曾用名
+      ,d.XBM as d_JZGJBSJ_XBM--性别码
+      ,db.MC as d_JZGJBSJ_XBM_MC--名称
+      ,d.CSRQ as d_JZGJBSJ_CSRQ--出生日期
+      ,d.CSDM as d_JZGJBSJ_CSDM--出生地码
+      ,dc.MC as d_JZGJBSJ_CSDM_MC--名称
+      ,d.JG as d_JZGJBSJ_JG--籍贯
+      ,d.MZM as d_JZGJBSJ_MZM--民族码
+      ,dd.MZMC as d_JZGJBSJ_MZM_MZMC--民族名称
+      ,dd.ZMDM as d_JZGJBSJ_MZM_ZMDM--字母代码
+      ,d.GJDQM as d_JZGJBSJ_GJDQM--国籍/地区码
+      ,de.GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--国家/地区名称简称
+      ,de.EZMDM as d_JZGJBSJ_GJDQM_EZMDM--二字母代码
+      ,de.SZMDM as d_JZGJBSJ_GJDQM_SZMDM--三字母代码
+      ,d.SFZJLXM as d_JZGJBSJ_SFZJLXM--身份证件类型码
+      ,df.MC as d_JZGJBSJ_SFZJLXM_MC--名称
+      ,d.SFZJH as d_JZGJBSJ_SFZJH--身份证件号
+      ,d.HYZKM as d_JZGJBSJ_HYZKM--婚姻状况码
+      ,dg.MC as d_JZGJBSJ_HYZKM_MC--名称
+      ,d.GATQWM as d_JZGJBSJ_GATQWM--港澳台侨外码
+      ,dh.MC as d_JZGJBSJ_GATQWM_MC--名称
+      ,dh.SM as d_JZGJBSJ_GATQWM_SM--说明
+      ,d.ZZMMM as d_JZGJBSJ_ZZMMM--政治面貌码
+      ,di.MC as d_JZGJBSJ_ZZMMM_MC--名称
+      ,di.JC as d_JZGJBSJ_ZZMMM_JC--简称
+      ,d.JKZKM as d_JZGJBSJ_JKZKM--健康状况码
+      ,dj.MC as d_JZGJBSJ_JKZKM_MC--名称
+      ,dj.SM as d_JZGJBSJ_JKZKM_SM--说明
+      ,d.XYZJM as d_JZGJBSJ_XYZJM--信仰宗教码
+      ,dk.MC as d_JZGJBSJ_XYZJM_MC--名称
+      ,d.XXM as d_JZGJBSJ_XXM--血型码
+      ,dl.MC as d_JZGJBSJ_XXM_MC--名称
+      ,dl.JC as d_JZGJBSJ_XXM_JC--简称
+      ,d.ZP as d_JZGJBSJ_ZP--照片
+      ,d.SFZJYXQ as d_JZGJBSJ_SFZJYXQ--身份证件有效期
+      ,d.JGH as d_JZGJBSJ_JGH--机构号
+      ,d.JTZZ as d_JZGJBSJ_JTZZ--家庭住址
+      ,d.XZZ as d_JZGJBSJ_XZZ--现住址
+      ,d.HKSZD as d_JZGJBSJ_HKSZD--户口所在地
+      ,d.HKXZM as d_JZGJBSJ_HKXZM--户口性质码
+      ,dm.MC as d_JZGJBSJ_HKXZM_MC--名称
+      ,d.XLM as d_JZGJBSJ_XLM--学历码
+      ,dn.MC as d_JZGJBSJ_XLM_MC--名称
+      ,d.GZNY as d_JZGJBSJ_GZNY--参加工作年月
+      ,d.LXNY as d_JZGJBSJ_LXNY--来校年月
+      ,d.CJNY as d_JZGJBSJ_CJNY--从教年月
+      ,d.BZLBM as d_JZGJBSJ_BZLBM--编制类别码
+      ,do.MC as d_JZGJBSJ_BZLBM_MC--名称
+      ,d.DABH as d_JZGJBSJ_DABH--档案编号
+      ,d.DAWB as d_JZGJBSJ_DAWB--档案文本
+      ,d.TXDZ as d_JZGJBSJ_TXDZ--通信地址
+      ,d.LXDH as d_JZGJBSJ_LXDH--联系电话
+      ,d.YZBM as d_JZGJBSJ_YZBM--邮政编码
+      ,d.DZXX as d_JZGJBSJ_DZXX--电子信箱
+      ,d.ZYDZ as d_JZGJBSJ_ZYDZ--主页地址
+      ,d.TC as d_JZGJBSJ_TC--特长
+      ,d.GWZYM as d_JZGJBSJ_GWZYM--岗位职业码
+      ,dp.MC as d_JZGJBSJ_GWZYM_MC--名称
+      ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--主要任课学段
+      ,dq.MC as d_JZGJBSJ_ZYRKXD_MC--名称
+      ,e.MC as e_SFBZ_MC--名称
+      ,f.SCHOOLID as f_JG_SCHOOLID--学校名
+      ,f.LSJGH as f_JG_LSJGH--隶属机构号
+      ,f.JGMC as f_JG_JGMC--机构名称
+      ,f.JGJC as f_JG_JGJC--机构简称
+      ,f.FZRGH as f_JG_FZRGH--负责人工号
+
+FROM dbo.EDU_ZXJZ_02_A01_XNGWSJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_A01_JGGW AS c ON a.GWID = c.ID /*岗位表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_01_JG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS dc ON d.CSDM = dc.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS dd ON d.MZM = dd.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS de ON d.GJDQM = de.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS df ON d.SFZJLXM = df.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS dh ON d.GATQWM = dh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS di ON d.ZZMMM = di.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS dk ON d.XYZJM = dk.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS dl ON d.XXM = dl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS dm ON d.HKXZM = dm.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS dn ON d.XLM = dn.DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS do ON d.BZLBM = do.DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS dp ON d.GWZYM = dp.DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS dq ON d.ZYRKXD = dq.DM /*主要任课学段*/
+GO
+
+--学生基本数据子类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_01_01_XSXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[XH]--学号
+      ,a.[XM]--姓名
+      ,a.[YWXM]--英文姓名
+      ,a.[XMPY]--姓名拼音
+      ,a.[CYM]--曾用名
+      ,a.[XBM]--性别码
+      ,a.[CSRQ]--出生日期
+      ,a.[CSDM]--出生地码
+      ,a.[JG]--籍贯
+      ,a.[MZM]--民族码
+      ,a.[GJDQM]--国籍/地区码
+      ,a.[SFZJLXM]--身份证件类型码
+      ,a.[SFZJH]--身份证件号
+      ,a.[HYZKM]--婚姻状况码
+      ,a.[GATQWM]--港澳台侨外码
+      ,a.[ZZMMM]--政治面貌码
+      ,a.[JKZKM]--健康状况码
+      ,a.[XYZJM]--信仰宗教码
+      ,a.[XXM]--血型码
+      ,a.[ZP]--照片
+      ,a.[SFZJYXQ]--身份证件有效期
+      ,a.[DSZYBZ]--独生子女标志
+      ,a.[RXNY]--入学年月
+      ,a.[NJ]--年级
+      ,a.[BH]--班号
+      ,a.[XSLBM]--学生类别码
+      ,a.[XZZ]--现住址
+      ,a.[HKSZD]--户口所在地
+      ,a.[HKXZM]--户口性质码
+      ,a.[SFLDRK]--是否流动人口
+      ,a.[TC]--特长
+      ,a.[LXDH]--联系电话
+      ,a.[TXDZ]--通信地址
+      ,a.[YZBM]--邮政编码
+      ,a.[DZXX]--电子信箱
+      ,a.[ZYDZ]--主页地址
+      ,a.[XJH]--学籍号
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.MC as c_RDXB_MC--名称
+      ,d.MC as d_ZHRMGHGXZQH_MC--名称
+      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--民族名称
+      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--字母代码
+      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--国家/地区名称简称
+      ,f.EZMDM as f_SJGGHDQMC_EZMDM--二字母代码
+      ,f.SZMDM as f_SJGGHDQMC_SZMDM--三字母代码
+      ,g.MC as g_SFZJLX_MC--名称
+      ,h.MC as h_HYZZ_MC--名称
+      ,i.MC as i_GATQW_MC--名称
+      ,i.SM as i_GATQW_SM--说明
+      ,j.MC as j_ZZMM_MC--名称
+      ,j.JC as j_ZZMM_JC--简称
+      ,k.MC as k_JKZKYWSZ_MC--名称
+      ,k.SM as k_JKZKYWSZ_SM--说明
+      ,l.MC as l_ZJXY_MC--名称
+      ,m.MC as m_XX_MC--名称
+      ,m.JC as m_XX_JC--简称
+      ,n.MC as n_SFBZ_MC--名称
+      ,o.SCHOOLID as o_NJ_SCHOOLID--学校名
+      ,o.NJMC as o_NJ_NJMC--年级名称
+      ,p.SCHOOLID as p_BJ_SCHOOLID--学校名
+      ,p.NJ as p_BJ_NJ--年级号
+      ,p.BJ as p_BJ_BJ--班级名称
+      ,p.JBNY as p_BJ_JBNY--建班年月
+      ,p.BZRGH as p_BJ_BZRGH--班主任工号
+      ,p.BZXH as p_BJ_BZXH--班长学号
+      ,p.BJRYCH as p_BJ_BJRYCH--班级荣誉称号
+      ,p.XZ as p_BJ_XZ--学制
+      ,p.BJLXM as p_BJ_BJLXM--班级类型码
+      ,pb.MC as p_BJ_BJLXM_MC--名称
+      ,p.WLLX as p_BJ_WLLX--文理类型
+      ,p.BYRQ as p_BJ_BYRQ--毕业日期
+      ,p.SFSSMZSYJXB as p_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,pc.MC as p_BJ_SFSSMZSYJXB_MC--名称
+      ,p.SYJXMSM as p_BJ_SYJXMSM--双语教学模式码
+      ,pd.MC as p_BJ_SYJXMSM_MC--名称
+      ,pd.SM as p_BJ_SYJXMSM_SM--说明
+      ,q.MC as q_XSLB_MC--名称
+      ,q.SM as q_XSLB_SM--说明
+      ,r.MC as r_HKLB_MC--名称
+      ,s.MC as s_SFBZ_MC--名称
+
+FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS d ON a.CSDM = d.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS e ON a.MZM = e.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS f ON a.GJDQM = f.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS g ON a.SFZJLXM = g.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS h ON a.HYZKM = h.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS i ON a.GATQWM = i.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS j ON a.ZZMMM = j.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS k ON a.JKZKM = k.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS l ON a.XYZJM = l.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS m ON a.XXM = m.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS n ON a.DSZYBZ = n.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS o ON a.NJ = o.NJ /*年级*/ AND a.SCHOOLID = o.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS p ON a.BH = p.BH /*班号*/ AND a.SCHOOLID = p.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS q ON a.XSLBM = q.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS r ON a.HKXZM = r.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS s ON a.SFLDRK = s.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS pb ON p.BJLXM = pb.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS pc ON p.SFSSMZSYJXB = pc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS pd ON p.SYJXMSM = pd.DM /*双语教学模式码*/
+GO
+
+--学生家庭成员数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_01_06_XSJTCY_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[XSXXID]--学生信息数据表
+      ,a.[GXM]--关系码
+      ,a.[CYXM]--成员姓名
+      ,a.[CSNY]--出生年月
+      ,a.[MZM]--民族码
+      ,a.[GJDQM]--国籍/地区码
+      ,a.[JKZKM]--健康状况码
+      ,a.[CYGZDW]--成员工作单位
+      ,a.[CYM]--从业码
+      ,a.[ZYJSZWM]--专业技术职务码
+      ,a.[ZWJBM]--职务级别码
+      ,a.[DH]--电话
+      ,a.[DZXX]--电子信箱
+      ,a.[SFJHR]--是否监护人
+      ,a.[XBM]--性别码
+      ,a.[XLM]--学历码
+      ,a.[LXDZ]--联系地址
+      ,a.[SJHM]--手机号码
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_XSXX_SCHOOLID--学校名
+      ,c.XH as c_XSXX_XH--学号
+      ,c.XM as c_XSXX_XM--姓名
+      ,c.YWXM as c_XSXX_YWXM--英文姓名
+      ,c.XMPY as c_XSXX_XMPY--姓名拼音
+      ,c.CYM as c_XSXX_CYM--曾用名
+      ,c.XBM as c_XSXX_XBM--性别码
+      ,cb.MC as c_XSXX_XBM_MC--名称
+      ,c.CSRQ as c_XSXX_CSRQ--出生日期
+      ,c.CSDM as c_XSXX_CSDM--出生地码
+      ,cc.MC as c_XSXX_CSDM_MC--名称
+      ,c.JG as c_XSXX_JG--籍贯
+      ,c.MZM as c_XSXX_MZM--民族码
+      ,cd.MZMC as c_XSXX_MZM_MZMC--民族名称
+      ,cd.ZMDM as c_XSXX_MZM_ZMDM--字母代码
+      ,c.GJDQM as c_XSXX_GJDQM--国籍/地区码
+      ,ce.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--国家/地区名称简称
+      ,ce.EZMDM as c_XSXX_GJDQM_EZMDM--二字母代码
+      ,ce.SZMDM as c_XSXX_GJDQM_SZMDM--三字母代码
+      ,c.SFZJLXM as c_XSXX_SFZJLXM--身份证件类型码
+      ,cf.MC as c_XSXX_SFZJLXM_MC--名称
+      ,c.SFZJH as c_XSXX_SFZJH--身份证件号
+      ,c.HYZKM as c_XSXX_HYZKM--婚姻状况码
+      ,cg.MC as c_XSXX_HYZKM_MC--名称
+      ,c.GATQWM as c_XSXX_GATQWM--港澳台侨外码
+      ,ch.MC as c_XSXX_GATQWM_MC--名称
+      ,ch.SM as c_XSXX_GATQWM_SM--说明
+      ,c.ZZMMM as c_XSXX_ZZMMM--政治面貌码
+      ,ci.MC as c_XSXX_ZZMMM_MC--名称
+      ,ci.JC as c_XSXX_ZZMMM_JC--简称
+      ,c.JKZKM as c_XSXX_JKZKM--健康状况码
+      ,cj.MC as c_XSXX_JKZKM_MC--名称
+      ,cj.SM as c_XSXX_JKZKM_SM--说明
+      ,c.XYZJM as c_XSXX_XYZJM--信仰宗教码
+      ,ck.MC as c_XSXX_XYZJM_MC--名称
+      ,c.XXM as c_XSXX_XXM--血型码
+      ,cl.MC as c_XSXX_XXM_MC--名称
+      ,cl.JC as c_XSXX_XXM_JC--简称
+      ,c.ZP as c_XSXX_ZP--照片
+      ,c.SFZJYXQ as c_XSXX_SFZJYXQ--身份证件有效期
+      ,c.DSZYBZ as c_XSXX_DSZYBZ--独生子女标志
+      ,cm.MC as c_XSXX_DSZYBZ_MC--名称
+      ,c.RXNY as c_XSXX_RXNY--入学年月
+      ,c.NJ as c_XSXX_NJ--年级
+      ,c.BH as c_XSXX_BH--班号
+      ,c.XSLBM as c_XSXX_XSLBM--学生类别码
+      ,cn.MC as c_XSXX_XSLBM_MC--名称
+      ,cn.SM as c_XSXX_XSLBM_SM--说明
+      ,c.XZZ as c_XSXX_XZZ--现住址
+      ,c.HKSZD as c_XSXX_HKSZD--户口所在地
+      ,c.HKXZM as c_XSXX_HKXZM--户口性质码
+      ,co.MC as c_XSXX_HKXZM_MC--名称
+      ,c.SFLDRK as c_XSXX_SFLDRK--是否流动人口
+      ,cp.MC as c_XSXX_SFLDRK_MC--名称
+      ,c.TC as c_XSXX_TC--特长
+      ,c.LXDH as c_XSXX_LXDH--联系电话
+      ,c.TXDZ as c_XSXX_TXDZ--通信地址
+      ,c.YZBM as c_XSXX_YZBM--邮政编码
+      ,c.DZXX as c_XSXX_DZXX--电子信箱
+      ,c.ZYDZ as c_XSXX_ZYDZ--主页地址
+      ,c.XJH as c_XSXX_XJH--学籍号
+      ,d.MC as d_JTGX_MC--名称
+      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--民族名称
+      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--字母代码
+      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--国家/地区名称简称
+      ,f.EZMDM as f_SJGGHDQMC_EZMDM--二字母代码
+      ,f.SZMDM as f_SJGGHDQMC_SZMDM--三字母代码
+      ,g.MC as g_JKZKYWSZ_MC--名称
+      ,g.SM as g_JKZKYWSZ_SM--说明
+      ,h.MC as h_CYZK_MC--名称
+      ,h.SM as h_CYZK_SM--说明
+      ,i.MC as i_ZYJSZW_MC--名称
+      ,j.MC as j_ZWJBDM_MC--名称
+      ,k.MC as k_SFBZ_MC--名称
+      ,l.MC as l_RDXB_MC--名称
+      ,m.MC as m_XL_MC--名称
+
+FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生信息数据表*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JTGX AS d ON a.GXM = d.DM /*关系码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS e ON a.MZM = e.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS f ON a.GJDQM = f.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS g ON a.JKZKM = g.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_CYZK AS h ON a.CYM = h.DM /*从业码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZYJSZW AS i ON a.ZYJSZWM = i.DM /*专业技术职务码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZWJBDM AS j ON a.ZWJBM = j.DM /*职务级别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS k ON a.SFJHR = k.DM /*是否监护人*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS l ON a.XBM = l.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS m ON a.XLM = m.DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cm ON c.DSZYBZ = cm.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS cn ON c.XSLBM = cn.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS co ON c.HKXZM = co.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cp ON c.SFLDRK = cp.DM /*是否流动人口*/
+GO
+
+--学生家庭信息数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_02_A01_XSJTXX_DISP]
+AS
+SELECT a.[XSXXID]--学生信息数据表
+      ,a.[SCHOOLID]--学校名
+      ,a.[JTZZ]--家庭住址
+      ,a.[JTYZBM]--家庭邮政编码
+      ,a.[JTDH]--家庭电话
+      ,a.[JTLXR]--家庭联系人
+      ,a.[JTDZXX]--家庭电子信箱
+      ,a.[JTRK]--家庭人口
+      ,a.[JTZYSRLY]--家庭主要收入来源
+      ,a.[JTYSRJE]--家庭月收入金额
+      ,a.[JTNSRJE]--家庭年收入金额
+      ,a.[LJZJHCZ]--离家最近火车站
+      ,b.SCHOOLID as b_XSXX_SCHOOLID--学校名
+      ,b.XH as b_XSXX_XH--学号
+      ,b.XM as b_XSXX_XM--姓名
+      ,b.YWXM as b_XSXX_YWXM--英文姓名
+      ,b.XMPY as b_XSXX_XMPY--姓名拼音
+      ,b.CYM as b_XSXX_CYM--曾用名
+      ,b.XBM as b_XSXX_XBM--性别码
+      ,bb.MC as b_XSXX_XBM_MC--名称
+      ,b.CSRQ as b_XSXX_CSRQ--出生日期
+      ,b.CSDM as b_XSXX_CSDM--出生地码
+      ,bc.MC as b_XSXX_CSDM_MC--名称
+      ,b.JG as b_XSXX_JG--籍贯
+      ,b.MZM as b_XSXX_MZM--民族码
+      ,bd.MZMC as b_XSXX_MZM_MZMC--民族名称
+      ,bd.ZMDM as b_XSXX_MZM_ZMDM--字母代码
+      ,b.GJDQM as b_XSXX_GJDQM--国籍/地区码
+      ,be.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--国家/地区名称简称
+      ,be.EZMDM as b_XSXX_GJDQM_EZMDM--二字母代码
+      ,be.SZMDM as b_XSXX_GJDQM_SZMDM--三字母代码
+      ,b.SFZJLXM as b_XSXX_SFZJLXM--身份证件类型码
+      ,bf.MC as b_XSXX_SFZJLXM_MC--名称
+      ,b.SFZJH as b_XSXX_SFZJH--身份证件号
+      ,b.HYZKM as b_XSXX_HYZKM--婚姻状况码
+      ,bg.MC as b_XSXX_HYZKM_MC--名称
+      ,b.GATQWM as b_XSXX_GATQWM--港澳台侨外码
+      ,bh.MC as b_XSXX_GATQWM_MC--名称
+      ,bh.SM as b_XSXX_GATQWM_SM--说明
+      ,b.ZZMMM as b_XSXX_ZZMMM--政治面貌码
+      ,bi.MC as b_XSXX_ZZMMM_MC--名称
+      ,bi.JC as b_XSXX_ZZMMM_JC--简称
+      ,b.JKZKM as b_XSXX_JKZKM--健康状况码
+      ,bj.MC as b_XSXX_JKZKM_MC--名称
+      ,bj.SM as b_XSXX_JKZKM_SM--说明
+      ,b.XYZJM as b_XSXX_XYZJM--信仰宗教码
+      ,bk.MC as b_XSXX_XYZJM_MC--名称
+      ,b.XXM as b_XSXX_XXM--血型码
+      ,bl.MC as b_XSXX_XXM_MC--名称
+      ,bl.JC as b_XSXX_XXM_JC--简称
+      ,b.ZP as b_XSXX_ZP--照片
+      ,b.SFZJYXQ as b_XSXX_SFZJYXQ--身份证件有效期
+      ,b.DSZYBZ as b_XSXX_DSZYBZ--独生子女标志
+      ,bm.MC as b_XSXX_DSZYBZ_MC--名称
+      ,b.RXNY as b_XSXX_RXNY--入学年月
+      ,b.NJ as b_XSXX_NJ--年级
+      ,b.BH as b_XSXX_BH--班号
+      ,b.XSLBM as b_XSXX_XSLBM--学生类别码
+      ,bn.MC as b_XSXX_XSLBM_MC--名称
+      ,bn.SM as b_XSXX_XSLBM_SM--说明
+      ,b.XZZ as b_XSXX_XZZ--现住址
+      ,b.HKSZD as b_XSXX_HKSZD--户口所在地
+      ,b.HKXZM as b_XSXX_HKXZM--户口性质码
+      ,bo.MC as b_XSXX_HKXZM_MC--名称
+      ,b.SFLDRK as b_XSXX_SFLDRK--是否流动人口
+      ,bp.MC as b_XSXX_SFLDRK_MC--名称
+      ,b.TC as b_XSXX_TC--特长
+      ,b.LXDH as b_XSXX_LXDH--联系电话
+      ,b.TXDZ as b_XSXX_TXDZ--通信地址
+      ,b.YZBM as b_XSXX_YZBM--邮政编码
+      ,b.DZXX as b_XSXX_DZXX--电子信箱
+      ,b.ZYDZ as b_XSXX_ZYDZ--主页地址
+      ,b.XJH as b_XSXX_XJH--学籍号
+      ,c.XXDM as c_ZXXX_XXDM--学校代码
+      ,c.XXMC as c_ZXXX_XXMC--学校名称
+      ,c.XXYWMC as c_ZXXX_XXYWMC--学校英文名称
+      ,c.XXDZ as c_ZXXX_XXDZ--学校地址
+      ,c.XXYZBM as c_ZXXX_XXYZBM--学校邮政编码
+      ,c.XZQHM as c_ZXXX_XZQHM--行政区划码
+      ,cb.MC as c_ZXXX_XZQHM_MC--名称
+      ,c.JXNY as c_ZXXX_JXNY--建校年月
+      ,c.XQR as c_ZXXX_XQR--校庆日
+      ,c.XXBXLXM as c_ZXXX_XXBXLXM--学校办学类型码
+      ,cc.MC as c_ZXXX_XXBXLXM_MC--名称
+      ,cc.SM as c_ZXXX_XXBXLXM_SM--说明
+      ,c.XXZGBMM as c_ZXXX_XXZGBMM--学校主管部门码
+      ,cd.MC as c_ZXXX_XXZGBMM_MC--名称
+      ,cd.SM as c_ZXXX_XXZGBMM_SM--说明
+      ,c.FDDBRH as c_ZXXX_FDDBRH--法定代表人号
+      ,c.FRZSH as c_ZXXX_FRZSH--法人证书号
+      ,c.XZGH as c_ZXXX_XZGH--校长工号
+      ,c.XZXM as c_ZXXX_XZXM--校长姓名
+      ,c.DWFZRH as c_ZXXX_DWFZRH--党委负责人号
+      ,c.ZZJGM as c_ZXXX_ZZJGM--组织机构码
+      ,c.LXDH as c_ZXXX_LXDH--联系电话
+      ,c.CZDH as c_ZXXX_CZDH--传真电话
+      ,c.DZXX as c_ZXXX_DZXX--电子信箱
+      ,c.ZYDZ as c_ZXXX_ZYDZ--主页地址
+      ,c.LSYG as c_ZXXX_LSYG--历史沿革
+      ,c.XXBBM as c_ZXXX_XXBBM--学校办别码
+      ,ce.MC as c_ZXXX_XXBBM_MC--名称
+      ,c.SSZGDWM as c_ZXXX_SSZGDWM--所属主管单位码
+      ,cf.MC as c_ZXXX_SSZGDWM_MC--名称
+      ,cf.SM as c_ZXXX_SSZGDWM_SM--说明
+      ,c.SZDCXLXM as c_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,cg.MC as c_ZXXX_SZDCXLXM_MC--名称
+      ,c.SZDJJSXM as c_ZXXX_SZDJJSXM--所在地经济属性码
+      ,ch.MC as c_ZXXX_SZDJJSXM_MC--名称
+      ,c.SZDMZSX as c_ZXXX_SZDMZSX--所在地民族属性
+      ,ci.MC as c_ZXXX_SZDMZSX_MC--名称
+      ,c.XXXZ as c_ZXXX_XXXZ--小学学制
+      ,c.XXRXNL as c_ZXXX_XXRXNL--小学入学年龄
+      ,c.CZXZ as c_ZXXX_CZXZ--初中学制
+      ,c.CZRXNL as c_ZXXX_CZRXNL--初中入学年龄
+      ,c.GZXZ as c_ZXXX_GZXZ--高中学制
+      ,c.ZJXYYM as c_ZXXX_ZJXYYM--主教学语言码
+      ,cj.MC as c_ZXXX_ZJXYYM_MC--名称
+      ,cj.ZMDM as c_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,c.FJXYYM as c_ZXXX_FJXYYM--辅教学语言码
+      ,ck.MC as c_ZXXX_FJXYYM_MC--名称
+      ,ck.ZMDM as c_ZXXX_FJXYYM_ZMDM--字母代码
+      ,c.ZSBJ as c_ZXXX_ZSBJ--招生半径
+
+FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS c ON a.SCHOOLID = c.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bc ON b.CSDM = bc.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS be ON b.GJDQM = be.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS bf ON b.SFZJLXM = bf.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS bh ON b.GATQWM = bh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS bi ON b.ZZMMM = bi.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS bk ON b.XYZJM = bk.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bm ON b.DSZYBZ = bm.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS bn ON b.XSLBM = bn.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS bo ON b.HKXZM = bo.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bp ON b.SFLDRK = bp.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS cb ON c.XZQHM = cb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS cc ON c.XXBXLXM = cc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS cd ON c.XXZGBMM = cd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS ce ON c.XXBBM = ce.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS cf ON c.SSZGDWM = cf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS cg ON c.SZDCXLXM = cg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS ch ON c.SZDJJSXM = ch.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ci ON c.SZDMZSX = ci.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS cj ON c.ZJXYYM = cj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS ck ON c.FJXYYM = ck.DM /*辅教学语言码*/
+GO
+
+--学籍异动数据子类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_07_A02_XJYD_DISP]
+AS
+SELECT a.[ID]--学籍异动表编号
+      ,a.[XSXXID]--学生ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[YDLBM]--异动类别码
+      ,a.[YDRQ]--异动日期
+      ,a.[YDYYM]--异动原因码
+      ,a.[SPRQ]--审批日期
+      ,a.[SPWH]--审批文号
+      ,a.[JBRID]--经办人ID
+      ,a.[JBRGH]--经办人工号
+      ,a.[YDLYXXM]--异动来源学校码
+      ,a.[YDQXXXM]--异动去向学校码
+      ,a.[YDSM]--异动说明
+      ,a.[YBH]--原班号
+      ,a.[YNJ]--原年级
+      ,a.[XBH]--现班号
+      ,a.[XNJ]--现年级
+      ,b.SCHOOLID as b_XSXX_SCHOOLID--学校名
+      ,b.XH as b_XSXX_XH--学号
+      ,b.XM as b_XSXX_XM--姓名
+      ,b.YWXM as b_XSXX_YWXM--英文姓名
+      ,b.XMPY as b_XSXX_XMPY--姓名拼音
+      ,b.CYM as b_XSXX_CYM--曾用名
+      ,b.XBM as b_XSXX_XBM--性别码
+      ,bb.MC as b_XSXX_XBM_MC--名称
+      ,b.CSRQ as b_XSXX_CSRQ--出生日期
+      ,b.CSDM as b_XSXX_CSDM--出生地码
+      ,bc.MC as b_XSXX_CSDM_MC--名称
+      ,b.JG as b_XSXX_JG--籍贯
+      ,b.MZM as b_XSXX_MZM--民族码
+      ,bd.MZMC as b_XSXX_MZM_MZMC--民族名称
+      ,bd.ZMDM as b_XSXX_MZM_ZMDM--字母代码
+      ,b.GJDQM as b_XSXX_GJDQM--国籍/地区码
+      ,be.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--国家/地区名称简称
+      ,be.EZMDM as b_XSXX_GJDQM_EZMDM--二字母代码
+      ,be.SZMDM as b_XSXX_GJDQM_SZMDM--三字母代码
+      ,b.SFZJLXM as b_XSXX_SFZJLXM--身份证件类型码
+      ,bf.MC as b_XSXX_SFZJLXM_MC--名称
+      ,b.SFZJH as b_XSXX_SFZJH--身份证件号
+      ,b.HYZKM as b_XSXX_HYZKM--婚姻状况码
+      ,bg.MC as b_XSXX_HYZKM_MC--名称
+      ,b.GATQWM as b_XSXX_GATQWM--港澳台侨外码
+      ,bh.MC as b_XSXX_GATQWM_MC--名称
+      ,bh.SM as b_XSXX_GATQWM_SM--说明
+      ,b.ZZMMM as b_XSXX_ZZMMM--政治面貌码
+      ,bi.MC as b_XSXX_ZZMMM_MC--名称
+      ,bi.JC as b_XSXX_ZZMMM_JC--简称
+      ,b.JKZKM as b_XSXX_JKZKM--健康状况码
+      ,bj.MC as b_XSXX_JKZKM_MC--名称
+      ,bj.SM as b_XSXX_JKZKM_SM--说明
+      ,b.XYZJM as b_XSXX_XYZJM--信仰宗教码
+      ,bk.MC as b_XSXX_XYZJM_MC--名称
+      ,b.XXM as b_XSXX_XXM--血型码
+      ,bl.MC as b_XSXX_XXM_MC--名称
+      ,bl.JC as b_XSXX_XXM_JC--简称
+      ,b.ZP as b_XSXX_ZP--照片
+      ,b.SFZJYXQ as b_XSXX_SFZJYXQ--身份证件有效期
+      ,b.DSZYBZ as b_XSXX_DSZYBZ--独生子女标志
+      ,bm.MC as b_XSXX_DSZYBZ_MC--名称
+      ,b.RXNY as b_XSXX_RXNY--入学年月
+      ,b.NJ as b_XSXX_NJ--年级
+      ,b.BH as b_XSXX_BH--班号
+      ,b.XSLBM as b_XSXX_XSLBM--学生类别码
+      ,bn.MC as b_XSXX_XSLBM_MC--名称
+      ,bn.SM as b_XSXX_XSLBM_SM--说明
+      ,b.XZZ as b_XSXX_XZZ--现住址
+      ,b.HKSZD as b_XSXX_HKSZD--户口所在地
+      ,b.HKXZM as b_XSXX_HKXZM--户口性质码
+      ,bo.MC as b_XSXX_HKXZM_MC--名称
+      ,b.SFLDRK as b_XSXX_SFLDRK--是否流动人口
+      ,bp.MC as b_XSXX_SFLDRK_MC--名称
+      ,b.TC as b_XSXX_TC--特长
+      ,b.LXDH as b_XSXX_LXDH--联系电话
+      ,b.TXDZ as b_XSXX_TXDZ--通信地址
+      ,b.YZBM as b_XSXX_YZBM--邮政编码
+      ,b.DZXX as b_XSXX_DZXX--电子信箱
+      ,b.ZYDZ as b_XSXX_ZYDZ--主页地址
+      ,b.XJH as b_XSXX_XJH--学籍号
+      ,c.XXDM as c_ZXXX_XXDM--学校代码
+      ,c.XXMC as c_ZXXX_XXMC--学校名称
+      ,c.XXYWMC as c_ZXXX_XXYWMC--学校英文名称
+      ,c.XXDZ as c_ZXXX_XXDZ--学校地址
+      ,c.XXYZBM as c_ZXXX_XXYZBM--学校邮政编码
+      ,c.XZQHM as c_ZXXX_XZQHM--行政区划码
+      ,cb.MC as c_ZXXX_XZQHM_MC--名称
+      ,c.JXNY as c_ZXXX_JXNY--建校年月
+      ,c.XQR as c_ZXXX_XQR--校庆日
+      ,c.XXBXLXM as c_ZXXX_XXBXLXM--学校办学类型码
+      ,cc.MC as c_ZXXX_XXBXLXM_MC--名称
+      ,cc.SM as c_ZXXX_XXBXLXM_SM--说明
+      ,c.XXZGBMM as c_ZXXX_XXZGBMM--学校主管部门码
+      ,cd.MC as c_ZXXX_XXZGBMM_MC--名称
+      ,cd.SM as c_ZXXX_XXZGBMM_SM--说明
+      ,c.FDDBRH as c_ZXXX_FDDBRH--法定代表人号
+      ,c.FRZSH as c_ZXXX_FRZSH--法人证书号
+      ,c.XZGH as c_ZXXX_XZGH--校长工号
+      ,c.XZXM as c_ZXXX_XZXM--校长姓名
+      ,c.DWFZRH as c_ZXXX_DWFZRH--党委负责人号
+      ,c.ZZJGM as c_ZXXX_ZZJGM--组织机构码
+      ,c.LXDH as c_ZXXX_LXDH--联系电话
+      ,c.CZDH as c_ZXXX_CZDH--传真电话
+      ,c.DZXX as c_ZXXX_DZXX--电子信箱
+      ,c.ZYDZ as c_ZXXX_ZYDZ--主页地址
+      ,c.LSYG as c_ZXXX_LSYG--历史沿革
+      ,c.XXBBM as c_ZXXX_XXBBM--学校办别码
+      ,ce.MC as c_ZXXX_XXBBM_MC--名称
+      ,c.SSZGDWM as c_ZXXX_SSZGDWM--所属主管单位码
+      ,cf.MC as c_ZXXX_SSZGDWM_MC--名称
+      ,cf.SM as c_ZXXX_SSZGDWM_SM--说明
+      ,c.SZDCXLXM as c_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,cg.MC as c_ZXXX_SZDCXLXM_MC--名称
+      ,c.SZDJJSXM as c_ZXXX_SZDJJSXM--所在地经济属性码
+      ,ch.MC as c_ZXXX_SZDJJSXM_MC--名称
+      ,c.SZDMZSX as c_ZXXX_SZDMZSX--所在地民族属性
+      ,ci.MC as c_ZXXX_SZDMZSX_MC--名称
+      ,c.XXXZ as c_ZXXX_XXXZ--小学学制
+      ,c.XXRXNL as c_ZXXX_XXRXNL--小学入学年龄
+      ,c.CZXZ as c_ZXXX_CZXZ--初中学制
+      ,c.CZRXNL as c_ZXXX_CZRXNL--初中入学年龄
+      ,c.GZXZ as c_ZXXX_GZXZ--高中学制
+      ,c.ZJXYYM as c_ZXXX_ZJXYYM--主教学语言码
+      ,cj.MC as c_ZXXX_ZJXYYM_MC--名称
+      ,cj.ZMDM as c_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,c.FJXYYM as c_ZXXX_FJXYYM--辅教学语言码
+      ,ck.MC as c_ZXXX_FJXYYM_MC--名称
+      ,ck.ZMDM as c_ZXXX_FJXYYM_ZMDM--字母代码
+      ,c.ZSBJ as c_ZXXX_ZSBJ--招生半径
+      ,d.MC as d_XJYDLB_MC--名称
+      ,e.MC as e_XJYDYY_MC--名称
+      ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--学校名
+      ,f.GH as f_JZGJBSJ_GH--工号
+      ,f.XM as f_JZGJBSJ_XM--姓名
+      ,f.YWXM as f_JZGJBSJ_YWXM--英文姓名
+      ,f.XMPY as f_JZGJBSJ_XMPY--姓名拼音
+      ,f.CYM as f_JZGJBSJ_CYM--曾用名
+      ,f.XBM as f_JZGJBSJ_XBM--性别码
+      ,fb.MC as f_JZGJBSJ_XBM_MC--名称
+      ,f.CSRQ as f_JZGJBSJ_CSRQ--出生日期
+      ,f.CSDM as f_JZGJBSJ_CSDM--出生地码
+      ,fc.MC as f_JZGJBSJ_CSDM_MC--名称
+      ,f.JG as f_JZGJBSJ_JG--籍贯
+      ,f.MZM as f_JZGJBSJ_MZM--民族码
+      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--民族名称
+      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--字母代码
+      ,f.GJDQM as f_JZGJBSJ_GJDQM--国籍/地区码
+      ,fe.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--国家/地区名称简称
+      ,fe.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--二字母代码
+      ,fe.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--三字母代码
+      ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--身份证件类型码
+      ,ff.MC as f_JZGJBSJ_SFZJLXM_MC--名称
+      ,f.SFZJH as f_JZGJBSJ_SFZJH--身份证件号
+      ,f.HYZKM as f_JZGJBSJ_HYZKM--婚姻状况码
+      ,fg.MC as f_JZGJBSJ_HYZKM_MC--名称
+      ,f.GATQWM as f_JZGJBSJ_GATQWM--港澳台侨外码
+      ,fh.MC as f_JZGJBSJ_GATQWM_MC--名称
+      ,fh.SM as f_JZGJBSJ_GATQWM_SM--说明
+      ,f.ZZMMM as f_JZGJBSJ_ZZMMM--政治面貌码
+      ,fi.MC as f_JZGJBSJ_ZZMMM_MC--名称
+      ,fi.JC as f_JZGJBSJ_ZZMMM_JC--简称
+      ,f.JKZKM as f_JZGJBSJ_JKZKM--健康状况码
+      ,fj.MC as f_JZGJBSJ_JKZKM_MC--名称
+      ,fj.SM as f_JZGJBSJ_JKZKM_SM--说明
+      ,f.XYZJM as f_JZGJBSJ_XYZJM--信仰宗教码
+      ,fk.MC as f_JZGJBSJ_XYZJM_MC--名称
+      ,f.XXM as f_JZGJBSJ_XXM--血型码
+      ,fl.MC as f_JZGJBSJ_XXM_MC--名称
+      ,fl.JC as f_JZGJBSJ_XXM_JC--简称
+      ,f.ZP as f_JZGJBSJ_ZP--照片
+      ,f.SFZJYXQ as f_JZGJBSJ_SFZJYXQ--身份证件有效期
+      ,f.JGH as f_JZGJBSJ_JGH--机构号
+      ,f.JTZZ as f_JZGJBSJ_JTZZ--家庭住址
+      ,f.XZZ as f_JZGJBSJ_XZZ--现住址
+      ,f.HKSZD as f_JZGJBSJ_HKSZD--户口所在地
+      ,f.HKXZM as f_JZGJBSJ_HKXZM--户口性质码
+      ,fm.MC as f_JZGJBSJ_HKXZM_MC--名称
+      ,f.XLM as f_JZGJBSJ_XLM--学历码
+      ,fn.MC as f_JZGJBSJ_XLM_MC--名称
+      ,f.GZNY as f_JZGJBSJ_GZNY--参加工作年月
+      ,f.LXNY as f_JZGJBSJ_LXNY--来校年月
+      ,f.CJNY as f_JZGJBSJ_CJNY--从教年月
+      ,f.BZLBM as f_JZGJBSJ_BZLBM--编制类别码
+      ,fo.MC as f_JZGJBSJ_BZLBM_MC--名称
+      ,f.DABH as f_JZGJBSJ_DABH--档案编号
+      ,f.DAWB as f_JZGJBSJ_DAWB--档案文本
+      ,f.TXDZ as f_JZGJBSJ_TXDZ--通信地址
+      ,f.LXDH as f_JZGJBSJ_LXDH--联系电话
+      ,f.YZBM as f_JZGJBSJ_YZBM--邮政编码
+      ,f.DZXX as f_JZGJBSJ_DZXX--电子信箱
+      ,f.ZYDZ as f_JZGJBSJ_ZYDZ--主页地址
+      ,f.TC as f_JZGJBSJ_TC--特长
+      ,f.GWZYM as f_JZGJBSJ_GWZYM--岗位职业码
+      ,fp.MC as f_JZGJBSJ_GWZYM_MC--名称
+      ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--主要任课学段
+      ,fq.MC as f_JZGJBSJ_ZYRKXD_MC--名称
+      ,g.SCHOOLID as g_BJ_SCHOOLID--学校名
+      ,g.NJ as g_BJ_NJ--年级号
+      ,g.BJ as g_BJ_BJ--班级名称
+      ,g.JBNY as g_BJ_JBNY--建班年月
+      ,g.BZRGH as g_BJ_BZRGH--班主任工号
+      ,g.BZXH as g_BJ_BZXH--班长学号
+      ,g.BJRYCH as g_BJ_BJRYCH--班级荣誉称号
+      ,g.XZ as g_BJ_XZ--学制
+      ,g.BJLXM as g_BJ_BJLXM--班级类型码
+      ,gb.MC as g_BJ_BJLXM_MC--名称
+      ,g.WLLX as g_BJ_WLLX--文理类型
+      ,g.BYRQ as g_BJ_BYRQ--毕业日期
+      ,g.SFSSMZSYJXB as g_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,gc.MC as g_BJ_SFSSMZSYJXB_MC--名称
+      ,g.SYJXMSM as g_BJ_SYJXMSM--双语教学模式码
+      ,gd.MC as g_BJ_SYJXMSM_MC--名称
+      ,gd.SM as g_BJ_SYJXMSM_SM--说明
+      ,h.SCHOOLID as h_NJ_SCHOOLID--学校名
+      ,h.NJMC as h_NJ_NJMC--年级名称
+      ,i.SCHOOLID as i_BJ_SCHOOLID--学校名
+      ,i.NJ as i_BJ_NJ--年级号
+      ,i.BJ as i_BJ_BJ--班级名称
+      ,i.JBNY as i_BJ_JBNY--建班年月
+      ,i.BZRGH as i_BJ_BZRGH--班主任工号
+      ,i.BZXH as i_BJ_BZXH--班长学号
+      ,i.BJRYCH as i_BJ_BJRYCH--班级荣誉称号
+      ,i.XZ as i_BJ_XZ--学制
+      ,i.BJLXM as i_BJ_BJLXM--班级类型码
+      ,ib.MC as i_BJ_BJLXM_MC--名称
+      ,i.WLLX as i_BJ_WLLX--文理类型
+      ,i.BYRQ as i_BJ_BYRQ--毕业日期
+      ,i.SFSSMZSYJXB as i_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,ic.MC as i_BJ_SFSSMZSYJXB_MC--名称
+      ,i.SYJXMSM as i_BJ_SYJXMSM--双语教学模式码
+      ,id.MC as i_BJ_SYJXMSM_MC--名称
+      ,id.SM as i_BJ_SYJXMSM_SM--说明
+      ,j.SCHOOLID as j_NJ_SCHOOLID--学校名
+      ,j.NJMC as j_NJ_NJMC--年级名称
+
+FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS c ON a.SCHOOLID = c.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XJYDLB AS d ON a.YDLBM = d.DM /*异动类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XJYDYY AS e ON a.YDYYM = e.DM /*异动原因码*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS f ON a.JBRID = f.ID /*经办人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS g ON a.YBH = g.BH /*原班号*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS h ON a.YNJ = h.NJ /*原年级*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS i ON a.XBH = i.BH /*现班号*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS j ON a.XNJ = j.NJ /*现年级*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bc ON b.CSDM = bc.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS be ON b.GJDQM = be.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS bf ON b.SFZJLXM = bf.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS bh ON b.GATQWM = bh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS bi ON b.ZZMMM = bi.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS bk ON b.XYZJM = bk.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bm ON b.DSZYBZ = bm.DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS bn ON b.XSLBM = bn.DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS bo ON b.HKXZM = bo.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bp ON b.SFLDRK = bp.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS cb ON c.XZQHM = cb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS cc ON c.XXBXLXM = cc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS cd ON c.XXZGBMM = cd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS ce ON c.XXBBM = ce.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS cf ON c.SSZGDWM = cf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS cg ON c.SZDCXLXM = cg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS ch ON c.SZDJJSXM = ch.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ci ON c.SZDMZSX = ci.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS cj ON c.ZJXYYM = cj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS ck ON c.FJXYYM = ck.DM /*辅教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS fc ON f.CSDM = fc.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS fe ON f.GJDQM = fe.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS ff ON f.SFZJLXM = ff.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS fg ON f.HYZKM = fg.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS fh ON f.GATQWM = fh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS fi ON f.ZZMMM = fi.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS fj ON f.JKZKM = fj.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS fk ON f.XYZJM = fk.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS fl ON f.XXM = fl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS fm ON f.HKXZM = fm.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS fn ON f.XLM = fn.DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS fp ON f.GWZYM = fp.DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS fq ON f.ZYRKXD = fq.DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS gb ON g.BJLXM = gb.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS gc ON g.SFSSMZSYJXB = gc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS gd ON g.SYJXMSM = gd.DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS ib ON i.BJLXM = ib.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ic ON i.SFSSMZSYJXB = ic.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS id ON i.SYJXMSM = id.DM /*双语教学模式码*/
+GO
+
+--学校基本数据子类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXX_01_01_ZXXX_DISP]
+AS
+SELECT a.[ID]--学校ID
+      ,a.[XXDM]--学校代码
+      ,a.[XXMC]--学校名称
+      ,a.[XXYWMC]--学校英文名称
+      ,a.[XXDZ]--学校地址
+      ,a.[XXYZBM]--学校邮政编码
+      ,a.[XZQHM]--行政区划码
+      ,a.[JXNY]--建校年月
+      ,a.[XQR]--校庆日
+      ,a.[XXBXLXM]--学校办学类型码
+      ,a.[XXZGBMM]--学校主管部门码
+      ,a.[FDDBRH]--法定代表人号
+      ,a.[FRZSH]--法人证书号
+      ,a.[XZGH]--校长工号
+      ,a.[XZXM]--校长姓名
+      ,a.[DWFZRH]--党委负责人号
+      ,a.[ZZJGM]--组织机构码
+      ,a.[LXDH]--联系电话
+      ,a.[CZDH]--传真电话
+      ,a.[DZXX]--电子信箱
+      ,a.[ZYDZ]--主页地址
+      ,a.[LSYG]--历史沿革
+      ,a.[XXBBM]--学校办别码
+      ,a.[SSZGDWM]--所属主管单位码
+      ,a.[SZDCXLXM]--所在地城乡类型码
+      ,a.[SZDJJSXM]--所在地经济属性码
+      ,a.[SZDMZSX]--所在地民族属性
+      ,a.[XXXZ]--小学学制
+      ,a.[XXRXNL]--小学入学年龄
+      ,a.[CZXZ]--初中学制
+      ,a.[CZRXNL]--初中入学年龄
+      ,a.[GZXZ]--高中学制
+      ,a.[ZJXYYM]--主教学语言码
+      ,a.[FJXYYM]--辅教学语言码
+      ,a.[ZSBJ]--招生半径
+      ,b.MC as b_ZHRMGHGXZQH_MC--名称
+      ,c.MC as c_BXLX_MC--名称
+      ,c.SM as c_BXLX_SM--说明
+      ,d.MC as d_XXJYJGJBZ_MC--名称
+      ,d.SM as d_XXJYJGJBZ_SM--说明
+      ,e.MC as e_XXBB_MC--名称
+      ,f.MC as f_XXJYJGJBZ_MC--名称
+      ,f.SM as f_XXJYJGJBZ_SM--说明
+      ,g.MC as g_SZDCXLX_MC--名称
+      ,h.MC as h_SZDQJJSX_MC--名称
+      ,i.MC as i_SFBZ_MC--名称
+      ,j.MC as j_ZGYZ_MC--名称
+      ,j.ZMDM as j_ZGYZ_ZMDM--字母代码
+      ,k.MC as k_ZGYZ_MC--名称
+      ,k.ZMDM as k_ZGYZ_ZMDM--字母代码
+
+FROM dbo.EDU_ZXXX_01_01_ZXXX AS a LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS b ON a.XZQHM = b.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS c ON a.XXBXLXM = c.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS d ON a.XXZGBMM = d.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS e ON a.XXBBM = e.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS f ON a.SSZGDWM = f.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS g ON a.SZDCXLXM = g.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS h ON a.SZDJJSXM = h.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS i ON a.SZDMZSX = i.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS j ON a.ZJXYYM = j.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS k ON a.FJXYYM = k.DM /*辅教学语言码*/
+GO
+
+--年级数据类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXX_02_01_NJ_DISP]
+AS
+SELECT a.[SCHOOLID]--学校名
+      ,a.[NJ]--年级号
+      ,a.[NJMC]--年级名称
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+
+FROM dbo.EDU_ZXXX_02_01_NJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--班级数据类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXX_03_01_BJ_DISP]
+AS
+SELECT a.[SCHOOLID]--学校名
+      ,a.[BH]--班号
+      ,a.[NJ]--年级号
+      ,a.[BJ]--班级名称
+      ,a.[JBNY]--建班年月
+      ,a.[BZRGH]--班主任工号
+      ,a.[BZXH]--班长学号
+      ,a.[BJRYCH]--班级荣誉称号
+      ,a.[XZ]--学制
+      ,a.[BJLXM]--班级类型码
+      ,a.[WLLX]--文理类型
+      ,a.[BYRQ]--毕业日期
+      ,a.[SFSSMZSYJXB]--是否少数民族双语教学班
+      ,a.[SYJXMSM]--双语教学模式码
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_NJ_SCHOOLID--学校名
+      ,c.NJMC as c_NJ_NJMC--年级名称
+      ,d.MC as d_ZXXBJLX_MC--名称
+      ,e.MC as e_SFBZ_MC--名称
+      ,f.MC as f_SSMZSYJXMS_MC--名称
+      ,f.SM as f_SSMZSYJXMS_SM--说明
+
+FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS d ON a.BJLXM = d.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.SFSSMZSYJXB = e.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS f ON a.SYJXMSM = f.DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--机构数据类表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXX_04_01_JG_DISP]
+AS
+SELECT a.[SCHOOLID]--学校名
+      ,a.[JGH]--机构号
+      ,a.[LSJGH]--隶属机构号
+      ,a.[JGMC]--机构名称
+      ,a.[JGJC]--机构简称
+      ,a.[FZRGH]--负责人工号
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_JG_SCHOOLID--学校名
+      ,c.LSJGH as c_JG_LSJGH--隶属机构号
+      ,c.JGMC as c_JG_JGMC--机构名称
+      ,c.JGJC as c_JG_JGJC--机构简称
+      ,c.FZRGH as c_JG_FZRGH--负责人工号
+
+FROM dbo.EDU_ZXXX_04_01_JG AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_01_JG AS c ON a.LSJGH = c.JGH /*隶属机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--机构岗位表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXX_04_A01_JGGW_DISP]
+AS
+SELECT a.[ID]--岗位表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JGH]--机构号
+      ,a.[GWBH]--岗位编号
+      ,a.[GWMC]--岗位名称
+      ,a.[GWSM]--岗位说明
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_JG_SCHOOLID--学校名
+      ,c.LSJGH as c_JG_LSJGH--隶属机构号
+      ,c.JGMC as c_JG_JGMC--机构名称
+      ,c.JGJC as c_JG_JGJC--机构简称
+      ,c.FZRGH as c_JG_FZRGH--负责人工号
+
+FROM dbo.EDU_ZXXX_04_A01_JGGW AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
+GO
+
+--学期数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXX_05_A01_ZXXQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[XNID]--学年
+      ,a.[XQM]--学期码
+      ,a.[XQMC]--学期名称
+      ,a.[XQKSRQ]--学期开始日期
+      ,a.[XQJSRQ]--学期结束日期
+      ,b.XXDM as b_ZXXX_XXDM--学校代码
+      ,b.XXMC as b_ZXXX_XXMC--学校名称
+      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
+      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
+      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
+      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
+      ,bb.MC as b_ZXXX_XZQHM_MC--名称
+      ,b.JXNY as b_ZXXX_JXNY--建校年月
+      ,b.XQR as b_ZXXX_XQR--校庆日
+      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
+      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
+      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
+      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
+      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
+      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
+      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
+      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
+      ,b.XZGH as b_ZXXX_XZGH--校长工号
+      ,b.XZXM as b_ZXXX_XZXM--校长姓名
+      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
+      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
+      ,b.LXDH as b_ZXXX_LXDH--联系电话
+      ,b.CZDH as b_ZXXX_CZDH--传真电话
+      ,b.DZXX as b_ZXXX_DZXX--电子信箱
+      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
+      ,b.LSYG as b_ZXXX_LSYG--历史沿革
+      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
+      ,be.MC as b_ZXXX_XXBBM_MC--名称
+      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
+      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
+      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
+      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
+      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
+      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
+      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
+      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
+      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
+      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
+      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
+      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
+      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
+      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
+      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
+      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
+      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
+      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
+      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
+      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
+      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
+      ,c.SCHOOLID as c_XN_SCHOOLID--学校名
+      ,c.XN as c_XN_XN--学年
+      ,d.MC as d_XQ_MC--名称
+
+FROM dbo.EDU_ZXXX_05_A01_ZXXQ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS d ON a.XQM = d.DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
 GO
 
 --建筑物基本数据类表

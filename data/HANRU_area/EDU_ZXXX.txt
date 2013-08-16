@@ -84,15 +84,4 @@
             <name="GWSM" explanation="岗位说明" type="text" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
-    <table name="EDU_ZXXX_05_A01_ZXXQ" explanation="学期数据表">
-        <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="EDU_SYS_01_XN" />
-            <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_XQ" />
-            <name="XQMC" explanation="学期名称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="XQKSRQ" explanation="学期开始日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
-            <name="XQJSRQ" explanation="学期结束日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
-        </field_area>
-    </table>
 </namespace>
