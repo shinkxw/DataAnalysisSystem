@@ -13,7 +13,8 @@ class TemplateBuilder < BaseBuilder
     @file_hash = nil
     @builder_version = "0.1"
     @tab = Indent.new(tab)
-    @app_name = "XGXT"
+    @app_name = "JWXT"
+    @directory_name = "xtgl"
     @ignore_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
     @controller_preset_text = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
     @controller_preset_text << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
@@ -188,18 +189,18 @@ class TemplateBuilder < BaseBuilder
     index_str = ""
     index_str << "@model HanRuEdu.LDAL.#{table.name}\n"
     index_str << "<table id=\"dg\" title=\"  \" class=\"easyui-datagrid\" style=\"width:900px;height:500px\"\n"
-    index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'/xtgl/#{table.lname}/index_jsonstr',\n"
+    index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'/#{@directory_name}/#{table.lname}/index_jsonstr',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
       index_str << "            <th field=\"#{field.name}\" width=\"50\" sortable=\"true\">@Html.LabelFor(m => m.#{field.name})</th><!--#{field.explanation}-->\n"
     end
     index_str << "        </tr>\n    </thead>\n</table>\n"
-    index_str << "@{\n    ViewData[\"index_create\"] = Url.Content(\"~/#{table.library_name}/#{table.lname_dc}/create\");\n"
-    index_str << "    ViewData[\"index_edit\"] = Url.Content(\"~/#{table.library_name}/#{table.lname_dc}/edit\");\n"
-    index_str << "    //ViewData[\"index_detail\"] = Url.Content(\"~/#{table.library_name}/#{table.lname_dc}/details\";)\n"
-    index_str << "    //ViewData[\"index_del\"] = Url.Content(\"~/#{table.library_name}/#{table.lname_dc}/delete\";)\n"
-    index_str << "    ViewData[\"index_multi_del\"] = Url.Content(\"~/#{table.library_name}/#{table.lname_dc}/delete\";)\n"
+    index_str << "@{\n    ViewData[\"index_create\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/create\");\n"
+    index_str << "    ViewData[\"index_edit\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/edit\");\n"
+    index_str << "    //ViewData[\"index_detail\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/details\");\n"
+    index_str << "    //ViewData[\"index_del\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/delete\");\n"
+    index_str << "    ViewData[\"index_multi_del\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/delete\");\n"
     index_str << "    ViewData[\"index_id_name\"] = \"ID\";\n"
     index_str << "    //ViewData[\"index_outdata\"] = Url.Content(\"~/zsgl/xsdj/OutExcel\");\n"
     index_str << "    //ViewData[\"index_indata\"] = Url.Content(\"~/zsgl/xsdj/ImportData\");\n}\n"
@@ -216,7 +217,7 @@ class TemplateBuilder < BaseBuilder
       create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
       create_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
-    create_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/xtgl/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
+    create_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
   end
   def make_edit(table)
     edit_str = ""
@@ -229,7 +230,7 @@ class TemplateBuilder < BaseBuilder
       edit_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
       edit_str << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
-    edit_str << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/xtgl/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
+    edit_str << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
   end
   def out_relation(field)
     field.relation ? "   " << field.relation.table.explanation : ""
