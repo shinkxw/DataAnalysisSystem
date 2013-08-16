@@ -1,0 +1,19 @@
+EDU_SYS_01_CONFIG  全局配置表
+  ID          配置ID                int            主键
+  VALUE       配置值                  nvarchar(200)  非主
+
+EDU_SYS_01_XN  学年表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键
+  XN          学年                    nvarchar(9)    非主
+
+EDU_SYS_01_MODULE  
+  ID                                  int            主键
+  APPID                               int            非主
+  NAME                                nvarchar(20)   非主
+  Depth                               int            非主
+  PID                                 int            非主
+  MenuDisp                            int            非主
+  MenuUserType                        int            非主
+  Link                                nvarchar(100)  非主
+

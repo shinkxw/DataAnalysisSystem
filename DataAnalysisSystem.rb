@@ -20,16 +20,16 @@ DataAnalysisSystem.new
 #ManageAreaInterface.new
 
 t = Time.now
-@work_area = AreaManager.load_work_area("ZXXX")
+@work_area = AreaManager.load_work_area("HANRU")
 #@work_area.area.reallocate_namespace
 #@work_area.area.delete_all_table_data
 #@work_area.update_by_sql("table")
 #@work_area.update_by_daf("EDU_ELE")
 
-@work_area.export_sql
-@work_area.export_view(false)
-@work_area.export_model
-@work_area.export_template
+#@work_area.export_sql
+#@work_area.export_view(false)
+#@work_area.export_model
+#@work_area.export_template
 
 @work_area.export_tableinfo
 @work_area.save_and_close_work_area

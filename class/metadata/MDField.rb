@@ -102,12 +102,12 @@ class MDField
   def is_valid?
     puts "MDNameSpace: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == "T" && @p == "F"
     puts "MDNameSpace: 表#{@table.name}中字段#{@name}为主键不能为空" if @p == "T" && @null == "T"
-    if /nvarchar\((?<char_num>[^\)]*)\)/ =~ @type
-      ignore_namespace_arr = ["GB","JY","ZJ"]
-      if !ignore_namespace_arr.include?(@table.name.split("_")[1]) && @relation == nil && char_num.to_i < 6
-        puts "MDNameSpace: 表#{@table.name}中字段#{@name}可能需要关联"
-      end
-    end
+    #~ if /nvarchar\((?<char_num>[^\)]*)\)/ =~ @type
+      #~ ignore_namespace_arr = ["GB","JY","ZJ"]
+      #~ if !ignore_namespace_arr.include?(@table.name.split("_")[1]) && @relation == nil && char_num.to_i < 6
+        #~ puts "MDNameSpace: 表#{@table.name}中字段#{@name}可能需要关联"
+      #~ end
+    #~ end
     true
   end
   #计算10的n次方

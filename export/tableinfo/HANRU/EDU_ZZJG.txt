@@ -1,0 +1,88 @@
+EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键
+  GH          工号                    nvarchar(20)   非主
+  XM          姓名                    nvarchar(36)   非主
+  YWXM        英文姓名                nvarchar(60)   非主
+  XMPY        姓名拼音                nvarchar(60)   非主
+  CYM         曾用名                  nvarchar(36)   非主
+  SFZJLXM     身份证件类型码          nvarchar(1)    非主
+  SFZJH       身份证件号              nvarchar(20)   非主
+  CSRQ        出生日期                nvarchar(8)    非主
+  XBM         性别码                  nvarchar(1)    非主
+  MZM         民族码                  nvarchar(2)    非主
+  XXM         血型码                  nvarchar(1)    非主
+  JKZKM       健康状况码              nvarchar(1)    非主
+  HYZTM       婚姻状态码              nvarchar(2)    非主
+  ZZMMM       政治面貌码              nvarchar(2)    非主
+  GATQWM      港澳台侨外码            nvarchar(2)    非主
+  JG          籍贯                    nvarchar(20)   非主
+  GJDQM       国籍/地区码            nvarchar(3)    非主
+  CSDXZQHM    出生地行政区划码        nvarchar(6)    非主
+  XYZJM       信仰宗教码              nvarchar(2)    非主
+  JZGHKSZDXZQHM教职工户口所在地行政区划码nvarchar(6)    非主
+  HKLBM       户口类别码              nvarchar(1)    非主
+  DQZZ        当前住址                nvarchar(180)  非主
+  DQZZYZBM    当前住址邮政编码        nvarchar(6)    非主
+  CJGZNY      参加工作年月            nvarchar(6)    非主
+  CJNY        从教年月                nvarchar(6)    非主
+  LXNY        来校年月                nvarchar(6)    非主
+  BZLBM       编制类别码              nvarchar(2)    非主
+  JZGLBM      教职工类别码            nvarchar(2)    非主
+  GWLBM       岗位类别码              nvarchar(1)    非主
+  SFJZJS      是否兼职教师            nvarchar(1)    非主
+  SFSSXJS     是否双师型教            nvarchar(1)    非主
+  ZP          照片(路径)            nvarchar(100)  非主
+  DQZTM       当前状态码              nvarchar(2)    非主
+
+EDU_ZZJG_02_01_JZGLXFS  教职工联系方式数据子类表
+  SCHOOLID    学校名                  int            主键
+  JZGJBSJID   教职工ID              int            主键
+  GH          工号                    nvarchar(20)   非主
+  XM          姓名                    nvarchar(36)   非主
+  YDDH        移动电话                nvarchar(30)   非主
+  GDDH        固定电话                nvarchar(30)   非主
+  YZBM        邮政编码                nvarchar(6)    非主
+  TXDZ        通信地址                nvarchar(180)  非主
+  DZXX        电子信箱                nvarchar(40)   非主
+  WLDZ        网络地址                nvarchar(60)   非主
+  JSTXH       即时通讯号              nvarchar(40)   非主
+
+EDU_ZZJG_02_02_XNGWSJ  校内岗位数据子类表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键
+  GWID        岗位表ID              int            非主
+  JZGJBSJID   教职工基本数据子类表    int            非主
+  GWQSNY      岗位起始年月            nvarchar(6)    非主
+  GWJSNY      岗位结束年月            nvarchar(6)    非主
+  SFZG        是否在岗                nvarchar(1)    非主
+  ZWMC        职务名称                nvarchar(10)   非主
+  JGH         机构号                  nvarchar(6)    非主
+
+EDU_ZZJG_07_01_JZGZYNL  教职工专业能力与资格证书数据类表
+  SCHOOLID    学校名                  int            主键
+  JZGJBSJID   教职工ID              int            主键
+  ZSMC        证书名称                nvarchar(40)   主键
+  ZSBH        证书编号                nvarchar(20)   非主
+  ZSBFDW      证书颁发单位            nvarchar(60)   非主
+  ZSBFRQ      证书颁发日期            nvarchar(8)    非主
+  ZSBZ        证书备注                text           非主
+  SFSZYZGZS   是否是职业资格证书      nvarchar(1)    非主
+
+EDU_ZZJG_04_A01_JBDJ  加班登记表
+  ID          加班登记表ID          int            主键
+  SCHOOLID    学校ID                int            主键
+  JZGJBSJID   教职工ID              int            非主
+  KSSJ        开始时间                datetime       非主
+  JSSJ        结束时间                datetime       非主
+  JBLX        加班类型                int            非主
+
+EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
+  JZGJBSJID   教工基本信息ID        int            主键
+  SCHOOLID    学校ID                int            主键
+  JL          教龄                    int            非主
+  GL          工龄                    int            非主
+  GZJY        工作经验                text           非主
+  LDJN        劳动技能                text           非主
+  XXJL        学习经历                text           非主
+

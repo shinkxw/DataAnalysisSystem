@@ -57,7 +57,7 @@ class DafBuilder < BaseBuilder
         end
       end
     end
-    if @area.error_relation_str != ""
+    if @area.error_relation_str != "" && @area.error_relation_str != nil
       @daf_str << "\n以下为出错的关联语句:\n\n" << @area.error_relation_str
     end
   end
