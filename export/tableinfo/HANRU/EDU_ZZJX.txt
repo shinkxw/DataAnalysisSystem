@@ -22,15 +22,6 @@ EDU_ZZJX_02_01_ZZNJ  学校年级数据表
   SSNF        所属年份                nvarchar(4)    非主
   NJZT        年级状态                nvarchar(1)    非主     是否标志代码表
 
-EDU_ZZJX_01_03_ZZXQ  学期数据表
-  ID          编号                    int            主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
-  XNID        学年                    int            非主     学年表
-  XQM         学期码                  nvarchar(1)    非主     学期代码表
-  XQMC        学期名称                nvarchar(10)   非主
-  XQKSRQ      学期开始日期            nvarchar(8)    非主
-  XQJSRQ      学期结束日期            nvarchar(8)    非主
-
 EDU_ZZJX_01_01_ZYXX  专业基本信息数据表
   ZYBH        专业编号                int            主键
   SCHOOLID    学校名                  int            主键     学校基本数据表

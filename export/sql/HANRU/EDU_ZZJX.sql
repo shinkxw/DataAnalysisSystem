@@ -10,11 +10,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_02_01_ZZNJ'
    drop table EDU_ZZJX_02_01_ZZNJ
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_01_03_ZZXQ')
-            and   type = 'U')
-   drop table EDU_ZZJX_01_03_ZZXQ
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_01_01_ZYXX')
             and   type = 'U')
    drop table EDU_ZZJX_01_01_ZYXX
@@ -169,26 +164,6 @@ CREATE TABLE [dbo].[EDU_ZZJX_02_01_ZZNJ](
 CONSTRAINT [PK_EDU_ZZJX_02_01_ZZNJ] PRIMARY KEY CLUSTERED
 (
 	[NJDM] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
---学期数据表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_01_03_ZZXQ]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZJX_01_03_ZZXQ](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校名
-	[XNID]  int  NOT NULL,--学年
-	[XQM]  nvarchar(1)  NOT NULL,--学期码
-	[XQMC]  nvarchar(10)  NOT NULL,--学期名称
-	[XQKSRQ]  nvarchar(8)  NULL,--学期开始日期
-	[XQJSRQ]  nvarchar(8)  NULL,--学期结束日期
-CONSTRAINT [PK_EDU_ZZJX_01_03_ZZXQ] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
 	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -783,22 +758,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属年份' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_02_01_ZZNJ', @level2type=N'COLUMN',@level2name=N'SSNF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_02_01_ZZNJ', @level2type=N'COLUMN',@level2name=N'NJZT'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学年' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'XNID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'XQM'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'XQMC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期开始日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'XQKSRQ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期结束日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_03_ZZXQ', @level2type=N'COLUMN',@level2name=N'XQJSRQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业基本信息数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_01_ZYXX'
 GO

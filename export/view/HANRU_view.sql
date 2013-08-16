@@ -11,6 +11,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_SCHO
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_SCHOOL_DISP
 go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_XQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ELE_01_XQ_DISP
+go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_03_APPRZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_03_APPRZ_DISP
@@ -251,10 +255,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_A01
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_04_A01_JGGW_DISP
 go
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_05_A01_ZXXQ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZXXX_05_A01_ZXXQ_DISP
-go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP
@@ -306,10 +306,6 @@ go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_02_01_ZZNJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_02_01_ZZNJ_DISP
-go
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_03_ZZXQ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZZJX_01_03_ZZXQ_DISP
 go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_01_ZYXX_DISP')
             and   type = 'V')
@@ -552,18 +548,44 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XQID as b_SCHOOL_XQID--学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.SCHOOLID as c_ZZXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZZXQ_XNID--学年
-      ,c.XQM as c_ZZXQ_XQM--学期码
-      ,cb.MC as c_ZZXQ_XQM_MC--名称
-      ,c.XQMC as c_ZZXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZZXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZZXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
 
 FROM dbo.EDU_ELE_01_SCHOOL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+GO
+
+--学期数据表
+CREATE VIEW [dbo].[VIEW_EDU_ELE_01_XQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[XNID]--学年
+      ,a.[XQM]--学期码
+      ,a.[XQMC]--学期名称
+      ,a.[XQKSRQ]--学期开始日期
+      ,a.[XQJSRQ]--学期结束日期
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
+      ,b.XNID as b_SCHOOL_XNID--学年ID
+      ,b.XQID as b_SCHOOL_XQID--学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
+      ,c.SCHOOLID as c_XN_SCHOOLID--学校名
+      ,c.XN as c_XN_XN--学年
+      ,d.MC as d_XQ_MC--名称
+
+FROM dbo.EDU_ELE_01_XQ AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS d ON a.XQM = d.DM /*学期码*/
 GO
 
 --应用日志表
@@ -1730,40 +1752,15 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校名
       ,a.[XN]--学年
-      ,b.XXDM as b_ZZXX_XXDM--学校代码
-      ,b.XXMC as b_ZZXX_XXMC--学校名称
-      ,b.XXYWMC as b_ZZXX_XXYWMC--学校英文名称
-      ,b.XXJBZM as b_ZZXX_XXJBZM--学校举办者码
-      ,bb.MC as b_ZZXX_XXJBZM_MC--名称
-      ,bb.SM as b_ZZXX_XXJBZM_SM--说明
-      ,b.XXZGBMM as b_ZZXX_XXZGBMM--学校主管部门码
-      ,bc.MC as b_ZZXX_XXZGBMM_MC--名称
-      ,bc.SM as b_ZZXX_XXZGBMM_SM--说明
-      ,b.XXDZ as b_ZZXX_XXDZ--学校地址
-      ,b.XXYZBM as b_ZZXX_XXYZBM--学校邮政编码
-      ,b.XZQHM as b_ZZXX_XZQHM--行政区划码
-      ,bd.MC as b_ZZXX_XZQHM_MC--名称
-      ,b.JXNY as b_ZZXX_JXNY--建校年月
-      ,b.XQR as b_ZZXX_XQR--校庆日
-      ,b.CLBJ as b_ZZXX_CLBJ--成立背景
-      ,b.LSYG as b_ZZXX_LSYG--历史沿革
-      ,b.XXXQS as b_ZZXX_XXXQS--学校校区数
-      ,b.XXPGLX as b_ZZXX_XXPGLX--学校评估类型
-      ,be.MC as b_ZZXX_XXPGLX_MC--名称
-      ,b.XXPGQKSM as b_ZZXX_XXPGQKSM--学校评估情况说明
-      ,b.ZYDZ as b_ZZXX_ZYDZ--主页地址
-      ,b.FDDBRH as b_ZZXX_FDDBRH--法定代表人号
-      ,b.FRZSH as b_ZZXX_FRZSH--法人证书号
-      ,b.LXDH as b_ZZXX_LXDH--联系电话
-      ,b.CZDH as b_ZZXX_CZDH--传真电话
-      ,b.DZXX as b_ZZXX_DZXX--电子信箱
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
+      ,b.XNID as b_SCHOOL_XNID--学年ID
+      ,b.XQID as b_SCHOOL_XQID--学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
 
 FROM dbo.EDU_SYS_01_XN AS a LEFT OUTER JOIN
-      dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bd ON b.XZQHM = bd.DM /*行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_PGQK AS be ON b.XXPGLX = be.DM /*学校评估类型*/
+      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/
 GO
 
 --网站会员
@@ -2393,17 +2390,17 @@ SELECT a.[ID]--值周岗位表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
 
 FROM dbo.EDU_ZXDY_04_A01_ZZGW AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -2479,13 +2476,13 @@ SELECT a.[ID]--值周人员安排表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
       ,d.XQID as d_ZZZC_XQID--学期ID
       ,d.ZCM as d_ZZZC_ZCM--周次名
@@ -2526,7 +2523,7 @@ SELECT a.[ID]--值周人员安排表ID
 
 FROM dbo.EDU_ZXDY_04_A02_ZZRYAP AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS e ON a.ZZBJ = e.BH /*值周班级班号*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.ZZID = f.LOGINNAME /*组长ID*/ LEFT OUTER JOIN
@@ -2605,13 +2602,13 @@ SELECT a.[ID]--值周岗位分配表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
       ,d.XQID as d_ZZZC_XQID--学期ID
       ,d.ZCM as d_ZZZC_ZCM--周次名
@@ -2638,7 +2635,7 @@ SELECT a.[ID]--值周岗位分配表ID
 
 FROM dbo.EDU_ZXDY_04_A03_ZZGWFP AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A01_ZZGW AS e ON a.GWID = e.ID /*岗位ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.JSID = f.LOGINNAME /*教师ID*/ LEFT OUTER JOIN
@@ -2783,13 +2780,13 @@ SELECT a.[ID]--特别值周教师表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_USER_SCHOOLID--学校ID
       ,d.APPID as d_USER_APPID--应用ID
       ,d.PWD as d_USER_PWD--密码
@@ -2808,7 +2805,7 @@ SELECT a.[ID]--特别值周教师表ID
 
 FROM dbo.EDU_ZXDY_04_A05_TBZZJS AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.JSID = d.LOGINNAME /*教师ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
@@ -2881,17 +2878,17 @@ SELECT a.[ID]--周次表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
 
 FROM dbo.EDU_ZXDY_04_A06_ZZZC AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -2980,17 +2977,17 @@ SELECT a.[ID]--值周打分大类表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
 
 FROM dbo.EDU_ZXDY_05_A01_ZZDFDL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -3145,13 +3142,13 @@ SELECT a.[ID]--值周打分单表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
       ,d.XQID as d_ZZZC_XQID--学期ID
       ,d.ZCM as d_ZZZC_ZCM--周次名
@@ -3196,7 +3193,7 @@ SELECT a.[ID]--值周打分单表ID
 
 FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS e ON a.BJ = e.BH /*班级*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_05_A02_ZZDFXZ AS f ON a.SSXZID = f.ID /*所属细则*/ LEFT OUTER JOIN
@@ -3275,13 +3272,13 @@ SELECT a.[ID]--值周小结表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
       ,d.XQID as d_ZZZC_XQID--学期ID
       ,d.ZCM as d_ZZZC_ZCM--周次名
@@ -3290,7 +3287,7 @@ SELECT a.[ID]--值周小结表ID
 
 FROM dbo.EDU_ZXDY_06_A01_ZZXJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
@@ -3363,13 +3360,13 @@ SELECT a.[ID]--国旗下讲话表ID
       ,bk.MC as b_ZXXX_FJXYYM_MC--名称
       ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
       ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_ZXXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZXXQ_XNID--学年
-      ,c.XQM as c_ZXXQ_XQM--学期码
-      ,cb.MC as c_ZXXQ_XQM_MC--名称
-      ,c.XQMC as c_ZXXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZXXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZXXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
       ,d.XQID as d_ZZZC_XQID--学期ID
       ,d.ZCM as d_ZZZC_ZCM--周次名
@@ -3378,7 +3375,7 @@ SELECT a.[ID]--国旗下讲话表ID
 
 FROM dbo.EDU_ZXDY_06_A02_GQXJH AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_05_A01_ZXXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
@@ -4896,85 +4893,6 @@ SELECT a.[ID]--岗位表ID
 FROM dbo.EDU_ZXXX_04_A01_JGGW AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXBB AS be ON b.XXBBM = be.DM /*学校办别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXJYJGJBZ AS bf ON b.SSZGDWM = bf.DM /*所属主管单位码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SZDCXLX AS bg ON b.SZDCXLXM = bg.DM /*所在地城乡类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SZDQJJSX AS bh ON b.SZDJJSXM = bh.DM /*所在地经济属性码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bi ON b.SZDMZSX = bi.DM /*所在地民族属性*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGYZ AS bj ON b.ZJXYYM = bj.DM /*主教学语言码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGYZ AS bk ON b.FJXYYM = bk.DM /*辅教学语言码*/
-GO
-
---学期数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZXXX_05_A01_ZXXQ_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SCHOOLID]--学校名
-      ,a.[XNID]--学年
-      ,a.[XQM]--学期码
-      ,a.[XQMC]--学期名称
-      ,a.[XQKSRQ]--学期开始日期
-      ,a.[XQJSRQ]--学期结束日期
-      ,b.XXDM as b_ZXXX_XXDM--学校代码
-      ,b.XXMC as b_ZXXX_XXMC--学校名称
-      ,b.XXYWMC as b_ZXXX_XXYWMC--学校英文名称
-      ,b.XXDZ as b_ZXXX_XXDZ--学校地址
-      ,b.XXYZBM as b_ZXXX_XXYZBM--学校邮政编码
-      ,b.XZQHM as b_ZXXX_XZQHM--行政区划码
-      ,bb.MC as b_ZXXX_XZQHM_MC--名称
-      ,b.JXNY as b_ZXXX_JXNY--建校年月
-      ,b.XQR as b_ZXXX_XQR--校庆日
-      ,b.XXBXLXM as b_ZXXX_XXBXLXM--学校办学类型码
-      ,bc.MC as b_ZXXX_XXBXLXM_MC--名称
-      ,bc.SM as b_ZXXX_XXBXLXM_SM--说明
-      ,b.XXZGBMM as b_ZXXX_XXZGBMM--学校主管部门码
-      ,bd.MC as b_ZXXX_XXZGBMM_MC--名称
-      ,bd.SM as b_ZXXX_XXZGBMM_SM--说明
-      ,b.FDDBRH as b_ZXXX_FDDBRH--法定代表人号
-      ,b.FRZSH as b_ZXXX_FRZSH--法人证书号
-      ,b.XZGH as b_ZXXX_XZGH--校长工号
-      ,b.XZXM as b_ZXXX_XZXM--校长姓名
-      ,b.DWFZRH as b_ZXXX_DWFZRH--党委负责人号
-      ,b.ZZJGM as b_ZXXX_ZZJGM--组织机构码
-      ,b.LXDH as b_ZXXX_LXDH--联系电话
-      ,b.CZDH as b_ZXXX_CZDH--传真电话
-      ,b.DZXX as b_ZXXX_DZXX--电子信箱
-      ,b.ZYDZ as b_ZXXX_ZYDZ--主页地址
-      ,b.LSYG as b_ZXXX_LSYG--历史沿革
-      ,b.XXBBM as b_ZXXX_XXBBM--学校办别码
-      ,be.MC as b_ZXXX_XXBBM_MC--名称
-      ,b.SSZGDWM as b_ZXXX_SSZGDWM--所属主管单位码
-      ,bf.MC as b_ZXXX_SSZGDWM_MC--名称
-      ,bf.SM as b_ZXXX_SSZGDWM_SM--说明
-      ,b.SZDCXLXM as b_ZXXX_SZDCXLXM--所在地城乡类型码
-      ,bg.MC as b_ZXXX_SZDCXLXM_MC--名称
-      ,b.SZDJJSXM as b_ZXXX_SZDJJSXM--所在地经济属性码
-      ,bh.MC as b_ZXXX_SZDJJSXM_MC--名称
-      ,b.SZDMZSX as b_ZXXX_SZDMZSX--所在地民族属性
-      ,bi.MC as b_ZXXX_SZDMZSX_MC--名称
-      ,b.XXXZ as b_ZXXX_XXXZ--小学学制
-      ,b.XXRXNL as b_ZXXX_XXRXNL--小学入学年龄
-      ,b.CZXZ as b_ZXXX_CZXZ--初中学制
-      ,b.CZRXNL as b_ZXXX_CZRXNL--初中入学年龄
-      ,b.GZXZ as b_ZXXX_GZXZ--高中学制
-      ,b.ZJXYYM as b_ZXXX_ZJXYYM--主教学语言码
-      ,bj.MC as b_ZXXX_ZJXYYM_MC--名称
-      ,bj.ZMDM as b_ZXXX_ZJXYYM_ZMDM--字母代码
-      ,b.FJXYYM as b_ZXXX_FJXYYM--辅教学语言码
-      ,bk.MC as b_ZXXX_FJXYYM_MC--名称
-      ,bk.ZMDM as b_ZXXX_FJXYYM_ZMDM--字母代码
-      ,b.ZSBJ as b_ZXXX_ZSBJ--招生半径
-      ,c.SCHOOLID as c_XN_SCHOOLID--学校名
-      ,c.XN as c_XN_XN--学年
-      ,d.MC as d_XQ_MC--名称
-
-FROM dbo.EDU_ZXXX_05_A01_ZXXQ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXXX_01_01_ZXXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS d ON a.XQM = d.DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bb ON b.XZQHM = bb.DM /*行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_JY_BXLX AS bc ON b.XXBXLXM = bc.DM /*学校办学类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bd ON b.XXZGBMM = bd.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -6664,57 +6582,6 @@ FROM dbo.EDU_ZZJX_02_01_ZZNJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZ_PGQK AS be ON b.XXPGLX = be.DM /*学校评估类型*/
 GO
 
---学期数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_03_ZZXQ_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SCHOOLID]--学校名
-      ,a.[XNID]--学年
-      ,a.[XQM]--学期码
-      ,a.[XQMC]--学期名称
-      ,a.[XQKSRQ]--学期开始日期
-      ,a.[XQJSRQ]--学期结束日期
-      ,b.XXDM as b_ZZXX_XXDM--学校代码
-      ,b.XXMC as b_ZZXX_XXMC--学校名称
-      ,b.XXYWMC as b_ZZXX_XXYWMC--学校英文名称
-      ,b.XXJBZM as b_ZZXX_XXJBZM--学校举办者码
-      ,bb.MC as b_ZZXX_XXJBZM_MC--名称
-      ,bb.SM as b_ZZXX_XXJBZM_SM--说明
-      ,b.XXZGBMM as b_ZZXX_XXZGBMM--学校主管部门码
-      ,bc.MC as b_ZZXX_XXZGBMM_MC--名称
-      ,bc.SM as b_ZZXX_XXZGBMM_SM--说明
-      ,b.XXDZ as b_ZZXX_XXDZ--学校地址
-      ,b.XXYZBM as b_ZZXX_XXYZBM--学校邮政编码
-      ,b.XZQHM as b_ZZXX_XZQHM--行政区划码
-      ,bd.MC as b_ZZXX_XZQHM_MC--名称
-      ,b.JXNY as b_ZZXX_JXNY--建校年月
-      ,b.XQR as b_ZZXX_XQR--校庆日
-      ,b.CLBJ as b_ZZXX_CLBJ--成立背景
-      ,b.LSYG as b_ZZXX_LSYG--历史沿革
-      ,b.XXXQS as b_ZZXX_XXXQS--学校校区数
-      ,b.XXPGLX as b_ZZXX_XXPGLX--学校评估类型
-      ,be.MC as b_ZZXX_XXPGLX_MC--名称
-      ,b.XXPGQKSM as b_ZZXX_XXPGQKSM--学校评估情况说明
-      ,b.ZYDZ as b_ZZXX_ZYDZ--主页地址
-      ,b.FDDBRH as b_ZZXX_FDDBRH--法定代表人号
-      ,b.FRZSH as b_ZZXX_FRZSH--法人证书号
-      ,b.LXDH as b_ZZXX_LXDH--联系电话
-      ,b.CZDH as b_ZZXX_CZDH--传真电话
-      ,b.DZXX as b_ZZXX_DZXX--电子信箱
-      ,c.SCHOOLID as c_XN_SCHOOLID--学校名
-      ,c.XN as c_XN_XN--学年
-      ,d.MC as d_XQ_MC--名称
-
-FROM dbo.EDU_ZZJX_01_03_ZZXQ AS a LEFT OUTER JOIN
-      dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS d ON a.XQM = d.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bd ON b.XZQHM = bd.DM /*行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_PGQK AS be ON b.XXPGLX = be.DM /*学校评估类型*/
-GO
-
 --专业基本信息数据表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_01_ZYXX_DISP]
 AS
@@ -6947,7 +6814,7 @@ SELECT a.[SCHOOLID]--学校ID
 FROM dbo.EDU_ZZJX_08_A01_DGFSQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.SHRID = e.ID /*审核人员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -7090,18 +6957,18 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
       ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
-      ,d.SCHOOLID as d_ZZXQ_SCHOOLID--学校名
-      ,d.XNID as d_ZZXQ_XNID--学年
-      ,d.XQM as d_ZZXQ_XQM--学期码
-      ,db.MC as d_ZZXQ_XQM_MC--名称
-      ,d.XQMC as d_ZZXQ_XQMC--学期名称
-      ,d.XQKSRQ as d_ZZXQ_XQKSRQ--学期开始日期
-      ,d.XQJSRQ as d_ZZXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_XQ_SCHOOLID--学校名
+      ,d.XNID as d_XQ_XNID--学年
+      ,d.XQM as d_XQ_XQM--学期码
+      ,db.MC as d_XQ_XQM_MC--名称
+      ,d.XQMC as d_XQ_XQMC--学期名称
+      ,d.XQKSRQ as d_XQ_XQKSRQ--学期开始日期
+      ,d.XQJSRQ as d_XQ_XQJSRQ--学期结束日期
 
 FROM dbo.EDU_ZZJX_05_02_JSJXGZLTJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bd ON b.XZQHM = bd.DM /*行政区划码*/ LEFT OUTER JOIN
@@ -7163,13 +7030,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.LXDH as b_ZZXX_LXDH--联系电话
       ,b.CZDH as b_ZZXX_CZDH--传真电话
       ,b.DZXX as b_ZZXX_DZXX--电子信箱
-      ,c.SCHOOLID as c_ZZXQ_SCHOOLID--学校名
-      ,c.XNID as c_ZZXQ_XNID--学年
-      ,c.XQM as c_ZZXQ_XQM--学期码
-      ,cb.MC as c_ZZXQ_XQM_MC--名称
-      ,c.XQMC as c_ZZXQ_XQMC--学期名称
-      ,c.XQKSRQ as c_ZZXQ_XQKSRQ--学期开始日期
-      ,c.XQJSRQ as c_ZZXQ_XQJSRQ--学期结束日期
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
       ,d.SCHOOLID as d_ZTJXJH_SCHOOLID--学校ID
       ,d.JHNJ as d_ZTJXJH_JHNJ--计划年级
       ,d.ZYXXID as d_ZTJXJH_ZYXXID--专业编号
@@ -7184,7 +7051,7 @@ SELECT a.[SCHOOLID]--学校ID
 
 FROM dbo.EDU_ZZJX_03_A01_XQXFGL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS d ON a.JHBH = d.JHBH /*计划编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
@@ -7262,13 +7129,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SFKY as d_ZTJXJH_SFKY--是否可用
       ,db.MC as d_ZTJXJH_SFKY_MC--名称
       ,d.FJ as d_ZTJXJH_FJ--附件
-      ,e.SCHOOLID as e_ZZXQ_SCHOOLID--学校名
-      ,e.XNID as e_ZZXQ_XNID--学年
-      ,e.XQM as e_ZZXQ_XQM--学期码
-      ,eb.MC as e_ZZXQ_XQM_MC--名称
-      ,e.XQMC as e_ZZXQ_XQMC--学期名称
-      ,e.XQKSRQ as e_ZZXQ_XQKSRQ--学期开始日期
-      ,e.XQJSRQ as e_ZZXQ_XQJSRQ--学期结束日期
+      ,e.SCHOOLID as e_XQ_SCHOOLID--学校名
+      ,e.XNID as e_XQ_XNID--学年
+      ,e.XQM as e_XQ_XQM--学期码
+      ,eb.MC as e_XQ_XQM_MC--名称
+      ,e.XQMC as e_XQ_XQMC--学期名称
+      ,e.XQKSRQ as e_XQ_XQKSRQ--学期开始日期
+      ,e.XQJSRQ as e_XQ_XQJSRQ--学期结束日期
       ,f.MC as f_SKFS_MC--名称
       ,g.MC as g_KCFL_MC--名称
       ,h.MC as h_KCSX_MC--名称
@@ -7278,7 +7145,7 @@ FROM dbo.EDU_ZZJX_03_03_JXJHKCQD AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_02_KC AS c ON a.KCH = c.KCH /*课程号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS d ON a.JHBH = d.JHBH /*计划编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS f ON a.SFHXKC = f.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS g ON a.KCFLM = g.DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KCSX AS h ON a.KCSXM = h.DM /*课程属性码*/ LEFT OUTER JOIN
@@ -7554,20 +7421,20 @@ SELECT a.[SCHOOLID]--学校ID
       ,e.SFKY as e_ZTJXJH_SFKY--是否可用
       ,eb.MC as e_ZTJXJH_SFKY_MC--名称
       ,e.FJ as e_ZTJXJH_FJ--附件
-      ,f.SCHOOLID as f_ZZXQ_SCHOOLID--学校名
-      ,f.XNID as f_ZZXQ_XNID--学年
-      ,f.XQM as f_ZZXQ_XQM--学期码
-      ,fb.MC as f_ZZXQ_XQM_MC--名称
-      ,f.XQMC as f_ZZXQ_XQMC--学期名称
-      ,f.XQKSRQ as f_ZZXQ_XQKSRQ--学期开始日期
-      ,f.XQJSRQ as f_ZZXQ_XQJSRQ--学期结束日期
+      ,f.SCHOOLID as f_XQ_SCHOOLID--学校名
+      ,f.XNID as f_XQ_XNID--学年
+      ,f.XQM as f_XQ_XQM--学期码
+      ,fb.MC as f_XQ_XQM_MC--名称
+      ,f.XQMC as f_XQ_XQMC--学期名称
+      ,f.XQKSRQ as f_XQ_XQKSRQ--学期开始日期
+      ,f.XQJSRQ as f_XQ_XQJSRQ--学期结束日期
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_02_KC AS d ON a.KCH = d.KCH /*课程号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS e ON a.JHBH = e.JHBH /*计划编号*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS f ON a.XQID = f.ID /*学期ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS f ON a.XQID = f.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bd ON b.XZQHM = bd.DM /*行政区划码*/ LEFT OUTER JOIN
@@ -10018,13 +9885,13 @@ SELECT a.[XSXXID]--学生信息数据表
       ,d.ZYLB as d_ZYXX_ZYLB--专业类别名称
       ,e.SCHOOLID as e_XN_SCHOOLID--学校名
       ,e.XN as e_XN_XN--学年
-      ,f.SCHOOLID as f_ZZXQ_SCHOOLID--学校名
-      ,f.XNID as f_ZZXQ_XNID--学年
-      ,f.XQM as f_ZZXQ_XQM--学期码
-      ,fb.MC as f_ZZXQ_XQM_MC--名称
-      ,f.XQMC as f_ZZXQ_XQMC--学期名称
-      ,f.XQKSRQ as f_ZZXQ_XQKSRQ--学期开始日期
-      ,f.XQJSRQ as f_ZZXQ_XQJSRQ--学期结束日期
+      ,f.SCHOOLID as f_XQ_SCHOOLID--学校名
+      ,f.XNID as f_XQ_XNID--学年
+      ,f.XQM as f_XQ_XQM--学期码
+      ,fb.MC as f_XQ_XQM_MC--名称
+      ,f.XQMC as f_XQ_XQMC--学期名称
+      ,f.XQKSRQ as f_XQ_XQKSRQ--学期开始日期
+      ,f.XQJSRQ as f_XQ_XQJSRQ--学期结束日期
       ,g.MC as g_ZHRMGHGXZQH_MC--名称
       ,h.MC as h_HJXZ_MC--名称
       ,i.MC as i_SFBZ_MC--名称
@@ -10037,8 +9904,8 @@ FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS c ON a.SCHOOLID = c.ID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业基本信息*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS e ON a.XNID = e.ID /*学年*/ AND a.SCHOOLID = e.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS f ON a.ZZXQID = f.ID /*学期表*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS e ON a.XNID = e.ID /*学年*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS f ON a.ZZXQID = f.ID /*学期表*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS g ON a.JTDZQH = g.DM /*家庭地址区划码*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_HJXZ AS h ON a.HJXZ = h.DM /*户籍性质代码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS i ON a.BYJX = i.DM /*不宜军训*/ LEFT OUTER JOIN
@@ -10262,13 +10129,13 @@ SELECT a.[XSXXID]--学生ID
       ,c.LXDH as c_ZZXX_LXDH--联系电话
       ,c.CZDH as c_ZZXX_CZDH--传真电话
       ,c.DZXX as c_ZZXX_DZXX--电子信箱
-      ,d.SCHOOLID as d_ZZXQ_SCHOOLID--学校名
-      ,d.XNID as d_ZZXQ_XNID--学年
-      ,d.XQM as d_ZZXQ_XQM--学期码
-      ,db.MC as d_ZZXQ_XQM_MC--名称
-      ,d.XQMC as d_ZZXQ_XQMC--学期名称
-      ,d.XQKSRQ as d_ZZXQ_XQKSRQ--学期开始日期
-      ,d.XQJSRQ as d_ZZXQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_XQ_SCHOOLID--学校名
+      ,d.XNID as d_XQ_XNID--学年
+      ,d.XQM as d_XQ_XQM--学期码
+      ,db.MC as d_XQ_XQM_MC--名称
+      ,d.XQMC as d_XQ_XQMC--学期名称
+      ,d.XQKSRQ as d_XQ_XQKSRQ--学期开始日期
+      ,d.XQJSRQ as d_XQ_XQJSRQ--学期结束日期
       ,e.MC as e_ZCZK_MC--名称
       ,f.MC as f_SFBZ_MC--名称
       ,g.MC as g_XQ_MC--名称
@@ -10276,7 +10143,7 @@ SELECT a.[XSXXID]--学生ID
 FROM dbo.EDU_ZZXS_07_03_XSZCXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS c ON a.SCHOOLID = c.ID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZCZK AS e ON a.ZCZKM = e.DM /*注册状况码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFQJ = f.DM /*是否请假*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS g ON a.WASZCXQM = g.DM /*未按时注册学期码*/ LEFT OUTER JOIN
@@ -10707,13 +10574,13 @@ SELECT a.[XSXXID]--学生ID
       ,d.SKFSM as d_KC_SKFSM--授课方式码
       ,dc.MC as d_KC_SKFSM_MC--名称
       ,d.KCFY as d_KC_KCFY--课程费用
-      ,e.SCHOOLID as e_ZZXQ_SCHOOLID--学校名
-      ,e.XNID as e_ZZXQ_XNID--学年
-      ,e.XQM as e_ZZXQ_XQM--学期码
-      ,eb.MC as e_ZZXQ_XQM_MC--名称
-      ,e.XQMC as e_ZZXQ_XQMC--学期名称
-      ,e.XQKSRQ as e_ZZXQ_XQKSRQ--学期开始日期
-      ,e.XQJSRQ as e_ZZXQ_XQJSRQ--学期结束日期
+      ,e.SCHOOLID as e_XQ_SCHOOLID--学校名
+      ,e.XNID as e_XQ_XNID--学年
+      ,e.XQM as e_XQ_XQM--学期码
+      ,eb.MC as e_XQ_XQM_MC--名称
+      ,e.XQMC as e_XQ_XQMC--学期名称
+      ,e.XQKSRQ as e_XQ_XQKSRQ--学期开始日期
+      ,e.XQJSRQ as e_XQ_XQJSRQ--学期结束日期
       ,f.MC as f_KSXZ_MC--名称
       ,f.SM as f_KSXZ_SM--说明
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--学校名
@@ -10843,7 +10710,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS c ON a.SCHOOLID = c.ID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_02_KC AS d ON a.KCH = d.KCH /*课程号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_03_ZZXQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_KSXZ AS f ON a.KSXZ = f.DM /*考试性质*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.RKJGID = g.ID /*任课教工ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.CJLRJGID = h.ID /*成绩录入教工ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -11370,7 +11237,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_01_01_ZZXX AS b ON a.SCHOOLID = b.ID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bb ON b.XXJBZM = bb.DM /*学校举办者码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS bc ON b.XXZGBMM = bc.DM /*学校主管部门码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bd ON b.XZQHM = bd.DM /*行政区划码*/ LEFT OUTER JOIN

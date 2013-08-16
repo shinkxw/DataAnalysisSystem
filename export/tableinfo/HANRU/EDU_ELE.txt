@@ -35,6 +35,15 @@ EDU_ELE_01_SCHOOL  学校配置表
   MatchURL    匹配url              nvarchar(500)  非主
   LogLevel    日志级别                int            非主
 
+EDU_ELE_01_XQ  学期数据表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键     学校配置表
+  XNID        学年                    int            非主     学年表
+  XQM         学期码                  nvarchar(1)    非主     学期代码表
+  XQMC        学期名称                nvarchar(10)   非主
+  XQKSRQ      学期开始日期            nvarchar(8)    非主
+  XQJSRQ      学期结束日期            nvarchar(8)    非主
+
 EDU_ELE_01_ROLE  应用系统角色表
   ID          角色ID                int            主键
   SCHOOLID    学校ID                int            主键

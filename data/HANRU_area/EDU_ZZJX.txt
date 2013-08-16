@@ -28,7 +28,6 @@
             <name="NJZT" explanation="年级状态" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_SFBZ" />
         </field_area>
     </table>
-
     <table name="EDU_ZZJX_01_01_ZYXX" explanation="专业基本信息数据表">
         <field_area>
             <name="ZYBH" explanation="专业编号" type="int" null="F" p="T" identity="F" remark="" />
