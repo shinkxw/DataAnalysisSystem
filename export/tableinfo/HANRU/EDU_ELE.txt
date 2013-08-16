@@ -1,7 +1,7 @@
 EDU_ELE_01_USER  应用系统用户表
   LOGINNAME   用户名                  nvarchar(20)   主键
-  SCHOOLID    学校ID                int            主键
-  APPID       应用ID                int            非主
+  SCHOOLID    学校ID                int            主键     学校基本数据表
+  APPID       应用ID                int            非主     应用表
   PWD         密码                    nvarchar(100)  非主
   STATUS      用户状态                int            非主
   USERTYPE    用户类别                int            非主
@@ -18,7 +18,7 @@ EDU_ELE_01_USER  应用系统用户表
 
 EDU_ELE_01_APP  应用表
   ID          应用ID                int            主键
-  SCHOOLID    学校ID                int            主键
+  SCHOOLID    学校ID                int            主键     学校基本数据表
   NAME        应用名称                nvarchar(50)   非主
   URL         网址                    nvarchar(200)  非主
   AUTHIP      限用IP                nvarchar(200)  非主
@@ -27,11 +27,11 @@ EDU_ELE_01_APP  应用表
   STATUS      应用状态                int            非主
 
 EDU_ELE_01_SCHOOL  学校配置表
-  SCHOOLID    学校ID                int            主键
+  SCHOOLID    学校ID                int            主键     学校基本数据表
   SCHOOLNAME  学校名称                nvarchar(60)   非主
   SCHOOLTYPE  学校类型                int            非主
   XNID        学年ID                int            非主
-  XQID        学期ID                int            非主
+  XQID        学期ID                int            非主     学期数据表
   MatchURL    匹配url              nvarchar(500)  非主
   LogLevel    日志级别                int            非主
 
@@ -51,10 +51,10 @@ EDU_ELE_01_CONFIG  应用系统配置表
 
 EDU_ELE_03_APPRZ  应用日志表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            非主
+  SCHOOLID    学校名                  int            非主     学校基本数据表
   APPID       应用ID                int            主键
   RZLX        日志类型                int            非主
-  YHID        操作用户                nvarchar(20)   非主
+  YHID        操作用户                nvarchar(20)   非主     应用系统用户表
   CZSJ        操作时间                datetime       非主
   CZYY        操作应用                nvarchar(20)   非主
   CZLX        操作类型                nvarchar(10)   非主
@@ -62,9 +62,9 @@ EDU_ELE_03_APPRZ  应用日志表
 
 EDU_ELE_03_APPLL  应用履历表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            非主
+  SCHOOLID    学校名                  int            非主     学校基本数据表
   APPID       应用ID                int            主键
-  YHID        操作用户                nvarchar(20)   非主
+  YHID        操作用户                nvarchar(20)   非主     应用系统用户表
   CZSJ        操作时间                datetime       非主
   CZYY        操作应用                nvarchar(20)   非主
   CZBM        操作表名                nvarchar(30)   非主
@@ -72,10 +72,10 @@ EDU_ELE_03_APPLL  应用履历表
 
 EDU_ELE_02_YHFZ  用户分组表
   ID          分组ID                int            主键
-  SCHOOLID    学校ID                int            主键
-  APPID       应用ID                int            主键
-  YHID        用户ID                nvarchar(20)   非主
-  SJFZID      上级分组ID            int            非主
+  SCHOOLID    学校ID                int            主键     学校基本数据表
+  APPID       应用ID                int            主键     应用表
+  YHID        用户ID                nvarchar(20)   非主     应用系统用户表
+  SJFZID      上级分组ID            int            非主     用户分组表
   FZMC        分组名称                nvarchar(100)  非主
   FZYHID      分组用户ID列表        text           非主
 
