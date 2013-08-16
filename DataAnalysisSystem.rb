@@ -26,7 +26,7 @@ t = Time.now
 #@work_area.update_by_sql("table")
 #@work_area.update_by_daf("EDU_ELE")
 
-@work_area.export_sql
+@work_area.export_sql(false)
 @work_area.export_view(false)
 @work_area.export_model
 @work_area.export_template
