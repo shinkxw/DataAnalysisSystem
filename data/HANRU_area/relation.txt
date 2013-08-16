@@ -1,19 +1,19 @@
 <EDU_ELE_01_USER
-  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   APPID          EDU_ELE_01_APP           ID
 <EDU_ELE_01_APP
-  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
 <EDU_ELE_01_SCHOOL
-  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   XQID           EDU_ZZJX_01_03_ZZXQ      ID
 <EDU_ELE_03_APPRZ
-  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   YHID           EDU_ELE_01_USER          LOGINNAME
 <EDU_ELE_03_APPLL
-  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   YHID           EDU_ELE_01_USER          LOGINNAME
 <EDU_ELE_02_YHFZ
-  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   APPID          EDU_ELE_01_APP           ID
   YHID           EDU_ELE_01_USER          LOGINNAME
   SJFZID         EDU_ELE_02_YHFZ          ID
@@ -245,7 +245,7 @@
   SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
   NJZT           EDU_JY_SFBZ              DM
 <EDU_ZZJX_01_03_ZZXQ
-  SchoolID       EDU_ZZXX_01_01_ZZXX      ID
+  SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
   XNID           EDU_SYS_01_XN            ID
   XQM            EDU_JY_XQ                DM
 <EDU_ZZJX_01_01_ZYXX
@@ -476,3 +476,8 @@
   XSXXID         EDU_ZZXS_01_01_XSXX      ID
   SCHOOLID       EDU_ZZXX_01_01_ZZXX      ID
   KMM            EDU_ZZ_ZKKM              DM
+
+以下为出错的关联语句:
+
+<EDU_ZZJX_01_03_ZZXQ
+  SchoolID       EDU_ZZXX_01_01_ZZXX      ID
