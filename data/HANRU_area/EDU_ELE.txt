@@ -32,11 +32,11 @@
             <name="STATUS" explanation="应用状态" type="int" null="F" p="F" identity="F" remark="是否生效等" />
         </field_area>
     </table>
-    <table name="EDU_ELE_01_SCHOOL" explanation="当前学年学期配置表">
+    <table name="EDU_ELE_01_SCHOOL" explanation="学校配置表">
         <field_area>
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLNAME" explanation="学校名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
-            <name="SCHOOLTYPE" explanation="学校名称" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SCHOOLTYPE" explanation="学校类型" type="int" null="F" p="F" identity="F" remark="" />
             <name="XNID" explanation="学年ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="MatchURL" explanation="匹配url" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
@@ -90,7 +90,7 @@
         <field_area>
             <name="ID" explanation="分组ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="YHID" explanation="用户ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="SJFZID" explanation="上级分组ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="FZMC" explanation="分组名称" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
