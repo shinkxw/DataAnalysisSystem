@@ -1,6 +1,6 @@
 EDU_ZZXX_03_01_XNJG  校内机构数据类表
   JGH         机构号                  nvarchar(6)    主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   JGMC        机构名称                nvarchar(100)  非主
   JGYWMC      机构英文名称            nvarchar(100)  非主
   JGJC        机构简称                nvarchar(50)   非主
@@ -40,7 +40,7 @@ EDU_ZZXX_01_01_ZZXX  学校基本数据表
 
 EDU_ZZXX_03_A01_JGGW  机构岗位表
   ID          岗位表ID              int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JGH         机构号                  nvarchar(6)    非主     校内机构数据类表
   GWBH        岗位编号                nvarchar(50)   非主
   GWMC        岗位名称                nvarchar(50)   非主

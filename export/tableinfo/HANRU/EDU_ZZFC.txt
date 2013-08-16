@@ -1,5 +1,5 @@
 EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ID          建筑物ID              int            主键
   JZWH        建筑物号                nvarchar(6)    非主
   JZWMC       建筑物名称              nvarchar(30)   非主
@@ -67,7 +67,7 @@ EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
   QTYF        其他用房                decimal(8)     非主
 
 EDU_ZZFC_08_01_XSSS  学生宿舍数据类表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ID          宿舍ID                int            主键
   SSLID       宿舍楼ID              int            非主     建筑物基本数据类表
   SSLBM       宿舍楼编号              nvarchar(6)    非主
@@ -86,7 +86,7 @@ EDU_ZZFC_08_01_XSSS  学生宿舍数据类表
   SSM         宿舍名                  nvarchar(128)  非主
 
 EDU_ZZFC_08_A01_SSCW  宿舍床位表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   ID          床位ID                int            主键
   SSLID       宿舍楼ID              int            非主     建筑物基本数据类表
   SSID        宿舍ID                int            非主     学生宿舍数据类表
@@ -95,7 +95,7 @@ EDU_ZZFC_08_A01_SSCW  宿舍床位表
   SFRZ        是否入住                nvarchar(1)    非主     是否标志代码表
 
 EDU_ZZFC_08_A03_ZWHCY  住委会成员表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   ID          成员ID                int            主键
   YHID        用户ID                int            非主
   YHLX        用户类型                int            非主
@@ -105,7 +105,7 @@ EDU_ZZFC_08_A03_ZWHCY  住委会成员表
   GZNR        工作内容                nvarchar(500)  非主
 
 EDU_ZZFC_08_A02_YHZSJL  用户住宿记录表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   ID          住宿记录ID            int            主键
   YHID        用户ID                int            非主
   SSLID       宿舍楼ID              int            非主     建筑物基本数据类表

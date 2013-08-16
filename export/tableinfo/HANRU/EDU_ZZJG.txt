@@ -1,6 +1,6 @@
 EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   GH          工号                    nvarchar(20)   非主
   XM          姓名                    nvarchar(36)   非主
   YWXM        英文姓名                nvarchar(60)   非主
@@ -36,7 +36,7 @@ EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
   DQZTM       当前状态码              nvarchar(2)    非主     教职工当前状态代码表
 
 EDU_ZZJG_02_01_JZGLXFS  教职工联系方式数据子类表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   JZGJBSJID   教职工ID              int            主键     教职工基本数据子类表
   GH          工号                    nvarchar(20)   非主
   XM          姓名                    nvarchar(36)   非主
@@ -50,7 +50,7 @@ EDU_ZZJG_02_01_JZGLXFS  教职工联系方式数据子类表
 
 EDU_ZZJG_02_02_XNGWSJ  校内岗位数据子类表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   GWID        岗位表ID              int            非主     机构岗位表
   JZGJBSJID   教职工基本数据子类表    int            非主     教职工基本数据子类表
   GWQSNY      岗位起始年月            nvarchar(6)    非主
@@ -60,7 +60,7 @@ EDU_ZZJG_02_02_XNGWSJ  校内岗位数据子类表
   JGH         机构号                  nvarchar(6)    非主     校内机构数据类表
 
 EDU_ZZJG_07_01_JZGZYNL  教职工专业能力与资格证书数据类表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   JZGJBSJID   教职工ID              int            主键     教职工基本数据子类表
   ZSMC        证书名称                nvarchar(40)   主键
   ZSBH        证书编号                nvarchar(20)   非主
@@ -71,7 +71,7 @@ EDU_ZZJG_07_01_JZGZYNL  教职工专业能力与资格证书数据类表
 
 EDU_ZZJG_04_A01_JBDJ  加班登记表
   ID          加班登记表ID          int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JZGJBSJID   教职工ID              int            非主     教职工基本数据子类表
   KSSJ        开始时间                datetime       非主
   JSSJ        结束时间                datetime       非主
@@ -79,7 +79,7 @@ EDU_ZZJG_04_A01_JBDJ  加班登记表
 
 EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   JZGJBSJID   教工基本信息ID        int            主键     教职工基本数据子类表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JL          教龄                    int            非主
   GL          工龄                    int            非主
   GZJY        工作经验                text           非主

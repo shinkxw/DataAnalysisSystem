@@ -36,12 +36,12 @@ EDU_ZXXX_01_01_ZXXX  学校基本数据子类表
   ZSBJ        招生半径                nvarchar(30)   非主
 
 EDU_ZXXX_02_01_NJ  年级数据类表
-  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  SCHOOLID    学校名                  int            主键     学校配置表
   NJ          年级号                  nvarchar(10)   主键
   NJMC        年级名称                nvarchar(30)   非主
 
 EDU_ZXXX_03_01_BJ  班级数据类表
-  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  SCHOOLID    学校名                  int            主键     学校配置表
   BH          班号                    nvarchar(10)   主键
   NJ          年级号                  nvarchar(10)   非主     年级数据类表
   BJ          班级名称                nvarchar(20)   非主
@@ -57,7 +57,7 @@ EDU_ZXXX_03_01_BJ  班级数据类表
   SYJXMSM     双语教学模式码          nvarchar(1)    非主     少数民族双语教学模式代码表
 
 EDU_ZXXX_04_01_JG  机构数据类表
-  SCHOOLID    学校名                  int            主键     学校基本数据子类表
+  SCHOOLID    学校名                  int            主键     学校配置表
   JGH         机构号                  nvarchar(10)   主键
   LSJGH       隶属机构号              nvarchar(10)   非主     机构数据类表
   JGMC        机构名称                nvarchar(60)   非主
@@ -66,7 +66,7 @@ EDU_ZXXX_04_01_JG  机构数据类表
 
 EDU_ZXXX_04_A01_JGGW  机构岗位表
   ID          岗位表ID              int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据子类表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JGH         机构号                  nvarchar(10)   非主     机构数据类表
   GWBH        岗位编号                nvarchar(50)   非主
   GWMC        岗位名称                nvarchar(50)   非主

@@ -1,6 +1,6 @@
 EDU_ZZXS_07_01_XJSJ  学籍基本数据表
   XSXXID      学生信息数据表          int            主键     学生信息数据表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ZYXXID      专业基本信息            int            非主     专业基本信息数据表
   ZZBJID      学校班级数据表          nvarchar(10)   非主     学校班级数据表
   ZZNJID      学校年级数据表          nvarchar(4)    非主     学校年级数据表
@@ -12,7 +12,7 @@ EDU_ZZXS_07_01_XJSJ  学籍基本数据表
 
 EDU_ZZXS_02_A02_XSJTJJ  学生家庭经济情况数据表
   XSXXID      学生信息数据表          int            主键     学生信息数据表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   SYRK        赡养人口                decimal(2, 0)  非主
   LDLRK       劳动力人口              decimal(2, 0)  非主
   JTRJYSR     家庭人均月收入          money          非主
@@ -25,7 +25,7 @@ EDU_ZZXS_02_A02_XSJTJJ  学生家庭经济情况数据表
 
 EDU_ZZXS_02_A01_XSLXR  学生联系人数据表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            非主     学校基本数据表
+  SCHOOLID    学校名                  int            非主     学校配置表
   XSXXID      学生信息数据表          int            非主     学生信息数据表
   GXM         关系码                  nvarchar(2)    非主     家庭关系代码
   LXRXM       联系人姓名              nvarchar(36)   非主
@@ -40,7 +40,7 @@ EDU_ZZXS_02_A01_XSLXR  学生联系人数据表
 
 EDU_ZZXS_02_02_XSJTCY  学生家庭成员数据表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            非主     学校基本数据表
+  SCHOOLID    学校名                  int            非主     学校配置表
   XSXXID      学生信息数据表          int            非主     学生信息数据表
   XM          姓名                    nvarchar(36)   非主
   GXM         关系码                  nvarchar(2)    非主     家庭关系代码
@@ -52,7 +52,7 @@ EDU_ZZXS_02_02_XSJTCY  学生家庭成员数据表
 
 EDU_ZZXS_02_01_XSJTXX  学生家庭信息数据表
   XSXXID      学生信息数据表          int            主键     学生信息数据表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   JTZZ        家庭住址                nvarchar(180)  非主
   JTYZBM      家庭邮政编码            nvarchar(6)    非主
   JTDH        家庭电话                nvarchar(30)   非主
@@ -66,7 +66,7 @@ EDU_ZZXS_02_01_XSJTXX  学生家庭信息数据表
 
 EDU_ZZXS_01_A01_XSXX  学生扩展数据表
   XSXXID      学生信息数据表          int            主键     学生信息数据表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ZYXXID      专业基本信息            int            非主     专业基本信息数据表
   XNID        学年                    int            非主     学年表
   ZZXQID      学期表                  int            非主     学期数据表
@@ -86,7 +86,7 @@ EDU_ZZXS_01_A01_XSXX  学生扩展数据表
 
 EDU_ZZXS_01_01_XSXX  学生信息数据表
   ID          编号                    int            主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   XH          学号                    nvarchar(30)   非主
   XM          姓名                    nvarchar(36)   非主
   YWXM        英文姓名                nvarchar(60)   非主
@@ -118,7 +118,7 @@ EDU_ZZXS_01_01_XSXX  学生信息数据表
 
 EDU_ZZXS_07_03_XSZCXX  学生注册信息数据子类表
   XSXXID      学生ID                int            主键     学生信息数据表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XQID        学期ID                int            主键     学期数据表
   ZCZKM       注册状况码              nvarchar(1)    非主     注册状况代码表
   ZCRQ        注册日期                nvarchar(8)    非主
@@ -131,7 +131,7 @@ EDU_ZZXS_07_03_XSZCXX  学生注册信息数据子类表
 EDU_ZZXS_07_02_XJYD  学籍异动数据子类表
   ID          学籍异动表编号          int            主键
   XSXXID      学生ID                int            非主     学生信息数据表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   YDLBM       异动类别码              nvarchar(2)    非主     学籍异动类别代码表
   YDRQ        异动日期                nvarchar(8)    非主
   YDYYM       异动原因码              nvarchar(2)    非主     学籍异动原因代码表
@@ -153,7 +153,7 @@ EDU_ZZXS_07_02_XJYD  学籍异动数据子类表
 
 EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
   XSXXID      学生ID                int            主键     学生信息数据表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   KCH         课程号                  nvarchar(6)    主键     课程数据子类表
   XQID        学期ID                int            主键     学期数据表
   KCMC        课程名称                nvarchar(100)  非主
@@ -171,7 +171,7 @@ EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
   QMCJ        期末成绩                decimal(5, 1)  非主
 
 EDU_ZZXS_13_A01_XSJL  学生简历表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XSXXID      学生信息ID            int            主键     学生信息数据表
   YYNL        英语能力                nvarchar(50)   非主
   GZNX        工作年限                int            非主

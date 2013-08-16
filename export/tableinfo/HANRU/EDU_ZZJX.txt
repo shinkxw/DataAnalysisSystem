@@ -1,6 +1,6 @@
 EDU_ZZJX_02_02_ZZBJ  学校班级数据表
   XZBDM       行政班代码              nvarchar(10)   主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ZYXXID      专业基本信息            int            非主     专业基本信息数据表
   ZZNJID      学校年级数据表          nvarchar(4)    非主     学校年级数据表
   XZBMC       行政班名称              nvarchar(50)   非主
@@ -17,14 +17,14 @@ EDU_ZZJX_02_02_ZZBJ  学校班级数据表
 
 EDU_ZZJX_02_01_ZZNJ  学校年级数据表
   NJDM        年级代码                nvarchar(4)    主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   NJMC        年级名称                nvarchar(10)   非主
   SSNF        所属年份                nvarchar(4)    非主
   NJZT        年级状态                nvarchar(1)    非主     是否标志代码表
 
 EDU_ZZJX_01_01_ZYXX  专业基本信息数据表
   ZYBH        专业编号                int            主键
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ZYDM        专业代码                nvarchar(6)    非主     自建专业代码
   ZYMC        专业名称                nvarchar(50)   非主
   ZYYWMC      专业英文名称            nvarchar(100)  非主
@@ -39,7 +39,7 @@ EDU_ZZJX_01_01_ZYXX  专业基本信息数据表
   ZYLB        专业类别名称            nvarchar(50)   非主
 
 EDU_ZZJX_08_A01_DGFSQ  代管费收取表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XSXXID      学生ID                int            主键     学生信息数据表
   XNID        学年ID                int            主键     学年表
   YJJE        已缴金额                money          非主
@@ -48,7 +48,7 @@ EDU_ZZJX_08_A01_DGFSQ  代管费收取表
   SHRID       审核人员ID            int            非主     教职工基本数据子类表
 
 EDU_ZZJX_05_02_JSJXGZLTJ  教师教学工作量统计数据子类表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JSID        教师ID                int            主键     教职工基本数据子类表
   XQID        学期ID                int            主键     学期数据表
   XQMC        学期名称                nvarchar(10)   非主
@@ -61,14 +61,14 @@ EDU_ZZJX_05_02_JSJXGZLTJ  教师教学工作量统计数据子类表
   ZXFS        总学分数                decimal(5, 1)  非主
 
 EDU_ZZJX_03_A01_XQXFGL  学期学分管理表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XQID        学期ID                int            主键     学期数据表
   JHBH        计划编号                nvarchar(5)    主键     总体教学计划数据子类表
   ZDXF        最高学分                decimal(2, 1)  非主
   ZGXF        最低学分                decimal(2, 1)  非主
 
 EDU_ZZJX_03_03_JXJHKCQD  教学计划课程清单数据子类表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   KCH         课程号                  nvarchar(6)    主键     课程数据子类表
   JHBH        计划编号                nvarchar(5)    主键     总体教学计划数据子类表
   XQID        学期ID                int            主键     学期数据表
@@ -80,13 +80,13 @@ EDU_ZZJX_03_03_JXJHKCQD  教学计划课程清单数据子类表
   ZXXQ        执行学期                decimal(2, 0)  非主
 
 EDU_ZZJX_03_02_JXJHFLXFYQ  教学计划分类学分要求数据子类
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   KCFLM       课程分类码              nvarchar(1)    主键     课程分类代码
   XFYQ        学分要求                decimal(2, 1)  非主
   JHBH        计划编号                nvarchar(5)    主键     总体教学计划数据子类表
 
 EDU_ZZJX_03_01_ZTJXJH  总体教学计划数据子类表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JHBH        计划编号                nvarchar(5)    主键
   JHNJ        计划年级                nvarchar(4)    非主     学校年级数据表
   ZYXXID      专业编号                int            非主     专业基本信息数据表
@@ -99,7 +99,7 @@ EDU_ZZJX_03_01_ZTJXJH  总体教学计划数据子类表
   FJ          附件                    text           非主
 
 EDU_ZZJX_01_A02_JSRK  教师任课表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   KXH         课序号                  int            主键
   JSID        教师表ID              int            非主     教职工基本数据子类表
   KCH         课程号                  nvarchar(6)    非主     课程数据子类表
@@ -108,7 +108,7 @@ EDU_ZZJX_01_A02_JSRK  教师任课表
   JXDG        教学大纲                text           非主
 
 EDU_ZZJX_01_A01_KCPJ  课程评价表
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   PJID        评价ID                int            主键
   KXH         课序号                  int            非主     教师任课表
   PJR         评价人                  nvarchar(20)   非主     应用系统用户表
@@ -118,7 +118,7 @@ EDU_ZZJX_01_A01_KCPJ  课程评价表
 
 EDU_ZZJX_01_02_KC  课程数据子类表
   KCH         课程号                  nvarchar(6)    主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   KCMC        课程名称                nvarchar(100)  非主
   KCYWM       课程英文名              nvarchar(100)  非主
   KCBM        课程别名                nvarchar(100)  非主
@@ -135,7 +135,7 @@ EDU_ZZJX_01_02_KC  课程数据子类表
   KCFY        课程费用                money          非主
 
 EDU_ZZJX_07_01_XWSXJDXX  校外实习基地信息数据子类表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ID          企业表ID              int            主键
   QYBH        企业编号                nvarchar(20)   非主
   JDHZHTBH    基地合作合同编号        nvarchar(20)   非主
@@ -165,7 +165,7 @@ EDU_ZZJX_07_01_XWSXJDXX  校外实习基地信息数据子类表
   SHZT        审核状态                int            非主
 
 EDU_ZZJX_07_03_XSXWSXQK  学生校外实习情况数据子类表
-  SCHOOLID    学校名                  int            主键     学校基本数据表
+  SCHOOLID    学校名                  int            主键     学校配置表
   ID          实习情况表ID          int            主键
   XSXXID      学生信息ID            int            非主     学生信息数据表
   QYID        企业表ID              int            非主     校外实习基地信息数据子类表
@@ -183,7 +183,7 @@ EDU_ZZJX_07_03_XSXWSXQK  学生校外实习情况数据子类表
 
 EDU_ZZJX_07_A11_SXJC  实习奖惩表
   ID          奖惩信息ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   SXJHID      实习计划ID            int            非主     学校实习计划表
   XSXXID      学生信息ID            int            非主     学生信息数据表
   JCLX        奖惩类型                int            非主
@@ -194,7 +194,7 @@ EDU_ZZJX_07_A11_SXJC  实习奖惩表
 
 EDU_ZZJX_07_A10_SXJD  实习鉴定表
   ID          实习鉴定信息ID        int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   SXJHID      实习计划ID            int            非主     学校实习计划表
   XSXXID      学生信息ID            int            非主     学生信息数据表
   JDNR        鉴定内容                text           非主
@@ -204,7 +204,7 @@ EDU_ZZJX_07_A10_SXJD  实习鉴定表
 
 EDU_ZZJX_07_A09_SXRZ  实习日志表
   ID          实习日志ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XSXXID      学生信息ID            int            非主     学生信息数据表
   SXJHID      实习计划ID            int            非主     学校实习计划表
   SXJDID      实习阶段ID            int            非主     学校实习阶段表
@@ -214,7 +214,7 @@ EDU_ZZJX_07_A09_SXRZ  实习日志表
 
 EDU_ZZJX_07_A08_SXTS  实习投诉表
   ID          实习投诉ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   QYID        企业ID                int            非主     校外实习基地信息数据子类表
   SXJHID      实习计划ID            int            非主     学校实习计划表
   XSXXID      投诉学生ID            int            非主     学生信息数据表
@@ -225,7 +225,7 @@ EDU_ZZJX_07_A08_SXTS  实习投诉表
 
 EDU_ZZJX_07_A07_SXZG  实习转岗表
   ID          实习转岗ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XSXXID      申请学生ID            int            非主     学生信息数据表
   ZCGW        转出岗位ID            int            非主     实习岗位表
   ZCGWQY      转出岗位企业ID        int            非主     校外实习基地信息数据子类表
@@ -238,7 +238,7 @@ EDU_ZZJX_07_A07_SXZG  实习转岗表
 
 EDU_ZZJX_07_A06_XQHD  校企互动表
   ID          校企互动信息ID        int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   QYID        企业ID                int            非主     校外实习基地信息数据子类表
   XXJY        企业对学校工作建议      nvarchar(300)  非主
   XSJY        企业对学生职业技能建议  nvarchar(300)  非主
@@ -249,7 +249,7 @@ EDU_ZZJX_07_A06_XQHD  校企互动表
 
 EDU_ZZJX_07_A05_XSYP  学生应聘表
   ID          学生应聘信息ID        int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   XSXXID      学生信息ID            int            非主     学生信息数据表
   QYID        企业ID                int            非主     校外实习基地信息数据子类表
   GWID        实习岗位ID            int            非主     实习岗位表
@@ -258,7 +258,7 @@ EDU_ZZJX_07_A05_XSYP  学生应聘表
 
 EDU_ZZJX_07_A04_SXGW  实习岗位表
   ID          实习岗位ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   QYID        企业ID                int            非主     校外实习基地信息数据子类表
   GWMC        岗位名称                nvarchar(50)   非主
   QYMC        企业名称                int            非主
@@ -282,7 +282,7 @@ EDU_ZZJX_07_A04_SXGW  实习岗位表
 
 EDU_ZZJX_07_A03_XXSXZY  学校实习周/月表
   ID          实习周/月ID          int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   SXJHID      实习计划ID            int            非主     学校实习计划表
   SXJDID      实习阶段ID            int            非主     学校实习阶段表
   MC          名称                    nvarchar(30)   非主
@@ -292,7 +292,7 @@ EDU_ZZJX_07_A03_XXSXZY  学校实习周/月表
 
 EDU_ZZJX_07_A02_XXSXJD  学校实习阶段表
   ID          实习阶段ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   SXJHID      实习计划ID            int            非主     学校实习计划表
   JDM         阶段名                  nvarchar(30)   非主
   JDKSSJ      阶段开始时间            datetime       非主
@@ -300,7 +300,7 @@ EDU_ZZJX_07_A02_XXSXJD  学校实习阶段表
 
 EDU_ZZJX_07_A01_XXSXJH  学校实习计划表
   ID          实习计划ID            int            主键
-  SCHOOLID    学校ID                int            主键     学校基本数据表
+  SCHOOLID    学校ID                int            主键     学校配置表
   JHBT        计划标题                nvarchar(30)   非主
   NJ          年级                    nvarchar(10)   非主
   BGXS        报告形式                int            非主
