@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ZXBG" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZXBG_10_A01_TZ" explanation="通知数据表">
+<namespace name="EDU_OAXT" provider="reallocate_namespace" generation_time="">
+    <table name="EDU_OAXT_10_A01_TZ" explanation="通知数据表">
         <field_area>
             <name="ID" explanation="通知ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
@@ -18,7 +18,7 @@
             <name="FSZT" explanation="发送状态" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_10_A02_TZYDJL" explanation="通知阅读记录">
+    <table name="EDU_OAXT_10_A02_TZYDJL" explanation="通知阅读记录">
         <field_area>
             <name="ID" explanation="通知阅读记录ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
@@ -28,7 +28,7 @@
             <name="SFYD" explanation="是否已阅读" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_10_A03_GG" explanation="公告数据表">
+    <table name="EDU_OAXT_10_A03_GG" explanation="公告数据表">
         <field_area>
             <name="ID" explanation="公告ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
@@ -40,7 +40,7 @@
             <name="ZT" explanation="公告状态" type="int" null="F" p="F" identity="F" remark="正常、已过期" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_11_A01_YJ" explanation="邮件数据表">
+    <table name="EDU_OAXT_11_A01_YJ" explanation="邮件数据表">
         <field_area>
             <name="ID" explanation="邮件ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
@@ -59,7 +59,7 @@
             <name="YJLX" explanation="邮件类型" type="int" null="F" p="F" identity="F" remark="1收件箱2草稿箱3已发送4已删除" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_01_01_WJJBSJ" explanation="文件基本数据类表">
+    <table name="EDU_OAXT_01_01_WJJBSJ" explanation="文件基本数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="ID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
@@ -77,13 +77,13 @@
             <name="CSDW" explanation="抄送单位" type="text" null="F" p="F" identity="F" remark="解释/举例：多个单位用逗号隔开 " />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_02_01_SWCL" explanation="收文处理子类表">
+    <table name="EDU_OAXT_02_01_SWCL" explanation="收文处理子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="QSRID" explanation="签收人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="CFRID" explanation="拆封人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="DJRID" explanation="登记人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="QSRID" explanation="签收人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CFRID" explanation="拆封人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="DJRID" explanation="登记人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="QSRGH" explanation="签收人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
             <name="CFRGH" explanation="拆封人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
             <name="DJRGH" explanation="登记人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
@@ -94,11 +94,11 @@
             <name="FYFS" explanation="翻印份数" type="decimal(4)" null="T" p="F" identity="F" remark="单位：份 " />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_02_02_WJYB" explanation="文件阅办子类表">
+    <table name="EDU_OAXT_02_02_WJYB" explanation="文件阅办子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="YBRID" explanation="阅办人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="YBRID" explanation="阅办人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="YBLBM" explanation="阅办类别码" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：JY/T1001YBLB阅办类别代码 " />
             <name="YBJB" explanation="阅办级别" type="nvarchar(30)" null="T" p="F" identity="F" remark="解释/举例：指文件阅办指定的级别和范围 " />
             <name="YBDW" explanation="阅办单位" type="nvarchar(60)" null="T" p="F" identity="F" remark="单位名称" />
@@ -108,15 +108,15 @@
             <name="YBRQ" explanation="阅办日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_03_01_FWCL" explanation="发文处理子类表">
+    <table name="EDU_OAXT_03_01_FWCL" explanation="发文处理子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="NGRID" explanation="拟稿人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="QFRID" explanation="签发人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="DJRID" explanation="登记人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="DZRID" explanation="打字人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="JDRID" explanation="校对人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="NGRID" explanation="拟稿人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="QFRID" explanation="签发人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="DJRID" explanation="登记人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="DZRID" explanation="打字人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="JDRID" explanation="校对人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="NGRGH" explanation="拟稿人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="NGRQ" explanation="拟稿日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
             <name="QFRGH" explanation="签发人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
@@ -133,68 +133,68 @@
             <name="FZFSM" explanation="封装方式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001GWFZFS封装方式代码 " />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_03_02_HG" explanation="核稿子类表">
+    <table name="EDU_OAXT_03_02_HG" explanation="核稿子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="HGRID" explanation="核稿人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="HGRID" explanation="核稿人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="HGRGH" explanation="核稿人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
             <name="HGDW" explanation="核稿单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="单位名称" />
             <name="HGYJ" explanation="核稿意见" type="text" null="F" p="F" identity="F" remark="解释/举例：核对文件的相关意见 " />
             <name="HGRQ" explanation="核稿日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_03_03_HQ" explanation="会签子类表">
+    <table name="EDU_OAXT_03_03_HQ" explanation="会签子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="HQRID" explanation="会签人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="HQRID" explanation="会签人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="HQR" explanation="会签人" type="nvarchar(36)" null="F" p="F" identity="F" remark="姓名" />
             <name="HQDW" explanation="会签单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="解释/举例：多个单位会签可逐个填写 单位名称" />
             <name="HQYJ" explanation="会签意见" type="text" null="F" p="F" identity="F" remark="解释/举例：会签文件的相关意见 " />
             <name="HQRQ" explanation="会签日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_03_04_CP" explanation="呈批子类表">
+    <table name="EDU_OAXT_03_04_CP" explanation="呈批子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="PFRID" explanation="批复人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="PFRID" explanation="批复人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="PFR" explanation="批复人" type="nvarchar(36)" null="F" p="F" identity="F" remark="姓名" />
             <name="PFDW" explanation="批复单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="单位名称" />
             <name="PFYJ" explanation="批复意见" type="text" null="F" p="F" identity="F" remark="解释/举例：文件批复的具体意见 " />
             <name="PFRQ" explanation="批复日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_04_01_WJQT" explanation="文件清退数据类表">
+    <table name="EDU_OAXT_04_01_WJQT" explanation="文件清退数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="JBRID" explanation="经办人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="JBRID" explanation="经办人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="QTRQ" explanation="清退日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
             <name="QTFW" explanation="清退范围" type="nvarchar(180)" null="F" p="F" identity="F" remark="解释/举例：文件清退所指定的范围 " />
             <name="QTSM" explanation="清退说明" type="text" null="T" p="F" identity="F" remark="解释/举例：文件清退相关说明或结果 " />
             <name="JBRGH" explanation="经办人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_05_01_WJXH" explanation="文件销毁数据类表">
+    <table name="EDU_OAXT_05_01_WJXH" explanation="文件销毁数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="XHSPRID" explanation="销毁审批人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="JBRID" explanation="经办人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="XHSPRID" explanation="销毁审批人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="JBRID" explanation="经办人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="XHRQ" explanation="销毁日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
             <name="XHSPRGH" explanation="销毁审批人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
             <name="XHSM" explanation="销毁说明" type="text" null="T" p="F" identity="F" remark="解释/举例：销毁文件的相关说明 " />
             <name="JBRGH" explanation="经办人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="学号或工号" />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_06_01_WJJQ" explanation="文件借阅数据类表">
+    <table name="EDU_OAXT_06_01_WJJQ" explanation="文件借阅数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="WJID" explanation="文件ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="JYSPRID" explanation="借阅审批人ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="JYJBRID" explanation="借阅经办人ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="JYSPRID" explanation="借阅审批人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="JYJBRID" explanation="借阅经办人ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="JYR" explanation="借阅人" type="nvarchar(36)" null="F" p="F" identity="F" remark="姓名" />
             <name="JYRQ" explanation="借阅日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
             <name="JYSPRGH" explanation="借阅审批人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
@@ -202,7 +202,7 @@
             <name="JYYY" explanation="借阅原因" type="nvarchar(80)" null="T" p="F" identity="F" remark="借阅原因 编号：ZZBG060005 " />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_12_A01_SJFB" explanation="数据发布类表">
+    <table name="EDU_OAXT_12_A01_SJFB" explanation="数据发布类表">
         <field_area>
             <name="ID" explanation="数据发布ID" type="int" null="F" p="T" identity="T" remark="" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="学校ID" />
@@ -222,12 +222,12 @@
             <name="SJZT" explanation="数据状态" type="nvarchar(10)" null="F" p="F" identity="F" remark="解释/举例：待审批/已审批 " />
         </field_area>
     </table>
-    <table name="EDU_ZXBG_13_A01_DWSJ" explanation="单位数据表">
+    <table name="EDU_OAXT_13_A01_DWSJ" explanation="单位数据表">
         <field_area>
             <name="ID" explanation="单位ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="SJDWID" explanation="上级单位ID" type="int" null="T" p="F" identity="F" remark="" />
-            <name="DWFZRID" explanation="单位负责人ID" type="int" null="T" p="F" identity="F" remark="" />
+            <name="DWFZRID" explanation="单位负责人ID" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
             <name="DWMC" explanation="单位名称" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
             <name="DWCYIDLB" explanation="单位成员ID列表" type="text" null="T" p="F" identity="F" remark="" />
         </field_area>
