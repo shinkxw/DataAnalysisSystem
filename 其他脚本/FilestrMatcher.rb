@@ -22,9 +22,9 @@ class FilestrMatcher
       file_str_arr = get_file_str_arr(file_path)
       file_str_arr.each do |str|
         if decide.call(str)
-          p file_path
-          p str
-          p str = change.call(str)
+          puts file_path
+          puts str
+          puts str = change.call(str)
           change_num += 1
         end
         file_str << str
