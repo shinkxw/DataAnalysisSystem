@@ -21,13 +21,14 @@ class FilestrMatcher
       file_str = ""
       file_str_arr = get_file_str_arr(file_path)
       file_str_arr.each do |str|
+        str.force_encoding('GBK') if !str.valid_encoding?#str = str.encode('UTF-8')
         if decide.call(str)
           puts file_path
           puts str
           puts str = change.call(str)
           change_num += 1
         end
-        file_str << str
+        #file_str << str
       end
       file_str_hash[file_path] = file_str
     end
@@ -62,26 +63,23 @@ class FilestrMatcher
   end
   #使用正确的编码打开文件并返回字符串数组
   def get_file_str_arr(file_path)
-    File.open("#{file_path}","r:GBK") do |file|
-      str_arr = file.readlines
-      return str_arr if str_arr[0].valid_encoding?
-    end
     File.open("#{file_path}","r:UTF-8") do |file|
-      str_arr = file.readlines
-      return str_arr if str_arr[0].valid_encoding?
+      file.readlines
     end
-    puts "未找到合适的编码打开该文件".encode('GBK') << file_path
   end
   #覆盖文件
   def cover_file(file_path,file_str)
     File.open(file_path,"w:GBK"){|file| file.puts(file_str)}
   end
 end
-fm = FilestrMatcher.new("G:/瀚孺/DataAnalysisSystem".encode('GBK'))
-fm.ignore_folder_name_arr += [".svn","测试".encode('GBK'),"其他脚本".encode('GBK')]
-fm.file_extname_arr = [".rb"]
-decide = Proc.new{|str| str.include?("GBK")}
-change = Proc.new{|str| "#encoding: UTF-8\n"}
+fm = FilestrMatcher.new("D:/技术部/代码/Trunk".encode('GBK'))
+fm.ignore_folder_name_arr += ["Common".encode('GBK'),"Web".encode('GBK')]
+fm.file_extname_arr = [".cs",".cshtml"]
+decide = Proc.new do |str|
+  #^[^\/]+?[^\(]"[^\/<]\/[^\/>]+?[^<]\/[^\/]+?[^<]\/[^\/]  路径错误
+  str =~ /index_jsonstr"/
+end
+change = Proc.new{|str| ""}
 fm.search_matchstr(decide,change)
 #fm.search_and_modify_matchstr(decide,change)
 
