@@ -73,13 +73,28 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "工作日名称")]
+            public Int32 WEEKDAYNAME { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "时段")]
             public Int32 PERIOD { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "时段名称")]
+            public Int32 PERIODNAME { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "节次")]
             public Int32 SESSION { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "节次名称")]
+            public Int32 SESSIONNAME { get; set; }
 
 
         }

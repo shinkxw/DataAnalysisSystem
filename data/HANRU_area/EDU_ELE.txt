@@ -119,8 +119,11 @@
             <name="CLASSID" explanation="班级" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="CLASSNAME" explanation="班级" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
             <name="WEEKDAY" explanation="工作日" type="int" null="F" p="F" identity="F" remark="" />
+            <name="WEEKDAYNAME" explanation="工作日名称" type="int" null="F" p="F" identity="F" remark="" />
             <name="PERIOD" explanation="时段" type="int" null="F" p="F" identity="F" remark="" />
+            <name="PERIODNAME" explanation="时段名称" type="int" null="F" p="F" identity="F" remark="" />
             <name="SESSION" explanation="节次" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SESSIONNAME" explanation="节次名称" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

@@ -60,4 +60,21 @@
             <name="JGH" explanation="机构号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_ZXJZ_07_02_RKSJ" explanation="任课数据子类表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" remark="" />
+            <name="RKKCH" explanation="任课课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="RKQSNY" explanation="任课起始年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="RKZZNY" explanation="任课终止年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="RKZXS" explanation="任课总学时" type="decimal(3)" null="F" p="F" identity="F" remark="" />
+            <name="RKXDM" explanation="任课学段码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001RKXD任课学段代码 " />
+            <name="RKJSM" explanation="任课角色码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001RKJS任课角色代码 " />
+            <name="SKBJ" explanation="授课班级" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="SKRS" explanation="授课人数" type="decimal(4)" null="F" p="F" identity="F" remark="" />
+            <name="ZKS" explanation="周课时" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SFLT" explanation="是否连堂" type="int" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
 </namespace>
