@@ -111,15 +111,15 @@
     <table name="EDU_ELE_04_PKJGJL" explanation="排课结果记录表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TEACHERID" explanation="老师" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
+            <name="TEACHERID" explanation="老师" type="int" null="F" p="F" identity="F" remark="" />
             <name="TEACHERNAME" explanation="老师" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="COURSEID" explanation="课程" type="nvarchar(20)" null="F" p="T" identity="F" remark="" />
+            <name="COURSEID" explanation="课程" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="COURSENAME" explanation="课程" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="CLASSID" explanation="班级" type="nvarchar(20)" null="F" p="T" identity="F" remark="" />
+            <name="CLASSID" explanation="班级" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="CLASSNAME" explanation="班级" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="WEEKDAY" explanation="工作日" type="int" null="F" p="T" identity="F" remark="" />
-            <name="PERIOD" explanation="时段" type="int" null="F" p="T" identity="F" remark="" />
+            <name="WEEKDAY" explanation="工作日" type="int" null="F" p="F" identity="F" remark="" />
+            <name="PERIOD" explanation="时段" type="int" null="F" p="F" identity="F" remark="" />
             <name="SESSION" explanation="节次" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
