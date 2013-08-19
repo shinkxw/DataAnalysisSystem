@@ -279,10 +279,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_01_01_
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_01_01_JZGJBSJ_DISP
 go
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_02_01_JZGLXFS_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZZJG_02_01_JZGLXFS_DISP
-go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_02_02_XNGWSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_02_02_XNGWSJ_DISP
@@ -4447,6 +4443,13 @@ SELECT a.[ID]--编号
       ,a.[SFSSXJS]--是否双师型教
       ,a.[ZP]--照片(路径)
       ,a.[DQZTM]--当前状态码
+      ,a.[YDDH]--移动电话
+      ,a.[GDDH]--固定电话
+      ,a.[TXDZYZBM]--通信地址邮政编码
+      ,a.[TXDZ]--通信地址
+      ,a.[DZXX]--电子信箱
+      ,a.[WLDZ]--网络地址
+      ,a.[JSTXH]--即时通讯号
       ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
       ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
       ,b.XNID as b_SCHOOL_XNID--学年ID
@@ -4502,112 +4505,6 @@ FROM dbo.EDU_ZZJG_01_01_JZGJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFJZJS = s.DM /*是否兼职教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS t ON a.SFSSXJS = t.DM /*是否双师型教*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS u ON a.DQZTM = u.DM /*当前状态码*/
-GO
-
---教职工联系方式数据子类表
-CREATE VIEW [dbo].[VIEW_EDU_ZZJG_02_01_JZGLXFS_DISP]
-AS
-SELECT a.[SCHOOLID]--学校名
-      ,a.[JZGJBSJID]--教职工ID
-      ,a.[GH]--工号
-      ,a.[XM]--姓名
-      ,a.[YDDH]--移动电话
-      ,a.[GDDH]--固定电话
-      ,a.[YZBM]--邮政编码
-      ,a.[TXDZ]--通信地址
-      ,a.[DZXX]--电子信箱
-      ,a.[WLDZ]--网络地址
-      ,a.[JSTXH]--即时通讯号
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--学校名
-      ,c.GH as c_JZGJBSJ_GH--工号
-      ,c.XM as c_JZGJBSJ_XM--姓名
-      ,c.YWXM as c_JZGJBSJ_YWXM--英文姓名
-      ,c.XMPY as c_JZGJBSJ_XMPY--姓名拼音
-      ,c.CYM as c_JZGJBSJ_CYM--曾用名
-      ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--名称
-      ,c.SFZJH as c_JZGJBSJ_SFZJH--身份证件号
-      ,c.CSRQ as c_JZGJBSJ_CSRQ--出生日期
-      ,c.XBM as c_JZGJBSJ_XBM--性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--名称
-      ,c.MZM as c_JZGJBSJ_MZM--民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--字母代码
-      ,c.XXM as c_JZGJBSJ_XXM--血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--简称
-      ,c.JKZKM as c_JZGJBSJ_JKZKM--健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--说明
-      ,c.HYZTM as c_JZGJBSJ_HYZTM--婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--名称
-      ,c.ZZMMM as c_JZGJBSJ_ZZMMM--政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--简称
-      ,c.GATQWM as c_JZGJBSJ_GATQWM--港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--说明
-      ,c.JG as c_JZGJBSJ_JG--籍贯
-      ,c.GJDQM as c_JZGJBSJ_GJDQM--国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--三字母代码
-      ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--名称
-      ,c.XYZJM as c_JZGJBSJ_XYZJM--信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--名称
-      ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--名称
-      ,c.HKLBM as c_JZGJBSJ_HKLBM--户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--名称
-      ,c.DQZZ as c_JZGJBSJ_DQZZ--当前住址
-      ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--当前住址邮政编码
-      ,c.CJGZNY as c_JZGJBSJ_CJGZNY--参加工作年月
-      ,c.CJNY as c_JZGJBSJ_CJNY--从教年月
-      ,c.LXNY as c_JZGJBSJ_LXNY--来校年月
-      ,c.BZLBM as c_JZGJBSJ_BZLBM--编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--名称
-      ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--说明
-      ,c.GWLBM as c_JZGJBSJ_GWLBM--岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--名称
-      ,c.SFJZJS as c_JZGJBSJ_SFJZJS--是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--名称
-      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--是否双师型教
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--名称
-      ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
-      ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
-
-FROM dbo.EDU_ZZJG_02_01_JZGLXFS AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
 GO
 
 --校内岗位数据子类表
@@ -4694,6 +4591,13 @@ SELECT a.[ID]--编号
       ,d.ZP as d_JZGJBSJ_ZP--照片(路径)
       ,d.DQZTM as d_JZGJBSJ_DQZTM--当前状态码
       ,dt.MC as d_JZGJBSJ_DQZTM_MC--名称
+      ,d.YDDH as d_JZGJBSJ_YDDH--移动电话
+      ,d.GDDH as d_JZGJBSJ_GDDH--固定电话
+      ,d.TXDZYZBM as d_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,d.TXDZ as d_JZGJBSJ_TXDZ--通信地址
+      ,d.DZXX as d_JZGJBSJ_DZXX--电子信箱
+      ,d.WLDZ as d_JZGJBSJ_WLDZ--网络地址
+      ,d.JSTXH as d_JZGJBSJ_JSTXH--即时通讯号
       ,e.MC as e_SFBZ_MC--名称
       ,f.SCHOOLID as f_XNJG_SCHOOLID--学校名
       ,f.JGMC as f_XNJG_JGMC--机构名称
@@ -4818,6 +4722,13 @@ SELECT a.[SCHOOLID]--学校名
       ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
       ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
+      ,c.YDDH as c_JZGJBSJ_YDDH--移动电话
+      ,c.GDDH as c_JZGJBSJ_GDDH--固定电话
+      ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,c.TXDZ as c_JZGJBSJ_TXDZ--通信地址
+      ,c.DZXX as c_JZGJBSJ_DZXX--电子信箱
+      ,c.WLDZ as c_JZGJBSJ_WLDZ--网络地址
+      ,c.JSTXH as c_JZGJBSJ_JSTXH--即时通讯号
       ,d.MC as d_SFBZ_MC--名称
 
 FROM dbo.EDU_ZZJG_07_01_JZGZYNL AS a LEFT OUTER JOIN
@@ -4921,6 +4832,13 @@ SELECT a.[ID]--加班登记表ID
       ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
       ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
+      ,c.YDDH as c_JZGJBSJ_YDDH--移动电话
+      ,c.GDDH as c_JZGJBSJ_GDDH--固定电话
+      ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,c.TXDZ as c_JZGJBSJ_TXDZ--通信地址
+      ,c.DZXX as c_JZGJBSJ_DZXX--电子信箱
+      ,c.WLDZ as c_JZGJBSJ_WLDZ--网络地址
+      ,c.JSTXH as c_JZGJBSJ_JSTXH--即时通讯号
       ,d.MC as d_JBLX_MC--名称
 
 FROM dbo.EDU_ZZJG_04_A01_JBDJ AS a LEFT OUTER JOIN
@@ -5019,6 +4937,13 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.ZP as b_JZGJBSJ_ZP--照片(路径)
       ,b.DQZTM as b_JZGJBSJ_DQZTM--当前状态码
       ,bt.MC as b_JZGJBSJ_DQZTM_MC--名称
+      ,b.YDDH as b_JZGJBSJ_YDDH--移动电话
+      ,b.GDDH as b_JZGJBSJ_GDDH--固定电话
+      ,b.TXDZYZBM as b_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,b.TXDZ as b_JZGJBSJ_TXDZ--通信地址
+      ,b.DZXX as b_JZGJBSJ_DZXX--电子信箱
+      ,b.WLDZ as b_JZGJBSJ_WLDZ--网络地址
+      ,b.JSTXH as b_JZGJBSJ_JSTXH--即时通讯号
       ,c.SCHOOLNAME as c_SCHOOL_SCHOOLNAME--学校名称
       ,c.SCHOOLTYPE as c_SCHOOL_SCHOOLTYPE--学校类型
       ,c.XNID as c_SCHOOL_XNID--学年ID
@@ -5326,6 +5251,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,e.ZP as e_JZGJBSJ_ZP--照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--当前状态码
       ,et.MC as e_JZGJBSJ_DQZTM_MC--名称
+      ,e.YDDH as e_JZGJBSJ_YDDH--移动电话
+      ,e.GDDH as e_JZGJBSJ_GDDH--固定电话
+      ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,e.TXDZ as e_JZGJBSJ_TXDZ--通信地址
+      ,e.DZXX as e_JZGJBSJ_DZXX--电子信箱
+      ,e.WLDZ as e_JZGJBSJ_WLDZ--网络地址
+      ,e.JSTXH as e_JZGJBSJ_JSTXH--即时通讯号
 
 FROM dbo.EDU_ZZJX_08_A01_DGFSQ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -5448,6 +5380,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
       ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
+      ,c.YDDH as c_JZGJBSJ_YDDH--移动电话
+      ,c.GDDH as c_JZGJBSJ_GDDH--固定电话
+      ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,c.TXDZ as c_JZGJBSJ_TXDZ--通信地址
+      ,c.DZXX as c_JZGJBSJ_DZXX--电子信箱
+      ,c.WLDZ as c_JZGJBSJ_WLDZ--网络地址
+      ,c.JSTXH as c_JZGJBSJ_JSTXH--即时通讯号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学校名
       ,d.XNID as d_XQ_XNID--学年
       ,d.XQM as d_XQ_XQM--学期码
@@ -5759,6 +5698,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
       ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
+      ,c.YDDH as c_JZGJBSJ_YDDH--移动电话
+      ,c.GDDH as c_JZGJBSJ_GDDH--固定电话
+      ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,c.TXDZ as c_JZGJBSJ_TXDZ--通信地址
+      ,c.DZXX as c_JZGJBSJ_DZXX--电子信箱
+      ,c.WLDZ as c_JZGJBSJ_WLDZ--网络地址
+      ,c.JSTXH as c_JZGJBSJ_JSTXH--即时通讯号
       ,d.SCHOOLID as d_KC_SCHOOLID--学校ID
       ,d.KCMC as d_KC_KCMC--课程名称
       ,d.KCYWM as d_KC_KCYWM--课程英文名
@@ -8098,6 +8044,13 @@ SELECT a.[ID]--学籍异动表编号
       ,f.ZP as f_JZGJBSJ_ZP--照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--当前状态码
       ,ft.MC as f_JZGJBSJ_DQZTM_MC--名称
+      ,f.YDDH as f_JZGJBSJ_YDDH--移动电话
+      ,f.GDDH as f_JZGJBSJ_GDDH--固定电话
+      ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,f.TXDZ as f_JZGJBSJ_TXDZ--通信地址
+      ,f.DZXX as f_JZGJBSJ_DZXX--电子信箱
+      ,f.WLDZ as f_JZGJBSJ_WLDZ--网络地址
+      ,f.JSTXH as f_JZGJBSJ_JSTXH--即时通讯号
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业代码
       ,gb.ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--专业目录类别
@@ -8385,6 +8338,13 @@ SELECT a.[XSXXID]--学生ID
       ,g.ZP as g_JZGJBSJ_ZP--照片(路径)
       ,g.DQZTM as g_JZGJBSJ_DQZTM--当前状态码
       ,gt.MC as g_JZGJBSJ_DQZTM_MC--名称
+      ,g.YDDH as g_JZGJBSJ_YDDH--移动电话
+      ,g.GDDH as g_JZGJBSJ_GDDH--固定电话
+      ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,g.TXDZ as g_JZGJBSJ_TXDZ--通信地址
+      ,g.DZXX as g_JZGJBSJ_DZXX--电子信箱
+      ,g.WLDZ as g_JZGJBSJ_WLDZ--网络地址
+      ,g.JSTXH as g_JZGJBSJ_JSTXH--即时通讯号
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--学校名
       ,h.GH as h_JZGJBSJ_GH--工号
       ,h.XM as h_JZGJBSJ_XM--姓名
@@ -8446,6 +8406,13 @@ SELECT a.[XSXXID]--学生ID
       ,h.ZP as h_JZGJBSJ_ZP--照片(路径)
       ,h.DQZTM as h_JZGJBSJ_DQZTM--当前状态码
       ,ht.MC as h_JZGJBSJ_DQZTM_MC--名称
+      ,h.YDDH as h_JZGJBSJ_YDDH--移动电话
+      ,h.GDDH as h_JZGJBSJ_GDDH--固定电话
+      ,h.TXDZYZBM as h_JZGJBSJ_TXDZYZBM--通信地址邮政编码
+      ,h.TXDZ as h_JZGJBSJ_TXDZ--通信地址
+      ,h.DZXX as h_JZGJBSJ_DZXX--电子信箱
+      ,h.WLDZ as h_JZGJBSJ_WLDZ--网络地址
+      ,h.JSTXH as h_JZGJBSJ_JSTXH--即时通讯号
 
 FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

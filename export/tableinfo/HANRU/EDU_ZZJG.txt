@@ -34,15 +34,9 @@ EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
   SFSSXJS     是否双师型教            nvarchar(1)    非主     是否标志代码表
   ZP          照片(路径)            nvarchar(100)  非主
   DQZTM       当前状态码              nvarchar(2)    非主     教职工当前状态代码表
-
-EDU_ZZJG_02_01_JZGLXFS  教职工联系方式数据子类表
-  SCHOOLID    学校名                  int            主键     学校配置表
-  JZGJBSJID   教职工ID              int            主键     教职工基本数据子类表
-  GH          工号                    nvarchar(20)   非主
-  XM          姓名                    nvarchar(36)   非主
   YDDH        移动电话                nvarchar(30)   非主
   GDDH        固定电话                nvarchar(30)   非主
-  YZBM        邮政编码                nvarchar(6)    非主
+  TXDZYZBM    通信地址邮政编码        nvarchar(6)    非主
   TXDZ        通信地址                nvarchar(180)  非主
   DZXX        电子信箱                nvarchar(40)   非主
   WLDZ        网络地址                nvarchar(60)   非主

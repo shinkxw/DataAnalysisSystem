@@ -33,6 +33,8 @@ namespace HanRuEdu.LDAL
             SFJZJS = "";
             SFSSXJS = "";
             DQZTM = "";
+            YDDH = "";
+            DZXX = "";
         }
         public class EDU_ZZJG_01_01_JZGJBSJ_metadata
         {
@@ -266,6 +268,50 @@ namespace HanRuEdu.LDAL
             [StringLength(2)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String DQZTM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "移动电话")]
+            [StringLength(30)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String YDDH { get; set; }
+
+
+            [Display(Name = "固定电话")]
+            [StringLength(30)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GDDH { get; set; }
+
+
+            [Display(Name = "通信地址邮政编码")]
+            [StringLength(6)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TXDZYZBM { get; set; }
+
+
+            [Display(Name = "通信地址")]
+            [StringLength(180)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TXDZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "电子信箱")]
+            [StringLength(40)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DZXX { get; set; }
+
+
+            [Display(Name = "网络地址")]
+            [StringLength(60)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String WLDZ { get; set; }
+
+
+            [Display(Name = "即时通讯号")]
+            [StringLength(40)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSTXH { get; set; }
 
 
         }
