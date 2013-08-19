@@ -58,6 +58,15 @@ EDU_ELE_01_CONFIG  应用系统配置表
   APPID       应用ID                int            主键
   VALUE       配置值                  nvarchar(200)  非主
 
+EDU_ELE_02_YHFZ  用户分组表
+  ID          分组ID                int            主键
+  SCHOOLID    学校ID                int            主键     学校配置表
+  APPID       应用ID                int            主键     应用表
+  YHID        用户ID                nvarchar(20)   非主     应用系统用户表
+  SJFZID      上级分组ID            int            非主     用户分组表
+  FZMC        分组名称                nvarchar(100)  非主
+  FZYHID      分组用户ID列表        text           非主
+
 EDU_ELE_03_APPRZ  应用日志表
   ID          编号                    int            主键
   SCHOOLID    学校名                  int            非主     学校配置表
@@ -79,12 +88,16 @@ EDU_ELE_03_APPLL  应用履历表
   CZBM        操作表名                nvarchar(30)   非主
   CZXX        操作信息                text           非主
 
-EDU_ELE_02_YHFZ  用户分组表
-  ID          分组ID                int            主键
-  SCHOOLID    学校ID                int            主键     学校配置表
-  APPID       应用ID                int            主键     应用表
-  YHID        用户ID                nvarchar(20)   非主     应用系统用户表
-  SJFZID      上级分组ID            int            非主     用户分组表
-  FZMC        分组名称                nvarchar(100)  非主
-  FZYHID      分组用户ID列表        text           非主
+EDU_ELE_04_PKJGJL  排课结果记录表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            非主
+  TEACHERID   老师                    int            主键
+  TEACHERNAME 老师                    nvarchar(100)  非主
+  COURSEID    课程                    nvarchar(20)   主键
+  COURSENAME  课程                    nvarchar(100)  非主
+  CLASSID     班级                    nvarchar(20)   主键
+  CLASSNAME   班级                    nvarchar(100)  非主
+  WEEKDAY     工作日                  int            主键
+  PERIOD      时段                    int            主键
+  SESSION     节次                    int            非主
 

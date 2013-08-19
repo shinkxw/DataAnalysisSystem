@@ -72,6 +72,17 @@
             <name="VALUE" explanation="配置值" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_ELE_02_YHFZ" explanation="用户分组表">
+        <field_area>
+            <name="ID" explanation="分组ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="YHID" explanation="用户ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="SJFZID" explanation="上级分组ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="FZMC" explanation="分组名称" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
+            <name="FZYHID" explanation="分组用户ID列表" type="text" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
     <table name="EDU_ELE_03_APPRZ" explanation="应用日志表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
@@ -97,15 +108,19 @@
             <name="CZXX" explanation="操作信息" type="text" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
-    <table name="EDU_ELE_02_YHFZ" explanation="用户分组表">
+    <table name="EDU_ELE_04_PKJGJL" explanation="排课结果记录表">
         <field_area>
-            <name="ID" explanation="分组ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="YHID" explanation="用户ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="SJFZID" explanation="上级分组ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="FZMC" explanation="分组名称" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="FZYHID" explanation="分组用户ID列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="" />
+            <name="TEACHERID" explanation="老师" type="int" null="F" p="T" identity="F" remark="" />
+            <name="TEACHERNAME" explanation="老师" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
+            <name="COURSEID" explanation="课程" type="nvarchar(20)" null="F" p="T" identity="F" remark="" />
+            <name="COURSENAME" explanation="课程" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
+            <name="CLASSID" explanation="班级" type="nvarchar(20)" null="F" p="T" identity="F" remark="" />
+            <name="CLASSNAME" explanation="班级" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
+            <name="WEEKDAY" explanation="工作日" type="int" null="F" p="T" identity="F" remark="" />
+            <name="PERIOD" explanation="时段" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SESSION" explanation="节次" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

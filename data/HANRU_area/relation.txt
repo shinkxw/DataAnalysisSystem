@@ -10,17 +10,17 @@
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   XNID           EDU_SYS_01_XN            ID
   XQM            EDU_JY_XQ                DM
+<EDU_ELE_02_YHFZ
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
+  APPID          EDU_ELE_01_APP           ID
+  YHID           EDU_ELE_01_USER          LOGINNAME
+  SJFZID         EDU_ELE_02_YHFZ          ID
 <EDU_ELE_03_APPRZ
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   YHID           EDU_ELE_01_USER          LOGINNAME
 <EDU_ELE_03_APPLL
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   YHID           EDU_ELE_01_USER          LOGINNAME
-<EDU_ELE_02_YHFZ
-  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
-  APPID          EDU_ELE_01_APP           ID
-  YHID           EDU_ELE_01_USER          LOGINNAME
-  SJFZID         EDU_ELE_02_YHFZ          ID
 <EDU_OAXT_10_A01_TZ
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   FSRID          EDU_ELE_01_USER          LOGINNAME
