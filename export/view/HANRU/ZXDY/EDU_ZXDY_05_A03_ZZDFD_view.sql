@@ -1,0 +1,84 @@
+
+--值周打分单表
+CREATE VIEW [dbo].[VIEW_EDU_ZXDY_05_A03_ZZDFD_DISP]
+AS
+SELECT a.[ID]--值周打分单表ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZCID]--周次ID
+      ,a.[BJ]--班级
+      ,a.[XSIDLB]--学生ID列表
+      ,a.[XSMCLB]--学生名称列表
+      ,a.[SSXZID]--所属细则
+      ,a.[DFFZ]--打分分值
+      ,a.[FSSJ]--发生时间
+      ,a.[DFSJ]--打分时间
+      ,a.[DFJSID]--打分教师ID
+      ,a.[BZ]--备注
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
+      ,b.XNID as b_SCHOOL_XNID--学年ID
+      ,b.XQID as b_SCHOOL_XQID--学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学校名
+      ,c.XNID as c_XQ_XNID--学年
+      ,c.XQM as c_XQ_XQM--学期码
+      ,cb.MC as c_XQ_XQM_MC--名称
+      ,c.XQMC as c_XQ_XQMC--学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期结束日期
+      ,d.SCHOOLID as d_ZZZC_SCHOOLID--学校ID
+      ,d.XQID as d_ZZZC_XQID--学期ID
+      ,d.ZCM as d_ZZZC_ZCM--周次名
+      ,d.XQKSRQ as d_ZZZC_XQKSRQ--开始日期
+      ,d.XQJSRQ as d_ZZZC_XQJSRQ--结束日期
+      ,e.SCHOOLID as e_BJ_SCHOOLID--学校名
+      ,e.NJ as e_BJ_NJ--年级号
+      ,e.BJ as e_BJ_BJ--班级名称
+      ,e.JBNY as e_BJ_JBNY--建班年月
+      ,e.BZRGH as e_BJ_BZRGH--班主任工号
+      ,e.BZXH as e_BJ_BZXH--班长学号
+      ,e.BJRYCH as e_BJ_BJRYCH--班级荣誉称号
+      ,e.XZ as e_BJ_XZ--学制
+      ,e.BJLXM as e_BJ_BJLXM--班级类型码
+      ,eb.MC as e_BJ_BJLXM_MC--名称
+      ,e.WLLX as e_BJ_WLLX--文理类型
+      ,e.BYRQ as e_BJ_BYRQ--毕业日期
+      ,e.SFSSMZSYJXB as e_BJ_SFSSMZSYJXB--是否少数民族双语教学班
+      ,ec.MC as e_BJ_SFSSMZSYJXB_MC--名称
+      ,e.SYJXMSM as e_BJ_SYJXMSM--双语教学模式码
+      ,ed.MC as e_BJ_SYJXMSM_MC--名称
+      ,ed.SM as e_BJ_SYJXMSM_SM--说明
+      ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--学校ID
+      ,f.SSDLID as f_ZZDFXZ_SSDLID--所属大类ID
+      ,f.XZNR as f_ZZDFXZ_XZNR--细则内容
+      ,f.XZFZ as f_ZZDFXZ_XZFZ--细则分值
+      ,g.SCHOOLID as g_USER_SCHOOLID--学校ID
+      ,g.APPID as g_USER_APPID--应用ID
+      ,g.PWD as g_USER_PWD--密码
+      ,g.STATUS as g_USER_STATUS--用户状态
+      ,g.USERTYPE as g_USER_USERTYPE--用户类别
+      ,g.USERID as g_USER_USERID--用户ID
+      ,g.ROLEIDLst as g_USER_ROLEIDLst--用户角色
+      ,g.XM as g_USER_XM--姓名
+      ,g.XB as g_USER_XB--性别
+      ,g.QQ as g_USER_QQ--QQ
+      ,g.DZYJ as g_USER_DZYJ--电子邮件
+      ,g.LXDH as g_USER_LXDH--联系电话
+      ,g.ZJDLSJ as g_USER_ZJDLSJ--最近一次登录时间
+      ,g.DLCGCS as g_USER_DLCGCS--登录成功次数
+      ,g.YHCJSJ as g_USER_YHCJSJ--用户创建时间
+
+FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS e ON a.BJ = e.BH /*班级*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXDY_05_A02_ZZDFXZ AS f ON a.SSXZID = f.ID /*所属细则*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS g ON a.DFJSID = g.LOGINNAME /*打分教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS eb ON e.BJLXM = eb.DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ec ON e.SFSSMZSYJXB = ec.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS ed ON e.SYJXMSM = ed.DM /*双语教学模式码*/
+GO
