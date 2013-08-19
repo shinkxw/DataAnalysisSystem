@@ -17,7 +17,7 @@
             <name="JCBM" explanation="教材编码" type="text" null="T" p="F" identity="F" remark="解释/举例：课程使用的教材 " />
             <name="CKSM" explanation="参考书目" type="text" null="T" p="F" identity="F" remark=" 解释/举例：课程使用的参考书目 " />
             <name="CDXZ" explanation="场地限制" type="int" null="T" p="F" identity="F" remark="" />
-            <name="SFZK" explanation="是否主课" type="int" null="T" p="F" identity="F" remark="" />
+            <name="SFZK" explanation="是否主课" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

@@ -54,3 +54,18 @@ EDU_ZXJZ_02_A01_XNGWSJ  校内岗位数据子类表
   ZWMC        职务名称                nvarchar(10)   非主
   JGH         机构号                  nvarchar(10)   非主     机构数据类表
 
+EDU_ZXJZ_07_02_RKSJ  任课数据子类表
+  ID          编号                    int            主键
+  SCHOOLID    学校名                  int            主键     学校配置表
+  JZGJBSJID   教职工基本数据子类表    int            非主     教职工基本数据子类表
+  RKKCH       任课课程号              nvarchar(10)   非主     课程数据类
+  RKQSNY      任课起始年月            nvarchar(6)    非主
+  RKZZNY      任课终止年月            nvarchar(6)    非主
+  RKZXS       任课总学时              decimal(3)     非主
+  RKXDM       任课学段码              nvarchar(1)    非主     任课学段代码表
+  RKJSM       任课角色码              nvarchar(1)    非主     任课角色代码表
+  SKBJ        授课班级                nvarchar(10)   非主     班级数据类表
+  SKRS        授课人数                decimal(4)     非主
+  ZKS         周课时                  int            非主
+  SFLT        是否连堂                nvarchar(1)    非主     是否标志代码表
+
