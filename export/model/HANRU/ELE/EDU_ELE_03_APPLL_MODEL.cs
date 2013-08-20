@@ -45,14 +45,14 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "操作应用")]
-            [StringLength(20)]
+            [StringLength(30)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String CZYY { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "操作表名")]
-            [StringLength(30)]
+            [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String CZBM { get; set; }
 

@@ -206,7 +206,7 @@ CREATE TABLE [dbo].[EDU_ELE_03_APPRZ](
 	[RZLX]  int  NOT NULL,--日志类型
 	[YHID]  nvarchar(20)  NOT NULL,--操作用户
 	[CZSJ]  datetime  NOT NULL,--操作时间
-	[CZYY]  nvarchar(20)  NOT NULL,--操作应用
+	[CZYY]  nvarchar(30)  NOT NULL,--操作应用
 	[CZLX]  nvarchar(10)  NOT NULL,--操作类型
 	[CZJTXX]  nvarchar(200)  NULL,--操作具体信息
 CONSTRAINT [PK_EDU_ELE_03_APPRZ] PRIMARY KEY CLUSTERED
@@ -227,8 +227,8 @@ CREATE TABLE [dbo].[EDU_ELE_03_APPLL](
 	[APPID]  int  NOT NULL,--应用ID
 	[YHID]  nvarchar(20)  NOT NULL,--操作用户
 	[CZSJ]  datetime  NOT NULL,--操作时间
-	[CZYY]  nvarchar(20)  NOT NULL,--操作应用
-	[CZBM]  nvarchar(30)  NOT NULL,--操作表名
+	[CZYY]  nvarchar(30)  NOT NULL,--操作应用
+	[CZBM]  nvarchar(100)  NOT NULL,--操作表名
 	[CZXX]  text  NOT NULL,--操作信息
 CONSTRAINT [PK_EDU_ELE_03_APPLL] PRIMARY KEY CLUSTERED
 (

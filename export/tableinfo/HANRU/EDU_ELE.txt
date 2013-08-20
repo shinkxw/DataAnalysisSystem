@@ -74,7 +74,7 @@ EDU_ELE_03_APPRZ  应用日志表
   RZLX        日志类型                int            非主
   YHID        操作用户                nvarchar(20)   非主     应用系统用户表
   CZSJ        操作时间                datetime       非主
-  CZYY        操作应用                nvarchar(20)   非主
+  CZYY        操作应用                nvarchar(30)   非主
   CZLX        操作类型                nvarchar(10)   非主
   CZJTXX      操作具体信息            nvarchar(200)  非主
 
@@ -84,8 +84,8 @@ EDU_ELE_03_APPLL  应用履历表
   APPID       应用ID                int            主键
   YHID        操作用户                nvarchar(20)   非主     应用系统用户表
   CZSJ        操作时间                datetime       非主
-  CZYY        操作应用                nvarchar(20)   非主
-  CZBM        操作表名                nvarchar(30)   非主
+  CZYY        操作应用                nvarchar(30)   非主
+  CZBM        操作表名                nvarchar(100)  非主
   CZXX        操作信息                text           非主
 
 EDU_ELE_04_PKJGJL  排课结果记录表

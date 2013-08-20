@@ -91,7 +91,7 @@
             <name="RZLX" explanation="日志类型" type="int" null="F" p="F" identity="F" remark="" />
             <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" identity="F" remark="EDU_ELE_01_USER" />
             <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="CZYY" explanation="操作应用" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
             <name="CZLX" explanation="操作类型" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="CZJTXX" explanation="操作具体信息" type="nvarchar(200)" null="T" p="F" identity="F" remark="" />
         </field_area>
@@ -103,8 +103,8 @@
             <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
             <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" identity="F" remark="EDU_ELE_01_USER" />
             <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="CZYY" explanation="操作应用" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="CZBM" explanation="操作表名" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
+            <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
+            <name="CZBM" explanation="操作表名" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
             <name="CZXX" explanation="操作信息" type="text" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>

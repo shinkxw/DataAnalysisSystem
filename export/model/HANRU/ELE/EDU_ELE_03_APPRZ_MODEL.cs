@@ -49,7 +49,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "操作应用")]
-            [StringLength(20)]
+            [StringLength(30)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String CZYY { get; set; }
 
