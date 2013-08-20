@@ -16,31 +16,31 @@ SELECT a.[ZYBH]--专业编号
       ,a.[ZXF]--总学分
       ,a.[SSZYML]--所属专业目录
       ,a.[ZYLB]--专业类别名称
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.ZYMLLB as c_ZJZY_ZYMLLB--专业目录类别
-      ,cb.MC as c_ZJZY_ZYMLLB_MC--名称
-      ,c.MC as c_ZJZY_MC--名称
-      ,d.SCHOOLID as d_XNJG_SCHOOLID--学校名
-      ,d.JGMC as d_XNJG_JGMC--机构名称
-      ,d.JGYWMC as d_XNJG_JGYWMC--机构英文名称
-      ,d.JGJC as d_XNJG_JGJC--机构简称
-      ,d.JGJP as d_XNJG_JGJP--机构简拼
-      ,d.JGDZ as d_XNJG_JGDZ--机构地址
-      ,d.LSSJJGH as d_XNJG_LSSJJGH--隶属上级机构号
-      ,d.LSXQH as d_XNJG_LSXQH--隶属校区号
-      ,d.JGYXBS as d_XNJG_JGYXBS--机构有效标识
-      ,db.MC as d_XNJG_JGYXBS_MC--名称
-      ,d.SFST as d_XNJG_SFST--是否实体
-      ,dc.MC as d_XNJG_SFST_MC--名称
-      ,d.JLNY as d_XNJG_JLNY--建立年月
-      ,d.JGYZBM as d_XNJG_JGYZBM--机构邮政编码
-      ,d.FZRH as d_XNJG_FZRH--负责人号
-      ,e.MC as e_ZYML_MC--名称
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ZYMLLB as c_ZJZY_ZYMLLB--自建专业代码 专业目录类别
+      ,cb.MC as c_ZJZY_ZYMLLB_MC--专业目录代码 名称
+      ,c.MC as c_ZJZY_MC--自建专业代码 名称
+      ,d.SCHOOLID as d_XNJG_SCHOOLID--校内机构数据类表 学校名
+      ,d.JGMC as d_XNJG_JGMC--校内机构数据类表 机构名称
+      ,d.JGYWMC as d_XNJG_JGYWMC--校内机构数据类表 机构英文名称
+      ,d.JGJC as d_XNJG_JGJC--校内机构数据类表 机构简称
+      ,d.JGJP as d_XNJG_JGJP--校内机构数据类表 机构简拼
+      ,d.JGDZ as d_XNJG_JGDZ--校内机构数据类表 机构地址
+      ,d.LSSJJGH as d_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
+      ,d.LSXQH as d_XNJG_LSXQH--校内机构数据类表 隶属校区号
+      ,d.JGYXBS as d_XNJG_JGYXBS--校内机构数据类表 机构有效标识
+      ,db.MC as d_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,d.SFST as d_XNJG_SFST--校内机构数据类表 是否实体
+      ,dc.MC as d_XNJG_SFST_MC--是否标志代码表 名称
+      ,d.JLNY as d_XNJG_JLNY--校内机构数据类表 建立年月
+      ,d.JGYZBM as d_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
+      ,d.FZRH as d_XNJG_FZRH--校内机构数据类表 负责人号
+      ,e.MC as e_ZYML_MC--专业目录代码 名称
 
 FROM dbo.EDU_ZZJX_01_01_ZYXX AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

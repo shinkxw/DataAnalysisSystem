@@ -16,18 +16,18 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[FJ]--附件
       ,a.[FWRQ]--发文日期
       ,a.[CSDW]--抄送单位
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.HYPYDM as c_WXBMZJ_HYPYDM--汉语拼音代码
-      ,c.HZDM as c_WXBMZJ_HZDM--汉字代码
-      ,c.MC as c_WXBMZJ_MC--名称
-      ,d.MC as d_JJCD_MC--名称
-      ,e.MC as e_WJFL_MC--名称
-      ,e.SM as e_WJFL_SM--说明
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.HYPYDM as c_WXBMZJ_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,c.HZDM as c_WXBMZJ_HZDM--文献保密等级代码与标识 汉字代码
+      ,c.MC as c_WXBMZJ_MC--文献保密等级代码与标识 名称
+      ,d.MC as d_JJCD_MC--紧急程度代码表 名称
+      ,e.MC as e_WJFL_MC--文件分类代码表 名称
+      ,e.SM as e_WJFL_SM--文件分类代码表 说明
 
 FROM dbo.EDU_OAXT_01_01_WJJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

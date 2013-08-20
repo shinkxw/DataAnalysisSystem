@@ -8,81 +8,81 @@ SELECT a.[ID]--加班登记表ID
       ,a.[KSSJ]--开始时间
       ,a.[JSSJ]--结束时间
       ,a.[JBLX]--加班类型
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--学校名
-      ,c.GH as c_JZGJBSJ_GH--工号
-      ,c.XM as c_JZGJBSJ_XM--姓名
-      ,c.YWXM as c_JZGJBSJ_YWXM--英文姓名
-      ,c.XMPY as c_JZGJBSJ_XMPY--姓名拼音
-      ,c.CYM as c_JZGJBSJ_CYM--曾用名
-      ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--名称
-      ,c.SFZJH as c_JZGJBSJ_SFZJH--身份证件号
-      ,c.CSRQ as c_JZGJBSJ_CSRQ--出生日期
-      ,c.XBM as c_JZGJBSJ_XBM--性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--名称
-      ,c.MZM as c_JZGJBSJ_MZM--民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--字母代码
-      ,c.XXM as c_JZGJBSJ_XXM--血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--简称
-      ,c.JKZKM as c_JZGJBSJ_JKZKM--健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--说明
-      ,c.HYZTM as c_JZGJBSJ_HYZTM--婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--名称
-      ,c.ZZMMM as c_JZGJBSJ_ZZMMM--政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--简称
-      ,c.GATQWM as c_JZGJBSJ_GATQWM--港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--说明
-      ,c.JG as c_JZGJBSJ_JG--籍贯
-      ,c.GJDQM as c_JZGJBSJ_GJDQM--国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--三字母代码
-      ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--名称
-      ,c.XYZJM as c_JZGJBSJ_XYZJM--信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--名称
-      ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--名称
-      ,c.HKLBM as c_JZGJBSJ_HKLBM--户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--名称
-      ,c.DQZZ as c_JZGJBSJ_DQZZ--当前住址
-      ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--当前住址邮政编码
-      ,c.CJGZNY as c_JZGJBSJ_CJGZNY--参加工作年月
-      ,c.CJNY as c_JZGJBSJ_CJNY--从教年月
-      ,c.LXNY as c_JZGJBSJ_LXNY--来校年月
-      ,c.BZLBM as c_JZGJBSJ_BZLBM--编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--名称
-      ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--说明
-      ,c.GWLBM as c_JZGJBSJ_GWLBM--岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--名称
-      ,c.SFJZJS as c_JZGJBSJ_SFJZJS--是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--名称
-      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--是否双师型教
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--名称
-      ,c.ZP as c_JZGJBSJ_ZP--照片(路径)
-      ,c.DQZTM as c_JZGJBSJ_DQZTM--当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--名称
-      ,c.YDDH as c_JZGJBSJ_YDDH--移动电话
-      ,c.GDDH as c_JZGJBSJ_GDDH--固定电话
-      ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--通信地址邮政编码
-      ,c.TXDZ as c_JZGJBSJ_TXDZ--通信地址
-      ,c.DZXX as c_JZGJBSJ_DZXX--电子信箱
-      ,c.WLDZ as c_JZGJBSJ_WLDZ--网络地址
-      ,c.JSTXH as c_JZGJBSJ_JSTXH--即时通讯号
-      ,d.MC as d_JBLX_MC--名称
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,c.YWXM as c_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,c.TXDZ as c_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,c.DZXX as c_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,d.MC as d_JBLX_MC--加班类型代码 名称
 
 FROM dbo.EDU_ZZJG_04_A01_JBDJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

@@ -68,36 +68,36 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[QZWSBJS]--其中卫生保健室
       ,a.[QZQTXZBGYF]--其中其他行政办公用房
       ,a.[QTYF]--其他用房
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.MC as c_SYZK_MC--名称
-      ,d.MC as d_CQ_MC--名称
-      ,e.MC as e_JZWFL_MC--名称
-      ,f.MC as f_JZWJG_MC--名称
-      ,g.MC as g_JFLY_MC--名称
-      ,h.JC as h_KZSFLD_JC--简称
-      ,h.MC as h_KZSFLD_MC--名称
-      ,i.JC as i_KZSFBZ_JC--简称
-      ,i.MC as i_KZSFBZ_MC--名称
-      ,i.SM as i_KZSFBZ_SM--说明
-      ,j.MC as j_JZWZK_MC--名称
-      ,j.SM as j_JZWZK_SM--说明
-      ,k.MC as k_XXDWCC_MC--名称
-      ,l.MC as l_SFBZ_MC--名称
-      ,m.MC as m_SFBZ_MC--名称
-      ,n.MC as n_JZWYT_MC--名称
-      ,o.MC as o_GNFS_MC--名称
-      ,p.MC as p_JZWJCXS_MC--名称
-      ,q.MC as q_JZWPMXS_MC--名称
-      ,r.MC as r_JZWLBXS_MC--名称
-      ,s.MC as s_SFBZ_MC--名称
-      ,t.MC as t_SFBZ_MC--名称
-      ,u.MC as u_ZYZXTZBZMC_MC--名称
-      ,v.MC as v_WWJZDJ_MC--名称
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.MC as c_SYZK_MC--使用状况代码表 名称
+      ,d.MC as d_CQ_MC--产权代码表 名称
+      ,e.MC as e_JZWFL_MC--建筑物分类代码表 名称
+      ,f.MC as f_JZWJG_MC--建筑物结构代码表 名称
+      ,g.MC as g_JFLY_MC--经费来源代码表 名称
+      ,h.JC as h_KZSFLD_JC--抗震设防烈度代码 简称
+      ,h.MC as h_KZSFLD_MC--抗震设防烈度代码 名称
+      ,i.JC as i_KZSFBZ_JC--抗震设防标准代码 简称
+      ,i.MC as i_KZSFBZ_MC--抗震设防标准代码 名称
+      ,i.SM as i_KZSFBZ_SM--抗震设防标准代码 说明
+      ,j.MC as j_JZWZK_MC--建筑物状况代码表 名称
+      ,j.SM as j_JZWZK_SM--建筑物状况代码表 说明
+      ,k.MC as k_XXDWCC_MC--学校单位层次代码表 名称
+      ,l.MC as l_SFBZ_MC--是否标志代码表 名称
+      ,m.MC as m_SFBZ_MC--是否标志代码表 名称
+      ,n.MC as n_JZWYT_MC--建筑物用途代码表 名称
+      ,o.MC as o_GNFS_MC--供暖方式代码表 名称
+      ,p.MC as p_JZWJCXS_MC--建筑物基础形式代码表 名称
+      ,q.MC as q_JZWPMXS_MC--建筑物平面形式代码表 名称
+      ,r.MC as r_JZWLBXS_MC--建筑物楼板形式代码表 名称
+      ,s.MC as s_SFBZ_MC--是否标志代码表 名称
+      ,t.MC as t_SFBZ_MC--是否标志代码表 名称
+      ,u.MC as u_ZYZXTZBZMC_MC--中央专项投资补助名称代码表 名称
+      ,v.MC as v_WWJZDJ_MC--文物建筑等级代码表 名称
 
 FROM dbo.EDU_ZZFC_02_01_JZWJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

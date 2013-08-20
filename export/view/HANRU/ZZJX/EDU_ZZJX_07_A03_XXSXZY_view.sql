@@ -10,23 +10,23 @@ SELECT a.[ID]--实习周/月ID
       ,a.[KSSJ]--开始时间
       ,a.[JSSJ]--结束时间
       ,a.[LX]--类型
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校ID
-      ,c.JHBT as c_XXSXJH_JHBT--计划标题
-      ,c.NJ as c_XXSXJH_NJ--年级
-      ,c.BGXS as c_XXSXJH_BGXS--报告形式
-      ,c.SFSX as c_XXSXJH_SFSX--计划是否生效
-      ,cb.MC as c_XXSXJH_SFSX_MC--名称
-      ,d.SCHOOLID as d_XXSXJD_SCHOOLID--学校ID
-      ,d.SXJHID as d_XXSXJD_SXJHID--实习计划ID
-      ,d.JDM as d_XXSXJD_JDM--阶段名
-      ,d.JDKSSJ as d_XXSXJD_JDKSSJ--阶段开始时间
-      ,d.JDJSSJ as d_XXSXJD_JDJSSJ--阶段结束时间
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校实习计划表 学校ID
+      ,c.JHBT as c_XXSXJH_JHBT--学校实习计划表 计划标题
+      ,c.NJ as c_XXSXJH_NJ--学校实习计划表 年级
+      ,c.BGXS as c_XXSXJH_BGXS--学校实习计划表 报告形式
+      ,c.SFSX as c_XXSXJH_SFSX--学校实习计划表 计划是否生效
+      ,cb.MC as c_XXSXJH_SFSX_MC--授课方式代码表 名称
+      ,d.SCHOOLID as d_XXSXJD_SCHOOLID--学校实习阶段表 学校ID
+      ,d.SXJHID as d_XXSXJD_SXJHID--学校实习阶段表 实习计划ID
+      ,d.JDM as d_XXSXJD_JDM--学校实习阶段表 阶段名
+      ,d.JDKSSJ as d_XXSXJD_JDKSSJ--学校实习阶段表 阶段开始时间
+      ,d.JDJSSJ as d_XXSXJD_JDJSSJ--学校实习阶段表 阶段结束时间
 
 FROM dbo.EDU_ZZJX_07_A03_XXSXZY AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

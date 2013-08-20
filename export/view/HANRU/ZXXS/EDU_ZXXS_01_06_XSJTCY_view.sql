@@ -22,88 +22,88 @@ SELECT a.[ID]--编号
       ,a.[XLM]--学历码
       ,a.[LXDZ]--联系地址
       ,a.[SJHM]--手机号码
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.SCHOOLID as c_XSXX_SCHOOLID--学校名
-      ,c.XH as c_XSXX_XH--学号
-      ,c.XM as c_XSXX_XM--姓名
-      ,c.YWXM as c_XSXX_YWXM--英文姓名
-      ,c.XMPY as c_XSXX_XMPY--姓名拼音
-      ,c.CYM as c_XSXX_CYM--曾用名
-      ,c.XBM as c_XSXX_XBM--性别码
-      ,cb.MC as c_XSXX_XBM_MC--名称
-      ,c.CSRQ as c_XSXX_CSRQ--出生日期
-      ,c.CSDM as c_XSXX_CSDM--出生地码
-      ,cc.MC as c_XSXX_CSDM_MC--名称
-      ,c.JG as c_XSXX_JG--籍贯
-      ,c.MZM as c_XSXX_MZM--民族码
-      ,cd.MZMC as c_XSXX_MZM_MZMC--民族名称
-      ,cd.ZMDM as c_XSXX_MZM_ZMDM--字母代码
-      ,c.GJDQM as c_XSXX_GJDQM--国籍/地区码
-      ,ce.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--国家/地区名称简称
-      ,ce.EZMDM as c_XSXX_GJDQM_EZMDM--二字母代码
-      ,ce.SZMDM as c_XSXX_GJDQM_SZMDM--三字母代码
-      ,c.SFZJLXM as c_XSXX_SFZJLXM--身份证件类型码
-      ,cf.MC as c_XSXX_SFZJLXM_MC--名称
-      ,c.SFZJH as c_XSXX_SFZJH--身份证件号
-      ,c.HYZKM as c_XSXX_HYZKM--婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--名称
-      ,c.GATQWM as c_XSXX_GATQWM--港澳台侨外码
-      ,ch.MC as c_XSXX_GATQWM_MC--名称
-      ,ch.SM as c_XSXX_GATQWM_SM--说明
-      ,c.ZZMMM as c_XSXX_ZZMMM--政治面貌码
-      ,ci.MC as c_XSXX_ZZMMM_MC--名称
-      ,ci.JC as c_XSXX_ZZMMM_JC--简称
-      ,c.JKZKM as c_XSXX_JKZKM--健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--名称
-      ,cj.SM as c_XSXX_JKZKM_SM--说明
-      ,c.XYZJM as c_XSXX_XYZJM--信仰宗教码
-      ,ck.MC as c_XSXX_XYZJM_MC--名称
-      ,c.XXM as c_XSXX_XXM--血型码
-      ,cl.MC as c_XSXX_XXM_MC--名称
-      ,cl.JC as c_XSXX_XXM_JC--简称
-      ,c.ZP as c_XSXX_ZP--照片
-      ,c.SFZJYXQ as c_XSXX_SFZJYXQ--身份证件有效期
-      ,c.DSZYBZ as c_XSXX_DSZYBZ--独生子女标志
-      ,cm.MC as c_XSXX_DSZYBZ_MC--名称
-      ,c.RXNY as c_XSXX_RXNY--入学年月
-      ,c.NJ as c_XSXX_NJ--年级
-      ,c.BH as c_XSXX_BH--班号
-      ,c.XSLBM as c_XSXX_XSLBM--学生类别码
-      ,cn.MC as c_XSXX_XSLBM_MC--名称
-      ,cn.SM as c_XSXX_XSLBM_SM--说明
-      ,c.XZZ as c_XSXX_XZZ--现住址
-      ,c.HKSZD as c_XSXX_HKSZD--户口所在地
-      ,c.HKXZM as c_XSXX_HKXZM--户口性质码
-      ,co.MC as c_XSXX_HKXZM_MC--名称
-      ,c.SFLDRK as c_XSXX_SFLDRK--是否流动人口
-      ,cp.MC as c_XSXX_SFLDRK_MC--名称
-      ,c.TC as c_XSXX_TC--特长
-      ,c.LXDH as c_XSXX_LXDH--联系电话
-      ,c.TXDZ as c_XSXX_TXDZ--通信地址
-      ,c.YZBM as c_XSXX_YZBM--邮政编码
-      ,c.DZXX as c_XSXX_DZXX--电子信箱
-      ,c.ZYDZ as c_XSXX_ZYDZ--主页地址
-      ,c.XJH as c_XSXX_XJH--学籍号
-      ,d.MC as d_JTGX_MC--名称
-      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--民族名称
-      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--字母代码
-      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--国家/地区名称简称
-      ,f.EZMDM as f_SJGGHDQMC_EZMDM--二字母代码
-      ,f.SZMDM as f_SJGGHDQMC_SZMDM--三字母代码
-      ,g.MC as g_JKZKYWSZ_MC--名称
-      ,g.SM as g_JKZKYWSZ_SM--说明
-      ,h.MC as h_CYZK_MC--名称
-      ,h.SM as h_CYZK_SM--说明
-      ,i.MC as i_ZYJSZW_MC--名称
-      ,j.MC as j_ZWJBDM_MC--名称
-      ,k.MC as k_SFBZ_MC--名称
-      ,l.MC as l_RDXB_MC--名称
-      ,m.MC as m_XL_MC--名称
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
+      ,c.XH as c_XSXX_XH--学生基本数据子类表 学号
+      ,c.XM as c_XSXX_XM--学生基本数据子类表 姓名
+      ,c.YWXM as c_XSXX_YWXM--学生基本数据子类表 英文姓名
+      ,c.XMPY as c_XSXX_XMPY--学生基本数据子类表 姓名拼音
+      ,c.CYM as c_XSXX_CYM--学生基本数据子类表 曾用名
+      ,c.XBM as c_XSXX_XBM--学生基本数据子类表 性别码
+      ,cb.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,c.CSRQ as c_XSXX_CSRQ--学生基本数据子类表 出生日期
+      ,c.CSDM as c_XSXX_CSDM--学生基本数据子类表 出生地码
+      ,cc.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,c.JG as c_XSXX_JG--学生基本数据子类表 籍贯
+      ,c.MZM as c_XSXX_MZM--学生基本数据子类表 民族码
+      ,cd.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,cd.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,c.GJDQM as c_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
+      ,ce.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,ce.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,ce.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,c.SFZJLXM as c_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
+      ,cf.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,c.SFZJH as c_XSXX_SFZJH--学生基本数据子类表 身份证件号
+      ,c.HYZKM as c_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
+      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,c.GATQWM as c_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
+      ,ch.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,ch.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,c.ZZMMM as c_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
+      ,ci.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,ci.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,c.JKZKM as c_XSXX_JKZKM--学生基本数据子类表 健康状况码
+      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,c.XYZJM as c_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
+      ,ck.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,c.XXM as c_XSXX_XXM--学生基本数据子类表 血型码
+      ,cl.MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,cl.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,c.ZP as c_XSXX_ZP--学生基本数据子类表 照片
+      ,c.SFZJYXQ as c_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
+      ,c.DSZYBZ as c_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
+      ,cm.MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,c.RXNY as c_XSXX_RXNY--学生基本数据子类表 入学年月
+      ,c.NJ as c_XSXX_NJ--学生基本数据子类表 年级
+      ,c.BH as c_XSXX_BH--学生基本数据子类表 班号
+      ,c.XSLBM as c_XSXX_XSLBM--学生基本数据子类表 学生类别码
+      ,cn.MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,cn.SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,c.XZZ as c_XSXX_XZZ--学生基本数据子类表 现住址
+      ,c.HKSZD as c_XSXX_HKSZD--学生基本数据子类表 户口所在地
+      ,c.HKXZM as c_XSXX_HKXZM--学生基本数据子类表 户口性质码
+      ,co.MC as c_XSXX_HKXZM_MC--户口类别代码 名称
+      ,c.SFLDRK as c_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
+      ,cp.MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,c.TC as c_XSXX_TC--学生基本数据子类表 特长
+      ,c.LXDH as c_XSXX_LXDH--学生基本数据子类表 联系电话
+      ,c.TXDZ as c_XSXX_TXDZ--学生基本数据子类表 通信地址
+      ,c.YZBM as c_XSXX_YZBM--学生基本数据子类表 邮政编码
+      ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
+      ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
+      ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,d.MC as d_JTGX_MC--家庭关系代码 名称
+      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,f.EZMDM as f_SJGGHDQMC_EZMDM--世界各国和地区名称代码 二字母代码
+      ,f.SZMDM as f_SJGGHDQMC_SZMDM--世界各国和地区名称代码 三字母代码
+      ,g.MC as g_JKZKYWSZ_MC--健康状况1位数字代码 名称
+      ,g.SM as g_JKZKYWSZ_SM--健康状况1位数字代码 说明
+      ,h.MC as h_CYZK_MC--从业状况（个人身份）代码 名称
+      ,h.SM as h_CYZK_SM--从业状况（个人身份）代码 说明
+      ,i.MC as i_ZYJSZW_MC--专业技术职务代码 名称
+      ,j.MC as j_ZWJBDM_MC--职务级别代码 名称
+      ,k.MC as k_SFBZ_MC--是否标志代码表 名称
+      ,l.MC as l_RDXB_MC--人的性别代码 名称
+      ,m.MC as m_XL_MC--学历代码 名称
 
 FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

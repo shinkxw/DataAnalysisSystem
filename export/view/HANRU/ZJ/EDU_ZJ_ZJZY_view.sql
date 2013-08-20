@@ -5,7 +5,7 @@ AS
 SELECT a.[DM]--代码
       ,a.[ZYMLLB]--专业目录类别
       ,a.[MC]--名称
-      ,b.MC as b_ZYML_MC--名称
+      ,b.MC as b_ZYML_MC--专业目录代码 名称
 
 FROM dbo.EDU_ZJ_ZJZY AS a LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS b ON a.ZYMLLB = b.DM /*专业目录类别*/

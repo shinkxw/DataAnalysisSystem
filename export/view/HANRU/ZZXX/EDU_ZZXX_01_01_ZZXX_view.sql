@@ -24,12 +24,12 @@ SELECT a.[ID]--编号
       ,a.[LXDH]--联系电话
       ,a.[CZDH]--传真电话
       ,a.[DZXX]--电子信箱
-      ,b.MC as b_XXJYJGJBZ_MC--名称
-      ,b.SM as b_XXJYJGJBZ_SM--说明
-      ,c.MC as c_XXJYJGJBZ_MC--名称
-      ,c.SM as c_XXJYJGJBZ_SM--说明
-      ,d.MC as d_ZHRMGHGXZQH_MC--名称
-      ,e.MC as e_PGQK_MC--名称
+      ,b.MC as b_XXJYJGJBZ_MC--学校（教育机构）举办者代码表 名称
+      ,b.SM as b_XXJYJGJBZ_SM--学校（教育机构）举办者代码表 说明
+      ,c.MC as c_XXJYJGJBZ_MC--学校（教育机构）举办者代码表 名称
+      ,c.SM as c_XXJYJGJBZ_SM--学校（教育机构）举办者代码表 说明
+      ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
+      ,e.MC as e_PGQK_MC--评估情况代码 名称
 
 FROM dbo.EDU_ZZXX_01_01_ZZXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_XXJYJGJBZ AS b ON a.XXJBZM = b.DM /*学校举办者码*/ LEFT OUTER JOIN

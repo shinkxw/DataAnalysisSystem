@@ -45,35 +45,35 @@ SELECT a.[ID]--编号
       ,a.[TC]--特长
       ,a.[GWZYM]--岗位职业码
       ,a.[ZYRKXD]--主要任课学段
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校类型
-      ,b.XNID as b_SCHOOL_XNID--学年ID
-      ,b.XQID as b_SCHOOL_XQID--学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--匹配url
-      ,b.LogLevel as b_SCHOOL_LogLevel--日志级别
-      ,c.MC as c_RDXB_MC--名称
-      ,d.MC as d_ZHRMGHGXZQH_MC--名称
-      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--民族名称
-      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--字母代码
-      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--国家/地区名称简称
-      ,f.EZMDM as f_SJGGHDQMC_EZMDM--二字母代码
-      ,f.SZMDM as f_SJGGHDQMC_SZMDM--三字母代码
-      ,g.MC as g_SFZJLX_MC--名称
-      ,h.MC as h_HYZZ_MC--名称
-      ,i.MC as i_GATQW_MC--名称
-      ,i.SM as i_GATQW_SM--说明
-      ,j.MC as j_ZZMM_MC--名称
-      ,j.JC as j_ZZMM_JC--简称
-      ,k.MC as k_JKZKYWSZ_MC--名称
-      ,k.SM as k_JKZKYWSZ_SM--说明
-      ,l.MC as l_ZJXY_MC--名称
-      ,m.MC as m_XX_MC--名称
-      ,m.JC as m_XX_JC--简称
-      ,n.MC as n_HKLB_MC--名称
-      ,o.MC as o_XL_MC--名称
-      ,p.MC as p_ZXXBZLB_MC--名称
-      ,q.MC as q_GWZY_MC--名称
-      ,r.MC as r_RKXD_MC--名称
+      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
+      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
+      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
+      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
+      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.MC as c_RDXB_MC--人的性别代码 名称
+      ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
+      ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,f.GJDQMCJC as f_SJGGHDQMC_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,f.EZMDM as f_SJGGHDQMC_EZMDM--世界各国和地区名称代码 二字母代码
+      ,f.SZMDM as f_SJGGHDQMC_SZMDM--世界各国和地区名称代码 三字母代码
+      ,g.MC as g_SFZJLX_MC--身份证件类型代码表 名称
+      ,h.MC as h_HYZZ_MC--婚姻状况代码 名称
+      ,i.MC as i_GATQW_MC--港澳台侨外代码表 名称
+      ,i.SM as i_GATQW_SM--港澳台侨外代码表 说明
+      ,j.MC as j_ZZMM_MC--政治面貌代码 名称
+      ,j.JC as j_ZZMM_JC--政治面貌代码 简称
+      ,k.MC as k_JKZKYWSZ_MC--健康状况1位数字代码 名称
+      ,k.SM as k_JKZKYWSZ_SM--健康状况1位数字代码 说明
+      ,l.MC as l_ZJXY_MC--宗教信仰代码 名称
+      ,m.MC as m_XX_MC--血型代码表 名称
+      ,m.JC as m_XX_JC--血型代码表 简称
+      ,n.MC as n_HKLB_MC--户口类别代码 名称
+      ,o.MC as o_XL_MC--学历代码 名称
+      ,p.MC as p_ZXXBZLB_MC--中小学编制类别代码表 名称
+      ,q.MC as q_GWZY_MC--岗位职业代码表 名称
+      ,r.MC as r_RKXD_MC--任课学段代码表 名称
 
 FROM dbo.EDU_ZXJZ_01_01_JZGJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

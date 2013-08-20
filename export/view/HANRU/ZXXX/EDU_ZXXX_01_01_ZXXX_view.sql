@@ -37,21 +37,21 @@ SELECT a.[ID]--学校ID
       ,a.[ZJXYYM]--主教学语言码
       ,a.[FJXYYM]--辅教学语言码
       ,a.[ZSBJ]--招生半径
-      ,b.MC as b_ZHRMGHGXZQH_MC--名称
-      ,c.MC as c_BXLX_MC--名称
-      ,c.SM as c_BXLX_SM--说明
-      ,d.MC as d_XXJYJGJBZ_MC--名称
-      ,d.SM as d_XXJYJGJBZ_SM--说明
-      ,e.MC as e_XXBB_MC--名称
-      ,f.MC as f_XXJYJGJBZ_MC--名称
-      ,f.SM as f_XXJYJGJBZ_SM--说明
-      ,g.MC as g_SZDCXLX_MC--名称
-      ,h.MC as h_SZDQJJSX_MC--名称
-      ,i.MC as i_SFBZ_MC--名称
-      ,j.MC as j_ZGYZ_MC--名称
-      ,j.ZMDM as j_ZGYZ_ZMDM--字母代码
-      ,k.MC as k_ZGYZ_MC--名称
-      ,k.ZMDM as k_ZGYZ_ZMDM--字母代码
+      ,b.MC as b_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
+      ,c.MC as c_BXLX_MC--办学类型代码表 名称
+      ,c.SM as c_BXLX_SM--办学类型代码表 说明
+      ,d.MC as d_XXJYJGJBZ_MC--学校（教育机构）举办者代码表 名称
+      ,d.SM as d_XXJYJGJBZ_SM--学校（教育机构）举办者代码表 说明
+      ,e.MC as e_XXBB_MC--学校办别代码表 名称
+      ,f.MC as f_XXJYJGJBZ_MC--学校（教育机构）举办者代码表 名称
+      ,f.SM as f_XXJYJGJBZ_SM--学校（教育机构）举办者代码表 说明
+      ,g.MC as g_SZDCXLX_MC--所在地城乡类型代码表 名称
+      ,h.MC as h_SZDQJJSX_MC--所在地区经济属性代码表 名称
+      ,i.MC as i_SFBZ_MC--是否标志代码表 名称
+      ,j.MC as j_ZGYZ_MC--中国语种代码 名称
+      ,j.ZMDM as j_ZGYZ_ZMDM--中国语种代码 字母代码
+      ,k.MC as k_ZGYZ_MC--中国语种代码 名称
+      ,k.ZMDM as k_ZGYZ_ZMDM--中国语种代码 字母代码
 
 FROM dbo.EDU_ZXXX_01_01_ZXXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS b ON a.XZQHM = b.DM /*行政区划码*/ LEFT OUTER JOIN

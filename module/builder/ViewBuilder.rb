@@ -78,7 +78,7 @@ class ViewBuilder < BaseBuilder
           if relationed_field.name != field.name
             select_str << "      ,#{@@Short_name[index]}.#{field.name} as "
             select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}"
-            select_str << "_#{field.name}--#{field.explanation}\n"
+            select_str << "_#{field.name}--#{relation_table.explanation} #{field.explanation}\n"
             #字段是否关联标准
             if field.relation != nil && field.relation.table.name =~ /^EDU_(GB|JY|ZZ|ZJ)_/
               bz_table = field.relation.table
@@ -86,7 +86,7 @@ class ViewBuilder < BaseBuilder
                 if field.relation.name != bz_field.name
                   select_str << "      ,#{@@Short_name[index]}#{@@Short_name[i2]}.#{bz_field.name} as "
                   select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}"
-                  select_str << "_#{field.name}_#{bz_field.name}--#{bz_field.explanation}\n"
+                  select_str << "_#{field.name}_#{bz_field.name}--#{bz_table.explanation} #{bz_field.explanation}\n"
                 end
               end
               @bz_inf_arr.push([field,@@Short_name[index],@@Short_name[i2]])
