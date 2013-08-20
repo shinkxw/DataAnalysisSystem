@@ -14,6 +14,9 @@ namespace HanRuEdu.LDAL
             COURSENAME = "";
             CLASSID = "";
             CLASSNAME = "";
+            WEEKDAYNAME = "";
+            PERIODNAME = "";
+            SESSIONNAME = "";
         }
         public class EDU_ELE_04_PKJGJL_metadata
         {
@@ -25,6 +28,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校名")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学期")]
+            public Int32 XQID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -72,9 +80,11 @@ namespace HanRuEdu.LDAL
             public Int32 WEEKDAY { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "工作日名称")]
-            public Int32 WEEKDAYNAME { get; set; }
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String WEEKDAYNAME { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -82,9 +92,11 @@ namespace HanRuEdu.LDAL
             public Int32 PERIOD { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "时段名称")]
-            public Int32 PERIODNAME { get; set; }
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PERIODNAME { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -92,9 +104,11 @@ namespace HanRuEdu.LDAL
             public Int32 SESSION { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "节次名称")]
-            public Int32 SESSIONNAME { get; set; }
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SESSIONNAME { get; set; }
 
 
         }

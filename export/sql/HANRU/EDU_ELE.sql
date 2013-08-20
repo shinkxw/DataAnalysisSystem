@@ -245,6 +245,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ELE_04_PKJGJL](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校名
+	[XQID]  int  NOT NULL,--学期ID
 	[TEACHERID]  int  NOT NULL,--老师
 	[TEACHERNAME]  nvarchar(100)  NOT NULL,--老师
 	[COURSEID]  nvarchar(20)  NOT NULL,--课程
@@ -252,11 +253,11 @@ CREATE TABLE [dbo].[EDU_ELE_04_PKJGJL](
 	[CLASSID]  nvarchar(20)  NOT NULL,--班级
 	[CLASSNAME]  nvarchar(100)  NOT NULL,--班级
 	[WEEKDAY]  int  NOT NULL,--工作日
-	[WEEKDAYNAME]  int  NOT NULL,--工作日名称
+	[WEEKDAYNAME]  nvarchar(20)  NOT NULL,--工作日名称
 	[PERIOD]  int  NOT NULL,--时段
-	[PERIODNAME]  int  NOT NULL,--时段名称
+	[PERIODNAME]  nvarchar(20)  NOT NULL,--时段名称
 	[SESSION]  int  NOT NULL,--节次
-	[SESSIONNAME]  int  NOT NULL,--节次名称
+	[SESSIONNAME]  nvarchar(20)  NOT NULL,--节次名称
 CONSTRAINT [PK_EDU_ELE_04_PKJGJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -434,6 +435,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL', @level2type=N'COLUMN',@level2name=N'ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'老师' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL', @level2type=N'COLUMN',@level2name=N'TEACHERID'
 GO
