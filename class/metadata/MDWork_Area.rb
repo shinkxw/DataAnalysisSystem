@@ -78,7 +78,7 @@ class MDWork_Area
   #输出Sql脚本
   def export_sql(build_folder = true, need_delete = true, need_data = false)
     builder = SqlBuilder.new(need_delete,need_data)
-    builder.need_data_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
+    builder.need_data_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ","EDU_SYS"]
     build_folder ? builder.build_hash(@area).export : builder.build(@area).export
   end
   #输出创建视图语句

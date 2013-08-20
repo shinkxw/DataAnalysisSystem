@@ -12,6 +12,32 @@
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="EDU_ZZXX_01_01_ZZXX" />
             <name="XN" explanation="学年" type="nvarchar(9)" null="F" p="F" identity="F" remark="" />
         </field_area>
+        <data_area>
+            <ID="2012" SCHOOLID="0" XN="2012学年" />
+            <ID="2013" SCHOOLID="0" XN="2013学年" />
+            <ID="2014" SCHOOLID="0" XN="2014学年" />
+            <ID="2015" SCHOOLID="0" XN="2015学年" />
+            <ID="2016" SCHOOLID="0" XN="2016学年" />
+            <ID="2017" SCHOOLID="0" XN="2017学年" />
+            <ID="2018" SCHOOLID="0" XN="2018学年" />
+            <ID="2019" SCHOOLID="0" XN="2019学年" />
+            <ID="2020" SCHOOLID="0" XN="2020学年" />
+            <ID="2021" SCHOOLID="0" XN="2021学年" />
+            <ID="2022" SCHOOLID="0" XN="2022学年" />
+            <ID="2023" SCHOOLID="0" XN="2023学年" />
+            <ID="2024" SCHOOLID="0" XN="2024学年" />
+            <ID="2025" SCHOOLID="0" XN="2025学年" />
+            <ID="2026" SCHOOLID="0" XN="2026学年" />
+            <ID="2027" SCHOOLID="0" XN="2027学年" />
+            <ID="2028" SCHOOLID="0" XN="2028学年" />
+            <ID="2029" SCHOOLID="0" XN="2029学年" />
+            <ID="2030" SCHOOLID="0" XN="2030学年" />
+            <ID="2031" SCHOOLID="0" XN="2031学年" />
+            <ID="2032" SCHOOLID="0" XN="2032学年" />
+            <ID="2033" SCHOOLID="0" XN="2033学年" />
+            <ID="2034" SCHOOLID="0" XN="2034学年" />
+            <ID="2035" SCHOOLID="0" XN="2035学年" />
+        </data_area>
     </table>
     <table name="EDU_SYS_01_MODULE" explanation="">
         <field_area>
