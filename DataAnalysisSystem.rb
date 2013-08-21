@@ -10,15 +10,7 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 #~ @work_area.save_and_close_work_area
 #~ p Time.now - t
 
-db = SqlServer.new('192.168.0.8,1444',)
-db.open('HanruEdu')
-sql = "select * from EDU_JY_ZCZK"
-results = db.query(sql)
-
-puts db.fields.join(" ")
-
-puts results.size
-
-results.each{|result| puts result.inspect}
-
-db.close
+conn = SqlServer.new('192.168.0.8,1444')
+md = MigrateData.new('HanruEdu',conn)
+md.get_table_info('EDU_JY_ZCZK')
+conn.close

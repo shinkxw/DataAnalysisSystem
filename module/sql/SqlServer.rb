@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 require 'win32ole'
+#数据库连接与查询
 class SqlServer
   attr_accessor :connection, :data, :fields
-  attr_writer :username, :password
+  attr_reader :username, :password
   #初始化
   def initialize(host, username = 'sa', password='123456')
     @connection = nil

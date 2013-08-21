@@ -29,8 +29,8 @@ class ScriptLoader
     unless @@ignore_list.include?(script_name)#文件名是否在忽略列表内
       require script_name
       @@required_script.push(script_name)
-      #p "已载入" + script_name
-      #p script_name + " 载入完毕"
+      #puts "已载入" + script_name
+      #puts script_name + " 载入完毕"
     end
   end
   #返回指定目录中的所有目录名
@@ -58,7 +58,7 @@ class ScriptLoader
       str_arr = file.readlines
       str_arr.each do |str|
         #if后只有=
-        p "#{file_path} has problem: #{str}" if str =~ /^[^"]*?if[^=<>!]*?(=(?!=|~)(?!<>!)).*?$/
+        puts "#{file_path} has problem: #{str}" if str =~ /^[^"]*?if[^=<>!]*?(=(?!=|~)(?!<>!)).*?$/
       end
     end
   end
@@ -68,7 +68,8 @@ class ScriptLoader
   end
 end
 
-p "--------------------------------DAS正在加载--------------------------------"
+#代码加载
+#puts "--------------------------------DAS正在加载--------------------------------"
 ScriptLoader.load_all($root + "/class")#加载类定义
 ScriptLoader.load_all($root + "/module")#加载模块
-p "--------------------------------DAS加载完毕--------------------------------"
+#puts "--------------------------------DAS加载完毕--------------------------------"
