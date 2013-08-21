@@ -10,7 +10,12 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 #~ @work_area.save_and_close_work_area
 #~ p Time.now - t
 
-conn = SqlServer.new('192.168.0.8,1444')
-md = MigrateData.new('HanruEdu',conn)
-md.get_table_info('EDU_JY_ZCZK')
+conn = SqlServer.new('192.168.0.8')
+md = MigrateData.new('CloudEdu',conn)
+md.get_table_info('edu_jyb_student')
+
+p md.fields
+puts md.results.size
+md.results.each{|result| puts result.inspect}
+
 conn.close

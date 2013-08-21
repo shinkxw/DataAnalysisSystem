@@ -2,7 +2,7 @@
 # encoding: GBK
 #迁移数据类
 class MigrateData
-  attr_reader :database_name
+  attr_reader :database_name, :fields, :results
   #初始化
   def initialize(db_name,conn)
     @conn = conn
@@ -16,11 +16,14 @@ class MigrateData
   #获得指定表的信息
   def get_table_info(table_name)
     sql = "select * from #{table_name}"
-    results = @conn.query(sql)
-    puts @conn.fields.join(" ")
-    puts results.size
-    results.each{|result| puts result.inspect}
+    @results = @conn.query(sql)
+    @fields = @conn.fields
   end
+  #向指定表中插入信息
+  def 
+    
+  end
+  
 end
 
 
