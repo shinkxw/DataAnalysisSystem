@@ -24,7 +24,11 @@ class FilestrMatcher
         str.force_encoding('GBK') if !str.valid_encoding?#str = str.encode('UTF-8')
         if decide.call(str)
           puts file_path
-          puts str
+          #上下文
+          i = file_str_arr.index(str)
+          puts file_str_arr[i]
+          puts file_str_arr[i + 1]
+          #修改后
           puts str = change.call(str)
           change_num += 1
         end
