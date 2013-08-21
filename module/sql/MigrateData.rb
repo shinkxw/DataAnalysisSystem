@@ -25,7 +25,7 @@ class MigrateData
   def insert_data(table_name,data_hash)
     field_names = data_hash.keys
     prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES('"
-    data_arr = field_names.map{|field_name| @data_hash[field_name]}.transpose#×ªÖÃ
+    data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#×ªÖÃ
     istr = ""
     data_arr.each{|data| istr << "#{prefix_str}#{data.join("', '")}')\n"}
     FileWriter.new(Dir.pwd << "/#{table_name}_QY.sql").write_str(istr)
@@ -36,14 +36,16 @@ class MigrateData
     out_hash = {}
     config.each_key do |key|
       data_arr = []
-      in_name = config[key]['field_name']
+      in_name = config[key][:field_name]
       if in_name != nil
         @data_hash[in_name].each do |data|
-          data_arr << config[key]['proc'].call(data)
+          data_arr << config[key][:proc].call(data)
         end
       else
-        @data_hash[@data_hash.keys[0]].each do |i|
-          data_arr << config[key]['proc'].call
+        i = 0
+        @data_hash[@data_hash.keys[0]].each do |data|
+          data_arr << config[key][:proc].call(i)
+          i += 1
         end
       end
       out_hash[key] = data_arr
