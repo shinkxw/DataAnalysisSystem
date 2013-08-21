@@ -83,6 +83,7 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
 
 FROM dbo.EDU_ZZJG_01_A01_JZGKZ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS b ON a.JZGJBSJID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

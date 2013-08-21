@@ -83,6 +83,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MC as e_YZMCEZM_MC--语种名称代码2字母代码 名称
       ,f.MC as f_KSFS_MC--考试方式代码表 名称

@@ -15,6 +15,7 @@ SELECT a.[ID]--网站广告ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启

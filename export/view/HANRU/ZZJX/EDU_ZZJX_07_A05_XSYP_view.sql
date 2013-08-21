@@ -15,6 +15,7 @@ SELECT a.[ID]--学生应聘信息ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名

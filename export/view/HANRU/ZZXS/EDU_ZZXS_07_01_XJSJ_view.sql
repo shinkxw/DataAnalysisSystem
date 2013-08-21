@@ -68,6 +68,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,db.ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别

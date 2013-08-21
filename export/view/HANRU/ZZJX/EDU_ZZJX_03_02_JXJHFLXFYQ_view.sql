@@ -12,6 +12,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_KCFL_MC--课程分类代码 名称
       ,d.SCHOOLID as d_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
       ,d.JHNJ as d_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级

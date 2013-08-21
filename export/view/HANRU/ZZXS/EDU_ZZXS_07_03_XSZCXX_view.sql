@@ -68,6 +68,7 @@ SELECT a.[XSXXID]--学生ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码

@@ -18,6 +18,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_KC_SCHOOLID--课程数据子类表 学校ID
       ,c.KCMC as c_KC_KCMC--课程数据子类表 课程名称
       ,c.KCYWM as c_KC_KCYWM--课程数据子类表 课程英文名

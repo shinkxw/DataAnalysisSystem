@@ -24,6 +24,7 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_ZXXKC_MC--中小学课程代码表 名称
       ,c.SYXX as c_ZXXKC_SYXX--中小学课程代码表 适用学校
       ,d.MC as d_ZXXKCDJ_MC--中小学课程等级代码表 名称

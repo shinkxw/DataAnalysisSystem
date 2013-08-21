@@ -74,6 +74,7 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SYZK_MC--使用状况代码表 名称
       ,d.MC as d_CQ_MC--产权代码表 名称
       ,e.MC as e_JZWFL_MC--建筑物分类代码表 名称

@@ -62,6 +62,7 @@ SELECT a.[XSXXID]--考生ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_ZKKM_MC--中考科目代码 名称
 
 FROM dbo.EDU_ZZZS_03_01_KSKMCJ AS a LEFT OUTER JOIN

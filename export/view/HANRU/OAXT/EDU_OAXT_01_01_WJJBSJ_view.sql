@@ -22,6 +22,7 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.HYPYDM as c_WXBMZJ_HYPYDM--文献保密等级代码与标识 汉语拼音代码
       ,c.HZDM as c_WXBMZJ_HZDM--文献保密等级代码与标识 汉字代码
       ,c.MC as c_WXBMZJ_MC--文献保密等级代码与标识 名称

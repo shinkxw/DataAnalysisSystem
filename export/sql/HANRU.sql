@@ -110,6 +110,7 @@ CREATE TABLE [dbo].[EDU_ELE_01_SCHOOL](
 	[XQID]  int  NOT NULL,--学期ID
 	[MatchURL]  nvarchar(500)  NOT NULL,--匹配url
 	[LogLevel]  int  NOT NULL,--日志级别
+	[ModuleIdList]  text  NOT NULL,--权限列表
 CONSTRAINT [PK_EDU_ELE_01_SCHOOL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC
@@ -335,6 +336,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'匹配url' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'MatchURL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'日志级别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'LogLevel'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'权限列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'ModuleIdList'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_XQ'
 GO
@@ -27728,30 +27731,6 @@ CONSTRAINT [PK_EDU_SYS_01_XN] PRIMARY KEY CLUSTERED
 END
 GO
 
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2012', '0', '2012学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2013', '0', '2013学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2014', '0', '2014学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2015', '0', '2015学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2016', '0', '2016学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2017', '0', '2017学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2018', '0', '2018学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2019', '0', '2019学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2020', '0', '2020学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2021', '0', '2021学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2022', '0', '2022学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2023', '0', '2023学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2024', '0', '2024学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2025', '0', '2025学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2026', '0', '2026学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2027', '0', '2027学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2028', '0', '2028学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2029', '0', '2029学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2030', '0', '2030学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2031', '0', '2031学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2032', '0', '2032学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2033', '0', '2033学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2034', '0', '2034学年')
-INSERT INTO [EDU_SYS_01_XN]([ID] ,[SCHOOLID] ,[XN]) VALUES('2035', '0', '2035学年')
 
 --
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_SYS_01_MODULE]') AND type in (N'U'))

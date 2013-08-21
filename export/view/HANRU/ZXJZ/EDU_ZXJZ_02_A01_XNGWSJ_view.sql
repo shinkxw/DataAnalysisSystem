@@ -17,6 +17,7 @@ SELECT a.[ID]--编号
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JGGW_SCHOOLID--机构岗位表 学校ID
       ,c.JGH as c_JGGW_JGH--机构岗位表 机构号
       ,c.GWBH as c_JGGW_GWBH--机构岗位表 岗位编号

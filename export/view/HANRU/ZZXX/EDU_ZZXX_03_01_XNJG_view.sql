@@ -22,6 +22,7 @@ SELECT a.[JGH]--机构号
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
       ,c.JGMC as c_XNJG_JGMC--校内机构数据类表 机构名称
       ,c.JGYWMC as c_XNJG_JGYWMC--校内机构数据类表 机构英文名称

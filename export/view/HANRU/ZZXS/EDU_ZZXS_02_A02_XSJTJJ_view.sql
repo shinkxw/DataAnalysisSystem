@@ -69,6 +69,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_JTLB_MC--家庭类别代码表 名称
       ,e.MC as e_KNYY_MC--困难原因代码表 名称
       ,f.MC as f_KNCD_MC--困难程度代码表 名称

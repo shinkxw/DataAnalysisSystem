@@ -15,6 +15,7 @@ SELECT a.[ID]--分组ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
       ,c.NAME as c_APP_NAME--应用表 应用名称
       ,c.URL as c_APP_URL--应用表 网址

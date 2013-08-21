@@ -14,6 +14,7 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JG_SCHOOLID--机构数据类表 学校名
       ,c.LSJGH as c_JG_LSJGH--机构数据类表 隶属机构号
       ,c.JGMC as c_JG_JGMC--机构数据类表 机构名称

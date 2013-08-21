@@ -19,6 +19,7 @@ SELECT a.[WEBID]--网站ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
+      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_WZYS_SCHOOLID--样式库 学校名
       ,d.WEBID as d_WZYS_WEBID--样式库 网站ID
       ,d.NAME as d_WZYS_NAME--样式库 样式名

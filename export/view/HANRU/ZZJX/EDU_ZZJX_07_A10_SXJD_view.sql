@@ -16,6 +16,7 @@ SELECT a.[ID]--实习鉴定信息ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校实习计划表 学校ID
       ,c.JHBT as c_XXSXJH_JHBT--学校实习计划表 计划标题
       ,c.NJ as c_XXSXJH_NJ--学校实习计划表 年级

@@ -18,6 +18,7 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
+      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
       ,c.WJBH as c_WJJBSJ_WJBH--文件基本数据类表 文件编号
       ,c.WJWH as c_WJJBSJ_WJWH--文件基本数据类表 文件文号
