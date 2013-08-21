@@ -38,7 +38,7 @@ class SqlServer
       @data = []
     end
     recordset.Close
-    @data.transpose
+    @data#.transpose
   end
   #πÿ±’¡¨Ω”
   def close;@connection.Close end

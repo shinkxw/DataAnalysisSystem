@@ -40,6 +40,8 @@
             <name="XNID" explanation="学年ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="MatchURL" explanation="匹配url" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
+            <name="MenhuURL" explanation="门户url" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
+            <name="MenhuWebid" explanation="门户webid" type="int" null="F" p="F" identity="F" remark="" />
             <name="LogLevel" explanation="日志级别" type="int" null="F" p="F" identity="F" remark="" />
             <name="ModuleIdList" explanation="权限列表" type="text" null="F" p="F" identity="F" remark="" />
         </field_area>

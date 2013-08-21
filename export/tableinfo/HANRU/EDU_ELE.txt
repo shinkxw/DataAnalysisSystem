@@ -33,6 +33,8 @@ EDU_ELE_01_SCHOOL  学校配置表
   XNID        学年ID                int            非主
   XQID        学期ID                int            非主     学期数据表
   MatchURL    匹配url              nvarchar(500)  非主
+  MenhuURL    门户url              nvarchar(500)  非主
+  MenhuWebid  门户webid          int            非主
   LogLevel    日志级别                int            非主
   ModuleIdList权限列表                text           非主
 

@@ -109,6 +109,8 @@ CREATE TABLE [dbo].[EDU_ELE_01_SCHOOL](
 	[XNID]  int  NOT NULL,--学年ID
 	[XQID]  int  NOT NULL,--学期ID
 	[MatchURL]  nvarchar(500)  NOT NULL,--匹配url
+	[MenhuURL]  nvarchar(500)  NOT NULL,--门户url
+	[MenhuWebid]  int  NOT NULL,--门户webid
 	[LogLevel]  int  NOT NULL,--日志级别
 	[ModuleIdList]  text  NOT NULL,--权限列表
 CONSTRAINT [PK_EDU_ELE_01_SCHOOL] PRIMARY KEY CLUSTERED
@@ -334,6 +336,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'匹配url' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'MatchURL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'门户url' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'MenhuURL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'门户webid' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'MenhuWebid'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'日志级别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'LogLevel'
 GO

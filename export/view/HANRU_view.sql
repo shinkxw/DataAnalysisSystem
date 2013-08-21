@@ -500,6 +500,8 @@ SELECT a.[LOGINNAME]--用户名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
@@ -531,6 +533,8 @@ SELECT a.[ID]--应用ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -547,6 +551,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[XNID]--学年ID
       ,a.[XQID]--学期ID
       ,a.[MatchURL]--匹配url
+      ,a.[MenhuURL]--门户url
+      ,a.[MenhuWebid]--门户webid
       ,a.[LogLevel]--日志级别
       ,a.[ModuleIdList]--权限列表
       ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
@@ -554,6 +560,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -585,6 +593,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
@@ -612,6 +622,8 @@ SELECT a.[ID]--分组ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
@@ -667,6 +679,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
@@ -706,6 +720,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
@@ -751,6 +767,8 @@ SELECT a.[ID]--通知ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
@@ -788,6 +806,8 @@ SELECT a.[ID]--通知阅读记录ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_TZ_SCHOOLID--通知数据表 学校ID
@@ -843,6 +863,8 @@ SELECT a.[ID]--公告ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
@@ -889,6 +911,8 @@ SELECT a.[ID]--邮件ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
@@ -968,6 +992,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.HYPYDM as c_WXBMZJ_HYPYDM--文献保密等级代码与标识 汉语拼音代码
@@ -1005,6 +1031,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1101,6 +1129,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1179,6 +1209,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1308,6 +1340,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1369,6 +1403,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1430,6 +1466,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1491,6 +1529,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1553,6 +1593,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1632,6 +1674,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WJJBSJ_SCHOOLID--文件基本数据类表 学校名
@@ -1718,6 +1762,8 @@ SELECT a.[ID]--数据发布ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -1745,6 +1791,8 @@ SELECT a.[ID]--单位ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_DWSJ_SCHOOLID--单位数据表 学校ID
@@ -1785,6 +1833,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -1811,6 +1861,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -1837,6 +1889,8 @@ SELECT a.[ID]--样式ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -1865,6 +1919,8 @@ SELECT a.[ID]--投票题目选项ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -1909,6 +1965,8 @@ SELECT a.[ID]--投票题目ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -1948,6 +2006,8 @@ SELECT a.[ID]--投票设置ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -1980,6 +2040,8 @@ SELECT a.[ID]--投票记录ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2015,6 +2077,8 @@ SELECT a.[ID]--友情链接类型ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2043,6 +2107,8 @@ SELECT a.[ID]--友情链接ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2074,6 +2140,8 @@ SELECT a.[ID]--样式库ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2120,6 +2188,8 @@ SELECT a.[ID]--网站文章ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2166,6 +2236,8 @@ SELECT a.[ID]--评价ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2223,6 +2295,8 @@ SELECT a.[WEBID]--网站ID
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_WZYS_SCHOOLID--样式库 学校名
@@ -2258,6 +2332,8 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2300,6 +2376,8 @@ SELECT a.[ID]--网站广告ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2327,6 +2405,8 @@ SELECT a.[ID]--访问履历ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2354,6 +2434,8 @@ SELECT a.[ID]--发布权限ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -2391,6 +2473,8 @@ SELECT a.[ID]--值周岗位表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2425,6 +2509,8 @@ SELECT a.[ID]--值周人员安排表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2499,6 +2585,8 @@ SELECT a.[ID]--值周岗位分配表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2552,6 +2640,8 @@ SELECT a.[ID]--岗位分配模板表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -2573,6 +2663,8 @@ SELECT a.[ID]--特别值周教师表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2619,6 +2711,8 @@ SELECT a.[ID]--周次表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2666,6 +2760,8 @@ SELECT a.[ID]--值周打分大类表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2695,6 +2791,8 @@ SELECT a.[ID]--值周打分细则表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_ZZDFDL_SCHOOLID--值周打分大类表 学校ID
@@ -2727,6 +2825,8 @@ SELECT a.[ID]--值周打分单表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2805,6 +2905,8 @@ SELECT a.[ID]--值周小结表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2841,6 +2943,8 @@ SELECT a.[ID]--国旗下讲话表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -2887,6 +2991,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_ZXXKC_MC--中小学课程代码表 名称
@@ -2954,6 +3060,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_RDXB_MC--人的性别代码 名称
@@ -3017,6 +3125,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JGGW_SCHOOLID--机构岗位表 学校ID
@@ -3141,6 +3251,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -3329,6 +3441,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_RDXB_MC--人的性别代码 名称
@@ -3426,6 +3540,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
@@ -3616,6 +3732,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -3725,6 +3843,8 @@ SELECT a.[ID]--学籍异动表编号
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
@@ -3960,6 +4080,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -3989,6 +4111,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_NJ_SCHOOLID--年级数据类表 学校名
@@ -4020,6 +4144,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JG_SCHOOLID--机构数据类表 学校名
@@ -4047,6 +4173,8 @@ SELECT a.[ID]--岗位表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JG_SCHOOLID--机构数据类表 学校名
@@ -4134,6 +4262,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SYZK_MC--使用状况代码表 名称
@@ -4210,6 +4340,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
@@ -4348,6 +4480,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
@@ -4506,6 +4640,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -4533,6 +4669,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
@@ -4732,6 +4870,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
@@ -4802,6 +4942,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JGGW_SCHOOLID--机构岗位表 学校ID
@@ -4939,6 +5081,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -5050,6 +5194,8 @@ SELECT a.[ID]--加班登记表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -5230,6 +5376,8 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -5280,6 +5428,8 @@ SELECT a.[XZBDM]--行政班代码
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
@@ -5344,6 +5494,8 @@ SELECT a.[NJDM]--年级代码
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
@@ -5375,6 +5527,8 @@ SELECT a.[ZYBH]--专业编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.ZYMLLB as c_ZJZY_ZYMLLB--自建专业代码 专业目录类别
@@ -5422,6 +5576,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -5604,6 +5760,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -5721,6 +5879,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -5768,6 +5928,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_KC_SCHOOLID--课程数据子类表 学校ID
@@ -5836,6 +5998,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_KCFL_MC--课程分类代码 名称
@@ -5877,6 +6041,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_ZZNJ_SCHOOLID--学校年级数据表 学校名
@@ -5927,6 +6093,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -6079,6 +6247,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JSRK_SCHOOLID--教师任课表 学校ID
@@ -6133,6 +6303,8 @@ SELECT a.[KCH]--课程号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
@@ -6198,6 +6370,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SXJDLB_MC--实习基地类别代码 名称
@@ -6234,6 +6408,8 @@ SELECT a.[SCHOOLID]--学校名
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -6385,6 +6561,8 @@ SELECT a.[ID]--奖惩信息ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校实习计划表 学校ID
@@ -6481,6 +6659,8 @@ SELECT a.[ID]--实习鉴定信息ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校实习计划表 学校ID
@@ -6577,6 +6757,8 @@ SELECT a.[ID]--实习日志ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -6688,6 +6870,8 @@ SELECT a.[ID]--实习投诉ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XWSXJDXX_SCHOOLID--校外实习基地信息数据子类表 学校名
@@ -6821,6 +7005,8 @@ SELECT a.[ID]--实习转岗ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -7022,6 +7208,8 @@ SELECT a.[ID]--校企互动信息ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XWSXJDXX_SCHOOLID--校外实习基地信息数据子类表 学校名
@@ -7078,6 +7266,8 @@ SELECT a.[ID]--学生应聘信息ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -7236,6 +7426,8 @@ SELECT a.[ID]--实习岗位ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XWSXJDXX_SCHOOLID--校外实习基地信息数据子类表 学校名
@@ -7293,6 +7485,8 @@ SELECT a.[ID]--实习周/月ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校实习计划表 学校ID
@@ -7328,6 +7522,8 @@ SELECT a.[ID]--实习阶段ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XXSXJH_SCHOOLID--学校实习计划表 学校ID
@@ -7357,6 +7553,8 @@ SELECT a.[ID]--实习计划ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SKFS_MC--授课方式代码表 名称
@@ -7434,6 +7632,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
@@ -7572,6 +7772,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_JTLB_MC--家庭类别代码表 名称
@@ -7626,6 +7828,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -7718,6 +7922,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -7867,6 +8073,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
 
@@ -7965,6 +8173,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
@@ -8069,6 +8279,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
@@ -8179,6 +8391,8 @@ SELECT a.[XSXXID]--学生ID
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
@@ -8295,6 +8509,8 @@ SELECT a.[ID]--学籍异动表编号
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
@@ -8566,6 +8782,8 @@ SELECT a.[XSXXID]--学生ID
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
@@ -8815,6 +9033,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
@@ -8909,6 +9129,8 @@ SELECT a.[JGH]--机构号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
@@ -8991,6 +9213,8 @@ SELECT a.[ID]--岗位表ID
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
@@ -9080,6 +9304,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_FJFLB_MC--附加分类别代码表 名称
@@ -9118,6 +9344,8 @@ SELECT a.[ID]--编号
       ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
       ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
       ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
+      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
+      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
       ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
@@ -9230,6 +9458,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
@@ -9321,6 +9551,8 @@ SELECT a.[XSXXID]--考生ID
       ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
       ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
       ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
+      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
+      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
       ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
       ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.MC as d_ZKKM_MC--中考科目代码 名称

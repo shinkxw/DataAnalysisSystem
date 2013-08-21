@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             SCHOOLNAME = "";
             MatchURL = "";
+            MenhuURL = "";
             ModuleIdList = "";
         }
         public class EDU_ELE_01_SCHOOL_metadata
@@ -47,6 +48,18 @@ namespace HanRuEdu.LDAL
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String MatchURL { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "门户url")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String MenhuURL { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "门户webid")]
+            public Int32 MenhuWebid { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
