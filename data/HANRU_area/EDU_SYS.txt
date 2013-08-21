@@ -6,7 +6,7 @@
             <name="VALUE" explanation="ÅäÖÃÖµ" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
         </field_area>
         <data_area>
-            <ID="1001" VALUE="http://www.114school.com" />
+            <ID="1001" VALUE="http://115.236.101.41/yxtlogin/index.jsp" />
             <ID="1002" VALUE="http://sso.114school.com/cas/" />
             <ID="1003" VALUE="http://www2.114school.com/203S/api4LoginUser.do" />
             <ID="1004" VALUE="http://115.236.101.57/MsgService/SiServer" />
