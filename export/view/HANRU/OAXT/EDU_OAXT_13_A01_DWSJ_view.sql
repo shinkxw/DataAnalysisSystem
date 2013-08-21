@@ -8,15 +8,6 @@ SELECT a.[ID]--单位ID
       ,a.[DWFZRID]--单位负责人ID
       ,a.[DWMC]--单位名称
       ,a.[DWCYIDLB]--单位成员ID列表
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
-      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
-      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
-      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
-      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_DWSJ_SCHOOLID--单位数据表 学校ID
       ,c.SJDWID as c_DWSJ_SJDWID--单位数据表 上级单位ID
       ,c.DWFZRID as c_DWSJ_DWFZRID--单位数据表 单位负责人ID
@@ -39,7 +30,6 @@ SELECT a.[ID]--单位ID
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
 
 FROM dbo.EDU_OAXT_13_A01_DWSJ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_OAXT_13_A01_DWSJ AS c ON a.SJDWID = c.ID /*上级单位ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.DWFZRID = d.LOGINNAME /*单位负责人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO

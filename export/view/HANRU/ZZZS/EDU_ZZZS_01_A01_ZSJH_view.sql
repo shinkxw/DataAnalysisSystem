@@ -8,15 +8,6 @@ SELECT a.[ID]--编号
       ,a.[XNID]--学年
       ,a.[ZSJHRS]--招生计划
       ,a.[BZ]--备注
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
-      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
-      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
-      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
-      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -37,7 +28,6 @@ SELECT a.[ID]--编号
       ,d.XN as d_XN_XN--学年表 学年
 
 FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN

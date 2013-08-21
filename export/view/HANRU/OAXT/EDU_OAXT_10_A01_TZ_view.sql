@@ -16,15 +16,6 @@ SELECT a.[ID]--通知ID
       ,a.[YYDRIDLB]--已阅读人ID列表
       ,a.[YYDRMZLB]--已阅读人名字列表
       ,a.[FSZT]--发送状态
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
-      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
-      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
-      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
-      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
       ,c.PWD as c_USER_PWD--应用系统用户表 密码
@@ -42,6 +33,5 @@ SELECT a.[ID]--通知ID
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
 
 FROM dbo.EDU_OAXT_10_A01_TZ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.FSRID = c.LOGINNAME /*发送人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO

@@ -41,15 +41,6 @@ SELECT a.[ID]--编号
       ,a.[DZXX]--电子信箱
       ,a.[ZYDZ]--主页地址
       ,a.[XJH]--学籍号
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
-      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
-      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
-      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
-      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -94,7 +85,6 @@ SELECT a.[ID]--编号
       ,s.MC as s_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS d ON a.CSDM = d.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS e ON a.MZM = e.DM /*民族码*/ LEFT OUTER JOIN

@@ -15,15 +15,6 @@ SELECT a.[ID]--值周打分单表ID
       ,a.[DFSJ]--打分时间
       ,a.[DFJSID]--打分教师ID
       ,a.[BZ]--备注
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
-      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
-      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
-      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
-      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -74,7 +65,6 @@ SELECT a.[ID]--值周打分单表ID
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
 
 FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS e ON a.BJ = e.BH /*班级*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

@@ -62,15 +62,6 @@ SELECT a.[XSXXID]--学生ID
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
-      ,c.SCHOOLNAME as c_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,c.SCHOOLTYPE as c_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
-      ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
-      ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
-      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
-      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
-      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -84,7 +75,6 @@ SELECT a.[XSXXID]--学生ID
 
 FROM dbo.EDU_ZZXS_07_03_XSZCXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS c ON a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZCZK AS e ON a.ZCZKM = e.DM /*注册状况码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFQJ = f.DM /*是否请假*/ LEFT OUTER JOIN

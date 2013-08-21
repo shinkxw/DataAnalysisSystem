@@ -77,19 +77,9 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.DZXX as b_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
-      ,c.SCHOOLNAME as c_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,c.SCHOOLTYPE as c_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,c.XNID as c_SCHOOL_XNID--学校配置表 学年ID
-      ,c.XQID as c_SCHOOL_XQID--学校配置表 学期ID
-      ,c.MatchURL as c_SCHOOL_MatchURL--学校配置表 匹配url
-      ,c.MenhuURL as c_SCHOOL_MenhuURL--学校配置表 门户url
-      ,c.MenhuWebid as c_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,c.LogLevel as c_SCHOOL_LogLevel--学校配置表 日志级别
-      ,c.ModuleIdList as c_SCHOOL_ModuleIdList--学校配置表 权限列表
 
 FROM dbo.EDU_ZZJG_01_A01_JZGKZ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS b ON a.JZGJBSJID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS c ON a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN

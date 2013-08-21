@@ -7,6 +7,7 @@ class ViewBuilder < BaseBuilder
   attr_reader :view_str#生成的view语句
   attr_reader :need_delete#是否增加删除语句
   attr_reader :bz_inf_arr#关联标准信息数组
+  attr_reader :ignore_table_arr#忽视关联表数组
   attr_reader :bulid_table_name_arr#需生成视图的表名数组,nil为全生成
   attr_reader :builder_version#生成器版本
   @@Short_name = ["b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -17,6 +18,7 @@ class ViewBuilder < BaseBuilder
     @view_str = nil
     @need_delete = need_delete
     @bz_inf_arr = nil
+    @ignore_table_arr = ["EDU_ELE_01_SCHOOL"]
     @bulid_table_name_arr = bulid_table_name_arr
     @builder_version = "0.1"
     super(log)
@@ -46,7 +48,7 @@ class ViewBuilder < BaseBuilder
     end
     MDDoc.new("view",@area.name,@view_str_hash)
   end
-  #生成创建表的视图语句
+  #生成创建视图的语句
   def add_table_view(table)
     @bz_inf_arr = []
     relation_field_arr = table.get_relation
@@ -72,6 +74,7 @@ class ViewBuilder < BaseBuilder
     relation_field_arr.each_index do |index|
       if index < 24
         relationed_field = relation_field_arr[index].relation
+        next if @ignore_table_arr.include?(relationed_field.table.name)
         relation_table = relationed_field.table
         i2 = 0
         relation_table.field_area.each do |field|
@@ -106,6 +109,7 @@ class ViewBuilder < BaseBuilder
     from_str << "FROM dbo.#{table.name} AS a"
     relation_field_arr.each_index do |index|
       relationed_field = relation_field_arr[index].relation
+      next if @ignore_table_arr.include?(relationed_field.table.name)
       from_str << " LEFT OUTER JOIN\n      "
       from_str << "dbo.#{relationed_field.table.name} "
       from_str << "AS #{@@Short_name[index]} ON"

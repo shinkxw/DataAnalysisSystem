@@ -9,15 +9,6 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[PJSJ]--评价时间
       ,a.[PJNR]--评价内容
       ,a.[HF]--回复
-      ,b.SCHOOLNAME as b_SCHOOL_SCHOOLNAME--学校配置表 学校名称
-      ,b.SCHOOLTYPE as b_SCHOOL_SCHOOLTYPE--学校配置表 学校类型
-      ,b.XNID as b_SCHOOL_XNID--学校配置表 学年ID
-      ,b.XQID as b_SCHOOL_XQID--学校配置表 学期ID
-      ,b.MatchURL as b_SCHOOL_MatchURL--学校配置表 匹配url
-      ,b.MenhuURL as b_SCHOOL_MenhuURL--学校配置表 门户url
-      ,b.MenhuWebid as b_SCHOOL_MenhuWebid--学校配置表 门户webid
-      ,b.LogLevel as b_SCHOOL_LogLevel--学校配置表 日志级别
-      ,b.ModuleIdList as b_SCHOOL_ModuleIdList--学校配置表 权限列表
       ,c.SCHOOLID as c_JSRK_SCHOOLID--教师任课表 学校ID
       ,c.JSID as c_JSRK_JSID--教师任课表 教师表ID
       ,c.KCH as c_JSRK_KCH--教师任课表 课程号
@@ -41,7 +32,6 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
 
 FROM dbo.EDU_ZZJX_01_A01_KCPJ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_SCHOOL AS b ON a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_A02_JSRK AS c ON a.KXH = c.KXH /*课序号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.PJR = d.LOGINNAME /*评价人*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO
