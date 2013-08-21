@@ -16,12 +16,10 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 conn = SqlServer.new('192.168.0.8')
 md = MigrateData.new('CloudEdu',conn)
 md.get_table_info('edu_ele_student')
-hash_1 = { field_name: nil, proc: Proc.new{|i| i + 1}}
-hash_2 = { field_name: Name, proc: Proc.new{|str| str}}
-hash_3 = { field_name: ID, proc: Proc.new{|str| str}}
-config = { ID: hash_1,
-           XM: hash_1, 
-           XH: hash_2, }
-md.convert_data('edu_ele_student',config)
+#hash_1 = { field_name: nil, proc: Proc.new{|i| i + 1}}
+config = { ID: { field_name: nil, proc: Proc.new{|i| i + 1}},
+           XM: { field_name: 'Name', proc: Proc.new{|str| str}}, 
+           XH: { field_name: 'ID', proc: Proc.new{|str| str}}, }
+md.convert_data('EDU_ZZXS_01_01_XSXX',config)
 
 conn.close
