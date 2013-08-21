@@ -68,3 +68,7 @@ class ScriptLoader
   end
 end
 
+p "--------------------------------DAS正在加载--------------------------------"
+ScriptLoader.load_all($root + "/class")#加载类定义
+ScriptLoader.load_all($root + "/module")#加载模块
+p "--------------------------------DAS加载完毕--------------------------------"

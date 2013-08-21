@@ -17,6 +17,16 @@ class MDWork_Area
     save_to_temporary
     backup_work_area
   end
+  #输出所有
+  def export_all
+    export_sql
+    export_sql(false)
+    export_view
+    export_view(false)
+    export_model
+    export_template
+    export_tableinfo
+  end
   #自数据库脚本更新数据
   def update_by_sql(sql_file_name)
     str_arr = FileLoader.new("#{@@enter_path}/sql/#{sql_file_name}.sql").get_str_arr
