@@ -15,7 +15,7 @@ class SqlServer
   end
   #打开连接
   def open(database)
-    connection_string = "Provider=sqloledb;"
+    connection_string = "Provider=sqloledb;"#Microsoft.Jet.OleDb.4.0
     connection_string << "Persist Security Info=True;"
     connection_string << "User ID=#{@username};"
     connection_string << "password=#{@password};"
