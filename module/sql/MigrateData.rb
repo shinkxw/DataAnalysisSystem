@@ -24,10 +24,13 @@ class MigrateData
   #生成插入数据脚本
   def insert_data(table_name,data_hash)
     field_names = data_hash.keys
-    prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES('"
+    prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
     data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
     istr = ""
-    data_arr.each{|data| istr << "#{prefix_str}#{data.join("', '")}')\n"}
+    data_arr.each do |data|
+      data.map!{|d| d =~ /^CAST\(/ ? d : "'#{d}'"}
+      istr << "#{prefix_str}#{data.join(", ")})\n"
+    end
     FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
   end
   #根据配置将hash表的内容进行转换

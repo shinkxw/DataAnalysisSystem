@@ -16,7 +16,11 @@ conn = SqlServer.new('(local)\SQLEXPRESS','sa','123@abc')
 md = MigrateData.new('CloudEdu',conn)
 
 content_proc = Proc.new do |str|
-  str
+  str.gsub(/'/, "''")
+end
+time_proc = Proc.new do |time|
+  ":sec, :min, :hour, :mday, :day, :mon, :month, :year, :wday, :yday, :tv_sec, :tv_usec, :usec, :tv_nsec, :nsec,  "
+  "CAST('#{time}' AS DateTime)"
 end
 md.get_table_info('edu_wzgl_sparticle')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -28,7 +32,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            PUBLISHERNAME: { fn: 'AuthorID', p: Proc.new{|str| str}},
            AUTHOR: { fn: 'Author', p: Proc.new{|str| str}},
            AUTHORDEPART: { fn: 'Authordepart', p: Proc.new{|str| str}},
-           PUBLISHDATE: { fn: 'PublishDate', p: Proc.new{|str| str}},
+           PUBLISHDATE: { fn: 'PublishDate', p: time_proc},
            CONTENT: { fn: 'Content', p: content_proc},
            URL: { fn: 'Url', p: Proc.new{|str| str}},
            IMAGEURL: { fn: 'ImageUrl', p: Proc.new{|str| str}},
@@ -38,7 +42,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            AUDITSTATU: { fn: 'Auditing', p: Proc.new{|str| str}},
            AUDITOR: { fn: 'Auditer', p: Proc.new{|str| str}},
            AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},
-           AUDITTIME: { fn: 'AuditerTime', p: Proc.new{|str| str}},
+           AUDITTIME: { fn: 'AuditerTime', p: time_proc},
            REMARK: { fn: 'Remark', p: Proc.new{|str| str}},
            SUMMARY: { fn: 'Summary', p: Proc.new{|str| str}},
            DISPLAYTYPE: { fn: 'DisplayType', p: Proc.new{|str| str}},
