@@ -1,0 +1,8 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           APPID: { fn: '', p: Proc.new{|i| ''}},
+           NAME: { fn: '', p: Proc.new{|i| ''}},
+           Depth: { fn: '', p: Proc.new{|i| ''}},
+           PID: { fn: '', p: Proc.new{|i| ''}},
+           MenuDisp: { fn: '', p: Proc.new{|i| ''}},
+           MenuUserType: { fn: '', p: Proc.new{|i| ''}},
+           Link: { fn: '', p: Proc.new{|i| ''}},

@@ -14,12 +14,14 @@ class MigrateData
     @conn.open(@db_name)
   end
   #获得指定表的信息
-  def get_table_info(table_name)
-    sql = "select * from #{table_name}"
-    @results = @conn.query(sql)
-    @fields = @conn.fields
+  def get_table_info(table_arr)
     @data_hash = {}
-    @fields.each_index{|i| @data_hash[@fields[i]] = @results[i]}
+    table_arr.each do |table_name|
+      sql = "select * from #{table_name}"
+      @results = @conn.query(sql)
+      @fields = @conn.fields
+      @fields.each_index{|i| @data_hash[@fields[i]] = @results[i]}
+    end
   end
   #生成插入数据脚本
   def insert_data(table_name,data_hash)

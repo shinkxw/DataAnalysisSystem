@@ -1,0 +1,4 @@
+           DM: { fn: '', p: Proc.new{|i| ''}},
+           HYPYDM: { fn: '', p: Proc.new{|i| ''}},
+           HZDM: { fn: '', p: Proc.new{|i| ''}},
+           MC: { fn: '', p: Proc.new{|i| ''}},

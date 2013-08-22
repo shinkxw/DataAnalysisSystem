@@ -1,0 +1,6 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           WEBID: { fn: '', p: Proc.new{|i| ''}},
+           ACCESSIP: { fn: '', p: Proc.new{|i| ''}},
+           ACCESSURL: { fn: '', p: Proc.new{|i| ''}},
+           ACCESSTIME: { fn: '', p: Proc.new{|i| ''}},

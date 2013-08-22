@@ -1,0 +1,8 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           FBRID: { fn: '', p: Proc.new{|i| ''}},
+           FBBM: { fn: '', p: Proc.new{|i| ''}},
+           FBSJ: { fn: '', p: Proc.new{|i| ''}},
+           BT: { fn: '', p: Proc.new{|i| ''}},
+           NR: { fn: '', p: Proc.new{|i| ''}},
+           ZT: { fn: '', p: Proc.new{|i| ''}},

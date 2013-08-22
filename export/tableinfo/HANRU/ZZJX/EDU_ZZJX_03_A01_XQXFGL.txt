@@ -1,0 +1,5 @@
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           XQID: { fn: '', p: Proc.new{|i| ''}},
+           JHBH: { fn: '', p: Proc.new{|i| ''}},
+           ZDXF: { fn: '', p: Proc.new{|i| ''}},
+           ZGXF: { fn: '', p: Proc.new{|i| ''}},

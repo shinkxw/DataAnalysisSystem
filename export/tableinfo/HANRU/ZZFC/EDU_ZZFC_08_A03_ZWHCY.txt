@@ -1,0 +1,8 @@
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           YHID: { fn: '', p: Proc.new{|i| ''}},
+           YHLX: { fn: '', p: Proc.new{|i| ''}},
+           CYXM: { fn: '', p: Proc.new{|i| ''}},
+           TJSJ: { fn: '', p: Proc.new{|i| ''}},
+           ZWMC: { fn: '', p: Proc.new{|i| ''}},
+           GZNR: { fn: '', p: Proc.new{|i| ''}},

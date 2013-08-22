@@ -1,0 +1,3 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           XN: { fn: '', p: Proc.new{|i| ''}},

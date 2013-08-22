@@ -1,0 +1,4 @@
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           KCFLM: { fn: '', p: Proc.new{|i| ''}},
+           XFYQ: { fn: '', p: Proc.new{|i| ''}},
+           JHBH: { fn: '', p: Proc.new{|i| ''}},

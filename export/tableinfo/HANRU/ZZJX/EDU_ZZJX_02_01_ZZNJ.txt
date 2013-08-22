@@ -1,0 +1,5 @@
+           NJDM: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           NJMC: { fn: '', p: Proc.new{|i| ''}},
+           SSNF: { fn: '', p: Proc.new{|i| ''}},
+           NJZT: { fn: '', p: Proc.new{|i| ''}},

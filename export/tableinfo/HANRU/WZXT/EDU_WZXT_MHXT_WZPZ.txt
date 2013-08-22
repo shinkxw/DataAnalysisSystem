@@ -1,0 +1,6 @@
+           WEBID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           WEBNAME: { fn: '', p: Proc.new{|i| ''}},
+           STATUID: { fn: '', p: Proc.new{|i| ''}},
+           WEBURL: { fn: '', p: Proc.new{|i| ''}},
+           CSSID: { fn: '', p: Proc.new{|i| ''}},

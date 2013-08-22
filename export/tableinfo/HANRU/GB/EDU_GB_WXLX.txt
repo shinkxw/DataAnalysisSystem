@@ -1,0 +1,5 @@
+           DM: { fn: '', p: Proc.new{|i| ''}},
+           MC: { fn: '', p: Proc.new{|i| ''}},
+           JC: { fn: '', p: Proc.new{|i| ''}},
+           SZM: { fn: '', p: Proc.new{|i| ''}},
+           DZM: { fn: '', p: Proc.new{|i| ''}},

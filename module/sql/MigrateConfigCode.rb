@@ -1,6 +1,6 @@
 #网站会员
-#~ md.get_table_info('edu_wzgl_associator')
-#~ config = { SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+#~ md.get_table_info(['edu_wzgl_associator'])
+#~ config = { SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            #~ WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            #~ LOGINNAME: { fn: 'UserName', p: Proc.new{|str| str}},
            #~ LOGINPWD: { fn: 'PassWord', p: Proc.new{|str| str}},
@@ -13,9 +13,9 @@
            #~ AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},}
 #~ md.convert_data('EDU_WZXT_VIP',config)
 #网站文章
-#~ md.get_table_info('edu_wzgl_sparticle')
+#~ md.get_table_info(['edu_wzgl_sparticle'])
 #~ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            #~ WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            #~ TYPENAME: { fn: '', p: Proc.new{|i| ''}},
            #~ LMID: { fn: 'TypeID', p: Proc.new{|str| str}},
@@ -42,9 +42,9 @@
            #~ }
 #~ md.convert_data('EDU_WZXT_MHXT_WZWZ',config)
 #发布权限
-#~ md.get_table_info('edu_wzgl_sparticlepower')
+#~ md.get_table_info(['edu_wzgl_sparticlepower'])
 #~ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            #~ WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            #~ LOGINNAME: { fn: 'TeacherID', p: Proc.new{|str| str}},
            #~ LMLIST: { fn: 'ArticleLst', p: Proc.new{|str| str}},
@@ -52,9 +52,9 @@
            #~ }
 #~ md.convert_data('EDU_WZXT_MHXT_FBQX',config)
 #网站栏目
-#~ md.get_table_info('edu_wzgl_sparticletype')
+#~ md.get_table_info(['edu_wzgl_sparticletype'])
 #~ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            #~ WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            #~ LMSHOWSTYLE: { fn: 'ImageShow', p: Proc.new{|str| str}},
            #~ NAME: { fn: 'Name', p: Proc.new{|str| str}},
@@ -70,9 +70,9 @@
            #~ }
 #~ md.convert_data('EDU_WZXT_MHXT_WZLM',config)
 #友情链接
-#~ md.get_table_info('edu_wzgl_splink')
+#~ md.get_table_info(['edu_wzgl_splink'])
 #~ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            #~ WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            #~ TITLE: { fn: 'Title', p: Proc.new{|str| str}},
            #~ TYPEID: { fn: 'Typeid', p: Proc.new{|str| str}},
@@ -81,9 +81,9 @@
            #~ }
 #~ md.convert_data('EDU_WZXT_MHXT_YQLJ',config)
 #友情链接类型
-#~ md.get_table_info('edu_wzgl_splinktype')
+#~ md.get_table_info(['edu_wzgl_splinktype'])
 #~ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            #~ WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            #~ NAME: { fn: 'Name', p: Proc.new{|str| str}},
            #~ SHOWSTYLE: { fn: 'Typeid', p: Proc.new{|str| str}},
