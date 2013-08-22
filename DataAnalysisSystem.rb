@@ -11,15 +11,41 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 #~ @work_area.save_and_close_work_area
 #~ p Time.now - t
 
-#Dir.pwd << "/db.mdb"
 #'one' => 1, 
-conn = SqlServer.new('192.168.0.8')
+conn = SqlServer.new('(local)\SQLEXPRESS','sa','123@abc')
 md = MigrateData.new('CloudEdu',conn)
-md.get_table_info('edu_ele_student')
-#hash_1 = { field_name: nil, proc: Proc.new{|i| i + 1}}
-config = { ID: { field_name: nil, proc: Proc.new{|i| i + 1}},
-           XM: { field_name: 'Name', proc: Proc.new{|str| str}}, 
-           XH: { field_name: 'ID', proc: Proc.new{|str| str}}, }
-md.convert_data('EDU_ZZXS_01_01_XSXX',config)
+
+content_proc = Proc.new do |str|
+  str
+end
+md.get_table_info('edu_wzgl_sparticle')
+config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
+           TYPENAME: { fn: '', p: Proc.new{|i| ''}},
+           LMID: { fn: 'TypeID', p: Proc.new{|str| str}},
+           TITLE: { fn: 'Title', p: Proc.new{|str| str}},
+           PUBLISHERNAME: { fn: 'AuthorID', p: Proc.new{|str| str}},
+           AUTHOR: { fn: 'Author', p: Proc.new{|str| str}},
+           AUTHORDEPART: { fn: 'Authordepart', p: Proc.new{|str| str}},
+           PUBLISHDATE: { fn: 'PublishDate', p: Proc.new{|str| str}},
+           CONTENT: { fn: 'Content', p: content_proc},
+           URL: { fn: 'Url', p: Proc.new{|str| str}},
+           IMAGEURL: { fn: 'ImageUrl', p: Proc.new{|str| str}},
+           ATTACHMENTNAME: { fn: 'AttachmentName', p: Proc.new{|str| str}},
+           ATTACHMENT: { fn: 'Attachment', p: Proc.new{|str| str}},
+           CHICKNUB: { fn: 'ChickNub', p: Proc.new{|str| str}},
+           AUDITSTATU: { fn: 'Auditing', p: Proc.new{|str| str}},
+           AUDITOR: { fn: 'Auditer', p: Proc.new{|str| str}},
+           AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},
+           AUDITTIME: { fn: 'AuditerTime', p: Proc.new{|str| str}},
+           REMARK: { fn: 'Remark', p: Proc.new{|str| str}},
+           SUMMARY: { fn: 'Summary', p: Proc.new{|str| str}},
+           DISPLAYTYPE: { fn: 'DisplayType', p: Proc.new{|str| str}},
+           OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
+           LLQX: { fn: '', p: Proc.new{|i| '0'}},
+           }
+md.convert_data('EDU_WZXT_MHXT_WZWZ',config)
 
 conn.close
+

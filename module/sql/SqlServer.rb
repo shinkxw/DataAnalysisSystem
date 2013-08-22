@@ -16,12 +16,13 @@ class SqlServer
   #打开连接
   def open(database)
     connection_string = "Provider=sqloledb;"#Microsoft.Jet.OleDb.4.0
-    connection_string << "Persist Security Info=True;"
-    connection_string << "User ID=#{@username};"
-    connection_string << "password=#{@password};"
-    connection_string << "Initial Catalog=#{database};"
     connection_string << "Data Source=#{@host};"
-    connection_string << "Network Library=dbmssocn"
+    #connection_string << "User ID=#{@username};"
+    #connection_string << "password=#{@password};"
+    connection_string << "Initial Catalog=#{database};"
+    #connection_string << "Persist Security Info=True;"
+    #connection_string << "Network Library=dbmssocn;"
+    connection_string << "Integrated Security=SSPI;"
     @connection = WIN32OLE::new('ADODB.Connection')
     @connection.Open(connection_string)
   end

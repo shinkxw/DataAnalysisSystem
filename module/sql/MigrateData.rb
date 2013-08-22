@@ -28,7 +28,7 @@ class MigrateData
     data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
     istr = ""
     data_arr.each{|data| istr << "#{prefix_str}#{data.join("', '")}')\n"}
-    FileWriter.new(Dir.pwd << "/#{table_name}_QY.sql").write_str(istr)
+    FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
   end
   #根据配置将hash表的内容进行转换
   #该config为一个hash表，键为结果字段，值为输入字段(无则为nil)与处理方法组成的hash表
@@ -36,15 +36,15 @@ class MigrateData
     out_hash = {}
     config.each_key do |key|
       data_arr = []
-      in_name = config[key][:field_name]
-      if in_name != nil
+      in_name = config[key][:fn]
+      if in_name != ''
         @data_hash[in_name].each do |data|
-          data_arr << config[key][:proc].call(data)
+          data_arr << config[key][:p].call(data)
         end
       else
         i = 0
         @data_hash[@data_hash.keys[0]].each do |data|
-          data_arr << config[key][:proc].call(i)
+          data_arr << config[key][:p].call(i)
           i += 1
         end
       end
