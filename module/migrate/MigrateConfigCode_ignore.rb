@@ -11,7 +11,7 @@ config = { SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            AUDITSTATU: { fn: '', p: Proc.new{|i| ''}},
            AUDITOR: { fn: '', p: Proc.new{|i| ''}},
            AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},}
-md.convert_data('EDU_WZXT_VIP',config)
+md.insert_data('EDU_WZXT_VIP',config)
 #网站文章
 md.get_table_info(['edu_wzgl_sparticle'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -40,7 +40,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            OPENFLAG: { fn: '', p: Proc.new{|i| '1'}},
            LLQX: { fn: '', p: Proc.new{|i| '0'}},
            }
-md.convert_data('EDU_WZXT_MHXT_WZWZ',config)
+md.insert_data('EDU_WZXT_MHXT_WZWZ',config)
 #发布权限
 md.get_table_info(['edu_wzgl_sparticlepower'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -50,7 +50,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            LMLIST: { fn: 'ArticleLst', p: Proc.new{|str| str}},
            LMNAMELIST: { fn: 'ArticleNameLst', p: Proc.new{|str| str}},
            }
-md.convert_data('EDU_WZXT_MHXT_FBQX',config)
+md.insert_data('EDU_WZXT_MHXT_FBQX',config)
 #网站栏目
 md.get_table_info(['edu_wzgl_sparticletype'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -68,7 +68,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            OPENFLAG: { fn: '', p: Proc.new{|i| '1'}},
            LLQX: { fn: '', p: Proc.new{|i| '0'}},
            }
-md.convert_data('EDU_WZXT_MHXT_WZLM',config)
+md.insert_data('EDU_WZXT_MHXT_WZLM',config)
 #友情链接
 md.get_table_info(['edu_wzgl_splink'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -79,7 +79,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            IMAGEURL: { fn: 'ImageUrl', p: Proc.new{|str| str}},
            URL: { fn: 'Url', p: Proc.new{|str| str}},
            }
-md.convert_data('EDU_WZXT_MHXT_YQLJ',config)
+md.insert_data('EDU_WZXT_MHXT_YQLJ',config)
 #友情链接类型
 md.get_table_info(['edu_wzgl_splinktype'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -88,7 +88,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            NAME: { fn: 'Name', p: Proc.new{|str| str}},
            SHOWSTYLE: { fn: 'Typeid', p: Proc.new{|str| str}},
            }
-md.convert_data('EDU_WZXT_MHXT_YQLJLX',config)
+md.insert_data('EDU_WZXT_MHXT_YQLJLX',config)
 #教师表
 md.get_table_info(['edu_ele_teacher'])
 config = { ID: { fn: '', p: Proc.new{|i| i}},
@@ -134,10 +134,10 @@ config = { ID: { fn: '', p: Proc.new{|i| i}},
            WLDZ: { fn: '', p: Proc.new{|i| ''}},
            JSTXH: { fn: '', p: Proc.new{|i| ''}},
            }
-md.convert_data('EDU_ZZJG_01_01_JZGJBSJ',config)
+md.insert_data('EDU_ZZJG_01_01_JZGJBSJ',config)
 #学生表
 md.get_table_info(['edu_ele_student'])
-config = { ID: { fn: '', p: Proc.new{|i| i}},
+config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            XH: { fn: 'ID', p: Proc.new{|s| s}},
            XM: { fn: 'Name', p: Proc.new{|s| s}},
@@ -168,5 +168,122 @@ config = { ID: { fn: '', p: Proc.new{|i| i}},
            DZXX: { fn: '', p: Proc.new{|i| ''}},
            ZP: { fn: 'Imageurl', p: Proc.new{|s| s}},
            }
-md.convert_data('EDU_ZZXS_01_01_XSXX',config)
-#
+md.insert_data('EDU_ZZXS_01_01_XSXX',config)
+#房屋
+md.get_table_info(['edu_ssgl_apartment'])
+config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           JZWH: { fn: '', p: Proc.new{|i| '0'}},
+           JZWMC: { fn: 'Name', p: Proc.new{|s| s}},
+           SYZKM: { fn: '', p: Proc.new{|i| '0'}},
+           FWCQ: { fn: '', p: Proc.new{|i| '0'}},
+           XQH: { fn: '', p: Proc.new{|i| '0'}},
+           JZWFLM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWJGM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWCS: { fn: 'Floors', p: Proc.new{|s| s}},
+           JCNY: { fn: '', p: Proc.new{|i| '0'}},
+           JZWTZZE: { fn: '', p: Proc.new{|i| '0'}},
+           JFLYM: { fn: '', p: Proc.new{|i| '0'}},
+           ZJZMJ: { fn: '', p: Proc.new{|i| '0'}},
+           ZSYMJ: { fn: '', p: Proc.new{|i| '0'}},
+           KZSFLDM: { fn: '', p: Proc.new{|i| '0'}},
+           KZSFBZM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWDZ: { fn: 'Adress', p: Proc.new{|s| s}},
+           JZWZKM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWTP: { fn: '', p: Proc.new{|i| '0'}},
+           JZWPMT: { fn: '', p: Proc.new{|i| '0'}},
+           XXDWCCM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWWZZK: { fn: '', p: Proc.new{|i| '0'}},
+           GHSPWH: { fn: '', p: Proc.new{|i| '0'}},
+           ZHFZNL: { fn: '', p: Proc.new{|i| '0'}},
+           GHSYNX: { fn: '', p: Proc.new{|i| '0'}},
+           SFYYJBXCS: { fn: '', p: Proc.new{|i| '0'}},
+           SFKYYYJBNCS: { fn: '', p: Proc.new{|i| '0'}},
+           CQZH: { fn: '', p: Proc.new{|i| '0'}},
+           JZWYTM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWZGD: { fn: '', p: Proc.new{|i| '0'}},
+           WFJDBM: { fn: '', p: Proc.new{|i| '0'}},
+           WFJDWH: { fn: '', p: Proc.new{|i| '0'}},
+           WFJDRQ: { fn: '', p: Proc.new{|i| '0'}},
+           GNFSM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWJCXSM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWPMXSM: { fn: '', p: Proc.new{|i| '0'}},
+           JZWLBXSM: { fn: '', p: Proc.new{|i| '0'}},
+           SFYGZZ: { fn: '', p: Proc.new{|i| '0'}},
+           QL: { fn: '', p: Proc.new{|i| '0'}},
+           ZJAQGZWCRQ: { fn: '', p: Proc.new{|i| '0'}},
+           ZJAQGZHYJSYNX: { fn: '', p: Proc.new{|i| '0'}},
+           ZXLXM: { fn: '', p: Proc.new{|i| '0'}},
+           ZYZXTZBZMCM: { fn: '', p: Proc.new{|i| '0'}},
+           WWJZDJM: { fn: '', p: Proc.new{|i| '0'}},
+           JXJFZYF: { fn: '', p: Proc.new{|i| '0'}},
+           QZJS: { fn: '', p: Proc.new{|i| '0'}},
+           QZSYS: { fn: '', p: Proc.new{|i| '0'}},
+           QZTSS: { fn: '', p: Proc.new{|i| '0'}},
+           QZWJS: { fn: '', p: Proc.new{|i| '0'}},
+           QZYYS: { fn: '', p: Proc.new{|i| '0'}},
+           QZTYHDS: { fn: '', p: Proc.new{|i| '0'}},
+           QZQTJFYF: { fn: '', p: Proc.new{|i| '0'}},
+           SHYF: { fn: '', p: Proc.new{|i| '0'}},
+           QZXSSS: { fn: 'FloDorCount', p: Proc.new{|s| s}},
+           QZST: { fn: '', p: Proc.new{|i| '0'}},
+           QZCS: { fn: '', p: Proc.new{|i| '0'}},
+           QZGLF: { fn: '', p: Proc.new{|i| '0'}},
+           QZYS: { fn: '', p: Proc.new{|i| '0'}},
+           QZJGSS: { fn: '', p: Proc.new{|i| '0'}},
+           QZQTSHYF: { fn: '', p: Proc.new{|i| '0'}},
+           XZBGYF: { fn: '', p: Proc.new{|i| '0'}},
+           QZJSBGS: { fn: '', p: Proc.new{|i| '0'}},
+           QZWSBJS: { fn: '', p: Proc.new{|i| '0'}},
+           QZQTXZBGYF: { fn: '', p: Proc.new{|i| '0'}},
+           QTYF: { fn: '', p: Proc.new{|i| '0'}},
+           }
+md.insert_data('EDU_ZZFC_02_01_JZWJBSJ', config)
+#宿舍
+md.get_table_info(['edu_ssgl_dormitory'])
+config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           SSLID: { fn: 'ApartmentID', p: Proc.new{|s| s}},
+           SSLBM: { fn: 'Name', p: Proc.new{|s| s}},
+           FJBM: { fn: '', p: Proc.new{|i| '0'}},
+           RZXB: { fn: '', p: Proc.new{|i| '0'}},
+           SFKY: { fn: '', p: Proc.new{|i| '0'}},
+           KZRS: { fn: 'MaxBeds', p: Proc.new{|s| s}},
+           WLDK: { fn: '', p: Proc.new{|i| '0'}},
+           AZDSJ: { fn: '', p: Proc.new{|i| '0'}},
+           DHDK: { fn: '', p: Proc.new{|i| '0'}},
+           DHHM: { fn: '', p: Proc.new{|i| '0'}},
+           SBDS: { fn: '', p: Proc.new{|i| '0'}},
+           DBDS: { fn: '', p: Proc.new{|i| '0'}},
+           SSBZ: { fn: '', p: Proc.new{|i| '0'}},
+           SZLZ: { fn: 'FloorID', p: Proc.new{|s| s}},
+           SSM: { fn: 'Name', p: Proc.new{|s| s}},
+           }
+md.insert_data('EDU_ZZFC_08_01_XSSS', config)
+#床位
+md.get_table_info(['edu_ssgl_bed'])
+config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           SSLID: { fn: 'AID', p: Proc.new{|s| s}},
+           SSID: { fn: 'DID', p: Proc.new{|s| s}},
+           CWM: { fn: 'Name', p: Proc.new{|s| s}},
+           BZ: { fn: 'Reamrk', p: Proc.new{|s| s}},
+           SFRZ: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ZZFC_08_A01_SSCW', config)
+#住宿记录
+md.get_table_info(['edu_ssgl_manage'])
+config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           YHID: { fn: 'UserID', p: Proc.new{|s| s}},
+           SSLID: { fn: 'ApartmentID', p: Proc.new{|s| s}},
+           SSID: { fn: 'DormitoryID', p: Proc.new{|s| s}},
+           CWID: { fn: 'BedID', p: Proc.new{|s| s}},
+           YHXM: { fn: 'UserName', p: Proc.new{|s| s}},
+           RZRLX: { fn: '', p: Proc.new{|i| '0'}},
+           RZSJ: { fn: 'InDate', p: 'datetime'},
+           SHZT: { fn: '', p: Proc.new{|i| '0'}},
+           SHSJ: { fn: '', p: Proc.new{|i| '0'}},
+           SHR: { fn: '', p: Proc.new{|i| '0'}},
+           }
+md.insert_data('EDU_ZZFC_08_A02_YHZSJL', config)
