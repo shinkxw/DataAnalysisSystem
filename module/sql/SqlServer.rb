@@ -39,7 +39,9 @@ class SqlServer
       @data = []
     end
     recordset.Close
-    @data#.transpose
+    @data_hash = {}
+    @fields.each_index{|i| @data_hash[@fields[i]] = @data[i]}
+    @data_hash
   end
   #πÿ±’¡¨Ω”
   def close;@connection.Close end

@@ -1,3 +1,0 @@
-           DM: { fn: '', p: Proc.new{|i| ''}},
-           MC: { fn: '', p: Proc.new{|i| ''}},
-           SYJYLX: { fn: '', p: Proc.new{|i| ''}},

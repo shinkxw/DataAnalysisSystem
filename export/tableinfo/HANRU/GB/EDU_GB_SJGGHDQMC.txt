@@ -1,4 +1,0 @@
-           DM: { fn: '', p: Proc.new{|i| ''}},
-           GJDQMCJC: { fn: '', p: Proc.new{|i| ''}},
-           EZMDM: { fn: '', p: Proc.new{|i| ''}},
-           SZMDM: { fn: '', p: Proc.new{|i| ''}},

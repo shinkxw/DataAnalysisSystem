@@ -2,7 +2,7 @@
 # encoding: GBK
 #迁移数据类
 class MigrateData
-  attr_reader :database_name, :fields, :results, :data_hash
+  attr_reader :database_name, :data_hash
   #初始化
   def initialize(db_name,conn)
     @conn = conn
@@ -15,12 +15,9 @@ class MigrateData
   end
   #获得指定表的信息
   def get_table_info(table_arr)
-    @data_hash = {}
     table_arr.each do |table_name|
       sql = "select * from #{table_name}"
-      @results = @conn.query(sql)
-      @fields = @conn.fields
-      @fields.each_index{|i| @data_hash[@fields[i]] = @results[i]}
+      @data_hash = @conn.query(sql)
     end
   end
   #生成插入数据脚本

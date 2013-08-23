@@ -13,6 +13,7 @@
             <ID="1005" VALUE="0573" />
             <ID="1006" VALUE="83572000" />
             <ID="1007" VALUE="83572499" />
+            <ID="2001" VALUE="600" />
         </data_area>
     </table>
     <table name="EDU_SYS_01_XN" explanation="Ñ§Äê±í">

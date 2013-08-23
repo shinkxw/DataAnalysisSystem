@@ -1,8 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           NAME: { fn: '', p: Proc.new{|i| ''}},
-           URL: { fn: '', p: Proc.new{|i| ''}},
-           AUTHIP: { fn: '', p: Proc.new{|i| ''}},
-           SM: { fn: '', p: Proc.new{|i| ''}},
-           DLFS: { fn: '', p: Proc.new{|i| ''}},
-           STATUS: { fn: '', p: Proc.new{|i| ''}},

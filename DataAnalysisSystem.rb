@@ -11,7 +11,6 @@ t = Time.now
 @work_area.save_and_close_work_area
 p Time.now - t
 
-#'one' => 1, 
 #~ conn = SqlServer.new('(local)')
 #~ md = MigrateData.new('CloudEdu',conn)
 

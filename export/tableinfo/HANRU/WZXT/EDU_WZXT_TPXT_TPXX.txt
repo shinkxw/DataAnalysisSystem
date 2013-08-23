@@ -1,7 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           WEBID: { fn: '', p: Proc.new{|i| ''}},
-           TPID: { fn: '', p: Proc.new{|i| ''}},
-           TMID: { fn: '', p: Proc.new{|i| ''}},
-           TITLE: { fn: '', p: Proc.new{|i| ''}},
-           SUMTP: { fn: '', p: Proc.new{|i| ''}},

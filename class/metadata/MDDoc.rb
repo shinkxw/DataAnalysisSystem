@@ -14,16 +14,16 @@ class MDDoc
   def export
     case @data.class.to_s
     when "Hash"
-			path = "#{@@export_path}/#{@type}/#{@name}"
+      path = "#{@@export_path}/#{@type}/#{@name}"
       DirManager.remove_dir(path)#删除文件夹
       hash_out("#{path}/")
     when "String"
-			path = "#{@@export_path}/#{@type}/#{@name}.#{@file_type}"
+      path = "#{@@export_path}/#{@type}/#{@name}.#{@file_type}"
       str_out(path)
     else
       puts "MDDoc: 无法输出的文档类别：#{@data.class.to_s}"
     end
-		path if path != nil
+	path if path != nil
   end
   #将哈希形式文档输出至文件夹
   def hash_out(path)

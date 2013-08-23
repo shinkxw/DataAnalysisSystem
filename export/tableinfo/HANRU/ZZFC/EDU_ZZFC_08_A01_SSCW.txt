@@ -1,7 +1,0 @@
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SSLID: { fn: '', p: Proc.new{|i| ''}},
-           SSID: { fn: '', p: Proc.new{|i| ''}},
-           CWM: { fn: '', p: Proc.new{|i| ''}},
-           BZ: { fn: '', p: Proc.new{|i| ''}},
-           SFRZ: { fn: '', p: Proc.new{|i| ''}},

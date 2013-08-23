@@ -1,3 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           MBMC: { fn: '', p: Proc.new{|i| ''}},

@@ -1,6 +1,0 @@
-           XSXXID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           RXZF: { fn: '', p: Proc.new{|i| ''}},
-           GKZF: { fn: '', p: Proc.new{|i| ''}},
-           FJF: { fn: '', p: Proc.new{|i| ''}},
-           FJFLBM: { fn: '', p: Proc.new{|i| ''}},

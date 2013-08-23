@@ -1,0 +1,120 @@
+EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
+  SCHOOLID    学校名                  int            主键     学校配置表
+  ID          建筑物ID              int            主键
+  JZWH        建筑物号                nvarchar(6)    非主
+  JZWMC       建筑物名称              nvarchar(30)   非主
+  SYZKM       使用状况码              nvarchar(1)    非主     使用状况代码表
+  FWCQ        房屋产权                nvarchar(1)    非主     产权代码表
+  XQH         校区号                  nvarchar(2)    非主
+  JZWFLM      建筑物分类码            nvarchar(1)    非主     建筑物分类代码表
+  JZWJGM      建筑物结构码            nvarchar(1)    非主     建筑物结构代码表
+  JZWCS       建筑物层数              decimal(2)     非主
+  JCNY        建成年月                nvarchar(6)    非主
+  JZWTZZE     建筑物投资总额          money          非主
+  JFLYM       经费来源码              nvarchar(1)    非主     经费来源代码表
+  ZJZMJ       总建筑面积              decimal(10, 2) 非主
+  ZSYMJ       总使用面积              decimal(10, 2) 非主
+  KZSFLDM     抗震设防烈度码          nvarchar(1)    非主     抗震设防烈度代码
+  KZSFBZM     抗震设防标准码          nvarchar(1)    非主     抗震设防标准代码
+  JZWDZ       建筑物地址              nvarchar(180)  非主
+  JZWZKM      建筑物状况码            nvarchar(2)    非主     建筑物状况代码表
+  JZWTP       建筑物图片              nvarchar(200)  非主
+  JZWPMT      建筑物平面图            nvarchar(200)  非主
+  XXDWCCM     学校单位层次码          nvarchar(1)    非主     学校单位层次代码表
+  JZWWZZK     建筑物位置状况          nvarchar(1)    非主
+  GHSPWH      规划审批文号            nvarchar(24)   非主
+  ZHFZNL      综合防灾能力            nvarchar(60)   非主
+  GHSYNX      规划使用年限            decimal(3)     非主
+  SFYYJBXCS   是否有预警避险措施      nvarchar(1)    非主     是否标志代码表
+  SFKYYYJBNCS 是否可用于应急避难场所  nvarchar(1)    非主     是否标志代码表
+  CQZH        产权证号                nvarchar(20)   非主
+  JZWYTM      建筑物用途码            nvarchar(2)    非主     建筑物用途代码表
+  JZWZGD      建筑物总高度            decimal(3)     非主
+  WFJDBM      危房鉴定部门            nvarchar(60)   非主
+  WFJDWH      危房鉴定文号            nvarchar(20)   非主
+  WFJDRQ      危房鉴定日期            nvarchar(8)    非主
+  GNFSM       供暖方式码              nvarchar(1)    非主     供暖方式代码表
+  JZWJCXSM    建筑物基础形式码        nvarchar(2)    非主     建筑物基础形式代码表
+  JZWPMXSM    建筑物平面形式码        nvarchar(1)    非主     建筑物平面形式代码表
+  JZWLBXSM    建筑物楼板形式码        nvarchar(1)    非主     建筑物楼板形式代码表
+  SFYGZZ      是否有构造柱            nvarchar(1)    非主     是否标志代码表
+  QL          圈梁                    nvarchar(1)    非主     是否标志代码表
+  ZJAQGZWCRQ  最近安全改造完成日期    nvarchar(8)    非主
+  ZJAQGZHYJSYNX最近安全改造后预计使用年限decimal(2)     非主
+  ZXLXM       专项类型                nvarchar(1)    非主
+  ZYZXTZBZMCM 中央专项投资补助名称码  nvarchar(1)    非主     中央专项投资补助名称代码表
+  WWJZDJM     文物建筑等级码          nvarchar(1)    非主     文物建筑等级代码表
+  JXJFZYF     教学及辅助用房          decimal(8)     非主
+  QZJS        其中教室                decimal(8)     非主
+  QZSYS       其中实验室              decimal(8)     非主
+  QZTSS       其中图书室              decimal(8)     非主
+  QZWJS       其中微机室              decimal(8)     非主
+  QZYYS       其中语音室              decimal(8)     非主
+  QZTYHDS     其中体育活动室          decimal(8)     非主
+  QZQTJFYF    其中其他教辅用房        decimal(8)     非主
+  SHYF        生活用房                decimal(8)     非主
+  QZXSSS      其中学生宿舍            decimal(8)     非主
+  QZST        其中食堂                decimal(8)     非主
+  QZCS        其中厕所                decimal(8)     非主
+  QZGLF       其中锅炉房(开水房)    decimal(8)     非主
+  QZYS        其中浴室                decimal(8)     非主
+  QZJGSS      其中教工宿舍            decimal(8)     非主
+  QZQTSHYF    其中其他生活用房        decimal(8)     非主
+  XZBGYF      行政办公用房            decimal(8)     非主
+  QZJSBGS     其中教职工办公室        decimal(8)     非主
+  QZWSBJS     其中卫生保健室          decimal(8)     非主
+  QZQTXZBGYF  其中其他行政办公用房    decimal(8)     非主
+  QTYF        其他用房                decimal(8)     非主
+
+EDU_ZZFC_08_01_XSSS  学生宿舍数据类表
+  SCHOOLID    学校名                  int            主键     学校配置表
+  ID          宿舍ID                int            主键
+  SSLID       宿舍楼ID              int            非主     建筑物基本数据类表
+  SSLBM       宿舍楼编号              nvarchar(6)    非主
+  FJBM        房间编号                nvarchar(10)   非主
+  RZXB        入住性别                nvarchar(1)    非主     人的性别代码
+  SFKY        是否可用                nvarchar(1)    非主     是否标志代码表
+  KZRS        可住人数                decimal(2)     非主
+  WLDK        网络端口                nvarchar(20)   非主
+  AZDSJ       安装电视机              nvarchar(1)    非主     是否标志代码表
+  DHDK        电话端口                nvarchar(20)   非主
+  DHHM        电话号码                nvarchar(20)   非主
+  SBDS        水表底数                decimal(10)    非主
+  DBDS        电表底数                decimal(10)    非主
+  SSBZ        宿舍备注                text           非主
+  SZLZ        所在楼层                int            非主
+  SSM         宿舍名                  nvarchar(128)  非主
+
+EDU_ZZFC_08_A01_SSCW  宿舍床位表
+  SCHOOLID    学校ID                int            主键     学校配置表
+  ID          床位ID                int            主键
+  SSLID       宿舍楼ID              int            非主     建筑物基本数据类表
+  SSID        宿舍ID                int            非主     学生宿舍数据类表
+  CWM         床位名                  nvarchar(128)  非主
+  BZ          备注                    text           非主
+  SFRZ        是否入住                nvarchar(1)    非主     是否标志代码表
+
+EDU_ZZFC_08_A03_ZWHCY  住委会成员表
+  SCHOOLID    学校ID                int            主键     学校配置表
+  ID          成员ID                int            主键
+  YHID        用户ID                int            非主
+  YHLX        用户类型                int            非主
+  CYXM        成员姓名                nvarchar(128)  非主
+  TJSJ        添加时间                datetime       非主
+  ZWMC        职位名称                nvarchar(128)  非主
+  GZNR        工作内容                nvarchar(500)  非主
+
+EDU_ZZFC_08_A02_YHZSJL  用户住宿记录表
+  SCHOOLID    学校ID                int            主键     学校配置表
+  ID          住宿记录ID            int            主键
+  YHID        用户ID                int            非主
+  SSLID       宿舍楼ID              int            非主     建筑物基本数据类表
+  SSID        宿舍ID                int            非主     学生宿舍数据类表
+  CWID        床位ID                int            非主     宿舍床位表
+  YHXM        用户姓名                nvarchar(128)  非主
+  RZRLX       入住人类型              int            非主
+  RZSJ        入住时间                datetime       非主
+  SHZT        审核状态                int            非主
+  SHSJ        审核时间                datetime       非主
+  SHR         审核人                  nvarchar(128)  非主
+

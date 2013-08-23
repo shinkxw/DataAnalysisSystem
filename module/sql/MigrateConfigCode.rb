@@ -37,7 +37,7 @@
            #~ REMARK: { fn: 'Remark', p: Proc.new{|str| str}},
            #~ SUMMARY: { fn: 'Summary', p: Proc.new{|str| str}},
            #~ DISPLAYTYPE: { fn: 'DisplayType', p: Proc.new{|str| str}},
-           #~ OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
+           #~ OPENFLAG: { fn: '', p: Proc.new{|i| '1'}},
            #~ LLQX: { fn: '', p: Proc.new{|i| '0'}},
            #~ }
 #~ md.convert_data('EDU_WZXT_MHXT_WZWZ',config)
@@ -65,7 +65,7 @@
            #~ LISTSHOWSTYLE: { fn: '', p: Proc.new{|i| '0'}},
            #~ ORDERTYPE: { fn: '', p: Proc.new{|i| '0'}},
            #~ SHOWNUMBER: { fn: '', p: Proc.new{|i| '0'}},
-           #~ OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
+           #~ OPENFLAG: { fn: '', p: Proc.new{|i| '1'}},
            #~ LLQX: { fn: '', p: Proc.new{|i| '0'}},
            #~ }
 #~ md.convert_data('EDU_WZXT_MHXT_WZLM',config)

@@ -1,2 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           VALUE: { fn: '', p: Proc.new{|i| ''}},

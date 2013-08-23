@@ -1,0 +1,99 @@
+EDU_ZXDY_04_A01_ZZGW  值周岗位数据表
+  ID          值周岗位表ID          int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  GWGZNR      岗位工作内容            nvarchar(200)  非主
+
+EDU_ZXDY_04_A02_ZZRYAP  值周人员安排表
+  ID          值周人员安排表ID      int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  ZCID        周次ID                int            非主     值周周次表
+  KSRQ        开始日期                datetime       非主
+  JSRQ        结束日期                datetime       非主
+  ZZBJ        值周班级班号            nvarchar(10)   非主     班级数据类表
+  ZZID        组长ID                nvarchar(20)   非主     应用系统用户表
+  ZYIDLB      组员ID列表            text           非主
+  ZYMCLB      组员名称列表            text           非主
+
+EDU_ZXDY_04_A03_ZZGWFP  值周岗位分配表
+  ID          值周岗位分配表ID      int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  ZCID        周次ID                int            非主     值周周次表
+  GZR         工作日                  int            非主
+  GWID        岗位ID                int            非主     值周岗位数据表
+  JSID        教师ID                nvarchar(20)   非主     应用系统用户表
+
+EDU_ZXDY_04_A04_GWFPMB  岗位分配模板表
+  ID          岗位分配模板表ID      int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  MBMC        模板名称                nvarchar(20)   非主
+
+EDU_ZXDY_04_A05_TBZZJS  特别值周教师表
+  ID          特别值周教师表ID      int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  JSLX        教师类型                nvarchar(20)   非主
+  JSID        教师ID                nvarchar(20)   非主     应用系统用户表
+  YXRQ        有效日期                datetime       非主
+
+EDU_ZXDY_04_A06_ZZZC  值周周次表
+  ID          周次表ID              int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  ZCM         周次名                  nvarchar(20)   非主
+  XQKSRQ      开始日期                datetime       非主
+  XQJSRQ      结束日期                datetime       非主
+
+EDU_ZXDY_04_A07_MBFPNR  模板分配内容表
+  ID          模板内容表ID          int            主键
+  MBID        模板表ID              int            非主     岗位分配模板表
+  GZR         工作日                  int            非主
+  GWID        岗位ID                int            非主     值周岗位数据表
+  DYRYH       对应人员号              int            非主
+
+EDU_ZXDY_05_A01_ZZDFDL  值周打分大类表
+  ID          值周打分大类表ID      int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  DLMC        大类名称                nvarchar(20)   非主
+
+EDU_ZXDY_05_A02_ZZDFXZ  值周打分细则表
+  ID          值周打分细则表ID      int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  SSDLID      所属大类ID            int            非主     值周打分大类表
+  XZNR        细则内容                nvarchar(200)  非主
+  XZFZ        细则分值                decimal(2, 1)  非主
+
+EDU_ZXDY_05_A03_ZZDFD  值周打分单表
+  ID          值周打分单表ID        int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  ZCID        周次ID                int            非主     值周周次表
+  BJ          班级                    nvarchar(10)   非主     班级数据类表
+  XSIDLB      学生ID列表            text           非主
+  XSMCLB      学生名称列表            text           非主
+  SSXZID      所属细则                int            非主     值周打分细则表
+  DFFZ        打分分值                decimal(2, 1)  非主
+  FSSJ        发生时间                datetime       非主
+  DFSJ        打分时间                datetime       非主
+  DFJSID      打分教师ID            nvarchar(20)   非主     应用系统用户表
+  BZ          备注                    text           非主
+
+EDU_ZXDY_06_A01_ZZXJ  值周小结表
+  ID          值周小结表ID          int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  ZCID        周次ID                int            非主     值周周次表
+  SZDS        上周大事                text           非主
+  ZZJCQKFK    值周检查情况反馈        text           非主
+
+EDU_ZXDY_06_A02_GQXJH  国旗下讲话表
+  ID          国旗下讲话表ID        int            主键
+  SCHOOLID    学校ID                int            非主     学校配置表
+  XQID        学期ID                int            非主     学期数据表
+  ZCID        周次ID                int            非主     值周周次表
+  JHZT        讲话主题                text           非主
+  JHNR        讲话内容                text           非主
+
