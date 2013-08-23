@@ -9,6 +9,7 @@ class ConversionMethod
   #datetime×ª»»Îª×Ö·û´®
   def self.datetime(t)
     "CAST('#{t.year}-#{t.month}-#{t.day} #{t.hour}:#{t.min}:#{t.sec}' AS DateTime)"
+    "#{t.year}-#{t.month}-#{t.day} #{t.hour}:#{t.min}:#{t.sec}"
   end
   #datetime×ª»»Îª6Î»×Ö·û´®
   def self.time_to_6(time);time.to_s.split(" ")[0].delete("-")[0,5] end
