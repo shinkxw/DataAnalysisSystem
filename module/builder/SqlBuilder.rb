@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #sql语句生成器
-class SqlBuilder < BaseBuilder
+class SqlBuilder
   attr_reader :area#待生成的元数据
   attr_reader :sql_str#生成的sql语句
   attr_reader :need_delete#是否增加删除语句
@@ -16,7 +16,7 @@ class SqlBuilder < BaseBuilder
     @need_data = need_data
     @builder_version = "0.1"
     @need_data_name_space_arr = []
-    super(log)
+    @log = log
   end
   #生成sql脚本
   def build(area)

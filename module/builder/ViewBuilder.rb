@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #视图数据生成器
-class ViewBuilder < BaseBuilder
+class ViewBuilder
   attr_reader :area#待生成的元数据
   attr_reader :table_arr#需建立视图的表的数组
   attr_reader :view_str#生成的view语句
@@ -21,7 +21,7 @@ class ViewBuilder < BaseBuilder
     @ignore_table_arr = ["EDU_ELE_01_SCHOOL"]
     @bulid_table_name_arr = bulid_table_name_arr
     @builder_version = "0.1"
-    super(log)
+    @log = log
   end
   #生成view脚本
   def build(area)

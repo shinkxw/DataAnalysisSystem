@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #DAF数据生成器
-class DafBuilder < BaseBuilder
+class DafBuilder
   attr_reader :area#待生成的元数据
   attr_reader :daf_str#生成的daf语句
   attr_reader :builder_version#生成器版本
@@ -15,7 +15,7 @@ class DafBuilder < BaseBuilder
     @builder_version = "0.1"
     @is_hash = is_hash
     @tab = tab
-    super(log)
+    @log = log
   end
   #生成DAF数据
   def build(area)

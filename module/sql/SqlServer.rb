@@ -7,24 +7,24 @@ class SqlServer
   attr_reader :username, :password
   #初始化
   def initialize(host, username = 'sa', password='123456')
-    @connection = nil
-    @data = nil
     @host = host
     @username = username
     @password = password
+    @connection = nil
+    @data = nil
   end
   #打开连接
   def open(database)
-    connection_string = "Provider=sqloledb;"#Microsoft.Jet.OleDb.4.0
-    connection_string << "Data Source=#{@host};"
-    #connection_string << "User ID=#{@username};"
-    #connection_string << "password=#{@password};"
-    connection_string << "Initial Catalog=#{database};"
-    #connection_string << "Persist Security Info=True;"
-    #connection_string << "Network Library=dbmssocn;"
-    connection_string << "Integrated Security=SSPI;"
+    connect_string = "Provider=sqloledb;"
+    connect_string << "Data Source=#{@host};"
+    connect_string << "Initial Catalog=#{database};"
+    connect_string << "User ID=#{@username};" unless @host =~ /^\(local\)/
+    connect_string << "password=#{@password};" unless @host =~ /^\(local\)/
+    connect_string << "Persist Security Info=True;" unless @host =~ /^\(local\)/
+    connect_string << "Network Library=dbmssocn;" unless @host =~ /^\(local\)/
+    connect_string << "Integrated Security=SSPI;" if @host =~ /^\(local\)/
     @connection = WIN32OLE::new('ADODB.Connection')
-    @connection.Open(connection_string)
+    @connection.Open(connect_string)
   end
   #请求查询
   def query(sql)

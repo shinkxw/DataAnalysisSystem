@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #模板数据生成器
-class TemplateBuilder < BaseBuilder
+class TemplateBuilder
   attr_reader :area#待生成的元数据
   attr_reader :template_str#生成的模板语句
   attr_reader :builder_version#生成器版本
@@ -20,7 +20,7 @@ class TemplateBuilder < BaseBuilder
     @controller_preset_text << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
     @controller_preset_text << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
     @controller_preset_text << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
-    super(log)
+    @log = log
   end
   #生成模板数据
   def build(area)

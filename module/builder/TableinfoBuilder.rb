@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #表信息生成器
-class TableinfoBuilder < BaseBuilder
+class TableinfoBuilder
   attr_reader :area#待生成的元数据
   attr_reader :builder_version#生成器版本
   attr_accessor :tab#缩进
@@ -12,7 +12,7 @@ class TableinfoBuilder < BaseBuilder
     @hash = nil
     @builder_version = "0.1"
     @tab = tab
-    super(log)
+    @log = log
   end
   #生成表信息
   def build(area)

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #model数据生成器
-class ModelBuilder < BaseBuilder
+class ModelBuilder
   attr_reader :area#待生成的元数据
   attr_reader :model_str#生成的model语句
   attr_reader :ignore_name_space_arr#不需要生成model数据的命名空间
@@ -13,7 +13,7 @@ class ModelBuilder < BaseBuilder
     @file_hash = {}
     @ignore_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
     @builder_version = "0.1"
-    super(log)
+    @log = log
   end
   #生成model数据
   def build(area)
