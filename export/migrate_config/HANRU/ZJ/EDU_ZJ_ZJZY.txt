@@ -1,0 +1,3 @@
+           DM: { fn: '', p: Proc.new{|i| ''}},
+           ZYMLLB: { fn: '', p: Proc.new{|i| ''}},
+           MC: { fn: '', p: Proc.new{|i| ''}},

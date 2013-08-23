@@ -1,0 +1,7 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           WEBID: { fn: '', p: Proc.new{|i| ''}},
+           SHOWTYPE: { fn: '', p: Proc.new{|i| ''}},
+           ADCONTENT: { fn: '', p: Proc.new{|i| ''}},
+           GGLJ: { fn: '', p: Proc.new{|i| ''}},
+           SHOWSTATU: { fn: '', p: Proc.new{|i| ''}},

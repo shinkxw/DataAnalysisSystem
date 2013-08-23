@@ -1,0 +1,4 @@
+           XSXXID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           KMM: { fn: '', p: Proc.new{|i| ''}},
+           ZKFS: { fn: '', p: Proc.new{|i| ''}},

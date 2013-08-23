@@ -5,35 +5,43 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
-t = Time.now
-@work_area = AreaManager.load_work_area("HANRU")
-@work_area.export_all
-@work_area.save_and_close_work_area
-p Time.now - t
+#~ t = Time.now
+#~ @work_area = AreaManager.load_work_area("HANRU")
+#~ @work_area.export_all
+#~ @work_area.save_and_close_work_area
+#~ p Time.now - t
 
-#~ conn = SqlServer.new('(local)')
-#~ md = MigrateData.new('CloudEdu',conn)
+conn = SqlServer.new('(local)')
+md = MigrateData.new('CloudEdu',conn)
 
-#~ content_proc = Proc.new do |str|
-  #~ str.gsub(/'/, "''")
-#~ end
-#~ time_proc = Proc.new do |time|
-  #~ ":sec, :min, :hour, :mday, :day, :mon, :month, :year, :wday, :yday, :tv_sec, :tv_usec, :usec, :tv_nsec, :nsec,  "
-  #~ "CAST('#{time}' AS DateTime)"
-  #~ ""
-#~ end
-#~ time_to_6_proc = Proc.new{|time| time.to_s.split(" ")[0].delete("-")[0,5]}
-#~ time_to_8_proc = Proc.new{|time| time.to_s.split(" ")[0].delete("-")}
-
-#~ md.get_table_info(['edu_ele_student'])
-#~ config = { ID: { fn: '', p: Proc.new{|i| i}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           #~ JZWH: { fn: '', p: Proc.new{|i| ''}},
-           #~ JZWMC: { fn: '', p: Proc.new{|i| ''}},
-           #~ SYZKM: { fn: '', p: Proc.new{|i| ''}},
-           #~ FWCQ: { fn: '', p: Proc.new{|i| ''}},
-           #~ XQH: { fn: '', p: Proc.new{|i| ''}},
-           #~ }
-#~ md.convert_data('test',config)
+#~ #ÍøÕ¾ÎÄÕÂ
+md.get_table_info(['edu_wzgl_sparticle'])
+config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
+           TYPENAME: { fn: '', p: Proc.new{|i| ''}},
+           LMID: { fn: 'TypeID', p: Proc.new{|str| str}},
+           TITLE: { fn: 'Title', p: Proc.new{|str| str}},
+           PUBLISHERNAME: { fn: 'AuthorID', p: Proc.new{|str| str}},
+           AUTHOR: { fn: 'Author', p: Proc.new{|str| str}},
+           AUTHORDEPART: { fn: 'Authordepart', p: Proc.new{|str| str}},
+           PUBLISHDATE: { fn: 'PublishDate', p: 'datetime'},
+           CONTENT: { fn: 'Content', p: 'content'},
+           URL: { fn: 'Url', p: Proc.new{|str| str}},
+           IMAGEURL: { fn: 'ImageUrl', p: Proc.new{|str| str}},
+           ATTACHMENTNAME: { fn: 'AttachmentName', p: Proc.new{|str| str}},
+           ATTACHMENT: { fn: 'Attachment', p: Proc.new{|str| str}},
+           CHICKNUB: { fn: 'ChickNub', p: Proc.new{|str| str}},
+           AUDITSTATU: { fn: 'Auditing', p: Proc.new{|str| str}},
+           AUDITOR: { fn: 'Auditer', p: Proc.new{|str| str}},
+           AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},
+           AUDITTIME: { fn: 'AuditerTime', p: 'datetime'},
+           REMARK: { fn: 'Remark', p: Proc.new{|str| str}},
+           SUMMARY: { fn: 'Summary', p: Proc.new{|str| str}},
+           DISPLAYTYPE: { fn: 'DisplayType', p: Proc.new{|str| str}},
+           OPENFLAG: { fn: '', p: Proc.new{|i| '1'}},
+           LLQX: { fn: '', p: Proc.new{|i| '0'}},
+           }
+md.convert_data('EDU_WZXT_MHXT_WZWZ',config)
 
 #~ conn.close

@@ -1,0 +1,5 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           MBID: { fn: '', p: Proc.new{|i| ''}},
+           GZR: { fn: '', p: Proc.new{|i| ''}},
+           GWID: { fn: '', p: Proc.new{|i| ''}},
+           DYRYH: { fn: '', p: Proc.new{|i| ''}},

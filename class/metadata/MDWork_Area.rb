@@ -26,6 +26,7 @@ class MDWork_Area
     export_model
     export_template
     export_tableinfo
+    export_migrate_config
   end
   #自数据库脚本更新数据
   def update_by_sql(sql_file_name)
@@ -85,6 +86,23 @@ class MDWork_Area
       end
     end
   end
+  #输出数据迁移脚本
+  def export_migrate_config
+    build_proc = Proc.new do |str|
+      export = {}
+      area.each do |name_space|
+        name_space.each do |table|
+          ostr = ""
+          table.field_area.each do |field|
+            ostr << "           #{field.name}: { fn: '', p: Proc.new{|i| ''}},\n"
+          end
+          export["#{table.library_name.upcase}/#{table.name}.txt"] = ostr
+        end
+      end
+      export
+    end
+    auto_export('migrate_config',build_proc)
+  end
   #输出Sql脚本
   def export_sql(build_folder = true, need_delete = true, need_data = false)
     builder = SqlBuilder.new(need_delete,need_data)
@@ -102,6 +120,8 @@ class MDWork_Area
   def export_template;TemplateBuilder.new.build(@area).export end
   #输出表信息
   def export_tableinfo;TableinfoBuilder.new.build(@area).export end
+  #输出自定义信息
+  def auto_export(name,build_proc);Builder.build(name,@area,build_proc).export end
   private#重新生成元数据文档
   def reset_doc;@doc = DafBuilder.new.build(@area) end
 end

@@ -25,8 +25,9 @@ class ScriptLoader
   end
   #加载指定名称脚本文件
   def self.load_script(script_name)
-    #p "正在载入" + script_name
-    unless @@ignore_list.include?(script_name)#文件名是否在忽略列表内
+    #puts "正在载入" + script_name
+    #文件名是否在忽略列表内
+    if !@@ignore_list.include?(script_name) && script_name.split('_')[-1] != 'ignore.rb'
       require script_name
       @@required_script.push(script_name)
       #puts "已载入" + script_name

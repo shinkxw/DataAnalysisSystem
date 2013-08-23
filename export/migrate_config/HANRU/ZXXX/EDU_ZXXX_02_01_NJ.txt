@@ -1,0 +1,3 @@
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           NJ: { fn: '', p: Proc.new{|i| ''}},
+           NJMC: { fn: '', p: Proc.new{|i| ''}},

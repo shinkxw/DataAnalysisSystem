@@ -1,0 +1,7 @@
+           JZGJBSJID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           JL: { fn: '', p: Proc.new{|i| ''}},
+           GL: { fn: '', p: Proc.new{|i| ''}},
+           GZJY: { fn: '', p: Proc.new{|i| ''}},
+           LDJN: { fn: '', p: Proc.new{|i| ''}},
+           XXJL: { fn: '', p: Proc.new{|i| ''}},

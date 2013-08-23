@@ -1,0 +1,6 @@
+           ID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
+           SXJHID: { fn: '', p: Proc.new{|i| ''}},
+           JDM: { fn: '', p: Proc.new{|i| ''}},
+           JDKSSJ: { fn: '', p: Proc.new{|i| ''}},
+           JDJSSJ: { fn: '', p: Proc.new{|i| ''}},
