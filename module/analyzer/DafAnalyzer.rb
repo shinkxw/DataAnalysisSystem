@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #DAF数据解析器
-class DafAnalyzer < BaseAnalyzer
+class DafAnalyzer
   attr_reader :arr_reader#待分析的字符串
   attr_reader :analyzer_version#解析器版本
   attr_reader :area#分析结果
@@ -10,7 +10,7 @@ class DafAnalyzer < BaseAnalyzer
     @arr_reader = nil
     @analyzer_version = "0.1"
     @area = nil
-    super(log)
+    @log = log
   end
   #解析DAF数据
   def analyze(daf_data_arr,folder_name = nil)

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #业务表数据解析器
-class STAnalyzer < BaseAnalyzer
+class STAnalyzer
   attr_reader :arr_reader#待分析的字符串
   attr_reader :analyzer_version#解析器版本
   attr_reader :area#分析结果
@@ -13,7 +13,7 @@ class STAnalyzer < BaseAnalyzer
     @area = nil
     @field_hash = nil
     @table_arr = nil
-    super(log)
+    @log = log
   end
   #解析业务表数据
   def analyze(str_arr)

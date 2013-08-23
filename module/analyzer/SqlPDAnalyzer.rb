@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #Sql(Power Designer15生成)脚本解析器
-class SqlPDAnalyzer < BaseAnalyzer
+class SqlPDAnalyzer
   attr_reader :arr_reader#待分析的字符串
   attr_reader :analyzer_version#解析器版本
   attr_reader :area#分析结果
@@ -10,7 +10,7 @@ class SqlPDAnalyzer < BaseAnalyzer
     @arr_reader = nil
     @analyzer_version = "0.1"
     @area = nil
-    super(log)
+    @log = log
   end
   #解析Sql脚本
   def analyze(sql_script)

@@ -1,13 +1,11 @@
 每个组件只能完成较单一的工作
 analyzer   分析器      将一种格式的字符串转换为元数据 需实现analyze方法
-    BaseAnalyzer       分析器父类
     DafAnalyzer        daf格式
     SqlSSAnalyzer      sql sever脚本格式
     SqlPDAnalyzer      power designer脚本格式
     STAnalyzer         业务表数据
 
 builder    生成器      将元数据装换为一种格式的字符串 需实现build方法
-    BaseBuilder        生成器父类
     DafBuilder         daf格式
     SqlBuilder         sql脚本格式
     ModelBuilder       模型验证
