@@ -21,7 +21,8 @@ class MigrateData
     end
   end
   #生成插入数据脚本
-  def insert_data(table_name,data_hash)
+  def insert_data(table_name, config)
+    data_hash = convert_data(config)
     field_names = data_hash.keys
     prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
     data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
@@ -32,9 +33,23 @@ class MigrateData
     end
     FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
   end
-  #根据配置将hash表的内容进行转换
+  #生成更新数据脚本
+  def update_data(table_name, config)
+    data_hash = convert_data(config)
+    field_names = data_hash.keys
+    prefix_str = "UPDATE [dbo].[#{table_name}]\nSET "
+    data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
+    istr = ""
+    data_arr.each do |data|
+      istr << prefix_str
+      istr << "[PUBLISHDATE] = #{data[9]},\n[AUDITTIME] = #{data[19]}\n"
+      istr << "WHERE ID='#{data[0]}' and WEBID='#{data[2]}'\nGO\n"
+    end
+    FileWriter.new(Dir.pwd << "/UP/#{table_name}.sql").write_str(istr)
+  end
+  #根据config将hash表的内容进行转换
   #该config为一个hash表，键为结果字段，值为输入字段(无则为nil)与处理方法组成的hash表
-  def convert_data(table_name,config)
+  def convert_data(config)
     out_hash = {}
     config.each_key do |key|
       data_arr = []
@@ -53,7 +68,7 @@ class MigrateData
       end
       out_hash[key] = data_arr
     end
-    insert_data(table_name,out_hash)
+    out_hash
   end
   def get_proc(proc)
     case proc.class.to_s

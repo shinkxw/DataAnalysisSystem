@@ -14,7 +14,6 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 conn = SqlServer.new('(local)')
 md = MigrateData.new('CloudEdu',conn)
 
-#~ #ÍøÕ¾ÎÄÕÂ
 md.get_table_info(['edu_wzgl_sparticle'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
@@ -42,6 +41,6 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            OPENFLAG: { fn: '', p: Proc.new{|i| '1'}},
            LLQX: { fn: '', p: Proc.new{|i| '0'}},
            }
-md.convert_data('EDU_WZXT_MHXT_WZWZ',config)
-
-#~ conn.close
+md.insert_data('EDU_WZXT_MHXT_WZWZ', config)
+#md.update_data('EDU_WZXT_MHXT_WZWZ', config)
+conn.close
