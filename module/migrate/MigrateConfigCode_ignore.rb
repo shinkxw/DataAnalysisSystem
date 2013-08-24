@@ -91,7 +91,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
 md.insert_data('EDU_WZXT_MHXT_YQLJLX',config)
 #ΩÃ ¶±Ì
 md.get_table_info(['edu_ele_teacher'])
-config = { ID: { fn: '', p: Proc.new{|i| i}},
+config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            GH: { fn: 'ID', p: Proc.new{|s| s}},
            XM: { fn: 'Name', p: Proc.new{|s| s}},
@@ -151,7 +151,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            CSRQ: { fn: 'Birthday', p: 'time_to_8'},
            CSDM: { fn: '', p: Proc.new{|i| ''}},
            JG: { fn: '', p: Proc.new{|i| ''}},
-           MZM: { fn: '', p: Proc.new{|i| ''}},
+           MZM: { fn: '', p: Proc.new{|i| '01'}},
            HYZKM: { fn: '', p: Proc.new{|i| ''}},
            XYZJM: { fn: '', p: Proc.new{|i| ''}},
            GATQWM: { fn: '', p: Proc.new{|i| ''}},

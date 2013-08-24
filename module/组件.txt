@@ -26,9 +26,10 @@ helper      辅助工具   便于辅助开发及代码复用
     Indent        用于管理字符串的缩进
     Log           记录并管理日志
 
-sql         数据库相关操作
-    SqlServer     建立数据库连接及进行查询
-    MigrateData   迁移数据类
+migrate     数据迁移相关
+    SqlServer            建立数据库连接及进行查询
+    MigrateData          迁移数据类
+    ConversionMethod     数据转换类
 
 interface   系统界面   用户交互相关
     BaseInterface      命令行界面父类

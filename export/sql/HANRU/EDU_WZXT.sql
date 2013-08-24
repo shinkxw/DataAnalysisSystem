@@ -60,6 +60,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_WZXT_MHXT_WZPZ')
    drop table EDU_WZXT_MHXT_WZPZ
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_WZXT_MHXT_NWIP')
+            and   type = 'U')
+   drop table EDU_WZXT_MHXT_NWIP
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_WZXT_MHXT_WZLM')
             and   type = 'U')
    drop table EDU_WZXT_MHXT_WZLM
@@ -341,6 +346,24 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZPZ](
 	[CSSID]  int  NOT NULL,--网站样式
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZPZ] PRIMARY KEY CLUSTERED
 (
+	[WEBID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--内网IP配置
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_WZXT_MHXT_NWIP]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_WZXT_MHXT_NWIP](
+	[ID]  int  NOT NULL,--内网IP配置ID
+	[WEBID]  int  NOT NULL,--网站ID
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[IP]  nvarchar(40)  NOT NULL,--IP地址
+CONSTRAINT [PK_EDU_WZXT_MHXT_NWIP] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
 	[WEBID] ASC,
 	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -669,6 +692,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'WEBURL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网站样式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'CSSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内网IP配置' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内网IP配置ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网站ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP', @level2type=N'COLUMN',@level2name=N'WEBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'IP地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP', @level2type=N'COLUMN',@level2name=N'IP'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网站栏目（导航）' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM'
 GO

@@ -126,6 +126,12 @@ EDU_WZXT_MHXT_WZPZ  网站配置
   WEBURL      网址                    nvarchar(500)  非主
   CSSID       网站样式                int            非主     样式库
 
+EDU_WZXT_MHXT_NWIP  内网IP配置
+  ID          内网IP配置ID        int            主键
+  WEBID       网站ID                int            主键
+  SCHOOLID    学校名                  int            主键
+  IP          IP地址                nvarchar(40)   非主
+
 EDU_WZXT_MHXT_WZLM  网站栏目（导航）
   ID          网站栏目（导航）ID    int            主键
   SCHOOLID    学校名                  int            主键     学校配置表

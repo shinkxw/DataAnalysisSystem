@@ -152,6 +152,14 @@
             <name="CSSID" explanation="ÍøÕ¾ÑùÊ½" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_WZXT_MHXT_NWIP" explanation="ÄÚÍøIPÅäÖÃ">
+        <field_area>
+            <name="ID" explanation="ÄÚÍøIPÅäÖÃID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="WEBID" explanation="ÍøÕ¾ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="Ñ§Ð£Ãû" type="int" null="F" p="T" identity="F" remark="" />
+            <name="IP" explanation="IPµØÖ·" type="nvarchar(40)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
     <table name="EDU_WZXT_MHXT_WZLM" explanation="ÍøÕ¾À¸Ä¿£¨µ¼º½£©">
         <field_area>
             <name="ID" explanation="ÍøÕ¾À¸Ä¿£¨µ¼º½£©ID" type="int" null="F" p="T" identity="F" remark="" />
