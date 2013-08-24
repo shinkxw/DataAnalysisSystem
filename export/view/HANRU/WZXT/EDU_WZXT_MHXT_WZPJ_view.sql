@@ -39,8 +39,8 @@ SELECT a.[ID]--评价ID
       ,d.AUDITTIME as d_WZWZ_AUDITTIME--网站文章 审核时间
       ,d.REMARK as d_WZWZ_REMARK--网站文章 备注
       ,d.SUMMARY as d_WZWZ_SUMMARY--网站文章 摘要
-      ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 是否显示
-      ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 内外网
+      ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 内外网
+      ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 开启状态
       ,d.LLQX as d_WZWZ_LLQX--网站文章 浏览权限
 
 FROM dbo.EDU_WZXT_MHXT_WZPJ AS a LEFT OUTER JOIN

@@ -28082,8 +28082,8 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZWZ](
 	[AUDITTIME]  datetime  NOT NULL,--审核时间
 	[REMARK]  nvarchar(300)  NULL,--备注
 	[SUMMARY]  text  NULL,--摘要
-	[DISPLAYTYPE]  int  NOT NULL,--是否显示
-	[OPENFLAG]  int  NOT NULL,--内外网
+	[DISPLAYTYPE]  int  NOT NULL,--内外网
+	[OPENFLAG]  int  NOT NULL,--开启状态
 	[LLQX]  nvarchar(50)  NULL,--浏览权限
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZWZ] PRIMARY KEY CLUSTERED
 (
@@ -28171,7 +28171,7 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZLM](
 	[LISTSHOWSTYLE]  int  NULL,--列表显示型式
 	[ORDERTYPE]  int  NOT NULL,--排序方式
 	[SHOWNUMBER]  int  NOT NULL,--显示个数
-	[OPENFLAG]  int  NOT NULL,--内外网
+	[OPENFLAG]  int  NOT NULL,--开启状态
 	[LLQX]  nvarchar(50)  NULL,--浏览权限
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZLM] PRIMARY KEY CLUSTERED
 (
@@ -28433,9 +28433,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'摘要' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'SUMMARY'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否显示' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'DISPLAYTYPE'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内外网' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'DISPLAYTYPE'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内外网' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'OPENFLAG'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开启状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'OPENFLAG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览权限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'LLQX'
 GO
@@ -28513,7 +28513,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排序方式' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'显示个数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'SHOWNUMBER'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内外网' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'OPENFLAG'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开启状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'OPENFLAG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览权限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'LLQX'
 GO

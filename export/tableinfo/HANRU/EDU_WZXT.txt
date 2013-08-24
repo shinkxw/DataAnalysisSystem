@@ -101,8 +101,8 @@ EDU_WZXT_MHXT_WZWZ  网站文章
   AUDITTIME   审核时间                datetime       非主
   REMARK      备注                    nvarchar(300)  非主
   SUMMARY     摘要                    text           非主
-  DISPLAYTYPE 是否显示                int            非主
-  OPENFLAG    内外网                  int            非主
+  DISPLAYTYPE 内外网                  int            非主
+  OPENFLAG    开启状态                int            非主
   LLQX        浏览权限                nvarchar(50)   非主
 
 EDU_WZXT_MHXT_WZPJ  文章评价表
@@ -145,7 +145,7 @@ EDU_WZXT_MHXT_WZLM  网站栏目（导航）
   LISTSHOWSTYLE列表显示型式            int            非主
   ORDERTYPE   排序方式                int            非主
   SHOWNUMBER  显示个数                int            非主
-  OPENFLAG    内外网                  int            非主
+  OPENFLAG    开启状态                int            非主
   LLQX        浏览权限                nvarchar(50)   非主
 
 EDU_WZXT_MHXT_WZGG  网站广告

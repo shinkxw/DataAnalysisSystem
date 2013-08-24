@@ -140,12 +140,12 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "是否显示")]
+            [Display(Name = "内外网")]
             public Int32 DISPLAYTYPE { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "内外网")]
+            [Display(Name = "开启状态")]
             public Int32 OPENFLAG { get; set; }
 
 

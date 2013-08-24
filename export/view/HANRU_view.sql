@@ -1850,8 +1850,8 @@ SELECT a.[ID]--网站文章ID
       ,a.[AUDITTIME]--审核时间
       ,a.[REMARK]--备注
       ,a.[SUMMARY]--摘要
-      ,a.[DISPLAYTYPE]--是否显示
-      ,a.[OPENFLAG]--内外网
+      ,a.[DISPLAYTYPE]--内外网
+      ,a.[OPENFLAG]--开启状态
       ,a.[LLQX]--浏览权限
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
@@ -1869,7 +1869,7 @@ SELECT a.[ID]--网站文章ID
       ,d.LISTSHOWSTYLE as d_WZLM_LISTSHOWSTYLE--网站栏目（导航） 列表显示型式
       ,d.ORDERTYPE as d_WZLM_ORDERTYPE--网站栏目（导航） 排序方式
       ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
-      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 内外网
+      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
       ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
 
 FROM dbo.EDU_WZXT_MHXT_WZWZ AS a LEFT OUTER JOIN
@@ -1917,8 +1917,8 @@ SELECT a.[ID]--评价ID
       ,d.AUDITTIME as d_WZWZ_AUDITTIME--网站文章 审核时间
       ,d.REMARK as d_WZWZ_REMARK--网站文章 备注
       ,d.SUMMARY as d_WZWZ_SUMMARY--网站文章 摘要
-      ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 是否显示
-      ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 内外网
+      ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 内外网
+      ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 开启状态
       ,d.LLQX as d_WZWZ_LLQX--网站文章 浏览权限
 
 FROM dbo.EDU_WZXT_MHXT_WZPJ AS a LEFT OUTER JOIN
@@ -1965,7 +1965,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,a.[LISTSHOWSTYLE]--列表显示型式
       ,a.[ORDERTYPE]--排序方式
       ,a.[SHOWNUMBER]--显示个数
-      ,a.[OPENFLAG]--内外网
+      ,a.[OPENFLAG]--开启状态
       ,a.[LLQX]--浏览权限
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
@@ -1983,7 +1983,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,d.LISTSHOWSTYLE as d_WZLM_LISTSHOWSTYLE--网站栏目（导航） 列表显示型式
       ,d.ORDERTYPE as d_WZLM_ORDERTYPE--网站栏目（导航） 排序方式
       ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
-      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 内外网
+      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
       ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
 
 FROM dbo.EDU_WZXT_MHXT_WZLM AS a LEFT OUTER JOIN

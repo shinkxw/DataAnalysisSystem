@@ -14,7 +14,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,a.[LISTSHOWSTYLE]--列表显示型式
       ,a.[ORDERTYPE]--排序方式
       ,a.[SHOWNUMBER]--显示个数
-      ,a.[OPENFLAG]--内外网
+      ,a.[OPENFLAG]--开启状态
       ,a.[LLQX]--浏览权限
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
@@ -32,7 +32,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,d.LISTSHOWSTYLE as d_WZLM_LISTSHOWSTYLE--网站栏目（导航） 列表显示型式
       ,d.ORDERTYPE as d_WZLM_ORDERTYPE--网站栏目（导航） 排序方式
       ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
-      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 内外网
+      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
       ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
 
 FROM dbo.EDU_WZXT_MHXT_WZLM AS a LEFT OUTER JOIN

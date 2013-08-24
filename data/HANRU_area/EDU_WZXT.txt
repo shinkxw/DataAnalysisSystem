@@ -122,8 +122,8 @@
             <name="AUDITTIME" explanation="审核时间" type="datetime" null="F" p="F" identity="F" remark="" />
             <name="REMARK" explanation="备注" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
             <name="SUMMARY" explanation="摘要" type="text" null="T" p="F" identity="F" remark="" />
-            <name="DISPLAYTYPE" explanation="是否显示" type="int" null="F" p="F" identity="F" remark="" />
-            <name="OPENFLAG" explanation="内外网" type="int" null="F" p="F" identity="F" remark="" />
+            <name="DISPLAYTYPE" explanation="内外网" type="int" null="F" p="F" identity="F" remark="" />
+            <name="OPENFLAG" explanation="开启状态" type="int" null="F" p="F" identity="F" remark="" />
             <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
         </field_area>
     </table>
@@ -174,7 +174,7 @@
             <name="LISTSHOWSTYLE" explanation="列表显示型式" type="int" null="T" p="F" identity="F" remark="" />
             <name="ORDERTYPE" explanation="排序方式" type="int" null="F" p="F" identity="F" remark="（按时间方式：添加顺序、访问量）" />
             <name="SHOWNUMBER" explanation="显示个数" type="int" null="F" p="F" identity="F" remark="" />
-            <name="OPENFLAG" explanation="内外网" type="int" null="F" p="F" identity="F" remark="（0外，1内网）" />
+            <name="OPENFLAG" explanation="开启状态" type="int" null="F" p="F" identity="F" remark="（0外，1内网）" />
             <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
         </field_area>
     </table>
