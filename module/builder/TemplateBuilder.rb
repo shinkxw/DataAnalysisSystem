@@ -48,7 +48,7 @@ class TemplateBuilder
     str << make_controller_index_jsonstr(table)
     str << make_controller_add(table)
     str << make_controller_upd(table)
-    str << make_controller_InitViewBag
+    str << make_controller_InitViewBag(table)
     str << make_controller_index(table)
     str << make_controller_create(table)
     str << make_controller_edit(table)
@@ -98,10 +98,11 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n"
   end
-  def make_controller_InitViewBag
+  def make_controller_InitViewBag(table)
     str = "#{@tab.t}public void InitViewBag()\n#{@tab.t}"
-    str << "{\n#{@tab.l}//ViewBag.\n#{@tab.t}\n"
-    str << "#{@tab.s}}\n\n"
+    str << "{\n#{@tab.l}"
+    table.each_field{|field| str << get_selLst(field)}
+    str << "\n#{@tab.s}}\n\n"
   end
   def make_controller_index(table)
     str = "#{@tab.t}public ActionResult Index()\n#{@tab.t}"
@@ -214,7 +215,11 @@ class TemplateBuilder
     create_atr << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
     table.each_field do |field|
       create_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
-      create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+      if field.relation
+        create_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
+      else
+        create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+      end
       create_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
     create_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
@@ -227,10 +232,29 @@ class TemplateBuilder
     edit_str << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
     table.each_field do |field|
       edit_str << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
-      edit_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+      if field.relation
+        edit_str << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
+      else
+        edit_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+      end
       edit_str << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
     edit_str << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
+  end
+  #获得一个字段的值列表
+  def get_selLst(field)
+    bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
+    if field.relation
+      lname = bztable_hash[field.relation.table.library_name.to_sym]
+      if lname != nil
+        mname = field.relation.table.select_method_name
+        "ViewBag.#{mname}Lst = #{bztable_hash[lname]}LDAL.Get#{mname}SelLst();\n#{@tab.t}"
+      else
+        ""
+      end
+    else
+      ""
+    end
   end
   def out_relation(field)
     field.relation ? "   " << field.relation.table.explanation : ""
