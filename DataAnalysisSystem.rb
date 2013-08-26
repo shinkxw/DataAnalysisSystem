@@ -5,36 +5,34 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
-t = Time.now
-work_area = AreaManager.load_work_area("HANRU")
-work_area.export_all
-work_area.save_and_close_work_area
-p Time.now - t
+#~ t = Time.now
+#~ work_area = AreaManager.load_work_area("HANRU")
+#~ work_area.export_all
+#~ work_area.save_and_close_work_area
+#~ p Time.now - t
 
-#~ conn = SqlServer.new('(local)')
-#~ md = MigrateData.new('CloudEdu',conn)
+conn = SqlServer.new('(local)')
+md = MigrateData.new('jinyun',conn)
 
-#~ md.get_table_info(['edu_ele_student'])
-#~ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           #~ ZYXXID: { fn: '', p: Proc.new{|i| ''}},
-           #~ XNID: { fn: '', p: Proc.new{|i| ''}},
-           #~ ZZXQID: { fn: '', p: Proc.new{|i| ''}},
-           #~ JTDZQH: { fn: '', p: Proc.new{|i| ''}},
-           #~ JTXXDZ: { fn: 'HomeAdd', p: Proc.new{|s| s}},
-           #~ HJXXDZ: { fn: '', p: Proc.new{|i| ''}},
-           #~ HJXZ: { fn: '', p: Proc.new{|i| ''}},
-           #~ BYJX: { fn: '', p: Proc.new{|i| ''}},
-           #~ CSBZR: { fn: '', p: Proc.new{|i| ''}},
-           #~ DRZW: { fn: '', p: Proc.new{|i| ''}},
-           #~ YYDR: { fn: '', p: Proc.new{|i| ''}},
-           #~ BZ: { fn: '', p: Proc.new{|i| ''}},
-           #~ BYLX: { fn: '', p: Proc.new{|i| ''}},
-           #~ XSLX: { fn: '', p: Proc.new{|i| ''}},
-           #~ SFZS: { fn: '', p: Proc.new{|i| ''}},
-           #~ XSBMSJ: { fn: '', p: Proc.new{|i| ''}},
-           #~ }
-#~ md.insert_data('EDU_ZZXS_01_A01_XSXX',config)
+md.get_table_info(['zydn_User_Base'])
+config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           APPID: { fn: '', p: Proc.new{|i| ''}},
+           PWD: { fn: '', p: Proc.new{|i| ''}},
+           STATUS: { fn: '', p: Proc.new{|i| ''}},
+           USERTYPE: { fn: '', p: Proc.new{|i| ''}},
+           USERID: { fn: '', p: Proc.new{|i| ''}},
+           ROLEIDLst: { fn: '', p: Proc.new{|i| ''}},
+           XM: { fn: '', p: Proc.new{|i| ''}},
+           XB: { fn: '', p: Proc.new{|i| ''}},
+           QQ: { fn: '', p: Proc.new{|i| ''}},
+           DZYJ: { fn: '', p: Proc.new{|i| ''}},
+           LXDH: { fn: '', p: Proc.new{|i| ''}},
+           ZJDLSJ: { fn: '', p: Proc.new{|i| ''}},
+           DLCGCS: { fn: '', p: Proc.new{|i| ''}},
+           YHCJSJ: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ELE_01_USER',config)
 
-#~ conn.close
+conn.close
 

@@ -62,15 +62,15 @@ class MDTable
     true#单数据键值重复 数据的键值应属于字段 非空字段值判断
   end
   #返回表名的最后一个字段
-  def lname;@name.split("_")[-1] end
+  def lname;@name.split('_')[-1] end
   #返回表名的最后一个字段的小写形式
-  def lname_dc;@name.split("_")[-1].downcase end
+  def lname_dc;@name.split('_')[-1].downcase end
   #返回表所在库名的小写形式
-  def library_name;@name.split("_")[1].downcase end
+  def library_name;@name.split('_')[1].downcase end
   #返回表所属的命名空间名
-  def name_space_name;a = @name.split("_");"#{a[0]}_#{a[1]}" end
+  def name_space_name;a = @name.split('_');"#{a[0]}_#{a[1]}" end
   #返回标准表的获取值方法名
-  def select_method_name;a = @name.split("_");"#{a[1]}_#{a[2]}" end
+  def select_method_name;a = @name.split('_');"#{a[1]}_#{a[2]}" end
   #返回所有主键
   def get_primary_key;@field_area.select{|field| field.p == "T"} end
   #获得第一个字段的字段名

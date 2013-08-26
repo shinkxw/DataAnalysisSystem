@@ -16,7 +16,7 @@ class MigrateData
   #获得指定表的信息
   def get_table_info(table_name_arr)
     if table_name_arr.size == 1
-      @data_hash = @conn.query("select * from #{table_name}")
+      @data_hash = @conn.query("select * from #{table_name_arr[0]}")
     else
       @data_hash = {}
       table_name_arr.each do |table_name|
