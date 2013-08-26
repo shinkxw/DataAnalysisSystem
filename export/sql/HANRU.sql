@@ -28232,8 +28232,8 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_FBQX](
 	[SCHOOLID]  int  NOT NULL,--学校名
 	[WEBID]  int  NOT NULL,--网站ID
 	[LOGINNAME]  nvarchar(50)  NOT NULL,--用户名
-	[LMLIST]  nvarchar(500)  NOT NULL,--栏目
-	[LMNAMELIST]  nvarchar(500)  NULL,--栏目文字
+	[LMLIST]  text  NOT NULL,--栏目
+	[LMNAMELIST]  text  NULL,--栏目文字
 CONSTRAINT [PK_EDU_WZXT_MHXT_FBQX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

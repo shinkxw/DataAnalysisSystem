@@ -170,6 +170,6 @@ EDU_WZXT_MHXT_FBQX  发布权限
   SCHOOLID    学校名                  int            主键     学校配置表
   WEBID       网站ID                int            主键     网站配置
   LOGINNAME   用户名                  nvarchar(50)   非主
-  LMLIST      栏目                    nvarchar(500)  非主
-  LMNAMELIST  栏目文字                nvarchar(500)  非主
+  LMLIST      栏目                    text           非主
+  LMNAMELIST  栏目文字                text           非主
 

@@ -38,13 +38,11 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "栏目")]
-            [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String LMLIST { get; set; }
 
 
             [Display(Name = "栏目文字")]
-            [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String LMNAMELIST { get; set; }
 
