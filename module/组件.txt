@@ -12,6 +12,7 @@ builder    生成器      将元数据装换为一种格式的字符串
     ModelBuilder       模型验证
     ViewBuilder        视图生成
     TemplateBuilder    模板生成
+    TestdataBuilder    测试数据脚本生成
 
 file       文件处理    文件读写相关
     DirManager         目录管理器
