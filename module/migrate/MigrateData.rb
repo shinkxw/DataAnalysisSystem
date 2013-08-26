@@ -14,10 +14,16 @@ class MigrateData
     @conn.open(@db_name)
   end
   #获得指定表的信息
-  def get_table_info(table_arr)
-    table_arr.each do |table_name|
-      sql = "select * from #{table_name}"
-      @data_hash = @conn.query(sql)
+  def get_table_info(table_name_arr)
+    if table_name_arr.size == 1
+      @data_hash = @conn.query("select * from #{table_name}")
+    else
+      @data_hash = {}
+      table_name_arr.each do |table_name|
+        #为键添加表名
+        hash = @conn.query("select * from #{table_name}")
+        hash.each{|k,v| @data_hash[table_name.split("_")[-1] + '_' + k] = v}
+      end
     end
   end
   #生成插入数据脚本
