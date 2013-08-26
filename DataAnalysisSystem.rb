@@ -15,22 +15,22 @@ conn = SqlServer.new('(local)')
 md = MigrateData.new('jinyun',conn)
 
 md.get_table_info(['zydn_User_Base'])
-config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
+config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            APPID: { fn: '', p: Proc.new{|i| ''}},
-           PWD: { fn: '', p: Proc.new{|i| ''}},
+           PWD: { fn: 'PassWord', p: Proc.new{|s| s}},
            STATUS: { fn: '', p: Proc.new{|i| ''}},
            USERTYPE: { fn: '', p: Proc.new{|i| ''}},
            USERID: { fn: '', p: Proc.new{|i| ''}},
            ROLEIDLst: { fn: '', p: Proc.new{|i| ''}},
-           XM: { fn: '', p: Proc.new{|i| ''}},
+           XM: { fn: 'UserName', p: Proc.new{|s| s}},
            XB: { fn: '', p: Proc.new{|i| ''}},
            QQ: { fn: '', p: Proc.new{|i| ''}},
-           DZYJ: { fn: '', p: Proc.new{|i| ''}},
+           DZYJ: { fn: 'Email', p: Proc.new{|s| s}},
            LXDH: { fn: '', p: Proc.new{|i| ''}},
-           ZJDLSJ: { fn: '', p: Proc.new{|i| ''}},
-           DLCGCS: { fn: '', p: Proc.new{|i| ''}},
-           YHCJSJ: { fn: '', p: Proc.new{|i| ''}},
+           ZJDLSJ: { fn: 'Date_Login', p: 'datetime'},
+           DLCGCS: { fn: 'Count_Login', p: Proc.new{|s| s}},
+           YHCJSJ: { fn: 'RegDate', p: 'datetime'},
            }
 md.insert_data('EDU_ELE_01_USER',config)
 
