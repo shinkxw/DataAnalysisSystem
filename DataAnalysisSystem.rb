@@ -12,40 +12,75 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 #~ p Time.now - t
 
 conn = SqlServer.new('(local)')
-md = MigrateData.new('CloudEdu',conn)
+md = MigrateData.new('jinyun',conn)
 
-md.get_table_info('edu_ele_student')
+#ÍøÕ¾ÎÄÕÂ
+md.get_table_info('tab_News')
 config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           XH: { fn: 'ID', p: Proc.new{|s| s}},
-           XM: { fn: 'Name', p: Proc.new{|s| s}},
-           YWXM: { fn: '', p: Proc.new{|i| ''}},
-           XMPY: { fn: '', p: Proc.new{|i| ''}},
-           CYM: { fn: '', p: Proc.new{|i| ''}},
-           SFZJLXM: { fn: '', p: Proc.new{|i| '1'}},
-           SFZJH: { fn: 'IDcard', p: Proc.new{|s| s}},
-           XBM: { fn: 'XbID', p: Proc.new{|s| s == 0 ? '1' : '2'}},
-           XXM: { fn: '', p: Proc.new{|i| ''}},
-           CSRQ: { fn: 'Birthday', p: 'time_to_8'},
-           CSDM: { fn: '', p: Proc.new{|i| ''}},
-           JG: { fn: '', p: Proc.new{|i| ''}},
-           MZM: { fn: '', p: Proc.new{|i| '01'}},
-           HYZKM: { fn: '', p: Proc.new{|i| ''}},
-           XYZJM: { fn: '', p: Proc.new{|i| ''}},
-           GATQWM: { fn: '', p: Proc.new{|i| ''}},
-           JKZKM: { fn: '', p: Proc.new{|i| ''}},
-           ZZMMM: { fn: '', p: Proc.new{|i| ''}},
-           HKSZDXZQHM: { fn: '', p: Proc.new{|i| ''}},
-           HKLBM: { fn: '', p: Proc.new{|i| ''}},
-           SFSLDRK: { fn: '', p: Proc.new{|i| ''}},
-           GJDQM: { fn: '', p: Proc.new{|i| ''}},
-           TC: { fn: '', p: Proc.new{|i| ''}},
-           XSLXDH: { fn: 'Mobile', p: Proc.new{|s| s}},
-           WLDZ: { fn: '', p: Proc.new{|i| ''}},
-           JSTXH: { fn: '', p: Proc.new{|i| ''}},
-           DZXX: { fn: '', p: Proc.new{|i| ''}},
-           ZP: { fn: 'Imageurl', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           WEBID: { fn: '', p: Proc.new{|i| '1'}},
+           TYPENAME: { fn: 'Kind', p: Proc.new{|s| s}},
+           LMID: { fn: 'menuid', p: Proc.new{|s| s}},
+           TITLE: { fn: 'title', p: Proc.new{|s| s}},
+           PUBLISHERNAME: { fn: 'SaveUser', p: Proc.new{|s| s}},
+           AUTHOR: { fn: 'SaveUser', p: Proc.new{|s| s}},
+           AUTHORDEPART: { fn: '', p: Proc.new{|i| ''}},
+           PUBLISHDATE: { fn: 'SaveDate', p: 'datetime'},
+           CONTENT: { fn: 'content', p: 'content'},
+           URL: { fn: '', p: Proc.new{|i| ''}},
+           IMAGEURL: { fn: '', p: Proc.new{|i| ''}},
+           ATTACHMENTNAME: { fn: '', p: Proc.new{|i| ''}},
+           ATTACHMENT: { fn: 'TabImage', p: Proc.new{|s| s}},
+           CHICKNUB: { fn: '', p: Proc.new{|i| '0'}},
+           AUDITSTATU: { fn: '', p: Proc.new{|i| '1'}},
+           AUDITOR: { fn: '', p: Proc.new{|i| ''}},
+           AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},
+           AUDITTIME: { fn: 'SaveDate', p: 'datetime'},
+           REMARK: { fn: '', p: Proc.new{|i| ''}},
+           SUMMARY: { fn: 'CBS', p: Proc.new{|s| s}},
+           DISPLAYTYPE: { fn: '', p: Proc.new{|i| '0'}},
+           OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
+           LLQX: { fn: '', p: Proc.new{|i| '0'}},
            }
-md.insert_data('EDU_ZZXS_01_01_XSXX',config)
+md.insert_data('EDU_WZXT_MHXT_WZWZ',config)
+#ÍøÕ¾À¸Ä¿
+pid_proc = Proc.new{|s| s.include?(',') ? s.split(',')[-2] : '0'}
+md.get_table_info('zydn_Menu')
+config = { ID: { fn: 'MID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           WEBID: { fn: '', p: Proc.new{|i| '1'}},
+           LMSHOWSTYLE: { fn: '', p: Proc.new{|i| ''}},
+           NAME: { fn: 'MName', p: Proc.new{|s| s}},
+           URL: { fn: '', p: Proc.new{|i| ''}},
+           IMAGEURL: { fn: '', p: Proc.new{|i| ''}},
+           DEPTH: { fn: 'layer', p: Proc.new{|s| s}},
+           PID: { fn: 'UpListID', p: pid_proc},
+           LISTSHOWSTYLE: { fn: '', p: Proc.new{|i| ''}},
+           ORDERTYPE: { fn: '', p: Proc.new{|i| ''}},
+           SHOWNUMBER: { fn: '', p: Proc.new{|i| ''}},
+           OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
+           LLQX: { fn: '', p: Proc.new{|i| '0'}},
+           }
+md.insert_data('EDU_WZXT_MHXT_WZLM',config)
+#ÍøÕ¾ÓÃ»§
+md.get_table_info('zydn_User_Base')
+config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           APPID: { fn: '', p: Proc.new{|i| '10'}},
+           PWD: { fn: '', p: Proc.new{|i| 'C3F64A921C134351A0A52974BD8797C5'}},
+           STATUS: { fn: '', p: Proc.new{|i| '1'}},
+           USERTYPE: { fn: '', p: Proc.new{|i| ''}},
+           USERID: { fn: '', p: Proc.new{|i| ''}},
+           ROLEIDLst: { fn: '', p: Proc.new{|i| ''}},
+           XM: { fn: 'UserName', p: Proc.new{|s| s}},
+           XB: { fn: '', p: Proc.new{|i| ''}},
+           QQ: { fn: '', p: Proc.new{|i| ''}},
+           DZYJ: { fn: 'Email', p: Proc.new{|s| s}},
+           LXDH: { fn: '', p: Proc.new{|i| ''}},
+           ZJDLSJ: { fn: 'Date_Login', p: 'datetime'},
+           DLCGCS: { fn: 'Count_Login', p: Proc.new{|s| s}},
+           YHCJSJ: { fn: 'RegDate', p: 'datetime'},
+           }
+md.insert_data('EDU_ELE_01_USER',config)
 
 conn.close

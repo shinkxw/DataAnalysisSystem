@@ -1,7 +1,7 @@
 #ÍøÕ¾ÎÄÕÂ
-md.get_table_info(['tab_News'])
+md.get_table_info('tab_News')
 config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
            WEBID: { fn: '', p: Proc.new{|i| '1'}},
            TYPENAME: { fn: 'Kind', p: Proc.new{|s| s}},
            LMID: { fn: 'menuid', p: Proc.new{|s| s}},
@@ -29,9 +29,9 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
 md.insert_data('EDU_WZXT_MHXT_WZWZ',config)
 #ÍøÕ¾À¸Ä¿
 pid_proc = Proc.new{|s| s.include?(',') ? s.split(',')[-2] : '0'}
-md.get_table_info(['zydn_Menu'])
+md.get_table_info('zydn_Menu')
 config = { ID: { fn: 'MID', p: Proc.new{|s| s}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
            WEBID: { fn: '', p: Proc.new{|i| '1'}},
            LMSHOWSTYLE: { fn: '', p: Proc.new{|i| ''}},
            NAME: { fn: 'MName', p: Proc.new{|s| s}},
@@ -47,12 +47,12 @@ config = { ID: { fn: 'MID', p: Proc.new{|s| s}},
            }
 md.insert_data('EDU_WZXT_MHXT_WZLM',config)
 #ÍøÕ¾ÓÃ»§
-md.get_table_info(['zydn_User_Base'])
+md.get_table_info('zydn_User_Base')
 config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           APPID: { fn: '', p: Proc.new{|i| ''}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
+           APPID: { fn: '', p: Proc.new{|i| '10'}},
            PWD: { fn: 'PassWord', p: Proc.new{|s| s}},
-           STATUS: { fn: '', p: Proc.new{|i| ''}},
+           STATUS: { fn: '', p: Proc.new{|i| '1'}},
            USERTYPE: { fn: '', p: Proc.new{|i| ''}},
            USERID: { fn: '', p: Proc.new{|i| ''}},
            ROLEIDLst: { fn: '', p: Proc.new{|i| ''}},
