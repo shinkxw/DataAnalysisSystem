@@ -1,7 +1,7 @@
 conn = SqlServer.new('(local)')
 md = MigrateData.new('CloudEdu',conn)
 #网站会员
-md.get_table_info(['edu_wzgl_associator'])
+md.get_table_info('edu_wzgl_associator')
 config = { SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
            LOGINNAME: { fn: 'UserName', p: Proc.new{|str| str}},
@@ -15,7 +15,7 @@ config = { SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},}
 md.insert_data('EDU_WZXT_VIP',config)
 #网站文章
-md.get_table_info(['edu_wzgl_sparticle'])
+md.get_table_info('edu_wzgl_sparticle')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
@@ -44,7 +44,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_WZXT_MHXT_WZWZ',config)
 #发布权限
-md.get_table_info(['edu_wzgl_sparticlepower'])
+md.get_table_info('edu_wzgl_sparticlepower')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
@@ -54,7 +54,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_WZXT_MHXT_FBQX',config)
 #网站栏目
-md.get_table_info(['edu_wzgl_sparticletype'])
+md.get_table_info('edu_wzgl_sparticletype')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
@@ -72,7 +72,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_WZXT_MHXT_WZLM',config)
 #友情链接
-md.get_table_info(['edu_wzgl_splink'])
+md.get_table_info('edu_wzgl_splink')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
@@ -83,7 +83,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_WZXT_MHXT_YQLJ',config)
 #友情链接类型
-md.get_table_info(['edu_wzgl_splinktype'])
+md.get_table_info('edu_wzgl_splinktype')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            WEBID: { fn: 'SpwebID', p: Proc.new{|str| str}},
@@ -92,7 +92,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_WZXT_MHXT_YQLJLX',config)
 #教师表
-md.get_table_info(['edu_ele_teacher'])
+md.get_table_info('edu_ele_teacher')
 config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            GH: { fn: 'ID', p: Proc.new{|s| s}},
@@ -138,7 +138,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            }
 md.insert_data('EDU_ZZJG_01_01_JZGJBSJ',config)
 #学生表
-md.get_table_info(['edu_ele_student'])
+md.get_table_info('edu_ele_student')
 config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            XH: { fn: 'ID', p: Proc.new{|s| s}},
@@ -148,7 +148,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            CYM: { fn: '', p: Proc.new{|i| ''}},
            SFZJLXM: { fn: '', p: Proc.new{|i| '1'}},
            SFZJH: { fn: 'IDcard', p: Proc.new{|s| s}},
-           XBM: { fn: 'XbID', p: Proc.new{|s| s == '0' ? '1' : '0'}},
+           XBM: { fn: 'XbID', p: Proc.new{|s| s == '0' ? '1' : '2'}},
            XXM: { fn: '', p: Proc.new{|i| ''}},
            CSRQ: { fn: 'Birthday', p: 'time_to_8'},
            CSDM: { fn: '', p: Proc.new{|i| ''}},
@@ -172,9 +172,21 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            }
 md.insert_data('EDU_ZZXS_01_01_XSXX',config)
 #学籍
-
+md.get_table_info('edu_ele_student', {'edu_ele_class' => {'ClassID' => 'ID'}})
+config = { XSXXID: { fn: 'student_ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
+           ZZBJID: { fn: 'student_ClassID', p: Proc.new{|s| s}},
+           ZZNJID: { fn: 'class_GradeID', p: Proc.new{|s| s}},
+           RXNY: { fn: '', p: Proc.new{|i| ''}},
+           XSLBM: { fn: '', p: Proc.new{|i| ''}},
+           XZ: { fn: '', p: Proc.new{|i| ''}},
+           ZYM: { fn: '', p: Proc.new{|i| ''}},
+           XSDQZTM: { fn: '', p: Proc.new{|i| '01'}},
+           }
+md.insert_data('EDU_ZZXS_07_01_XJSJ',config)
 #房屋
-md.get_table_info(['edu_ssgl_apartment'])
+md.get_table_info('edu_ssgl_apartment')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            JZWH: { fn: '', p: Proc.new{|i| '0'}},
@@ -244,7 +256,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_ZZFC_02_01_JZWJBSJ', config)
 #宿舍
-md.get_table_info(['edu_ssgl_dormitory'])
+md.get_table_info('edu_ssgl_dormitory')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            SSLID: { fn: 'ApartmentID', p: Proc.new{|s| s}},
@@ -265,7 +277,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_ZZFC_08_01_XSSS', config)
 #床位
-md.get_table_info(['edu_ssgl_bed'])
+md.get_table_info('edu_ssgl_bed')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            SSLID: { fn: 'AID', p: Proc.new{|s| s}},
@@ -276,7 +288,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_ZZFC_08_A01_SSCW', config)
 #住宿记录
-md.get_table_info(['edu_ssgl_manage'])
+md.get_table_info('edu_ssgl_manage')
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            YHID: { fn: 'UserID', p: Proc.new{|s| s}},
@@ -311,7 +323,7 @@ config = { XZBDM: { fn: 'upgrade_ID', p: Proc.new{|s| s}},
            }
 md.insert_data('EDU_ZZJX_02_02_ZZBJ',config)
 #年级
-md.get_table_info(['edu_ele_grade'])
+md.get_table_info('edu_ele_grade')
 config = { NJDM: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            NJMC: { fn: 'Name', p: Proc.new{|s| s}},
@@ -320,7 +332,7 @@ config = { NJDM: { fn: 'ID', p: Proc.new{|s| s}},
            }
 md.insert_data('EDU_ZZJX_02_01_ZZNJ',config)
 #专业
-md.get_table_info(['edu_ele_major'])
+md.get_table_info('edu_ele_major')
 config = { ZYBH: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            ZYDM: { fn: '', p: Proc.new{|i| ''}},
@@ -337,20 +349,5 @@ config = { ZYBH: { fn: 'ID', p: Proc.new{|s| s}},
            ZYLB: { fn: '', p: Proc.new{|i| ''}},
            }
 md.insert_data('EDU_ZZJX_01_01_ZYXX',config)
-#学籍
-md.get_table_info('edu_ele_student', {'edu_ele_class' => {'ClassID' => 'ID'}})
-config = { XSXXID: { fn: 'student_ID', p: Proc.new{|s| s}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
-           ZZBJID: { fn: 'student_ClassID', p: Proc.new{|s| s}},
-           ZZNJID: { fn: 'class_GradeID', p: Proc.new{|s| s}},
-           RXNY: { fn: '', p: Proc.new{|i| ''}},
-           XSLBM: { fn: '', p: Proc.new{|i| ''}},
-           XZ: { fn: '', p: Proc.new{|i| ''}},
-           ZYM: { fn: '', p: Proc.new{|i| ''}},
-           XSDQZTM: { fn: '', p: Proc.new{|i| ''}},
-           }
-md.insert_data('EDU_ZZXS_07_01_XJSJ',config)
-
 
 conn.close
