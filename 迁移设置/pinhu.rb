@@ -1,3 +1,5 @@
+conn = SqlServer.new('(local)')
+md = MigrateData.new('CloudEdu',conn)
 #网站会员
 md.get_table_info(['edu_wzgl_associator'])
 config = { SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
@@ -169,6 +171,8 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            ZP: { fn: 'Imageurl', p: Proc.new{|s| s}},
            }
 md.insert_data('EDU_ZZXS_01_01_XSXX',config)
+#学籍
+
 #房屋
 md.get_table_info(['edu_ssgl_apartment'])
 config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
@@ -287,3 +291,51 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            SHR: { fn: '', p: Proc.new{|i| '0'}},
            }
 md.insert_data('EDU_ZZFC_08_A02_YHZSJL', config)
+#班级
+md.get_table_info(['edu_ele_class','edu_ele_class_upgrade'])
+config = { XZBDM: { fn: 'upgrade_ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
+           ZZNJID: { fn: 'upgrade_GradeID', p: Proc.new{|s| s}},
+           XZBMC: { fn: 'class_Name', p: Proc.new{|s| s}},
+           JBNY: { fn: '', p: Proc.new{|i| ''}},
+           BZRGH: { fn: '', p: Proc.new{|i| ''}},
+           JSBH: { fn: '', p: Proc.new{|i| ''}},
+           NANSRS: { fn: '', p: Proc.new{|i| '0'}},
+           NVSRS: { fn: '', p: Proc.new{|i| '0'}},
+           ZRS: { fn: 'upgrade_StuCount', p: Proc.new{|s| s}},
+           BZXH: { fn: '', p: Proc.new{|i| ''}},
+           JXJH: { fn: '', p: Proc.new{|i| ''}},
+           JGH: { fn: '', p: Proc.new{|i| ''}},
+           XQDM: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ZZJX_02_02_ZZBJ',config)
+#年级
+md.get_table_info(['edu_ele_grade'])
+config = { NJDM: { fn: 'ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           NJMC: { fn: 'Name', p: Proc.new{|s| s}},
+           SSNF: { fn: '', p: Proc.new{|i| ''}},
+           NJZT: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ZZJX_02_01_ZZNJ',config)
+#专业
+md.get_table_info(['edu_ele_major'])
+config = { ZYBH: { fn: 'ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           ZYDM: { fn: '', p: Proc.new{|i| ''}},
+           ZYMC: { fn: 'Name', p: Proc.new{|s| s}},
+           ZYYWMC: { fn: '', p: Proc.new{|i| ''}},
+           XZ: { fn: '', p: Proc.new{|i| ''}},
+           ZYFXMC: { fn: '', p: Proc.new{|i| ''}},
+           ZYJC: { fn: '', p: Proc.new{|i| ''}},
+           JLNY: { fn: '', p: Proc.new{|i| ''}},
+           ZYJSS: { fn: '', p: Proc.new{|i| '0'}},
+           KSJGH: { fn: '', p: Proc.new{|i| '000000'}},
+           ZXF: { fn: '', p: Proc.new{|i| ''}},
+           SSZYML: { fn: '', p: Proc.new{|i| ''}},
+           ZYLB: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ZZJX_01_01_ZYXX',config)
+
+conn.close

@@ -12,27 +12,22 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 #~ p Time.now - t
 
 conn = SqlServer.new('(local)')
-md = MigrateData.new('jinyun',conn)
+md = MigrateData.new('CloudEdu',conn)
 
-md.get_table_info(['zydn_User_Base'])
-config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           APPID: { fn: '', p: Proc.new{|i| ''}},
-           PWD: { fn: 'PassWord', p: Proc.new{|s| s}},
-           STATUS: { fn: '', p: Proc.new{|i| ''}},
-           USERTYPE: { fn: '', p: Proc.new{|i| ''}},
-           USERID: { fn: '', p: Proc.new{|i| ''}},
-           ROLEIDLst: { fn: '', p: Proc.new{|i| ''}},
-           XM: { fn: 'UserName', p: Proc.new{|s| s}},
-           XB: { fn: '', p: Proc.new{|i| ''}},
-           QQ: { fn: '', p: Proc.new{|i| ''}},
-           DZYJ: { fn: 'Email', p: Proc.new{|s| s}},
-           LXDH: { fn: '', p: Proc.new{|i| ''}},
-           ZJDLSJ: { fn: 'Date_Login', p: 'datetime'},
-           DLCGCS: { fn: 'Count_Login', p: Proc.new{|s| s}},
-           YHCJSJ: { fn: 'RegDate', p: 'datetime'},
-           }
-md.insert_data('EDU_ELE_01_USER',config)
+md.get_table_fields('edu_ele_student')
+
+#~ md.get_table_info(['edu_ele_student','edu_ele_class'])
+#~ config = { XSXXID: { fn: 'student_ID', p: Proc.new{|s| s}},
+           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           #~ ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
+           #~ ZZBJID: { fn: 'student_ClassID', p: Proc.new{|s| s}},
+           #~ ZZNJID: { fn: 'class_GradeID', p: Proc.new{|s| s}},
+           #~ RXNY: { fn: '', p: Proc.new{|i| ''}},
+           #~ XSLBM: { fn: '', p: Proc.new{|i| ''}},
+           #~ XZ: { fn: '', p: Proc.new{|i| ''}},
+           #~ ZYM: { fn: '', p: Proc.new{|i| ''}},
+           #~ XSDQZTM: { fn: '', p: Proc.new{|i| ''}},
+           #~ }
+#~ md.insert_data('EDU_ZZXS_07_01_XJSJ',config)
 
 conn.close
-

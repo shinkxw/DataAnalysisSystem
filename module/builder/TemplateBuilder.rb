@@ -15,7 +15,7 @@ class TemplateBuilder
     @tab = Indent.new(tab)
     @app_name = "JWXT"
     @directory_name = "xtgl"
-    @ignore_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
+    @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
     @controller_preset_text = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
     @controller_preset_text << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
     @controller_preset_text << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
