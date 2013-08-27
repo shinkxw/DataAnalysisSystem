@@ -10,7 +10,7 @@ class ViewBuilder
   attr_reader :ignore_table_arr#忽视关联表数组
   attr_reader :bulid_table_name_arr#需生成视图的表名数组,nil为全生成
   attr_reader :builder_version#生成器版本
-  @@Short_name = ["b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  @@Short_name = %w(b c d e f g h i j k l m n o p q r s t u v w x y z)
   #初始化
   def initialize(need_delete = true,bulid_table_name_arr = nil,log = Log.new)
     @area = nil

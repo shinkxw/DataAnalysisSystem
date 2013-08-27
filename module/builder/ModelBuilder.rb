@@ -11,7 +11,7 @@ class ModelBuilder
     @area = nil
     @model_str = nil
     @file_hash = {}
-    @ignore_name_space_arr = ["EDU_GB","EDU_JY","EDU_ZJ","EDU_ZZ"]
+    @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
     @builder_version = "0.1"
     @log = log
   end
