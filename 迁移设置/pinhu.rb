@@ -292,7 +292,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
            }
 md.insert_data('EDU_ZZFC_08_A02_YHZSJL', config)
 #°à¼¶
-md.get_table_info(['edu_ele_class','edu_ele_class_upgrade'])
+md.get_table_info('edu_ele_class','edu_ele_class_upgrade')
 config = { XZBDM: { fn: 'upgrade_ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
            ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
@@ -337,5 +337,20 @@ config = { ZYBH: { fn: 'ID', p: Proc.new{|s| s}},
            ZYLB: { fn: '', p: Proc.new{|i| ''}},
            }
 md.insert_data('EDU_ZZJX_01_01_ZYXX',config)
+#Ñ§¼®
+md.get_table_info('edu_ele_student', {'edu_ele_class' => {'ClassID' => 'ID'}})
+config = { XSXXID: { fn: 'student_ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
+           ZZBJID: { fn: 'student_ClassID', p: Proc.new{|s| s}},
+           ZZNJID: { fn: 'class_GradeID', p: Proc.new{|s| s}},
+           RXNY: { fn: '', p: Proc.new{|i| ''}},
+           XSLBM: { fn: '', p: Proc.new{|i| ''}},
+           XZ: { fn: '', p: Proc.new{|i| ''}},
+           ZYM: { fn: '', p: Proc.new{|i| ''}},
+           XSDQZTM: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ZZXS_07_01_XJSJ',config)
+
 
 conn.close

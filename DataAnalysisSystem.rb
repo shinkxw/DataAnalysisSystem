@@ -14,20 +14,18 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 conn = SqlServer.new('(local)')
 md = MigrateData.new('CloudEdu',conn)
 
-md.get_table_fields('edu_ele_student')
-
-#~ md.get_table_info(['edu_ele_student','edu_ele_class'])
-#~ config = { XSXXID: { fn: 'student_ID', p: Proc.new{|s| s}},
-           #~ SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
-           #~ ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
-           #~ ZZBJID: { fn: 'student_ClassID', p: Proc.new{|s| s}},
-           #~ ZZNJID: { fn: 'class_GradeID', p: Proc.new{|s| s}},
-           #~ RXNY: { fn: '', p: Proc.new{|i| ''}},
-           #~ XSLBM: { fn: '', p: Proc.new{|i| ''}},
-           #~ XZ: { fn: '', p: Proc.new{|i| ''}},
-           #~ ZYM: { fn: '', p: Proc.new{|i| ''}},
-           #~ XSDQZTM: { fn: '', p: Proc.new{|i| ''}},
-           #~ }
-#~ md.insert_data('EDU_ZZXS_07_01_XJSJ',config)
+md.get_table_info('edu_ele_student', {'edu_ele_class' => {'ClassID' => 'ID'}})
+config = { XSXXID: { fn: 'student_ID', p: Proc.new{|s| s}},
+           SCHOOLID: { fn: '', p: Proc.new{|i| '1'}},
+           ZYXXID: { fn: 'class_MajorID', p: Proc.new{|s| s}},
+           ZZBJID: { fn: 'student_ClassID', p: Proc.new{|s| s}},
+           ZZNJID: { fn: 'class_GradeID', p: Proc.new{|s| s}},
+           RXNY: { fn: '', p: Proc.new{|i| ''}},
+           XSLBM: { fn: '', p: Proc.new{|i| ''}},
+           XZ: { fn: '', p: Proc.new{|i| ''}},
+           ZYM: { fn: '', p: Proc.new{|i| ''}},
+           XSDQZTM: { fn: '', p: Proc.new{|i| ''}},
+           }
+md.insert_data('EDU_ZZXS_07_01_XJSJ',config)
 
 conn.close

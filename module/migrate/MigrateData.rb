@@ -14,25 +14,25 @@ class MigrateData
     @conn.open(@db_name)
   end
   #获得指定表的信息
-  def get_table_info(table_name_arr)
-    if table_name_arr.size == 1
-      @data_hash = @conn.query("select * from #{table_name_arr[0]}")
-    elsif table_name_arr[1].class.to_s == 'String'
+  def get_table_info(main_table_name, join_config = nil)
+    if join_config == nil
+      @data_hash = @conn.query("select * from #{main_table_name}")
+    elsif join_config.class.to_s == 'String'
       @data_hash = {}
-      table_name_arr.each do |table_name|
-        #为键添加表名
-        hash = @conn.query("select * from #{table_name}")
-        hash.each{|k,v| @data_hash[table_name.split("_")[-1] + '_' + k] = v}
-      end
+      #为键添加表名
+      hash = @conn.query("select * from #{main_table_name}")
+      hash.each{|k,v| @data_hash[main_table_name.split("_")[-1] + '_' + k] = v}
+      hash = @conn.query("select * from #{join_config}")
+      hash.each{|k,v| @data_hash[join_config.split("_")[-1] + '_' + k] = v}
     else
-      @data_hash = @conn.query(get_join_sql(table_name_arr))
+      @data_hash = @conn.query(get_join_sql(main_table_name, join_config))
     end
   end
   #获得指定表的字段数据
   def get_table_fields(table_name)
     sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.columns "
     sql << "WHERE TABLE_NAME= '#{table_name}'"
-    p @conn.query(sql)['COLUMN_NAME']
+    @conn.query(sql)['COLUMN_NAME']
   end
   #生成插入数据脚本
   def insert_data(table_name, config)
@@ -83,21 +83,23 @@ class MigrateData
     out_hash
   end
   #根据配置获得表连接查询sql语句
-  #该config为一个数组，第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件数组
-  def get_join_sql(join_config)
-    join_sql = "SELECT "
-    mtname = join_config[0]
-    sn = mtname.split("_")[-1]
+  #该config为一个数组，第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash
+  def get_join_sql(mtname, jc)
+    select_sql = "SELECT "
+    from_sql = "\nFROM "
     fns = get_table_fields(mtname)
-    join_sql << fns.collect{|fn| "#{sn}.[#{fn}] as #{sn}_#{fn}"}
-    
-    "#{mtname}.[LOGINNAME] as #{mtname}_
-      ,a.[SCHOOLID]--学校ID
-      ,a.[APPID]--应用ID
-      ,c.DLFS as c_APP_DLFS--应用表 登录方式
-      ,c.STATUS as c_APP_STATUS--应用表 应用状态
-      FROM dbo.#{join_config[0]} AS #{main_tablename} LEFT OUTER JOIN
-      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID AND a.SCHOOLID = c.SCHOOLID"
+    msn = mtname.split("_")[-1]
+    select_sql << fns.collect{|fn| "#{msn}.#{fn} as #{msn}_#{fn}"}.join("\n,")
+    from_sql << "dbo.#{mtname} AS #{msn}"
+    jc.each_key do |tname|
+      fns = get_table_fields(tname)
+      sn = tname.split("_")[-1]
+      fns.each{|fn| select_sql << "\n,#{sn}.[#{fn}] as #{sn}_#{fn}"}
+      from_sql << " LEFT OUTER JOIN\ndbo.#{tname} AS #{sn} ON "
+      j_config = jc[tname]
+      from_sql << j_config.map{|k,v| "#{msn}.#{k} = #{sn}.#{v}"}.join(" AND ")
+    end
+    select_sql << from_sql
   end
   #获得转换方法
   def get_proc(proc)
@@ -115,4 +117,3 @@ class MigrateData
     Proc.new{|str| str}
   end
 end
-p %w(b c d e f g h i j k l m n o p q r s t u v w x y z)
