@@ -22,9 +22,7 @@ class SqlBuilder
   def build(area)
     @area = area
     @sql_str = ""
-    @area.each do |name_space|
-      add_name_space_script(name_space)
-    end
+    @area.each{|name_space| add_name_space_script(name_space)}
     MDDoc.new("sql",@area.name,@sql_str,"sql")
   end
   #生成sql脚本哈希表
@@ -85,19 +83,9 @@ class SqlBuilder
       @sql_str << ",--#{field.explanation}\n"
     end
     #输出创建主键与约束语句
-    @sql_str << "CONSTRAINT [PK_#{table.name}] PRIMARY KEY CLUSTERED\n(\n\t"
-    pArr = table.get_primary_key_name_arr
-    
-    firstflag = true
-    pArr.each do |p|
-      if firstflag
-        firstflag = false
-        @sql_str << "[#{p}] ASC"
-      else
-        @sql_str << ",\n\t[#{p}] ASC"
-      end
-    end
-    @sql_str << "\n)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]\n"
+    @sql_str << "CONSTRAINT [PK_#{table.name}] PRIMARY KEY CLUSTERED\n(\n\t["
+    @sql_str << table.get_primary_key_name_arr.join("] ASC,\n\t[")
+    @sql_str << "] ASC\n)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]\n"
     @sql_str << ") ON [PRIMARY]\nEND\nGO\n\n"
   end
   #生成添加数据语句
@@ -114,9 +102,7 @@ class SqlBuilder
   #生成整个命名空间表的注释语句
   def add_name_space_explanation(name_space)
     @sql_str << "--以下为添加注释语句\n"
-    name_space.each do |table|
-      add_table_explanation(table)
-    end
+    name_space.each{|table| add_table_explanation(table)}
   end
   #生成一个表的注释语句
   def add_table_explanation(table)
@@ -133,9 +119,7 @@ class SqlBuilder
   end
   #生成删除整个空间的表的语句
   def delete_name_space(name_space)
-    name_space.table_arr.each do |table|
-      delete_table(table.name)
-    end
+    name_space.each{|table| delete_table(table.name)}
   end
   #根据表名输出删除表语句
   def delete_table(table_name)
