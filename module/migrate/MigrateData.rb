@@ -2,16 +2,10 @@
 # encoding: GBK
 #迁移数据类
 class MigrateData
-  attr_reader :database_name, :data_hash
+  attr_reader :data_hash
   #初始化
-  def initialize(db_name,conn)
+  def initialize(conn)
     @conn = conn
-    open_database(db_name)
-  end
-  #打开数据库
-  def open_database(db_name)
-    @db_name = db_name
-    @conn.open(@db_name)
   end
   #获得指定表的信息
   def get_table_info(main_table_name, join_config = nil)

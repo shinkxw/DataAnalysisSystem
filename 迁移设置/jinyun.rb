@@ -1,9 +1,8 @@
-conn = SqlServer.new('(local)')
-md = MigrateData.new('jinyun',conn)
-
-#ÍøÕ¾ÎÄÕÂ
-md.get_table_info('tab_News')
-config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
+SqlServer.new('(local)','jinyun').open do |conn|
+  md = MigrateData.new(conn)
+  #ÍøÕ¾ÎÄÕÂ
+  md.get_table_info('tab_News')
+  config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
            WEBID: { fn: '', p: Proc.new{|i| '1'}},
            TYPENAME: { fn: 'Kind', p: Proc.new{|s| s}},
@@ -29,11 +28,11 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
            LLQX: { fn: '', p: Proc.new{|i| '0'}},
            }
-md.insert_data('EDU_WZXT_MHXT_WZWZ',config)
-#ÍøÕ¾À¸Ä¿
-pid_proc = Proc.new{|s| s.include?(',') ? s.split(',')[-2] : '0'}
-md.get_table_info('zydn_Menu')
-config = { ID: { fn: 'MID', p: Proc.new{|s| s}},
+  md.insert_data('EDU_WZXT_MHXT_WZWZ',config)
+  #ÍøÕ¾À¸Ä¿
+  pid_proc = Proc.new{|s| s.include?(',') ? s.split(',')[-2] : '0'}
+  md.get_table_info('zydn_Menu')
+  config = { ID: { fn: 'MID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
            WEBID: { fn: '', p: Proc.new{|i| '1'}},
            LMSHOWSTYLE: { fn: '', p: Proc.new{|i| ''}},
@@ -48,10 +47,10 @@ config = { ID: { fn: 'MID', p: Proc.new{|s| s}},
            OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
            LLQX: { fn: '', p: Proc.new{|i| '0'}},
            }
-md.insert_data('EDU_WZXT_MHXT_WZLM',config)
-#ÍøÕ¾ÓÃ»§
-md.get_table_info('zydn_User_Base')
-config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
+  md.insert_data('EDU_WZXT_MHXT_WZLM',config)
+  #ÍøÕ¾ÓÃ»§
+  md.get_table_info('zydn_User_Base')
+  config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
            APPID: { fn: '', p: Proc.new{|i| '10'}},
            PWD: { fn: 'PassWord', p: Proc.new{|s| s}},
@@ -68,7 +67,6 @@ config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
            DLCGCS: { fn: 'Count_Login', p: Proc.new{|s| s}},
            YHCJSJ: { fn: 'RegDate', p: 'datetime'},
            }
-md.insert_data('EDU_ELE_01_USER',config)
+  md.insert_data('EDU_ELE_01_USER',config)
 
-
-conn.close
+end
