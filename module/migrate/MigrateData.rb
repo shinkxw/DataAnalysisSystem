@@ -38,8 +38,8 @@ class MigrateData
   def insert_data(table_name, config)
     data_hash = convert_data(config)
     field_names = data_hash.keys
-    prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
     data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
+    prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
     istr = ""
     data_arr.each do |data|
       data.map!{|d| d =~ /^CAST\(/ ? d : "'#{d}'"}
@@ -47,12 +47,21 @@ class MigrateData
     end
     FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
   end
+  #生成说明文件
+  def out_info(table_name, config)
+    data_hash = convert_data(config)
+    field_names = data_hash.keys
+    data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
+    ostr = ""
+    data_arr.each{|data| ostr << "#{data.join("   ")}\n"}
+    FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(ostr)
+  end
   #生成更新数据脚本
   def update_data(table_name, config)
     data_hash = convert_data(config)
     field_names = data_hash.keys
-    prefix_str = "UPDATE [dbo].[#{table_name}]\nSET "
     data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
+    prefix_str = "UPDATE [dbo].[#{table_name}]\nSET "
     istr = ""
     data_arr.each do |data|
       istr << prefix_str
