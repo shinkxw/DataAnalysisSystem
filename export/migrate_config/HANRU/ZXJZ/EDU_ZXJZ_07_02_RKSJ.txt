@@ -11,3 +11,6 @@
            SKRS: { fn: '', p: Proc.new{|i| ''}},
            ZKS: { fn: '', p: Proc.new{|i| ''}},
            SFLT: { fn: '', p: Proc.new{|i| ''}},
+           NJID: { fn: '', p: Proc.new{|i| ''}},
+           XQID: { fn: '', p: Proc.new{|i| ''}},
+           XNID: { fn: '', p: Proc.new{|i| ''}},

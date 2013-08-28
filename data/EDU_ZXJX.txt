@@ -3,7 +3,7 @@
     <table name="EDU_ZXJX_03_01_JXJH" explanation="教学计划数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="T" identity="F" remark="解释/举例：课程及活动的编号，学校自编" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="解释/举例：课程及活动的编号，学校自编" />
             <name="SKNJ" explanation="授课年级" type="nvarchar(10)" null="F" p="F" identity="F" remark="解释/举例：本门课程面向的年级" />
             <name="SKXN" explanation="上课学年" type="nvarchar(9)" null="F" p="F" identity="F" remark="格式：YYYY-YYYY，如：2001-2002" />
             <name="SKXQM" explanation="上课学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001XQ学期代码" />
@@ -13,7 +13,7 @@
     <table name="EDU_ZXJX_04_01_PK" explanation="排课数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="KCH" explanation="课程号" type="nvarchar(2)" null="F" p="T" identity="F" remark="" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
             <name="SKJSGH" explanation="授课教师工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
             <name="FJBH" explanation="房间编号" type="" null="T" p="F" identity="F" remark="" />
             <name="SKRQ" explanation="授课日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
@@ -22,3 +22,23 @@
         </field_area>
     </table>
 </namespace>
+    <table name="EDU_ZXXS_02_06_ZXKSSJ" explanation="在校考试数据子类表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="XN" explanation="学年（度）" type="nvarchar(9)" null="F" p="F" identity="F" remark="学年（度） 编号：JCTB010205 引用自JCTB010205 XN 学年（度） C 9 NULL NULL 格式：YYYY-YYYY，如：2001-2002 NULL" />
+            <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="学期码 编号：JCTB010206 引用自JCTB010206 XQM 学期码 C 1 NULL JY/T1001XQ学期代码 NULL NULL" />
+            <name="KSRQ" explanation="考试日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="考试日期 编号：JCXS020301 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="课程号 编号：JCTB010403 引用自JCTB010403 KCH 课程号 C 10 NULL NULL 学校自编 NULL" />
+            <name="KSFSM" explanation="考试方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="考试方式码 编号：JCTB010406 引用自JCTB010406 KSFSM 考试方式码 C 1 NULL JY/T1001KSFS考试方式代码 NULL NULL" />
+            <name="KSXZM" explanation="考试性质码" type="nvarchar(2)" null="T" p="F" identity="F" remark="考试性质码 编号：JCXS020303 引用自JCXS020303 KSXZM 考试性质码 C 2 O JY/T1001KSXZ考试性质代码 NULL NULL" />
+            <name="KSXSM" explanation="考试形式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="考试形式码 编号：JCXS020304 引用自JCXS020304 KSXSM 考试形式码 C 1 O JY/T1001KSXS考试形式代码 NULL NULL" />
+            <name="FSLKSCJ" explanation="分数类考试成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="分数类考试成绩 编号：JCXS020305 引用自JCXS020305 FSLKSCJ 分数类考试成绩 N 51 O NULL NULL NULL" />
+            <name="DJLKSCJ" explanation="等级类考试成绩" type="nvarchar(1)" null="T" p="F" identity="F" remark="等级类考试成绩 编号：JCXS020306 引用自JCXS020306 DJLKSCJ 等级类考试成绩 C 1 O NULL 学校自编 NULL" />
+            <name="KCCJ" explanation="课程成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="课程成绩 编号：JCXS020307 引用自JCXS020307 KCCJ 课程成绩 N 51 M NULL 指课程综合成绩 NULL" />
+            <name="KCDJCJM" explanation="课程等级成绩码" type="nvarchar(1)" null="T" p="F" identity="F" remark="课程等级成绩码 编号：JCXS020308 引用自JCXS020308 KCDJCJM 课程等级成绩码 C 1 O NULL 学校自编 NULL" />
+            <name="RKJSGH" explanation="任课教师工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="任课教师工号 编号：JCXS020309 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="CJLRRH" explanation="成绩录入人号" type="nvarchar(20)" null="T" p="F" identity="F" remark="成绩录入人号 编号：JCXS020310 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="CJLRRQ" explanation="成绩录入日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="成绩录入日期 编号：JCXS020311 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CJLRSJ" explanation="成绩录入时间" type="nvarchar(6)" null="T" p="F" identity="F" remark="成绩录入时间 编号：JCXS020312 引用自JCTB010204 SJ 时间 C 6 NULL GB/T7408 格式：hhmmss，如：141503表示下午2时15分3秒 NULL" />
+        </field_area>
+    </table>

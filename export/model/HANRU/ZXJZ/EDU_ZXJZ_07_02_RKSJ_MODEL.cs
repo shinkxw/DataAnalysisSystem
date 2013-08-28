@@ -16,6 +16,7 @@ namespace HanRuEdu.LDAL
             RKJSM = "";
             SKBJ = "";
             SFLT = "";
+            NJID = "";
         }
         public class EDU_ZXJZ_07_02_RKSJ_metadata
         {
@@ -98,6 +99,23 @@ namespace HanRuEdu.LDAL
             [StringLength(1)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SFLT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级号")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学期")]
+            public Int32 XQID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学年")]
+            public Int32 XNID { get; set; }
 
 
         }

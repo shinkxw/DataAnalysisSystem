@@ -2706,6 +2706,9 @@ SELECT a.[ID]--编号
       ,a.[SKRS]--授课人数
       ,a.[ZKS]--周课时
       ,a.[SFLT]--是否连堂
+      ,a.[NJID]--年级号
+      ,a.[XQID]--学期
+      ,a.[XNID]--学年
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -2811,6 +2814,17 @@ SELECT a.[ID]--编号
       ,gd.MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,gd.SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
+      ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
+      ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称
+      ,j.SCHOOLID as j_XQ_SCHOOLID--学期数据表 学校名
+      ,j.XNID as j_XQ_XNID--学期数据表 学年
+      ,j.XQM as j_XQ_XQM--学期数据表 学期码
+      ,jb.MC as j_XQ_XQM_MC--学期代码表 名称
+      ,j.XQMC as j_XQ_XQMC--学期数据表 学期名称
+      ,j.XQKSRQ as j_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,j.XQJSRQ as j_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,k.SCHOOLID as k_XN_SCHOOLID--学年表 学校名
+      ,k.XN as k_XN_XN--学年表 学年
 
 FROM dbo.EDU_ZXJZ_07_02_RKSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2819,6 +2833,9 @@ FROM dbo.EDU_ZXJZ_07_02_RKSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_RKJS AS f ON a.RKJSM = f.DM /*任课角色码*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS g ON a.SKBJ = g.BH /*授课班级*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS h ON a.SFLT = h.DM /*是否连堂*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_02_01_NJ AS i ON a.NJID = i.NJ /*年级号*/ AND a.SCHOOLID = i.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS j ON a.XQID = j.ID /*学期*/ AND a.SCHOOLID = j.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS k ON a.XNID = k.ID /*学年*/ AND a.SCHOOLID = k.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
@@ -2841,7 +2858,8 @@ FROM dbo.EDU_ZXJZ_07_02_RKSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS de ON d.SFZK = de.DM /*是否主课*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS gb ON g.BJLXM = gb.DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS gc ON g.SFSSMZSYJXB = gc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS gd ON g.SYJXMSM = gd.DM /*双语教学模式码*/
+      dbo.EDU_JY_SSMZSYJXMS AS gd ON g.SYJXMSM = gd.DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS jb ON j.XQM = jb.DM /*学期码*/
 GO
 
 --学生基本数据子类表

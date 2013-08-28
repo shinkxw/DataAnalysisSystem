@@ -68,4 +68,7 @@ EDU_ZXJZ_07_02_RKSJ  任课数据子类表
   SKRS        授课人数                decimal(4)     非主
   ZKS         周课时                  int            非主
   SFLT        是否连堂                nvarchar(1)    非主     是否标志代码表
+  NJID        年级号                  nvarchar(10)   主键     年级数据类表
+  XQID        学期                    int            主键     学期数据表
+  XNID        学年                    int            非主     学年表
 
