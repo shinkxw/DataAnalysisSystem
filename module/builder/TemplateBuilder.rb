@@ -248,7 +248,7 @@ class TemplateBuilder
       lname = bztable_hash[field.relation.table.library_name.to_sym]
       if lname != nil
         mname = field.relation.table.select_method_name
-        "ViewBag.#{mname}Lst = #{bztable_hash[lname]}LDAL.Get#{mname}SelLst();\n#{@tab.t}"
+        "ViewBag.#{mname}Lst = #{lname}LDAL.Get#{mname}SelLst();\n#{@tab.t}"
       else
         ""
       end
