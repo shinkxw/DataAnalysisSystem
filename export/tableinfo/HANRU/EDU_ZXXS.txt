@@ -75,6 +75,30 @@ EDU_ZXXS_02_A01_XSJTXX  学生家庭信息数据表
   JTNSRJE     家庭年收入金额          money          非主
   LJZJHCZ     离家最近火车站          nvarchar(30)   非主
 
+EDU_ZXXS_02_06_ZXKSCJ  在校考试成绩数据子类表
+  ID          考试成绩表              int            主键
+  SCHOOLID    学校名                  int            主键     学校配置表
+  XSXXID      学生ID                int            非主     学生基本数据子类表
+  XN          学年（度）              nvarchar(9)    非主
+  XQM         学期码                  nvarchar(1)    非主     学期代码表
+  KSRQ        考试日期                nvarchar(8)    非主
+  KCH         课程号                  nvarchar(10)   非主     课程数据类
+  KSFSM       考试方式码              nvarchar(1)    非主     考试方式代码表
+  KSXZM       考试性质码              nvarchar(2)    非主     考试性质代码表
+  KSXSM       考试形式码              nvarchar(1)    非主     考试形式代码表
+  FSLKSCJ     分数类考试成绩          decimal(5,1)   非主
+  DJLKSCJ     等级类考试成绩          nvarchar(1)    非主
+  KCCJ        课程成绩                decimal(5,1)   非主
+  KCDJCJM     课程等级成绩码          nvarchar(1)    非主
+  RKJSGH      任课教师工号            nvarchar(20)   非主
+  CJLRRH      成绩录入人号            nvarchar(20)   非主
+  CJLRRQ      成绩录入日期            nvarchar(8)    非主
+  CJLRSJ      成绩录入时间            nvarchar(6)    非主
+  XQID        学期                    int            非主     学期数据表
+  XNID        学年                    int            非主     学年表
+  RKJSID      任课教师ID            int            非主     教职工基本数据子类表
+  CJLRRID     成绩录入人ID          int            非主     教职工基本数据子类表
+
 EDU_ZXXS_07_A02_XJYD  学籍异动数据子类表
   ID          学籍异动表编号          int            主键
   XSXXID      学生ID                int            非主     学生基本数据子类表

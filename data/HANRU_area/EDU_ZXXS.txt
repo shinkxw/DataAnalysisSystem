@@ -83,6 +83,32 @@
             <name="LJZJHCZ" explanation="离家最近火车站" type="nvarchar(30)" null="T" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_02_06_ZXKSCJ" explanation="在校考试成绩数据子类表">
+        <field_area>
+            <name="ID" explanation="考试成绩表" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="XSXXID" explanation="学生ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="XN" explanation="学年（度）" type="nvarchar(9)" null="F" p="F" identity="F" remark="格式：YYYY-YYYY，如：2001-2002 NULL" />
+            <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="JY/T1001XQ学期代码 NULL NULL" />
+            <name="KSRQ" explanation="考试日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="KSFSM" explanation="考试方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="JY/T1001KSFS考试方式代码" />
+            <name="KSXZM" explanation="考试性质码" type="nvarchar(2)" null="T" p="F" identity="F" remark="JY/T1001KSXZ考试性质代码" />
+            <name="KSXSM" explanation="考试形式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="JY/T1001KSXS考试形式代码" />
+            <name="FSLKSCJ" explanation="分数类考试成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
+            <name="DJLKSCJ" explanation="等级类考试成绩" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
+            <name="KCCJ" explanation="课程成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
+            <name="KCDJCJM" explanation="课程等级成绩码" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
+            <name="RKJSGH" explanation="任课教师工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="CJLRRH" explanation="成绩录入人号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="CJLRRQ" explanation="成绩录入日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="格式：YYYYMMDD" />
+            <name="CJLRSJ" explanation="成绩录入时间" type="nvarchar(6)" null="T" p="F" identity="F" remark="格式：hhmmss" />
+            <name="XQID" explanation="学期" type="int" null="F" p="F" identity="F" remark="" />
+            <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="" />
+            <name="RKJSID" explanation="任课教师ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="CJLRRID" explanation="成绩录入人ID" type="int" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
     <table name="EDU_ZXXS_07_A02_XJYD" explanation="学籍异动数据子类表">
         <field_area>
             <name="ID" explanation="学籍异动表编号" type="int" null="F" p="T" identity="F" remark="" />

@@ -1,4 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           XQID: { fn: '', p: Proc.new{|i| ''}},
-           GWGZNR: { fn: '', p: Proc.new{|i| ''}},

@@ -1,7 +1,0 @@
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           PJID: { fn: '', p: Proc.new{|i| ''}},
-           KXH: { fn: '', p: Proc.new{|i| ''}},
-           PJR: { fn: '', p: Proc.new{|i| ''}},
-           PJSJ: { fn: '', p: Proc.new{|i| ''}},
-           PJNR: { fn: '', p: Proc.new{|i| ''}},
-           HF: { fn: '', p: Proc.new{|i| ''}},

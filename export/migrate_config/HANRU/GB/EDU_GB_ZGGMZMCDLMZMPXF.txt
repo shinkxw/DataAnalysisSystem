@@ -1,3 +1,0 @@
-           DM: { fn: '', p: Proc.new{|i| ''}},
-           MZMC: { fn: '', p: Proc.new{|i| ''}},
-           ZMDM: { fn: '', p: Proc.new{|i| ''}},

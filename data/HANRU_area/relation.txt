@@ -283,6 +283,18 @@
 <EDU_ZXXS_02_A01_XSJTXX
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
+<EDU_ZXXS_02_06_ZXKSCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
+  XSXXID         EDU_ZXXS_01_01_XSXX      ID
+  XQM            EDU_JY_XQ                DM
+  KCH            EDU_ZXJX_01_01_KC        KCH
+  KSFSM          EDU_JY_KSFS              DM
+  KSXZM          EDU_JY_KSXZ              DM
+  KSXSM          EDU_JY_KSXS              DM
+  XQID           EDU_ELE_01_XQ            ID
+  XNID           EDU_SYS_01_XN            ID
+  RKJSID         EDU_ZXJZ_01_01_JZGJBSJ   ID
+  CJLRRID        EDU_ZXJZ_01_01_JZGJBSJ   ID
 <EDU_ZXXS_07_A02_XJYD
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID

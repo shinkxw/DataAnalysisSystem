@@ -6,6 +6,13 @@ class ConversionMethod
   def self.content(str)
     str.gsub(/'/, "''")
   end
+  #正文转换,附带替换标签
+  def self.content_change(str)
+    str.gsub!(/'/, "''")
+    str.gsub(%r(<A href=\"../../upfile/)) {|s| '<A href="../../../upfile/' }
+    str.gsub(%r(<A href=\"upfile/)) {|s| '<A href="../../../upfile/' }
+    
+  end
   #datetime转换为字符串
   def self.datetime(t)
     if t

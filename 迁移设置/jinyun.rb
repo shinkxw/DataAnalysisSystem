@@ -1,3 +1,6 @@
+conn = SqlServer.new('(local)')
+md = MigrateData.new('jinyun',conn)
+
 #ÍøÕ¾ÎÄÕÂ
 md.get_table_info('tab_News')
 config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
@@ -10,7 +13,7 @@ config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            AUTHOR: { fn: 'SaveUser', p: Proc.new{|s| s}},
            AUTHORDEPART: { fn: '', p: Proc.new{|i| ''}},
            PUBLISHDATE: { fn: 'SaveDate', p: 'datetime'},
-           CONTENT: { fn: 'content', p: 'content'},
+           CONTENT: { fn: 'content', p: 'content_change'},
            URL: { fn: '', p: Proc.new{|i| ''}},
            IMAGEURL: { fn: '', p: Proc.new{|i| ''}},
            ATTACHMENTNAME: { fn: '', p: Proc.new{|i| ''}},
@@ -66,3 +69,6 @@ config = { LOGINNAME: { fn: 'UserName', p: Proc.new{|s| s}},
            YHCJSJ: { fn: 'RegDate', p: 'datetime'},
            }
 md.insert_data('EDU_ELE_01_USER',config)
+
+
+conn.close

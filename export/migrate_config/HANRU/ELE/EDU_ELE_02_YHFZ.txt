@@ -1,7 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           APPID: { fn: '', p: Proc.new{|i| ''}},
-           YHID: { fn: '', p: Proc.new{|i| ''}},
-           SJFZID: { fn: '', p: Proc.new{|i| ''}},
-           FZMC: { fn: '', p: Proc.new{|i| ''}},
-           FZYHID: { fn: '', p: Proc.new{|i| ''}},

@@ -1,6 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           WEBID: { fn: '', p: Proc.new{|i| ''}},
-           LOGINNAME: { fn: '', p: Proc.new{|i| ''}},
-           LMLIST: { fn: '', p: Proc.new{|i| ''}},
-           LMNAMELIST: { fn: '', p: Proc.new{|i| ''}},

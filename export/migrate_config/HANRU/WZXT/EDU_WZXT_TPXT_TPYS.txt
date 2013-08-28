@@ -1,5 +1,0 @@
-           ID: { fn: '', p: Proc.new{|i| ''}},
-           SCHOOLID: { fn: '', p: Proc.new{|i| ''}},
-           WEBID: { fn: '', p: Proc.new{|i| ''}},
-           NAME: { fn: '', p: Proc.new{|i| ''}},
-           SHOWIMG: { fn: '', p: Proc.new{|i| ''}},
