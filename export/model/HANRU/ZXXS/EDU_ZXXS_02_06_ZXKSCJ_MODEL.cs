@@ -134,6 +134,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "所属考试")]
+            public Int32 SSKSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "任课教师")]
             public Int32 RKJSID { get; set; }
 

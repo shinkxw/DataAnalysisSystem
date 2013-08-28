@@ -96,6 +96,7 @@ EDU_ZXXS_02_06_ZXKSCJ  在校考试成绩数据子类表
   CJLRSJ      成绩录入时间            nvarchar(6)    非主
   XQID        学期                    int            非主     学期数据表
   XNID        学年                    int            非主     学年表
+  SSKSID      所属考试ID            int            非主     考试数据表
   RKJSID      任课教师ID            int            非主     教职工基本数据子类表
   CJLRRID     成绩录入人ID          int            非主     教职工基本数据子类表
 

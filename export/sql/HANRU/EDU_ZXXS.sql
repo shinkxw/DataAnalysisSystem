@@ -158,6 +158,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_02_06_ZXKSCJ](
 	[CJLRSJ]  nvarchar(6)  NULL,--成绩录入时间
 	[XQID]  int  NOT NULL,--学期
 	[XNID]  int  NOT NULL,--学年
+	[SSKSID]  int  NOT NULL,--所属考试ID
 	[RKJSID]  int  NOT NULL,--任课教师ID
 	[CJLRRID]  int  NOT NULL,--成绩录入人ID
 CONSTRAINT [PK_EDU_ZXXS_02_06_ZXKSCJ] PRIMARY KEY CLUSTERED
@@ -389,6 +390,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_02_06_ZXKSCJ', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学年' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_02_06_ZXKSCJ', @level2type=N'COLUMN',@level2name=N'XNID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属考试ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_02_06_ZXKSCJ', @level2type=N'COLUMN',@level2name=N'SSKSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'任课教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_02_06_ZXKSCJ', @level2type=N'COLUMN',@level2name=N'RKJSID'
 GO

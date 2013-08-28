@@ -83,7 +83,7 @@ class MigrateData
     out_hash
   end
   #根据配置获得表连接查询sql语句
-  #该config为一个数组，第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash
+  #第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash
   def get_join_sql(mtname, jc)
     select_sql = "SELECT "
     from_sql = "\nFROM "

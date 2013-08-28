@@ -75,8 +75,8 @@
             <name="SKRS" explanation="授课人数" type="decimal(4)" null="F" p="F" identity="F" remark="" />
             <name="ZKS" explanation="周课时" type="int" null="F" p="F" identity="F" remark="" />
             <name="SFLT" explanation="是否连堂" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
-            <name="NJID" explanation="年级号" type="nvarchar(10)" null="F" p="T" identity="F" remark="" />
-            <name="XQID" explanation="学期" type="int" null="F" p="T" identity="F" remark="" />
+            <name="NJID" explanation="年级号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="XQID" explanation="学期" type="int" null="F" p="F" identity="F" remark="" />
             <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>

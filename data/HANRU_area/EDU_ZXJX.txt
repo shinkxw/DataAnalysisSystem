@@ -20,4 +20,30 @@
             <name="SFZK" explanation="是否主课" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_05_A01_KS" explanation="考试数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="" />
+            <name="XQID" explanation="学期" type="int" null="F" p="F" identity="F" remark="" />
+            <name="KSMC" explanation="考试名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+            <name="KSKSSJ" explanation="考试开始时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="KSJSSJ" explanation="考试结束时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="DFKSSJ" explanation="登分开始时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="DFJSSJ" explanation="登分结束时间" type="datetime" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_05_A02_KSKM" explanation="考试科目数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
+            <name="SSKSID" explanation="所属考试ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="NJIDLB" explanation="年级列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="NJMCLB" explanation="年级名称列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="BJIDLB" explanation="班级列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="BJMCLB" explanation="班级名称列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="CJZF" explanation="成绩总分" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
 </namespace>

@@ -213,6 +213,14 @@
   KCDJM          EDU_JY_ZXXKCDJ           DM
   SKFSM          EDU_JY_SKFS              DM
   SFZK           EDU_JY_SFBZ              DM
+<EDU_ZXJX_05_A01_KS
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
+  XNID           EDU_SYS_01_XN            ID
+  XQID           EDU_ELE_01_XQ            ID
+<EDU_ZXJX_05_A02_KSKM
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
+  SSKSID         EDU_ZXJX_05_A01_KS       ID
+  KCH            EDU_ZXJX_01_01_KC        KCH
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   XBM            EDU_GB_RDXB              DM
@@ -293,6 +301,7 @@
   KSXSM          EDU_JY_KSXS              DM
   XQID           EDU_ELE_01_XQ            ID
   XNID           EDU_SYS_01_XN            ID
+  SSKSID         EDU_ZXJX_05_A01_KS       ID
   RKJSID         EDU_ZXJZ_01_01_JZGJBSJ   ID
   CJLRRID        EDU_ZXJZ_01_01_JZGJBSJ   ID
 <EDU_ZXXS_07_A02_XJYD

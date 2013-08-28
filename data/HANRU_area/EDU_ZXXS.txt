@@ -92,9 +92,9 @@
             <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="JY/T1001XQ学期代码 NULL NULL" />
             <name="KSRQ" explanation="考试日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="" />
             <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="KSFSM" explanation="考试方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="JY/T1001KSFS考试方式代码" />
-            <name="KSXZM" explanation="考试性质码" type="nvarchar(2)" null="T" p="F" identity="F" remark="JY/T1001KSXZ考试性质代码" />
-            <name="KSXSM" explanation="考试形式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="JY/T1001KSXS考试形式代码" />
+            <name="KSFSM" explanation="考试方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
+            <name="KSXZM" explanation="考试性质码" type="nvarchar(2)" null="T" p="F" identity="F" remark="" />
+            <name="KSXSM" explanation="考试形式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
             <name="FSLKSCJ" explanation="分数类考试成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
             <name="DJLKSCJ" explanation="等级类考试成绩" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
             <name="KCCJ" explanation="课程成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
@@ -105,6 +105,7 @@
             <name="CJLRSJ" explanation="成绩录入时间" type="nvarchar(6)" null="T" p="F" identity="F" remark="格式：hhmmss" />
             <name="XQID" explanation="学期" type="int" null="F" p="F" identity="F" remark="" />
             <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SSKSID" explanation="所属考试ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="RKJSID" explanation="任课教师ID" type="int" null="F" p="F" identity="F" remark="" />
             <name="CJLRRID" explanation="成绩录入人ID" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
