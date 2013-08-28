@@ -39,4 +39,17 @@ class AreaManager
     area.add_table_relation(relation_str) if relation_str != nil
     MDWork_Area.new(area)
   end
+  #将指定名称的元数据域加载为工作区并传给块
+  def self.open(area_name)
+    t = Time.now
+    work_area = load_work_area(area_name)
+    if block_given?
+      begin
+        yield work_area
+      ensure
+        work_area.save_and_close_work_area
+      end
+    end
+    p Time.now - t
+  end
 end

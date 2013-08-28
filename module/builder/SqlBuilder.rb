@@ -165,4 +165,15 @@ class SqlBuilder
     end
     str_arr.push(key_str).push(value_str)
   end
+  def File.open(*args)
+    result = f = File.new(*args)
+    if block_given?
+      begin
+        result = yield f
+      ensure
+        f.close
+      end
+    end
+    return result
+  end
 end
