@@ -5,7 +5,6 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
-#~ AreaManager.open("HANRU") do |work_area|
-  #~ work_area.export_all
-#~ end
-
+AreaManager.open("HANRU") do |work_area|
+  work_area.export_all
+end

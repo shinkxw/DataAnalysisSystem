@@ -105,11 +105,8 @@ class SqlBuilder
     #输出添加元素语句
     @sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] ON\n" if table.field_area.has_identity?#存在自增字段
     table.data_area.each do |data|
-      str_arr = get_data_add_str(data.key_value_hash)
-      #字段名
-      @sql_str << "INSERT INTO [#{table.name}](#{str_arr[0]}) "
-      #字段值
-      @sql_str << "VALUES(#{str_arr[1]})\n"
+      @sql_str << "INSERT INTO [#{table.name}]([#{data.get_keys.join('] ,[')}]) "
+      @sql_str << "VALUES(#{data.map{|_,v| v =~ /^CAST\(/ ? v : "'#{v}'"}.join(', ')})\n"
     end
     @sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] OFF\n" if table.field_area.has_identity?#存在自增字段
     @sql_str << "\n"
@@ -147,22 +144,5 @@ class SqlBuilder
     @sql_str << "            and   type = 'U')\n"
     @sql_str << "   drop table #{table_name}\n"
     @sql_str << "go\n"
-  end
-  #根据数据哈希表产生添加用字符串
-  def get_data_add_str(hash)
-    str_arr = []
-    key_str = ""
-    value_str = ""
-    i = 1
-    hash.keys.each do |key|
-      key_str.concat(i == 1 ? "[#{key}]" : " ,[#{key}]")
-      if hash[key] =~ /CAST\((.+?) AS /
-        value_str.concat(i == 1 ? "#{hash[key]}" : ", #{hash[key]}")
-      else
-        value_str.concat(i == 1 ? "'#{hash[key]}'" : ", '#{hash[key]}'")
-      end
-      i += 1
-    end
-    str_arr.push(key_str).push(value_str)
   end
 end
