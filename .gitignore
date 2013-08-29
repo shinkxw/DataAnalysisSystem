@@ -14,6 +14,7 @@ tmp
 data/backup
 export/template
 export/migrate_config
+export/testdata
 QY
 
 

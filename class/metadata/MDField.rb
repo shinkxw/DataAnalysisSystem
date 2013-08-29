@@ -28,7 +28,7 @@ class MDField
   #改变字段关联
   def change_relation(r_field)
     result = true
-    if r_field.class.to_s == "MDField"
+    if r_field.class.to_s == 'MDField'
       if @relation == nil
         if @type == r_field.type
           @relation = r_field
@@ -46,24 +46,24 @@ class MDField
   end
   #返回处理后的类型
   def split_type
-    result = ["UN"]
+    result = ['UN']
     @type =~ /([^(]+?)(?:\((.+?)\)|$)/
     type = $1
     value = $2
     case type
-    when "int";result = ["int"]
-    when "datetime";result = ["DateTime"]
-    when "text";result = ["String"]
-    when "money";result = ["decimal","0","9999999"]
-    when "nchar";result = ["String",value]
-    when "nvarchar";result = ["String",value]
-    when "decimal"
+    when 'int';result = ['int']
+    when 'datetime';result = ['DateTime']
+    when 'text';result = ['String','1000']
+    when 'money';result = ['decimal','0','9999999']
+    when 'nchar';result = ['String',value]
+    when 'nvarchar';result = ['String',value]
+    when 'decimal'
       if value =~ /(.+?),(.+?)/
         zw = $1.to_i
         xw = $2.to_i
-        result = ["decimal","0",(calnum(zw)-(1.0/calnum(xw))).to_i.to_s]
+        result = ['decimal','0',(calnum(zw)-(1.0/calnum(xw))).to_i.to_s]
       elsif value =~ /[^,]+/
-        result = ["decimal","0",(calnum(value.to_i)-1).to_i.to_s]
+        result = ['decimal','0',(calnum(value.to_i)-1).to_i.to_s]
       else
         puts "MDField: type wrong: #{@type}"
       end

@@ -82,7 +82,7 @@ class MDWork_Area
       dir_path_arr.pop(@@backup_max_num)
       dir_path_arr.each do |dir_path|
         DirManager.remove_dir(dir_path)
-        puts "MDDoc: 备份#{dir_path}已删除"
+        puts "MDWork_Area: 备份#{dir_path}已删除"
       end
     end
   end
@@ -102,6 +102,10 @@ class MDWork_Area
       export
     end
     auto_export('migrate_config',build_proc)
+  end
+  #输出测试数据
+  def export_testdata(config)
+    TestdataBuilder.new.build_simple_data(@area,config).export
   end
   #输出Sql脚本
   def export_sql(build_folder = true, need_delete = true, need_data = false)
