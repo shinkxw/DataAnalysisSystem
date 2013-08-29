@@ -9,3 +9,4 @@ AreaManager.open("HANRU") do |work_area|
   work_area.export_all
 end
 
+end

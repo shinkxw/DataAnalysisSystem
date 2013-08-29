@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             XQM = "";
             KSRQ = "";
             KCH = "";
+            NJID = "";
+            BJID = "";
         }
         public class EDU_ZXXS_02_06_ZXKSCJ_metadata
         {
@@ -57,6 +59,16 @@ namespace HanRuEdu.LDAL
             [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String KCH { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "任课教师")]
+            public Int32 RKJSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "成绩录入人")]
+            public Int32 CJLRRID { get; set; }
 
 
             [Display(Name = "考试方式码")]
@@ -133,19 +145,33 @@ namespace HanRuEdu.LDAL
             public Int32 XNID { get; set; }
 
 
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJID { get; set; }
+
+
             [Required(ErrorMessage = "必填")]
             [Display(Name = "所属考试")]
             public Int32 SSKSID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "任课教师")]
-            public Int32 RKJSID { get; set; }
+            [Display(Name = "所属考试科目")]
+            public Int32 SSKSKMID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "成绩录入人")]
-            public Int32 CJLRRID { get; set; }
+            [Display(Name = "试卷")]
+            public Int32 SJID { get; set; }
 
 
         }

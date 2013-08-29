@@ -296,14 +296,16 @@
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
   XQM            EDU_JY_XQ                DM
   KCH            EDU_ZXJX_01_01_KC        KCH
+  RKJSID         EDU_ZXJZ_01_01_JZGJBSJ   ID
+  CJLRRID        EDU_ZXJZ_01_01_JZGJBSJ   ID
   KSFSM          EDU_JY_KSFS              DM
   KSXZM          EDU_JY_KSXZ              DM
   KSXSM          EDU_JY_KSXS              DM
   XQID           EDU_ELE_01_XQ            ID
   XNID           EDU_SYS_01_XN            ID
-  SSKSID         EDU_ZXJX_05_A01_KS       ID
-  RKJSID         EDU_ZXJZ_01_01_JZGJBSJ   ID
-  CJLRRID        EDU_ZXJZ_01_01_JZGJBSJ   ID
+  NJID           EDU_ZXXX_02_01_NJ        NJ
+  BJID           EDU_ZXXX_03_01_BJ        BH
+  SSKSKMID       EDU_ZXJX_05_A02_KSKM     ID
 <EDU_ZXXS_07_A02_XJYD
   XSXXID         EDU_ZXXS_01_01_XSXX      ID
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID

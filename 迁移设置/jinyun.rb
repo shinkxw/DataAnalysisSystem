@@ -1,11 +1,11 @@
-SqlServer.new('(local)','jinyun').open do |conn|
+SqlServer.new('192.168.0.8,1444','mytest').open do |conn|
   md = MigrateData.new(conn)
   #ÍøÕ¾ÎÄÕÂ
   md.get_table_info('tab_News')
   config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
            SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
            WEBID: { fn: '', p: Proc.new{|i| '1'}},
-           TYPENAME: { fn: 'Kind', p: Proc.new{|s| s}},
+           TYPENAME: { fn: 'menuName', p: Proc.new{|s| s}},
            LMID: { fn: 'menuid', p: Proc.new{|s| s}},
            TITLE: { fn: 'title', p: Proc.new{|s| s}},
            PUBLISHERNAME: { fn: 'SaveUser', p: Proc.new{|s| s}},
@@ -68,5 +68,3 @@ SqlServer.new('(local)','jinyun').open do |conn|
            YHCJSJ: { fn: 'RegDate', p: 'datetime'},
            }
   md.insert_data('EDU_ELE_01_USER',config)
-
-end
