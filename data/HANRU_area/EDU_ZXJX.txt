@@ -38,12 +38,11 @@
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
             <name="SSKSID" explanation="所属考试ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="NJIDLB" explanation="年级列表" type="text" null="F" p="F" identity="F" remark="" />
-            <name="NJMCLB" explanation="年级名称列表" type="text" null="F" p="F" identity="F" remark="" />
-            <name="BJIDLB" explanation="班级列表" type="text" null="F" p="F" identity="F" remark="" />
-            <name="BJMCLB" explanation="班级名称列表" type="text" null="F" p="F" identity="F" remark="" />
-            <name="CJZF" explanation="成绩总分" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
+            <name="JSRKID" explanation="教师任课编号" type="int" null="F" p="F" identity="F" remark="" />
+            <name="KCMC" explanation="课程名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+            <name="NJMC" explanation="年级名称" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
+            <name="BJMC" explanation="班级名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CJZF" explanation="成绩总分" type="decimal(5,1)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

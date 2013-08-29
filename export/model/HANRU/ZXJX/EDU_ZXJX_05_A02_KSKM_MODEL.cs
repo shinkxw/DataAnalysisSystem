@@ -9,11 +9,9 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXJX_05_A02_KSKM()
         {
-            KCH = "";
-            NJIDLB = "";
-            NJMCLB = "";
-            BJIDLB = "";
-            BJMCLB = "";
+            KCMC = "";
+            NJMC = "";
+            BJMC = "";
         }
         public class EDU_ZXJX_05_A02_KSKM_metadata
         {
@@ -32,37 +30,33 @@ namespace HanRuEdu.LDAL
             public Int32 SSKSID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "课程号")]
-            [StringLength(10)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KCH { get; set; }
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教师任课编号")]
+            public Int32 JSRKID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "年级列表")]
+            [Display(Name = "课程名称")]
+            [StringLength(60)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String NJIDLB { get; set; }
+            public String KCMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "年级名称列表")]
+            [Display(Name = "年级名称")]
+            [StringLength(30)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String NJMCLB { get; set; }
+            public String NJMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "班级列表")]
+            [Display(Name = "班级名称")]
+            [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String BJIDLB { get; set; }
+            public String BJMC { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "班级名称列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String BJMCLB { get; set; }
-
-
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "成绩总分")]
             [Range(typeof(decimal), "0", "99999")]
             public decimal CJZF { get; set; }

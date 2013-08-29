@@ -31,10 +31,9 @@ EDU_ZXJX_05_A02_KSKM  考试科目数据表
   ID          编号                    int            主键
   SCHOOLID    学校名                  int            主键     学校配置表
   SSKSID      所属考试ID            int            非主     考试数据表
-  KCH         课程号                  nvarchar(10)   非主     课程数据类
-  NJIDLB      年级列表                text           非主
-  NJMCLB      年级名称列表            text           非主
-  BJIDLB      班级列表                text           非主
-  BJMCLB      班级名称列表            text           非主
+  JSRKID      教师任课编号            int            非主     任课数据子类表
+  KCMC        课程名称                nvarchar(60)   非主
+  NJMC        年级名称                nvarchar(30)   非主
+  BJMC        班级名称                nvarchar(20)   非主
   CJZF        成绩总分                decimal(5,1)   非主
 
