@@ -107,7 +107,12 @@ class MDWork_Area
   def export_sql(build_folder = true, need_delete = true, need_data = false)
     builder = SqlBuilder.new(need_delete,need_data)
     builder.need_data_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ EDU_SYS)
-    build_folder ? builder.build_hash(@area).export : builder.build(@area).export
+    if build_folder
+      builder.build_hash(@area).export
+    else
+      builder.build_bz(@area).export
+      builder.build_yw(@area).export
+    end
   end
   #输出创建视图语句
   def export_view(build_folder = true, need_delete = true)

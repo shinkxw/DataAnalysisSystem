@@ -18,15 +18,19 @@ class SqlBuilder
     @need_data_name_space_arr = []
     @log = log
   end
-  #生成sql脚本
-  def build(area)
+  #生成需要带数据的表脚本
+  def build_bz(area)
     @area = area
     @sql_str = ""
     @area.select{|np| need_data?(np.name)}.each{|np| add_name_space_script(np)}
-    MDDoc.new('sql',"#{@area.name}_bz.sql",@sql_str,'sql').export
+    MDDoc.new('sql',"#{@area.name}_bz",@sql_str,'sql')
+  end
+  #生成不需要带数据的表脚本
+  def build_yw(area)
+    @area = area
     @sql_str = ""
     @area.select{|np| !need_data?(np.name)}.each{|np| add_name_space_script(np)}
-    MDDoc.new('sql',"#{@area.name}_yw.sql",@sql_str,'sql')
+    MDDoc.new('sql',"#{@area.name}_yw",@sql_str,'sql')
   end
   #生成sql脚本哈希表
   def build_hash(area)
