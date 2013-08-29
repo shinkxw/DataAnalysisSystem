@@ -22,19 +22,22 @@ class SqlBuilder
   def build(area)
     @area = area
     @sql_str = ""
-    @area.each{|name_space| add_name_space_script(name_space)}
-    MDDoc.new("sql",@area.name,@sql_str,"sql")
+    @area.select{|np| need_data?(np.name)}.each{|np| add_name_space_script(np)}
+    MDDoc.new('sql',"#{@area.name}_bz.sql",@sql_str,'sql').export
+    @sql_str = ""
+    @area.select{|np| !need_data?(np.name)}.each{|np| add_name_space_script(np)}
+    MDDoc.new('sql',"#{@area.name}_yw.sql",@sql_str,'sql')
   end
   #生成sql脚本哈希表
   def build_hash(area)
     @area = area
-    @sql_str_hash = {}
+    sql_str_hash = {}
     @area.each do |name_space|
       @sql_str = ""
       add_name_space_script(name_space)
-      @sql_str_hash["#{name_space.name}.sql"] = @sql_str
+      sql_str_hash["#{name_space.name}.sql"] = @sql_str
     end
-    MDDoc.new("sql",@area.name,@sql_str_hash)
+    MDDoc.new("sql",@area.name,sql_str_hash)
   end
   #根据表名列表生成指定表的生成语句(用于数据库更新)
   def build_update(area,table_name_arr)
@@ -59,7 +62,7 @@ class SqlBuilder
     #根据各个表信息输出创建表及内容语句
     name_space.each do |table|
       add_table_script(table)
-      add_data(table) if @need_data || @need_data_name_space_arr.include?(name_space.name)
+      add_data(table) if @need_data || need_data?(name_space.name)
     end
     add_name_space_explanation(name_space)
   end
@@ -116,6 +119,10 @@ class SqlBuilder
         @sql_str << "@level1type=N'TABLE',@level1name=N'#{table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
       end
     end
+  end
+  #判断命名空间是否需要生成添加数据脚本
+  def need_data?(name_space_name)
+    @need_data_name_space_arr.include?(name_space_name)
   end
   #生成删除整个空间的表的语句
   def delete_name_space(name_space)
