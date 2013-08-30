@@ -305,6 +305,7 @@
   XNID           EDU_SYS_01_XN            ID
   NJID           EDU_ZXXX_02_01_NJ        NJ
   BJID           EDU_ZXXX_03_01_BJ        BH
+  SSKSID         EDU_ZXJX_05_A01_KS       ID
   SSKSKMID       EDU_ZXJX_05_A02_KSKM     ID
 <EDU_ZXXS_07_A02_XJYD
   XSXXID         EDU_ZXXS_01_01_XSXX      ID

@@ -53,7 +53,7 @@ class MDField
     case type
     when 'int';result = ['int']
     when 'datetime';result = ['DateTime']
-    when 'text';result = ['String','1000']
+    when 'text';result = ['String']
     when 'money';result = ['decimal','0','9999999']
     when 'nchar';result = ['String',value]
     when 'nvarchar';result = ['String',value]

@@ -6,8 +6,8 @@ $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 AreaManager.open("HANRU") do |work_area|
-  config = {'EDU_WZXT_MHXT_WZLM' => 5, 'EDU_WZXT_MHXT_WZWZ' => 500}
-  work_area.export_testdata(config)
-  #work_area.export_all
+  #config = {'EDU_WZXT_MHXT_WZLM' => 5, 'EDU_WZXT_MHXT_WZWZ' => 500}
+  #work_area.export_testdata(config)
+  work_area.export_all
 end
 

@@ -44,7 +44,11 @@ class TestdataBuilder
       build_proc = @build_rule[type[0]]
       if build_proc != nil
         if type[0] == 'String'
-          proc_arr << build_proc.call(type[1].to_i)
+          if type.size > 1
+            proc_arr << build_proc.call(type[1].to_i)
+          else
+            proc_arr << build_proc.call(1000)
+          end
         else
           proc_arr << build_proc
         end

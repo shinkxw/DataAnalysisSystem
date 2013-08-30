@@ -100,7 +100,7 @@ EDU_ZXXS_02_06_ZXKSCJ  在校考试成绩数据子类表
   XNID        学年                    int            非主     学年表
   NJID        年级                    nvarchar(10)   非主     年级数据类表
   BJID        班级                    nvarchar(10)   非主     班级数据类表
-  SSKSID      所属考试ID            int            非主
+  SSKSID      所属考试ID            int            非主     考试数据表
   SSKSKMID    所属考试科目ID        int            非主     考试科目数据表
   SJID        试卷ID                int            非主
 

@@ -3556,13 +3556,21 @@ SELECT a.[ID]--考试成绩表
       ,n.SYJXMSM as n_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,nd.MC as n_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,nd.SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
-      ,o.SCHOOLID as o_KSKM_SCHOOLID--考试科目数据表 学校名
-      ,o.SSKSID as o_KSKM_SSKSID--考试科目数据表 所属考试ID
-      ,o.JSRKID as o_KSKM_JSRKID--考试科目数据表 教师任课编号
-      ,o.KCMC as o_KSKM_KCMC--考试科目数据表 课程名称
-      ,o.NJMC as o_KSKM_NJMC--考试科目数据表 年级名称
-      ,o.BJMC as o_KSKM_BJMC--考试科目数据表 班级名称
-      ,o.CJZF as o_KSKM_CJZF--考试科目数据表 成绩总分
+      ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
+      ,o.XNID as o_KS_XNID--考试数据表 学年
+      ,o.XQID as o_KS_XQID--考试数据表 学期
+      ,o.KSMC as o_KS_KSMC--考试数据表 考试名称
+      ,o.KSKSSJ as o_KS_KSKSSJ--考试数据表 考试开始时间
+      ,o.KSJSSJ as o_KS_KSJSSJ--考试数据表 考试结束时间
+      ,o.DFKSSJ as o_KS_DFKSSJ--考试数据表 登分开始时间
+      ,o.DFJSSJ as o_KS_DFJSSJ--考试数据表 登分结束时间
+      ,p.SCHOOLID as p_KSKM_SCHOOLID--考试科目数据表 学校名
+      ,p.SSKSID as p_KSKM_SSKSID--考试科目数据表 所属考试ID
+      ,p.JSRKID as p_KSKM_JSRKID--考试科目数据表 教师任课编号
+      ,p.KCMC as p_KSKM_KCMC--考试科目数据表 课程名称
+      ,p.NJMC as p_KSKM_NJMC--考试科目数据表 年级名称
+      ,p.BJMC as p_KSKM_BJMC--考试科目数据表 班级名称
+      ,p.CJZF as p_KSKM_CJZF--考试科目数据表 成绩总分
 
 FROM dbo.EDU_ZXXS_02_06_ZXKSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -3577,7 +3585,8 @@ FROM dbo.EDU_ZXXS_02_06_ZXKSCJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS l ON a.XNID = l.ID /*学年*/ AND a.SCHOOLID = l.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS m ON a.NJID = m.NJ /*年级*/ AND a.SCHOOLID = m.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS n ON a.BJID = n.BH /*班级*/ AND a.SCHOOLID = n.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_05_A02_KSKM AS o ON a.SSKSKMID = o.ID /*所属考试科目ID*/ AND a.SCHOOLID = o.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_05_A01_KS AS o ON a.SSKSID = o.ID /*所属考试ID*/ AND a.SCHOOLID = o.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_05_A02_KSKM AS p ON a.SSKSKMID = p.ID /*所属考试科目ID*/ AND a.SCHOOLID = p.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
