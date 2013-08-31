@@ -22,7 +22,7 @@ class MigrateData
       @data_hash = @conn.query(get_join_sql(main_table_name, join_config))
     end
   end
-  #获得指定表的字段数据
+  #获得指定表的字段名数组
   def get_table_fields(table_name)
     sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.columns "
     sql << "WHERE TABLE_NAME= '#{table_name}'"
