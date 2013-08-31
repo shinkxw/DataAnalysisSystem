@@ -9,7 +9,7 @@ class MDNameSpace
   attr_accessor :generation_time#命名空间生成时间
   attr_accessor :config#命名空间配置
   #初始化
-  def initialize(name,provider,generation_time,config = "")
+  def initialize(name,provider,generation_time = '',config = '')
     @name = name
     @table_arr = []
     @provider = provider

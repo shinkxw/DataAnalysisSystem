@@ -9,7 +9,7 @@ class MDTable
   attr_accessor :remark#表备注
   attr_accessor :config#表配置
   #初始化
-  def initialize(name,explanation,remark,config = "")
+  def initialize(name,explanation,remark = '',config = '')
     @name = name
     @explanation = explanation
     @remark = remark

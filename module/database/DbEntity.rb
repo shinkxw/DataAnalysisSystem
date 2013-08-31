@@ -46,9 +46,19 @@ class DbEntity
     sql << "WHERE TABLE_NAME= '#{table_name}'"
     query(sql)
   end
-  
-  
-  
+  #获得表的说明信息
+  def get_table_exp(table_name)
+    sql = "SELECT *FROM ::fn_listextendedproperty (NULL, 'user', "
+    sql << "'dbo', 'table', '#{table_name}', default, default)"
+    result = query(sql)
+    result['value'] ? result['value'][0] : ''
+  end
+  #获得指定表中字段的说明信息
+  def get_table_field_exp(table_name)
+    sql = "SELECT *FROM ::fn_listextendedproperty (NULL, 'user', "
+    sql << "'dbo', 'table', '#{table_name}', 'column', default)"
+    query(sql)
+  end
   #请求查询并返回hash形式的查询结果
   def query(sql)
     recordset = WIN32OLE.new('ADODB.Recordset')

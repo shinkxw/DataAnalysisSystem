@@ -5,7 +5,7 @@ require 'win32ole'
 class DbConnector
   attr_reader :host, :username, :password
   #≥ı ºªØ
-  def initialize(host, username = 'sa', password='123456')
+  def initialize(host, username = 'sa', password = '123456')
     @host = host
     @username = username
     @password = password

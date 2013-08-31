@@ -13,11 +13,7 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 DbEntity.set_connector(DbConnector.new('(local)\sqlexpress'))
 DbEntity.open('HanRuEdu') do |db|
-  hash = db.get_table_fields_info('EDU_ZZXS_01_01_XSXX')
-  p hash['COLUMN_NAME']
-  p hash['IS_NULLABLE']
-  p hash['DATA_TYPE']
-  p hash['CHARACTER_MAXIMUM_LENGTH']
+  p db.get_table_exp('EDU_GB_DP')
 end
 
 
