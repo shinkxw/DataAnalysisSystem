@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
-#DAF数据解析器
-class DafAnalyzer
+#数据库数据解析器
+class DBAnalyzer
   attr_reader :arr_reader#待分析的字符串
   attr_reader :analyzer_version#解析器版本
   attr_reader :area#分析结果
@@ -104,7 +104,9 @@ class DafAnalyzer
   def get_valid_line(reader)
     until reader.next == nil
       value = line_valid_value(reader.now)
-      return value if value != nil#有效
+      if value != nil#有效
+        return value
+      end
     end
     return nil
   end
