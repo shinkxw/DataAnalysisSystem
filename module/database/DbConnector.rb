@@ -2,7 +2,7 @@
 # encoding: GBK
 require 'win32ole'
 #选择并返回与数据库实例的连接
-class DbConnector
+class DBConnector
   attr_reader :host, :username, :password
   #初始化
   def initialize(host, username = 'sa', password = '123456')

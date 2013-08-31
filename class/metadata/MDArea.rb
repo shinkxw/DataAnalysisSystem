@@ -3,8 +3,8 @@
 #元数据域类
 class MDArea
   include Enumerable
-  attr_reader :name#元数据域名称
   attr_reader :name_space_arr#命名空间数组
+  attr_accessor :name#元数据域名称
   attr_accessor :table_relation_str_arr#表关联信息数组
   attr_accessor :generation_time#生成时间
   attr_accessor :analyzer_version#解析器版本

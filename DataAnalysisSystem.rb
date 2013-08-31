@@ -11,10 +11,11 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
   #~ work_area.export_all
 #~ end
 
-DbEntity.set_connector(DbConnector.new('(local)\sqlexpress'))
-DbEntity.open('HanRuEdu') do |db|
+DBEntity.set_connector(DBConnector.new('(local)\sqlexpress'))
+DBEntity.open('HanRuEdu') do |db|
   p db.get_table_exp('EDU_GB_DP')
 end
 
-
-
+t = Time.now
+AreaManager.create_area_from_db('db_out','(local)\sqlexpress','HanRuEdu')
+p Time.now - t
