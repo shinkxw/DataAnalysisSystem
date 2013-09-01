@@ -78,22 +78,18 @@ class MDField
       old_type = @type
       @type = new_field.type
       puts "MDField: 表#{@table.name}中字段#{@name}的类型从#{old_type}改为#{@type}。"
-      $update_table_name_arr.push(@table.name)
     end
     if @null != new_field.null
       @null = new_field.null
       puts "MDField: 表#{@table.name}中字段#{@name}被改为#{@null == "T" ? "可以为空" : "不可为空"}。"
-      $update_table_name_arr.push(@table.name)
     end
     if @p != new_field.p
       @p = new_field.p
       puts "MDField: 表#{@table.name}中字段#{@name}#{@p == "T" ? "成为主键" : "不再为主键"}。"
-      $update_table_name_arr.push(@table.name)
     end
     if @identity != new_field.identity
       @identity = new_field.identity
       puts "MDField: 表#{@table.name}中字段#{@name}#{@null == "T" ? "变为自增" : "不再自增"}。"
-      $update_table_name_arr.push(@table.name)
     end
     @explanation = new_field.explanation if new_field.explanation != ""
     @remark = new_field.remark if new_field.remark != ""

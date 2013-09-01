@@ -35,20 +35,18 @@ class MDTable
     field_name_arr = get_field_name_arr
     new_table.each_field do |new_field|
       old_field = find_field(new_field.name)
-      if old_field != nil
+      if old_field
         old_field.update_by(new_field)
         field_name_arr.delete(new_field.name)
       else
         add_field(new_field)
         p "MDTable: 表#{@name}增加了新的字段:#{new_field.name}"
-        $update_table_name_arr.push(@name)
       end
     end
     field_name_arr.each do |field_name|
       need_delete_field = find_field(field_name)
       field_arr.delete(need_delete_field)
       p "MDTable: 表#{@name}删除了字段:#{field_name}"
-      $update_table_name_arr.push(@name)
     end
     @explanation = new_table.explanation if new_table.explanation != ""
     @remark = new_table.remark if new_table.remark != ""

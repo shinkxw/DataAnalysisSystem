@@ -3,7 +3,6 @@
 #工作区类
 class MDWork_Area
   attr_reader :area#元数据域
-  $update_table_name_arr = []
   @@data_path = "#{$root}/data"
   @@temporary_path = "#{$root}/data/temporary"
   @@backup_path = "#{$root}/data/backup"
@@ -27,27 +26,6 @@ class MDWork_Area
     export_template
     export_tableinfo
     export_migrate_config
-  end
-  #自数据库脚本更新数据
-  def update_by_sql(sql_file_name)
-    str_arr = FileLoader.new("#{@@enter_path}/sql/#{sql_file_name}.sql").get_str_arr
-    sql_area = SqlSSAnalyzer.new().analyze(str_arr)
-    sql_area.reallocate_namespace
-    @area.update_by(sql_area)
-    @area.is_valid?
-    reset_doc
-  end
-  #自daf格式文件更新数据
-  def update_by_daf(daf_file_name)
-    out_hash = {}
-    str_arr = FileLoader.new("#{@@enter_path}/dafdata/#{daf_file_name}.txt").get_str_arr
-    daf_area = DafAnalyzer.new().analyze(str_arr)
-    daf_area.reallocate_namespace
-    @area.update_by(daf_area)
-    @area.is_valid?
-    reset_doc
-    out_hash["sql_update.sql"] = SqlBuilder.new().build_update(@work_area,$update_table_name_arr.uniq)
-    FolderWriter.new("#{$root}/export/update/#{@work_area.name}_#{Time.now.strftime("%m%d")}/",true).write_str_hash(out_hash)
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area

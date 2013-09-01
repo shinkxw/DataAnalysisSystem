@@ -17,6 +17,6 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
   #~ p db.get_table_data('EDU_OAXT_02_01_SWCL')
 #~ end
 
-t = Time.now
-AreaManager.create_area_from_db('db_out','(local)\sqlexpress','HanRuEdu')
-p Time.now - t
+#~ t = Time.now
+#~ AreaManager.create_area_from_db('db_out','(local)\sqlexpress','HanRuEdu')
+#~ p Time.now - t

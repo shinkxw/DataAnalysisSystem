@@ -49,7 +49,7 @@ class MDArea
   def cover_combine(new_area)
     new_area.each do |new_name_space|
       old_name_space = find_name_space(new_name_space.name)
-      if old_name_space != nil
+      if old_name_space
         old_name_space.cover_combine(new_name_space)
       else 
         add_name_space(new_name_space)
@@ -67,7 +67,6 @@ class MDArea
         p "MDArea: 增加了新的命名空间:#{new_name_space.name}"
         new_name_space.each do |table|
           p "MDArea: 增加了新的表:#{table.name}"
-          $update_table_name_arr.push(table.name)
         end
       end
     end

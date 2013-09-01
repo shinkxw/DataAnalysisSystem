@@ -41,12 +41,11 @@ class MDNameSpace
   def update_by(new_name_space)
     new_name_space.each do |new_table|
       old_table = find_table(new_table.name)
-      if old_table != nil
+      if old_table
         old_table.update_by(new_table)
       else
         add_table(new_table)
         p "MDNameSpace: 增加了新的表:#{new_table.name}"
-        $update_table_name_arr.push(new_table.name)
       end
     end
   end
