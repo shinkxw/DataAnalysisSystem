@@ -14,12 +14,24 @@ class MDData
   def add_key_value(key,value)
     result = true
     if @key_value_hash[key] == nil
-      @key_value_hash[key] = value
+      @key_value_hash[key] = convert_value(value)
     else
       result = false
       p "the MDData_key is repeat"
     end
     result
+  end
+  #根据值的类型进行转换
+  def convert_value(v)
+    case v.class.to_s
+    when 'String', 'Fixnum', 'NilClass'; v
+    when 'Time'
+      #"CAST('#{v.year}-#{v.month}-#{v.day} #{v.hour}:#{v.min}:#{v.sec}' AS DateTime)"
+      v
+    else 
+      puts "类型为#{v.class}的数据并未处理"
+      v
+    end
   end
   #根据键取值
   def get_value(key);@key_value_hash[key] end

@@ -58,22 +58,12 @@ class DBAnalyzer
   def analyze_fieldtype(info)
     type = info['DATA_TYPE']
     case type
-    when 'int'
-      type
-    when 'nchar'
-      "#{type}(#{info['CHARACTER_MAXIMUM_LENGTH']})"
-    when 'nvarchar'
-      "#{type}(#{info['CHARACTER_MAXIMUM_LENGTH']})"
+    when 'int','text','datetime','money'; type
+    when 'nchar','nvarchar'; "#{type}(#{info['CHARACTER_MAXIMUM_LENGTH']})"
     when 'decimal'
       prec = info['NUMERIC_PRECISION']
       scale = info['NUMERIC_SCALE']
       "#{type}(#{prec}#{scale == 0 ? '' : ",#{scale}"})"
-    when 'text'
-      type
-    when 'datetime'
-      type
-    when 'money'
-      type
     else
       puts "字段类型未识别#{type}"
       type
