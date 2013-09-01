@@ -55,11 +55,11 @@ CREATE TABLE [dbo].[EDU_ZXXX_01_01_ZXXX](
 	[SZDCXLXM]  nvarchar(3)  NOT NULL,--所在地城乡类型码
 	[SZDJJSXM]  nvarchar(1)  NOT NULL,--所在地经济属性码
 	[SZDMZSX]  nvarchar(1)  NOT NULL,--所在地民族属性
-	[XXXZ]  decimal(3,1)  NOT NULL,--小学学制
-	[XXRXNL]  decimal(1)  NOT NULL,--小学入学年龄
-	[CZXZ]  decimal(3,1)  NOT NULL,--初中学制
-	[CZRXNL]  decimal(2)  NOT NULL,--初中入学年龄
-	[GZXZ]  decimal(3,1)  NOT NULL,--高中学制
+	[XXXZ]  decimal(3, 1)  NOT NULL,--小学学制
+	[XXRXNL]  decimal(1, 0)  NOT NULL,--小学入学年龄
+	[CZXZ]  decimal(3, 1)  NOT NULL,--初中学制
+	[CZRXNL]  decimal(2, 0)  NOT NULL,--初中入学年龄
+	[GZXZ]  decimal(3, 1)  NOT NULL,--高中学制
 	[ZJXYYM]  nvarchar(3)  NOT NULL,--主教学语言码
 	[FJXYYM]  nvarchar(3)  NOT NULL,--辅教学语言码
 	[ZSBJ]  nvarchar(30)  NULL,--招生半径
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[EDU_ZXXX_03_01_BJ](
 	[BZRGH]  nvarchar(20)  NULL,--班主任工号
 	[BZXH]  nvarchar(20)  NULL,--班长学号
 	[BJRYCH]  nvarchar(40)  NULL,--班级荣誉称号
-	[XZ]  decimal(3,1)  NULL,--学制
+	[XZ]  decimal(3, 1)  NULL,--学制
 	[BJLXM]  nvarchar(2)  NULL,--班级类型码
 	[WLLX]  nvarchar(2)  NULL,--文理类型
 	[BYRQ]  nvarchar(8)  NULL,--毕业日期

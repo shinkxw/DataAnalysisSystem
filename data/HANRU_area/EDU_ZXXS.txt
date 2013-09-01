@@ -97,9 +97,9 @@
             <name="KSFSM" explanation="考试方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
             <name="KSXZM" explanation="考试性质码" type="nvarchar(2)" null="T" p="F" identity="F" remark="" />
             <name="KSXSM" explanation="考试形式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
-            <name="FSLKSCJ" explanation="分数类考试成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
+            <name="FSLKSCJ" explanation="分数类考试成绩" type="decimal(5, 1)" null="T" p="F" identity="F" remark="" />
             <name="DJLKSCJ" explanation="等级类考试成绩" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
-            <name="KCCJ" explanation="课程成绩" type="decimal(5,1)" null="T" p="F" identity="F" remark="" />
+            <name="KCCJ" explanation="课程成绩" type="decimal(5, 1)" null="T" p="F" identity="F" remark="" />
             <name="KCDJCJM" explanation="课程等级成绩码" type="nvarchar(1)" null="T" p="F" identity="F" remark="" />
             <name="RKJSGH" explanation="任课教师工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
             <name="CJLRRH" explanation="成绩录入人号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />

@@ -3,7 +3,7 @@
 #元数据比较器比较后所生成的差异度对象
 class MDDiff
   @@table_pro_arr = %w(explanation)
-  @@field_pro_arr = %w(type null p identity explanation remark)#remark
+  @@field_pro_arr = %w(type null p identity explanation)#remark
   attr_reader :a1_diff_arr#记录元数据域1中独有的表
   attr_reader :a2_diff_arr#记录元数据域2中独有的表
   attr_reader :t1_diff_arr#记录元数据域1中表独有的字段

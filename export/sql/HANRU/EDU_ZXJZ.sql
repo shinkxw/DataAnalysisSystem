@@ -102,11 +102,11 @@ CREATE TABLE [dbo].[EDU_ZXJZ_07_02_RKSJ](
 	[RKKCH]  nvarchar(10)  NOT NULL,--任课课程号
 	[RKQSNY]  nvarchar(6)  NOT NULL,--任课起始年月
 	[RKZZNY]  nvarchar(6)  NOT NULL,--任课终止年月
-	[RKZXS]  decimal(3)  NOT NULL,--任课总学时
+	[RKZXS]  decimal(3, 0)  NOT NULL,--任课总学时
 	[RKXDM]  nvarchar(1)  NOT NULL,--任课学段码
 	[RKJSM]  nvarchar(1)  NOT NULL,--任课角色码
 	[SKBJ]  nvarchar(10)  NOT NULL,--授课班级
-	[SKRS]  decimal(4)  NOT NULL,--授课人数
+	[SKRS]  decimal(4, 0)  NOT NULL,--授课人数
 	[ZKS]  int  NOT NULL,--周课时
 	[SFLT]  nvarchar(1)  NOT NULL,--是否连堂
 	[NJID]  nvarchar(10)  NOT NULL,--年级号

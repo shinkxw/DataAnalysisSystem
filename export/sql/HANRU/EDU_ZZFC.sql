@@ -37,7 +37,7 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[XQH]  nvarchar(2)  NULL,--校区号
 	[JZWFLM]  nvarchar(1)  NOT NULL,--建筑物分类码
 	[JZWJGM]  nvarchar(1)  NOT NULL,--建筑物结构码
-	[JZWCS]  decimal(2)  NOT NULL,--建筑物层数
+	[JZWCS]  decimal(2, 0)  NOT NULL,--建筑物层数
 	[JCNY]  nvarchar(6)  NULL,--建成年月
 	[JZWTZZE]  money  NULL,--建筑物投资总额
 	[JFLYM]  nvarchar(1)  NULL,--经费来源码
@@ -53,12 +53,12 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[JZWWZZK]  nvarchar(1)  NOT NULL,--建筑物位置状况
 	[GHSPWH]  nvarchar(24)  NOT NULL,--规划审批文号
 	[ZHFZNL]  nvarchar(60)  NULL,--综合防灾能力
-	[GHSYNX]  decimal(3)  NULL,--规划使用年限
+	[GHSYNX]  decimal(3, 0)  NULL,--规划使用年限
 	[SFYYJBXCS]  nvarchar(1)  NULL,--是否有预警避险措施
 	[SFKYYYJBNCS]  nvarchar(1)  NULL,--是否可用于应急避难场所
 	[CQZH]  nvarchar(20)  NOT NULL,--产权证号
 	[JZWYTM]  nvarchar(2)  NULL,--建筑物用途码
-	[JZWZGD]  decimal(3)  NULL,--建筑物总高度
+	[JZWZGD]  decimal(3, 0)  NULL,--建筑物总高度
 	[WFJDBM]  nvarchar(60)  NULL,--危房鉴定部门
 	[WFJDWH]  nvarchar(20)  NULL,--危房鉴定文号
 	[WFJDRQ]  nvarchar(8)  NULL,--危房鉴定日期
@@ -69,31 +69,31 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[SFYGZZ]  nvarchar(1)  NOT NULL,--是否有构造柱
 	[QL]  nvarchar(1)  NOT NULL,--圈梁
 	[ZJAQGZWCRQ]  nvarchar(8)  NULL,--最近安全改造完成日期
-	[ZJAQGZHYJSYNX]  decimal(2)  NULL,--最近安全改造后预计使用年限
+	[ZJAQGZHYJSYNX]  decimal(2, 0)  NULL,--最近安全改造后预计使用年限
 	[ZXLXM]  nvarchar(1)  NULL,--专项类型
 	[ZYZXTZBZMCM]  nvarchar(1)  NULL,--中央专项投资补助名称码
 	[WWJZDJM]  nvarchar(1)  NULL,--文物建筑等级码
-	[JXJFZYF]  decimal(8)  NOT NULL,--教学及辅助用房
-	[QZJS]  decimal(8)  NOT NULL,--其中教室
-	[QZSYS]  decimal(8)  NOT NULL,--其中实验室
-	[QZTSS]  decimal(8)  NOT NULL,--其中图书室
-	[QZWJS]  decimal(8)  NOT NULL,--其中微机室
-	[QZYYS]  decimal(8)  NOT NULL,--其中语音室
-	[QZTYHDS]  decimal(8)  NOT NULL,--其中体育活动室
-	[QZQTJFYF]  decimal(8)  NOT NULL,--其中其他教辅用房
-	[SHYF]  decimal(8)  NOT NULL,--生活用房
-	[QZXSSS]  decimal(8)  NOT NULL,--其中学生宿舍
-	[QZST]  decimal(8)  NOT NULL,--其中食堂
-	[QZCS]  decimal(8)  NOT NULL,--其中厕所
-	[QZGLF]  decimal(8)  NOT NULL,--其中锅炉房(开水房)
-	[QZYS]  decimal(8)  NOT NULL,--其中浴室
-	[QZJGSS]  decimal(8)  NOT NULL,--其中教工宿舍
-	[QZQTSHYF]  decimal(8)  NOT NULL,--其中其他生活用房
-	[XZBGYF]  decimal(8)  NOT NULL,--行政办公用房
-	[QZJSBGS]  decimal(8)  NOT NULL,--其中教职工办公室
-	[QZWSBJS]  decimal(8)  NOT NULL,--其中卫生保健室
-	[QZQTXZBGYF]  decimal(8)  NOT NULL,--其中其他行政办公用房
-	[QTYF]  decimal(8)  NOT NULL,--其他用房
+	[JXJFZYF]  decimal(8, 0)  NOT NULL,--教学及辅助用房
+	[QZJS]  decimal(8, 0)  NOT NULL,--其中教室
+	[QZSYS]  decimal(8, 0)  NOT NULL,--其中实验室
+	[QZTSS]  decimal(8, 0)  NOT NULL,--其中图书室
+	[QZWJS]  decimal(8, 0)  NOT NULL,--其中微机室
+	[QZYYS]  decimal(8, 0)  NOT NULL,--其中语音室
+	[QZTYHDS]  decimal(8, 0)  NOT NULL,--其中体育活动室
+	[QZQTJFYF]  decimal(8, 0)  NOT NULL,--其中其他教辅用房
+	[SHYF]  decimal(8, 0)  NOT NULL,--生活用房
+	[QZXSSS]  decimal(8, 0)  NOT NULL,--其中学生宿舍
+	[QZST]  decimal(8, 0)  NOT NULL,--其中食堂
+	[QZCS]  decimal(8, 0)  NOT NULL,--其中厕所
+	[QZGLF]  decimal(8, 0)  NOT NULL,--其中锅炉房(开水房)
+	[QZYS]  decimal(8, 0)  NOT NULL,--其中浴室
+	[QZJGSS]  decimal(8, 0)  NOT NULL,--其中教工宿舍
+	[QZQTSHYF]  decimal(8, 0)  NOT NULL,--其中其他生活用房
+	[XZBGYF]  decimal(8, 0)  NOT NULL,--行政办公用房
+	[QZJSBGS]  decimal(8, 0)  NOT NULL,--其中教职工办公室
+	[QZWSBJS]  decimal(8, 0)  NOT NULL,--其中卫生保健室
+	[QZQTXZBGYF]  decimal(8, 0)  NOT NULL,--其中其他行政办公用房
+	[QTYF]  decimal(8, 0)  NOT NULL,--其他用房
 CONSTRAINT [PK_EDU_ZZFC_02_01_JZWJBSJ] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -114,13 +114,13 @@ CREATE TABLE [dbo].[EDU_ZZFC_08_01_XSSS](
 	[FJBM]  nvarchar(10)  NOT NULL,--房间编号
 	[RZXB]  nvarchar(1)  NOT NULL,--入住性别
 	[SFKY]  nvarchar(1)  NOT NULL,--是否可用
-	[KZRS]  decimal(2)  NOT NULL,--可住人数
+	[KZRS]  decimal(2, 0)  NOT NULL,--可住人数
 	[WLDK]  nvarchar(20)  NULL,--网络端口
 	[AZDSJ]  nvarchar(1)  NULL,--安装电视机
 	[DHDK]  nvarchar(20)  NULL,--电话端口
 	[DHHM]  nvarchar(20)  NULL,--电话号码
-	[SBDS]  decimal(10)  NULL,--水表底数
-	[DBDS]  decimal(10)  NULL,--电表底数
+	[SBDS]  decimal(10, 0)  NULL,--水表底数
+	[DBDS]  decimal(10, 0)  NULL,--电表底数
 	[SSBZ]  text  NULL,--宿舍备注
 	[SZLZ]  int  NOT NULL,--所在楼层
 	[SSM]  nvarchar(128)  NOT NULL,--宿舍名

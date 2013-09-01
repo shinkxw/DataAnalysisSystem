@@ -659,7 +659,7 @@ CREATE TABLE [dbo].[EDU_OAXT_01_01_WJJBSJ](
 	[ZTC]  text  NOT NULL,--主题词
 	[MJM]  nvarchar(1)  NOT NULL,--密级码
 	[JJCDM]  nvarchar(1)  NOT NULL,--紧急程度码
-	[YS]  decimal(6)  NULL,--页数
+	[YS]  decimal(6, 0)  NULL,--页数
 	[WJFLM]  nvarchar(2)  NOT NULL,--文件分类码
 	[ZW]  text  NOT NULL,--正文
 	[FJ]  text  NOT NULL,--附件
@@ -688,9 +688,9 @@ CREATE TABLE [dbo].[EDU_OAXT_02_01_SWCL](
 	[DJRGH]  nvarchar(20)  NOT NULL,--登记人工号
 	[SWRQ]  nvarchar(8)  NOT NULL,--收文日期
 	[LWDW]  nvarchar(60)  NOT NULL,--来文单位
-	[FS]  decimal(3)  NOT NULL,--份数
+	[FS]  decimal(3, 0)  NOT NULL,--份数
 	[CLQK]  text  NOT NULL,--处理情况
-	[FYFS]  decimal(4)  NULL,--翻印份数
+	[FYFS]  decimal(4, 0)  NULL,--翻印份数
 CONSTRAINT [PK_EDU_OAXT_02_01_SWCL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -742,7 +742,7 @@ CREATE TABLE [dbo].[EDU_OAXT_03_01_FWCL](
 	[FSFSM]  nvarchar(1)  NOT NULL,--发送方式码
 	[DJRGH]  nvarchar(20)  NOT NULL,--登记人工号
 	[DJRQ]  nvarchar(8)  NOT NULL,--登记日期
-	[FWJS]  decimal(4)  NOT NULL,--发文件数
+	[FWJS]  decimal(4, 0)  NOT NULL,--发文件数
 	[GWFWRQ]  nvarchar(8)  NOT NULL,--公文发文日期
 	[CLQK]  text  NOT NULL,--处理情况
 	[DZRGH]  nvarchar(20)  NULL,--打字人工号
@@ -893,7 +893,7 @@ CREATE TABLE [dbo].[EDU_OAXT_12_A01_SJFB](
 	[XXBT]  nvarchar(100)  NOT NULL,--数据标题
 	[FBLMH]  nvarchar(2)  NOT NULL,--发布栏目号
 	[SJNR]  text  NOT NULL,--数据内容
-	[FJS]  decimal(2)  NOT NULL,--附件数
+	[FJS]  decimal(2, 0)  NOT NULL,--附件数
 	[FBRQ]  nvarchar(8)  NOT NULL,--发布日期
 	[FBDW]  nvarchar(10)  NOT NULL,--发布单位号
 	[FBRGH]  nvarchar(20)  NULL,--发布人工号
@@ -2558,9 +2558,9 @@ CREATE TABLE [dbo].[EDU_ZXJX_01_01_KC](
 	[KCBM]  nvarchar(60)  NOT NULL,--课程别名
 	[KCJJ]  text  NULL,--课程简介
 	[KCYQ]  text  NULL,--课程要求
-	[ZXS]  decimal(3)  NULL,--总学时
-	[ZHXS]  decimal(2)  NULL,--周学时
-	[ZXXS]  decimal(3)  NULL,--自学学时
+	[ZXS]  decimal(3, 0)  NULL,--总学时
+	[ZHXS]  decimal(2, 0)  NULL,--周学时
+	[ZXXS]  decimal(3, 0)  NULL,--自学学时
 	[SKFSM]  nvarchar(1)  NOT NULL,--授课方式码
 	[JCBM]  text  NULL,--教材编码
 	[CKSM]  text  NULL,--参考书目
@@ -2608,7 +2608,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_05_A02_KSKM](
 	[KCMC]  nvarchar(60)  NOT NULL,--课程名称
 	[NJMC]  nvarchar(30)  NOT NULL,--年级名称
 	[BJMC]  nvarchar(20)  NOT NULL,--班级名称
-	[CJZF]  decimal(5,1)  NOT NULL,--成绩总分
+	[CJZF]  decimal(5, 1)  NOT NULL,--成绩总分
 CONSTRAINT [PK_EDU_ZXJX_05_A02_KSKM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2795,11 +2795,11 @@ CREATE TABLE [dbo].[EDU_ZXJZ_07_02_RKSJ](
 	[RKKCH]  nvarchar(10)  NOT NULL,--任课课程号
 	[RKQSNY]  nvarchar(6)  NOT NULL,--任课起始年月
 	[RKZZNY]  nvarchar(6)  NOT NULL,--任课终止年月
-	[RKZXS]  decimal(3)  NOT NULL,--任课总学时
+	[RKZXS]  decimal(3, 0)  NOT NULL,--任课总学时
 	[RKXDM]  nvarchar(1)  NOT NULL,--任课学段码
 	[RKJSM]  nvarchar(1)  NOT NULL,--任课角色码
 	[SKBJ]  nvarchar(10)  NOT NULL,--授课班级
-	[SKRS]  decimal(4)  NOT NULL,--授课人数
+	[SKRS]  decimal(4, 0)  NOT NULL,--授课人数
 	[ZKS]  int  NOT NULL,--周课时
 	[SFLT]  nvarchar(1)  NOT NULL,--是否连堂
 	[NJID]  nvarchar(10)  NOT NULL,--年级号
@@ -3109,9 +3109,9 @@ CREATE TABLE [dbo].[EDU_ZXXS_02_06_ZXKSCJ](
 	[KSFSM]  nvarchar(1)  NULL,--考试方式码
 	[KSXZM]  nvarchar(2)  NULL,--考试性质码
 	[KSXSM]  nvarchar(1)  NULL,--考试形式码
-	[FSLKSCJ]  decimal(5,1)  NULL,--分数类考试成绩
+	[FSLKSCJ]  decimal(5, 1)  NULL,--分数类考试成绩
 	[DJLKSCJ]  nvarchar(1)  NULL,--等级类考试成绩
-	[KCCJ]  decimal(5,1)  NULL,--课程成绩
+	[KCCJ]  decimal(5, 1)  NULL,--课程成绩
 	[KCDJCJM]  nvarchar(1)  NULL,--课程等级成绩码
 	[RKJSGH]  nvarchar(20)  NULL,--任课教师工号
 	[CJLRRH]  nvarchar(20)  NULL,--成绩录入人号
@@ -3461,11 +3461,11 @@ CREATE TABLE [dbo].[EDU_ZXXX_01_01_ZXXX](
 	[SZDCXLXM]  nvarchar(3)  NOT NULL,--所在地城乡类型码
 	[SZDJJSXM]  nvarchar(1)  NOT NULL,--所在地经济属性码
 	[SZDMZSX]  nvarchar(1)  NOT NULL,--所在地民族属性
-	[XXXZ]  decimal(3,1)  NOT NULL,--小学学制
-	[XXRXNL]  decimal(1)  NOT NULL,--小学入学年龄
-	[CZXZ]  decimal(3,1)  NOT NULL,--初中学制
-	[CZRXNL]  decimal(2)  NOT NULL,--初中入学年龄
-	[GZXZ]  decimal(3,1)  NOT NULL,--高中学制
+	[XXXZ]  decimal(3, 1)  NOT NULL,--小学学制
+	[XXRXNL]  decimal(1, 0)  NOT NULL,--小学入学年龄
+	[CZXZ]  decimal(3, 1)  NOT NULL,--初中学制
+	[CZRXNL]  decimal(2, 0)  NOT NULL,--初中入学年龄
+	[GZXZ]  decimal(3, 1)  NOT NULL,--高中学制
 	[ZJXYYM]  nvarchar(3)  NOT NULL,--主教学语言码
 	[FJXYYM]  nvarchar(3)  NOT NULL,--辅教学语言码
 	[ZSBJ]  nvarchar(30)  NULL,--招生半径
@@ -3505,7 +3505,7 @@ CREATE TABLE [dbo].[EDU_ZXXX_03_01_BJ](
 	[BZRGH]  nvarchar(20)  NULL,--班主任工号
 	[BZXH]  nvarchar(20)  NULL,--班长学号
 	[BJRYCH]  nvarchar(40)  NULL,--班级荣誉称号
-	[XZ]  decimal(3,1)  NULL,--学制
+	[XZ]  decimal(3, 1)  NULL,--学制
 	[BJLXM]  nvarchar(2)  NULL,--班级类型码
 	[WLLX]  nvarchar(2)  NULL,--文理类型
 	[BYRQ]  nvarchar(8)  NULL,--毕业日期
@@ -3736,7 +3736,7 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[XQH]  nvarchar(2)  NULL,--校区号
 	[JZWFLM]  nvarchar(1)  NOT NULL,--建筑物分类码
 	[JZWJGM]  nvarchar(1)  NOT NULL,--建筑物结构码
-	[JZWCS]  decimal(2)  NOT NULL,--建筑物层数
+	[JZWCS]  decimal(2, 0)  NOT NULL,--建筑物层数
 	[JCNY]  nvarchar(6)  NULL,--建成年月
 	[JZWTZZE]  money  NULL,--建筑物投资总额
 	[JFLYM]  nvarchar(1)  NULL,--经费来源码
@@ -3752,12 +3752,12 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[JZWWZZK]  nvarchar(1)  NOT NULL,--建筑物位置状况
 	[GHSPWH]  nvarchar(24)  NOT NULL,--规划审批文号
 	[ZHFZNL]  nvarchar(60)  NULL,--综合防灾能力
-	[GHSYNX]  decimal(3)  NULL,--规划使用年限
+	[GHSYNX]  decimal(3, 0)  NULL,--规划使用年限
 	[SFYYJBXCS]  nvarchar(1)  NULL,--是否有预警避险措施
 	[SFKYYYJBNCS]  nvarchar(1)  NULL,--是否可用于应急避难场所
 	[CQZH]  nvarchar(20)  NOT NULL,--产权证号
 	[JZWYTM]  nvarchar(2)  NULL,--建筑物用途码
-	[JZWZGD]  decimal(3)  NULL,--建筑物总高度
+	[JZWZGD]  decimal(3, 0)  NULL,--建筑物总高度
 	[WFJDBM]  nvarchar(60)  NULL,--危房鉴定部门
 	[WFJDWH]  nvarchar(20)  NULL,--危房鉴定文号
 	[WFJDRQ]  nvarchar(8)  NULL,--危房鉴定日期
@@ -3768,31 +3768,31 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[SFYGZZ]  nvarchar(1)  NOT NULL,--是否有构造柱
 	[QL]  nvarchar(1)  NOT NULL,--圈梁
 	[ZJAQGZWCRQ]  nvarchar(8)  NULL,--最近安全改造完成日期
-	[ZJAQGZHYJSYNX]  decimal(2)  NULL,--最近安全改造后预计使用年限
+	[ZJAQGZHYJSYNX]  decimal(2, 0)  NULL,--最近安全改造后预计使用年限
 	[ZXLXM]  nvarchar(1)  NULL,--专项类型
 	[ZYZXTZBZMCM]  nvarchar(1)  NULL,--中央专项投资补助名称码
 	[WWJZDJM]  nvarchar(1)  NULL,--文物建筑等级码
-	[JXJFZYF]  decimal(8)  NOT NULL,--教学及辅助用房
-	[QZJS]  decimal(8)  NOT NULL,--其中教室
-	[QZSYS]  decimal(8)  NOT NULL,--其中实验室
-	[QZTSS]  decimal(8)  NOT NULL,--其中图书室
-	[QZWJS]  decimal(8)  NOT NULL,--其中微机室
-	[QZYYS]  decimal(8)  NOT NULL,--其中语音室
-	[QZTYHDS]  decimal(8)  NOT NULL,--其中体育活动室
-	[QZQTJFYF]  decimal(8)  NOT NULL,--其中其他教辅用房
-	[SHYF]  decimal(8)  NOT NULL,--生活用房
-	[QZXSSS]  decimal(8)  NOT NULL,--其中学生宿舍
-	[QZST]  decimal(8)  NOT NULL,--其中食堂
-	[QZCS]  decimal(8)  NOT NULL,--其中厕所
-	[QZGLF]  decimal(8)  NOT NULL,--其中锅炉房(开水房)
-	[QZYS]  decimal(8)  NOT NULL,--其中浴室
-	[QZJGSS]  decimal(8)  NOT NULL,--其中教工宿舍
-	[QZQTSHYF]  decimal(8)  NOT NULL,--其中其他生活用房
-	[XZBGYF]  decimal(8)  NOT NULL,--行政办公用房
-	[QZJSBGS]  decimal(8)  NOT NULL,--其中教职工办公室
-	[QZWSBJS]  decimal(8)  NOT NULL,--其中卫生保健室
-	[QZQTXZBGYF]  decimal(8)  NOT NULL,--其中其他行政办公用房
-	[QTYF]  decimal(8)  NOT NULL,--其他用房
+	[JXJFZYF]  decimal(8, 0)  NOT NULL,--教学及辅助用房
+	[QZJS]  decimal(8, 0)  NOT NULL,--其中教室
+	[QZSYS]  decimal(8, 0)  NOT NULL,--其中实验室
+	[QZTSS]  decimal(8, 0)  NOT NULL,--其中图书室
+	[QZWJS]  decimal(8, 0)  NOT NULL,--其中微机室
+	[QZYYS]  decimal(8, 0)  NOT NULL,--其中语音室
+	[QZTYHDS]  decimal(8, 0)  NOT NULL,--其中体育活动室
+	[QZQTJFYF]  decimal(8, 0)  NOT NULL,--其中其他教辅用房
+	[SHYF]  decimal(8, 0)  NOT NULL,--生活用房
+	[QZXSSS]  decimal(8, 0)  NOT NULL,--其中学生宿舍
+	[QZST]  decimal(8, 0)  NOT NULL,--其中食堂
+	[QZCS]  decimal(8, 0)  NOT NULL,--其中厕所
+	[QZGLF]  decimal(8, 0)  NOT NULL,--其中锅炉房(开水房)
+	[QZYS]  decimal(8, 0)  NOT NULL,--其中浴室
+	[QZJGSS]  decimal(8, 0)  NOT NULL,--其中教工宿舍
+	[QZQTSHYF]  decimal(8, 0)  NOT NULL,--其中其他生活用房
+	[XZBGYF]  decimal(8, 0)  NOT NULL,--行政办公用房
+	[QZJSBGS]  decimal(8, 0)  NOT NULL,--其中教职工办公室
+	[QZWSBJS]  decimal(8, 0)  NOT NULL,--其中卫生保健室
+	[QZQTXZBGYF]  decimal(8, 0)  NOT NULL,--其中其他行政办公用房
+	[QTYF]  decimal(8, 0)  NOT NULL,--其他用房
 CONSTRAINT [PK_EDU_ZZFC_02_01_JZWJBSJ] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -3813,13 +3813,13 @@ CREATE TABLE [dbo].[EDU_ZZFC_08_01_XSSS](
 	[FJBM]  nvarchar(10)  NOT NULL,--房间编号
 	[RZXB]  nvarchar(1)  NOT NULL,--入住性别
 	[SFKY]  nvarchar(1)  NOT NULL,--是否可用
-	[KZRS]  decimal(2)  NOT NULL,--可住人数
+	[KZRS]  decimal(2, 0)  NOT NULL,--可住人数
 	[WLDK]  nvarchar(20)  NULL,--网络端口
 	[AZDSJ]  nvarchar(1)  NULL,--安装电视机
 	[DHDK]  nvarchar(20)  NULL,--电话端口
 	[DHHM]  nvarchar(20)  NULL,--电话号码
-	[SBDS]  decimal(10)  NULL,--水表底数
-	[DBDS]  decimal(10)  NULL,--电表底数
+	[SBDS]  decimal(10, 0)  NULL,--水表底数
+	[DBDS]  decimal(10, 0)  NULL,--电表底数
 	[SSBZ]  text  NULL,--宿舍备注
 	[SZLZ]  int  NOT NULL,--所在楼层
 	[SSM]  nvarchar(128)  NOT NULL,--宿舍名

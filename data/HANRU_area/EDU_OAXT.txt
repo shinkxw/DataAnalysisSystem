@@ -69,7 +69,7 @@
             <name="ZTC" explanation="主题词" type="text" null="F" p="F" identity="F" remark="解释/举例：文件的主题词，多个主题词用逗号隔开 " />
             <name="MJM" explanation="密级码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：GB/T7156 " />
             <name="JJCDM" explanation="紧急程度码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001JJCD紧急程度代码 " />
-            <name="YS" explanation="页数" type="decimal(6)" null="T" p="F" identity="F" remark="解释/举例：文件的总页数，单位：页 " />
+            <name="YS" explanation="页数" type="decimal(6, 0)" null="T" p="F" identity="F" remark="解释/举例：文件的总页数，单位：页 " />
             <name="WJFLM" explanation="文件分类码" type="nvarchar(2)" null="F" p="F" identity="F" remark="值空间：JY/T1001WJFL文件分类代码 " />
             <name="ZW" explanation="正文" type="text" null="F" p="F" identity="F" remark="解释/举例：文件的具体内容 " />
             <name="FJ" explanation="附件" type="text" null="F" p="F" identity="F" remark="解释/举例：文件所带附件的具体内容 " />
@@ -89,9 +89,9 @@
             <name="DJRGH" explanation="登记人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
             <name="SWRQ" explanation="收文日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
             <name="LWDW" explanation="来文单位" type="nvarchar(60)" null="F" p="F" identity="F" remark="单位名称" />
-            <name="FS" explanation="份数" type="decimal(3)" null="F" p="F" identity="F" remark="单位：份 " />
+            <name="FS" explanation="份数" type="decimal(3, 0)" null="F" p="F" identity="F" remark="单位：份 " />
             <name="CLQK" explanation="处理情况" type="text" null="F" p="F" identity="F" remark="解释/举例：填写文件需要处理的情况和结果，包括领导批示、承办部门等 " />
-            <name="FYFS" explanation="翻印份数" type="decimal(4)" null="T" p="F" identity="F" remark="单位：份 " />
+            <name="FYFS" explanation="翻印份数" type="decimal(4, 0)" null="T" p="F" identity="F" remark="单位：份 " />
         </field_area>
     </table>
     <table name="EDU_OAXT_02_02_WJYB" explanation="文件阅办子类表">
@@ -125,7 +125,7 @@
             <name="FSFSM" explanation="发送方式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001FSFS发送方式代码 " />
             <name="DJRGH" explanation="登记人工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="工号" />
             <name="DJRQ" explanation="登记日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
-            <name="FWJS" explanation="发文件数" type="decimal(4)" null="F" p="F" identity="F" remark="解释/举例：发送文件的数量，单位：份 " />
+            <name="FWJS" explanation="发文件数" type="decimal(4, 0)" null="F" p="F" identity="F" remark="解释/举例：发送文件的数量，单位：份 " />
             <name="GWFWRQ" explanation="公文发文日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
             <name="CLQK" explanation="处理情况" type="text" null="F" p="F" identity="F" remark="解释/举例：指对新制发的文件进行合理的处理 " />
             <name="DZRGH" explanation="打字人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="学号或工号" />
@@ -213,7 +213,7 @@
             <name="XXBT" explanation="数据标题" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
             <name="FBLMH" explanation="发布栏目号" type="nvarchar(2)" null="F" p="F" identity="F" remark="" />
             <name="SJNR" explanation="数据内容" type="text" null="F" p="F" identity="F" remark="" />
-            <name="FJS" explanation="附件数" type="decimal(2)" null="F" p="F" identity="F" remark="" />
+            <name="FJS" explanation="附件数" type="decimal(2, 0)" null="F" p="F" identity="F" remark="" />
             <name="FBRQ" explanation="发布日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
             <name="FBDW" explanation="发布单位号" type="nvarchar(10)" null="F" p="F" identity="F" remark="自行编码" />
             <name="FBRGH" explanation="发布人工号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />

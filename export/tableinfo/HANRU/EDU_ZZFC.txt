@@ -8,7 +8,7 @@ EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
   XQH         校区号                  nvarchar(2)    非主
   JZWFLM      建筑物分类码            nvarchar(1)    非主     建筑物分类代码表
   JZWJGM      建筑物结构码            nvarchar(1)    非主     建筑物结构代码表
-  JZWCS       建筑物层数              decimal(2)     非主
+  JZWCS       建筑物层数              decimal(2, 0)  非主
   JCNY        建成年月                nvarchar(6)    非主
   JZWTZZE     建筑物投资总额          money          非主
   JFLYM       经费来源码              nvarchar(1)    非主     经费来源代码表
@@ -24,12 +24,12 @@ EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
   JZWWZZK     建筑物位置状况          nvarchar(1)    非主
   GHSPWH      规划审批文号            nvarchar(24)   非主
   ZHFZNL      综合防灾能力            nvarchar(60)   非主
-  GHSYNX      规划使用年限            decimal(3)     非主
+  GHSYNX      规划使用年限            decimal(3, 0)  非主
   SFYYJBXCS   是否有预警避险措施      nvarchar(1)    非主     是否标志代码表
   SFKYYYJBNCS 是否可用于应急避难场所  nvarchar(1)    非主     是否标志代码表
   CQZH        产权证号                nvarchar(20)   非主
   JZWYTM      建筑物用途码            nvarchar(2)    非主     建筑物用途代码表
-  JZWZGD      建筑物总高度            decimal(3)     非主
+  JZWZGD      建筑物总高度            decimal(3, 0)  非主
   WFJDBM      危房鉴定部门            nvarchar(60)   非主
   WFJDWH      危房鉴定文号            nvarchar(20)   非主
   WFJDRQ      危房鉴定日期            nvarchar(8)    非主
@@ -40,31 +40,31 @@ EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
   SFYGZZ      是否有构造柱            nvarchar(1)    非主     是否标志代码表
   QL          圈梁                    nvarchar(1)    非主     是否标志代码表
   ZJAQGZWCRQ  最近安全改造完成日期    nvarchar(8)    非主
-  ZJAQGZHYJSYNX最近安全改造后预计使用年限decimal(2)     非主
+  ZJAQGZHYJSYNX最近安全改造后预计使用年限decimal(2, 0)  非主
   ZXLXM       专项类型                nvarchar(1)    非主
   ZYZXTZBZMCM 中央专项投资补助名称码  nvarchar(1)    非主     中央专项投资补助名称代码表
   WWJZDJM     文物建筑等级码          nvarchar(1)    非主     文物建筑等级代码表
-  JXJFZYF     教学及辅助用房          decimal(8)     非主
-  QZJS        其中教室                decimal(8)     非主
-  QZSYS       其中实验室              decimal(8)     非主
-  QZTSS       其中图书室              decimal(8)     非主
-  QZWJS       其中微机室              decimal(8)     非主
-  QZYYS       其中语音室              decimal(8)     非主
-  QZTYHDS     其中体育活动室          decimal(8)     非主
-  QZQTJFYF    其中其他教辅用房        decimal(8)     非主
-  SHYF        生活用房                decimal(8)     非主
-  QZXSSS      其中学生宿舍            decimal(8)     非主
-  QZST        其中食堂                decimal(8)     非主
-  QZCS        其中厕所                decimal(8)     非主
-  QZGLF       其中锅炉房(开水房)    decimal(8)     非主
-  QZYS        其中浴室                decimal(8)     非主
-  QZJGSS      其中教工宿舍            decimal(8)     非主
-  QZQTSHYF    其中其他生活用房        decimal(8)     非主
-  XZBGYF      行政办公用房            decimal(8)     非主
-  QZJSBGS     其中教职工办公室        decimal(8)     非主
-  QZWSBJS     其中卫生保健室          decimal(8)     非主
-  QZQTXZBGYF  其中其他行政办公用房    decimal(8)     非主
-  QTYF        其他用房                decimal(8)     非主
+  JXJFZYF     教学及辅助用房          decimal(8, 0)  非主
+  QZJS        其中教室                decimal(8, 0)  非主
+  QZSYS       其中实验室              decimal(8, 0)  非主
+  QZTSS       其中图书室              decimal(8, 0)  非主
+  QZWJS       其中微机室              decimal(8, 0)  非主
+  QZYYS       其中语音室              decimal(8, 0)  非主
+  QZTYHDS     其中体育活动室          decimal(8, 0)  非主
+  QZQTJFYF    其中其他教辅用房        decimal(8, 0)  非主
+  SHYF        生活用房                decimal(8, 0)  非主
+  QZXSSS      其中学生宿舍            decimal(8, 0)  非主
+  QZST        其中食堂                decimal(8, 0)  非主
+  QZCS        其中厕所                decimal(8, 0)  非主
+  QZGLF       其中锅炉房(开水房)    decimal(8, 0)  非主
+  QZYS        其中浴室                decimal(8, 0)  非主
+  QZJGSS      其中教工宿舍            decimal(8, 0)  非主
+  QZQTSHYF    其中其他生活用房        decimal(8, 0)  非主
+  XZBGYF      行政办公用房            decimal(8, 0)  非主
+  QZJSBGS     其中教职工办公室        decimal(8, 0)  非主
+  QZWSBJS     其中卫生保健室          decimal(8, 0)  非主
+  QZQTXZBGYF  其中其他行政办公用房    decimal(8, 0)  非主
+  QTYF        其他用房                decimal(8, 0)  非主
 
 EDU_ZZFC_08_01_XSSS  学生宿舍数据类表
   SCHOOLID    学校名                  int            主键     学校配置表
@@ -74,13 +74,13 @@ EDU_ZZFC_08_01_XSSS  学生宿舍数据类表
   FJBM        房间编号                nvarchar(10)   非主
   RZXB        入住性别                nvarchar(1)    非主     人的性别代码
   SFKY        是否可用                nvarchar(1)    非主     是否标志代码表
-  KZRS        可住人数                decimal(2)     非主
+  KZRS        可住人数                decimal(2, 0)  非主
   WLDK        网络端口                nvarchar(20)   非主
   AZDSJ       安装电视机              nvarchar(1)    非主     是否标志代码表
   DHDK        电话端口                nvarchar(20)   非主
   DHHM        电话号码                nvarchar(20)   非主
-  SBDS        水表底数                decimal(10)    非主
-  DBDS        电表底数                decimal(10)    非主
+  SBDS        水表底数                decimal(10, 0) 非主
+  DBDS        电表底数                decimal(10, 0) 非主
   SSBZ        宿舍备注                text           非主
   SZLZ        所在楼层                int            非主
   SSM         宿舍名                  nvarchar(128)  非主

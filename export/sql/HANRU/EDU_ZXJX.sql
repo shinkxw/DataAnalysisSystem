@@ -26,9 +26,9 @@ CREATE TABLE [dbo].[EDU_ZXJX_01_01_KC](
 	[KCBM]  nvarchar(60)  NOT NULL,--课程别名
 	[KCJJ]  text  NULL,--课程简介
 	[KCYQ]  text  NULL,--课程要求
-	[ZXS]  decimal(3)  NULL,--总学时
-	[ZHXS]  decimal(2)  NULL,--周学时
-	[ZXXS]  decimal(3)  NULL,--自学学时
+	[ZXS]  decimal(3, 0)  NULL,--总学时
+	[ZHXS]  decimal(2, 0)  NULL,--周学时
+	[ZXXS]  decimal(3, 0)  NULL,--自学学时
 	[SKFSM]  nvarchar(1)  NOT NULL,--授课方式码
 	[JCBM]  text  NULL,--教材编码
 	[CKSM]  text  NULL,--参考书目
@@ -76,7 +76,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_05_A02_KSKM](
 	[KCMC]  nvarchar(60)  NOT NULL,--课程名称
 	[NJMC]  nvarchar(30)  NOT NULL,--年级名称
 	[BJMC]  nvarchar(20)  NOT NULL,--班级名称
-	[CJZF]  decimal(5,1)  NOT NULL,--成绩总分
+	[CJZF]  decimal(5, 1)  NOT NULL,--成绩总分
 CONSTRAINT [PK_EDU_ZXJX_05_A02_KSKM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

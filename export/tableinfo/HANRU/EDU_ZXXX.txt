@@ -26,11 +26,11 @@ EDU_ZXXX_01_01_ZXXX  学校基本数据子类表
   SZDCXLXM    所在地城乡类型码        nvarchar(3)    非主     所在地城乡类型代码表
   SZDJJSXM    所在地经济属性码        nvarchar(1)    非主     所在地区经济属性代码表
   SZDMZSX     所在地民族属性          nvarchar(1)    非主     是否标志代码表
-  XXXZ        小学学制                decimal(3,1)   非主
-  XXRXNL      小学入学年龄            decimal(1)     非主
-  CZXZ        初中学制                decimal(3,1)   非主
-  CZRXNL      初中入学年龄            decimal(2)     非主
-  GZXZ        高中学制                decimal(3,1)   非主
+  XXXZ        小学学制                decimal(3, 1)  非主
+  XXRXNL      小学入学年龄            decimal(1, 0)  非主
+  CZXZ        初中学制                decimal(3, 1)  非主
+  CZRXNL      初中入学年龄            decimal(2, 0)  非主
+  GZXZ        高中学制                decimal(3, 1)  非主
   ZJXYYM      主教学语言码            nvarchar(3)    非主     中国语种代码
   FJXYYM      辅教学语言码            nvarchar(3)    非主     中国语种代码
   ZSBJ        招生半径                nvarchar(30)   非主
@@ -49,7 +49,7 @@ EDU_ZXXX_03_01_BJ  班级数据类表
   BZRGH       班主任工号              nvarchar(20)   非主
   BZXH        班长学号                nvarchar(20)   非主
   BJRYCH      班级荣誉称号            nvarchar(40)   非主
-  XZ          学制                    decimal(3,1)   非主
+  XZ          学制                    decimal(3, 1)  非主
   BJLXM       班级类型码              nvarchar(2)    非主     中小学班级类型代码表
   WLLX        文理类型                nvarchar(2)    非主
   BYRQ        毕业日期                nvarchar(8)    非主

@@ -186,7 +186,7 @@ CREATE TABLE [dbo].[EDU_OAXT_01_01_WJJBSJ](
 	[ZTC]  text  NOT NULL,--主题词
 	[MJM]  nvarchar(1)  NOT NULL,--密级码
 	[JJCDM]  nvarchar(1)  NOT NULL,--紧急程度码
-	[YS]  decimal(6)  NULL,--页数
+	[YS]  decimal(6, 0)  NULL,--页数
 	[WJFLM]  nvarchar(2)  NOT NULL,--文件分类码
 	[ZW]  text  NOT NULL,--正文
 	[FJ]  text  NOT NULL,--附件
@@ -215,9 +215,9 @@ CREATE TABLE [dbo].[EDU_OAXT_02_01_SWCL](
 	[DJRGH]  nvarchar(20)  NOT NULL,--登记人工号
 	[SWRQ]  nvarchar(8)  NOT NULL,--收文日期
 	[LWDW]  nvarchar(60)  NOT NULL,--来文单位
-	[FS]  decimal(3)  NOT NULL,--份数
+	[FS]  decimal(3, 0)  NOT NULL,--份数
 	[CLQK]  text  NOT NULL,--处理情况
-	[FYFS]  decimal(4)  NULL,--翻印份数
+	[FYFS]  decimal(4, 0)  NULL,--翻印份数
 CONSTRAINT [PK_EDU_OAXT_02_01_SWCL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -269,7 +269,7 @@ CREATE TABLE [dbo].[EDU_OAXT_03_01_FWCL](
 	[FSFSM]  nvarchar(1)  NOT NULL,--发送方式码
 	[DJRGH]  nvarchar(20)  NOT NULL,--登记人工号
 	[DJRQ]  nvarchar(8)  NOT NULL,--登记日期
-	[FWJS]  decimal(4)  NOT NULL,--发文件数
+	[FWJS]  decimal(4, 0)  NOT NULL,--发文件数
 	[GWFWRQ]  nvarchar(8)  NOT NULL,--公文发文日期
 	[CLQK]  text  NOT NULL,--处理情况
 	[DZRGH]  nvarchar(20)  NULL,--打字人工号
@@ -420,7 +420,7 @@ CREATE TABLE [dbo].[EDU_OAXT_12_A01_SJFB](
 	[XXBT]  nvarchar(100)  NOT NULL,--数据标题
 	[FBLMH]  nvarchar(2)  NOT NULL,--发布栏目号
 	[SJNR]  text  NOT NULL,--数据内容
-	[FJS]  decimal(2)  NOT NULL,--附件数
+	[FJS]  decimal(2, 0)  NOT NULL,--附件数
 	[FBRQ]  nvarchar(8)  NOT NULL,--发布日期
 	[FBDW]  nvarchar(10)  NOT NULL,--发布单位号
 	[FBRGH]  nvarchar(20)  NULL,--发布人工号

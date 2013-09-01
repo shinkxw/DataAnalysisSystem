@@ -10,9 +10,9 @@
             <name="KCBM" explanation="课程别名" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
             <name="KCJJ" explanation="课程简介" type="text" null="T" p="F" identity="F" remark="解释/举例：课程学习的主要内容 " />
             <name="KCYQ" explanation="课程要求" type="text" null="T" p="F" identity="F" remark="解释/举例：对课程的教学要求 " />
-            <name="ZXS" explanation="总学时" type="decimal(3)" null="T" p="F" identity="F" remark="解释/举例：单位：学时 " />
-            <name="ZHXS" explanation="周学时" type="decimal(2)" null="T" p="F" identity="F" remark="解释/举例：每周安排的学时数，单位：学时 " />
-            <name="ZXXS" explanation="自学学时" type="decimal(3)" null="T" p="F" identity="F" remark="解释/举例：单位：学时 " />
+            <name="ZXS" explanation="总学时" type="decimal(3, 0)" null="T" p="F" identity="F" remark="解释/举例：单位：学时 " />
+            <name="ZHXS" explanation="周学时" type="decimal(2, 0)" null="T" p="F" identity="F" remark="解释/举例：每周安排的学时数，单位：学时 " />
+            <name="ZXXS" explanation="自学学时" type="decimal(3, 0)" null="T" p="F" identity="F" remark="解释/举例：单位：学时 " />
             <name="SKFSM" explanation="授课方式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SKFS授课方式代码 " />
             <name="JCBM" explanation="教材编码" type="text" null="T" p="F" identity="F" remark="解释/举例：课程使用的教材 " />
             <name="CKSM" explanation="参考书目" type="text" null="T" p="F" identity="F" remark=" 解释/举例：课程使用的参考书目 " />
@@ -42,7 +42,7 @@
             <name="KCMC" explanation="课程名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
             <name="NJMC" explanation="年级名称" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
             <name="BJMC" explanation="班级名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="CJZF" explanation="成绩总分" type="decimal(5,1)" null="F" p="F" identity="F" remark="" />
+            <name="CJZF" explanation="成绩总分" type="decimal(5, 1)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

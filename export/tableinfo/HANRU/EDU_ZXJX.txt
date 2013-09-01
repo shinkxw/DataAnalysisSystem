@@ -7,9 +7,9 @@ EDU_ZXJX_01_01_KC  课程数据类
   KCBM        课程别名                nvarchar(60)   非主
   KCJJ        课程简介                text           非主
   KCYQ        课程要求                text           非主
-  ZXS         总学时                  decimal(3)     非主
-  ZHXS        周学时                  decimal(2)     非主
-  ZXXS        自学学时                decimal(3)     非主
+  ZXS         总学时                  decimal(3, 0)  非主
+  ZHXS        周学时                  decimal(2, 0)  非主
+  ZXXS        自学学时                decimal(3, 0)  非主
   SKFSM       授课方式码              nvarchar(1)    非主     授课方式代码表
   JCBM        教材编码                text           非主
   CKSM        参考书目                text           非主
@@ -35,5 +35,5 @@ EDU_ZXJX_05_A02_KSKM  考试科目数据表
   KCMC        课程名称                nvarchar(60)   非主
   NJMC        年级名称                nvarchar(30)   非主
   BJMC        班级名称                nvarchar(20)   非主
-  CJZF        成绩总分                decimal(5,1)   非主
+  CJZF        成绩总分                decimal(5, 1)  非主
 

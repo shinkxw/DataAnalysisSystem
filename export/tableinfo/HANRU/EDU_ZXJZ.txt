@@ -61,11 +61,11 @@ EDU_ZXJZ_07_02_RKSJ  任课数据子类表
   RKKCH       任课课程号              nvarchar(10)   非主     课程数据类
   RKQSNY      任课起始年月            nvarchar(6)    非主
   RKZZNY      任课终止年月            nvarchar(6)    非主
-  RKZXS       任课总学时              decimal(3)     非主
+  RKZXS       任课总学时              decimal(3, 0)  非主
   RKXDM       任课学段码              nvarchar(1)    非主     任课学段代码表
   RKJSM       任课角色码              nvarchar(1)    非主     任课角色代码表
   SKBJ        授课班级                nvarchar(10)   非主     班级数据类表
-  SKRS        授课人数                decimal(4)     非主
+  SKRS        授课人数                decimal(4, 0)  非主
   ZKS         周课时                  int            非主
   SFLT        是否连堂                nvarchar(1)    非主     是否标志代码表
   NJID        年级号                  nvarchar(10)   非主     年级数据类表

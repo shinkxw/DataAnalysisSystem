@@ -150,9 +150,9 @@ CREATE TABLE [dbo].[EDU_ZXXS_02_06_ZXKSCJ](
 	[KSFSM]  nvarchar(1)  NULL,--考试方式码
 	[KSXZM]  nvarchar(2)  NULL,--考试性质码
 	[KSXSM]  nvarchar(1)  NULL,--考试形式码
-	[FSLKSCJ]  decimal(5,1)  NULL,--分数类考试成绩
+	[FSLKSCJ]  decimal(5, 1)  NULL,--分数类考试成绩
 	[DJLKSCJ]  nvarchar(1)  NULL,--等级类考试成绩
-	[KCCJ]  decimal(5,1)  NULL,--课程成绩
+	[KCCJ]  decimal(5, 1)  NULL,--课程成绩
 	[KCDJCJM]  nvarchar(1)  NULL,--课程等级成绩码
 	[RKJSGH]  nvarchar(20)  NULL,--任课教师工号
 	[CJLRRH]  nvarchar(20)  NULL,--成绩录入人号
