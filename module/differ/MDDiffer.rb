@@ -2,75 +2,50 @@
 # encoding: GBK
 #元数据比较器
 class MDDiffer
-  #自另一个元数据域更新元数据，不考虑命名空间的删除
-  def update_by(new_area)
-    new_area.each do |new_name_space|
-      old_name_space = find_name_space(new_name_space.name)
-      if old_name_space != nil
-        old_name_space.update_by(new_name_space)
-      else
-        add_name_space(new_name_space)
-        p "MDArea: 增加了新的命名空间:#{new_name_space.name}"
-        new_name_space.each do |table|
-          p "MDArea: 增加了新的表:#{table.name}"
-        end
-      end
-    end
+  attr_reader :diff#差异度对象
+  #初始化
+  def initialize
+    reset_diff
   end
-  #更新命名空间，不考虑表的删除
-  def update_by(new_name_space)
-    new_name_space.each do |new_table|
-      old_table = find_table(new_table.name)
-      if old_table
-        old_table.update_by(new_table)
-      else
-        add_table(new_table)
-        p "MDNameSpace: 增加了新的表:#{new_table.name}"
-      end
+  #比较两个元数据域
+  def compare_area(area1,area2)
+    reset_diff
+    tname_arr1 = area1.get_table_name_arr
+    tname_arr2 = area2.get_table_name_arr
+    t1_diff = (tname_arr1 - tname_arr2).map{|tn| area1.find_table(tn)}#a1独有表
+    t2_diff = (tname_arr2 - tname_arr1).map{|tn| area2.find_table(tn)}#a2独有表
+    @diff.add_table_diff(t1_diff,t2_diff)
+    (tname_arr1 & tname_arr2).each do |tn|
+      compare_table(area1.find_table(tn),area2.find_table(tn))
     end
+    @diff
   end
-  #更新表
-  def update_by(new_table)
-    field_name_arr = get_field_name_arr
-    new_table.each_field do |new_field|
-      old_field = find_field(new_field.name)
-      if old_field
-        old_field.update_by(new_field)
-        field_name_arr.delete(new_field.name)
-      else
-        add_field(new_field)
-        p "MDTable: 表#{@name}增加了新的字段:#{new_field.name}"
-      end
+  #比较两个元数据表
+  def compare_table(table1,table2)
+    @diff || reset_diff
+    fname_arr1 = table1.get_field_name_arr
+    fname_arr2 = table2.get_field_name_arr
+    f1_diff = (fname_arr1 - fname_arr2).map{|fn| table1.find_field(fn)}#t1独有字段
+    f2_diff = (fname_arr2 - fname_arr1).map{|fn| table2.find_field(fn)}#t2独有字段
+    @diff.add_field_diff(f1_diff,f2_diff)
+    (fname_arr1 & fname_arr2).each do |fn|
+      compare_field(table1.find_field(fn),table2.find_field(fn))
     end
-    field_name_arr.each do |field_name|
-      need_delete_field = find_field(field_name)
-      field_arr.delete(need_delete_field)
-      p "MDTable: 表#{@name}删除了字段:#{field_name}"
-    end
-    @explanation = new_table.explanation if new_table.explanation != ""
-    @remark = new_table.remark if new_table.remark != ""
-    @data_area = new_table.data_area#数据更新
+    @diff.add_pro_diff(table1,table2) if table1.explanation != table2.explanation
+    @diff.add_pro_diff(table1,table2) if table1.remark != table2.remark
+    @diff
   end
-  #更新字段
-  def update_by(new_field)
-    if @type != new_field.type
-      old_type = @type
-      @type = new_field.type
-      puts "MDField: 表#{@table.name}中字段#{@name}的类型从#{old_type}改为#{@type}。"
-    end
-    if @null != new_field.null
-      @null = new_field.null
-      puts "MDField: 表#{@table.name}中字段#{@name}被改为#{@null == "T" ? "可以为空" : "不可为空"}。"
-    end
-    if @p != new_field.p
-      @p = new_field.p
-      puts "MDField: 表#{@table.name}中字段#{@name}#{@p == "T" ? "成为主键" : "不再为主键"}。"
-    end
-    if @identity != new_field.identity
-      @identity = new_field.identity
-      puts "MDField: 表#{@table.name}中字段#{@name}#{@null == "T" ? "变为自增" : "不再自增"}。"
-    end
-    @explanation = new_field.explanation if new_field.explanation != ""
-    @remark = new_field.remark if new_field.remark != ""
+  #比较两个元数据字段
+  def compare_field(field1,field2)
+    @diff || reset_diff
+    @diff.add_pro_diff(field1,field2) if field1.type != field2.type
+    @diff.add_pro_diff(field1,field2) if field1.null != field2.null
+    @diff.add_pro_diff(field1,field2) if field1.p != field2.p
+    @diff.add_pro_diff(field1,field2) if field1.identity != field2.identity
+    @diff.add_pro_diff(field1,field2) if field1.explanation != field2.explanation
+    @diff.add_pro_diff(field1,field2) if field1.remark != field2.remark
+    @diff
   end
+  #重置差异度
+  def reset_diff;@diff = MDDiff.new end
 end

@@ -59,7 +59,7 @@ class ScriptLoader
       str_arr = file.readlines
       str_arr.each do |str|
         #if后只有=
-        puts "#{file_path} has problem: #{str}" if str =~ /^[^"]*?if[^=<>!]*?(=(?!=|~)(?!<>!)).*?$/
+        puts "#{file_path} 可能存在问题: #{str}" if str =~ /^[^"]*?if [^=<>!]*?(=(?!=|~)(?!<>!)).*?$/
       end
     end
   end
