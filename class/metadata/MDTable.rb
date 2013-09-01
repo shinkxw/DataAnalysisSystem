@@ -30,28 +30,6 @@ class MDTable
       p "MDTable: 表#{@name}中不存在主键#{key_name}"
     end
   end
-  #更新表
-  def update_by(new_table)
-    field_name_arr = get_field_name_arr
-    new_table.each_field do |new_field|
-      old_field = find_field(new_field.name)
-      if old_field
-        old_field.update_by(new_field)
-        field_name_arr.delete(new_field.name)
-      else
-        add_field(new_field)
-        p "MDTable: 表#{@name}增加了新的字段:#{new_field.name}"
-      end
-    end
-    field_name_arr.each do |field_name|
-      need_delete_field = find_field(field_name)
-      field_arr.delete(need_delete_field)
-      p "MDTable: 表#{@name}删除了字段:#{field_name}"
-    end
-    @explanation = new_table.explanation if new_table.explanation != ""
-    @remark = new_table.remark if new_table.remark != ""
-    @data_area = new_table.data_area#数据更新
-  end
   #判断表数据是否有效
   def is_valid?
     p "MDNameSpace: 表#{@name}没有字段" if get_field_size == 0

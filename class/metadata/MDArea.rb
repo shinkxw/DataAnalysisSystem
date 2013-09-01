@@ -56,21 +56,6 @@ class MDArea
       end
     end
   end
-  #自另一个元数据域更新元数据，不考虑命名空间的删除
-  def update_by(new_area)
-    new_area.each do |new_name_space|
-      old_name_space = find_name_space(new_name_space.name)
-      if old_name_space != nil
-        old_name_space.update_by(new_name_space)
-      else
-        add_name_space(new_name_space)
-        p "MDArea: 增加了新的命名空间:#{new_name_space.name}"
-        new_name_space.each do |table|
-          p "MDArea: 增加了新的表:#{table.name}"
-        end
-      end
-    end
-  end
   #为元数据增加表的关联信息
   def add_table_relation(table_relation_str_arr)
     @error_relation_str = ""

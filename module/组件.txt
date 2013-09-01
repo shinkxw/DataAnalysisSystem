@@ -14,6 +14,10 @@ builder    生成器      将元数据装换为一种格式的字符串
     TemplateBuilder    模板生成
     TestdataBuilder    测试数据脚本生成
 
+differ     比较器      用来比较两者并输出差异度
+    MDDiffer           元数据比较器
+    MDDiff             元数据比较器比较后所生成的差异度对象
+
 file       文件处理    文件读写相关
     DirManager         目录管理器
     FileLoader         文件读取器

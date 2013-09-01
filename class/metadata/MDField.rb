@@ -72,28 +72,6 @@ class MDField
     end
     result
   end
-  #更新字段
-  def update_by(new_field)
-    if @type != new_field.type
-      old_type = @type
-      @type = new_field.type
-      puts "MDField: 表#{@table.name}中字段#{@name}的类型从#{old_type}改为#{@type}。"
-    end
-    if @null != new_field.null
-      @null = new_field.null
-      puts "MDField: 表#{@table.name}中字段#{@name}被改为#{@null == "T" ? "可以为空" : "不可为空"}。"
-    end
-    if @p != new_field.p
-      @p = new_field.p
-      puts "MDField: 表#{@table.name}中字段#{@name}#{@p == "T" ? "成为主键" : "不再为主键"}。"
-    end
-    if @identity != new_field.identity
-      @identity = new_field.identity
-      puts "MDField: 表#{@table.name}中字段#{@name}#{@null == "T" ? "变为自增" : "不再自增"}。"
-    end
-    @explanation = new_field.explanation if new_field.explanation != ""
-    @remark = new_field.remark if new_field.remark != ""
-  end
   #判断字段数据是否有效
   def is_valid?
     puts "MDNameSpace: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == "T" && @p == "F"

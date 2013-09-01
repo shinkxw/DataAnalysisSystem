@@ -37,18 +37,6 @@ class MDNameSpace
       end
     end
   end
-  #更新命名空间，不考虑表的删除
-  def update_by(new_name_space)
-    new_name_space.each do |new_table|
-      old_table = find_table(new_table.name)
-      if old_table
-        old_table.update_by(new_table)
-      else
-        add_table(new_table)
-        p "MDNameSpace: 增加了新的表:#{new_table.name}"
-      end
-    end
-  end
   #判断命名空间数据是否有效
   def is_valid?
     each{|table| table.is_valid?}
