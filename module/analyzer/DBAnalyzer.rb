@@ -28,7 +28,7 @@ class DBAnalyzer
     table_exp = db.get_table_exp(table_name)
     table = MDTable.new(table_name,table_exp)
     analyze_field(table,db)
-    #analyze_data(table,db)
+    analyze_data(table,db)
     table
   end
   #分析指定表的字段并添加
@@ -51,7 +51,8 @@ class DBAnalyzer
   end
   #分析指定表的数据并添加
   def analyze_data(table,db)
-    table.add_data(MDData.new(hash))
+    data_arr = db.get_table_data(table.name)
+    data_arr.each{|data_hash| table.add_data(MDData.new(data_hash))}
   end
   #分析字段的类型相关信息
   def analyze_fieldtype(info)

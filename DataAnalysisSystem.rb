@@ -13,7 +13,8 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 #~ DBEntity.set_connector(DBConnector.new('(local)\sqlexpress'))
 #~ DBEntity.open('HanRuEdu') do |db|
-  #~ puts db.get_table_fields_info('EDU_OAXT_02_01_SWCL').keys
+  #~ p db.get_table_data('EDU_ELE_03_APPLL')
+  #~ p db.get_table_data('EDU_OAXT_02_01_SWCL')
 #~ end
 
 t = Time.now

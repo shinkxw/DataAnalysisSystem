@@ -75,7 +75,19 @@ class DBEntity
       alist = [result['objname'],result['value']].transpose
       Hash[*alist.flatten]
     else
-      Hash.new([''])
+      Hash.new('')
+    end
+  end
+  #获取指定表的数据
+  def get_table_data(table_name)
+    sql = "select * from #{table_name}"
+    result = query(sql)
+    if result[result.keys[0]] != nil
+      data_arr = []
+      result.keys.each{|key| data_arr << result[key].map{|v| [key,v]}}
+      data_arr.transpose.map{|arr| Hash[*arr.flatten]}
+    else
+      []
     end
   end
   #在查询结果中获得以主要键为索引的所需信息，key_arr第一个元素为主键
