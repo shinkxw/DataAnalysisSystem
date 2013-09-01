@@ -48,6 +48,14 @@ class MDField
   end
   #对类型进行格式化
   def format(type)
+    if /^decimal\((?<num>[^)]+?)\)$/ =~ type
+      if num.include?(',')
+        na = num.split(',')
+        type = "decimal(#{na[0].strip}, #{na[1].strip})"
+      else
+        type = "decimal(#{num}, 0)"
+      end
+    end
     type
   end
   #返回处理后的类型
