@@ -109,7 +109,7 @@ class DBEntity
     execute(sql)
   end
   #让数据库执行sql语句
-  def execute(sql);@conn.Execute(sql) end
+  def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end
   #请求查询并返回hash形式的查询结果
   def query(sql)
     recordset = WIN32OLE.new('ADODB.Recordset')

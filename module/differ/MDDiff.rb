@@ -21,7 +21,6 @@ class MDDiff
   def db_transform(db)
     @t1_diff_arr.each{|table| db.delete_table(table.name)}#删表
     @t2_diff_arr.each{|table| db.create_table(table)}#建表
-
     #删字段
     #加字段
     
