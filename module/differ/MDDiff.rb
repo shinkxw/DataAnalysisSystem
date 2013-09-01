@@ -21,8 +21,8 @@ class MDDiff
   def db_transform(db)
     @t1_diff_arr.each{|table| db.delete_table(table.name)}#É¾±í
     @t2_diff_arr.each{|table| db.create_table(table)}#½¨±í
-    #É¾×Ö¶Î
-    #¼Ó×Ö¶Î
+    @f1_diff_arr.each{|field| db.delete_field(field)}#É¾×Ö¶Î
+    @f2_diff_arr.each{|field| db.add_field(field)}#¼Ó×Ö¶Î
     
   end
   #ÏÔÊ¾²îÒì

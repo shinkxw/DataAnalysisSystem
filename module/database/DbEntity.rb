@@ -99,14 +99,22 @@ class DBEntity
     end
     result
   end
-  #删除指定表
-  def delete_table(table_name);execute("DROP TABLE #{table_name}") end
   #根据元数据建表
   def create_table(table)
     builder = SqlBuilder.new
     builder.add_table_script(table,sql = '')
     builder.add_table_explanation(table,sql)
     execute(sql)
+  end
+  #删除指定表
+  def delete_table(table_name);execute("DROP TABLE #{table_name}") end
+  #添加字段
+  def add_field(field)
+    
+  end
+  #删除字段
+  def delete_field(field)
+    execute("ALTER table #{field.table.name} DROP column #{field.name}")
   end
   #让数据库执行sql语句
   def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end
