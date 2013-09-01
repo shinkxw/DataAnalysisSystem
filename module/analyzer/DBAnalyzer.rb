@@ -25,6 +25,7 @@ class DBAnalyzer
   end
   #根据分析数据库中指定表并返回
   def analyze_table(table_name,db)
+    @log.push("正在自数据库读取表: #{table_name}")
     table_exp = db.get_table_exp(table_name)
     table = MDTable.new(table_name,table_exp)
     analyze_field(table,db)
@@ -63,7 +64,7 @@ class DBAnalyzer
     when 'decimal'
       prec = info['NUMERIC_PRECISION']
       scale = info['NUMERIC_SCALE']
-      "#{type}(#{prec}#{scale == 0 ? '' : ",#{scale}"})"
+      "#{type}(#{prec}, #{scale})"
     else
       puts "字段类型未识别#{type}"
       type

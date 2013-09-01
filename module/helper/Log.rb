@@ -18,6 +18,6 @@ class Log
   #放入日志
   def push(log)
     @log_arr.push(log)
-    p log
+    puts log
   end
 end

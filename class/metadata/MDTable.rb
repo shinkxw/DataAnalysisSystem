@@ -67,6 +67,8 @@ class MDTable
   def get_primary_key_name_arr
     @field_area.select{|field| field.p == "T"}.map{|field| field.name}
   end
+  #在有说明时返回说明，否则返回名字
+  def gname;@explanation != '' && @explanation != nil ? @explanation : @name end
   #获得字段数组
   def field_arr;@field_area.field_arr end
   #迭代字段

@@ -29,19 +29,13 @@ class MDDiffer
     (fname_arr1 & fname_arr2).each do |fn|
       compare_field(table1.find_field(fn),table2.find_field(fn))
     end
-    @diff.add_pro_diff(table1,table2) if table1.explanation != table2.explanation
-    @diff.add_pro_diff(table1,table2) if table1.remark != table2.remark
+    @diff.add_pro_diff(table1,table2)
     @diff
   end
   #比较两个元数据字段
   def compare_field(field1,field2)
     @diff || reset_diff
-    @diff.add_pro_diff(field1,field2) if field1.type != field2.type
-    @diff.add_pro_diff(field1,field2) if field1.null != field2.null
-    @diff.add_pro_diff(field1,field2) if field1.p != field2.p
-    @diff.add_pro_diff(field1,field2) if field1.identity != field2.identity
-    @diff.add_pro_diff(field1,field2) if field1.explanation != field2.explanation
-    @diff.add_pro_diff(field1,field2) if field1.remark != field2.remark
+    @diff.add_pro_diff(field1,field2)
     @diff
   end
   #重置差异度

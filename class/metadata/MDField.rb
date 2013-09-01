@@ -16,7 +16,7 @@ class MDField
   def initialize(table,name,type,null,p,explanation,remark,identity = "F",config = "")
     @table = table
     @name = name
-    @type = type
+    @type = format(type)
     @null = null
     @p = p
     @explanation = explanation
@@ -25,6 +25,8 @@ class MDField
     @config = config
     @relation = nil
   end
+  #在有说明时返回说明，否则返回名字
+  def gname;@explanation != '' && @explanation != nil ? @explanation : @name end
   #改变字段关联
   def change_relation(r_field)
     result = true
@@ -43,6 +45,10 @@ class MDField
       puts "MDField: can only relation MDField"
     end
     result
+  end
+  #对类型进行格式化
+  def format(type)
+    type
   end
   #返回处理后的类型
   def split_type
