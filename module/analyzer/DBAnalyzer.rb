@@ -34,13 +34,14 @@ class DBAnalyzer
   #分析指定表的字段并添加
   def analyze_field(table,db)
     key_arr = ['COLUMN_NAME','DATA_TYPE','IS_NULLABLE','CHARACTER_MAXIMUM_LENGTH']
+    key_arr += ['NUMERIC_PRECISION','NUMERIC_SCALE']
     result_hash = db.get_table_fields_info(table.name,key_arr)
     exp_hash = db.get_table_field_exp(table.name)
     pk_arr = db.get_table_pk_arr(table.name)
     idpk = db.get_table_idpk(table.name)
     result_hash.each do |k,v|
       name = k
-      type = v['DATA_TYPE']
+      type = analyze_fieldtype(v)
       null = v['IS_NULLABLE'] == 'YES' ? 'T' : 'F'
       p = pk_arr.include?(k) ? 'T' : 'F'
       explanation = exp_hash[k]
@@ -51,6 +52,31 @@ class DBAnalyzer
   #分析指定表的数据并添加
   def analyze_data(table,db)
     table.add_data(MDData.new(hash))
+  end
+  #分析字段的类型相关信息
+  def analyze_fieldtype(info)
+    type = info['DATA_TYPE']
+    case type
+    when 'int'
+      type
+    when 'nchar'
+      "#{type}(#{info['CHARACTER_MAXIMUM_LENGTH']})"
+    when 'nvarchar'
+      "#{type}(#{info['CHARACTER_MAXIMUM_LENGTH']})"
+    when 'decimal'
+      prec = info['NUMERIC_PRECISION']
+      scale = info['NUMERIC_SCALE']
+      "#{type}(#{prec}#{scale == 0 ? '' : ",#{scale}"})"
+    when 'text'
+      type
+    when 'datetime'
+      type
+    when 'money'
+      type
+    else
+      puts "字段类型未识别#{type}"
+      type
+    end
   end
 end
 
