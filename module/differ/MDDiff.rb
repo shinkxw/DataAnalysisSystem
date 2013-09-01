@@ -15,8 +15,24 @@ class MDDiff
     @f2_diff_arr = []
     @pro_diff_hash = []
   end
-  #
-  
+  #将数据库1转换为2
+  def db_transform(db)
+    @t1_diff_arr.each{|table| db.delete_table(table.name)}#删表
+    #建表
+    
+    #删字段
+    #加字段
+    
+  end
+  #显示差异
+  def show_diff()
+    puts '表级差异'
+    
+    puts '字段级差异'
+    
+    puts '属性级差异'
+    
+  end
   #添加表级差异
   def add_table_diff(table_arr1,table_arr2)
     @t1_diff_arr += table_arr1

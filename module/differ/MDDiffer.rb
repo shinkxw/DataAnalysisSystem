@@ -4,9 +4,7 @@
 class MDDiffer
   attr_reader :diff#差异度对象
   #初始化
-  def initialize
-    reset_diff
-  end
+  def initialize;reset_diff end
   #比较两个元数据域
   def compare_area(area1,area2)
     reset_diff
