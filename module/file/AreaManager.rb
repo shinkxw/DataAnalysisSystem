@@ -32,8 +32,8 @@ class AreaManager
       p "AreaManager: 该数据域未找到"
     end
   end
-  #将指定名称的元数据域加载为工作区并返回
-  def self.load_work_area(area_name)
+  #将指定名称的元数据域加载为元数据
+  def self.load_area(area_name)
     area = MDArea.new(area_name)
     file_hash = FolderLoader.new("#{@@data_path}/#{area_name}_area/").get_file_str_hash
     file_hash.each do |file_name,file_str|
@@ -44,8 +44,10 @@ class AreaManager
     end
     relation_str = file_hash["relation.txt"]
     area.add_table_relation(relation_str) if relation_str != nil
-    MDWork_Area.new(area)
+    area
   end
+  #将指定名称的元数据域加载为工作区并返回
+  def self.load_work_area(area_name);MDWork_Area.new(load_area(area_name)) end
   #将指定名称的元数据域加载为工作区并传给块
   def self.open(area_name)
     t = Time.now

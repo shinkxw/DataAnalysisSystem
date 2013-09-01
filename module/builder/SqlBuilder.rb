@@ -60,8 +60,8 @@ class SqlBuilder
     @sql_str
   end
   #生成指定命名空间的脚本语句
-  def add_name_space_script(name_space)
-    @sql_str << "--空间名：#{name_space.name}  生成器：SqlBuilder#{@builder_version}\n"
+  def add_name_space_script(name_space,sql_str = @sql_str)
+    sql_str << "--空间名：#{name_space.name}  生成器：SqlBuilder#{@builder_version}\n"
     delete_name_space(name_space) if @need_delete
     #根据各个表信息输出创建表及内容语句
     name_space.each do |table|
@@ -71,56 +71,56 @@ class SqlBuilder
     add_name_space_explanation(name_space)
   end
   #生成创建表的脚本语句
-  def add_table_script(table)
+  def add_table_script(table,sql_str = @sql_str)
     #输出中文注释
-    @sql_str << "--#{table.explanation}\n"
+    sql_str << "--#{table.explanation}\n"
     #输出建表预置文字
-    @sql_str << "IF NOT EXISTS (SELECT * FROM sys.objects WHERE "
-    @sql_str << "object_id = OBJECT_ID(N'[#{table.name}]') AND type in (N'U'))\n"
+    sql_str << "IF NOT EXISTS (SELECT * FROM sys.objects WHERE "
+    sql_str << "object_id = OBJECT_ID(N'[#{table.name}]') AND type in (N'U'))\n"
     #输出创建表语句
-    @sql_str << "BEGIN\nCREATE TABLE [dbo].[#{table.name}](\n"
+    sql_str << "BEGIN\nCREATE TABLE [dbo].[#{table.name}](\n"
     #输出创建字段语句
     table.field_area.each do |field|
-      @sql_str << "\t[#{field.name}]  #{field.type}"
+      sql_str << "\t[#{field.name}]  #{field.type}"
       if field.identity == "T"
-        @sql_str << "  identity"
+        sql_str << "  identity"
       else
-        @sql_str.concat(field.null == "F" ? "  NOT NULL" : "  NULL")
+        sql_str.concat(field.null == "F" ? "  NOT NULL" : "  NULL")
       end
-      @sql_str << ",--#{field.explanation}\n"
+      sql_str << ",--#{field.explanation}\n"
     end
     #输出创建主键与约束语句
-    @sql_str << "CONSTRAINT [PK_#{table.name}] PRIMARY KEY CLUSTERED\n(\n\t["
-    @sql_str << table.get_primary_key_name_arr.join("] ASC,\n\t[")
-    @sql_str << "] ASC\n)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]\n"
-    @sql_str << ") ON [PRIMARY]\nEND\nGO\n\n"
+    sql_str << "CONSTRAINT [PK_#{table.name}] PRIMARY KEY CLUSTERED\n(\n\t["
+    sql_str << table.get_primary_key_name_arr.join("] ASC,\n\t[")
+    sql_str << "] ASC\n)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]\n"
+    sql_str << ") ON [PRIMARY]\nEND\nGO\n\n"
   end
   #生成添加数据语句
-  def add_data(table)
+  def add_data(table,sql_str = @sql_str)
     #输出添加元素语句
-    @sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] ON\n" if table.field_area.has_identity?#存在自增字段
+    sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] ON\n" if table.field_area.has_identity?#存在自增字段
     table.data_area.each do |data|
-      @sql_str << "INSERT INTO [#{table.name}]([#{data.get_keys.join('] ,[')}]) "
-      @sql_str << "VALUES(#{data.map{|_,v| v =~ /^CAST\(/ ? v : "'#{v}'"}.join(', ')})\n"
+      sql_str << "INSERT INTO [#{table.name}]([#{data.get_keys.join('] ,[')}]) "
+      sql_str << "VALUES(#{data.map{|_,v| v =~ /^CAST\(/ ? v : "'#{v}'"}.join(', ')})\n"
     end
-    @sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] OFF\n" if table.field_area.has_identity?#存在自增字段
-    @sql_str << "\n"
+    sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] OFF\n" if table.field_area.has_identity?#存在自增字段
+    sql_str << "\n"
   end
   #生成整个命名空间表的注释语句
-  def add_name_space_explanation(name_space)
-    @sql_str << "--以下为添加注释语句\n"
-    name_space.each{|table| add_table_explanation(table)}
+  def add_name_space_explanation(name_space,sql_str = @sql_str)
+    sql_str << "--以下为添加注释语句\n"
+    name_space.each{|table| add_table_explanation(table,sql_str)}
   end
   #生成一个表的注释语句
-  def add_table_explanation(table)
+  def add_table_explanation(table,sql_str = @sql_str)
     if table.explanation != "" && table.explanation != nil
-      @sql_str << "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{table.explanation}' , "
-      @sql_str << "@level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'#{table.name}'\nGO\n"
+      sql_str << "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{table.explanation}' , "
+      sql_str << "@level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'#{table.name}'\nGO\n"
     end
     table.each_field do |field|
       if field.explanation != "" && table.explanation != nil
-        @sql_str << "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{field.explanation}' , @level0type=N'SCHEMA',@level0name=N'dbo', "
-        @sql_str << "@level1type=N'TABLE',@level1name=N'#{table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
+        sql_str << "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{field.explanation}' , @level0type=N'SCHEMA',@level0name=N'dbo', "
+        sql_str << "@level1type=N'TABLE',@level1name=N'#{table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
       end
     end
   end
@@ -133,11 +133,11 @@ class SqlBuilder
     name_space.each{|table| delete_table(table.name)}
   end
   #根据表名输出删除表语句
-  def delete_table(table_name)
-    @sql_str << "\nif exists (select 1 from  sysobjects where  "
-    @sql_str << "id = object_id('#{table_name}')\n"
-    @sql_str << "            and   type = 'U')\n"
-    @sql_str << "   drop table #{table_name}\n"
-    @sql_str << "go\n"
+  def delete_table(table_name,sql_str = @sql_str)
+    sql_str << "\nif exists (select 1 from  sysobjects where  "
+    sql_str << "id = object_id('#{table_name}')\n"
+    sql_str << "            and   type = 'U')\n"
+    sql_str << "   drop table #{table_name}\n"
+    sql_str << "go\n"
   end
 end

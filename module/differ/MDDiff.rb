@@ -13,25 +13,33 @@ class MDDiff
     @t2_diff_arr = []
     @f1_diff_arr = []
     @f2_diff_arr = []
-    @pro_diff_hash = []
+    @pro_diff_hash = {}
   end
   #将数据库1转换为2
   def db_transform(db)
     @t1_diff_arr.each{|table| db.delete_table(table.name)}#删表
-    #建表
-    
+    @t2_diff_arr.each{|table| db.create_table(table)}#建表
+
     #删字段
     #加字段
     
   end
   #显示差异
   def show_diff()
-    puts '表级差异'
-    
-    puts '字段级差异'
-    
-    puts '属性级差异'
-    
+    if @t1_diff_arr != [] || @t2_diff_arr != []
+      puts '表级差异:'
+      @t1_diff_arr.each{|table| puts '  ' * 3 << table.name}
+      @t2_diff_arr.each{|table| puts '  ' * 35 << table.name}
+    end
+    if @f1_diff_arr != [] || @f1_diff_arr != []
+      puts '字段级差异:'
+      @f1_diff_arr.each{|field| puts '  ' * 3 << field.table.name << '  ' << field.name}
+      @f2_diff_arr.each{|field| puts '  ' * 35 << field.table.name << '  ' << field.name}
+    end
+    if @pro_diff_hash.keys != []
+      puts '属性级差异:'
+      
+    end
   end
   #添加表级差异
   def add_table_diff(table_arr1,table_arr2)
@@ -44,7 +52,22 @@ class MDDiff
     @f2_diff_arr += field_arr2
   end
   #添加属性级差异,包括表属性及字段属性,放入的是两个对等的对象(表或字段)
-  def add_pro_diff(object1,object2)
-    pro_diff_hash[object1] = object2
+  def add_pro_diff(obj1,obj2)
+    @pro_diff_hash[obj1] = obj2 if get_pro_diff(obj1,obj2)
+  end
+  #获得两个对象间的差异
+  def get_pro_diff(obj1,obj2)
+    case obj1.class.to_s
+    when 'MDTable'
+      return true if obj1.explanation != obj2.explanation
+      return true if obj1.remark != obj2.remark
+    when 'MDField'
+      return true if obj1.type != obj2.type
+      return true if obj1.null != obj2.null
+      return true if obj1.p != obj2.p
+      return true if obj1.identity != obj2.identity
+      return true if obj1.explanation != obj2.explanation
+      return true if obj1.remark != obj2.remark
+    end
   end
 end
