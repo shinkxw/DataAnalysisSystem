@@ -17,7 +17,7 @@ class TestdataBuilder
   end
   #生成无关联表的测试数据添加脚本
   #config为hash表，键为表名，值为需生成数据条数
-  def build_simple_data(area, config)
+  def build_sd(area, config)
     @area = area
     @sql_str = ""
     config.each do |table_name,data_num|
