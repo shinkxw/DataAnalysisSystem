@@ -8,10 +8,9 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 AreaManager.open("HANRU") do |work_area|
   #work_area.export_all
   
-  DBEntity.set_connector(DBConnector.new('(local)'))
-  DBEntity.open('HanRuEdu') do |db|
+  DBEntity.open('HanRuEdu',DBConnector.new('(local)')) do |db|
     work_area.show_db_diff(db)
-    work_area.update_db(db)
+    #work_area.update_db(db)
   end
 end
 

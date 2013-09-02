@@ -8,7 +8,8 @@ class DBEntity
   #设置共用数据库连接器
   def self.set_connector(connector);@@connector = connector end
   #打开一个数据库实例并返回实体,如不输入数据库则只连接数据源
-  def self.open(database_name = nil)
+  def self.open(database_name = nil,connector = nil)
+    set_connector(connector) if connector
     if @@connector != nil
       conn = @@connector.open_database(database_name)
       if block_given?
