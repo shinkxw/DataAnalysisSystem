@@ -31,10 +31,7 @@ class DBEntity
   #查询数据源中的数据库名
   def get_database_name;query("select name from sys.databases")['name'] end
   #查询当前数据库所有表的名字
-  def get_table_name_arr
-    sql = "select name from sysobjects where xtype='U' and category=0"
-    query(sql)['name'] ||= []
-  end
+  def get_table_name_arr;query(Sql.all_table_name)['name'] ||= [] end
   #获得指定表的字段名数组
   def get_table_fields_name(table_name)
     sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.columns "
