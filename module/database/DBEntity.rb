@@ -61,17 +61,8 @@ class DBEntity
       Hash.new('')
     end
   end
-  #获取指定表的数据,大数据或nil数据影响注意！！
-  def get_table_data(table_name)
-    result = query(Sql.get_tdata(table_name))
-    if result[result.keys[0]]
-      data_arr = []
-      result.keys.each{|key| data_arr << result[key].map{|v| [key,v]}}
-      data_arr.transpose.map{|arr| Hash[*arr.flatten]}
-    else
-      []
-    end
-  end
+  #获取指定表的数据
+  def get_table_data(table_name);query(Sql.get_tdata(table_name)) end
   #根据元数据建表
   def create_table(table);execute(Sql.create_table(table)) end
   #删除指定表

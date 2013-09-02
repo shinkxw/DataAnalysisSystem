@@ -1,7 +1,22 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 #数据转换方法
-class ConversionMethod
+class DataConver
+  #获得转换方法
+  def self.get_proc(proc)
+    case proc.class.to_s
+    when 'String'
+      if public_methods.include?(proc.to_sym)
+        return public_method(proc.to_sym) 
+      else
+        puts "传入转换方法名有误：#{proc}"
+      end
+    when 'Proc'
+      return proc
+    else puts "传入转换方法有误：#{proc}"
+    end
+    Proc.new{|str| str}
+  end
   #正文转换
   def self.content(str)
     str.gsub(/'/, "''")
@@ -11,7 +26,6 @@ class ConversionMethod
     str.gsub!(/'/, "''")
     str.gsub(%r(<A href=\"../../upfile/)) {|s| '<A href="../../../upfile/' }
     str.gsub(%r(<A href=\"upfile/)) {|s| '<A href="../../../upfile/' }
-    
   end
   #datetime转换为字符串
   def self.datetime(t)

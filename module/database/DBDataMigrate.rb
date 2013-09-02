@@ -8,16 +8,16 @@ class DBDataMigrate
   #获得指定表的信息
   def get_table_info(main_table_name, join_config = nil)
     if join_config == nil
-      @data_hash = @db.query("select * from #{main_table_name}")
+      @data_hash = @db.get_table_data(main_table_name)
     elsif join_config.class.to_s == 'String'
       @data_hash = {}
       #为键添加表名
-      hash = @db.query("select * from #{main_table_name}")
+      hash = @db.get_table_data(main_table_name)
       hash.each{|k,v| @data_hash[main_table_name.split("_")[-1] + '_' + k] = v}
-      hash = @db.query("select * from #{join_config}")
+      hash = @db.get_table_data(join_config)
       hash.each{|k,v| @data_hash[join_config.split("_")[-1] + '_' + k] = v}
     else
-      @data_hash = @db.query(get_join_sql(main_table_name, join_config))
+      @data_hash = @db.query(Sql.get_join_sql(main_table_name, join_config, @db))
     end
   end
   #生成插入数据脚本
@@ -63,7 +63,7 @@ class DBDataMigrate
     config.each_key do |key|
       data_arr = []
       in_name = config[key][:fn]
-      proc = get_proc(config[key][:p])
+      proc = DataConver.get_proc(config[key][:p])
       if in_name != ''
         @data_hash[in_name].each{|data| data_arr << proc.call(data)}
       else
@@ -76,39 +76,5 @@ class DBDataMigrate
       out_hash[key] = data_arr
     end
     out_hash
-  end
-  #根据配置获得表连接查询sql语句
-  #第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash
-  def get_join_sql(mtname, jc)
-    select_sql = "SELECT "
-    from_sql = "\nFROM "
-    fns = @db.get_table_fields_name(mtname)
-    msn = mtname.split("_")[-1]
-    select_sql << fns.collect{|fn| "#{msn}.#{fn} as #{msn}_#{fn}"}.join("\n,")
-    from_sql << "dbo.#{mtname} AS #{msn}"
-    jc.each_key do |tname|
-      fns = @db.get_table_fields_name(tname)
-      sn = tname.split("_")[-1]
-      fns.each{|fn| select_sql << "\n,#{sn}.[#{fn}] as #{sn}_#{fn}"}
-      from_sql << " LEFT OUTER JOIN\ndbo.#{tname} AS #{sn} ON "
-      j_config = jc[tname]
-      from_sql << j_config.map{|k,v| "#{msn}.#{k} = #{sn}.#{v}"}.join(" AND ")
-    end
-    select_sql << from_sql
-  end
-  #获得转换方法
-  def get_proc(proc)
-    case proc.class.to_s
-    when 'String'
-      if ConversionMethod.public_methods.include?(proc.to_sym)
-        return ConversionMethod.public_method(proc.to_sym) 
-      else
-        puts "传入转换方法名有误：#{proc}"
-      end
-    when 'Proc'
-      return proc
-    else puts "传入转换方法有误：#{proc}"
-    end
-    Proc.new{|str| str}
   end
 end

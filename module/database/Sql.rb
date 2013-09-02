@@ -47,4 +47,23 @@ class Sql
   def self.delete_field(field)
     "ALTER table #{field.table.name} DROP column #{field.name}"
   end
+  #根据配置获得表连接查询sql语句
+  #第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash, 第三个元素为数据库实体
+  def self.get_join_sql(mtname, jc, db)
+    select_sql = "SELECT "
+    from_sql = "\nFROM "
+    fns = db.get_table_fname(mtname)
+    msn = mtname.split("_")[-1]
+    select_sql << fns.collect{|fn| "#{msn}.#{fn} as #{msn}_#{fn}"}.join("\n,")
+    from_sql << "dbo.#{mtname} AS #{msn}"
+    jc.each_key do |tname|
+      fns = db.get_table_fname(tname)
+      sn = tname.split("_")[-1]
+      fns.each{|fn| select_sql << "\n,#{sn}.[#{fn}] as #{sn}_#{fn}"}
+      from_sql << " LEFT OUTER JOIN\ndbo.#{tname} AS #{sn} ON "
+      j_config = jc[tname]
+      from_sql << j_config.map{|k,v| "#{msn}.#{k} = #{sn}.#{v}"}.join(" AND ")
+    end
+    select_sql << from_sql
+  end
 end
