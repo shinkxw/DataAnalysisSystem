@@ -221,6 +221,15 @@
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   SSKSID         EDU_ZXJX_05_A01_KS       ID
   JSRKID         EDU_ZXJZ_07_02_RKSJ      ID
+<EDU_ZXJX_06_A01_MPJL
+  SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
+  XNID           EDU_SYS_01_XN            ID
+  XQID           EDU_ELE_01_XQ            ID
+  NJID           EDU_ZXXX_02_01_NJ        NJ
+  BJID           EDU_ZXXX_03_01_BJ        BH
+  MPJS           EDU_ZXJZ_01_01_JZGJBSJ   ID
+  MPKC           EDU_ZXJX_01_01_KC        KCH
+  MPXS           EDU_ZXXS_01_01_XSXX      ID
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL        SCHOOLID
   XBM            EDU_GB_RDXB              DM
