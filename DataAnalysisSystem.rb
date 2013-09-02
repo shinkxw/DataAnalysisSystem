@@ -6,11 +6,11 @@ $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 AreaManager.open("HANRU") do |work_area|
-  work_area.export_all
+  #work_area.export_all
   
-  #~ DBEntity.open('HanRuEdu',DBConnector.new('(local)')) do |db|
-    #~ work_area.show_db_diff(db)
-    #~ #work_area.update_db(db)
-  #~ end
+  DBEntity.open('HanRuEdu',DBConnector.new('(local)\sqlexpress')) do |db|
+    work_area.show_db_diff(db)
+    #work_area.update_db(db)
+  end
 end
 
