@@ -71,6 +71,7 @@ class DBAnalyzer
       prec = info['NUMERIC_PRECISION']
       scale = info['NUMERIC_SCALE']
       "#{type}(#{prec}, #{scale})"
+    when 'bit','float'; type
     else
       puts "字段类型未识别#{type}"
       type

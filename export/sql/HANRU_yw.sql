@@ -2640,6 +2640,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_06_A01_MPJL](
 	[MPSJ]  datetime  NOT NULL,--面批时间
 	[RRSJ]  datetime  NOT NULL,--录入时间
 	[BZ]  text  NULL,--备注
+	[JSRKID]  int  NOT NULL,--教师任课编号
 CONSTRAINT [PK_EDU_ZXJX_06_A01_MPJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -2748,6 +2749,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录入时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_06_A01_MPJL', @level2type=N'COLUMN',@level2name=N'RRSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_06_A01_MPJL', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师任课编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_06_A01_MPJL', @level2type=N'COLUMN',@level2name=N'JSRKID'
 GO
 --空间名：EDU_ZXJZ  生成器：SqlBuilder0.1
 

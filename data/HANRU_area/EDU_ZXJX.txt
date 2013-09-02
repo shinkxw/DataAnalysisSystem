@@ -60,6 +60,7 @@
             <name="MPSJ" explanation="面批时间" type="datetime" null="F" p="F" identity="F" remark="" />
             <name="RRSJ" explanation="录入时间" type="datetime" null="F" p="F" identity="F" remark="" />
             <name="BZ" explanation="备注" type="text" null="T" p="F" identity="F" remark="" />
+            <name="JSRKID" explanation="教师任课编号" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
 </namespace>

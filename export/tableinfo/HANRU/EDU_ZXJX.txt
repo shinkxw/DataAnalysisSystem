@@ -51,4 +51,5 @@ EDU_ZXJX_06_A01_MPJL  面批记录表
   MPSJ        面批时间                datetime       非主
   RRSJ        录入时间                datetime       非主
   BZ          备注                    text           非主
+  JSRKID      教师任课编号            int            非主
 

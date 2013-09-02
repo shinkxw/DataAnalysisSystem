@@ -79,7 +79,7 @@ class DBEntity
       Hash.new('')
     end
   end
-  #获取指定表的数据
+  #获取指定表的数据,大数据或nil数据影响注意！！
   def get_table_data(table_name)
     sql = "select * from #{table_name}"
     result = query(sql)

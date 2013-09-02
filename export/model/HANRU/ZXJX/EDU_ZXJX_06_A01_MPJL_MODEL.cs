@@ -86,6 +86,11 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教师任课编号")]
+            public Int32 JSRKID { get; set; }
+
+
         }
     }
 }
