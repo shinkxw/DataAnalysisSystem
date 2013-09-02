@@ -9,9 +9,9 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXJX_06_A01_MPJL()
         {
+            MPKC = "";
             NJID = "";
             BJID = "";
-            MPKC = "";
         }
         public class EDU_ZXJX_06_A01_MPJL_metadata
         {
@@ -23,6 +23,23 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校名")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "面批教师")]
+            public Int32 MPJS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "面批课程")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String MPKC { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "面批学生")]
+            public Int32 MPXS { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -47,23 +64,6 @@ namespace HanRuEdu.LDAL
             [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BJID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "面批教师")]
-            public Int32 MPJS { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "面批课程")]
-            [StringLength(10)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String MPKC { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "面批学生")]
-            public Int32 MPXS { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

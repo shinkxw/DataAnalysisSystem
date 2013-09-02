@@ -40,13 +40,13 @@ EDU_ZXJX_05_A02_KSKM  考试科目数据表
 EDU_ZXJX_06_A01_MPJL  面批记录表
   ID          编号                    int            主键
   SCHOOLID    学校名                  int            非主     学校配置表
+  MPJS        面批教师                int            非主     教职工基本数据子类表
+  MPKC        面批课程                nvarchar(10)   非主     课程数据类
+  MPXS        面批学生                int            非主     学生基本数据子类表
   XNID        学年                    int            非主     学年表
   XQID        学期                    int            非主     学期数据表
   NJID        年级                    nvarchar(10)   非主     年级数据类表
   BJID        班级                    nvarchar(10)   非主     班级数据类表
-  MPJS        面批教师                int            非主     教职工基本数据子类表
-  MPKC        面批课程                nvarchar(10)   非主     课程数据类
-  MPXS        面批学生                int            非主     学生基本数据子类表
   MPJG        面批结果                int            非主
   MPSJ        面批时间                datetime       非主
   RRSJ        录入时间                datetime       非主

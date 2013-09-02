@@ -25,11 +25,11 @@ class DBAnalyzer
   end
   #根据分析数据库中指定表并返回
   def analyze_table(table_name,db)
-    @log.push("正在自数据库读取表: #{table_name}")
+    @log.push("正在读取: #{table_name}")
     table_exp = db.get_table_exp(table_name)
     table = MDTable.new(table_name,table_exp)
     analyze_field(table,db)
-    analyze_data(table,db)
+    #analyze_data(table,db)
     table
   end
   #分析指定表的字段并添加
