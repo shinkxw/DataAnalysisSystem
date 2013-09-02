@@ -105,6 +105,7 @@ CREATE TABLE [dbo].[EDU_ZXXX_03_01_BJ](
 	[BYRQ]  nvarchar(8)  NULL,--毕业日期
 	[SFSSMZSYJXB]  nvarchar(1)  NOT NULL,--是否少数民族双语教学班
 	[SYJXMSM]  nvarchar(1)  NOT NULL,--双语教学模式码
+	[BZRID]  int  NOT NULL,--班主任ID
 CONSTRAINT [PK_EDU_ZXXX_03_01_BJ] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -262,6 +263,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否少数民族双语教学班' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_01_BJ', @level2type=N'COLUMN',@level2name=N'SFSSMZSYJXB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'双语教学模式码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_01_BJ', @level2type=N'COLUMN',@level2name=N'SYJXMSM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班主任ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_01_BJ', @level2type=N'COLUMN',@level2name=N'BZRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'机构数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_04_01_JG'
 GO

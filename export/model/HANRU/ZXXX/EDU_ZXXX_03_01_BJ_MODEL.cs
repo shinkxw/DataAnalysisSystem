@@ -102,6 +102,11 @@ namespace HanRuEdu.LDAL
             public String SYJXMSM { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "°àÖ÷ÈÎ")]
+            public Int32 BZRID { get; set; }
+
+
         }
     }
 }

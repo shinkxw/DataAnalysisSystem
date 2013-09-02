@@ -274,6 +274,7 @@ SELECT a.[ID]--考试成绩表
       ,n.SYJXMSM as n_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,nd.MC as n_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,nd.SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,n.BZRID as n_BJ_BZRID--班级数据类表 班主任ID
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期

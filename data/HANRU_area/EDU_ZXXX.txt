@@ -62,6 +62,7 @@
             <name="BYRQ" explanation="毕业日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="如：20060412表示2006年4月12日" />
             <name="SFSSMZSYJXB" explanation="是否少数民族双语教学班" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
             <name="SYJXMSM" explanation="双语教学模式码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SSMZSYJXMS少数民族双语教学模式代码 " />
+            <name="BZRID" explanation="班主任ID" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_04_01_JG" explanation="机构数据类表">

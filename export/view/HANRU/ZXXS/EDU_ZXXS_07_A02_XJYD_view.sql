@@ -164,6 +164,7 @@ SELECT a.[ID]--学籍异动表编号
       ,g.SYJXMSM as g_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,gd.MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,gd.SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
@@ -183,6 +184,7 @@ SELECT a.[ID]--学籍异动表编号
       ,i.SYJXMSM as i_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
 

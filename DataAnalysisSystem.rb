@@ -14,7 +14,3 @@ AreaManager.open("HANRU") do |work_area|
   #~ end
 end
 
-#~ AreaManager.create_area_from_db('baihua_db','(local)','baihua')
-
-
-

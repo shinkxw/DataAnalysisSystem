@@ -190,6 +190,7 @@ SELECT a.[ID]--编号
       ,i.SYJXMSM as i_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
 
 FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.MPJS = c.ID /*面批教师*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

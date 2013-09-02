@@ -79,6 +79,7 @@ SELECT a.[ID]--编号
       ,p.SYJXMSM as p_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,pd.MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,pd.SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,p.BZRID as p_BJ_BZRID--班级数据类表 班主任ID
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称

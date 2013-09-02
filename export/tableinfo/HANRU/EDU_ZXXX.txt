@@ -55,6 +55,7 @@ EDU_ZXXX_03_01_BJ  班级数据类表
   BYRQ        毕业日期                nvarchar(8)    非主
   SFSSMZSYJXB 是否少数民族双语教学班  nvarchar(1)    非主     是否标志代码表
   SYJXMSM     双语教学模式码          nvarchar(1)    非主     少数民族双语教学模式代码表
+  BZRID       班主任ID              int            非主     教职工基本数据子类表
 
 EDU_ZXXX_04_01_JG  机构数据类表
   SCHOOLID    学校名                  int            主键     学校配置表

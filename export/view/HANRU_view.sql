@@ -279,6 +279,70 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_A01
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_04_A01_JGGW_DISP
 go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_VIP_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_VIP_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPYS_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_TPXT_TPYS_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_TPXT_TPXX_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPTM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_TPXT_TPTM_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPSZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_TPXT_TPSZ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_TPXT_TPJL_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_YQLJLX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_YQLJLX_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_YQLJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_YQLJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZYS_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_WZYS_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZWZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_WZWZ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZPJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_WZPJ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZPZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_WZPZ_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZLM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_WZLM_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZGG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_WZGG_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_FWLL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_FWLL_DISP
+go
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_FBQX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_MHXT_FBQX_DISP
+go
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP
@@ -2139,6 +2203,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,e.SYJXMSM as e_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,ed.MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,ed.SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -2385,6 +2450,7 @@ SELECT a.[ID]--值周打分单表ID
       ,e.SYJXMSM as e_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,ed.MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,ed.SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--值周打分细则表 学校ID
       ,f.SSDLID as f_ZZDFXZ_SSDLID--值周打分细则表 所属大类ID
       ,f.XZNR as f_ZZDFXZ_XZNR--值周打分细则表 细则内容
@@ -2770,6 +2836,7 @@ SELECT a.[ID]--编号
       ,i.SYJXMSM as i_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
 
 FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.MPJS = c.ID /*面批教师*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -3144,6 +3211,7 @@ SELECT a.[ID]--编号
       ,g.SYJXMSM as g_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,gd.MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,gd.SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
       ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称
@@ -3273,6 +3341,7 @@ SELECT a.[ID]--编号
       ,p.SYJXMSM as p_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,pd.MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,pd.SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,p.BZRID as p_BJ_BZRID--班级数据类表 班主任ID
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称
@@ -3801,6 +3870,7 @@ SELECT a.[ID]--考试成绩表
       ,n.SYJXMSM as n_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,nd.MC as n_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,nd.SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,n.BZRID as n_BJ_BZRID--班级数据类表 班主任ID
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期
@@ -4054,6 +4124,7 @@ SELECT a.[ID]--学籍异动表编号
       ,g.SYJXMSM as g_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,gd.MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,gd.SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
@@ -4073,6 +4144,7 @@ SELECT a.[ID]--学籍异动表编号
       ,i.SYJXMSM as i_BJ_SYJXMSM--班级数据类表 双语教学模式码
       ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
 
@@ -4218,18 +4290,101 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[BYRQ]--毕业日期
       ,a.[SFSSMZSYJXB]--是否少数民族双语教学班
       ,a.[SYJXMSM]--双语教学模式码
+      ,a.[BZRID]--班主任ID
       ,c.SCHOOLID as c_NJ_SCHOOLID--年级数据类表 学校名
       ,c.NJMC as c_NJ_NJMC--年级数据类表 年级名称
       ,d.MC as d_ZXXBJLX_MC--中小学班级类型代码表 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.MC as f_SSMZSYJXMS_MC--少数民族双语教学模式代码表 名称
       ,f.SM as f_SSMZSYJXMS_SM--少数民族双语教学模式代码表 说明
+      ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,g.YWXM as g_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,gb.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,g.CSDM as g_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
+      ,gc.MC as g_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,ge.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,ge.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,ge.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,gf.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,g.HYZKM as g_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
+      ,gg.MC as g_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,gh.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,gh.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,gi.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,gi.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,gj.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,gj.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,gk.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,gl.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,gl.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片
+      ,g.SFZJYXQ as g_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
+      ,g.JGH as g_JZGJBSJ_JGH--教职工基本数据子类表 机构号
+      ,g.JTZZ as g_JZGJBSJ_JTZZ--教职工基本数据子类表 家庭住址
+      ,g.XZZ as g_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
+      ,g.HKSZD as g_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
+      ,g.HKXZM as g_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
+      ,gm.MC as g_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,g.XLM as g_JZGJBSJ_XLM--教职工基本数据子类表 学历码
+      ,gn.MC as g_JZGJBSJ_XLM_MC--学历代码 名称
+      ,g.GZNY as g_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
+      ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,go.MC as g_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,g.DABH as g_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
+      ,g.DAWB as g_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
+      ,g.TXDZ as g_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,g.LXDH as g_JZGJBSJ_LXDH--教职工基本数据子类表 联系电话
+      ,g.YZBM as g_JZGJBSJ_YZBM--教职工基本数据子类表 邮政编码
+      ,g.DZXX as g_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,g.ZYDZ as g_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
+      ,g.TC as g_JZGJBSJ_TC--教职工基本数据子类表 特长
+      ,g.GWZYM as g_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
+      ,gp.MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
+      ,gq.MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
 
 FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS d ON a.BJLXM = d.DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFSSMZSYJXB = e.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS f ON a.SYJXMSM = f.DM /*双语教学模式码*/
+      dbo.EDU_JY_SSMZSYJXMS AS f ON a.SYJXMSM = f.DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS g ON a.BZRID = g.ID /*班主任ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS gb ON g.XBM = gb.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS gc ON g.CSDM = gc.DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS ge ON g.GJDQM = ge.DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS gf ON g.SFZJLXM = gf.DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS gg ON g.HYZKM = gg.DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS gh ON g.GATQWM = gh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS gi ON g.ZZMMM = gi.DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS gj ON g.JKZKM = gj.DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS gk ON g.XYZJM = gk.DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS gl ON g.XXM = gl.DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS gm ON g.HKXZM = gm.DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS gn ON g.XLM = gn.DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS gp ON g.GWZYM = gp.DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS gq ON g.ZYRKXD = gq.DM /*主要任课学段*/
 GO
 
 --机构数据类表
@@ -4268,6 +4423,447 @@ SELECT a.[ID]--岗位表ID
 
 FROM dbo.EDU_ZXXX_04_A01_JGGW AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--网站会员
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_VIP_DISP]
+AS
+SELECT a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[LOGINNAME]--用户名
+      ,a.[LOGINPWD]--密码
+      ,a.[REALNAME]--姓名
+      ,a.[EMAIL]--电子邮箱
+      ,a.[MOBILE]--联系电话
+      ,a.[QQ]--QQ号码
+      ,a.[AUDITSTATU]--审核状态
+      ,a.[AUDITOR]--审核人ID
+      ,a.[AUDITORNAME]--审核人
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+
+FROM dbo.EDU_ZYZX_VIP AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--投票样式库
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_TPXT_TPYS_DISP]
+AS
+SELECT a.[ID]--样式ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[NAME]--样式名
+      ,a.[SHOWIMG]--效果图
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+
+FROM dbo.EDU_ZYZX_TPXT_TPYS AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--投票题目选项
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_TPXT_TPXX_DISP]
+AS
+SELECT a.[ID]--投票题目选项ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[TPID]--投票
+      ,a.[TMID]--投票题目
+      ,a.[TITLE]--标题
+      ,a.[SUMTP]--已选人数
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
+      ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
+      ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
+      ,d.CONTENT as d_TPSZ_CONTENT--投票设置 内容
+      ,d.SHOWSTYLEID as d_TPSZ_SHOWSTYLEID--投票设置 显示方式
+      ,d.CSSID as d_TPSZ_CSSID--投票设置 显示样式
+      ,d.LOGINNAMELIST as d_TPSZ_LOGINNAMELIST--投票设置 投票人
+      ,d.STARTSTATU as d_TPSZ_STARTSTATU--投票设置 是否开启
+      ,e.SCHOOLID as e_TPTM_SCHOOLID--投票题目 学校名
+      ,e.WEBID as e_TPTM_WEBID--投票题目 网站ID
+      ,e.TPID as e_TPTM_TPID--投票题目 投票
+      ,e.TYPEID as e_TPTM_TYPEID--投票题目 投票形式
+      ,e.TITLE as e_TPTM_TITLE--投票题目 标题
+      ,e.CONTENT as e_TPTM_CONTENT--投票题目 内容
+
+FROM dbo.EDU_ZYZX_TPXT_TPXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_TPXT_TPSZ AS d ON a.TPID = d.ID /*投票*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_TPXT_TPTM AS e ON a.TMID = e.ID /*投票题目*/ AND a.SCHOOLID = e.SCHOOLID /*学校名*/ AND a.WEBID = e.WEBID /*网站ID*/
+GO
+
+--投票题目
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_TPXT_TPTM_DISP]
+AS
+SELECT a.[ID]--投票题目ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[TPID]--投票
+      ,a.[TYPEID]--投票形式
+      ,a.[TITLE]--标题
+      ,a.[CONTENT]--内容
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
+      ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
+      ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
+      ,d.CONTENT as d_TPSZ_CONTENT--投票设置 内容
+      ,d.SHOWSTYLEID as d_TPSZ_SHOWSTYLEID--投票设置 显示方式
+      ,d.CSSID as d_TPSZ_CSSID--投票设置 显示样式
+      ,d.LOGINNAMELIST as d_TPSZ_LOGINNAMELIST--投票设置 投票人
+      ,d.STARTSTATU as d_TPSZ_STARTSTATU--投票设置 是否开启
+
+FROM dbo.EDU_ZYZX_TPXT_TPTM AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_TPXT_TPSZ AS d ON a.TPID = d.ID /*投票*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--投票设置
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_TPXT_TPSZ_DISP]
+AS
+SELECT a.[ID]--投票设置ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[TITLE]--标题
+      ,a.[CONTENT]--内容
+      ,a.[SHOWSTYLEID]--显示方式
+      ,a.[CSSID]--显示样式
+      ,a.[LOGINNAMELIST]--投票人
+      ,a.[STARTSTATU]--是否开启
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_TPYS_SCHOOLID--投票样式库 学校名
+      ,d.WEBID as d_TPYS_WEBID--投票样式库 网站ID
+      ,d.NAME as d_TPYS_NAME--投票样式库 样式名
+      ,d.SHOWIMG as d_TPYS_SHOWIMG--投票样式库 效果图
+
+FROM dbo.EDU_ZYZX_TPXT_TPSZ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_TPXT_TPYS AS d ON a.CSSID = d.ID /*显示样式*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--投票记录
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_TPXT_TPJL_DISP]
+AS
+SELECT a.[ID]--投票记录ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[TPID]--投票
+      ,a.[TPIP]--投票人
+      ,a.[TPTIME]--投票时间
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
+      ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
+      ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
+      ,d.CONTENT as d_TPSZ_CONTENT--投票设置 内容
+      ,d.SHOWSTYLEID as d_TPSZ_SHOWSTYLEID--投票设置 显示方式
+      ,d.CSSID as d_TPSZ_CSSID--投票设置 显示样式
+      ,d.LOGINNAMELIST as d_TPSZ_LOGINNAMELIST--投票设置 投票人
+      ,d.STARTSTATU as d_TPSZ_STARTSTATU--投票设置 是否开启
+
+FROM dbo.EDU_ZYZX_TPXT_TPJL AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_TPXT_TPSZ AS d ON a.TPID = d.ID /*投票*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--友情链接类型
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_YQLJLX_DISP]
+AS
+SELECT a.[ID]--友情链接类型ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[NAME]--类型名
+      ,a.[SHOWSTYLE]--显示方式
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+
+FROM dbo.EDU_ZYZX_MHXT_YQLJLX AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--友情链接
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_YQLJ_DISP]
+AS
+SELECT a.[ID]--友情链接ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[TITLE]--标题
+      ,a.[TYPEID]--类型
+      ,a.[IMAGEURL]--图片
+      ,a.[URL]--链接
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_YQLJLX_SCHOOLID--友情链接类型 学校名
+      ,d.WEBID as d_YQLJLX_WEBID--友情链接类型 网站ID
+      ,d.NAME as d_YQLJLX_NAME--友情链接类型 类型名
+      ,d.SHOWSTYLE as d_YQLJLX_SHOWSTYLE--友情链接类型 显示方式
+
+FROM dbo.EDU_ZYZX_MHXT_YQLJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_YQLJLX AS d ON a.TYPEID = d.ID /*类型*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--样式库
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_WZYS_DISP]
+AS
+SELECT a.[ID]--样式库ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[NAME]--样式名
+      ,a.[SHOWIMG]--效果图
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+
+FROM dbo.EDU_ZYZX_MHXT_WZYS AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--网站文章
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_WZWZ_DISP]
+AS
+SELECT a.[ID]--网站文章ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[TYPENAME]--类型名称
+      ,a.[LMID]--栏目
+      ,a.[TITLE]--标题
+      ,a.[PUBLISHERNAME]--发布人
+      ,a.[AUTHOR]--作者
+      ,a.[AUTHORDEPART]--作者部门
+      ,a.[PUBLISHDATE]--发布时间
+      ,a.[CONTENT]--内容
+      ,a.[URL]--链接
+      ,a.[IMAGEURL]--图片
+      ,a.[ATTACHMENTNAME]--附件名
+      ,a.[ATTACHMENT]--附件
+      ,a.[CHICKNUB]--点击量
+      ,a.[AUDITSTATU]--审核状态
+      ,a.[AUDITOR]--审核人ID
+      ,a.[AUDITORNAME]--审核人
+      ,a.[AUDITTIME]--审核时间
+      ,a.[REMARK]--备注
+      ,a.[SUMMARY]--摘要
+      ,a.[DISPLAYTYPE]--内外网
+      ,a.[OPENFLAG]--开启状态
+      ,a.[LLQX]--浏览权限
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
+      ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
+      ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
+      ,d.NAME as d_WZLM_NAME--网站栏目（导航） 栏目名称
+      ,d.URL as d_WZLM_URL--网站栏目（导航） 栏目链接
+      ,d.IMAGEURL as d_WZLM_IMAGEURL--网站栏目（导航） 图片链接
+      ,d.DEPTH as d_WZLM_DEPTH--网站栏目（导航） 层级
+      ,d.PID as d_WZLM_PID--网站栏目（导航） 父目录
+      ,d.LISTSHOWSTYLE as d_WZLM_LISTSHOWSTYLE--网站栏目（导航） 列表显示型式
+      ,d.ORDERTYPE as d_WZLM_ORDERTYPE--网站栏目（导航） 排序方式
+      ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
+      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
+      ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
+
+FROM dbo.EDU_ZYZX_MHXT_WZWZ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZLM AS d ON a.LMID = d.ID /*栏目*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--文章评价表
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_WZPJ_DISP]
+AS
+SELECT a.[ID]--评价ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[WEBID]--网站ID
+      ,a.[WZID]--网站文章ID
+      ,a.[PJR]--评价人
+      ,a.[YJDZ]--邮件地址
+      ,a.[PJSJ]--评价时间
+      ,a.[PJNR]--评价内容
+      ,a.[PJZT]--评价状态
+      ,a.[SHR]--审核人
+      ,a.[HF]--回复
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_WZWZ_SCHOOLID--网站文章 学校名
+      ,d.WEBID as d_WZWZ_WEBID--网站文章 网站ID
+      ,d.TYPENAME as d_WZWZ_TYPENAME--网站文章 类型名称
+      ,d.LMID as d_WZWZ_LMID--网站文章 栏目
+      ,d.TITLE as d_WZWZ_TITLE--网站文章 标题
+      ,d.PUBLISHERNAME as d_WZWZ_PUBLISHERNAME--网站文章 发布人
+      ,d.AUTHOR as d_WZWZ_AUTHOR--网站文章 作者
+      ,d.AUTHORDEPART as d_WZWZ_AUTHORDEPART--网站文章 作者部门
+      ,d.PUBLISHDATE as d_WZWZ_PUBLISHDATE--网站文章 发布时间
+      ,d.CONTENT as d_WZWZ_CONTENT--网站文章 内容
+      ,d.URL as d_WZWZ_URL--网站文章 链接
+      ,d.IMAGEURL as d_WZWZ_IMAGEURL--网站文章 图片
+      ,d.ATTACHMENTNAME as d_WZWZ_ATTACHMENTNAME--网站文章 附件名
+      ,d.ATTACHMENT as d_WZWZ_ATTACHMENT--网站文章 附件
+      ,d.CHICKNUB as d_WZWZ_CHICKNUB--网站文章 点击量
+      ,d.AUDITSTATU as d_WZWZ_AUDITSTATU--网站文章 审核状态
+      ,d.AUDITOR as d_WZWZ_AUDITOR--网站文章 审核人ID
+      ,d.AUDITORNAME as d_WZWZ_AUDITORNAME--网站文章 审核人
+      ,d.AUDITTIME as d_WZWZ_AUDITTIME--网站文章 审核时间
+      ,d.REMARK as d_WZWZ_REMARK--网站文章 备注
+      ,d.SUMMARY as d_WZWZ_SUMMARY--网站文章 摘要
+      ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 内外网
+      ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 开启状态
+      ,d.LLQX as d_WZWZ_LLQX--网站文章 浏览权限
+
+FROM dbo.EDU_ZYZX_MHXT_WZPJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZWZ AS d ON a.WZID = d.ID /*网站文章ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--网站配置
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_WZPZ_DISP]
+AS
+SELECT a.[WEBID]--网站ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBNAME]--网站名
+      ,a.[STATUID]--是否开启
+      ,a.[WEBURL]--网址
+      ,a.[CSSID]--网站样式
+      ,b.SCHOOLID as b_WZPZ_SCHOOLID--网站配置 学校名
+      ,b.WEBNAME as b_WZPZ_WEBNAME--网站配置 网站名
+      ,b.STATUID as b_WZPZ_STATUID--网站配置 是否开启
+      ,b.WEBURL as b_WZPZ_WEBURL--网站配置 网址
+      ,b.CSSID as b_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_WZYS_SCHOOLID--样式库 学校名
+      ,d.WEBID as d_WZYS_WEBID--样式库 网站ID
+      ,d.NAME as d_WZYS_NAME--样式库 样式名
+      ,d.SHOWIMG as d_WZYS_SHOWIMG--样式库 效果图
+
+FROM dbo.EDU_ZYZX_MHXT_WZPZ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS b ON a.WEBID = b.WEBID /*网站ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZYS AS d ON a.CSSID = d.ID /*网站样式*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--网站栏目（导航）
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_WZLM_DISP]
+AS
+SELECT a.[ID]--网站栏目（导航）ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[LMSHOWSTYLE]--栏目使用类型
+      ,a.[NAME]--栏目名称
+      ,a.[URL]--栏目链接
+      ,a.[IMAGEURL]--图片链接
+      ,a.[DEPTH]--层级
+      ,a.[PID]--父目录
+      ,a.[LISTSHOWSTYLE]--列表显示型式
+      ,a.[ORDERTYPE]--排序方式
+      ,a.[SHOWNUMBER]--显示个数
+      ,a.[OPENFLAG]--开启状态
+      ,a.[LLQX]--浏览权限
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
+      ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
+      ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
+      ,d.NAME as d_WZLM_NAME--网站栏目（导航） 栏目名称
+      ,d.URL as d_WZLM_URL--网站栏目（导航） 栏目链接
+      ,d.IMAGEURL as d_WZLM_IMAGEURL--网站栏目（导航） 图片链接
+      ,d.DEPTH as d_WZLM_DEPTH--网站栏目（导航） 层级
+      ,d.PID as d_WZLM_PID--网站栏目（导航） 父目录
+      ,d.LISTSHOWSTYLE as d_WZLM_LISTSHOWSTYLE--网站栏目（导航） 列表显示型式
+      ,d.ORDERTYPE as d_WZLM_ORDERTYPE--网站栏目（导航） 排序方式
+      ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
+      ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
+      ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
+
+FROM dbo.EDU_ZYZX_MHXT_WZLM AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZLM AS d ON a.PID = d.ID /*父目录*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ AND a.WEBID = d.WEBID /*网站ID*/
+GO
+
+--网站广告
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_WZGG_DISP]
+AS
+SELECT a.[ID]--网站广告ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[SHOWTYPE]--显示型式
+      ,a.[ADCONTENT]--广告内容
+      ,a.[GGLJ]--广告链接
+      ,a.[SHOWSTATU]--是否显示
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+
+FROM dbo.EDU_ZYZX_MHXT_WZGG AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--访问履历
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_FWLL_DISP]
+AS
+SELECT a.[ID]--访问履历ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[ACCESSIP]--访问IP
+      ,a.[ACCESSURL]--访问链接
+      ,a.[ACCESSTIME]--访问时间
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+
+FROM dbo.EDU_ZYZX_MHXT_FWLL AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--发布权限
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_FBQX_DISP]
+AS
+SELECT a.[ID]--发布权限ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[LOGINNAME]--用户名
+      ,a.[LMLIST]--栏目
+      ,a.[LMNAMELIST]--栏目文字
+
+FROM dbo.EDU_ZYZX_MHXT_FBQX AS a
 GO
 
 --建筑物基本数据类表
