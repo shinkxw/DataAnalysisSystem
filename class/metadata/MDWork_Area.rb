@@ -64,6 +64,18 @@ class MDWork_Area
       end
     end
   end
+  #显示本数据域与数据库间的差异
+  def show_db_diff(db)
+    diff = compare_db(db)
+    diff.show_diff
+  end
+  #使用本数据域更新数据库
+  def update_db(db)
+    diff = compare_db(db)
+    diff.db_transform(db)
+  end
+  #与指定数据库中的表结构进行比较
+  def compare_db(db);MDDiffer.new.compare_area(db.get_db_area,@area) end
   #输出Sql脚本
   def export_sql(build_folder = true, need_delete = true, need_data = false)
     builder = SqlBuilder.new(need_delete,need_data)

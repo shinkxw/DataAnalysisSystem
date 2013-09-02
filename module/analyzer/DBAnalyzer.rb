@@ -4,28 +4,34 @@
 class DBAnalyzer
   attr_reader :area#分析结果
   #初始化
-  def initialize(host, username = 'sa', password = '123456', log = Log.new)
-    DBEntity.set_connector(DBConnector.new(host,username,password))
+  def initialize(host = '(local)', username = 'sa', password = '123456', log = Log.new)
+    @host = host
+    @username = username
+    @password = password
     @area = nil
     @log = log
   end
   #解析数据库数据
   def analyze(database_name)
-    @area = MDArea.new(database_name)
-    DBEntity.open(database_name) do |db|
-      name_space = MDNameSpace.new('temporary','db')
-      db.get_table_name_arr.each do |table_name|
-        table = analyze_table(table_name, db)
-        name_space.add_table(table)
-      end
-      @area.add_name_space(name_space)
+    DBEntity.set_connector(DBConnector.new(@host,@username,@password))
+    DBEntity.open(database_name){|db| analyze_db(db)}
+    @area
+  end
+  #解析数据库实体
+  def analyze_db(db)
+    @area = MDArea.new('db_out')
+    name_space = MDNameSpace.new('temporary','db')
+    db.get_table_name_arr.each do |table_name|
+      table = analyze_table(table_name, db)
+      name_space.add_table(table)
     end
+    @area.add_name_space(name_space)
     @area.reallocate_namespace
     @area
   end
   #根据分析数据库中指定表并返回
   def analyze_table(table_name,db)
-    @log.push("正在读取: #{table_name}")
+    #@log.push("正在读取: #{table_name}")
     table_exp = db.get_table_exp(table_name)
     table = MDTable.new(table_name,table_exp)
     analyze_field(table,db)

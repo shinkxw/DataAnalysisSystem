@@ -17,6 +17,7 @@ class TestdataBuilder
   end
   #生成无关联表的测试数据添加脚本
   #config为hash表，键为表名，值为需生成数据条数
+  #config = {'EDU_WZXT_MHXT_WZLM' => 5, 'EDU_WZXT_MHXT_WZWZ' => 500}
   def build_sd(area, config)
     @area = area
     @sql_str = ""

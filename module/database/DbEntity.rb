@@ -116,6 +116,8 @@ class DBEntity
   def delete_field(field)
     execute("ALTER table #{field.table.name} DROP column #{field.name}")
   end
+  #获得数据库的元数据域
+  def get_db_area;DBAnalyzer.new.analyze_db(self) end
   #让数据库执行sql语句
   def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end
   #请求查询并返回hash形式的查询结果
