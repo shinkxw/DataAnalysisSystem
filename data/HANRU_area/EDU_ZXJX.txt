@@ -63,4 +63,23 @@
             <name="JSRKID" explanation="教师任课编号" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_07_A01_CJFXPZ" explanation="成绩分析配置表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SSKSID" explanation="配置名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="FXLX" explanation="分析类型" type="int" null="F" p="F" identity="F" remark="" />
+            <name="BZ" explanation="备注" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_07_A02_CJFXPZXM" explanation="成绩分析配置项目表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="SSPZID" explanation="所属配置ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="DCMC" explanation="名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="SX" explanation="上限" type="int" null="F" p="F" identity="F" remark="" />
+            <name="XX" explanation="下限" type="int" null="F" p="F" identity="F" remark="" />
+            <name="PZQZ" explanation="P值权重" type="int" null="F" p="F" identity="F" remark="" />
+        </field_area>
+    </table>
 </namespace>

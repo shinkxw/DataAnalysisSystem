@@ -18,7 +18,6 @@ class DBConnector
   #返回与指定数据库实例的连接
   def open_database(database_name = nil)
     conn = WIN32OLE::new('ADODB.Connection')
-    p get_connect_string(database_name)
     conn.Open(get_connect_string(database_name))
     conn
   end

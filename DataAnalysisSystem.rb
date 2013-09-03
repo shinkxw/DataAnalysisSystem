@@ -8,7 +8,7 @@ require 'ScriptLoader'#脚本加载器
 AreaManager.open("HANRU") do |work_area|
   #config = {'EDU_WZXT_MHXT_WZLM' => 5, 'EDU_WZXT_MHXT_WZWZ' => 500}
   #work_area.export_testdata()
-  #work_area.export_all
+  work_area.export_all
   
   db_conn = DBConnector.new('D:\待迁移数据库\百花.mdb', db_type: 'ac')
   DBEntity.open('HanRuEdu',db_conn) do |db|
@@ -21,30 +21,30 @@ AreaManager.open("HANRU") do |work_area|
     config = { ID: { fn: 'ArticleID', p: Proc.new{|s| s}},
                SCHOOLID: { fn: '', p: Proc.new{|i| '0'}},
                WEBID: { fn: '', p: Proc.new{|i| '1'}},
-               TYPENAME: { fn: '', p: Proc.new{|i| ''}},
+               TYPENAME: { fn: 'Keyword', p: Proc.new{|s| s.delete(' ')[0, 20]}},
                LMID: { fn: 'ClassID', p: Proc.new{|s| s}},
                TITLE: { fn: 'Title', p: Proc.new{|s| s}},
-               PUBLISHERNAME: { fn: '', p: Proc.new{|s| s}},
-               AUTHOR: { fn: '', p: Proc.new{|s| s}},
-               AUTHORDEPART: { fn: '', p: Proc.new{|i| ''}},
-               PUBLISHDATE: { fn: '', p: 'datetime'},
-               CONTENT: { fn: '', p: 'content_change'},
-               URL: { fn: '', p: Proc.new{|i| ''}},
+               PUBLISHERNAME: { fn: 'Inputer', p: Proc.new{|s| s}},
+               AUTHOR: { fn: 'Author', p: Proc.new{|s| s}},
+               AUTHORDEPART: { fn: 'CopyFrom', p: Proc.new{|s| s}},
+               PUBLISHDATE: { fn: 'UpdateTime', p: 'datetime'},
+               CONTENT: { fn: 'Content', p: 'content'},
+               URL: { fn: 'LinkUrl', p: Proc.new{|s| s}},
                IMAGEURL: { fn: '', p: Proc.new{|i| ''}},
                ATTACHMENTNAME: { fn: '', p: Proc.new{|i| ''}},
-               ATTACHMENT: { fn: '', p: Proc.new{|s| s}},
-               CHICKNUB: { fn: '', p: Proc.new{|i| '0'}},
+               ATTACHMENT: { fn: '', p: Proc.new{|i| ''}},
+               CHICKNUB: { fn: 'Hits', p: Proc.new{|s| s}},
                AUDITSTATU: { fn: '', p: Proc.new{|i| '1'}},
-               AUDITOR: { fn: '', p: Proc.new{|i| ''}},
-               AUDITORNAME: { fn: '', p: Proc.new{|i| ''}},
-               AUDITTIME: { fn: '', p: 'datetime'},
+               AUDITOR: { fn: 'Editor', p: Proc.new{|s| s}},
+               AUDITORNAME: { fn: 'Editor', p: Proc.new{|s| s}},
+               AUDITTIME: { fn: 'CreateTime', p: 'datetime'},
                REMARK: { fn: '', p: Proc.new{|i| ''}},
-               SUMMARY: { fn: '', p: Proc.new{|s| s}},
+               SUMMARY: { fn: '', p: Proc.new{|i| ''}},
                DISPLAYTYPE: { fn: '', p: Proc.new{|i| '0'}},
                OPENFLAG: { fn: '', p: Proc.new{|i| '0'}},
                LLQX: { fn: '', p: Proc.new{|i| '0'}},
                }
-    dm.insert_data('EDU_WZXT_MHXT_WZWZ',config)
+    dm.insert_data('EDU_WZXT_MHXT_WZWZ',config,1)
   end
 end
 

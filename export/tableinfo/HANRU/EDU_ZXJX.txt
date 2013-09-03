@@ -53,3 +53,18 @@ EDU_ZXJX_06_A01_MPJL  面批记录表
   BZ          备注                    text           非主
   JSRKID      教师任课编号            int            非主
 
+EDU_ZXJX_07_A01_CJFXPZ  成绩分析配置表
+  ID          编号                    int            主键
+  SCHOOLID    学校ID                int            非主
+  SSKSID      配置名称                nvarchar(20)   非主
+  FXLX        分析类型                int            非主
+  BZ          备注                    nvarchar(60)   非主
+
+EDU_ZXJX_07_A02_CJFXPZXM  成绩分析配置项目表
+  ID          编号                    int            主键
+  SSPZID      所属配置ID            int            非主
+  DCMC        名称                    nvarchar(20)   非主
+  SX          上限                    int            非主
+  XX          下限                    int            非主
+  PZQZ        P值权重                int            非主
+
