@@ -21,24 +21,26 @@ class DBDataMigrate
     end
   end
   #生成插入数据脚本
-  def insert_data(table_name, config, fnum = 1)
+  def insert_data(table_name, config, mb = 50)
     data_hash = convert_data(config)
     field_names = data_hash.keys
     data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose#转置
     prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
-    quotient = data_arr.size / fnum
-    i_arr = Array.new(fnum){|i| quotient * i}
     istr = ""
+    str_arr = []
     data_arr.each_index do |i|
       data = data_arr[i].map{|d| d =~ /^CAST\(/ ? d : "'#{d}'"}
       istr << "#{prefix_str}#{data.join(", ")})\n"
-      if i_arr.include?(i + 1)
-        path = Dir.pwd << "/QY/#{table_name}_#{i_arr.index(i + 1)}.sql"
-        FileWriter.new(path).write_str(istr)
+      if istr.bytesize > mb.MB
+        str_arr << istr
         istr = ""
       end
     end
-    #FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
+    str_arr << istr
+    str_arr.each_index do |i|
+      path = Dir.pwd << "/QY/#{table_name}_#{i + 1}.sql"
+      FileWriter.new(path).write_str(str_arr[i])
+    end
   end
   #生成说明文件
   def out_info(table_name, config)
