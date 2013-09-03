@@ -23,6 +23,7 @@ namespace HanRuEdu.LDAL
             CQZH = "";
             SFYGZZ = "";
             QL = "";
+            GLY = "";
         }
         public class EDU_ZZFC_02_01_JZWJBSJ_metadata
         {
@@ -428,6 +429,13 @@ namespace HanRuEdu.LDAL
             [Display(Name = "其他用房")]
             [Range(typeof(decimal), "0", "99999999")]
             public decimal QTYF { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "管理员")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GLY { get; set; }
 
 
         }

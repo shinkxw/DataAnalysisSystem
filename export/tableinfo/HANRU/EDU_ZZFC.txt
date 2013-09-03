@@ -65,6 +65,7 @@ EDU_ZZFC_02_01_JZWJBSJ  建筑物基本数据类表
   QZWSBJS     其中卫生保健室          decimal(8, 0)  非主
   QZQTXZBGYF  其中其他行政办公用房    decimal(8, 0)  非主
   QTYF        其他用房                decimal(8, 0)  非主
+  GLY         管理员                  nvarchar(20)   非主
 
 EDU_ZZFC_08_01_XSSS  学生宿舍数据类表
   SCHOOLID    学校名                  int            主键     学校配置表

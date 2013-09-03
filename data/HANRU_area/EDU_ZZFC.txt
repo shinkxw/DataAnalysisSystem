@@ -68,6 +68,7 @@
             <name="QZWSBJS" explanation="其中卫生保健室" type="decimal(8, 0)" null="F" p="F" identity="F" remark="解释/举例：单位：平方米 " />
             <name="QZQTXZBGYF" explanation="其中其他行政办公用房" type="decimal(8, 0)" null="F" p="F" identity="F" remark="解释/举例：单位：平方米 " />
             <name="QTYF" explanation="其他用房" type="decimal(8, 0)" null="F" p="F" identity="F" remark="解释/举例：非教学及辅助用房、生活用房、行政办公用房的用房总和，单位：平方米 " />
+            <name="GLY" explanation="管理员" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
     <table name="EDU_ZZFC_08_01_XSSS" explanation="学生宿舍数据类表">

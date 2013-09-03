@@ -4636,6 +4636,7 @@ CREATE TABLE [dbo].[EDU_ZZFC_02_01_JZWJBSJ](
 	[QZWSBJS]  decimal(8, 0)  NOT NULL,--其中卫生保健室
 	[QZQTXZBGYF]  decimal(8, 0)  NOT NULL,--其中其他行政办公用房
 	[QTYF]  decimal(8, 0)  NOT NULL,--其他用房
+	[GLY]  nvarchar(20)  NOT NULL,--管理员
 CONSTRAINT [PK_EDU_ZZFC_02_01_JZWJBSJ] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -4875,6 +4876,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'其中其他行政办公用房' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_02_01_JZWJBSJ', @level2type=N'COLUMN',@level2name=N'QZQTXZBGYF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'其他用房' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_02_01_JZWJBSJ', @level2type=N'COLUMN',@level2name=N'QTYF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'管理员' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_02_01_JZWJBSJ', @level2type=N'COLUMN',@level2name=N'GLY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生宿舍数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_01_XSSS'
 GO

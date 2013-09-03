@@ -68,6 +68,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[QZWSBJS]--其中卫生保健室
       ,a.[QZQTXZBGYF]--其中其他行政办公用房
       ,a.[QTYF]--其他用房
+      ,a.[GLY]--管理员
       ,c.MC as c_SYZK_MC--使用状况代码表 名称
       ,d.MC as d_CQ_MC--产权代码表 名称
       ,e.MC as e_JZWFL_MC--建筑物分类代码表 名称

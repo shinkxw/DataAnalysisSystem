@@ -4935,6 +4935,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[QZWSBJS]--其中卫生保健室
       ,a.[QZQTXZBGYF]--其中其他行政办公用房
       ,a.[QTYF]--其他用房
+      ,a.[GLY]--管理员
       ,c.MC as c_SYZK_MC--使用状况代码表 名称
       ,d.MC as d_CQ_MC--产权代码表 名称
       ,e.MC as e_JZWFL_MC--建筑物分类代码表 名称
@@ -5092,6 +5093,7 @@ SELECT a.[SCHOOLID]--学校名
       ,c.QZWSBJS as c_JZWJBSJ_QZWSBJS--建筑物基本数据类表 其中卫生保健室
       ,c.QZQTXZBGYF as c_JZWJBSJ_QZQTXZBGYF--建筑物基本数据类表 其中其他行政办公用房
       ,c.QTYF as c_JZWJBSJ_QTYF--建筑物基本数据类表 其他用房
+      ,c.GLY as c_JZWJBSJ_GLY--建筑物基本数据类表 管理员
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
@@ -5222,6 +5224,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.QZWSBJS as c_JZWJBSJ_QZWSBJS--建筑物基本数据类表 其中卫生保健室
       ,c.QZQTXZBGYF as c_JZWJBSJ_QZQTXZBGYF--建筑物基本数据类表 其中其他行政办公用房
       ,c.QTYF as c_JZWJBSJ_QTYF--建筑物基本数据类表 其他用房
+      ,c.GLY as c_JZWJBSJ_GLY--建筑物基本数据类表 管理员
       ,d.SCHOOLID as d_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,d.SSLID as d_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
@@ -5391,6 +5394,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.QZWSBJS as c_JZWJBSJ_QZWSBJS--建筑物基本数据类表 其中卫生保健室
       ,c.QZQTXZBGYF as c_JZWJBSJ_QZQTXZBGYF--建筑物基本数据类表 其中其他行政办公用房
       ,c.QTYF as c_JZWJBSJ_QTYF--建筑物基本数据类表 其他用房
+      ,c.GLY as c_JZWJBSJ_GLY--建筑物基本数据类表 管理员
       ,d.SCHOOLID as d_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,d.SSLID as d_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号

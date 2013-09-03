@@ -108,6 +108,7 @@ SELECT a.[SCHOOLID]--学校名
       ,c.QZWSBJS as c_JZWJBSJ_QZWSBJS--建筑物基本数据类表 其中卫生保健室
       ,c.QZQTXZBGYF as c_JZWJBSJ_QZQTXZBGYF--建筑物基本数据类表 其中其他行政办公用房
       ,c.QTYF as c_JZWJBSJ_QTYF--建筑物基本数据类表 其他用房
+      ,c.GLY as c_JZWJBSJ_GLY--建筑物基本数据类表 管理员
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称

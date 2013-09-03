@@ -98,6 +98,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.QZWSBJS as c_JZWJBSJ_QZWSBJS--建筑物基本数据类表 其中卫生保健室
       ,c.QZQTXZBGYF as c_JZWJBSJ_QZQTXZBGYF--建筑物基本数据类表 其中其他行政办公用房
       ,c.QTYF as c_JZWJBSJ_QTYF--建筑物基本数据类表 其他用房
+      ,c.GLY as c_JZWJBSJ_GLY--建筑物基本数据类表 管理员
       ,d.SCHOOLID as d_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,d.SSLID as d_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
