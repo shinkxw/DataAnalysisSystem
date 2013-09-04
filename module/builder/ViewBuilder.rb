@@ -143,9 +143,7 @@ class ViewBuilder
         else
           this_field = nil
           field_arr.each do |field|
-            if field.relation == that_table_pk.relation
-              this_field = field
-            end
+            this_field = field if field.relation == that_table_pk.relation
           end
           if this_field == nil
             @log.push("ViewBuilder: 并未在表#{this_table.name}中找到与表#{that_table.name}的主键#{that_table_pk.name}关联同一张表的字段")

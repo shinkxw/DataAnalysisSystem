@@ -71,6 +71,15 @@ class MDDiff
     end
     result
   end
+  #≈–∂œ «∑Ò¥Ê‘⁄≤Ó“Ï
+  def has_diff?
+    size = @t1_diff_arr.size
+    size += @t2_diff_arr.size
+    size += @f1_diff_arr.size
+    size += @f2_diff_arr.size
+    size += @pro_diff_hash.size
+    size != 0
+  end
   #œ‘ æ≤Ó“Ï
   def show_diff
     if @t1_diff_arr != [] || @t2_diff_arr != []

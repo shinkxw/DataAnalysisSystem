@@ -65,19 +65,21 @@ class MDWork_Area
     end
   end
   #显示本数据域与数据库间的差异
-  def show_db_diff(db)
-    diff = compare_db(db)
-    diff.show_diff
-  end
+  def show_db_diff(db);compare_db(db).show_diff end
   #显示本数据域与数据库间的差异(cmd版)
-  def show_db_diff_cmd(db)
-    diff = compare_db(db)
-    diff.show_cmd_diff
-  end
-  #使用本数据域更新数据库
+  def show_db_diff_cmd(db);compare_db(db).show_cmd_diff end
+  #使用本数据域更新数据库表结构
   def update_db(db)
+    #将表数据与最新版本进行比较，记录差异处
     diff = compare_db(db)
-    diff.db_transform(db)
+    #使用脚本将差异处更新
+    diff.db_transform(db) if diff.has_diff?
+    #再次检查数据库中表结构是否与最新版本相同
+    if compare_db(db).has_diff?
+      #报错
+    else
+      #删除所有视图并运行最新版本的视图
+    end
   end
   #与指定数据库中的表结构进行比较
   def compare_db(db);MDDiffer.new.compare_area(db.get_db_area,@area) end
