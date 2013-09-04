@@ -54,9 +54,11 @@ class DbUpdateInterface < BaseInterface
       if @input == 'q'
         @statu = 2
       elsif @input == 'u'
+        puts '请输入用户名：'
         get_input
         @username = @input
       elsif @input == 'p'
+        puts '请输入密码：'
         get_input
         @password = @input
       elsif @input == 'c'
@@ -75,15 +77,18 @@ class DbUpdateInterface < BaseInterface
       if @input == 'q'
         @statu = 4
       elsif @input == 'd'
+        puts '比较中...'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
             work_area.show_db_diff_cmd(db)
           end
         end
       elsif @input == 'u'
+        puts '正在更新...'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
             work_area.update_db(db)
+            puts '更新完毕'
           end
         end
       else
@@ -115,7 +120,7 @@ class DbUpdateInterface < BaseInterface
   def show_menu3
     puts "   输入u设置用户名(默认sa)              "
     puts "   输入p设置密码(默认123456)            "
-    puts "   输入c连接数据库                      "
+    puts "   输入c连接数据源                      "
     puts "   输入q返回上级目录                    "
   end
   def show_menu4
@@ -141,7 +146,7 @@ class DbUpdateInterface < BaseInterface
   #显示数据源中的数据库
   def show_db
     DBEntity.set_connector(DBConnector.new(@host,username: @username,password: @password))
-    puts "正在查询数据源中的数据库...     "
-    DBEntity.open(){|db| db.get_db_name.each{|db_name| puts db_name}}
+    puts "   正在查询数据源中的数据库...     "
+    DBEntity.open(){|db| db.get_db_name.each{|db_name| puts '   ' << db_name}}
   end
 end

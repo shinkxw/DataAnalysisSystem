@@ -70,7 +70,7 @@ class MDWork_Area
     diff.show_diff
   end
   #显示本数据域与数据库间的差异(cmd版)
-  def show_db_diff_cmd
+  def show_db_diff_cmd(db)
     diff = compare_db(db)
     diff.show_cmd_diff
   end

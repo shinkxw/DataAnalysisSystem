@@ -59,6 +59,6 @@ class AreaManager
         work_area.save_and_close_work_area
       end
     end
-    p Time.now - t
+    puts "ºÄÊ±#{Time.now - t}Ãë"
   end
 end

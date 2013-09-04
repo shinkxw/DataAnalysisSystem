@@ -100,7 +100,7 @@ class MDDiff
   end
   #显示差异(cmd版)
   def show_cmd_diff
-    puts '  ' * 2 << '数据库' << '  ' * 16 << '工作区'
+    puts '  ' * 2 << '数据库' << '  ' * 17 << '工作区'
     if @t1_diff_arr != [] || @t2_diff_arr != []
       puts '表级差异:'
       @t1_diff_arr.each{|table| puts '  ' * 2 << table.gname}
