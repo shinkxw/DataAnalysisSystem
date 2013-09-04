@@ -51,6 +51,19 @@ class Sql
   def self.delete_field(field)
     "ALTER table #{field.table.name} DROP column #{field.name}"
   end
+  #添加表注释
+  def self.add_texp(table)
+    sql = "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{table.explanation}' , "
+    sql << "@level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'#{table.name}'\nGO\n"
+  end
+  #添加字段注释
+  def self.add_fexp(field)
+    sql = "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{field.explanation}' , @level0type=N'SCHEMA',@level0name=N'dbo', "
+    sql << "@level1type=N'TABLE',@level1name=N'#{field.table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
+  end
+  
+  
+  
   #根据配置获得表连接查询sql语句
   #第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash, 第三个元素为数据库实体
   def self.get_join_sql(mtname, jc, db)

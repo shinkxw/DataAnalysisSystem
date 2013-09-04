@@ -113,15 +113,9 @@ class SqlBuilder
   end
   #生成一个表的注释语句
   def add_table_explanation(table,sql_str = @sql_str)
-    if table.explanation != "" && table.explanation != nil
-      sql_str << "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{table.explanation}' , "
-      sql_str << "@level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'#{table.name}'\nGO\n"
-    end
+    sql_str << Sql.add_texp(table) if table.explanation != "" && table.explanation != nil
     table.each_field do |field|
-      if field.explanation != "" && table.explanation != nil
-        sql_str << "EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'#{field.explanation}' , @level0type=N'SCHEMA',@level0name=N'dbo', "
-        sql_str << "@level1type=N'TABLE',@level1name=N'#{table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
-      end
+      sql_str << Sql.add_fexp(field) if field.explanation != "" && table.explanation != nil
     end
   end
   #判断命名空间是否需要生成添加数据脚本
