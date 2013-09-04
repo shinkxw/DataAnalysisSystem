@@ -72,13 +72,20 @@ class MDWork_Area
   def update_db(db)
     #将表数据与最新版本进行比较，记录差异处
     diff = compare_db(db)
-    #使用脚本将差异处更新
-    diff.db_transform(db) if diff.has_diff?
-    #再次检查数据库中表结构是否与最新版本相同
-    if compare_db(db).has_diff?
-      #报错
+    if diff.has_diff?
+      #使用脚本将差异处更新
+      diff.db_transform(db) 
+      #再次检查数据库中表结构是否与最新版本相同
+      if compare_db(db).has_diff?
+        #报错
+        puts '数据库差异更新并未成功！'
+      else
+        #运行最新版本的视图
+        view_str = ViewBuilder.new(need_delete).build(@area).get_data_str
+        db.execute(view_str)
+      end
     else
-      #删除所有视图并运行最新版本的视图
+      puts '数据库表结构与工作区一致，不需更新'
     end
   end
   #与指定数据库中的表结构进行比较

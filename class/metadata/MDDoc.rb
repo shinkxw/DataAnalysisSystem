@@ -10,6 +10,8 @@ class MDDoc
     @data = data#文档数据
     @file_type = file_type#文件格式
   end
+  #获得文档的字符串形式
+  def get_data_str;@data end
   #按照惯例输出文档
   def export
     case @data.class.to_s
