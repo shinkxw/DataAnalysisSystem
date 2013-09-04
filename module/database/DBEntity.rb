@@ -62,6 +62,8 @@ class DBEntity
   def add_field(field);execute(Sql.add_field(field)) end
   #删除字段
   def delete_field(field);execute(Sql.delete_field(field)) end
+  #修改字段类型
+  def update_ftype(field);execute(Sql.update_ftype(field)) end
   #添加表注释
   def add_texp(table);execute(Sql.add_texp(table)) end
   #修改表注释

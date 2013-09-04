@@ -45,11 +45,17 @@ class Sql
   def self.delete_table(table_name);"DROP TABLE #{table_name}" end
   #添加字段
   def self.add_field(field)
-    "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"
+    sql = "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"
+    sql << " NOT NULL default #{field.defv}" if field.null == 'F'#不可为空
+    sql
   end
   #删除字段
   def self.delete_field(field)
     "ALTER table #{field.table.name} DROP column #{field.name}"
+  end
+  #修改字段类型
+  def update_ftype(field)
+    "ALTER TABLE #{field.table.name} ALTER COLUMN #{field.name} #{field.type}"
   end
   #添加表注释
   def self.add_texp(table)
@@ -58,7 +64,8 @@ class Sql
   end
   #修改表注释
   def self.update_texp(table)
-    
+    sql = "EXEC sys.sp_updateextendedproperty @name=N'MS_Description', @value=N'#{table.explanation}' , "
+    sql << "@level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'#{table.name}'\nGO\n"
   end
   #添加字段注释
   def self.add_fexp(field)
@@ -67,7 +74,8 @@ class Sql
   end
   #修改字段注释
   def self.update_fexp(field)
-    
+    sql = "EXEC sys.sp_updateextendedproperty @name=N'MS_Description', @value=N'#{field.explanation}' , @level0type=N'SCHEMA',@level0name=N'dbo', "
+    sql << "@level1type=N'TABLE',@level1name=N'#{field.table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
   end
   #根据配置获得表连接查询sql语句
   #第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash, 第三个元素为数据库实体

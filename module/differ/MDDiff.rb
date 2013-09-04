@@ -23,16 +23,27 @@ class MDDiff
     @t2_diff_arr.each{|table| db.create_table(table)}#建表
     @f1_diff_arr.each{|field| db.delete_field(field)}#删字段
     @f2_diff_arr.each{|f| db.add_field(f);add_pro_diff(f.ef,f)}#加字段
-    @pro_diff_hash.each{|o1,o2| obj_transform(o1,o2)}#修改对象属性
+    @pro_diff_hash.each{|o1,o2| obj_transform(o1,o2,db)}#修改对象属性
   end
-  #将对象1转换为对象2
-  def obj_transform(obj1,obj2)
-    dp_arr = get_pro_diff(obj1,obj2)
+  #在数据库中将对象1转换为对象2
+  def obj_transform(obj1,obj2,db)
     case obj1.class.to_s
-    when 'MDTable'
-      obj1.has_exp? ? db.update_fexp(obj2) : db.add_texp(obj2)
+    when 'MDTable'#只有explanation属性时使用
+      obj1.has_exp? ? db.update_texp(obj2) : db.add_texp(obj2)
     when 'MDField'
+      dp_arr = get_pro_diff(obj1,obj2)
+      dp_arr.each{|dp| field_transform(dp,obj1,obj2,db)}
+    end
+  end
+  #在数据库中转换字段属性
+  def field_transform(dp,f1,f2,db)
+    case dp
+    when 'type' then db.update_ftype(f2)
+    when 'null'
       
+    when 'explanation'
+      f1.has_exp? ? db.update_fexp(f2) : db.add_fexp(f2)
+    else puts "#{dp}属性差异暂时无法更新"
     end
   end
   #添加表级差异

@@ -17,11 +17,11 @@ class MDField
     @table = table
     @name = name
     @type = format(type)
-    @null = null
-    @p = p
+    @null = pro_input(null)
+    @p = pro_input(p)
     @explanation = explanation
     @remark = remark
-    @identity = (identity == nil ? "F" : identity)
+    @identity = (identity == nil ? "F" : pro_input(identity))
     @config = config
     @relation = nil
   end
@@ -58,6 +58,17 @@ class MDField
     end
     type
   end
+  #根据类型计算默认值
+  def defv
+    @type =~ /([^(]+?)(?:\((.+?)\)|$)/
+    case $1
+    when 'int','decimal','money' then return '0'
+    when 'nchar','nvarchar','text','datetime' then return "''"
+    else 
+      puts "MDField: 类型#{$1}没有设置默认值！"
+      return "''"
+    end
+  end
   #返回处理后的类型
   def split_type
     result = ['UN']
@@ -88,8 +99,8 @@ class MDField
   end
   #判断字段数据是否有效
   def is_valid?
-    puts "MDNameSpace: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == "T" && @p == "F"
-    puts "MDNameSpace: 表#{@table.name}中字段#{@name}为主键不能为空" if @p == "T" && @null == "T"
+    puts "MDField: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == "T" && @p == "F"
+    puts "MDField: 表#{@table.name}中字段#{@name}为主键不能为空" if @p == "T" && @null == "T"
     #~ if /nvarchar\((?<char_num>[^\)]*)\)/ =~ @type
       #~ ignore_namespace_arr = %w(GB JY ZJ)
       #~ if !ignore_namespace_arr.include?(@table.name.split("_")[1]) && @relation == nil && char_num.to_i < 6
@@ -101,7 +112,15 @@ class MDField
   #判断说明是否存在
   def has_exp?;@explanation != "" && @explanation != nil end
   #返回只有类型的自己，用于数据库比较
-  def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
+  def ef;MDField.new(@table,@name,@type,@null,'F','','','F') end
+  #处理输入数据
+  def pro_input(str)
+    if str == 'T' || str == 'F'
+      return str
+    else
+      puts "MDField: 表#{@table.name}字段#{@name}属性有误！"
+    end
+  end
   #计算10的n次方
   def calnum(n);10**n end
 end
