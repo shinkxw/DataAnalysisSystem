@@ -12,22 +12,13 @@ class DBEntity
     set_connector(connector) if connector
     if @@connector != nil
       conn = @@connector.open_database(database_name)
-      if block_given?
-        begin
-          yield new(conn)
-        ensure
-          conn.close
-        end
-      end
+      if block_given?;begin;yield new(conn);ensure;conn.close;end;end
     else
       puts '请先为DatabaseEntity配置共用数据库连接器！'
     end
   end
   #初始化
-  def initialize(conn)
-    @conn = conn
-    @data = nil
-  end
+  def initialize(conn);@conn,@data = conn,nil end
   #查询数据源中的数据库名
   def get_database_name;query(Sql.get_db_name)['name'] end
   #查询当前数据库所有表的名字
@@ -68,9 +59,7 @@ class DBEntity
   #删除指定表
   def delete_table(table_name);execute(Sql.delete_table(table_name)) end
   #添加字段
-  def add_field(field)
-    
-  end
+  def add_field(field);execute(Sql.add_field(field)) end
   #删除字段
   def delete_field(field);execute(Sql.delete_field(field)) end
   #获得数据库的元数据域

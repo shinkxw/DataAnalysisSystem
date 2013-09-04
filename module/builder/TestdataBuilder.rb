@@ -9,10 +9,20 @@ class TestdataBuilder
   def initialize(log = Log.new)
     @area = nil
     @sql_str = nil
-    @build_rule  = { 'int' => Proc.new{|i| i},
+    @build_rule  = { 'int' => Proc.new{|p| case p
+                                           when 'WEBID' then Proc.new{|i| '1'}
+                                           when 'SCHOOLID' then Proc.new{|i| '2'}
+                                           when 'LMID' then Proc.new{|i| (i % 50) + 1}
+                                           when 'OPENFLAG' then Proc.new{|i| '0'}
+                                           when 'AUDITSTATU' then Proc.new{|i| '1'}
+                                           when 'PID' then Proc.new{|i| (i % 10) + 1}
+                                           when 'LLQX' then Proc.new{|i| '0'}
+                                           else Proc.new{|i| i}
+                                           end
+                                      },
                      'String' => Proc.new{|len| Proc.new{get_random_string(len)}},
-                     'decimal' => Proc.new{|i| '0'},
-                     'DateTime' => Proc.new{|i| ''}}
+                     'decimal' => Proc.new{|p| Proc.new{|i| '0'}},
+                     'DateTime' => Proc.new{|p| Proc.new{|i| ''}}}
     @log = log
   end
   #生成无关联表的测试数据添加脚本
@@ -46,12 +56,12 @@ class TestdataBuilder
       if build_proc != nil
         if type[0] == 'String'
           if type.size > 1
-            proc_arr << build_proc.call(type[1].to_i)
+            proc_arr << build_proc.call(type[1].to_i,field.name)
           else
-            proc_arr << build_proc.call(1000)
+            proc_arr << build_proc.call(1000,field.name)
           end
         else
-          proc_arr << build_proc
+          proc_arr << build_proc.call(field.name)
         end
       else
         puts "TestdataBuilder：没有为属性#{type[0]}配置数据生成方法"

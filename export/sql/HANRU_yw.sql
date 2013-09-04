@@ -2603,6 +2603,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_05_A01_KS](
 	[KSJSSJ]  datetime  NOT NULL,--考试结束时间
 	[DFKSSJ]  datetime  NOT NULL,--登分开始时间
 	[DFJSSJ]  datetime  NOT NULL,--登分结束时间
+	[DFKS]  int  NOT NULL,--登分方式
 CONSTRAINT [PK_EDU_ZXJX_05_A01_KS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2748,6 +2749,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登分开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_05_A01_KS', @level2type=N'COLUMN',@level2name=N'DFKSSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登分结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_05_A01_KS', @level2type=N'COLUMN',@level2name=N'DFJSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登分方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_05_A01_KS', @level2type=N'COLUMN',@level2name=N'DFKS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试科目数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_05_A02_KSKM'
 GO

@@ -29,8 +29,8 @@ class MDWork_Area
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area
-    DirManager.clear_dir("#{$root}/data/temporary")#清空临时文件夹
     save_data
+    DirManager.clear_dir("#{$root}/data/temporary")#清空临时文件夹
     @area = nil
   end
   #固化数据

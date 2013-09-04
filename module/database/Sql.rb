@@ -43,6 +43,10 @@ class Sql
   end
   #É¾³ýÖ¸¶¨±í
   def self.delete_table(table_name);"DROP TABLE #{table_name}" end
+  #Ìí¼Ó×Ö¶Î
+  def self.add_field(field)
+    "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"
+  end
   #É¾³ý×Ö¶Î
   def self.delete_field(field)
     "ALTER table #{field.table.name} DROP column #{field.name}"

@@ -31,6 +31,7 @@
             <name="KSJSSJ" explanation="考试结束时间" type="datetime" null="F" p="F" identity="F" remark="" />
             <name="DFKSSJ" explanation="登分开始时间" type="datetime" null="F" p="F" identity="F" remark="" />
             <name="DFJSSJ" explanation="登分结束时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="DFKS" explanation="登分方式" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_05_A02_KSKM" explanation="考试科目数据表">

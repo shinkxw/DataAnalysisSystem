@@ -98,6 +98,8 @@ class MDField
     #~ end
     true
   end
+  #返回只有类型的自己，用于数据库比较
+  def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
   #计算10的n次方
   def calnum(n);10**n end
 end

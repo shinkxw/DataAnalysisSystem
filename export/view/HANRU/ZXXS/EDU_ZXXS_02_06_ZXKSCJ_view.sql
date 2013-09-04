@@ -283,6 +283,7 @@ SELECT a.[ID]--考试成绩表
       ,o.KSJSSJ as o_KS_KSJSSJ--考试数据表 考试结束时间
       ,o.DFKSSJ as o_KS_DFKSSJ--考试数据表 登分开始时间
       ,o.DFJSSJ as o_KS_DFJSSJ--考试数据表 登分结束时间
+      ,o.DFKS as o_KS_DFKS--考试数据表 登分方式
       ,p.SCHOOLID as p_KSKM_SCHOOLID--考试科目数据表 学校名
       ,p.SSKSID as p_KSKM_SSKSID--考试科目数据表 所属考试ID
       ,p.JSRKID as p_KSKM_JSRKID--考试科目数据表 教师任课编号

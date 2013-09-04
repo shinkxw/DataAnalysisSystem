@@ -60,6 +60,11 @@ namespace HanRuEdu.LDAL
             public DateTime DFJSSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "登分方式")]
+            public Int32 DFKS { get; set; }
+
+
         }
     }
 }

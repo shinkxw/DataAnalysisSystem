@@ -11,6 +11,7 @@ SELECT a.[ID]--编号
       ,a.[KSJSSJ]--考试结束时间
       ,a.[DFKSSJ]--登分开始时间
       ,a.[DFJSSJ]--登分结束时间
+      ,a.[DFKS]--登分方式
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名

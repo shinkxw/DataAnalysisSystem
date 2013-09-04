@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.KSJSSJ as c_KS_KSJSSJ--考试数据表 考试结束时间
       ,c.DFKSSJ as c_KS_DFKSSJ--考试数据表 登分开始时间
       ,c.DFJSSJ as c_KS_DFJSSJ--考试数据表 登分结束时间
+      ,c.DFKS as c_KS_DFKS--考试数据表 登分方式
       ,d.SCHOOLID as d_RKSJ_SCHOOLID--任课数据子类表 学校名
       ,d.JZGJBSJID as d_RKSJ_JZGJBSJID--任课数据子类表 教职工基本数据子类表
       ,d.RKKCH as d_RKSJ_RKKCH--任课数据子类表 任课课程号

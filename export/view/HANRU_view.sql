@@ -2583,6 +2583,7 @@ SELECT a.[ID]--编号
       ,a.[KSJSSJ]--考试结束时间
       ,a.[DFKSSJ]--登分开始时间
       ,a.[DFJSSJ]--登分结束时间
+      ,a.[DFKS]--登分方式
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
@@ -2618,6 +2619,7 @@ SELECT a.[ID]--编号
       ,c.KSJSSJ as c_KS_KSJSSJ--考试数据表 考试结束时间
       ,c.DFKSSJ as c_KS_DFKSSJ--考试数据表 登分开始时间
       ,c.DFJSSJ as c_KS_DFJSSJ--考试数据表 登分结束时间
+      ,c.DFKS as c_KS_DFKS--考试数据表 登分方式
       ,d.SCHOOLID as d_RKSJ_SCHOOLID--任课数据子类表 学校名
       ,d.JZGJBSJID as d_RKSJ_JZGJBSJID--任课数据子类表 教职工基本数据子类表
       ,d.RKKCH as d_RKSJ_RKKCH--任课数据子类表 任课课程号
@@ -3879,6 +3881,7 @@ SELECT a.[ID]--考试成绩表
       ,o.KSJSSJ as o_KS_KSJSSJ--考试数据表 考试结束时间
       ,o.DFKSSJ as o_KS_DFKSSJ--考试数据表 登分开始时间
       ,o.DFJSSJ as o_KS_DFJSSJ--考试数据表 登分结束时间
+      ,o.DFKS as o_KS_DFKS--考试数据表 登分方式
       ,p.SCHOOLID as p_KSKM_SCHOOLID--考试科目数据表 学校名
       ,p.SSKSID as p_KSKM_SSKSID--考试科目数据表 所属考试ID
       ,p.JSRKID as p_KSKM_JSRKID--考试科目数据表 教师任课编号
