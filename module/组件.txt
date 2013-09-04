@@ -32,11 +32,6 @@ helper      辅助工具   便于辅助开发及代码复用
     Indent        用于管理字符串的缩进
     Log           记录并管理日志
 
-migrate     数据迁移相关
-    SqlServer            建立数据库连接及进行查询
-    MigrateData          迁移数据类
-    ConversionMethod     数据转换类
-
 database    数据库操作相关
     DBConnector          选择并返回与数据库实例的连接
     DBEntity             数据库实体，可执行查询操作，并附带常用指令集
