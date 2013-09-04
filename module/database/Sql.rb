@@ -45,17 +45,24 @@ class Sql
   def self.delete_table(table_name);"DROP TABLE #{table_name}" end
   #添加字段
   def self.add_field(field)
-    sql = "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"
-    sql << " NOT NULL default #{field.defv}" if field.null == 'F'#不可为空
-    sql
+    "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"
   end
   #删除字段
   def self.delete_field(field)
-    "ALTER table #{field.table.name} DROP column #{field.name}"
+    "ALTER TABLE #{field.table.name} DROP COLUMN #{field.name}"
   end
   #修改字段类型
-  def update_ftype(field)
+  def self.update_ftype(field)
     "ALTER TABLE #{field.table.name} ALTER COLUMN #{field.name} #{field.type}"
+  end
+  #设字段可以为空
+  def self.field_null(f)
+    "ALTER TABLE #{f.table.name} ALTER COLUMN #{f.name} #{f.type} NULL"
+  end
+  #设字段不可为空
+  def self.field_not_null(f)
+    sql = "update #{f.table.name} set #{f.name} =#{f.defv} where #{f.name} is null\n"
+    sql << "ALTER TABLE #{f.table.name} ALTER COLUMN #{f.name} #{f.type} NOT NULL"
   end
   #添加表注释
   def self.add_texp(table)

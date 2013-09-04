@@ -64,6 +64,10 @@ class DBEntity
   def delete_field(field);execute(Sql.delete_field(field)) end
   #修改字段类型
   def update_ftype(field);execute(Sql.update_ftype(field)) end
+  #设字段可以为空
+  def field_null(field);execute(Sql.field_null(field)) end
+  #设字段不可为空
+  def field_not_null(field);execute(Sql.field_not_null(field)) end
   #添加表注释
   def add_texp(table);execute(Sql.add_texp(table)) end
   #修改表注释

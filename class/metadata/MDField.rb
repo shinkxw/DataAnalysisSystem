@@ -112,7 +112,7 @@ class MDField
   #判断说明是否存在
   def has_exp?;@explanation != "" && @explanation != nil end
   #返回只有类型的自己，用于数据库比较
-  def ef;MDField.new(@table,@name,@type,@null,'F','','','F') end
+  def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
   #处理输入数据
   def pro_input(str)
     if str == 'T' || str == 'F'

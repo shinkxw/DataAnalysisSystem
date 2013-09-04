@@ -40,7 +40,7 @@ class MDDiff
     case dp
     when 'type' then db.update_ftype(f2)
     when 'null'
-      
+      f2.null == 'T' ? db.field_null(f2) : db.field_not_null(f2)
     when 'explanation'
       f1.has_exp? ? db.update_fexp(f2) : db.add_fexp(f2)
     else puts "#{dp}属性差异暂时无法更新"
