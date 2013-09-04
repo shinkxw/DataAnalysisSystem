@@ -62,6 +62,14 @@ class DBEntity
   def add_field(field);execute(Sql.add_field(field)) end
   #删除字段
   def delete_field(field);execute(Sql.delete_field(field)) end
+  #添加表注释
+  def add_texp(table);execute(Sql.add_texp(table)) end
+  #修改表注释
+  def update_texp(table);execute(Sql.update_texp(table)) end
+  #添加字段注释
+  def add_fexp(field);execute(Sql.add_fexp(field)) end
+  #修改字段注释
+  def update_fexp(field);execute(Sql.update_fexp(field)) end
   #获得数据库的元数据域
   def get_db_area;DBAnalyzer.new.analyze_db(self) end
   #让数据库执行sql语句

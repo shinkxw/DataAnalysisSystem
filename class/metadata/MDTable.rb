@@ -57,6 +57,8 @@ class MDTable
   def has_relation?;@field_area.find{|field| field.relation != nil} end
   #是否有数据
   def has_data?;@data_area.data_arr.size != 0 end
+  #判断说明是否存在
+  def has_exp?;@explanation != "" && @explanation != nil end
   #查找字段名并返回该字段,无则返回nil
   def find_field(field_name);@field_area.find{|field| field.name == field_name} end
   #返回字段数

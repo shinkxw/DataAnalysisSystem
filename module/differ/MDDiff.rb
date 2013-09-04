@@ -30,8 +30,7 @@ class MDDiff
     dp_arr = get_pro_diff(obj1,obj2)
     case obj1.class.to_s
     when 'MDTable'
-      
-      
+      obj1.has_exp? ? db.update_fexp(obj2) : db.add_texp(obj2)
     when 'MDField'
       
     end

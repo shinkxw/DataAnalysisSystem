@@ -98,6 +98,8 @@ class MDField
     #~ end
     true
   end
+  #判断说明是否存在
+  def has_exp?;@explanation != "" && @explanation != nil end
   #返回只有类型的自己，用于数据库比较
   def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
   #计算10的n次方

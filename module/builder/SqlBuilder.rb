@@ -113,9 +113,9 @@ class SqlBuilder
   end
   #生成一个表的注释语句
   def add_table_explanation(table,sql_str = @sql_str)
-    sql_str << Sql.add_texp(table) if table.explanation != "" && table.explanation != nil
+    sql_str << Sql.add_texp(table) if table.has_exp?
     table.each_field do |field|
-      sql_str << Sql.add_fexp(field) if field.explanation != "" && table.explanation != nil
+      sql_str << Sql.add_fexp(field) if field.has_exp?
     end
   end
   #判断命名空间是否需要生成添加数据脚本
