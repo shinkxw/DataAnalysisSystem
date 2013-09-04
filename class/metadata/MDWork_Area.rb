@@ -60,7 +60,7 @@ class MDWork_Area
       dir_path_arr.pop(@@backup_max_num)
       dir_path_arr.each do |dir_path|
         DirManager.remove_dir(dir_path)
-        puts "MDWork_Area: 备份#{dir_path}已删除"
+        #puts "MDWork_Area: 备份#{dir_path}已删除"
       end
     end
   end
@@ -68,6 +68,11 @@ class MDWork_Area
   def show_db_diff(db)
     diff = compare_db(db)
     diff.show_diff
+  end
+  #显示本数据域与数据库间的差异(cmd版)
+  def show_db_diff_cmd
+    diff = compare_db(db)
+    diff.show_cmd_diff
   end
   #使用本数据域更新数据库
   def update_db(db)

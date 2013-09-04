@@ -20,7 +20,7 @@ class DBEntity
   #初始化
   def initialize(conn);@conn,@data = conn,nil end
   #查询数据源中的数据库名
-  def get_database_name;query(Sql.get_db_name)['name'] end
+  def get_db_name;query(Sql.get_db_name)['name'] end
   #查询当前数据库所有表的名字
   def get_table_name_arr;query(Sql.get_all_tname)['name'] ||= [] end
   #获得指定表的字段名数组

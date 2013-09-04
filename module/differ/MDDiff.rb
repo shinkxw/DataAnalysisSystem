@@ -98,4 +98,32 @@ class MDDiff
       end
     end
   end
+  #显示差异(cmd版)
+  def show_cmd_diff
+    puts '  ' * 2 << '数据库' << '  ' * 16 << '工作区'
+    if @t1_diff_arr != [] || @t2_diff_arr != []
+      puts '表级差异:'
+      @t1_diff_arr.each{|table| puts '  ' * 2 << table.gname}
+      @t2_diff_arr.each{|table| puts '  ' * 20 << table.gname}
+    end
+    if @f1_diff_arr != [] || @f2_diff_arr != []
+      puts '字段级差异:'
+      @f1_diff_arr.each{|field| puts '  ' * 2 << field.table.gname << '  ' << field.gname}
+      @f2_diff_arr.each{|field| puts '  ' * 20 << field.table.gname << '  ' << field.gname}
+    end
+    if @pro_diff_hash.keys != []
+      puts '属性级差异:'
+      @pro_diff_hash.each do |k,v|
+        if k.class.to_s == 'MDTable'
+          puts '  ' * 2 << k.gname.ljust(44) << v.gname
+        else
+          tf_name = "#{k.table.gname}  #{k.gname}"
+          puts '  ' * 2 << tf_name.ljust(40) << v.table.gname << '  ' << v.gname
+        end
+        get_pro_diff(k,v).each do |pro|
+          puts "#{'  ' * 3 << pro}:  #{k.send(pro)}#{' ' * 33}#{v.send(pro)}"
+        end
+      end
+    end
+  end
 end
