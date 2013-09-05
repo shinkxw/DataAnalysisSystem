@@ -12,8 +12,8 @@ AreaManager.open("HANRU") do |work_area|
   
   db_conn = DBConnector.new('l')
   DBEntity.open('HanRuEdu',db_conn) do |db|
-    work_area.show_db_diff(db)
-    #work_area.update_db(db)
+    #work_area.show_db_diff(db)
+    work_area.update_db(db)
     
   end
 end 
