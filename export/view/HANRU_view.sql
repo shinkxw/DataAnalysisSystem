@@ -2,559 +2,559 @@
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_USER_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_USER_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_APP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_APP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_SCHOOL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_SCHOOL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_XQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_XQ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_02_YHFZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_02_YHFZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_03_APPRZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_03_APPRZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_03_APPLL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_03_APPLL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A01_TZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_10_A01_TZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A02_TZYDJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_10_A02_TZYDJL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A03_GG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_10_A03_GG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_11_A01_YJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_11_A01_YJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_01_01_WJJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_01_01_WJJBSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_02_01_SWCL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_02_01_SWCL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_02_02_WJYB_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_02_02_WJYB_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_03_01_FWCL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_03_01_FWCL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_03_02_HG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_03_02_HG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_03_03_HQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_03_03_HQ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_03_04_CP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_03_04_CP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_04_01_WJQT_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_04_01_WJQT_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_05_01_WJXH_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_05_01_WJXH_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_06_01_WJJQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_06_01_WJJQ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_12_A01_SJFB_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_12_A01_SJFB_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_13_A01_DWSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_13_A01_DWSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_SYS_01_XN_DISP')
             and   type = 'V')
    drop view VIEW_EDU_SYS_01_XN_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_VIP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_VIP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_TPXT_TPYS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_TPXT_TPYS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_TPXT_TPXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_TPXT_TPXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_TPXT_TPTM_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_TPXT_TPTM_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_TPXT_TPSZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_TPXT_TPSZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_TPXT_TPJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_TPXT_TPJL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_YQLJLX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_YQLJLX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_YQLJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_YQLJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZYS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZYS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZWZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZWZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZPJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZPJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZPZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZPZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZLM_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZLM_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_WZGG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_WZGG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_FWLL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_FWLL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_FBQX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_FBQX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZJ_ZJZY_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A01_ZZGW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A01_ZZGW_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A02_ZZRYAP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A02_ZZRYAP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A03_ZZGWFP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A03_ZZGWFP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A06_ZZZC_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A06_ZZZC_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A07_MBFPNR_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A07_MBFPNR_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_05_A01_ZZDFDL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_05_A01_ZZDFDL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_05_A02_ZZDFXZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_05_A02_ZZDFXZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_05_A03_ZZDFD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_05_A03_ZZDFD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_06_A01_ZZXJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_06_A01_ZZXJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_06_A02_GQXJH_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_06_A02_GQXJH_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_01_01_KC_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_01_01_KC_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_05_A01_KS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_05_A01_KS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_05_A02_KSKM_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_05_A02_KSKM_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_06_A01_MPJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_06_A01_MPJL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_07_02_RKSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_07_02_RKSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_01_01_XSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_01_01_XSXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_01_06_XSJTCY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_01_06_XSJTCY_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_02_A01_XSJTXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_02_A01_XSJTXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_02_06_ZXKSCJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_02_06_ZXKSCJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_07_A02_XJYD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_07_A02_XJYD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_01_01_ZXXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_01_01_ZXXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_02_01_NJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_02_01_NJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_03_01_BJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_03_01_BJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_01_JG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_04_01_JG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_A01_JGGW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_04_A01_JGGW_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_VIP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_VIP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPYS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_TPXT_TPYS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_TPXT_TPXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPTM_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_TPXT_TPTM_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPSZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_TPXT_TPSZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_TPXT_TPJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_TPXT_TPJL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_YQLJLX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_YQLJLX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_YQLJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_YQLJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZYS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_WZYS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZWZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_WZWZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZPJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_WZPJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZPZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_WZPZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZLM_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_WZLM_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_WZGG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_WZGG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_FWLL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_FWLL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_FBQX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_FBQX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_01_XSSS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_08_01_XSSS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_A01_SSCW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_08_A01_SSCW_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_A03_ZWHCY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_08_A03_ZWHCY_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_A02_YHZSJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_08_A02_YHZSJL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_01_01_JZGJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_01_01_JZGJBSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_02_02_XNGWSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_02_02_XNGWSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_07_01_JZGZYNL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_07_01_JZGZYNL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_04_A01_JBDJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_04_A01_JBDJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_01_A01_JZGKZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_01_A01_JZGKZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_02_02_ZZBJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_02_02_ZZBJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_02_01_ZZNJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_02_01_ZZNJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_01_ZYXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_01_ZYXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_08_A01_DGFSQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_08_A01_DGFSQ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_05_02_JSJXGZLTJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_05_02_JSJXGZLTJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_03_JXJHKCQD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_03_03_JXJHKCQD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_02_JXJHFLXFYQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_03_02_JXJHFLXFYQ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_01_ZTJXJH_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_03_01_ZTJXJH_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_A02_JSRK_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_A02_JSRK_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_A01_KCPJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_A01_KCPJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_02_KC_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_02_KC_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_01_XWSXJDXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_01_XWSXJDXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_03_XSXWSXQK_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_03_XSXWSXQK_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A11_SXJC_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A11_SXJC_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A10_SXJD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A10_SXJD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A09_SXRZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A09_SXRZ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A08_SXTS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A08_SXTS_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A07_SXZG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A07_SXZG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A06_XQHD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A06_XQHD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A05_XSYP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A05_XSYP_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A04_SXGW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A04_SXGW_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A03_XXSXZY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A03_XXSXZY_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A02_XXSXJD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A02_XXSXJD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_07_A01_XXSXJH_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_07_A01_XXSXJH_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_07_01_XJSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_07_01_XJSJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_02_A02_XSJTJJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_02_A02_XSJTJJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_02_A01_XSLXR_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_02_A01_XSLXR_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_02_02_XSJTCY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_02_02_XSJTCY_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_02_01_XSJTXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_02_01_XSJTXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_01_A01_XSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_01_A01_XSXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_01_01_XSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_01_01_XSXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_07_03_XSZCXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_07_03_XSZCXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_07_02_XJYD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_07_02_XJYD_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_06_01_XSCJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_06_01_XSCJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_13_A01_XSJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_13_A01_XSJL_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXX_03_01_XNJG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXX_03_01_XNJG_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXX_01_01_ZZXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXX_01_01_ZZXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXX_03_A01_JGGW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXX_03_A01_JGGW_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_02_01_RXCJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZZS_02_01_RXCJ_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_01_A01_ZSJH_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZZS_01_A01_ZSJH_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_01_01_ZSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZZS_01_01_ZSXX_DISP
-go
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_03_01_KSKMCJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZZS_03_01_KSKMCJ_DISP
-go
+GO
 
 --应用系统用户表
 CREATE VIEW [dbo].[VIEW_EDU_ELE_01_USER_DISP]
@@ -5490,7 +5490,7 @@ SELECT a.[ID]--编号
       ,a.[JZGLBM]--教职工类别码
       ,a.[GWLBM]--岗位类别码
       ,a.[SFJZJS]--是否兼职教师
-      ,a.[SFSSXJS]--是否双师型教
+      ,a.[SFSSXJS]--是否双师型教师
       ,a.[ZP]--照片(路径)
       ,a.[DQZTM]--当前状态码
       ,a.[YDDH]--移动电话
@@ -5546,7 +5546,7 @@ FROM dbo.EDU_ZZJG_01_01_JZGJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS q ON a.JZGLBM = q.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS r ON a.GWLBM = r.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFJZJS = s.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS t ON a.SFSSXJS = t.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS t ON a.SFSSXJS = t.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS u ON a.DQZTM = u.DM /*当前状态码*/
 GO
 
@@ -5623,7 +5623,7 @@ SELECT a.[ID]--编号
       ,dq.MC as d_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,d.SFJZJS as d_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,dr.MC as d_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,d.SFSSXJS as d_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,d.SFSSXJS as d_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,ds.MC as d_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,d.ZP as d_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,d.DQZTM as d_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -5674,7 +5674,7 @@ FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS dp ON d.JZGLBM = dp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS dq ON d.GWLBM = dq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS dr ON d.SFJZJS = dr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ds ON d.SFSSXJS = ds.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS ds ON d.SFSSXJS = ds.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS dt ON d.DQZTM = dt.DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS fb ON f.JGYXBS = fb.DM /*机构有效标识*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS fc ON f.SFST = fc.DM /*是否实体*/
@@ -5747,7 +5747,7 @@ SELECT a.[SCHOOLID]--学校名
       ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -5781,7 +5781,7 @@ FROM dbo.EDU_ZZJG_07_01_JZGZYNL AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
 GO
 
@@ -5850,7 +5850,7 @@ SELECT a.[ID]--加班登记表ID
       ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -5884,7 +5884,7 @@ FROM dbo.EDU_ZZJG_04_A01_JBDJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
 GO
 
@@ -5954,7 +5954,7 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,bq.MC as b_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,b.SFJZJS as b_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,br.MC as b_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,b.SFSSXJS as b_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,b.SFSSXJS as b_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,bs.MC as b_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,b.ZP as b_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,b.DQZTM as b_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -5986,7 +5986,7 @@ FROM dbo.EDU_ZZJG_01_A01_JZGKZ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS bp ON b.JZGLBM = bp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS bq ON b.GWLBM = bq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS br ON b.SFJZJS = br.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bs ON b.SFSSXJS = bs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bs ON b.SFSSXJS = bs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS bt ON b.DQZTM = bt.DM /*当前状态码*/
 GO
 
@@ -6234,7 +6234,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -6282,7 +6282,7 @@ FROM dbo.EDU_ZZJX_08_A01_DGFSQ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/
 GO
 
@@ -6356,7 +6356,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -6396,7 +6396,7 @@ FROM dbo.EDU_ZZJX_05_02_JSJXGZLTJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
 GO
@@ -6639,7 +6639,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -6709,7 +6709,7 @@ FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/ LEFT OUTER JOIN
@@ -8817,7 +8817,7 @@ SELECT a.[ID]--学籍异动表编号
       ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -8942,7 +8942,7 @@ FROM dbo.EDU_ZZXS_07_02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS gb ON g.ZYDM = gb.DM /*专业代码*/ AND g.SSZYML = gb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS gc ON g.SSZYML = gc.DM /*所属专业目录*/ LEFT OUTER JOIN
@@ -9104,7 +9104,7 @@ SELECT a.[XSXXID]--学生ID
       ,gq.MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,gr.MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,gs.MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -9172,7 +9172,7 @@ SELECT a.[XSXXID]--学生ID
       ,hq.MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,h.SFJZJS as h_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,hr.MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,h.SFSSXJS as h_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,h.SFSSXJS as h_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,hs.MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,h.ZP as h_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,h.DQZTM as h_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -9226,7 +9226,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS gp ON g.JZGLBM = gp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS gq ON g.GWLBM = gq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS gr ON g.SFJZJS = gr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gs ON g.SFSSXJS = gs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS gs ON g.SFSSXJS = gs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS gt ON g.DQZTM = gt.DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS hb ON h.SFZJLXM = hb.DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS hc ON h.XBM = hc.DM /*性别码*/ LEFT OUTER JOIN
@@ -9245,7 +9245,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS hp ON h.JZGLBM = hp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS hq ON h.GWLBM = hq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS hr ON h.SFJZJS = hr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hs ON h.SFSSXJS = hs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS hs ON h.SFSSXJS = hs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ht ON h.DQZTM = ht.DM /*当前状态码*/
 GO
 

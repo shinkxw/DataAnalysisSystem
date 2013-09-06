@@ -60,7 +60,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_01_01_JZGJBSJ](
 	[JZGLBM]  nvarchar(2)  NOT NULL,--教职工类别码
 	[GWLBM]  nvarchar(1)  NOT NULL,--岗位类别码
 	[SFJZJS]  nvarchar(1)  NOT NULL,--是否兼职教师
-	[SFSSXJS]  nvarchar(1)  NOT NULL,--是否双师型教
+	[SFSSXJS]  nvarchar(1)  NOT NULL,--是否双师型教师
 	[ZP]  nvarchar(100)  NULL,--照片(路径)
 	[DQZTM]  nvarchar(2)  NOT NULL,--当前状态码
 	[YDDH]  nvarchar(30)  NOT NULL,--移动电话
@@ -229,7 +229,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位类别码' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否兼职教师' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'SFJZJS'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否双师型教' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'SFSSXJS'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否双师型教师' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'SFSSXJS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'照片(路径)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZP'
 GO

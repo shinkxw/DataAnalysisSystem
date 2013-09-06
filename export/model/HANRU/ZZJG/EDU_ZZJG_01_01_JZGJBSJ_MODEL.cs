@@ -251,7 +251,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "是否双师型教")]
+            [Display(Name = "是否双师型教师")]
             [StringLength(1)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SFSSXJS { get; set; }

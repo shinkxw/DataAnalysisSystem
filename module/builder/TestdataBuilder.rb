@@ -17,6 +17,7 @@ class TestdataBuilder
                                            when 'AUDITSTATU' then Proc.new{|i| '1'}
                                            when 'PID' then Proc.new{|i| (i % 10) + 1}
                                            when 'LLQX' then Proc.new{|i| '0'}
+                                           when ''
                                            else Proc.new{|i| i}
                                            end
                                       },

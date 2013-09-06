@@ -31,7 +31,7 @@ EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
   JZGLBM      教职工类别码            nvarchar(2)    非主     教职工类别代码表
   GWLBM       岗位类别码              nvarchar(1)    非主     岗位类别代码表
   SFJZJS      是否兼职教师            nvarchar(1)    非主     是否标志代码表
-  SFSSXJS     是否双师型教            nvarchar(1)    非主     是否标志代码表
+  SFSSXJS     是否双师型教师          nvarchar(1)    非主     是否标志代码表
   ZP          照片(路径)            nvarchar(100)  非主
   DQZTM       当前状态码              nvarchar(2)    非主     教职工当前状态代码表
   YDDH        移动电话                nvarchar(30)   非主

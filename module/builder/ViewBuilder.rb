@@ -163,7 +163,7 @@ class ViewBuilder
     @table_arr.each do |table|
       @view_str << "if exists (select 1 from  sysobjects where  id = object_id('VIEW_#{table.name}_DISP')\n"
       @view_str << "            and   type = 'V')\n"
-      @view_str << "   drop view VIEW_#{table.name}_DISP\ngo\n"
+      @view_str << "   drop view VIEW_#{table.name}_DISP\nGO\n"
     end
   end
   #查找存在关联的表

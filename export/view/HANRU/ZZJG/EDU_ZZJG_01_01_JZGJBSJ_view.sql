@@ -34,7 +34,7 @@ SELECT a.[ID]--编号
       ,a.[JZGLBM]--教职工类别码
       ,a.[GWLBM]--岗位类别码
       ,a.[SFJZJS]--是否兼职教师
-      ,a.[SFSSXJS]--是否双师型教
+      ,a.[SFSSXJS]--是否双师型教师
       ,a.[ZP]--照片(路径)
       ,a.[DQZTM]--当前状态码
       ,a.[YDDH]--移动电话
@@ -90,6 +90,6 @@ FROM dbo.EDU_ZZJG_01_01_JZGJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS q ON a.JZGLBM = q.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS r ON a.GWLBM = r.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFJZJS = s.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS t ON a.SFSSXJS = t.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS t ON a.SFSSXJS = t.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS u ON a.DQZTM = u.DM /*当前状态码*/
 GO

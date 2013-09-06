@@ -34,7 +34,7 @@
             <name="JZGLBM" explanation="教职工类别码" type="nvarchar(2)" null="F" p="F" identity="F" remark="EDU_JY_JZGLB" />
             <name="GWLBM" explanation="岗位类别码" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_GWLB" />
             <name="SFJZJS" explanation="是否兼职教师" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_SFBZ" />
-            <name="SFSSXJS" explanation="是否双师型教" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_SFBZ" />
+            <name="SFSSXJS" explanation="是否双师型教师" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_SFBZ" />
             <name="ZP" explanation="照片(路径)" type="nvarchar(100)" null="T" p="F" identity="F" remark="" />
             <name="DQZTM" explanation="当前状态码" type="nvarchar(2)" null="F" p="F" identity="F" remark="EDU_JY_JZGDQZT" />
             <name="YDDH" explanation="移动电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />

@@ -65,7 +65,7 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,bq.MC as b_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,b.SFJZJS as b_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
       ,br.MC as b_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
-      ,b.SFSSXJS as b_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教
+      ,b.SFSSXJS as b_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
       ,bs.MC as b_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,b.ZP as b_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,b.DQZTM as b_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
@@ -97,6 +97,6 @@ FROM dbo.EDU_ZZJG_01_A01_JZGKZ AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGLB AS bp ON b.JZGLBM = bp.DM /*教职工类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS bq ON b.GWLBM = bq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS br ON b.SFJZJS = br.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bs ON b.SFSSXJS = bs.DM /*是否双师型教*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS bs ON b.SFSSXJS = bs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS bt ON b.DQZTM = bt.DM /*当前状态码*/
 GO
