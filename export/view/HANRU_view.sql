@@ -1951,6 +1951,7 @@ SELECT a.[ID]--网站文章ID
       ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
       ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
       ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
+      ,d.PLSX as d_WZLM_PLSX--网站栏目（导航） 排列顺序
 
 FROM dbo.EDU_WZXT_MHXT_WZWZ AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2047,6 +2048,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,a.[SHOWNUMBER]--显示个数
       ,a.[OPENFLAG]--开启状态
       ,a.[LLQX]--浏览权限
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
@@ -2065,6 +2067,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
       ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
       ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
+      ,d.PLSX as d_WZLM_PLSX--网站栏目（导航） 排列顺序
 
 FROM dbo.EDU_WZXT_MHXT_WZLM AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

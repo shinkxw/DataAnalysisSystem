@@ -45,6 +45,7 @@ SELECT a.[ID]--网站文章ID
       ,d.SHOWNUMBER as d_WZLM_SHOWNUMBER--网站栏目（导航） 显示个数
       ,d.OPENFLAG as d_WZLM_OPENFLAG--网站栏目（导航） 开启状态
       ,d.LLQX as d_WZLM_LLQX--网站栏目（导航） 浏览权限
+      ,d.PLSX as d_WZLM_PLSX--网站栏目（导航） 排列顺序
 
 FROM dbo.EDU_WZXT_MHXT_WZWZ AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

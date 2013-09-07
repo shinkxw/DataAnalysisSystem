@@ -104,7 +104,7 @@ class DBEntity
     recordset.Close
     
     data_hash = {}
-    fields.each_index{|i| data_hash[fields[i]] = data[i]}
+    data.each_index{|i| data_hash[fields[i]] = data[i]}
     data_hash
   end
 end

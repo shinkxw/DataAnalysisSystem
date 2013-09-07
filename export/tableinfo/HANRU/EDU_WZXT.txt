@@ -147,6 +147,7 @@ EDU_WZXT_MHXT_WZLM  网站栏目（导航）
   SHOWNUMBER  显示个数                int            非主
   OPENFLAG    开启状态                int            非主
   LLQX        浏览权限                nvarchar(50)   非主
+  PLSX        排列顺序                int            非主
 
 EDU_WZXT_MHXT_WZGG  网站广告
   ID          网站广告ID            int            主键

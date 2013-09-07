@@ -176,6 +176,7 @@
             <name="SHOWNUMBER" explanation="显示个数" type="int" null="F" p="F" identity="F" remark="" />
             <name="OPENFLAG" explanation="开启状态" type="int" null="F" p="F" identity="F" remark="（0外，1内网）" />
             <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
+            <name="PLSX" explanation="排列顺序" type="int" null="F" p="F" identity="F" remark="" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZGG" explanation="网站广告">

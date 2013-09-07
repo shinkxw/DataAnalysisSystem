@@ -1687,6 +1687,7 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZLM](
 	[SHOWNUMBER]  int  NOT NULL,--显示个数
 	[OPENFLAG]  int  NOT NULL,--开启状态
 	[LLQX]  nvarchar(50)  NULL,--浏览权限
+	[PLSX]  int  NOT NULL,--排列顺序
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZLM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2030,6 +2031,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开启状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'OPENFLAG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览权限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'LLQX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZLM', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网站广告' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZGG'
 GO

@@ -88,6 +88,7 @@ class MDWork_Area
         #运行最新版本的视图
         view_str = ViewBuilder.new(true).build(@area).get_data_str
         db.execute(view_str)
+        puts '数据库更新成功'
       end
     else
       puts '数据库表结构与工作区一致，不需更新'

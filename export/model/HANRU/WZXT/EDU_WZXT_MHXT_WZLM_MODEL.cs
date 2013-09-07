@@ -87,6 +87,11 @@ namespace HanRuEdu.LDAL
             public String LLQX { get; set; }
 
 
+            [Required(ErrorMessage = "±ÿÃÓ")]
+            [Display(Name = "≈≈¡–À≥–Ú")]
+            public Int32 PLSX { get; set; }
+
+
         }
     }
 }
