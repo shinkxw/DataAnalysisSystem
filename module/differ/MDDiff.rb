@@ -96,10 +96,10 @@ class MDDiff
       puts ' Ù–‘º∂≤Ó“Ï:'
       @pro_diff_hash.each do |k,v|
         if k.class.to_s == 'MDTable'
-          puts '  ' * 3 << k.gname.ljust(66) << v.gname
+          puts '  ' * 3 << k.gname.fill_cn(66) << v.gname
         else
           tf_name = "#{k.table.gname}  #{k.gname}"
-          puts '  ' * 3 << tf_name.ljust(60) << v.table.gname << '  ' << v.gname
+          puts '  ' * 3 << tf_name.fill_cn(60) << v.table.gname << '  ' << v.gname
         end
         get_pro_diff(k,v).each do |pro|
           puts "#{'  ' * 6 << pro}:  #{k.send(pro)}#{' ' * 55}#{v.send(pro)}"

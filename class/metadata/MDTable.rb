@@ -58,7 +58,7 @@ class MDTable
   #是否有数据
   def has_data?;@data_area.data_arr.size != 0 end
   #判断说明是否存在
-  def has_exp?;@explanation != "" && @explanation != nil end
+  def has_exp?;@explanation != '' && @explanation != nil end
   #查找字段名并返回该字段,无则返回nil
   def find_field(field_name);@field_area.find{|field| field.name == field_name} end
   #返回字段数
@@ -70,7 +70,7 @@ class MDTable
     @field_area.select{|field| field.p == "T"}.map{|field| field.name}
   end
   #在有说明时返回说明，否则返回名字
-  def gname;@explanation != '' && @explanation != nil ? @explanation : @name end
+  def gname;has_exp? ? @explanation + '(' + @name + ')' : @name end
   #获得字段数组
   def field_arr;@field_area.field_arr end
   #迭代字段

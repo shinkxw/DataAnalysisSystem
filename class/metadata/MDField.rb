@@ -26,7 +26,7 @@ class MDField
     @relation = nil
   end
   #在有说明时返回说明，否则返回名字
-  def gname;@explanation != '' && @explanation != nil ? @explanation : @name end
+  def gname;has_exp? ? @explanation + '(' + @name + ')' : @name end
   #改变字段关联
   def change_relation(r_field)
     result = true
@@ -80,8 +80,7 @@ class MDField
     when 'datetime';result = ['DateTime']
     when 'text';result = ['String']
     when 'money';result = ['decimal','0','9999999']
-    when 'nchar';result = ['String',value]
-    when 'nvarchar';result = ['String',value]
+    when 'nchar','nvarchar';result = ['String',value]
     when 'decimal'
       if value =~ /(.+?),(.+?)/
         zw = $1.to_i
@@ -110,7 +109,7 @@ class MDField
     true
   end
   #判断说明是否存在
-  def has_exp?;@explanation != "" && @explanation != nil end
+  def has_exp?;@explanation != '' && @explanation != nil end
   #返回只有类型的自己，用于数据库比较
   def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
   #处理输入数据
