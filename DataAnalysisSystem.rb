@@ -6,9 +6,10 @@ $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 AreaManager.open("HANRU") do |work_area|
-  #config = {'EDU_WZXT_MHXT_WZLM' => 50}
-  #work_area.export_testdata(config)
-  work_area.export_all
+  build_hash = {'EDU_WZXT_MHXT_WZWZ' => {'num' => 500,
+                                         'SCHOOLID' => Proc.new{'123'}}}
+  work_area.export_testdata(build_hash)
+  #work_area.export_all
   
   #db_conn = DBConnector.new('l')#192.168.0.8,1444
   #DBEntity.open('HanRuEdu',db_conn) do |db|

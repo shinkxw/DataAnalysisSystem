@@ -23,7 +23,7 @@ class MDWork_Area
                  #~ 'HANRU_bz'=>'G:/同步',
                  #~ 'HANRU_yw'=>'G:/同步',
                  #~ 'HANRU_view'=>'G:/同步'}
-    MDDoc.set_fsc(fs_config)
+    #~ MDDoc.set_fsc(fs_config)
     export_sql
     export_sql(false)
     export_view
@@ -32,7 +32,7 @@ class MDWork_Area
     export_template
     export_tableinfo
     export_migrate_config
-    MDDoc.set_fsc(nil)
+    #MDDoc.set_fsc(nil)
     #SVN.commit('G:\瀚孺\HanruEdu')
   end
   #固化元数据并关闭工作环境

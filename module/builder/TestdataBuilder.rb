@@ -4,40 +4,24 @@
 class TestdataBuilder
   attr_reader :area#待生成的元数据
   attr_reader :sql_str#生成的sql语句
-  attr_accessor :build_rule#数据生成规则hash表，键为数据类型，值为生成方法
   #初始化
   def initialize(log = Log.new)
     @area = nil
     @sql_str = nil
-    @build_rule  = { 'int' => Proc.new{|p| case p
-                                           when 'WEBID' then Proc.new{|i| '1'}
-                                           when 'SCHOOLID' then Proc.new{|i| '2'}
-                                           when 'LMID' then Proc.new{|i| (i % 50) + 1}
-                                           when 'OPENFLAG' then Proc.new{|i| '0'}
-                                           when 'AUDITSTATU' then Proc.new{|i| '1'}
-                                           when 'PID' then Proc.new{|i| (i % 10) + 1}
-                                           when 'LLQX' then Proc.new{|i| '0'}
-                                           when ''
-                                           else Proc.new{|i| i}
-                                           end
-                                      },
-                     'String' => Proc.new{|len| Proc.new{get_random_string(len)}},
-                     'decimal' => Proc.new{|p| Proc.new{|i| '0'}},
-                     'DateTime' => Proc.new{|p| Proc.new{|i| ''}}}
     @log = log
   end
   #生成无关联表的测试数据添加脚本
-  #config为hash表，键为表名，值为需生成数据条数
-  #config = {'EDU_WZXT_MHXT_WZLM' => 5, 'EDU_WZXT_MHXT_WZWZ' => 500}
-  def build_sd(area, config)
+  #build_hash为hash表，键为表名，值为生成配置
+  def build_sd(area, build_hash)
     @area = area
     @sql_str = ""
-    config.each do |table_name,data_num|
+    build_hash.each do |table_name,config|
+      data_num = config['num']
       table = @area.find_table(table_name)
       if table != nil
         prefix_str = "INSERT INTO [#{table_name}](["
         prefix_str << "#{table.get_field_name_arr.join("] ,[")}]) VALUES("
-        testdata_arr = get_testdata(table, data_num)
+        testdata_arr = get_testdata(table, data_num, config)
         testdata_arr.each do |testdata|
           testdata.map!{|d| d =~ /^CAST\(/ ? d : "'#{d}'"}
           @sql_str << "#{prefix_str}#{testdata.join(", ")})\n"
@@ -49,27 +33,36 @@ class TestdataBuilder
     MDDoc.new("testdata",@area.name,@sql_str,"sql")
   end
   #获得测试数据
-  def get_testdata(table, data_num)
+  def get_testdata(table, data_num, config)
     proc_arr = []
     table.each_field do |field|
-      type = field.split_type
-      build_proc = @build_rule[type[0]]
-      if build_proc != nil
-        if type[0] == 'String'
-          if type.size > 1
-            proc_arr << build_proc.call(type[1].to_i,field.name)
-          else
-            proc_arr << build_proc.call(1000,field.name)
-          end
-        else
-          proc_arr << build_proc.call(field.name)
-        end
+      if config[field.name]
+        proc_arr << config[field.name]
       else
-        puts "TestdataBuilder：没有为属性#{type[0]}配置数据生成方法"
-        proc_arr << Proc.new{|str| ""}
+        proc_arr << get_def_proc(field)
       end
     end
     Array.new(data_num){|i| proc_arr.map{|proc| proc.call(i)}}
+  end
+  #获得默认的数据生成方法
+  def get_def_proc(field)
+    type = field.split_type
+    case type[0]
+    when 'int'; Proc.new{|str| '0'}
+    when 'String'
+      if type.size > 1
+        Proc.new{get_random_string(type[1].to_i)}
+      else
+        Proc.new{get_random_string(1000)}
+      end
+    when 'decimal'
+      Proc.new{|str| '0'}
+    when 'DateTime'
+      Proc.new{|str| ''}
+    else
+      puts "TestdataBuilder：没有为属性#{type[0]}配置数据生成方法"
+      Proc.new{|str| ""}
+    end
   end
   #生成测试数据插入脚本
   def build(area, config)
