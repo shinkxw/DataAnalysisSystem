@@ -12,9 +12,10 @@ class TestdataBuilder
   end
   #生成无关联表的测试数据添加脚本
   #build_hash为hash表，键为表名，值为生成配置
+  #{'EDU_WZXT_MHXT_WZWZ' => {'num' => 500,'SCHOOLID' => Proc.new{'123'}}}
   def build_sd(area, build_hash)
     @area = area
-    @sql_str = ""
+    @sql_str = ''
     build_hash.each do |table_name,config|
       data_num = config['num']
       table = @area.find_table(table_name)
@@ -30,7 +31,7 @@ class TestdataBuilder
         puts "TestdataBuilder：未找到表#{table_name}的定义"
       end
     end
-    MDDoc.new("testdata",@area.name,@sql_str,"sql")
+    MDDoc.new('testdata',@area.name,@sql_str,"sql")
   end
   #获得测试数据
   def get_testdata(table, data_num, config)
@@ -61,7 +62,7 @@ class TestdataBuilder
       Proc.new{|str| ''}
     else
       puts "TestdataBuilder：没有为属性#{type[0]}配置数据生成方法"
-      Proc.new{|str| ""}
+      Proc.new{|str| ''}
     end
   end
   #生成测试数据插入脚本
