@@ -28,11 +28,7 @@ class MDDoc
 	path if path != nil
   end
   #将哈希形式文档输出至文件夹
-  def hash_out(path)
-    FolderWriter.new(path,true).write_str_hash(@data)
-  end
+  def hash_out(path);FolderWriter.new(path,true).write_str_hash(@data) end
   #将字符串形式文档输出至文件夹
-  def str_out(path)
-    FileWriter.new(path).write_str(@data)
-  end
+  def str_out(path);FileWriter.new(path).write_str(@data) end
 end

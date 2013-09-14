@@ -9,7 +9,7 @@ class String
   def fill_cn(length, pad = ' ')
     cl = cn_length
     if cl < length
-      self.dup << (pad * (length - cl) * 2)
+      self.dup << (pad * ((length - cl) * 2))
     else
       self
     end

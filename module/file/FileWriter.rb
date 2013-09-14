@@ -20,9 +20,7 @@ class FileWriter
   #将字符串数组写入文件
   def write_str_arr(str_arr)
     File.open("#{@file_path}","#{@type}:#{@encode}") do |file|
-      str_arr.each do |str|
-        file.puts(str)
-      end
+      str_arr.each{|str| file.puts(str)}
     end
   end
 end

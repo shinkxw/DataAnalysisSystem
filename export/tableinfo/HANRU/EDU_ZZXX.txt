@@ -1,48 +1,48 @@
 EDU_ZZXX_03_01_XNJG  校内机构数据类表
-  JGH         机构号                  nvarchar(6)    主键
-  SCHOOLID    学校名                  int            主键     学校配置表
-  JGMC        机构名称                nvarchar(100)  非主
-  JGYWMC      机构英文名称            nvarchar(100)  非主
-  JGJC        机构简称                nvarchar(50)   非主
-  JGJP        机构简拼                nvarchar(20)   非主
-  JGDZ        机构地址                nvarchar(180)  非主
-  LSSJJGH     隶属上级机构号          nvarchar(6)    非主     校内机构数据类表
-  LSXQH       隶属校区号              nvarchar(2)    非主
-  JGYXBS      机构有效标识            nvarchar(1)    非主     是否标志代码表
-  SFST        是否实体                nvarchar(1)    非主     是否标志代码表
-  JLNY        建立年月                nvarchar(6)    非主
-  JGYZBM      机构邮政编码            nvarchar(6)    非主
-  FZRH        负责人号                nvarchar(20)   非主
+  JGH         机构号                                    nvarchar(6)    主键
+  SCHOOLID    学校名                                    int            主键     学校配置表
+  JGMC        机构名称                                nvarchar(100)  非主
+  JGYWMC      机构英文名称                        nvarchar(100)  非主
+  JGJC        机构简称                                nvarchar(50)   非主
+  JGJP        机构简拼                                nvarchar(20)   非主
+  JGDZ        机构地址                                nvarchar(180)  非主
+  LSSJJGH     隶属上级机构号                    nvarchar(6)    非主     校内机构数据类表
+  LSXQH       隶属校区号                            nvarchar(2)    非主
+  JGYXBS      机构有效标识                        nvarchar(1)    非主     是否标志代码表
+  SFST        是否实体                                nvarchar(1)    非主     是否标志代码表
+  JLNY        建立年月                                nvarchar(6)    非主
+  JGYZBM      机构邮政编码                        nvarchar(6)    非主
+  FZRH        负责人号                                nvarchar(20)   非主
 
 EDU_ZZXX_01_01_ZZXX  学校基本数据表
-  ID          编号                    int            主键
-  XXDM        学校代码                nvarchar(10)   非主
-  XXMC        学校名称                nvarchar(60)   非主
-  XXYWMC      学校英文名称            nvarchar(60)   非主
-  XXJBZM      学校举办者码            nvarchar(3)    非主     学校（教育机构）举办者代码表
-  XXZGBMM     学校主管部门码          nvarchar(3)    非主     学校（教育机构）举办者代码表
-  XXDZ        学校地址                nvarchar(180)  非主
-  XXYZBM      学校邮政编码            nvarchar(6)    非主
-  XZQHM       行政区划码              nvarchar(6)    非主     中华人民共和国行政区划代码
-  JXNY        建校年月                nvarchar(6)    非主
-  XQR         校庆日                  nvarchar(60)   非主
-  CLBJ        成立背景                text           非主
-  LSYG        历史沿革                text           非主
-  XXXQS       学校校区数              decimal(2, 0)  非主
-  XXPGLX      学校评估类型            nvarchar(1)    非主     评估情况代码
-  XXPGQKSM    学校评估情况说明        text           非主
-  ZYDZ        主页地址                nvarchar(60)   非主
-  FDDBRH      法定代表人号            nvarchar(30)   非主
-  FRZSH       法人证书号              nvarchar(20)   非主
-  LXDH        联系电话                nvarchar(30)   非主
-  CZDH        传真电话                nvarchar(30)   非主
-  DZXX        电子信箱                nvarchar(40)   非主
+  ID          编号                                        int            主键
+  XXDM        学校代码                                nvarchar(10)   非主
+  XXMC        学校名称                                nvarchar(60)   非主
+  XXYWMC      学校英文名称                        nvarchar(60)   非主
+  XXJBZM      学校举办者码                        nvarchar(3)    非主     学校（教育机构）举办者代码表
+  XXZGBMM     学校主管部门码                    nvarchar(3)    非主     学校（教育机构）举办者代码表
+  XXDZ        学校地址                                nvarchar(180)  非主
+  XXYZBM      学校邮政编码                        nvarchar(6)    非主
+  XZQHM       行政区划码                            nvarchar(6)    非主     中华人民共和国行政区划代码
+  JXNY        建校年月                                nvarchar(6)    非主
+  XQR         校庆日                                    nvarchar(60)   非主
+  CLBJ        成立背景                                text           非主
+  LSYG        历史沿革                                text           非主
+  XXXQS       学校校区数                            decimal(2, 0)  非主
+  XXPGLX      学校评估类型                        nvarchar(1)    非主     评估情况代码
+  XXPGQKSM    学校评估情况说明                text           非主
+  ZYDZ        主页地址                                nvarchar(60)   非主
+  FDDBRH      法定代表人号                        nvarchar(30)   非主
+  FRZSH       法人证书号                            nvarchar(20)   非主
+  LXDH        联系电话                                nvarchar(30)   非主
+  CZDH        传真电话                                nvarchar(30)   非主
+  DZXX        电子信箱                                nvarchar(40)   非主
 
 EDU_ZZXX_03_A01_JGGW  机构岗位表
-  ID          岗位表ID              int            主键
-  SCHOOLID    学校ID                int            主键     学校配置表
-  JGH         机构号                  nvarchar(6)    非主     校内机构数据类表
-  GWBH        岗位编号                nvarchar(50)   非主
-  GWMC        岗位名称                nvarchar(50)   非主
-  GWSM        岗位说明                text           非主
+  ID          岗位表ID                                int            主键
+  SCHOOLID    学校ID                                    int            主键     学校配置表
+  JGH         机构号                                    nvarchar(6)    非主     校内机构数据类表
+  GWBH        岗位编号                                nvarchar(50)   非主
+  GWMC        岗位名称                                nvarchar(50)   非主
+  GWSM        岗位说明                                text           非主
 
