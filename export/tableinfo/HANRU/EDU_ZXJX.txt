@@ -1,71 +1,71 @@
 EDU_ZXJX_01_01_KC  课程数据类
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  KCH         课程号                                    nvarchar(10)   主键
-  KCMC        课程名称                                nvarchar(60)   非主
-  KCM         课程码                                    nvarchar(2)    非主     中小学课程代码表
-  KCDJM       课程等级码                            nvarchar(1)    非主     中小学课程等级代码表
-  KCBM        课程别名                                nvarchar(60)   非主
-  KCJJ        课程简介                                text           非主
-  KCYQ        课程要求                                text           非主
-  ZXS         总学时                                    decimal(3, 0)  非主
-  ZHXS        周学时                                    decimal(2, 0)  非主
-  ZXXS        自学学时                                decimal(3, 0)  非主
-  SKFSM       授课方式码                            nvarchar(1)    非主     授课方式代码表
-  JCBM        教材编码                                text           非主
-  CKSM        参考书目                                text           非主
-  CDXZ        场地限制                                int            非主
-  SFZK        是否主课                                nvarchar(1)    非主     是否标志代码表
+  SCHOOLID      学校名                  int            主键   学校配置表
+  KCH           课程号                  nvarchar(10)   主键
+  KCMC          课程名称                nvarchar(60)   非主
+  KCM           课程码                  nvarchar(2)    非主   中小学课程代码表
+  KCDJM         课程等级码              nvarchar(1)    非主   中小学课程等级代码表
+  KCBM          课程别名                nvarchar(60)   非主
+  KCJJ          课程简介                text           非主
+  KCYQ          课程要求                text           非主
+  ZXS           总学时                  decimal(3, 0)  非主
+  ZHXS          周学时                  decimal(2, 0)  非主
+  ZXXS          自学学时                decimal(3, 0)  非主
+  SKFSM         授课方式码              nvarchar(1)    非主   授课方式代码表
+  JCBM          教材编码                text           非主
+  CKSM          参考书目                text           非主
+  CDXZ          场地限制                int            非主
+  SFZK          是否主课                nvarchar(1)    非主   是否标志代码表
 
 EDU_ZXJX_05_A01_KS  考试数据表
-  ID          编号                                        int            主键
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  XNID        学年                                        int            非主     学年表
-  XQID        学期                                        int            非主     学期数据表
-  KSMC        考试名称                                nvarchar(60)   非主
-  KSKSSJ      考试开始时间                        datetime       非主
-  KSJSSJ      考试结束时间                        datetime       非主
-  DFKSSJ      登分开始时间                        datetime       非主
-  DFJSSJ      登分结束时间                        datetime       非主
-  DFKS        登分方式                                int            非主
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键   学校配置表
+  XNID          学年                    int            非主   学年表
+  XQID          学期                    int            非主   学期数据表
+  KSMC          考试名称                nvarchar(60)   非主
+  KSKSSJ        考试开始时间            datetime       非主
+  KSJSSJ        考试结束时间            datetime       非主
+  DFKSSJ        登分开始时间            datetime       非主
+  DFJSSJ        登分结束时间            datetime       非主
+  DFKS          登分方式                int            非主
 
 EDU_ZXJX_05_A02_KSKM  考试科目数据表
-  ID          编号                                        int            主键
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  SSKSID      所属考试ID                            int            非主     考试数据表
-  JSRKID      教师任课编号                        int            非主     任课数据子类表
-  KCMC        课程名称                                nvarchar(60)   非主
-  NJMC        年级名称                                nvarchar(30)   非主
-  BJMC        班级名称                                nvarchar(20)   非主
-  CJZF        成绩总分                                decimal(5, 1)  非主
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键   学校配置表
+  SSKSID        所属考试ID              int            非主   考试数据表
+  JSRKID        教师任课编号            int            非主   任课数据子类表
+  KCMC          课程名称                nvarchar(60)   非主
+  NJMC          年级名称                nvarchar(30)   非主
+  BJMC          班级名称                nvarchar(20)   非主
+  CJZF          成绩总分                decimal(5, 1)  非主
 
 EDU_ZXJX_06_A01_MPJL  面批记录表
-  ID          编号                                        int            主键
-  SCHOOLID    学校名                                    int            非主     学校配置表
-  MPJS        面批教师                                int            非主     教职工基本数据子类表
-  MPKC        面批课程                                nvarchar(10)   非主     课程数据类
-  MPXS        面批学生                                int            非主     学生基本数据子类表
-  XNID        学年                                        int            非主     学年表
-  XQID        学期                                        int            非主     学期数据表
-  NJID        年级                                        nvarchar(10)   非主     年级数据类表
-  BJID        班级                                        nvarchar(10)   非主     班级数据类表
-  MPJG        面批结果                                int            非主
-  MPSJ        面批时间                                datetime       非主
-  RRSJ        录入时间                                datetime       非主
-  BZ          备注                                        text           非主
-  JSRKID      教师任课编号                        int            非主
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            非主   学校配置表
+  MPJS          面批教师                int            非主   教职工基本数据子类表
+  MPKC          面批课程                nvarchar(10)   非主   课程数据类
+  MPXS          面批学生                int            非主   学生基本数据子类表
+  XNID          学年                    int            非主   学年表
+  XQID          学期                    int            非主   学期数据表
+  NJID          年级                    nvarchar(10)   非主   年级数据类表
+  BJID          班级                    nvarchar(10)   非主   班级数据类表
+  MPJG          面批结果                int            非主
+  MPSJ          面批时间                datetime       非主
+  RRSJ          录入时间                datetime       非主
+  BZ            备注                    text           非主
+  JSRKID        教师任课编号            int            非主
 
 EDU_ZXJX_07_A01_CJFXPZ  成绩分析配置表
-  ID          编号                                        int            主键
-  SCHOOLID    学校ID                                    int            非主
-  SSKSID      配置名称                                nvarchar(20)   非主
-  FXLX        分析类型                                int            非主
-  BZ          备注                                        nvarchar(60)   非主
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  SSKSID        配置名称                nvarchar(20)   非主
+  FXLX          分析类型                int            非主
+  BZ            备注                    nvarchar(60)   非主
 
 EDU_ZXJX_07_A02_CJFXPZXM  成绩分析配置项目表
-  ID          编号                                        int            主键
-  SSPZID      所属配置ID                            int            非主
-  DCMC        名称                                        nvarchar(20)   非主
-  SX          上限                                        int            非主
-  XX          下限                                        int            非主
-  PZQZ        P值权重                                  int            非主
+  ID            编号                    int            主键
+  SSPZID        所属配置ID              int            非主
+  DCMC          名称                    nvarchar(20)   非主
+  SX            上限                    int            非主
+  XX            下限                    int            非主
+  PZQZ          P值权重                 int            非主
 

@@ -1,40 +1,40 @@
 EDU_ZZ_ZYZWLB  主要职务类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_ZZ_ZXJFL  助学金分类代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(5)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
 
 EDU_ZZ_ZKKM  中考科目代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_ZZ_XKSH  学生选课审核状态代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(5)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
 
 EDU_ZZ_SXJDLB  实习基地类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_ZZ_SXJDJNSXSSL  实习基地接纳实习生数量代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_ZZ_PGQK  评估情况代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_ZZ_KCFL  课程分类代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_ZZ_JZJSGW  兼职教师岗位代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(4)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
 
 EDU_ZZ_HJXZ  户籍性质代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
 

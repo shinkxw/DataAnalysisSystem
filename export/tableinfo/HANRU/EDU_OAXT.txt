@@ -1,200 +1,200 @@
 EDU_OAXT_10_A01_TZ  通知数据表
-  ID          通知ID                                    int            主键
-  SCHOOLID    学校ID                                    int            主键     学校配置表
-  FSRID       发送人ID                                nvarchar(20)   非主     应用系统用户表
-  FSRLB       发送人类别                            int            非主
-  BT          标题                                        nvarchar(100)  非主
-  NR          内容                                        text           非主
-  FJ          附件                                        nvarchar(500)  非主
-  TJRQ        添加日期                                datetime       非主
-  JSRS        接收人数                                int            非主
-  JSRIDLB     接收人ID列表                        text           非主
-  JSRMZLB     接收人名字列表                    text           非主
-  YYDRIDLB    已阅读人ID列表                    text           非主
-  YYDRMZLB    已阅读人名字列表                text           非主
-  FSZT        发送状态                                int            非主
+  ID            通知ID                  int            主键
+  SCHOOLID      学校ID                  int            主键   学校配置表
+  FSRID         发送人ID                nvarchar(20)   非主   应用系统用户表
+  FSRLB         发送人类别              int            非主
+  BT            标题                    nvarchar(100)  非主
+  NR            内容                    text           非主
+  FJ            附件                    nvarchar(500)  非主
+  TJRQ          添加日期                datetime       非主
+  JSRS          接收人数                int            非主
+  JSRIDLB       接收人ID列表            text           非主
+  JSRMZLB       接收人名字列表          text           非主
+  YYDRIDLB      已阅读人ID列表          text           非主
+  YYDRMZLB      已阅读人名字列表        text           非主
+  FSZT          发送状态                int            非主
 
 EDU_OAXT_10_A02_TZYDJL  通知阅读记录
-  ID          通知阅读记录ID                    int            主键
-  SCHOOLID    学校ID                                    int            主键     学校配置表
-  TZID        通知ID                                    int            非主     通知数据表
-  BTZRID      被通知人ID                            nvarchar(20)   非主     应用系统用户表
-  YDRQ        阅读日期                                datetime       非主
-  SFYD        是否已阅读                            nvarchar(1)    非主     是否标志代码表
+  ID            通知阅读记录ID          int            主键
+  SCHOOLID      学校ID                  int            主键   学校配置表
+  TZID          通知ID                  int            非主   通知数据表
+  BTZRID        被通知人ID              nvarchar(20)   非主   应用系统用户表
+  YDRQ          阅读日期                datetime       非主
+  SFYD          是否已阅读              nvarchar(1)    非主   是否标志代码表
 
 EDU_OAXT_10_A03_GG  公告数据表
-  ID          公告ID                                    int            主键
-  SCHOOLID    学校ID                                    int            主键     学校配置表
-  FBRID       发布人ID                                nvarchar(20)   非主     应用系统用户表
-  FBBM        发布部门                                nvarchar(100)  非主
-  FBSJ        发布时间                                datetime       非主
-  BT          公告标题                                nvarchar(200)  非主
-  NR          公告内容                                text           非主
-  ZT          公告状态                                int            非主
+  ID            公告ID                  int            主键
+  SCHOOLID      学校ID                  int            主键   学校配置表
+  FBRID         发布人ID                nvarchar(20)   非主   应用系统用户表
+  FBBM          发布部门                nvarchar(100)  非主
+  FBSJ          发布时间                datetime       非主
+  BT            公告标题                nvarchar(200)  非主
+  NR            公告内容                text           非主
+  ZT            公告状态                int            非主
 
 EDU_OAXT_11_A01_YJ  邮件数据表
-  ID          邮件ID                                    int            主键
-  SCHOOLID    学校ID                                    int            主键     学校配置表
-  YYZID       拥有者ID                                nvarchar(20)   非主     应用系统用户表
-  FSRID       发送人ID                                nvarchar(20)   非主     应用系统用户表
-  JSRID       接收人ID                                nvarchar(20)   非主     应用系统用户表
-  FSRMC       发送人名称                            nvarchar(100)  非主
-  JSRMC       接收人名称                            nvarchar(100)  非主
-  JSRIDLB     接收人ID列表                        text           非主
-  JSRMCLB     接收人名称列表                    text           非主
-  BT          标题                                        nvarchar(200)  非主
-  NR          内容                                        text           非主
-  FJ          附件                                        nvarchar(200)  非主
-  FSSJ        发送时间                                datetime       非主
-  SFYD        是否已阅读                            nvarchar(1)    非主     是否标志代码表
-  YJLX        邮件类型                                int            非主
+  ID            邮件ID                  int            主键
+  SCHOOLID      学校ID                  int            主键   学校配置表
+  YYZID         拥有者ID                nvarchar(20)   非主   应用系统用户表
+  FSRID         发送人ID                nvarchar(20)   非主   应用系统用户表
+  JSRID         接收人ID                nvarchar(20)   非主   应用系统用户表
+  FSRMC         发送人名称              nvarchar(100)  非主
+  JSRMC         接收人名称              nvarchar(100)  非主
+  JSRIDLB       接收人ID列表            text           非主
+  JSRMCLB       接收人名称列表          text           非主
+  BT            标题                    nvarchar(200)  非主
+  NR            内容                    text           非主
+  FJ            附件                    nvarchar(200)  非主
+  FSSJ          发送时间                datetime       非主
+  SFYD          是否已阅读              nvarchar(1)    非主   是否标志代码表
+  YJLX          邮件类型                int            非主
 
 EDU_OAXT_01_01_WJJBSJ  文件基本数据类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  ID          文件ID                                    int            主键
-  WJBH        文件编号                                nvarchar(10)   非主
-  WJWH        文件文号                                nvarchar(24)   非主
-  BT          标题                                        nvarchar(60)   非主
-  ZTC         主题词                                    text           非主
-  MJM         密级码                                    nvarchar(1)    非主     文献保密等级代码与标识
-  JJCDM       紧急程度码                            nvarchar(1)    非主     紧急程度代码表
-  YS          页数                                        decimal(6, 0)  非主
-  WJFLM       文件分类码                            nvarchar(2)    非主     文件分类代码表
-  ZW          正文                                        text           非主
-  FJ          附件                                        text           非主
-  FWRQ        发文日期                                nvarchar(8)    非主
-  CSDW        抄送单位                                text           非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  ID            文件ID                  int            主键
+  WJBH          文件编号                nvarchar(10)   非主
+  WJWH          文件文号                nvarchar(24)   非主
+  BT            标题                    nvarchar(60)   非主
+  ZTC           主题词                  text           非主
+  MJM           密级码                  nvarchar(1)    非主   文献保密等级代码与标识
+  JJCDM         紧急程度码              nvarchar(1)    非主   紧急程度代码表
+  YS            页数                    decimal(6, 0)  非主
+  WJFLM         文件分类码              nvarchar(2)    非主   文件分类代码表
+  ZW            正文                    text           非主
+  FJ            附件                    text           非主
+  FWRQ          发文日期                nvarchar(8)    非主
+  CSDW          抄送单位                text           非主
 
 EDU_OAXT_02_01_SWCL  收文处理子类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  QSRID       签收人ID                                nvarchar(20)   非主     应用系统用户表
-  CFRID       拆封人ID                                nvarchar(20)   非主     应用系统用户表
-  DJRID       登记人ID                                nvarchar(20)   非主     应用系统用户表
-  QSRGH       签收人工号                            nvarchar(20)   非主
-  CFRGH       拆封人工号                            nvarchar(20)   非主
-  DJRGH       登记人工号                            nvarchar(20)   非主
-  SWRQ        收文日期                                nvarchar(8)    非主
-  LWDW        来文单位                                nvarchar(60)   非主
-  FS          份数                                        decimal(3, 0)  非主
-  CLQK        处理情况                                text           非主
-  FYFS        翻印份数                                decimal(4, 0)  非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  QSRID         签收人ID                nvarchar(20)   非主   应用系统用户表
+  CFRID         拆封人ID                nvarchar(20)   非主   应用系统用户表
+  DJRID         登记人ID                nvarchar(20)   非主   应用系统用户表
+  QSRGH         签收人工号              nvarchar(20)   非主
+  CFRGH         拆封人工号              nvarchar(20)   非主
+  DJRGH         登记人工号              nvarchar(20)   非主
+  SWRQ          收文日期                nvarchar(8)    非主
+  LWDW          来文单位                nvarchar(60)   非主
+  FS            份数                    decimal(3, 0)  非主
+  CLQK          处理情况                text           非主
+  FYFS          翻印份数                decimal(4, 0)  非主
 
 EDU_OAXT_02_02_WJYB  文件阅办子类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  YBRID       阅办人ID                                nvarchar(20)   非主     应用系统用户表
-  YBLBM       阅办类别码                            nvarchar(1)    非主     阅办类别代码表
-  YBJB        阅办级别                                nvarchar(30)   非主
-  YBDW        阅办单位                                nvarchar(60)   非主
-  YBDWBH      阅办单位编号                        nvarchar(10)   非主
-  YBRGH       阅办人工号                            nvarchar(20)   非主
-  YBYJ        阅办意见                                text           非主
-  YBRQ        阅办日期                                nvarchar(8)    非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  YBRID         阅办人ID                nvarchar(20)   非主   应用系统用户表
+  YBLBM         阅办类别码              nvarchar(1)    非主   阅办类别代码表
+  YBJB          阅办级别                nvarchar(30)   非主
+  YBDW          阅办单位                nvarchar(60)   非主
+  YBDWBH        阅办单位编号            nvarchar(10)   非主
+  YBRGH         阅办人工号              nvarchar(20)   非主
+  YBYJ          阅办意见                text           非主
+  YBRQ          阅办日期                nvarchar(8)    非主
 
 EDU_OAXT_03_01_FWCL  发文处理子类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  NGRID       拟稿人ID                                nvarchar(20)   非主     应用系统用户表
-  QFRID       签发人ID                                nvarchar(20)   非主     应用系统用户表
-  DJRID       登记人ID                                nvarchar(20)   非主     应用系统用户表
-  DZRID       打字人ID                                nvarchar(20)   非主     应用系统用户表
-  JDRID       校对人ID                                nvarchar(20)   非主     应用系统用户表
-  NGRGH       拟稿人工号                            nvarchar(20)   非主
-  NGRQ        拟稿日期                                nvarchar(8)    非主
-  QFRGH       签发人工号                            nvarchar(20)   非主
-  QFRQ        签发日期                                nvarchar(8)    非主
-  FSFW        发送范围                                nvarchar(60)   非主
-  FSFSM       发送方式码                            nvarchar(1)    非主     发送方式代码表
-  DJRGH       登记人工号                            nvarchar(20)   非主
-  DJRQ        登记日期                                nvarchar(8)    非主
-  FWJS        发文件数                                decimal(4, 0)  非主
-  GWFWRQ      公文发文日期                        nvarchar(8)    非主
-  CLQK        处理情况                                text           非主
-  DZRGH       打字人工号                            nvarchar(20)   非主
-  JDRGH       校对人工号                            nvarchar(20)   非主
-  FZFSM       封装方式码                            nvarchar(1)    非主     公文封装方式代码表
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  NGRID         拟稿人ID                nvarchar(20)   非主   应用系统用户表
+  QFRID         签发人ID                nvarchar(20)   非主   应用系统用户表
+  DJRID         登记人ID                nvarchar(20)   非主   应用系统用户表
+  DZRID         打字人ID                nvarchar(20)   非主   应用系统用户表
+  JDRID         校对人ID                nvarchar(20)   非主   应用系统用户表
+  NGRGH         拟稿人工号              nvarchar(20)   非主
+  NGRQ          拟稿日期                nvarchar(8)    非主
+  QFRGH         签发人工号              nvarchar(20)   非主
+  QFRQ          签发日期                nvarchar(8)    非主
+  FSFW          发送范围                nvarchar(60)   非主
+  FSFSM         发送方式码              nvarchar(1)    非主   发送方式代码表
+  DJRGH         登记人工号              nvarchar(20)   非主
+  DJRQ          登记日期                nvarchar(8)    非主
+  FWJS          发文件数                decimal(4, 0)  非主
+  GWFWRQ        公文发文日期            nvarchar(8)    非主
+  CLQK          处理情况                text           非主
+  DZRGH         打字人工号              nvarchar(20)   非主
+  JDRGH         校对人工号              nvarchar(20)   非主
+  FZFSM         封装方式码              nvarchar(1)    非主   公文封装方式代码表
 
 EDU_OAXT_03_02_HG  核稿子类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  HGRID       核稿人ID                                nvarchar(20)   非主     应用系统用户表
-  HGRGH       核稿人工号                            nvarchar(20)   非主
-  HGDW        核稿单位                                nvarchar(60)   非主
-  HGYJ        核稿意见                                text           非主
-  HGRQ        核稿日期                                nvarchar(8)    非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  HGRID         核稿人ID                nvarchar(20)   非主   应用系统用户表
+  HGRGH         核稿人工号              nvarchar(20)   非主
+  HGDW          核稿单位                nvarchar(60)   非主
+  HGYJ          核稿意见                text           非主
+  HGRQ          核稿日期                nvarchar(8)    非主
 
 EDU_OAXT_03_03_HQ  会签子类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  HQRID       会签人ID                                nvarchar(20)   非主     应用系统用户表
-  HQR         会签人                                    nvarchar(36)   非主
-  HQDW        会签单位                                nvarchar(60)   非主
-  HQYJ        会签意见                                text           非主
-  HQRQ        会签日期                                nvarchar(8)    非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  HQRID         会签人ID                nvarchar(20)   非主   应用系统用户表
+  HQR           会签人                  nvarchar(36)   非主
+  HQDW          会签单位                nvarchar(60)   非主
+  HQYJ          会签意见                text           非主
+  HQRQ          会签日期                nvarchar(8)    非主
 
 EDU_OAXT_03_04_CP  呈批子类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  PFRID       批复人ID                                nvarchar(20)   非主     应用系统用户表
-  PFR         批复人                                    nvarchar(36)   非主
-  PFDW        批复单位                                nvarchar(60)   非主
-  PFYJ        批复意见                                text           非主
-  PFRQ        批复日期                                nvarchar(8)    非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  PFRID         批复人ID                nvarchar(20)   非主   应用系统用户表
+  PFR           批复人                  nvarchar(36)   非主
+  PFDW          批复单位                nvarchar(60)   非主
+  PFYJ          批复意见                text           非主
+  PFRQ          批复日期                nvarchar(8)    非主
 
 EDU_OAXT_04_01_WJQT  文件清退数据类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  JBRID       经办人ID                                nvarchar(20)   非主     应用系统用户表
-  QTRQ        清退日期                                nvarchar(8)    非主
-  QTFW        清退范围                                nvarchar(180)  非主
-  QTSM        清退说明                                text           非主
-  JBRGH       经办人工号                            nvarchar(20)   非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  JBRID         经办人ID                nvarchar(20)   非主   应用系统用户表
+  QTRQ          清退日期                nvarchar(8)    非主
+  QTFW          清退范围                nvarchar(180)  非主
+  QTSM          清退说明                text           非主
+  JBRGH         经办人工号              nvarchar(20)   非主
 
 EDU_OAXT_05_01_WJXH  文件销毁数据类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  XHSPRID     销毁审批人ID                        nvarchar(20)   非主     应用系统用户表
-  JBRID       经办人ID                                nvarchar(20)   非主     应用系统用户表
-  XHRQ        销毁日期                                nvarchar(8)    非主
-  XHSPRGH     销毁审批人工号                    nvarchar(20)   非主
-  XHSM        销毁说明                                text           非主
-  JBRGH       经办人工号                            nvarchar(20)   非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  XHSPRID       销毁审批人ID            nvarchar(20)   非主   应用系统用户表
+  JBRID         经办人ID                nvarchar(20)   非主   应用系统用户表
+  XHRQ          销毁日期                nvarchar(8)    非主
+  XHSPRGH       销毁审批人工号          nvarchar(20)   非主
+  XHSM          销毁说明                text           非主
+  JBRGH         经办人工号              nvarchar(20)   非主
 
 EDU_OAXT_06_01_WJJQ  文件借阅数据类表
-  SCHOOLID    学校名                                    int            主键     学校配置表
-  WJID        文件ID                                    int            主键     文件基本数据类表
-  JYSPRID     借阅审批人ID                        nvarchar(20)   非主     应用系统用户表
-  JYJBRID     借阅经办人ID                        nvarchar(20)   非主     应用系统用户表
-  JYR         借阅人                                    nvarchar(36)   非主
-  JYRQ        借阅日期                                nvarchar(8)    非主
-  JYSPRGH     借阅审批人工号                    nvarchar(20)   非主
-  JYJBRGH     借阅经办人工号                    nvarchar(20)   非主
-  JYYY        借阅原因                                nvarchar(80)   非主
+  SCHOOLID      学校名                  int            主键   学校配置表
+  WJID          文件ID                  int            主键   文件基本数据类表
+  JYSPRID       借阅审批人ID            nvarchar(20)   非主   应用系统用户表
+  JYJBRID       借阅经办人ID            nvarchar(20)   非主   应用系统用户表
+  JYR           借阅人                  nvarchar(36)   非主
+  JYRQ          借阅日期                nvarchar(8)    非主
+  JYSPRGH       借阅审批人工号          nvarchar(20)   非主
+  JYJBRGH       借阅经办人工号          nvarchar(20)   非主
+  JYYY          借阅原因                nvarchar(80)   非主
 
 EDU_OAXT_12_A01_SJFB  数据发布类表
-  ID          数据发布ID                            int            主键
-  SCHOOLID    学校名                                    int            非主     学校配置表
-  WEBID       网站ID                                    int            非主     网站配置
-  FBRID       发布人ID                                nvarchar(20)   非主
-  FBBZRID     发布批准人ID                        nvarchar(20)   非主
-  FBH         发布号                                    nvarchar(10)   非主
-  XXBT        数据标题                                nvarchar(100)  非主
-  FBLMH       发布栏目号                            nvarchar(2)    非主
-  SJNR        数据内容                                text           非主
-  FJS         附件数                                    decimal(2, 0)  非主
-  FBRQ        发布日期                                nvarchar(8)    非主
-  FBDW        发布单位号                            nvarchar(10)   非主
-  FBRGH       发布人工号                            nvarchar(20)   非主
-  FBFW        发布范围                                nvarchar(200)  非主
-  FBBZRH      发布批准人号                        nvarchar(10)   非主
-  SJZT        数据状态                                nvarchar(10)   非主
+  ID            数据发布ID              int            主键
+  SCHOOLID      学校名                  int            非主   学校配置表
+  WEBID         网站ID                  int            非主   网站配置
+  FBRID         发布人ID                nvarchar(20)   非主
+  FBBZRID       发布批准人ID            nvarchar(20)   非主
+  FBH           发布号                  nvarchar(10)   非主
+  XXBT          数据标题                nvarchar(100)  非主
+  FBLMH         发布栏目号              nvarchar(2)    非主
+  SJNR          数据内容                text           非主
+  FJS           附件数                  decimal(2, 0)  非主
+  FBRQ          发布日期                nvarchar(8)    非主
+  FBDW          发布单位号              nvarchar(10)   非主
+  FBRGH         发布人工号              nvarchar(20)   非主
+  FBFW          发布范围                nvarchar(200)  非主
+  FBBZRH        发布批准人号            nvarchar(10)   非主
+  SJZT          数据状态                nvarchar(10)   非主
 
 EDU_OAXT_13_A01_DWSJ  单位数据表
-  ID          单位ID                                    int            主键
-  SCHOOLID    学校ID                                    int            主键     学校配置表
-  SJDWID      上级单位ID                            int            非主     单位数据表
-  DWFZRID     单位负责人ID                        nvarchar(20)   非主     应用系统用户表
-  DWMC        单位名称                                nvarchar(60)   非主
-  DWCYIDLB    单位成员ID列表                    text           非主
+  ID            单位ID                  int            主键
+  SCHOOLID      学校ID                  int            主键   学校配置表
+  SJDWID        上级单位ID              int            非主   单位数据表
+  DWFZRID       单位负责人ID            nvarchar(20)   非主   应用系统用户表
+  DWMC          单位名称                nvarchar(60)   非主
+  DWCYIDLB      单位成员ID列表          text           非主
 

@@ -28,9 +28,9 @@ class TableinfoBuilder
       name_space.each do |table|
         @info_str << "#{table.name}  #{table.explanation}\n"
         table.field_area.each do |field|
-          @info_str << "#{@tab}#{field.name.ljust(12)}#{field.explanation.fill_cn(24)}#{field.type.ljust(15)}"
+          @info_str << "#{@tab}#{field.name.ljust(14)}#{field.explanation.fill_cn(24)}#{field.type.ljust(15)}"
           @info_str.concat(field.p == "T" ? "Ö÷¼ü" : "·ÇÖ÷")
-					@info_str << "     #{field.relation.table.explanation}" if field.relation != nil
+					@info_str << "   #{field.relation.table.explanation}" if field.relation != nil
           @info_str << "\n"
         end   
         @info_str << "\n"

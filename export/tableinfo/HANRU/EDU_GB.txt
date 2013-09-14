@@ -1,409 +1,409 @@
 EDU_GB_ZZMMYCLB  政治面貌异常类别代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_ZZMM  政治面貌代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(12)   非主
-  JC          简称                                        nchar(7)       非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
+  JC            简称                    nchar(7)       非主
 
 EDU_GB_ZYJSZWBDLB  专业技术职务变动类别代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(12)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
 
 EDU_GB_ZYJSZW  专业技术职务代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(13)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(13)   非主
 
 EDU_GB_ZYFL  职业分类与代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(34)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(34)   非主
 
 EDU_GB_ZYDZJGRMTTJQTJG  中央党政机关、人民团体及其他机构代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(35)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(35)   非主
 
 EDU_GB_ZXDWLB  在学单位类别代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(12)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
 
 EDU_GB_ZWJBDM  职务级别代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_ZWGZBDYY  职务工资变动原因代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_ZWGDC  职务工档次代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_ZWFL  职位分类代码
-  DM          代码                                        nvarchar(4)    主键
-  MC          名称                                        nvarchar(19)   非主
+  DM            代码                    nvarchar(4)    主键
+  MC            名称                    nvarchar(19)   非主
 
 EDU_GB_ZWBDLB  职务变动类别代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(11)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
 
 EDU_GB_ZJXY  宗教信仰代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(5)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
 
 EDU_GB_ZJLB  专家类别代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(18)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(18)   非主
 
 EDU_GB_ZHRMGHGXZQH  中华人民共和国行政区划代码
-  DM          代码                                        nvarchar(6)    主键
-  MC          名称                                        nvarchar(15)   非主
+  DM            代码                    nvarchar(6)    主键
+  MC            名称                    nvarchar(15)   非主
 
 EDU_GB_ZHRMGHGXW  中华人民共和国学位代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_ZGYZ  中国语种代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(6)    非主
-  ZMDM        字母代码                                nchar(2)       非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(6)    非主
+  ZMDM          字母代码                nchar(2)       非主
 
 EDU_GB_ZGQZZL  中国签证种类代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(9)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(9)    非主
 
 EDU_GB_ZGGMZMCDLMZMPXF  中国各民族名称的罗马字母拼写法和代码
-  DM          代码                                        nvarchar(2)    主键
-  MZMC        民族名称                                nvarchar(9)    非主
-  ZMDM        字母代码                                nchar(2)       非主
+  DM            代码                    nvarchar(2)    主键
+  MZMC          民族名称                nvarchar(9)    非主
+  ZMDM          字母代码                nchar(2)       非主
 
 EDU_GB_ZDZYXXZYML  中等职业学校专业目录
-  DM          代码                                        nvarchar(6)    主键
-  MC          名称                                        nvarchar(13)   非主
+  DM            代码                    nvarchar(6)    主键
+  MC            名称                    nvarchar(13)   非主
 
 EDU_GB_YZSLCD  语种熟练程度代码表
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
-  SM          说明                                        nvarchar(62)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+  SM            说明                    nvarchar(62)   非主
 
 EDU_GB_YZMCEZM  语种名称代码2字母代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_YS  院士代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_GB_YRDWYRXSFL  用人单位用人形式分类与代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(19)   非主
-  SM          说明                                        nvarchar(101)  非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(19)   非主
+  SM            说明                    nvarchar(101)  非主
 
 EDU_GB_YJXK  一级学科代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(14)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(14)   非主
 
 EDU_GB_YCJJSJ  延长晋级时间代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(4)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
 
 EDU_GB_XXXS  学习形式代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_XXFS  学习方式代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_XL  学历代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_XKFL  学科分类代码
-  DM          代码                                        nvarchar(9)    主键
-  MC          名称                                        nvarchar(18)   非主
-  SM          说明                                        nvarchar(56)   非主
+  DM            代码                    nvarchar(9)    主键
+  MC            名称                    nvarchar(18)   非主
+  SM            说明                    nvarchar(56)   非主
 
 EDU_GB_XJ  薪级代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_WYKSDJ  外语考试等级代码表
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(16)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(16)   非主
 
 EDU_GB_WXZT  文献载体代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
-  JC          简称                                        nchar(1)       非主
-  SZM         双字码                                    nchar(2)       非主
-  DZM         单字码                                    nchar(1)       非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+  JC            简称                    nchar(1)       非主
+  SZM           双字码                  nchar(2)       非主
+  DZM           单字码                  nchar(1)       非主
 
 EDU_GB_WXLX  文献类型代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(7)    非主
-  JC          简称                                        nchar(1)       非主
-  SZM         双字码                                    nchar(2)       非主
-  DZM         单字码                                    nchar(1)       非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+  JC            简称                    nchar(1)       非主
+  SZM           双字码                  nchar(2)       非主
+  DZM           单字码                  nchar(1)       非主
 
 EDU_GB_WXBMZJ  文献保密等级代码与标识
-  DM          代码                                        nvarchar(1)    主键
-  HYPYDM      汉语拼音代码                        nchar(2)       非主
-  HZDM        汉字代码                                nchar(2)       非主
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(1)    主键
+  HYPYDM        汉语拼音代码            nchar(2)       非主
+  HZDM          汉字代码                nchar(2)       非主
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_WCJKHYY  未参加考核原因代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_SYDWZYJSRYTGNX  事业单位专业技术人员套改年限代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWZYJSRYRZNX  事业单位专业技术人员任职年限代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWZYJSRYGWDJ  事业单位专业技术人员岗位等级代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_SYDWZYJSGRTGNX  事业单位技术工人套改年限代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWZYJSGRRZNX  事业单位技术工人任职年限代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWZYJSGRGWDJ  事业单位技术工人岗位等级代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWPTGRTGNX  事业单位普通工人套改年限代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWGLRYTGNX  事业单位管理人员套改年限代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWGLRYRZNX  事业单位管理人员任职年限代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_SYDWGLRYGWDJ  事业单位管理人员岗位等级代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_GB_SJGGHDQMC  世界各国和地区名称代码
-  DM          代码                                        nvarchar(3)    主键
-  GJDQMCJC    国家/地区名称简称              nchar(12)      非主
-  EZMDM       二字母代码                            nchar(2)       非主
-  SZMDM       三字母代码                            nchar(3)       非主
+  DM            代码                    nvarchar(3)    主键
+  GJDQMCJC      国家/地区名称简称       nchar(12)      非主
+  EZMDM         二字母代码              nchar(2)       非主
+  SZMDM         三字母代码              nchar(3)       非主
 
 EDU_GB_SHJZ  社会兼职代码
-  DM          代码                                        nvarchar(4)    主键
-  MC          名称                                        nvarchar(19)   非主
+  DM            代码                    nvarchar(4)    主键
+  MC            名称                    nvarchar(19)   非主
 
 EDU_GB_RZFS  任职方式代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_RYJZ  荣誉奖章代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(10)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(10)   非主
 
 EDU_GB_RYCHJB  荣誉称号级别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(15)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(15)   非主
 
 EDU_GB_RYCH  荣誉称号代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(16)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(16)   非主
 
 EDU_GB_RDXB  人的性别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_GB_RDDBZXWY  人大代表、政协委员代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_QZZL  签注种类代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(11)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
 
 EDU_GB_QDZGTJ  取得资格途径代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_GB_PXJXXZ  (教育)培训、进修性质代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_GB_MZFS  免职方式代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_GB_MZCZYY  免职、辞职原因代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_GB_LXTXLB  离休、退休类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(26)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(26)   非主
 
 EDU_GB_LTXGBXXSDYLB  离退休干部现享受待遇类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(18)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(18)   非主
 
 EDU_GB_KJXMLB  科技项目类别代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(16)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(16)   非主
 
 EDU_GB_KHLB  考核类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(4)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
 
 EDU_GB_KHJL  考核结论代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_GB_JYPXJG  教育培训结果代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_JYLB  教育类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(5)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
 
 EDU_GB_JTGX  家庭关系代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(15)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(15)   非主
 
 EDU_GB_JLDM  奖励代码
-  DM          代码                                        nvarchar(4)    主键
-  MC          名称                                        nvarchar(21)   非主
+  DM            代码                    nvarchar(4)    主键
+  MC            名称                    nvarchar(21)   非主
 
 EDU_GB_JLCF  纪律处分代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(15)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(15)   非主
 
 EDU_GB_JKZKYWSZ  健康状况1位数字代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(5)    非主
-  SM          说明                                        nvarchar(46)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+  SM            说明                    nvarchar(46)   非主
 
 EDU_GB_JKZKEWSZ  健康状况2位数字代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(7)    非主
-  SM          说明                                        nvarchar(39)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+  SM            说明                    nvarchar(39)   非主
 
 EDU_GB_JJLXFL  经济类型分类与代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(15)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(15)   非主
 
 EDU_GB_JINJYY  晋级原因代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(40)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(40)   非主
 
 EDU_GB_JIANGJYY  降级原因代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(5)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
 
 EDU_GB_JFLY  经费来源代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(4)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
 
 EDU_GB_JCZT  进出状态代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(5)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
 
 EDU_GB_JBGZBDYY  级别工资变动原因代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(12)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
 
 EDU_GB_HZZJZL  护照证件种类代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(20)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(20)   非主
 
 EDU_GB_HYZZ  婚姻状况代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_HKLB  户口类别代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_GB_GZLB  工资类别代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(9)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
 
 EDU_GB_GZJB  工资级别代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_GZBZLXDM  工资标准类型代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(26)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(26)   非主
 
 EDU_GB_GZBDYY  工资变动原因代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(7)    非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
 
 EDU_GB_GZBDLX  工资变动类型代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_GMJJHYFL  国民经济行业分类代码
-  DM          代码                                        nvarchar(5)    主键
-  MC          名称                                        nvarchar(20)   非主
-  SM          说明                                        nvarchar(258)  非主
+  DM            代码                    nvarchar(5)    主键
+  MC            名称                    nvarchar(20)   非主
+  SM            说明                    nvarchar(258)  非主
 
 EDU_GB_GJZYZG  国家职业资格(工人技术等级)代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(12)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(12)   非主
 
 EDU_GB_GDXXDASTFL  高等学校档案实体分类法
-  DM          代码                                        nvarchar(6)    主键
-  MC          名称                                        nvarchar(31)   非主
+  DM            代码                    nvarchar(6)    主键
+  MC            名称                    nvarchar(31)   非主
 
 EDU_GB_GBZWMCTZ  干部职务名称特征代码表
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(8)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
 
 EDU_GB_GBZWMC  干部职务名称代码
-  DM          代码                                        nvarchar(4)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(4)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_DWJB  单位级别代码
-  DM          代码                                        nvarchar(3)    主键
-  MC          名称                                        nvarchar(12)   非主
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(12)   非主
 
 EDU_GB_DQRZZT  当前任职状态代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_DP  党、派代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(10)   非主
-  JC          简称                                        nchar(3)       非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(10)   非主
+  JC            简称                    nchar(3)       非主
 
 EDU_GB_CYZK  从业状况（个人身份）代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(7)    非主
-  SM          说明                                        nvarchar(15)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+  SM            说明                    nvarchar(15)   非主
 
 EDU_GB_CJSHBXBS  参加社会保险标识代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(3)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
 
 EDU_GB_CGSP  成果水平代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_GB_BXFLFXM  保险福利费细目代码
-  DM          代码                                        nvarchar(2)    主键
-  MC          名称                                        nvarchar(12)   非主
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
 

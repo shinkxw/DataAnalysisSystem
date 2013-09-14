@@ -1,25 +1,25 @@
 EDU_ZJ_ZYML  专业目录代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(19)   非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(19)   非主
 
 EDU_ZJ_ZJZY  自建专业代码
-  DM          代码                                        nvarchar(6)    主键
-  ZYMLLB      专业目录类别                        nvarchar(1)    主键     专业目录代码
-  MC          名称                                        nvarchar(26)   非主
+  DM            代码                    nvarchar(6)    主键
+  ZYMLLB        专业目录类别            nvarchar(1)    主键   专业目录代码
+  MC            名称                    nvarchar(26)   非主
 
 EDU_ZJ_YHLX  用户类型代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(2)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
 
 EDU_ZJ_HJXZ  户籍性质代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(4)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
 
 EDU_ZJ_BYSLX  毕业生类型代码
-  DM          代码                                        nvarchar(1)    主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
 
 EDU_ZJ_JBLX  加班类型代码
-  DM          代码                                        int            主键
-  MC          名称                                        nvarchar(6)    非主
+  DM            代码                    int            主键
+  MC            名称                    nvarchar(6)    非主
 
