@@ -18,11 +18,11 @@ class MDWork_Area
   end
   #输出所有
   def export_all
-    fs_config = {'@sql'=>'G:/同步/sql',
-                 '@view'=>'G:/同步/view',
-                 'HANRU_bz'=>'G:/同步',
-                 'HANRU_yw'=>'G:/同步',
-                 'HANRU_view'=>'G:/同步'}
+    #~ fs_config = {'@sql'=>'G:/同步/sql',
+                 #~ '@view'=>'G:/同步/view',
+                 #~ 'HANRU_bz'=>'G:/同步',
+                 #~ 'HANRU_yw'=>'G:/同步',
+                 #~ 'HANRU_view'=>'G:/同步'}
     MDDoc.set_fsc(fs_config)
     export_sql
     export_sql(false)
@@ -33,6 +33,7 @@ class MDWork_Area
     export_tableinfo
     export_migrate_config
     MDDoc.set_fsc(nil)
+    #SVN.commit('G:\瀚孺\HanruEdu')
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area
