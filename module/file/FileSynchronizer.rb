@@ -5,11 +5,8 @@ class FileSynchronizer
   attr_accessor :file_path#文件路径关键词与同步位置hash表
   #attr_accessor :file_path#文件路径
   #初始化
-  def initialize(type,name,data,file_type = "txt")
-    @type = type#文档格式
-    @name = name#文档名
-    @data = data#文档数据
-    @file_type = file_type#文件格式
+  def initialize(config)
+    
   end
   #获得文档的字符串形式
   def get_data_str
@@ -18,5 +15,13 @@ class FileSynchronizer
     #~ 'HANRU_view'
     #~ 'sql/HANRU/'
     #~ 'view/HANRU/'
+  end
+  #根据文件路径判断并执行文件同步操作
+  def sy_file(path,str)
+    puts 'file: ' << path
+  end
+  #根据文件夹路径判断并执行文件夹同步操作
+  def sy_folder(path,hash)
+    puts 'folder: ' << path
   end
 end

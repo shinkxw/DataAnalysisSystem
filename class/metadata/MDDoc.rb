@@ -3,6 +3,9 @@
 #文档类
 class MDDoc
   @@export_path = "#{$root}/export"
+  @@fs = nil#文件同步器
+  #设置文档同步生成器
+  def self.set_fs(fs);@@fs = fs end
   #初始化
   def initialize(type,name,data,file_type = "txt")
     @type = type#文档格式
@@ -19,9 +22,11 @@ class MDDoc
       path = "#{@@export_path}/#{@type}/#{@name}"
       DirManager.remove_dir(path)#删除文件夹
       hash_out("#{path}/")
+      @@fs.sy_folder("#{path}/",@data) if @@fs
     when "String"
       path = "#{@@export_path}/#{@type}/#{@name}.#{@file_type}"
       str_out(path)
+      @@fs.sy_file(path,@data) if @@fs
     else
       puts "MDDoc: 无法输出的文档类别：#{@data.class.to_s}"
     end
