@@ -25,7 +25,6 @@ file       文件处理    文件读写相关
     FileWriter         文件写入器
     FolderWriter       文件夹写入器
     AreaManager        元数据域管理器
-    FileSynchronizer  文件同步器
 
 helper      辅助工具   便于辅助开发及代码复用
     ArrReader     字符串数组读取器

@@ -18,8 +18,12 @@ class MDWork_Area
   end
   #输出所有
   def export_all
-    config = {}
-    MDDoc.set_fs(FileSynchronizer.new(config))
+    fs_config = {'@sql'=>'G:/同步/sql',
+                 '@view'=>'G:/同步/view',
+                 'HANRU_bz'=>'G:/同步',
+                 'HANRU_yw'=>'G:/同步',
+                 'HANRU_view'=>'G:/同步'}
+    MDDoc.set_fsc(fs_config)
     export_sql
     export_sql(false)
     export_view
@@ -28,7 +32,7 @@ class MDWork_Area
     export_template
     export_tableinfo
     export_migrate_config
-    MDDoc.set_fs(nil)
+    MDDoc.set_fsc(nil)
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area

@@ -3,9 +3,9 @@
 #文档类
 class MDDoc
   @@export_path = "#{$root}/export"
-  @@fs = nil#文件同步器
-  #设置文档同步生成器
-  def self.set_fs(fs);@@fs = fs end
+  @@fs_config = nil#文件同步配置,@开头的键为类型，其他为文件名
+  #设置文档同步配置
+  def self.set_fsc(fsc);@@fs_config = fsc end
   #初始化
   def initialize(type,name,data,file_type = "txt")
     @type = type#文档格式
@@ -22,15 +22,30 @@ class MDDoc
       path = "#{@@export_path}/#{@type}/#{@name}"
       DirManager.remove_dir(path)#删除文件夹
       hash_out("#{path}/")
-      @@fs.sy_folder("#{path}/",@data) if @@fs
     when "String"
       path = "#{@@export_path}/#{@type}/#{@name}.#{@file_type}"
       str_out(path)
-      @@fs.sy_file(path,@data) if @@fs
     else
       puts "MDDoc: 无法输出的文档类别：#{@data.class.to_s}"
     end
-	path if path != nil
+    sy_doc if @@fs_config
+	path if path 
+  end
+  #根据同步配置同步文档
+  def sy_doc
+    case @data.class.to_s
+    when "Hash"
+      if @@fs_config['@' << @type]
+        path = @@fs_config['@' << @type]
+        DirManager.remove_dir(path)#删除文件夹
+        hash_out("#{path}/")
+      end
+    when "String"
+      if @@fs_config[@name]
+        path = "#{@@fs_config[@name]}/#{@name}.#{@file_type}"
+        str_out(path)
+      end
+    end
   end
   #将哈希形式文档输出至文件夹
   def hash_out(path);FolderWriter.new(path,true).write_str_hash(@data) end
