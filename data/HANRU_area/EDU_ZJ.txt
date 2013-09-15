@@ -2,8 +2,8 @@
 <namespace name="EDU_ZJ" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ZJ_ZYML" explanation="专业目录代码">
         <field_area>
-            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" remark="" />
-            <name="MC" explanation="名称" type="nvarchar(19)" null="F" p="F" identity="F" remark="" />
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" />
+            <name="MC" explanation="名称" type="nvarchar(19)" null="F" p="F" identity="F" />
         </field_area>
         <data_area>
             <DM="1" MC="中等职业学校专业目录" />
@@ -14,9 +14,9 @@
     </table>
     <table name="EDU_ZJ_ZJZY" explanation="自建专业代码">
         <field_area>
-            <name="DM" explanation="代码" type="nvarchar(6)" null="F" p="T" identity="F" remark="" />
-            <name="ZYMLLB" explanation="专业目录类别" type="nvarchar(1)" null="F" p="T" identity="F" remark="" />
-            <name="MC" explanation="名称" type="nvarchar(26)" null="F" p="F" identity="F" remark="" />
+            <name="DM" explanation="代码" type="nvarchar(6)" null="F" p="T" identity="F" />
+            <name="ZYMLLB" explanation="专业目录类别" type="nvarchar(1)" null="F" p="T" identity="F" />
+            <name="MC" explanation="名称" type="nvarchar(26)" null="F" p="F" identity="F" />
         </field_area>
         <data_area>
             <DM="01" ZYMLLB="1" MC="农林牧渔类" />
@@ -1792,8 +1792,8 @@
     </table>
     <table name="EDU_ZJ_YHLX" explanation="用户类型代码">
         <field_area>
-            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" remark="" />
-            <name="MC" explanation="名称" type="nvarchar(2)" null="F" p="F" identity="F" remark="" />
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" />
+            <name="MC" explanation="名称" type="nvarchar(2)" null="F" p="F" identity="F" />
         </field_area>
         <data_area>
             <DM="0" MC="教师" />
@@ -1802,8 +1802,8 @@
     </table>
     <table name="EDU_ZJ_HJXZ" explanation="户籍性质代码">
         <field_area>
-            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" remark="" />
-            <name="MC" explanation="名称" type="nvarchar(4)" null="F" p="F" identity="F" remark="" />
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" />
+            <name="MC" explanation="名称" type="nvarchar(4)" null="F" p="F" identity="F" />
         </field_area>
         <data_area>
             <DM="1" MC="农村" />
@@ -1813,8 +1813,8 @@
     </table>
     <table name="EDU_ZJ_BYSLX" explanation="毕业生类型代码">
         <field_area>
-            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" remark="" />
-            <name="MC" explanation="名称" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" identity="F" />
+            <name="MC" explanation="名称" type="nvarchar(6)" null="F" p="F" identity="F" />
         </field_area>
         <data_area>
             <DM="0" MC="应届初中毕业" />
@@ -1827,8 +1827,8 @@
     </table>
     <table name="EDU_ZJ_JBLX" explanation="加班类型代码">
         <field_area>
-            <name="DM" explanation="代码" type="int" null="F" p="T" identity="F" remark="" />
-            <name="MC" explanation="名称" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="DM" explanation="代码" type="int" null="F" p="T" identity="F" />
+            <name="MC" explanation="名称" type="nvarchar(6)" null="F" p="F" identity="F" />
         </field_area>
         <data_area>
             <DM="1" MC="正常加班" />

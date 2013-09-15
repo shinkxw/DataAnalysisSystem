@@ -3,14 +3,14 @@
     <table name="EDU_ZZFC_02_01_JZWJBSJ" explanation="建筑物基本数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="ID" explanation="建筑物ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="ID" explanation="建筑物ID" type="int" null="F" p="T" identity="F" />
             <name="JZWH" explanation="建筑物号" type="nvarchar(6)" null="F" p="F" identity="F" remark="学校自编" />
             <name="JZWMC" explanation="建筑物名称" type="nvarchar(30)" null="F" p="F" identity="F" remark="指建筑物的汉字名称" />
             <name="SYZKM" explanation="使用状况码" type="nvarchar(1)" null="F" p="F" identity="F" remark="引用自JCBX020204 SYZKM 使用状况码" />
             <name="FWCQ" explanation="房屋产权" type="nvarchar(1)" null="F" p="F" identity="F" remark="引用自JCBX020203 FWCQM 房屋产权码" />
             <name="XQH" explanation="校区号" type="nvarchar(2)" null="T" p="F" identity="F" remark="学校自编" />
-            <name="JZWFLM" explanation="建筑物分类码" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
-            <name="JZWJGM" explanation="建筑物结构码" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
+            <name="JZWFLM" explanation="建筑物分类码" type="nvarchar(1)" null="F" p="F" identity="F" />
+            <name="JZWJGM" explanation="建筑物结构码" type="nvarchar(1)" null="F" p="F" identity="F" />
             <name="JZWCS" explanation="建筑物层数" type="decimal(2, 0)" null="F" p="F" identity="F" remark="单位：层 NULL" />
             <name="JCNY" explanation="建成年月" type="nvarchar(6)" null="T" p="F" identity="F" remark="格式：YYYYMM，如：200604表示2006年4月 NULL" />
             <name="JZWTZZE" explanation="建筑物投资总额" type="money" null="T" p="F" identity="F" remark="单位：元" />
@@ -25,16 +25,16 @@
             <name="JZWPMT" explanation="建筑物平面图" type="nvarchar(200)" null="T" p="F" identity="F" remark="指建筑物的建筑平面图" />
             <name="XXDWCCM" explanation="学校单位层次码" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：JY/T1001XXDWCC学校单位层次代码 " />
             <name="JZWWZZK" explanation="建筑物位置状况" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 解释/举例：1校内0校外 " />
-            <name="GHSPWH" explanation="规划审批文号" type="nvarchar(24)" null="F" p="F" identity="F" remark="" />
-            <name="ZHFZNL" explanation="综合防灾能力" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
-            <name="GHSYNX" explanation="规划使用年限" type="decimal(3, 0)" null="T" p="F" identity="F" remark="" />
+            <name="GHSPWH" explanation="规划审批文号" type="nvarchar(24)" null="F" p="F" identity="F" />
+            <name="ZHFZNL" explanation="综合防灾能力" type="nvarchar(60)" null="T" p="F" identity="F" />
+            <name="GHSYNX" explanation="规划使用年限" type="decimal(3, 0)" null="T" p="F" identity="F" />
             <name="SFYYJBXCS" explanation="是否有预警避险措施" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
             <name="SFKYYYJBNCS" explanation="是否可用于应急避难场所" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
-            <name="CQZH" explanation="产权证号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="CQZH" explanation="产权证号" type="nvarchar(20)" null="F" p="F" identity="F" />
             <name="JZWYTM" explanation="建筑物用途码" type="nvarchar(2)" null="T" p="F" identity="F" remark="值空间：JY/T1001JZWYT建筑物用途代码 " />
             <name="JZWZGD" explanation="建筑物总高度" type="decimal(3, 0)" null="T" p="F" identity="F" remark="解释/举例：单位：米 " />
             <name="WFJDBM" explanation="危房鉴定部门" type="nvarchar(60)" null="T" p="F" identity="F" remark="引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
-            <name="WFJDWH" explanation="危房鉴定文号" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
+            <name="WFJDWH" explanation="危房鉴定文号" type="nvarchar(20)" null="T" p="F" identity="F" />
             <name="WFJDRQ" explanation="危房鉴定日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
             <name="GNFSM" explanation="供暖方式码" type="nvarchar(1)" null="T" p="F" identity="F" remark="值空间：JY/T1001GNFS供暖方式代码 " />
             <name="JZWJCXSM" explanation="建筑物基础形式码" type="nvarchar(2)" null="T" p="F" identity="F" remark="值空间：JY/T1001JZWJCXS建筑物基础形式代码 " />
@@ -68,14 +68,14 @@
             <name="QZWSBJS" explanation="其中卫生保健室" type="decimal(8, 0)" null="F" p="F" identity="F" remark="解释/举例：单位：平方米 " />
             <name="QZQTXZBGYF" explanation="其中其他行政办公用房" type="decimal(8, 0)" null="F" p="F" identity="F" remark="解释/举例：单位：平方米 " />
             <name="QTYF" explanation="其他用房" type="decimal(8, 0)" null="F" p="F" identity="F" remark="解释/举例：非教学及辅助用房、生活用房、行政办公用房的用房总和，单位：平方米 " />
-            <name="GLY" explanation="管理员" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="GLY" explanation="管理员" type="nvarchar(20)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZZFC_08_01_XSSS" explanation="学生宿舍数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="ID" explanation="宿舍ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SSLID" explanation="宿舍楼ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="宿舍ID" type="int" null="F" p="T" identity="F" />
+            <name="SSLID" explanation="宿舍楼ID" type="int" null="F" p="F" identity="F" />
             <name="SSLBM" explanation="宿舍楼编号" type="nvarchar(6)" null="F" p="F" identity="F" remark="宿舍楼编号 编号：ZZFC080001 引用自JCBX020201 JZWH 建筑物号 C 6 M NULL 学校自编 NULL" />
             <name="FJBM" explanation="房间编号" type="nvarchar(10)" null="F" p="F" identity="F" remark="房间编号 编号：ZZFC080002 " />
             <name="RZXB" explanation="入住性别" type="nvarchar(1)" null="F" p="F" identity="F" remark="入住性别 编号：ZZFC080003 值空间：GB/T2261.1 解释/举例：1男性2女性 " />
@@ -88,47 +88,47 @@
             <name="SBDS" explanation="水表底数" type="decimal(10, 0)" null="T" p="F" identity="F" remark="水表底数 编号：ZZFC080010 " />
             <name="DBDS" explanation="电表底数" type="decimal(10, 0)" null="T" p="F" identity="F" remark="电表底数 编号：ZZFC080011 " />
             <name="SSBZ" explanation="宿舍备注" type="text" null="T" p="F" identity="F" remark="宿舍备注 编号：ZZFC080012 " />
-            <name="SZLZ" explanation="所在楼层" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SSM" explanation="宿舍名" type="nvarchar(128)" null="F" p="F" identity="F" remark="" />
+            <name="SZLZ" explanation="所在楼层" type="int" null="F" p="F" identity="F" />
+            <name="SSM" explanation="宿舍名" type="nvarchar(128)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZZFC_08_A01_SSCW" explanation="宿舍床位表">
         <field_area>
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="ID" explanation="床位ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SSLID" explanation="宿舍楼ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SSID" explanation="宿舍ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="CWM" explanation="床位名" type="nvarchar(128)" null="F" p="F" identity="F" remark="" />
-            <name="BZ" explanation="备注" type="text" null="F" p="F" identity="F" remark="" />
-            <name="SFRZ" explanation="是否入住" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="ID" explanation="床位ID" type="int" null="F" p="T" identity="F" />
+            <name="SSLID" explanation="宿舍楼ID" type="int" null="F" p="F" identity="F" />
+            <name="SSID" explanation="宿舍ID" type="int" null="F" p="F" identity="F" />
+            <name="CWM" explanation="床位名" type="nvarchar(128)" null="F" p="F" identity="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" identity="F" />
+            <name="SFRZ" explanation="是否入住" type="nvarchar(1)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZZFC_08_A03_ZWHCY" explanation="住委会成员表">
         <field_area>
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="ID" explanation="成员ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="YHID" explanation="用户ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="YHLX" explanation="用户类型" type="int" null="F" p="F" identity="F" remark="" />
-            <name="CYXM" explanation="成员姓名" type="nvarchar(128)" null="T" p="F" identity="F" remark="" />
-            <name="TJSJ" explanation="添加时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="ZWMC" explanation="职位名称" type="nvarchar(128)" null="F" p="F" identity="F" remark="" />
-            <name="GZNR" explanation="工作内容" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="ID" explanation="成员ID" type="int" null="F" p="T" identity="F" />
+            <name="YHID" explanation="用户ID" type="int" null="F" p="F" identity="F" />
+            <name="YHLX" explanation="用户类型" type="int" null="F" p="F" identity="F" />
+            <name="CYXM" explanation="成员姓名" type="nvarchar(128)" null="T" p="F" identity="F" />
+            <name="TJSJ" explanation="添加时间" type="datetime" null="F" p="F" identity="F" />
+            <name="ZWMC" explanation="职位名称" type="nvarchar(128)" null="F" p="F" identity="F" />
+            <name="GZNR" explanation="工作内容" type="nvarchar(500)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZZFC_08_A02_YHZSJL" explanation="用户住宿记录表">
         <field_area>
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="ID" explanation="住宿记录ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="YHID" explanation="用户ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SSLID" explanation="宿舍楼ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SSID" explanation="宿舍ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="CWID" explanation="床位ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="YHXM" explanation="用户姓名" type="nvarchar(128)" null="T" p="F" identity="F" remark="" />
-            <name="RZRLX" explanation="入住人类型" type="int" null="F" p="F" identity="F" remark="" />
-            <name="RZSJ" explanation="入住时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="SHZT" explanation="审核状态" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SHSJ" explanation="审核时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="SHR" explanation="审核人" type="nvarchar(128)" null="F" p="F" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="ID" explanation="住宿记录ID" type="int" null="F" p="T" identity="F" />
+            <name="YHID" explanation="用户ID" type="int" null="F" p="F" identity="F" />
+            <name="SSLID" explanation="宿舍楼ID" type="int" null="F" p="F" identity="F" />
+            <name="SSID" explanation="宿舍ID" type="int" null="F" p="F" identity="F" />
+            <name="CWID" explanation="床位ID" type="int" null="F" p="F" identity="F" />
+            <name="YHXM" explanation="用户姓名" type="nvarchar(128)" null="T" p="F" identity="F" />
+            <name="RZRLX" explanation="入住人类型" type="int" null="F" p="F" identity="F" />
+            <name="RZSJ" explanation="入住时间" type="datetime" null="F" p="F" identity="F" />
+            <name="SHZT" explanation="审核状态" type="int" null="F" p="F" identity="F" />
+            <name="SHSJ" explanation="审核时间" type="datetime" null="F" p="F" identity="F" />
+            <name="SHR" explanation="审核人" type="nvarchar(128)" null="F" p="F" identity="F" />
         </field_area>
     </table>
 </namespace>

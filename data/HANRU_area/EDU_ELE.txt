@@ -2,132 +2,132 @@
 <namespace name="EDU_ELE" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ELE_01_USER" explanation="应用系统用户表">
         <field_area>
-            <name="LOGINNAME" explanation="用户名" type="nvarchar(20)" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="PWD" explanation="密码" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="STATUS" explanation="用户状态" type="int" null="F" p="F" identity="F" remark="" />
+            <name="LOGINNAME" explanation="用户名" type="nvarchar(20)" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="F" identity="F" />
+            <name="PWD" explanation="密码" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="STATUS" explanation="用户状态" type="int" null="F" p="F" identity="F" />
             <name="USERTYPE" explanation="用户类别" type="int" null="F" p="F" identity="F" remark="（教师，学生等）" />
             <name="USERID" explanation="用户ID" type="int" null="F" p="F" identity="F" remark="对应教师表或学生表等ID" />
-            <name="ROLEIDLst" explanation="用户角色" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
-            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" identity="F" remark="" />
-            <name="XB" explanation="性别" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="QQ" explanation="QQ" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="DZYJ" explanation="电子邮件" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="LXDH" explanation="联系电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
-            <name="ZJDLSJ" explanation="最近一次登录时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="DLCGCS" explanation="登录成功次数" type="int" null="F" p="F" identity="F" remark="" />
-            <name="YHCJSJ" explanation="用户创建时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="ROLEIDLst" explanation="用户角色" type="nvarchar(200)" null="F" p="F" identity="F" />
+            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" identity="F" />
+            <name="XB" explanation="性别" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="QQ" explanation="QQ" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="DZYJ" explanation="电子邮件" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="LXDH" explanation="联系电话" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="ZJDLSJ" explanation="最近一次登录时间" type="datetime" null="F" p="F" identity="F" />
+            <name="DLCGCS" explanation="登录成功次数" type="int" null="F" p="F" identity="F" />
+            <name="YHCJSJ" explanation="用户创建时间" type="datetime" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_APP" explanation="应用表">
         <field_area>
-            <name="ID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="NAME" explanation="应用名称" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="URL" explanation="网址" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
-            <name="AUTHIP" explanation="限用IP" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
-            <name="SM" explanation="说明" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="应用ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="NAME" explanation="应用名称" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="URL" explanation="网址" type="nvarchar(200)" null="F" p="F" identity="F" />
+            <name="AUTHIP" explanation="限用IP" type="nvarchar(200)" null="F" p="F" identity="F" />
+            <name="SM" explanation="说明" type="text" null="F" p="F" identity="F" />
             <name="DLFS" explanation="登录方式" type="int" null="F" p="F" identity="F" remark="TOKEN,模拟" />
             <name="STATUS" explanation="应用状态" type="int" null="F" p="F" identity="F" remark="是否生效等" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_SCHOOL" explanation="学校配置表">
         <field_area>
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLNAME" explanation="学校名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
-            <name="SCHOOLTYPE" explanation="学校类型" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XNID" explanation="学年ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="MatchURL" explanation="匹配url" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
-            <name="MenhuURL" explanation="门户url" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
-            <name="MenhuWebid" explanation="门户webid" type="int" null="F" p="F" identity="F" remark="" />
-            <name="LogLevel" explanation="日志级别" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ModuleIdList" explanation="权限列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLNAME" explanation="学校名称" type="nvarchar(60)" null="F" p="F" identity="F" />
+            <name="SCHOOLTYPE" explanation="学校类型" type="int" null="F" p="F" identity="F" />
+            <name="XNID" explanation="学年ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="MatchURL" explanation="匹配url" type="nvarchar(500)" null="F" p="F" identity="F" />
+            <name="MenhuURL" explanation="门户url" type="nvarchar(500)" null="F" p="F" identity="F" />
+            <name="MenhuWebid" explanation="门户webid" type="int" null="F" p="F" identity="F" />
+            <name="LogLevel" explanation="日志级别" type="int" null="F" p="F" identity="F" />
+            <name="ModuleIdList" explanation="权限列表" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_XQ" explanation="学期数据表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="EDU_ZZXX_01_01_ZZXX" />
             <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="EDU_SYS_01_XN" />
             <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_XQ" />
-            <name="XQMC" explanation="学期名称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="XQKSRQ" explanation="学期开始日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
-            <name="XQJSRQ" explanation="学期结束日期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
+            <name="XQMC" explanation="学期名称" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="XQKSRQ" explanation="学期开始日期" type="nvarchar(8)" null="T" p="F" identity="F" />
+            <name="XQJSRQ" explanation="学期结束日期" type="nvarchar(8)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_ROLE" explanation="应用系统角色表">
         <field_area>
-            <name="ID" explanation="角色ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="NAME" explanation="角色名" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="PID" explanation="角色所属父ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ModIDLst" explanation="角色能访问的模块列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="角色ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="F" identity="F" />
+            <name="NAME" explanation="角色名" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="PID" explanation="角色所属父ID" type="int" null="F" p="F" identity="F" />
+            <name="ModIDLst" explanation="角色能访问的模块列表" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_CONFIG" explanation="应用系统配置表">
         <field_area>
-            <name="ID" explanation="配置ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="VALUE" explanation="配置值" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="配置ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" />
+            <name="VALUE" explanation="配置值" type="nvarchar(200)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_02_YHFZ" explanation="用户分组表">
         <field_area>
-            <name="ID" explanation="分组ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="YHID" explanation="用户ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="SJFZID" explanation="上级分组ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="FZMC" explanation="分组名称" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="FZYHID" explanation="分组用户ID列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="分组ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" />
+            <name="YHID" explanation="用户ID" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="SJFZID" explanation="上级分组ID" type="int" null="F" p="F" identity="F" />
+            <name="FZMC" explanation="分组名称" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="FZYHID" explanation="分组用户ID列表" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_03_APPRZ" explanation="应用日志表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="RZLX" explanation="日志类型" type="int" null="F" p="F" identity="F" remark="" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" />
+            <name="RZLX" explanation="日志类型" type="int" null="F" p="F" identity="F" />
             <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" identity="F" remark="EDU_ELE_01_USER" />
-            <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
-            <name="CZLX" explanation="操作类型" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="CZJTXX" explanation="操作具体信息" type="nvarchar(200)" null="T" p="F" identity="F" remark="" />
+            <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" />
+            <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="CZLX" explanation="操作类型" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="CZJTXX" explanation="操作具体信息" type="nvarchar(200)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_03_APPLL" explanation="应用履历表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" identity="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="T" identity="F" />
             <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" identity="F" remark="EDU_ELE_01_USER" />
-            <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
-            <name="CZBM" explanation="操作表名" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="CZXX" explanation="操作信息" type="text" null="F" p="F" identity="F" remark="" />
+            <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" identity="F" />
+            <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="CZBM" explanation="操作表名" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="CZXX" explanation="操作信息" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_04_PKJGJL" explanation="排课结果记录表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TEACHERID" explanation="老师" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TEACHERNAME" explanation="老师" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="COURSEID" explanation="课程" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="COURSENAME" explanation="课程" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="CLASSID" explanation="班级" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="CLASSNAME" explanation="班级" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="WEEKDAY" explanation="工作日" type="int" null="F" p="F" identity="F" remark="" />
-            <name="WEEKDAYNAME" explanation="工作日名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="PERIOD" explanation="时段" type="int" null="F" p="F" identity="F" remark="" />
-            <name="PERIODNAME" explanation="时段名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="SESSION" explanation="节次" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SESSIONNAME" explanation="节次名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="TEACHERID" explanation="老师" type="int" null="F" p="F" identity="F" />
+            <name="TEACHERNAME" explanation="老师" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="COURSEID" explanation="课程" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="COURSENAME" explanation="课程" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="CLASSID" explanation="班级" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="CLASSNAME" explanation="班级" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="WEEKDAY" explanation="工作日" type="int" null="F" p="F" identity="F" />
+            <name="WEEKDAYNAME" explanation="工作日名称" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="PERIOD" explanation="时段" type="int" null="F" p="F" identity="F" />
+            <name="PERIODNAME" explanation="时段名称" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="SESSION" explanation="节次" type="int" null="F" p="F" identity="F" />
+            <name="SESSIONNAME" explanation="节次名称" type="nvarchar(20)" null="F" p="F" identity="F" />
         </field_area>
     </table>
 </namespace>

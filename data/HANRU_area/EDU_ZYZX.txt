@@ -2,211 +2,211 @@
 <namespace name="EDU_ZYZX" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ZYZX_VIP" explanation="网站会员">
         <field_area>
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="LOGINNAME" explanation="用户名" type="nvarchar(50)" null="F" p="T" identity="F" remark="" />
-            <name="LOGINPWD" explanation="密码" type="nvarchar(64)" null="F" p="F" identity="F" remark="" />
-            <name="REALNAME" explanation="姓名" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="EMAIL" explanation="电子邮箱" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="MOBILE" explanation="联系电话" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="QQ" explanation="QQ号码" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
-            <name="AUDITSTATU" explanation="审核状态" type="int" null="F" p="F" identity="F" remark="" />
-            <name="AUDITOR" explanation="审核人ID" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
-            <name="AUDITORNAME" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="LOGINNAME" explanation="用户名" type="nvarchar(50)" null="F" p="T" identity="F" />
+            <name="LOGINPWD" explanation="密码" type="nvarchar(64)" null="F" p="F" identity="F" />
+            <name="REALNAME" explanation="姓名" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="EMAIL" explanation="电子邮箱" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="MOBILE" explanation="联系电话" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="QQ" explanation="QQ号码" type="nvarchar(20)" null="T" p="F" identity="F" />
+            <name="AUDITSTATU" explanation="审核状态" type="int" null="F" p="F" identity="F" />
+            <name="AUDITOR" explanation="审核人ID" type="nvarchar(50)" null="T" p="F" identity="F" />
+            <name="AUDITORNAME" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_TPXT_TPYS" explanation="投票样式库">
         <field_area>
-            <name="ID" explanation="样式ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="NAME" explanation="样式名" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="SHOWIMG" explanation="效果图" type="nvarchar(500)" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="样式ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="NAME" explanation="样式名" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="SHOWIMG" explanation="效果图" type="nvarchar(500)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_TPXT_TPXX" explanation="投票题目选项">
         <field_area>
-            <name="ID" explanation="投票题目选项ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="TPID" explanation="投票" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TMID" explanation="投票题目" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TITLE" explanation="标题" type="nvarchar(500)" null="T" p="F" identity="F" remark="" />
-            <name="SUMTP" explanation="已选人数" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="投票题目选项ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="TPID" explanation="投票" type="int" null="F" p="F" identity="F" />
+            <name="TMID" explanation="投票题目" type="int" null="F" p="F" identity="F" />
+            <name="TITLE" explanation="标题" type="nvarchar(500)" null="T" p="F" identity="F" />
+            <name="SUMTP" explanation="已选人数" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_TPXT_TPTM" explanation="投票题目">
         <field_area>
-            <name="ID" explanation="投票题目ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="TPID" explanation="投票" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="投票题目ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="TPID" explanation="投票" type="int" null="F" p="F" identity="F" />
             <name="TYPEID" explanation="投票形式" type="int" null="F" p="F" identity="F" remark="（单选，多选）" />
-            <name="TITLE" explanation="标题" type="nvarchar(500)" null="T" p="F" identity="F" remark="" />
-            <name="CONTENT" explanation="内容" type="text" null="T" p="F" identity="F" remark="" />
+            <name="TITLE" explanation="标题" type="nvarchar(500)" null="T" p="F" identity="F" />
+            <name="CONTENT" explanation="内容" type="text" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_TPXT_TPSZ" explanation="投票设置">
         <field_area>
-            <name="ID" explanation="投票设置ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="TITLE" explanation="标题" type="nvarchar(500)" null="T" p="F" identity="F" remark="" />
-            <name="CONTENT" explanation="内容" type="text" null="T" p="F" identity="F" remark="" />
-            <name="SHOWSTYLEID" explanation="显示方式" type="int" null="T" p="F" identity="F" remark="" />
-            <name="CSSID" explanation="显示样式" type="int" null="F" p="F" identity="F" remark="" />
-            <name="LOGINNAMELIST" explanation="投票人" type="text" null="T" p="F" identity="F" remark="" />
-            <name="STARTSTATU" explanation="是否开启" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="投票设置ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="TITLE" explanation="标题" type="nvarchar(500)" null="T" p="F" identity="F" />
+            <name="CONTENT" explanation="内容" type="text" null="T" p="F" identity="F" />
+            <name="SHOWSTYLEID" explanation="显示方式" type="int" null="T" p="F" identity="F" />
+            <name="CSSID" explanation="显示样式" type="int" null="F" p="F" identity="F" />
+            <name="LOGINNAMELIST" explanation="投票人" type="text" null="T" p="F" identity="F" />
+            <name="STARTSTATU" explanation="是否开启" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_TPXT_TPJL" explanation="投票记录">
         <field_area>
-            <name="ID" explanation="投票记录ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="TPID" explanation="投票" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TPIP" explanation="投票人" type="nvarchar(128)" null="F" p="F" identity="F" remark="" />
-            <name="TPTIME" explanation="投票时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="投票记录ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="TPID" explanation="投票" type="int" null="F" p="F" identity="F" />
+            <name="TPIP" explanation="投票人" type="nvarchar(128)" null="F" p="F" identity="F" />
+            <name="TPTIME" explanation="投票时间" type="datetime" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_YQLJLX" explanation="友情链接类型">
         <field_area>
-            <name="ID" explanation="友情链接类型ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="NAME" explanation="类型名" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="SHOWSTYLE" explanation="显示方式" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="友情链接类型ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="NAME" explanation="类型名" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="SHOWSTYLE" explanation="显示方式" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_YQLJ" explanation="友情链接">
         <field_area>
-            <name="ID" explanation="友情链接ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="TITLE" explanation="标题" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="TYPEID" explanation="类型" type="int" null="F" p="F" identity="F" remark="" />
-            <name="IMAGEURL" explanation="图片" type="nvarchar(500)" null="T" p="F" identity="F" remark="" />
-            <name="URL" explanation="链接" type="nvarchar(300)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="友情链接ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="TITLE" explanation="标题" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="TYPEID" explanation="类型" type="int" null="F" p="F" identity="F" />
+            <name="IMAGEURL" explanation="图片" type="nvarchar(500)" null="T" p="F" identity="F" />
+            <name="URL" explanation="链接" type="nvarchar(300)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_WZYS" explanation="样式库">
         <field_area>
-            <name="ID" explanation="样式库ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="NAME" explanation="样式名" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="SHOWIMG" explanation="效果图" type="nvarchar(500)" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="样式库ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="NAME" explanation="样式名" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="SHOWIMG" explanation="效果图" type="nvarchar(500)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_WZWZ" explanation="网站文章">
         <field_area>
-            <name="ID" explanation="网站文章ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="TYPENAME" explanation="类型名称" type="nvarchar(20)" null="T" p="F" identity="F" remark="" />
-            <name="LMID" explanation="栏目" type="int" null="F" p="F" identity="F" remark="" />
-            <name="TITLE" explanation="标题" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="PUBLISHERNAME" explanation="发布人" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="AUTHOR" explanation="作者" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="AUTHORDEPART" explanation="作者部门" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
-            <name="PUBLISHDATE" explanation="发布时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="CONTENT" explanation="内容" type="text" null="T" p="F" identity="F" remark="" />
-            <name="URL" explanation="链接" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
-            <name="IMAGEURL" explanation="图片" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
-            <name="ATTACHMENTNAME" explanation="附件名" type="nvarchar(100)" null="T" p="F" identity="F" remark="" />
-            <name="ATTACHMENT" explanation="附件" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
-            <name="CHICKNUB" explanation="点击量" type="int" null="T" p="F" identity="F" remark="" />
-            <name="AUDITSTATU" explanation="审核状态" type="int" null="F" p="F" identity="F" remark="" />
-            <name="AUDITOR" explanation="审核人ID" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
-            <name="AUDITORNAME" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
-            <name="AUDITTIME" explanation="审核时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="REMARK" explanation="备注" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
-            <name="SUMMARY" explanation="摘要" type="text" null="T" p="F" identity="F" remark="" />
-            <name="DISPLAYTYPE" explanation="内外网" type="int" null="F" p="F" identity="F" remark="" />
-            <name="OPENFLAG" explanation="开启状态" type="int" null="F" p="F" identity="F" remark="" />
-            <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="网站文章ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="TYPENAME" explanation="类型名称" type="nvarchar(20)" null="T" p="F" identity="F" />
+            <name="LMID" explanation="栏目" type="int" null="F" p="F" identity="F" />
+            <name="TITLE" explanation="标题" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="PUBLISHERNAME" explanation="发布人" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="AUTHOR" explanation="作者" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="AUTHORDEPART" explanation="作者部门" type="nvarchar(50)" null="T" p="F" identity="F" />
+            <name="PUBLISHDATE" explanation="发布时间" type="datetime" null="F" p="F" identity="F" />
+            <name="CONTENT" explanation="内容" type="text" null="T" p="F" identity="F" />
+            <name="URL" explanation="链接" type="nvarchar(300)" null="T" p="F" identity="F" />
+            <name="IMAGEURL" explanation="图片" type="nvarchar(300)" null="T" p="F" identity="F" />
+            <name="ATTACHMENTNAME" explanation="附件名" type="nvarchar(100)" null="T" p="F" identity="F" />
+            <name="ATTACHMENT" explanation="附件" type="nvarchar(300)" null="T" p="F" identity="F" />
+            <name="CHICKNUB" explanation="点击量" type="int" null="T" p="F" identity="F" />
+            <name="AUDITSTATU" explanation="审核状态" type="int" null="F" p="F" identity="F" />
+            <name="AUDITOR" explanation="审核人ID" type="nvarchar(50)" null="T" p="F" identity="F" />
+            <name="AUDITORNAME" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" />
+            <name="AUDITTIME" explanation="审核时间" type="datetime" null="F" p="F" identity="F" />
+            <name="REMARK" explanation="备注" type="nvarchar(300)" null="T" p="F" identity="F" />
+            <name="SUMMARY" explanation="摘要" type="text" null="T" p="F" identity="F" />
+            <name="DISPLAYTYPE" explanation="内外网" type="int" null="F" p="F" identity="F" />
+            <name="OPENFLAG" explanation="开启状态" type="int" null="F" p="F" identity="F" />
+            <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_WZPJ" explanation="文章评价表">
         <field_area>
-            <name="ID" explanation="评价ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="WZID" explanation="网站文章ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="PJR" explanation="评价人" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="YJDZ" explanation="邮件地址" type="nvarchar(40)" null="F" p="F" identity="F" remark="" />
-            <name="PJSJ" explanation="评价时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="PJNR" explanation="评价内容" type="text" null="F" p="F" identity="F" remark="" />
-            <name="PJZT" explanation="评价状态" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SHR" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
-            <name="HF" explanation="回复" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="评价ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="F" identity="F" />
+            <name="WZID" explanation="网站文章ID" type="int" null="F" p="F" identity="F" />
+            <name="PJR" explanation="评价人" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="YJDZ" explanation="邮件地址" type="nvarchar(40)" null="F" p="F" identity="F" />
+            <name="PJSJ" explanation="评价时间" type="datetime" null="F" p="F" identity="F" />
+            <name="PJNR" explanation="评价内容" type="text" null="F" p="F" identity="F" />
+            <name="PJZT" explanation="评价状态" type="int" null="F" p="F" identity="F" />
+            <name="SHR" explanation="审核人" type="nvarchar(50)" null="T" p="F" identity="F" />
+            <name="HF" explanation="回复" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_WZPZ" explanation="网站配置">
         <field_area>
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBNAME" explanation="网站名" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBNAME" explanation="网站名" type="nvarchar(500)" null="F" p="F" identity="F" />
             <name="STATUID" explanation="是否开启" type="int" null="F" p="F" identity="F" remark="(默认不开启0)" />
-            <name="WEBURL" explanation="网址" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
-            <name="CSSID" explanation="网站样式" type="int" null="F" p="F" identity="F" remark="" />
+            <name="WEBURL" explanation="网址" type="nvarchar(500)" null="F" p="F" identity="F" />
+            <name="CSSID" explanation="网站样式" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_NWIP" explanation="内网IP配置">
         <field_area>
-            <name="ID" explanation="内网IP配置ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="IP" explanation="IP地址" type="nvarchar(40)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="内网IP配置ID" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="IP" explanation="IP地址" type="nvarchar(40)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_WZLM" explanation="网站栏目（导航）">
         <field_area>
-            <name="ID" explanation="网站栏目（导航）ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="ID" explanation="网站栏目（导航）ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
             <name="LMSHOWSTYLE" explanation="栏目使用类型" type="int" null="F" p="F" identity="F" remark="（使用内容列表，还是图片加栏目链接）" />
-            <name="NAME" explanation="栏目名称" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="URL" explanation="栏目链接" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
-            <name="IMAGEURL" explanation="图片链接" type="nvarchar(300)" null="T" p="F" identity="F" remark="" />
-            <name="DEPTH" explanation="层级" type="int" null="F" p="F" identity="F" remark="" />
-            <name="PID" explanation="父目录" type="int" null="F" p="F" identity="F" remark="" />
-            <name="LISTSHOWSTYLE" explanation="列表显示型式" type="int" null="T" p="F" identity="F" remark="" />
+            <name="NAME" explanation="栏目名称" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="URL" explanation="栏目链接" type="nvarchar(300)" null="T" p="F" identity="F" />
+            <name="IMAGEURL" explanation="图片链接" type="nvarchar(300)" null="T" p="F" identity="F" />
+            <name="DEPTH" explanation="层级" type="int" null="F" p="F" identity="F" />
+            <name="PID" explanation="父目录" type="int" null="F" p="F" identity="F" />
+            <name="LISTSHOWSTYLE" explanation="列表显示型式" type="int" null="T" p="F" identity="F" />
             <name="ORDERTYPE" explanation="排序方式" type="int" null="F" p="F" identity="F" remark="（按时间方式：添加顺序、访问量）" />
-            <name="SHOWNUMBER" explanation="显示个数" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SHOWNUMBER" explanation="显示个数" type="int" null="F" p="F" identity="F" />
             <name="OPENFLAG" explanation="开启状态" type="int" null="F" p="F" identity="F" remark="（0外，1内网）" />
-            <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
+            <name="LLQX" explanation="浏览权限" type="nvarchar(50)" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_WZGG" explanation="网站广告">
         <field_area>
-            <name="ID" explanation="网站广告ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
+            <name="ID" explanation="网站广告ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
             <name="SHOWTYPE" explanation="显示型式" type="int" null="F" p="F" identity="F" remark="（页内、浮动、弹窗、挂角）" />
-            <name="ADCONTENT" explanation="广告内容" type="text" null="T" p="F" identity="F" remark="" />
-            <name="GGLJ" explanation="广告链接" type="nvarchar(150)" null="T" p="F" identity="F" remark="" />
-            <name="SHOWSTATU" explanation="是否显示" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ADCONTENT" explanation="广告内容" type="text" null="T" p="F" identity="F" />
+            <name="GGLJ" explanation="广告链接" type="nvarchar(150)" null="T" p="F" identity="F" />
+            <name="SHOWSTATU" explanation="是否显示" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_FWLL" explanation="访问履历">
         <field_area>
-            <name="ID" explanation="访问履历ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="ACCESSIP" explanation="访问IP" type="nvarchar(150)" null="F" p="F" identity="F" remark="" />
-            <name="ACCESSURL" explanation="访问链接" type="nvarchar(500)" null="F" p="F" identity="F" remark="" />
-            <name="ACCESSTIME" explanation="访问时间" type="datetime" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="访问履历ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="ACCESSIP" explanation="访问IP" type="nvarchar(150)" null="F" p="F" identity="F" />
+            <name="ACCESSURL" explanation="访问链接" type="nvarchar(500)" null="F" p="F" identity="F" />
+            <name="ACCESSTIME" explanation="访问时间" type="datetime" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_MHXT_FBQX" explanation="发布权限">
         <field_area>
-            <name="ID" explanation="发布权限ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="LOGINNAME" explanation="用户名" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="LMLIST" explanation="栏目" type="text" null="F" p="F" identity="F" remark="" />
-            <name="LMNAMELIST" explanation="栏目文字" type="text" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="发布权限ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="WEBID" explanation="网站ID" type="int" null="F" p="T" identity="F" />
+            <name="LOGINNAME" explanation="用户名" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="LMLIST" explanation="栏目" type="text" null="F" p="F" identity="F" />
+            <name="LMNAMELIST" explanation="栏目文字" type="text" null="T" p="F" identity="F" />
         </field_area>
     </table>
 </namespace>

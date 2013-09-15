@@ -2,15 +2,15 @@
 <namespace name="EDU_ZXJZ" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ZXJZ_01_01_JZGJBSJ" explanation="教职工基本数据子类表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="GH" explanation="工号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" identity="F" remark="" />
-            <name="YWXM" explanation="英文姓名" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
-            <name="XMPY" explanation="姓名拼音" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
-            <name="CYM" explanation="曾用名" type="nvarchar(36)" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="GH" explanation="工号" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" identity="F" />
+            <name="YWXM" explanation="英文姓名" type="nvarchar(60)" null="T" p="F" identity="F" />
+            <name="XMPY" explanation="姓名拼音" type="nvarchar(60)" null="T" p="F" identity="F" />
+            <name="CYM" explanation="曾用名" type="nvarchar(36)" null="T" p="F" identity="F" />
             <name="XBM" explanation="性别码" type="nvarchar(1)" null="F" p="F" identity="F" remark="GB/T2261.1" />
-            <name="CSRQ" explanation="出生日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="" />
+            <name="CSRQ" explanation="出生日期" type="nvarchar(8)" null="F" p="F" identity="F" />
             <name="CSDM" explanation="出生地码" type="nvarchar(6)" null="F" p="F" identity="F" remark="GB/T2260" />
             <name="JG" explanation="籍贯" type="nvarchar(20)" null="T" p="F" identity="F" remark="籍贯 编号：JCTB020108 引用自JCTB020108 JG 籍贯 C 20 NULL NULL NULL NULL" />
             <name="MZM" explanation="民族码" type="nvarchar(2)" null="T" p="F" identity="F" remark="民族码 编号：JCTB020109 引用自JCTB020109 MZM 民族码 C 2 NULL GB/T3304 取用2位数字代码，如：01汉族，02蒙古族 NULL" />
@@ -24,7 +24,7 @@
             <name="XYZJM" explanation="信仰宗教码" type="nvarchar(2)" null="T" p="F" identity="F" remark="信仰宗教码 编号：JCTB020117 引用自JCTB020117 XYZJM 信仰宗教码 C 2 NULL GA214.12 NULL NULL" />
             <name="XXM" explanation="血型码" type="nvarchar(1)" null="T" p="F" identity="F" remark="血型码 编号：JCTB020118 引用自JCTB020118 XXM 血型码 C 1 NULL JY/T1001XX血型代码 NULL NULL" />
             <name="ZP" explanation="照片" type="nvarchar(200)" null="T" p="F" identity="F" remark="照片 编号：JCTB020119 引用自JCTB020119 ZP 照片 B NULL NULL NULL 近期正面免冠证件照片 NULL" />
-            <name="SFZJYXQ" explanation="身份证件有效期" type="nvarchar(8)" null="T" p="F" identity="F" remark="" />
+            <name="SFZJYXQ" explanation="身份证件有效期" type="nvarchar(8)" null="T" p="F" identity="F" />
             <name="JGH" explanation="机构号" type="nvarchar(40)" null="F" p="F" identity="F" remark="机构号 编号：ZXJZ010101 解释/举例：本人所属机构号" />
             <name="JTZZ" explanation="家庭住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="家庭住址 编号：ZXJZ010102 解释/举例：指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）的详细地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
             <name="XZZ" explanation="现住址" type="nvarchar(180)" null="T" p="F" identity="F" remark="现住址 编号：ZXJZ010103 解释/举例：指本人当前的常住地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
@@ -49,35 +49,35 @@
     </table>
     <table name="EDU_ZXJZ_02_A01_XNGWSJ" explanation="校内岗位数据子类表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="" />
-            <name="GWID" explanation="岗位表ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" remark="" />
-            <name="GWQSNY" explanation="岗位起始年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
-            <name="GWJSNY" explanation="岗位结束年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
-            <name="SFZG" explanation="是否在岗" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
-            <name="ZWMC" explanation="职务名称" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="JGH" explanation="机构号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="GWID" explanation="岗位表ID" type="int" null="F" p="F" identity="F" />
+            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" />
+            <name="GWQSNY" explanation="岗位起始年月" type="nvarchar(6)" null="F" p="F" identity="F" />
+            <name="GWJSNY" explanation="岗位结束年月" type="nvarchar(6)" null="F" p="F" identity="F" />
+            <name="SFZG" explanation="是否在岗" type="nvarchar(1)" null="F" p="F" identity="F" />
+            <name="ZWMC" explanation="职务名称" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="JGH" explanation="机构号" type="nvarchar(10)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_07_02_RKSJ" explanation="任课数据子类表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" remark="" />
-            <name="RKKCH" explanation="任课课程号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="RKQSNY" explanation="任课起始年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
-            <name="RKZZNY" explanation="任课终止年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
-            <name="RKZXS" explanation="任课总学时" type="decimal(3, 0)" null="F" p="F" identity="F" remark="" />
+            <name="JZGJBSJID" explanation="教职工基本数据子类表" type="int" null="F" p="F" identity="F" />
+            <name="RKKCH" explanation="任课课程号" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="RKQSNY" explanation="任课起始年月" type="nvarchar(6)" null="F" p="F" identity="F" />
+            <name="RKZZNY" explanation="任课终止年月" type="nvarchar(6)" null="F" p="F" identity="F" />
+            <name="RKZXS" explanation="任课总学时" type="decimal(3, 0)" null="F" p="F" identity="F" />
             <name="RKXDM" explanation="任课学段码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001RKXD任课学段代码 " />
             <name="RKJSM" explanation="任课角色码" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001RKJS任课角色代码 " />
-            <name="SKBJ" explanation="授课班级" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="SKRS" explanation="授课人数" type="decimal(4, 0)" null="F" p="F" identity="F" remark="" />
-            <name="ZKS" explanation="周课时" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SFLT" explanation="是否连堂" type="nvarchar(1)" null="F" p="F" identity="F" remark="" />
-            <name="NJID" explanation="年级号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" remark="" />
+            <name="SKBJ" explanation="授课班级" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="SKRS" explanation="授课人数" type="decimal(4, 0)" null="F" p="F" identity="F" />
+            <name="ZKS" explanation="周课时" type="int" null="F" p="F" identity="F" />
+            <name="SFLT" explanation="是否连堂" type="nvarchar(1)" null="F" p="F" identity="F" />
+            <name="NJID" explanation="年级号" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期" type="int" null="F" p="F" identity="F" />
+            <name="XNID" explanation="学年" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
 </namespace>

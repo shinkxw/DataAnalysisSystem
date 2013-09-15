@@ -2,125 +2,125 @@
 <namespace name="EDU_ZXDY" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ZXDY_04_A01_ZZGW" explanation="值周岗位数据表">
         <field_area>
-            <name="ID" explanation="值周岗位表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="GWGZNR" explanation="岗位工作内容" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周岗位表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="GWGZNR" explanation="岗位工作内容" type="nvarchar(200)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A02_ZZRYAP" explanation="值周人员安排表">
         <field_area>
-            <name="ID" explanation="值周人员安排表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="KSRQ" explanation="开始日期" type="datetime" null="T" p="F" identity="F" remark="" />
-            <name="JSRQ" explanation="结束日期" type="datetime" null="T" p="F" identity="F" remark="" />
-            <name="ZZBJ" explanation="值周班级班号" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="ZZID" explanation="组长ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="ZYIDLB" explanation="组员ID列表" type="text" null="F" p="F" identity="F" remark="" />
-            <name="ZYMCLB" explanation="组员名称列表" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周人员安排表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" />
+            <name="KSRQ" explanation="开始日期" type="datetime" null="T" p="F" identity="F" />
+            <name="JSRQ" explanation="结束日期" type="datetime" null="T" p="F" identity="F" />
+            <name="ZZBJ" explanation="值周班级班号" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="ZZID" explanation="组长ID" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="ZYIDLB" explanation="组员ID列表" type="text" null="F" p="F" identity="F" />
+            <name="ZYMCLB" explanation="组员名称列表" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A03_ZZGWFP" explanation="值周岗位分配表">
         <field_area>
-            <name="ID" explanation="值周岗位分配表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="GZR" explanation="工作日" type="int" null="T" p="F" identity="F" remark="" />
-            <name="GWID" explanation="岗位ID" type="int" null="T" p="F" identity="F" remark="" />
-            <name="JSID" explanation="教师ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周岗位分配表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" />
+            <name="GZR" explanation="工作日" type="int" null="T" p="F" identity="F" />
+            <name="GWID" explanation="岗位ID" type="int" null="T" p="F" identity="F" />
+            <name="JSID" explanation="教师ID" type="nvarchar(20)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A04_GWFPMB" explanation="岗位分配模板表">
         <field_area>
-            <name="ID" explanation="岗位分配模板表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="MBMC" explanation="模板名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="岗位分配模板表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="MBMC" explanation="模板名称" type="nvarchar(20)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A05_TBZZJS" explanation="特别值周教师表">
         <field_area>
-            <name="ID" explanation="特别值周教师表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="特别值周教师表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
             <name="JSLX" explanation="教师类型" type="nvarchar(20)" null="F" p="F" identity="F" remark="单日或学期" />
-            <name="JSID" explanation="教师ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="YXRQ" explanation="有效日期" type="datetime" null="T" p="F" identity="F" remark="" />
+            <name="JSID" explanation="教师ID" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="YXRQ" explanation="有效日期" type="datetime" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A06_ZZZC" explanation="值周周次表">
         <field_area>
-            <name="ID" explanation="周次表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ZCM" explanation="周次名" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="XQKSRQ" explanation="开始日期" type="datetime" null="T" p="F" identity="F" remark="" />
-            <name="XQJSRQ" explanation="结束日期" type="datetime" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="周次表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="ZCM" explanation="周次名" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="XQKSRQ" explanation="开始日期" type="datetime" null="T" p="F" identity="F" />
+            <name="XQJSRQ" explanation="结束日期" type="datetime" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A07_MBFPNR" explanation="模板分配内容表">
         <field_area>
-            <name="ID" explanation="模板内容表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="MBID" explanation="模板表ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="GZR" explanation="工作日" type="int" null="T" p="F" identity="F" remark="" />
-            <name="GWID" explanation="岗位ID" type="int" null="T" p="F" identity="F" remark="" />
-            <name="DYRYH" explanation="对应人员号" type="int" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="模板内容表ID" type="int" null="F" p="T" identity="F" />
+            <name="MBID" explanation="模板表ID" type="int" null="F" p="F" identity="F" />
+            <name="GZR" explanation="工作日" type="int" null="T" p="F" identity="F" />
+            <name="GWID" explanation="岗位ID" type="int" null="T" p="F" identity="F" />
+            <name="DYRYH" explanation="对应人员号" type="int" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A01_ZZDFDL" explanation="值周打分大类表">
         <field_area>
-            <name="ID" explanation="值周打分大类表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="DLMC" explanation="大类名称" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周打分大类表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="DLMC" explanation="大类名称" type="nvarchar(20)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A02_ZZDFXZ" explanation="值周打分细则表">
         <field_area>
-            <name="ID" explanation="值周打分细则表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SSDLID" explanation="所属大类ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XZNR" explanation="细则内容" type="nvarchar(200)" null="F" p="F" identity="F" remark="" />
-            <name="XZFZ" explanation="细则分值" type="decimal(2, 1)" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周打分细则表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="SSDLID" explanation="所属大类ID" type="int" null="F" p="F" identity="F" />
+            <name="XZNR" explanation="细则内容" type="nvarchar(200)" null="F" p="F" identity="F" />
+            <name="XZFZ" explanation="细则分值" type="decimal(2, 1)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A03_ZZDFD" explanation="值周打分单表">
         <field_area>
-            <name="ID" explanation="值周打分单表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="BJ" explanation="班级" type="nvarchar(10)" null="T" p="F" identity="F" remark="" />
-            <name="XSIDLB" explanation="学生ID列表" type="text" null="T" p="F" identity="F" remark="" />
-            <name="XSMCLB" explanation="学生名称列表" type="text" null="T" p="F" identity="F" remark="" />
-            <name="SSXZID" explanation="所属细则" type="int" null="F" p="F" identity="F" remark="" />
-            <name="DFFZ" explanation="打分分值" type="decimal(2, 1)" null="F" p="F" identity="F" remark="" />
-            <name="FSSJ" explanation="发生时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="DFSJ" explanation="打分时间" type="datetime" null="F" p="F" identity="F" remark="" />
-            <name="DFJSID" explanation="打分教师ID" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="BZ" explanation="备注" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周打分单表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" />
+            <name="BJ" explanation="班级" type="nvarchar(10)" null="T" p="F" identity="F" />
+            <name="XSIDLB" explanation="学生ID列表" type="text" null="T" p="F" identity="F" />
+            <name="XSMCLB" explanation="学生名称列表" type="text" null="T" p="F" identity="F" />
+            <name="SSXZID" explanation="所属细则" type="int" null="F" p="F" identity="F" />
+            <name="DFFZ" explanation="打分分值" type="decimal(2, 1)" null="F" p="F" identity="F" />
+            <name="FSSJ" explanation="发生时间" type="datetime" null="F" p="F" identity="F" />
+            <name="DFSJ" explanation="打分时间" type="datetime" null="F" p="F" identity="F" />
+            <name="DFJSID" explanation="打分教师ID" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_06_A01_ZZXJ" explanation="值周小结表">
         <field_area>
-            <name="ID" explanation="值周小结表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="SZDS" explanation="上周大事" type="text" null="T" p="F" identity="F" remark="" />
-            <name="ZZJCQKFK" explanation="值周检查情况反馈" type="text" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="值周小结表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" />
+            <name="SZDS" explanation="上周大事" type="text" null="T" p="F" identity="F" />
+            <name="ZZJCQKFK" explanation="值周检查情况反馈" type="text" null="T" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_06_A02_GQXJH" explanation="国旗下讲话表">
         <field_area>
-            <name="ID" explanation="国旗下讲话表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" remark="" />
-            <name="JHZT" explanation="讲话主题" type="text" null="T" p="F" identity="F" remark="" />
-            <name="JHNR" explanation="讲话内容" type="text" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="国旗下讲话表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" identity="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" identity="F" />
+            <name="ZCID" explanation="周次ID" type="int" null="F" p="F" identity="F" />
+            <name="JHZT" explanation="讲话主题" type="text" null="T" p="F" identity="F" />
+            <name="JHNR" explanation="讲话内容" type="text" null="T" p="F" identity="F" />
         </field_area>
     </table>
 </namespace>

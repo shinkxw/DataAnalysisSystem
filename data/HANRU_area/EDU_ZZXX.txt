@@ -2,56 +2,56 @@
 <namespace name="EDU_ZZXX" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ZZXX_03_01_XNJG" explanation="校内机构数据类表">
         <field_area>
-            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="T" identity="F" remark="" />
+            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="T" identity="F" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="JGMC" explanation="机构名称" type="nvarchar(100)" null="F" p="F" identity="F" remark="" />
-            <name="JGYWMC" explanation="机构英文名称" type="nvarchar(100)" null="T" p="F" identity="F" remark="" />
-            <name="JGJC" explanation="机构简称" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="JGJP" explanation="机构简拼" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="JGDZ" explanation="机构地址" type="nvarchar(180)" null="F" p="F" identity="F" remark="" />
+            <name="JGMC" explanation="机构名称" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="JGYWMC" explanation="机构英文名称" type="nvarchar(100)" null="T" p="F" identity="F" />
+            <name="JGJC" explanation="机构简称" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="JGJP" explanation="机构简拼" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="JGDZ" explanation="机构地址" type="nvarchar(180)" null="F" p="F" identity="F" />
             <name="LSSJJGH" explanation="隶属上级机构号" type="nvarchar(6)" null="F" p="F" identity="F" remark="EDU_ZZXX_03_01_XNJG" />
-            <name="LSXQH" explanation="隶属校区号" type="nvarchar(2)" null="F" p="F" identity="F" remark="" />
+            <name="LSXQH" explanation="隶属校区号" type="nvarchar(2)" null="F" p="F" identity="F" />
             <name="JGYXBS" explanation="机构有效标识" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_SFBZ" />
             <name="SFST" explanation="是否实体" type="nvarchar(1)" null="F" p="F" identity="F" remark="EDU_JY_SFBZ" />
-            <name="JLNY" explanation="建立年月" type="nvarchar(6)" null="T" p="F" identity="F" remark="" />
-            <name="JGYZBM" explanation="机构邮政编码" type="nvarchar(6)" null="T" p="F" identity="F" remark="" />
-            <name="FZRH" explanation="负责人号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
+            <name="JLNY" explanation="建立年月" type="nvarchar(6)" null="T" p="F" identity="F" />
+            <name="JGYZBM" explanation="机构邮政编码" type="nvarchar(6)" null="T" p="F" identity="F" />
+            <name="FZRH" explanation="负责人号" type="nvarchar(20)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXX_01_01_ZZXX" explanation="学校基本数据表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" remark="" />
-            <name="XXDM" explanation="学校代码" type="nvarchar(10)" null="F" p="F" identity="F" remark="" />
-            <name="XXMC" explanation="学校名称" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
-            <name="XXYWMC" explanation="学校英文名称" type="nvarchar(60)" null="T" p="F" identity="F" remark="" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" />
+            <name="XXDM" explanation="学校代码" type="nvarchar(10)" null="F" p="F" identity="F" />
+            <name="XXMC" explanation="学校名称" type="nvarchar(60)" null="F" p="F" identity="F" />
+            <name="XXYWMC" explanation="学校英文名称" type="nvarchar(60)" null="T" p="F" identity="F" />
             <name="XXJBZM" explanation="学校举办者码" type="nvarchar(3)" null="F" p="F" identity="F" remark="EDU_JY_XXJYJGJBZ" />
             <name="XXZGBMM" explanation="学校主管部门码" type="nvarchar(3)" null="F" p="F" identity="F" remark="EDU_JY_XXJYJGJBZ" />
-            <name="XXDZ" explanation="学校地址" type="nvarchar(180)" null="F" p="F" identity="F" remark="" />
-            <name="XXYZBM" explanation="学校邮政编码" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
+            <name="XXDZ" explanation="学校地址" type="nvarchar(180)" null="F" p="F" identity="F" />
+            <name="XXYZBM" explanation="学校邮政编码" type="nvarchar(6)" null="F" p="F" identity="F" />
             <name="XZQHM" explanation="行政区划码" type="nvarchar(6)" null="F" p="F" identity="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="JXNY" explanation="建校年月" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
-            <name="XQR" explanation="校庆日" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
-            <name="CLBJ" explanation="成立背景" type="text" null="T" p="F" identity="F" remark="" />
-            <name="LSYG" explanation="历史沿革" type="text" null="T" p="F" identity="F" remark="" />
-            <name="XXXQS" explanation="学校校区数" type="decimal(2, 0)" null="F" p="F" identity="F" remark="" />
+            <name="JXNY" explanation="建校年月" type="nvarchar(6)" null="F" p="F" identity="F" />
+            <name="XQR" explanation="校庆日" type="nvarchar(60)" null="F" p="F" identity="F" />
+            <name="CLBJ" explanation="成立背景" type="text" null="T" p="F" identity="F" />
+            <name="LSYG" explanation="历史沿革" type="text" null="T" p="F" identity="F" />
+            <name="XXXQS" explanation="学校校区数" type="decimal(2, 0)" null="F" p="F" identity="F" />
             <name="XXPGLX" explanation="学校评估类型" type="nvarchar(1)" null="T" p="F" identity="F" remark="EDU_ZZ_PGQK" />
-            <name="XXPGQKSM" explanation="学校评估情况说明" type="text" null="F" p="F" identity="F" remark="" />
-            <name="ZYDZ" explanation="主页地址" type="nvarchar(60)" null="F" p="F" identity="F" remark="" />
-            <name="FDDBRH" explanation="法定代表人号" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
-            <name="FRZSH" explanation="法人证书号" type="nvarchar(20)" null="F" p="F" identity="F" remark="" />
-            <name="LXDH" explanation="联系电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
-            <name="CZDH" explanation="传真电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="" />
-            <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="F" p="F" identity="F" remark="" />
+            <name="XXPGQKSM" explanation="学校评估情况说明" type="text" null="F" p="F" identity="F" />
+            <name="ZYDZ" explanation="主页地址" type="nvarchar(60)" null="F" p="F" identity="F" />
+            <name="FDDBRH" explanation="法定代表人号" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="FRZSH" explanation="法人证书号" type="nvarchar(20)" null="F" p="F" identity="F" />
+            <name="LXDH" explanation="联系电话" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="CZDH" explanation="传真电话" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXX_03_A01_JGGW" explanation="机构岗位表">
         <field_area>
-            <name="ID" explanation="岗位表ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" remark="" />
-            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="F" identity="F" remark="" />
-            <name="GWBH" explanation="岗位编号" type="nvarchar(50)" null="F" p="F" identity="F" remark="" />
-            <name="GWMC" explanation="岗位名称" type="nvarchar(50)" null="T" p="F" identity="F" remark="" />
-            <name="GWSM" explanation="岗位说明" type="text" null="F" p="F" identity="F" remark="" />
+            <name="ID" explanation="岗位表ID" type="int" null="F" p="T" identity="F" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" identity="F" />
+            <name="JGH" explanation="机构号" type="nvarchar(6)" null="F" p="F" identity="F" />
+            <name="GWBH" explanation="岗位编号" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="GWMC" explanation="岗位名称" type="nvarchar(50)" null="T" p="F" identity="F" />
+            <name="GWSM" explanation="岗位说明" type="text" null="F" p="F" identity="F" />
         </field_area>
     </table>
 </namespace>

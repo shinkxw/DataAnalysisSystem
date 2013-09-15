@@ -90,7 +90,8 @@ class DafBuilder
     @daf_str << "null=\"#{field.null}\" "
     @daf_str << "p=\"#{field.p}\" "
     @daf_str << "identity=\"#{field.identity}\" "
-    @daf_str << "remark=\"#{field.remark}\" />\n"
+    @daf_str << "remark=\"#{field.remark}\" " if field.has_remark?
+    @daf_str << "/>\n"
   end
   #生成数据域的daf字符串
   def build_data_area_daf(data_area)
