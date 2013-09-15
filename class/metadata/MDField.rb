@@ -11,9 +11,9 @@ class MDField
   attr_accessor :identity#字段自增标识
   attr_accessor :explanation#字段说明
   attr_accessor :remark#字段备注
-  attr_accessor :config#字段配置
+  attr_accessor :default#字段默认值
   #初始化
-  def initialize(table,name,type,null,p,explanation,remark,identity = "F",config = "")
+  def initialize(table,name,type,null,p,explanation,remark,identity = "F",default = nil)
     @table = table
     @name = name
     @type = format(type)
@@ -22,7 +22,7 @@ class MDField
     @explanation = explanation
     @remark = remark
     @identity = (identity == nil ? "F" : pro_input(identity))
-    @config = config
+    @default = default
     @relation = nil
   end
   #在有说明时返回说明，否则返回名字
