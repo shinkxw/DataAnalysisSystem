@@ -39,13 +39,13 @@ class MDNameSpace
   end
   #判断命名空间数据是否有效
   def is_valid?
-    each{|table| table.is_valid?}
+    each(&:is_valid?)
     true
   end
   #返回命名空间中表的数量
   def get_table_num;@table_arr.size end
   #获得命名空间中所有表名的数组
-  def get_table_name_arr;map{|table| table.name} end
+  def get_table_name_arr;map(&:name) end
   #迭代表
   def each;@table_arr.each{|table| yield(table)} end
 end

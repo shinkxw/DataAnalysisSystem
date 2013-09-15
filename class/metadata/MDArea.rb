@@ -29,9 +29,7 @@ class MDArea
     inject(0){|num, name_space| num + name_space.get_table_num}
   end
   #得到包含所有表的数组
-  def get_table_arr
-    map{|name_space| name_space.table_arr}.flatten
-  end
+  def get_table_arr;map(&:table_arr).flatten end
   #查找表名并返回该表对象,无则返回nil
   def find_table(table_name)
     get_table_arr.find{|table| table.name == table_name}
@@ -103,9 +101,7 @@ class MDArea
     end
   end
   #获得所有表名的数组
-  def get_table_name_arr
-    map{|name_space| name_space.get_table_name_arr}.flatten
-  end
+  def get_table_name_arr;map(&:get_table_name_arr).flatten end
   #迭代命名空间
   def each;@name_space_arr.each{|name_space| yield(name_space)} end
 end

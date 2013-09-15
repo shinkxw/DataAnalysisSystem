@@ -64,10 +64,10 @@ class MDTable
   #返回字段数
   def get_field_size;@field_area.field_arr.size end
   #获得所有字段名的数组
-  def get_field_name_arr;@field_area.map{|field| field.name} end
+  def get_field_name_arr;@field_area.map(&:name) end
   #获得所有主键的字段名数组
   def get_primary_key_name_arr
-    @field_area.select{|field| field.p == "T"}.map{|field| field.name}
+    @field_area.select{|field| field.p == "T"}.map(&:name)
   end
   #在有说明时返回说明，否则返回名字
   def gname;has_exp? ? @explanation : @name end
