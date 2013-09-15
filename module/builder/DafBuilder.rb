@@ -89,7 +89,7 @@ class DafBuilder
     @daf_str << "type=\"#{field.type}\" "
     @daf_str << "null=\"#{field.null}\" "
     @daf_str << "p=\"#{field.p}\" "
-    @daf_str << "identity=\"#{field.identity}\" "
+    @daf_str << "identity=\"#{field.identity}\" " if field.identity == 'T'
     @daf_str << "remark=\"#{field.remark}\" " if field.has_remark?
     @daf_str << "/>\n"
   end

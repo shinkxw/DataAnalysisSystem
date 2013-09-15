@@ -2,8 +2,8 @@
 <namespace name="EDU_SYS" provider="reallocate_namespace" generation_time="">
     <table name="EDU_SYS_01_CONFIG" explanation="全局配置表">
         <field_area>
-            <name="ID" explanation="配置ID" type="int" null="F" p="T" identity="F" />
-            <name="VALUE" explanation="配置值" type="nvarchar(200)" null="F" p="F" identity="F" />
+            <name="ID" explanation="配置ID" type="int" null="F" p="T" />
+            <name="VALUE" explanation="配置值" type="nvarchar(200)" null="F" p="F" />
         </field_area>
         <data_area>
             <ID="1001" VALUE="http://115.236.101.41/yxtlogin/index.jsp" />
@@ -18,21 +18,21 @@
     </table>
     <table name="EDU_SYS_01_XN" explanation="学年表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="F" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="XN" explanation="学年" type="nvarchar(9)" null="F" p="F" identity="F" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="XN" explanation="学年" type="nvarchar(9)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_SYS_01_MODULE" explanation="">
         <field_area>
-            <name="ID" explanation="" type="int" null="F" p="T" identity="F" />
-            <name="APPID" explanation="" type="int" null="F" p="F" identity="F" />
-            <name="NAME" explanation="" type="nvarchar(20)" null="F" p="F" identity="F" />
-            <name="Depth" explanation="" type="int" null="F" p="F" identity="F" />
-            <name="PID" explanation="" type="int" null="F" p="F" identity="F" />
-            <name="MenuDisp" explanation="" type="int" null="F" p="F" identity="F" />
-            <name="MenuUserType" explanation="" type="int" null="F" p="F" identity="F" />
-            <name="Link" explanation="" type="nvarchar(100)" null="F" p="F" identity="F" />
+            <name="ID" explanation="" type="int" null="F" p="T" />
+            <name="APPID" explanation="" type="int" null="F" p="F" />
+            <name="NAME" explanation="" type="nvarchar(20)" null="F" p="F" />
+            <name="Depth" explanation="" type="int" null="F" p="F" />
+            <name="PID" explanation="" type="int" null="F" p="F" />
+            <name="MenuDisp" explanation="" type="int" null="F" p="F" />
+            <name="MenuUserType" explanation="" type="int" null="F" p="F" />
+            <name="Link" explanation="" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>
