@@ -118,8 +118,8 @@ class MDDiff
     end
     if @f1_diff_arr != [] || @f2_diff_arr != []
       puts '×Ö¶Î¼¶²îÒì:'
-      @f1_diff_arr.each{|field| puts '   ' << field.table.name.ljust(12) << field.name}
-      @f2_diff_arr.each{|field| puts '   ' * 13 << field.table.name.ljust(12) << field.name}
+      @f1_diff_arr.each{|field| puts '   ' << field.table.name.ljust(20) << field.name}
+      @f2_diff_arr.each{|field| puts '   ' * 13 << field.table.name.ljust(20) << field.name}
     end
     if @pro_diff_hash.keys != []
       puts 'ÊôÐÔ¼¶²îÒì:'
