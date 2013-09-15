@@ -26,7 +26,7 @@ class MDField
     @relation = nil
   end
   #在有说明时返回说明，否则返回名字
-  def gname;has_exp? ? @explanation + '(' + @name + ')' : @name end
+  def gname;has_exp? ? @explanation : @name end
   #改变字段关联
   def change_relation(r_field)
     result = true

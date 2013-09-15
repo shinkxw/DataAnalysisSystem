@@ -70,7 +70,7 @@ class MDTable
     @field_area.select{|field| field.p == "T"}.map{|field| field.name}
   end
   #在有说明时返回说明，否则返回名字
-  def gname;has_exp? ? @explanation + '(' + @name + ')' : @name end
+  def gname;has_exp? ? @explanation : @name end
   #获得字段数组
   def field_arr;@field_area.field_arr end
   #迭代字段

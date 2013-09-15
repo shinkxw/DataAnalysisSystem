@@ -10,7 +10,6 @@ class DbUpdateInterface < BaseInterface
   #开始处理
   def start
     super
-    @area_hash = {}
     @statu = 1
     @username = 'sa'
     @password = '123456'
@@ -18,6 +17,8 @@ class DbUpdateInterface < BaseInterface
   #输入前操作
   def before_input
     super
+    @area_hash = {}
+    @db_hash = {}
     show_menu
   end
   #输入后操作
@@ -35,7 +36,7 @@ class DbUpdateInterface < BaseInterface
     case @statu
     when 1#选择工作区
       area_name = @area_hash[@input]
-      if area_name != nil
+      if area_name
         @area_name = area_name
         @statu = 2
       elsif @input == 'q'
@@ -67,20 +68,30 @@ class DbUpdateInterface < BaseInterface
         puts "输入有误！"
       end
     when 4#输入数据库地址
-      if @input == 'q'
+      dbname = @db_hash[@input]
+      if dbname
+        @dbname = dbname
+        @statu = 5
+      elsif @input == 'q'
         @statu = 3
       else
-        @dbname = @input
-        @statu = 5
+        puts "输入号码有误！"
       end
     when 5#输入命令
       if @input == 'q'
         @statu = 4
-      elsif @input == 'd'
+      elsif @input == 'e'
         puts '比较中...'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
-            work_area.show_db_diff_cmd(db)
+            work_area.show_db_diff(db)
+          end
+        end
+      elsif @input == 'n'
+        puts '比较中...'
+        AreaManager.open(@area_name) do |work_area|
+          DBEntity.open(@dbname) do |db|
+            work_area.show_db_diff2(db)
           end
         end
       elsif @input == 'u'
@@ -125,11 +136,12 @@ class DbUpdateInterface < BaseInterface
   end
   def show_menu4
     show_db
-    puts "   输入待更新数据库的名称               "
+    puts "   输入待更新数据库的对应号码           "
     puts "   输入q返回上级目录                    "
   end
   def show_menu5
-    puts "   输入d查看数据库与工作区的差异        "
+    puts "   输入e查看数据库与工作区的差异(说明版)"
+    puts "   输入n查看数据库与工作区的差异(名称版)"
     puts "   输入u将更新数据库中的表结构          "
     puts "   输入q返回上级目录                    "
   end
@@ -138,7 +150,7 @@ class DbUpdateInterface < BaseInterface
     num = 1
     puts "   现有工作区：           "
     AreaManager.get_all_area_name.each do |name|
-      puts "   #{name.ljust(16)}#{num.to_s} "
+      puts "   #{name.ljust(18)}#{num.to_s}"
       @area_hash[num.to_s] = name
       num += 1
     end
@@ -147,6 +159,13 @@ class DbUpdateInterface < BaseInterface
   def show_db
     DBEntity.set_connector(DBConnector.new(@host,username: @username,password: @password))
     puts "   正在查询数据源中的数据库...     "
-    DBEntity.open(){|db| db.get_db_name.each{|db_name| puts '   ' << db_name}}
+    DBEntity.open() do |db|
+      num = 1
+      db.get_db_name.each do |db_name|
+        puts "   #{db_name.fill_cn(18)}#{num.to_s}"
+        @db_hash[num.to_s] = db_name
+        num += 1
+      end
+    end
   end
 end

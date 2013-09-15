@@ -72,10 +72,10 @@ class MDWork_Area
       end
     end
   end
-  #显示本数据域与数据库间的差异
+  #显示本数据域与数据库间的差异(说明版)
   def show_db_diff(db);compare_db(db).show_diff end
-  #显示本数据域与数据库间的差异(cmd版)
-  def show_db_diff_cmd(db);compare_db(db).show_cmd_diff end
+  #显示本数据域与数据库间的差异(名称版)
+  def show_db_diff2(db);compare_db(db).show_diff2 end
   #使用本数据域更新数据库表结构
   def update_db(db)
     #将表数据与最新版本进行比较，记录差异处

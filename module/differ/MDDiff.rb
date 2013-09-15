@@ -80,57 +80,58 @@ class MDDiff
     size += @pro_diff_hash.size
     size != 0
   end
-  #显示差异
+  #显示差异(说明版)
   def show_diff
+    puts '  ' * 2 << '数据库' << '  ' * 15 << '工作区'
     if @t1_diff_arr != [] || @t2_diff_arr != []
       puts '表级差异:'
-      @t1_diff_arr.each{|table| puts '  ' * 3 << table.gname}
-      @t2_diff_arr.each{|table| puts '  ' * 35 << table.gname}
+      @t1_diff_arr.each{|table| puts '   ' << table.gname}
+      @t2_diff_arr.each{|table| puts '   ' * 13 << table.gname}
     end
     if @f1_diff_arr != [] || @f2_diff_arr != []
       puts '字段级差异:'
-      @f1_diff_arr.each{|field| puts '  ' * 3 << field.table.gname << '  ' << field.gname}
-      @f2_diff_arr.each{|field| puts '  ' * 35 << field.table.gname << '  ' << field.gname}
+      @f1_diff_arr.each{|field| puts '   ' << field.table.gname.fill_cn(24) << field.gname}
+      @f2_diff_arr.each{|field| puts '   ' * 13 << field.table.gname.fill_cn(24) << field.gname}
     end
     if @pro_diff_hash.keys != []
       puts '属性级差异:'
       @pro_diff_hash.each do |k,v|
         if k.class.to_s == 'MDTable'
-          puts '  ' * 3 << k.gname.fill_cn(66) << v.gname
+          puts '   ' << k.gname.fill_cn(40) << v.gname
         else
           tf_name = "#{k.table.gname}  #{k.gname}"
-          puts '  ' * 3 << tf_name.fill_cn(60) << v.table.gname << '  ' << v.gname
+          puts '   ' << tf_name.fill_cn(40) << v.table.gname << '  ' << v.gname
         end
         get_pro_diff(k,v).each do |pro|
-          puts "#{'  ' * 6 << pro}:  #{k.send(pro)}#{' ' * 55}#{v.send(pro)}"
+          puts "#{'   ' * 2 << pro}:  #{k.send(pro).ljust(20)}#{v.send(pro)}"
         end
       end
     end
   end
-  #显示差异(cmd版)
-  def show_cmd_diff
-    puts '  ' * 2 << '数据库' << '  ' * 17 << '工作区'
+  #显示差异(名称版)
+  def show_diff2
+    puts '  ' * 2 << '数据库' << '  ' * 15 << '工作区'
     if @t1_diff_arr != [] || @t2_diff_arr != []
       puts '表级差异:'
-      @t1_diff_arr.each{|table| puts '  ' * 2 << table.gname}
-      @t2_diff_arr.each{|table| puts '  ' * 20 << table.gname}
+      @t1_diff_arr.each{|table| puts '   ' << table.name}
+      @t2_diff_arr.each{|table| puts '   ' * 13 << table.name}
     end
     if @f1_diff_arr != [] || @f2_diff_arr != []
       puts '字段级差异:'
-      @f1_diff_arr.each{|field| puts '  ' * 2 << field.table.gname << '  ' << field.gname}
-      @f2_diff_arr.each{|field| puts '  ' * 20 << field.table.gname << '  ' << field.gname}
+      @f1_diff_arr.each{|field| puts '   ' << field.table.name.ljust(12) << field.name}
+      @f2_diff_arr.each{|field| puts '   ' * 13 << field.table.name.ljust(12) << field.name}
     end
     if @pro_diff_hash.keys != []
       puts '属性级差异:'
       @pro_diff_hash.each do |k,v|
         if k.class.to_s == 'MDTable'
-          puts '  ' * 2 << k.gname.ljust(44) << v.gname
+          puts '   ' << k.name.ljust(40) << v.name
         else
-          tf_name = "#{k.table.gname}  #{k.gname}"
-          puts '  ' * 2 << tf_name.ljust(40) << v.table.gname << '  ' << v.gname
+          tf_name = "#{k.table.name}  #{k.name}"
+          puts '   ' << tf_name.ljust(40) << v.table.name << '  ' << v.name
         end
         get_pro_diff(k,v).each do |pro|
-          puts "#{'  ' * 3 << pro}:  #{k.send(pro)}#{' ' * 33}#{v.send(pro)}"
+          puts "#{'   ' * 2 << pro}:  #{k.send(pro).ljust(20)}#{v.send(pro)}"
         end
       end
     end
