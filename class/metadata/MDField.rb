@@ -60,7 +60,7 @@ class MDField
   end
   #根据类型计算默认值
   def defv
-    #如果字段存在存在默认值，则返回默认值
+    return @default if @default#如果字段存在存在默认值，则返回默认值
     @type =~ /([^(]+?)(?:\((.+?)\)|$)/
     case $1
     when 'int','decimal','money' then return '0'
