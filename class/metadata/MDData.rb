@@ -3,10 +3,8 @@
 #元数据表数据类
 class MDData
   include Enumerable
-  attr_accessor :name#数据名称
   #初始化
   def initialize(hash)
-    @name = ''
     @key_value_hash = {}#数据键值对哈希表
     hash.each{|k,v| add_key_value(k,v)}
   end

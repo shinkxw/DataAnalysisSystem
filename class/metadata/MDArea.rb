@@ -30,9 +30,16 @@ class MDArea
   end
   #得到包含所有表的数组
   def get_table_arr;map(&:table_arr).flatten end
+  #得到键为表名，值为表的哈希表
+  def get_table_hash
+    table_hash = {}
+    get_table_arr.each{|table| table_hash[table.name] = table}
+    table_hash
+  end
   #查找表名并返回该表对象,无则返回nil
   def find_table(table_name)
-    get_table_arr.find{|table| table.name == table_name}
+    @table_hash ||= get_table_hash
+    @table_hash[table_name]
   end
   #查找是否存在该名字的命名空间,无则返回nil
   def find_name_space(name_space_name)

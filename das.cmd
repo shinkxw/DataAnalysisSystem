@@ -1,3 +1,3 @@
-@Rem ruby -w cli.rb
-ruby -r profile DataAnalysisSystem.rb
+ruby -w cli.rb
+@Rem ruby -r profile DataAnalysisSystem.rb
 pause

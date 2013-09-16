@@ -11,8 +11,8 @@ AreaManager.open("HANRU") do |work_area|
   #~ work_area.export_testdata(build_hash)
   #work_area.export_all
   
-  db_conn = DBConnector.new('l')#192.168.0.8,1444
-  DBEntity.open('CloudEdu',db_conn) do |db|#CloudEdu,HanRuEdu
+  db_conn = DBConnector.new('le')#192.168.0.8,1444
+  DBEntity.open('HanRuEdu',db_conn) do |db|
     #work_area.show_db_diff(db)
     work_area.update_db(db)
   end

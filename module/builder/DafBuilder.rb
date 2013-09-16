@@ -103,7 +103,7 @@ class DafBuilder
   #生成数据的daf字符串
   def build_data_daf(data)
     @daf_str << "#{@tab}#{@tab}#{@tab}<"
-    data.get_keys.each{|key| @daf_str << "#{key}=\"#{data.get_value(key)}\" "}
+    data.each{|k,v| @daf_str << "#{k}=\"#{v}\" "}
     @daf_str << "/>\n"
   end
 end
