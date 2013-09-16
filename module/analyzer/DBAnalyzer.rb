@@ -18,8 +18,8 @@ class DBAnalyzer
     @area
   end
   #解析数据库实体
-  def analyze_db(db)
-    @area = MDArea.new('db_out')
+  def analyze_db(db,db_name = 'db_out')
+    @area = MDArea.new(db_name)
     name_space = MDNameSpace.new('temporary','db')
     db.get_table_name_arr.each do |table_name|
       table = analyze_table(table_name, db)

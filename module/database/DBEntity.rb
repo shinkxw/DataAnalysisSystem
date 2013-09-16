@@ -77,7 +77,7 @@ class DBEntity
   #修改字段注释
   def update_fexp(field);execute(Sql.update_fexp(field)) end
   #获得数据库的元数据域
-  def get_db_area;DBAnalyzer.new.analyze_db(self) end
+  def get_db_area(db_name = 'db_out');DBAnalyzer.new.analyze_db(self,db_name) end
   #让数据库执行sql语句
   def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end
   #在查询结果中获得以主要键为索引的所需信息，key_arr第一个元素为主键

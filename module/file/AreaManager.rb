@@ -7,11 +7,9 @@ class AreaManager
   #设置共用数据库连接器
   def self.set_conn(conn);@@db_conn = conn end
   #自数据库获取表信息以新建一个元数据域
-  def self.create_area_from_db(area_name,host,database_name,username = 'sa', password = '123456')
+  def self.create_area_from_db(area_name,db)
     create_area(area_name)
-    area = DBAnalyzer.new(host,username,password).analyze(database_name)
-    area.name = area_name
-    MDWork_Area.new(area).save_and_close_work_area
+    MDWork_Area.new(db.get_db_area(area_name)).save_and_close_work_area
   end
   #获得现有元数据域名列表
   def self.get_all_area_name
