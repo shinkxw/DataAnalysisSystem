@@ -95,11 +95,9 @@ class DbUpdateInterface < BaseInterface
           end
         end
       elsif @input == 'u'
-        puts '正在更新...'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
             work_area.update_db(db)
-            puts '更新完毕'
           end
         end
       else
@@ -162,7 +160,7 @@ class DbUpdateInterface < BaseInterface
     DBEntity.open() do |db|
       num = 1
       db.get_db_name.each do |db_name|
-        puts "   #{db_name.fill_cn(18)}#{num.to_s}"
+        puts "   #{db_name.fill_cn(22)}#{num.to_s}"
         @db_hash[num.to_s] = db_name
         num += 1
       end

@@ -103,7 +103,7 @@ class MDDiff
           puts '   ' << tf_name.fill_cn(40) << v.table.gname << '  ' << v.gname
         end
         get_pro_diff(k,v).each do |pro|
-          puts "#{'   ' * 2 << pro}:  #{k.send(pro).ljust(20)}#{v.send(pro)}"
+          puts "#{'   ' * 2 << pro}:  #{k.send(pro).to_s.ljust(26)}#{v.send(pro)}"
         end
       end
     end
@@ -131,7 +131,7 @@ class MDDiff
           puts '   ' << tf_name.ljust(40) << v.table.name << '  ' << v.name
         end
         get_pro_diff(k,v).each do |pro|
-          puts "#{'   ' * 2 << pro}:  #{k.send(pro).ljust(20)}#{v.send(pro)}"
+          puts "#{'   ' * 2 << pro}:  #{k.send(pro).to_s.ljust(26)}#{v.send(pro)}"
         end
       end
     end

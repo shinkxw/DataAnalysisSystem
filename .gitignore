@@ -13,6 +13,7 @@ test/tmp
 test/version_tmp
 tmp
 data/backup
+data/temporary
 data/db_out_area
 export/template
 export/migrate_config

@@ -73,27 +73,40 @@ class MDWork_Area
     end
   end
   #显示本数据域与数据库间的差异(说明版)
-  def show_db_diff(db);compare_db(db).show_diff end
-  #显示本数据域与数据库间的差异(名称版)
-  def show_db_diff2(db);compare_db(db).show_diff2 end
-  #使用本数据域更新数据库表结构
-  def update_db(db)
-    #将表数据与最新版本进行比较，记录差异处
+  def show_db_diff(db)
     diff = compare_db(db)
     if diff.has_diff?
-      #显示差异
       diff.show_diff
-      #使用脚本将差异处更新
+    else
+      puts '没有差异'
+    end
+  end
+  #显示本数据域与数据库间的差异(名称版)
+  def show_db_diff2(db)
+    diff = compare_db(db)
+    if diff.has_diff?
+      diff.show_diff2
+    else
+      puts '没有差异'
+    end
+  end
+  #使用本数据域更新数据库表结构
+  def update_db(db)
+    puts "比较中..."#将表数据与最新版本进行比较，记录差异处
+    diff = compare_db(db)
+    if diff.has_diff?
+      puts "\n以下是两者的差异:\n"#显示差异
+      diff.show_diff
+      puts "\n正在更新数据库差异..."#使用脚本将差异处更新
       diff.db_transform(db) 
-      #再次检查数据库中表结构是否与最新版本相同
+      puts "\n再次比较两者差异..."
       diff = compare_db(db)
       if diff.has_diff?
-        #报错
-        puts '数据库差异更新并未成功！'
-        #显示未修正差异
+        puts '数据库差异更新并未成功！'#报错
+        puts '未修正差异为：'#显示未修正差异
         diff.show_diff
       else
-        #运行最新版本的视图
+        puts '正在重置视图'#运行最新版本的视图
         view_str = ViewBuilder.new(true).build(@area).get_data_str
         db.execute(view_str)
         puts '数据库更新成功'

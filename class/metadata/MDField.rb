@@ -60,7 +60,7 @@ class MDField
   end
   #根据类型计算默认值
   def defv
-    return @default if @default#如果字段存在存在默认值，则返回默认值
+    return @default if has_default?#如果字段存在存在默认值，则返回默认值
     @type =~ /([^(]+?)(?:\((.+?)\)|$)/
     case $1
     when 'int','decimal','money' then return '0'
@@ -113,6 +113,8 @@ class MDField
   def has_exp?;@explanation != '' && @explanation != nil end
   #判断备注是否存在
   def has_remark?;@remark != '' && @remark != nil end
+  #判断默认值是否存在
+  def has_default?;@default != '' && @default != nil end
   #返回只有类型的自己，用于数据库比较
   def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
   #处理输入数据
