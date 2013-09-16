@@ -3,6 +3,9 @@
 #元数据域管理器
 class AreaManager
   @@data_path = "#{$root}/data"
+  @@db_conn = nil
+  #设置共用数据库连接器
+  def self.set_conn(conn);@@db_conn = conn end
   #自数据库获取表信息以新建一个元数据域
   def self.create_area_from_db(area_name,host,database_name,username = 'sa', password = '123456')
     create_area(area_name)
@@ -46,8 +49,20 @@ class AreaManager
     area.add_table_relation(relation_str) if relation_str != nil
     area
   end
-  #将指定名称的元数据域加载为工作区并返回
-  def self.load_work_area(area_name);MDWork_Area.new(load_area(area_name)) end
+  #同时加载指定名称的元数据域与指定数据库实体并传给块
+  def self.load_area_and_db(area_name,db_name = nil,&block)
+    if db_name && @@db_conn
+      open(area_name) do |work_area|
+        DBEntity.open(db_name,@@db_conn) do |db|
+          yield(work_area,db)
+        end
+      end
+    elsif db_name
+      puts 'AreaManager：未配置数据库连接'
+    else
+      open(area_name,&block)
+    end
+  end
   #将指定名称的元数据域加载为工作区并传给块
   def self.open(area_name)
     t = Time.now
@@ -61,4 +76,6 @@ class AreaManager
     end
     puts "耗时#{Time.now - t}秒"
   end
+  #将指定名称的元数据域加载为工作区并返回
+  def self.load_work_area(area_name);MDWork_Area.new(load_area(area_name)) end
 end

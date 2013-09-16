@@ -58,7 +58,7 @@ class MDDiff
   end
   #添加属性级差异,包括表属性及字段属性,放入的是两个对等的对象(表或字段)
   def add_pro_diff(obj1,obj2)
-    @pro_diff_hash[obj1] = obj2 if get_pro_diff(obj1,obj2) != []
+    @pro_diff_hash[obj1] = obj2 unless get_pro_diff(obj1,obj2).empty?
   end
   #获得两个对象间的差异
   def get_pro_diff(obj1,obj2)
