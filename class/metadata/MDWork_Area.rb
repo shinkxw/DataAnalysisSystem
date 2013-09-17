@@ -100,20 +100,26 @@ class MDWork_Area
       diff.show_diff
       puts "\n正在更新数据库差异..."#使用脚本将差异处更新
       diff.db_transform(db) 
-      puts "\n再次比较两者差异..."
-      diff = compare_db(db)
-      if diff.has_diff?
-        puts "\n数据库差异更新并未成功！"#报错
-        puts '未修正差异为：'#显示未修正差异
-        diff.show_diff
-      else
-        puts "\n正在重置视图..."
-        #db.delete_all_view#删除所有视图
-        #运行最新版本的视图
-        view_str = ViewBuilder.new(true).build(@area).get_data_str
-        db.execute(view_str)
-        puts "\n数据库更新成功"
-      end
+      #~ puts "\n再次比较两者差异..."
+      #~ diff = compare_db(db)
+      #~ if diff.has_diff?
+        #~ puts "\n数据库差异更新并未成功！"#报错
+        #~ puts '未修正差异为：'#显示未修正差异
+        #~ diff.show_diff
+      #~ else
+        #~ puts "\n正在重置视图..."
+        #~ #db.delete_all_view#删除所有视图
+        #~ #运行最新版本的视图
+        #~ view_str = ViewBuilder.new(true).build(@area).get_data_str
+        #~ db.execute(view_str)
+        #~ puts "\n数据库更新成功"
+      #~ end
+      
+      puts "\n正在重置视图..."
+      view_str = ViewBuilder.new(true).build(@area).get_data_str
+      db.execute(view_str)
+      puts "\n数据库更新成功"
+      
     else
       puts '数据库表结构与工作区一致，不需更新'
     end

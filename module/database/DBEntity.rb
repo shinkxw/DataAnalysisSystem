@@ -27,7 +27,9 @@ class DBEntity
   def get_table_fname(tn);query(Sql.get_tf_info(tn))['COLUMN_NAME'] end
   #获得指定表的字段信息
   def get_table_fields_info(table_name,key_arr = nil)
+    #puts "请求表#{table_name}的字段信息"
     result = query(Sql.get_tf_info(table_name))
+    #puts "获得表#{table_name}的字段信息"
     key_arr ? get_need_info(result,key_arr) : result
   end
   #获得指定表的主键名数组
@@ -69,7 +71,13 @@ class DBEntity
   #删除字段
   def delete_field(field);execute(Sql.delete_field(field)) end
   #修改字段类型
-  def update_ftype(field);execute(Sql.update_ftype(field)) end
+  def update_ftype(field)
+    if field.null == 'T'
+      execute(Sql.update_ftype(field))#改变类型
+    else
+      execute(Sql.field_not_null(field))
+    end
+  end
   #设字段可以为空
   def field_null(field);execute(Sql.field_null(field)) end
   #设字段不可为空

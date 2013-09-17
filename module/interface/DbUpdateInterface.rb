@@ -39,6 +39,7 @@ class DbUpdateInterface < BaseInterface
       if area_name
         @area_name = area_name
         @statu = 2
+        puts "正在加载工作区#{@area_name}..."
       elsif @input == 'q'
         @statu = "quit"
       else
@@ -72,6 +73,7 @@ class DbUpdateInterface < BaseInterface
       if dbname
         @dbname = dbname
         @statu = 5
+        puts "打开数据库#{@dbname}"
       elsif @input == 'q'
         @statu = 3
       else
