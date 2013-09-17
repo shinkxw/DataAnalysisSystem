@@ -83,4 +83,24 @@
             <name="PZQZ" explanation="P值权重" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_08_A01_XXGCXPJPZ" explanation="学生学习过程性评价配置表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="SSKCH" explanation="所属课程号" type="nvarchar(10)" null="F" p="F" />
+            <name="PZMC" explanation="配置名称" type="nvarchar(80)" null="F" p="F" />
+            <name="PZLX" explanation="配置类型" type="nvarchar(30)" null="F" p="F" remark="（学科教师、评价课程、班长）" />
+            <name="FLM" explanation="父类名" type="nvarchar(30)" null="F" p="F" remark="（作业评价、课堂发言、无）" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_08_A02_XXGCXPJJG" explanation="学生学习过程性评价结果表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="PZID" explanation="评价配置ID" type="int" null="F" p="F" />
+            <name="FS" explanation="分数" type="decimal(18, 1)" null="F" p="F" />
+            <name="XLZID" explanation="校历周ID" type="int" null="F" p="F" />
+            <name="XSXXID" explanation="学生ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

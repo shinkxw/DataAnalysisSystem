@@ -130,4 +130,26 @@
             <name="SESSIONNAME" explanation="节次名称" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ELE_05_XL" explanation="校历表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="NAME" explanation="校历名称" type="nvarchar(50)" null="F" p="F" />
+            <name="STARTDAY" explanation="开始日期" type="datetime" null="F" p="F" />
+            <name="ENDDAY" explanation="结束日期" type="datetime" null="F" p="F" />
+            <name="XNID" explanation="学年ID" type="int" null="F" p="F" />
+            <name="XQID" explanation="学期ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_05_XLZ" explanation="校历周表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="XLID" explanation="校历ID" type="int" null="F" p="F" />
+            <name="NAME" explanation="校历周名称" type="nvarchar(50)" null="F" p="F" />
+            <name="STARTDAY" explanation="开始日期" type="datetime" null="F" p="F" />
+            <name="ENDDAY" explanation="结束日期" type="datetime" null="F" p="F" />
+            <name="ZJH" explanation="周计划" type="text" null="T" p="F" />
+        </field_area>
+    </table>
 </namespace>

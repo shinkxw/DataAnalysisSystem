@@ -92,7 +92,7 @@ class MDWork_Area
   end
   #使用本数据域更新数据库表结构
   def update_db(db)
-    puts "比较中..."#将表数据与最新版本进行比较，记录差异处
+    puts "\n开始更新数据库"
     diff = compare_db(db)
     if diff.has_diff?
       puts "\n以下是两者的差异:\n"#显示差异
@@ -116,7 +116,12 @@ class MDWork_Area
     end
   end
   #与指定数据库中的表结构进行比较
-  def compare_db(db);MDDiffer.new.compare_area(db.get_db_area,@area) end
+  def compare_db(db)
+    puts '正在自数据库获取表信息...'
+    db_area = db.get_db_area
+    puts '获取完毕，比较中...'
+    MDDiffer.new.compare_area(db_area,@area)
+  end
   #输出Sql脚本
   def export_sql(build_folder = true, need_delete = true, need_data = false)
     builder = SqlBuilder.new(need_delete,need_data)

@@ -53,7 +53,7 @@ class DafBuilder
         @daf_str << "<#{relation_table.name}\n"
         relation_field_arr = relation_table.get_relation
         relation_field_arr.each do |rf|
-          @daf_str << "  #{rf.name.ljust(15)}#{rf.relation.table.name.ljust(25)}#{rf.relation.name}\n"
+          @daf_str << "  #{rf.name.ljust(15)}#{rf.relation.table.name.ljust(35)}#{rf.relation.name}\n"
         end
       end
     end

@@ -81,14 +81,12 @@ class DbUpdateInterface < BaseInterface
       if @input == 'q'
         @statu = 4
       elsif @input == 'e'
-        puts '比较中...'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
             work_area.show_db_diff(db)
           end
         end
       elsif @input == 'n'
-        puts '比较中...'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
             work_area.show_db_diff2(db)

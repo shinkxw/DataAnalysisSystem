@@ -18,13 +18,16 @@ class DBAnalyzer
     @area
   end
   #解析数据库实体
-  def analyze_db(db,db_name = 'db_out')
-    @area = MDArea.new(db_name)
+  def analyze_db(db,area_name = 'db_out')
+    @area = MDArea.new(area_name)
     name_space = MDNameSpace.new('temporary','db')
+    puts '开始读取表数据...'
     db.get_table_name_arr.each do |table_name|
+      puts table_name
       table = analyze_table(table_name, db)
       name_space.add_table(table)
     end
+    puts '表数据读取完毕'
     @area.add_name_space(name_space)
     @area.reallocate_namespace
     @area
