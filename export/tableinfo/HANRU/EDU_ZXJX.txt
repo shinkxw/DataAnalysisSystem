@@ -86,3 +86,9 @@ EDU_ZXJX_08_A02_XXGCXPJJG  学生学习过程性评价结果表
   XSXXID        学生ID                  int            非主   学生基本数据子类表
   SSKCH         所属课程号              nvarchar(10)   非主   课程数据类
 
+EDU_ZXJX_08_A03_XXGCXPJXMLX  学生学习过程性评价项目类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键
+  LXMC          类型名称                nvarchar(80)   非主
+  PJKM          评价科目                text           非主
+

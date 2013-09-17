@@ -104,4 +104,12 @@
             <name="SSKCH" explanation="所属课程号" type="nvarchar(10)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_08_A03_XXGCXPJXMLX" explanation="学生学习过程性评价项目类型表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="LXMC" explanation="类型名称" type="nvarchar(80)" null="F" p="F" />
+            <name="PJKM" explanation="评价科目" type="text" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
