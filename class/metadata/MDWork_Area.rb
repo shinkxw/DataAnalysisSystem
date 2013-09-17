@@ -108,7 +108,7 @@ class MDWork_Area
         diff.show_diff
       else
         puts "\n正在重置视图..."
-        #删除所有视图
+        #db.delete_all_view#删除所有视图
         #运行最新版本的视图
         view_str = ViewBuilder.new(true).build(@area).get_data_str
         db.execute(view_str)

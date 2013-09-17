@@ -34,6 +34,8 @@ class Sql
   end
   #查询指定表的数据
   def self.get_tdata(table_name);"select * from #{table_name}" end
+  #删除指定名称视图
+  def self.delete_view(view_name);"DROP VIEW #{view_name}" end
   #根据元数据建表
   def self.create_table(table)
     builder = SqlBuilder.new

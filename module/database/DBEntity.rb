@@ -54,6 +54,12 @@ class DBEntity
   end
   #获取指定表的数据
   def get_table_data(table_name);query(Sql.get_tdata(table_name)) end
+  #删除所有视图
+  def delete_all_view
+    #取得所有视图名
+    #一一获得删除语句并执行
+    #Sql.delete_view(view_name)
+  end
   #根据元数据建表
   def create_table(table);execute(Sql.create_table(table)) end
   #删除指定表
