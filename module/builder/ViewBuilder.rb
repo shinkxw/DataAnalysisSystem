@@ -171,7 +171,9 @@ class ViewBuilder
     table_arr = @area.get_table_arr
     if @bulid_table_name_arr == nil
       table_arr.each do |table|
-        @table_arr.push(table) if table.has_relation?
+        if table.field_area.find{|f| f.relation != nil && f.relation.name != 'SCHOOLID'}
+          @table_arr.push(table) 
+        end
       end
     else
       table_arr.each do |table|

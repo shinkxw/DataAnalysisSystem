@@ -18,12 +18,13 @@ class MDWork_Area
   end
   #输出所有
   def export_all
-    #~ fs_config = {'@sql'=>'G:/同步/sql',
-                 #~ '@view'=>'G:/同步/view',
-                 #~ 'HANRU_bz'=>'G:/同步',
-                 #~ 'HANRU_yw'=>'G:/同步',
-                 #~ 'HANRU_view'=>'G:/同步'}
-    #~ MDDoc.set_fsc(fs_config)
+    fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
+    fs_config = {'@sql'=>"#{fs_root}/BASE",
+                 '@view'=>"#{fs_root}/VIEW",
+                 'HANRU_bz'=>fs_root,
+                 'HANRU_yw'=>fs_root,
+                 'HANRU_view'=>fs_root}
+    MDDoc.set_fsc(fs_config)
     export_sql
     export_sql(false)
     export_view
@@ -32,7 +33,7 @@ class MDWork_Area
     export_template
     export_tableinfo
     export_migrate_config
-    #MDDoc.set_fsc(nil)
+    MDDoc.set_fsc(nil)
     #SVN.commit('G:\瀚孺\HanruEdu')
   end
   #固化元数据并关闭工作环境
@@ -106,7 +107,9 @@ class MDWork_Area
         puts '未修正差异为：'#显示未修正差异
         diff.show_diff
       else
-        puts "\n正在重置视图..."#运行最新版本的视图
+        puts "\n正在重置视图..."
+        #删除所有视图
+        #运行最新版本的视图
         view_str = ViewBuilder.new(true).build(@area).get_data_str
         db.execute(view_str)
         puts "\n数据库更新成功"

@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[FS]--分数
       ,a.[XLZID]--校历周ID
       ,a.[XSXXID]--学生ID
+      ,a.[SSKCH]--所属课程号
       ,c.SCHOOLID as c_XXGCXPJPZ_SCHOOLID--学生学习过程性评价配置表 学校ID
       ,c.SSKCH as c_XXGCXPJPZ_SSKCH--学生学习过程性评价配置表 所属课程号
       ,c.PZMC as c_XXGCXPJPZ_PZMC--学生学习过程性评价配置表 配置名称
@@ -80,11 +81,32 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,e.ZYDZ as e_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,e.XJH as e_XSXX_XJH--学生基本数据子类表 学籍号
+      ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
+      ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
+      ,f.KCM as f_KC_KCM--课程数据类 课程码
+      ,fb.MC as f_KC_KCM_MC--中小学课程代码表 名称
+      ,fb.SYXX as f_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,f.KCDJM as f_KC_KCDJM--课程数据类 课程等级码
+      ,fc.MC as f_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,f.KCBM as f_KC_KCBM--课程数据类 课程别名
+      ,f.KCJJ as f_KC_KCJJ--课程数据类 课程简介
+      ,f.KCYQ as f_KC_KCYQ--课程数据类 课程要求
+      ,f.ZXS as f_KC_ZXS--课程数据类 总学时
+      ,f.ZHXS as f_KC_ZHXS--课程数据类 周学时
+      ,f.ZXXS as f_KC_ZXXS--课程数据类 自学学时
+      ,f.SKFSM as f_KC_SKFSM--课程数据类 授课方式码
+      ,fd.MC as f_KC_SKFSM_MC--授课方式代码表 名称
+      ,f.JCBM as f_KC_JCBM--课程数据类 教材编码
+      ,f.CKSM as f_KC_CKSM--课程数据类 参考书目
+      ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
+      ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
+      ,fe.MC as f_KC_SFZK_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_08_A01_XXGCXPJPZ AS c ON a.PZID = c.ID /*评价配置ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS d ON a.XLZID = d.ID /*校历周ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS e ON a.XSXXID = e.ID /*学生ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_01_01_KC AS f ON a.SSKCH = f.KCH /*所属课程号*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS ec ON e.CSDM = ec.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
@@ -99,5 +121,9 @@ FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS em ON e.DSZYBZ = em.DM /*独生子女标志*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS en ON e.XSLBM = en.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS eo ON e.HKXZM = eo.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ep ON e.SFLDRK = ep.DM /*是否流动人口*/
+      dbo.EDU_JY_SFBZ AS ep ON e.SFLDRK = ep.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS fb ON f.KCM = fb.DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS fc ON f.KCDJM = fc.DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS fd ON f.SKFSM = fd.DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS fe ON f.SFZK = fe.DM /*是否主课*/
 GO

@@ -28,7 +28,6 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
             [Display(Name = "ËùÊô¿Î³ÌºÅ")]
-            [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SSKCH { get; set; }
 

@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXJX_08_A02_XXGCXPJJG()
         {
+            SSKCH = "";
         }
         public class EDU_ZXJX_08_A02_XXGCXPJJG_metadata
         {
@@ -41,6 +42,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学生")]
             public Int32 XSXXID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "所属课程号")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SSKCH { get; set; }
 
 
         }

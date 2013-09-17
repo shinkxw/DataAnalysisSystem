@@ -179,7 +179,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXJX_08_A01_XXGCXPJPZ](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校ID
-	[SSKCH]  nvarchar(10)  NOT NULL,--所属课程号
+	[SSKCH]  text  NOT NULL,--所属课程号
 	[PZMC]  nvarchar(80)  NOT NULL,--配置名称
 	[PZLX]  nvarchar(30)  NOT NULL,--配置类型
 	[FLM]  nvarchar(30)  NOT NULL,--父类名
@@ -202,6 +202,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_08_A02_XXGCXPJJG](
 	[FS]  decimal(18, 1)  NOT NULL,--分数
 	[XLZID]  int  NOT NULL,--校历周ID
 	[XSXXID]  int  NOT NULL,--学生ID
+	[SSKCH]  nvarchar(10)  NOT NULL,--所属课程号
 CONSTRAINT [PK_EDU_ZXJX_08_A02_XXGCXPJJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -369,4 +370,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校历周ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_08_A02_XXGCXPJJG', @level2type=N'COLUMN',@level2name=N'XLZID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_08_A02_XXGCXPJJG', @level2type=N'COLUMN',@level2name=N'XSXXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属课程号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_08_A02_XXGCXPJJG', @level2type=N'COLUMN',@level2name=N'SSKCH'
 GO

@@ -23,7 +23,7 @@ class DBAnalyzer
     name_space = MDNameSpace.new('temporary','db')
     puts '开始读取表数据...'
     db.get_table_name_arr.each do |table_name|
-      puts table_name
+      #puts table_name
       table = analyze_table(table_name, db)
       name_space.add_table(table)
     end

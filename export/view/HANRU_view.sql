@@ -3,10 +3,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_USER
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_USER_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_APP_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ELE_01_APP_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_SCHOOL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_SCHOOL_DISP
@@ -99,10 +95,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_13_A01
             and   type = 'V')
    drop view VIEW_EDU_OAXT_13_A01_DWSJ_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_SYS_01_XN_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_SYS_01_XN_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_VIP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_VIP_DISP
@@ -183,10 +175,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A03
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A03_ZZGWFP_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP
@@ -235,10 +223,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_06_A01
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_06_A01_MPJL_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_08_A01_XXGCXPJPZ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZXJX_08_A01_XXGCXPJPZ_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_08_A02_XXGCXPJJG_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_08_A02_XXGCXPJJG_DISP
@@ -278,10 +262,6 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_01_01_ZXXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_01_01_ZXXX_DISP
-GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_02_01_NJ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZXXX_02_01_NJ_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_03_01_BJ_DISP')
             and   type = 'V')
@@ -355,10 +335,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_F
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_FWLL_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_FBQX_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZYZX_MHXT_FBQX_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP
@@ -370,10 +346,6 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_A01_SSCW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZFC_08_A01_SSCW_DISP
-GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_A03_ZWHCY_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZZFC_08_A03_ZWHCY_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZFC_08_A02_YHZSJL_DISP')
             and   type = 'V')
@@ -601,21 +573,6 @@ SELECT a.[LOGINNAME]--用户名
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
-GO
-
---应用表
-CREATE VIEW [dbo].[VIEW_EDU_ELE_01_APP_DISP]
-AS
-SELECT a.[ID]--应用ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[NAME]--应用名称
-      ,a.[URL]--网址
-      ,a.[AUTHIP]--限用IP
-      ,a.[SM]--说明
-      ,a.[DLFS]--登录方式
-      ,a.[STATUS]--应用状态
-
-FROM dbo.EDU_ELE_01_APP AS a
 GO
 
 --学校配置表
@@ -1735,16 +1692,6 @@ FROM dbo.EDU_OAXT_13_A01_DWSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.DWFZRID = d.LOGINNAME /*单位负责人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO
 
---学年表
-CREATE VIEW [dbo].[VIEW_EDU_SYS_01_XN_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SCHOOLID]--学校名
-      ,a.[XN]--学年
-
-FROM dbo.EDU_SYS_01_XN AS a
-GO
-
 --网站会员
 CREATE VIEW [dbo].[VIEW_EDU_WZXT_VIP_DISP]
 AS
@@ -2346,16 +2293,6 @@ FROM dbo.EDU_ZXDY_04_A03_ZZGWFP AS a LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
 GO
 
---岗位分配模板表
-CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A04_GWFPMB_DISP]
-AS
-SELECT a.[ID]--岗位分配模板表ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[MBMC]--模板名称
-
-FROM dbo.EDU_ZXDY_04_A04_GWFPMB AS a
-GO
-
 --特别值周教师表
 CREATE VIEW [dbo].[VIEW_EDU_ZXDY_04_A05_TBZZJS_DISP]
 AS
@@ -2955,44 +2892,6 @@ FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS id ON i.SYJXMSM = id.DM /*双语教学模式码*/
 GO
 
---学生学习过程性评价配置表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_08_A01_XXGCXPJPZ_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SCHOOLID]--学校ID
-      ,a.[SSKCH]--所属课程号
-      ,a.[PZMC]--配置名称
-      ,a.[PZLX]--配置类型
-      ,a.[FLM]--父类名
-      ,c.SCHOOLID as c_KC_SCHOOLID--课程数据类 学校名
-      ,c.KCMC as c_KC_KCMC--课程数据类 课程名称
-      ,c.KCM as c_KC_KCM--课程数据类 课程码
-      ,cb.MC as c_KC_KCM_MC--中小学课程代码表 名称
-      ,cb.SYXX as c_KC_KCM_SYXX--中小学课程代码表 适用学校
-      ,c.KCDJM as c_KC_KCDJM--课程数据类 课程等级码
-      ,cc.MC as c_KC_KCDJM_MC--中小学课程等级代码表 名称
-      ,c.KCBM as c_KC_KCBM--课程数据类 课程别名
-      ,c.KCJJ as c_KC_KCJJ--课程数据类 课程简介
-      ,c.KCYQ as c_KC_KCYQ--课程数据类 课程要求
-      ,c.ZXS as c_KC_ZXS--课程数据类 总学时
-      ,c.ZHXS as c_KC_ZHXS--课程数据类 周学时
-      ,c.ZXXS as c_KC_ZXXS--课程数据类 自学学时
-      ,c.SKFSM as c_KC_SKFSM--课程数据类 授课方式码
-      ,cd.MC as c_KC_SKFSM_MC--授课方式代码表 名称
-      ,c.JCBM as c_KC_JCBM--课程数据类 教材编码
-      ,c.CKSM as c_KC_CKSM--课程数据类 参考书目
-      ,c.CDXZ as c_KC_CDXZ--课程数据类 场地限制
-      ,c.SFZK as c_KC_SFZK--课程数据类 是否主课
-      ,ce.MC as c_KC_SFZK_MC--是否标志代码表 名称
-
-FROM dbo.EDU_ZXJX_08_A01_XXGCXPJPZ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_01_01_KC AS c ON a.SSKCH = c.KCH /*所属课程号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS cb ON c.KCM = cb.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS cc ON c.KCDJM = cc.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS cd ON c.SKFSM = cd.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ce ON c.SFZK = ce.DM /*是否主课*/
-GO
-
 --学生学习过程性评价结果表
 CREATE VIEW [dbo].[VIEW_EDU_ZXJX_08_A02_XXGCXPJJG_DISP]
 AS
@@ -3002,6 +2901,7 @@ SELECT a.[ID]--编号
       ,a.[FS]--分数
       ,a.[XLZID]--校历周ID
       ,a.[XSXXID]--学生ID
+      ,a.[SSKCH]--所属课程号
       ,c.SCHOOLID as c_XXGCXPJPZ_SCHOOLID--学生学习过程性评价配置表 学校ID
       ,c.SSKCH as c_XXGCXPJPZ_SSKCH--学生学习过程性评价配置表 所属课程号
       ,c.PZMC as c_XXGCXPJPZ_PZMC--学生学习过程性评价配置表 配置名称
@@ -3074,11 +2974,32 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,e.ZYDZ as e_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,e.XJH as e_XSXX_XJH--学生基本数据子类表 学籍号
+      ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
+      ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
+      ,f.KCM as f_KC_KCM--课程数据类 课程码
+      ,fb.MC as f_KC_KCM_MC--中小学课程代码表 名称
+      ,fb.SYXX as f_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,f.KCDJM as f_KC_KCDJM--课程数据类 课程等级码
+      ,fc.MC as f_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,f.KCBM as f_KC_KCBM--课程数据类 课程别名
+      ,f.KCJJ as f_KC_KCJJ--课程数据类 课程简介
+      ,f.KCYQ as f_KC_KCYQ--课程数据类 课程要求
+      ,f.ZXS as f_KC_ZXS--课程数据类 总学时
+      ,f.ZHXS as f_KC_ZHXS--课程数据类 周学时
+      ,f.ZXXS as f_KC_ZXXS--课程数据类 自学学时
+      ,f.SKFSM as f_KC_SKFSM--课程数据类 授课方式码
+      ,fd.MC as f_KC_SKFSM_MC--授课方式代码表 名称
+      ,f.JCBM as f_KC_JCBM--课程数据类 教材编码
+      ,f.CKSM as f_KC_CKSM--课程数据类 参考书目
+      ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
+      ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
+      ,fe.MC as f_KC_SFZK_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_08_A01_XXGCXPJPZ AS c ON a.PZID = c.ID /*评价配置ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS d ON a.XLZID = d.ID /*校历周ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS e ON a.XSXXID = e.ID /*学生ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_01_01_KC AS f ON a.SSKCH = f.KCH /*所属课程号*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS ec ON e.CSDM = ec.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
@@ -3093,7 +3014,11 @@ FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS em ON e.DSZYBZ = em.DM /*独生子女标志*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS en ON e.XSLBM = en.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS eo ON e.HKXZM = eo.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ep ON e.SFLDRK = ep.DM /*是否流动人口*/
+      dbo.EDU_JY_SFBZ AS ep ON e.SFLDRK = ep.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS fb ON f.KCM = fb.DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS fc ON f.KCDJM = fc.DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS fd ON f.SKFSM = fd.DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS fe ON f.SFZK = fe.DM /*是否主课*/
 GO
 
 --教职工基本数据子类表
@@ -4473,16 +4398,6 @@ FROM dbo.EDU_ZXXX_01_01_ZXXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZGYZ AS k ON a.FJXYYM = k.DM /*辅教学语言码*/
 GO
 
---年级数据类表
-CREATE VIEW [dbo].[VIEW_EDU_ZXXX_02_01_NJ_DISP]
-AS
-SELECT a.[SCHOOLID]--学校名
-      ,a.[NJ]--年级号
-      ,a.[NJMC]--年级名称
-
-FROM dbo.EDU_ZXXX_02_01_NJ AS a
-GO
-
 --班级数据类表
 CREATE VIEW [dbo].[VIEW_EDU_ZXXX_03_01_BJ_DISP]
 AS
@@ -5063,19 +4978,6 @@ FROM dbo.EDU_ZYZX_MHXT_FWLL AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
 GO
 
---发布权限
-CREATE VIEW [dbo].[VIEW_EDU_ZYZX_MHXT_FBQX_DISP]
-AS
-SELECT a.[ID]--发布权限ID
-      ,a.[SCHOOLID]--学校名
-      ,a.[WEBID]--网站ID
-      ,a.[LOGINNAME]--用户名
-      ,a.[LMLIST]--栏目
-      ,a.[LMNAMELIST]--栏目文字
-
-FROM dbo.EDU_ZYZX_MHXT_FBQX AS a
-GO
-
 --建筑物基本数据类表
 CREATE VIEW [dbo].[VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP]
 AS
@@ -5483,21 +5385,6 @@ FROM dbo.EDU_ZZFC_08_A01_SSCW AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS db ON d.RZXB = db.DM /*入住性别*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS dc ON d.SFKY = dc.DM /*是否可用*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS dd ON d.AZDSJ = dd.DM /*安装电视机*/
-GO
-
---住委会成员表
-CREATE VIEW [dbo].[VIEW_EDU_ZZFC_08_A03_ZWHCY_DISP]
-AS
-SELECT a.[SCHOOLID]--学校ID
-      ,a.[ID]--成员ID
-      ,a.[YHID]--用户ID
-      ,a.[YHLX]--用户类型
-      ,a.[CYXM]--成员姓名
-      ,a.[TJSJ]--添加时间
-      ,a.[ZWMC]--职位名称
-      ,a.[GZNR]--工作内容
-
-FROM dbo.EDU_ZZFC_08_A03_ZWHCY AS a
 GO
 
 --用户住宿记录表
