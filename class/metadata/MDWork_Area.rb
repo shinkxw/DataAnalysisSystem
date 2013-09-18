@@ -165,7 +165,7 @@ class MDWork_Area
         name_space.each do |table|
           ostr = ""
           table.field_area.each do |field|
-            ostr << "           #{field.name}: { fn: '', p: Proc.new{|i| ''}},\n"
+            ostr << "             #{field.name}: { fn: '', p: Proc.new{|i| ''}},\n"
           end
           export["#{table.library_name.upcase}/#{table.name}.txt"] = ostr
         end

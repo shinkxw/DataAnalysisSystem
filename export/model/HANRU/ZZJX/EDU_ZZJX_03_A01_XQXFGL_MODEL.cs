@@ -31,13 +31,13 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "最高学分")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal ZDXF { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "最低学分")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal ZGXF { get; set; }
 
 

@@ -77,8 +77,8 @@
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
             <name="XQID" explanation="学期ID" type="int" null="F" p="T" />
             <name="JHBH" explanation="计划编号" type="nvarchar(5)" null="F" p="T" />
-            <name="ZDXF" explanation="最高学分" type="decimal(2, 1)" null="T" p="F" />
-            <name="ZGXF" explanation="最低学分" type="decimal(2, 1)" null="F" p="F" />
+            <name="ZDXF" explanation="最高学分" type="decimal(3, 1)" null="T" p="F" />
+            <name="ZGXF" explanation="最低学分" type="decimal(3, 1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_03_03_JXJHKCQD" explanation="教学计划课程清单数据子类表">

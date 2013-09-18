@@ -5816,8 +5816,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_03_A01_XQXFGL](
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[XQID]  int  NOT NULL,--学期ID
 	[JHBH]  nvarchar(5)  NOT NULL,--计划编号
-	[ZDXF]  decimal(2, 1)  NULL,--最高学分
-	[ZGXF]  decimal(2, 1)  NOT NULL,--最低学分
+	[ZDXF]  decimal(3, 1)  NULL,--最高学分
+	[ZGXF]  decimal(3, 1)  NOT NULL,--最低学分
 CONSTRAINT [PK_EDU_ZZJX_03_A01_XQXFGL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
