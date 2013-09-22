@@ -4,8 +4,8 @@
 class MDWork_Area
   attr_reader :area#元数据域
   @@data_path = "#{$root}/data"
-  @@temporary_path = "#{$root}/data/temporary"
-  @@backup_path = "#{$root}/data/backup"
+  @@temporary_path = "#{@@data_path}/temporary"
+  @@backup_path = "#{@@data_path}/backup"
   @@enter_path = "#{$root}/enter"
   @@backup_max_num = 5
   #初始化
@@ -39,7 +39,7 @@ class MDWork_Area
   #固化元数据并关闭工作环境
   def save_and_close_work_area
     save_data
-    DirManager.clear_dir("#{$root}/data/temporary")#清空临时文件夹
+    DirManager.clear_dir(@@temporary_path)#清空临时文件夹
     @area = nil
   end
   #固化数据
