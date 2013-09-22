@@ -12,5 +12,13 @@ class Timer
   end
   #获得当前时间
   def self.now;Time.now end
+  #初始化
+  def initialize(tag = '');@tag,@time = tag,now end
+  #实例方法
+  def tick;puts "#{"#{@tag}: " if @tag != ''}#{gap}" end
+  def gap
+    old_time,@time = @time,now
+    now - old_time
+  end
+  def now;self.class.now end
 end
-

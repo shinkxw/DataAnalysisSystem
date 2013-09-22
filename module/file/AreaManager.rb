@@ -63,7 +63,7 @@ class AreaManager
   end
   #将指定名称的元数据域加载为工作区并传给块
   def self.open(area_name)
-    Timer.gap
+    timer = Timer.new('area_open')
     work_area = load_work_area(area_name)
     if block_given?
       begin
@@ -72,7 +72,7 @@ class AreaManager
         work_area.save_and_close_work_area
       end
     end
-    puts "耗时#{Timer.gap}秒"
+    puts "耗时#{timer.gap}秒"
   end
   #将指定名称的元数据域加载为工作区并返回
   def self.load_work_area(area_name);MDWork_Area.new(load_area(area_name)) end
