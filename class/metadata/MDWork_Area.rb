@@ -17,7 +17,7 @@ class MDWork_Area
     backup_work_area
   end
   #输出所有
-  def export_all
+  def export_all(need_commit = false)
     fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
     fs_config = {'@sql'=>"#{fs_root}/BASE",
                  '@view'=>"#{fs_root}/VIEW",
@@ -34,7 +34,7 @@ class MDWork_Area
     export_tableinfo
     export_migrate_config
     MDDoc.set_fsc(nil)
-    SVN.commit('D:\技术部\代码\Trunk\DB\SQL')
+    SVN.commit('D:\技术部\代码\Trunk\DB\SQL') if need_commit
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area
