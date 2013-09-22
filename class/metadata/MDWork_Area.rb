@@ -74,22 +74,9 @@ class MDWork_Area
     end
   end
   #显示本数据域与数据库间的差异(说明版)
-  def show_db_diff(db)
+  def show_db_diff(db,is_exp = true)
     diff = compare_db(db)
-    if diff.has_diff?
-      diff.show_diff
-    else
-      puts '没有差异'
-    end
-  end
-  #显示本数据域与数据库间的差异(名称版)
-  def show_db_diff2(db)
-    diff = compare_db(db)
-    if diff.has_diff?
-      diff.show_diff2
-    else
-      puts '没有差异'
-    end
+    diff.has_diff? ? diff.send('show_diff' << (is_exp ? '' : '2')) : puts('没有差异')
   end
   #使用本数据域更新数据库表结构
   def update_db(db)

@@ -91,7 +91,7 @@ class DbUpdateInterface < BaseInterface
       elsif @input == 'n'
         AreaManager.open(@area_name) do |work_area|
           DBEntity.open(@dbname) do |db|
-            work_area.show_db_diff2(db)
+            work_area.show_db_diff(db,false)
           end
         end
       elsif @input == 'u'

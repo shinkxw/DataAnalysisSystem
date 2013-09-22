@@ -15,7 +15,10 @@ class SVN
     system cmd
   end
 end
-#p `TortoiseProc /command:commit /path:"D:\技术部\代码\Trunk\DB\SQL\"`
+
+system 'TortoiseProc /command:update /path:"D:\技术部\代码\Trunk\DB" /closeonend:1'
+system 'TortoiseProc /command:commit /path:"D:\技术部\代码\Trunk\DB\" /closeonend:1'
+
 #~ /closeonend:0 不自动关闭对话框
 #~ /closeonend:1 如果没发生错误则自动关闭对话框
 #~ /closeonend:2 如果没发生错误和冲突则自动关闭对话框
