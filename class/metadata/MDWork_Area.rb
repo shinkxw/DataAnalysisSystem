@@ -34,7 +34,7 @@ class MDWork_Area
     export_tableinfo
     export_migrate_config
     MDDoc.set_fsc(nil)
-    #SVN.commit('G:\瀚孺\HanruEdu')
+    SVN.commit('D:\技术部\代码\Trunk\DB\SQL')
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area

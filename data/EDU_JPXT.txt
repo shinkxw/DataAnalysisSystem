@@ -2,20 +2,18 @@
 <namespace name="EDU_JPXT" provider="reallocate_namespace" generation_time="">
     <table name="EDU_JPXT_01_01_JLCSJ" explanation="教练车数据表">
         <field_area>
-            <name="ID" explanation="通知ID" type="int" null="F" p="T" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="FSRID" explanation="发送人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FSRLB" explanation="发送人类别" type="int" null="F" p="F" />
-            <name="BT" explanation="标题" type="nvarchar(100)" null="F" p="F" />
-            <name="NR" explanation="内容" type="text" null="F" p="F" />
-            <name="FJ" explanation="附件" type="nvarchar(500)" null="T" p="F" />
-            <name="TJRQ" explanation="添加日期" type="datetime" null="F" p="F" />
-            <name="JSRS" explanation="接收人数" type="int" null="F" p="F" />
-            <name="JSRIDLB" explanation="接收人ID列表" type="text" null="F" p="F" />
-            <name="JSRMZLB" explanation="接收人名字列表" type="text" null="F" p="F" />
-            <name="YYDRIDLB" explanation="已阅读人ID列表" type="text" null="T" p="F" />
-            <name="YYDRMZLB" explanation="已阅读人名字列表" type="text" null="F" p="F" />
-            <name="FSZT" explanation="发送状态" type="int" null="F" p="F" />
+            <name="FSRID" explanation="购买时间" type="nvarchar(20)" null="F" p="F" />
+            <name="FSRLB" explanation="车辆型号" type="int" null="F" p="F" />
+            <name="BT" explanation="品牌" type="nvarchar(100)" null="F" p="F" />
+            <name="NR" explanation="教练车号" type="text" null="F" p="F" />
+            <name="FJ" explanation="发动机号" type="nvarchar(500)" null="T" p="F" />
+            <name="TJRQ" explanation="车架号" type="datetime" null="F" p="F" />
+            <name="JSRS" explanation="报废时间" type="int" null="F" p="F" />
+            <name="JSRIDLB" explanation="二保日期" type="text" null="F" p="F" />
+            <name="JSRMZLB" explanation="当前状态" type="text" null="F" p="F" />
+            <name="YYDRIDLB" explanation="备注" type="text" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_JPXT_01_02_JLCBGLL" explanation="教练车保管履历表">
