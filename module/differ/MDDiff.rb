@@ -24,7 +24,7 @@ class MDDiff
     @f1_diff_arr.each{|field| db.delete_field(field)}#删字段
     @f2_diff_arr.each{|f| db.add_field(f);add_pro_diff(f.ef,f)}#加字段
     @pro_diff_hash.each{|o1,o2| obj_transform(o1,o2,db)}#修改对象属性
-    db.reset_conn
+    db.reset_conn#重置连接
   end
   #在数据库中将对象1转换为对象2
   def obj_transform(obj1,obj2,db)
