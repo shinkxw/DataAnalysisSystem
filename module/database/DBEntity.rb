@@ -7,18 +7,31 @@ class DBEntity
   @@connector = nil
   #设置共用数据库连接器
   def self.set_connector(connector);@@connector = connector end
-  #打开一个数据库实例并返回实体,如不输入数据库则只连接数据源
-  def self.open(database_name = nil,connector = nil)
-    set_connector(connector) if connector
+  #获得数据库连接
+  def self.get_conn(db_name)
     if @@connector
-      conn = @@connector.open_database(database_name)
-      if block_given?;begin;yield new(conn);ensure;conn.close;end;end
+      return @@connector.open_database(db_name)
     else
       puts '请先为DatabaseEntity配置共用数据库连接器！'
     end
   end
+  #打开一个数据库实例并返回实体,如不输入数据库则只连接数据源
+  def self.open(db_name = nil,connector = nil)
+    set_connector(connector) if connector
+    conn = get_conn(db_name)
+    begin; db = new(conn,db_name);yield db;ensure;db.close;end if conn && block_given?
+  end
   #初始化
-  def initialize(conn);@conn,@data = conn,nil end
+  def initialize(conn,db_name);@conn,@db_name,@data = conn,db_name,nil end
+  #重置连接
+  def reset_conn
+    close_conn
+    @conn = self.class.get_conn(@db_name)
+  end
+  #关闭连接
+  def close_conn;@conn.close end
+  #关闭数据库
+  def close;close_conn end
   #查询数据源中的数据库名
   def get_db_name;query(Sql.get_db_name)['name'] end
   #查询当前数据库所有表的名字

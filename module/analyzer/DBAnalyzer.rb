@@ -4,7 +4,7 @@
 class DBAnalyzer
   attr_reader :area#分析结果
   #初始化
-  def initialize(host = '(local)', username = 'sa', password = '123456', log = Log.new)
+  def initialize(host = '(local)', username = 'sa', password = '123456', log = [])
     @host = host
     @username = username
     @password = password

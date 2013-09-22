@@ -123,7 +123,7 @@ class DbUpdateInterface < BaseInterface
     puts "   输入q退出                            "
   end
   def show_menu2
-    puts "   输入待更新数据源的地址(本地为l)      "
+    puts "   输入待更新数据源的地址(本地为b)      "
     puts "   输入q返回上级目录                    "
   end
   def show_menu3

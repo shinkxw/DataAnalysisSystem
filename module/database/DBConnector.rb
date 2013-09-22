@@ -7,8 +7,8 @@ class DBConnector
   #≥ı ºªØ
   def initialize(host, options = {})
     @host = case host
-            when 'l' then '(local)'
-            when 'le' then '(local)\sqlexpress'
+            when 'b' then '(local)'
+            when 'be' then '(local)\sqlexpress'
             else host
             end
     @db_type = options[:db_type] ? options[:db_type] : 'ss'
