@@ -130,9 +130,10 @@ class TemplateBuilder
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_delete(table)
-    str = "#{@tab.t}/*public String Delete(string id)\n#{@tab.t}"
+    str = "#{@tab.t}/*public String Delete(String id)\n#{@tab.t}"
     str << "{\n#{@tab.l}try\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
+    str << "#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
     str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + dbEx.Message;\n"
@@ -145,7 +146,7 @@ class TemplateBuilder
     str << "{\n#{@tab.l}try\n#{@tab.t}"
     str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}"
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
-    str << "#{@tab.s}}\n#{@tab.t}return \"É¾³ý³É¹¦£¡\"\n;"
+    str << "#{@tab.s}}\n#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
     str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + dbEx.Message;\n"

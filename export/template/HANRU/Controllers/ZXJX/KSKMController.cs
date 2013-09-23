@@ -146,7 +146,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             }
         }
 
-        /*public String Delete(string id)
+        /*public String Delete(String id)
         {
             try
             {
@@ -176,8 +176,8 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                     db_zxjx.EDU_ZXJX_05_A02_KSKM.Remove(kskm);
                     db_zxjx.SaveChanges();
                 }
-                return "删除成功！"
-;            }
+                return "删除成功！";
+            }
             catch (DbEntityValidationException dbEx)
             {
                 return "删除出错！" + dbEx.Message;

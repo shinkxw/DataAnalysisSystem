@@ -189,7 +189,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             }
         }
 
-        /*public String Delete(string id)
+        /*public String Delete(String id)
         {
             try
             {
@@ -219,8 +219,8 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                     db_jpxt.EDU_JPXT_02_01_JLYSJ.Remove(jlysj);
                     db_jpxt.SaveChanges();
                 }
-                return "删除成功！"
-;            }
+                return "删除成功！";
+            }
             catch (DbEntityValidationException dbEx)
             {
                 return "删除出错！" + dbEx.Message;

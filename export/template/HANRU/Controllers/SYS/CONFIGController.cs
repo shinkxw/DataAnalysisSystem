@@ -134,7 +134,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             }
         }
 
-        /*public String Delete(string id)
+        /*public String Delete(String id)
         {
             try
             {
@@ -164,8 +164,8 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                     db_sys.EDU_SYS_01_CONFIG.Remove(config);
                     db_sys.SaveChanges();
                 }
-                return "删除成功！"
-;            }
+                return "删除成功！";
+            }
             catch (DbEntityValidationException dbEx)
             {
                 return "删除出错！" + dbEx.Message;
