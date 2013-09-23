@@ -4,22 +4,17 @@
 class TemplateBuilder
   attr_reader :area#待生成的元数据
   attr_reader :template_str#生成的模板语句
-  attr_reader :builder_version#生成器版本
   attr_reader :ignore_name_space_arr#不需要生成模板的命名空间
   attr_accessor :tab#缩进
   #初始化
   def initialize(tab = "    ",log = Log.new)
     @area = nil
     @file_hash = nil
-    @builder_version = "0.1"
     @tab = Indent.new(tab)
     @app_name = "JWXT"
     @directory_name = "jpxt"
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
-    @controller_preset_text = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
-    @controller_preset_text << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
-    @controller_preset_text << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
-    @controller_preset_text << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
+    @bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
     @log = log
   end
   #生成模板数据
@@ -42,8 +37,10 @@ class TemplateBuilder
     end
   end
   def make_controller(table)
-    str = ""
-    str << @controller_preset_text
+    str = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
+    str << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
+    str << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
+    str << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
     str << "{\n#{@tab.l}public class #{table.name.split("_")[-1]}Controller : #{@app_name}Controller\n#{@tab.t}"
     str << make_controller_index_jsonstr(table)
     str << make_controller_add(table)
@@ -57,8 +54,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n}"
   end
   def make_controller_index_jsonstr(table)
-    str = ""
-    str << "{\n#{@tab.l}public string index_jsonstr(string searchkey = \"\", string sort = \"\", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = \"desc\")\n#{@tab.t}"
+    str = "{\n#{@tab.l}public string index_jsonstr(string searchkey = \"\", string sort = \"\", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = \"desc\")\n#{@tab.t}"
     str << "{\n#{@tab.l}List<VIEW_#{table.name}_DISP> model = db_#{table.library_name}.VIEW_#{table.name}_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
     str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey)).ToList();\n"
     str << "#{@tab.s}}\n\n#{@tab.t}if (!String.IsNullOrEmpty(sort))\n#{@tab.t}"
@@ -76,8 +72,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_upd(table)
-    str = ""
-    str << "#{@tab.t}public void Upd#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
+    str = "#{@tab.t}public void Upd#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}//设置默认值\n"
     table.each_field do |field|
       if field.split_type[0] == "String"
@@ -110,8 +105,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n"
   end
   def make_controller_create(table)
-    str = ""
-    str << "#{@tab.t}public ActionResult Create()\n#{@tab.t}"
+    str = "#{@tab.t}public ActionResult Create()\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}return View(new #{table.name}());\n""#{@tab.s}}\n\n"
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Create(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
@@ -123,8 +117,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_edit(table)
-    str = ""
-    str << "#{@tab.t}public ActionResult Edit(int id)\n#{@tab.t}"
+    str = "#{@tab.t}public ActionResult Edit(int id)\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}#{table.name} #{table.lname_dc}= db_#{table.library_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Edit(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
@@ -137,8 +130,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_delete(table)
-    str = ""
-    str << "#{@tab.t}/*public String Delete(string id)\n#{@tab.t}"
+    str = "#{@tab.t}/*public String Delete(string id)\n#{@tab.t}"
     str << "{\n#{@tab.l}try\n#{@tab.t}"
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n#{@tab.t}return \"删除成功！\";\n"
     str << "#{@tab.s}}\n"
@@ -163,8 +155,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_get_max_ID(table)
-    str = ""
-    str << "#{@tab.t}private static int Max_#{table.lname}_ID = 0;\n#{@tab.t}"
+    str = "#{@tab.t}private static int Max_#{table.lname}_ID = 0;\n#{@tab.t}"
     str << "private static object syncIDLock = new object();\n#{@tab.t}"
     str << "//获取#{table.explanation}最大ID\n#{@tab.t}"
     str << "public int GetMax_#{table.lname}_ID()\n#{@tab.t}"
@@ -187,8 +178,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n\n"
   end
   def make_index(table)
-    index_str = ""
-    index_str << "@model HanRuEdu.LDAL.#{table.name}\n"
+    index_str = "@model HanRuEdu.LDAL.#{table.name}\n"
     index_str << "<table id=\"dg\" title=\"  \" class=\"easyui-datagrid\" style=\"width:900px;height:500px\"\n"
     index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname}/index_jsonstr\")',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
@@ -211,8 +201,7 @@ class TemplateBuilder
     index_str << "@Html.Partial(\"~/views/shared/indexToolBarPage.cshtml\", this.ViewData)\n"
   end
   def make_table_info(table,title)
-    info_atr = ""
-    info_atr << "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
+    info_atr = "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
     info_atr << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"#{title}\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
     info_atr << "        <center>  <h1 ><span style=\"font-size:smaller;\">#{title}</span></h1></center>\n\n"
     info_atr << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
@@ -233,18 +222,12 @@ class TemplateBuilder
   end
   #获得一个字段的值列表
   def get_selLst(field)
-    bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
-    if field.relation
-      lname = bztable_hash[field.relation.table.library_name.to_sym]
-      if lname != nil
-        mname = field.relation.table.select_method_name
-        "ViewBag.#{mname}Lst = #{lname}LDAL.Get#{mname}SelLst();\n#{@tab.t}"
-      else
-        ""
-      end
-    else
-      ""
+    lname = @bztable_hash[field.relation.table.library_name.to_sym] if field.relation
+    if lname
+      mname = field.relation.table.select_method_name
+      result = "ViewBag.#{mname}Lst = #{lname}LDAL.Get#{mname}SelLst();\n#{@tab.t}"
     end
+    result ||= ''
   end
   def get_relation(field)
     field.relation ? '   ' << field.relation.table.explanation : ''
