@@ -5,14 +5,12 @@ class ModelBuilder
   attr_reader :area#待生成的元数据
   attr_reader :model_str#生成的model语句
   attr_reader :ignore_name_space_arr#不需要生成model数据的命名空间
-  attr_reader :builder_version#生成器版本
   #初始化
   def initialize(log = Log.new)
     @area = nil
     @model_str = nil
     @file_hash = {}
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
-    @builder_version = "0.1"
     @log = log
   end
   #生成model数据
@@ -33,11 +31,11 @@ class ModelBuilder
       @model_str << "    public partial class #{table.name}\n    {\n"
       @model_str << "        public #{table.name}()\n        {\n"
       table.field_area.each do |field|
-        type = field.split_type
-        if field.null == "F"
-          if type[0] == "String"
-            @model_str << %(            #{field.name} = "";\n)
-          end
+        if field.null == "F" && field.split_type[0] == "String"
+          @model_str << %(            #{field.name} = "";\n)
+        end
+        if field.type == 'datetime'
+          #@model_str << "            #{field.name} = new Datetime(1900,1,1);\n"
         end
       end
       @model_str << "        }\n"
