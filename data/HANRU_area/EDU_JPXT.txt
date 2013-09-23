@@ -13,6 +13,7 @@
             <name="BFSJ" explanation="报废时间" type="datetime" null="F" p="F" />
             <name="EBRQ" explanation="二保日期" type="datetime" null="F" p="F" />
             <name="DQZT" explanation="当前状态" type="int" null="F" p="F" />
+            <name="DQJLYID" explanation="当前教练员ID" type="int" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="T" p="F" />
         </field_area>
     </table>
@@ -78,7 +79,7 @@
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
             <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="XBM" explanation="性别码" type="int" null="F" p="F" />
+            <name="XBM" explanation="性别码" type="nvarchar(1)" null="F" p="F" />
             <name="SFZH" explanation="身份证号" type="nvarchar(50)" null="F" p="F" />
             <name="JSZH" explanation="驾驶证号" type="nvarchar(50)" null="F" p="F" />
             <name="JSZYXQ" explanation="驾驶证有效期" type="datetime" null="F" p="F" />

@@ -10,6 +10,7 @@ EDU_JPXT_01_01_JLCSJ  教练车数据表
   BFSJ          报废时间                datetime       非主
   EBRQ          二保日期                datetime       非主
   DQZT          当前状态                int            非主
+  DQJLYID       当前教练员ID            int            非主        教练员数据表
   BZ            备注                    text           非主
 
 EDU_JPXT_01_02_JLCBGLL  教练车保管履历表
@@ -63,7 +64,7 @@ EDU_JPXT_02_01_JLYSJ  教练员数据表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
   XM            姓名                    nvarchar(36)   非主
-  XBM           性别码                  int            非主
+  XBM           性别码                  nvarchar(1)    非主        人的性别代码
   SFZH          身份证号                nvarchar(50)   非主
   JSZH          驾驶证号                nvarchar(50)   非主
   JSZYXQ        驾驶证有效期            datetime       非主

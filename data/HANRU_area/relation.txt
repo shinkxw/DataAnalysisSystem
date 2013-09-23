@@ -31,6 +31,7 @@
 <EDU_JPXT_01_01_JLCSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CLXHID         EDU_JPXT_05_01_CLXH                ID
+  DQJLYID        EDU_JPXT_02_01_JLYSJ               ID
 <EDU_JPXT_01_02_JLCBGLL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JLCID          EDU_JPXT_01_01_JLCSJ               ID
@@ -51,6 +52,7 @@
   JLYID          EDU_JPXT_02_01_JLYSJ               ID
 <EDU_JPXT_02_01_JLYSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XBM            EDU_GB_RDXB                        DM
 <EDU_JPXT_02_02_JLYWJQK
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JLYID          EDU_JPXT_02_01_JLYSJ               ID
