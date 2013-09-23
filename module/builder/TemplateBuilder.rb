@@ -55,7 +55,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n}"
   end
   def make_controller_index_jsonstr(table)
-    str = "{\n#{@tab.l}public string index_jsonstr(string searchkey = \"\", string sort = \"\", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = \"desc\")\n#{@tab.t}"
+    str = %({\n#{@tab.l}public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")\n#{@tab.t})
     str << "{\n#{@tab.l}List<VIEW_#{table.name}_DISP> model = db_#{table.library_name}.VIEW_#{table.name}_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
     str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey)).ToList();\n"
     str << "#{@tab.s}}\n\n#{@tab.t}if (!String.IsNullOrEmpty(sort))\n#{@tab.t}"
@@ -134,7 +134,8 @@ class TemplateBuilder
     str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(String id#{'Lst' if is_multi})\n#{@tab.t}"
     str << "{\n#{@tab.l}try\n#{@tab.t}"
     str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}" if is_multi
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n"
+    str << "#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n" if is_multi
     str << "#{@tab.t}return \"删除成功！\";\n"
     str << "#{@tab.s}}\n"
@@ -207,7 +208,8 @@ class TemplateBuilder
       end
       info_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
-    info_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
+    info_atr << %(        </table>\n        <br />\n        @{ ViewData["ce_cancel"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/index");}\n)
+    info_atr << %(        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n    </div>\n}\n)
   end
   #获得一个字段的值列表
   def get_selLst(field)
