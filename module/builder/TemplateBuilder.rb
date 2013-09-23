@@ -49,7 +49,8 @@ class TemplateBuilder
     str << make_controller_index(table)
     str << make_controller_create(table)
     str << make_controller_edit(table)
-    str << make_controller_delete(table)
+    str << make_controller_delete(table,false)
+    str << make_controller_delete(table,true)
     str << make_controller_get_max_ID(table)
     str << "#{@tab.s}}\n}"
   end
@@ -129,10 +130,14 @@ class TemplateBuilder
     str << "#{@tab.s}}\n"
     str << "#{@tab.s}}\n\n"
   end
-  def make_controller_delete(table)
-    str = "#{@tab.t}/*public String Delete(String id)\n#{@tab.t}"
+  def make_controller_delete(table,is_multi)
+    str = ''
+    str << "#{@tab.t}/*public String Delete(String id)\n#{@tab.t}" unless is_multi
+    str << "#{@tab.t}public String Delete(String idLst)\n#{@tab.t}" if is_multi
     str << "{\n#{@tab.l}try\n#{@tab.t}"
+    str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}" if is_multi
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
+    str << "#{@tab.s}}\n" if is_multi
     str << "#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
@@ -140,20 +145,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + e.Message;\n"
     str << "#{@tab.s}}\n"
-    str << "#{@tab.s}}*/\n\n"
-    
-    str << "#{@tab.t}public String Delete(String idLst)\n#{@tab.t}"
-    str << "{\n#{@tab.l}try\n#{@tab.t}"
-    str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
-    str << "#{@tab.s}}\n#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
-    str << "#{@tab.s}}\n"
-    str << "#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
-    str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + dbEx.Message;\n"
-    str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
-    str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + e.Message;\n"
-    str << "#{@tab.s}}\n"
-    str << "#{@tab.s}}\n\n"
+    str.concat(is_multi ? "#{@tab.s}}\n\n" : "#{@tab.s}}*/\n\n")
   end
   def make_controller_get_max_ID(table)
     str = "#{@tab.t}private static int Max_#{table.lname}_ID = 0;\n#{@tab.t}"
