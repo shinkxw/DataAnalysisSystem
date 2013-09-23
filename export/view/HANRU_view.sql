@@ -31,6 +31,58 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_05_XLZ_
             and   type = 'V')
    drop view VIEW_EDU_ELE_05_XLZ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_01_JLCSJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_01_01_JLCSJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_02_JLCBGLL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_01_02_JLCBGLL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_03_JLCWXQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_01_03_JLCWXQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_04_JLCJYQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_01_04_JLCJYQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_05_JLCYHQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_01_05_JLCYHQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_06_JLCCLXH_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_01_06_JLCCLXH_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_02_01_JLYSJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_02_01_JLYSJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_02_02_JLYWJQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_02_02_JLYWJQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_02_03_JLYAQQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_02_03_JLYAQQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_02_04_JLYJCQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_02_04_JLYJCQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_01_XYSJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_03_01_XYSJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_02_XYKSQK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_03_02_XYKSQK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_03_XYHFXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_03_03_XYHFXX_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A01_TZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_10_A01_TZ_DISP
@@ -773,6 +825,620 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ELE_05_XLZ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_05_XL AS c ON a.XLID = c.ID /*校历ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--教练车数据表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_01_01_JLCSJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[GMSJ]--购买时间
+      ,a.[CLXHID]--车辆型号ID
+      ,a.[PP]--品牌
+      ,a.[CPH]--车牌号
+      ,a.[FDJH]--发动机号
+      ,a.[CJH]--车架号
+      ,a.[BFSJ]--报废时间
+      ,a.[EBRQ]--二保日期
+      ,a.[DQZT]--当前状态
+      ,a.[DQJLYID]--当前教练员ID
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_CLXH_SCHOOLID--车辆型号数据表 学校ID
+      ,c.CLXHMC as c_CLXH_CLXHMC--车辆型号数据表 车辆型号名称
+      ,c.BZ as c_CLXH_BZ--车辆型号数据表 备注
+      ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
+      ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
+      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
+      ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,d.JLZH as d_JLYSJ_JLZH--教练员数据表 教练证号
+      ,d.JLZYXQ as d_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,d.XL as d_JLYSJ_XL--教练员数据表 学历
+      ,d.ZC as d_JLYSJ_ZC--教练员数据表 职称
+      ,d.JXSJ as d_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,d.LXDH as d_JLYSJ_LXDH--教练员数据表 联系电话
+      ,d.ZZ as d_JLYSJ_ZZ--教练员数据表 住址
+      ,d.JSDJ as d_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,d.JTCHYXM as d_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,d.JTCYYGX as d_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,d.JTCYYXBM as d_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,d.JTCYYCSRQ as d_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,d.JTCYYZZ as d_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,d.JTCYYLXDH as d_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,d.JTCYYCSGZ as d_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,d.JTCYEXM as d_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,d.JTCYEGX as d_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,d.JTCYEXBM as d_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,d.JTCYECSRQ as d_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,d.JTCYEZZ as d_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,d.JTCYELXDH as d_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,d.JTCYECSGZ as d_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_01_01_JLCSJ AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_05_01_CLXH AS c ON a.CLXHID = c.ID /*车辆型号ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.DQJLYID = d.ID /*当前教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+GO
+
+--教练车保管履历表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_01_02_JLCBGLL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLCID]--教练车ID
+      ,a.[JLYID]--教练员ID
+      ,a.[BGKSSJ]--保管开始时间
+      ,a.[BGJSSJ]--保管结束时间
+      ,a.[BGZT]--保管状态
+      ,c.SCHOOLID as c_JLCSJ_SCHOOLID--教练车数据表 学校ID
+      ,c.GMSJ as c_JLCSJ_GMSJ--教练车数据表 购买时间
+      ,c.CLXHID as c_JLCSJ_CLXHID--教练车数据表 车辆型号ID
+      ,c.PP as c_JLCSJ_PP--教练车数据表 品牌
+      ,c.CPH as c_JLCSJ_CPH--教练车数据表 车牌号
+      ,c.FDJH as c_JLCSJ_FDJH--教练车数据表 发动机号
+      ,c.CJH as c_JLCSJ_CJH--教练车数据表 车架号
+      ,c.BFSJ as c_JLCSJ_BFSJ--教练车数据表 报废时间
+      ,c.EBRQ as c_JLCSJ_EBRQ--教练车数据表 二保日期
+      ,c.DQZT as c_JLCSJ_DQZT--教练车数据表 当前状态
+      ,c.DQJLYID as c_JLCSJ_DQJLYID--教练车数据表 当前教练员ID
+      ,c.BZ as c_JLCSJ_BZ--教练车数据表 备注
+      ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
+      ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
+      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
+      ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,d.JLZH as d_JLYSJ_JLZH--教练员数据表 教练证号
+      ,d.JLZYXQ as d_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,d.XL as d_JLYSJ_XL--教练员数据表 学历
+      ,d.ZC as d_JLYSJ_ZC--教练员数据表 职称
+      ,d.JXSJ as d_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,d.LXDH as d_JLYSJ_LXDH--教练员数据表 联系电话
+      ,d.ZZ as d_JLYSJ_ZZ--教练员数据表 住址
+      ,d.JSDJ as d_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,d.JTCHYXM as d_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,d.JTCYYGX as d_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,d.JTCYYXBM as d_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,d.JTCYYCSRQ as d_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,d.JTCYYZZ as d_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,d.JTCYYLXDH as d_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,d.JTCYYCSGZ as d_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,d.JTCYEXM as d_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,d.JTCYEGX as d_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,d.JTCYEXBM as d_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,d.JTCYECSRQ as d_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,d.JTCYEZZ as d_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,d.JTCYELXDH as d_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,d.JTCYECSGZ as d_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_01_02_JLCBGLL AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+GO
+
+--教练车维修情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_01_03_JLCWXQK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLCID]--教练车ID
+      ,a.[GZXX]--故障现象
+      ,a.[SXSJ]--送修时间
+      ,a.[WCSJ]--完成时间
+      ,a.[WXJG]--维修结果
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLCSJ_SCHOOLID--教练车数据表 学校ID
+      ,c.GMSJ as c_JLCSJ_GMSJ--教练车数据表 购买时间
+      ,c.CLXHID as c_JLCSJ_CLXHID--教练车数据表 车辆型号ID
+      ,c.PP as c_JLCSJ_PP--教练车数据表 品牌
+      ,c.CPH as c_JLCSJ_CPH--教练车数据表 车牌号
+      ,c.FDJH as c_JLCSJ_FDJH--教练车数据表 发动机号
+      ,c.CJH as c_JLCSJ_CJH--教练车数据表 车架号
+      ,c.BFSJ as c_JLCSJ_BFSJ--教练车数据表 报废时间
+      ,c.EBRQ as c_JLCSJ_EBRQ--教练车数据表 二保日期
+      ,c.DQZT as c_JLCSJ_DQZT--教练车数据表 当前状态
+      ,c.DQJLYID as c_JLCSJ_DQJLYID--教练车数据表 当前教练员ID
+      ,c.BZ as c_JLCSJ_BZ--教练车数据表 备注
+
+FROM dbo.EDU_JPXT_01_03_JLCWXQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--教练车检验情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_01_04_JLCJYQK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLCID]--教练车ID
+      ,a.[JYNR]--检验内容
+      ,a.[JYSJ]--检验时间
+      ,a.[WCSJ]--完成时间
+      ,a.[JYJG]--检验结果
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLCSJ_SCHOOLID--教练车数据表 学校ID
+      ,c.GMSJ as c_JLCSJ_GMSJ--教练车数据表 购买时间
+      ,c.CLXHID as c_JLCSJ_CLXHID--教练车数据表 车辆型号ID
+      ,c.PP as c_JLCSJ_PP--教练车数据表 品牌
+      ,c.CPH as c_JLCSJ_CPH--教练车数据表 车牌号
+      ,c.FDJH as c_JLCSJ_FDJH--教练车数据表 发动机号
+      ,c.CJH as c_JLCSJ_CJH--教练车数据表 车架号
+      ,c.BFSJ as c_JLCSJ_BFSJ--教练车数据表 报废时间
+      ,c.EBRQ as c_JLCSJ_EBRQ--教练车数据表 二保日期
+      ,c.DQZT as c_JLCSJ_DQZT--教练车数据表 当前状态
+      ,c.DQJLYID as c_JLCSJ_DQJLYID--教练车数据表 当前教练员ID
+      ,c.BZ as c_JLCSJ_BZ--教练车数据表 备注
+
+FROM dbo.EDU_JPXT_01_04_JLCJYQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--教练车油耗情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_01_05_JLCYHQK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLCID]--教练车ID
+      ,a.[JLYID]--教练员ID
+      ,a.[LRSJ]--录入时间
+      ,a.[YLCZ]--油量充值
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLCSJ_SCHOOLID--教练车数据表 学校ID
+      ,c.GMSJ as c_JLCSJ_GMSJ--教练车数据表 购买时间
+      ,c.CLXHID as c_JLCSJ_CLXHID--教练车数据表 车辆型号ID
+      ,c.PP as c_JLCSJ_PP--教练车数据表 品牌
+      ,c.CPH as c_JLCSJ_CPH--教练车数据表 车牌号
+      ,c.FDJH as c_JLCSJ_FDJH--教练车数据表 发动机号
+      ,c.CJH as c_JLCSJ_CJH--教练车数据表 车架号
+      ,c.BFSJ as c_JLCSJ_BFSJ--教练车数据表 报废时间
+      ,c.EBRQ as c_JLCSJ_EBRQ--教练车数据表 二保日期
+      ,c.DQZT as c_JLCSJ_DQZT--教练车数据表 当前状态
+      ,c.DQJLYID as c_JLCSJ_DQJLYID--教练车数据表 当前教练员ID
+      ,c.BZ as c_JLCSJ_BZ--教练车数据表 备注
+      ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
+      ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
+      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
+      ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,d.JLZH as d_JLYSJ_JLZH--教练员数据表 教练证号
+      ,d.JLZYXQ as d_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,d.XL as d_JLYSJ_XL--教练员数据表 学历
+      ,d.ZC as d_JLYSJ_ZC--教练员数据表 职称
+      ,d.JXSJ as d_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,d.LXDH as d_JLYSJ_LXDH--教练员数据表 联系电话
+      ,d.ZZ as d_JLYSJ_ZZ--教练员数据表 住址
+      ,d.JSDJ as d_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,d.JTCHYXM as d_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,d.JTCYYGX as d_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,d.JTCYYXBM as d_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,d.JTCYYCSRQ as d_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,d.JTCYYZZ as d_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,d.JTCYYLXDH as d_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,d.JTCYYCSGZ as d_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,d.JTCYEXM as d_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,d.JTCYEGX as d_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,d.JTCYEXBM as d_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,d.JTCYECSRQ as d_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,d.JTCYEZZ as d_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,d.JTCYELXDH as d_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,d.JTCYECSGZ as d_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_01_05_JLCYHQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+GO
+
+--教练车材料消耗表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_01_06_JLCCLXH_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLCID]--教练车ID
+      ,a.[JLYID]--教练员ID
+      ,a.[LRSJ]--录入时间
+      ,a.[XHQK]--消耗情况
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLCSJ_SCHOOLID--教练车数据表 学校ID
+      ,c.GMSJ as c_JLCSJ_GMSJ--教练车数据表 购买时间
+      ,c.CLXHID as c_JLCSJ_CLXHID--教练车数据表 车辆型号ID
+      ,c.PP as c_JLCSJ_PP--教练车数据表 品牌
+      ,c.CPH as c_JLCSJ_CPH--教练车数据表 车牌号
+      ,c.FDJH as c_JLCSJ_FDJH--教练车数据表 发动机号
+      ,c.CJH as c_JLCSJ_CJH--教练车数据表 车架号
+      ,c.BFSJ as c_JLCSJ_BFSJ--教练车数据表 报废时间
+      ,c.EBRQ as c_JLCSJ_EBRQ--教练车数据表 二保日期
+      ,c.DQZT as c_JLCSJ_DQZT--教练车数据表 当前状态
+      ,c.DQJLYID as c_JLCSJ_DQJLYID--教练车数据表 当前教练员ID
+      ,c.BZ as c_JLCSJ_BZ--教练车数据表 备注
+      ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
+      ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
+      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
+      ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,d.JLZH as d_JLYSJ_JLZH--教练员数据表 教练证号
+      ,d.JLZYXQ as d_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,d.XL as d_JLYSJ_XL--教练员数据表 学历
+      ,d.ZC as d_JLYSJ_ZC--教练员数据表 职称
+      ,d.JXSJ as d_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,d.LXDH as d_JLYSJ_LXDH--教练员数据表 联系电话
+      ,d.ZZ as d_JLYSJ_ZZ--教练员数据表 住址
+      ,d.JSDJ as d_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,d.JTCHYXM as d_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,d.JTCYYGX as d_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,d.JTCYYXBM as d_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,d.JTCYYCSRQ as d_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,d.JTCYYZZ as d_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,d.JTCYYLXDH as d_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,d.JTCYYCSGZ as d_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,d.JTCYEXM as d_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,d.JTCYEGX as d_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,d.JTCYEXBM as d_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,d.JTCYECSRQ as d_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,d.JTCYEZZ as d_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,d.JTCYELXDH as d_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,d.JTCYECSGZ as d_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_01_06_JLCCLXH AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+GO
+
+--教练员数据表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_02_01_JLYSJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XM]--姓名
+      ,a.[XBM]--性别码
+      ,a.[SFZH]--身份证号
+      ,a.[JSZH]--驾驶证号
+      ,a.[JSZYXQ]--驾驶证有效期
+      ,a.[JLZH]--教练证号
+      ,a.[JLZYXQ]--教练证有效期
+      ,a.[XL]--学历
+      ,a.[ZC]--职称
+      ,a.[JXSJ]--进校时间
+      ,a.[LXDH]--联系电话
+      ,a.[ZZ]--住址
+      ,a.[JSDJ]--技术等级
+      ,a.[JTCHYXM]--家庭成员一姓名
+      ,a.[JTCYYGX]--家庭成员一关系
+      ,a.[JTCYYXBM]--家庭成员一性别码
+      ,a.[JTCYYCSRQ]--家庭成员一出生日期
+      ,a.[JTCYYZZ]--家庭成员一住址
+      ,a.[JTCYYLXDH]--家庭成员一联系电话
+      ,a.[JTCYYCSGZ]--家庭成员一从事工作
+      ,a.[JTCYEXM]--家庭成员二姓名
+      ,a.[JTCYEGX]--家庭成员二关系
+      ,a.[JTCYEXBM]--家庭成员二性别码
+      ,a.[JTCYECSRQ]--家庭成员二出生日期
+      ,a.[JTCYEZZ]--家庭成员二住址
+      ,a.[JTCYELXDH]--家庭成员二联系电话
+      ,a.[JTCYECSGZ]--家庭成员二从事工作
+      ,c.MC as c_RDXB_MC--人的性别代码 名称
+
+FROM dbo.EDU_JPXT_02_01_JLYSJ AS a LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/
+GO
+
+--教练员违纪情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_02_02_JLYWJQK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLYID]--教练员ID
+      ,a.[TSR]--投诉人
+      ,a.[TSSJ]--投诉时间
+      ,a.[LXDH]--联系电话
+      ,a.[TSNR]--投诉内容
+      ,a.[CLJG]--处理结果
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,c.XM as c_JLYSJ_XM--教练员数据表 姓名
+      ,c.XBM as c_JLYSJ_XBM--教练员数据表 性别码
+      ,cb.MC as c_JLYSJ_XBM_MC--人的性别代码 名称
+      ,c.SFZH as c_JLYSJ_SFZH--教练员数据表 身份证号
+      ,c.JSZH as c_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,c.JSZYXQ as c_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,c.JLZH as c_JLYSJ_JLZH--教练员数据表 教练证号
+      ,c.JLZYXQ as c_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,c.XL as c_JLYSJ_XL--教练员数据表 学历
+      ,c.ZC as c_JLYSJ_ZC--教练员数据表 职称
+      ,c.JXSJ as c_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,c.LXDH as c_JLYSJ_LXDH--教练员数据表 联系电话
+      ,c.ZZ as c_JLYSJ_ZZ--教练员数据表 住址
+      ,c.JSDJ as c_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,c.JTCHYXM as c_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,c.JTCYYGX as c_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,c.JTCYYXBM as c_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,c.JTCYYCSRQ as c_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,c.JTCYYZZ as c_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,c.JTCYYLXDH as c_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,c.JTCYYCSGZ as c_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,c.JTCYEXM as c_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,c.JTCYEGX as c_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,c.JTCYEXBM as c_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,c.JTCYECSRQ as c_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,c.JTCYEZZ as c_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,c.JTCYELXDH as c_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,c.JTCYECSGZ as c_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_02_02_JLYWJQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS c ON a.JLYID = c.ID /*教练员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+GO
+
+--教练员安全情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_02_03_JLYAQQK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLYID]--教练员ID
+      ,a.[LRSJ]--录入时间
+      ,a.[AQQK]--安全情况
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,c.XM as c_JLYSJ_XM--教练员数据表 姓名
+      ,c.XBM as c_JLYSJ_XBM--教练员数据表 性别码
+      ,cb.MC as c_JLYSJ_XBM_MC--人的性别代码 名称
+      ,c.SFZH as c_JLYSJ_SFZH--教练员数据表 身份证号
+      ,c.JSZH as c_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,c.JSZYXQ as c_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,c.JLZH as c_JLYSJ_JLZH--教练员数据表 教练证号
+      ,c.JLZYXQ as c_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,c.XL as c_JLYSJ_XL--教练员数据表 学历
+      ,c.ZC as c_JLYSJ_ZC--教练员数据表 职称
+      ,c.JXSJ as c_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,c.LXDH as c_JLYSJ_LXDH--教练员数据表 联系电话
+      ,c.ZZ as c_JLYSJ_ZZ--教练员数据表 住址
+      ,c.JSDJ as c_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,c.JTCHYXM as c_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,c.JTCYYGX as c_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,c.JTCYYXBM as c_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,c.JTCYYCSRQ as c_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,c.JTCYYZZ as c_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,c.JTCYYLXDH as c_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,c.JTCYYCSGZ as c_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,c.JTCYEXM as c_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,c.JTCYEGX as c_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,c.JTCYEXBM as c_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,c.JTCYECSRQ as c_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,c.JTCYEZZ as c_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,c.JTCYELXDH as c_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,c.JTCYECSGZ as c_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_02_03_JLYAQQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS c ON a.JLYID = c.ID /*教练员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+GO
+
+--教练员奖惩情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_02_04_JLYJCQK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JLYID]--教练员ID
+      ,a.[LRSJ]--录入时间
+      ,a.[JCQK]--奖惩情况
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,c.XM as c_JLYSJ_XM--教练员数据表 姓名
+      ,c.XBM as c_JLYSJ_XBM--教练员数据表 性别码
+      ,cb.MC as c_JLYSJ_XBM_MC--人的性别代码 名称
+      ,c.SFZH as c_JLYSJ_SFZH--教练员数据表 身份证号
+      ,c.JSZH as c_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,c.JSZYXQ as c_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,c.JLZH as c_JLYSJ_JLZH--教练员数据表 教练证号
+      ,c.JLZYXQ as c_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,c.XL as c_JLYSJ_XL--教练员数据表 学历
+      ,c.ZC as c_JLYSJ_ZC--教练员数据表 职称
+      ,c.JXSJ as c_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,c.LXDH as c_JLYSJ_LXDH--教练员数据表 联系电话
+      ,c.ZZ as c_JLYSJ_ZZ--教练员数据表 住址
+      ,c.JSDJ as c_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,c.JTCHYXM as c_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,c.JTCYYGX as c_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,c.JTCYYXBM as c_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,c.JTCYYCSRQ as c_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,c.JTCYYZZ as c_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,c.JTCYYLXDH as c_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,c.JTCYYCSGZ as c_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,c.JTCYEXM as c_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,c.JTCYEGX as c_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,c.JTCYEXBM as c_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,c.JTCYECSRQ as c_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,c.JTCYEZZ as c_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,c.JTCYELXDH as c_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,c.JTCYECSGZ as c_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_02_04_JLYJCQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS c ON a.JLYID = c.ID /*教练员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+GO
+
+--学员数据表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_03_01_XYSJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XM]--姓名
+      ,a.[SFZH]--身份证号
+      ,a.[XBM]--性别码
+      ,a.[LXDH]--联系电话
+      ,a.[ZZ]--住址
+      ,a.[BMSJ]--报名时间
+      ,a.[SFQK]--缴费情况
+      ,a.[SXCXID]--所选车型ID
+      ,a.[ZJQK]--增加情况
+      ,a.[SZJLCID]--所属教练员ID
+      ,a.[YJJLYID]--引荐教练员ID
+      ,a.[DQZT]--当前状态
+      ,a.[BYSJ]--毕业时间
+      ,c.MC as c_RDXB_MC--人的性别代码 名称
+      ,d.SCHOOLID as d_CLXH_SCHOOLID--车辆型号数据表 学校ID
+      ,d.CLXHMC as d_CLXH_CLXHMC--车辆型号数据表 车辆型号名称
+      ,d.BZ as d_CLXH_BZ--车辆型号数据表 备注
+      ,e.SCHOOLID as e_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,e.XM as e_JLYSJ_XM--教练员数据表 姓名
+      ,e.XBM as e_JLYSJ_XBM--教练员数据表 性别码
+      ,eb.MC as e_JLYSJ_XBM_MC--人的性别代码 名称
+      ,e.SFZH as e_JLYSJ_SFZH--教练员数据表 身份证号
+      ,e.JSZH as e_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,e.JSZYXQ as e_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,e.JLZH as e_JLYSJ_JLZH--教练员数据表 教练证号
+      ,e.JLZYXQ as e_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,e.XL as e_JLYSJ_XL--教练员数据表 学历
+      ,e.ZC as e_JLYSJ_ZC--教练员数据表 职称
+      ,e.JXSJ as e_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,e.LXDH as e_JLYSJ_LXDH--教练员数据表 联系电话
+      ,e.ZZ as e_JLYSJ_ZZ--教练员数据表 住址
+      ,e.JSDJ as e_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,e.JTCHYXM as e_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,e.JTCYYGX as e_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,e.JTCYYXBM as e_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,e.JTCYYCSRQ as e_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,e.JTCYYZZ as e_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,e.JTCYYLXDH as e_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,e.JTCYYCSGZ as e_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,e.JTCYEXM as e_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,e.JTCYEGX as e_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,e.JTCYEXBM as e_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,e.JTCYECSRQ as e_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,e.JTCYEZZ as e_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,e.JTCYELXDH as e_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,e.JTCYECSGZ as e_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+      ,f.SCHOOLID as f_JLYSJ_SCHOOLID--教练员数据表 学校ID
+      ,f.XM as f_JLYSJ_XM--教练员数据表 姓名
+      ,f.XBM as f_JLYSJ_XBM--教练员数据表 性别码
+      ,fb.MC as f_JLYSJ_XBM_MC--人的性别代码 名称
+      ,f.SFZH as f_JLYSJ_SFZH--教练员数据表 身份证号
+      ,f.JSZH as f_JLYSJ_JSZH--教练员数据表 驾驶证号
+      ,f.JSZYXQ as f_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
+      ,f.JLZH as f_JLYSJ_JLZH--教练员数据表 教练证号
+      ,f.JLZYXQ as f_JLYSJ_JLZYXQ--教练员数据表 教练证有效期
+      ,f.XL as f_JLYSJ_XL--教练员数据表 学历
+      ,f.ZC as f_JLYSJ_ZC--教练员数据表 职称
+      ,f.JXSJ as f_JLYSJ_JXSJ--教练员数据表 进校时间
+      ,f.LXDH as f_JLYSJ_LXDH--教练员数据表 联系电话
+      ,f.ZZ as f_JLYSJ_ZZ--教练员数据表 住址
+      ,f.JSDJ as f_JLYSJ_JSDJ--教练员数据表 技术等级
+      ,f.JTCHYXM as f_JLYSJ_JTCHYXM--教练员数据表 家庭成员一姓名
+      ,f.JTCYYGX as f_JLYSJ_JTCYYGX--教练员数据表 家庭成员一关系
+      ,f.JTCYYXBM as f_JLYSJ_JTCYYXBM--教练员数据表 家庭成员一性别码
+      ,f.JTCYYCSRQ as f_JLYSJ_JTCYYCSRQ--教练员数据表 家庭成员一出生日期
+      ,f.JTCYYZZ as f_JLYSJ_JTCYYZZ--教练员数据表 家庭成员一住址
+      ,f.JTCYYLXDH as f_JLYSJ_JTCYYLXDH--教练员数据表 家庭成员一联系电话
+      ,f.JTCYYCSGZ as f_JLYSJ_JTCYYCSGZ--教练员数据表 家庭成员一从事工作
+      ,f.JTCYEXM as f_JLYSJ_JTCYEXM--教练员数据表 家庭成员二姓名
+      ,f.JTCYEGX as f_JLYSJ_JTCYEGX--教练员数据表 家庭成员二关系
+      ,f.JTCYEXBM as f_JLYSJ_JTCYEXBM--教练员数据表 家庭成员二性别码
+      ,f.JTCYECSRQ as f_JLYSJ_JTCYECSRQ--教练员数据表 家庭成员二出生日期
+      ,f.JTCYEZZ as f_JLYSJ_JTCYEZZ--教练员数据表 家庭成员二住址
+      ,f.JTCYELXDH as f_JLYSJ_JTCYELXDH--教练员数据表 家庭成员二联系电话
+      ,f.JTCYECSGZ as f_JLYSJ_JTCYECSGZ--教练员数据表 家庭成员二从事工作
+
+FROM dbo.EDU_JPXT_03_01_XYSJ AS a LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_05_01_CLXH AS d ON a.SXCXID = d.ID /*所选车型ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SZJLCID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS f ON a.YJJLYID = f.ID /*引荐教练员ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/
+GO
+
+--学员考试情况表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_03_02_XYKSQK_DISP]
+AS
+SELECT a.[XYID]--学员ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[KMYIKSSJ]--科目一考试时间
+      ,a.[KMYIKSJG]--科目一考试结果
+      ,a.[KMERKSSJ]--科目二考试时间
+      ,a.[KMERYKSJG]--科目二考试结果
+      ,a.[KMSANKSSJ]--科目三考试时间
+      ,a.[KMSANKSJG]--科目三考试结果
+      ,a.[KMSIKSSJ]--科目四考试时间
+      ,a.[KMSIKSJG]--科目四考试结果
+      ,a.[KMWUKSSJ]--科目五考试时间
+      ,a.[KMWUKSJG]--科目五考试结果
+      ,b.SCHOOLID as b_XYSJ_SCHOOLID--学员数据表 学校ID
+      ,b.XM as b_XYSJ_XM--学员数据表 姓名
+      ,b.SFZH as b_XYSJ_SFZH--学员数据表 身份证号
+      ,b.XBM as b_XYSJ_XBM--学员数据表 性别码
+      ,bb.MC as b_XYSJ_XBM_MC--人的性别代码 名称
+      ,b.LXDH as b_XYSJ_LXDH--学员数据表 联系电话
+      ,b.ZZ as b_XYSJ_ZZ--学员数据表 住址
+      ,b.BMSJ as b_XYSJ_BMSJ--学员数据表 报名时间
+      ,b.SFQK as b_XYSJ_SFQK--学员数据表 缴费情况
+      ,b.SXCXID as b_XYSJ_SXCXID--学员数据表 所选车型ID
+      ,b.ZJQK as b_XYSJ_ZJQK--学员数据表 增加情况
+      ,b.SZJLCID as b_XYSJ_SZJLCID--学员数据表 所属教练员ID
+      ,b.YJJLYID as b_XYSJ_YJJLYID--学员数据表 引荐教练员ID
+      ,b.DQZT as b_XYSJ_DQZT--学员数据表 当前状态
+      ,b.BYSJ as b_XYSJ_BYSJ--学员数据表 毕业时间
+
+FROM dbo.EDU_JPXT_03_02_XYKSQK AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_03_01_XYSJ AS b ON a.XYID = b.ID /*学员ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/
+GO
+
+--学员回访信息表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_03_03_XYHFXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XYID]--学员ID
+      ,a.[HFSJ]--回访时间
+      ,a.[HFJG]--回访结果
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_XYSJ_SCHOOLID--学员数据表 学校ID
+      ,c.XM as c_XYSJ_XM--学员数据表 姓名
+      ,c.SFZH as c_XYSJ_SFZH--学员数据表 身份证号
+      ,c.XBM as c_XYSJ_XBM--学员数据表 性别码
+      ,cb.MC as c_XYSJ_XBM_MC--人的性别代码 名称
+      ,c.LXDH as c_XYSJ_LXDH--学员数据表 联系电话
+      ,c.ZZ as c_XYSJ_ZZ--学员数据表 住址
+      ,c.BMSJ as c_XYSJ_BMSJ--学员数据表 报名时间
+      ,c.SFQK as c_XYSJ_SFQK--学员数据表 缴费情况
+      ,c.SXCXID as c_XYSJ_SXCXID--学员数据表 所选车型ID
+      ,c.ZJQK as c_XYSJ_ZJQK--学员数据表 增加情况
+      ,c.SZJLCID as c_XYSJ_SZJLCID--学员数据表 所属教练员ID
+      ,c.YJJLYID as c_XYSJ_YJJLYID--学员数据表 引荐教练员ID
+      ,c.DQZT as c_XYSJ_DQZT--学员数据表 当前状态
+      ,c.BYSJ as c_XYSJ_BYSJ--学员数据表 毕业时间
+
+FROM dbo.EDU_JPXT_03_03_XYHFXX AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_03_01_XYSJ AS c ON a.XYID = c.ID /*学员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
 GO
 
 --通知数据表
