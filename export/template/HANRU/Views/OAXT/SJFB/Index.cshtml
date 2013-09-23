@@ -1,6 +1,6 @@
 @model HanRuEdu.LDAL.EDU_OAXT_12_A01_SJFB
 <table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
-            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/SJFB/index_jsonstr")',
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/jpxt/SJFB/index_jsonstr")',
             toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
     <thead>
         <tr>
@@ -25,11 +25,11 @@
     </thead>
 </table>
 @{
-    ViewData["index_create"] = Url.Content("~/xtgl/sjfb/create");
-    ViewData["index_edit"] = Url.Content("~/xtgl/sjfb/edit");
-    //ViewData["index_detail"] = Url.Content("~/xtgl/sjfb/details");
-    //ViewData["index_del"] = Url.Content("~/xtgl/sjfb/delete");
-    ViewData["index_multi_del"] = Url.Content("~/xtgl/sjfb/delete");
+    ViewData["index_create"] = Url.Content("~/jpxt/sjfb/create");
+    ViewData["index_edit"] = Url.Content("~/jpxt/sjfb/edit");
+    //ViewData["index_detail"] = Url.Content("~/jpxt/sjfb/details");
+    //ViewData["index_del"] = Url.Content("~/jpxt/sjfb/delete");
+    ViewData["index_multi_del"] = Url.Content("~/jpxt/sjfb/delete");
     ViewData["index_id_name"] = "ID";
     //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
     //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
