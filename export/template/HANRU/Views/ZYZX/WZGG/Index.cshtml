@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZYZX_MHXT_WZGG
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/WZGG/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--网站广告ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="SHOWTYPE" width="50" sortable="true">@Html.LabelFor(m => m.SHOWTYPE)</th><!--显示型式-->
+            <th field="ADCONTENT" width="50" sortable="true">@Html.LabelFor(m => m.ADCONTENT)</th><!--广告内容-->
+            <th field="GGLJ" width="50" sortable="true">@Html.LabelFor(m => m.GGLJ)</th><!--广告链接-->
+            <th field="SHOWSTATU" width="50" sortable="true">@Html.LabelFor(m => m.SHOWSTATU)</th><!--是否显示-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/wzgg/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/wzgg/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/wzgg/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/wzgg/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/wzgg/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

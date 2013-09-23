@@ -194,7 +194,11 @@ class TemplateBuilder
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
-      index_str << "            <th field=\"#{field.name}\" width=\"50\" sortable=\"true\">@Html.LabelFor(m => m.#{field.name})</th><!--#{field.explanation}-->\n"
+      index_str << "            <th field=\"#{field.name}\" width=\"50\" "
+      index_str << 'formatter="formatDatebox" ' if field.type == 'datetime'
+      index_str << "sortable=\"true\">@Html.LabelFor(m => m.#{field.name})"
+      index_str << "</th><!--#{field.explanation}-->\n"
+      
     end
     index_str << "        </tr>\n    </thead>\n</table>\n"
     index_str << "@{\n    ViewData[\"index_create\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/create\");\n"

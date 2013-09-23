@@ -1,0 +1,35 @@
+@model HanRuEdu.LDAL.EDU_OAXT_10_A01_TZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/TZ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--通知ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="FSRID" width="50" sortable="true">@Html.LabelFor(m => m.FSRID)</th><!--发送人ID-->
+            <th field="FSRLB" width="50" sortable="true">@Html.LabelFor(m => m.FSRLB)</th><!--发送人类别-->
+            <th field="BT" width="50" sortable="true">@Html.LabelFor(m => m.BT)</th><!--标题-->
+            <th field="NR" width="50" sortable="true">@Html.LabelFor(m => m.NR)</th><!--内容-->
+            <th field="FJ" width="50" sortable="true">@Html.LabelFor(m => m.FJ)</th><!--附件-->
+            <th field="TJRQ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.TJRQ)</th><!--添加日期-->
+            <th field="JSRS" width="50" sortable="true">@Html.LabelFor(m => m.JSRS)</th><!--接收人数-->
+            <th field="JSRIDLB" width="50" sortable="true">@Html.LabelFor(m => m.JSRIDLB)</th><!--接收人ID列表-->
+            <th field="JSRMZLB" width="50" sortable="true">@Html.LabelFor(m => m.JSRMZLB)</th><!--接收人名字列表-->
+            <th field="YYDRIDLB" width="50" sortable="true">@Html.LabelFor(m => m.YYDRIDLB)</th><!--已阅读人ID列表-->
+            <th field="YYDRMZLB" width="50" sortable="true">@Html.LabelFor(m => m.YYDRMZLB)</th><!--已阅读人名字列表-->
+            <th field="FSZT" width="50" sortable="true">@Html.LabelFor(m => m.FSZT)</th><!--发送状态-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/tz/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/tz/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/tz/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/tz/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/tz/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

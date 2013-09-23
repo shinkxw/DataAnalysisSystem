@@ -1,0 +1,37 @@
+@model HanRuEdu.LDAL.EDU_ZXJZ_07_02_RKSJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/RKSJ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="JZGJBSJID" width="50" sortable="true">@Html.LabelFor(m => m.JZGJBSJID)</th><!--教职工基本数据子类表-->
+            <th field="RKKCH" width="50" sortable="true">@Html.LabelFor(m => m.RKKCH)</th><!--任课课程号-->
+            <th field="RKQSNY" width="50" sortable="true">@Html.LabelFor(m => m.RKQSNY)</th><!--任课起始年月-->
+            <th field="RKZZNY" width="50" sortable="true">@Html.LabelFor(m => m.RKZZNY)</th><!--任课终止年月-->
+            <th field="RKZXS" width="50" sortable="true">@Html.LabelFor(m => m.RKZXS)</th><!--任课总学时-->
+            <th field="RKXDM" width="50" sortable="true">@Html.LabelFor(m => m.RKXDM)</th><!--任课学段码-->
+            <th field="RKJSM" width="50" sortable="true">@Html.LabelFor(m => m.RKJSM)</th><!--任课角色码-->
+            <th field="SKBJ" width="50" sortable="true">@Html.LabelFor(m => m.SKBJ)</th><!--授课班级-->
+            <th field="SKRS" width="50" sortable="true">@Html.LabelFor(m => m.SKRS)</th><!--授课人数-->
+            <th field="ZKS" width="50" sortable="true">@Html.LabelFor(m => m.ZKS)</th><!--周课时-->
+            <th field="SFLT" width="50" sortable="true">@Html.LabelFor(m => m.SFLT)</th><!--是否连堂-->
+            <th field="NJID" width="50" sortable="true">@Html.LabelFor(m => m.NJID)</th><!--年级号-->
+            <th field="XQID" width="50" sortable="true">@Html.LabelFor(m => m.XQID)</th><!--学期-->
+            <th field="XNID" width="50" sortable="true">@Html.LabelFor(m => m.XNID)</th><!--学年-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/rksj/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/rksj/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/rksj/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/rksj/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/rksj/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

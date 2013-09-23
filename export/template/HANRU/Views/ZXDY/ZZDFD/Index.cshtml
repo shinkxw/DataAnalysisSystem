@@ -1,0 +1,34 @@
+@model HanRuEdu.LDAL.EDU_ZXDY_05_A03_ZZDFD
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/ZZDFD/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--值周打分单表ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="XQID" width="50" sortable="true">@Html.LabelFor(m => m.XQID)</th><!--学期ID-->
+            <th field="ZCID" width="50" sortable="true">@Html.LabelFor(m => m.ZCID)</th><!--周次ID-->
+            <th field="BJ" width="50" sortable="true">@Html.LabelFor(m => m.BJ)</th><!--班级-->
+            <th field="XSIDLB" width="50" sortable="true">@Html.LabelFor(m => m.XSIDLB)</th><!--学生ID列表-->
+            <th field="XSMCLB" width="50" sortable="true">@Html.LabelFor(m => m.XSMCLB)</th><!--学生名称列表-->
+            <th field="SSXZID" width="50" sortable="true">@Html.LabelFor(m => m.SSXZID)</th><!--所属细则-->
+            <th field="DFFZ" width="50" sortable="true">@Html.LabelFor(m => m.DFFZ)</th><!--打分分值-->
+            <th field="FSSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.FSSJ)</th><!--发生时间-->
+            <th field="DFSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.DFSJ)</th><!--打分时间-->
+            <th field="DFJSID" width="50" sortable="true">@Html.LabelFor(m => m.DFJSID)</th><!--打分教师ID-->
+            <th field="BZ" width="50" sortable="true">@Html.LabelFor(m => m.BZ)</th><!--备注-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/zzdfd/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/zzdfd/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/zzdfd/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/zzdfd/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/zzdfd/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

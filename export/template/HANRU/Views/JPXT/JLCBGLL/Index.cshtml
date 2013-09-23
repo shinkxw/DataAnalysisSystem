@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_JPXT_01_02_JLCBGLL
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/JLCBGLL/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="JLCID" width="50" sortable="true">@Html.LabelFor(m => m.JLCID)</th><!--教练车ID-->
+            <th field="JLYID" width="50" sortable="true">@Html.LabelFor(m => m.JLYID)</th><!--教练员ID-->
+            <th field="BGKSSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.BGKSSJ)</th><!--保管开始时间-->
+            <th field="BGJSSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.BGJSSJ)</th><!--保管结束时间-->
+            <th field="BGZT" width="50" sortable="true">@Html.LabelFor(m => m.BGZT)</th><!--保管状态-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/jlcbgll/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/jlcbgll/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/jlcbgll/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/jlcbgll/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/jlcbgll/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

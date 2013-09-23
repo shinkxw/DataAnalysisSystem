@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_ZYZX_MHXT_FBQX
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/FBQX/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--发布权限ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="LOGINNAME" width="50" sortable="true">@Html.LabelFor(m => m.LOGINNAME)</th><!--用户名-->
+            <th field="LMLIST" width="50" sortable="true">@Html.LabelFor(m => m.LMLIST)</th><!--栏目-->
+            <th field="LMNAMELIST" width="50" sortable="true">@Html.LabelFor(m => m.LMNAMELIST)</th><!--栏目文字-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/fbqx/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/fbqx/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/fbqx/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/fbqx/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/fbqx/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

@@ -1,0 +1,35 @@
+@model HanRuEdu.LDAL.EDU_ZXJX_06_A01_MPJL
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/MPJL/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="MPJS" width="50" sortable="true">@Html.LabelFor(m => m.MPJS)</th><!--面批教师-->
+            <th field="MPKC" width="50" sortable="true">@Html.LabelFor(m => m.MPKC)</th><!--面批课程-->
+            <th field="MPXS" width="50" sortable="true">@Html.LabelFor(m => m.MPXS)</th><!--面批学生-->
+            <th field="XNID" width="50" sortable="true">@Html.LabelFor(m => m.XNID)</th><!--学年-->
+            <th field="XQID" width="50" sortable="true">@Html.LabelFor(m => m.XQID)</th><!--学期-->
+            <th field="NJID" width="50" sortable="true">@Html.LabelFor(m => m.NJID)</th><!--年级-->
+            <th field="BJID" width="50" sortable="true">@Html.LabelFor(m => m.BJID)</th><!--班级-->
+            <th field="MPJG" width="50" sortable="true">@Html.LabelFor(m => m.MPJG)</th><!--面批结果-->
+            <th field="MPSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.MPSJ)</th><!--面批时间-->
+            <th field="RRSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.RRSJ)</th><!--录入时间-->
+            <th field="BZ" width="50" sortable="true">@Html.LabelFor(m => m.BZ)</th><!--备注-->
+            <th field="JSRKID" width="50" sortable="true">@Html.LabelFor(m => m.JSRKID)</th><!--教师任课编号-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/mpjl/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/mpjl/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/mpjl/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/mpjl/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/mpjl/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

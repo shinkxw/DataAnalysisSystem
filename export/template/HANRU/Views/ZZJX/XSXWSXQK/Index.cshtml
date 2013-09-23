@@ -1,0 +1,36 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_07_03_XSXWSXQK
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/XSXWSXQK/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--实习情况表ID-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--学生信息ID-->
+            <th field="QYID" width="50" sortable="true">@Html.LabelFor(m => m.QYID)</th><!--企业表ID-->
+            <th field="GWID" width="50" sortable="true">@Html.LabelFor(m => m.GWID)</th><!--岗位表ID-->
+            <th field="SXQSRQ" width="50" sortable="true">@Html.LabelFor(m => m.SXQSRQ)</th><!--受训起始日期-->
+            <th field="SXJSRQ" width="50" sortable="true">@Html.LabelFor(m => m.SXJSRQ)</th><!--受训结束日期-->
+            <th field="QYBH" width="50" sortable="true">@Html.LabelFor(m => m.QYBH)</th><!--企业编号-->
+            <th field="SXGWMC" width="50" sortable="true">@Html.LabelFor(m => m.SXGWMC)</th><!--受训岗位名称-->
+            <th field="SXDS" width="50" sortable="true">@Html.LabelFor(m => m.SXDS)</th><!--实训导师-->
+            <th field="SFGMSXZRBX" width="50" sortable="true">@Html.LabelFor(m => m.SFGMSXZRBX)</th><!--是否购买实习责任保险-->
+            <th field="BXFZFZ" width="50" sortable="true">@Html.LabelFor(m => m.BXFZFZ)</th><!--保险费支付者-->
+            <th field="SXXC" width="50" sortable="true">@Html.LabelFor(m => m.SXXC)</th><!--实习薪酬-->
+            <th field="SFSDGSX" width="50" sortable="true">@Html.LabelFor(m => m.SFSDGSX)</th><!--是否是顶岗实习-->
+            <th field="XSHJXZM" width="50" sortable="true">@Html.LabelFor(m => m.XSHJXZM)</th><!--学生户籍性质码-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/xsxwsxqk/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/xsxwsxqk/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/xsxwsxqk/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/xsxwsxqk/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/xsxwsxqk/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ELE_05_XLZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/XLZ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="XLID" width="50" sortable="true">@Html.LabelFor(m => m.XLID)</th><!--校历ID-->
+            <th field="NAME" width="50" sortable="true">@Html.LabelFor(m => m.NAME)</th><!--校历周名称-->
+            <th field="STARTDAY" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.STARTDAY)</th><!--开始日期-->
+            <th field="ENDDAY" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.ENDDAY)</th><!--结束日期-->
+            <th field="ZJH" width="50" sortable="true">@Html.LabelFor(m => m.ZJH)</th><!--周计划-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/xlz/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/xlz/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/xlz/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/xlz/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/xlz/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

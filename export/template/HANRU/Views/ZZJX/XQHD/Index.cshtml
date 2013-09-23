@@ -1,0 +1,30 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_07_A06_XQHD
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/XQHD/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--校企互动信息ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="QYID" width="50" sortable="true">@Html.LabelFor(m => m.QYID)</th><!--企业ID-->
+            <th field="XXJY" width="50" sortable="true">@Html.LabelFor(m => m.XXJY)</th><!--企业对学校工作建议-->
+            <th field="XSJY" width="50" sortable="true">@Html.LabelFor(m => m.XSJY)</th><!--企业对学生职业技能建议-->
+            <th field="GLJY" width="50" sortable="true">@Html.LabelFor(m => m.GLJY)</th><!--实习生管理工作的建议-->
+            <th field="QTJY" width="50" sortable="true">@Html.LabelFor(m => m.QTJY)</th><!--其他建议-->
+            <th field="FKNR" width="50" sortable="true">@Html.LabelFor(m => m.FKNR)</th><!--反馈内容-->
+            <th field="FKSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.FKSJ)</th><!--反馈时间-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/xqhd/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/xqhd/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/xqhd/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/xqhd/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/xqhd/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

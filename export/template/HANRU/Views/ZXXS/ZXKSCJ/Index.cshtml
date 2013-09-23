@@ -1,0 +1,48 @@
+@model HanRuEdu.LDAL.EDU_ZXXS_02_06_ZXKSCJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/ZXKSCJ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--考试成绩表-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--学生ID-->
+            <th field="XN" width="50" sortable="true">@Html.LabelFor(m => m.XN)</th><!--学年（度）-->
+            <th field="XQM" width="50" sortable="true">@Html.LabelFor(m => m.XQM)</th><!--学期码-->
+            <th field="KSRQ" width="50" sortable="true">@Html.LabelFor(m => m.KSRQ)</th><!--考试日期-->
+            <th field="KCH" width="50" sortable="true">@Html.LabelFor(m => m.KCH)</th><!--课程号-->
+            <th field="RKJSID" width="50" sortable="true">@Html.LabelFor(m => m.RKJSID)</th><!--任课教师ID-->
+            <th field="CJLRRID" width="50" sortable="true">@Html.LabelFor(m => m.CJLRRID)</th><!--成绩录入人ID-->
+            <th field="KSFSM" width="50" sortable="true">@Html.LabelFor(m => m.KSFSM)</th><!--考试方式码-->
+            <th field="KSXZM" width="50" sortable="true">@Html.LabelFor(m => m.KSXZM)</th><!--考试性质码-->
+            <th field="KSXSM" width="50" sortable="true">@Html.LabelFor(m => m.KSXSM)</th><!--考试形式码-->
+            <th field="FSLKSCJ" width="50" sortable="true">@Html.LabelFor(m => m.FSLKSCJ)</th><!--分数类考试成绩-->
+            <th field="DJLKSCJ" width="50" sortable="true">@Html.LabelFor(m => m.DJLKSCJ)</th><!--等级类考试成绩-->
+            <th field="KCCJ" width="50" sortable="true">@Html.LabelFor(m => m.KCCJ)</th><!--课程成绩-->
+            <th field="KCDJCJM" width="50" sortable="true">@Html.LabelFor(m => m.KCDJCJM)</th><!--课程等级成绩码-->
+            <th field="RKJSGH" width="50" sortable="true">@Html.LabelFor(m => m.RKJSGH)</th><!--任课教师工号-->
+            <th field="CJLRRH" width="50" sortable="true">@Html.LabelFor(m => m.CJLRRH)</th><!--成绩录入人号-->
+            <th field="CJLRRQ" width="50" sortable="true">@Html.LabelFor(m => m.CJLRRQ)</th><!--成绩录入日期-->
+            <th field="CJLRSJ" width="50" sortable="true">@Html.LabelFor(m => m.CJLRSJ)</th><!--成绩录入时间-->
+            <th field="XQID" width="50" sortable="true">@Html.LabelFor(m => m.XQID)</th><!--学期-->
+            <th field="XNID" width="50" sortable="true">@Html.LabelFor(m => m.XNID)</th><!--学年-->
+            <th field="NJID" width="50" sortable="true">@Html.LabelFor(m => m.NJID)</th><!--年级-->
+            <th field="BJID" width="50" sortable="true">@Html.LabelFor(m => m.BJID)</th><!--班级-->
+            <th field="SSKSID" width="50" sortable="true">@Html.LabelFor(m => m.SSKSID)</th><!--所属考试ID-->
+            <th field="SSKSKMID" width="50" sortable="true">@Html.LabelFor(m => m.SSKSKMID)</th><!--所属考试科目ID-->
+            <th field="SJID" width="50" sortable="true">@Html.LabelFor(m => m.SJID)</th><!--试卷ID-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/zxkscj/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/zxkscj/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/zxkscj/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/zxkscj/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/zxkscj/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

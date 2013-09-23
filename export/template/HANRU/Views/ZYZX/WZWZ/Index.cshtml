@@ -1,0 +1,46 @@
+@model HanRuEdu.LDAL.EDU_ZYZX_MHXT_WZWZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/WZWZ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--网站文章ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="TYPENAME" width="50" sortable="true">@Html.LabelFor(m => m.TYPENAME)</th><!--类型名称-->
+            <th field="LMID" width="50" sortable="true">@Html.LabelFor(m => m.LMID)</th><!--栏目-->
+            <th field="TITLE" width="50" sortable="true">@Html.LabelFor(m => m.TITLE)</th><!--标题-->
+            <th field="PUBLISHERNAME" width="50" sortable="true">@Html.LabelFor(m => m.PUBLISHERNAME)</th><!--发布人-->
+            <th field="AUTHOR" width="50" sortable="true">@Html.LabelFor(m => m.AUTHOR)</th><!--作者-->
+            <th field="AUTHORDEPART" width="50" sortable="true">@Html.LabelFor(m => m.AUTHORDEPART)</th><!--作者部门-->
+            <th field="PUBLISHDATE" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.PUBLISHDATE)</th><!--发布时间-->
+            <th field="CONTENT" width="50" sortable="true">@Html.LabelFor(m => m.CONTENT)</th><!--内容-->
+            <th field="URL" width="50" sortable="true">@Html.LabelFor(m => m.URL)</th><!--链接-->
+            <th field="IMAGEURL" width="50" sortable="true">@Html.LabelFor(m => m.IMAGEURL)</th><!--图片-->
+            <th field="ATTACHMENTNAME" width="50" sortable="true">@Html.LabelFor(m => m.ATTACHMENTNAME)</th><!--附件名-->
+            <th field="ATTACHMENT" width="50" sortable="true">@Html.LabelFor(m => m.ATTACHMENT)</th><!--附件-->
+            <th field="CHICKNUB" width="50" sortable="true">@Html.LabelFor(m => m.CHICKNUB)</th><!--点击量-->
+            <th field="AUDITSTATU" width="50" sortable="true">@Html.LabelFor(m => m.AUDITSTATU)</th><!--审核状态-->
+            <th field="AUDITOR" width="50" sortable="true">@Html.LabelFor(m => m.AUDITOR)</th><!--审核人ID-->
+            <th field="AUDITORNAME" width="50" sortable="true">@Html.LabelFor(m => m.AUDITORNAME)</th><!--审核人-->
+            <th field="AUDITTIME" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.AUDITTIME)</th><!--审核时间-->
+            <th field="REMARK" width="50" sortable="true">@Html.LabelFor(m => m.REMARK)</th><!--备注-->
+            <th field="SUMMARY" width="50" sortable="true">@Html.LabelFor(m => m.SUMMARY)</th><!--摘要-->
+            <th field="DISPLAYTYPE" width="50" sortable="true">@Html.LabelFor(m => m.DISPLAYTYPE)</th><!--内外网-->
+            <th field="OPENFLAG" width="50" sortable="true">@Html.LabelFor(m => m.OPENFLAG)</th><!--开启状态-->
+            <th field="LLQX" width="50" sortable="true">@Html.LabelFor(m => m.LLQX)</th><!--浏览权限-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/wzwz/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/wzwz/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/wzwz/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/wzwz/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/wzwz/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

@@ -1,0 +1,75 @@
+@model HanRuEdu.LDAL.EDU_OAXT_04_01_WJQT
+@using (Html.BeginForm())
+{
+    @Html.Partial("SingleZTree")
+    <div id="dlg" class="easyui-panel" title="添加" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">添加</span></h1></center>
+
+        <table class="admintable">
+            <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校名-->
+                <td>
+                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.SCHOOLID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.WJID) </td> <!--文件ID-->
+                <td>
+                    @Html.DropDownListFor(m => m.WJID, ViewBag.OAXT_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.WJID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.JBRID) </td> <!--经办人ID-->
+                <td>
+                    @Html.DropDownListFor(m => m.JBRID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.JBRID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.QTRQ) </td> <!--清退日期-->
+                <td>
+                    @Html.TextBoxFor(m => m.QTRQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.QTRQ)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.QTFW) </td> <!--清退范围-->
+                <td>
+                    @Html.TextBoxFor(m => m.QTFW, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.QTFW)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.QTSM) </td> <!--清退说明-->
+                <td>
+                    @Html.TextBoxFor(m => m.QTSM, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.QTSM)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.JBRGH) </td> <!--经办人工号-->
+                <td>
+                    @Html.TextBoxFor(m => m.JBRGH, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.JBRGH)
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        @{ ViewData["ce_cancel"] = Url.Content("~/xtgl/wjqt/index");}
+        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
+    </div>
+}

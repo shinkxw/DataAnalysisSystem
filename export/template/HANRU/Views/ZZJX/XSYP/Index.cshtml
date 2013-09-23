@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_07_A05_XSYP
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/XSYP/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--学生应聘信息ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--学生信息ID-->
+            <th field="QYID" width="50" sortable="true">@Html.LabelFor(m => m.QYID)</th><!--企业ID-->
+            <th field="GWID" width="50" sortable="true">@Html.LabelFor(m => m.GWID)</th><!--实习岗位ID-->
+            <th field="XXSH" width="50" sortable="true">@Html.LabelFor(m => m.XXSH)</th><!--学校审核-->
+            <th field="QYSH" width="50" sortable="true">@Html.LabelFor(m => m.QYSH)</th><!--企业审核-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/xsyp/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/xsyp/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/xsyp/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/xsyp/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/xsyp/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

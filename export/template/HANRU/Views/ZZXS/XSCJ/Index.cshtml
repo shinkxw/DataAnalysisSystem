@@ -1,0 +1,38 @@
+@model HanRuEdu.LDAL.EDU_ZZXS_06_01_XSCJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/XSCJ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--学生ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="KCH" width="50" sortable="true">@Html.LabelFor(m => m.KCH)</th><!--课程号-->
+            <th field="XQID" width="50" sortable="true">@Html.LabelFor(m => m.XQID)</th><!--学期ID-->
+            <th field="KCMC" width="50" sortable="true">@Html.LabelFor(m => m.KCMC)</th><!--课程名称-->
+            <th field="XF" width="50" sortable="true">@Html.LabelFor(m => m.XF)</th><!--学分-->
+            <th field="XQMC" width="50" sortable="true">@Html.LabelFor(m => m.XQMC)</th><!--学期名称-->
+            <th field="PSCJ" width="50" sortable="true">@Html.LabelFor(m => m.PSCJ)</th><!--平时成绩-->
+            <th field="CJ" width="50" sortable="true">@Html.LabelFor(m => m.CJ)</th><!--成绩-->
+            <th field="KSXZ" width="50" sortable="true">@Html.LabelFor(m => m.KSXZ)</th><!--考试性质-->
+            <th field="RKJGID" width="50" sortable="true">@Html.LabelFor(m => m.RKJGID)</th><!--任课教工ID-->
+            <th field="RKJGH" width="50" sortable="true">@Html.LabelFor(m => m.RKJGH)</th><!--任课教工号-->
+            <th field="CJLRJGID" width="50" sortable="true">@Html.LabelFor(m => m.CJLRJGID)</th><!--成绩录入教工ID-->
+            <th field="CJLRJGH" width="50" sortable="true">@Html.LabelFor(m => m.CJLRJGH)</th><!--成绩录入教工号-->
+            <th field="CJLRRQ" width="50" sortable="true">@Html.LabelFor(m => m.CJLRRQ)</th><!--成绩录入日期-->
+            <th field="QZCJ" width="50" sortable="true">@Html.LabelFor(m => m.QZCJ)</th><!--期中成绩-->
+            <th field="QMCJ" width="50" sortable="true">@Html.LabelFor(m => m.QMCJ)</th><!--期末成绩-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/xscj/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/xscj/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/xscj/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/xscj/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/xscj/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

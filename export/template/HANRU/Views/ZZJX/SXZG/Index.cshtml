@@ -1,0 +1,32 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_07_A07_SXZG
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/SXZG/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--实习转岗ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="XSXXID" width="50" sortable="true">@Html.LabelFor(m => m.XSXXID)</th><!--申请学生ID-->
+            <th field="ZCGW" width="50" sortable="true">@Html.LabelFor(m => m.ZCGW)</th><!--转出岗位ID-->
+            <th field="ZCGWQY" width="50" sortable="true">@Html.LabelFor(m => m.ZCGWQY)</th><!--转出岗位企业ID-->
+            <th field="ZRGW" width="50" sortable="true">@Html.LabelFor(m => m.ZRGW)</th><!--转入岗位ID-->
+            <th field="ZRGWQY" width="50" sortable="true">@Html.LabelFor(m => m.ZRGWQY)</th><!--转入岗位企业ID-->
+            <th field="BZRSH" width="50" sortable="true">@Html.LabelFor(m => m.BZRSH)</th><!--班主任审核-->
+            <th field="ZCQYSH" width="50" sortable="true">@Html.LabelFor(m => m.ZCQYSH)</th><!--转出企业审核-->
+            <th field="ZRQYSH" width="50" sortable="true">@Html.LabelFor(m => m.ZRQYSH)</th><!--转入企业审核-->
+            <th field="JYCSH" width="50" sortable="true">@Html.LabelFor(m => m.JYCSH)</th><!--就业处审核-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/sxzg/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/sxzg/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/sxzg/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/sxzg/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/sxzg/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

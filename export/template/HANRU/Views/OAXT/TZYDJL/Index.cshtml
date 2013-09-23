@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_OAXT_10_A02_TZYDJL
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/TZYDJL/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--通知阅读记录ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="TZID" width="50" sortable="true">@Html.LabelFor(m => m.TZID)</th><!--通知ID-->
+            <th field="BTZRID" width="50" sortable="true">@Html.LabelFor(m => m.BTZRID)</th><!--被通知人ID-->
+            <th field="YDRQ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.YDRQ)</th><!--阅读日期-->
+            <th field="SFYD" width="50" sortable="true">@Html.LabelFor(m => m.SFYD)</th><!--是否已阅读-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/tzydjl/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/tzydjl/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/tzydjl/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/tzydjl/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/tzydjl/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

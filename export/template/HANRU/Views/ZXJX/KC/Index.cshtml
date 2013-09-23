@@ -1,0 +1,37 @@
+@model HanRuEdu.LDAL.EDU_ZXJX_01_01_KC
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/KC/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校名-->
+            <th field="KCH" width="50" sortable="true">@Html.LabelFor(m => m.KCH)</th><!--课程号-->
+            <th field="KCMC" width="50" sortable="true">@Html.LabelFor(m => m.KCMC)</th><!--课程名称-->
+            <th field="KCM" width="50" sortable="true">@Html.LabelFor(m => m.KCM)</th><!--课程码-->
+            <th field="KCDJM" width="50" sortable="true">@Html.LabelFor(m => m.KCDJM)</th><!--课程等级码-->
+            <th field="KCBM" width="50" sortable="true">@Html.LabelFor(m => m.KCBM)</th><!--课程别名-->
+            <th field="KCJJ" width="50" sortable="true">@Html.LabelFor(m => m.KCJJ)</th><!--课程简介-->
+            <th field="KCYQ" width="50" sortable="true">@Html.LabelFor(m => m.KCYQ)</th><!--课程要求-->
+            <th field="ZXS" width="50" sortable="true">@Html.LabelFor(m => m.ZXS)</th><!--总学时-->
+            <th field="ZHXS" width="50" sortable="true">@Html.LabelFor(m => m.ZHXS)</th><!--周学时-->
+            <th field="ZXXS" width="50" sortable="true">@Html.LabelFor(m => m.ZXXS)</th><!--自学学时-->
+            <th field="SKFSM" width="50" sortable="true">@Html.LabelFor(m => m.SKFSM)</th><!--授课方式码-->
+            <th field="JCBM" width="50" sortable="true">@Html.LabelFor(m => m.JCBM)</th><!--教材编码-->
+            <th field="CKSM" width="50" sortable="true">@Html.LabelFor(m => m.CKSM)</th><!--参考书目-->
+            <th field="CDXZ" width="50" sortable="true">@Html.LabelFor(m => m.CDXZ)</th><!--场地限制-->
+            <th field="SFZK" width="50" sortable="true">@Html.LabelFor(m => m.SFZK)</th><!--是否主课-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/kc/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/kc/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/kc/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/kc/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/kc/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

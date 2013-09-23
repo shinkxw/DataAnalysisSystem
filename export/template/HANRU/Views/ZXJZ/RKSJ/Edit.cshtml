@@ -1,0 +1,147 @@
+@model HanRuEdu.LDAL.EDU_ZXJZ_07_02_RKSJ
+@using (Html.BeginForm())
+{
+    @Html.Partial("SingleZTree")
+    <div id="dlg" class="easyui-panel" title="编辑" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">编辑</span></h1></center>
+
+        <table class="admintable">
+            <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ID) </td> <!--编号-->
+                <td>
+                    @Html.TextBoxFor(m => m.ID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校名-->
+                <td>
+                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.SCHOOLID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.JZGJBSJID) </td> <!--教职工基本数据子类表-->
+                <td>
+                    @Html.DropDownListFor(m => m.JZGJBSJID, ViewBag.ZXJZ_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.JZGJBSJID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.RKKCH) </td> <!--任课课程号-->
+                <td>
+                    @Html.DropDownListFor(m => m.RKKCH, ViewBag.ZXJX_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.RKKCH)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.RKQSNY) </td> <!--任课起始年月-->
+                <td>
+                    @Html.TextBoxFor(m => m.RKQSNY, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.RKQSNY)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.RKZZNY) </td> <!--任课终止年月-->
+                <td>
+                    @Html.TextBoxFor(m => m.RKZZNY, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.RKZZNY)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.RKZXS) </td> <!--任课总学时-->
+                <td>
+                    @Html.TextBoxFor(m => m.RKZXS, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.RKZXS)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.RKXDM) </td> <!--任课学段码-->
+                <td>
+                    @Html.DropDownListFor(m => m.RKXDM, ViewBag.JY_RKXDLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.RKXDM)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.RKJSM) </td> <!--任课角色码-->
+                <td>
+                    @Html.DropDownListFor(m => m.RKJSM, ViewBag.JY_RKJSLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.RKJSM)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SKBJ) </td> <!--授课班级-->
+                <td>
+                    @Html.DropDownListFor(m => m.SKBJ, ViewBag.ZXXX_03Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.SKBJ)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SKRS) </td> <!--授课人数-->
+                <td>
+                    @Html.TextBoxFor(m => m.SKRS, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.SKRS)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ZKS) </td> <!--周课时-->
+                <td>
+                    @Html.TextBoxFor(m => m.ZKS, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ZKS)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SFLT) </td> <!--是否连堂-->
+                <td>
+                    @Html.DropDownListFor(m => m.SFLT, ViewBag.JY_SFBZLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.SFLT)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.NJID) </td> <!--年级号-->
+                <td>
+                    @Html.DropDownListFor(m => m.NJID, ViewBag.ZXXX_02Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.NJID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XQID) </td> <!--学期-->
+                <td>
+                    @Html.DropDownListFor(m => m.XQID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.XQID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.XNID) </td> <!--学年-->
+                <td>
+                    @Html.DropDownListFor(m => m.XNID, ViewBag.SYS_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.XNID)
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        @{ ViewData["ce_cancel"] = Url.Content("~/xtgl/rksj/index");}
+        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
+    </div>
+}

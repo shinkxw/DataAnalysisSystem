@@ -1,0 +1,28 @@
+@model HanRuEdu.LDAL.EDU_ZZJX_01_A02_JSRK
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/JSRK/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="KXH" width="50" sortable="true">@Html.LabelFor(m => m.KXH)</th><!--课序号-->
+            <th field="JSID" width="50" sortable="true">@Html.LabelFor(m => m.JSID)</th><!--教师表ID-->
+            <th field="KCH" width="50" sortable="true">@Html.LabelFor(m => m.KCH)</th><!--课程号-->
+            <th field="JHBH" width="50" sortable="true">@Html.LabelFor(m => m.JHBH)</th><!--计划编号-->
+            <th field="XQID" width="50" sortable="true">@Html.LabelFor(m => m.XQID)</th><!--学期ID-->
+            <th field="JXDG" width="50" sortable="true">@Html.LabelFor(m => m.JXDG)</th><!--教学大纲-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/jsrk/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/jsrk/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/jsrk/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/jsrk/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/jsrk/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

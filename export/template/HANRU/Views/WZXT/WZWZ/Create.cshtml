@@ -1,0 +1,219 @@
+@model HanRuEdu.LDAL.EDU_WZXT_MHXT_WZWZ
+@using (Html.BeginForm())
+{
+    @Html.Partial("SingleZTree")
+    <div id="dlg" class="easyui-panel" title="添加" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">添加</span></h1></center>
+
+        <table class="admintable">
+            <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ID) </td> <!--网站文章ID-->
+                <td>
+                    @Html.TextBoxFor(m => m.ID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校名-->
+                <td>
+                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.SCHOOLID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.WEBID) </td> <!--网站ID-->
+                <td>
+                    @Html.DropDownListFor(m => m.WEBID, ViewBag.WZXT_MHXTLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.WEBID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.TYPENAME) </td> <!--类型名称-->
+                <td>
+                    @Html.TextBoxFor(m => m.TYPENAME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.TYPENAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.LMID) </td> <!--栏目-->
+                <td>
+                    @Html.DropDownListFor(m => m.LMID, ViewBag.WZXT_MHXTLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.LMID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.TITLE) </td> <!--标题-->
+                <td>
+                    @Html.TextBoxFor(m => m.TITLE, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.TITLE)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.PUBLISHERNAME) </td> <!--发布人-->
+                <td>
+                    @Html.TextBoxFor(m => m.PUBLISHERNAME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.PUBLISHERNAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUTHOR) </td> <!--作者-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUTHOR, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUTHOR)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUTHORDEPART) </td> <!--作者部门-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUTHORDEPART, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUTHORDEPART)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.PUBLISHDATE) </td> <!--发布时间-->
+                <td>
+                    @Html.TextBoxFor(m => m.PUBLISHDATE, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.PUBLISHDATE)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.CONTENT) </td> <!--内容-->
+                <td>
+                    @Html.TextBoxFor(m => m.CONTENT, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.CONTENT)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.URL) </td> <!--链接-->
+                <td>
+                    @Html.TextBoxFor(m => m.URL, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.URL)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.IMAGEURL) </td> <!--图片-->
+                <td>
+                    @Html.TextBoxFor(m => m.IMAGEURL, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.IMAGEURL)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ATTACHMENTNAME) </td> <!--附件名-->
+                <td>
+                    @Html.TextBoxFor(m => m.ATTACHMENTNAME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ATTACHMENTNAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ATTACHMENT) </td> <!--附件-->
+                <td>
+                    @Html.TextBoxFor(m => m.ATTACHMENT, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ATTACHMENT)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.CHICKNUB) </td> <!--点击量-->
+                <td>
+                    @Html.TextBoxFor(m => m.CHICKNUB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.CHICKNUB)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUDITSTATU) </td> <!--审核状态-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUDITSTATU, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUDITSTATU)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUDITOR) </td> <!--审核人ID-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUDITOR, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUDITOR)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUDITORNAME) </td> <!--审核人-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUDITORNAME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUDITORNAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.AUDITTIME) </td> <!--审核时间-->
+                <td>
+                    @Html.TextBoxFor(m => m.AUDITTIME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.AUDITTIME)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.REMARK) </td> <!--备注-->
+                <td>
+                    @Html.TextBoxFor(m => m.REMARK, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.REMARK)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SUMMARY) </td> <!--摘要-->
+                <td>
+                    @Html.TextBoxFor(m => m.SUMMARY, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.SUMMARY)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.DISPLAYTYPE) </td> <!--内外网-->
+                <td>
+                    @Html.TextBoxFor(m => m.DISPLAYTYPE, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.DISPLAYTYPE)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.OPENFLAG) </td> <!--开启状态-->
+                <td>
+                    @Html.TextBoxFor(m => m.OPENFLAG, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.OPENFLAG)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.LLQX) </td> <!--浏览权限-->
+                <td>
+                    @Html.TextBoxFor(m => m.LLQX, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.LLQX)
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        @{ ViewData["ce_cancel"] = Url.Content("~/xtgl/wzwz/index");}
+        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
+    </div>
+}

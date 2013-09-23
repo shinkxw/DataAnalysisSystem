@@ -1,0 +1,27 @@
+@model HanRuEdu.LDAL.EDU_ZXJX_08_A01_XXGCXPJPZ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/XXGCXPJPZ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="SSKCH" width="50" sortable="true">@Html.LabelFor(m => m.SSKCH)</th><!--所属课程号-->
+            <th field="PZMC" width="50" sortable="true">@Html.LabelFor(m => m.PZMC)</th><!--配置名称-->
+            <th field="PZLX" width="50" sortable="true">@Html.LabelFor(m => m.PZLX)</th><!--配置类型-->
+            <th field="FLM" width="50" sortable="true">@Html.LabelFor(m => m.FLM)</th><!--父类名-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/xxgcxpjpz/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/xxgcxpjpz/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/xxgcxpjpz/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/xxgcxpjpz/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/xxgcxpjpz/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

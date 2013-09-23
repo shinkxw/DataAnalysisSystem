@@ -1,0 +1,32 @@
+@model HanRuEdu.LDAL.EDU_ZYZX_MHXT_WZPJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/xtgl/WZPJ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--评价ID-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="WEBID" width="50" sortable="true">@Html.LabelFor(m => m.WEBID)</th><!--网站ID-->
+            <th field="WZID" width="50" sortable="true">@Html.LabelFor(m => m.WZID)</th><!--网站文章ID-->
+            <th field="PJR" width="50" sortable="true">@Html.LabelFor(m => m.PJR)</th><!--评价人-->
+            <th field="YJDZ" width="50" sortable="true">@Html.LabelFor(m => m.YJDZ)</th><!--邮件地址-->
+            <th field="PJSJ" width="50" formatter="formatDatebox" sortable="true">@Html.LabelFor(m => m.PJSJ)</th><!--评价时间-->
+            <th field="PJNR" width="50" sortable="true">@Html.LabelFor(m => m.PJNR)</th><!--评价内容-->
+            <th field="PJZT" width="50" sortable="true">@Html.LabelFor(m => m.PJZT)</th><!--评价状态-->
+            <th field="SHR" width="50" sortable="true">@Html.LabelFor(m => m.SHR)</th><!--审核人-->
+            <th field="HF" width="50" sortable="true">@Html.LabelFor(m => m.HF)</th><!--回复-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/xtgl/wzpj/create");
+    ViewData["index_edit"] = Url.Content("~/xtgl/wzpj/edit");
+    //ViewData["index_detail"] = Url.Content("~/xtgl/wzpj/details");
+    //ViewData["index_del"] = Url.Content("~/xtgl/wzpj/delete");
+    ViewData["index_multi_del"] = Url.Content("~/xtgl/wzpj/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

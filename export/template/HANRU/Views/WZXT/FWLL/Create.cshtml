@@ -1,0 +1,67 @@
+@model HanRuEdu.LDAL.EDU_WZXT_MHXT_FWLL
+@using (Html.BeginForm())
+{
+    @Html.Partial("SingleZTree")
+    <div id="dlg" class="easyui-panel" title="添加" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">添加</span></h1></center>
+
+        <table class="admintable">
+            <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ID) </td> <!--访问履历ID-->
+                <td>
+                    @Html.TextBoxFor(m => m.ID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校名-->
+                <td>
+                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.SCHOOLID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.WEBID) </td> <!--网站ID-->
+                <td>
+                    @Html.DropDownListFor(m => m.WEBID, ViewBag.WZXT_MHXTLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.WEBID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ACCESSIP) </td> <!--访问IP-->
+                <td>
+                    @Html.TextBoxFor(m => m.ACCESSIP, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ACCESSIP)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ACCESSURL) </td> <!--访问链接-->
+                <td>
+                    @Html.TextBoxFor(m => m.ACCESSURL, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ACCESSURL)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.ACCESSTIME) </td> <!--访问时间-->
+                <td>
+                    @Html.TextBoxFor(m => m.ACCESSTIME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.ACCESSTIME)
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        @{ ViewData["ce_cancel"] = Url.Content("~/xtgl/fwll/index");}
+        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
+    </div>
+}
