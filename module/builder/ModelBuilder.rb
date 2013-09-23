@@ -36,7 +36,7 @@ class ModelBuilder
         type = field.split_type
         if field.null == "F"
           if type[0] == "String"
-            @model_str << "            #{field.name} = \"\";\n"
+            @model_str << %(            #{field.name} = "";\n)
           end
         end
       end
@@ -46,18 +46,18 @@ class ModelBuilder
         type = field.split_type
         if field.null == "F"
           if type[0] == "String"
-            @model_str << "            [Required(ErrorMessage = \"必填\",AllowEmptyStrings = true)]\n"
+            @model_str << %(            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]\n)
           else
-            @model_str << "            [Required(ErrorMessage = \"必填\")]\n"
+            @model_str << %(            [Required(ErrorMessage = "必填")]\n)
           end
         end
         display_name = /^(?<name>.*?)ID$/ =~ field.explanation ? name : field.explanation
-        @model_str << "            [Display(Name = \"#{display_name}\")]\n"
+        @model_str << %(            [Display(Name = "#{display_name}")]\n)
         #字段类型解析
         if type[0] == "String" && type.size > 1
           @model_str << "            [StringLength(#{type[1]})]\n"
         elsif type[0] == "decimal"
-          @model_str << "            [Range(typeof(decimal), \"#{type[1]}\", \"#{type[2]}\")]\n"
+          @model_str << %(            [Range(typeof(decimal), "#{type[1]}", "#{type[2]}")]\n)
         elsif type[0] == "UN"
           p "ModelBuilder: this type cannot be analyze: #{type[0]}"
         end
