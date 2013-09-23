@@ -1,0 +1,164 @@
+EDU_JPXT_01_01_JLCSJ  教练车数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键
+  GMSJ          购买时间                datetime       非主
+  CLXHID        车辆型号ID              int            非主
+  PP            品牌                    nvarchar(100)  非主
+  CPH           车牌号                  nvarchar(50)   非主
+  FDJH          发动机号                nvarchar(100)  非主
+  CJH           车架号                  nvarchar(100)  非主
+  BFSJ          报废时间                datetime       非主
+  EBRQ          二保日期                datetime       非主
+  DQZT          当前状态                int            非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_01_02_JLCBGLL  教练车保管履历表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLYID         教练员ID                int            非主
+  JLCID         教练车ID                int            非主
+  BGKSSJ        保管开始时间            datetime       非主
+  BGJSSJ        保管结束时间            datetime       非主
+  BGZT          保管状态                text           非主
+
+EDU_JPXT_01_03_JLCWXQK  教练车维修情况表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLCID         教练车ID                int            非主
+  GZXX          故障现象                text           非主
+  SXSJ          送修时间                datetime       非主
+  WCSJ          完成时间                datetime       非主
+  WXJG          维修结果                text           非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_01_04_JLCJYQK  教练车检验情况表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLCID         教练车ID                int            非主
+  JYNR          检验内容                text           非主
+  JYSJ          检验时间                datetime       非主
+  WCSJ          完成时间                datetime       非主
+  JYJG          检验结果                text           非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_02_01_JLYSJ  教练员数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键
+  XM            姓名                    nvarchar(36)   非主
+  XBM           性别码                  int            非主
+  SFZH          身份证号                nvarchar(50)   非主
+  JSZH          驾驶证号                nvarchar(50)   非主
+  JSZYXQ        驾驶证有效期            datetime       非主
+  JLZH          教练证号                nvarchar(50)   非主
+  JLZYXQ        教练证有效期            datetime       非主
+  XL            学历                    nvarchar(50)   非主
+  ZC            职称                    nvarchar(50)   非主
+  JXSJ          进校时间                datetime       非主
+  LXDH          联系电话                nvarchar(30)   非主
+  ZZ            住址                    nvarchar(200)  非主
+  JSDJ          技术等级                nvarchar(100)  非主
+  JTCHYXM       家庭成员一姓名          nvarchar(36)   非主
+  JTCYYGX       家庭成员一关系          nvarchar(36)   非主
+  JTCYYXBM      家庭成员一性别码        nvarchar(1)    非主
+  JTCYYCSRQ     家庭成员一出生日期      datetime       非主
+  JTCYYZZ       家庭成员一住址          nvarchar(200)  非主
+  JTCYYLXDH     家庭成员一联系电话      nvarchar(30)   非主
+  JTCYYCSGZ     家庭成员一从事工作      nvarchar(200)  非主
+  JTCYEXM       家庭成员二姓名          nvarchar(36)   非主
+  JTCYEGX       家庭成员二关系          nvarchar(36)   非主
+  JTCYEXBM      家庭成员二性别码        nvarchar(1)    非主
+  JTCYECSRQ     家庭成员二出生日期      datetime       非主
+  JTCYEZZ       家庭成员二住址          nvarchar(200)  非主
+  JTCYELXDH     家庭成员二联系电话      nvarchar(30)   非主
+  JTCYECSGZ     家庭成员二从事工作      nvarchar(200)  非主
+
+EDU_JPXT_02_02_JLYWJQK  教练员违纪情况表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLYID         教练员ID                int            非主
+  TSR           投诉人                  nvarchar(50)   非主
+  TSSJ          投诉时间                datetime       非主
+  LXDH          联系电话                nvarchar(30)   非主
+  TSNR          投诉内容                text           非主
+  CLJG          处理结果                text           非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_02_03_JLYAQQK  教练员安全情况表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLYID         教练员ID                int            非主
+  LRSJ          录入时间                datetime       非主
+  AQQK          安全情况                text           非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_02_04_JLYJCQK  教练员奖惩情况表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLYID         教练员ID                int            非主
+  LRSJ          录入时间                datetime       非主
+  JCQK          奖惩情况                text           非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_02_05_JLCYHQK  教练车油耗情况表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLCID         教练车ID                int            非主
+  JLYID         教练员ID                int            非主
+  LRSJ          录入时间                datetime       非主
+  YLCZ          油量充值                decimal(8, 3)  非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_02_06_JLCCLXH  教练车材料消耗表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  JLCID         教练车ID                int            非主
+  JLYID         教练员ID                int            非主
+  LRSJ          录入时间                datetime       非主
+  XHQK          消耗情况                decimal(8, 2)  非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_03_01_XYSJ  学员数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键
+  XM            姓名                    nvarchar(36)   非主
+  SFZH          身份证号                nvarchar(30)   非主
+  XBM           性别码                  nvarchar(1)    非主
+  LXDH          联系电话                nvarchar(30)   非主
+  ZZ            住址                    nvarchar(200)  非主
+  BMSJ          报名时间                datetime       非主
+  SFQK          缴费情况                nvarchar(200)  非主
+  SXCXID        所选车型ID              int            非主
+  ZJQK          增加情况                nvarchar(200)  非主
+  SZJLCID       所属教练员ID            int            非主
+  YJJLYID       引荐教练员ID            int            非主
+  DQZT          当前状态                int            非主
+  BYSJ          毕业时间                datetime       非主
+
+EDU_JPXT_03_02_XYKSQK  学员考试情况表
+  XYID          学员ID                  int            主键
+  SCHOOLID      学校ID                  int            主键
+  KMYIKSSJ      科目一考试时间          datetime       非主
+  KMYIKSJG      科目一考试结果          int            非主
+  KMERKSSJ      科目二考试时间          datetime       非主
+  KMERYKSJG     科目二考试结果          int            非主
+  KMSANKSSJ     科目三考试时间          datetime       非主
+  KMSANKSJG     科目三考试结果          int            非主
+  KMSIKSSJ      科目四考试时间          datetime       非主
+  KMSIKSJG      科目四考试结果          int            非主
+  KMWUKSSJ      科目五考试时间          datetime       非主
+  KMWUKSJG      科目五考试结果          int            非主
+
+EDU_JPXT_03_03_XYHFXX  学员回访信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  XYID          学员ID                  int            非主
+  HFSJ          回访时间                datetime       非主
+  HFJG          回访结果                text           非主
+  BZ            备注                    text           非主
+
+EDU_JPXT_05_01_CLXH  车辆型号数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主
+  CLXHMC        车辆型号名称            nvarchar(30)   非主
+  BZ            备注                    text           非主
+
