@@ -64,7 +64,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
     str << "{\n#{@tab.l}model = model.OrderByDescending(e => GetPropertyValue(e, sort)).ToList();\n"
     str << "#{@tab.s}}\n"
-    str << "#{@tab.s}}\n#{@tab.t}return \"{\\\"total\\\":\" + model.Count + \",\\\"rows\\\":\" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + \"}\";\n"
+    str << %(#{@tab.s}}\n#{@tab.t}return \"{\\"total\\":" + model.Count + ",\\"rows\\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";\n)
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_add(table)
@@ -170,32 +170,30 @@ class TemplateBuilder
   end
   def make_index(table)
     index_str = "@model HanRuEdu.LDAL.#{table.name}\n"
-    index_str << "<table id=\"dg\" title=\"  \" class=\"easyui-datagrid\" style=\"width:900px;height:500px\"\n"
+    index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"\n)
     index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname}/index_jsonstr\")',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
-      index_str << "            <th field=\"#{field.name}\" width=\"50\" "
-      index_str << 'formatter="formatDatebox" ' if field.type == 'datetime'
-      index_str << "sortable=\"true\">@Html.LabelFor(m => m.#{field.name})"
+      index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}sortable="true">@Html.LabelFor(m => m.#{field.name}))
       index_str << "</th><!--#{field.explanation}-->\n"
     end
     index_str << "        </tr>\n    </thead>\n</table>\n"
-    index_str << "@{\n    ViewData[\"index_create\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/create\");\n"
-    index_str << "    ViewData[\"index_edit\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/edit\");\n"
-    index_str << "    //ViewData[\"index_detail\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/details\");\n"
-    index_str << "    //ViewData[\"index_del\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/delete\");\n"
-    index_str << "    ViewData[\"index_multi_del\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/delete\");\n"
-    index_str << "    ViewData[\"index_id_name\"] = \"ID\";\n"
-    index_str << "    //ViewData[\"index_outdata\"] = Url.Content(\"~/zsgl/xsdj/OutExcel\");\n"
-    index_str << "    //ViewData[\"index_indata\"] = Url.Content(\"~/zsgl/xsdj/ImportData\");\n}\n"
-    index_str << "@Html.Partial(\"~/views/shared/indexToolBarPage.cshtml\", this.ViewData)\n"
+    index_str << %(@{\n    ViewData["index_create"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/create");\n)
+    index_str << %(    ViewData["index_edit"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/edit");\n)
+    index_str << %(    //ViewData["index_detail"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/details");\n)
+    index_str << %(    //ViewData["index_del"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/delete");\n)
+    index_str << %(    ViewData["index_multi_del"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/delete");\n)
+    index_str << %(    ViewData["index_id_name"] = "ID";\n)
+    index_str << %(    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");\n)
+    index_str << %(    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");\n}\n)
+    index_str << %(@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)\n)
   end
   def make_table_info(table,title)
-    info_atr = "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
-    info_atr << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"#{title}\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
-    info_atr << "        <center>  <h1 ><span style=\"font-size:smaller;\">#{title}</span></h1></center>\n\n"
-    info_atr << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
+    info_atr = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial("SingleZTree")\n)
+    info_atr << %(    <div id="dlg" class="easyui-panel" title="#{title}" style="width: 900px; height: 500px; padding: 10px 20px">\n)
+    info_atr << %(        <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
+    info_atr << %(        <table class="admintable">\n            <tr>\n                <td width="50%"></td>\n                <td width="50%"></td>\n            </tr>\n\n)
     table.each_field do |field|
       info_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
       if field.relation
