@@ -1,34 +1,34 @@
 EDU_ZZZS_02_01_RXCJ  入学成绩数据表
-  XSXXID        学生信息数据表          int            主键   学生信息数据表
-  SCHOOLID      学校名                  int            主键   学校配置表
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
   RXZF          入学总分                decimal(5, 1)  非主
   GKZF          中考总分                decimal(5, 1)  非主
   FJF           附加分                  decimal(5, 1)  非主
-  FJFLBM        附加分类别码            nvarchar(1)    非主   附加分类别代码表
+  FJFLBM        附加分类别码            nvarchar(1)    非主        附加分类别代码表
 
 EDU_ZZZS_01_A01_ZSJH  招生计划数据表
-  ID            编号                    int            主键
-  SCHOOLID      学校名                  int            非主   学校配置表
-  ZYXXID        专业基本信息            int            非主   专业基本信息数据表
-  XNID          学年                    int            非主   学年表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  ZYXXID        专业基本信息            int            非主        专业基本信息数据表
+  XNID          学年                    int            非主        学年表
   ZSJHRS        招生计划                int            非主
   BZ            备注                    text           非主
 
 EDU_ZZZS_01_01_ZSXX  考生数据表
-  XSXXID        学生信息数据表          int            主键   学生信息数据表
-  SCHOOLID      学校名                  int            主键   学校配置表
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
   ZKZH          准考证号                nvarchar(15)   非主
   KSH           考生号                  nvarchar(20)   非主
-  KQXZQHM       考区行政区划码          nvarchar(6)    非主   中华人民共和国行政区划代码
+  KQXZQHM       考区行政区划码          nvarchar(6)    非主        中华人民共和国行政区划代码
   RXNY          入学年月                nvarchar(6)    非主
-  YSWGYZM       应试外国语种码          nvarchar(2)    非主   语种名称代码2字母代码
+  YSWGYZM       应试外国语种码          nvarchar(2)    非主        语种名称代码2字母代码
   BKZYM1        报考专业码1             nvarchar(6)    非主
   BKZYM2        报考专业码2             nvarchar(6)    非主
   BKZYM3        报考专业码3             nvarchar(6)    非主
   BKZYM4        报考专业码4             nvarchar(6)    非主
   BKZYM5        报考专业码5             nvarchar(6)    非主
   BKZYM6        报考专业码6             nvarchar(6)    非主
-  KSFSM         考试方式码              nvarchar(1)    非主   考试方式代码表
+  KSFSM         考试方式码              nvarchar(1)    非主        考试方式代码表
   BYZX          毕业中学                nvarchar(50)   非主
   BYZXYZBM      毕业中学邮政编码        nvarchar(6)    非主
   KSTC          考生特长                nvarchar(100)  非主
@@ -42,8 +42,8 @@ EDU_ZZZS_01_01_ZSXX  考生数据表
   KSSL          考生视力                decimal(3, 1)  非主
 
 EDU_ZZZS_03_01_KSKMCJ  考生科目成绩数据类表
-  XSXXID        考生ID                  int            主键   学生信息数据表
-  SCHOOLID      学校ID                  int            主键   学校配置表
-  KMM           科目码                  nvarchar(2)    主键   中考科目代码
+  XSXXID        考生ID                  int            主键        学生信息数据表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  KMM           科目码                  nvarchar(2)    主键        中考科目代码
   ZKFS          中考分数                decimal(5, 1)  非主
 

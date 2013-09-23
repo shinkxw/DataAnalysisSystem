@@ -20,8 +20,8 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
-            <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
             <name="JLCID" explanation="教练车ID" type="int" null="F" p="F" />
+            <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
             <name="BGKSSJ" explanation="保管开始时间" type="datetime" null="F" p="F" />
             <name="BGJSSJ" explanation="保管结束时间" type="datetime" null="T" p="F" />
             <name="BGZT" explanation="保管状态" type="text" null="F" p="F" />
@@ -48,6 +48,28 @@
             <name="JYSJ" explanation="检验时间" type="datetime" null="F" p="F" />
             <name="WCSJ" explanation="完成时间" type="datetime" null="F" p="F" />
             <name="JYJG" explanation="检验结果" type="text" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_JPXT_01_05_JLCYHQK" explanation="教练车油耗情况表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
+            <name="JLCID" explanation="教练车ID" type="int" null="F" p="F" />
+            <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
+            <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
+            <name="YLCZ" explanation="油量充值" type="decimal(8, 3)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_JPXT_01_06_JLCCLXH" explanation="教练车材料消耗表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
+            <name="JLCID" explanation="教练车ID" type="int" null="F" p="F" />
+            <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
+            <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
+            <name="XHQK" explanation="消耗情况" type="decimal(8, 2)" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
@@ -114,28 +136,6 @@
             <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
             <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
             <name="JCQK" explanation="奖惩情况" type="text" null="F" p="F" />
-            <name="BZ" explanation="备注" type="text" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_JPXT_02_05_JLCYHQK" explanation="教练车油耗情况表">
-        <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
-            <name="JLCID" explanation="教练车ID" type="int" null="F" p="F" />
-            <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
-            <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
-            <name="YLCZ" explanation="油量充值" type="decimal(8, 3)" null="F" p="F" />
-            <name="BZ" explanation="备注" type="text" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_JPXT_02_06_JLCCLXH" explanation="教练车材料消耗表">
-        <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
-            <name="JLCID" explanation="教练车ID" type="int" null="F" p="F" />
-            <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
-            <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
-            <name="XHQK" explanation="消耗情况" type="decimal(8, 2)" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>
     </table>

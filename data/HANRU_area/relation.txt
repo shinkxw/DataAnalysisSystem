@@ -28,6 +28,52 @@
 <EDU_ELE_05_XLZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XLID           EDU_ELE_05_XL                      ID
+<EDU_JPXT_01_01_JLCSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  CLXHID         EDU_JPXT_05_01_CLXH                ID
+<EDU_JPXT_01_02_JLCBGLL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLCID          EDU_JPXT_01_01_JLCSJ               ID
+  JLYID          EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_01_03_JLCWXQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLCID          EDU_JPXT_01_01_JLCSJ               ID
+<EDU_JPXT_01_04_JLCJYQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLCID          EDU_JPXT_01_01_JLCSJ               ID
+<EDU_JPXT_01_05_JLCYHQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLCID          EDU_JPXT_01_01_JLCSJ               ID
+  JLYID          EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_01_06_JLCCLXH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLCID          EDU_JPXT_01_01_JLCSJ               ID
+  JLYID          EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_02_01_JLYSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_JPXT_02_02_JLYWJQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLYID          EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_02_03_JLYAQQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLYID          EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_02_04_JLYJCQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JLYID          EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_03_01_XYSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XBM            EDU_GB_RDXB                        DM
+  SXCXID         EDU_JPXT_05_01_CLXH                ID
+  SZJLCID        EDU_JPXT_02_01_JLYSJ               ID
+  YJJLYID        EDU_JPXT_02_01_JLYSJ               ID
+<EDU_JPXT_03_02_XYKSQK
+  XYID           EDU_JPXT_03_01_XYSJ                ID
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_JPXT_03_03_XYHFXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XYID           EDU_JPXT_03_01_XYSJ                ID
+<EDU_JPXT_05_01_CLXH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_10_A01_TZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FSRID          EDU_ELE_01_USER                    LOGINNAME

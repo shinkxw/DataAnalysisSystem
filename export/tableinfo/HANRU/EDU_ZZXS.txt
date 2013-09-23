@@ -1,33 +1,33 @@
 EDU_ZZXS_07_01_XJSJ  学籍基本数据表
-  XSXXID        学生信息数据表          int            主键   学生信息数据表
-  SCHOOLID      学校名                  int            主键   学校配置表
-  ZYXXID        专业基本信息            int            非主   专业基本信息数据表
-  ZZBJID        学校班级数据表          nvarchar(10)   非主   学校班级数据表
-  ZZNJID        学校年级数据表          nvarchar(4)    非主   学校年级数据表
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
+  ZYXXID        专业基本信息            int            非主        专业基本信息数据表
+  ZZBJID        学校班级数据表          nvarchar(10)   非主        学校班级数据表
+  ZZNJID        学校年级数据表          nvarchar(4)    非主        学校年级数据表
   RXNY          入学年月                nvarchar(6)    非主
-  XSLBM         学生类别码              nvarchar(5)    非主   学生类别代码表
+  XSLBM         学生类别码              nvarchar(5)    非主        学生类别代码表
   XZ            学制                    nvarchar(20)   非主
   ZYM           专业码                  nvarchar(6)    非主
-  XSDQZTM       学生当前状态码          nvarchar(2)    非主   学生当前状态代码表
+  XSDQZTM       学生当前状态码          nvarchar(2)    非主        学生当前状态代码表
 
 EDU_ZZXS_02_A02_XSJTJJ  学生家庭经济情况数据表
-  XSXXID        学生信息数据表          int            主键   学生信息数据表
-  SCHOOLID      学校名                  int            主键   学校配置表
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
   SYRK          赡养人口                decimal(2, 0)  非主
   LDLRK         劳动力人口              decimal(2, 0)  非主
   JTRJYSR       家庭人均月收入          money          非主
-  JTLBM         家庭类别码              nvarchar(1)    非主   家庭类别代码表
-  KNYYM         困难原因码              nvarchar(1)    非主   困难原因代码表
-  KNCDM         困难程度码              nvarchar(2)    非主   困难程度代码表
-  SFDB          是否低保                nvarchar(1)    非主   是否标志代码表
-  RXQHKLBM      入学前户口类别码        nvarchar(1)    非主   户口类别代码
+  JTLBM         家庭类别码              nvarchar(1)    非主        家庭类别代码表
+  KNYYM         困难原因码              nvarchar(1)    非主        困难原因代码表
+  KNCDM         困难程度码              nvarchar(2)    非主        困难程度代码表
+  SFDB          是否低保                nvarchar(1)    非主        是否标志代码表
+  RXQHKLBM      入学前户口类别码        nvarchar(1)    非主        户口类别代码
   JXDDBX        就学地低保线            money          非主
 
 EDU_ZZXS_02_A01_XSLXR  学生联系人数据表
-  ID            编号                    int            主键
-  SCHOOLID      学校名                  int            非主   学校配置表
-  XSXXID        学生信息数据表          int            非主   学生信息数据表
-  GXM           关系码                  nvarchar(2)    非主   家庭关系代码
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  XSXXID        学生信息数据表          int            非主        学生信息数据表
+  GXM           关系码                  nvarchar(2)    非主        家庭关系代码
   LXRXM         联系人姓名              nvarchar(36)   非主
   YZBM          邮政编码                nvarchar(6)    非主
   TXDZ          通信地址                nvarchar(180)  非主
@@ -39,20 +39,20 @@ EDU_ZZXS_02_A01_XSLXR  学生联系人数据表
   JSTXH         即时通讯号              nvarchar(40)   非主
 
 EDU_ZZXS_02_02_XSJTCY  学生家庭成员数据表
-  ID            编号                    int            主键
-  SCHOOLID      学校名                  int            非主   学校配置表
-  XSXXID        学生信息数据表          int            非主   学生信息数据表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  XSXXID        学生信息数据表          int            非主        学生信息数据表
   XM            姓名                    nvarchar(36)   非主
-  GXM           关系码                  nvarchar(2)    非主   家庭关系代码
-  JTCYZYM       家庭成员职业码          nvarchar(3)    非主   职业分类与代码
+  GXM           关系码                  nvarchar(2)    非主        家庭关系代码
+  JTCYZYM       家庭成员职业码          nvarchar(3)    非主        职业分类与代码
   SZDW          所在单位                nvarchar(60)   非主
-  ZZMMM         政治面貌码              nvarchar(2)    非主   政治面貌代码
+  ZZMMM         政治面貌码              nvarchar(2)    非主        政治面貌代码
   DH            电话                    nvarchar(30)   非主
   YDDH          移动电话                nvarchar(30)   非主
 
 EDU_ZZXS_02_01_XSJTXX  学生家庭信息数据表
-  XSXXID        学生信息数据表          int            主键   学生信息数据表
-  SCHOOLID      学校名                  int            主键   学校配置表
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
   JTZZ          家庭住址                nvarchar(180)  非主
   JTYZBM        家庭邮政编码            nvarchar(6)    非主
   JTDH          家庭电话                nvarchar(30)   非主
@@ -65,50 +65,50 @@ EDU_ZZXS_02_01_XSJTXX  学生家庭信息数据表
   LJZJHCZ       离家最近火车站          nvarchar(30)   非主
 
 EDU_ZZXS_01_A01_XSXX  学生扩展数据表
-  XSXXID        学生信息数据表          int            主键   学生信息数据表
-  SCHOOLID      学校名                  int            主键   学校配置表
-  ZYXXID        专业基本信息            int            非主   专业基本信息数据表
-  XNID          学年                    int            非主   学年表
-  ZZXQID        学期表                  int            非主   学期数据表
-  JTDZQH        家庭地址区划码          nvarchar(6)    非主   中华人民共和国行政区划代码
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
+  ZYXXID        专业基本信息            int            非主        专业基本信息数据表
+  XNID          学年                    int            非主        学年表
+  ZZXQID        学期表                  int            非主        学期数据表
+  JTDZQH        家庭地址区划码          nvarchar(6)    非主        中华人民共和国行政区划代码
   JTXXDZ        家庭详细地址            nvarchar(50)   非主
   HJXXDZ        户籍详细地址            nvarchar(50)   非主
-  HJXZ          户籍性质代码            nvarchar(1)    非主   户籍性质代码
-  BYJX          不宜军训                nvarchar(1)    非主   是否标志代码表
+  HJXZ          户籍性质代码            nvarchar(1)    非主        户籍性质代码
+  BYJX          不宜军训                nvarchar(1)    非主        是否标志代码表
   CSBZR         初三班主任              nvarchar(10)   非主
   DRZW          曾担任何种职务          text           非主
   YYDR          愿意担任班干部，何职     text           非主
   BZ            备注                    text           非主
-  BYLX          毕业生类型              nvarchar(1)    非主   毕业生类型代码
-  XSLX          学生类型                nvarchar(5)    非主   学生类别代码表
-  SFZS          是否住宿                nvarchar(1)    非主   是否标志代码表
+  BYLX          毕业生类型              nvarchar(1)    非主        毕业生类型代码
+  XSLX          学生类型                nvarchar(5)    非主        学生类别代码表
+  SFZS          是否住宿                nvarchar(1)    非主        是否标志代码表
   XSBMSJ        学生报名时间            nvarchar(8)    非主
 
 EDU_ZZXS_01_01_XSXX  学生信息数据表
   ID            编号                    int            主键
-  SCHOOLID      学校名                  int            主键   学校配置表
+  SCHOOLID      学校名                  int            主键        学校配置表
   XH            学号                    nvarchar(30)   非主
   XM            姓名                    nvarchar(36)   非主
   YWXM          英文姓名                nvarchar(60)   非主
   XMPY          姓名拼音                nvarchar(60)   非主
   CYM           曾用名                  nvarchar(36)   非主
-  SFZJLXM       身份证件类型码          nvarchar(1)    非主   身份证件类型代码表
+  SFZJLXM       身份证件类型码          nvarchar(1)    非主        身份证件类型代码表
   SFZJH         身份证件号              nvarchar(20)   非主
-  XBM           性别码                  nvarchar(1)    非主   人的性别代码
-  XXM           血型码                  nvarchar(1)    非主   血型代码表
+  XBM           性别码                  nvarchar(1)    非主        人的性别代码
+  XXM           血型码                  nvarchar(1)    非主        血型代码表
   CSRQ          出生日期                nvarchar(8)    非主
-  CSDM          出生地码                nvarchar(6)    非主   中华人民共和国行政区划代码
+  CSDM          出生地码                nvarchar(6)    非主        中华人民共和国行政区划代码
   JG            籍贯                    nvarchar(20)   非主
-  MZM           民族码                  nvarchar(2)    非主   中国各民族名称的罗马字母拼写法和代码
-  HYZKM         婚姻状况码              nvarchar(2)    非主   婚姻状况代码
-  XYZJM         信仰宗教码              nvarchar(2)    非主   宗教信仰代码
-  GATQWM        港澳台侨外码            nvarchar(2)    非主   港澳台侨外代码表
-  JKZKM         健康状况码              nvarchar(1)    非主   健康状况1位数字代码
-  ZZMMM         政治面貌码              nvarchar(2)    非主   政治面貌代码
-  HKSZDXZQHM    户口所在地行政区划码    nvarchar(6)    非主   中华人民共和国行政区划代码
-  HKLBM         户口类别码              nvarchar(1)    非主   户口类别代码
-  SFSLDRK       是否是流动人口          nvarchar(1)    非主   是否标志代码表
-  GJDQM         国籍/地区               nvarchar(3)    非主   世界各国和地区名称代码
+  MZM           民族码                  nvarchar(2)    非主        中国各民族名称的罗马字母拼写法和代码
+  HYZKM         婚姻状况码              nvarchar(2)    非主        婚姻状况代码
+  XYZJM         信仰宗教码              nvarchar(2)    非主        宗教信仰代码
+  GATQWM        港澳台侨外码            nvarchar(2)    非主        港澳台侨外代码表
+  JKZKM         健康状况码              nvarchar(1)    非主        健康状况1位数字代码
+  ZZMMM         政治面貌码              nvarchar(2)    非主        政治面貌代码
+  HKSZDXZQHM    户口所在地行政区划码    nvarchar(6)    非主        中华人民共和国行政区划代码
+  HKLBM         户口类别码              nvarchar(1)    非主        户口类别代码
+  SFSLDRK       是否是流动人口          nvarchar(1)    非主        是否标志代码表
+  GJDQM         国籍/地区               nvarchar(3)    非主        世界各国和地区名称代码
   TC            特长                    text           非主
   XSLXDH        学生联系电话            nvarchar(30)   非主
   WLDZ          网络地址                nvarchar(60)   非主
@@ -117,62 +117,62 @@ EDU_ZZXS_01_01_XSXX  学生信息数据表
   ZP            照片(路径)              nvarchar(100)  非主
 
 EDU_ZZXS_07_03_XSZCXX  学生注册信息数据子类表
-  XSXXID        学生ID                  int            主键   学生信息数据表
-  SCHOOLID      学校ID                  int            主键   学校配置表
-  XQID          学期ID                  int            主键   学期数据表
-  ZCZKM         注册状况码              nvarchar(1)    非主   注册状况代码表
+  XSXXID        学生ID                  int            主键        学生信息数据表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            主键        学期数据表
+  ZCZKM         注册状况码              nvarchar(1)    非主        注册状况代码表
   ZCRQ          注册日期                nvarchar(8)    非主
   BDRQ          报到日期                nvarchar(8)    非主
   WZCYY         未注册原因              nvarchar(100)  非主
   WZCWBDQX      未注册/未报到去向       nvarchar(40)   非主
-  SFQJ          是否请假                nvarchar(1)    非主   是否标志代码表
-  WASZCXQM      未按时注册学期码        nvarchar(1)    非主   学期代码表
+  SFQJ          是否请假                nvarchar(1)    非主        是否标志代码表
+  WASZCXQM      未按时注册学期码        nvarchar(1)    非主        学期代码表
 
 EDU_ZZXS_07_02_XJYD  学籍异动数据子类表
   ID            学籍异动表编号          int            主键
-  XSXXID        学生ID                  int            非主   学生信息数据表
-  SCHOOLID      学校ID                  int            主键   学校配置表
-  YDLBM         异动类别码              nvarchar(2)    非主   学籍异动类别代码表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  YDLBM         异动类别码              nvarchar(2)    非主        学籍异动类别代码表
   YDRQ          异动日期                nvarchar(8)    非主
-  YDYYM         异动原因码              nvarchar(2)    非主   学籍异动原因代码表
+  YDYYM         异动原因码              nvarchar(2)    非主        学籍异动原因代码表
   SPRQ          审批日期                nvarchar(8)    非主
   SPWH          审批文号                nvarchar(24)   非主
-  JBRID         经办人ID                int            非主   教职工基本数据子类表
+  JBRID         经办人ID                int            非主        教职工基本数据子类表
   JBRGH         经办人工号              nvarchar(20)   非主
   YDLYXXM       异动来源学校码          nvarchar(10)   非主
   YDQXXXM       异动去向学校码          nvarchar(10)   非主
   YDSM          异动说明                text           非主
   YZYM          原专业码                nvarchar(6)    非主
-  YZYID         原专业ID                int            非主   专业基本信息数据表
-  YBH           原班号                  nvarchar(10)   非主   学校班级数据表
-  YNJ           原年级                  nvarchar(4)    非主   学校年级数据表
+  YZYID         原专业ID                int            非主        专业基本信息数据表
+  YBH           原班号                  nvarchar(10)   非主        学校班级数据表
+  YNJ           原年级                  nvarchar(4)    非主        学校年级数据表
   XZYM          现专业码                nvarchar(6)    非主
-  XZYID         现专业ID                int            非主   专业基本信息数据表
-  XBH           现班号                  nvarchar(10)   非主   学校班级数据表
-  XNJ           现年级                  nvarchar(4)    非主   学校年级数据表
+  XZYID         现专业ID                int            非主        专业基本信息数据表
+  XBH           现班号                  nvarchar(10)   非主        学校班级数据表
+  XNJ           现年级                  nvarchar(4)    非主        学校年级数据表
 
 EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
-  XSXXID        学生ID                  int            主键   学生信息数据表
-  SCHOOLID      学校ID                  int            主键   学校配置表
-  KCH           课程号                  nvarchar(6)    主键   课程数据子类表
-  XQID          学期ID                  int            主键   学期数据表
+  XSXXID        学生ID                  int            主键        学生信息数据表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  KCH           课程号                  nvarchar(6)    主键        课程数据子类表
+  XQID          学期ID                  int            主键        学期数据表
   KCMC          课程名称                nvarchar(100)  非主
   XF            学分                    decimal(2, 1)  非主
   XQMC          学期名称                nvarchar(10)   非主
   PSCJ          平时成绩                decimal(5, 1)  非主
   CJ            成绩                    decimal(5, 1)  非主
-  KSXZ          考试性质                nvarchar(2)    非主   考试性质代码表
-  RKJGID        任课教工ID              int            非主   教职工基本数据子类表
+  KSXZ          考试性质                nvarchar(2)    非主        考试性质代码表
+  RKJGID        任课教工ID              int            非主        教职工基本数据子类表
   RKJGH         任课教工号              nvarchar(20)   非主
-  CJLRJGID      成绩录入教工ID          int            非主   教职工基本数据子类表
+  CJLRJGID      成绩录入教工ID          int            非主        教职工基本数据子类表
   CJLRJGH       成绩录入教工号          nvarchar(20)   非主
   CJLRRQ        成绩录入日期            nvarchar(8)    非主
   QZCJ          期中成绩                decimal(5, 1)  非主
   QMCJ          期末成绩                decimal(5, 1)  非主
 
 EDU_ZZXS_13_A01_XSJL  学生简历表
-  SCHOOLID      学校ID                  int            主键   学校配置表
-  XSXXID        学生信息ID              int            主键   学生信息数据表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XSXXID        学生信息ID              int            主键        学生信息数据表
   YYNL          英语能力                nvarchar(50)   非主
   GZNX          工作年限                int            非主
   ZWPJ          自我评价                nvarchar(300)  非主
