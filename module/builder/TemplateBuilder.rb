@@ -81,16 +81,16 @@ class TemplateBuilder
     str << "{\n#{@tab.l}//设置默认值\n"
     table.each_field do |field|
       if field.split_type[0] == "String"
-        str << "#{@tab.t}if (string.IsNullOrEmpty(#{table.lname_dc}.#{field.name})) #{table.lname_dc}.#{field.name} = \"\";//#{field.explanation}#{out_relation(field)}\n"
+        str << "#{@tab.t}if (string.IsNullOrEmpty(#{table.lname_dc}.#{field.name})) #{table.lname_dc}.#{field.name} = \"\";//#{field.explanation}#{get_relation(field)}\n"
       else
-        str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{out_relation(field)}\n"
+        str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{get_relation(field)}\n"
       end
     end
     str << "#{@tab.t}#{table.name} #{table.lname_dc}_model = db_#{table.library_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
     str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n\n#{@tab.t}if (#{table.lname_dc}_model != null)\n#{@tab.t}"
     str << "{\n#{@tab.long}"
     table.each_field do |field|
-      str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{out_relation(field)}\n"
+      str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{get_relation(field)}\n"
     end
     str << "#{@tab.t}db_#{table.library_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
@@ -211,25 +211,25 @@ class TemplateBuilder
     index_str << "@Html.Partial(\"~/views/shared/indexToolBarPage.cshtml\", this.ViewData)\n"
   end
   def make_table_info(table,title)
-    create_atr = ""
-    create_atr << "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
-    create_atr << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"#{title}\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
-    create_atr << "        <center>  <h1 ><span style=\"font-size:smaller;\">#{title}</span></h1></center>\n\n"
-    create_atr << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
+    info_atr = ""
+    info_atr << "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
+    info_atr << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"#{title}\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
+    info_atr << "        <center>  <h1 ><span style=\"font-size:smaller;\">#{title}</span></h1></center>\n\n"
+    info_atr << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
     table.each_field do |field|
-      create_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
+      info_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
       if field.relation
-        create_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
+        info_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
-        create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
+        info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       #elsif field.type == 'text'
-      #  create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
+      #  info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       else
-        create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+        info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
       end
-      create_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
+      info_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
-    create_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
+    info_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
   end
   #获得一个字段的值列表
   def get_selLst(field)
@@ -246,7 +246,7 @@ class TemplateBuilder
       ""
     end
   end
-  def out_relation(field)
-    field.relation ? "   " << field.relation.table.explanation : ""
+  def get_relation(field)
+    field.relation ? '   ' << field.relation.table.explanation : ''
   end
 end
