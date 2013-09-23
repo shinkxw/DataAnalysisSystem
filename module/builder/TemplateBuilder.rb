@@ -14,7 +14,7 @@ class TemplateBuilder
     @builder_version = "0.1"
     @tab = Indent.new(tab)
     @app_name = "JWXT"
-    @directory_name = "xtgl"
+    @directory_name = "jpxt"
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
     @controller_preset_text = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
     @controller_preset_text << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
@@ -37,8 +37,8 @@ class TemplateBuilder
       @tab.to_0
       @file_hash["Controllers/#{table.library_name.upcase}/#{table.lname}Controller.cs"] = make_controller(table)
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
-      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_create(table)
-      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_edit(table)
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'添加')
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'编辑')
     end
   end
   def make_controller(table)
@@ -198,7 +198,6 @@ class TemplateBuilder
       index_str << 'formatter="formatDatebox" ' if field.type == 'datetime'
       index_str << "sortable=\"true\">@Html.LabelFor(m => m.#{field.name})"
       index_str << "</th><!--#{field.explanation}-->\n"
-      
     end
     index_str << "        </tr>\n    </thead>\n</table>\n"
     index_str << "@{\n    ViewData[\"index_create\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/create\");\n"
@@ -211,42 +210,26 @@ class TemplateBuilder
     index_str << "    //ViewData[\"index_indata\"] = Url.Content(\"~/zsgl/xsdj/ImportData\");\n}\n"
     index_str << "@Html.Partial(\"~/views/shared/indexToolBarPage.cshtml\", this.ViewData)\n"
   end
-  def make_create(table)
+  def make_table_info(table,title)
     create_atr = ""
     create_atr << "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
-    create_atr << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"添加\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
-    create_atr << "        <center>  <h1 ><span style=\"font-size:smaller;\">添加</span></h1></center>\n\n"
+    create_atr << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"#{title}\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
+    create_atr << "        <center>  <h1 ><span style=\"font-size:smaller;\">#{title}</span></h1></center>\n\n"
     create_atr << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
     table.each_field do |field|
       create_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
       if field.relation
         create_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
+      #elsif field.type == 'datetime'
+      #  create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
+      #elsif field.type == 'text'
+      #  create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       else
         create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
-        
-        ### easyui-datetimebox
-        
       end
       create_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
     create_atr << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
-  end
-  def make_edit(table)
-    edit_str = ""
-    edit_str << "@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial(\"SingleZTree\")\n"
-    edit_str << "    <div id=\"dlg\" class=\"easyui-panel\" title=\"编辑\" style=\"width: 900px; height: 500px; padding: 10px 20px\">\n"
-    edit_str << "        <center>  <h1 ><span style=\"font-size:smaller;\">编辑</span></h1></center>\n\n"
-    edit_str << "        <table class=\"admintable\">\n            <tr>\n                <td width=\"50%\"></td>\n                <td width=\"50%\"></td>\n            </tr>\n\n"
-    table.each_field do |field|
-      edit_str << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
-      if field.relation
-        edit_str << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
-      else
-        edit_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
-      end
-      edit_str << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
-    end
-    edit_str << "        </table>\n        <br />\n        @{ ViewData[\"ce_cancel\"] = Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index\");}\n        @Html.Partial(\"~/views/shared/CreateEditToolBarPage.cshtml\", this.ViewData)\n    </div>\n}\n"
   end
   #获得一个字段的值列表
   def get_selLst(field)
