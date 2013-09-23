@@ -220,8 +220,8 @@ class TemplateBuilder
       create_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
       if field.relation
         create_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
-      #elsif field.type == 'datetime'
-      #  create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
+      elsif field.type == 'datetime'
+        create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       #elsif field.type == 'text'
       #  create_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       else

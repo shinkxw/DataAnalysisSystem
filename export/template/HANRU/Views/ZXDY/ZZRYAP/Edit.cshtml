@@ -46,7 +46,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.KSRQ) </td> <!--开始日期-->
                 <td>
-                    @Html.TextBoxFor(m => m.KSRQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextBoxFor(m => m.KSRQ, new { @class = "easyui-datetimebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.KSRQ)
                 </td>
             </tr>
@@ -54,7 +54,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.JSRQ) </td> <!--结束日期-->
                 <td>
-                    @Html.TextBoxFor(m => m.JSRQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextBoxFor(m => m.JSRQ, new { @class = "easyui-datetimebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.JSRQ)
                 </td>
             </tr>

@@ -54,7 +54,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.ACCESSTIME) </td> <!--·ÃÎÊÊ±¼ä-->
                 <td>
-                    @Html.TextBoxFor(m => m.ACCESSTIME, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextBoxFor(m => m.ACCESSTIME, new { @class = "easyui-datetimebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.ACCESSTIME)
                 </td>
             </tr>

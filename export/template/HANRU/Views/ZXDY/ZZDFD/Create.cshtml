@@ -86,7 +86,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.FSSJ) </td> <!--发生时间-->
                 <td>
-                    @Html.TextBoxFor(m => m.FSSJ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextBoxFor(m => m.FSSJ, new { @class = "easyui-datetimebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.FSSJ)
                 </td>
             </tr>
@@ -94,7 +94,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.DFSJ) </td> <!--打分时间-->
                 <td>
-                    @Html.TextBoxFor(m => m.DFSJ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextBoxFor(m => m.DFSJ, new { @class = "easyui-datetimebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.DFSJ)
                 </td>
             </tr>
