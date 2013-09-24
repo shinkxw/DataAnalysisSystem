@@ -159,20 +159,13 @@
             <name="BYSJ" explanation="毕业时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_JPXT_03_02_XYKSQK" explanation="学员考试情况表">
+    <table name="EDU_JPXT_03_02_XYKSJG" explanation="学员考试结果表">
         <field_area>
             <name="XYID" explanation="学员ID" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="KMYIKSSJ" explanation="科目一考试时间" type="datetime" null="F" p="F" />
-            <name="KMYIKSJG" explanation="科目一考试结果" type="int" null="F" p="F" />
-            <name="KMERKSSJ" explanation="科目二考试时间" type="datetime" null="F" p="F" />
-            <name="KMERYKSJG" explanation="科目二考试结果" type="int" null="F" p="F" />
-            <name="KMSANKSSJ" explanation="科目三考试时间" type="datetime" null="F" p="F" />
-            <name="KMSANKSJG" explanation="科目三考试结果" type="int" null="F" p="F" />
-            <name="KMSIKSSJ" explanation="科目四考试时间" type="datetime" null="F" p="F" />
-            <name="KMSIKSJG" explanation="科目四考试结果" type="int" null="F" p="F" />
-            <name="KMWUKSSJ" explanation="科目五考试时间" type="datetime" null="F" p="F" />
-            <name="KMWUKSJG" explanation="科目五考试结果" type="int" null="F" p="F" />
+            <name="KMKSID" explanation="科目考试ID" type="int" null="F" p="F" />
+            <name="KSKMID" explanation="考试科目ID" type="int" null="F" p="F" />
+            <name="KSJG" explanation="考试结果" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_JPXT_03_03_XYHFXX" explanation="学员回访信息表">
@@ -182,6 +175,25 @@
             <name="XYID" explanation="学员ID" type="int" null="F" p="F" />
             <name="HFSJ" explanation="回访时间" type="datetime" null="F" p="F" />
             <name="HFJG" explanation="回访结果" type="text" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_JPXT_04_01_KMKS" explanation="科目考试表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
+            <name="JLYOLID" explanation="教练员ID" type="int" null="F" p="F" />
+            <name="KMID" explanation="科目ID" type="int" null="F" p="F" />
+            <name="KSSJ" explanation="考试时间" type="datetime" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_JPXT_04_02_JKKM" explanation="驾考科目表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
+            <name="CLXHMC" explanation="科目名称" type="nvarchar(30)" null="F" p="F" />
+            <name="CLXHID" explanation="车辆型号ID" type="int" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>
     </table>

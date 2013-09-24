@@ -36,6 +36,8 @@ class DBEntity
   def get_db_name;query(Sql.get_db_name)['name'] end
   #查询当前数据库所有表的名字
   def get_table_name_arr;query(Sql.get_all_tname)['name'] ||= [] end
+  #查询当前数据库所有视图的名字
+  def get_view_name_arr;query(Sql.get_all_vname)['name'] ||= [] end
   #获得指定表的字段名数组
   def get_table_fname(tn);query(Sql.get_tf_info(tn))['COLUMN_NAME'] end
   #获得指定表的字段信息
@@ -71,9 +73,7 @@ class DBEntity
   def get_table_data(table_name);query(Sql.get_tdata(table_name)) end
   #删除所有视图
   def delete_all_view
-    #取得所有视图名
-    #一一获得删除语句并执行
-    #Sql.delete_view(view_name)
+    get_view_name_arr.each{|view_name| Sql.delete_view(view_name)}
   end
   #根据元数据建表
   def create_table(table);execute(Sql.create_table(table)) end

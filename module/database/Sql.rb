@@ -4,9 +4,13 @@
 class Sql
   #查询数据源中的数据库名
   def self.get_db_name;'select name from sys.databases' end
-  #查询当前数据库所有表
+  #查询当前数据库所有表名
   def self.get_all_tname
     "select name from sysobjects where xtype='U' and category=0"
+  end
+  #查询当前数据库所有视图名
+  def self.get_all_vname
+    "select name from sysobjects where xtype='V' and category=0"
   end
   #查询指定表的字段信息
   def self.get_tf_info(table_name)

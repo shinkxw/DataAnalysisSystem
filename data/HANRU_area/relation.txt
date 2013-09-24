@@ -68,7 +68,7 @@
   SXCXID         EDU_JPXT_05_01_CLXH                ID
   SZJLCID        EDU_JPXT_02_01_JLYSJ               ID
   YJJLYID        EDU_JPXT_02_01_JLYSJ               ID
-<EDU_JPXT_03_02_XYKSQK
+<EDU_JPXT_03_02_XYKSJG
   XYID           EDU_JPXT_03_01_XYSJ                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_JPXT_03_03_XYHFXX

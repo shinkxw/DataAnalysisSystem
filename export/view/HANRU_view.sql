@@ -75,9 +75,9 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_01_
             and   type = 'V')
    drop view VIEW_EDU_JPXT_03_01_XYSJ_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_02_XYKSQK_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_02_XYKSJG_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_JPXT_03_02_XYKSQK_DISP
+   drop view VIEW_EDU_JPXT_03_02_XYKSJG_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_03_XYHFXX_DISP')
             and   type = 'V')
@@ -1375,21 +1375,14 @@ FROM dbo.EDU_JPXT_03_01_XYSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/
 GO
 
---学员考试情况表
-CREATE VIEW [dbo].[VIEW_EDU_JPXT_03_02_XYKSQK_DISP]
+--学员考试结果表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_03_02_XYKSJG_DISP]
 AS
 SELECT a.[XYID]--学员ID
       ,a.[SCHOOLID]--学校ID
-      ,a.[KMYIKSSJ]--科目一考试时间
-      ,a.[KMYIKSJG]--科目一考试结果
-      ,a.[KMERKSSJ]--科目二考试时间
-      ,a.[KMERYKSJG]--科目二考试结果
-      ,a.[KMSANKSSJ]--科目三考试时间
-      ,a.[KMSANKSJG]--科目三考试结果
-      ,a.[KMSIKSSJ]--科目四考试时间
-      ,a.[KMSIKSJG]--科目四考试结果
-      ,a.[KMWUKSSJ]--科目五考试时间
-      ,a.[KMWUKSJG]--科目五考试结果
+      ,a.[KMKSID]--科目考试ID
+      ,a.[KSKMID]--考试科目ID
+      ,a.[KSJG]--考试结果
       ,b.SCHOOLID as b_XYSJ_SCHOOLID--学员数据表 学校ID
       ,b.XM as b_XYSJ_XM--学员数据表 姓名
       ,b.SFZH as b_XYSJ_SFZH--学员数据表 身份证号
@@ -1406,7 +1399,7 @@ SELECT a.[XYID]--学员ID
       ,b.DQZT as b_XYSJ_DQZT--学员数据表 当前状态
       ,b.BYSJ as b_XYSJ_BYSJ--学员数据表 毕业时间
 
-FROM dbo.EDU_JPXT_03_02_XYKSQK AS a LEFT OUTER JOIN
+FROM dbo.EDU_JPXT_03_02_XYKSJG AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_03_01_XYSJ AS b ON a.XYID = b.ID /*学员ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/
 GO
