@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZYZX_TPXT_TPJL()
         {
             TPIP = "";
+            TPTIME = new DateTime(1900, 1, 1);
         }
         public class EDU_ZYZX_TPXT_TPJL_metadata
         {

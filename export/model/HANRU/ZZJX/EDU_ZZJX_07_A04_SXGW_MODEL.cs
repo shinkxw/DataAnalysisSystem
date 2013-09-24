@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_07_A04_SXGW()
         {
             GWMC = "";
+            ZPKSSJ = new DateTime(1900, 1, 1);
+            ZPJSSJ = new DateTime(1900, 1, 1);
             XBYQ = "";
             GWXC = "";
             WYYQ = "";

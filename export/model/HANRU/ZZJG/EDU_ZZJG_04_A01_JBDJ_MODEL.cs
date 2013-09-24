@@ -9,6 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_04_A01_JBDJ()
         {
+            KSSJ = new DateTime(1900, 1, 1);
+            JSSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZJG_04_A01_JBDJ_metadata
         {

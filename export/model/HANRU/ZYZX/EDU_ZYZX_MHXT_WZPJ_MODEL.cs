@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             PJR = "";
             YJDZ = "";
+            PJSJ = new DateTime(1900, 1, 1);
             PJNR = "";
             HF = "";
         }

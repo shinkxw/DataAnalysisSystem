@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_07_A08_SXTS()
         {
+            TSSJ = new DateTime(1900, 1, 1);
             TSYY = "";
             TSJG = "";
             QYJY = "";

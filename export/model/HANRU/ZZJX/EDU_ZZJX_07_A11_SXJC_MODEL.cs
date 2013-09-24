@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_07_A11_SXJC()
         {
+            JCRQ = new DateTime(1900, 1, 1);
             CLJG = "";
             BZ = "";
         }

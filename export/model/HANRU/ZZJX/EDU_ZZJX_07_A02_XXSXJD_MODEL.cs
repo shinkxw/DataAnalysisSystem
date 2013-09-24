@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_07_A02_XXSXJD()
         {
             JDM = "";
+            JDKSSJ = new DateTime(1900, 1, 1);
+            JDJSSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZJX_07_A02_XXSXJD_metadata
         {

@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_01_06_JLCCLXH()
         {
+            LRSJ = new DateTime(1900, 1, 1);
             BZ = "";
         }
         public class EDU_JPXT_01_06_JLCCLXH_metadata

@@ -14,6 +14,7 @@ namespace HanRuEdu.LDAL
             GLJY = "";
             QTJY = "";
             FKNR = "";
+            FKSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZJX_07_A06_XQHD_metadata
         {

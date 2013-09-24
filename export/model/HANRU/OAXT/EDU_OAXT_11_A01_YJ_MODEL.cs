@@ -19,6 +19,7 @@ namespace HanRuEdu.LDAL
             BT = "";
             NR = "";
             FJ = "";
+            FSSJ = new DateTime(1900, 1, 1);
             SFYD = "";
         }
         public class EDU_OAXT_11_A01_YJ_metadata

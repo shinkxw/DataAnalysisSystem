@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             JSLX = "";
             JSID = "";
+            YXRQ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZXDY_04_A05_TBZZJS_metadata
         {

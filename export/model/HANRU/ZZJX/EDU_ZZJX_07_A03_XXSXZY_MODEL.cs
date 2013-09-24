@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_07_A03_XXSXZY()
         {
             MC = "";
+            KSSJ = new DateTime(1900, 1, 1);
+            JSSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZJX_07_A03_XXSXZY_metadata
         {

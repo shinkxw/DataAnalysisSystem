@@ -9,6 +9,11 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_03_02_XYKSQK()
         {
+            KMYIKSSJ = new DateTime(1900, 1, 1);
+            KMERKSSJ = new DateTime(1900, 1, 1);
+            KMSANKSSJ = new DateTime(1900, 1, 1);
+            KMSIKSSJ = new DateTime(1900, 1, 1);
+            KMWUKSSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_JPXT_03_02_XYKSQK_metadata
         {

@@ -14,8 +14,10 @@ namespace HanRuEdu.LDAL
             XBM = "";
             LXDH = "";
             ZZ = "";
+            BMSJ = new DateTime(1900, 1, 1);
             SFQK = "";
             ZJQK = "";
+            BYSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_JPXT_03_01_XYSJ_metadata
         {

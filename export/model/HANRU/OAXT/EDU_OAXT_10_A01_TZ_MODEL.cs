@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             FSRID = "";
             BT = "";
             NR = "";
+            TJRQ = new DateTime(1900, 1, 1);
             JSRIDLB = "";
             JSRMZLB = "";
             YYDRMZLB = "";

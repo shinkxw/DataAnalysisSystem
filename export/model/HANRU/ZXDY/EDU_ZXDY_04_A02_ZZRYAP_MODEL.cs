@@ -9,6 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXDY_04_A02_ZZRYAP()
         {
+            KSRQ = new DateTime(1900, 1, 1);
+            JSRQ = new DateTime(1900, 1, 1);
             ZZBJ = "";
             ZZID = "";
             ZYIDLB = "";

@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ELE_05_XL()
         {
             NAME = "";
+            STARTDAY = new DateTime(1900, 1, 1);
+            ENDDAY = new DateTime(1900, 1, 1);
         }
         public class EDU_ELE_05_XL_metadata
         {

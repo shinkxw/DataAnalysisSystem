@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_JPXT_01_04_JLCJYQK()
         {
             JYNR = "";
+            JYSJ = new DateTime(1900, 1, 1);
+            WCSJ = new DateTime(1900, 1, 1);
             JYJG = "";
             BZ = "";
         }

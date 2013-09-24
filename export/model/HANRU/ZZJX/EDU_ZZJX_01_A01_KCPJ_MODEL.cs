@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_01_A01_KCPJ()
         {
             PJR = "";
+            PJSJ = new DateTime(1900, 1, 1);
             PJNR = "";
             HF = "";
         }
