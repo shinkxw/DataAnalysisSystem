@@ -58,6 +58,11 @@ namespace HanRuEdu.LDAL
             public String Link { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "")]
+            public Int32 OrderIndex { get; set; }
+
+
         }
     }
 }

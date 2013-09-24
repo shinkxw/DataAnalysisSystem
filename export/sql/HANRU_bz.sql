@@ -26460,6 +26460,7 @@ CREATE TABLE [dbo].[EDU_SYS_01_MODULE](
 	[MenuDisp]  int  NOT NULL,--
 	[MenuUserType]  int  NOT NULL,--
 	[Link]  nvarchar(100)  NOT NULL,--
+	[OrderIndex]  int  NOT NULL,--
 CONSTRAINT [PK_EDU_SYS_01_MODULE] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC

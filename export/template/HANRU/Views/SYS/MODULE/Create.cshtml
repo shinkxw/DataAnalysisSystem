@@ -75,6 +75,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td> @Html.LabelFor(m => m.OrderIndex) </td> <!---->
+                <td>
+                    @Html.TextBoxFor(m => m.OrderIndex, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.OrderIndex)
+                </td>
+            </tr>
+
         </table>
         <br />
         @{ ViewData["ce_cancel"] = Url.Content("~/jpxt/module/index");}

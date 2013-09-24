@@ -54,6 +54,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (module.MenuDisp == 0) module.MenuDisp = 0;//
             if (module.MenuUserType == 0) module.MenuUserType = 0;//
             if (string.IsNullOrEmpty(module.Link)) module.Link = "";//
+            if (module.OrderIndex == 0) module.OrderIndex = 0;//
             EDU_SYS_01_MODULE module_model = db_sys.EDU_SYS_01_MODULE.FirstOrDefault(e => e.ID == module.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 
@@ -67,6 +68,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                 module_model.MenuDisp = module.MenuDisp;//
                 module_model.MenuUserType = module.MenuUserType;//
                 module_model.Link = module.Link;//
+                module_model.OrderIndex = module.OrderIndex;//
                 db_sys.Entry(module_model).State = EntityState.Modified;
             }
             else

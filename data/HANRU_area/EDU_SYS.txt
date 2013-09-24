@@ -33,6 +33,7 @@
             <name="MenuDisp" explanation="" type="int" null="F" p="F" />
             <name="MenuUserType" explanation="" type="int" null="F" p="F" />
             <name="Link" explanation="" type="nvarchar(100)" null="F" p="F" />
+            <name="OrderIndex" explanation="" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

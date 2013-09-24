@@ -16,4 +16,5 @@ EDU_SYS_01_MODULE
   MenuDisp                              int            非主
   MenuUserType                          int            非主
   Link                                  nvarchar(100)  非主
+  OrderIndex                            int            非主
 
