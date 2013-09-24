@@ -54,7 +54,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.ZTC) </td> <!--主题词-->
                 <td>
-                    @Html.TextBoxFor(m => m.ZTC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.ZTC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.ZTC)
                 </td>
             </tr>
@@ -94,7 +95,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.ZW) </td> <!--正文-->
                 <td>
-                    @Html.TextBoxFor(m => m.ZW, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.ZW, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.ZW)
                 </td>
             </tr>
@@ -102,7 +104,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.FJ) </td> <!--附件-->
                 <td>
-                    @Html.TextBoxFor(m => m.FJ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.FJ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.FJ)
                 </td>
             </tr>
@@ -118,7 +121,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.CSDW) </td> <!--抄送单位-->
                 <td>
-                    @Html.TextBoxFor(m => m.CSDW, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.CSDW, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.CSDW)
                 </td>
             </tr>

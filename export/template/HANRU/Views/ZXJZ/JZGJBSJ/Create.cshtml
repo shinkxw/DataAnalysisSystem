@@ -286,7 +286,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.DAWB) </td> <!--档案文本-->
                 <td>
-                    @Html.TextBoxFor(m => m.DAWB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.DAWB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.DAWB)
                 </td>
             </tr>
@@ -334,7 +335,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TC) </td> <!--特长-->
                 <td>
-                    @Html.TextBoxFor(m => m.TC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.TC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.TC)
                 </td>
             </tr>

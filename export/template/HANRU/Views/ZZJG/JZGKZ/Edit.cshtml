@@ -46,7 +46,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.GZJY) </td> <!--工作经验-->
                 <td>
-                    @Html.TextBoxFor(m => m.GZJY, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.GZJY, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.GZJY)
                 </td>
             </tr>
@@ -54,7 +55,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.LDJN) </td> <!--劳动技能-->
                 <td>
-                    @Html.TextBoxFor(m => m.LDJN, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.LDJN, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.LDJN)
                 </td>
             </tr>
@@ -62,7 +64,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.XXJL) </td> <!--学习经历-->
                 <td>
-                    @Html.TextBoxFor(m => m.XXJL, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.XXJL, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.XXJL)
                 </td>
             </tr>

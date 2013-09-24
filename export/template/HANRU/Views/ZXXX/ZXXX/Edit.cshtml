@@ -182,7 +182,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.LSYG) </td> <!--ÀúÊ·ÑØ¸ï-->
                 <td>
-                    @Html.TextBoxFor(m => m.LSYG, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.LSYG, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.LSYG)
                 </td>
             </tr>

@@ -54,7 +54,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.ModIDLst) </td> <!--角色能访问的模块列表-->
                 <td>
-                    @Html.TextBoxFor(m => m.ModIDLst, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.ModIDLst, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.ModIDLst)
                 </td>
             </tr>

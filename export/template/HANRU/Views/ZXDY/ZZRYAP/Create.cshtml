@@ -78,7 +78,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.ZYIDLB) </td> <!--组员ID列表-->
                 <td>
-                    @Html.TextBoxFor(m => m.ZYIDLB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.ZYIDLB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.ZYIDLB)
                 </td>
             </tr>
@@ -86,7 +87,8 @@
             <tr>
                 <td> @Html.LabelFor(m => m.ZYMCLB) </td> <!--组员名称列表-->
                 <td>
-                    @Html.TextBoxFor(m => m.ZYMCLB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.TextAreaFor(m => m.ZYMCLB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
                     @Html.ValidationMessageFor(m => m.ZYMCLB)
                 </td>
             </tr>
