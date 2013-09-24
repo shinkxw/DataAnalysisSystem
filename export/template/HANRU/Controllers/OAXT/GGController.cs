@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class GGController : JWXTController
+    public class GGController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,7 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (gg.SCHOOLID == 0) gg.SCHOOLID = 0;//学校ID   学校配置表
             if (string.IsNullOrEmpty(gg.FBRID)) gg.FBRID = "";//发布人ID   应用系统用户表
             if (string.IsNullOrEmpty(gg.FBBM)) gg.FBBM = "";//发布部门
-            if (gg.FBSJ == 0) gg.FBSJ = 0;//发布时间
             if (string.IsNullOrEmpty(gg.BT)) gg.BT = "";//公告标题
             if (string.IsNullOrEmpty(gg.NR)) gg.NR = "";//公告内容
             if (gg.ZT == 0) gg.ZT = 0;//公告状态

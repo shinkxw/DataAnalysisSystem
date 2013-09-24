@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JLYJCQKController : JWXTController
+    public class JLYJCQKController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -49,7 +49,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (jlyjcqk.ID == 0) jlyjcqk.ID = 0;//编号
             if (jlyjcqk.SCHOOLID == 0) jlyjcqk.SCHOOLID = 0;//学校ID   学校配置表
             if (jlyjcqk.JLYID == 0) jlyjcqk.JLYID = 0;//教练员ID   教练员数据表
-            if (jlyjcqk.LRSJ == 0) jlyjcqk.LRSJ = 0;//录入时间
             if (string.IsNullOrEmpty(jlyjcqk.JCQK)) jlyjcqk.JCQK = "";//奖惩情况
             if (string.IsNullOrEmpty(jlyjcqk.BZ)) jlyjcqk.BZ = "";//备注
             EDU_JPXT_02_04_JLYJCQK jlyjcqk_model = db_jpxt.EDU_JPXT_02_04_JLYJCQK.FirstOrDefault(e => e.ID == jlyjcqk.ID

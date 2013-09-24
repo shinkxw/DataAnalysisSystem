@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class XQHDController : JWXTController
+    public class XQHDController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -54,7 +54,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(xqhd.GLJY)) xqhd.GLJY = "";//实习生管理工作的建议
             if (string.IsNullOrEmpty(xqhd.QTJY)) xqhd.QTJY = "";//其他建议
             if (string.IsNullOrEmpty(xqhd.FKNR)) xqhd.FKNR = "";//反馈内容
-            if (xqhd.FKSJ == 0) xqhd.FKSJ = 0;//反馈时间
             EDU_ZZJX_07_A06_XQHD xqhd_model = db_zzjx.EDU_ZZJX_07_A06_XQHD.FirstOrDefault(e => e.ID == xqhd.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 

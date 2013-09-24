@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class KCPJController : JWXTController
+    public class KCPJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,7 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (kcpj.PJID == 0) kcpj.PJID = 0;//评价ID
             if (kcpj.KXH == 0) kcpj.KXH = 0;//课序号   教师任课表
             if (string.IsNullOrEmpty(kcpj.PJR)) kcpj.PJR = "";//评价人   应用系统用户表
-            if (kcpj.PJSJ == 0) kcpj.PJSJ = 0;//评价时间
             if (string.IsNullOrEmpty(kcpj.PJNR)) kcpj.PJNR = "";//评价内容
             if (string.IsNullOrEmpty(kcpj.HF)) kcpj.HF = "";//回复
             EDU_ZZJX_01_A01_KCPJ kcpj_model = db_zzjx.EDU_ZZJX_01_A01_KCPJ.FirstOrDefault(e => e.SCHOOLID == kcpj.SCHOOLID

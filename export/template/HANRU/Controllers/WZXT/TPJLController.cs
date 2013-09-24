@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class TPJLController : JWXTController
+    public class TPJLController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -51,7 +51,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (tpjl.WEBID == 0) tpjl.WEBID = 0;//网站ID   网站配置
             if (tpjl.TPID == 0) tpjl.TPID = 0;//投票   投票设置
             if (string.IsNullOrEmpty(tpjl.TPIP)) tpjl.TPIP = "";//投票人
-            if (tpjl.TPTIME == 0) tpjl.TPTIME = 0;//投票时间
             EDU_WZXT_TPXT_TPJL tpjl_model = db_wzxt.EDU_WZXT_TPXT_TPJL.FirstOrDefault(e => e.ID == tpjl.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 

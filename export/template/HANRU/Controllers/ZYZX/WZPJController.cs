@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class WZPJController : JWXTController
+    public class WZPJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -52,7 +52,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (wzpj.WZID == 0) wzpj.WZID = 0;//网站文章ID   网站文章
             if (string.IsNullOrEmpty(wzpj.PJR)) wzpj.PJR = "";//评价人
             if (string.IsNullOrEmpty(wzpj.YJDZ)) wzpj.YJDZ = "";//邮件地址
-            if (wzpj.PJSJ == 0) wzpj.PJSJ = 0;//评价时间
             if (string.IsNullOrEmpty(wzpj.PJNR)) wzpj.PJNR = "";//评价内容
             if (wzpj.PJZT == 0) wzpj.PJZT = 0;//评价状态
             if (string.IsNullOrEmpty(wzpj.SHR)) wzpj.SHR = "";//审核人

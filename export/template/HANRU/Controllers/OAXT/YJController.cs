@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class YJController : JWXTController
+    public class YJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -58,7 +58,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(yj.BT)) yj.BT = "";//标题
             if (string.IsNullOrEmpty(yj.NR)) yj.NR = "";//内容
             if (string.IsNullOrEmpty(yj.FJ)) yj.FJ = "";//附件
-            if (yj.FSSJ == 0) yj.FSSJ = 0;//发送时间
             if (string.IsNullOrEmpty(yj.SFYD)) yj.SFYD = "";//是否已阅读   是否标志代码表
             if (yj.YJLX == 0) yj.YJLX = 0;//邮件类型
             EDU_OAXT_11_A01_YJ yj_model = db_oaxt.EDU_OAXT_11_A01_YJ.FirstOrDefault(e => e.ID == yj.ID

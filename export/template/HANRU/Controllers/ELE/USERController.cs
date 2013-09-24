@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class USERController : JWXTController
+    public class USERController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -59,9 +59,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(user.QQ)) user.QQ = "";//QQ
             if (string.IsNullOrEmpty(user.DZYJ)) user.DZYJ = "";//电子邮件
             if (string.IsNullOrEmpty(user.LXDH)) user.LXDH = "";//联系电话
-            if (user.ZJDLSJ == 0) user.ZJDLSJ = 0;//最近一次登录时间
             if (user.DLCGCS == 0) user.DLCGCS = 0;//登录成功次数
-            if (user.YHCJSJ == 0) user.YHCJSJ = 0;//用户创建时间
             EDU_ELE_01_USER user_model = db_ele.EDU_ELE_01_USER.FirstOrDefault(e => e.LOGINNAME == user.LOGINNAME
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 

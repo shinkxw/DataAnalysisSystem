@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class ZZZCController : JWXTController
+    public class ZZZCController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,8 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (zzzc.SCHOOLID == 0) zzzc.SCHOOLID = 0;//学校ID   学校配置表
             if (zzzc.XQID == 0) zzzc.XQID = 0;//学期ID   学期数据表
             if (string.IsNullOrEmpty(zzzc.ZCM)) zzzc.ZCM = "";//周次名
-            if (zzzc.XQKSRQ == 0) zzzc.XQKSRQ = 0;//开始日期
-            if (zzzc.XQJSRQ == 0) zzzc.XQJSRQ = 0;//结束日期
             EDU_ZXDY_04_A06_ZZZC zzzc_model = db_zxdy.EDU_ZXDY_04_A06_ZZZC.FirstOrDefault(e => e.ID == zzzc.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 

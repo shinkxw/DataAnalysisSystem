@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class FWLLController : JWXTController
+    public class FWLLController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -51,7 +51,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (fwll.WEBID == 0) fwll.WEBID = 0;//ÍøÕ¾ID   ÍøÕ¾ÅäÖÃ
             if (string.IsNullOrEmpty(fwll.ACCESSIP)) fwll.ACCESSIP = "";//·ÃÎÊIP
             if (string.IsNullOrEmpty(fwll.ACCESSURL)) fwll.ACCESSURL = "";//·ÃÎÊÁ´½Ó
-            if (fwll.ACCESSTIME == 0) fwll.ACCESSTIME = 0;//·ÃÎÊÊ±¼ä
             EDU_ZYZX_MHXT_FWLL fwll_model = db_zyzx.EDU_ZYZX_MHXT_FWLL.FirstOrDefault(e => e.ID == fwll.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 

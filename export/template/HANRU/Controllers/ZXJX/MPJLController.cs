@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class MPJLController : JWXTController
+    public class MPJLController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -56,8 +56,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(mpjl.NJID)) mpjl.NJID = "";//年级   年级数据类表
             if (string.IsNullOrEmpty(mpjl.BJID)) mpjl.BJID = "";//班级   班级数据类表
             if (mpjl.MPJG == 0) mpjl.MPJG = 0;//面批结果
-            if (mpjl.MPSJ == 0) mpjl.MPSJ = 0;//面批时间
-            if (mpjl.RRSJ == 0) mpjl.RRSJ = 0;//录入时间
             if (string.IsNullOrEmpty(mpjl.BZ)) mpjl.BZ = "";//备注
             if (mpjl.JSRKID == 0) mpjl.JSRKID = 0;//教师任课编号
             EDU_ZXJX_06_A01_MPJL mpjl_model = db_zxjx.EDU_ZXJX_06_A01_MPJL.FirstOrDefault(e => e.ID == mpjl.ID

@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class KMKSController : JWXTController
+    public class KMKSController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -49,7 +49,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (kmks.ID == 0) kmks.ID = 0;//编号
             if (kmks.SCHOOLID == 0) kmks.SCHOOLID = 0;//学校ID   学校配置表
             if (string.IsNullOrEmpty(kmks.KMDM)) kmks.KMDM = "";//科目代码   驾考科目代码
-            if (kmks.KSSJ == 0) kmks.KSSJ = 0;//考试时间
             if (string.IsNullOrEmpty(kmks.BZ)) kmks.BZ = "";//备注
             EDU_JPXT_04_01_KMKS kmks_model = db_jpxt.EDU_JPXT_04_01_KMKS.FirstOrDefault(e => e.ID == kmks.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

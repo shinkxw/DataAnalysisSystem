@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class XLZController : JWXTController
+    public class XLZController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,8 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (xlz.SCHOOLID == 0) xlz.SCHOOLID = 0;//学校ID   学校配置表
             if (xlz.XLID == 0) xlz.XLID = 0;//校历ID   校历表
             if (string.IsNullOrEmpty(xlz.NAME)) xlz.NAME = "";//校历周名称
-            if (xlz.STARTDAY == 0) xlz.STARTDAY = 0;//开始日期
-            if (xlz.ENDDAY == 0) xlz.ENDDAY = 0;//结束日期
             if (string.IsNullOrEmpty(xlz.ZJH)) xlz.ZJH = "";//周计划
             EDU_ELE_05_XLZ xlz_model = db_ele.EDU_ELE_05_XLZ.FirstOrDefault(e => e.ID == xlz.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

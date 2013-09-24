@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class YHZSJLController : JWXTController
+    public class YHZSJLController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -54,9 +54,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (yhzsjl.CWID == 0) yhzsjl.CWID = 0;//床位ID   宿舍床位表
             if (string.IsNullOrEmpty(yhzsjl.YHXM)) yhzsjl.YHXM = "";//用户姓名
             if (yhzsjl.RZRLX == 0) yhzsjl.RZRLX = 0;//入住人类型
-            if (yhzsjl.RZSJ == 0) yhzsjl.RZSJ = 0;//入住时间
             if (yhzsjl.SHZT == 0) yhzsjl.SHZT = 0;//审核状态
-            if (yhzsjl.SHSJ == 0) yhzsjl.SHSJ = 0;//审核时间
             if (string.IsNullOrEmpty(yhzsjl.SHR)) yhzsjl.SHR = "";//审核人
             EDU_ZZFC_08_A02_YHZSJL yhzsjl_model = db_zzfc.EDU_ZZFC_08_A02_YHZSJL.FirstOrDefault(e => e.SCHOOLID == yhzsjl.SCHOOLID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JLCSJController : JWXTController
+    public class JLCSJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -48,14 +48,11 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             //设置默认值
             if (jlcsj.ID == 0) jlcsj.ID = 0;//编号
             if (jlcsj.SCHOOLID == 0) jlcsj.SCHOOLID = 0;//学校ID   学校配置表
-            if (jlcsj.GMSJ == 0) jlcsj.GMSJ = 0;//购买时间
             if (jlcsj.CLXHID == 0) jlcsj.CLXHID = 0;//车辆型号ID   车辆型号数据表
             if (string.IsNullOrEmpty(jlcsj.PP)) jlcsj.PP = "";//品牌
             if (string.IsNullOrEmpty(jlcsj.CPH)) jlcsj.CPH = "";//车牌号
             if (string.IsNullOrEmpty(jlcsj.FDJH)) jlcsj.FDJH = "";//发动机号
             if (string.IsNullOrEmpty(jlcsj.CJH)) jlcsj.CJH = "";//车架号
-            if (jlcsj.BFSJ == 0) jlcsj.BFSJ = 0;//报废时间
-            if (jlcsj.EBRQ == 0) jlcsj.EBRQ = 0;//二保日期
             if (jlcsj.DQZT == 0) jlcsj.DQZT = 0;//当前状态
             if (jlcsj.DQJLYID == 0) jlcsj.DQJLYID = 0;//当前教练员ID   教练员数据表
             if (string.IsNullOrEmpty(jlcsj.BZ)) jlcsj.BZ = "";//备注

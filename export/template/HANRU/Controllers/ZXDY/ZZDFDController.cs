@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class ZZDFDController : JWXTController
+    public class ZZDFDController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -55,8 +55,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(zzdfd.XSMCLB)) zzdfd.XSMCLB = "";//学生名称列表
             if (zzdfd.SSXZID == 0) zzdfd.SSXZID = 0;//所属细则   值周打分细则表
             if (zzdfd.DFFZ == 0) zzdfd.DFFZ = 0;//打分分值
-            if (zzdfd.FSSJ == 0) zzdfd.FSSJ = 0;//发生时间
-            if (zzdfd.DFSJ == 0) zzdfd.DFSJ = 0;//打分时间
             if (string.IsNullOrEmpty(zzdfd.DFJSID)) zzdfd.DFJSID = "";//打分教师ID   应用系统用户表
             if (string.IsNullOrEmpty(zzdfd.BZ)) zzdfd.BZ = "";//备注
             EDU_ZXDY_05_A03_ZZDFD zzdfd_model = db_zxdy.EDU_ZXDY_05_A03_ZZDFD.FirstOrDefault(e => e.ID == zzdfd.ID

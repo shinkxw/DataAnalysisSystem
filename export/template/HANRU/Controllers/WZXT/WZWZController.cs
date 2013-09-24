@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class WZWZController : JWXTController
+    public class WZWZController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -55,7 +55,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(wzwz.PUBLISHERNAME)) wzwz.PUBLISHERNAME = "";//发布人
             if (string.IsNullOrEmpty(wzwz.AUTHOR)) wzwz.AUTHOR = "";//作者
             if (string.IsNullOrEmpty(wzwz.AUTHORDEPART)) wzwz.AUTHORDEPART = "";//作者部门
-            if (wzwz.PUBLISHDATE == 0) wzwz.PUBLISHDATE = 0;//发布时间
             if (string.IsNullOrEmpty(wzwz.CONTENT)) wzwz.CONTENT = "";//内容
             if (string.IsNullOrEmpty(wzwz.URL)) wzwz.URL = "";//链接
             if (string.IsNullOrEmpty(wzwz.IMAGEURL)) wzwz.IMAGEURL = "";//图片
@@ -65,7 +64,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (wzwz.AUDITSTATU == 0) wzwz.AUDITSTATU = 0;//审核状态
             if (string.IsNullOrEmpty(wzwz.AUDITOR)) wzwz.AUDITOR = "";//审核人ID
             if (string.IsNullOrEmpty(wzwz.AUDITORNAME)) wzwz.AUDITORNAME = "";//审核人
-            if (wzwz.AUDITTIME == 0) wzwz.AUDITTIME = 0;//审核时间
             if (string.IsNullOrEmpty(wzwz.REMARK)) wzwz.REMARK = "";//备注
             if (string.IsNullOrEmpty(wzwz.SUMMARY)) wzwz.SUMMARY = "";//摘要
             if (wzwz.DISPLAYTYPE == 0) wzwz.DISPLAYTYPE = 0;//内外网

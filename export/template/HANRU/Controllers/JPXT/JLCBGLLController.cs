@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JLCBGLLController : JWXTController
+    public class JLCBGLLController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,8 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (jlcbgll.SCHOOLID == 0) jlcbgll.SCHOOLID = 0;//学校ID   学校配置表
             if (jlcbgll.JLCID == 0) jlcbgll.JLCID = 0;//教练车ID   教练车数据表
             if (jlcbgll.JLYID == 0) jlcbgll.JLYID = 0;//教练员ID   教练员数据表
-            if (jlcbgll.BGKSSJ == 0) jlcbgll.BGKSSJ = 0;//保管开始时间
-            if (jlcbgll.BGJSSJ == 0) jlcbgll.BGJSSJ = 0;//保管结束时间
             if (string.IsNullOrEmpty(jlcbgll.BGZT)) jlcbgll.BGZT = "";//保管状态
             EDU_JPXT_01_02_JLCBGLL jlcbgll_model = db_jpxt.EDU_JPXT_01_02_JLCBGLL.FirstOrDefault(e => e.ID == jlcbgll.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

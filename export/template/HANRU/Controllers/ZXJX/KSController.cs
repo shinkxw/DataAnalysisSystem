@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class KSController : JWXTController
+    public class KSController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -51,10 +51,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (ks.XNID == 0) ks.XNID = 0;//学年   学年表
             if (ks.XQID == 0) ks.XQID = 0;//学期   学期数据表
             if (string.IsNullOrEmpty(ks.KSMC)) ks.KSMC = "";//考试名称
-            if (ks.KSKSSJ == 0) ks.KSKSSJ = 0;//考试开始时间
-            if (ks.KSJSSJ == 0) ks.KSJSSJ = 0;//考试结束时间
-            if (ks.DFKSSJ == 0) ks.DFKSSJ = 0;//登分开始时间
-            if (ks.DFJSSJ == 0) ks.DFJSSJ = 0;//登分结束时间
             if (ks.DFKS == 0) ks.DFKS = 0;//登分方式
             EDU_ZXJX_05_A01_KS ks_model = db_zxjx.EDU_ZXJX_05_A01_KS.FirstOrDefault(e => e.ID == ks.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

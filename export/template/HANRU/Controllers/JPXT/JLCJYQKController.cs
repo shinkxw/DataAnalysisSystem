@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JLCJYQKController : JWXTController
+    public class JLCJYQKController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,8 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (jlcjyqk.SCHOOLID == 0) jlcjyqk.SCHOOLID = 0;//学校ID   学校配置表
             if (jlcjyqk.JLCID == 0) jlcjyqk.JLCID = 0;//教练车ID   教练车数据表
             if (string.IsNullOrEmpty(jlcjyqk.JYNR)) jlcjyqk.JYNR = "";//检验内容
-            if (jlcjyqk.JYSJ == 0) jlcjyqk.JYSJ = 0;//检验时间
-            if (jlcjyqk.WCSJ == 0) jlcjyqk.WCSJ = 0;//完成时间
             if (string.IsNullOrEmpty(jlcjyqk.JYJG)) jlcjyqk.JYJG = "";//检验结果
             if (string.IsNullOrEmpty(jlcjyqk.BZ)) jlcjyqk.BZ = "";//备注
             EDU_JPXT_01_04_JLCJYQK jlcjyqk_model = db_jpxt.EDU_JPXT_01_04_JLCJYQK.FirstOrDefault(e => e.ID == jlcjyqk.ID

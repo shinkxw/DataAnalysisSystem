@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class XYSJController : JWXTController
+    public class XYSJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -53,14 +53,12 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(xysj.XBM)) xysj.XBM = "";//性别码   人的性别代码
             if (string.IsNullOrEmpty(xysj.LXDH)) xysj.LXDH = "";//联系电话
             if (string.IsNullOrEmpty(xysj.ZZ)) xysj.ZZ = "";//住址
-            if (xysj.BMSJ == 0) xysj.BMSJ = 0;//报名时间
             if (string.IsNullOrEmpty(xysj.SFQK)) xysj.SFQK = "";//缴费情况
             if (xysj.SXCXID == 0) xysj.SXCXID = 0;//所选车型ID   车辆型号数据表
             if (string.IsNullOrEmpty(xysj.ZJQK)) xysj.ZJQK = "";//增加情况
             if (xysj.SZJLCID == 0) xysj.SZJLCID = 0;//所属教练员ID   教练员数据表
             if (xysj.YJJLYID == 0) xysj.YJJLYID = 0;//引荐教练员ID   教练员数据表
             if (xysj.DQZT == 0) xysj.DQZT = 0;//当前状态
-            if (xysj.BYSJ == 0) xysj.BYSJ = 0;//毕业时间
             EDU_JPXT_03_01_XYSJ xysj_model = db_jpxt.EDU_JPXT_03_01_XYSJ.FirstOrDefault(e => e.ID == xysj.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 

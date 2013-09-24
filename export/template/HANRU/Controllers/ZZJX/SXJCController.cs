@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class SXJCController : JWXTController
+    public class SXJCController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -51,7 +51,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (sxjc.SXJHID == 0) sxjc.SXJHID = 0;//实习计划ID   学校实习计划表
             if (sxjc.XSXXID == 0) sxjc.XSXXID = 0;//学生信息ID   学生信息数据表
             if (sxjc.JCLX == 0) sxjc.JCLX = 0;//奖惩类型
-            if (sxjc.JCRQ == 0) sxjc.JCRQ = 0;//奖惩日期
             if (string.IsNullOrEmpty(sxjc.CLJG)) sxjc.CLJG = "";//处理结果
             if (string.IsNullOrEmpty(sxjc.BZ)) sxjc.BZ = "";//备注
             if (sxjc.TJR == 0) sxjc.TJR = 0;//添加人

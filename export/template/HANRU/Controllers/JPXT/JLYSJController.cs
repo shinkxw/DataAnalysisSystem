@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JLYSJController : JWXTController
+    public class JLYSJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -52,26 +52,21 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(jlysj.XBM)) jlysj.XBM = "";//性别码   人的性别代码
             if (string.IsNullOrEmpty(jlysj.SFZH)) jlysj.SFZH = "";//身份证号
             if (string.IsNullOrEmpty(jlysj.JSZH)) jlysj.JSZH = "";//驾驶证号
-            if (jlysj.JSZYXQ == 0) jlysj.JSZYXQ = 0;//驾驶证有效期
             if (string.IsNullOrEmpty(jlysj.JLZH)) jlysj.JLZH = "";//教练证号
-            if (jlysj.JLZYXQ == 0) jlysj.JLZYXQ = 0;//教练证有效期
             if (string.IsNullOrEmpty(jlysj.XL)) jlysj.XL = "";//学历
             if (string.IsNullOrEmpty(jlysj.ZC)) jlysj.ZC = "";//职称
-            if (jlysj.JXSJ == 0) jlysj.JXSJ = 0;//进校时间
             if (string.IsNullOrEmpty(jlysj.LXDH)) jlysj.LXDH = "";//联系电话
             if (string.IsNullOrEmpty(jlysj.ZZ)) jlysj.ZZ = "";//住址
             if (string.IsNullOrEmpty(jlysj.JSDJ)) jlysj.JSDJ = "";//技术等级
             if (string.IsNullOrEmpty(jlysj.JTCHYXM)) jlysj.JTCHYXM = "";//家庭成员一姓名
             if (string.IsNullOrEmpty(jlysj.JTCYYGX)) jlysj.JTCYYGX = "";//家庭成员一关系
             if (string.IsNullOrEmpty(jlysj.JTCYYXBM)) jlysj.JTCYYXBM = "";//家庭成员一性别码
-            if (jlysj.JTCYYCSRQ == 0) jlysj.JTCYYCSRQ = 0;//家庭成员一出生日期
             if (string.IsNullOrEmpty(jlysj.JTCYYZZ)) jlysj.JTCYYZZ = "";//家庭成员一住址
             if (string.IsNullOrEmpty(jlysj.JTCYYLXDH)) jlysj.JTCYYLXDH = "";//家庭成员一联系电话
             if (string.IsNullOrEmpty(jlysj.JTCYYCSGZ)) jlysj.JTCYYCSGZ = "";//家庭成员一从事工作
             if (string.IsNullOrEmpty(jlysj.JTCYEXM)) jlysj.JTCYEXM = "";//家庭成员二姓名
             if (string.IsNullOrEmpty(jlysj.JTCYEGX)) jlysj.JTCYEGX = "";//家庭成员二关系
             if (string.IsNullOrEmpty(jlysj.JTCYEXBM)) jlysj.JTCYEXBM = "";//家庭成员二性别码
-            if (jlysj.JTCYECSRQ == 0) jlysj.JTCYECSRQ = 0;//家庭成员二出生日期
             if (string.IsNullOrEmpty(jlysj.JTCYEZZ)) jlysj.JTCYEZZ = "";//家庭成员二住址
             if (string.IsNullOrEmpty(jlysj.JTCYELXDH)) jlysj.JTCYELXDH = "";//家庭成员二联系电话
             if (string.IsNullOrEmpty(jlysj.JTCYECSGZ)) jlysj.JTCYECSGZ = "";//家庭成员二从事工作

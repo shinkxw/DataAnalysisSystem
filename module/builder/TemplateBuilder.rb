@@ -11,7 +11,7 @@ class TemplateBuilder
     @area = nil
     @file_hash = nil
     @tab = Indent.new(tab)
-    @app_name = "JWXT"
+    @app_name = "JPXT"
     @directory_name = "jpxt"
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
     @bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
@@ -78,6 +78,8 @@ class TemplateBuilder
     table.each_field do |field|
       if field.split_type[0] == "String"
         str << "#{@tab.t}if (string.IsNullOrEmpty(#{table.lname_dc}.#{field.name})) #{table.lname_dc}.#{field.name} = \"\";//#{field.explanation}#{get_relation(field)}\n"
+      elsif field.type == 'datetime'
+        str << ''
       else
         str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{get_relation(field)}\n"
       end

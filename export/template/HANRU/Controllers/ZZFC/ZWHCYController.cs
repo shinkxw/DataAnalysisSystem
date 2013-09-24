@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class ZWHCYController : JWXTController
+    public class ZWHCYController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -51,7 +51,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (zwhcy.YHID == 0) zwhcy.YHID = 0;//用户ID
             if (zwhcy.YHLX == 0) zwhcy.YHLX = 0;//用户类型
             if (string.IsNullOrEmpty(zwhcy.CYXM)) zwhcy.CYXM = "";//成员姓名
-            if (zwhcy.TJSJ == 0) zwhcy.TJSJ = 0;//添加时间
             if (string.IsNullOrEmpty(zwhcy.ZWMC)) zwhcy.ZWMC = "";//职位名称
             if (string.IsNullOrEmpty(zwhcy.GZNR)) zwhcy.GZNR = "";//工作内容
             EDU_ZZFC_08_A03_ZWHCY zwhcy_model = db_zzfc.EDU_ZZFC_08_A03_ZWHCY.FirstOrDefault(e => e.SCHOOLID == zwhcy.SCHOOLID

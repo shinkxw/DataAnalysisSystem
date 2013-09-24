@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class TZController : JWXTController
+    public class TZController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -53,7 +53,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (string.IsNullOrEmpty(tz.BT)) tz.BT = "";//标题
             if (string.IsNullOrEmpty(tz.NR)) tz.NR = "";//内容
             if (string.IsNullOrEmpty(tz.FJ)) tz.FJ = "";//附件
-            if (tz.TJRQ == 0) tz.TJRQ = 0;//添加日期
             if (tz.JSRS == 0) tz.JSRS = 0;//接收人数
             if (string.IsNullOrEmpty(tz.JSRIDLB)) tz.JSRIDLB = "";//接收人ID列表
             if (string.IsNullOrEmpty(tz.JSRMZLB)) tz.JSRMZLB = "";//接收人名字列表

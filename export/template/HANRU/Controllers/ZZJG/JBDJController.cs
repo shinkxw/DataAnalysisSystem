@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JBDJController : JWXTController
+    public class JBDJController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -49,8 +49,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (jbdj.ID == 0) jbdj.ID = 0;//加班登记表ID
             if (jbdj.SCHOOLID == 0) jbdj.SCHOOLID = 0;//学校ID   学校配置表
             if (jbdj.JZGJBSJID == 0) jbdj.JZGJBSJID = 0;//教职工ID   教职工基本数据子类表
-            if (jbdj.KSSJ == 0) jbdj.KSSJ = 0;//开始时间
-            if (jbdj.JSSJ == 0) jbdj.JSSJ = 0;//结束时间
             if (jbdj.JBLX == 0) jbdj.JBLX = 0;//加班类型   加班类型代码
             EDU_ZZJG_04_A01_JBDJ jbdj_model = db_zzjg.EDU_ZZJG_04_A01_JBDJ.FirstOrDefault(e => e.ID == jbdj.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

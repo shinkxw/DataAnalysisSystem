@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class TZYDJLController : JWXTController
+    public class TZYDJLController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,7 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (tzydjl.SCHOOLID == 0) tzydjl.SCHOOLID = 0;//学校ID   学校配置表
             if (tzydjl.TZID == 0) tzydjl.TZID = 0;//通知ID   通知数据表
             if (string.IsNullOrEmpty(tzydjl.BTZRID)) tzydjl.BTZRID = "";//被通知人ID   应用系统用户表
-            if (tzydjl.YDRQ == 0) tzydjl.YDRQ = 0;//阅读日期
             if (string.IsNullOrEmpty(tzydjl.SFYD)) tzydjl.SFYD = "";//是否已阅读   是否标志代码表
             EDU_OAXT_10_A02_TZYDJL tzydjl_model = db_oaxt.EDU_OAXT_10_A02_TZYDJL.FirstOrDefault(e => e.ID == tzydjl.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);

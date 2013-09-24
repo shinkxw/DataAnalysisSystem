@@ -9,11 +9,11 @@ using System.Collections;
 using HanRuEdu.LDAL;
 using System.Text;
 using System.Data.Entity.Validation;
-using HanRuEdu.JWXT.Common;
+using HanRuEdu.JPXT.Common;
 
-namespace HanRuEdu.JWXT.Controllers.JWXT
+namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class JLCWXQKController : JWXTController
+    public class JLCWXQKController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
@@ -50,8 +50,6 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (jlcwxqk.SCHOOLID == 0) jlcwxqk.SCHOOLID = 0;//学校ID   学校配置表
             if (jlcwxqk.JLCID == 0) jlcwxqk.JLCID = 0;//教练车ID   教练车数据表
             if (string.IsNullOrEmpty(jlcwxqk.GZXX)) jlcwxqk.GZXX = "";//故障现象
-            if (jlcwxqk.SXSJ == 0) jlcwxqk.SXSJ = 0;//送修时间
-            if (jlcwxqk.WCSJ == 0) jlcwxqk.WCSJ = 0;//完成时间
             if (string.IsNullOrEmpty(jlcwxqk.WXJG)) jlcwxqk.WXJG = "";//维修结果
             if (string.IsNullOrEmpty(jlcwxqk.BZ)) jlcwxqk.BZ = "";//备注
             EDU_JPXT_01_03_JLCWXQK jlcwxqk_model = db_jpxt.EDU_JPXT_01_03_JLCWXQK.FirstOrDefault(e => e.ID == jlcwxqk.ID
