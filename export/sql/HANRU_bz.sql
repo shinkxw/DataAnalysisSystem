@@ -28699,7 +28699,7 @@ INSERT INTO [EDU_ZZ_HJXZ]([DM] ,[MC]) VALUES('3', '城市')
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZ_JKKM]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZZ_JKKM](
-	[DM]  nvarchar(1)  identity,--代码
+	[DM]  nvarchar(1)  NOT NULL,--代码
 	[MC]  nvarchar(20)  NOT NULL,--科目名称
 	[KSSX]  int  NOT NULL,--考试顺序
 CONSTRAINT [PK_EDU_ZZ_JKKM] PRIMARY KEY CLUSTERED
@@ -28710,11 +28710,9 @@ CONSTRAINT [PK_EDU_ZZ_JKKM] PRIMARY KEY CLUSTERED
 END
 GO
 
-SET IDENTITY_INSERT [dbo].[EDU_ZZ_JKKM] ON
 INSERT INTO [EDU_ZZ_JKKM]([DM] ,[MC] ,[KSSX]) VALUES('1', '科目一', '1')
 INSERT INTO [EDU_ZZ_JKKM]([DM] ,[MC] ,[KSSX]) VALUES('2', '科目二', '2')
 INSERT INTO [EDU_ZZ_JKKM]([DM] ,[MC] ,[KSSX]) VALUES('3', '科目三', '3')
-SET IDENTITY_INSERT [dbo].[EDU_ZZ_JKKM] OFF
 
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'主要职务类别代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZ_ZYZWLB'
