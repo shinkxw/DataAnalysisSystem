@@ -38,3 +38,8 @@ EDU_ZZ_HJXZ  户籍性质代码
   DM            代码                    nvarchar(1)    主键
   MC            名称                    nvarchar(2)    非主
 
+EDU_ZZ_JKKM  驾考科目代码
+  DM            代码                    nvarchar(1)    自增主键
+  MC            科目名称                nvarchar(20)   非主
+  KSSX          考试顺序                int            非主
+

@@ -44,10 +44,10 @@
             </tr>
 
             <tr>
-                <td> @Html.LabelFor(m => m.KSKMID) </td> <!--考试科目ID-->
+                <td> @Html.LabelFor(m => m.KSKMDM) </td> <!--考试科目代码-->
                 <td>
-                    @Html.TextBoxFor(m => m.KSKMID, new { @class = "easyui-validatebox", style = "width:150px; " })
-                    @Html.ValidationMessageFor(m => m.KSKMID)
+                    @Html.DropDownListFor(m => m.KSKMDM, ViewBag.ZZ_JKKMLst as SelectList)
+                    @Html.ValidationMessageFor(m => m.KSKMDM)
                 </td>
             </tr>
 

@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_04_01_KMKS()
         {
+            KMDM = "";
             KSSJ = new DateTime(1900, 1, 1);
             BZ = "";
         }
@@ -24,9 +25,11 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "科目")]
-            public Int32 KMID { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "科目代码")]
+            [StringLength(1)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KMDM { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

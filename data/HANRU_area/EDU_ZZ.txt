@@ -135,4 +135,16 @@
             <DM="3" MC="城市" />
         </data_area>
     </table>
+    <table name="EDU_ZZ_JKKM" explanation="驾考科目代码">
+        <field_area>
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" />
+            <name="MC" explanation="科目名称" type="nvarchar(20)" null="F" p="F" />
+            <name="KSSX" explanation="考试顺序" type="int" null="F" p="F" />
+        </field_area>
+        <data_area>
+            <DM="1" MC="科目一" KSSX="1" />
+            <DM="2" MC="科目二" KSSX="2" />
+            <DM="3" MC="科目三" KSSX="3" />
+        </data_area>
+    </table>
 </namespace>

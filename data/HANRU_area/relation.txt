@@ -72,15 +72,13 @@
   XYID           EDU_JPXT_03_01_XYSJ                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KMKSID         EDU_JPXT_04_01_KMKS                ID
+  KSKMDM         EDU_ZZ_JKKM                        DM
 <EDU_JPXT_03_03_XYHFXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XYID           EDU_JPXT_03_01_XYSJ                ID
 <EDU_JPXT_04_01_KMKS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  KMID           EDU_JPXT_04_02_JKKM                ID
-<EDU_JPXT_04_02_JKKM
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  CLXHID         EDU_JPXT_05_01_CLXH                ID
+  KMDM           EDU_ZZ_JKKM                        DM
 <EDU_JPXT_05_01_CLXH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_10_A01_TZ

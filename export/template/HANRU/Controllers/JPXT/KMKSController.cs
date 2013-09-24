@@ -48,7 +48,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             //设置默认值
             if (kmks.ID == 0) kmks.ID = 0;//编号
             if (kmks.SCHOOLID == 0) kmks.SCHOOLID = 0;//学校ID   学校配置表
-            if (kmks.KMID == 0) kmks.KMID = 0;//科目ID   驾考科目表
+            if (string.IsNullOrEmpty(kmks.KMDM)) kmks.KMDM = "";//科目代码   驾考科目代码
             if (kmks.KSSJ == 0) kmks.KSSJ = 0;//考试时间
             if (string.IsNullOrEmpty(kmks.BZ)) kmks.BZ = "";//备注
             EDU_JPXT_04_01_KMKS kmks_model = db_jpxt.EDU_JPXT_04_01_KMKS.FirstOrDefault(e => e.ID == kmks.ID
@@ -58,7 +58,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             {
                 kmks_model.ID = kmks.ID;//编号
                 kmks_model.SCHOOLID = kmks.SCHOOLID;//学校ID   学校配置表
-                kmks_model.KMID = kmks.KMID;//科目ID   驾考科目表
+                kmks_model.KMDM = kmks.KMDM;//科目代码   驾考科目代码
                 kmks_model.KSSJ = kmks.KSSJ;//考试时间
                 kmks_model.BZ = kmks.BZ;//备注
                 db_jpxt.Entry(kmks_model).State = EntityState.Modified;
@@ -72,6 +72,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
         }
         public void InitViewBag()
         {
+            ViewBag.ZZ_JKKMLst = ZZBLDAL.GetZZ_JKKMSelLst();
             
         }
 

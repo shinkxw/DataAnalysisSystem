@@ -50,7 +50,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (xyksjg.XYID == 0) xyksjg.XYID = 0;//学员ID   学员数据表
             if (xyksjg.SCHOOLID == 0) xyksjg.SCHOOLID = 0;//学校ID   学校配置表
             if (xyksjg.KMKSID == 0) xyksjg.KMKSID = 0;//科目考试ID   科目考试表
-            if (xyksjg.KSKMID == 0) xyksjg.KSKMID = 0;//考试科目ID
+            if (string.IsNullOrEmpty(xyksjg.KSKMDM)) xyksjg.KSKMDM = "";//考试科目代码   驾考科目代码
             if (xyksjg.KSJG == 0) xyksjg.KSJG = 0;//考试结果
             EDU_JPXT_03_02_XYKSJG xyksjg_model = db_jpxt.EDU_JPXT_03_02_XYKSJG.FirstOrDefault(e => e.ID == xyksjg.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
@@ -61,7 +61,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                 xyksjg_model.XYID = xyksjg.XYID;//学员ID   学员数据表
                 xyksjg_model.SCHOOLID = xyksjg.SCHOOLID;//学校ID   学校配置表
                 xyksjg_model.KMKSID = xyksjg.KMKSID;//科目考试ID   科目考试表
-                xyksjg_model.KSKMID = xyksjg.KSKMID;//考试科目ID
+                xyksjg_model.KSKMDM = xyksjg.KSKMDM;//考试科目代码   驾考科目代码
                 xyksjg_model.KSJG = xyksjg.KSJG;//考试结果
                 db_jpxt.Entry(xyksjg_model).State = EntityState.Modified;
             }
@@ -74,6 +74,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
         }
         public void InitViewBag()
         {
+            ViewBag.ZZ_JKKMLst = ZZBLDAL.GetZZ_JKKMSelLst();
             
         }
 
