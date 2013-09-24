@@ -22,7 +22,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.SCHOOLID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.SCHOOLID)
                 </td>
             </tr>
@@ -30,7 +30,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.YYZID) </td> <!--拥有者ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.YYZID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.YYZID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.YYZID)
                 </td>
             </tr>
@@ -38,7 +38,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.FSRID) </td> <!--发送人ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.FSRID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.FSRID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.FSRID)
                 </td>
             </tr>
@@ -46,7 +46,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.JSRID) </td> <!--接收人ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.JSRID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.JSRID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.JSRID)
                 </td>
             </tr>

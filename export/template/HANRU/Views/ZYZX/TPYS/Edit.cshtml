@@ -22,7 +22,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--Ñ§Ð£Ãû-->
                 <td>
-                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.SCHOOLID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.SCHOOLID)
                 </td>
             </tr>
@@ -30,7 +30,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.WEBID) </td> <!--ÍøÕ¾ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.WEBID, ViewBag.ZYZX_MHXTLst as SelectList)
+                    @Html.TextBoxFor(m => m.WEBID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.WEBID)
                 </td>
             </tr>

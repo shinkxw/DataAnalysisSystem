@@ -14,7 +14,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.SCHOOLID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.SCHOOLID)
                 </td>
             </tr>
@@ -30,7 +30,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.JSID) </td> <!--教师表ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.JSID, ViewBag.ZZJG_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.JSID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.JSID)
                 </td>
             </tr>
@@ -38,7 +38,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.KCH) </td> <!--课程号-->
                 <td>
-                    @Html.DropDownListFor(m => m.KCH, ViewBag.ZZJX_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.KCH, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.KCH)
                 </td>
             </tr>
@@ -46,7 +46,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.JHBH) </td> <!--计划编号-->
                 <td>
-                    @Html.DropDownListFor(m => m.JHBH, ViewBag.ZZJX_03Lst as SelectList)
+                    @Html.TextBoxFor(m => m.JHBH, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.JHBH)
                 </td>
             </tr>
@@ -54,7 +54,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.XQID) </td> <!--学期ID-->
                 <td>
-                    @Html.DropDownListFor(m => m.XQID, ViewBag.ELE_01Lst as SelectList)
+                    @Html.TextBoxFor(m => m.XQID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.XQID)
                 </td>
             </tr>

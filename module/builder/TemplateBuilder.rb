@@ -199,7 +199,7 @@ class TemplateBuilder
     info_atr << %(        <table class="admintable">\n            <tr>\n                <td width="50%"></td>\n                <td width="50%"></td>\n            </tr>\n\n)
     table.each_field do |field|
       info_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
-      if field.relation
+      if field.relation && @bztable_hash[field.relation.table.library_name.to_sym]
         info_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
         info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
