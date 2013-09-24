@@ -32,6 +32,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "考试顺序")]
+            public Int32 KSSX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "车辆型号")]
             public Int32 CLXHID { get; set; }
 

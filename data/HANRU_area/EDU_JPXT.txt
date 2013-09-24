@@ -185,6 +185,8 @@
             <name="JLYOLID" explanation="教练员ID" type="int" null="F" p="F" />
             <name="KMID" explanation="科目ID" type="int" null="F" p="F" />
             <name="KSSJ" explanation="考试时间" type="datetime" null="F" p="F" />
+            <name="CJKSXYIDLB" explanation="参加考试学员ID列表" type="text" null="F" p="F" />
+            <name="CJKSXYXMLB" explanation="参加考试学员姓名列表" type="text" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
@@ -193,6 +195,7 @@
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="F" />
             <name="CLXHMC" explanation="科目名称" type="nvarchar(30)" null="F" p="F" />
+            <name="KSSX" explanation="考试顺序" type="int" null="F" p="F" />
             <name="CLXHID" explanation="车辆型号ID" type="int" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>

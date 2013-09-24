@@ -52,6 +52,24 @@
             </tr>
 
             <tr>
+                <td> @Html.LabelFor(m => m.CJKSXYIDLB) </td> <!--参加考试学员ID列表-->
+                <td>
+                    @Html.TextAreaFor(m => m.CJKSXYIDLB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
+                    @Html.ValidationMessageFor(m => m.CJKSXYIDLB)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.CJKSXYXMLB) </td> <!--参加考试学员姓名列表-->
+                <td>
+                    @Html.TextAreaFor(m => m.CJKSXYXMLB, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @*@Html.MYeWebEditorFor(m=>m.NR, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@
+                    @Html.ValidationMessageFor(m => m.CJKSXYXMLB)
+                </td>
+            </tr>
+
+            <tr>
                 <td> @Html.LabelFor(m => m.BZ) </td> <!--备注-->
                 <td>
                     @Html.TextAreaFor(m => m.BZ, new { @class = "easyui-validatebox", style = "width:150px; " })

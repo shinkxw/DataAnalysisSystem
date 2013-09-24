@@ -36,6 +36,14 @@
             </tr>
 
             <tr>
+                <td> @Html.LabelFor(m => m.KSSX) </td> <!--¿¼ÊÔË³Ðò-->
+                <td>
+                    @Html.TextBoxFor(m => m.KSSX, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.KSSX)
+                </td>
+            </tr>
+
+            <tr>
                 <td> @Html.LabelFor(m => m.CLXHID) </td> <!--³µÁ¾ÐÍºÅID-->
                 <td>
                     @Html.TextBoxFor(m => m.CLXHID, new { @class = "easyui-validatebox", style = "width:150px; " })

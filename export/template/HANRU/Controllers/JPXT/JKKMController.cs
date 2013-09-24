@@ -49,6 +49,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (jkkm.ID == 0) jkkm.ID = 0;//编号
             if (jkkm.SCHOOLID == 0) jkkm.SCHOOLID = 0;//学校ID
             if (string.IsNullOrEmpty(jkkm.CLXHMC)) jkkm.CLXHMC = "";//科目名称
+            if (jkkm.KSSX == 0) jkkm.KSSX = 0;//考试顺序
             if (jkkm.CLXHID == 0) jkkm.CLXHID = 0;//车辆型号ID
             if (string.IsNullOrEmpty(jkkm.BZ)) jkkm.BZ = "";//备注
             EDU_JPXT_04_02_JKKM jkkm_model = db_jpxt.EDU_JPXT_04_02_JKKM.FirstOrDefault(e => e.ID == jkkm.ID
@@ -59,6 +60,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                 jkkm_model.ID = jkkm.ID;//编号
                 jkkm_model.SCHOOLID = jkkm.SCHOOLID;//学校ID
                 jkkm_model.CLXHMC = jkkm.CLXHMC;//科目名称
+                jkkm_model.KSSX = jkkm.KSSX;//考试顺序
                 jkkm_model.CLXHID = jkkm.CLXHID;//车辆型号ID
                 jkkm_model.BZ = jkkm.BZ;//备注
                 db_jpxt.Entry(jkkm_model).State = EntityState.Modified;

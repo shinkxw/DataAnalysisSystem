@@ -94,9 +94,9 @@ class MDWork_Area
         puts '未修正差异为：'#显示未修正差异
         diff.show_diff
       else
+        puts "\n正在删除所有视图..."
+        db.delete_all_view#删除所有视图
         puts "\n正在重置视图..."
-        #db.delete_all_view#删除所有视图
-        #运行最新版本的视图
         view_str = ViewBuilder.new(true).build(@area).get_data_str
         db.execute(view_str)
         puts "\n数据库更新成功"

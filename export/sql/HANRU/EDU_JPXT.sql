@@ -374,6 +374,8 @@ CREATE TABLE [dbo].[EDU_JPXT_04_01_KMKS](
 	[JLYOLID]  int  NOT NULL,--教练员ID
 	[KMID]  int  NOT NULL,--科目ID
 	[KSSJ]  datetime  NOT NULL,--考试时间
+	[CJKSXYIDLB]  text  NOT NULL,--参加考试学员ID列表
+	[CJKSXYXMLB]  text  NOT NULL,--参加考试学员姓名列表
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_JPXT_04_01_KMKS] PRIMARY KEY CLUSTERED
 (
@@ -390,6 +392,7 @@ CREATE TABLE [dbo].[EDU_JPXT_04_02_JKKM](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[CLXHMC]  nvarchar(30)  NOT NULL,--科目名称
+	[KSSX]  int  NOT NULL,--考试顺序
 	[CLXHID]  int  NOT NULL,--车辆型号ID
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_JPXT_04_02_JKKM] PRIMARY KEY CLUSTERED
@@ -707,6 +710,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'科目ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_01_KMKS', @level2type=N'COLUMN',@level2name=N'KSSJ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参加考试学员ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_01_KMKS', @level2type=N'COLUMN',@level2name=N'CJKSXYIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参加考试学员姓名列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_01_KMKS', @level2type=N'COLUMN',@level2name=N'CJKSXYXMLB'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_01_KMKS', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'驾考科目表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_02_JKKM'
@@ -716,6 +723,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_02_JKKM', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'科目名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_02_JKKM', @level2type=N'COLUMN',@level2name=N'CLXHMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_02_JKKM', @level2type=N'COLUMN',@level2name=N'KSSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆型号ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_04_02_JKKM', @level2type=N'COLUMN',@level2name=N'CLXHID'
 GO
