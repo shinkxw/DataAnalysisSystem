@@ -20,7 +20,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             List<VIEW_EDU_JPXT_03_02_XYKSJG_DISP> model = db_jpxt.VIEW_EDU_JPXT_03_02_XYKSJG_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
             if (!String.IsNullOrEmpty(searchkey))
             {
-                //model = model.Where(e => e.XYID.Contains(searchkey)).ToList();
+                //model = model.Where(e => e.ID.Contains(searchkey)).ToList();
             }
 
             if (!String.IsNullOrEmpty(sort))
@@ -46,19 +46,21 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
         public void UpdXyksjg(EDU_JPXT_03_02_XYKSJG xyksjg)
         {
             //设置默认值
+            if (xyksjg.ID == 0) xyksjg.ID = 0;//编号
             if (xyksjg.XYID == 0) xyksjg.XYID = 0;//学员ID   学员数据表
             if (xyksjg.SCHOOLID == 0) xyksjg.SCHOOLID = 0;//学校ID   学校配置表
-            if (xyksjg.KMKSID == 0) xyksjg.KMKSID = 0;//科目考试ID
+            if (xyksjg.KMKSID == 0) xyksjg.KMKSID = 0;//科目考试ID   科目考试表
             if (xyksjg.KSKMID == 0) xyksjg.KSKMID = 0;//考试科目ID
             if (xyksjg.KSJG == 0) xyksjg.KSJG = 0;//考试结果
-            EDU_JPXT_03_02_XYKSJG xyksjg_model = db_jpxt.EDU_JPXT_03_02_XYKSJG.FirstOrDefault(e => e.XYID == xyksjg.XYID
+            EDU_JPXT_03_02_XYKSJG xyksjg_model = db_jpxt.EDU_JPXT_03_02_XYKSJG.FirstOrDefault(e => e.ID == xyksjg.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 
             if (xyksjg_model != null)
             {
+                xyksjg_model.ID = xyksjg.ID;//编号
                 xyksjg_model.XYID = xyksjg.XYID;//学员ID   学员数据表
                 xyksjg_model.SCHOOLID = xyksjg.SCHOOLID;//学校ID   学校配置表
-                xyksjg_model.KMKSID = xyksjg.KMKSID;//科目考试ID
+                xyksjg_model.KMKSID = xyksjg.KMKSID;//科目考试ID   科目考试表
                 xyksjg_model.KSKMID = xyksjg.KSKMID;//考试科目ID
                 xyksjg_model.KSJG = xyksjg.KSJG;//考试结果
                 db_jpxt.Entry(xyksjg_model).State = EntityState.Modified;
@@ -113,7 +115,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
         {
             InitViewBag();
             
-            EDU_JPXT_03_02_XYKSJG xyksjg= db_jpxt.EDU_JPXT_03_02_XYKSJG.Single(e => e.XYID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+            EDU_JPXT_03_02_XYKSJG xyksjg= db_jpxt.EDU_JPXT_03_02_XYKSJG.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
             return View(xyksjg);
         }
 
@@ -144,7 +146,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
         {
             try
             {
-                EDU_JPXT_03_02_XYKSJG xyksjg = db_jpxt.EDU_JPXT_03_02_XYKSJG.SingleOrDefault(e => e.XYID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                EDU_JPXT_03_02_XYKSJG xyksjg = db_jpxt.EDU_JPXT_03_02_XYKSJG.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
                 db_jpxt.EDU_JPXT_03_02_XYKSJG.Remove(xyksjg);
                 db_jpxt.SaveChanges();
                 return "删除成功！";
@@ -166,7 +168,7 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
                 int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);
                 foreach (int id in idlst)
                 {
-                    EDU_JPXT_03_02_XYKSJG xyksjg = db_jpxt.EDU_JPXT_03_02_XYKSJG.SingleOrDefault(e => e.XYID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                    EDU_JPXT_03_02_XYKSJG xyksjg = db_jpxt.EDU_JPXT_03_02_XYKSJG.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
                     db_jpxt.EDU_JPXT_03_02_XYKSJG.Remove(xyksjg);
                     db_jpxt.SaveChanges();
                 }

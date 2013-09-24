@@ -136,9 +136,10 @@ EDU_JPXT_03_01_XYSJ  学员数据表
   BYSJ          毕业时间                datetime       非主
 
 EDU_JPXT_03_02_XYKSJG  学员考试结果表
+  ID            编号                    int            主键
   XYID          学员ID                  int            主键        学员数据表
   SCHOOLID      学校ID                  int            主键        学校配置表
-  KMKSID        科目考试ID              int            非主
+  KMKSID        科目考试ID              int            非主        科目考试表
   KSKMID        考试科目ID              int            非主
   KSJG          考试结果                int            非主
 
@@ -152,20 +153,17 @@ EDU_JPXT_03_03_XYHFXX  学员回访信息表
 
 EDU_JPXT_04_01_KMKS  科目考试表
   ID            编号                    int            自增主键
-  SCHOOLID      学校ID                  int            非主
-  JLYOLID       教练员ID                int            非主
-  KMID          科目ID                  int            非主
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  KMID          科目ID                  int            非主        驾考科目表
   KSSJ          考试时间                datetime       非主
-  CJKSXYIDLB    参加考试学员ID列表      text           非主
-  CJKSXYXMLB    参加考试学员姓名列表    text           非主
   BZ            备注                    text           非主
 
 EDU_JPXT_04_02_JKKM  驾考科目表
   ID            编号                    int            自增主键
-  SCHOOLID      学校ID                  int            非主
+  SCHOOLID      学校ID                  int            非主        学校配置表
   CLXHMC        科目名称                nvarchar(30)   非主
+  CLXHID        车辆型号ID              int            非主        车辆型号数据表
   KSSX          考试顺序                int            非主
-  CLXHID        车辆型号ID              int            非主
   BZ            备注                    text           非主
 
 EDU_JPXT_05_01_CLXH  车辆型号数据表

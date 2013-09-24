@@ -83,6 +83,14 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_03_03_
             and   type = 'V')
    drop view VIEW_EDU_JPXT_03_03_XYHFXX_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_04_01_KMKS_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_04_01_KMKS_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_04_02_JKKM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_JPXT_04_02_JKKM_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A01_TZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_10_A01_TZ_DISP
@@ -1378,7 +1386,8 @@ GO
 --学员考试结果表
 CREATE VIEW [dbo].[VIEW_EDU_JPXT_03_02_XYKSJG_DISP]
 AS
-SELECT a.[XYID]--学员ID
+SELECT a.[ID]--编号
+      ,a.[XYID]--学员ID
       ,a.[SCHOOLID]--学校ID
       ,a.[KMKSID]--科目考试ID
       ,a.[KSKMID]--考试科目ID
@@ -1398,9 +1407,14 @@ SELECT a.[XYID]--学员ID
       ,b.YJJLYID as b_XYSJ_YJJLYID--学员数据表 引荐教练员ID
       ,b.DQZT as b_XYSJ_DQZT--学员数据表 当前状态
       ,b.BYSJ as b_XYSJ_BYSJ--学员数据表 毕业时间
+      ,d.SCHOOLID as d_KMKS_SCHOOLID--科目考试表 学校ID
+      ,d.KMID as d_KMKS_KMID--科目考试表 科目ID
+      ,d.KSSJ as d_KMKS_KSSJ--科目考试表 考试时间
+      ,d.BZ as d_KMKS_BZ--科目考试表 备注
 
 FROM dbo.EDU_JPXT_03_02_XYKSJG AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_03_01_XYSJ AS b ON a.XYID = b.ID /*学员ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_04_01_KMKS AS d ON a.KMKSID = d.ID /*科目考试ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/
 GO
 
@@ -1432,6 +1446,41 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_03_03_XYHFXX AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_03_01_XYSJ AS c ON a.XYID = c.ID /*学员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+GO
+
+--科目考试表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_04_01_KMKS_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[KMID]--科目ID
+      ,a.[KSSJ]--考试时间
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_JKKM_SCHOOLID--驾考科目表 学校ID
+      ,c.CLXHMC as c_JKKM_CLXHMC--驾考科目表 科目名称
+      ,c.CLXHID as c_JKKM_CLXHID--驾考科目表 车辆型号ID
+      ,c.KSSX as c_JKKM_KSSX--驾考科目表 考试顺序
+      ,c.BZ as c_JKKM_BZ--驾考科目表 备注
+
+FROM dbo.EDU_JPXT_04_01_KMKS AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_04_02_JKKM AS c ON a.KMID = c.ID /*科目ID*/
+GO
+
+--驾考科目表
+CREATE VIEW [dbo].[VIEW_EDU_JPXT_04_02_JKKM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[CLXHMC]--科目名称
+      ,a.[CLXHID]--车辆型号ID
+      ,a.[KSSX]--考试顺序
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_CLXH_SCHOOLID--车辆型号数据表 学校ID
+      ,c.CLXHMC as c_CLXH_CLXHMC--车辆型号数据表 车辆型号名称
+      ,c.BZ as c_CLXH_BZ--车辆型号数据表 备注
+
+FROM dbo.EDU_JPXT_04_02_JKKM AS a LEFT OUTER JOIN
+      dbo.EDU_JPXT_05_01_CLXH AS c ON a.CLXHID = c.ID /*车辆型号ID*/
 GO
 
 --通知数据表

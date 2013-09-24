@@ -13,6 +13,11 @@ namespace HanRuEdu.LDAL
         public class EDU_JPXT_03_02_XYKSJG_metadata
         {
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学员")]
             public Int32 XYID { get; set; }
 

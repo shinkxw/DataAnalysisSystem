@@ -10,8 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_JPXT_04_01_KMKS()
         {
             KSSJ = new DateTime(1900, 1, 1);
-            CJKSXYIDLB = "";
-            CJKSXYXMLB = "";
             BZ = "";
         }
         public class EDU_JPXT_04_01_KMKS_metadata
@@ -27,11 +25,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "教练员")]
-            public Int32 JLYOLID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "科目")]
             public Int32 KMID { get; set; }
 
@@ -39,18 +32,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "考试时间")]
             public DateTime KSSJ { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "参加考试学员ID列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CJKSXYIDLB { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "参加考试学员姓名列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CJKSXYXMLB { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

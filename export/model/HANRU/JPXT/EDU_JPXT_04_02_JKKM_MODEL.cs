@@ -32,13 +32,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "±ÿÃÓ")]
-            [Display(Name = "øº ‘À≥–Ú")]
-            public Int32 KSSX { get; set; }
+            [Display(Name = "≥µ¡æ–Õ∫≈")]
+            public Int32 CLXHID { get; set; }
 
 
             [Required(ErrorMessage = "±ÿÃÓ")]
-            [Display(Name = "≥µ¡æ–Õ∫≈")]
-            public Int32 CLXHID { get; set; }
+            [Display(Name = "øº ‘À≥–Ú")]
+            public Int32 KSSX { get; set; }
 
 
             [Required(ErrorMessage = "±ÿÃÓ",AllowEmptyStrings = true)]

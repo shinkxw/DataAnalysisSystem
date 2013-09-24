@@ -22,7 +22,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--Ñ§Ð£ID-->
                 <td>
-                    @Html.TextBoxFor(m => m.SCHOOLID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.SCHOOLID, ViewBag.ELE_01Lst as SelectList)
                     @Html.ValidationMessageFor(m => m.SCHOOLID)
                 </td>
             </tr>
@@ -36,18 +36,18 @@
             </tr>
 
             <tr>
-                <td> @Html.LabelFor(m => m.KSSX) </td> <!--¿¼ÊÔË³Ðò-->
+                <td> @Html.LabelFor(m => m.CLXHID) </td> <!--³µÁ¾ÐÍºÅID-->
                 <td>
-                    @Html.TextBoxFor(m => m.KSSX, new { @class = "easyui-validatebox", style = "width:150px; " })
-                    @Html.ValidationMessageFor(m => m.KSSX)
+                    @Html.DropDownListFor(m => m.CLXHID, ViewBag.JPXT_05Lst as SelectList)
+                    @Html.ValidationMessageFor(m => m.CLXHID)
                 </td>
             </tr>
 
             <tr>
-                <td> @Html.LabelFor(m => m.CLXHID) </td> <!--³µÁ¾ÐÍºÅID-->
+                <td> @Html.LabelFor(m => m.KSSX) </td> <!--¿¼ÊÔË³Ðò-->
                 <td>
-                    @Html.TextBoxFor(m => m.CLXHID, new { @class = "easyui-validatebox", style = "width:150px; " })
-                    @Html.ValidationMessageFor(m => m.CLXHID)
+                    @Html.TextBoxFor(m => m.KSSX, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.KSSX)
                 </td>
             </tr>
 

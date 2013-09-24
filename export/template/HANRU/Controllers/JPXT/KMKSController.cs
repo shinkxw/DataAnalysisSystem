@@ -47,12 +47,9 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
         {
             //设置默认值
             if (kmks.ID == 0) kmks.ID = 0;//编号
-            if (kmks.SCHOOLID == 0) kmks.SCHOOLID = 0;//学校ID
-            if (kmks.JLYOLID == 0) kmks.JLYOLID = 0;//教练员ID
-            if (kmks.KMID == 0) kmks.KMID = 0;//科目ID
+            if (kmks.SCHOOLID == 0) kmks.SCHOOLID = 0;//学校ID   学校配置表
+            if (kmks.KMID == 0) kmks.KMID = 0;//科目ID   驾考科目表
             if (kmks.KSSJ == 0) kmks.KSSJ = 0;//考试时间
-            if (string.IsNullOrEmpty(kmks.CJKSXYIDLB)) kmks.CJKSXYIDLB = "";//参加考试学员ID列表
-            if (string.IsNullOrEmpty(kmks.CJKSXYXMLB)) kmks.CJKSXYXMLB = "";//参加考试学员姓名列表
             if (string.IsNullOrEmpty(kmks.BZ)) kmks.BZ = "";//备注
             EDU_JPXT_04_01_KMKS kmks_model = db_jpxt.EDU_JPXT_04_01_KMKS.FirstOrDefault(e => e.ID == kmks.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
@@ -60,12 +57,9 @@ namespace HanRuEdu.JWXT.Controllers.JWXT
             if (kmks_model != null)
             {
                 kmks_model.ID = kmks.ID;//编号
-                kmks_model.SCHOOLID = kmks.SCHOOLID;//学校ID
-                kmks_model.JLYOLID = kmks.JLYOLID;//教练员ID
-                kmks_model.KMID = kmks.KMID;//科目ID
+                kmks_model.SCHOOLID = kmks.SCHOOLID;//学校ID   学校配置表
+                kmks_model.KMID = kmks.KMID;//科目ID   驾考科目表
                 kmks_model.KSSJ = kmks.KSSJ;//考试时间
-                kmks_model.CJKSXYIDLB = kmks.CJKSXYIDLB;//参加考试学员ID列表
-                kmks_model.CJKSXYXMLB = kmks.CJKSXYXMLB;//参加考试学员姓名列表
                 kmks_model.BZ = kmks.BZ;//备注
                 db_jpxt.Entry(kmks_model).State = EntityState.Modified;
             }
