@@ -40,7 +40,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "油量充值")]
+            [Display(Name = "充值油量")]
             [Range(typeof(decimal), "0", "99999999")]
             public decimal YLCZ { get; set; }
 

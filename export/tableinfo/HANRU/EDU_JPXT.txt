@@ -48,7 +48,7 @@ EDU_JPXT_01_05_JLCYHQK  教练车油耗情况表
   JLCID         教练车ID                int            非主        教练车数据表
   JLYID         教练员ID                int            非主        教练员数据表
   LRSJ          录入时间                datetime       非主
-  YLCZ          油量充值                decimal(8, 3)  非主
+  YLCZ          充值油量                decimal(8, 3)  非主
   BZ            备注                    text           非主
 
 EDU_JPXT_01_06_JLCCLXH  教练车材料消耗表

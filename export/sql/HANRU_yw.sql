@@ -813,7 +813,7 @@ CREATE TABLE [dbo].[EDU_JPXT_01_05_JLCYHQK](
 	[JLCID]  int  NOT NULL,--教练车ID
 	[JLYID]  int  NOT NULL,--教练员ID
 	[LRSJ]  datetime  NOT NULL,--录入时间
-	[YLCZ]  decimal(8, 3)  NOT NULL,--油量充值
+	[YLCZ]  decimal(8, 3)  NOT NULL,--充值油量
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_JPXT_01_05_JLCYHQK] PRIMARY KEY CLUSTERED
 (
@@ -1131,7 +1131,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教练员ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录入时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_05_JLCYHQK', @level2type=N'COLUMN',@level2name=N'LRSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'油量充值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_05_JLCYHQK', @level2type=N'COLUMN',@level2name=N'YLCZ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'充值油量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_05_JLCYHQK', @level2type=N'COLUMN',@level2name=N'YLCZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_05_JLCYHQK', @level2type=N'COLUMN',@level2name=N'BZ'
 GO

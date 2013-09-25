@@ -1018,7 +1018,7 @@ SELECT a.[ID]--编号
       ,a.[JLCID]--教练车ID
       ,a.[JLYID]--教练员ID
       ,a.[LRSJ]--录入时间
-      ,a.[YLCZ]--油量充值
+      ,a.[YLCZ]--充值油量
       ,a.[BZ]--备注
       ,c.SCHOOLID as c_JLCSJ_SCHOOLID--教练车数据表 学校ID
       ,c.GMSJ as c_JLCSJ_GMSJ--教练车数据表 购买时间
