@@ -40,7 +40,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "消耗情况")]
+            [Display(Name = "消耗金额")]
             [Range(typeof(decimal), "0", "99999999")]
             public decimal XHQK { get; set; }
 

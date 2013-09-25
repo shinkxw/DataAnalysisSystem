@@ -57,7 +57,7 @@ EDU_JPXT_01_06_JLCCLXH  教练车材料消耗表
   JLCID         教练车ID                int            非主        教练车数据表
   JLYID         教练员ID                int            非主        教练员数据表
   LRSJ          录入时间                datetime       非主
-  XHQK          消耗情况                decimal(8, 2)  非主
+  XHQK          消耗金额                decimal(8, 2)  非主
   BZ            备注                    text           非主
 
 EDU_JPXT_02_01_JLYSJ  教练员数据表

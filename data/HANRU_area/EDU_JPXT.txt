@@ -70,7 +70,7 @@
             <name="JLCID" explanation="教练车ID" type="int" null="F" p="F" />
             <name="JLYID" explanation="教练员ID" type="int" null="F" p="F" />
             <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
-            <name="XHQK" explanation="消耗情况" type="decimal(8, 2)" null="F" p="F" />
+            <name="XHQK" explanation="消耗金额" type="decimal(8, 2)" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>
     </table>

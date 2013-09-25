@@ -187,7 +187,7 @@ CREATE TABLE [dbo].[EDU_JPXT_01_06_JLCCLXH](
 	[JLCID]  int  NOT NULL,--教练车ID
 	[JLYID]  int  NOT NULL,--教练员ID
 	[LRSJ]  datetime  NOT NULL,--录入时间
-	[XHQK]  decimal(8, 2)  NOT NULL,--消耗情况
+	[XHQK]  decimal(8, 2)  NOT NULL,--消耗金额
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_JPXT_01_06_JLCCLXH] PRIMARY KEY CLUSTERED
 (
@@ -502,7 +502,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教练员ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录入时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_06_JLCCLXH', @level2type=N'COLUMN',@level2name=N'LRSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'消耗情况' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_06_JLCCLXH', @level2type=N'COLUMN',@level2name=N'XHQK'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'消耗金额' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_06_JLCCLXH', @level2type=N'COLUMN',@level2name=N'XHQK'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_01_06_JLCCLXH', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
