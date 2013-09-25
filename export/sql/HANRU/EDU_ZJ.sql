@@ -39,7 +39,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_T
 BEGIN
 CREATE TABLE [dbo].[EDU_ZJ_TKLX](
 	[DM]  int  NOT NULL,--代码
-	[LXMC]  nvarchar(36)  NOT NULL,--类型名称
+	[MC]  nvarchar(36)  NOT NULL,--类型名称
 CONSTRAINT [PK_EDU_ZJ_TKLX] PRIMARY KEY CLUSTERED
 (
 	[DM] ASC
@@ -1936,7 +1936,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课类型代码' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_TKLX', @level2type=N'COLUMN',@level2name=N'DM'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_TKLX', @level2type=N'COLUMN',@level2name=N'LXMC'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_TKLX', @level2type=N'COLUMN',@level2name=N'MC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业目录代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_ZYML'
 GO

@@ -3,7 +3,7 @@
     <table name="EDU_ZJ_TKLX" explanation="调课类型代码">
         <field_area>
             <name="DM" explanation="代码" type="int" null="F" p="T" />
-            <name="LXMC" explanation="类型名称" type="nvarchar(36)" null="F" p="F" />
+            <name="MC" explanation="类型名称" type="nvarchar(36)" null="F" p="F" />
         </field_area>
         <data_area>
             <DM="1" MC="调课" />

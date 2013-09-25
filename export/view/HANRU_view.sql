@@ -3826,7 +3826,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,de.MC as d_KC_SFZK_MC--是否标志代码表 名称
-      ,e.LXMC as e_TKLX_LXMC--调课类型代码 类型名称
+      ,e.MC as e_TKLX_MC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
       ,f.XLID as f_XLZ_XLID--校历周表 校历ID
       ,f.NAME as f_XLZ_NAME--校历周表 校历周名称
@@ -8977,7 +8977,7 @@ SELECT a.[ID]--编号
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
       ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
-      ,e.LXMC as e_TKLX_LXMC--调课类型代码 类型名称
+      ,e.MC as e_TKLX_MC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
       ,f.XLID as f_XLZ_XLID--校历周表 校历ID
       ,f.NAME as f_XLZ_NAME--校历周表 校历周名称
