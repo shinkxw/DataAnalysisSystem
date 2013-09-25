@@ -15,7 +15,7 @@ tmp
 data/backup
 data/temporary
 data/db_out_area
-export/template_
+export/template
 export/migrate_config
 export/testdata
 QY
