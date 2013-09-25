@@ -25,6 +25,7 @@ SELECT a.[LOGINNAME]--用户名
       ,c.SM as c_APP_SM--应用表 说明
       ,c.DLFS as c_APP_DLFS--应用表 登录方式
       ,c.STATUS as c_APP_STATUS--应用表 应用状态
+      ,c.TYPE as c_APP_TYPE--应用表 应用类别
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/

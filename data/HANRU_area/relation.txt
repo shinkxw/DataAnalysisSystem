@@ -28,7 +28,7 @@
 <EDU_ELE_05_XLZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XLID           EDU_ELE_05_XL                      ID
-<EDU_ELE_05_XQ
+<EDU_ELE_05_WEEKDAY
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_05_SD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
@@ -308,19 +308,17 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JSID           EDU_ZXJZ_01_01_JZGJBSJ             ID
   KCID           EDU_ZXJX_01_01_KC                  KCH
-  TKLXID         EDU_ZXJX_09_A02_TKLX               ID
+  TKLXID         EDU_ZJ_TKLX                        DM
   TKQQSZ         EDU_ELE_05_XLZ                     ID
   TKQJSZ         EDU_ELE_05_XLZ                     ID
-  TKQXQ          EDU_ELE_05_XQ                      ID
+  TKQXQ          EDU_ELE_05_WEEKDAY                 ID
   TKQSD          EDU_ELE_05_SD                      ID
   TKQJC          EDU_ELE_05_JC                      ID
   TKHQSZ         EDU_ELE_05_XLZ                     ID
   TKHJSZ         EDU_ELE_05_XLZ                     ID
-  TKHXQ          EDU_ELE_05_XQ                      ID
+  TKHXQ          EDU_ELE_05_WEEKDAY                 ID
   TKHSD          EDU_ELE_05_SD                      ID
   TKHJC          EDU_ELE_05_JC                      ID
-<EDU_ZXJX_09_A02_TKLX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM
@@ -700,19 +698,17 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JSID           EDU_ZZJG_01_01_JZGJBSJ             ID
   KCID           EDU_ZZJX_01_02_KC                  KCH
-  TKLXID         EDU_ZZJX_08_A02_TKLX               ID
+  TKLXID         EDU_ZJ_TKLX                        DM
   TKQQSZ         EDU_ELE_05_XLZ                     ID
   TKQJSZ         EDU_ELE_05_XLZ                     ID
-  TKQXQ          EDU_ELE_05_XQ                      ID
+  TKQXQ          EDU_ELE_05_WEEKDAY                 ID
   TKQSD          EDU_ELE_05_SD                      ID
   TKQJC          EDU_ELE_05_JC                      ID
   TKHQSZ         EDU_ELE_05_XLZ                     ID
   TKHJSZ         EDU_ELE_05_XLZ                     ID
-  TKHXQ          EDU_ELE_05_XQ                      ID
+  TKHXQ          EDU_ELE_05_WEEKDAY                 ID
   TKHSD          EDU_ELE_05_SD                      ID
   TKHJC          EDU_ELE_05_JC                      ID
-<EDU_ZZJX_08_A02_TKLX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXS_07_01_XJSJ
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

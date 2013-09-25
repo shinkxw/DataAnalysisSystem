@@ -311,7 +311,7 @@ EDU_ZZJX_08_A01_TKSQSJ  调课申请数据表
   SCHOOLID      学校ID                  int            主键        学校配置表
   JSID          教师                    int            非主        教职工基本数据子类表
   KCID          课程                    nvarchar(6)    非主        课程数据子类表
-  TKLXID        调课类型ID              int            非主        调课类型表
+  TKLXID        调课类型ID              int            非主        调课类型代码
   TKQQSZ        调课前起始周            int            非主        校历周表
   TKQJSZ        调课前结束周            int            非主        校历周表
   TKQXQ         调课前星期              int            非主        星期
@@ -324,9 +324,4 @@ EDU_ZZJX_08_A01_TKSQSJ  调课申请数据表
   TKHJC         调课后节次              int            非主        节次
   ZT            当前状态                int            非主
   BZ            备注                    text           非主
-
-EDU_ZZJX_08_A02_TKLX  调课类型表
-  ID            编号                    int            主键
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  LXMC          类型名称                nvarchar(36)   非主
 

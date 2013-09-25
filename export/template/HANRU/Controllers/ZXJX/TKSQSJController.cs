@@ -50,7 +50,7 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             if (tksqsj.SCHOOLID == 0) tksqsj.SCHOOLID = 0;//学校ID   学校配置表
             if (tksqsj.JSID == 0) tksqsj.JSID = 0;//教师   教职工基本数据子类表
             if (string.IsNullOrEmpty(tksqsj.KCID)) tksqsj.KCID = "";//课程   课程数据类
-            if (tksqsj.TKLXID == 0) tksqsj.TKLXID = 0;//调课类型ID   调课类型表
+            if (tksqsj.TKLXID == 0) tksqsj.TKLXID = 0;//调课类型ID   调课类型代码
             if (tksqsj.TKQQSZ == 0) tksqsj.TKQQSZ = 0;//调课前起始周   校历周表
             if (tksqsj.TKQJSZ == 0) tksqsj.TKQJSZ = 0;//调课前结束周   校历周表
             if (tksqsj.TKQXQ == 0) tksqsj.TKQXQ = 0;//调课前星期   星期
@@ -72,7 +72,7 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
                 tksqsj_model.SCHOOLID = tksqsj.SCHOOLID;//学校ID   学校配置表
                 tksqsj_model.JSID = tksqsj.JSID;//教师   教职工基本数据子类表
                 tksqsj_model.KCID = tksqsj.KCID;//课程   课程数据类
-                tksqsj_model.TKLXID = tksqsj.TKLXID;//调课类型ID   调课类型表
+                tksqsj_model.TKLXID = tksqsj.TKLXID;//调课类型ID   调课类型代码
                 tksqsj_model.TKQQSZ = tksqsj.TKQQSZ;//调课前起始周   校历周表
                 tksqsj_model.TKQJSZ = tksqsj.TKQJSZ;//调课前结束周   校历周表
                 tksqsj_model.TKQXQ = tksqsj.TKQXQ;//调课前星期   星期
@@ -96,6 +96,7 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         }
         public void InitViewBag()
         {
+            ViewBag.ZJ_TKLXLst = ZJLDAL.GetZJ_TKLXSelLst();
             
         }
 

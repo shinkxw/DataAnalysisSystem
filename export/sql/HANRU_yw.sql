@@ -60,9 +60,9 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_05_XLZ')
    drop table EDU_ELE_05_XLZ
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_05_XQ')
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_05_WEEKDAY')
             and   type = 'U')
-   drop table EDU_ELE_05_XQ
+   drop table EDU_ELE_05_WEEKDAY
 go
 
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_05_SD')
@@ -115,6 +115,7 @@ CREATE TABLE [dbo].[EDU_ELE_01_APP](
 	[SM]  text  NOT NULL,--说明
 	[DLFS]  int  NOT NULL,--登录方式
 	[STATUS]  int  NOT NULL,--应用状态
+	[TYPE]  int  NOT NULL,--应用类别
 CONSTRAINT [PK_EDU_ELE_01_APP] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -336,13 +337,13 @@ END
 GO
 
 --星期
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_05_XQ]') AND type in (N'U'))
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_05_WEEKDAY]') AND type in (N'U'))
 BEGIN
-CREATE TABLE [dbo].[EDU_ELE_05_XQ](
+CREATE TABLE [dbo].[EDU_ELE_05_WEEKDAY](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校名
 	[MC]  nvarchar(8)  NOT NULL,--名称
-CONSTRAINT [PK_EDU_ELE_05_XQ] PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_EDU_ELE_05_WEEKDAY] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
@@ -435,6 +436,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登录方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'DLFS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'STATUS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用类别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'TYPE'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL'
 GO
@@ -616,13 +619,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束日期' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'周计划' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_XLZ', @level2type=N'COLUMN',@level2name=N'ZJH'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'星期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_XQ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'星期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_WEEKDAY'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_XQ', @level2type=N'COLUMN',@level2name=N'ID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_WEEKDAY', @level2type=N'COLUMN',@level2name=N'ID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_XQ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_WEEKDAY', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_XQ', @level2type=N'COLUMN',@level2name=N'MC'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_WEEKDAY', @level2type=N'COLUMN',@level2name=N'MC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'时段' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_SD'
 GO
@@ -3453,11 +3456,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXJX_09_A01_TKSQ
             and   type = 'U')
    drop table EDU_ZXJX_09_A01_TKSQSJ
 go
-
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXJX_09_A02_TKLX')
-            and   type = 'U')
-   drop table EDU_ZXJX_09_A02_TKLX
-go
 --课程数据类
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXJX_01_01_KC]') AND type in (N'U'))
 BEGIN
@@ -3678,22 +3676,6 @@ CONSTRAINT [PK_EDU_ZXJX_09_A01_TKSQSJ] PRIMARY KEY CLUSTERED
 END
 GO
 
---调课类型表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXJX_09_A02_TKLX]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZXJX_09_A02_TKLX](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校ID
-	[LXMC]  nvarchar(36)  NOT NULL,--类型名称
-CONSTRAINT [PK_EDU_ZXJX_09_A02_TKLX] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程数据类' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_01_01_KC'
 GO
@@ -3900,14 +3882,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_09_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_09_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'BZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_09_A02_TKLX'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_09_A02_TKLX', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_09_A02_TKLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_09_A02_TKLX', @level2type=N'COLUMN',@level2name=N'LXMC'
 GO
 --空间名：EDU_ZXJZ  生成器：SqlBuilder0.1
 
@@ -6582,11 +6556,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_08_A01_TKSQ
             and   type = 'U')
    drop table EDU_ZZJX_08_A01_TKSQSJ
 go
-
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_08_A02_TKLX')
-            and   type = 'U')
-   drop table EDU_ZZJX_08_A02_TKLX
-go
 --学校班级数据表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_02_02_ZZBJ]') AND type in (N'U'))
 BEGIN
@@ -7207,22 +7176,6 @@ CONSTRAINT [PK_EDU_ZZJX_08_A01_TKSQSJ] PRIMARY KEY CLUSTERED
 END
 GO
 
---调课类型表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_08_A02_TKLX]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZJX_08_A02_TKLX](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校ID
-	[LXMC]  nvarchar(36)  NOT NULL,--类型名称
-CONSTRAINT [PK_EDU_ZZJX_08_A02_TKLX] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校班级数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_02_02_ZZBJ'
 GO
@@ -7825,14 +7778,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_08_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_08_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'BZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_08_A02_TKLX'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_08_A02_TKLX', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_08_A02_TKLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_08_A02_TKLX', @level2type=N'COLUMN',@level2name=N'LXMC'
 GO
 --空间名：EDU_ZZXS  生成器：SqlBuilder0.1
 

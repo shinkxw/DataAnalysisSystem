@@ -30,6 +30,7 @@
             <name="SM" explanation="说明" type="text" null="F" p="F" />
             <name="DLFS" explanation="登录方式" type="int" null="F" p="F" remark="TOKEN,模拟" />
             <name="STATUS" explanation="应用状态" type="int" null="F" p="F" remark="是否生效等" />
+            <name="TYPE" explanation="应用类别" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_SCHOOL" explanation="学校配置表">
@@ -152,7 +153,7 @@
             <name="ZJH" explanation="周计划" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ELE_05_XQ" explanation="星期">
+    <table name="EDU_ELE_05_WEEKDAY" explanation="星期">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />

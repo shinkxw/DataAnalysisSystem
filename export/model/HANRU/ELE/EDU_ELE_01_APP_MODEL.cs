@@ -63,6 +63,11 @@ namespace HanRuEdu.LDAL
             public Int32 STATUS { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "应用类别")]
+            public Int32 TYPE { get; set; }
+
+
         }
     }
 }

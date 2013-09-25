@@ -379,11 +379,4 @@
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_08_A02_TKLX" explanation="调课类型表">
-        <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="LXMC" explanation="类型名称" type="nvarchar(36)" null="F" p="F" />
-        </field_area>
-    </table>
 </namespace>

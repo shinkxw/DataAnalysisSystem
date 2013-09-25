@@ -25,6 +25,7 @@ EDU_ELE_01_APP  应用表
   SM            说明                    text           非主
   DLFS          登录方式                int            非主
   STATUS        应用状态                int            非主
+  TYPE          应用类别                int            非主
 
 EDU_ELE_01_SCHOOL  学校配置表
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -126,7 +127,7 @@ EDU_ELE_05_XLZ  校历周表
   ENDDAY        结束日期                datetime       非主
   ZJH           周计划                  text           非主
 
-EDU_ELE_05_XQ  星期
+EDU_ELE_05_WEEKDAY  星期
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
   MC            名称                    nvarchar(8)    非主

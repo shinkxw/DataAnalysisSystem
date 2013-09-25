@@ -54,6 +54,7 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             if (string.IsNullOrEmpty(app.SM)) app.SM = "";//说明
             if (app.DLFS == 0) app.DLFS = 0;//登录方式
             if (app.STATUS == 0) app.STATUS = 0;//应用状态
+            if (app.TYPE == 0) app.TYPE = 0;//应用类别
             EDU_ELE_01_APP app_model = db_ele.EDU_ELE_01_APP.FirstOrDefault(e => e.ID == app.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 
@@ -67,6 +68,7 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
                 app_model.SM = app.SM;//说明
                 app_model.DLFS = app.DLFS;//登录方式
                 app_model.STATUS = app.STATUS;//应用状态
+                app_model.TYPE = app.TYPE;//应用类别
                 db_ele.Entry(app_model).State = EntityState.Modified;
             }
             else

@@ -104,8 +104,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,de.MC as d_KC_SFZK_MC--是否标志代码表 名称
-      ,e.SCHOOLID as e_TKLX_SCHOOLID--调课类型表 学校ID
-      ,e.LXMC as e_TKLX_LXMC--调课类型表 类型名称
+      ,e.LXMC as e_TKLX_LXMC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
       ,f.XLID as f_XLZ_XLID--校历周表 校历ID
       ,f.NAME as f_XLZ_NAME--校历周表 校历周名称
@@ -118,8 +117,8 @@ SELECT a.[ID]--编号
       ,g.STARTDAY as g_XLZ_STARTDAY--校历周表 开始日期
       ,g.ENDDAY as g_XLZ_ENDDAY--校历周表 结束日期
       ,g.ZJH as g_XLZ_ZJH--校历周表 周计划
-      ,h.SCHOOLID as h_XQ_SCHOOLID--星期 学校名
-      ,h.MC as h_XQ_MC--星期 名称
+      ,h.SCHOOLID as h_WEEKDAY_SCHOOLID--星期 学校名
+      ,h.MC as h_WEEKDAY_MC--星期 名称
       ,i.SCHOOLID as i_SD_SCHOOLID--时段 学校名
       ,i.MC as i_SD_MC--时段 名称
       ,j.SCHOOLID as j_JC_SCHOOLID--节次 学校名
@@ -136,8 +135,8 @@ SELECT a.[ID]--编号
       ,l.STARTDAY as l_XLZ_STARTDAY--校历周表 开始日期
       ,l.ENDDAY as l_XLZ_ENDDAY--校历周表 结束日期
       ,l.ZJH as l_XLZ_ZJH--校历周表 周计划
-      ,m.SCHOOLID as m_XQ_SCHOOLID--星期 学校名
-      ,m.MC as m_XQ_MC--星期 名称
+      ,m.SCHOOLID as m_WEEKDAY_SCHOOLID--星期 学校名
+      ,m.MC as m_WEEKDAY_MC--星期 名称
       ,n.SCHOOLID as n_SD_SCHOOLID--时段 学校名
       ,n.MC as n_SD_MC--时段 名称
       ,o.SCHOOLID as o_JC_SCHOOLID--节次 学校名
@@ -146,15 +145,15 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZXJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_01_01_KC AS d ON a.KCID = d.KCH /*课程*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_09_A02_TKLX AS e ON a.TKLXID = e.ID /*调课类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_TKLX AS e ON a.TKLXID = e.DM /*调课类型ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS f ON a.TKQQSZ = f.ID /*调课前起始周*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS g ON a.TKQJSZ = g.ID /*调课前结束周*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_05_XQ AS h ON a.TKQXQ = h.ID /*调课前星期*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_05_WEEKDAY AS h ON a.TKQXQ = h.ID /*调课前星期*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_SD AS i ON a.TKQSD = i.ID /*调课前时段*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_JC AS j ON a.TKQJC = j.ID /*调课前节次*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS k ON a.TKHQSZ = k.ID /*调课后起始周*/ AND a.SCHOOLID = k.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS l ON a.TKHJSZ = l.ID /*调课后结束周*/ AND a.SCHOOLID = l.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_05_XQ AS m ON a.TKHXQ = m.ID /*调课后星期*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_05_WEEKDAY AS m ON a.TKHXQ = m.ID /*调课后星期*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_SD AS n ON a.TKHSD = n.ID /*调课后时段*/ AND a.SCHOOLID = n.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_JC AS o ON a.TKHJC = o.ID /*调课后节次*/ AND a.SCHOOLID = o.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN

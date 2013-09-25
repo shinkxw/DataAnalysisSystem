@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_09_A02_TKLX_metadata))]
-    public partial class EDU_ZXJX_09_A02_TKLX
+    [MetadataType(typeof(EDU_ELE_05_WEEKDAY_metadata))]
+    public partial class EDU_ELE_05_WEEKDAY
     {
-        public EDU_ZXJX_09_A02_TKLX()
+        public EDU_ELE_05_WEEKDAY()
         {
-            LXMC = "";
+            MC = "";
         }
-        public class EDU_ZXJX_09_A02_TKLX_metadata
+        public class EDU_ELE_05_WEEKDAY_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -19,15 +19,15 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学校")]
+            [Display(Name = "学校名")]
             public Int32 SCHOOLID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "类型名称")]
-            [StringLength(36)]
+            [Display(Name = "名称")]
+            [StringLength(8)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LXMC { get; set; }
+            public String MC { get; set; }
 
 
         }

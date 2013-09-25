@@ -13,11 +13,11 @@ using HanRuEdu.JPXT.Common;
 
 namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class TKLXController : JPXTController
+    public class WEEKDAYController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
-            List<VIEW_EDU_ZZJX_08_A02_TKLX_DISP> model = db_zzjx.VIEW_EDU_ZZJX_08_A02_TKLX_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
+            List<VIEW_EDU_ELE_05_WEEKDAY_DISP> model = db_ele.VIEW_EDU_ELE_05_WEEKDAY_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
             if (!String.IsNullOrEmpty(searchkey))
             {
                 //model = model.Where(e => e.ID.Contains(searchkey)).ToList();
@@ -37,34 +37,34 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             return "{\"total\":" + model.Count + ",\"rows\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";
         }
 
-        public void AddTklx(EDU_ZZJX_08_A02_TKLX tklx)
+        public void AddWeekday(EDU_ELE_05_WEEKDAY weekday)
         {
-            tklx.SCHOOLID = CurUser.ele01Usr.SCHOOLID;
-            UpdTklx(tklx);
+            weekday.SCHOOLID = CurUser.ele01Usr.SCHOOLID;
+            UpdWeekday(weekday);
         }
 
-        public void UpdTklx(EDU_ZZJX_08_A02_TKLX tklx)
+        public void UpdWeekday(EDU_ELE_05_WEEKDAY weekday)
         {
             //设置默认值
-            if (tklx.ID == 0) tklx.ID = 0;//编号
-            if (tklx.SCHOOLID == 0) tklx.SCHOOLID = 0;//学校ID   学校配置表
-            if (string.IsNullOrEmpty(tklx.LXMC)) tklx.LXMC = "";//类型名称
-            EDU_ZZJX_08_A02_TKLX tklx_model = db_zzjx.EDU_ZZJX_08_A02_TKLX.FirstOrDefault(e => e.ID == tklx.ID
+            if (weekday.ID == 0) weekday.ID = 0;//编号
+            if (weekday.SCHOOLID == 0) weekday.SCHOOLID = 0;//学校名   学校配置表
+            if (string.IsNullOrEmpty(weekday.MC)) weekday.MC = "";//名称
+            EDU_ELE_05_WEEKDAY weekday_model = db_ele.EDU_ELE_05_WEEKDAY.FirstOrDefault(e => e.ID == weekday.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 
-            if (tklx_model != null)
+            if (weekday_model != null)
             {
-                tklx_model.ID = tklx.ID;//编号
-                tklx_model.SCHOOLID = tklx.SCHOOLID;//学校ID   学校配置表
-                tklx_model.LXMC = tklx.LXMC;//类型名称
-                db_zzjx.Entry(tklx_model).State = EntityState.Modified;
+                weekday_model.ID = weekday.ID;//编号
+                weekday_model.SCHOOLID = weekday.SCHOOLID;//学校名   学校配置表
+                weekday_model.MC = weekday.MC;//名称
+                db_ele.Entry(weekday_model).State = EntityState.Modified;
             }
             else
             {
                 throw new Exception("记录不存在");
-                //db_zzjx.EDU_ZZJX_08_A02_TKLX.Add(tklx);
+                //db_ele.EDU_ELE_05_WEEKDAY.Add(weekday);
             }
-            db_zzjx.SaveChanges();
+            db_ele.SaveChanges();
         }
         public void InitViewBag()
         {
@@ -73,35 +73,35 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
 
         public ActionResult Index()
         {
-            return View(new EDU_ZZJX_08_A02_TKLX());
+            return View(new EDU_ELE_05_WEEKDAY());
         }
         public ActionResult Create()
         {
             InitViewBag();
             
-            return View(new EDU_ZZJX_08_A02_TKLX());
+            return View(new EDU_ELE_05_WEEKDAY());
         }
 
         [HttpPost]
-        public ActionResult Create(EDU_ZZJX_08_A02_TKLX tklx)
+        public ActionResult Create(EDU_ELE_05_WEEKDAY weekday)
         {
             InitViewBag();
             try
             {
                 //
                 //
-                AddTklx(tklx);
+                AddWeekday(weekday);
                 return RedirectToAction("Index");
             }
             catch (DbEntityValidationException dbEx)
             {
                 SetTopCenter(dbEx.Message);
-                return View(tklx);
+                return View(weekday);
             }
             catch (Exception e)
             {
                 SetTopCenter(e.Message);
-                return View(tklx);
+                return View(weekday);
             }
         }
 
@@ -109,30 +109,30 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         {
             InitViewBag();
             
-            EDU_ZZJX_08_A02_TKLX tklx= db_zzjx.EDU_ZZJX_08_A02_TKLX.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-            return View(tklx);
+            EDU_ELE_05_WEEKDAY weekday= db_ele.EDU_ELE_05_WEEKDAY.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+            return View(weekday);
         }
 
         [HttpPost]
-        public ActionResult Edit(EDU_ZZJX_08_A02_TKLX tklx)
+        public ActionResult Edit(EDU_ELE_05_WEEKDAY weekday)
         {
             InitViewBag();
             try
             {
                 
                 
-                UpdTklx(tklx);
+                UpdWeekday(weekday);
                 return RedirectToAction("Index");
             }
             catch (DbEntityValidationException dbEx)
             {
                 SetTopCenter(dbEx.Message);
-                return View(tklx);
+                return View(weekday);
             }
             catch (Exception e)
             {
                 SetTopCenter(e.Message);
-                return View(tklx);
+                return View(weekday);
             }
         }
 
@@ -140,9 +140,9 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         {
             try
             {
-                EDU_ZZJX_08_A02_TKLX tklx = db_zzjx.EDU_ZZJX_08_A02_TKLX.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-                db_zzjx.EDU_ZZJX_08_A02_TKLX.Remove(tklx);
-                db_zzjx.SaveChanges();
+                EDU_ELE_05_WEEKDAY weekday = db_ele.EDU_ELE_05_WEEKDAY.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                db_ele.EDU_ELE_05_WEEKDAY.Remove(weekday);
+                db_ele.SaveChanges();
                 return "删除成功！";
             }
             catch (DbEntityValidationException dbEx)
@@ -162,9 +162,9 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
                 int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);
                 foreach (int id in idlst)
                 {
-                    EDU_ZZJX_08_A02_TKLX tklx = db_zzjx.EDU_ZZJX_08_A02_TKLX.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-                    db_zzjx.EDU_ZZJX_08_A02_TKLX.Remove(tklx);
-                    db_zzjx.SaveChanges();
+                    EDU_ELE_05_WEEKDAY weekday = db_ele.EDU_ELE_05_WEEKDAY.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                    db_ele.EDU_ELE_05_WEEKDAY.Remove(weekday);
+                    db_ele.SaveChanges();
                 }
                 return "删除成功！";
             }
@@ -178,31 +178,31 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             }
         }
 
-        private static int Max_TKLX_ID = 0;
+        private static int Max_WEEKDAY_ID = 0;
         private static object syncIDLock = new object();
-        //获取调课类型表最大ID
-        public int GetMax_TKLX_ID()
+        //获取星期最大ID
+        public int GetMax_WEEKDAY_ID()
         {
             int maxId = 0;
             lock (syncIDLock)
             {
-                if (Max_TKLX_ID == 0)
+                if (Max_WEEKDAY_ID == 0)
                 {
-                    EDU_ZZJX_08_A02_TKLX tklx = db_zzjx.EDU_ZZJX_08_A02_TKLX.FirstOrDefault();
-                    if (tklx == null)
+                    EDU_ELE_05_WEEKDAY weekday = db_ele.EDU_ELE_05_WEEKDAY.FirstOrDefault();
+                    if (weekday == null)
                     {
-                        Max_TKLX_ID = 1;
+                        Max_WEEKDAY_ID = 1;
                     }
                     else
                     {
-                        //Max_TKLX_ID = db_zzjx.EDU_ZZJX_08_A02_TKLX.Max(e => e.ID) + 1;
+                        //Max_WEEKDAY_ID = db_ele.EDU_ELE_05_WEEKDAY.Max(e => e.ID) + 1;
                     }
                 }
                 else
                 {
-                    Max_TKLX_ID++;
+                    Max_WEEKDAY_ID++;
                 }
-                maxId = Max_TKLX_ID;
+                maxId = Max_WEEKDAY_ID;
             }
             return maxId;
         }

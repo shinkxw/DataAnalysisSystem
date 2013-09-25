@@ -76,6 +76,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td> @Html.LabelFor(m => m.TYPE) </td> <!--应用类别-->
+                <td>
+                    @Html.TextBoxFor(m => m.TYPE, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.TYPE)
+                </td>
+            </tr>
+
         </table>
         <br />
         @{ ViewData["ce_cancel"] = Url.Content("~/jpxt/app/index");}

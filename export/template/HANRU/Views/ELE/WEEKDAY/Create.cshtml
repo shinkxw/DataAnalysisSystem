@@ -1,9 +1,9 @@
-@model HanRuEdu.LDAL.EDU_ZXJX_09_A02_TKLX
+@model HanRuEdu.LDAL.EDU_ELE_05_WEEKDAY
 @using (Html.BeginForm())
 {
     @Html.Partial("SingleZTree")
-    <div id="dlg" class="easyui-panel" title="编辑" style="width: 900px; height: 500px; padding: 10px 20px">
-        <center>  <h1 ><span style="font-size:smaller;">编辑</span></h1></center>
+    <div id="dlg" class="easyui-panel" title="添加" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">添加</span></h1></center>
 
         <table class="admintable">
             <tr>
@@ -20,7 +20,7 @@
             </tr>
 
             <tr>
-                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校ID-->
+                <td> @Html.LabelFor(m => m.SCHOOLID) </td> <!--学校名-->
                 <td>
                     @Html.TextBoxFor(m => m.SCHOOLID, new { @class = "easyui-validatebox", style = "width:150px; " })
                     @Html.ValidationMessageFor(m => m.SCHOOLID)
@@ -28,16 +28,16 @@
             </tr>
 
             <tr>
-                <td> @Html.LabelFor(m => m.LXMC) </td> <!--类型名称-->
+                <td> @Html.LabelFor(m => m.MC) </td> <!--名称-->
                 <td>
-                    @Html.TextBoxFor(m => m.LXMC, new { @class = "easyui-validatebox", style = "width:150px; " })
-                    @Html.ValidationMessageFor(m => m.LXMC)
+                    @Html.TextBoxFor(m => m.MC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.MC)
                 </td>
             </tr>
 
         </table>
         <br />
-        @{ ViewData["ce_cancel"] = Url.Content("~/jpxt/tklx/index");}
+        @{ ViewData["ce_cancel"] = Url.Content("~/jpxt/weekday/index");}
         @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
     </div>
 }

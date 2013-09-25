@@ -16,6 +16,7 @@ SELECT a.[ID]--分组ID
       ,c.SM as c_APP_SM--应用表 说明
       ,c.DLFS as c_APP_DLFS--应用表 登录方式
       ,c.STATUS as c_APP_STATUS--应用表 应用状态
+      ,c.TYPE as c_APP_TYPE--应用表 应用类别
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
