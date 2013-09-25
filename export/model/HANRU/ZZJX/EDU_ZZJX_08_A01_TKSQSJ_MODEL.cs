@@ -10,12 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_08_A01_TKSQSJ()
         {
             KCID = "";
-            TKQXQ = "";
-            TKQSD = "";
-            TKQJC = "";
-            TKHXQ = "";
-            TKHSD = "";
-            TKHJC = "";
             BZ = "";
         }
         public class EDU_ZZJX_08_A01_TKSQSJ_metadata
@@ -57,25 +51,19 @@ namespace HanRuEdu.LDAL
             public Int32 TKQJSZ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "调课前星期")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String TKQXQ { get; set; }
+            public Int32 TKQXQ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "调课前时段")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String TKQSD { get; set; }
+            public Int32 TKQSD { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "调课前节次")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String TKQJC { get; set; }
+            public Int32 TKQJC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -88,25 +76,19 @@ namespace HanRuEdu.LDAL
             public Int32 TKHJSZ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "调课后星期")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String TKHXQ { get; set; }
+            public Int32 TKHXQ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "调课后时段")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String TKHSD { get; set; }
+            public Int32 TKHSD { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "调课后节次")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String TKHJC { get; set; }
+            public Int32 TKHJC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

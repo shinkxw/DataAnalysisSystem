@@ -28,6 +28,12 @@
 <EDU_ELE_05_XLZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XLID           EDU_ELE_05_XL                      ID
+<EDU_ELE_05_XQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_05_SD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_05_JC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_JPXT_01_01_JLCSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CLXHID         EDU_JPXT_05_01_CLXH                ID
@@ -305,14 +311,14 @@
   TKLXID         EDU_ZXJX_09_A02_TKLX               ID
   TKQQSZ         EDU_ELE_05_XLZ                     ID
   TKQJSZ         EDU_ELE_05_XLZ                     ID
-  TKQXQ          EDU_ZJ_XQ                          DM
-  TKQSD          EDU_ZJ_SD                          DM
-  TKQJC          EDU_ZJ_JC                          DM
+  TKQXQ          EDU_ELE_05_XQ                      ID
+  TKQSD          EDU_ELE_05_SD                      ID
+  TKQJC          EDU_ELE_05_JC                      ID
   TKHQSZ         EDU_ELE_05_XLZ                     ID
   TKHJSZ         EDU_ELE_05_XLZ                     ID
-  TKHXQ          EDU_ZJ_XQ                          DM
-  TKHSD          EDU_ZJ_SD                          DM
-  TKHJC          EDU_ZJ_JC                          DM
+  TKHXQ          EDU_ELE_05_XQ                      ID
+  TKHSD          EDU_ELE_05_SD                      ID
+  TKHJC          EDU_ELE_05_JC                      ID
 <EDU_ZXJX_09_A02_TKLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJZ_01_01_JZGJBSJ
@@ -697,14 +703,14 @@
   TKLXID         EDU_ZZJX_08_A02_TKLX               ID
   TKQQSZ         EDU_ELE_05_XLZ                     ID
   TKQJSZ         EDU_ELE_05_XLZ                     ID
-  TKQXQ          EDU_ZJ_XQ                          DM
-  TKQSD          EDU_ZJ_SD                          DM
-  TKQJC          EDU_ZJ_JC                          DM
+  TKQXQ          EDU_ELE_05_XQ                      ID
+  TKQSD          EDU_ELE_05_SD                      ID
+  TKQJC          EDU_ELE_05_JC                      ID
   TKHQSZ         EDU_ELE_05_XLZ                     ID
   TKHJSZ         EDU_ELE_05_XLZ                     ID
-  TKHXQ          EDU_ZJ_XQ                          DM
-  TKHSD          EDU_ZJ_SD                          DM
-  TKHJC          EDU_ZJ_JC                          DM
+  TKHXQ          EDU_ELE_05_XQ                      ID
+  TKHSD          EDU_ELE_05_SD                      ID
+  TKHJC          EDU_ELE_05_JC                      ID
 <EDU_ZZJX_08_A02_TKLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXS_07_01_XJSJ

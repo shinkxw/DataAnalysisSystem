@@ -1,15 +1,3 @@
-EDU_ZJ_XQ  星期代码
-  DM            代码                    nvarchar(1)    主键
-  MC            名称                    nvarchar(8)    非主
-
-EDU_ZJ_SD  时段代码
-  DM            代码                    nvarchar(1)    主键
-  MC            名称                    nvarchar(5)    非主
-
-EDU_ZJ_JC  节次代码
-  DM            代码                    nvarchar(1)    主键
-  MC            名称                    nvarchar(5)    非主
-
 EDU_ZJ_ZYML  专业目录代码
   DM            代码                    nvarchar(1)    主键
   MC            名称                    nvarchar(19)   非主

@@ -126,3 +126,18 @@ EDU_ELE_05_XLZ  校历周表
   ENDDAY        结束日期                datetime       非主
   ZJH           周计划                  text           非主
 
+EDU_ELE_05_XQ  星期
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  MC            名称                    nvarchar(8)    非主
+
+EDU_ELE_05_SD  时段
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  MC            名称                    nvarchar(5)    非主
+
+EDU_ELE_05_JC  节次
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  MC            名称                    nvarchar(5)    非主
+

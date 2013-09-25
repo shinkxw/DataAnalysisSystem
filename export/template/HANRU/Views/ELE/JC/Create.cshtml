@@ -1,9 +1,9 @@
-@model HanRuEdu.LDAL.EDU_ELE_05_XQ
+@model HanRuEdu.LDAL.EDU_ELE_05_JC
 @using (Html.BeginForm())
 {
     @Html.Partial("SingleZTree")
-    <div id="dlg" class="easyui-panel" title="±à¼­" style="width: 900px; height: 500px; padding: 10px 20px">
-        <center>  <h1 ><span style="font-size:smaller;">±à¼­</span></h1></center>
+    <div id="dlg" class="easyui-panel" title="Ìí¼Ó" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">Ìí¼Ó</span></h1></center>
 
         <table class="admintable">
             <tr>
@@ -37,7 +37,7 @@
 
         </table>
         <br />
-        @{ ViewData["ce_cancel"] = Url.Content("~/jpxt/xq/index");}
+        @{ ViewData["ce_cancel"] = Url.Content("~/jpxt/jc/index");}
         @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)
     </div>
 }

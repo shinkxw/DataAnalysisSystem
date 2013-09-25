@@ -1,20 +1,5 @@
 --空间名：EDU_ZJ  生成器：SqlBuilder0.1
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_XQ')
-            and   type = 'U')
-   drop table EDU_ZJ_XQ
-go
-
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_SD')
-            and   type = 'U')
-   drop table EDU_ZJ_SD
-go
-
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_JC')
-            and   type = 'U')
-   drop table EDU_ZJ_JC
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_ZYML')
             and   type = 'U')
    drop table EDU_ZJ_ZYML
@@ -44,68 +29,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_JBLX')
             and   type = 'U')
    drop table EDU_ZJ_JBLX
 go
---星期代码
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_XQ]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZJ_XQ](
-	[DM]  nvarchar(1)  NOT NULL,--代码
-	[MC]  nvarchar(8)  NOT NULL,--名称
-CONSTRAINT [PK_EDU_ZJ_XQ] PRIMARY KEY CLUSTERED
-(
-	[DM] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('1', '星期一')
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('2', '星期二')
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('3', '星期三')
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('4', '星期四')
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('5', '星期五')
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('6', '星期六')
-INSERT INTO [EDU_ZJ_XQ]([DM] ,[MC]) VALUES('7', '星期日')
-
---时段代码
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_SD]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZJ_SD](
-	[DM]  nvarchar(1)  NOT NULL,--代码
-	[MC]  nvarchar(5)  NOT NULL,--名称
-CONSTRAINT [PK_EDU_ZJ_SD] PRIMARY KEY CLUSTERED
-(
-	[DM] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
-INSERT INTO [EDU_ZJ_SD]([DM] ,[MC]) VALUES('1', '上午')
-INSERT INTO [EDU_ZJ_SD]([DM] ,[MC]) VALUES('2', '中午')
-INSERT INTO [EDU_ZJ_SD]([DM] ,[MC]) VALUES('3', '下午')
-INSERT INTO [EDU_ZJ_SD]([DM] ,[MC]) VALUES('4', '晚上')
-
---节次代码
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_JC]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZJ_JC](
-	[DM]  nvarchar(1)  NOT NULL,--代码
-	[MC]  nvarchar(5)  NOT NULL,--名称
-CONSTRAINT [PK_EDU_ZJ_JC] PRIMARY KEY CLUSTERED
-(
-	[DM] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
-INSERT INTO [EDU_ZJ_JC]([DM] ,[MC]) VALUES('1', '第一节')
-INSERT INTO [EDU_ZJ_JC]([DM] ,[MC]) VALUES('2', '第二节')
-INSERT INTO [EDU_ZJ_JC]([DM] ,[MC]) VALUES('3', '第三节')
-INSERT INTO [EDU_ZJ_JC]([DM] ,[MC]) VALUES('4', '第四节')
-INSERT INTO [EDU_ZJ_JC]([DM] ,[MC]) VALUES('5', '第五节')
-INSERT INTO [EDU_ZJ_JC]([DM] ,[MC]) VALUES('6', '第六节')
-
 --专业目录代码
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_ZYML]') AND type in (N'U'))
 BEGIN
@@ -1986,24 +1909,6 @@ INSERT INTO [EDU_ZJ_JBLX]([DM] ,[MC]) VALUES('2', '双休日加班')
 INSERT INTO [EDU_ZJ_JBLX]([DM] ,[MC]) VALUES('3', '节假日加班')
 
 --以下为添加注释语句
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'星期代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_XQ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_XQ', @level2type=N'COLUMN',@level2name=N'DM'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_XQ', @level2type=N'COLUMN',@level2name=N'MC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'时段代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_SD'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_SD', @level2type=N'COLUMN',@level2name=N'DM'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_SD', @level2type=N'COLUMN',@level2name=N'MC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'节次代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_JC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_JC', @level2type=N'COLUMN',@level2name=N'DM'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_JC', @level2type=N'COLUMN',@level2name=N'MC'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业目录代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_ZYML'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_ZYML', @level2type=N'COLUMN',@level2name=N'DM'

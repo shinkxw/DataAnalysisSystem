@@ -152,4 +152,25 @@
             <name="ZJH" explanation="周计划" type="text" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ELE_05_XQ" explanation="星期">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(8)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_05_SD" explanation="时段">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(5)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_05_JC" explanation="节次">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(5)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

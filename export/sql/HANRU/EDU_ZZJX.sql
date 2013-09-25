@@ -735,14 +735,14 @@ CREATE TABLE [dbo].[EDU_ZZJX_08_A01_TKSQSJ](
 	[TKLXID]  int  NOT NULL,--调课类型ID
 	[TKQQSZ]  int  NOT NULL,--调课前起始周
 	[TKQJSZ]  int  NOT NULL,--调课前结束周
-	[TKQXQ]  nvarchar(1)  NOT NULL,--调课前星期
-	[TKQSD]  nvarchar(1)  NOT NULL,--调课前时段
-	[TKQJC]  nvarchar(1)  NOT NULL,--调课前节次
+	[TKQXQ]  int  NOT NULL,--调课前星期
+	[TKQSD]  int  NOT NULL,--调课前时段
+	[TKQJC]  int  NOT NULL,--调课前节次
 	[TKHQSZ]  int  NOT NULL,--调课后起始周
 	[TKHJSZ]  int  NOT NULL,--调课后结束周
-	[TKHXQ]  nvarchar(1)  NOT NULL,--调课后星期
-	[TKHSD]  nvarchar(1)  NOT NULL,--调课后时段
-	[TKHJC]  nvarchar(1)  NOT NULL,--调课后节次
+	[TKHXQ]  int  NOT NULL,--调课后星期
+	[TKHSD]  int  NOT NULL,--调课后时段
+	[TKHJC]  int  NOT NULL,--调课后节次
 	[ZT]  int  NOT NULL,--当前状态
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_ZZJX_08_A01_TKSQSJ] PRIMARY KEY CLUSTERED

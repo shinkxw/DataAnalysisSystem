@@ -53,14 +53,14 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             if (tksqsj.TKLXID == 0) tksqsj.TKLXID = 0;//调课类型ID   调课类型表
             if (tksqsj.TKQQSZ == 0) tksqsj.TKQQSZ = 0;//调课前起始周   校历周表
             if (tksqsj.TKQJSZ == 0) tksqsj.TKQJSZ = 0;//调课前结束周   校历周表
-            if (string.IsNullOrEmpty(tksqsj.TKQXQ)) tksqsj.TKQXQ = "";//调课前星期   星期代码
-            if (string.IsNullOrEmpty(tksqsj.TKQSD)) tksqsj.TKQSD = "";//调课前时段   时段代码
-            if (string.IsNullOrEmpty(tksqsj.TKQJC)) tksqsj.TKQJC = "";//调课前节次   节次代码
+            if (tksqsj.TKQXQ == 0) tksqsj.TKQXQ = 0;//调课前星期   星期
+            if (tksqsj.TKQSD == 0) tksqsj.TKQSD = 0;//调课前时段   时段
+            if (tksqsj.TKQJC == 0) tksqsj.TKQJC = 0;//调课前节次   节次
             if (tksqsj.TKHQSZ == 0) tksqsj.TKHQSZ = 0;//调课后起始周   校历周表
             if (tksqsj.TKHJSZ == 0) tksqsj.TKHJSZ = 0;//调课后结束周   校历周表
-            if (string.IsNullOrEmpty(tksqsj.TKHXQ)) tksqsj.TKHXQ = "";//调课后星期   星期代码
-            if (string.IsNullOrEmpty(tksqsj.TKHSD)) tksqsj.TKHSD = "";//调课后时段   时段代码
-            if (string.IsNullOrEmpty(tksqsj.TKHJC)) tksqsj.TKHJC = "";//调课后节次   节次代码
+            if (tksqsj.TKHXQ == 0) tksqsj.TKHXQ = 0;//调课后星期   星期
+            if (tksqsj.TKHSD == 0) tksqsj.TKHSD = 0;//调课后时段   时段
+            if (tksqsj.TKHJC == 0) tksqsj.TKHJC = 0;//调课后节次   节次
             if (tksqsj.ZT == 0) tksqsj.ZT = 0;//当前状态
             if (string.IsNullOrEmpty(tksqsj.BZ)) tksqsj.BZ = "";//备注
             EDU_ZZJX_08_A01_TKSQSJ tksqsj_model = db_zzjx.EDU_ZZJX_08_A01_TKSQSJ.FirstOrDefault(e => e.ID == tksqsj.ID
@@ -75,14 +75,14 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
                 tksqsj_model.TKLXID = tksqsj.TKLXID;//调课类型ID   调课类型表
                 tksqsj_model.TKQQSZ = tksqsj.TKQQSZ;//调课前起始周   校历周表
                 tksqsj_model.TKQJSZ = tksqsj.TKQJSZ;//调课前结束周   校历周表
-                tksqsj_model.TKQXQ = tksqsj.TKQXQ;//调课前星期   星期代码
-                tksqsj_model.TKQSD = tksqsj.TKQSD;//调课前时段   时段代码
-                tksqsj_model.TKQJC = tksqsj.TKQJC;//调课前节次   节次代码
+                tksqsj_model.TKQXQ = tksqsj.TKQXQ;//调课前星期   星期
+                tksqsj_model.TKQSD = tksqsj.TKQSD;//调课前时段   时段
+                tksqsj_model.TKQJC = tksqsj.TKQJC;//调课前节次   节次
                 tksqsj_model.TKHQSZ = tksqsj.TKHQSZ;//调课后起始周   校历周表
                 tksqsj_model.TKHJSZ = tksqsj.TKHJSZ;//调课后结束周   校历周表
-                tksqsj_model.TKHXQ = tksqsj.TKHXQ;//调课后星期   星期代码
-                tksqsj_model.TKHSD = tksqsj.TKHSD;//调课后时段   时段代码
-                tksqsj_model.TKHJC = tksqsj.TKHJC;//调课后节次   节次代码
+                tksqsj_model.TKHXQ = tksqsj.TKHXQ;//调课后星期   星期
+                tksqsj_model.TKHSD = tksqsj.TKHSD;//调课后时段   时段
+                tksqsj_model.TKHJC = tksqsj.TKHJC;//调课后节次   节次
                 tksqsj_model.ZT = tksqsj.ZT;//当前状态
                 tksqsj_model.BZ = tksqsj.BZ;//备注
                 db_zzjx.Entry(tksqsj_model).State = EntityState.Modified;
@@ -96,12 +96,6 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         }
         public void InitViewBag()
         {
-            ViewBag.ZJ_XQLst = ZJLDAL.GetZJ_XQSelLst();
-            ViewBag.ZJ_SDLst = ZJLDAL.GetZJ_SDSelLst();
-            ViewBag.ZJ_JCLst = ZJLDAL.GetZJ_JCSelLst();
-            ViewBag.ZJ_XQLst = ZJLDAL.GetZJ_XQSelLst();
-            ViewBag.ZJ_SDLst = ZJLDAL.GetZJ_SDSelLst();
-            ViewBag.ZJ_JCLst = ZJLDAL.GetZJ_JCSelLst();
             
         }
 

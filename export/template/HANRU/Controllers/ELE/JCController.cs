@@ -13,11 +13,11 @@ using HanRuEdu.JPXT.Common;
 
 namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class XQController : JPXTController
+    public class JCController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
-            List<VIEW_EDU_ELE_05_XQ_DISP> model = db_ele.VIEW_EDU_ELE_05_XQ_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
+            List<VIEW_EDU_ELE_05_JC_DISP> model = db_ele.VIEW_EDU_ELE_05_JC_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
             if (!String.IsNullOrEmpty(searchkey))
             {
                 //model = model.Where(e => e.ID.Contains(searchkey)).ToList();
@@ -37,32 +37,32 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             return "{\"total\":" + model.Count + ",\"rows\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";
         }
 
-        public void AddXq(EDU_ELE_05_XQ xq)
+        public void AddJc(EDU_ELE_05_JC jc)
         {
-            xq.SCHOOLID = CurUser.ele01Usr.SCHOOLID;
-            UpdXq(xq);
+            jc.SCHOOLID = CurUser.ele01Usr.SCHOOLID;
+            UpdJc(jc);
         }
 
-        public void UpdXq(EDU_ELE_05_XQ xq)
+        public void UpdJc(EDU_ELE_05_JC jc)
         {
             //设置默认值
-            if (xq.ID == 0) xq.ID = 0;//编号
-            if (xq.SCHOOLID == 0) xq.SCHOOLID = 0;//学校名   学校配置表
-            if (string.IsNullOrEmpty(xq.MC)) xq.MC = "";//名称
-            EDU_ELE_05_XQ xq_model = db_ele.EDU_ELE_05_XQ.FirstOrDefault(e => e.ID == xq.ID
+            if (jc.ID == 0) jc.ID = 0;//编号
+            if (jc.SCHOOLID == 0) jc.SCHOOLID = 0;//学校名   学校配置表
+            if (string.IsNullOrEmpty(jc.MC)) jc.MC = "";//名称
+            EDU_ELE_05_JC jc_model = db_ele.EDU_ELE_05_JC.FirstOrDefault(e => e.ID == jc.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 
-            if (xq_model != null)
+            if (jc_model != null)
             {
-                xq_model.ID = xq.ID;//编号
-                xq_model.SCHOOLID = xq.SCHOOLID;//学校名   学校配置表
-                xq_model.MC = xq.MC;//名称
-                db_ele.Entry(xq_model).State = EntityState.Modified;
+                jc_model.ID = jc.ID;//编号
+                jc_model.SCHOOLID = jc.SCHOOLID;//学校名   学校配置表
+                jc_model.MC = jc.MC;//名称
+                db_ele.Entry(jc_model).State = EntityState.Modified;
             }
             else
             {
                 throw new Exception("记录不存在");
-                //db_ele.EDU_ELE_05_XQ.Add(xq);
+                //db_ele.EDU_ELE_05_JC.Add(jc);
             }
             db_ele.SaveChanges();
         }
@@ -73,35 +73,35 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
 
         public ActionResult Index()
         {
-            return View(new EDU_ELE_05_XQ());
+            return View(new EDU_ELE_05_JC());
         }
         public ActionResult Create()
         {
             InitViewBag();
             
-            return View(new EDU_ELE_05_XQ());
+            return View(new EDU_ELE_05_JC());
         }
 
         [HttpPost]
-        public ActionResult Create(EDU_ELE_05_XQ xq)
+        public ActionResult Create(EDU_ELE_05_JC jc)
         {
             InitViewBag();
             try
             {
                 //
                 //
-                AddXq(xq);
+                AddJc(jc);
                 return RedirectToAction("Index");
             }
             catch (DbEntityValidationException dbEx)
             {
                 SetTopCenter(dbEx.Message);
-                return View(xq);
+                return View(jc);
             }
             catch (Exception e)
             {
                 SetTopCenter(e.Message);
-                return View(xq);
+                return View(jc);
             }
         }
 
@@ -109,30 +109,30 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         {
             InitViewBag();
             
-            EDU_ELE_05_XQ xq= db_ele.EDU_ELE_05_XQ.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-            return View(xq);
+            EDU_ELE_05_JC jc= db_ele.EDU_ELE_05_JC.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+            return View(jc);
         }
 
         [HttpPost]
-        public ActionResult Edit(EDU_ELE_05_XQ xq)
+        public ActionResult Edit(EDU_ELE_05_JC jc)
         {
             InitViewBag();
             try
             {
                 
                 
-                UpdXq(xq);
+                UpdJc(jc);
                 return RedirectToAction("Index");
             }
             catch (DbEntityValidationException dbEx)
             {
                 SetTopCenter(dbEx.Message);
-                return View(xq);
+                return View(jc);
             }
             catch (Exception e)
             {
                 SetTopCenter(e.Message);
-                return View(xq);
+                return View(jc);
             }
         }
 
@@ -140,8 +140,8 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         {
             try
             {
-                EDU_ELE_05_XQ xq = db_ele.EDU_ELE_05_XQ.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-                db_ele.EDU_ELE_05_XQ.Remove(xq);
+                EDU_ELE_05_JC jc = db_ele.EDU_ELE_05_JC.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                db_ele.EDU_ELE_05_JC.Remove(jc);
                 db_ele.SaveChanges();
                 return "删除成功！";
             }
@@ -162,8 +162,8 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
                 int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);
                 foreach (int id in idlst)
                 {
-                    EDU_ELE_05_XQ xq = db_ele.EDU_ELE_05_XQ.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-                    db_ele.EDU_ELE_05_XQ.Remove(xq);
+                    EDU_ELE_05_JC jc = db_ele.EDU_ELE_05_JC.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                    db_ele.EDU_ELE_05_JC.Remove(jc);
                     db_ele.SaveChanges();
                 }
                 return "删除成功！";
@@ -178,31 +178,31 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             }
         }
 
-        private static int Max_XQ_ID = 0;
+        private static int Max_JC_ID = 0;
         private static object syncIDLock = new object();
-        //获取星期最大ID
-        public int GetMax_XQ_ID()
+        //获取节次最大ID
+        public int GetMax_JC_ID()
         {
             int maxId = 0;
             lock (syncIDLock)
             {
-                if (Max_XQ_ID == 0)
+                if (Max_JC_ID == 0)
                 {
-                    EDU_ELE_05_XQ xq = db_ele.EDU_ELE_05_XQ.FirstOrDefault();
-                    if (xq == null)
+                    EDU_ELE_05_JC jc = db_ele.EDU_ELE_05_JC.FirstOrDefault();
+                    if (jc == null)
                     {
-                        Max_XQ_ID = 1;
+                        Max_JC_ID = 1;
                     }
                     else
                     {
-                        //Max_XQ_ID = db_ele.EDU_ELE_05_XQ.Max(e => e.ID) + 1;
+                        //Max_JC_ID = db_ele.EDU_ELE_05_JC.Max(e => e.ID) + 1;
                     }
                 }
                 else
                 {
-                    Max_XQ_ID++;
+                    Max_JC_ID++;
                 }
-                maxId = Max_XQ_ID;
+                maxId = Max_JC_ID;
             }
             return maxId;
         }
