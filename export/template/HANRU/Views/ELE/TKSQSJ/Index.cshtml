@@ -1,0 +1,37 @@
+@model HanRuEdu.LDAL.EDU_ELE_04_TKSQSJ
+<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
+            data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/jpxt/TKSQSJ/index_jsonstr")',
+            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
+    <thead>
+        <tr>
+            <!--<th data-options="field:'ck',checkbox:true"></th>-->
+            <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
+            <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
+            <th field="JSRKID" width="50" sortable="true">@Html.LabelFor(m => m.JSRKID)</th><!--教师任课ID-->
+            <th field="TKLXID" width="50" sortable="true">@Html.LabelFor(m => m.TKLXID)</th><!--调课类型ID-->
+            <th field="TKQQSZ" width="50" sortable="true">@Html.LabelFor(m => m.TKQQSZ)</th><!--调课前起始周-->
+            <th field="TKQJSZ" width="50" sortable="true">@Html.LabelFor(m => m.TKQJSZ)</th><!--调课前结束周-->
+            <th field="TKQXQ" width="50" sortable="true">@Html.LabelFor(m => m.TKQXQ)</th><!--调课前星期-->
+            <th field="TKQSD" width="50" sortable="true">@Html.LabelFor(m => m.TKQSD)</th><!--调课前时段-->
+            <th field="TKQJC" width="50" sortable="true">@Html.LabelFor(m => m.TKQJC)</th><!--调课前节次-->
+            <th field="TKHQSZ" width="50" sortable="true">@Html.LabelFor(m => m.TKHQSZ)</th><!--调课后起始周-->
+            <th field="TKHJSZ" width="50" sortable="true">@Html.LabelFor(m => m.TKHJSZ)</th><!--调课后结束周-->
+            <th field="TKHXQ" width="50" sortable="true">@Html.LabelFor(m => m.TKHXQ)</th><!--调课后星期-->
+            <th field="TKHSD" width="50" sortable="true">@Html.LabelFor(m => m.TKHSD)</th><!--调课后时段-->
+            <th field="TKHJC" width="50" sortable="true">@Html.LabelFor(m => m.TKHJC)</th><!--调课后节次-->
+            <th field="ZT" width="50" sortable="true">@Html.LabelFor(m => m.ZT)</th><!--当前状态-->
+            <th field="BZ" width="50" sortable="true">@Html.LabelFor(m => m.BZ)</th><!--备注-->
+        </tr>
+    </thead>
+</table>
+@{
+    ViewData["index_create"] = Url.Content("~/jpxt/tksqsj/create");
+    ViewData["index_edit"] = Url.Content("~/jpxt/tksqsj/edit");
+    //ViewData["index_detail"] = Url.Content("~/jpxt/tksqsj/details");
+    //ViewData["index_del"] = Url.Content("~/jpxt/tksqsj/delete");
+    ViewData["index_multi_del"] = Url.Content("~/jpxt/tksqsj/delete");
+    ViewData["index_id_name"] = "ID";
+    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");
+    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");
+}
+@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)

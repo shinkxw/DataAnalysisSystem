@@ -108,6 +108,29 @@ EDU_ELE_04_PKJGJL  排课结果记录表
   SESSION       节次                    int            非主
   SESSIONNAME   节次名称                nvarchar(20)   非主
 
+EDU_ELE_04_TKSQSJ  调课申请数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键
+  JSRKID        教师任课ID              int            非主
+  TKLXID        调课类型ID              int            非主
+  TKQQSZ        调课前起始周            int            非主
+  TKQJSZ        调课前结束周            int            非主
+  TKQXQ         调课前星期              int            非主
+  TKQSD         调课前时段              int            非主
+  TKQJC         调课前节次              int            非主
+  TKHQSZ        调课后起始周            int            非主
+  TKHJSZ        调课后结束周            int            非主
+  TKHXQ         调课后星期              int            非主
+  TKHSD         调课后时段              int            非主
+  TKHJC         调课后节次              int            非主
+  ZT            当前状态                int            非主
+  BZ            备注                    text           非主
+
+EDU_ELE_04_TKLXSJ  调课类型数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键
+  LXMC          类型名称                nvarchar(36)   非主
+
 EDU_ELE_05_XL  校历表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表

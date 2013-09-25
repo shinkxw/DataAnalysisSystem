@@ -1,5 +1,46 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZJ" provider="reallocate_namespace" generation_time="">
+    <table name="EDU_ZJ_XQ" explanation="星期代码">
+        <field_area>
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(8)" null="F" p="F" />
+        </field_area>
+        <data_area>
+            <DM="1" MC="星期一" />
+            <DM="2" MC="星期二" />
+            <DM="3" MC="星期三" />
+            <DM="4" MC="星期四" />
+            <DM="5" MC="星期五" />
+            <DM="6" MC="星期六" />
+            <DM="7" MC="星期日" />
+        </data_area>
+    </table>
+    <table name="EDU_ZJ_SD" explanation="时段代码">
+        <field_area>
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(5)" null="F" p="F" />
+        </field_area>
+        <data_area>
+            <DM="1" MC="上午" />
+            <DM="2" MC="中午" />
+            <DM="3" MC="下午" />
+            <DM="4" MC="晚上" />
+        </data_area>
+    </table>
+    <table name="EDU_ZJ_JC" explanation="节次代码">
+        <field_area>
+            <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(5)" null="F" p="F" />
+        </field_area>
+        <data_area>
+            <DM="1" MC="第一节" />
+            <DM="2" MC="第二节" />
+            <DM="3" MC="第三节" />
+            <DM="4" MC="第四节" />
+            <DM="5" MC="第五节" />
+            <DM="6" MC="第六节" />
+        </data_area>
+    </table>
     <table name="EDU_ZJ_ZYML" explanation="专业目录代码">
         <field_area>
             <name="DM" explanation="代码" type="nvarchar(1)" null="F" p="T" />
