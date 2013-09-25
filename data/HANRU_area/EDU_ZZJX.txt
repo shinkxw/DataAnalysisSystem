@@ -46,17 +46,6 @@
             <name="ZYLB" explanation="专业类别名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_08_A01_DGFSQ" explanation="代管费收取表">
-        <field_area>
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" explanation="学生ID" type="int" null="F" p="T" />
-            <name="XNID" explanation="学年ID" type="int" null="F" p="T" />
-            <name="YJJE" explanation="已缴金额" type="money" null="F" p="F" />
-            <name="JFRQ" explanation="缴费日期" type="nvarchar(8)" null="T" p="F" />
-            <name="SFYSH" explanation="是否已审核" type="nvarchar(1)" null="F" p="F" />
-            <name="SHRID" explanation="审核人员ID" type="int" null="T" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZJX_05_02_JSJXGZLTJ" explanation="教师教学工作量统计数据子类表">
         <field_area>
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
@@ -358,7 +347,18 @@
             <name="SFSX" explanation="计划是否生效" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_08_A01_TKSQSJ" explanation="调课申请数据表">
+    <table name="EDU_ZZJX_08_A01_DGFSQ" explanation="代管费收取表">
+        <field_area>
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="XSXXID" explanation="学生ID" type="int" null="F" p="T" />
+            <name="XNID" explanation="学年ID" type="int" null="F" p="T" />
+            <name="YJJE" explanation="已缴金额" type="money" null="F" p="F" />
+            <name="JFRQ" explanation="缴费日期" type="nvarchar(8)" null="T" p="F" />
+            <name="SFYSH" explanation="是否已审核" type="nvarchar(1)" null="F" p="F" />
+            <name="SHRID" explanation="审核人员ID" type="int" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_09_A01_TKSQSJ" explanation="调课申请数据表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
