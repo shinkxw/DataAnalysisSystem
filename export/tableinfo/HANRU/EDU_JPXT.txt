@@ -137,10 +137,9 @@ EDU_JPXT_03_01_XYSJ  学员数据表
 
 EDU_JPXT_03_02_XYKSJG  学员考试结果表
   ID            编号                    int            主键
-  XYID          学员ID                  int            主键        学员数据表
   SCHOOLID      学校ID                  int            主键        学校配置表
+  XYID          学员ID                  int            非主        学员数据表
   KMKSID        科目考试ID              int            非主        科目考试表
-  KSKMDM        考试科目代码            nvarchar(1)    非主        驾考科目代码
   KSJG          考试结果                int            非主
 
 EDU_JPXT_03_03_XYHFXX  学员回访信息表

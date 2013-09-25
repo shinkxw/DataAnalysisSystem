@@ -329,15 +329,13 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_JPXT
 BEGIN
 CREATE TABLE [dbo].[EDU_JPXT_03_02_XYKSJG](
 	[ID]  int  NOT NULL,--编号
-	[XYID]  int  NOT NULL,--学员ID
 	[SCHOOLID]  int  NOT NULL,--学校ID
+	[XYID]  int  NOT NULL,--学员ID
 	[KMKSID]  int  NOT NULL,--科目考试ID
-	[KSKMDM]  nvarchar(1)  NOT NULL,--考试科目代码
 	[KSJG]  int  NOT NULL,--考试结果
 CONSTRAINT [PK_EDU_JPXT_03_02_XYKSJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
-	[XYID] ASC,
 	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -652,13 +650,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学员考试结果表
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'ID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学员ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'XYID'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'科目考试ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'KMKSID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学员ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'XYID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试科目代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'KSKMDM'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'科目考试ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'KMKSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试结果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_02_XYKSJG', @level2type=N'COLUMN',@level2name=N'KSJG'
 GO

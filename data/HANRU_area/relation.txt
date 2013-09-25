@@ -75,10 +75,9 @@
   SZJLCID        EDU_JPXT_02_01_JLYSJ               ID
   YJJLYID        EDU_JPXT_02_01_JLYSJ               ID
 <EDU_JPXT_03_02_XYKSJG
-  XYID           EDU_JPXT_03_01_XYSJ                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XYID           EDU_JPXT_03_01_XYSJ                ID
   KMKSID         EDU_JPXT_04_01_KMKS                ID
-  KSKMDM         EDU_ZZ_JKKM                        DM
 <EDU_JPXT_03_03_XYHFXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XYID           EDU_JPXT_03_01_XYSJ                ID

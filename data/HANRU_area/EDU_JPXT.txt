@@ -162,10 +162,9 @@
     <table name="EDU_JPXT_03_02_XYKSJG" explanation="学员考试结果表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
-            <name="XYID" explanation="学员ID" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="XYID" explanation="学员ID" type="int" null="F" p="F" />
             <name="KMKSID" explanation="科目考试ID" type="int" null="F" p="F" />
-            <name="KSKMDM" explanation="考试科目代码" type="nvarchar(1)" null="F" p="F" />
             <name="KSJG" explanation="考试结果" type="int" null="F" p="F" />
         </field_area>
     </table>

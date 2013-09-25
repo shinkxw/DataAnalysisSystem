@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_03_02_XYKSJG()
         {
-            KSKMDM = "";
         }
         public class EDU_JPXT_03_02_XYKSJG_metadata
         {
@@ -19,25 +18,18 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学员")]
-            public Int32 XYID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "学员")]
+            public Int32 XYID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "科目考试")]
             public Int32 KMKSID { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "考试科目代码")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KSKMDM { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
