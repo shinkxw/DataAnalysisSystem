@@ -13,11 +13,11 @@ using HanRuEdu.JPXT.Common;
 
 namespace HanRuEdu.JPXT.Controllers.JPXT
 {
-    public class TKLXSJController : JPXTController
+    public class TKLXController : JPXTController
     {
         public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")
         {
-            List<VIEW_EDU_ELE_04_TKLXSJ_DISP> model = db_ele.VIEW_EDU_ELE_04_TKLXSJ_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
+            List<VIEW_EDU_ZZJX_08_A02_TKLX_DISP> model = db_zzjx.VIEW_EDU_ZZJX_08_A02_TKLX_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();
             if (!String.IsNullOrEmpty(searchkey))
             {
                 //model = model.Where(e => e.ID.Contains(searchkey)).ToList();
@@ -37,34 +37,34 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             return "{\"total\":" + model.Count + ",\"rows\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";
         }
 
-        public void AddTklxsj(EDU_ELE_04_TKLXSJ tklxsj)
+        public void AddTklx(EDU_ZZJX_08_A02_TKLX tklx)
         {
-            tklxsj.SCHOOLID = CurUser.ele01Usr.SCHOOLID;
-            UpdTklxsj(tklxsj);
+            tklx.SCHOOLID = CurUser.ele01Usr.SCHOOLID;
+            UpdTklx(tklx);
         }
 
-        public void UpdTklxsj(EDU_ELE_04_TKLXSJ tklxsj)
+        public void UpdTklx(EDU_ZZJX_08_A02_TKLX tklx)
         {
             //设置默认值
-            if (tklxsj.ID == 0) tklxsj.ID = 0;//编号
-            if (tklxsj.SCHOOLID == 0) tklxsj.SCHOOLID = 0;//学校ID
-            if (string.IsNullOrEmpty(tklxsj.LXMC)) tklxsj.LXMC = "";//类型名称
-            EDU_ELE_04_TKLXSJ tklxsj_model = db_ele.EDU_ELE_04_TKLXSJ.FirstOrDefault(e => e.ID == tklxsj.ID
+            if (tklx.ID == 0) tklx.ID = 0;//编号
+            if (tklx.SCHOOLID == 0) tklx.SCHOOLID = 0;//学校ID   学校配置表
+            if (string.IsNullOrEmpty(tklx.LXMC)) tklx.LXMC = "";//类型名称
+            EDU_ZZJX_08_A02_TKLX tklx_model = db_zzjx.EDU_ZZJX_08_A02_TKLX.FirstOrDefault(e => e.ID == tklx.ID
                 && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
 
-            if (tklxsj_model != null)
+            if (tklx_model != null)
             {
-                tklxsj_model.ID = tklxsj.ID;//编号
-                tklxsj_model.SCHOOLID = tklxsj.SCHOOLID;//学校ID
-                tklxsj_model.LXMC = tklxsj.LXMC;//类型名称
-                db_ele.Entry(tklxsj_model).State = EntityState.Modified;
+                tklx_model.ID = tklx.ID;//编号
+                tklx_model.SCHOOLID = tklx.SCHOOLID;//学校ID   学校配置表
+                tklx_model.LXMC = tklx.LXMC;//类型名称
+                db_zzjx.Entry(tklx_model).State = EntityState.Modified;
             }
             else
             {
                 throw new Exception("记录不存在");
-                //db_ele.EDU_ELE_04_TKLXSJ.Add(tklxsj);
+                //db_zzjx.EDU_ZZJX_08_A02_TKLX.Add(tklx);
             }
-            db_ele.SaveChanges();
+            db_zzjx.SaveChanges();
         }
         public void InitViewBag()
         {
@@ -73,35 +73,35 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
 
         public ActionResult Index()
         {
-            return View(new EDU_ELE_04_TKLXSJ());
+            return View(new EDU_ZZJX_08_A02_TKLX());
         }
         public ActionResult Create()
         {
             InitViewBag();
             
-            return View(new EDU_ELE_04_TKLXSJ());
+            return View(new EDU_ZZJX_08_A02_TKLX());
         }
 
         [HttpPost]
-        public ActionResult Create(EDU_ELE_04_TKLXSJ tklxsj)
+        public ActionResult Create(EDU_ZZJX_08_A02_TKLX tklx)
         {
             InitViewBag();
             try
             {
                 //
                 //
-                AddTklxsj(tklxsj);
+                AddTklx(tklx);
                 return RedirectToAction("Index");
             }
             catch (DbEntityValidationException dbEx)
             {
                 SetTopCenter(dbEx.Message);
-                return View(tklxsj);
+                return View(tklx);
             }
             catch (Exception e)
             {
                 SetTopCenter(e.Message);
-                return View(tklxsj);
+                return View(tklx);
             }
         }
 
@@ -109,30 +109,30 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         {
             InitViewBag();
             
-            EDU_ELE_04_TKLXSJ tklxsj= db_ele.EDU_ELE_04_TKLXSJ.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-            return View(tklxsj);
+            EDU_ZZJX_08_A02_TKLX tklx= db_zzjx.EDU_ZZJX_08_A02_TKLX.Single(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+            return View(tklx);
         }
 
         [HttpPost]
-        public ActionResult Edit(EDU_ELE_04_TKLXSJ tklxsj)
+        public ActionResult Edit(EDU_ZZJX_08_A02_TKLX tklx)
         {
             InitViewBag();
             try
             {
                 
                 
-                UpdTklxsj(tklxsj);
+                UpdTklx(tklx);
                 return RedirectToAction("Index");
             }
             catch (DbEntityValidationException dbEx)
             {
                 SetTopCenter(dbEx.Message);
-                return View(tklxsj);
+                return View(tklx);
             }
             catch (Exception e)
             {
                 SetTopCenter(e.Message);
-                return View(tklxsj);
+                return View(tklx);
             }
         }
 
@@ -140,9 +140,9 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
         {
             try
             {
-                EDU_ELE_04_TKLXSJ tklxsj = db_ele.EDU_ELE_04_TKLXSJ.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-                db_ele.EDU_ELE_04_TKLXSJ.Remove(tklxsj);
-                db_ele.SaveChanges();
+                EDU_ZZJX_08_A02_TKLX tklx = db_zzjx.EDU_ZZJX_08_A02_TKLX.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                db_zzjx.EDU_ZZJX_08_A02_TKLX.Remove(tklx);
+                db_zzjx.SaveChanges();
                 return "删除成功！";
             }
             catch (DbEntityValidationException dbEx)
@@ -162,9 +162,9 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
                 int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);
                 foreach (int id in idlst)
                 {
-                    EDU_ELE_04_TKLXSJ tklxsj = db_ele.EDU_ELE_04_TKLXSJ.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
-                    db_ele.EDU_ELE_04_TKLXSJ.Remove(tklxsj);
-                    db_ele.SaveChanges();
+                    EDU_ZZJX_08_A02_TKLX tklx = db_zzjx.EDU_ZZJX_08_A02_TKLX.SingleOrDefault(e => e.ID == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);
+                    db_zzjx.EDU_ZZJX_08_A02_TKLX.Remove(tklx);
+                    db_zzjx.SaveChanges();
                 }
                 return "删除成功！";
             }
@@ -178,31 +178,31 @@ namespace HanRuEdu.JPXT.Controllers.JPXT
             }
         }
 
-        private static int Max_TKLXSJ_ID = 0;
+        private static int Max_TKLX_ID = 0;
         private static object syncIDLock = new object();
-        //获取调课类型数据表最大ID
-        public int GetMax_TKLXSJ_ID()
+        //获取调课类型表最大ID
+        public int GetMax_TKLX_ID()
         {
             int maxId = 0;
             lock (syncIDLock)
             {
-                if (Max_TKLXSJ_ID == 0)
+                if (Max_TKLX_ID == 0)
                 {
-                    EDU_ELE_04_TKLXSJ tklxsj = db_ele.EDU_ELE_04_TKLXSJ.FirstOrDefault();
-                    if (tklxsj == null)
+                    EDU_ZZJX_08_A02_TKLX tklx = db_zzjx.EDU_ZZJX_08_A02_TKLX.FirstOrDefault();
+                    if (tklx == null)
                     {
-                        Max_TKLXSJ_ID = 1;
+                        Max_TKLX_ID = 1;
                     }
                     else
                     {
-                        //Max_TKLXSJ_ID = db_ele.EDU_ELE_04_TKLXSJ.Max(e => e.ID) + 1;
+                        //Max_TKLX_ID = db_zzjx.EDU_ZZJX_08_A02_TKLX.Max(e => e.ID) + 1;
                     }
                 }
                 else
                 {
-                    Max_TKLXSJ_ID++;
+                    Max_TKLX_ID++;
                 }
-                maxId = Max_TKLXSJ_ID;
+                maxId = Max_TKLX_ID;
             }
             return maxId;
         }

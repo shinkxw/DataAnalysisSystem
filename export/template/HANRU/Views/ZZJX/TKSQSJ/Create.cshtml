@@ -1,9 +1,9 @@
-@model HanRuEdu.LDAL.EDU_ELE_04_TKSQSJ
+@model HanRuEdu.LDAL.EDU_ZZJX_08_A01_TKSQSJ
 @using (Html.BeginForm())
 {
     @Html.Partial("SingleZTree")
-    <div id="dlg" class="easyui-panel" title="编辑" style="width: 900px; height: 500px; padding: 10px 20px">
-        <center>  <h1 ><span style="font-size:smaller;">编辑</span></h1></center>
+    <div id="dlg" class="easyui-panel" title="添加" style="width: 900px; height: 500px; padding: 10px 20px">
+        <center>  <h1 ><span style="font-size:smaller;">添加</span></h1></center>
 
         <table class="admintable">
             <tr>
@@ -28,10 +28,18 @@
             </tr>
 
             <tr>
-                <td> @Html.LabelFor(m => m.JSRKID) </td> <!--教师任课ID-->
+                <td> @Html.LabelFor(m => m.JSID) </td> <!--教师-->
                 <td>
-                    @Html.TextBoxFor(m => m.JSRKID, new { @class = "easyui-validatebox", style = "width:150px; " })
-                    @Html.ValidationMessageFor(m => m.JSRKID)
+                    @Html.TextBoxFor(m => m.JSID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.JSID)
+                </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.KCID) </td> <!--课程-->
+                <td>
+                    @Html.TextBoxFor(m => m.KCID, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.ValidationMessageFor(m => m.KCID)
                 </td>
             </tr>
 
@@ -62,7 +70,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TKQXQ) </td> <!--调课前星期-->
                 <td>
-                    @Html.TextBoxFor(m => m.TKQXQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.TKQXQ, ViewBag.ZJ_XQLst as SelectList)
                     @Html.ValidationMessageFor(m => m.TKQXQ)
                 </td>
             </tr>
@@ -70,7 +78,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TKQSD) </td> <!--调课前时段-->
                 <td>
-                    @Html.TextBoxFor(m => m.TKQSD, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.TKQSD, ViewBag.ZJ_SDLst as SelectList)
                     @Html.ValidationMessageFor(m => m.TKQSD)
                 </td>
             </tr>
@@ -78,7 +86,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TKQJC) </td> <!--调课前节次-->
                 <td>
-                    @Html.TextBoxFor(m => m.TKQJC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.TKQJC, ViewBag.ZJ_JCLst as SelectList)
                     @Html.ValidationMessageFor(m => m.TKQJC)
                 </td>
             </tr>
@@ -102,7 +110,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TKHXQ) </td> <!--调课后星期-->
                 <td>
-                    @Html.TextBoxFor(m => m.TKHXQ, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.TKHXQ, ViewBag.ZJ_XQLst as SelectList)
                     @Html.ValidationMessageFor(m => m.TKHXQ)
                 </td>
             </tr>
@@ -110,7 +118,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TKHSD) </td> <!--调课后时段-->
                 <td>
-                    @Html.TextBoxFor(m => m.TKHSD, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.TKHSD, ViewBag.ZJ_SDLst as SelectList)
                     @Html.ValidationMessageFor(m => m.TKHSD)
                 </td>
             </tr>
@@ -118,7 +126,7 @@
             <tr>
                 <td> @Html.LabelFor(m => m.TKHJC) </td> <!--调课后节次-->
                 <td>
-                    @Html.TextBoxFor(m => m.TKHJC, new { @class = "easyui-validatebox", style = "width:150px; " })
+                    @Html.DropDownListFor(m => m.TKHJC, ViewBag.ZJ_JCLst as SelectList)
                     @Html.ValidationMessageFor(m => m.TKHJC)
                 </td>
             </tr>

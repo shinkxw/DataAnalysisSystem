@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ELE_04_TKLXSJ_metadata))]
-    public partial class EDU_ELE_04_TKLXSJ
+    [MetadataType(typeof(EDU_ZXJX_09_A02_TKLX_metadata))]
+    public partial class EDU_ZXJX_09_A02_TKLX
     {
-        public EDU_ELE_04_TKLXSJ()
+        public EDU_ZXJX_09_A02_TKLX()
         {
             LXMC = "";
         }
-        public class EDU_ELE_04_TKLXSJ_metadata
+        public class EDU_ZXJX_09_A02_TKLX_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

@@ -1,4 +1,4 @@
-@model HanRuEdu.LDAL.EDU_ELE_04_TKSQSJ
+@model HanRuEdu.LDAL.EDU_ZXJX_09_A01_TKSQSJ
 <table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"
             data-options="singleSelect:false,collapsible:true,  url:'@Url.Content("~/jpxt/TKSQSJ/index_jsonstr")',
             toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true" >
@@ -7,7 +7,8 @@
             <!--<th data-options="field:'ck',checkbox:true"></th>-->
             <th field="ID" width="50" sortable="true">@Html.LabelFor(m => m.ID)</th><!--编号-->
             <th field="SCHOOLID" width="50" sortable="true">@Html.LabelFor(m => m.SCHOOLID)</th><!--学校ID-->
-            <th field="JSRKID" width="50" sortable="true">@Html.LabelFor(m => m.JSRKID)</th><!--教师任课ID-->
+            <th field="JSID" width="50" sortable="true">@Html.LabelFor(m => m.JSID)</th><!--教师-->
+            <th field="KCID" width="50" sortable="true">@Html.LabelFor(m => m.KCID)</th><!--课程-->
             <th field="TKLXID" width="50" sortable="true">@Html.LabelFor(m => m.TKLXID)</th><!--调课类型ID-->
             <th field="TKQQSZ" width="50" sortable="true">@Html.LabelFor(m => m.TKQQSZ)</th><!--调课前起始周-->
             <th field="TKQJSZ" width="50" sortable="true">@Html.LabelFor(m => m.TKQJSZ)</th><!--调课前结束周-->

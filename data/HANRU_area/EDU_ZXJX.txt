@@ -112,4 +112,32 @@
             <name="PJKM" explanation="评价科目" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_09_A01_TKSQSJ" explanation="调课申请数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="JSID" explanation="教师" type="int" null="F" p="F" />
+            <name="KCID" explanation="课程" type="nvarchar(10)" null="F" p="F" />
+            <name="TKLXID" explanation="调课类型ID" type="int" null="F" p="F" />
+            <name="TKQQSZ" explanation="调课前起始周" type="int" null="F" p="F" />
+            <name="TKQJSZ" explanation="调课前结束周" type="int" null="F" p="F" />
+            <name="TKQXQ" explanation="调课前星期" type="nvarchar(1)" null="F" p="F" />
+            <name="TKQSD" explanation="调课前时段" type="nvarchar(1)" null="F" p="F" />
+            <name="TKQJC" explanation="调课前节次" type="nvarchar(1)" null="F" p="F" />
+            <name="TKHQSZ" explanation="调课后起始周" type="int" null="F" p="F" />
+            <name="TKHJSZ" explanation="调课后结束周" type="int" null="F" p="F" />
+            <name="TKHXQ" explanation="调课后星期" type="nvarchar(1)" null="F" p="F" />
+            <name="TKHSD" explanation="调课后时段" type="nvarchar(1)" null="F" p="F" />
+            <name="TKHJC" explanation="调课后节次" type="nvarchar(1)" null="F" p="F" />
+            <name="ZT" explanation="当前状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_09_A02_TKLX" explanation="调课类型表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="LXMC" explanation="类型名称" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

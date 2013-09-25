@@ -50,16 +50,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_04_PKJGJL')
    drop table EDU_ELE_04_PKJGJL
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_04_TKSQSJ')
-            and   type = 'U')
-   drop table EDU_ELE_04_TKSQSJ
-go
-
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_04_TKLXSJ')
-            and   type = 'U')
-   drop table EDU_ELE_04_TKLXSJ
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_05_XL')
             and   type = 'U')
    drop table EDU_ELE_05_XL
@@ -282,51 +272,6 @@ CREATE TABLE [dbo].[EDU_ELE_04_PKJGJL](
 	[SESSION]  int  NOT NULL,--节次
 	[SESSIONNAME]  nvarchar(20)  NOT NULL,--节次名称
 CONSTRAINT [PK_EDU_ELE_04_PKJGJL] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
---调课申请数据表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_04_TKSQSJ]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ELE_04_TKSQSJ](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校ID
-	[JSRKID]  int  NOT NULL,--教师任课ID
-	[TKLXID]  int  NOT NULL,--调课类型ID
-	[TKQQSZ]  int  NOT NULL,--调课前起始周
-	[TKQJSZ]  int  NOT NULL,--调课前结束周
-	[TKQXQ]  int  NOT NULL,--调课前星期
-	[TKQSD]  int  NOT NULL,--调课前时段
-	[TKQJC]  int  NOT NULL,--调课前节次
-	[TKHQSZ]  int  NOT NULL,--调课后起始周
-	[TKHJSZ]  int  NOT NULL,--调课后结束周
-	[TKHXQ]  int  NOT NULL,--调课后星期
-	[TKHSD]  int  NOT NULL,--调课后时段
-	[TKHJC]  int  NOT NULL,--调课后节次
-	[ZT]  int  NOT NULL,--当前状态
-	[BZ]  text  NOT NULL,--备注
-CONSTRAINT [PK_EDU_ELE_04_TKSQSJ] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
---调课类型数据表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_04_TKLXSJ]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ELE_04_TKLXSJ](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校ID
-	[LXMC]  nvarchar(36)  NOT NULL,--类型名称
-CONSTRAINT [PK_EDU_ELE_04_TKLXSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
@@ -575,48 +520,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'节次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL', @level2type=N'COLUMN',@level2name=N'SESSION'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'节次名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL', @level2type=N'COLUMN',@level2name=N'SESSIONNAME'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课申请数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师任课ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'JSRKID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKLXID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课前起始周' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKQQSZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课前结束周' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKQJSZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课前星期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKQXQ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课前时段' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKQSD'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课前节次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKQJC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课后起始周' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKHQSZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课后结束周' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKHJSZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课后星期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKHXQ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课后时段' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKHSD'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课后节次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKHJC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'ZT'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKSQSJ', @level2type=N'COLUMN',@level2name=N'BZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课类型数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKLXSJ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKLXSJ', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKLXSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_TKLXSJ', @level2type=N'COLUMN',@level2name=N'LXMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校历表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_XL'
 GO
