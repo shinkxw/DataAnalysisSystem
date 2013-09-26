@@ -112,3 +112,20 @@ EDU_ZXJX_09_A01_TKSQSJ  调课申请数据表
   ZT            当前状态                int            非主
   BZ            备注                    text           非主
 
+EDU_ZXJX_10_A01_JSGCXPJJL  教师过程性评价记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期                    int            非主        学期数据表
+  XLZID         考评周                  int            非主        校历周表
+  JSID          教师                    int            非主        教职工基本数据子类表
+  PJXMID        考评项目                int            非主        教师过程性评价考核项目表
+  KHF           考核分                  decimal(8, 3)  非主
+  FLM           成绩                    decimal(8, 3)  非主
+
+EDU_ZXJX_10_A02_JSGCXPJXM  教师过程性评价考核项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMMC          项目名称                nvarchar(36)   非主
+  DWMC          单位                    nvarchar(36)   非主
+  ZGF           考核最高分              decimal(8, 3)  非主
+

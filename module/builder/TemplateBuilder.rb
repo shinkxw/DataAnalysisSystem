@@ -11,8 +11,8 @@ class TemplateBuilder
     @area = nil
     @file_hash = nil
     @tab = Indent.new(tab)
-    @app_name = "JPXT"
-    @directory_name = "jpxt"
+    @app_name = $t_app_name || ' '
+    @directory_name = $t_dir_name || ' '
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
     @bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
     @log = log
