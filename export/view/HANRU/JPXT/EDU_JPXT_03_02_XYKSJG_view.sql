@@ -18,7 +18,7 @@ SELECT a.[ID]--编号
       ,c.SFQK as c_XYSJ_SFQK--学员数据表 缴费情况
       ,c.SXCXID as c_XYSJ_SXCXID--学员数据表 所选车型ID
       ,c.ZJQK as c_XYSJ_ZJQK--学员数据表 增加情况
-      ,c.SZJLCID as c_XYSJ_SZJLCID--学员数据表 所属教练员ID
+      ,c.SSJLYID as c_XYSJ_SSJLYID--学员数据表 所属教练员ID
       ,c.YJJLYID as c_XYSJ_YJJLYID--学员数据表 引荐教练员ID
       ,c.DQZT as c_XYSJ_DQZT--学员数据表 当前状态
       ,c.BYSJ as c_XYSJ_BYSJ--学员数据表 毕业时间

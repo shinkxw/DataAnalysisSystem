@@ -92,7 +92,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "所属教练员")]
-            public Int32 SZJLCID { get; set; }
+            public Int32 SSJLYID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

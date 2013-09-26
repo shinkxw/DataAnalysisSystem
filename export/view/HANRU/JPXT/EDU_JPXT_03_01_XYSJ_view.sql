@@ -13,7 +13,7 @@ SELECT a.[ID]--编号
       ,a.[SFQK]--缴费情况
       ,a.[SXCXID]--所选车型ID
       ,a.[ZJQK]--增加情况
-      ,a.[SZJLCID]--所属教练员ID
+      ,a.[SSJLYID]--所属教练员ID
       ,a.[YJJLYID]--引荐教练员ID
       ,a.[DQZT]--当前状态
       ,a.[BYSJ]--毕业时间
@@ -83,7 +83,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_03_01_XYSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_05_01_CLXH AS d ON a.SXCXID = d.ID /*所选车型ID*/ LEFT OUTER JOIN
-      dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SZJLCID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SSJLYID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS f ON a.YJJLYID = f.ID /*引荐教练员ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/

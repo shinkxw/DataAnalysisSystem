@@ -130,7 +130,7 @@ EDU_JPXT_03_01_XYSJ  学员数据表
   SFQK          缴费情况                nvarchar(200)  非主
   SXCXID        所选车型ID              int            非主        车辆型号数据表
   ZJQK          增加情况                nvarchar(200)  非主
-  SZJLCID       所属教练员ID            int            非主        教练员数据表
+  SSJLYID       所属教练员ID            int            非主        教练员数据表
   YJJLYID       引荐教练员ID            int            非主        教练员数据表
   DQZT          当前状态                int            非主
   BYSJ          毕业时间                datetime       非主

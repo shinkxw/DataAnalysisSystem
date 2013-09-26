@@ -1313,7 +1313,7 @@ SELECT a.[ID]--编号
       ,a.[SFQK]--缴费情况
       ,a.[SXCXID]--所选车型ID
       ,a.[ZJQK]--增加情况
-      ,a.[SZJLCID]--所属教练员ID
+      ,a.[SSJLYID]--所属教练员ID
       ,a.[YJJLYID]--引荐教练员ID
       ,a.[DQZT]--当前状态
       ,a.[BYSJ]--毕业时间
@@ -1383,7 +1383,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_03_01_XYSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_05_01_CLXH AS d ON a.SXCXID = d.ID /*所选车型ID*/ LEFT OUTER JOIN
-      dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SZJLCID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SSJLYID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS f ON a.YJJLYID = f.ID /*引荐教练员ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/
@@ -1408,7 +1408,7 @@ SELECT a.[ID]--编号
       ,c.SFQK as c_XYSJ_SFQK--学员数据表 缴费情况
       ,c.SXCXID as c_XYSJ_SXCXID--学员数据表 所选车型ID
       ,c.ZJQK as c_XYSJ_ZJQK--学员数据表 增加情况
-      ,c.SZJLCID as c_XYSJ_SZJLCID--学员数据表 所属教练员ID
+      ,c.SSJLYID as c_XYSJ_SSJLYID--学员数据表 所属教练员ID
       ,c.YJJLYID as c_XYSJ_YJJLYID--学员数据表 引荐教练员ID
       ,c.DQZT as c_XYSJ_DQZT--学员数据表 当前状态
       ,c.BYSJ as c_XYSJ_BYSJ--学员数据表 毕业时间
@@ -1446,7 +1446,7 @@ SELECT a.[ID]--编号
       ,c.SFQK as c_XYSJ_SFQK--学员数据表 缴费情况
       ,c.SXCXID as c_XYSJ_SXCXID--学员数据表 所选车型ID
       ,c.ZJQK as c_XYSJ_ZJQK--学员数据表 增加情况
-      ,c.SZJLCID as c_XYSJ_SZJLCID--学员数据表 所属教练员ID
+      ,c.SSJLYID as c_XYSJ_SSJLYID--学员数据表 所属教练员ID
       ,c.YJJLYID as c_XYSJ_YJJLYID--学员数据表 引荐教练员ID
       ,c.DQZT as c_XYSJ_DQZT--学员数据表 当前状态
       ,c.BYSJ as c_XYSJ_BYSJ--学员数据表 毕业时间

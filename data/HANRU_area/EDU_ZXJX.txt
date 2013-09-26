@@ -62,6 +62,7 @@
             <name="RRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="T" p="F" />
             <name="JSRKID" explanation="教师任课编号" type="int" null="F" p="F" />
+            <name="XLZID" explanation="校历周ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_07_A01_CJFXPZ" explanation="成绩分析配置表">

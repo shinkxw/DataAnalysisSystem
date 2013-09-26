@@ -311,7 +311,7 @@ CREATE TABLE [dbo].[EDU_JPXT_03_01_XYSJ](
 	[SFQK]  nvarchar(200)  NOT NULL,--缴费情况
 	[SXCXID]  int  NOT NULL,--所选车型ID
 	[ZJQK]  nvarchar(200)  NOT NULL,--增加情况
-	[SZJLCID]  int  NOT NULL,--所属教练员ID
+	[SSJLYID]  int  NOT NULL,--所属教练员ID
 	[YJJLYID]  int  NOT NULL,--引荐教练员ID
 	[DQZT]  int  NOT NULL,--当前状态
 	[BYSJ]  datetime  NOT NULL,--毕业时间
@@ -638,7 +638,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所选车型ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'增加情况' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_01_XYSJ', @level2type=N'COLUMN',@level2name=N'ZJQK'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属教练员ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_01_XYSJ', @level2type=N'COLUMN',@level2name=N'SZJLCID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属教练员ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_01_XYSJ', @level2type=N'COLUMN',@level2name=N'SSJLYID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'引荐教练员ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JPXT_03_01_XYSJ', @level2type=N'COLUMN',@level2name=N'YJJLYID'
 GO

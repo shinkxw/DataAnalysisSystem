@@ -72,7 +72,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM
   SXCXID         EDU_JPXT_05_01_CLXH                ID
-  SZJLCID        EDU_JPXT_02_01_JLYSJ               ID
+  SSJLYID        EDU_JPXT_02_01_JLYSJ               ID
   YJJLYID        EDU_JPXT_02_01_JLYSJ               ID
 <EDU_JPXT_03_02_XYKSJG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
@@ -295,6 +295,7 @@
   XQID           EDU_ELE_01_XQ                      ID
   NJID           EDU_ZXXX_02_01_NJ                  NJ
   BJID           EDU_ZXXX_03_01_BJ                  BH
+  XLZID          EDU_ELE_05_XLZ                     ID
 <EDU_ZXJX_08_A01_XXGCXPJPZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJX_08_A02_XXGCXPJJG

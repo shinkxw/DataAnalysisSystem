@@ -153,7 +153,7 @@
             <name="SFQK" explanation="缴费情况" type="nvarchar(200)" null="F" p="F" />
             <name="SXCXID" explanation="所选车型ID" type="int" null="F" p="F" />
             <name="ZJQK" explanation="增加情况" type="nvarchar(200)" null="F" p="F" />
-            <name="SZJLCID" explanation="所属教练员ID" type="int" null="F" p="F" />
+            <name="SSJLYID" explanation="所属教练员ID" type="int" null="F" p="F" />
             <name="YJJLYID" explanation="引荐教练员ID" type="int" null="F" p="F" />
             <name="DQZT" explanation="当前状态" type="int" null="F" p="F" />
             <name="BYSJ" explanation="毕业时间" type="datetime" null="F" p="F" />
