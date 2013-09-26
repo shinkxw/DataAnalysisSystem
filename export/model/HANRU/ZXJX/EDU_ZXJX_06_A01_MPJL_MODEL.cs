@@ -93,6 +93,11 @@ namespace HanRuEdu.LDAL
             public Int32 JSRKID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "校历周")]
+            public Int32 XLZID { get; set; }
+
+
         }
     }
 }

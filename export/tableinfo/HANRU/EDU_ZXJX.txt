@@ -53,6 +53,7 @@ EDU_ZXJX_06_A01_MPJL  面批记录表
   RRSJ          录入时间                datetime       非主
   BZ            备注                    text           非主
   JSRKID        教师任课编号            int            非主
+  XLZID         校历周ID                int            非主        校历周表
 
 EDU_ZXJX_07_A01_CJFXPZ  成绩分析配置表
   ID            编号                    int            自增主键

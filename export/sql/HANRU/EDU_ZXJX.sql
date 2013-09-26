@@ -140,6 +140,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_06_A01_MPJL](
 	[RRSJ]  datetime  NOT NULL,--录入时间
 	[BZ]  text  NULL,--备注
 	[JSRKID]  int  NOT NULL,--教师任课编号
+	[XLZID]  int  NOT NULL,--校历周ID
 CONSTRAINT [PK_EDU_ZXJX_06_A01_MPJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -373,6 +374,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_06_A01_MPJL', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师任课编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_06_A01_MPJL', @level2type=N'COLUMN',@level2name=N'JSRKID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校历周ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_06_A01_MPJL', @level2type=N'COLUMN',@level2name=N'XLZID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩分析配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_07_A01_CJFXPZ'
 GO

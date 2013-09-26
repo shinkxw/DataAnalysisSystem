@@ -3363,6 +3363,7 @@ SELECT a.[ID]--编号
       ,a.[RRSJ]--录入时间
       ,a.[BZ]--备注
       ,a.[JSRKID]--教师任课编号
+      ,a.[XLZID]--校历周ID
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -3538,6 +3539,12 @@ SELECT a.[ID]--编号
       ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
+      ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
+      ,j.XLID as j_XLZ_XLID--校历周表 校历ID
+      ,j.NAME as j_XLZ_NAME--校历周表 校历周名称
+      ,j.STARTDAY as j_XLZ_STARTDAY--校历周表 开始日期
+      ,j.ENDDAY as j_XLZ_ENDDAY--校历周表 结束日期
+      ,j.ZJH as j_XLZ_ZJH--校历周表 周计划
 
 FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.MPJS = c.ID /*面批教师*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -3547,6 +3554,7 @@ FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS g ON a.XQID = g.ID /*学期*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS h ON a.NJID = h.NJ /*年级*/ AND a.SCHOOLID = h.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS i ON a.BJID = i.BH /*班级*/ AND a.SCHOOLID = i.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_05_XLZ AS j ON a.XLZID = j.ID /*校历周ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
