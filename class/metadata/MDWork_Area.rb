@@ -94,6 +94,7 @@ class MDWork_Area
         puts '未修正差异为：'#显示未修正差异
         diff.show_diff
       else
+        #！！考虑重置所有标准表及数据
         puts "\n正在删除所有视图..."
         db.delete_all_view#删除所有视图
         puts "\n正在重置视图..."

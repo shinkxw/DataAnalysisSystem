@@ -45,6 +45,9 @@ class Sql
     builder = SqlBuilder.new
     builder.add_table_script(table,sql = '')
     builder.add_table_explanation(table,sql)
+    #标准表则添加数据
+    builder.need_data_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
+    builder.add_data(table,sql) if builder.need_data?(table.name_space_name)
     sql
   end
   #删除指定表
