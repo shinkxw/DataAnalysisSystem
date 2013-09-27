@@ -24,7 +24,10 @@ class DbUpdateInterface < BaseInterface
   #输入后操作
   def after_input
     menu_determine
-    super
+    rescue => err_msg
+      puts err_msg
+    ensure
+      super
   end
   # 结束处理
   def terminate
@@ -134,8 +137,11 @@ class DbUpdateInterface < BaseInterface
   end
   def show_menu4
     show_db
-    puts "   输入待更新数据库的对应号码           "
-    puts "   输入q返回上级目录                    "
+    rescue => err_msg
+      puts err_msg
+    ensure
+      puts "   输入待更新数据库的对应号码           "
+      puts "   输入q返回上级目录                    "
   end
   def show_menu5
     puts "   输入e查看数据库与工作区的差异(说明版)"

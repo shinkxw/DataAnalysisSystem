@@ -5,11 +5,11 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
-$t_app_name,$t_dir_name = 'JWXT','jsgcxpj'
+$t_app_name,$t_dir_name = 'XGXT','wsgl'
 AreaManager.set_conn(DBConnector.new('192.168.0.8,1444'))#192.168.0.8,1444
 AreaManager.load_area_and_db('HANRU','HanRuEdu') do |work_area,db|
   #work_area.export_tableinfo
-  work_area.export_all#(true)
-  #work_area.show_db_diff(db)
+  #work_area.export_all#(true)
+  work_area.show_db_diff(db)
   #work_area.update_db(db)
 end

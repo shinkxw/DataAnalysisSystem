@@ -14,7 +14,7 @@ class Sql
   end
   #查询指定表的字段信息
   def self.get_tf_info(table_name)
-    "SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME= '#{table_name}'"
+    "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= '#{table_name}'"
   end
   #查询指定表的主键信息
   def self.get_table_pk(table_name)
