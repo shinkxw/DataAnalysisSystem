@@ -128,4 +128,5 @@ EDU_ZXJX_10_A02_JSGCXPJXM  教师过程性评价考核项目表
   XMMC          项目名称                nvarchar(36)   非主
   DWMC          单位                    nvarchar(36)   非主
   ZGF           考核最高分              decimal(8, 3)  非主
+  QZ            权重                    decimal(8, 3)  非主
 

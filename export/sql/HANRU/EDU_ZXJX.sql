@@ -310,6 +310,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_10_A02_JSGCXPJXM](
 	[XMMC]  nvarchar(36)  NOT NULL,--项目名称
 	[DWMC]  nvarchar(36)  NOT NULL,--单位
 	[ZGF]  decimal(8, 3)  NOT NULL,--考核最高分
+	[QZ]  decimal(8, 3)  NOT NULL,--权重
 CONSTRAINT [PK_EDU_ZXJX_10_A02_JSGCXPJXM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -557,4 +558,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'单位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'DWMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核最高分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'ZGF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'权重' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'QZ'
 GO

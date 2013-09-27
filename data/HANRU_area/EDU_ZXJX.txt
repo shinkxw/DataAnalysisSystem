@@ -153,6 +153,7 @@
             <name="XMMC" explanation="项目名称" type="nvarchar(36)" null="F" p="F" />
             <name="DWMC" explanation="单位" type="nvarchar(36)" null="F" p="F" />
             <name="ZGF" explanation="考核最高分" type="decimal(8, 3)" null="F" p="F" />
+            <name="QZ" explanation="权重" type="decimal(8, 3)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

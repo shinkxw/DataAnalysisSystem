@@ -44,6 +44,12 @@ namespace HanRuEdu.LDAL
             public decimal ZGF { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "È¨ÖØ")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal QZ { get; set; }
+
+
         }
     }
 }

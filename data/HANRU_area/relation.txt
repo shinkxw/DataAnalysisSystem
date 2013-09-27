@@ -362,6 +362,10 @@
   NJID           EDU_ZXXX_02_01_NJ                  NJ
   XQID           EDU_ELE_01_XQ                      ID
   XNID           EDU_SYS_01_XN                      ID
+<EDU_ZXTW_03_A01_XSMZJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSXXID         EDU_ZXXS_01_01_XSXX                ID
+  BJID           EDU_ZXXX_03_01_BJ                  BH
 <EDU_ZXXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM

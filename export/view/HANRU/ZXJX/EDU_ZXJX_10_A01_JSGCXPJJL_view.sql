@@ -92,6 +92,7 @@ SELECT a.[ID]--编号
       ,f.XMMC as f_JSGCXPJXM_XMMC--教师过程性评价考核项目表 项目名称
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位
       ,f.ZGF as f_JSGCXPJXM_ZGF--教师过程性评价考核项目表 考核最高分
+      ,f.QZ as f_JSGCXPJXM_QZ--教师过程性评价考核项目表 权重
 
 FROM dbo.EDU_ZXJX_10_A01_JSGCXPJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
