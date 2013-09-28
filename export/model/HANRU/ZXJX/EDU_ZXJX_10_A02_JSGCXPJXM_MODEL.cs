@@ -50,6 +50,16 @@ namespace HanRuEdu.LDAL
             public decimal QZ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否统计")]
+            public Int32 SFTJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "数据来源")]
+            public Int32 SJLY { get; set; }
+
+
         }
     }
 }

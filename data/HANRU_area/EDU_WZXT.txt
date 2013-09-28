@@ -150,6 +150,7 @@
             <name="STATUID" explanation="是否开启" type="int" null="F" p="F" remark="(默认不开启0)" />
             <name="WEBURL" explanation="网址" type="nvarchar(500)" null="F" p="F" />
             <name="CSSID" explanation="网站样式" type="int" null="F" p="F" />
+            <name="URL" explanation="完整网址" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_NWIP" explanation="内网IP配置">

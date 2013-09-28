@@ -344,6 +344,7 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZPZ](
 	[STATUID]  int  NOT NULL,--是否开启
 	[WEBURL]  nvarchar(500)  NOT NULL,--网址
 	[CSSID]  int  NOT NULL,--网站样式
+	[URL]  nvarchar(500)  NOT NULL,--完整网址
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZPZ] PRIMARY KEY CLUSTERED
 (
 	[WEBID] ASC,
@@ -693,6 +694,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'WEBURL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网站样式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'CSSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'完整网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'URL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内网IP配置' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP'
 GO

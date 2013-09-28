@@ -2356,6 +2356,7 @@ SELECT a.[ID]--数据发布ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_OAXT_12_A01_SJFB AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2415,6 +2416,7 @@ SELECT a.[SCHOOLID]--学校名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_VIP AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2433,6 +2435,7 @@ SELECT a.[ID]--样式ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_TPXT_TPYS AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2453,6 +2456,7 @@ SELECT a.[ID]--投票题目选项ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
@@ -2489,6 +2493,7 @@ SELECT a.[ID]--投票题目ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
@@ -2520,6 +2525,7 @@ SELECT a.[ID]--投票设置ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_TPYS_SCHOOLID--投票样式库 学校名
       ,d.WEBID as d_TPYS_WEBID--投票样式库 网站ID
       ,d.NAME as d_TPYS_NAME--投票样式库 样式名
@@ -2544,6 +2550,7 @@ SELECT a.[ID]--投票记录ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
@@ -2571,6 +2578,7 @@ SELECT a.[ID]--友情链接类型ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_MHXT_YQLJLX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2591,6 +2599,7 @@ SELECT a.[ID]--友情链接ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_YQLJLX_SCHOOLID--友情链接类型 学校名
       ,d.WEBID as d_YQLJLX_WEBID--友情链接类型 网站ID
       ,d.NAME as d_YQLJLX_NAME--友情链接类型 类型名
@@ -2614,6 +2623,7 @@ SELECT a.[ID]--样式库ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_MHXT_WZYS AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2652,6 +2662,7 @@ SELECT a.[ID]--网站文章ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
       ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
       ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
@@ -2691,6 +2702,7 @@ SELECT a.[ID]--评价ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_WZWZ_SCHOOLID--网站文章 学校名
       ,d.WEBID as d_WZWZ_WEBID--网站文章 网站ID
       ,d.TYPENAME as d_WZWZ_TYPENAME--网站文章 类型名称
@@ -2730,11 +2742,13 @@ SELECT a.[WEBID]--网站ID
       ,a.[STATUID]--是否开启
       ,a.[WEBURL]--网址
       ,a.[CSSID]--网站样式
+      ,a.[URL]--完整网址
       ,b.SCHOOLID as b_WZPZ_SCHOOLID--网站配置 学校名
       ,b.WEBNAME as b_WZPZ_WEBNAME--网站配置 网站名
       ,b.STATUID as b_WZPZ_STATUID--网站配置 是否开启
       ,b.WEBURL as b_WZPZ_WEBURL--网站配置 网址
       ,b.CSSID as b_WZPZ_CSSID--网站配置 网站样式
+      ,b.URL as b_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_WZYS_SCHOOLID--样式库 学校名
       ,d.WEBID as d_WZYS_WEBID--样式库 网站ID
       ,d.NAME as d_WZYS_NAME--样式库 样式名
@@ -2768,6 +2782,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
       ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
       ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
@@ -2803,6 +2818,7 @@ SELECT a.[ID]--网站广告ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_MHXT_WZGG AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2822,6 +2838,7 @@ SELECT a.[ID]--访问履历ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_MHXT_FWLL AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -2841,6 +2858,7 @@ SELECT a.[ID]--发布权限ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
 FROM dbo.EDU_WZXT_MHXT_FBQX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -3923,6 +3941,7 @@ SELECT a.[ID]--编号
       ,a.[PJXMID]--考评项目
       ,a.[KHF]--考核分
       ,a.[FLM]--成绩
+      ,a.[LRSJ]--录入时间
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -4006,6 +4025,8 @@ SELECT a.[ID]--编号
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位
       ,f.ZGF as f_JSGCXPJXM_ZGF--教师过程性评价考核项目表 考核最高分
       ,f.QZ as f_JSGCXPJXM_QZ--教师过程性评价考核项目表 权重
+      ,f.SFTJ as f_JSGCXPJXM_SFTJ--教师过程性评价考核项目表 是否统计
+      ,f.SJLY as f_JSGCXPJXM_SJLY--教师过程性评价考核项目表 数据来源
 
 FROM dbo.EDU_ZXJX_10_A01_JSGCXPJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

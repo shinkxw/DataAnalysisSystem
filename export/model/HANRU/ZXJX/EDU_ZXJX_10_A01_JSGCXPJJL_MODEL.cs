@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXJX_10_A01_JSGCXPJJL()
         {
+            LRSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZXJX_10_A01_JSGCXPJJL_metadata
         {
@@ -52,6 +53,11 @@ namespace HanRuEdu.LDAL
             [Display(Name = "成绩")]
             [Range(typeof(decimal), "0", "99999999")]
             public decimal FLM { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "录入时间")]
+            public DateTime LRSJ { get; set; }
 
 
         }

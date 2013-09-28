@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[PJXMID]--考评项目
       ,a.[KHF]--考核分
       ,a.[FLM]--成绩
+      ,a.[LRSJ]--录入时间
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -93,6 +94,8 @@ SELECT a.[ID]--编号
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位
       ,f.ZGF as f_JSGCXPJXM_ZGF--教师过程性评价考核项目表 考核最高分
       ,f.QZ as f_JSGCXPJXM_QZ--教师过程性评价考核项目表 权重
+      ,f.SFTJ as f_JSGCXPJXM_SFTJ--教师过程性评价考核项目表 是否统计
+      ,f.SJLY as f_JSGCXPJXM_SJLY--教师过程性评价考核项目表 数据来源
 
 FROM dbo.EDU_ZXJX_10_A01_JSGCXPJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

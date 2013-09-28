@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             WEBNAME = "";
             WEBURL = "";
+            URL = "";
         }
         public class EDU_WZXT_MHXT_WZPZ_metadata
         {
@@ -46,6 +47,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "网站样式")]
             public Int32 CSSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "完整网址")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String URL { get; set; }
 
 
         }

@@ -292,6 +292,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_10_A01_JSGCXPJJL](
 	[PJXMID]  int  NOT NULL,--考评项目
 	[KHF]  decimal(8, 3)  NOT NULL,--考核分
 	[FLM]  decimal(8, 3)  NOT NULL,--成绩
+	[LRSJ]  datetime  NOT NULL,--录入时间
 CONSTRAINT [PK_EDU_ZXJX_10_A01_JSGCXPJJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -311,6 +312,8 @@ CREATE TABLE [dbo].[EDU_ZXJX_10_A02_JSGCXPJXM](
 	[DWMC]  nvarchar(36)  NOT NULL,--单位
 	[ZGF]  decimal(8, 3)  NOT NULL,--考核最高分
 	[QZ]  decimal(8, 3)  NOT NULL,--权重
+	[SFTJ]  int  NOT NULL,--是否统计
+	[SJLY]  int  NOT NULL,--数据来源
 CONSTRAINT [PK_EDU_ZXJX_10_A02_JSGCXPJXM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -547,6 +550,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核分' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A01_JSGCXPJJL', @level2type=N'COLUMN',@level2name=N'FLM'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录入时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A01_JSGCXPJJL', @level2type=N'COLUMN',@level2name=N'LRSJ'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师过程性评价考核项目表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'ID'
@@ -560,4 +565,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核最高分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'ZGF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'权重' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'QZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否统计' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'SFTJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_10_A02_JSGCXPJXM', @level2type=N'COLUMN',@level2name=N'SJLY'
 GO

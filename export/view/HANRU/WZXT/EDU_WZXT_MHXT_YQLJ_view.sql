@@ -14,6 +14,7 @@ SELECT a.[ID]--友情链接ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_YQLJLX_SCHOOLID--友情链接类型 学校名
       ,d.WEBID as d_YQLJLX_WEBID--友情链接类型 网站ID
       ,d.NAME as d_YQLJLX_NAME--友情链接类型 类型名

@@ -144,6 +144,7 @@
             <name="PJXMID" explanation="考评项目" type="int" null="F" p="F" />
             <name="KHF" explanation="考核分" type="decimal(8, 3)" null="F" p="F" />
             <name="FLM" explanation="成绩" type="decimal(8, 3)" null="F" p="F" />
+            <name="LRSJ" explanation="录入时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_10_A02_JSGCXPJXM" explanation="教师过程性评价考核项目表">
@@ -154,6 +155,8 @@
             <name="DWMC" explanation="单位" type="nvarchar(36)" null="F" p="F" />
             <name="ZGF" explanation="考核最高分" type="decimal(8, 3)" null="F" p="F" />
             <name="QZ" explanation="权重" type="decimal(8, 3)" null="F" p="F" />
+            <name="SFTJ" explanation="是否统计" type="int" null="F" p="F" />
+            <name="SJLY" explanation="数据来源" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

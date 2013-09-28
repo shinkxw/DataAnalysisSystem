@@ -125,6 +125,7 @@ EDU_WZXT_MHXT_WZPZ  网站配置
   STATUID       是否开启                int            非主
   WEBURL        网址                    nvarchar(500)  非主
   CSSID         网站样式                int            非主        样式库
+  URL           完整网址                nvarchar(500)  非主
 
 EDU_WZXT_MHXT_NWIP  内网IP配置
   ID            内网IP配置ID            int            主键

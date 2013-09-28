@@ -18,6 +18,7 @@ SELECT a.[ID]--评价ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_WZWZ_SCHOOLID--网站文章 学校名
       ,d.WEBID as d_WZWZ_WEBID--网站文章 网站ID
       ,d.TYPENAME as d_WZWZ_TYPENAME--网站文章 类型名称

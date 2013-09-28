@@ -14,6 +14,7 @@ SELECT a.[ID]--投票题目选项ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题

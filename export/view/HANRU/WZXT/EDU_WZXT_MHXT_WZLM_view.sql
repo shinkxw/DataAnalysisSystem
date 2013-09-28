@@ -22,6 +22,7 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
       ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
       ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
       ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
