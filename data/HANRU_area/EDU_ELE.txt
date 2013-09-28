@@ -171,6 +171,7 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
+            <name="SDID" explanation="所属时段ID" type="int" null="F" p="F" />
             <name="MC" explanation="名称" type="nvarchar(5)" null="F" p="F" />
         </field_area>
     </table>

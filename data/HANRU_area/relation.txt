@@ -34,6 +34,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_05_JC
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SDID           EDU_ELE_05_SD                      ID
 <EDU_JPXT_01_01_JLCSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CLXHID         EDU_JPXT_05_01_CLXH                ID

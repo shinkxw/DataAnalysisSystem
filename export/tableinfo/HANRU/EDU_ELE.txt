@@ -140,5 +140,6 @@ EDU_ELE_05_SD  时段
 EDU_ELE_05_JC  节次
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
+  SDID          所属时段ID              int            非主        时段
   MC            名称                    nvarchar(5)    非主
 

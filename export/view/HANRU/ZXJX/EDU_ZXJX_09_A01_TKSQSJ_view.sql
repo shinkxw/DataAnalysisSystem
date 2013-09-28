@@ -122,6 +122,7 @@ SELECT a.[ID]--编号
       ,i.SCHOOLID as i_SD_SCHOOLID--时段 学校名
       ,i.MC as i_SD_MC--时段 名称
       ,j.SCHOOLID as j_JC_SCHOOLID--节次 学校名
+      ,j.SDID as j_JC_SDID--节次 所属时段ID
       ,j.MC as j_JC_MC--节次 名称
       ,k.SCHOOLID as k_XLZ_SCHOOLID--校历周表 学校ID
       ,k.XLID as k_XLZ_XLID--校历周表 校历ID
@@ -140,6 +141,7 @@ SELECT a.[ID]--编号
       ,n.SCHOOLID as n_SD_SCHOOLID--时段 学校名
       ,n.MC as n_SD_MC--时段 名称
       ,o.SCHOOLID as o_JC_SCHOOLID--节次 学校名
+      ,o.SDID as o_JC_SDID--节次 所属时段ID
       ,o.MC as o_JC_MC--节次 名称
 
 FROM dbo.EDU_ZXJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
