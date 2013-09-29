@@ -159,4 +159,15 @@
             <name="SJLY" explanation="数据来源" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_10_A03_JSMZSKS" explanation="教师每周上课数表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="JSID" explanation="教师ID" type="int" null="F" p="F" />
+            <name="XLZID" explanation="校历周ID" type="int" null="F" p="F" />
+            <name="JSRKID" explanation="教师任课ID" type="int" null="F" p="F" />
+            <name="KCH" explanation="课程号" type="nvarchar(10)" null="F" p="F" />
+            <name="SKJS" explanation="上课节数" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

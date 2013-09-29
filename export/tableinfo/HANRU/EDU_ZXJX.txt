@@ -133,3 +133,12 @@ EDU_ZXJX_10_A02_JSGCXPJXM  教师过程性评价考核项目表
   SFTJ          是否统计                int            非主
   SJLY          数据来源                int            非主
 
+EDU_ZXJX_10_A03_JSMZSKS  教师每周上课数表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  XLZID         校历周ID                int            非主        校历周表
+  JSRKID        教师任课ID              int            非主        任课数据子类表
+  KCH           课程号                  nvarchar(10)   非主        课程数据类
+  SKJS          上课节数                int            非主
+
