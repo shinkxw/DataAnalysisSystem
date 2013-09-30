@@ -17,6 +17,8 @@ class MDTable
     @field_area = MDFieldArea.new
     @data_area = MDDataArea.new
   end
+  #改变表名
+  def rename(new_name);@name = new_name end
   #增加字段
   def add_field(field);@field_area.add_field(field) end
   #增加数据

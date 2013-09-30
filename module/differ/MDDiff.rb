@@ -3,7 +3,7 @@
 #元数据比较器比较后所生成的差异度对象
 class MDDiff
   @@table_pro_arr = %w(explanation)
-  @@field_pro_arr = %w(type null explanation identity p)#remark
+  @@field_pro_arr = %w(type null explanation p identity)#remark
   attr_reader :a1_diff_arr#记录元数据域1中独有的表
   attr_reader :a2_diff_arr#记录元数据域2中独有的表
   attr_reader :t1_diff_arr#记录元数据域1中表独有的字段
@@ -19,11 +19,18 @@ class MDDiff
   end
   #将数据库1转换为2
   def db_transform(db)
+    @rebuild_table_arr = []
     @t1_diff_arr.each{|table| db.delete_table(table.name)}#删表
     @t2_diff_arr.each{|table| db.create_table(table)}#建表
     @f1_diff_arr.each{|field| db.delete_field(field)}#删字段
     @f2_diff_arr.each{|f| db.add_field(f);add_pro_diff(f.ef,f)}#加字段
     @pro_diff_hash.each{|o1,o2| obj_transform(o1,o2,db)}#修改对象属性
+    #对无法更新的表采用重建
+    @rebuild_table_arr.uniq.each do |table|
+      puts "由于无法直接更新表结构，将通过重建方式来更新表#{table.name}"
+      puts "该操作可能破坏数据，请问是否重建?(Y/N)"
+      db.rebuild_table(table) if KbInput.get_bool
+    end
     db.reset_conn#重置连接
   end
   #在数据库中将对象1转换为对象2
@@ -45,15 +52,10 @@ class MDDiff
     when 'explanation'
       f1.has_exp? ? db.update_fexp(f2) : db.add_fexp(f2)
     when 'p'
-      puts "改动表#{f1.table.name}的#{f1.name}的主键属性将清空表内数据!"
-      puts "请问是否进行改动?(Y/N)"
-      if KbInput.get_bool
-        db.delete_table(f2.table.name)#删表
-        db.create_table(f2.table)#建表
-      end
+      @rebuild_table_arr << f2.table
     when 'identity'
       if f1.identity == 'T'
-        
+        @rebuild_table_arr << f2.table
       else
         puts "无法设置已有字段为自增属性"
       end

@@ -105,6 +105,19 @@ class DBEntity
   def update_fexp(field);execute(Sql.update_fexp(field)) end
   #获得数据库的元数据域
   def get_db_area(area_name = 'db_out');DBAnalyzer.new.analyze_db(self,area_name) end
+  #通过重建表的方式改变表结构
+  def rebuild_table(table)
+    old_name = table.name
+    table.rename('temporary_table')
+    begin
+      create_table(table)#建临时表
+      execute("INSERT INTO #{table.name} SELECT * from #{old_name}")#转移数据
+      delete_table(old_name)#删原表
+      execute("EXEC sp_rename '#{table.name}','#{old_name}'")#表改名
+    ensure
+      table.rename(old_name)
+    end
+  end
   #让数据库执行sql语句
   def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end
   #在查询结果中获得以主要键为索引的所需信息，key_arr第一个元素为主键
