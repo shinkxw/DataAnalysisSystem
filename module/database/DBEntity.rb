@@ -111,12 +111,15 @@ class DBEntity
     table.rename('temporary_table')
     begin
       create_table(table)#建临时表
-      execute("INSERT INTO #{table.name} SELECT * from #{old_name}")#转移数据
-      delete_table(old_name)#删原表
-      execute("EXEC sp_rename '#{table.name}','#{old_name}'")#表改名
+      execute(Sql.transfer_data(old_name,table))#转移数据
     ensure
       table.rename(old_name)
     end
+    reset_conn
+    delete_table(table.name)#删原表
+    create_table(table)#建原表
+    execute(Sql.transfer_data('temporary_table',table))#转移数据
+    delete_table('temporary_table')#删临时表
   end
   #让数据库执行sql语句
   def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end

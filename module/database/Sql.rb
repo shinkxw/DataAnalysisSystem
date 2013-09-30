@@ -93,6 +93,15 @@ class Sql
     sql = "EXEC sys.sp_updateextendedproperty @name=N'MS_Description', @value=N'#{field.explanation}' , @level0type=N'SCHEMA',@level0name=N'dbo', "
     sql << "@level1type=N'TABLE',@level1name=N'#{field.table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
   end
+  #转移表数据
+  def self.transfer_data(old_table_name,new_table)
+    sql = ''
+    sql << "SET IDENTITY_INSERT [dbo].[#{new_table.name}] ON\n" if new_table.has_identity?#存在自增字段
+    sql << "INSERT INTO [#{new_table.name}]([#{new_table.get_field_name_arr.join('] ,[')}]) "
+    sql << "SELECT * from #{old_table_name}\n"
+    sql << "SET IDENTITY_INSERT [dbo].[#{new_table.name}] OFF\n" if new_table.has_identity?#存在自增字段
+    sql
+  end
   #根据配置获得表连接查询sql语句
   #第一个元素是主表名，第二个元素为hash表，键为表名，值为连接条件hash, 第三个元素为数据库实体
   def self.get_join_sql(mtname, jc, db)
