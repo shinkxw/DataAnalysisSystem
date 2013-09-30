@@ -34,6 +34,7 @@ class MDTable
   def is_valid?
     p "MDNameSpace: 表#{@name}没有字段" if get_field_size == 0
     p "MDNameSpace: 表#{@name}字段名重复" if get_field_name_arr.uniq! != nil
+    p "MDNameSpace: 表#{@name}除自增主键外还存在主键" if has_identity? && get_primary_key.size > 1
     each_field{|field| field.is_valid?}
     true#单数据键值重复 数据的键值应属于字段 非空字段值判断
   end
@@ -59,6 +60,8 @@ class MDTable
   def has_data?;@data_area.data_arr.size != 0 end
   #判断说明是否存在
   def has_exp?;@explanation != '' && @explanation != nil end
+  #是否存在自增字段
+  def has_identity?;@field_area.find{|field| field.identity == "T"} end
   #查找字段名并返回该字段,无则返回nil
   def find_field(field_name);@field_area.find{|field| field.name == field_name} end
   #返回字段数

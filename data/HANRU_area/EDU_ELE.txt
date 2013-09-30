@@ -50,9 +50,9 @@
     <table name="EDU_ELE_01_XQ" explanation="学期数据表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="XNID" explanation="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
-            <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_XQ" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
+            <name="XNID" explanation="学年" type="int" null="F" p="F" />
+            <name="XQM" explanation="学期码" type="nvarchar(1)" null="F" p="F" />
             <name="XQMC" explanation="学期名称" type="nvarchar(10)" null="F" p="F" />
             <name="XQKSRQ" explanation="学期开始日期" type="nvarchar(8)" null="T" p="F" />
             <name="XQJSRQ" explanation="学期结束日期" type="nvarchar(8)" null="T" p="F" />
@@ -90,8 +90,8 @@
     <table name="EDU_ELE_03_APPRZ" explanation="应用日志表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="F" />
             <name="RZLX" explanation="日志类型" type="int" null="F" p="F" />
             <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" remark="EDU_ELE_01_USER" />
             <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" />
@@ -103,9 +103,9 @@
     <table name="EDU_ELE_03_APPLL" explanation="应用履历表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="APPID" explanation="应用ID" type="int" null="F" p="T" />
-            <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" remark="EDU_ELE_01_USER" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" />
+            <name="APPID" explanation="应用ID" type="int" null="F" p="F" />
+            <name="YHID" explanation="操作用户" type="nvarchar(20)" null="F" p="F" />
             <name="CZSJ" explanation="操作时间" type="datetime" null="F" p="F" />
             <name="CZYY" explanation="操作应用" type="nvarchar(30)" null="F" p="F" />
             <name="CZBM" explanation="操作表名" type="nvarchar(100)" null="F" p="F" />
@@ -115,7 +115,7 @@
     <table name="EDU_ELE_04_PKJGJL" explanation="排课结果记录表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" />
             <name="XQID" explanation="学期ID" type="int" null="F" p="F" />
             <name="TEACHERID" explanation="老师" type="int" null="F" p="F" />
             <name="TEACHERNAME" explanation="老师" type="nvarchar(100)" null="F" p="F" />

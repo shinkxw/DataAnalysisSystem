@@ -98,12 +98,12 @@ class SqlBuilder
   #生成添加数据语句
   def add_data(table,sql_str = @sql_str)
     #输出添加元素语句
-    sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] ON\n" if table.field_area.has_identity?#存在自增字段
+    sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] ON\n" if table.has_identity?#存在自增字段
     table.data_area.each do |data|
       sql_str << "INSERT INTO [#{table.name}]([#{data.get_keys.join('] ,[')}]) "
       sql_str << "VALUES(#{data.map{|_,v| v =~ /^CAST\(/ ? v : "'#{v}'"}.join(', ')})\n"
     end
-    sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] OFF\n" if table.field_area.has_identity?#存在自增字段
+    sql_str << "SET IDENTITY_INSERT [dbo].[#{table.name}] OFF\n" if table.has_identity?#存在自增字段
     sql_str << "\n"
   end
   #生成整个命名空间表的注释语句

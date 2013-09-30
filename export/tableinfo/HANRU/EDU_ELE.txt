@@ -74,7 +74,7 @@ EDU_ELE_02_YHFZ  用户分组表
 EDU_ELE_03_APPRZ  应用日志表
   ID            编号                    int            自增主键
   SCHOOLID      学校名                  int            非主        学校配置表
-  APPID         应用ID                  int            主键
+  APPID         应用ID                  int            非主
   RZLX          日志类型                int            非主
   YHID          操作用户                nvarchar(20)   非主        应用系统用户表
   CZSJ          操作时间                datetime       非主
@@ -85,7 +85,7 @@ EDU_ELE_03_APPRZ  应用日志表
 EDU_ELE_03_APPLL  应用履历表
   ID            编号                    int            自增主键
   SCHOOLID      学校名                  int            非主        学校配置表
-  APPID         应用ID                  int            主键
+  APPID         应用ID                  int            非主
   YHID          操作用户                nvarchar(20)   非主        应用系统用户表
   CZSJ          操作时间                datetime       非主
   CZYY          操作应用                nvarchar(30)   非主
@@ -94,7 +94,7 @@ EDU_ELE_03_APPLL  应用履历表
 
 EDU_ELE_04_PKJGJL  排课结果记录表
   ID            编号                    int            自增主键
-  SCHOOLID      学校名                  int            主键
+  SCHOOLID      学校名                  int            非主
   XQID          学期ID                  int            非主
   TEACHERID     老师                    int            非主
   TEACHERNAME   老师                    nvarchar(100)  非主

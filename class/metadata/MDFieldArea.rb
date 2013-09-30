@@ -18,8 +18,6 @@ class MDFieldArea
       p "MDFieldArea can only put MDField"
     end
   end
-  #是否存在自增字段
-  def has_identity?;find{|field| field.identity == "T"} end
   #迭代字段
   def each;@field_arr.each{|field| yield(field)} end
 end
