@@ -45,7 +45,7 @@
     </table>
     <table name="EDU_ZXXS_01_06_XSJTCY" explanation="学生家庭成员数据表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="F" />
             <name="GXM" explanation="关系码" type="nvarchar(2)" null="F" p="F" remark="值空间：GB/T4761 解释/举例：采用两位代码 " />

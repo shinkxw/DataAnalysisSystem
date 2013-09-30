@@ -80,7 +80,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXXS_01_06_XSJTCY]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZXXS_01_06_XSJTCY](
-	[ID]  int  identity,--编号
+	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校名
 	[XSXXID]  int  NOT NULL,--学生信息数据表
 	[GXM]  nvarchar(2)  NOT NULL,--关系码

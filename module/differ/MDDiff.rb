@@ -3,7 +3,7 @@
 #元数据比较器比较后所生成的差异度对象
 class MDDiff
   @@table_pro_arr = %w(explanation)
-  @@field_pro_arr = %w(type null p identity explanation)#remark
+  @@field_pro_arr = %w(type null explanation identity p)#remark
   attr_reader :a1_diff_arr#记录元数据域1中独有的表
   attr_reader :a2_diff_arr#记录元数据域2中独有的表
   attr_reader :t1_diff_arr#记录元数据域1中表独有的字段
@@ -44,6 +44,19 @@ class MDDiff
       f2.null == 'T' ? db.field_null(f2) : db.field_not_null(f2)
     when 'explanation'
       f1.has_exp? ? db.update_fexp(f2) : db.add_fexp(f2)
+    when 'p'
+      puts "改动表#{f1.table.name}的#{f1.name}的主键属性将清空表内数据!"
+      puts "请问是否进行改动?(Y/N)"
+      if KbInput.get_bool
+        db.delete_table(f2.table.name)#删表
+        db.create_table(f2.table)#建表
+      end
+    when 'identity'
+      if f1.identity == 'T'
+        
+      else
+        puts "无法设置已有字段为自增属性"
+      end
     else puts "#{dp}属性差异暂时无法更新"
     end
   end

@@ -33,6 +33,7 @@ helper      辅助工具   便于辅助开发及代码复用
     Log           记录并管理日志
     SVN           调用SVN指令的封装
     Timer         计时器
+    KbInput       键盘输入类
 
 database    数据库操作相关
     DBConnector          选择并返回与数据库实例的连接
