@@ -114,8 +114,8 @@
     </table>
     <table name="EDU_ELE_04_PKJGJL" explanation="排课结果记录表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" />
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
             <name="XQID" explanation="学期ID" type="int" null="F" p="F" />
             <name="TEACHERID" explanation="老师" type="int" null="F" p="F" />
             <name="TEACHERNAME" explanation="老师" type="nvarchar(100)" null="F" p="F" />
