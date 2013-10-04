@@ -51,9 +51,7 @@ class AreaManager
   def self.load_area_and_db(area_name,db_name = nil,&block)
     if db_name && @@db_conn
       open(area_name) do |work_area|
-        DBEntity.open(db_name,@@db_conn) do |db|
-          yield(work_area,db)
-        end
+        DBEntity.open(db_name,@@db_conn){|db| yield(work_area,db)}
       end
     elsif db_name
       puts 'AreaManager：未配置数据库连接'
