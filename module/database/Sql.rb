@@ -51,7 +51,10 @@ class Sql
     sql
   end
   #删除指定表
-  def self.delete_table(table_name);"DROP TABLE #{table_name}" end
+  def self.delete_table(table_name)
+    "if exists (select 1 from sysobjects where id = object_id('#{table_name}') and type = 'U') 
+    drop table #{table_name}"
+  end
   #添加字段
   def self.add_field(field)
     "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"

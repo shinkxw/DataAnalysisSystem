@@ -109,17 +109,17 @@ class DBEntity
   def rebuild_table(table)
     old_name = table.name
     table.rename('temporary_table')
-    begin
-      create_table(table)#建临时表
-      execute(Sql.transfer_data(old_name,table))#转移数据
-    ensure
-      table.rename(old_name)
-    end
-    reset_conn
-    delete_table(table.name)#删原表
-    create_table(table)#建原表
-    execute(Sql.transfer_data('temporary_table',table))#转移数据
-    delete_table('temporary_table')#删临时表
+    begin;transfer_data(old_name, table)
+    ensure;table.rename(old_name)
+    end#reset_conn
+    transfer_data('temporary_table', table)
+  end
+  #建表并转移指定名称的表数据进入
+  def transfer_data(from_table_name,to_table)
+    delete_table(to_table.name)#删表
+    create_table(to_table)#建表
+    execute(Sql.transfer_data(from_table_name,to_table))#转移数据
+    delete_table(from_table_name)#删表
   end
   #让数据库执行sql语句
   def execute(sql);sql.split("\nGO\n").each{|part| @conn.Execute(part)} end
