@@ -20,8 +20,8 @@ class AreaManager
     unless get_all_area_name.include?(area_name)
       DirManager.make_dir("#{@@data_path}/#{area_name}_area")
       DirManager.make_dir("#{@@data_path}/backup/#{area_name}_area")
-    else
-      p "AreaManager: 该数据域名已被使用"
+      DirManager.make_dir("#{@@data_path}/version/#{area_name}_area")
+    else;p "AreaManager: 该数据域名已被使用"
     end
   end
   #删除指定名称的元数据域
@@ -29,8 +29,7 @@ class AreaManager
     if get_all_area_name.include?(area_name)
       DirManager.remove_dir("#{@@data_path}/#{area_name}_area")
       DirManager.remove_dir("#{@@data_path}/backup/#{area_name}_area")
-    else
-      p "AreaManager: 该数据域未找到"
+    else;p "AreaManager: 该数据域未找到"
     end
   end
   #将指定名称的元数据域加载为元数据

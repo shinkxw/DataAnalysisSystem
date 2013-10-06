@@ -6,12 +6,12 @@ class MDWork_Area
   @@data_path = "#{$root}/data"
   @@temporary_path = "#{@@data_path}/temporary"
   @@backup_path = "#{@@data_path}/backup"
+  @@version_path = "#{@@data_path}/version"
   @@enter_path = "#{$root}/enter"
   @@backup_max_num = 5
   #初始化
   def initialize(area)
-    @area = area
-    @doc = nil
+    @area,@doc = area,nil
     @area.is_valid?
     save_to_temporary
     backup_work_area
@@ -19,20 +19,13 @@ class MDWork_Area
   #输出所有
   def export_all(need_commit = false)
     fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
-    fs_config = {'@sql'=>"#{fs_root}/BASE",
-                 '@view'=>"#{fs_root}/VIEW",
-                 'HANRU_bz'=>fs_root,
-                 'HANRU_yw'=>fs_root,
-                 'HANRU_view'=>fs_root}
+    fs_config = {'@sql'=>"#{fs_root}/BASE",'@view'=>"#{fs_root}/VIEW",
+                 'HANRU_bz'=>fs_root,'HANRU_yw'=>fs_root,'HANRU_view'=>fs_root}
     MDDoc.set_fsc(fs_config)
-    export_sql
-    export_sql(false)
-    export_view
-    export_view(false)
-    export_model
-    export_template
-    export_tableinfo
-    export_migrate_config
+    export_sql;export_sql(false)
+    export_view;export_view(false)
+    export_model;export_template
+    export_tableinfo;export_migrate_config
     MDDoc.set_fsc(nil)
     SVN.commit('D:\技术部\代码\Trunk\DB\SQL') if need_commit
   end

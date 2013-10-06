@@ -4,4 +4,5 @@ data analyze format 数据分析格式，用于固化元数据，类xml
 以namespace的名字作为文件名
 area_config文件用于配置元数据域
 文件夹backup中存放的是备份文件，每次改动前会在该文件夹下留下备份
+文件夹version中存放的是版本差异文件，每次改动后会在该文件夹下留下差异信息
 文件夹temporary_area中存放的是系统运行时使用的固化元数据，用于回滚等操作
