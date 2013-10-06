@@ -17,6 +17,7 @@ builder    生成器      将元数据装换为一种格式的字符串
 version    版本        版本控制模块
     MDDiffer           元数据比较器
     MDDiff             元数据比较器比较后所生成的差异度对象
+    MDVersion          元数据版本对象
     MDVCer             元数据版本控制器
 
 file       文件处理    文件读写相关

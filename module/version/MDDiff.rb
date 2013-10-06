@@ -94,8 +94,6 @@ class MDDiff
     size += @pro_diff_hash.size
     size != 0
   end
-  #将差异对象序列化
-  def to_str;Marshal.dump(self) end
   #显示差异(说明版)
   def show_diff
     puts '  ' * 2 << '数据库' << '  ' * 15 << '工作区'

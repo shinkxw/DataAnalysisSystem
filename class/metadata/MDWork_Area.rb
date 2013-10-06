@@ -10,7 +10,8 @@ class MDWork_Area
   @@backup_max_num = 5
   #≥ı ºªØ
   def initialize(area)
-    @area,@doc,@vc = area,nil,MDVCer.new(area.name)
+    @area,@doc = area,nil
+    @vc = MDVCer.new(area)
     @area.is_valid?
     save_to_temporary
     backup_work_area
