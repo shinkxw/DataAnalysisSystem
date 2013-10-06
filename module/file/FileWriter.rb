@@ -26,7 +26,7 @@ class FileWriter
   #将对象写入文件
   def write_obj(obj)
     File.open("#{@file_path}","#{@type}:#{@encode}") do |file|
-      file.puts(Marshal.dump(obj))
+      Marshal.dump(obj,file)
     end
   end
 end

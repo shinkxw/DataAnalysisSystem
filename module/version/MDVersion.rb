@@ -15,8 +15,6 @@ class MDVersion
     @pre_ev = pre_area.get_ev if pre_area
     @diff = MDDiffer.new.compare_area(pre_area,area) if area && pre_area
   end
-  #将版本对象序列化
-  def to_str;Marshal.dump(self) end
   #文件名
   def file_name;@name + '.ver' end
 end

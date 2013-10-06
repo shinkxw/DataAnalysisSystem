@@ -22,4 +22,13 @@ class FolderWriter
       FileWriter.new("#{folder_Path}#{file_name}").write_str(str)
     end
   end
+  #将一个哈希表中的对象写入文件夹，键值为文件名
+  def write_obj_hash(file_hash)
+    file_hash.each do |file_name,obj|
+      if @mkdir && "#{folder_Path}#{file_name}" =~ /(.+)\/[^\/]+?\.[^\/]+$/
+        DirManager.make_dir("#{$1}")
+      end
+      FileWriter.new("#{folder_Path}#{file_name}").write_obj(obj)
+    end
+  end
 end

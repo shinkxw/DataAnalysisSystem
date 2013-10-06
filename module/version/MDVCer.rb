@@ -30,11 +30,12 @@ class MDVCer
   def has_update?;@area.get_ev != @work_copy.ev end
   #保存版本信息文件
   def save_version
-    FileWriter.new(@work_copy_path,'w','ASCII-8BIT').write_str(@work_copy.to_str)
+    FileWriter.new(@work_copy_path).write_obj(@work_copy)
+    FileWriter.new(@ver_path + 'WorkCopy.daf').write_obj(@area)
     #清空文件夹
     @version_arr.each do |version|
       path = @ver_path + version.name + '/'
-      FolderWriter.new(path,true).write_str_hash({version.file_name => version.to_str})
+      FolderWriter.new(path,true).write_obj_hash({version.file_name => version.to_str})
     end
   end
   #读取数据域的版本信息
