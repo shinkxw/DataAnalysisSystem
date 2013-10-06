@@ -86,22 +86,16 @@ class DbUpdateInterface < BaseInterface
       if @input == 'q'
         @statu = 4
       elsif @input == 'e'
-        AreaManager.open(@area_name) do |work_area|
-          DBEntity.open(@dbname) do |db|
-            work_area.show_db_diff(db)
-          end
+        AreaManager.load_area_and_db(@area_name,@dbname) do |work_area,db|
+          DBUpdater.new(work_area.area,db).show_db_diff
         end
       elsif @input == 'n'
-        AreaManager.open(@area_name) do |work_area|
-          DBEntity.open(@dbname) do |db|
-            work_area.show_db_diff(db,false)
-          end
+        AreaManager.load_area_and_db(@area_name,@dbname) do |work_area,db|
+          DBUpdater.new(work_area.area,db).show_db_diff(false)
         end
       elsif @input == 'u'
-        AreaManager.open(@area_name) do |work_area|
-          DBEntity.open(@dbname) do |db|
-            work_area.update_db(db)
-          end
+        AreaManager.load_area_and_db(@area_name,@dbname) do |work_area,db|
+          DBUpdater.new(work_area.area,db).update_db
         end
       else
         puts "ÊäÈëÓÐÎó£¡"

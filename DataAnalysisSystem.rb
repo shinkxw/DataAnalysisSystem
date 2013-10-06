@@ -11,6 +11,6 @@ AreaManager.load_area_and_db('HANRU','HanRuEdu') do |work_area,db|
   db_updater = DBUpdater.new(work_area.area,db)
   #work_area.export_tableinfo
   #work_area.export_all#(true)
-  #db_updater.show_db_diff
+  db_updater.show_db_diff
   #db_updater.update_db
 end

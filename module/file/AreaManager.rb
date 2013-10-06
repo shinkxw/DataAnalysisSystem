@@ -48,12 +48,10 @@ class AreaManager
   end
   #同时加载指定名称的元数据域与指定数据库实体并传给块
   def self.load_area_and_db(area_name,db_name = nil,&block)
-    if db_name && @@db_conn
+    if db_name
       open(area_name) do |work_area|
         DBEntity.open(db_name,@@db_conn){|db| yield(work_area,db)}
       end
-    elsif db_name
-      puts 'AreaManager：未配置数据库连接'
     else
       open(area_name,&block)
     end
