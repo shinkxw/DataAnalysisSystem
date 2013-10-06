@@ -125,6 +125,10 @@ class MDField
       puts "MDField: 表#{@table.name}字段#{@name}属性有误！"
     end
   end
+  #计算字段的特征值
+  def get_ev
+    Compressor.arr_com([@name,@type,@null,@p,@explanation,@identity])
+  end
   #计算10的n次方
   def calnum(n);10**n end
 end

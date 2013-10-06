@@ -76,6 +76,10 @@ class MDTable
   end
   #在有说明时返回说明，否则返回名字
   def gname;has_exp? ? @explanation : @name end
+  #计算表的特征值
+  def get_ev
+    Compressor.arr_com([@name,@explanation] + field_arr.map(&:get_ev))
+  end
   #获得字段数组
   def field_arr;@field_area.field_arr end
   #迭代字段

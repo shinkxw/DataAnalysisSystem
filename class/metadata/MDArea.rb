@@ -109,6 +109,10 @@ class MDArea
   end
   #获得所有表名的数组
   def get_table_name_arr;map(&:get_table_name_arr).flatten end
+  #计算域的特征值
+  def get_ev
+    Compressor.arr_com(get_table_arr.map(&:get_ev))
+  end
   #迭代命名空间
   def each;@name_space_arr.each{|name_space| yield(name_space)} end
 end
