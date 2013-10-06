@@ -141,14 +141,12 @@ class MDWork_Area
   def export_migrate_config
     build_proc = Proc.new do |str|
       export = {}
-      area.each do |name_space|
-        name_space.each do |table|
-          ostr = ""
-          table.field_area.each do |field|
-            ostr << "             #{field.name}: { fn: '', p: Proc.new{|i| ''}},\n"
-          end
-          export["#{table.library_name.upcase}/#{table.name}.txt"] = ostr
+      @area.get_table_arr do |table|
+        ostr = ""
+        table.field_area.each do |field|
+          ostr << "             #{field.name}: { fn: '', p: Proc.new{|i| ''}},\n"
         end
+        export["#{table.library_name.upcase}/#{table.name}.txt"] = ostr
       end
       export
     end
