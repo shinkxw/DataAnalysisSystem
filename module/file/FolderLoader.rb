@@ -6,12 +6,11 @@ class FolderLoader
   attr_reader :file_suffix#文件后缀
   attr_accessor :encode#文件读取写入编码格式
   #初始化
-  def initialize(folder_Path,file_suffix = ".txt",encode = "GBK")
+  def initialize(folder_Path,file_suffix = '.txt',encode = 'GBK')
     @folder_Path = folder_Path
     @file_suffix = file_suffix
     @encode = encode
   end
-
   #读取所有文件并返回文件中的字符串数组
   def get_file_arr
     result = []

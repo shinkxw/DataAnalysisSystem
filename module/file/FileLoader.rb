@@ -6,23 +6,20 @@ class FileLoader
   attr_accessor :encode#文件读取写入编码格式
   #初始化
   def initialize(file_path,encode = "GBK")
-    @file_path = file_path
-    @encode = encode
+    @file_path,@encode = file_path,encode
   end
   #从文件获得字符串
   def get_str
-    result = ""
-    File.open("#{@file_path}","r:#{@encode}") do |file|
-      result = file.read
-    end
-    result
+    File.open("#{@file_path}","r:#{@encode}"){|file| return file.read}
   end
   #从文件获得字符串数组
   def get_str_arr
-    result = []
+    File.open("#{@file_path}","r:#{@encode}"){|file| return file.readlines}
+  end
+  #从文件获得对象
+  def get_obj
     File.open("#{@file_path}","r:#{@encode}") do |file|
-      result = file.readlines
+      return Marshal.load(file.read)
     end
-    result
   end
 end

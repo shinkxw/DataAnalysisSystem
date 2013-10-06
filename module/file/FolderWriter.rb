@@ -15,12 +15,12 @@ class FolderWriter
   end
   #将一个哈希表中的数据写入文件夹，键值为文件名
   def write_str_hash(file_hash)
-    file_name_arr = file_hash.keys
-    file_name_arr.each do |file_name|
+    #file_name_arr = file_hash.keys
+    file_hash.each do |file_name,str|
       if @mkdir && "#{folder_Path}#{file_name}" =~ /(.+)\/[^\/]+?\.[^\/]+$/
         DirManager.make_dir("#{$1}")
       end
-      FileWriter.new("#{folder_Path}#{file_name}").write_str(file_hash[file_name])
+      FileWriter.new("#{folder_Path}#{file_name}").write_str(str)
     end
   end
 end

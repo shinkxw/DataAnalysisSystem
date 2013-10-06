@@ -11,9 +11,9 @@ class MDVersion
   def initialize(area,pre_area,name = Time.now.strftime("%y年%m月%d日%H时%M分%S秒"))
     @name = name
     @update_date = Time.now
-    @ev = area.get_ev
-    @pre_ev = pre_area.get_ev
-    @diff = MDDiffer.new.compare_area(pre_area,area)
+    @ev = area.get_ev if area
+    @pre_ev = pre_area.get_ev if pre_area
+    @diff = MDDiffer.new.compare_area(pre_area,area) if area && pre_area
   end
   #将版本对象序列化
   def to_str;Marshal.dump(self) end
