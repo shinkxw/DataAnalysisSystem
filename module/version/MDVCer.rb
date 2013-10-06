@@ -35,7 +35,7 @@ class MDVCer
     #清空文件夹
     @version_arr.each do |version|
       path = @ver_path + version.name + '/'
-      FolderWriter.new(path,true).write_obj_hash({version.file_name => version.to_str})
+      FolderWriter.new(path,true).write_obj_hash({version.file_name => version})
     end
   end
   #读取数据域的版本信息
