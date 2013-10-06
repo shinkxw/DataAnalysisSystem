@@ -11,10 +11,8 @@ class MDDiff
   attr_reader :pro_diff_arr#记录相互差异的对象
   #初始化
   def initialize
-    @t1_diff_arr = []
-    @t2_diff_arr = []
-    @f1_diff_arr = []
-    @f2_diff_arr = []
+    @t1_diff_arr,@t2_diff_arr = [],[]
+    @f1_diff_arr,@f2_diff_arr = [],[]
     @pro_diff_hash = {}
   end
   #将数据库1转换为2
@@ -24,7 +22,7 @@ class MDDiff
     @t2_diff_arr.each{|table| db.create_table(table)}#建表
     @f1_diff_arr.each{|field| db.delete_field(field)}#删字段
     @f2_diff_arr.each{|f| db.add_field(f);add_pro_diff(f.ef,f)}#加字段
-    @pro_diff_hash.each{|o1,o2| obj_transform(o1,o2,db)}#修改对象属性
+    @pro_diff_hash.each{|o1,o2| db_obj_transform(o1,o2,db)}#修改对象属性
     #对无法更新的表采用重建
     @rebuild_table_arr.uniq.each do |table|
       puts "由于无法直接更新表结构，将通过重建方式来更新表#{table.name}"
@@ -34,17 +32,17 @@ class MDDiff
     db.reset_conn#重置连接
   end
   #在数据库中将对象1转换为对象2
-  def obj_transform(obj1,obj2,db)
+  def db_obj_transform(obj1,obj2,db)
     case obj1.class.to_s
     when 'MDTable'#只有explanation属性时使用
       obj1.has_exp? ? db.update_texp(obj2) : db.add_texp(obj2)
     when 'MDField'
       dp_arr = get_pro_diff(obj1,obj2)
-      dp_arr.each{|dp| field_transform(dp,obj1,obj2,db)}
+      dp_arr.each{|dp| db_field_transform(dp,obj1,obj2,db)}
     end
   end
   #在数据库中转换字段属性
-  def field_transform(dp,f1,f2,db)
+  def db_field_transform(dp,f1,f2,db)
     case dp
     when 'type' then db.update_ftype(f2)
     when 'null'
