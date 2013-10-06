@@ -6,7 +6,7 @@ class FileWriter
   attr_accessor :type#文件写入方式 w 覆盖 a 更新
   attr_accessor :encode#文件读取写入编码格式
   #初始化
-  def initialize(file_path,type = "w",encode = "GBK")
+  def initialize(file_path,type = 'w',encode = 'GBK')
     @type = type
     @file_path = file_path
     @encode = encode
@@ -21,6 +21,12 @@ class FileWriter
   def write_str_arr(str_arr)
     File.open("#{@file_path}","#{@type}:#{@encode}") do |file|
       str_arr.each{|str| file.puts(str)}
+    end
+  end
+  #将对象写入文件
+  def write_obj(obj)
+    File.open("#{@file_path}","#{@type}:#{@encode}") do |file|
+      file.puts(Marshal.dump(obj))
     end
   end
 end

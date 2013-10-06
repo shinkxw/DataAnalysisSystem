@@ -10,9 +10,11 @@ class MDVCer
     @ver_path = "#{$root}/data/version/#{@area.name}_area/"
     @work_copy_path = @ver_path + 'WorkCopy.ver'
     load_work_copy
+    puts '当前特征值: ' + @work_copy.ev.to_s
     load_area_vision
     build_new_version if has_update?
     build_update_log
+    save_version
   end
   #生成更新日志
   def build_update_log
@@ -28,10 +30,11 @@ class MDVCer
   def has_update?;@area.get_ev != @work_copy.ev end
   #保存版本信息文件
   def save_version
-    FileWriter.new(@work_copy_path).write_str(@work_copy.to_str)
+    FileWriter.new(@work_copy_path,'w','ASCII-8BIT').write_str(@work_copy.to_str)
+    #清空文件夹
     @version_arr.each do |version|
-      version.to_str
-      FolderWriter.new(path,true).write_str_hash(@data)
+      path = @ver_path + version.name + '/'
+      FolderWriter.new(path,true).write_str_hash({version.file_name => version.to_str})
     end
   end
   #读取数据域的版本信息

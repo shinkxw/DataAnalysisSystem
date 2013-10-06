@@ -17,4 +17,6 @@ class MDVersion
   end
   #将版本对象序列化
   def to_str;Marshal.dump(self) end
+  #文件名
+  def file_name;@name + '.ver' end
 end
