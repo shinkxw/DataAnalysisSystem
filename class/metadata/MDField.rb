@@ -127,7 +127,9 @@ class MDField
   end
   #计算字段的特征值
   def get_ev
-    Compressor.arr_com([@name,@type,@null,@p,@explanation,@identity])
+    arr = ['name' + @name,'type' + @type,'null' + @null]
+    arr += ['p' + @p,'explanation' + @explanation,'identity' + @identity]
+    Compressor.arr_com(arr)
   end
   #计算10的n次方
   def calnum(n);10**n end

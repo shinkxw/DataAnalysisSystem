@@ -78,7 +78,8 @@ class MDTable
   def gname;has_exp? ? @explanation : @name end
   #计算表的特征值
   def get_ev
-    Compressor.arr_com([@name,@explanation] + field_arr.map(&:get_ev))
+    arr = ['name' + @name,'explanation' + @explanation]
+    Compressor.arr_com(arr + field_arr.map(&:get_ev))
   end
   #获得字段数组
   def field_arr;@field_area.field_arr end
