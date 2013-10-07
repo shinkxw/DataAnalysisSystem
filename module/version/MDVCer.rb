@@ -11,8 +11,8 @@ class MDVCer
     @work_copy_path = @ver_path + 'WorkCopy.'
     @log_path = "#{$root}/data/#{@area.name}更新日志.txt"
     load_work_copy
-    puts '当前特征值: ' + @work_copy.ev.to_s
     load_area_vision
+    @version_arr.sort_by! {|v| v.update_date}.reverse!
     build_new_version if has_update?
     build_update_log
     save_version
