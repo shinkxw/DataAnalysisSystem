@@ -78,21 +78,39 @@ class MDDiff
   def get_pro_diff(obj1,obj2)
     result = []
     case obj1.class.to_s
-    when 'MDTable'
-      @@table_pro_arr.each{|p| result << p if obj1.send(p) != obj2.send(p)}
-    when 'MDField'
-      @@field_pro_arr.each{|p| result << p if obj1.send(p) != obj2.send(p)}
+    when 'MDTable';@@table_pro_arr.each{|p| result << p if obj1.send(p) != obj2.send(p)}
+    when 'MDField';@@field_pro_arr.each{|p| result << p if obj1.send(p) != obj2.send(p)}
     end
     result
   end
   #判断是否存在差异
   def has_diff?
-    size = @t1_diff_arr.size
-    size += @t2_diff_arr.size
+    size = @t1_diff_arr.size + @t2_diff_arr.size
     size += @f1_diff_arr.size
     size += @f2_diff_arr.size
     size += @pro_diff_hash.size
     size != 0
+  end
+  #生成差异日志
+  def build_log
+    log = ''
+    @t1_diff_arr.each{|t| log << "删除了表#{t.gname}\n"}
+    @f1_diff_arr.each{|f| log << "删除了表#{f.table.gname}中#{f.gname}字段\n"}
+    @t2_diff_arr.each{|t| log << "添加了表#{t.gname}\n"}
+    @f2_diff_arr.each{|f| log << "在表#{f.table.gname}中添加了#{f.gname}字段\n"}
+    @pro_diff_hash.each do |o1,o2|
+      case obj1.class.to_s
+      when 'MDTable'#只有explanation属性时使用
+        obj1.has_exp? ? db.update_texp(obj2) : db.add_texp(obj2)
+      when 'MDField'
+        dp_arr = get_pro_diff(obj1,obj2)
+        dp_arr.each do |dp|
+          
+          
+        end
+      end
+    end
+    log
   end
   #显示差异(说明版)
   def show_diff

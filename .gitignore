@@ -15,6 +15,7 @@ tmp
 data/backup
 data/version
 data/temporary
+data/test_area
 data/db_out_area
 export/template
 export/migrate_config

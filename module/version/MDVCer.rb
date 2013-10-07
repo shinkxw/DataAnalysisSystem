@@ -8,7 +8,8 @@ class MDVCer
   def initialize(area)
     @area,@work_copy = area,nil
     @ver_path = "#{$root}/data/version/#{@area.name}_area/"
-    @work_copy_path = @ver_path + 'WorkCopy.ver'
+    @work_copy_path = @ver_path + 'WorkCopy.'
+    @log_path = "#{$root}/data/#{@area.name}更新日志.txt"
     load_work_copy
     puts '当前特征值: ' + @work_copy.ev.to_s
     load_area_vision
@@ -18,11 +19,13 @@ class MDVCer
   end
   #生成更新日志
   def build_update_log
-    
+    log = ''
+    @version_arr.each{|ver| log << ver.build_log}
+    FileWriter.new(@log_path).write_str(log)
   end
   #生成新的版本对象
   def build_new_version
-    pre_area = FileLoader.new(@ver_path + 'WorkCopy.daf').get_obj
+    pre_area = FileLoader.new(@work_copy_path + 'daf').get_obj
     @work_copy = MDVersion.new(@area, pre_area)
     version_arr << @work_copy
   end
@@ -30,8 +33,8 @@ class MDVCer
   def has_update?;@area.get_ev != @work_copy.ev end
   #保存版本信息文件
   def save_version
-    FileWriter.new(@work_copy_path).write_obj(@work_copy)
-    FileWriter.new(@ver_path + 'WorkCopy.daf').write_obj(@area)
+    FileWriter.new(@work_copy_path + 'ver').write_obj(@work_copy)
+    FileWriter.new(@work_copy_path + 'daf').write_obj(@area)
     #清空文件夹
     @version_arr.each do |version|
       path = @ver_path + version.name + '/'
@@ -41,15 +44,14 @@ class MDVCer
   #读取数据域的版本信息
   def load_area_vision
     @version_arr = []
-    DirManager.get_dir_path(@ver_path).each do |path|
-      str_arr = FolderLoader.new(path + '/','.ver').get_file_str_arr
-      @version_arr + str_arr.map{|str| Marshal.load(str)}
+    DirManager.get_dir_name(@ver_path).each do |fname|
+      @version_arr << FileLoader.new("#{@ver_path}#{fname}/#{fname}.ver").get_obj
     end
   end
   #读取数据域的工作副本信息
   def load_work_copy
-    if File.file?(@work_copy_path)
-      @work_copy = FileLoader.new(@work_copy_path).get_obj
+    if File.file?(@work_copy_path + 'ver')
+      @work_copy = FileLoader.new(@work_copy_path + 'ver').get_obj
     else
       @work_copy = MDVersion.new(@area, nil, 'WorkCopy')
     end

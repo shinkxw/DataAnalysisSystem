@@ -15,6 +15,15 @@ class MDVersion
     @pre_ev = pre_area.get_ev if pre_area
     @diff = MDDiffer.new.compare_area(pre_area,area) if area && pre_area
   end
+  #生成更新日志
+  def build_log
+    str = "版本号：#{@name}\n"
+    str << "日期：#{@update_date}\n"
+    str << "特征值：#{@ev ? @ev : '无'}\n"
+    str << "上一个版本特征值：#{@pre_ev ? @pre_ev : '无'}\n"
+    str << @diff.build_log if @diff
+    str << "\n"
+  end
   #文件名
   def file_name;@name + '.ver' end
 end
