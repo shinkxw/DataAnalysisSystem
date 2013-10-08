@@ -118,7 +118,14 @@ class DBEntity
   def transfer_data(from_table_name,to_table)
     delete_table(to_table.name)#删表
     create_table(to_table)#建表
-    execute(Sql.transfer_data(from_table_name,to_table))#转移数据
+    begin;execute(Sql.transfer_data(from_table_name,to_table))#转移数据
+    rescue WIN32OLERuntimeError => e
+      if e.message.force_encoding('GBK').include?('插入重复键')
+        puts '原表中数据有冲突,继续操作将删除表中数据,是否继续?(Y/N)'
+        raise e unless KbInput.get_bool
+      else;raise e
+      end
+    end
     delete_table(from_table_name)#删表
   end
   #让数据库执行sql语句

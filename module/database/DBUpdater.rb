@@ -29,7 +29,7 @@ class DBUpdater
         puts '未修正差异为：'#显示未修正差异
         diff.show_diff
       else
-        #！！考虑重置所有标准表及数据
+        #!!考虑重置所有标准表及数据
         puts "\n正在删除所有视图..."
         @db.delete_all_view#删除所有视图
         puts "\n正在重置视图..."
@@ -40,6 +40,7 @@ class DBUpdater
     else
       puts '数据库表结构与工作区一致，不需更新'
     end
+    rescue WIN32OLERuntimeError => e;puts e.message.force_encoding('GBK')
   end
   #与指定数据库中的表结构进行比较
   def compare_db

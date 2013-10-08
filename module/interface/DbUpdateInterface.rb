@@ -24,8 +24,8 @@ class DbUpdateInterface < BaseInterface
   #输入后操作
   def after_input
     menu_determine
-    rescue => err_msg
-      puts err_msg
+    rescue => e
+      puts e.message.force_encoding('GBK')
     ensure
       super
   end
@@ -131,8 +131,8 @@ class DbUpdateInterface < BaseInterface
   end
   def show_menu4
     show_db
-    rescue => err_msg
-      puts err_msg
+    rescue => e
+      puts e.message.force_encoding('GBK')
     ensure
       puts "   输入待更新数据库的对应号码           "
       puts "   输入q返回上级目录                    "
