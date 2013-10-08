@@ -7,7 +7,7 @@ class MDWork_Area
   @@temporary_path = "#{@@data_path}/temporary"
   @@backup_path = "#{@@data_path}/backup"
   @@enter_path = "#{$root}/enter"
-  @@backup_max_num = 5
+  @@backup_max_num = 3
   #≥ı ºªØ
   def initialize(area)
     @area,@doc = area,nil
