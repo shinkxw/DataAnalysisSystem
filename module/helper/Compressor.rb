@@ -6,10 +6,10 @@ class Compressor
   @@max_bits = eval('1' + '0' * 15)
   #压缩数组
   def self.arr_com(arr)
-    arr.inject(arr.size) {|r, n| r + hash(n)} % @@max_bits
+    arr.inject(arr.size) {|r, n| r + cal_hash(n)} % @@max_bits
   end
   #将输入转换为数字
-  def self.hash(enter)
+  def self.cal_hash(enter)
     return 0 unless enter
     case enter.class.to_s
     when 'String'
