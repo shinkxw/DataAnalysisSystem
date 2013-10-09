@@ -1,3 +1,7 @@
+EDU_ZJ_KPZT  考评主体代码
+  DM            代码                    int            主键
+  MC            名称                    nvarchar(10)   非主
+
 EDU_ZJ_TKLX  调课类型代码
   DM            代码                    int            主键
   MC            类型名称                nvarchar(36)   非主

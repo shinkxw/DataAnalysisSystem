@@ -1,5 +1,18 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZJ" provider="reallocate_namespace" generation_time="">
+    <table name="EDU_ZJ_KPZT" explanation="考评主体代码">
+        <field_area>
+            <name="DM" explanation="代码" type="int" null="F" p="T" />
+            <name="MC" explanation="名称" type="nvarchar(10)" null="F" p="F" />
+        </field_area>
+        <data_area>
+            <DM="1" MC="领导评" />
+            <DM="2" MC="同事评" />
+            <DM="3" MC="学生评" />
+            <DM="4" MC="家长评" />
+            <DM="5" MC="自评" />
+        </data_area>
+    </table>
     <table name="EDU_ZJ_TKLX" explanation="调课类型代码">
         <field_area>
             <name="DM" explanation="代码" type="int" null="F" p="T" />
