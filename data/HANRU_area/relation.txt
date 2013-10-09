@@ -595,6 +595,41 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
   SFSZYZGZS      EDU_JY_SFBZ                        DM
+<EDU_ZZJG_11_A01_KPFZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_11_A02_KPXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KPTMID         EDU_ZZJG_11_A03_KPTM               ID
+  KPFZID         EDU_ZZJG_11_A01_KPFZ               ID
+<EDU_ZZJG_11_A03_KPTM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_11_A04_KPSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+<EDU_ZZJG_11_A05_KPNRSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_11_A06_KPNRXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KPNRID         EDU_ZZJG_11_A05_KPNRSJ             ID
+  KPTMID         EDU_ZZJG_11_A03_KPTM               ID
+<EDU_ZZJG_11_A07_KPBHNR
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KPID           EDU_ZZJG_11_A04_KPSJ               ID
+  KPNRID         EDU_ZZJG_11_A05_KPNRSJ             ID
+<EDU_ZZJG_11_A08_KPNRZTQZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KPNRID         EDU_ZZJG_11_A05_KPNRSJ             ID
+  KPZTID         EDU_ZJ_KPZT                        DM
+<EDU_ZZJG_11_A09_KPRY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KPBHNRID       EDU_ZZJG_11_A07_KPBHNR             ID
+  KPZTID         EDU_ZJ_KPZT                        DM
+<EDU_ZZJG_11_A10_KPJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KPBHNRID       EDU_ZZJG_11_A07_KPBHNR             ID
+  KPZTID         EDU_ZJ_KPZT                        DM
+  KPNRXMID       EDU_ZZJG_11_A06_KPNRXM             ID
 <EDU_ZZJX_02_02_ZZBJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
