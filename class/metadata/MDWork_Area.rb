@@ -11,13 +11,13 @@ class MDWork_Area
   #初始化
   def initialize(area)
     @area,@doc = area,nil
-    @vc = MDVCer.new(area)
     @area.is_valid?
     save_to_temporary
     backup_work_area
   end
   #输出所有
   def export_all(need_commit = false)
+    @vc = MDVCer.new(area)
     fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
     fs_config = {'@sql'=>"#{fs_root}/BASE",'@view'=>"#{fs_root}/VIEW",
                  'HANRU_bz'=>fs_root,'HANRU_yw'=>fs_root,'HANRU_view'=>fs_root}
