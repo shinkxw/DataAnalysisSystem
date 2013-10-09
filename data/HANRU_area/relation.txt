@@ -599,9 +599,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_11_A02_KPXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  KPTMID         EDU_ZZJG_11_A03_KPTM               ID
+  KPFSID         EDU_ZZJG_11_A03_KPFS               ID
   KPFZID         EDU_ZZJG_11_A01_KPFZ               ID
-<EDU_ZZJG_11_A03_KPTM
+<EDU_ZZJG_11_A03_KPFS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_11_A04_KPSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
@@ -612,7 +612,7 @@
 <EDU_ZZJG_11_A06_KPNRXM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KPNRID         EDU_ZZJG_11_A05_KPNRSJ             ID
-  KPTMID         EDU_ZZJG_11_A03_KPTM               ID
+  KPFSID         EDU_ZZJG_11_A03_KPFS               ID
 <EDU_ZZJG_11_A07_KPBHNR
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KPID           EDU_ZZJG_11_A04_KPSJ               ID

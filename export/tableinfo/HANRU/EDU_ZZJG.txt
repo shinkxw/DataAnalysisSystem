@@ -90,13 +90,13 @@ EDU_ZZJG_11_A02_KPXX  考评选项表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   XXMC          选项名称                nvarchar(20)   非主
-  KPTMID        考评题目ID              int            非主        考评题目表
+  KPFSID        考评方式ID              int            非主        考评方式表
   KPFZID        考评分值ID              int            非主        考评分值表
 
-EDU_ZZJG_11_A03_KPTM  考评题目表
+EDU_ZZJG_11_A03_KPFS  考评方式表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  KPTMMC        考评题目名称            nvarchar(20)   非主
+  KPFSMC        考评方式名称            nvarchar(20)   非主
 
 EDU_ZZJG_11_A04_KPSJ  考评数据表
   ID            编号                    int            主键
@@ -120,7 +120,7 @@ EDU_ZZJG_11_A06_KPNRXM  考评内容项目表
   XMMC          项目名称                nvarchar(20)   非主
   XMXX          项目信息                text           非主
   KPNRID        考评内容ID              int            非主        考评内容数据表
-  KPTMID        考评题目ID              int            非主        考评题目表
+  KPFSID        考评方式ID              int            非主        考评方式表
   QZ            权重                    int            非主
 
 EDU_ZZJG_11_A07_KPBHNR  考评包含内容表

@@ -105,15 +105,15 @@
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
             <name="XXMC" explanation="选项名称" type="nvarchar(20)" null="F" p="F" />
-            <name="KPTMID" explanation="考评题目ID" type="int" null="F" p="F" />
+            <name="KPFSID" explanation="考评方式ID" type="int" null="F" p="F" />
             <name="KPFZID" explanation="考评分值ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJG_11_A03_KPTM" explanation="考评题目表">
+    <table name="EDU_ZZJG_11_A03_KPFS" explanation="考评方式表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
-            <name="KPTMMC" explanation="考评题目名称" type="nvarchar(20)" null="F" p="F" />
+            <name="KPFSMC" explanation="考评方式名称" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_11_A04_KPSJ" explanation="考评数据表">
@@ -143,7 +143,7 @@
             <name="XMMC" explanation="项目名称" type="nvarchar(20)" null="F" p="F" />
             <name="XMXX" explanation="项目信息" type="text" null="F" p="F" />
             <name="KPNRID" explanation="考评内容ID" type="int" null="F" p="F" />
-            <name="KPTMID" explanation="考评题目ID" type="int" null="F" p="F" />
+            <name="KPFSID" explanation="考评方式ID" type="int" null="F" p="F" />
             <name="QZ" explanation="权重" type="int" null="F" p="F" />
         </field_area>
     </table>
