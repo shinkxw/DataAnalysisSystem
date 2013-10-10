@@ -123,6 +123,7 @@
             <name="XNID" explanation="学年ID" type="int" null="F" p="F" />
             <name="XQID" explanation="学期ID" type="int" null="F" p="F" />
             <name="KPMC" explanation="考评名称" type="nvarchar(20)" null="F" p="F" />
+            <name="BPRIDLB" explanation="被评人ID列表" type="text" null="F" p="F" />
             <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
             <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
             <name="ZT" explanation="状态" type="int" null="F" p="F" />
@@ -134,6 +135,7 @@
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
             <name="KPNRMC" explanation="考评内容名称" type="nvarchar(20)" null="F" p="F" />
             <name="KPNRLX" explanation="考评内容类型" type="int" null="F" p="F" />
+            <name="KPZTID" explanation="考评主体ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_11_A06_KPNRXM" explanation="考评内容项目表">
@@ -157,16 +159,7 @@
             <name="XSFS" explanation="显示方式" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJG_11_A08_KPNRZTQZ" explanation="考评内容主体权重表">
-        <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
-            <name="KPNRID" explanation="考评内容ID" type="int" null="F" p="F" />
-            <name="KPZTID" explanation="考评主体ID" type="int" null="F" p="F" />
-            <name="QZ" explanation="权重" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJG_11_A09_KPRY" explanation="考评人员表">
+    <table name="EDU_ZZJG_11_A08_KPRY" explanation="考评人员表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
@@ -176,15 +169,16 @@
             <name="KPZTID" explanation="考评主体ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJG_11_A10_KPJG" explanation="考评结果表">
+    <table name="EDU_ZZJG_11_A09_KPJG" explanation="考评结果表">
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
             <name="KPBHNRID" explanation="考评包含内容表ID" type="int" null="F" p="F" />
+            <name="KPNRXMID" explanation="考评内容项目ID" type="int" null="F" p="F" />
+            <name="KPFSID" explanation="考评方式ID" type="int" null="F" p="F" />
             <name="KPRID" explanation="考评人ID" type="int" null="F" p="F" />
             <name="BPRID" explanation="被评人ID" type="int" null="F" p="F" />
             <name="KPZTID" explanation="考评主体ID" type="int" null="F" p="F" />
-            <name="KPNRXMID" explanation="考评内容项目ID" type="int" null="F" p="F" />
             <name="KPFZ" explanation="考评分值" type="int" null="F" p="F" />
         </field_area>
     </table>
