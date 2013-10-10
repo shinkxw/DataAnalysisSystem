@@ -155,6 +155,46 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_13_A01
             and   type = 'V')
    drop view VIEW_EDU_OAXT_13_A01_DWSJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_14_A01_GRRCXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_14_A01_GRRCXX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A03_LCMB_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_20_A03_LCMB_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A04_LCBZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_20_A04_LCBZ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A05_LCSL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_20_A05_LCSL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A06_LCSHJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_20_A06_LCSHJL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_21_A02_QJSQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_21_A02_QJSQ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_22_A02_HYSQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_22_A02_HYSQ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_23_A01_GWSQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_23_A01_GWSQ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_24_A01_YCSQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_24_A01_YCSQ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_25_A01_CGSQ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_25_A01_CGSQ_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_VIP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_VIP_DISP
@@ -2445,6 +2485,565 @@ SELECT a.[ID]--单位ID
 FROM dbo.EDU_OAXT_13_A01_DWSJ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_13_A01_DWSJ AS c ON a.SJDWID = c.ID /*上级单位ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.DWFZRID = d.LOGINNAME /*单位负责人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
+GO
+
+--个人日程信息表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_14_A01_GRRCXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[YHID]--用户ID
+      ,a.[BT]--标题
+      ,a.[NR]--内容
+      ,a.[KSSJ]--开始时间
+      ,a.[JSSJ]--结束时间
+      ,a.[SFTS]--是否提示
+      ,a.[ZT]--状态
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.MC as d_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_OAXT_14_A01_GRRCXX AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS d ON a.SFTS = d.DM /*是否提示*/
+GO
+
+--流程模板表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_20_A03_LCMB_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[MBLXID]--模板类型ID
+      ,a.[MBMC]--模板名称
+      ,a.[BDID]--表单ID
+      ,a.[TJSJ]--添加时间
+      ,a.[BZ]--备注
+      ,c.LXMC as c_LCMBLX_LXMC--流程模板类型表 类型名称
+      ,c.BZ as c_LCMBLX_BZ--流程模板类型表 备注
+      ,d.SCHOOLID as d_LCBDSJ_SCHOOLID--流程表单数据表 学校
+      ,d.BDMC as d_LCBDSJ_BDMC--流程表单数据表 表单名称
+      ,d.BDNR as d_LCBDSJ_BDNR--流程表单数据表 表单内容
+      ,d.TJSJ as d_LCBDSJ_TJSJ--流程表单数据表 添加时间
+      ,d.BZ as d_LCBDSJ_BZ--流程表单数据表 备注
+
+FROM dbo.EDU_OAXT_20_A03_LCMB AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A01_LCMBLX AS c ON a.MBLXID = c.ID /*模板类型ID*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A02_LCBDSJ AS d ON a.BDID = d.ID /*表单ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--流程步骤表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_20_A04_LCBZ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[BZMC]--步骤名称
+      ,a.[LCMBID]--流程模板ID
+      ,a.[SPRIDLB]--审批人ID列表
+      ,a.[SPRMCLB]--审批人名称列表
+      ,a.[SYBZID]--上一步骤ID
+      ,a.[XYBZID]--下一步骤ID
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_LCMB_SCHOOLID--流程模板表 学校
+      ,c.MBLXID as c_LCMB_MBLXID--流程模板表 模板类型ID
+      ,c.MBMC as c_LCMB_MBMC--流程模板表 模板名称
+      ,c.BDID as c_LCMB_BDID--流程模板表 表单ID
+      ,c.TJSJ as c_LCMB_TJSJ--流程模板表 添加时间
+      ,c.BZ as c_LCMB_BZ--流程模板表 备注
+      ,d.SCHOOLID as d_LCBZ_SCHOOLID--流程步骤表 学校
+      ,d.BZMC as d_LCBZ_BZMC--流程步骤表 步骤名称
+      ,d.LCMBID as d_LCBZ_LCMBID--流程步骤表 流程模板ID
+      ,d.SPRIDLB as d_LCBZ_SPRIDLB--流程步骤表 审批人ID列表
+      ,d.SPRMCLB as d_LCBZ_SPRMCLB--流程步骤表 审批人名称列表
+      ,d.SYBZID as d_LCBZ_SYBZID--流程步骤表 上一步骤ID
+      ,d.XYBZID as d_LCBZ_XYBZID--流程步骤表 下一步骤ID
+      ,d.BZ as d_LCBZ_BZ--流程步骤表 备注
+      ,e.SCHOOLID as e_LCBZ_SCHOOLID--流程步骤表 学校
+      ,e.BZMC as e_LCBZ_BZMC--流程步骤表 步骤名称
+      ,e.LCMBID as e_LCBZ_LCMBID--流程步骤表 流程模板ID
+      ,e.SPRIDLB as e_LCBZ_SPRIDLB--流程步骤表 审批人ID列表
+      ,e.SPRMCLB as e_LCBZ_SPRMCLB--流程步骤表 审批人名称列表
+      ,e.SYBZID as e_LCBZ_SYBZID--流程步骤表 上一步骤ID
+      ,e.XYBZID as e_LCBZ_XYBZID--流程步骤表 下一步骤ID
+      ,e.BZ as e_LCBZ_BZ--流程步骤表 备注
+
+FROM dbo.EDU_OAXT_20_A04_LCBZ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A03_LCMB AS c ON a.LCMBID = c.ID /*流程模板ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A04_LCBZ AS d ON a.SYBZID = d.ID /*上一步骤ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A04_LCBZ AS e ON a.XYBZID = e.ID /*下一步骤ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
+GO
+
+--流程实例表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_20_A05_LCSL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCMBID]--流程模板ID
+      ,a.[SQRID]--申请人ID
+      ,a.[SPRID]--审批人ID
+      ,a.[SQSJ]--申请时间
+      ,a.[DQBZID]--当前步骤ID
+      ,a.[DQBZZXZT]--当前步骤执行状态
+      ,a.[YXQ]--有效期
+      ,a.[SLZT]--实例状态
+      ,a.[FJ]--附件
+      ,a.[BZ]--备注
+      ,a.[LXID]--类型ID
+      ,a.[LXMC]--类型名称
+      ,c.SCHOOLID as c_LCMB_SCHOOLID--流程模板表 学校
+      ,c.MBLXID as c_LCMB_MBLXID--流程模板表 模板类型ID
+      ,c.MBMC as c_LCMB_MBMC--流程模板表 模板名称
+      ,c.BDID as c_LCMB_BDID--流程模板表 表单ID
+      ,c.TJSJ as c_LCMB_TJSJ--流程模板表 添加时间
+      ,c.BZ as c_LCMB_BZ--流程模板表 备注
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,e.PWD as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.SCHOOLID as f_LCBZ_SCHOOLID--流程步骤表 学校
+      ,f.BZMC as f_LCBZ_BZMC--流程步骤表 步骤名称
+      ,f.LCMBID as f_LCBZ_LCMBID--流程步骤表 流程模板ID
+      ,f.SPRIDLB as f_LCBZ_SPRIDLB--流程步骤表 审批人ID列表
+      ,f.SPRMCLB as f_LCBZ_SPRMCLB--流程步骤表 审批人名称列表
+      ,f.SYBZID as f_LCBZ_SYBZID--流程步骤表 上一步骤ID
+      ,f.XYBZID as f_LCBZ_XYBZID--流程步骤表 下一步骤ID
+      ,f.BZ as f_LCBZ_BZ--流程步骤表 备注
+
+FROM dbo.EDU_OAXT_20_A05_LCSL AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A03_LCMB AS c ON a.LCMBID = c.ID /*流程模板ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SQRID = d.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.SPRID = e.LOGINNAME /*审批人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A04_LCBZ AS f ON a.DQBZID = f.ID /*当前步骤ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/
+GO
+
+--流程审核记录表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_20_A06_LCSHJL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCMBMC]--流程模板名称
+      ,a.[LCSLID]--流程实例ID
+      ,a.[BZMC]--步骤名称
+      ,a.[BZID]--步骤ID
+      ,a.[LCMBLXID]--流程模板类型ID
+      ,a.[SQRID]--申请人ID
+      ,a.[SPRID]--审批人ID
+      ,a.[SHZT]--审核状态
+      ,a.[TJSJ]--添加时间
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
+      ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
+      ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
+      ,c.SPRID as c_LCSL_SPRID--流程实例表 审批人ID
+      ,c.SQSJ as c_LCSL_SQSJ--流程实例表 申请时间
+      ,c.DQBZID as c_LCSL_DQBZID--流程实例表 当前步骤ID
+      ,c.DQBZZXZT as c_LCSL_DQBZZXZT--流程实例表 当前步骤执行状态
+      ,c.YXQ as c_LCSL_YXQ--流程实例表 有效期
+      ,c.SLZT as c_LCSL_SLZT--流程实例表 实例状态
+      ,c.FJ as c_LCSL_FJ--流程实例表 附件
+      ,c.BZ as c_LCSL_BZ--流程实例表 备注
+      ,c.LXID as c_LCSL_LXID--流程实例表 类型ID
+      ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
+      ,d.SCHOOLID as d_LCBZ_SCHOOLID--流程步骤表 学校
+      ,d.BZMC as d_LCBZ_BZMC--流程步骤表 步骤名称
+      ,d.LCMBID as d_LCBZ_LCMBID--流程步骤表 流程模板ID
+      ,d.SPRIDLB as d_LCBZ_SPRIDLB--流程步骤表 审批人ID列表
+      ,d.SPRMCLB as d_LCBZ_SPRMCLB--流程步骤表 审批人名称列表
+      ,d.SYBZID as d_LCBZ_SYBZID--流程步骤表 上一步骤ID
+      ,d.XYBZID as d_LCBZ_XYBZID--流程步骤表 下一步骤ID
+      ,d.BZ as d_LCBZ_BZ--流程步骤表 备注
+      ,e.LXMC as e_LCMBLX_LXMC--流程模板类型表 类型名称
+      ,e.BZ as e_LCMBLX_BZ--流程模板类型表 备注
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,f.PWD as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
+      ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
+      ,g.PWD as g_USER_PWD--应用系统用户表 密码
+      ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
+      ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
+      ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
+      ,g.ROLEIDLst as g_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,g.XM as g_USER_XM--应用系统用户表 姓名
+      ,g.XB as g_USER_XB--应用系统用户表 性别
+      ,g.QQ as g_USER_QQ--应用系统用户表 QQ
+      ,g.DZYJ as g_USER_DZYJ--应用系统用户表 电子邮件
+      ,g.LXDH as g_USER_LXDH--应用系统用户表 联系电话
+      ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_20_A06_LCSHJL AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A04_LCBZ AS d ON a.BZID = d.ID /*步骤ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A01_LCMBLX AS e ON a.LCMBLXID = e.ID /*流程模板类型ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.SQRID = f.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS g ON a.SPRID = g.LOGINNAME /*审批人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
+GO
+
+--请假申请表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_21_A02_QJSQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCSLID]--流程实例ID
+      ,a.[QJLXID]--请假类型ID
+      ,a.[QJYY]--请假原因
+      ,a.[KSSJ]--开始时间
+      ,a.[JSSJ]--结束时间
+      ,a.[QJTS]--请假天数
+      ,a.[SQSJ]--申请时间
+      ,a.[SQZT]--申请状态
+      ,a.[SQRID]--申请人ID
+      ,a.[BZ]--备注
+      ,a.[BJ]--补假
+      ,a.[XJ]--销假
+      ,a.[XJRID]--销假人ID
+      ,a.[XJSJ]--销假时间
+      ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
+      ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
+      ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
+      ,c.SPRID as c_LCSL_SPRID--流程实例表 审批人ID
+      ,c.SQSJ as c_LCSL_SQSJ--流程实例表 申请时间
+      ,c.DQBZID as c_LCSL_DQBZID--流程实例表 当前步骤ID
+      ,c.DQBZZXZT as c_LCSL_DQBZZXZT--流程实例表 当前步骤执行状态
+      ,c.YXQ as c_LCSL_YXQ--流程实例表 有效期
+      ,c.SLZT as c_LCSL_SLZT--流程实例表 实例状态
+      ,c.FJ as c_LCSL_FJ--流程实例表 附件
+      ,c.BZ as c_LCSL_BZ--流程实例表 备注
+      ,c.LXID as c_LCSL_LXID--流程实例表 类型ID
+      ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
+      ,d.SCHOOLID as d_QJLX_SCHOOLID--请假类型表 学校
+      ,d.LXMC as d_QJLX_LXMC--请假类型表 类型名称
+      ,d.BZ as d_QJLX_BZ--请假类型表 备注
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,e.PWD as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,f.PWD as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_21_A02_QJSQ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_21_A01_QJLX AS d ON a.QJLXID = d.ID /*请假类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.SQRID = e.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.XJRID = f.LOGINNAME /*销假人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/
+GO
+
+--会议申请表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_22_A02_HYSQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCSLID]--流程实例ID
+      ,a.[HYMC]--会议名称
+      ,a.[HYNR]--会议内容
+      ,a.[ZCRID]--主持人
+      ,a.[JLRID]--记录人
+      ,a.[HYJB]--会议级别
+      ,a.[HYDDID]--会议地点ID
+      ,a.[HYDZ]--会议地址
+      ,a.[YHRYIDLB]--与会人员ID列表
+      ,a.[YHRYXMLB]--与会人员姓名列表
+      ,a.[KSSJ]--开始时间
+      ,a.[JSSJ]--结束时间
+      ,a.[SQSJ]--申请时间
+      ,a.[SQZT]--申请状态
+      ,a.[SQRID]--申请人ID
+      ,a.[BZ]--备注
+      ,a.[FJ]--附件
+      ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
+      ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
+      ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
+      ,c.SPRID as c_LCSL_SPRID--流程实例表 审批人ID
+      ,c.SQSJ as c_LCSL_SQSJ--流程实例表 申请时间
+      ,c.DQBZID as c_LCSL_DQBZID--流程实例表 当前步骤ID
+      ,c.DQBZZXZT as c_LCSL_DQBZZXZT--流程实例表 当前步骤执行状态
+      ,c.YXQ as c_LCSL_YXQ--流程实例表 有效期
+      ,c.SLZT as c_LCSL_SLZT--流程实例表 实例状态
+      ,c.FJ as c_LCSL_FJ--流程实例表 附件
+      ,c.BZ as c_LCSL_BZ--流程实例表 备注
+      ,c.LXID as c_LCSL_LXID--流程实例表 类型ID
+      ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,e.PWD as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.SCHOOLID as f_HYSSJ_SCHOOLID--会议室数据表 学校
+      ,f.FJMC as f_HYSSJ_FJMC--会议室数据表 房间名称
+      ,f.FJDZ as f_HYSSJ_FJDZ--会议室数据表 房间地址
+      ,f.ZDRNRS as f_HYSSJ_ZDRNRS--会议室数据表 最大容纳人数
+      ,f.BZ as f_HYSSJ_BZ--会议室数据表 备注
+      ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
+      ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
+      ,g.PWD as g_USER_PWD--应用系统用户表 密码
+      ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
+      ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
+      ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
+      ,g.ROLEIDLst as g_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,g.XM as g_USER_XM--应用系统用户表 姓名
+      ,g.XB as g_USER_XB--应用系统用户表 性别
+      ,g.QQ as g_USER_QQ--应用系统用户表 QQ
+      ,g.DZYJ as g_USER_DZYJ--应用系统用户表 电子邮件
+      ,g.LXDH as g_USER_LXDH--应用系统用户表 联系电话
+      ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_22_A02_HYSQ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.ZCRID = d.LOGINNAME /*主持人*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.JLRID = e.LOGINNAME /*记录人*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_22_A01_HYSSJ AS f ON a.HYDDID = f.ID /*会议地点ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS g ON a.SQRID = g.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
+GO
+
+--公文申请表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_23_A01_GWSQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCSLID]--流程实例ID
+      ,a.[GWBT]--公文标题
+      ,a.[GWNR]--公文内容
+      ,a.[FJ]--附件
+      ,a.[SJRIDLB]--收件人ID列表
+      ,a.[SJRXMLB]--收件人姓名列表
+      ,a.[YDQK]--阅读情况
+      ,a.[SQSJ]--申请时间
+      ,a.[SQRID]--申请人ID
+      ,a.[SQZT]--申请状态
+      ,a.[BZ]--备注
+      ,a.[SWDW]--收文单位
+      ,a.[YGDCS]--已归档次数
+      ,a.[WJBH]--文件编号
+      ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
+      ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
+      ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
+      ,c.SPRID as c_LCSL_SPRID--流程实例表 审批人ID
+      ,c.SQSJ as c_LCSL_SQSJ--流程实例表 申请时间
+      ,c.DQBZID as c_LCSL_DQBZID--流程实例表 当前步骤ID
+      ,c.DQBZZXZT as c_LCSL_DQBZZXZT--流程实例表 当前步骤执行状态
+      ,c.YXQ as c_LCSL_YXQ--流程实例表 有效期
+      ,c.SLZT as c_LCSL_SLZT--流程实例表 实例状态
+      ,c.FJ as c_LCSL_FJ--流程实例表 附件
+      ,c.BZ as c_LCSL_BZ--流程实例表 备注
+      ,c.LXID as c_LCSL_LXID--流程实例表 类型ID
+      ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_23_A01_GWSQ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SQRID = d.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--用车申请表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_24_A01_YCSQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCSLID]--流程实例ID
+      ,a.[YCYY]--用车原因
+      ,a.[WCRS]--外出人数
+      ,a.[KSSJ]--开始时间
+      ,a.[SYTS]--使用天数
+      ,a.[SQSJ]--申请时间
+      ,a.[SQRID]--申请人ID
+      ,a.[SQZT]--申请状态
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
+      ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
+      ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
+      ,c.SPRID as c_LCSL_SPRID--流程实例表 审批人ID
+      ,c.SQSJ as c_LCSL_SQSJ--流程实例表 申请时间
+      ,c.DQBZID as c_LCSL_DQBZID--流程实例表 当前步骤ID
+      ,c.DQBZZXZT as c_LCSL_DQBZZXZT--流程实例表 当前步骤执行状态
+      ,c.YXQ as c_LCSL_YXQ--流程实例表 有效期
+      ,c.SLZT as c_LCSL_SLZT--流程实例表 实例状态
+      ,c.FJ as c_LCSL_FJ--流程实例表 附件
+      ,c.BZ as c_LCSL_BZ--流程实例表 备注
+      ,c.LXID as c_LCSL_LXID--流程实例表 类型ID
+      ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_24_A01_YCSQ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SQRID = d.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--采购申请表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_25_A01_CGSQ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LCSLID]--流程实例ID
+      ,a.[CGDMC]--采购单名称
+      ,a.[CGNR]--采购内容
+      ,a.[FJ]--附件
+      ,a.[SQSJ]--申请时间
+      ,a.[SQRID]--申请人ID
+      ,a.[CGZT]--采购状态
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
+      ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
+      ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
+      ,c.SPRID as c_LCSL_SPRID--流程实例表 审批人ID
+      ,c.SQSJ as c_LCSL_SQSJ--流程实例表 申请时间
+      ,c.DQBZID as c_LCSL_DQBZID--流程实例表 当前步骤ID
+      ,c.DQBZZXZT as c_LCSL_DQBZZXZT--流程实例表 当前步骤执行状态
+      ,c.YXQ as c_LCSL_YXQ--流程实例表 有效期
+      ,c.SLZT as c_LCSL_SLZT--流程实例表 实例状态
+      ,c.FJ as c_LCSL_FJ--流程实例表 附件
+      ,c.BZ as c_LCSL_BZ--流程实例表 备注
+      ,c.LXID as c_LCSL_LXID--流程实例表 类型ID
+      ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_25_A01_CGSQ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SQRID = d.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --网站会员
