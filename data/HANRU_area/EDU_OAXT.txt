@@ -232,4 +232,334 @@
             <name="DWCYIDLB" explanation="单位成员ID列表" type="text" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_14_A01_GRRCXX" explanation="个人日程信息表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="YHID" explanation="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BT" explanation="标题" type="nvarchar(200)" null="F" p="F" />
+            <name="NR" explanation="内容" type="text" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
+            <name="SFTS" explanation="是否提示" type="nvarchar(1)" null="F" p="F" />
+            <name="ZT" explanation="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_20_A01_LCMBLX" explanation="流程模板类型表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="LXMC" explanation="类型名称" type="nvarchar(100)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_20_A02_LCBDSJ" explanation="流程表单数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="BDMC" explanation="表单名称" type="nvarchar(100)" null="F" p="F" />
+            <name="BDNR" explanation="表单内容" type="text" null="F" p="F" />
+            <name="TJSJ" explanation="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_20_A03_LCMB" explanation="流程模板表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="MBLXID" explanation="模板类型ID" type="int" null="F" p="F" />
+            <name="MBMC" explanation="模板名称" type="nvarchar(100)" null="F" p="F" />
+            <name="BDID" explanation="表单ID" type="int" null="F" p="F" />
+            <name="TJSJ" explanation="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_20_A04_LCBZ" explanation="流程步骤表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="BZMC" explanation="步骤名称" type="nvarchar(100)" null="F" p="F" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="SPRIDLB" explanation="审批人ID列表" type="text" null="F" p="F" />
+            <name="SPRMCLB" explanation="审批人名称列表" type="text" null="F" p="F" />
+            <name="SYBZID" explanation="上一步骤ID" type="int" null="F" p="F" />
+            <name="XYBZID" explanation="下一步骤ID" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_20_A05_LCSL" explanation="流程实例表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SPRID" explanation="审批人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="DQBZID" explanation="当前步骤ID" type="int" null="F" p="F" />
+            <name="DQBZZXZT" explanation="当前步骤执行状态" type="int" null="F" p="F" />
+            <name="YXQ" explanation="有效期" type="datetime" null="F" p="F" />
+            <name="SLZT" explanation="实例状态" type="int" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(500)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="LXID" explanation="类型ID" type="int" null="F" p="F" />
+            <name="LXMC" explanation="类型名称" type="nvarchar(100)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_20_A06_LCSHJL" explanation="流程审核记录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCMBMC" explanation="流程模板名称" type="nvarchar(100)" null="F" p="F" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="BZMC" explanation="步骤名称" type="nvarchar(100)" null="F" p="F" />
+            <name="BZID" explanation="步骤ID" type="int" null="F" p="F" />
+            <name="LCMBLXID" explanation="流程模板类型ID" type="int" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SPRID" explanation="审批人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHZT" explanation="审核状态" type="int" null="F" p="F" />
+            <name="TJSJ" explanation="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_21_A01_QJLX" explanation="请假类型表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LXMC" explanation="类型名称" type="nvarchar(50)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_21_A02_QJSQ" explanation="请假申请表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="QJLXID" explanation="请假类型ID" type="int" null="F" p="F" />
+            <name="QJYY" explanation="请假原因" type="nvarchar(300)" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
+            <name="QJTS" explanation="请假天数" type="decimal(5, 2)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="BJ" explanation="补假" type="int" null="F" p="F" />
+            <name="XJ" explanation="销假" type="int" null="F" p="F" />
+            <name="XJRID" explanation="销假人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XJSJ" explanation="销假时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_21_A03_QJSQXGJL" explanation="请假申请修改记录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="QJLXID" explanation="请假类型ID" type="int" null="F" p="F" />
+            <name="QJLXMC" explanation="请假类型名称" type="nvarchar(200)" null="F" p="F" />
+            <name="QJYY" explanation="请假原因" type="nvarchar(300)" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
+            <name="QJTS" explanation="请假天数" type="decimal(5, 2)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="LCSLZT" explanation="流程实例状态" type="int" null="T" p="F" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="LCMBMC" explanation="流程模板名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZID" explanation="当前步骤ID" type="int" null="T" p="F" />
+            <name="DQBZMC" explanation="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZSHZT" explanation="当前步骤审核状态" type="int" null="T" p="F" />
+            <name="SQRBMID" explanation="申请人部门ID" type="int" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_22_A01_HYSSJ" explanation="会议室数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="FJMC" explanation="房间名称" type="nvarchar(50)" null="F" p="F" />
+            <name="FJDZ" explanation="房间地址" type="nvarchar(200)" null="F" p="F" />
+            <name="ZDRNRS" explanation="最大容纳人数" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_22_A02_HYSQ" explanation="会议申请表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="HYMC" explanation="会议名称" type="nvarchar(200)" null="F" p="F" />
+            <name="HYNR" explanation="会议内容" type="text" null="F" p="F" />
+            <name="ZCRID" explanation="主持人" type="nvarchar(20)" null="F" p="F" />
+            <name="JLRID" explanation="记录人" type="nvarchar(20)" null="F" p="F" />
+            <name="HYJB" explanation="会议级别" type="nvarchar(10)" null="F" p="F" />
+            <name="HYDDID" explanation="会议地点ID" type="int" null="F" p="F" />
+            <name="HYDZ" explanation="会议地址" type="nvarchar(50)" null="F" p="F" />
+            <name="YHRYIDLB" explanation="与会人员ID列表" type="text" null="F" p="F" />
+            <name="YHRYXMLB" explanation="与会人员姓名列表" type="text" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(300)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_22_A03_HYSQXGJL" explanation="会议申请修改记录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="HYMC" explanation="会议名称" type="nvarchar(200)" null="F" p="F" />
+            <name="HYNR" explanation="会议内容" type="text" null="F" p="F" />
+            <name="ZCRID" explanation="主持人" type="nvarchar(20)" null="F" p="F" />
+            <name="JLRID" explanation="记录人" type="nvarchar(20)" null="F" p="F" />
+            <name="HYJB" explanation="会议级别" type="nvarchar(10)" null="F" p="F" />
+            <name="HYDZID" explanation="会议地点ID" type="int" null="F" p="F" />
+            <name="HYDZ" explanation="会议地址" type="nvarchar(50)" null="F" p="F" />
+            <name="YHRYIDLB" explanation="与会人员ID列表" type="text" null="F" p="F" />
+            <name="YHRYXMLB" explanation="与会人员姓名列表" type="text" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(300)" null="T" p="F" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="LCSLZT" explanation="流程实例状态" type="int" null="T" p="F" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="LCMBMC" explanation="流程模板名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZID" explanation="当前步骤ID" type="int" null="T" p="F" />
+            <name="DQBZMC" explanation="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZSHZT" explanation="当前步骤审核状态" type="int" null="T" p="F" />
+            <name="SQRBMID" explanation="申请人部门ID" type="int" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_23_A01_GWSQ" explanation="公文申请表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="GWBT" explanation="公文标题" type="nvarchar(200)" null="F" p="F" />
+            <name="GWNR" explanation="公文内容" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(200)" null="F" p="F" />
+            <name="SJRIDLB" explanation="收件人ID列表" type="text" null="F" p="F" />
+            <name="SJRXMLB" explanation="收件人姓名列表" type="text" null="F" p="F" />
+            <name="YDQK" explanation="阅读情况" type="nvarchar(200)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="SWDW" explanation="收文单位" type="nvarchar(50)" null="F" p="F" />
+            <name="YGDCS" explanation="已归档次数" type="int" null="F" p="F" />
+            <name="WJBH" explanation="文件编号" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_23_A02_GWSQXGJL" explanation="公文申请修改记录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="GWBT" explanation="公文标题" type="nvarchar(200)" null="F" p="F" />
+            <name="GWNR" explanation="公文内容" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(200)" null="F" p="F" />
+            <name="SJRIDLB" explanation="收件人ID列表" type="text" null="F" p="F" />
+            <name="SJRXMLB" explanation="收件人姓名列表" type="text" null="F" p="F" />
+            <name="YDQK" explanation="阅读情况" type="nvarchar(200)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="SWDW" explanation="收文单位" type="nvarchar(50)" null="F" p="F" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="LCSLZT" explanation="流程实例状态" type="int" null="T" p="F" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="LCMBMC" explanation="流程模板名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZID" explanation="当前步骤ID" type="int" null="T" p="F" />
+            <name="DQBZMC" explanation="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZSHZT" explanation="当前步骤审核状态" type="int" null="T" p="F" />
+            <name="SQRBMID" explanation="申请人部门ID" type="int" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_24_A01_YCSQ" explanation="用车申请表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="YCYY" explanation="用车原因" type="nvarchar(300)" null="F" p="F" />
+            <name="WCRS" explanation="外出人数" type="int" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="SYTS" explanation="使用天数" type="int" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_24_A02_YCSQXGJL" explanation="用车申请修改记录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="YCYY" explanation="用车原因" type="nvarchar(300)" null="F" p="F" />
+            <name="WCRS" explanation="外出人数" type="int" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="SYTS" explanation="使用天数" type="int" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQZT" explanation="申请状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="LCSLZT" explanation="流程实例状态" type="int" null="T" p="F" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="LCMBMC" explanation="流程模板名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZID" explanation="当前步骤ID" type="int" null="T" p="F" />
+            <name="DQBZMC" explanation="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZSHZT" explanation="当前步骤审核状态" type="int" null="T" p="F" />
+            <name="SQRBMID" explanation="申请人部门ID" type="int" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_25_A01_CGSQ" explanation="采购申请表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="CGDMC" explanation="采购单名称" type="nvarchar(200)" null="F" p="F" />
+            <name="CGNR" explanation="采购内容" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(300)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="CGZT" explanation="采购状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_25_A02_CGSQXGJL" explanation="采购申请修改记录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="CGDMC" explanation="采购单名称" type="nvarchar(200)" null="F" p="F" />
+            <name="CGNR" explanation="采购内容" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(300)" null="F" p="F" />
+            <name="SQSJ" explanation="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" explanation="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="CGZT" explanation="采购状态" type="int" null="F" p="F" />
+            <name="BZ" explanation="备注" type="text" null="F" p="F" />
+            <name="LCSLID" explanation="流程实例ID" type="int" null="F" p="F" />
+            <name="LCSLZT" explanation="流程实例状态" type="int" null="T" p="F" />
+            <name="LCMBID" explanation="流程模板ID" type="int" null="F" p="F" />
+            <name="LCMBMC" explanation="流程模板名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZID" explanation="当前步骤ID" type="int" null="T" p="F" />
+            <name="DQBZMC" explanation="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZSHZT" explanation="当前步骤审核状态" type="int" null="T" p="F" />
+            <name="SQRBMID" explanation="申请人部门ID" type="int" null="T" p="F" />
+        </field_area>
+    </table>
 </namespace>
