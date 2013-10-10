@@ -94,17 +94,17 @@ class MDDiff
   #生成差异日志
   def build_log
     log = ''
-    @t1_diff_arr.each{|t| log << "删除了表#{t.gname}\n"}
-    @f1_diff_arr.each{|f| log << "删除了表#{f.table.gname}中#{f.gname}字段\n"}
-    @t2_diff_arr.each{|t| log << "添加了表#{t.gname}\n"}
+    @t1_diff_arr.each{|t| log << "删除了表: #{t.gname}\n"}
+    @f1_diff_arr.each{|f| log << "删除了表<#{f.table.gname}>中<#{f.gname}>字段\n"}
+    @t2_diff_arr.each{|t| log << "添加了表: #{t.gname}\n"}
     @f2_diff_arr.each{|f| log << "在表<#{f.table.gname}>中添加了<#{f.gname}>字段\n"}
     @pro_diff_hash.each do |o1,o2|
       case o1.class.to_s
       when 'MDTable'#只有explanation属性时使用
         if o1.has_exp?
-          log << "表#{o1.name}的说明由<#{o1.explanation}>改为<#{o2.explanation}>\n"
+          log << "表<#{o1.name}>的说明由<#{o1.explanation}>改为<#{o2.explanation}>\n"
         else
-          log << "为表#{o2.name}添加了说明:#{o2.explanation}\n"
+          log << "为表<#{o2.name}>添加了说明: #{o2.explanation}\n"
         end
       when 'MDField'
         get_pro_diff(o1,o2).each do |dp|

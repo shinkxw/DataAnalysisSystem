@@ -1,5 +1,10 @@
 --空间名：EDU_ZJ  生成器：SqlBuilder0.1
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_KPZT')
+            and   type = 'U')
+   drop table EDU_ZJ_KPZT
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_TKLX')
             and   type = 'U')
    drop table EDU_ZJ_TKLX
@@ -34,6 +39,26 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZJ_JBLX')
             and   type = 'U')
    drop table EDU_ZJ_JBLX
 go
+--考评主体代码
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_KPZT]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZJ_KPZT](
+	[DM]  int  NOT NULL,--代码
+	[MC]  nvarchar(10)  NOT NULL,--名称
+CONSTRAINT [PK_EDU_ZJ_KPZT] PRIMARY KEY CLUSTERED
+(
+	[DM] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+INSERT INTO [EDU_ZJ_KPZT]([DM] ,[MC]) VALUES('1', '领导评')
+INSERT INTO [EDU_ZJ_KPZT]([DM] ,[MC]) VALUES('2', '同事评')
+INSERT INTO [EDU_ZJ_KPZT]([DM] ,[MC]) VALUES('3', '学生评')
+INSERT INTO [EDU_ZJ_KPZT]([DM] ,[MC]) VALUES('4', '家长评')
+INSERT INTO [EDU_ZJ_KPZT]([DM] ,[MC]) VALUES('5', '自评')
+
 --调课类型代码
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZJ_TKLX]') AND type in (N'U'))
 BEGIN
@@ -1932,6 +1957,12 @@ INSERT INTO [EDU_ZJ_JBLX]([DM] ,[MC]) VALUES('2', '双休日加班')
 INSERT INTO [EDU_ZJ_JBLX]([DM] ,[MC]) VALUES('3', '节假日加班')
 
 --以下为添加注释语句
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评主体代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_KPZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_KPZT', @level2type=N'COLUMN',@level2name=N'DM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_KPZT', @level2type=N'COLUMN',@level2name=N'MC'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课类型代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_TKLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZJ_TKLX', @level2type=N'COLUMN',@level2name=N'DM'
