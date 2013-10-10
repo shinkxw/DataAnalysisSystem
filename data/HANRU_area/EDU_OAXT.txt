@@ -1,64 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_OAXT" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_OAXT_10_A01_TZ" explanation="通知数据表">
-        <field_area>
-            <name="ID" explanation="通知ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="FSRID" explanation="发送人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FSRLB" explanation="发送人类别" type="int" null="F" p="F" />
-            <name="BT" explanation="标题" type="nvarchar(100)" null="F" p="F" />
-            <name="NR" explanation="内容" type="text" null="F" p="F" />
-            <name="FJ" explanation="附件" type="nvarchar(500)" null="T" p="F" />
-            <name="TJRQ" explanation="添加日期" type="datetime" null="F" p="F" />
-            <name="JSRS" explanation="接收人数" type="int" null="F" p="F" />
-            <name="JSRIDLB" explanation="接收人ID列表" type="text" null="F" p="F" />
-            <name="JSRMZLB" explanation="接收人名字列表" type="text" null="F" p="F" />
-            <name="YYDRIDLB" explanation="已阅读人ID列表" type="text" null="T" p="F" />
-            <name="YYDRMZLB" explanation="已阅读人名字列表" type="text" null="F" p="F" />
-            <name="FSZT" explanation="发送状态" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_OAXT_10_A02_TZYDJL" explanation="通知阅读记录">
-        <field_area>
-            <name="ID" explanation="通知阅读记录ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="TZID" explanation="通知ID" type="int" null="F" p="F" />
-            <name="BTZRID" explanation="被通知人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="YDRQ" explanation="阅读日期" type="datetime" null="F" p="F" />
-            <name="SFYD" explanation="是否已阅读" type="nvarchar(1)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_OAXT_10_A03_GG" explanation="公告数据表">
-        <field_area>
-            <name="ID" explanation="公告ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="FBRID" explanation="发布人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FBBM" explanation="发布部门" type="nvarchar(100)" null="F" p="F" />
-            <name="FBSJ" explanation="发布时间" type="datetime" null="F" p="F" />
-            <name="BT" explanation="公告标题" type="nvarchar(200)" null="F" p="F" />
-            <name="NR" explanation="公告内容" type="text" null="F" p="F" />
-            <name="ZT" explanation="公告状态" type="int" null="F" p="F" remark="正常、已过期" />
-        </field_area>
-    </table>
-    <table name="EDU_OAXT_11_A01_YJ" explanation="邮件数据表">
-        <field_area>
-            <name="ID" explanation="邮件ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="YYZID" explanation="拥有者ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FSRID" explanation="发送人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="JSRID" explanation="接收人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FSRMC" explanation="发送人名称" type="nvarchar(100)" null="F" p="F" />
-            <name="JSRMC" explanation="接收人名称" type="nvarchar(100)" null="F" p="F" />
-            <name="JSRIDLB" explanation="接收人ID列表" type="text" null="F" p="F" />
-            <name="JSRMCLB" explanation="接收人名称列表" type="text" null="F" p="F" />
-            <name="BT" explanation="标题" type="nvarchar(200)" null="F" p="F" />
-            <name="NR" explanation="内容" type="text" null="F" p="F" />
-            <name="FJ" explanation="附件" type="nvarchar(200)" null="F" p="F" />
-            <name="FSSJ" explanation="发送时间" type="datetime" null="F" p="F" />
-            <name="SFYD" explanation="是否已阅读" type="nvarchar(1)" null="F" p="F" />
-            <name="YJLX" explanation="邮件类型" type="int" null="F" p="F" remark="1收件箱2草稿箱3已发送4已删除" />
-        </field_area>
-    </table>
     <table name="EDU_OAXT_01_01_WJJBSJ" explanation="文件基本数据类表">
         <field_area>
             <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="学校ID" />
@@ -200,6 +141,65 @@
             <name="JYSPRGH" explanation="借阅审批人工号" type="nvarchar(20)" null="F" p="F" remark="工号" />
             <name="JYJBRGH" explanation="借阅经办人工号" type="nvarchar(20)" null="F" p="F" remark="解释/举例：借阅文件的经手人员或保管人员的工号" />
             <name="JYYY" explanation="借阅原因" type="nvarchar(80)" null="T" p="F" remark="借阅原因 编号：ZZBG060005 " />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_10_A01_TZ" explanation="通知数据表">
+        <field_area>
+            <name="ID" explanation="通知ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="FSRID" explanation="发送人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FSRLB" explanation="发送人类别" type="int" null="F" p="F" />
+            <name="BT" explanation="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="NR" explanation="内容" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(500)" null="T" p="F" />
+            <name="TJRQ" explanation="添加日期" type="datetime" null="F" p="F" />
+            <name="JSRS" explanation="接收人数" type="int" null="F" p="F" />
+            <name="JSRIDLB" explanation="接收人ID列表" type="text" null="F" p="F" />
+            <name="JSRMZLB" explanation="接收人名字列表" type="text" null="F" p="F" />
+            <name="YYDRIDLB" explanation="已阅读人ID列表" type="text" null="T" p="F" />
+            <name="YYDRMZLB" explanation="已阅读人名字列表" type="text" null="F" p="F" />
+            <name="FSZT" explanation="发送状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_10_A02_TZYDJL" explanation="通知阅读记录">
+        <field_area>
+            <name="ID" explanation="通知阅读记录ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="TZID" explanation="通知ID" type="int" null="F" p="F" />
+            <name="BTZRID" explanation="被通知人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="YDRQ" explanation="阅读日期" type="datetime" null="F" p="F" />
+            <name="SFYD" explanation="是否已阅读" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_10_A03_GG" explanation="公告数据表">
+        <field_area>
+            <name="ID" explanation="公告ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="FBRID" explanation="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FBBM" explanation="发布部门" type="nvarchar(100)" null="F" p="F" />
+            <name="FBSJ" explanation="发布时间" type="datetime" null="F" p="F" />
+            <name="BT" explanation="公告标题" type="nvarchar(200)" null="F" p="F" />
+            <name="NR" explanation="公告内容" type="text" null="F" p="F" />
+            <name="ZT" explanation="公告状态" type="int" null="F" p="F" remark="正常、已过期" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_11_A01_YJ" explanation="邮件数据表">
+        <field_area>
+            <name="ID" explanation="邮件ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
+            <name="YYZID" explanation="拥有者ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FSRID" explanation="发送人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="JSRID" explanation="接收人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FSRMC" explanation="发送人名称" type="nvarchar(100)" null="F" p="F" />
+            <name="JSRMC" explanation="接收人名称" type="nvarchar(100)" null="F" p="F" />
+            <name="JSRIDLB" explanation="接收人ID列表" type="text" null="F" p="F" />
+            <name="JSRMCLB" explanation="接收人名称列表" type="text" null="F" p="F" />
+            <name="BT" explanation="标题" type="nvarchar(200)" null="F" p="F" />
+            <name="NR" explanation="内容" type="text" null="F" p="F" />
+            <name="FJ" explanation="附件" type="nvarchar(200)" null="F" p="F" />
+            <name="FSSJ" explanation="发送时间" type="datetime" null="F" p="F" />
+            <name="SFYD" explanation="是否已阅读" type="nvarchar(1)" null="F" p="F" />
+            <name="YJLX" explanation="邮件类型" type="int" null="F" p="F" remark="1收件箱2草稿箱3已发送4已删除" />
         </field_area>
     </table>
     <table name="EDU_OAXT_12_A01_SJFB" explanation="数据发布类表">

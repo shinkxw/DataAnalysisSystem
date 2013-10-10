@@ -87,23 +87,6 @@
   KMDM           EDU_ZZ_JKKM                        DM
 <EDU_JPXT_05_01_CLXH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-<EDU_OAXT_10_A01_TZ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  FSRID          EDU_ELE_01_USER                    LOGINNAME
-<EDU_OAXT_10_A02_TZYDJL
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  TZID           EDU_OAXT_10_A01_TZ                 ID
-  BTZRID         EDU_ELE_01_USER                    LOGINNAME
-  SFYD           EDU_JY_SFBZ                        DM
-<EDU_OAXT_10_A03_GG
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  FBRID          EDU_ELE_01_USER                    LOGINNAME
-<EDU_OAXT_11_A01_YJ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  YYZID          EDU_ELE_01_USER                    LOGINNAME
-  FSRID          EDU_ELE_01_USER                    LOGINNAME
-  JSRID          EDU_ELE_01_USER                    LOGINNAME
-  SFYD           EDU_JY_SFBZ                        DM
 <EDU_OAXT_01_01_WJJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   MJM            EDU_GB_WXBMZJ                      DM
@@ -156,6 +139,23 @@
   WJID           EDU_OAXT_01_01_WJJBSJ              ID
   JYSPRID        EDU_ELE_01_USER                    LOGINNAME
   JYJBRID        EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_10_A01_TZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_10_A02_TZYDJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TZID           EDU_OAXT_10_A01_TZ                 ID
+  BTZRID         EDU_ELE_01_USER                    LOGINNAME
+  SFYD           EDU_JY_SFBZ                        DM
+<EDU_OAXT_10_A03_GG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_11_A01_YJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YYZID          EDU_ELE_01_USER                    LOGINNAME
+  FSRID          EDU_ELE_01_USER                    LOGINNAME
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
+  SFYD           EDU_JY_SFBZ                        DM
 <EDU_OAXT_12_A01_SJFB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID

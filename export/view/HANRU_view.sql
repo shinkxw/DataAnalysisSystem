@@ -91,22 +91,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_04_01_
             and   type = 'V')
    drop view VIEW_EDU_JPXT_04_01_KMKS_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A01_TZ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_OAXT_10_A01_TZ_DISP
-GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A02_TZYDJL_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_OAXT_10_A02_TZYDJL_DISP
-GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A03_GG_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_OAXT_10_A03_GG_DISP
-GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_11_A01_YJ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_OAXT_11_A01_YJ_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_01_01_WJJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_01_01_WJJBSJ_DISP
@@ -146,6 +130,22 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_06_01_WJJQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_06_01_WJJQ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A01_TZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_10_A01_TZ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A02_TZYDJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_10_A02_TZYDJL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A03_GG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_10_A03_GG_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_11_A01_YJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_11_A01_YJ_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_12_A01_SJFB_DISP')
             and   type = 'V')
@@ -1529,191 +1529,6 @@ FROM dbo.EDU_JPXT_04_01_KMKS AS a LEFT OUTER JOIN
       dbo.EDU_ZZ_JKKM AS c ON a.KMDM = c.DM /*科目代码*/
 GO
 
---通知数据表
-CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A01_TZ_DISP]
-AS
-SELECT a.[ID]--通知ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[FSRID]--发送人ID
-      ,a.[FSRLB]--发送人类别
-      ,a.[BT]--标题
-      ,a.[NR]--内容
-      ,a.[FJ]--附件
-      ,a.[TJRQ]--添加日期
-      ,a.[JSRS]--接收人数
-      ,a.[JSRIDLB]--接收人ID列表
-      ,a.[JSRMZLB]--接收人名字列表
-      ,a.[YYDRIDLB]--已阅读人ID列表
-      ,a.[YYDRMZLB]--已阅读人名字列表
-      ,a.[FSZT]--发送状态
-      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
-      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
-      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
-      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
-      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
-      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,c.XM as c_USER_XM--应用系统用户表 姓名
-      ,c.XB as c_USER_XB--应用系统用户表 性别
-      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
-      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
-      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
-      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
-
-FROM dbo.EDU_OAXT_10_A01_TZ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS c ON a.FSRID = c.LOGINNAME /*发送人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
-GO
-
---通知阅读记录
-CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A02_TZYDJL_DISP]
-AS
-SELECT a.[ID]--通知阅读记录ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[TZID]--通知ID
-      ,a.[BTZRID]--被通知人ID
-      ,a.[YDRQ]--阅读日期
-      ,a.[SFYD]--是否已阅读
-      ,c.SCHOOLID as c_TZ_SCHOOLID--通知数据表 学校ID
-      ,c.FSRID as c_TZ_FSRID--通知数据表 发送人ID
-      ,c.FSRLB as c_TZ_FSRLB--通知数据表 发送人类别
-      ,c.BT as c_TZ_BT--通知数据表 标题
-      ,c.NR as c_TZ_NR--通知数据表 内容
-      ,c.FJ as c_TZ_FJ--通知数据表 附件
-      ,c.TJRQ as c_TZ_TJRQ--通知数据表 添加日期
-      ,c.JSRS as c_TZ_JSRS--通知数据表 接收人数
-      ,c.JSRIDLB as c_TZ_JSRIDLB--通知数据表 接收人ID列表
-      ,c.JSRMZLB as c_TZ_JSRMZLB--通知数据表 接收人名字列表
-      ,c.YYDRIDLB as c_TZ_YYDRIDLB--通知数据表 已阅读人ID列表
-      ,c.YYDRMZLB as c_TZ_YYDRMZLB--通知数据表 已阅读人名字列表
-      ,c.FSZT as c_TZ_FSZT--通知数据表 发送状态
-      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
-      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
-      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
-      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
-      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
-      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,d.XM as d_USER_XM--应用系统用户表 姓名
-      ,d.XB as d_USER_XB--应用系统用户表 性别
-      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
-      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
-      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
-      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
-
-FROM dbo.EDU_OAXT_10_A02_TZYDJL AS a LEFT OUTER JOIN
-      dbo.EDU_OAXT_10_A01_TZ AS c ON a.TZID = c.ID /*通知ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.BTZRID = d.LOGINNAME /*被通知人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS e ON a.SFYD = e.DM /*是否已阅读*/
-GO
-
---公告数据表
-CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A03_GG_DISP]
-AS
-SELECT a.[ID]--公告ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[FBRID]--发布人ID
-      ,a.[FBBM]--发布部门
-      ,a.[FBSJ]--发布时间
-      ,a.[BT]--公告标题
-      ,a.[NR]--公告内容
-      ,a.[ZT]--公告状态
-      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
-      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
-      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
-      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
-      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
-      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,c.XM as c_USER_XM--应用系统用户表 姓名
-      ,c.XB as c_USER_XB--应用系统用户表 性别
-      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
-      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
-      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
-      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
-
-FROM dbo.EDU_OAXT_10_A03_GG AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
-GO
-
---邮件数据表
-CREATE VIEW [dbo].[VIEW_EDU_OAXT_11_A01_YJ_DISP]
-AS
-SELECT a.[ID]--邮件ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[YYZID]--拥有者ID
-      ,a.[FSRID]--发送人ID
-      ,a.[JSRID]--接收人ID
-      ,a.[FSRMC]--发送人名称
-      ,a.[JSRMC]--接收人名称
-      ,a.[JSRIDLB]--接收人ID列表
-      ,a.[JSRMCLB]--接收人名称列表
-      ,a.[BT]--标题
-      ,a.[NR]--内容
-      ,a.[FJ]--附件
-      ,a.[FSSJ]--发送时间
-      ,a.[SFYD]--是否已阅读
-      ,a.[YJLX]--邮件类型
-      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
-      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
-      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
-      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
-      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
-      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,c.XM as c_USER_XM--应用系统用户表 姓名
-      ,c.XB as c_USER_XB--应用系统用户表 性别
-      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
-      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
-      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
-      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
-      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
-      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
-      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
-      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
-      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,d.XM as d_USER_XM--应用系统用户表 姓名
-      ,d.XB as d_USER_XB--应用系统用户表 性别
-      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
-      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
-      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
-      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
-      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
-      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
-      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
-      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
-      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,e.XM as e_USER_XM--应用系统用户表 姓名
-      ,e.XB as e_USER_XB--应用系统用户表 性别
-      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
-      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
-      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
-      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,f.MC as f_SFBZ_MC--是否标志代码表 名称
-
-FROM dbo.EDU_OAXT_11_A01_YJ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS c ON a.YYZID = c.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.FSRID = d.LOGINNAME /*发送人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS e ON a.JSRID = e.LOGINNAME /*接收人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS f ON a.SFYD = f.DM /*是否已阅读*/
-GO
-
 --文件基本数据类表
 CREATE VIEW [dbo].[VIEW_EDU_OAXT_01_01_WJJBSJ_DISP]
 AS
@@ -2380,6 +2195,191 @@ FROM dbo.EDU_OAXT_06_01_WJJQ AS a LEFT OUTER JOIN
       dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
       dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
       dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+GO
+
+--通知数据表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A01_TZ_DISP]
+AS
+SELECT a.[ID]--通知ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[FSRID]--发送人ID
+      ,a.[FSRLB]--发送人类别
+      ,a.[BT]--标题
+      ,a.[NR]--内容
+      ,a.[FJ]--附件
+      ,a.[TJRQ]--添加日期
+      ,a.[JSRS]--接收人数
+      ,a.[JSRIDLB]--接收人ID列表
+      ,a.[JSRMZLB]--接收人名字列表
+      ,a.[YYDRIDLB]--已阅读人ID列表
+      ,a.[YYDRMZLB]--已阅读人名字列表
+      ,a.[FSZT]--发送状态
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_10_A01_TZ AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FSRID = c.LOGINNAME /*发送人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--通知阅读记录
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A02_TZYDJL_DISP]
+AS
+SELECT a.[ID]--通知阅读记录ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[TZID]--通知ID
+      ,a.[BTZRID]--被通知人ID
+      ,a.[YDRQ]--阅读日期
+      ,a.[SFYD]--是否已阅读
+      ,c.SCHOOLID as c_TZ_SCHOOLID--通知数据表 学校ID
+      ,c.FSRID as c_TZ_FSRID--通知数据表 发送人ID
+      ,c.FSRLB as c_TZ_FSRLB--通知数据表 发送人类别
+      ,c.BT as c_TZ_BT--通知数据表 标题
+      ,c.NR as c_TZ_NR--通知数据表 内容
+      ,c.FJ as c_TZ_FJ--通知数据表 附件
+      ,c.TJRQ as c_TZ_TJRQ--通知数据表 添加日期
+      ,c.JSRS as c_TZ_JSRS--通知数据表 接收人数
+      ,c.JSRIDLB as c_TZ_JSRIDLB--通知数据表 接收人ID列表
+      ,c.JSRMZLB as c_TZ_JSRMZLB--通知数据表 接收人名字列表
+      ,c.YYDRIDLB as c_TZ_YYDRIDLB--通知数据表 已阅读人ID列表
+      ,c.YYDRMZLB as c_TZ_YYDRMZLB--通知数据表 已阅读人名字列表
+      ,c.FSZT as c_TZ_FSZT--通知数据表 发送状态
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_OAXT_10_A02_TZYDJL AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_10_A01_TZ AS c ON a.TZID = c.ID /*通知ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.BTZRID = d.LOGINNAME /*被通知人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.SFYD = e.DM /*是否已阅读*/
+GO
+
+--公告数据表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A03_GG_DISP]
+AS
+SELECT a.[ID]--公告ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[FBRID]--发布人ID
+      ,a.[FBBM]--发布部门
+      ,a.[FBSJ]--发布时间
+      ,a.[BT]--公告标题
+      ,a.[NR]--公告内容
+      ,a.[ZT]--公告状态
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_OAXT_10_A03_GG AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--邮件数据表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_11_A01_YJ_DISP]
+AS
+SELECT a.[ID]--邮件ID
+      ,a.[SCHOOLID]--学校ID
+      ,a.[YYZID]--拥有者ID
+      ,a.[FSRID]--发送人ID
+      ,a.[JSRID]--接收人ID
+      ,a.[FSRMC]--发送人名称
+      ,a.[JSRMC]--接收人名称
+      ,a.[JSRIDLB]--接收人ID列表
+      ,a.[JSRMCLB]--接收人名称列表
+      ,a.[BT]--标题
+      ,a.[NR]--内容
+      ,a.[FJ]--附件
+      ,a.[FSSJ]--发送时间
+      ,a.[SFYD]--是否已阅读
+      ,a.[YJLX]--邮件类型
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,e.PWD as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.MC as f_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_OAXT_11_A01_YJ AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.YYZID = c.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.FSRID = d.LOGINNAME /*发送人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.JSRID = e.LOGINNAME /*接收人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS f ON a.SFYD = f.DM /*是否已阅读*/
 GO
 
 --数据发布类表

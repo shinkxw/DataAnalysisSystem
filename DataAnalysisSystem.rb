@@ -8,7 +8,7 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 $t_app_name,$t_dir_name = 'RSXT','rskp'
 AreaManager.set_conn(DBConnector.new('b'))#192.168.0.8,1444
 AreaManager.load_area_and_db('HANRU','HanRuEdu') do |work_area,db|
-  #work_area.export_tableinfo
+  work_area.export_tableinfo
   #work_area.export_all#(true)
   #DBUpdater.new(work_area.area,db).show_db_diff
   #DBUpdater.new(work_area.area,db).update_db

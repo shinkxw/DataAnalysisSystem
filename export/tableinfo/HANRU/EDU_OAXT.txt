@@ -1,54 +1,3 @@
-EDU_OAXT_10_A01_TZ  通知数据表
-  ID            通知ID                  int            主键
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  FSRID         发送人ID                nvarchar(20)   非主        应用系统用户表
-  FSRLB         发送人类别              int            非主
-  BT            标题                    nvarchar(100)  非主
-  NR            内容                    text           非主
-  FJ            附件                    nvarchar(500)  非主
-  TJRQ          添加日期                datetime       非主
-  JSRS          接收人数                int            非主
-  JSRIDLB       接收人ID列表            text           非主
-  JSRMZLB       接收人名字列表          text           非主
-  YYDRIDLB      已阅读人ID列表          text           非主
-  YYDRMZLB      已阅读人名字列表        text           非主
-  FSZT          发送状态                int            非主
-
-EDU_OAXT_10_A02_TZYDJL  通知阅读记录
-  ID            通知阅读记录ID          int            主键
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  TZID          通知ID                  int            非主        通知数据表
-  BTZRID        被通知人ID              nvarchar(20)   非主        应用系统用户表
-  YDRQ          阅读日期                datetime       非主
-  SFYD          是否已阅读              nvarchar(1)    非主        是否标志代码表
-
-EDU_OAXT_10_A03_GG  公告数据表
-  ID            公告ID                  int            主键
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
-  FBBM          发布部门                nvarchar(100)  非主
-  FBSJ          发布时间                datetime       非主
-  BT            公告标题                nvarchar(200)  非主
-  NR            公告内容                text           非主
-  ZT            公告状态                int            非主
-
-EDU_OAXT_11_A01_YJ  邮件数据表
-  ID            邮件ID                  int            主键
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  YYZID         拥有者ID                nvarchar(20)   非主        应用系统用户表
-  FSRID         发送人ID                nvarchar(20)   非主        应用系统用户表
-  JSRID         接收人ID                nvarchar(20)   非主        应用系统用户表
-  FSRMC         发送人名称              nvarchar(100)  非主
-  JSRMC         接收人名称              nvarchar(100)  非主
-  JSRIDLB       接收人ID列表            text           非主
-  JSRMCLB       接收人名称列表          text           非主
-  BT            标题                    nvarchar(200)  非主
-  NR            内容                    text           非主
-  FJ            附件                    nvarchar(200)  非主
-  FSSJ          发送时间                datetime       非主
-  SFYD          是否已阅读              nvarchar(1)    非主        是否标志代码表
-  YJLX          邮件类型                int            非主
-
 EDU_OAXT_01_01_WJJBSJ  文件基本数据类表
   SCHOOLID      学校名                  int            主键        学校配置表
   ID            文件ID                  int            主键
@@ -171,6 +120,57 @@ EDU_OAXT_06_01_WJJQ  文件借阅数据类表
   JYSPRGH       借阅审批人工号          nvarchar(20)   非主
   JYJBRGH       借阅经办人工号          nvarchar(20)   非主
   JYYY          借阅原因                nvarchar(80)   非主
+
+EDU_OAXT_10_A01_TZ  通知数据表
+  ID            通知ID                  int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  FSRID         发送人ID                nvarchar(20)   非主        应用系统用户表
+  FSRLB         发送人类别              int            非主
+  BT            标题                    nvarchar(100)  非主
+  NR            内容                    text           非主
+  FJ            附件                    nvarchar(500)  非主
+  TJRQ          添加日期                datetime       非主
+  JSRS          接收人数                int            非主
+  JSRIDLB       接收人ID列表            text           非主
+  JSRMZLB       接收人名字列表          text           非主
+  YYDRIDLB      已阅读人ID列表          text           非主
+  YYDRMZLB      已阅读人名字列表        text           非主
+  FSZT          发送状态                int            非主
+
+EDU_OAXT_10_A02_TZYDJL  通知阅读记录
+  ID            通知阅读记录ID          int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  TZID          通知ID                  int            非主        通知数据表
+  BTZRID        被通知人ID              nvarchar(20)   非主        应用系统用户表
+  YDRQ          阅读日期                datetime       非主
+  SFYD          是否已阅读              nvarchar(1)    非主        是否标志代码表
+
+EDU_OAXT_10_A03_GG  公告数据表
+  ID            公告ID                  int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
+  FBBM          发布部门                nvarchar(100)  非主
+  FBSJ          发布时间                datetime       非主
+  BT            公告标题                nvarchar(200)  非主
+  NR            公告内容                text           非主
+  ZT            公告状态                int            非主
+
+EDU_OAXT_11_A01_YJ  邮件数据表
+  ID            邮件ID                  int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  YYZID         拥有者ID                nvarchar(20)   非主        应用系统用户表
+  FSRID         发送人ID                nvarchar(20)   非主        应用系统用户表
+  JSRID         接收人ID                nvarchar(20)   非主        应用系统用户表
+  FSRMC         发送人名称              nvarchar(100)  非主
+  JSRMC         接收人名称              nvarchar(100)  非主
+  JSRIDLB       接收人ID列表            text           非主
+  JSRMCLB       接收人名称列表          text           非主
+  BT            标题                    nvarchar(200)  非主
+  NR            内容                    text           非主
+  FJ            附件                    nvarchar(200)  非主
+  FSSJ          发送时间                datetime       非主
+  SFYD          是否已阅读              nvarchar(1)    非主        是否标志代码表
+  YJLX          邮件类型                int            非主
 
 EDU_OAXT_12_A01_SJFB  数据发布类表
   ID            数据发布ID              int            自增主键
