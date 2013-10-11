@@ -354,6 +354,7 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="SQID" explanation="请假申请表ID" type="int" null="F" p="F" />
             <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
             <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
             <name="QJLXID" explanation="请假类型ID" type="int" null="F" p="F" />
@@ -413,6 +414,7 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="SQID" explanation="会议申请表ID" type="int" null="F" p="F" />
             <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
             <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
             <name="HYMC" explanation="会议名称" type="nvarchar(200)" null="F" p="F" />
@@ -465,6 +467,7 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="SQID" explanation="公文申请表ID" type="int" null="F" p="F" />
             <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
             <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
             <name="GWBT" explanation="公文标题" type="nvarchar(200)" null="F" p="F" />
@@ -507,6 +510,7 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="SQID" explanation="用车申请表ID" type="int" null="F" p="F" />
             <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
             <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
             <name="YCYY" explanation="用车原因" type="nvarchar(300)" null="F" p="F" />
@@ -545,6 +549,7 @@
         <field_area>
             <name="ID" explanation="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="SQID" explanation="采购申请表ID" type="int" null="F" p="F" />
             <name="XGYHID" explanation="修改用户ID" type="nvarchar(20)" null="F" p="F" />
             <name="XGYHXM" explanation="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
             <name="CGDMC" explanation="采购单名称" type="nvarchar(200)" null="F" p="F" />

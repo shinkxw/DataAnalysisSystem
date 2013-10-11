@@ -301,6 +301,7 @@ EDU_OAXT_21_A02_QJSQ  请假申请表
 EDU_OAXT_21_A03_QJSQXGJL  请假申请修改记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
+  SQID          请假申请表ID            int            非主
   XGYHID        修改用户ID              nvarchar(20)   非主
   XGYHXM        修改用户姓名            nvarchar(36)   非主
   QJLXID        请假类型ID              int            非主
@@ -354,6 +355,7 @@ EDU_OAXT_22_A02_HYSQ  会议申请表
 EDU_OAXT_22_A03_HYSQXGJL  会议申请修改记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
+  SQID          会议申请表ID            int            非主
   XGYHID        修改用户ID              nvarchar(20)   非主
   XGYHXM        修改用户姓名            nvarchar(36)   非主
   HYMC          会议名称                nvarchar(200)  非主
@@ -402,6 +404,7 @@ EDU_OAXT_23_A01_GWSQ  公文申请表
 EDU_OAXT_23_A02_GWSQXGJL  公文申请修改记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
+  SQID          公文申请表ID            int            非主
   XGYHID        修改用户ID              nvarchar(20)   非主
   XGYHXM        修改用户姓名            nvarchar(36)   非主
   GWBT          公文标题                nvarchar(200)  非主
@@ -440,6 +443,7 @@ EDU_OAXT_24_A01_YCSQ  用车申请表
 EDU_OAXT_24_A02_YCSQXGJL  用车申请修改记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
+  SQID          用车申请表ID            int            非主
   XGYHID        修改用户ID              nvarchar(20)   非主
   XGYHXM        修改用户姓名            nvarchar(36)   非主
   YCYY          用车原因                nvarchar(300)  非主
@@ -474,6 +478,7 @@ EDU_OAXT_25_A01_CGSQ  采购申请表
 EDU_OAXT_25_A02_CGSQXGJL  采购申请修改记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
+  SQID          采购申请表ID            int            非主
   XGYHID        修改用户ID              nvarchar(20)   非主
   XGYHXM        修改用户姓名            nvarchar(36)   非主
   CGDMC         采购单名称              nvarchar(200)  非主

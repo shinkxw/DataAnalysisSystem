@@ -2105,6 +2105,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_OAXT_21_A03_QJSQXGJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
+	[SQID]  int  NOT NULL,--请假申请表ID
 	[XGYHID]  nvarchar(20)  NOT NULL,--修改用户ID
 	[XGYHXM]  nvarchar(36)  NOT NULL,--修改用户姓名
 	[QJLXID]  int  NOT NULL,--请假类型ID
@@ -2191,6 +2192,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_OAXT_22_A03_HYSQXGJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
+	[SQID]  int  NOT NULL,--会议申请表ID
 	[XGYHID]  nvarchar(20)  NOT NULL,--修改用户ID
 	[XGYHXM]  nvarchar(36)  NOT NULL,--修改用户姓名
 	[HYMC]  nvarchar(200)  NOT NULL,--会议名称
@@ -2261,6 +2263,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_OAXT_23_A02_GWSQXGJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
+	[SQID]  int  NOT NULL,--公文申请表ID
 	[XGYHID]  nvarchar(20)  NOT NULL,--修改用户ID
 	[XGYHXM]  nvarchar(36)  NOT NULL,--修改用户姓名
 	[GWBT]  nvarchar(200)  NOT NULL,--公文标题
@@ -2321,6 +2324,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_OAXT_24_A02_YCSQXGJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
+	[SQID]  int  NOT NULL,--用车申请表ID
 	[XGYHID]  nvarchar(20)  NOT NULL,--修改用户ID
 	[XGYHXM]  nvarchar(36)  NOT NULL,--修改用户姓名
 	[YCYY]  nvarchar(300)  NOT NULL,--用车原因
@@ -2377,6 +2381,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_OAXT_25_A02_CGSQXGJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
+	[SQID]  int  NOT NULL,--采购申请表ID
 	[XGYHID]  nvarchar(20)  NOT NULL,--修改用户ID
 	[XGYHXM]  nvarchar(36)  NOT NULL,--修改用户姓名
 	[CGDMC]  nvarchar(200)  NOT NULL,--采购单名称
@@ -2995,6 +3000,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_21_A03_QJSQXGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'请假申请表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_21_A03_QJSQXGJL', @level2type=N'COLUMN',@level2name=N'SQID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_21_A03_QJSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_21_A03_QJSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHXM'
@@ -3095,6 +3102,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_22_A03_HYSQXGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'会议申请表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_22_A03_HYSQXGJL', @level2type=N'COLUMN',@level2name=N'SQID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_22_A03_HYSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_22_A03_HYSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHXM'
@@ -3187,6 +3196,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_23_A02_GWSQXGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公文申请表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_23_A02_GWSQXGJL', @level2type=N'COLUMN',@level2name=N'SQID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_23_A02_GWSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_23_A02_GWSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHXM'
@@ -3259,6 +3270,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用车申请表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'SQID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHXM'
@@ -3322,6 +3335,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_25_A02_CGSQXGJL', @level2type=N'COLUMN',@level2name=N'ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_25_A02_CGSQXGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'采购申请表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_25_A02_CGSQXGJL', @level2type=N'COLUMN',@level2name=N'SQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_25_A02_CGSQXGJL', @level2type=N'COLUMN',@level2name=N'XGYHID'
 GO

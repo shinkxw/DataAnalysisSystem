@@ -33,6 +33,11 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "请假申请表")]
+            public Int32 SQID { get; set; }
+
+
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "修改用户")]
             [StringLength(20)]
