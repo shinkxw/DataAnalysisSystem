@@ -562,4 +562,21 @@
             <name="SQRBMID" explanation="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_30_A01_DSJ" explanation="大事记表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="BT" explanation="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="NR" explanation="内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_31_A01_GRTXL" explanation="个人通讯录表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="GRID" explanation="个人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="LXRXM" explanation="联系人姓名" type="nvarchar(50)" null="F" p="F" />
+            <name="LXRDH" explanation="联系人电话" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

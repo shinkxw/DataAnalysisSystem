@@ -220,6 +220,11 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LCSLID         EDU_OAXT_20_A05_LCSL               ID
   SQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_30_A01_DSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_31_A01_GRTXL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GRID           EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP
