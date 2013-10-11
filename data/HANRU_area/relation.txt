@@ -173,6 +173,8 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   MBLXID         EDU_OAXT_20_A01_LCMBLX             ID
   BDID           EDU_OAXT_20_A02_LCBDSJ             ID
+  QSBZID         EDU_OAXT_20_A04_LCBZ               ID
+  JSBZID         EDU_OAXT_20_A04_LCBZ               ID
 <EDU_OAXT_20_A04_LCBZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LCMBID         EDU_OAXT_20_A03_LCMB               ID

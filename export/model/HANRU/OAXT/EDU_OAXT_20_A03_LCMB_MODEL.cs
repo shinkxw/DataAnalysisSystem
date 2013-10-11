@@ -43,6 +43,16 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "起始步骤")]
+            public Int32 QSBZID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "结束步骤")]
+            public Int32 JSBZID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "添加时间")]
             public DateTime TJSJ { get; set; }
 

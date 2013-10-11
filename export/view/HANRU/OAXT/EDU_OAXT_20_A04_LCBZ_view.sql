@@ -15,6 +15,8 @@ SELECT a.[ID]--编号
       ,c.MBLXID as c_LCMB_MBLXID--流程模板表 模板类型ID
       ,c.MBMC as c_LCMB_MBMC--流程模板表 模板名称
       ,c.BDID as c_LCMB_BDID--流程模板表 表单ID
+      ,c.QSBZID as c_LCMB_QSBZID--流程模板表 起始步骤ID
+      ,c.JSBZID as c_LCMB_JSBZID--流程模板表 结束步骤ID
       ,c.TJSJ as c_LCMB_TJSJ--流程模板表 添加时间
       ,c.BZ as c_LCMB_BZ--流程模板表 备注
       ,d.SCHOOLID as d_LCBZ_SCHOOLID--流程步骤表 学校

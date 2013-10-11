@@ -269,6 +269,8 @@
             <name="MBLXID" explanation="模板类型ID" type="int" null="F" p="F" />
             <name="MBMC" explanation="模板名称" type="nvarchar(100)" null="F" p="F" />
             <name="BDID" explanation="表单ID" type="int" null="F" p="F" />
+            <name="QSBZID" explanation="起始步骤ID" type="int" null="F" p="F" />
+            <name="JSBZID" explanation="结束步骤ID" type="int" null="F" p="F" />
             <name="TJSJ" explanation="添加时间" type="datetime" null="F" p="F" />
             <name="BZ" explanation="备注" type="text" null="F" p="F" />
         </field_area>

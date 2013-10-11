@@ -228,6 +228,8 @@ EDU_OAXT_20_A03_LCMB  流程模板表
   MBLXID        模板类型ID              int            非主        流程模板类型表
   MBMC          模板名称                nvarchar(100)  非主
   BDID          表单ID                  int            非主        流程表单数据表
+  QSBZID        起始步骤ID              int            非主        流程步骤表
+  JSBZID        结束步骤ID              int            非主        流程步骤表
   TJSJ          添加时间                datetime       非主
   BZ            备注                    text           非主
 

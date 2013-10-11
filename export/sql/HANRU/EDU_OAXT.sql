@@ -624,6 +624,8 @@ CREATE TABLE [dbo].[EDU_OAXT_20_A03_LCMB](
 	[MBLXID]  int  NOT NULL,--模板类型ID
 	[MBMC]  nvarchar(100)  NOT NULL,--模板名称
 	[BDID]  int  NOT NULL,--表单ID
+	[QSBZID]  int  NOT NULL,--起始步骤ID
+	[JSBZID]  int  NOT NULL,--结束步骤ID
 	[TJSJ]  datetime  NOT NULL,--添加时间
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_OAXT_20_A03_LCMB] PRIMARY KEY CLUSTERED
@@ -1516,6 +1518,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模板名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_20_A03_LCMB', @level2type=N'COLUMN',@level2name=N'MBMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'表单ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_20_A03_LCMB', @level2type=N'COLUMN',@level2name=N'BDID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'起始步骤ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_20_A03_LCMB', @level2type=N'COLUMN',@level2name=N'QSBZID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束步骤ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_20_A03_LCMB', @level2type=N'COLUMN',@level2name=N'JSBZID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_20_A03_LCMB', @level2type=N'COLUMN',@level2name=N'TJSJ'
 GO
