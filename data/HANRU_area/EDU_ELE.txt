@@ -175,4 +175,14 @@
             <name="MC" explanation="名称" type="nvarchar(5)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ELE_06_CDSJ" explanation="场地数据表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="CDMC" explanation="场地名称" type="nvarchar(200)" null="F" p="F" />
+            <name="CDDZ" explanation="场地地址" type="nvarchar(200)" null="F" p="F" />
+            <name="CDLX" explanation="场地类型" type="int" null="F" p="F" />
+            <name="CDFZR" explanation="场地负责人" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

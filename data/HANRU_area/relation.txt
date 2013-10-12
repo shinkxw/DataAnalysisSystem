@@ -35,6 +35,8 @@
 <EDU_ELE_05_JC
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SDID           EDU_ELE_05_SD                      ID
+<EDU_ELE_06_CDSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_JPXT_01_01_JLCSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CLXHID         EDU_JPXT_05_01_CLXH                ID
@@ -692,6 +694,12 @@
   KPNRXMID       EDU_ZZJG_11_A06_KPNRXM             ID
   KPFSID         EDU_ZZJG_11_A03_KPFS               ID
   KPZTID         EDU_ZJ_KPZT                        DM
+<EDU_ZZJG_12_A01_XCLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_12_A02_XC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
+  XCLXID         EDU_ZZJG_12_A01_XCLX               ID
 <EDU_ZZJX_02_02_ZZBJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH

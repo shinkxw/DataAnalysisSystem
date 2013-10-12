@@ -143,3 +143,11 @@ EDU_ELE_05_JC  节次
   SDID          所属时段ID              int            非主        时段
   MC            名称                    nvarchar(5)    非主
 
+EDU_ELE_06_CDSJ  场地数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  CDMC          场地名称                nvarchar(200)  非主
+  CDDZ          场地地址                nvarchar(200)  非主
+  CDLX          场地类型                int            非主
+  CDFZR         场地负责人              nvarchar(36)   非主
+

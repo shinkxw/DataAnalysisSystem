@@ -46,6 +46,11 @@ class MDTable
   def lname_dc;@name.split('_')[-1].downcase end
   #返回表所在库名的小写形式
   def library_name;@name.split('_')[1].downcase end
+  #返回数据库实体对象名
+  def db_name
+    ln = library_name
+    "db_#{%w(ele sys).include?(ln) ? ln + '01' : ln}"
+  end
   #返回表所属的命名空间名
   def name_space_name;a = @name.split('_');"#{a[0]}_#{a[1]}" end
   #返回标准表的获取值方法名

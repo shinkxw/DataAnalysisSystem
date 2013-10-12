@@ -182,4 +182,23 @@
             <name="KPFZ" explanation="考评分值" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_12_A01_XCLX" explanation="薪酬类型表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="XCLXMC" explanation="类型名称" type="nvarchar(30)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_12_A02_XC" explanation="薪酬表">
+        <field_area>
+            <name="ID" explanation="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" explanation="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" explanation="教工基本信息ID" type="int" null="F" p="F" />
+            <name="KSSJ" explanation="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" explanation="结束时间" type="datetime" null="F" p="F" />
+            <name="XCLXID" explanation="薪酬类型ID" type="int" null="F" p="F" />
+            <name="JE" explanation="金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="FFSJ" explanation="发放时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

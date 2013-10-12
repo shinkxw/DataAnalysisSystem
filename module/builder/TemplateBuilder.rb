@@ -56,7 +56,7 @@ class TemplateBuilder
   end
   def make_controller_index_jsonstr(table)
     str = %({\n#{@tab.l}public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")\n#{@tab.t})
-    str << "{\n#{@tab.l}List<VIEW_#{table.name}_DISP> model = db_#{table.library_name}.VIEW_#{table.name}_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
+    str << "{\n#{@tab.l}List<VIEW_#{table.name}_DISP> model = #{table.db_name}.VIEW_#{table.name}_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
     str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey)).ToList();\n"
     str << "#{@tab.s}}\n\n#{@tab.t}if (!String.IsNullOrEmpty(sort))\n#{@tab.t}"
     str << "{\n#{@tab.l}if (order.Equals(\"desc\"))\n#{@tab.t}"
@@ -84,16 +84,16 @@ class TemplateBuilder
         str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{get_relation(field)}\n"
       end
     end
-    str << "#{@tab.t}#{table.name} #{table.lname_dc}_model = db_#{table.library_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
+    str << "#{@tab.t}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
     str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n\n#{@tab.t}if (#{table.lname_dc}_model != null)\n#{@tab.t}"
     str << "{\n#{@tab.long}"
     table.each_field do |field|
       str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{get_relation(field)}\n"
     end
-    str << "#{@tab.t}db_#{table.library_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
+    str << "#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << "{\n#{@tab.l}throw new Exception(\"记录不存在\");\n#{@tab.t}//db_#{table.library_name}.#{table.name}.Add(#{table.lname_dc});\n"
-    str << "#{@tab.s}}\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
+    str << "{\n#{@tab.l}throw new Exception(\"记录不存在\");\n#{@tab.t}//#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n"
+    str << "#{@tab.s}}\n#{@tab.t}#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n"
   end
   def make_controller_InitViewBag(table)
@@ -121,7 +121,7 @@ class TemplateBuilder
   end
   def make_controller_edit(table)
     str = "#{@tab.t}public ActionResult Edit(int id)\n#{@tab.t}"
-    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}#{table.name} #{table.lname_dc}= db_#{table.library_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}return View(#{table.lname_dc});\n"
+    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}#{table.name} #{table.lname_dc}= #{table.db_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Edit(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}\n#{@tab.t}\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
@@ -136,8 +136,8 @@ class TemplateBuilder
     str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(String id#{'Lst' if is_multi})\n#{@tab.t}"
     str << "{\n#{@tab.l}try\n#{@tab.t}"
     str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}" if is_multi
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n"
-    str << "#{@tab.t}db_#{table.library_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}db_#{table.library_name}.SaveChanges();\n"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n"
+    str << "#{@tab.t}#{table.db_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n" if is_multi
     str << "#{@tab.t}return \"删除成功！\";\n"
     str << "#{@tab.s}}\n"
@@ -155,12 +155,12 @@ class TemplateBuilder
     str << "public int GetMax_#{table.lname}_ID()\n#{@tab.t}"
     str << "{\n#{@tab.l}int maxId = 0;\n#{@tab.t}lock (syncIDLock)\n#{@tab.t}"
     str << "{\n#{@tab.l}if (Max_#{table.lname}_ID == 0)\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = db_#{table.library_name}.#{table.name}.FirstOrDefault();\n#{@tab.t}"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}.FirstOrDefault();\n#{@tab.t}"
     str << "if (#{table.lname_dc} == null)\n#{@tab.t}"
     str << "{\n#{@tab.l}Max_#{table.lname}_ID = 1;\n"
     str << "#{@tab.s}}\n#{@tab.t}"
     str << "else\n#{@tab.t}"
-    str << "{\n#{@tab.l}//Max_#{table.lname}_ID = db_#{table.library_name}.#{table.name}.Max(e => e.ID) + 1;\n"
+    str << "{\n#{@tab.l}//Max_#{table.lname}_ID = #{table.db_name}.#{table.name}.Max(e => e.ID) + 1;\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}"
     str << "else\n#{@tab.t}"
