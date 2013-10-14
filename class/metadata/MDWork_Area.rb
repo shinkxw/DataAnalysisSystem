@@ -20,6 +20,7 @@ class MDWork_Area
     @vc = MDVCer.new(area)
     fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
     fs_config = {'@sql'=>"#{fs_root}/BASE",'@view'=>"#{fs_root}/VIEW",
+                 '@tableinfo'=>"#{fs_root}/表信息",
                  'HANRU_bz'=>fs_root,'HANRU_yw'=>fs_root,'HANRU_view'=>fs_root}
     MDDoc.set_fsc(fs_config)
     export_sql;export_sql(false)
