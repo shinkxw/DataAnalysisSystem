@@ -75,7 +75,7 @@ class DBAnalyzer
       "#{type}(#{prec}, #{scale})"
     when 'bit','float'; type
     else
-      puts "字段类型未识别#{type}"
+      puts "DBAnalyzer: 字段类型未识别#{type}"
       type
     end
   end

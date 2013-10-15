@@ -105,6 +105,10 @@ class DBEntity
   def update_fexp(field);execute(Sql.update_fexp(field)) end
   #获得数据库的元数据域
   def get_db_area(area_name = 'db_out');DBAnalyzer.new.analyze_db(self,area_name) end
+  #使用数据库的数据创建新的工作区
+  def get_work_area(area_name = 'db_out')
+    MDWork_Area.new(get_db_area(area_name)).save_and_close_work_area
+  end
   #通过重建表的方式改变表结构
   def rebuild_table(table)
     old_name = table.name
