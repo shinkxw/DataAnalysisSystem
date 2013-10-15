@@ -85,7 +85,7 @@ class DafBuilder
   #Éú³É×Ö¶ÎµÄdaf×Ö·û´®
   def build_field_daf(field)
     @daf_str << "#{@tab}#{@tab}#{@tab}<name=\"#{field.name}\" "
-    @daf_str << "explanation=\"#{field.explanation}\" "
+    @daf_str << "exp=\"#{field.explanation}\" "
     @daf_str << "type=\"#{field.type}\" "
     @daf_str << "null=\"#{field.null}\" "
     @daf_str << "p=\"#{field.p}\" "

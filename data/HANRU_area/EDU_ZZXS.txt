@@ -2,240 +2,240 @@
 <namespace name="EDU_ZZXS" provider="reallocate_namespace" generation_time="">
     <table name="EDU_ZZXS_01_01_XSXX" explanation="学生信息数据表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="XH" explanation="学号" type="nvarchar(30)" null="F" p="F" />
-            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="YWXM" explanation="英文姓名" type="nvarchar(60)" null="T" p="F" />
-            <name="XMPY" explanation="姓名拼音" type="nvarchar(60)" null="F" p="F" />
-            <name="CYM" explanation="曾用名" type="nvarchar(36)" null="T" p="F" />
-            <name="SFZJLXM" explanation="身份证件类型码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFZJLX" />
-            <name="SFZJH" explanation="身份证件号" type="nvarchar(20)" null="F" p="F" />
-            <name="XBM" explanation="性别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_RDXB" />
-            <name="XXM" explanation="血型码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_XX" />
-            <name="CSRQ" explanation="出生日期" type="nvarchar(8)" null="F" p="F" />
-            <name="CSDM" explanation="出生地码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="JG" explanation="籍贯" type="nvarchar(20)" null="F" p="F" />
-            <name="MZM" explanation="民族码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZGGMZMCDLMZMPXF" />
-            <name="HYZKM" explanation="婚姻状况码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_HYZZ" />
-            <name="XYZJM" explanation="信仰宗教码" type="nvarchar(2)" null="T" p="F" remark="EDU_GB_ZJXY" />
-            <name="GATQWM" explanation="港澳台侨外码" type="nvarchar(2)" null="T" p="F" remark="EDU_JY_GATQW" />
-            <name="JKZKM" explanation="健康状况码" type="nvarchar(1)" null="T" p="F" remark="EDU_GB_JKZKYWSZ" />
-            <name="ZZMMM" explanation="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZZMM" />
-            <name="HKSZDXZQHM" explanation="户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="HKLBM" explanation="户口类别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_HKLB" />
-            <name="SFSLDRK" explanation="是否是流动人口" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
-            <name="GJDQM" explanation="国籍/地区" type="nvarchar(3)" null="T" p="F" remark="EDU_GB_SJGGHDQMC" />
-            <name="TC" explanation="特长" type="text" null="T" p="F" />
-            <name="XSLXDH" explanation="学生联系电话" type="nvarchar(30)" null="T" p="F" />
-            <name="WLDZ" explanation="网络地址" type="nvarchar(60)" null="T" p="F" />
-            <name="JSTXH" explanation="即时通讯号" type="nvarchar(40)" null="T" p="F" />
-            <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="T" p="F" />
-            <name="ZP" explanation="照片(路径)" type="nvarchar(100)" null="T" p="F" />
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="XH" exp="学号" type="nvarchar(30)" null="F" p="F" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" />
+            <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="F" p="F" />
+            <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFZJLX" />
+            <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="F" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_RDXB" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_XX" />
+            <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" />
+            <name="CSDM" exp="出生地码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
+            <name="JG" exp="籍贯" type="nvarchar(20)" null="F" p="F" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZGGMZMCDLMZMPXF" />
+            <name="HYZKM" exp="婚姻状况码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_HYZZ" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" remark="EDU_GB_ZJXY" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" remark="EDU_JY_GATQW" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" remark="EDU_GB_JKZKYWSZ" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZZMM" />
+            <name="HKSZDXZQHM" exp="户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
+            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_HKLB" />
+            <name="SFSLDRK" exp="是否是流动人口" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="GJDQM" exp="国籍/地区" type="nvarchar(3)" null="T" p="F" remark="EDU_GB_SJGGHDQMC" />
+            <name="TC" exp="特长" type="text" null="T" p="F" />
+            <name="XSLXDH" exp="学生联系电话" type="nvarchar(30)" null="T" p="F" />
+            <name="WLDZ" exp="网络地址" type="nvarchar(60)" null="T" p="F" />
+            <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" p="F" />
+            <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" />
+            <name="ZP" exp="照片(路径)" type="nvarchar(100)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_01_A01_XSXX" explanation="学生扩展数据表">
         <field_area>
-            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="ZYXXID" explanation="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
-            <name="XNID" explanation="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
-            <name="ZZXQID" explanation="学期表" type="int" null="F" p="F" remark="EDU_ZZJX_01_03_ZZXQ" />
-            <name="JTDZQH" explanation="家庭地址区划码" type="nvarchar(6)" null="T" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="JTXXDZ" explanation="家庭详细地址" type="nvarchar(50)" null="T" p="F" />
-            <name="HJXXDZ" explanation="户籍详细地址" type="nvarchar(50)" null="T" p="F" />
-            <name="HJXZ" explanation="户籍性质代码" type="nvarchar(1)" null="T" p="F" remark="EDU_ZJ_HJXZ" />
-            <name="BYJX" explanation="不宜军训" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_SFBZ" />
-            <name="CSBZR" explanation="初三班主任" type="nvarchar(10)" null="T" p="F" />
-            <name="DRZW" explanation="曾担任何种职务" type="text" null="T" p="F" />
-            <name="YYDR" explanation="愿意担任班干部，何职" type="text" null="T" p="F" />
-            <name="BZ" explanation="备注" type="text" null="T" p="F" />
-            <name="BYLX" explanation="毕业生类型" type="nvarchar(1)" null="F" p="F" remark="EDU_ZJ_BYSLX" />
-            <name="XSLX" explanation="学生类型" type="nvarchar(5)" null="F" p="F" remark="EDU_JY_XSLB" />
-            <name="SFZS" explanation="是否住宿" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
-            <name="XSBMSJ" explanation="学生报名时间" type="nvarchar(8)" null="T" p="F" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
+            <name="XNID" exp="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
+            <name="ZZXQID" exp="学期表" type="int" null="F" p="F" remark="EDU_ZZJX_01_03_ZZXQ" />
+            <name="JTDZQH" exp="家庭地址区划码" type="nvarchar(6)" null="T" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
+            <name="JTXXDZ" exp="家庭详细地址" type="nvarchar(50)" null="T" p="F" />
+            <name="HJXXDZ" exp="户籍详细地址" type="nvarchar(50)" null="T" p="F" />
+            <name="HJXZ" exp="户籍性质代码" type="nvarchar(1)" null="T" p="F" remark="EDU_ZJ_HJXZ" />
+            <name="BYJX" exp="不宜军训" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_SFBZ" />
+            <name="CSBZR" exp="初三班主任" type="nvarchar(10)" null="T" p="F" />
+            <name="DRZW" exp="曾担任何种职务" type="text" null="T" p="F" />
+            <name="YYDR" exp="愿意担任班干部，何职" type="text" null="T" p="F" />
+            <name="BZ" exp="备注" type="text" null="T" p="F" />
+            <name="BYLX" exp="毕业生类型" type="nvarchar(1)" null="F" p="F" remark="EDU_ZJ_BYSLX" />
+            <name="XSLX" exp="学生类型" type="nvarchar(5)" null="F" p="F" remark="EDU_JY_XSLB" />
+            <name="SFZS" exp="是否住宿" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="XSBMSJ" exp="学生报名时间" type="nvarchar(8)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_02_01_XSJTXX" explanation="学生家庭信息数据表">
         <field_area>
-            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="JTZZ" explanation="家庭住址" type="nvarchar(180)" null="F" p="F" />
-            <name="JTYZBM" explanation="家庭邮政编码" type="nvarchar(6)" null="F" p="F" />
-            <name="JTDH" explanation="家庭电话" type="nvarchar(30)" null="T" p="F" />
-            <name="JTLXR" explanation="家庭联系人" type="nvarchar(36)" null="F" p="F" />
-            <name="JTDZXX" explanation="家庭电子信箱" type="nvarchar(40)" null="T" p="F" />
-            <name="JTRK" explanation="家庭人口" type="int" null="T" p="F" />
-            <name="JTZYSRLY" explanation="家庭主要收入来源" type="nvarchar(180)" null="T" p="F" />
-            <name="JTYSRJE" explanation="家庭月收入金额" type="money" null="T" p="F" />
-            <name="JTNSRJE" explanation="家庭年收入金额" type="money" null="T" p="F" />
-            <name="LJZJHCZ" explanation="离家最近火车站" type="nvarchar(30)" null="T" p="F" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="JTZZ" exp="家庭住址" type="nvarchar(180)" null="F" p="F" />
+            <name="JTYZBM" exp="家庭邮政编码" type="nvarchar(6)" null="F" p="F" />
+            <name="JTDH" exp="家庭电话" type="nvarchar(30)" null="T" p="F" />
+            <name="JTLXR" exp="家庭联系人" type="nvarchar(36)" null="F" p="F" />
+            <name="JTDZXX" exp="家庭电子信箱" type="nvarchar(40)" null="T" p="F" />
+            <name="JTRK" exp="家庭人口" type="int" null="T" p="F" />
+            <name="JTZYSRLY" exp="家庭主要收入来源" type="nvarchar(180)" null="T" p="F" />
+            <name="JTYSRJE" exp="家庭月收入金额" type="money" null="T" p="F" />
+            <name="JTNSRJE" exp="家庭年收入金额" type="money" null="T" p="F" />
+            <name="LJZJHCZ" exp="离家最近火车站" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_02_02_XSJTCY" explanation="学生家庭成员数据表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="F" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="GXM" explanation="关系码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_JTGX" />
-            <name="JTCYZYM" explanation="家庭成员职业码" type="nvarchar(3)" null="F" p="F" remark="EDU_GB_ZYFL" />
-            <name="SZDW" explanation="所在单位" type="nvarchar(60)" null="T" p="F" />
-            <name="ZZMMM" explanation="政治面貌码" type="nvarchar(2)" null="T" p="F" remark="EDU_GB_ZZMM" />
-            <name="DH" explanation="电话" type="nvarchar(30)" null="T" p="F" />
-            <name="YDDH" explanation="移动电话" type="nvarchar(30)" null="T" p="F" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="F" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_JTGX" />
+            <name="JTCYZYM" exp="家庭成员职业码" type="nvarchar(3)" null="F" p="F" remark="EDU_GB_ZYFL" />
+            <name="SZDW" exp="所在单位" type="nvarchar(60)" null="T" p="F" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="T" p="F" remark="EDU_GB_ZZMM" />
+            <name="DH" exp="电话" type="nvarchar(30)" null="T" p="F" />
+            <name="YDDH" exp="移动电话" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_02_A01_XSLXR" explanation="学生联系人数据表">
         <field_area>
-            <name="ID" explanation="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="F" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="GXM" explanation="关系码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_JTGX" />
-            <name="LXRXM" explanation="联系人姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="YZBM" explanation="邮政编码" type="nvarchar(6)" null="T" p="F" />
-            <name="TXDZ" explanation="通信地址" type="nvarchar(180)" null="T" p="F" />
-            <name="DH" explanation="电话" type="nvarchar(30)" null="F" p="F" />
-            <name="YDDH" explanation="移动电话" type="nvarchar(30)" null="T" p="F" />
-            <name="CZDH" explanation="传真电话" type="nvarchar(60)" null="T" p="F" />
-            <name="DZXX" explanation="电子信箱" type="nvarchar(40)" null="T" p="F" />
-            <name="WLDZ" explanation="网络地址" type="nvarchar(60)" null="T" p="F" />
-            <name="JSTXH" explanation="即时通讯号" type="nvarchar(40)" null="T" p="F" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="F" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_JTGX" />
+            <name="LXRXM" exp="联系人姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="YZBM" exp="邮政编码" type="nvarchar(6)" null="T" p="F" />
+            <name="TXDZ" exp="通信地址" type="nvarchar(180)" null="T" p="F" />
+            <name="DH" exp="电话" type="nvarchar(30)" null="F" p="F" />
+            <name="YDDH" exp="移动电话" type="nvarchar(30)" null="T" p="F" />
+            <name="CZDH" exp="传真电话" type="nvarchar(60)" null="T" p="F" />
+            <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" />
+            <name="WLDZ" exp="网络地址" type="nvarchar(60)" null="T" p="F" />
+            <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_02_A02_XSJTJJ" explanation="学生家庭经济情况数据表">
         <field_area>
-            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="SYRK" explanation="赡养人口" type="decimal(2, 0)" null="T" p="F" />
-            <name="LDLRK" explanation="劳动力人口" type="decimal(2, 0)" null="T" p="F" />
-            <name="JTRJYSR" explanation="家庭人均月收入" type="money" null="F" p="F" />
-            <name="JTLBM" explanation="家庭类别码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_JTLB" />
-            <name="KNYYM" explanation="困难原因码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_KNYY" />
-            <name="KNCDM" explanation="困难程度码" type="nvarchar(2)" null="T" p="F" remark="EDU_JY_KNCD" />
-            <name="SFDB" explanation="是否低保" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_SFBZ" />
-            <name="RXQHKLBM" explanation="入学前户口类别码" type="nvarchar(1)" null="T" p="F" remark="EDU_GB_HKLB" />
-            <name="JXDDBX" explanation="就学地低保线" type="money" null="T" p="F" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="SYRK" exp="赡养人口" type="decimal(2, 0)" null="T" p="F" />
+            <name="LDLRK" exp="劳动力人口" type="decimal(2, 0)" null="T" p="F" />
+            <name="JTRJYSR" exp="家庭人均月收入" type="money" null="F" p="F" />
+            <name="JTLBM" exp="家庭类别码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_JTLB" />
+            <name="KNYYM" exp="困难原因码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_KNYY" />
+            <name="KNCDM" exp="困难程度码" type="nvarchar(2)" null="T" p="F" remark="EDU_JY_KNCD" />
+            <name="SFDB" exp="是否低保" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_SFBZ" />
+            <name="RXQHKLBM" exp="入学前户口类别码" type="nvarchar(1)" null="T" p="F" remark="EDU_GB_HKLB" />
+            <name="JXDDBX" exp="就学地低保线" type="money" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_06_01_XSCJ" explanation="学生成绩数据类表">
         <field_area>
-            <name="XSXXID" explanation="学生ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="KCH" explanation="课程号" type="nvarchar(6)" null="F" p="T" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="T" />
-            <name="KCMC" explanation="课程名称" type="nvarchar(100)" null="F" p="F" />
-            <name="XF" explanation="学分" type="decimal(2, 1)" null="F" p="F" />
-            <name="XQMC" explanation="学期名称" type="nvarchar(10)" null="F" p="F" />
-            <name="PSCJ" explanation="平时成绩" type="decimal(5, 1)" null="T" p="F" />
-            <name="CJ" explanation="成绩" type="decimal(5, 1)" null="F" p="F" />
-            <name="KSXZ" explanation="考试性质" type="nvarchar(2)" null="T" p="F" />
-            <name="RKJGID" explanation="任课教工ID" type="int" null="T" p="F" />
-            <name="RKJGH" explanation="任课教工号" type="nvarchar(20)" null="T" p="F" />
-            <name="CJLRJGID" explanation="成绩录入教工ID" type="int" null="T" p="F" />
-            <name="CJLRJGH" explanation="成绩录入教工号" type="nvarchar(20)" null="T" p="F" />
-            <name="CJLRRQ" explanation="成绩录入日期" type="nvarchar(8)" null="F" p="F" />
-            <name="QZCJ" explanation="期中成绩" type="decimal(5, 1)" null="T" p="F" />
-            <name="QMCJ" explanation="期末成绩" type="decimal(5, 1)" null="T" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
+            <name="KCMC" exp="课程名称" type="nvarchar(100)" null="F" p="F" />
+            <name="XF" exp="学分" type="decimal(2, 1)" null="F" p="F" />
+            <name="XQMC" exp="学期名称" type="nvarchar(10)" null="F" p="F" />
+            <name="PSCJ" exp="平时成绩" type="decimal(5, 1)" null="T" p="F" />
+            <name="CJ" exp="成绩" type="decimal(5, 1)" null="F" p="F" />
+            <name="KSXZ" exp="考试性质" type="nvarchar(2)" null="T" p="F" />
+            <name="RKJGID" exp="任课教工ID" type="int" null="T" p="F" />
+            <name="RKJGH" exp="任课教工号" type="nvarchar(20)" null="T" p="F" />
+            <name="CJLRJGID" exp="成绩录入教工ID" type="int" null="T" p="F" />
+            <name="CJLRJGH" exp="成绩录入教工号" type="nvarchar(20)" null="T" p="F" />
+            <name="CJLRRQ" exp="成绩录入日期" type="nvarchar(8)" null="F" p="F" />
+            <name="QZCJ" exp="期中成绩" type="decimal(5, 1)" null="T" p="F" />
+            <name="QMCJ" exp="期末成绩" type="decimal(5, 1)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_07_01_XJSJ" explanation="学籍基本数据表">
         <field_area>
-            <name="XSXXID" explanation="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="ZYXXID" explanation="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
-            <name="ZZBJID" explanation="学校班级数据表" type="nvarchar(10)" null="F" p="F" remark="EDU_ZZJX_02_02_ZZBJ" />
-            <name="ZZNJID" explanation="学校年级数据表" type="nvarchar(4)" null="F" p="F" remark="EDU_ZZJX_02_01_ZZNJ" />
-            <name="RXNY" explanation="入学年月" type="nvarchar(6)" null="F" p="F" />
-            <name="XSLBM" explanation="学生类别码" type="nvarchar(5)" null="F" p="F" remark="EDU_JY_XSLB" />
-            <name="XZ" explanation="学制" type="nvarchar(20)" null="F" p="F" />
-            <name="ZYM" explanation="专业码" type="nvarchar(6)" null="T" p="F" />
-            <name="XSDQZTM" explanation="学生当前状态码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_XSDQZT" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
+            <name="ZZBJID" exp="学校班级数据表" type="nvarchar(10)" null="F" p="F" remark="EDU_ZZJX_02_02_ZZBJ" />
+            <name="ZZNJID" exp="学校年级数据表" type="nvarchar(4)" null="F" p="F" remark="EDU_ZZJX_02_01_ZZNJ" />
+            <name="RXNY" exp="入学年月" type="nvarchar(6)" null="F" p="F" />
+            <name="XSLBM" exp="学生类别码" type="nvarchar(5)" null="F" p="F" remark="EDU_JY_XSLB" />
+            <name="XZ" exp="学制" type="nvarchar(20)" null="F" p="F" />
+            <name="ZYM" exp="专业码" type="nvarchar(6)" null="T" p="F" />
+            <name="XSDQZTM" exp="学生当前状态码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_XSDQZT" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_07_02_XJYD" explanation="学籍异动数据子类表">
         <field_area>
-            <name="ID" explanation="学籍异动表编号" type="int" null="F" p="T" />
-            <name="XSXXID" explanation="学生ID" type="int" null="F" p="F" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="YDLBM" explanation="异动类别码" type="nvarchar(2)" null="F" p="F" />
-            <name="YDRQ" explanation="异动日期" type="nvarchar(8)" null="F" p="F" />
-            <name="YDYYM" explanation="异动原因码" type="nvarchar(2)" null="F" p="F" />
-            <name="SPRQ" explanation="审批日期" type="nvarchar(8)" null="T" p="F" />
-            <name="SPWH" explanation="审批文号" type="nvarchar(24)" null="T" p="F" />
-            <name="JBRID" explanation="经办人ID" type="int" null="T" p="F" />
-            <name="JBRGH" explanation="经办人工号" type="nvarchar(20)" null="T" p="F" />
-            <name="YDLYXXM" explanation="异动来源学校码" type="nvarchar(10)" null="T" p="F" />
-            <name="YDQXXXM" explanation="异动去向学校码" type="nvarchar(10)" null="T" p="F" />
-            <name="YDSM" explanation="异动说明" type="text" null="T" p="F" />
-            <name="YZYM" explanation="原专业码" type="nvarchar(6)" null="T" p="F" />
-            <name="YZYID" explanation="原专业ID" type="int" null="F" p="F" />
-            <name="YBH" explanation="原班号" type="nvarchar(10)" null="F" p="F" />
-            <name="YNJ" explanation="原年级" type="nvarchar(4)" null="F" p="F" />
-            <name="XZYM" explanation="现专业码" type="nvarchar(6)" null="T" p="F" />
-            <name="XZYID" explanation="现专业ID" type="int" null="F" p="F" />
-            <name="XBH" explanation="现班号" type="nvarchar(10)" null="F" p="F" />
-            <name="XNJ" explanation="现年级" type="nvarchar(4)" null="F" p="F" />
+            <name="ID" exp="学籍异动表编号" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="YDLBM" exp="异动类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="YDRQ" exp="异动日期" type="nvarchar(8)" null="F" p="F" />
+            <name="YDYYM" exp="异动原因码" type="nvarchar(2)" null="F" p="F" />
+            <name="SPRQ" exp="审批日期" type="nvarchar(8)" null="T" p="F" />
+            <name="SPWH" exp="审批文号" type="nvarchar(24)" null="T" p="F" />
+            <name="JBRID" exp="经办人ID" type="int" null="T" p="F" />
+            <name="JBRGH" exp="经办人工号" type="nvarchar(20)" null="T" p="F" />
+            <name="YDLYXXM" exp="异动来源学校码" type="nvarchar(10)" null="T" p="F" />
+            <name="YDQXXXM" exp="异动去向学校码" type="nvarchar(10)" null="T" p="F" />
+            <name="YDSM" exp="异动说明" type="text" null="T" p="F" />
+            <name="YZYM" exp="原专业码" type="nvarchar(6)" null="T" p="F" />
+            <name="YZYID" exp="原专业ID" type="int" null="F" p="F" />
+            <name="YBH" exp="原班号" type="nvarchar(10)" null="F" p="F" />
+            <name="YNJ" exp="原年级" type="nvarchar(4)" null="F" p="F" />
+            <name="XZYM" exp="现专业码" type="nvarchar(6)" null="T" p="F" />
+            <name="XZYID" exp="现专业ID" type="int" null="F" p="F" />
+            <name="XBH" exp="现班号" type="nvarchar(10)" null="F" p="F" />
+            <name="XNJ" exp="现年级" type="nvarchar(4)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_07_03_XSZCXX" explanation="学生注册信息数据子类表">
         <field_area>
-            <name="XSXXID" explanation="学生ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="XQID" explanation="学期ID" type="int" null="F" p="T" />
-            <name="ZCZKM" explanation="注册状况码" type="nvarchar(1)" null="F" p="F" />
-            <name="ZCRQ" explanation="注册日期" type="nvarchar(8)" null="F" p="F" />
-            <name="BDRQ" explanation="报到日期" type="nvarchar(8)" null="F" p="F" />
-            <name="WZCYY" explanation="未注册原因" type="nvarchar(100)" null="F" p="F" />
-            <name="WZCWBDQX" explanation="未注册/未报到去向" type="nvarchar(40)" null="F" p="F" />
-            <name="SFQJ" explanation="是否请假" type="nvarchar(1)" null="F" p="F" />
-            <name="WASZCXQM" explanation="未按时注册学期码" type="nvarchar(1)" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
+            <name="ZCZKM" exp="注册状况码" type="nvarchar(1)" null="F" p="F" />
+            <name="ZCRQ" exp="注册日期" type="nvarchar(8)" null="F" p="F" />
+            <name="BDRQ" exp="报到日期" type="nvarchar(8)" null="F" p="F" />
+            <name="WZCYY" exp="未注册原因" type="nvarchar(100)" null="F" p="F" />
+            <name="WZCWBDQX" exp="未注册/未报到去向" type="nvarchar(40)" null="F" p="F" />
+            <name="SFQJ" exp="是否请假" type="nvarchar(1)" null="F" p="F" />
+            <name="WASZCXQM" exp="未按时注册学期码" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_10_02_JXJSJ" explanation="奖学金数据子类表">
         <field_area>
-            <name="XSXXID" explanation="学生ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
-            <name="JXJMC" explanation="奖学金名称" type="nvarchar(30)" null="F" p="F" />
-            <name="JXJBH" explanation="奖学金编号" type="nvarchar(2)" null="F" p="F" />
-            <name="JXJDJ" explanation="奖学金等级" type="nvarchar(20)" null="F" p="F" />
-            <name="JXJLXM" explanation="奖学金类型码" type="nvarchar(2)" null="F" p="F" />
-            <name="JXJE" explanation="奖学金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="HJSJ" explanation="获奖时间" type="datetime" null="F" p="F" />
-            <name="ZZDWHGR" explanation="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
-            <name="JXJLYM" explanation="奖学金来源码" type="nvarchar(1)" null="T" p="F" />
-            <name="SFSH" explanation="是否审核" type="nvarchar(1)" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="JXJMC" exp="奖学金名称" type="nvarchar(30)" null="F" p="F" />
+            <name="JXJBH" exp="奖学金编号" type="nvarchar(2)" null="F" p="F" />
+            <name="JXJDJ" exp="奖学金等级" type="nvarchar(20)" null="F" p="F" />
+            <name="JXJLXM" exp="奖学金类型码" type="nvarchar(2)" null="F" p="F" />
+            <name="JXJE" exp="奖学金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="HJSJ" exp="获奖时间" type="datetime" null="F" p="F" />
+            <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
+            <name="JXJLYM" exp="奖学金来源码" type="nvarchar(1)" null="T" p="F" />
+            <name="SFSH" exp="是否审核" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_10_03_ZXJSJ" explanation="助学金数据子类表">
         <field_area>
-            <name="XSXXID" explanation="学生ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" />
-            <name="ZKBMH" explanation="中考报名号" type="nvarchar(10)" null="T" p="F" />
-            <name="YHKH" explanation="银行卡号" type="nvarchar(30)" null="F" p="F" />
-            <name="ZXJE" explanation="助学金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="SFSJ" explanation="始发时间" type="datetime" null="F" p="F" />
-            <name="TFSJ" explanation="停发时间" type="datetime" null="F" p="F" />
-            <name="TFYY" explanation="停发原因" type="nvarchar(80)" null="F" p="F" />
-            <name="ZXJMC" explanation="助学金名称" type="nvarchar(60)" null="F" p="F" />
-            <name="ZZDWHGR" explanation="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
-            <name="ZXJLX" explanation="助学金类型" type="nvarchar(1)" null="F" p="F" />
-            <name="SFSH" explanation="是否审核" type="nvarchar(1)" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ZKBMH" exp="中考报名号" type="nvarchar(10)" null="T" p="F" />
+            <name="YHKH" exp="银行卡号" type="nvarchar(30)" null="F" p="F" />
+            <name="ZXJE" exp="助学金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="SFSJ" exp="始发时间" type="datetime" null="F" p="F" />
+            <name="TFSJ" exp="停发时间" type="datetime" null="F" p="F" />
+            <name="TFYY" exp="停发原因" type="nvarchar(80)" null="F" p="F" />
+            <name="ZXJMC" exp="助学金名称" type="nvarchar(60)" null="F" p="F" />
+            <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
+            <name="ZXJLX" exp="助学金类型" type="nvarchar(1)" null="F" p="F" />
+            <name="SFSH" exp="是否审核" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_13_A01_XSJL" explanation="学生简历表">
         <field_area>
-            <name="SCHOOLID" explanation="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" explanation="学生信息ID" type="int" null="F" p="T" />
-            <name="YYNL" explanation="英语能力" type="nvarchar(50)" null="F" p="F" />
-            <name="GZNX" explanation="工作年限" type="int" null="F" p="F" />
-            <name="ZWPJ" explanation="自我评价" type="nvarchar(300)" null="F" p="F" />
-            <name="JYJL" explanation="教育经历" type="nvarchar(200)" null="F" p="F" />
-            <name="SHZS" explanation="所获证书" type="nvarchar(200)" null="F" p="F" />
-            <name="GZJY" explanation="工作经验" type="nvarchar(500)" null="F" p="F" />
-            <name="QZYX" explanation="求职意向" type="nvarchar(200)" null="F" p="F" />
-            <name="JNZC" explanation="技能专长" type="nvarchar(300)" null="F" p="F" />
-            <name="XMJY" explanation="项目经验" type="nvarchar(600)" null="F" p="F" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="T" />
+            <name="YYNL" exp="英语能力" type="nvarchar(50)" null="F" p="F" />
+            <name="GZNX" exp="工作年限" type="int" null="F" p="F" />
+            <name="ZWPJ" exp="自我评价" type="nvarchar(300)" null="F" p="F" />
+            <name="JYJL" exp="教育经历" type="nvarchar(200)" null="F" p="F" />
+            <name="SHZS" exp="所获证书" type="nvarchar(200)" null="F" p="F" />
+            <name="GZJY" exp="工作经验" type="nvarchar(500)" null="F" p="F" />
+            <name="QZYX" exp="求职意向" type="nvarchar(200)" null="F" p="F" />
+            <name="JNZC" exp="技能专长" type="nvarchar(300)" null="F" p="F" />
+            <name="XMJY" exp="项目经验" type="nvarchar(600)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>
