@@ -92,7 +92,7 @@ class TemplateBuilder
     end
     str << "#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << "{\n#{@tab.l}throw new Exception(\"记录不存在\");\n#{@tab.t}//#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n"
+    str << "{\n#{@tab.l}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}//throw new Exception(\"记录不存在\");\n"
     str << "#{@tab.s}}\n#{@tab.t}#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n"
   end
@@ -109,10 +109,14 @@ class TemplateBuilder
   end
   def make_controller_create(table)
     str = "#{@tab.t}public ActionResult Create()\n#{@tab.t}"
-    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}return View(new #{table.name}());\n""#{@tab.s}}\n\n"
+    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}"
+    str << "return View(new #{table.name}());\n#{@tab.s}}\n\n"
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Create(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
-    str << "{\n#{@tab.l}//\n#{@tab.t}//\n#{@tab.t}Add#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
+    str << "{\n#{@tab.l}\n#{@tab.t}if (ModelState.IsValid)\n#{@tab.t}"
+    str << "{\n#{@tab.l}Add#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
+    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
+    str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
@@ -121,10 +125,15 @@ class TemplateBuilder
   end
   def make_controller_edit(table)
     str = "#{@tab.t}public ActionResult Edit(int id)\n#{@tab.t}"
-    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}#{table.name} #{table.lname_dc}= #{table.db_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}return View(#{table.lname_dc});\n"
-    str << "#{@tab.s}}\n\n#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Edit(#{table.name} #{table.lname_dc})\n#{@tab.t}"
+    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}"
+    str << "#{table.name} #{table.lname_dc}= #{table.db_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}"
+    str << "return View(#{table.lname_dc});\n#{@tab.s}}\n\n"
+    str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Edit(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
-    str << "{\n#{@tab.l}\n#{@tab.t}\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
+    str << "{\n#{@tab.l}\n#{@tab.t}if (ModelState.IsValid)\n#{@tab.t}"
+    str << "{\n#{@tab.l}Upd#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
+    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
+    str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
