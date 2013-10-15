@@ -245,6 +245,112 @@
             <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_15_A01_ZCML" explanation="资产目录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Name" exp="资产目录名称" type="nvarchar(100)" null="F" p="F" />
+            <name="Superid" exp="父目录ID" type="int" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A02_ZCDL" explanation="资产大类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Name" exp="资产大类名称" type="nvarchar(100)" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A03_ZCKC" explanation="资产库存表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TypeID" exp="资产目录表ID" type="int" null="F" p="F" />
+            <name="ClassID" exp="资产大类表ID" type="int" null="F" p="F" />
+            <name="Name" exp="资产名称" type="nvarchar(200)" null="F" p="F" />
+            <name="Info" exp="资产规格" type="nvarchar(200)" null="F" p="F" />
+            <name="Productdate" exp="出厂时间" type="datetime" null="F" p="F" />
+            <name="Price" exp="单价" type="decimal(10, 2)" null="F" p="F" />
+            <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
+            <name="Merchant" exp="供应商" type="nvarchar(200)" null="F" p="F" />
+            <name="Vender" exp="厂家" type="nvarchar(200)" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A04_ZCRK" explanation="资产入库表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TypeID" exp="资产目录表ID" type="int" null="F" p="F" />
+            <name="ClassID" exp="资产大类表ID" type="int" null="F" p="F" />
+            <name="Name" exp="资产名称" type="nvarchar(200)" null="F" p="F" />
+            <name="Info" exp="资产规格" type="nvarchar(200)" null="F" p="F" />
+            <name="Productdate" exp="出厂时间" type="datetime" null="F" p="F" />
+            <name="Price" exp="单价" type="decimal(10, 2)" null="F" p="F" />
+            <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
+            <name="Merchant" exp="供应商" type="nvarchar(200)" null="F" p="F" />
+            <name="Vender" exp="厂家" type="nvarchar(200)" null="F" p="F" />
+            <name="Registdate" exp="登记时间" type="datetime" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A05_ZCJH" explanation="资产借还表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TypeID" exp="资产目录表ID" type="int" null="F" p="F" />
+            <name="ClassID" exp="资产大类表ID" type="int" null="F" p="F" />
+            <name="AID" exp="库存表ID" type="int" null="F" p="F" />
+            <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
+            <name="Unit" exp="单位" type="nvarchar(10)" null="F" p="F" />
+            <name="Borrower" exp="借用方" type="nvarchar(200)" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A06_ZCBG" explanation="资产变更表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TypeID" exp="类别(领用、借用、报损)" type="int" null="F" p="F" />
+            <name="TypeName" exp="类别名称" type="nvarchar(100)" null="F" p="F" />
+            <name="AID" exp="库存表ID" type="int" null="F" p="F" />
+            <name="Name" exp="资产名称" type="nvarchar(200)" null="F" p="F" />
+            <name="Option" exp="操作" type="nvarchar(200)" null="F" p="F" />
+            <name="RegistTime" exp="登记时间" type="datetime" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A07_BXLX" explanation="报修类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TypeName" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A08_BXGL" explanation="报修管理表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="AID" exp="库存表ID" type="int" null="F" p="F" />
+            <name="TypeID" exp="报修类型ID" type="int" null="F" p="F" />
+            <name="Title" exp="报修主题" type="nvarchar(300)" null="F" p="F" />
+            <name="Telephone" exp="联系电话" type="nvarchar(20)" null="F" p="F" />
+            <name="Repairplace" exp="报修地点" type="nvarchar(20)" null="F" p="F" />
+            <name="Repaircontent" exp="报修内容" type="nvarchar(20)" null="F" p="F" />
+            <name="Repairpeople" exp="维修人" type="nvarchar(20)" null="F" p="F" />
+            <name="RepairDate" exp="维修时间" type="datetime" null="F" p="F" />
+            <name="ReadrID" exp="阅读情况" type="nvarchar(200)" null="F" p="F" />
+            <name="Readr" exp="阅读情况" type="nvarchar(200)" null="F" p="F" />
+            <name="Applicant" exp="申请人" type="nvarchar(50)" null="F" p="F" />
+            <name="Approver" exp="审批人" type="nvarchar(50)" null="T" p="F" />
+            <name="Evaluate" exp="评价" type="nvarchar(200)" null="F" p="F" />
+            <name="StartDate" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="Status" exp="状态" type="int" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_20_A01_LCMBLX" explanation="流程模板类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

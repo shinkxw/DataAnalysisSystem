@@ -159,6 +159,30 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_14_A01
             and   type = 'V')
    drop view VIEW_EDU_OAXT_14_A01_GRRCXX_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A01_ZCML_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A01_ZCML_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A03_ZCKC_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A03_ZCKC_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A04_ZCRK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A04_ZCRK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A05_ZCJH_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A05_ZCJH_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A06_ZCBG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A06_ZCBG_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A08_BXGL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A08_BXGL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A03_LCMB_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_20_A03_LCMB_DISP
@@ -2535,6 +2559,186 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_OAXT_14_A01_GRRCXX AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS d ON a.SFTS = d.DM /*是否提示*/
+GO
+
+--资产目录表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A01_ZCML_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[Name]--资产目录名称
+      ,a.[Superid]--父目录ID
+      ,a.[Remark]--备注
+      ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
+      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
+      ,c.Remark as c_ZCML_Remark--资产目录表 备注
+
+FROM dbo.EDU_OAXT_15_A01_ZCML AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A01_ZCML AS c ON a.Superid = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--资产库存表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A03_ZCKC_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[TypeID]--资产目录表ID
+      ,a.[ClassID]--资产大类表ID
+      ,a.[Name]--资产名称
+      ,a.[Info]--资产规格
+      ,a.[Productdate]--出厂时间
+      ,a.[Price]--单价
+      ,a.[SumCount]--数量
+      ,a.[Merchant]--供应商
+      ,a.[Vender]--厂家
+      ,a.[Remark]--备注
+      ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
+      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
+      ,c.Remark as c_ZCML_Remark--资产目录表 备注
+      ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
+      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Remark as d_ZCDL_Remark--资产大类表 备注
+
+FROM dbo.EDU_OAXT_15_A03_ZCKC AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A01_ZCML AS c ON a.TypeID = c.ID /*资产目录表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A02_ZCDL AS d ON a.ClassID = d.ID /*资产大类表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--资产入库表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A04_ZCRK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[TypeID]--资产目录表ID
+      ,a.[ClassID]--资产大类表ID
+      ,a.[Name]--资产名称
+      ,a.[Info]--资产规格
+      ,a.[Productdate]--出厂时间
+      ,a.[Price]--单价
+      ,a.[SumCount]--数量
+      ,a.[Merchant]--供应商
+      ,a.[Vender]--厂家
+      ,a.[Registdate]--登记时间
+      ,a.[Remark]--备注
+      ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
+      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
+      ,c.Remark as c_ZCML_Remark--资产目录表 备注
+      ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
+      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Remark as d_ZCDL_Remark--资产大类表 备注
+
+FROM dbo.EDU_OAXT_15_A04_ZCRK AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A01_ZCML AS c ON a.TypeID = c.ID /*资产目录表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A02_ZCDL AS d ON a.ClassID = d.ID /*资产大类表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--资产借还表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A05_ZCJH_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[TypeID]--资产目录表ID
+      ,a.[ClassID]--资产大类表ID
+      ,a.[AID]--库存表ID
+      ,a.[SumCount]--数量
+      ,a.[Unit]--单位
+      ,a.[Borrower]--借用方
+      ,a.[Remark]--备注
+      ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
+      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
+      ,c.Remark as c_ZCML_Remark--资产目录表 备注
+      ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
+      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Remark as d_ZCDL_Remark--资产大类表 备注
+      ,e.SCHOOLID as e_ZCKC_SCHOOLID--资产库存表 学校
+      ,e.TypeID as e_ZCKC_TypeID--资产库存表 资产目录表ID
+      ,e.ClassID as e_ZCKC_ClassID--资产库存表 资产大类表ID
+      ,e.Name as e_ZCKC_Name--资产库存表 资产名称
+      ,e.Info as e_ZCKC_Info--资产库存表 资产规格
+      ,e.Productdate as e_ZCKC_Productdate--资产库存表 出厂时间
+      ,e.Price as e_ZCKC_Price--资产库存表 单价
+      ,e.SumCount as e_ZCKC_SumCount--资产库存表 数量
+      ,e.Merchant as e_ZCKC_Merchant--资产库存表 供应商
+      ,e.Vender as e_ZCKC_Vender--资产库存表 厂家
+      ,e.Remark as e_ZCKC_Remark--资产库存表 备注
+
+FROM dbo.EDU_OAXT_15_A05_ZCJH AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A01_ZCML AS c ON a.TypeID = c.ID /*资产目录表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A02_ZCDL AS d ON a.ClassID = d.ID /*资产大类表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A03_ZCKC AS e ON a.AID = e.ID /*库存表ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
+GO
+
+--资产变更表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A06_ZCBG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[TypeID]--类别(领用、借用、报损)
+      ,a.[TypeName]--类别名称
+      ,a.[AID]--库存表ID
+      ,a.[Name]--资产名称
+      ,a.[Option]--操作
+      ,a.[RegistTime]--登记时间
+      ,a.[Remark]--备注
+      ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
+      ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
+      ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID
+      ,c.Name as c_ZCKC_Name--资产库存表 资产名称
+      ,c.Info as c_ZCKC_Info--资产库存表 资产规格
+      ,c.Productdate as c_ZCKC_Productdate--资产库存表 出厂时间
+      ,c.Price as c_ZCKC_Price--资产库存表 单价
+      ,c.SumCount as c_ZCKC_SumCount--资产库存表 数量
+      ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
+      ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
+      ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+
+FROM dbo.EDU_OAXT_15_A06_ZCBG AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--报修管理表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A08_BXGL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[AID]--库存表ID
+      ,a.[TypeID]--报修类型ID
+      ,a.[Title]--报修主题
+      ,a.[Telephone]--联系电话
+      ,a.[Repairplace]--报修地点
+      ,a.[Repaircontent]--报修内容
+      ,a.[Repairpeople]--维修人
+      ,a.[RepairDate]--维修时间
+      ,a.[ReadrID]--阅读情况
+      ,a.[Readr]--阅读情况
+      ,a.[Applicant]--申请人
+      ,a.[Approver]--审批人
+      ,a.[Evaluate]--评价
+      ,a.[StartDate]--开始时间
+      ,a.[Status]--状态
+      ,a.[Remark]--备注
+      ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
+      ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
+      ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID
+      ,c.Name as c_ZCKC_Name--资产库存表 资产名称
+      ,c.Info as c_ZCKC_Info--资产库存表 资产规格
+      ,c.Productdate as c_ZCKC_Productdate--资产库存表 出厂时间
+      ,c.Price as c_ZCKC_Price--资产库存表 单价
+      ,c.SumCount as c_ZCKC_SumCount--资产库存表 数量
+      ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
+      ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
+      ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,d.SCHOOLID as d_BXLX_SCHOOLID--报修类型表 学校
+      ,d.TypeName as d_BXLX_TypeName--报修类型表 类型名称
+      ,d.Remark as d_BXLX_Remark--报修类型表 备注
+
+FROM dbo.EDU_OAXT_15_A08_BXGL AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A07_BXLX AS d ON a.TypeID = d.ID /*报修类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --流程模板表

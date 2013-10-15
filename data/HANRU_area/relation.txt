@@ -169,6 +169,33 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   YHID           EDU_ELE_01_USER                    LOGINNAME
   SFTS           EDU_JY_SFBZ                        DM
+<EDU_OAXT_15_A01_ZCML
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  Superid        EDU_OAXT_15_A01_ZCML               ID
+<EDU_OAXT_15_A02_ZCDL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_15_A03_ZCKC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TypeID         EDU_OAXT_15_A01_ZCML               ID
+  ClassID        EDU_OAXT_15_A02_ZCDL               ID
+<EDU_OAXT_15_A04_ZCRK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TypeID         EDU_OAXT_15_A01_ZCML               ID
+  ClassID        EDU_OAXT_15_A02_ZCDL               ID
+<EDU_OAXT_15_A05_ZCJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TypeID         EDU_OAXT_15_A01_ZCML               ID
+  ClassID        EDU_OAXT_15_A02_ZCDL               ID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+<EDU_OAXT_15_A06_ZCBG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+<EDU_OAXT_15_A07_BXLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_15_A08_BXGL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+  TypeID         EDU_OAXT_15_A07_BXLX               ID
 <EDU_OAXT_20_A02_LCBDSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_20_A03_LCMB
