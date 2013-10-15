@@ -8,19 +8,17 @@ class ViewBuilder
   attr_reader :need_delete#是否增加删除语句
   attr_reader :bz_inf_arr#关联标准信息数组
   attr_reader :ignore_table_arr#忽视关联表数组
-  attr_reader :bulid_table_name_arr#需生成视图的表名数组,nil为全生成
-  attr_reader :builder_version#生成器版本
+  attr_reader :bulid_arr#需生成视图的表名数组,nil为全生成
   @@Short_name = %w(b c d e f g h i j k l m n o p q r s t u v w x y z)
   #初始化
-  def initialize(need_delete = true,bulid_table_name_arr = nil,log = Log.new)
+  def initialize(need_delete = true,bulid_arr = nil,log = Log.new)
     @area = nil
     @table_arr = nil
     @view_str = nil
     @need_delete = need_delete
     @bz_inf_arr = nil
     @ignore_table_arr = ["EDU_ELE_01_SCHOOL"]
-    @bulid_table_name_arr = bulid_table_name_arr
-    @builder_version = "0.1"
+    @bulid_arr = bulid_arr
     @log = log
   end
   #生成view脚本
@@ -168,18 +166,8 @@ class ViewBuilder
   end
   #查找存在关联的表
   def find_relation_table
-    table_arr = @area.get_table_arr
-    if @bulid_table_name_arr == nil
-      table_arr.each do |table|
-        if table.field_area.find{|f| f.relation != nil && f.relation.name != 'SCHOOLID'}
-          @table_arr.push(table) 
-        end
-      end
-    else
-      table_arr.each do |table|
-        @table_arr.push(table) if @bulid_table_name_arr.include?(table.name)
-      end
-    end
+    tarr = @area.get_table_arr
+    @table_arr = @bulid_arr ? tarr.select{|t| @bulid_arr.include?(t.name)} : tarr.select{|t| t.has_view?}
   end
   #根据关联字段获得所关联的表
   def get_relation_table_arr(relation_field_arr)

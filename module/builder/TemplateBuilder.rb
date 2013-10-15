@@ -56,7 +56,7 @@ class TemplateBuilder
   end
   def make_controller_index_jsonstr(table)
     str = %({\n#{@tab.l}public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")\n#{@tab.t})
-    str << "{\n#{@tab.l}List<VIEW_#{table.name}_DISP> model = #{table.db_name}.VIEW_#{table.name}_DISP.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
+    str << "{\n#{@tab.l}List<#{'VIEW_' if table.has_view?}#{table.name}#{'_DISP' if table.has_view?}> model = #{table.db_name}.#{'VIEW_' if table.has_view?}#{table.name}#{'_DISP' if table.has_view?}.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
     str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey)).ToList();\n"
     str << "#{@tab.s}}\n\n#{@tab.t}if (!String.IsNullOrEmpty(sort))\n#{@tab.t}"
     str << "{\n#{@tab.l}if (order.Equals(\"desc\"))\n#{@tab.t}"
@@ -114,10 +114,10 @@ class TemplateBuilder
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}//\n#{@tab.t}//\n#{@tab.t}Add#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
-    str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
+    str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
+    str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(e.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
-    str << "#{@tab.s}}\n"
-    str << "#{@tab.s}}\n\n"
+    str << "#{@tab.s}}\n#{@tab.s}}\n\n"
   end
   def make_controller_edit(table)
     str = "#{@tab.t}public ActionResult Edit(int id)\n#{@tab.t}"
@@ -129,8 +129,7 @@ class TemplateBuilder
     str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(e.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
-    str << "#{@tab.s}}\n"
-    str << "#{@tab.s}}\n\n"
+    str << "#{@tab.s}}\n#{@tab.s}}\n\n"
   end
   def make_controller_delete(table,is_multi)
     str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(String id#{'Lst' if is_multi})\n#{@tab.t}"
