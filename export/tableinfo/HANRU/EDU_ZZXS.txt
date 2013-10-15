@@ -210,3 +210,37 @@ EDU_ZZXS_13_A01_XSJL  学生简历表
   JNZC          技能专长                nvarchar(300)  非主
   XMJY          项目经验                nvarchar(600)  非主
 
+EDU_ZZXS_14_A01_XSKHXM  学生考核项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XMMC          项目名称                nvarchar(20)   非主
+
+EDU_ZZXS_14_A02_XSKHBSJ  学生考核表数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KHBMC         考核表名称              nvarchar(20)   非主
+  KHBJDMLB      考核班级代码列表        text           非主
+  KHXMIDLB      考核项目ID列表          text           非主
+  KHJSMCLB      考核教师名称列表        text           非主
+  KHJSIDLB      考核教师ID列表          text           非主
+
+EDU_ZZXS_14_A03_XSRCXWGFKHSJ  学生日常行为规范考核数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KHBJDM        考核班级代码            nvarchar(10)   非主        学校班级数据表
+  KHBID         考核表ID                int            非主        学生考核表数据表
+  KHXMID        考核项目ID              int            非主        学生考核项目表
+  KHFZ          考核分值                int            非主
+  KHSJ          考核时间                datetime       非主
+  JLJSID        记录教师ID              int            非主        教职工基本数据子类表
+
+EDU_ZZXS_14_A04_XSWWYTZQSJ  学生五位一体值勤数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BGLX          报告类型                int            非主
+  JXBMC         教学部名称              nvarchar(36)   非主
+  BGRLX         报告人类型              int            非主
+  BGRID         报告人ID                int            非主
+  NR            内容                    text           非主
+  ZRSJ          值日时间                datetime       非主
+
