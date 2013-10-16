@@ -351,6 +351,49 @@
             <name="Remark" exp="备注" type="nvarchar(300)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_15_A09_WXJH" explanation="维修计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="AID" exp="库存表ID" type="int" null="F" p="F" />
+            <name="Title" exp="计划标题" type="nvarchar(100)" null="F" p="F" />
+            <name="Content" exp="维修内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A10_ZCBF" explanation="资产报废表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="AID" exp="库存表ID" type="int" null="F" p="F" />
+            <name="Sum" exp="数量" type="decimal(8, 2)" null="F" p="F" />
+            <name="Reporter" exp="申报人" type="nvarchar(100)" null="F" p="F" />
+            <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+            <name="RegsterID" exp="登记人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="Statu" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A11_ZCPD" explanation="资产盘点表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Title" exp="盘点名称" type="nvarchar(100)" null="F" p="F" />
+            <name="PanDate" exp="盘点日期" type="datetime" null="F" p="F" />
+            <name="PanTypeIDs" exp="盘点目录ID列表" type="text" null="F" p="F" />
+            <name="Remark" exp="备注" type="text" null="F" p="F" />
+            <name="Statu" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A12_ZCPDMX" explanation="资产盘点明细表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="AID" exp="库存表ID" type="int" null="F" p="F" />
+            <name="PID" exp="盘点表ID" type="int" null="F" p="F" />
+            <name="PUserID" exp="盘点人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="Storesum" exp="库存数" type="decimal(8, 2)" null="F" p="F" />
+            <name="RealSum" exp="实存数" type="decimal(8, 2)" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_20_A01_LCMBLX" explanation="流程模板类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

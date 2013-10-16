@@ -299,6 +299,41 @@ EDU_OAXT_15_A08_BXGL  报修管理表
   Status        状态                    int            非主
   Remark        备注                    nvarchar(300)  非主
 
+EDU_OAXT_15_A09_WXJH  维修计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  AID           库存表ID                int            非主        资产库存表
+  Title         计划标题                nvarchar(100)  非主
+  Content       维修内容                text           非主
+
+EDU_OAXT_15_A10_ZCBF  资产报废表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  AID           库存表ID                int            非主        资产库存表
+  Sum           数量                    decimal(8, 2)  非主
+  Reporter      申报人                  nvarchar(100)  非主
+  Remark        备注                    nvarchar(100)  非主
+  RegsterID     登记人ID                nvarchar(20)   非主        应用系统用户表
+  Statu         状态                    int            非主
+
+EDU_OAXT_15_A11_ZCPD  资产盘点表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  Title         盘点名称                nvarchar(100)  非主
+  PanDate       盘点日期                datetime       非主
+  PanTypeIDs    盘点目录ID列表          text           非主
+  Remark        备注                    text           非主
+  Statu         状态                    int            非主
+
+EDU_OAXT_15_A12_ZCPDMX  资产盘点明细表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  AID           库存表ID                int            非主        资产库存表
+  PID           盘点表ID                int            非主        资产盘点表
+  PUserID       盘点人ID                nvarchar(20)   非主        应用系统用户表
+  Storesum      库存数                  decimal(8, 2)  非主
+  RealSum       实存数                  decimal(8, 2)  非主
+
 EDU_OAXT_20_A01_LCMBLX  流程模板类型表
   ID            编号                    int            主键
   LXMC          类型名称                nvarchar(100)  非主

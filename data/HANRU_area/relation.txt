@@ -196,6 +196,20 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   AID            EDU_OAXT_15_A03_ZCKC               ID
   TypeID         EDU_OAXT_15_A07_BXLX               ID
+<EDU_OAXT_15_A09_WXJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+<EDU_OAXT_15_A10_ZCBF
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+  RegsterID      EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_15_A11_ZCPD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_15_A12_ZCPDMX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+  PID            EDU_OAXT_15_A11_ZCPD               ID
+  PUserID        EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_20_A02_LCBDSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_20_A03_LCMB
