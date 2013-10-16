@@ -73,6 +73,11 @@ namespace HanRuEdu.LDAL
             public String ModuleIdList { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÆôÓÃ×´Ì¬")]
+            public Int32 EnableStatus { get; set; }
+
+
         }
     }
 }
