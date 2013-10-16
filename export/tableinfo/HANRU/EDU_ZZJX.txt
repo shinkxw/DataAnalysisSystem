@@ -23,15 +23,6 @@ EDU_ZZJX_01_A01_KCPJ  课程评价表
   PJNR          评价内容                text           非主
   HF            回复                    text           非主
 
-EDU_ZZJX_01_A02_JSRK  教师任课表
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  KXH           课序号                  int            主键
-  JSID          教师表ID                int            非主        教职工基本数据子类表
-  KCH           课程号                  nvarchar(6)    非主        课程数据子类表
-  JHBH          计划编号                nvarchar(5)    非主        总体教学计划数据子类表
-  XQID          学期ID                  int            非主        学期数据表
-  JXDG          教学大纲                text           非主
-
 EDU_ZZJX_01_02_KC  课程数据子类表
   KCH           课程号                  nvarchar(6)    主键
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -49,6 +40,15 @@ EDU_ZZJX_01_02_KC  课程数据子类表
   KSXS          考试形式                nvarchar(1)    非主        考试形式代码表
   SKFSM         授课方式码              nvarchar(1)    非主        授课方式代码表
   KCFY          课程费用                money          非主
+
+EDU_ZZJX_01_A02_JSRK  教师任课表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  KXH           课序号                  int            主键
+  JSID          教师表ID                int            非主        教职工基本数据子类表
+  KCH           课程号                  nvarchar(6)    非主        课程数据子类表
+  JHBH          计划编号                nvarchar(5)    非主        总体教学计划数据子类表
+  XQID          学期ID                  int            非主        学期数据表
+  JXDG          教学大纲                text           非主
 
 EDU_ZZJX_02_01_ZZNJ  学校年级数据表
   NJDM          年级代码                nvarchar(4)    主键
@@ -74,13 +74,6 @@ EDU_ZZJX_02_02_ZZBJ  学校班级数据表
   JGH           机构号                  nvarchar(6)    非主        校内机构数据类表
   XQDM          校区代码                nvarchar(2)    非主
 
-EDU_ZZJX_03_A01_XQXFGL  学期学分管理表
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  XQID          学期ID                  int            主键        学期数据表
-  JHBH          计划编号                nvarchar(5)    主键        总体教学计划数据子类表
-  ZDXF          最高学分                decimal(3, 1)  非主
-  ZGXF          最低学分                decimal(3, 1)  非主
-
 EDU_ZZJX_03_01_ZTJXJH  总体教学计划数据子类表
   SCHOOLID      学校ID                  int            主键        学校配置表
   JHBH          计划编号                nvarchar(5)    主键
@@ -93,6 +86,13 @@ EDU_ZZJX_03_01_ZTJXJH  总体教学计划数据子类表
   PYMB          培养目标                text           非主
   SFKY          是否可用                nvarchar(1)    非主        授课方式代码表
   FJ            附件                    text           非主
+
+EDU_ZZJX_03_A01_XQXFGL  学期学分管理表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            主键        学期数据表
+  JHBH          计划编号                nvarchar(5)    主键        总体教学计划数据子类表
+  ZDXF          最高学分                decimal(3, 1)  非主
+  ZGXF          最低学分                decimal(3, 1)  非主
 
 EDU_ZZJX_03_02_JXJHFLXFYQ  教学计划分类学分要求数据子类
   SCHOOLID      学校ID                  int            主键        学校配置表

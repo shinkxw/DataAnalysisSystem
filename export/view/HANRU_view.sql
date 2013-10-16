@@ -555,13 +555,13 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_A01
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_A01_KCPJ_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_A02_JSRK_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZZJX_01_A02_JSRK_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_02_KC_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_02_KC_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_A02_JSRK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_01_A02_JSRK_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_02_01_ZZNJ_DISP')
             and   type = 'V')
@@ -571,13 +571,13 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_02_02_
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_02_02_ZZBJ_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_01_ZTJXJH_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_03_01_ZTJXJH_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_02_JXJHFLXFYQ_DISP')
             and   type = 'V')
@@ -719,13 +719,13 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXX_03_A01
             and   type = 'V')
    drop view VIEW_EDU_ZZXX_03_A01_JGGW_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_01_A01_ZSJH_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ZZZS_01_A01_ZSJH_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_01_01_ZSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZZS_01_01_ZSXX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_01_A01_ZSJH_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZZS_01_A01_ZSJH_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZZS_02_01_RXCJ_DISP')
             and   type = 'V')
@@ -8665,6 +8665,51 @@ FROM dbo.EDU_ZZJX_01_A01_KCPJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.PJR = d.LOGINNAME /*评价人*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO
 
+--课程数据子类表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_02_KC_DISP]
+AS
+SELECT a.[KCH]--课程号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[KCMC]--课程名称
+      ,a.[KCYWM]--课程英文名
+      ,a.[KCBM]--课程别名
+      ,a.[KCJS]--课程介绍
+      ,a.[XF]--学分
+      ,a.[ZXS]--总学时
+      ,a.[LLXS]--理论学时
+      ,a.[SJXS]--实践学时
+      ,a.[QTXS]--其他学时
+      ,a.[CKSM]--参考书目
+      ,a.[KKDW]--开课单位
+      ,a.[KSXS]--考试形式
+      ,a.[SKFSM]--授课方式码
+      ,a.[KCFY]--课程费用
+      ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
+      ,c.JGMC as c_XNJG_JGMC--校内机构数据类表 机构名称
+      ,c.JGYWMC as c_XNJG_JGYWMC--校内机构数据类表 机构英文名称
+      ,c.JGJC as c_XNJG_JGJC--校内机构数据类表 机构简称
+      ,c.JGJP as c_XNJG_JGJP--校内机构数据类表 机构简拼
+      ,c.JGDZ as c_XNJG_JGDZ--校内机构数据类表 机构地址
+      ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
+      ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
+      ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
+      ,cb.MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
+      ,cc.MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
+      ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
+      ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
+      ,d.MC as d_KSXS_MC--考试形式代码表 名称
+      ,e.MC as e_SKFS_MC--授课方式代码表 名称
+
+FROM dbo.EDU_ZZJX_01_02_KC AS a LEFT OUTER JOIN
+      dbo.EDU_ZZXX_03_01_XNJG AS c ON a.KKDW = c.JGH /*开课单位*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS d ON a.KSXS = d.DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS e ON a.SKFSM = e.DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cb ON c.JGYXBS = cb.DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
+GO
+
 --教师任课表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_A02_JSRK_DISP]
 AS
@@ -8809,51 +8854,6 @@ FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS fb ON f.XQM = fb.DM /*学期码*/
 GO
 
---课程数据子类表
-CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_02_KC_DISP]
-AS
-SELECT a.[KCH]--课程号
-      ,a.[SCHOOLID]--学校ID
-      ,a.[KCMC]--课程名称
-      ,a.[KCYWM]--课程英文名
-      ,a.[KCBM]--课程别名
-      ,a.[KCJS]--课程介绍
-      ,a.[XF]--学分
-      ,a.[ZXS]--总学时
-      ,a.[LLXS]--理论学时
-      ,a.[SJXS]--实践学时
-      ,a.[QTXS]--其他学时
-      ,a.[CKSM]--参考书目
-      ,a.[KKDW]--开课单位
-      ,a.[KSXS]--考试形式
-      ,a.[SKFSM]--授课方式码
-      ,a.[KCFY]--课程费用
-      ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
-      ,c.JGMC as c_XNJG_JGMC--校内机构数据类表 机构名称
-      ,c.JGYWMC as c_XNJG_JGYWMC--校内机构数据类表 机构英文名称
-      ,c.JGJC as c_XNJG_JGJC--校内机构数据类表 机构简称
-      ,c.JGJP as c_XNJG_JGJP--校内机构数据类表 机构简拼
-      ,c.JGDZ as c_XNJG_JGDZ--校内机构数据类表 机构地址
-      ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
-      ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
-      ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,cb.MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
-      ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
-      ,cc.MC as c_XNJG_SFST_MC--是否标志代码表 名称
-      ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
-      ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
-      ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
-      ,d.MC as d_KSXS_MC--考试形式代码表 名称
-      ,e.MC as e_SKFS_MC--授课方式代码表 名称
-
-FROM dbo.EDU_ZZJX_01_02_KC AS a LEFT OUTER JOIN
-      dbo.EDU_ZZXX_03_01_XNJG AS c ON a.KKDW = c.JGH /*开课单位*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS d ON a.KSXS = d.DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS e ON a.SKFSM = e.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.JGYXBS = cb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
-GO
-
 --学校年级数据表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_02_01_ZZNJ_DISP]
 AS
@@ -8934,40 +8934,6 @@ FROM dbo.EDU_ZZJX_02_02_ZZBJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS ec ON e.SFST = ec.DM /*是否实体*/
 GO
 
---学期学分管理表
-CREATE VIEW [dbo].[VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP]
-AS
-SELECT a.[SCHOOLID]--学校ID
-      ,a.[XQID]--学期ID
-      ,a.[JHBH]--计划编号
-      ,a.[ZDXF]--最高学分
-      ,a.[ZGXF]--最低学分
-      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
-      ,c.XNID as c_XQ_XNID--学期数据表 学年
-      ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
-      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
-      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
-      ,d.SCHOOLID as d_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
-      ,d.JHNJ as d_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级
-      ,d.ZYXXID as d_ZTJXJH_ZYXXID--总体教学计划数据子类表 专业编号
-      ,d.JHZYMC as d_ZTJXJH_JHZYMC--总体教学计划数据子类表 计划专业名称
-      ,d.ZXFYQ as d_ZTJXJH_ZXFYQ--总体教学计划数据子类表 总学分要求
-      ,d.JLNY as d_ZTJXJH_JLNY--总体教学计划数据子类表 建立年月
-      ,d.SYXZ as d_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
-      ,d.PYMB as d_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
-      ,d.SFKY as d_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,db.MC as d_ZTJXJH_SFKY_MC--授课方式代码表 名称
-      ,d.FJ as d_ZTJXJH_FJ--总体教学计划数据子类表 附件
-
-FROM dbo.EDU_ZZJX_03_A01_XQXFGL AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_03_01_ZTJXJH AS d ON a.JHBH = d.JHBH /*计划编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS db ON d.SFKY = db.DM /*是否可用*/
-GO
-
 --总体教学计划数据子类表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_03_01_ZTJXJH_DISP]
 AS
@@ -9012,6 +8978,40 @@ FROM dbo.EDU_ZZJX_03_01_ZTJXJH AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cb ON c.NJZT = cb.DM /*年级状态*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS dc ON d.SSZYML = dc.DM /*所属专业目录*/
+GO
+
+--学期学分管理表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_03_A01_XQXFGL_DISP]
+AS
+SELECT a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[JHBH]--计划编号
+      ,a.[ZDXF]--最高学分
+      ,a.[ZGXF]--最低学分
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
+      ,d.JHNJ as d_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级
+      ,d.ZYXXID as d_ZTJXJH_ZYXXID--总体教学计划数据子类表 专业编号
+      ,d.JHZYMC as d_ZTJXJH_JHZYMC--总体教学计划数据子类表 计划专业名称
+      ,d.ZXFYQ as d_ZTJXJH_ZXFYQ--总体教学计划数据子类表 总学分要求
+      ,d.JLNY as d_ZTJXJH_JLNY--总体教学计划数据子类表 建立年月
+      ,d.SYXZ as d_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
+      ,d.PYMB as d_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
+      ,d.SFKY as d_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
+      ,db.MC as d_ZTJXJH_SFKY_MC--授课方式代码表 名称
+      ,d.FJ as d_ZTJXJH_FJ--总体教学计划数据子类表 附件
+
+FROM dbo.EDU_ZZJX_03_A01_XQXFGL AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_03_01_ZTJXJH AS d ON a.JHBH = d.JHBH /*计划编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS db ON d.SFKY = db.DM /*是否可用*/
 GO
 
 --教学计划分类学分要求数据子类
@@ -12524,41 +12524,6 @@ FROM dbo.EDU_ZZXX_03_A01_JGGW AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
 GO
 
---招生计划数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZZZS_01_A01_ZSJH_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SCHOOLID]--学校名
-      ,a.[ZYXXID]--专业基本信息
-      ,a.[XNID]--学年
-      ,a.[ZSJHRS]--招生计划
-      ,a.[BZ]--备注
-      ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
-      ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,cb.MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
-      ,c.ZYMC as c_ZYXX_ZYMC--专业基本信息数据表 专业名称
-      ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
-      ,c.XZ as c_ZYXX_XZ--专业基本信息数据表 学制
-      ,c.ZYFXMC as c_ZYXX_ZYFXMC--专业基本信息数据表 专业方向名称
-      ,c.ZYJC as c_ZYXX_ZYJC--专业基本信息数据表 专业简称
-      ,c.JLNY as c_ZYXX_JLNY--专业基本信息数据表 建立年月
-      ,c.ZYJSS as c_ZYXX_ZYJSS--专业基本信息数据表 专业教师数
-      ,c.KSJGH as c_ZYXX_KSJGH--专业基本信息数据表 开设机构号
-      ,c.ZXF as c_ZYXX_ZXF--专业基本信息数据表 总学分
-      ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,cc.MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
-      ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
-      ,d.SCHOOLID as d_XN_SCHOOLID--学年表 学校名
-      ,d.XN as d_XN_XN--学年表 学年
-
-FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS cc ON c.SSZYML = cc.DM /*所属专业目录*/
-GO
-
 --考生数据表
 CREATE VIEW [dbo].[VIEW_EDU_ZZZS_01_01_ZSXX_DISP]
 AS
@@ -12661,6 +12626,41 @@ FROM dbo.EDU_ZZZS_01_01_ZSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
       dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+GO
+
+--招生计划数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZZZS_01_A01_ZSJH_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[ZYXXID]--专业基本信息
+      ,a.[XNID]--学年
+      ,a.[ZSJHRS]--招生计划
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
+      ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
+      ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,cb.MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,c.ZYMC as c_ZYXX_ZYMC--专业基本信息数据表 专业名称
+      ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
+      ,c.XZ as c_ZYXX_XZ--专业基本信息数据表 学制
+      ,c.ZYFXMC as c_ZYXX_ZYFXMC--专业基本信息数据表 专业方向名称
+      ,c.ZYJC as c_ZYXX_ZYJC--专业基本信息数据表 专业简称
+      ,c.JLNY as c_ZYXX_JLNY--专业基本信息数据表 建立年月
+      ,c.ZYJSS as c_ZYXX_ZYJSS--专业基本信息数据表 专业教师数
+      ,c.KSJGH as c_ZYXX_KSJGH--专业基本信息数据表 开设机构号
+      ,c.ZXF as c_ZYXX_ZXF--专业基本信息数据表 总学分
+      ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
+      ,cc.MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.SCHOOLID as d_XN_SCHOOLID--学年表 学校名
+      ,d.XN as d_XN_XN--学年表 学年
+
+FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS cc ON c.SSZYML = cc.DM /*所属专业目录*/
 GO
 
 --入学成绩数据表

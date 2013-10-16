@@ -736,17 +736,17 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KXH            EDU_ZZJX_01_A02_JSRK               KXH
   PJR            EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZZJX_01_02_KC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KKDW           EDU_ZZXX_03_01_XNJG                JGH
+  KSXS           EDU_JY_KSXS                        DM
+  SKFSM          EDU_JY_SKFS                        DM
 <EDU_ZZJX_01_A02_JSRK
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JSID           EDU_ZZJG_01_01_JZGJBSJ             ID
   KCH            EDU_ZZJX_01_02_KC                  KCH
   JHBH           EDU_ZZJX_03_01_ZTJXJH              JHBH
   XQID           EDU_ELE_01_XQ                      ID
-<EDU_ZZJX_01_02_KC
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  KKDW           EDU_ZZXX_03_01_XNJG                JGH
-  KSXS           EDU_JY_KSXS                        DM
-  SKFSM          EDU_JY_SKFS                        DM
 <EDU_ZZJX_02_01_ZZNJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   NJZT           EDU_JY_SFBZ                        DM
@@ -755,15 +755,15 @@
   ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
   ZZNJID         EDU_ZZJX_02_01_ZZNJ                NJDM
   JGH            EDU_ZZXX_03_01_XNJG                JGH
-<EDU_ZZJX_03_A01_XQXFGL
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  XQID           EDU_ELE_01_XQ                      ID
-  JHBH           EDU_ZZJX_03_01_ZTJXJH              JHBH
 <EDU_ZZJX_03_01_ZTJXJH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JHNJ           EDU_ZZJX_02_01_ZZNJ                NJDM
   ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
   SFKY           EDU_JY_SKFS                        DM
+<EDU_ZZJX_03_A01_XQXFGL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  JHBH           EDU_ZZJX_03_01_ZTJXJH              JHBH
 <EDU_ZZJX_03_02_JXJHFLXFYQ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KCFLM          EDU_ZZ_KCFL                        DM
@@ -983,16 +983,16 @@
 <EDU_ZZXX_03_A01_JGGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JGH            EDU_ZZXX_03_01_XNJG                JGH
-<EDU_ZZZS_01_A01_ZSJH
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
-  XNID           EDU_SYS_01_XN                      ID
 <EDU_ZZZS_01_01_ZSXX
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KQXZQHM        EDU_GB_ZHRMGHGXZQH                 DM
   YSWGYZM        EDU_GB_YZMCEZM                     DM
   KSFSM          EDU_JY_KSFS                        DM
+<EDU_ZZZS_01_A01_ZSJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  XNID           EDU_SYS_01_XN                      ID
 <EDU_ZZZS_02_01_RXCJ
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

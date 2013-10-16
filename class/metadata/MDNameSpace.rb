@@ -46,8 +46,10 @@ class MDNameSpace
   def sort_table_by_name
     i = 0
     @table_arr.sort_by! do |t|
-      arr = t.name.split('_').select{|s| s =~ /^A*\d+$/}
-      [arr.inject(''){|r, n| r + n}.delete('A').to_i, i += 1]
+      str = t.name.split('_').select{|s| s =~ /^A*\d+$/}.inject(''){|r, n| r + n}
+      num = str.delete('A').to_i
+      num += 1 if str.include?('A')
+      [num, i += 1]
     end
   end
   #返回命名空间中表的数量

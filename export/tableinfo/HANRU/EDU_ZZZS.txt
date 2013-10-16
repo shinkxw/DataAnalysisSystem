@@ -1,11 +1,3 @@
-EDU_ZZZS_01_A01_ZSJH  招生计划数据表
-  ID            编号                    int            自增主键
-  SCHOOLID      学校名                  int            非主        学校配置表
-  ZYXXID        专业基本信息            int            非主        专业基本信息数据表
-  XNID          学年                    int            非主        学年表
-  ZSJHRS        招生计划                int            非主
-  BZ            备注                    text           非主
-
 EDU_ZZZS_01_01_ZSXX  考生数据表
   XSXXID        学生信息数据表          int            主键        学生信息数据表
   SCHOOLID      学校名                  int            主键        学校配置表
@@ -32,6 +24,14 @@ EDU_ZZZS_01_01_ZSXX  考生数据表
   KSJWBS        考生既往病史            nvarchar(200)  非主
   SG            身高                    decimal(5, 1)  非主
   KSSL          考生视力                decimal(3, 1)  非主
+
+EDU_ZZZS_01_A01_ZSJH  招生计划数据表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  ZYXXID        专业基本信息            int            非主        专业基本信息数据表
+  XNID          学年                    int            非主        学年表
+  ZSJHRS        招生计划                int            非主
+  BZ            备注                    text           非主
 
 EDU_ZZZS_02_01_RXCJ  入学成绩数据表
   XSXXID        学生信息数据表          int            主键        学生信息数据表

@@ -1,15 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZZS" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZZS_01_A01_ZSJH" explanation="招生计划数据表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
-            <name="XNID" exp="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
-            <name="ZSJHRS" exp="招生计划" type="int" null="F" p="F" />
-            <name="BZ" exp="备注" type="text" null="T" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZZS_01_01_ZSXX" explanation="考生数据表">
         <field_area>
             <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
@@ -37,6 +27,16 @@
             <name="KSJWBS" exp="考生既往病史" type="nvarchar(200)" null="T" p="F" />
             <name="SG" exp="身高" type="decimal(5, 1)" null="T" p="F" />
             <name="KSSL" exp="考生视力" type="decimal(3, 1)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZZS_01_A01_ZSJH" explanation="招生计划数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
+            <name="XNID" exp="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
+            <name="ZSJHRS" exp="招生计划" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZZS_02_01_RXCJ" explanation="入学成绩数据表">
