@@ -211,4 +211,24 @@
             <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_WZXT_MHXT_FBJS" explanation="发布角色表">
+        <field_area>
+            <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
+            <name="JSMC" exp="角色名称" type="nvarchar(50)" null="F" p="F" />
+            <name="LMIDLB" exp="栏目ID列表" type="text" null="F" p="F" />
+            <name="LMMCLB" exp="栏目名称列表" type="text" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_WZXT_MHXT_YHFBQX" explanation="用户发布权限表">
+        <field_area>
+            <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
+            <name="LOGINNAME" exp="用户名" type="nvarchar(20)" null="F" p="F" />
+            <name="JSIDLB" exp="角色ID列表" type="text" null="F" p="F" />
+            <name="SFXYSH" exp="是否需要审核" type="nvarchar(1)" null="T" p="F" />
+        </field_area>
+    </table>
 </namespace>

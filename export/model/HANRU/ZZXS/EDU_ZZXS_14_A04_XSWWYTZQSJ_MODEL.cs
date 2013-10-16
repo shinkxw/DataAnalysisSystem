@@ -10,7 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_14_A04_XSWWYTZQSJ()
         {
             JXBMC = "";
-            ZRSJ = new DateTime(1900, 1, 1);
+            ZQSJ = new DateTime(1900, 1, 1);
+            TJSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZXS_14_A04_XSWWYTZQSJ_metadata
         {
@@ -25,8 +26,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "报告类型")]
-            public Int32 BGLX { get; set; }
+            [Display(Name = "值勤项目")]
+            public Int32 ZQXMID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -37,22 +38,26 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "报告人类型")]
-            public Int32 BGRLX { get; set; }
+            [Display(Name = "值勤人员类型")]
+            public Int32 ZQRYLX { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "报告人")]
-            public Int32 BGRID { get; set; }
+            [Display(Name = "值勤人员")]
+            public Int32 ZQRYID { get; set; }
 
 
-            [Display(Name = "内容")]
+            [Display(Name = "值勤内容")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String NR { get; set; }
+            public String ZQNR { get; set; }
 
 
-            [Display(Name = "值日时间")]
-            public DateTime ZRSJ { get; set; }
+            [Display(Name = "值勤时间")]
+            public DateTime ZQSJ { get; set; }
+
+
+            [Display(Name = "添加时间")]
+            public DateTime TJSJ { get; set; }
 
 
         }

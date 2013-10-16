@@ -175,3 +175,19 @@ EDU_WZXT_MHXT_FBQX  发布权限
   LMLIST        栏目                    text           非主
   LMNAMELIST    栏目文字                text           非主
 
+EDU_WZXT_MHXT_FBJS  发布角色表
+  ID            发布权限ID              int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  WEBID         网站ID                  int            主键        网站配置
+  JSMC          角色名称                nvarchar(50)   非主
+  LMIDLB        栏目ID列表              text           非主
+  LMMCLB        栏目名称列表            text           非主
+
+EDU_WZXT_MHXT_YHFBQX  用户发布权限表
+  ID            发布权限ID              int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  WEBID         网站ID                  int            主键        网站配置
+  LOGINNAME     用户名                  nvarchar(20)   非主        应用系统用户表
+  JSIDLB        角色ID列表              text           非主
+  SFXYSH        是否需要审核            nvarchar(1)    非主        是否标志代码表
+

@@ -272,12 +272,31 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="BGLX" exp="报告类型" type="int" null="F" p="F" />
+            <name="ZQXMID" exp="值勤项目ID" type="int" null="F" p="F" />
             <name="JXBMC" exp="教学部名称" type="nvarchar(36)" null="F" p="F" />
-            <name="BGRLX" exp="报告人类型" type="int" null="F" p="F" />
-            <name="BGRID" exp="报告人ID" type="int" null="F" p="F" />
-            <name="NR" exp="内容" type="text" null="T" p="F" />
-            <name="ZRSJ" exp="值日时间" type="datetime" null="T" p="F" />
+            <name="ZQRYLX" exp="值勤人员类型" type="int" null="F" p="F" />
+            <name="ZQRYID" exp="值勤人员ID" type="int" null="F" p="F" />
+            <name="ZQNR" exp="值勤内容" type="text" null="T" p="F" />
+            <name="ZQSJ" exp="值勤时间" type="datetime" null="T" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_14_A05_XSWWYTZQXM" explanation="学生五位一体值勤项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZQXMMC" exp="值勤项目名称" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_14_A06_XSWWYTZQRYAP" explanation="学生五位一体值勤人员安排表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZQXMID" exp="值勤项目ID" type="int" null="F" p="F" />
+            <name="ZQRYLX" exp="值勤人员类型" type="int" null="F" p="F" />
+            <name="ZQRYID" exp="值勤人员ID" type="int" null="F" p="F" />
+            <name="ZQKSSJ" exp="值勤开始时间" type="datetime" null="T" p="F" />
+            <name="ZQJSSJ" exp="值勤结束时间" type="datetime" null="T" p="F" />
         </field_area>
     </table>
 </namespace>

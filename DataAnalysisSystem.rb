@@ -5,7 +5,7 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
-$t_app_name,$t_dir_name = 'OAXT','zcgl'
+$t_app_name,$t_dir_name = 'WZXT','admin'
 AreaManager.set_conn(DBConnector.new('192.168.0.8,1444'))#192.168.0.8,1444
 AreaManager.load_area_and_db('HANRU','HanRuEdu') do |work_area,db|
   #work_area.export_tableinfo

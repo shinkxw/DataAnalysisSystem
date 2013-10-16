@@ -237,10 +237,25 @@ EDU_ZZXS_14_A03_XSRCXWGFKHSJ  学生日常行为规范考核数据表
 EDU_ZZXS_14_A04_XSWWYTZQSJ  学生五位一体值勤数据表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  BGLX          报告类型                int            非主
+  ZQXMID        值勤项目ID              int            非主        学生五位一体值勤项目表
   JXBMC         教学部名称              nvarchar(36)   非主
-  BGRLX         报告人类型              int            非主
-  BGRID         报告人ID                int            非主
-  NR            内容                    text           非主
-  ZRSJ          值日时间                datetime       非主
+  ZQRYLX        值勤人员类型            int            非主
+  ZQRYID        值勤人员ID              int            非主
+  ZQNR          值勤内容                text           非主
+  ZQSJ          值勤时间                datetime       非主
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZZXS_14_A05_XSWWYTZQXM  学生五位一体值勤项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZQXMMC        值勤项目名称            nvarchar(36)   非主
+
+EDU_ZZXS_14_A06_XSWWYTZQRYAP  学生五位一体值勤人员安排表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZQXMID        值勤项目ID              int            非主        学生五位一体值勤项目表
+  ZQRYLX        值勤人员类型            int            非主
+  ZQRYID        值勤人员ID              int            非主
+  ZQKSSJ        值勤开始时间            datetime       非主
+  ZQJSSJ        值勤结束时间            datetime       非主
 

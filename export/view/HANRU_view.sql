@@ -299,6 +299,14 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_F
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_FBQX_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_FBJS_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_WZXT_MHXT_FBJS_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_YHFBQX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_WZXT_MHXT_YHFBQX_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZJ_ZJZY_DISP
@@ -738,6 +746,14 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_14_A03_XSRCXWGFKHSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_14_A03_XSRCXWGFKHSJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_14_A04_XSWWYTZQSJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZXS_14_A04_XSWWYTZQSJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_14_A06_XSWWYTZQRYAP_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZXS_14_A06_XSWWYTZQRYAP_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXX_01_01_ZZXX_DISP')
             and   type = 'V')
@@ -3937,6 +3953,64 @@ SELECT a.[ID]--发布权限ID
 
 FROM dbo.EDU_WZXT_MHXT_FBQX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--发布角色表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_FBJS_DISP]
+AS
+SELECT a.[ID]--发布权限ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[JSMC]--角色名称
+      ,a.[LMIDLB]--栏目ID列表
+      ,a.[LMMCLB]--栏目名称列表
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
+
+FROM dbo.EDU_WZXT_MHXT_FBJS AS a LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--用户发布权限表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_YHFBQX_DISP]
+AS
+SELECT a.[ID]--发布权限ID
+      ,a.[SCHOOLID]--学校名
+      ,a.[WEBID]--网站ID
+      ,a.[LOGINNAME]--用户名
+      ,a.[JSIDLB]--角色ID列表
+      ,a.[SFXYSH]--是否需要审核
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_WZXT_MHXT_YHFBQX AS a LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.LOGINNAME = d.LOGINNAME /*用户名*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.SFXYSH = e.DM /*是否需要审核*/
 GO
 
 --自建专业代码
@@ -13147,6 +13221,42 @@ FROM dbo.EDU_ZZXS_14_A03_XSRCXWGFKHSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+GO
+
+--学生五位一体值勤数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZZXS_14_A04_XSWWYTZQSJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZQXMID]--值勤项目ID
+      ,a.[JXBMC]--教学部名称
+      ,a.[ZQRYLX]--值勤人员类型
+      ,a.[ZQRYID]--值勤人员ID
+      ,a.[ZQNR]--值勤内容
+      ,a.[ZQSJ]--值勤时间
+      ,a.[TJSJ]--添加时间
+      ,c.SCHOOLID as c_XSWWYTZQXM_SCHOOLID--学生五位一体值勤项目表 学校
+      ,c.ZQXMMC as c_XSWWYTZQXM_ZQXMMC--学生五位一体值勤项目表 值勤项目名称
+
+FROM dbo.EDU_ZZXS_14_A04_XSWWYTZQSJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZZXS_14_A05_XSWWYTZQXM AS c ON a.ZQXMID = c.ID /*值勤项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--学生五位一体值勤人员安排表
+CREATE VIEW [dbo].[VIEW_EDU_ZZXS_14_A06_XSWWYTZQRYAP_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZQXMID]--值勤项目ID
+      ,a.[ZQRYLX]--值勤人员类型
+      ,a.[ZQRYID]--值勤人员ID
+      ,a.[ZQKSSJ]--值勤开始时间
+      ,a.[ZQJSSJ]--值勤结束时间
+      ,c.SCHOOLID as c_XSWWYTZQXM_SCHOOLID--学生五位一体值勤项目表 学校
+      ,c.ZQXMMC as c_XSWWYTZQXM_ZQXMMC--学生五位一体值勤项目表 值勤项目名称
+
+FROM dbo.EDU_ZZXS_14_A06_XSWWYTZQRYAP AS a LEFT OUTER JOIN
+      dbo.EDU_ZZXS_14_A05_XSWWYTZQXM AS c ON a.ZQXMID = c.ID /*值勤项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --学校基本数据表
