@@ -77,6 +77,11 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Required(ErrorMessage = "±ÿÃÓ")]
+            [Display(Name = "…Í«Î≥µ¡æ")]
+            public Int32 SQCLID { get; set; }
+
+
         }
     }
 }

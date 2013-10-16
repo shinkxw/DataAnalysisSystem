@@ -653,6 +653,7 @@
             <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />
             <name="SQZT" exp="申请状态" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SQCLID" exp="申请车辆ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_24_A02_YCSQXGJL" explanation="用车申请修改记录表">
@@ -678,6 +679,19 @@
             <name="DQBZMC" exp="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
             <name="DQBZSHZT" exp="当前步骤审核状态" type="int" null="T" p="F" />
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
+            <name="SQCLID" exp="申请车辆ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_24_A03_CLSJ" explanation="车辆数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="CLMC" exp="车辆名称" type="nvarchar(50)" null="F" p="F" />
+            <name="CLPP" exp="车辆品牌" type="nvarchar(200)" null="F" p="F" />
+            <name="CLCPH" exp="车辆车牌号" type="nvarchar(200)" null="F" p="F" />
+            <name="ZDRNRS" exp="最大可载人数" type="int" null="F" p="F" />
+            <name="CLZT" exp="车辆状态" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_25_A01_CGSQ" explanation="采购申请表">

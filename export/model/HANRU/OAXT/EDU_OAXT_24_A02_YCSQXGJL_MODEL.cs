@@ -135,6 +135,11 @@ namespace HanRuEdu.LDAL
             public Int32 SQRBMID { get; set; }
 
 
+            [Required(ErrorMessage = "±ÿÃÓ")]
+            [Display(Name = "…Í«Î≥µ¡æ")]
+            public Int32 SQCLID { get; set; }
+
+
         }
     }
 }

@@ -564,6 +564,7 @@ EDU_OAXT_24_A01_YCSQ  用车申请表
   SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表
   SQZT          申请状态                int            非主
   BZ            备注                    text           非主
+  SQCLID        申请车辆ID              int            非主        车辆数据表
 
 EDU_OAXT_24_A02_YCSQXGJL  用车申请修改记录表
   ID            编号                    int            主键
@@ -587,6 +588,17 @@ EDU_OAXT_24_A02_YCSQXGJL  用车申请修改记录表
   DQBZMC        当前步骤名称            nvarchar(200)  非主
   DQBZSHZT      当前步骤审核状态        int            非主
   SQRBMID       申请人部门ID            int            非主
+  SQCLID        申请车辆ID              int            非主
+
+EDU_OAXT_24_A03_CLSJ  车辆数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  CLMC          车辆名称                nvarchar(50)   非主
+  CLPP          车辆品牌                nvarchar(200)  非主
+  CLCPH         车辆车牌号              nvarchar(200)  非主
+  ZDRNRS        最大可载人数            int            非主
+  CLZT          车辆状态                int            非主
+  BZ            备注                    text           非主
 
 EDU_OAXT_25_A01_CGSQ  采购申请表
   ID            编号                    int            主键

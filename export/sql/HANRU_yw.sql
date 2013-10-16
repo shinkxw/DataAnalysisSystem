@@ -1611,6 +1611,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_24_A02_YCSQ
    drop table EDU_OAXT_24_A02_YCSQXGJL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_24_A03_CLSJ')
+            and   type = 'U')
+   drop table EDU_OAXT_24_A03_CLSJ
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_25_A01_CGSQ')
             and   type = 'U')
    drop table EDU_OAXT_25_A01_CGSQ
@@ -2670,6 +2675,7 @@ CREATE TABLE [dbo].[EDU_OAXT_24_A01_YCSQ](
 	[SQRID]  nvarchar(20)  NOT NULL,--申请人ID
 	[SQZT]  int  NOT NULL,--申请状态
 	[BZ]  text  NOT NULL,--备注
+	[SQCLID]  int  NOT NULL,--申请车辆ID
 CONSTRAINT [PK_EDU_OAXT_24_A01_YCSQ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2704,7 +2710,29 @@ CREATE TABLE [dbo].[EDU_OAXT_24_A02_YCSQXGJL](
 	[DQBZMC]  nvarchar(200)  NOT NULL,--当前步骤名称
 	[DQBZSHZT]  int  NULL,--当前步骤审核状态
 	[SQRBMID]  int  NULL,--申请人部门ID
+	[SQCLID]  int  NOT NULL,--申请车辆ID
 CONSTRAINT [PK_EDU_OAXT_24_A02_YCSQXGJL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--车辆数据表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_24_A03_CLSJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_24_A03_CLSJ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[CLMC]  nvarchar(50)  NOT NULL,--车辆名称
+	[CLPP]  nvarchar(200)  NOT NULL,--车辆品牌
+	[CLCPH]  nvarchar(200)  NOT NULL,--车辆车牌号
+	[ZDRNRS]  int  NOT NULL,--最大可载人数
+	[CLZT]  int  NOT NULL,--车辆状态
+	[BZ]  text  NOT NULL,--备注
+CONSTRAINT [PK_EDU_OAXT_24_A03_CLSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
@@ -3851,6 +3879,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请状态' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A01_YCSQ', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请车辆ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A01_YCSQ', @level2type=N'COLUMN',@level2name=N'SQCLID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用车申请修改记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -3894,6 +3924,26 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前步骤审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'DQBZSHZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请人部门ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'SQRBMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请车辆ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'SQCLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'CLMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆品牌' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'CLPP'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆车牌号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'CLCPH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最大可载人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'ZDRNRS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'CLZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'采购申请表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_25_A01_CGSQ'
 GO

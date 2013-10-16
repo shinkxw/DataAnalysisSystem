@@ -3379,6 +3379,7 @@ SELECT a.[ID]--编号
       ,a.[SQRID]--申请人ID
       ,a.[SQZT]--申请状态
       ,a.[BZ]--备注
+      ,a.[SQCLID]--申请车辆ID
       ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
       ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
       ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID
@@ -3407,10 +3408,18 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.SCHOOLID as e_CLSJ_SCHOOLID--车辆数据表 学校
+      ,e.CLMC as e_CLSJ_CLMC--车辆数据表 车辆名称
+      ,e.CLPP as e_CLSJ_CLPP--车辆数据表 车辆品牌
+      ,e.CLCPH as e_CLSJ_CLCPH--车辆数据表 车辆车牌号
+      ,e.ZDRNRS as e_CLSJ_ZDRNRS--车辆数据表 最大可载人数
+      ,e.CLZT as e_CLSJ_CLZT--车辆数据表 车辆状态
+      ,e.BZ as e_CLSJ_BZ--车辆数据表 备注
 
 FROM dbo.EDU_OAXT_24_A01_YCSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.SQRID = d.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+      dbo.EDU_ELE_01_USER AS d ON a.SQRID = d.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_24_A03_CLSJ AS e ON a.SQCLID = e.ID /*申请车辆ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
 GO
 
 --采购申请表

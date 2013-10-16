@@ -261,6 +261,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LCSLID         EDU_OAXT_20_A05_LCSL               ID
   SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SQCLID         EDU_OAXT_24_A03_CLSJ               ID
+<EDU_OAXT_24_A03_CLSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_25_A01_CGSQ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LCSLID         EDU_OAXT_20_A05_LCSL               ID
