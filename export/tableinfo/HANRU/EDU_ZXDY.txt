@@ -64,7 +64,7 @@ EDU_ZXDY_05_A02_ZZDFXZ  值周打分细则表
   SCHOOLID      学校ID                  int            非主        学校配置表
   SSDLID        所属大类ID              int            非主        值周打分大类表
   XZNR          细则内容                nvarchar(200)  非主
-  XZFZ          细则分值                decimal(2, 1)  非主
+  XZFZ          细则分值                decimal(6, 2)  非主
 
 EDU_ZXDY_05_A03_ZZDFD  值周打分单表
   ID            值周打分单表ID          int            主键
@@ -75,7 +75,7 @@ EDU_ZXDY_05_A03_ZZDFD  值周打分单表
   XSIDLB        学生ID列表              text           非主
   XSMCLB        学生名称列表            text           非主
   SSXZID        所属细则                int            非主        值周打分细则表
-  DFFZ          打分分值                decimal(2, 1)  非主
+  DFFZ          打分分值                decimal(6, 2)  非主
   FSSJ          发生时间                datetime       非主
   DFSJ          打分时间                datetime       非主
   DFJSID        打分教师ID              nvarchar(20)   非主        应用系统用户表

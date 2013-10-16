@@ -208,7 +208,7 @@ CREATE TABLE [dbo].[EDU_ZXDY_05_A02_ZZDFXZ](
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[SSDLID]  int  NOT NULL,--所属大类ID
 	[XZNR]  nvarchar(200)  NOT NULL,--细则内容
-	[XZFZ]  decimal(2, 1)  NOT NULL,--细则分值
+	[XZFZ]  decimal(6, 2)  NOT NULL,--细则分值
 CONSTRAINT [PK_EDU_ZXDY_05_A02_ZZDFXZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -229,7 +229,7 @@ CREATE TABLE [dbo].[EDU_ZXDY_05_A03_ZZDFD](
 	[XSIDLB]  text  NULL,--学生ID列表
 	[XSMCLB]  text  NULL,--学生名称列表
 	[SSXZID]  int  NOT NULL,--所属细则
-	[DFFZ]  decimal(2, 1)  NOT NULL,--打分分值
+	[DFFZ]  decimal(6, 2)  NOT NULL,--打分分值
 	[FSSJ]  datetime  NOT NULL,--发生时间
 	[DFSJ]  datetime  NOT NULL,--打分时间
 	[DFJSID]  nvarchar(20)  NOT NULL,--打分教师ID

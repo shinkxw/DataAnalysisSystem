@@ -59,7 +59,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "打分分值")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal DFFZ { get; set; }
 
 

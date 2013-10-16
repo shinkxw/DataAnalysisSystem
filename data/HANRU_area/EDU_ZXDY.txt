@@ -83,7 +83,7 @@
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
             <name="SSDLID" exp="所属大类ID" type="int" null="F" p="F" />
             <name="XZNR" exp="细则内容" type="nvarchar(200)" null="F" p="F" />
-            <name="XZFZ" exp="细则分值" type="decimal(2, 1)" null="F" p="F" />
+            <name="XZFZ" exp="细则分值" type="decimal(6, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A03_ZZDFD" explanation="值周打分单表">
@@ -96,7 +96,7 @@
             <name="XSIDLB" exp="学生ID列表" type="text" null="T" p="F" />
             <name="XSMCLB" exp="学生名称列表" type="text" null="T" p="F" />
             <name="SSXZID" exp="所属细则" type="int" null="F" p="F" />
-            <name="DFFZ" exp="打分分值" type="decimal(2, 1)" null="F" p="F" />
+            <name="DFFZ" exp="打分分值" type="decimal(6, 2)" null="F" p="F" />
             <name="FSSJ" exp="发生时间" type="datetime" null="F" p="F" />
             <name="DFSJ" exp="打分时间" type="datetime" null="F" p="F" />
             <name="DFJSID" exp="打分教师ID" type="nvarchar(20)" null="F" p="F" />
