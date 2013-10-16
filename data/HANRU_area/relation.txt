@@ -860,6 +860,32 @@
   TKHXQ          EDU_ELE_05_WEEKDAY                 ID
   TKHSD          EDU_ELE_05_SD                      ID
   TKHJC          EDU_ELE_05_JC                      ID
+<EDU_ZZJX_10_A01_LWSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+  SCJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJX_10_A02_KYHDSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+  SFFB           EDU_JY_SFBZ                        DM
+  SCJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJX_10_A03_CPXXSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+  SFFB           EDU_JY_SFBZ                        DM
+  SCJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJX_10_A04_KTSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+  SQJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  SHJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJX_10_A05_KTJDSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KTID           EDU_ZZJX_10_A04_KTSJ               ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM

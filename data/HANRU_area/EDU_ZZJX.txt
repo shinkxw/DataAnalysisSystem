@@ -379,4 +379,71 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_10_A01_LWSJ" explanation="论文数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XNID" exp="学年ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="LWMC" exp="论文名称" type="nvarchar(100)" null="F" p="F" />
+            <name="LWZY" exp="论文摘要" type="nvarchar(100)" null="F" p="F" />
+            <name="LWNR" exp="论文内容" type="text" null="F" p="F" />
+            <name="SCJSID" exp="上传教师ID" type="int" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_10_A02_KYHDSJ" explanation="科研活动数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XNID" exp="学年ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="HDMC" exp="活动名称" type="nvarchar(50)" null="F" p="F" />
+            <name="HDNR" exp="活动内容" type="text" null="F" p="F" />
+            <name="SFFB" exp="是否发布" type="nvarchar(1)" null="F" p="F" />
+            <name="SCJSID" exp="上传教师ID" type="int" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_10_A03_CPXXSJ" explanation="参评信息数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XNID" exp="学年ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XXMC" exp="信息名称" type="nvarchar(50)" null="F" p="F" />
+            <name="XXNR" exp="信息内容" type="text" null="F" p="F" />
+            <name="SFFB" exp="是否发布" type="nvarchar(1)" null="F" p="F" />
+            <name="SCJSID" exp="上传教师ID" type="int" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_10_A04_KTSJ" explanation="课题数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XNID" exp="学年ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="KTMC" exp="课题名称" type="nvarchar(50)" null="F" p="F" />
+            <name="KTZT" exp="课题主题" type="nvarchar(200)" null="F" p="F" />
+            <name="KTNR" exp="课题内容" type="text" null="F" p="F" />
+            <name="SQJSID" exp="申请教师ID" type="int" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="JXZT" exp="节项状态" type="int" null="F" p="F" />
+            <name="JXSJ" exp="节项时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_10_A05_KTJDSJ" explanation="课题阶段数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KTID" exp="课题ID" type="int" null="F" p="F" />
+            <name="JDMC" exp="阶段名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JDGZNR" exp="阶段工作内容" type="text" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
