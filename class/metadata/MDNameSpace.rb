@@ -42,6 +42,14 @@ class MDNameSpace
     each(&:is_valid?)
     true
   end
+  #根据表名中的数字对命名空间中的表排序
+  def sort_table_by_name
+    i = 0
+    @table_arr.sort_by! do |t|
+      arr = t.name.split('_').select{|s| s =~ /^A*\d+$/}
+      [arr.inject(''){|r, n| r + n}.delete('A').to_i, i += 1]
+    end
+  end
   #返回命名空间中表的数量
   def get_table_num;@table_arr.size end
   #获得命名空间中所有表名的数组

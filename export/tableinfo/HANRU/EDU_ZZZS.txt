@@ -1,11 +1,3 @@
-EDU_ZZZS_02_01_RXCJ  入学成绩数据表
-  XSXXID        学生信息数据表          int            主键        学生信息数据表
-  SCHOOLID      学校名                  int            主键        学校配置表
-  RXZF          入学总分                decimal(5, 1)  非主
-  GKZF          中考总分                decimal(5, 1)  非主
-  FJF           附加分                  decimal(5, 1)  非主
-  FJFLBM        附加分类别码            nvarchar(1)    非主        附加分类别代码表
-
 EDU_ZZZS_01_A01_ZSJH  招生计划数据表
   ID            编号                    int            自增主键
   SCHOOLID      学校名                  int            非主        学校配置表
@@ -40,6 +32,14 @@ EDU_ZZZS_01_01_ZSXX  考生数据表
   KSJWBS        考生既往病史            nvarchar(200)  非主
   SG            身高                    decimal(5, 1)  非主
   KSSL          考生视力                decimal(3, 1)  非主
+
+EDU_ZZZS_02_01_RXCJ  入学成绩数据表
+  XSXXID        学生信息数据表          int            主键        学生信息数据表
+  SCHOOLID      学校名                  int            主键        学校配置表
+  RXZF          入学总分                decimal(5, 1)  非主
+  GKZF          中考总分                decimal(5, 1)  非主
+  FJF           附加分                  decimal(5, 1)  非主
+  FJFLBM        附加分类别码            nvarchar(1)    非主        附加分类别代码表
 
 EDU_ZZZS_03_01_KSKMCJ  考生科目成绩数据类表
   XSXXID        考生ID                  int            主键        学生信息数据表

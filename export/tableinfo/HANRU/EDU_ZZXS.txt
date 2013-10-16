@@ -64,18 +64,6 @@ EDU_ZZXS_02_01_XSJTXX  学生家庭信息数据表
   JTNSRJE       家庭年收入金额          money          非主
   LJZJHCZ       离家最近火车站          nvarchar(30)   非主
 
-EDU_ZZXS_02_02_XSJTCY  学生家庭成员数据表
-  ID            编号                    int            自增主键
-  SCHOOLID      学校名                  int            非主        学校配置表
-  XSXXID        学生信息数据表          int            非主        学生信息数据表
-  XM            姓名                    nvarchar(36)   非主
-  GXM           关系码                  nvarchar(2)    非主        家庭关系代码
-  JTCYZYM       家庭成员职业码          nvarchar(3)    非主        职业分类与代码
-  SZDW          所在单位                nvarchar(60)   非主
-  ZZMMM         政治面貌码              nvarchar(2)    非主        政治面貌代码
-  DH            电话                    nvarchar(30)   非主
-  YDDH          移动电话                nvarchar(30)   非主
-
 EDU_ZZXS_02_A01_XSLXR  学生联系人数据表
   ID            编号                    int            自增主键
   SCHOOLID      学校名                  int            非主        学校配置表
@@ -90,6 +78,18 @@ EDU_ZZXS_02_A01_XSLXR  学生联系人数据表
   DZXX          电子信箱                nvarchar(40)   非主
   WLDZ          网络地址                nvarchar(60)   非主
   JSTXH         即时通讯号              nvarchar(40)   非主
+
+EDU_ZZXS_02_02_XSJTCY  学生家庭成员数据表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  XSXXID        学生信息数据表          int            非主        学生信息数据表
+  XM            姓名                    nvarchar(36)   非主
+  GXM           关系码                  nvarchar(2)    非主        家庭关系代码
+  JTCYZYM       家庭成员职业码          nvarchar(3)    非主        职业分类与代码
+  SZDW          所在单位                nvarchar(60)   非主
+  ZZMMM         政治面貌码              nvarchar(2)    非主        政治面貌代码
+  DH            电话                    nvarchar(30)   非主
+  YDDH          移动电话                nvarchar(30)   非主
 
 EDU_ZZXS_02_A02_XSJTJJ  学生家庭经济情况数据表
   XSXXID        学生信息数据表          int            主键        学生信息数据表

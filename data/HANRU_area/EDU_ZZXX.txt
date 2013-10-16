@@ -1,23 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZXX" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZXX_03_01_XNJG" explanation="校内机构数据类表">
-        <field_area>
-            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="JGMC" exp="机构名称" type="nvarchar(100)" null="F" p="F" />
-            <name="JGYWMC" exp="机构英文名称" type="nvarchar(100)" null="T" p="F" />
-            <name="JGJC" exp="机构简称" type="nvarchar(50)" null="F" p="F" />
-            <name="JGJP" exp="机构简拼" type="nvarchar(20)" null="F" p="F" />
-            <name="JGDZ" exp="机构地址" type="nvarchar(180)" null="F" p="F" />
-            <name="LSSJJGH" exp="隶属上级机构号" type="nvarchar(6)" null="F" p="F" remark="EDU_ZZXX_03_01_XNJG" />
-            <name="LSXQH" exp="隶属校区号" type="nvarchar(2)" null="F" p="F" />
-            <name="JGYXBS" exp="机构有效标识" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
-            <name="SFST" exp="是否实体" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
-            <name="JLNY" exp="建立年月" type="nvarchar(6)" null="T" p="F" />
-            <name="JGYZBM" exp="机构邮政编码" type="nvarchar(6)" null="T" p="F" />
-            <name="FZRH" exp="负责人号" type="nvarchar(20)" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZXX_01_01_ZZXX" explanation="学校基本数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -42,6 +24,24 @@
             <name="LXDH" exp="联系电话" type="nvarchar(30)" null="F" p="F" />
             <name="CZDH" exp="传真电话" type="nvarchar(30)" null="F" p="F" />
             <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXX_03_01_XNJG" explanation="校内机构数据类表">
+        <field_area>
+            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="JGMC" exp="机构名称" type="nvarchar(100)" null="F" p="F" />
+            <name="JGYWMC" exp="机构英文名称" type="nvarchar(100)" null="T" p="F" />
+            <name="JGJC" exp="机构简称" type="nvarchar(50)" null="F" p="F" />
+            <name="JGJP" exp="机构简拼" type="nvarchar(20)" null="F" p="F" />
+            <name="JGDZ" exp="机构地址" type="nvarchar(180)" null="F" p="F" />
+            <name="LSSJJGH" exp="隶属上级机构号" type="nvarchar(6)" null="F" p="F" remark="EDU_ZZXX_03_01_XNJG" />
+            <name="LSXQH" exp="隶属校区号" type="nvarchar(2)" null="F" p="F" />
+            <name="JGYXBS" exp="机构有效标识" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="SFST" exp="是否实体" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="JLNY" exp="建立年月" type="nvarchar(6)" null="T" p="F" />
+            <name="JGYZBM" exp="机构邮政编码" type="nvarchar(6)" null="T" p="F" />
+            <name="FZRH" exp="负责人号" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXX_03_A01_JGGW" explanation="机构岗位表">

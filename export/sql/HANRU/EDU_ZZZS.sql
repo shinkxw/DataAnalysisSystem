@@ -1,10 +1,5 @@
 --空间名：EDU_ZZZS  生成器：SqlBuilder0.1
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZZS_02_01_RXCJ')
-            and   type = 'U')
-   drop table EDU_ZZZS_02_01_RXCJ
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZZS_01_A01_ZSJH')
             and   type = 'U')
    drop table EDU_ZZZS_01_A01_ZSJH
@@ -15,29 +10,15 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZZS_01_01_ZSXX'
    drop table EDU_ZZZS_01_01_ZSXX
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZZS_02_01_RXCJ')
+            and   type = 'U')
+   drop table EDU_ZZZS_02_01_RXCJ
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZZS_03_01_KSKMCJ')
             and   type = 'U')
    drop table EDU_ZZZS_03_01_KSKMCJ
 go
---入学成绩数据表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZZS_02_01_RXCJ]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZZS_02_01_RXCJ](
-	[XSXXID]  int  NOT NULL,--学生信息数据表
-	[SCHOOLID]  int  NOT NULL,--学校名
-	[RXZF]  decimal(5, 1)  NULL,--入学总分
-	[GKZF]  decimal(5, 1)  NULL,--中考总分
-	[FJF]  decimal(5, 1)  NULL,--附加分
-	[FJFLBM]  nvarchar(1)  NULL,--附加分类别码
-CONSTRAINT [PK_EDU_ZZZS_02_01_RXCJ] PRIMARY KEY CLUSTERED
-(
-	[XSXXID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
 --招生计划数据表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZZS_01_A01_ZSJH]') AND type in (N'U'))
 BEGIN
@@ -94,6 +75,25 @@ CONSTRAINT [PK_EDU_ZZZS_01_01_ZSXX] PRIMARY KEY CLUSTERED
 END
 GO
 
+--入学成绩数据表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZZS_02_01_RXCJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZZS_02_01_RXCJ](
+	[XSXXID]  int  NOT NULL,--学生信息数据表
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[RXZF]  decimal(5, 1)  NULL,--入学总分
+	[GKZF]  decimal(5, 1)  NULL,--中考总分
+	[FJF]  decimal(5, 1)  NULL,--附加分
+	[FJFLBM]  nvarchar(1)  NULL,--附加分类别码
+CONSTRAINT [PK_EDU_ZZZS_02_01_RXCJ] PRIMARY KEY CLUSTERED
+(
+	[XSXXID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --考生科目成绩数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZZS_03_01_KSKMCJ]') AND type in (N'U'))
 BEGIN
@@ -113,20 +113,6 @@ END
 GO
 
 --以下为添加注释语句
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入学成绩数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生信息数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'XSXXID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入学总分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'RXZF'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'中考总分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'GKZF'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附加分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'FJF'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附加分类别码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'FJFLBM'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'招生计划数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_01_A01_ZSJH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_01_A01_ZSJH', @level2type=N'COLUMN',@level2name=N'ID'
@@ -192,6 +178,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'身高' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_01_01_ZSXX', @level2type=N'COLUMN',@level2name=N'SG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考生视力' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_01_01_ZSXX', @level2type=N'COLUMN',@level2name=N'KSSL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入学成绩数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生信息数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'XSXXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入学总分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'RXZF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'中考总分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'GKZF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附加分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'FJF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附加分类别码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_02_01_RXCJ', @level2type=N'COLUMN',@level2name=N'FJFLBM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考生科目成绩数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_03_01_KSKMCJ'
 GO

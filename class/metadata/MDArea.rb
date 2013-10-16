@@ -48,7 +48,7 @@ class MDArea
   #判断元数据域是否有效
   def is_valid?
     p "MDArea: 表名重复" if get_table_name_arr.uniq! != nil
-    each {|name_space| name_space.is_valid?};true
+    each{|name_space| name_space.is_valid?};true
   end
   #使用覆盖型方式合成新的元数据域
   def cover_combine(new_area)
@@ -107,6 +107,8 @@ class MDArea
       name_space.add_table(table)
     end
   end
+  #对命名空间中的表进行排序
+  def sort_table;each{|name_space| name_space.sort_table_by_name} end
   #获得所有表名的数组
   def get_table_name_arr;map(&:get_table_name_arr).flatten end
   #计算域的特征值

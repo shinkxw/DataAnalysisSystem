@@ -1,33 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZJX" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZJX_02_02_ZZBJ" explanation="学校班级数据表">
-        <field_area>
-            <name="XZBDM" exp="行政班代码" type="nvarchar(10)" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" />
-            <name="ZZNJID" exp="学校年级数据表" type="nvarchar(4)" null="F" p="F" />
-            <name="XZBMC" exp="行政班名称" type="nvarchar(50)" null="F" p="F" />
-            <name="JBNY" exp="建班年月" type="nvarchar(6)" null="F" p="F" />
-            <name="BZRGH" exp="班主任工号" type="nvarchar(20)" null="T" p="F" />
-            <name="JSBH" exp="教室编号" type="nvarchar(10)" null="T" p="F" />
-            <name="NANSRS" exp="男生人数" type="decimal(4, 0)" null="T" p="F" />
-            <name="NVSRS" exp="女生人数" type="decimal(4, 0)" null="T" p="F" />
-            <name="ZRS" exp="总人数" type="decimal(4, 0)" null="T" p="F" />
-            <name="BZXH" exp="班长学号" type="nvarchar(20)" null="T" p="F" />
-            <name="JXJH" exp="教学计划" type="text" null="F" p="F" />
-            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="F" />
-            <name="XQDM" exp="校区代码" type="nvarchar(2)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_02_01_ZZNJ" explanation="学校年级数据表">
-        <field_area>
-            <name="NJDM" exp="年级代码" type="nvarchar(4)" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="NJMC" exp="年级名称" type="nvarchar(10)" null="F" p="F" />
-            <name="SSNF" exp="所属年份" type="nvarchar(4)" null="F" p="F" />
-            <name="NJZT" exp="年级状态" type="nvarchar(1)" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZJX_01_01_ZYXX" explanation="专业基本信息数据表">
         <field_area>
             <name="ZYBH" exp="专业编号" type="int" null="F" p="T" />
@@ -46,65 +18,15 @@
             <name="ZYLB" exp="专业类别名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_05_02_JSJXGZLTJ" explanation="教师教学工作量统计数据子类表">
+    <table name="EDU_ZZJX_01_A01_KCPJ" explanation="课程评价表">
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="JSID" exp="教师ID" type="int" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
-            <name="XQMC" exp="学期名称" type="nvarchar(10)" null="F" p="F" />
-            <name="JSXM" exp="教师姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="RJKCMS" exp="任教课程门数" type="decimal(4, 0)" null="F" p="F" />
-            <name="LLZXS" exp="理论总学时" type="decimal(4, 0)" null="F" p="F" />
-            <name="SJZXS" exp="实践总学时" type="decimal(4, 0)" null="F" p="F" />
-            <name="QTZXS" exp="其他总学时" type="decimal(4, 0)" null="F" p="F" />
-            <name="XSZS" exp="学生总数" type="decimal(4, 0)" null="F" p="F" />
-            <name="ZXFS" exp="总学分数" type="decimal(5, 1)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_03_A01_XQXFGL" explanation="学期学分管理表">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
-            <name="ZDXF" exp="最高学分" type="decimal(3, 1)" null="T" p="F" />
-            <name="ZGXF" exp="最低学分" type="decimal(3, 1)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_03_03_JXJHKCQD" explanation="教学计划课程清单数据子类表">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="T" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
-            <name="KCMC" exp="课程名称" type="nvarchar(100)" null="F" p="F" />
-            <name="YXKC" exp="预修课程" type="nvarchar(200)" null="T" p="F" />
-            <name="SFHXKC" exp="是否核心（骨干）" type="nvarchar(1)" null="T" p="F" />
-            <name="KCFLM" exp="课程分类码" type="nvarchar(1)" null="F" p="F" />
-            <name="KCSXM" exp="课程属性码" type="nvarchar(1)" null="F" p="F" />
-            <name="ZXXQ" exp="执行学期" type="decimal(2, 0)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_03_02_JXJHFLXFYQ" explanation="教学计划分类学分要求数据子类">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="KCFLM" exp="课程分类码" type="nvarchar(1)" null="F" p="T" />
-            <name="XFYQ" exp="学分要求" type="decimal(2, 1)" null="F" p="F" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_03_01_ZTJXJH" explanation="总体教学计划数据子类表">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
-            <name="JHNJ" exp="计划年级" type="nvarchar(4)" null="F" p="F" />
-            <name="ZYXXID" exp="专业编号" type="int" null="F" p="F" />
-            <name="JHZYMC" exp="计划专业名称" type="nvarchar(50)" null="T" p="F" />
-            <name="ZXFYQ" exp="总学分要求" type="decimal(3, 0)" null="F" p="F" />
-            <name="JLNY" exp="建立年月" type="nvarchar(6)" null="T" p="F" />
-            <name="SYXZ" exp="适用学制" type="decimal(3, 1)" null="T" p="F" />
-            <name="PYMB" exp="培养目标" type="text" null="T" p="F" />
-            <name="SFKY" exp="是否可用" type="nvarchar(1)" null="F" p="F" />
-            <name="FJ" exp="附件" type="text" null="T" p="F" />
+            <name="PJID" exp="评价ID" type="int" null="F" p="T" />
+            <name="KXH" exp="课序号" type="int" null="F" p="F" />
+            <name="PJR" exp="评价人" type="nvarchar(20)" null="F" p="F" />
+            <name="PJSJ" exp="评价时间" type="datetime" null="F" p="F" />
+            <name="PJNR" exp="评价内容" type="text" null="F" p="F" />
+            <name="HF" exp="回复" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_01_A02_JSRK" explanation="教师任课表">
@@ -116,17 +38,6 @@
             <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
             <name="JXDG" exp="教学大纲" type="text" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_01_A01_KCPJ" explanation="课程评价表">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="PJID" exp="评价ID" type="int" null="F" p="T" />
-            <name="KXH" exp="课序号" type="int" null="F" p="F" />
-            <name="PJR" exp="评价人" type="nvarchar(20)" null="F" p="F" />
-            <name="PJSJ" exp="评价时间" type="datetime" null="F" p="F" />
-            <name="PJNR" exp="评价内容" type="text" null="F" p="F" />
-            <name="HF" exp="回复" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_01_02_KC" explanation="课程数据子类表">
@@ -147,6 +58,95 @@
             <name="KSXS" exp="考试形式" type="nvarchar(1)" null="F" p="F" />
             <name="SKFSM" exp="授课方式码" type="nvarchar(1)" null="F" p="F" />
             <name="KCFY" exp="课程费用" type="money" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_02_01_ZZNJ" explanation="学校年级数据表">
+        <field_area>
+            <name="NJDM" exp="年级代码" type="nvarchar(4)" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="NJMC" exp="年级名称" type="nvarchar(10)" null="F" p="F" />
+            <name="SSNF" exp="所属年份" type="nvarchar(4)" null="F" p="F" />
+            <name="NJZT" exp="年级状态" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_02_02_ZZBJ" explanation="学校班级数据表">
+        <field_area>
+            <name="XZBDM" exp="行政班代码" type="nvarchar(10)" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" />
+            <name="ZZNJID" exp="学校年级数据表" type="nvarchar(4)" null="F" p="F" />
+            <name="XZBMC" exp="行政班名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JBNY" exp="建班年月" type="nvarchar(6)" null="F" p="F" />
+            <name="BZRGH" exp="班主任工号" type="nvarchar(20)" null="T" p="F" />
+            <name="JSBH" exp="教室编号" type="nvarchar(10)" null="T" p="F" />
+            <name="NANSRS" exp="男生人数" type="decimal(4, 0)" null="T" p="F" />
+            <name="NVSRS" exp="女生人数" type="decimal(4, 0)" null="T" p="F" />
+            <name="ZRS" exp="总人数" type="decimal(4, 0)" null="T" p="F" />
+            <name="BZXH" exp="班长学号" type="nvarchar(20)" null="T" p="F" />
+            <name="JXJH" exp="教学计划" type="text" null="F" p="F" />
+            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="F" />
+            <name="XQDM" exp="校区代码" type="nvarchar(2)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_03_A01_XQXFGL" explanation="学期学分管理表">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
+            <name="ZDXF" exp="最高学分" type="decimal(3, 1)" null="T" p="F" />
+            <name="ZGXF" exp="最低学分" type="decimal(3, 1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_03_01_ZTJXJH" explanation="总体教学计划数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
+            <name="JHNJ" exp="计划年级" type="nvarchar(4)" null="F" p="F" />
+            <name="ZYXXID" exp="专业编号" type="int" null="F" p="F" />
+            <name="JHZYMC" exp="计划专业名称" type="nvarchar(50)" null="T" p="F" />
+            <name="ZXFYQ" exp="总学分要求" type="decimal(3, 0)" null="F" p="F" />
+            <name="JLNY" exp="建立年月" type="nvarchar(6)" null="T" p="F" />
+            <name="SYXZ" exp="适用学制" type="decimal(3, 1)" null="T" p="F" />
+            <name="PYMB" exp="培养目标" type="text" null="T" p="F" />
+            <name="SFKY" exp="是否可用" type="nvarchar(1)" null="F" p="F" />
+            <name="FJ" exp="附件" type="text" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_03_02_JXJHFLXFYQ" explanation="教学计划分类学分要求数据子类">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="KCFLM" exp="课程分类码" type="nvarchar(1)" null="F" p="T" />
+            <name="XFYQ" exp="学分要求" type="decimal(2, 1)" null="F" p="F" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_03_03_JXJHKCQD" explanation="教学计划课程清单数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="T" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
+            <name="KCMC" exp="课程名称" type="nvarchar(100)" null="F" p="F" />
+            <name="YXKC" exp="预修课程" type="nvarchar(200)" null="T" p="F" />
+            <name="SFHXKC" exp="是否核心（骨干）" type="nvarchar(1)" null="T" p="F" />
+            <name="KCFLM" exp="课程分类码" type="nvarchar(1)" null="F" p="F" />
+            <name="KCSXM" exp="课程属性码" type="nvarchar(1)" null="F" p="F" />
+            <name="ZXXQ" exp="执行学期" type="decimal(2, 0)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_05_02_JSJXGZLTJ" explanation="教师教学工作量统计数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JSID" exp="教师ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
+            <name="XQMC" exp="学期名称" type="nvarchar(10)" null="F" p="F" />
+            <name="JSXM" exp="教师姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="RJKCMS" exp="任教课程门数" type="decimal(4, 0)" null="F" p="F" />
+            <name="LLZXS" exp="理论总学时" type="decimal(4, 0)" null="F" p="F" />
+            <name="SJZXS" exp="实践总学时" type="decimal(4, 0)" null="F" p="F" />
+            <name="QTZXS" exp="其他总学时" type="decimal(4, 0)" null="F" p="F" />
+            <name="XSZS" exp="学生总数" type="decimal(4, 0)" null="F" p="F" />
+            <name="ZXFS" exp="总学分数" type="decimal(5, 1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_07_01_XWSXJDXX" explanation="校外实习基地信息数据子类表">
@@ -181,6 +181,26 @@
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_07_A01_XXSXJH" explanation="学校实习计划表">
+        <field_area>
+            <name="ID" exp="实习计划ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JHBT" exp="计划标题" type="nvarchar(30)" null="F" p="F" />
+            <name="NJ" exp="年级" type="nvarchar(10)" null="F" p="F" />
+            <name="BGXS" exp="报告形式" type="int" null="F" p="F" remark="（月报，周报）" />
+            <name="SFSX" exp="计划是否生效" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_07_A02_XXSXJD" explanation="学校实习阶段表">
+        <field_area>
+            <name="ID" exp="实习阶段ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
+            <name="JDM" exp="阶段名" type="nvarchar(30)" null="F" p="F" />
+            <name="JDKSSJ" exp="阶段开始时间" type="datetime" null="F" p="F" />
+            <name="JDJSSJ" exp="阶段结束时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_07_03_XSXWSXQK" explanation="学生校外实习情况数据子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -200,93 +220,16 @@
             <name="XSHJXZM" exp="学生户籍性质码" type="nvarchar(1)" null="F" p="F" remark="值空间：HJXZ户籍性质代码 " />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_07_A11_SXJC" explanation="实习奖惩表">
+    <table name="EDU_ZZJX_07_A03_XXSXZY" explanation="学校实习周/月表">
         <field_area>
-            <name="ID" exp="奖惩信息ID" type="int" null="F" p="T" />
+            <name="ID" exp="实习周/月ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
-            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
-            <name="JCLX" exp="奖惩类型" type="int" null="F" p="F" />
-            <name="JCRQ" exp="奖惩日期" type="datetime" null="F" p="F" />
-            <name="CLJG" exp="处理结果" type="nvarchar(300)" null="F" p="F" />
-            <name="BZ" exp="备注" type="nvarchar(300)" null="F" p="F" />
-            <name="TJR" exp="添加人" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_07_A10_SXJD" explanation="实习鉴定表">
-        <field_area>
-            <name="ID" exp="实习鉴定信息ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
-            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
-            <name="JDNR" exp="鉴定内容" type="text" null="F" p="F" />
-            <name="SXDWYJ" exp="实习单位意见" type="text" null="F" p="F" />
-            <name="BJYJ" exp="班级意见" type="text" null="F" p="F" />
-            <name="XXYJ" exp="学校意见" type="text" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_07_A09_SXRZ" explanation="实习日志表">
-        <field_area>
-            <name="ID" exp="实习日志ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
             <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
             <name="SXJDID" exp="实习阶段ID" type="int" null="F" p="F" />
-            <name="SXZYID" exp="实习周/月表ID" type="int" null="F" p="F" />
-            <name="RZBT" exp="日志标题" type="nvarchar(50)" null="F" p="F" />
-            <name="NR" exp="内容" type="text" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_07_A08_SXTS" explanation="实习投诉表">
-        <field_area>
-            <name="ID" exp="实习投诉ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
-            <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
-            <name="XSXXID" exp="投诉学生ID" type="int" null="F" p="F" />
-            <name="TSSJ" exp="投诉时间" type="datetime" null="F" p="F" />
-            <name="TSYY" exp="投诉原因" type="nvarchar(300)" null="F" p="F" />
-            <name="TSJG" exp="投诉结果" type="nvarchar(300)" null="F" p="F" />
-            <name="QYJY" exp="企业建议" type="nvarchar(300)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_07_A07_SXZG" explanation="实习转岗表">
-        <field_area>
-            <name="ID" exp="实习转岗ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" exp="申请学生ID" type="int" null="F" p="F" />
-            <name="ZCGW" exp="转出岗位ID" type="int" null="F" p="F" />
-            <name="ZCGWQY" exp="转出岗位企业ID" type="int" null="F" p="F" />
-            <name="ZRGW" exp="转入岗位ID" type="int" null="F" p="F" />
-            <name="ZRGWQY" exp="转入岗位企业ID" type="int" null="F" p="F" />
-            <name="BZRSH" exp="班主任审核" type="int" null="F" p="F" />
-            <name="ZCQYSH" exp="转出企业审核" type="int" null="F" p="F" />
-            <name="ZRQYSH" exp="转入企业审核" type="int" null="F" p="F" />
-            <name="JYCSH" exp="就业处审核" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_07_A06_XQHD" explanation="校企互动表">
-        <field_area>
-            <name="ID" exp="校企互动信息ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
-            <name="XXJY" exp="企业对学校工作建议" type="nvarchar(300)" null="F" p="F" />
-            <name="XSJY" exp="企业对学生职业技能建议" type="nvarchar(300)" null="F" p="F" />
-            <name="GLJY" exp="实习生管理工作的建议" type="nvarchar(300)" null="F" p="F" />
-            <name="QTJY" exp="其他建议" type="nvarchar(300)" null="F" p="F" />
-            <name="FKNR" exp="反馈内容" type="nvarchar(300)" null="F" p="F" />
-            <name="FKSJ" exp="反馈时间" type="datetime" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_07_A05_XSYP" explanation="学生应聘表">
-        <field_area>
-            <name="ID" exp="学生应聘信息ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
-            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
-            <name="GWID" exp="实习岗位ID" type="int" null="F" p="F" />
-            <name="XXSH" exp="学校审核" type="int" null="F" p="F" />
-            <name="QYSH" exp="企业审核" type="int" null="F" p="F" />
+            <name="MC" exp="名称" type="nvarchar(30)" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="LX" exp="类型" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_07_A04_SXGW" explanation="实习岗位表">
@@ -315,36 +258,93 @@
             <name="GWZT" exp="岗位状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_07_A03_XXSXZY" explanation="学校实习周/月表">
+    <table name="EDU_ZZJX_07_A05_XSYP" explanation="学生应聘表">
         <field_area>
-            <name="ID" exp="实习周/月ID" type="int" null="F" p="T" />
+            <name="ID" exp="学生应聘信息ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
+            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
+            <name="GWID" exp="实习岗位ID" type="int" null="F" p="F" />
+            <name="XXSH" exp="学校审核" type="int" null="F" p="F" />
+            <name="QYSH" exp="企业审核" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_07_A06_XQHD" explanation="校企互动表">
+        <field_area>
+            <name="ID" exp="校企互动信息ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
+            <name="XXJY" exp="企业对学校工作建议" type="nvarchar(300)" null="F" p="F" />
+            <name="XSJY" exp="企业对学生职业技能建议" type="nvarchar(300)" null="F" p="F" />
+            <name="GLJY" exp="实习生管理工作的建议" type="nvarchar(300)" null="F" p="F" />
+            <name="QTJY" exp="其他建议" type="nvarchar(300)" null="F" p="F" />
+            <name="FKNR" exp="反馈内容" type="nvarchar(300)" null="F" p="F" />
+            <name="FKSJ" exp="反馈时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_07_A07_SXZG" explanation="实习转岗表">
+        <field_area>
+            <name="ID" exp="实习转岗ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XSXXID" exp="申请学生ID" type="int" null="F" p="F" />
+            <name="ZCGW" exp="转出岗位ID" type="int" null="F" p="F" />
+            <name="ZCGWQY" exp="转出岗位企业ID" type="int" null="F" p="F" />
+            <name="ZRGW" exp="转入岗位ID" type="int" null="F" p="F" />
+            <name="ZRGWQY" exp="转入岗位企业ID" type="int" null="F" p="F" />
+            <name="BZRSH" exp="班主任审核" type="int" null="F" p="F" />
+            <name="ZCQYSH" exp="转出企业审核" type="int" null="F" p="F" />
+            <name="ZRQYSH" exp="转入企业审核" type="int" null="F" p="F" />
+            <name="JYCSH" exp="就业处审核" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_07_A08_SXTS" explanation="实习投诉表">
+        <field_area>
+            <name="ID" exp="实习投诉ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
+            <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="投诉学生ID" type="int" null="F" p="F" />
+            <name="TSSJ" exp="投诉时间" type="datetime" null="F" p="F" />
+            <name="TSYY" exp="投诉原因" type="nvarchar(300)" null="F" p="F" />
+            <name="TSJG" exp="投诉结果" type="nvarchar(300)" null="F" p="F" />
+            <name="QYJY" exp="企业建议" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_07_A09_SXRZ" explanation="实习日志表">
+        <field_area>
+            <name="ID" exp="实习日志ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
             <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
             <name="SXJDID" exp="实习阶段ID" type="int" null="F" p="F" />
-            <name="MC" exp="名称" type="nvarchar(30)" null="F" p="F" />
-            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
-            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
-            <name="LX" exp="类型" type="int" null="F" p="F" />
+            <name="SXZYID" exp="实习周/月表ID" type="int" null="F" p="F" />
+            <name="RZBT" exp="日志标题" type="nvarchar(50)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_07_A02_XXSXJD" explanation="学校实习阶段表">
+    <table name="EDU_ZZJX_07_A10_SXJD" explanation="实习鉴定表">
         <field_area>
-            <name="ID" exp="实习阶段ID" type="int" null="F" p="T" />
+            <name="ID" exp="实习鉴定信息ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
-            <name="JDM" exp="阶段名" type="nvarchar(30)" null="F" p="F" />
-            <name="JDKSSJ" exp="阶段开始时间" type="datetime" null="F" p="F" />
-            <name="JDJSSJ" exp="阶段结束时间" type="datetime" null="F" p="F" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
+            <name="JDNR" exp="鉴定内容" type="text" null="F" p="F" />
+            <name="SXDWYJ" exp="实习单位意见" type="text" null="F" p="F" />
+            <name="BJYJ" exp="班级意见" type="text" null="F" p="F" />
+            <name="XXYJ" exp="学校意见" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_07_A01_XXSXJH" explanation="学校实习计划表">
+    <table name="EDU_ZZJX_07_A11_SXJC" explanation="实习奖惩表">
         <field_area>
-            <name="ID" exp="实习计划ID" type="int" null="F" p="T" />
+            <name="ID" exp="奖惩信息ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="JHBT" exp="计划标题" type="nvarchar(30)" null="F" p="F" />
-            <name="NJ" exp="年级" type="nvarchar(10)" null="F" p="F" />
-            <name="BGXS" exp="报告形式" type="int" null="F" p="F" remark="（月报，周报）" />
-            <name="SFSX" exp="计划是否生效" type="nvarchar(1)" null="F" p="F" />
+            <name="SXJHID" exp="实习计划ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
+            <name="JCLX" exp="奖惩类型" type="int" null="F" p="F" />
+            <name="JCRQ" exp="奖惩日期" type="datetime" null="F" p="F" />
+            <name="CLJG" exp="处理结果" type="nvarchar(300)" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(300)" null="F" p="F" />
+            <name="TJR" exp="添加人" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_08_A01_DGFSQ" explanation="代管费收取表">

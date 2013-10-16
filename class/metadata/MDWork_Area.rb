@@ -12,6 +12,7 @@ class MDWork_Area
   def initialize(area)
     @area,@doc = area,nil
     @area.is_valid?
+    @area.sort_table
     save_to_temporary
     backup_work_area
   end

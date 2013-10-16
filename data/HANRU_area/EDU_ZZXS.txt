@@ -72,20 +72,6 @@
             <name="LJZJHCZ" exp="离家最近火车站" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_02_02_XSJTCY" explanation="学生家庭成员数据表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
-            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="F" />
-            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" />
-            <name="JTCYZYM" exp="家庭成员职业码" type="nvarchar(3)" null="F" p="F" />
-            <name="SZDW" exp="所在单位" type="nvarchar(60)" null="T" p="F" />
-            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="T" p="F" />
-            <name="DH" exp="电话" type="nvarchar(30)" null="T" p="F" />
-            <name="YDDH" exp="移动电话" type="nvarchar(30)" null="T" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZXS_02_A01_XSLXR" explanation="学生联系人数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
@@ -101,6 +87,20 @@
             <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" />
             <name="WLDZ" exp="网络地址" type="nvarchar(60)" null="T" p="F" />
             <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_02_02_XSJTCY" explanation="学生家庭成员数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="F" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" />
+            <name="JTCYZYM" exp="家庭成员职业码" type="nvarchar(3)" null="F" p="F" />
+            <name="SZDW" exp="所在单位" type="nvarchar(60)" null="T" p="F" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="T" p="F" />
+            <name="DH" exp="电话" type="nvarchar(30)" null="T" p="F" />
+            <name="YDDH" exp="移动电话" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_02_A02_XSJTJJ" explanation="学生家庭经济情况数据表">

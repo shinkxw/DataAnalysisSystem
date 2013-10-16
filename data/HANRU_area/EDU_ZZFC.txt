@@ -103,18 +103,6 @@
             <name="SFRZ" exp="是否入住" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZFC_08_A03_ZWHCY" explanation="住委会成员表">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="ID" exp="成员ID" type="int" null="F" p="T" />
-            <name="YHID" exp="用户ID" type="int" null="F" p="F" />
-            <name="YHLX" exp="用户类型" type="int" null="F" p="F" />
-            <name="CYXM" exp="成员姓名" type="nvarchar(128)" null="T" p="F" />
-            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
-            <name="ZWMC" exp="职位名称" type="nvarchar(128)" null="F" p="F" />
-            <name="GZNR" exp="工作内容" type="nvarchar(500)" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZFC_08_A02_YHZSJL" explanation="用户住宿记录表">
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -129,6 +117,18 @@
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
             <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
             <name="SHR" exp="审核人" type="nvarchar(128)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_08_A03_ZWHCY" explanation="住委会成员表">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="ID" exp="成员ID" type="int" null="F" p="T" />
+            <name="YHID" exp="用户ID" type="int" null="F" p="F" />
+            <name="YHLX" exp="用户类型" type="int" null="F" p="F" />
+            <name="CYXM" exp="成员姓名" type="nvarchar(128)" null="T" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="ZWMC" exp="职位名称" type="nvarchar(128)" null="F" p="F" />
+            <name="GZNR" exp="工作内容" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

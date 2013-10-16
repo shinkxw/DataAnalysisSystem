@@ -95,16 +95,6 @@ EDU_ZZFC_08_A01_SSCW  宿舍床位表
   BZ            备注                    text           非主
   SFRZ          是否入住                nvarchar(1)    非主        是否标志代码表
 
-EDU_ZZFC_08_A03_ZWHCY  住委会成员表
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  ID            成员ID                  int            主键
-  YHID          用户ID                  int            非主
-  YHLX          用户类型                int            非主
-  CYXM          成员姓名                nvarchar(128)  非主
-  TJSJ          添加时间                datetime       非主
-  ZWMC          职位名称                nvarchar(128)  非主
-  GZNR          工作内容                nvarchar(500)  非主
-
 EDU_ZZFC_08_A02_YHZSJL  用户住宿记录表
   SCHOOLID      学校ID                  int            主键        学校配置表
   ID            住宿记录ID              int            主键
@@ -118,4 +108,14 @@ EDU_ZZFC_08_A02_YHZSJL  用户住宿记录表
   SHZT          审核状态                int            非主
   SHSJ          审核时间                datetime       非主
   SHR           审核人                  nvarchar(128)  非主
+
+EDU_ZZFC_08_A03_ZWHCY  住委会成员表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  ID            成员ID                  int            主键
+  YHID          用户ID                  int            非主
+  YHLX          用户类型                int            非主
+  CYXM          成员姓名                nvarchar(128)  非主
+  TJSJ          添加时间                datetime       非主
+  ZWMC          职位名称                nvarchar(128)  非主
+  GZNR          工作内容                nvarchar(500)  非主
 
