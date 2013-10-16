@@ -3380,6 +3380,7 @@ SELECT a.[ID]--编号
       ,a.[SQZT]--申请状态
       ,a.[BZ]--备注
       ,a.[SQCLID]--申请车辆ID
+      ,a.[JSSJ]--结束时间
       ,c.SCHOOLID as c_LCSL_SCHOOLID--流程实例表 学校
       ,c.LCMBID as c_LCSL_LCMBID--流程实例表 流程模板ID
       ,c.SQRID as c_LCSL_SQRID--流程实例表 申请人ID

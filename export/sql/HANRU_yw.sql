@@ -2676,6 +2676,7 @@ CREATE TABLE [dbo].[EDU_OAXT_24_A01_YCSQ](
 	[SQZT]  int  NOT NULL,--申请状态
 	[BZ]  text  NOT NULL,--备注
 	[SQCLID]  int  NOT NULL,--申请车辆ID
+	[JSSJ]  datetime  NOT NULL,--结束时间
 CONSTRAINT [PK_EDU_OAXT_24_A01_YCSQ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2711,6 +2712,7 @@ CREATE TABLE [dbo].[EDU_OAXT_24_A02_YCSQXGJL](
 	[DQBZSHZT]  int  NULL,--当前步骤审核状态
 	[SQRBMID]  int  NULL,--申请人部门ID
 	[SQCLID]  int  NOT NULL,--申请车辆ID
+	[JSSJ]  datetime  NOT NULL,--结束时间
 CONSTRAINT [PK_EDU_OAXT_24_A02_YCSQXGJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3881,6 +3883,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请车辆ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A01_YCSQ', @level2type=N'COLUMN',@level2name=N'SQCLID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A01_YCSQ', @level2type=N'COLUMN',@level2name=N'JSSJ'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用车申请修改记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -3926,6 +3930,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请人部门ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'SQRBMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请车辆ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'SQCLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A02_YCSQXGJL', @level2type=N'COLUMN',@level2name=N'JSSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'车辆数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_24_A03_CLSJ'
 GO

@@ -14,6 +14,7 @@ namespace HanRuEdu.LDAL
             SQSJ = new DateTime(1900, 1, 1);
             SQRID = "";
             BZ = "";
+            JSSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_OAXT_24_A01_YCSQ_metadata
         {
@@ -80,6 +81,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "申请车辆")]
             public Int32 SQCLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "结束时间")]
+            public DateTime JSSJ { get; set; }
 
 
         }

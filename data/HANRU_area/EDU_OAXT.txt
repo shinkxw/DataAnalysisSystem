@@ -654,6 +654,7 @@
             <name="SQZT" exp="申请状态" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
             <name="SQCLID" exp="申请车辆ID" type="int" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_24_A02_YCSQXGJL" explanation="用车申请修改记录表">
@@ -680,6 +681,7 @@
             <name="DQBZSHZT" exp="当前步骤审核状态" type="int" null="T" p="F" />
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
             <name="SQCLID" exp="申请车辆ID" type="int" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_24_A03_CLSJ" explanation="车辆数据表">
