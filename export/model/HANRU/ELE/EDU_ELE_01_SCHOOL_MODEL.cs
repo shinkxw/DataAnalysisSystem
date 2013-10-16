@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             MatchURL = "";
             MenhuURL = "";
             ModuleIdList = "";
+            CreateTime = new DateTime(1900, 1, 1);
         }
         public class EDU_ELE_01_SCHOOL_metadata
         {
@@ -76,6 +77,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "启用状态")]
             public Int32 EnableStatus { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "开户时间")]
+            public DateTime CreateTime { get; set; }
 
 
         }

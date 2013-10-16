@@ -814,6 +814,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[LogLevel]--日志级别
       ,a.[ModuleIdList]--权限列表
       ,a.[EnableStatus]--启用状态
+      ,a.[CreateTime]--开户时间
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

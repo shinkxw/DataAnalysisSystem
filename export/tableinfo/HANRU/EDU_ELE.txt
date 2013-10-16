@@ -39,6 +39,7 @@ EDU_ELE_01_SCHOOL  学校配置表
   LogLevel      日志级别                int            非主
   ModuleIdList  权限列表                text           非主
   EnableStatus  启用状态                int            非主
+  CreateTime    开户时间                datetime       非主
 
 EDU_ELE_01_XQ  学期数据表
   ID            编号                    int            主键
