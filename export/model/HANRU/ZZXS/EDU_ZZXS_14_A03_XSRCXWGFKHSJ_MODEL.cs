@@ -46,10 +46,12 @@ namespace HanRuEdu.LDAL
             public Int32 KHFZ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "考核时间")]
             public DateTime KHSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "记录教师")]
             public Int32 JLJSID { get; set; }
 

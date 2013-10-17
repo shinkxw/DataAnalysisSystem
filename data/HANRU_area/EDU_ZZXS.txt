@@ -253,7 +253,7 @@
             <name="KHBJDMLB" exp="考核班级代码列表" type="text" null="F" p="F" />
             <name="KHXMIDLB" exp="考核项目ID列表" type="text" null="F" p="F" />
             <name="KHJSMCLB" exp="考核教师名称列表" type="text" null="F" p="F" />
-            <name="KHJSIDLB" exp="考核教师ID列表" type="text" null="T" p="F" />
+            <name="KHJSIDLB" exp="考核教师ID列表" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_14_A03_XSRCXWGFKHSJ" explanation="学生日常行为规范考核数据表">
@@ -264,8 +264,8 @@
             <name="KHBID" exp="考核表ID" type="int" null="F" p="F" />
             <name="KHXMID" exp="考核项目ID" type="int" null="F" p="F" />
             <name="KHFZ" exp="考核分值" type="int" null="F" p="F" />
-            <name="KHSJ" exp="考核时间" type="datetime" null="T" p="F" />
-            <name="JLJSID" exp="记录教师ID" type="int" null="T" p="F" />
+            <name="KHSJ" exp="考核时间" type="datetime" null="F" p="F" />
+            <name="JLJSID" exp="记录教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_14_A04_XSWWYTZQSJ" explanation="学生五位一体值勤数据表">
@@ -276,9 +276,9 @@
             <name="JXBMC" exp="教学部名称" type="nvarchar(36)" null="F" p="F" />
             <name="ZQRYLX" exp="值勤人员类型" type="int" null="F" p="F" />
             <name="ZQRYID" exp="值勤人员ID" type="int" null="F" p="F" />
-            <name="ZQNR" exp="值勤内容" type="text" null="T" p="F" />
-            <name="ZQSJ" exp="值勤时间" type="datetime" null="T" p="F" />
-            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
+            <name="ZQNR" exp="值勤内容" type="text" null="F" p="F" />
+            <name="ZQSJ" exp="值勤时间" type="datetime" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_14_A05_XSWWYTZQXM" explanation="学生五位一体值勤项目表">
@@ -295,8 +295,8 @@
             <name="ZQXMID" exp="值勤项目ID" type="int" null="F" p="F" />
             <name="ZQRYLX" exp="值勤人员类型" type="int" null="F" p="F" />
             <name="ZQRYID" exp="值勤人员ID" type="int" null="F" p="F" />
-            <name="ZQKSSJ" exp="值勤开始时间" type="datetime" null="T" p="F" />
-            <name="ZQJSSJ" exp="值勤结束时间" type="datetime" null="T" p="F" />
+            <name="ZQKSSJ" exp="值勤开始时间" type="datetime" null="F" p="F" />
+            <name="ZQJSSJ" exp="值勤结束时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

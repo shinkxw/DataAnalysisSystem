@@ -39,10 +39,12 @@ namespace HanRuEdu.LDAL
             public Int32 ZQRYID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "值勤开始时间")]
             public DateTime ZQKSSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "值勤结束时间")]
             public DateTime ZQJSSJ { get; set; }
 

@@ -11047,7 +11047,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_14_A02_XSKHBSJ](
 	[KHBJDMLB]  text  NOT NULL,--考核班级代码列表
 	[KHXMIDLB]  text  NOT NULL,--考核项目ID列表
 	[KHJSMCLB]  text  NOT NULL,--考核教师名称列表
-	[KHJSIDLB]  text  NULL,--考核教师ID列表
+	[KHJSIDLB]  text  NOT NULL,--考核教师ID列表
 CONSTRAINT [PK_EDU_ZZXS_14_A02_XSKHBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -11067,8 +11067,8 @@ CREATE TABLE [dbo].[EDU_ZZXS_14_A03_XSRCXWGFKHSJ](
 	[KHBID]  int  NOT NULL,--考核表ID
 	[KHXMID]  int  NOT NULL,--考核项目ID
 	[KHFZ]  int  NOT NULL,--考核分值
-	[KHSJ]  datetime  NULL,--考核时间
-	[JLJSID]  int  NULL,--记录教师ID
+	[KHSJ]  datetime  NOT NULL,--考核时间
+	[JLJSID]  int  NOT NULL,--记录教师ID
 CONSTRAINT [PK_EDU_ZZXS_14_A03_XSRCXWGFKHSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -11088,9 +11088,9 @@ CREATE TABLE [dbo].[EDU_ZZXS_14_A04_XSWWYTZQSJ](
 	[JXBMC]  nvarchar(36)  NOT NULL,--教学部名称
 	[ZQRYLX]  int  NOT NULL,--值勤人员类型
 	[ZQRYID]  int  NOT NULL,--值勤人员ID
-	[ZQNR]  text  NULL,--值勤内容
-	[ZQSJ]  datetime  NULL,--值勤时间
-	[TJSJ]  datetime  NULL,--添加时间
+	[ZQNR]  text  NOT NULL,--值勤内容
+	[ZQSJ]  datetime  NOT NULL,--值勤时间
+	[TJSJ]  datetime  NOT NULL,--添加时间
 CONSTRAINT [PK_EDU_ZZXS_14_A04_XSWWYTZQSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -11125,8 +11125,8 @@ CREATE TABLE [dbo].[EDU_ZZXS_14_A06_XSWWYTZQRYAP](
 	[ZQXMID]  int  NOT NULL,--值勤项目ID
 	[ZQRYLX]  int  NOT NULL,--值勤人员类型
 	[ZQRYID]  int  NOT NULL,--值勤人员ID
-	[ZQKSSJ]  datetime  NULL,--值勤开始时间
-	[ZQJSSJ]  datetime  NULL,--值勤结束时间
+	[ZQKSSJ]  datetime  NOT NULL,--值勤开始时间
+	[ZQJSSJ]  datetime  NOT NULL,--值勤结束时间
 CONSTRAINT [PK_EDU_ZZXS_14_A06_XSWWYTZQRYAP] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

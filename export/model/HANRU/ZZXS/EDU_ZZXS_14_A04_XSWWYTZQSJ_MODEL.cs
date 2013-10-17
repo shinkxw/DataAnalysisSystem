@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_14_A04_XSWWYTZQSJ()
         {
             JXBMC = "";
+            ZQNR = "";
             ZQSJ = new DateTime(1900, 1, 1);
             TJSJ = new DateTime(1900, 1, 1);
         }
@@ -47,15 +48,18 @@ namespace HanRuEdu.LDAL
             public Int32 ZQRYID { get; set; }
 
 
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "值勤内容")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZQNR { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "值勤时间")]
             public DateTime ZQSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "添加时间")]
             public DateTime TJSJ { get; set; }
 

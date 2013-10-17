@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             KHBJDMLB = "";
             KHXMIDLB = "";
             KHJSMCLB = "";
+            KHJSIDLB = "";
         }
         public class EDU_ZZXS_14_A02_XSKHBSJ_metadata
         {
@@ -51,6 +52,7 @@ namespace HanRuEdu.LDAL
             public String KHJSMCLB { get; set; }
 
 
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "考核教师ID列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String KHJSIDLB { get; set; }
