@@ -69,7 +69,9 @@ class TemplateBuilder
   end
   def make_controller_add(table)
     str = "#{@tab.t}public void Add#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n"
+    str << "{\n#{@tab.l}"
+    str << "//#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}"
+    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_upd(table)
@@ -163,12 +165,15 @@ class TemplateBuilder
     str << "public int GetMax_#{table.lname}_ID()\n#{@tab.t}"
     str << "{\n#{@tab.l}int maxId = 0;\n#{@tab.t}lock (syncIDLock)\n#{@tab.t}"
     str << "{\n#{@tab.l}if (Max_#{table.lname}_ID == 0)\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}.FirstOrDefault();\n#{@tab.t}"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}"
+    str << ".FirstOrDefault(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}"
     str << "if (#{table.lname_dc} == null)\n#{@tab.t}"
     str << "{\n#{@tab.l}Max_#{table.lname}_ID = 1;\n"
     str << "#{@tab.s}}\n#{@tab.t}"
     str << "else\n#{@tab.t}"
-    str << "{\n#{@tab.l}//Max_#{table.lname}_ID = #{table.db_name}.#{table.name}.Max(e => e.ID) + 1;\n"
+    str << "{\n#{@tab.l}//Max_#{table.lname}_ID = #{table.db_name}.#{table.name}"
+    str << ".Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID)"
+    str << ".Max(e => e.ID) + 1;\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}"
     str << "else\n#{@tab.t}"
