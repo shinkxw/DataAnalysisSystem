@@ -173,7 +173,7 @@ class TemplateBuilder
     str << "{\n#{@tab.l}Max_#{table.lname}_ID = 1;\n"
     str << "#{@tab.s}}\n#{@tab.t}"
     str << "else\n#{@tab.t}"
-    str << "{\n#{@tab.l}//Max_#{table.lname}_ID = #{table.db_name}.#{table.name}"
+    str << "{\n#{@tab.l}Max_#{table.lname}_ID = #{table.db_name}.#{table.name}"
     str << ".Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID)"
     str << ".Max(e => e.ID) + 1;\n"
     str << "#{@tab.s}}\n"
