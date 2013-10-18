@@ -46,3 +46,13 @@ EDU_ZZXX_03_A01_JGGW  机构岗位表
   GWMC          岗位名称                nvarchar(50)   非主
   GWSM          岗位说明                text           非主
 
+EDU_ZZXX_10_A01_XYAQSJ  校园安全数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BT            标题                    nvarchar(100)  非主
+  NR            内容                    text           非主
+  FBSJ          发布时间                datetime       非主
+  FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
+  FBDW          发布单位                nvarchar(100)  非主
+  SFXS          是否显示                nvarchar(1)    非主        是否标志代码表
+

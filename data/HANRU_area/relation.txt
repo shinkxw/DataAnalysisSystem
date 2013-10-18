@@ -1041,6 +1041,10 @@
 <EDU_ZZXX_03_A01_JGGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JGH            EDU_ZZXX_03_01_XNJG                JGH
+<EDU_ZZXX_10_A01_XYAQSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+  SFXS           EDU_JY_SFBZ                        DM
 <EDU_ZZZS_01_01_ZSXX
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

@@ -54,4 +54,16 @@
             <name="GWSM" exp="岗位说明" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZXX_10_A01_XYAQSJ" explanation="校园安全数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BT" exp="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="T" p="F" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FBDW" exp="发布单位" type="nvarchar(100)" null="F" p="F" />
+            <name="SFXS" exp="是否显示" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
