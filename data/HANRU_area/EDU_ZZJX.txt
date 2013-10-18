@@ -349,13 +349,15 @@
     </table>
     <table name="EDU_ZZJX_08_A01_DGFSQ" explanation="代管费收取表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
-            <name="XNID" exp="学年ID" type="int" null="F" p="T" />
-            <name="YJJE" exp="已缴金额" type="money" null="F" p="F" />
-            <name="JFRQ" exp="缴费日期" type="nvarchar(8)" null="T" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XNID" exp="学年ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YJJE" exp="已缴金额" type="decimal(10, 3)" null="F" p="F" />
+            <name="JFRQ" exp="缴费日期" type="datetime" null="T" p="F" />
             <name="SFYSH" exp="是否已审核" type="nvarchar(1)" null="F" p="F" />
-            <name="SHRID" exp="审核人员ID" type="int" null="T" p="F" />
+            <name="SHRID" exp="审核人员ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_09_A01_TKSQSJ" explanation="调课申请数据表">

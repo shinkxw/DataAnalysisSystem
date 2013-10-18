@@ -25,9 +25,13 @@ class MDDiff
     @pro_diff_hash.each{|o1,o2| db_obj_transform(o1,o2,db)}#修改对象属性
     #对无法更新的表采用重建
     @rebuild_table_arr.uniq.each do |table|
-      puts "由于无法直接更新表结构，将通过重建方式来更新表#{table.name}"
-      puts "该操作可能破坏数据，请问是否重建?(Y/N)"
-      db.rebuild_table(table) if KbInput.get_bool
+      if db.has_data?(table.name)
+        puts "由于无法直接更新表结构，将通过重建方式来更新表#{table.name}"
+        puts "该操作可能破坏数据，请问是否重建?(Y/N)"
+        db.rewrite_table(table) if KbInput.get_bool
+      else
+        db.rebuild_table(table)
+      end
     end
     db.reset_conn#重置连接
   end

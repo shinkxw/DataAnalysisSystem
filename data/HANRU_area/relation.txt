@@ -869,6 +869,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
   SHRID          EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_09_A01_TKSQSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

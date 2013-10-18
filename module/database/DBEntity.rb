@@ -71,6 +71,8 @@ class DBEntity
   end
   #获取指定表的数据
   def get_table_data(table_name);query(Sql.get_tdata(table_name)) end
+  #判断表中是否有数据
+  def has_data?(tn);query(Sql.get_tdata_num(tn))[''][0] > 0 end
   #删除所有视图
   def delete_all_view
     get_view_name_arr.each{|view_name| execute(Sql.delete_view(view_name))}
@@ -79,6 +81,11 @@ class DBEntity
   def create_table(table);execute(Sql.create_table(table)) end
   #删除指定表
   def delete_table(table_name);execute(Sql.delete_table(table_name)) end
+  #先删除再建表
+  def rebuild_table(table)
+    execute(Sql.delete_table(table.name))
+    execute(Sql.create_table(table))
+  end
   #添加字段
   def add_field(field);execute(Sql.add_field(field)) end
   #删除字段
@@ -109,19 +116,26 @@ class DBEntity
   def get_work_area(area_name = 'db_out')
     MDWork_Area.new(get_db_area(area_name)).save_and_close_work_area
   end
-  #通过重建表的方式改变表结构
-  def rebuild_table(table)
-    old_name = table.name
-    table.rename('temporary_table')
-    begin;transfer_data(old_name, table)
-    ensure;table.rename(old_name)
-    end#reset_conn
-    transfer_data('temporary_table', table)
+  #通过重建表的方式改写表结构
+  def rewrite_table(table)
+    begin
+      old_name = table.name
+      table.rename('temporary_table')
+      begin;transfer_data(old_name, table)
+      ensure;table.rename(old_name)
+      end#reset_conn
+      transfer_data('temporary_table', table)
+    rescue WIN32OLERuntimeError => e
+      puts '数据无法转移,继续操作将删除表中数据,是否继续?(Y/N)'
+      raise e unless KbInput.get_bool
+      rebuild_table(table)#重建表
+    ensure
+      delete_table('temporary_table')#删表
+    end
   end
   #建表并转移指定名称的表数据进入
   def transfer_data(from_table_name,to_table)
-    delete_table(to_table.name)#删表
-    create_table(to_table)#建表
+    rebuild_table(to_table)#重建表
     begin;execute(Sql.transfer_data(from_table_name,to_table))#转移数据
     rescue WIN32OLERuntimeError => e
       if e.message.force_encoding('GBK').include?('插入重复键')

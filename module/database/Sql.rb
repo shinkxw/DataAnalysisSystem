@@ -37,7 +37,9 @@ class Sql
     sql << "'dbo', 'table', '#{table_name}', 'column', default)"
   end
   #查询指定表的数据
-  def self.get_tdata(table_name);"select * from #{table_name}" end
+  def self.get_tdata(table_name);"SELECT * FROM #{table_name}" end
+  #查询指定表的数据量
+  def self.get_tdata_num(tn);"SELECT COUNT(*) FROM #{tn}" end
   #删除指定名称视图
   def self.delete_view(view_name);"DROP VIEW #{view_name}" end
   #根据元数据建表
@@ -97,12 +99,12 @@ class Sql
     sql << "@level1type=N'TABLE',@level1name=N'#{field.table.name}', @level2type=N'COLUMN',@level2name=N'#{field.name}'\nGO\n"
   end
   #转移表数据
-  def self.transfer_data(old_table_name,new_table)
+  def self.transfer_data(otn,nt)
     sql = ''
-    sql << "SET IDENTITY_INSERT [dbo].[#{new_table.name}] ON\n" if new_table.has_identity?#存在自增字段
-    sql << "INSERT INTO [#{new_table.name}]([#{new_table.get_field_name_arr.join('] ,[')}]) "
-    sql << "SELECT * from #{old_table_name}\n"
-    sql << "SET IDENTITY_INSERT [dbo].[#{new_table.name}] OFF\n" if new_table.has_identity?#存在自增字段
+    sql << "SET IDENTITY_INSERT [dbo].[#{nt.name}] ON\n" if nt.has_identity?#存在自增字段
+    sql << "INSERT INTO [#{nt.name}]([#{nt.get_field_name_arr.join('] ,[')}]) "
+    sql << "SELECT * from #{otn}\n"
+    sql << "SET IDENTITY_INSERT [dbo].[#{nt.name}] OFF\n" if nt.has_identity?#存在自增字段
     sql
   end
   #根据配置获得表连接查询sql语句

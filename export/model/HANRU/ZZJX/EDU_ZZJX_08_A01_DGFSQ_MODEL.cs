@@ -9,10 +9,16 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_08_A01_DGFSQ()
         {
+            JFRQ = new DateTime(1900, 1, 1);
             SFYSH = "";
         }
         public class EDU_ZZJX_08_A01_DGFSQ_metadata
         {
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
+
+
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
@@ -29,15 +35,18 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "学期")]
+            public Int32 XQID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "已缴金额")]
-            [Range(typeof(decimal), "0", "9999999")]
+            [Range(typeof(decimal), "0", "9999999999")]
             public decimal YJJE { get; set; }
 
 
             [Display(Name = "缴费日期")]
-            [StringLength(8)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JFRQ { get; set; }
+            public DateTime JFRQ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -47,6 +56,7 @@ namespace HanRuEdu.LDAL
             public String SFYSH { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "审核人员")]
             public Int32 SHRID { get; set; }
 
