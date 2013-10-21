@@ -14,6 +14,7 @@ namespace HanRuEdu.LDAL
             MenhuURL = "";
             ModuleIdList = "";
             CreateTime = new DateTime(1900, 1, 1);
+            YXTID = "";
         }
         public class EDU_ELE_01_SCHOOL_metadata
         {
@@ -82,6 +83,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "开户时间")]
             public DateTime CreateTime { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "翼校通")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String YXTID { get; set; }
 
 
         }

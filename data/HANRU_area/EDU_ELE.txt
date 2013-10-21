@@ -47,6 +47,7 @@
             <name="ModuleIdList" exp="权限列表" type="text" null="F" p="F" />
             <name="EnableStatus" exp="启用状态" type="int" null="F" p="F" />
             <name="CreateTime" exp="开户时间" type="datetime" null="F" p="F" />
+            <name="YXTID" exp="翼校通ID" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_XQ" explanation="学期数据表">
