@@ -392,6 +392,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_10_02_JXJSJ](
 	[ZZDWHGR]  nvarchar(60)  NULL,--资助单位或个人
 	[JXJLYM]  nvarchar(1)  NULL,--奖学金来源码
 	[SFSH]  nvarchar(1)  NOT NULL,--是否审核
+	[XQID]  int  NOT NULL,--学期ID
 CONSTRAINT [PK_EDU_ZZXS_10_02_JXJSJ] PRIMARY KEY CLUSTERED
 (
 	[XSXXID] ASC,
@@ -417,6 +418,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_10_03_ZXJSJ](
 	[ZZDWHGR]  nvarchar(60)  NULL,--资助单位或个人
 	[ZXJLX]  nvarchar(1)  NOT NULL,--助学金类型
 	[SFSH]  nvarchar(1)  NOT NULL,--是否审核
+	[XQID]  int  NOT NULL,--学期ID
 CONSTRAINT [PK_EDU_ZZXS_10_03_ZXJSJ] PRIMARY KEY CLUSTERED
 (
 	[XSXXID] ASC,
@@ -914,6 +916,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'奖学金来源码' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否审核' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_02_JXJSJ', @level2type=N'COLUMN',@level2name=N'SFSH'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_02_JXJSJ', @level2type=N'COLUMN',@level2name=N'XQID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'助学金数据子类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_03_ZXJSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_03_ZXJSJ', @level2type=N'COLUMN',@level2name=N'XSXXID'
@@ -939,6 +943,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'助学金类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_03_ZXJSJ', @level2type=N'COLUMN',@level2name=N'ZXJLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否审核' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_03_ZXJSJ', @level2type=N'COLUMN',@level2name=N'SFSH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_10_03_ZXJSJ', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生简历表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_13_A01_XSJL'
 GO

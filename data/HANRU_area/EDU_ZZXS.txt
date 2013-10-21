@@ -205,6 +205,7 @@
             <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
             <name="JXJLYM" exp="奖学金来源码" type="nvarchar(1)" null="T" p="F" />
             <name="SFSH" exp="是否审核" type="nvarchar(1)" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_10_03_ZXJSJ" explanation="助学金数据子类表">
@@ -221,6 +222,7 @@
             <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
             <name="ZXJLX" exp="助学金类型" type="nvarchar(1)" null="F" p="F" />
             <name="SFSH" exp="是否审核" type="nvarchar(1)" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_13_A01_XSJL" explanation="学生简历表">

@@ -13,6 +13,7 @@ SELECT a.[XSXXID]--学生ID
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[JXJLYM]--奖学金来源码
       ,a.[SFSH]--是否审核
+      ,a.[XQID]--学期ID
       ,b.SCHOOLID as b_XSXX_SCHOOLID--学生信息数据表 学校名
       ,b.XH as b_XSXX_XH--学生信息数据表 学号
       ,b.XM as b_XSXX_XM--学生信息数据表 姓名
@@ -66,12 +67,20 @@ SELECT a.[XSXXID]--学生ID
       ,d.MC as d_JXJLX_MC--奖学金类型代码表 名称
       ,e.MC as e_JLZZZJLY_MC--奖励资助资金来源代码表 名称
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
+      ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
+      ,g.XNID as g_XQ_XNID--学期数据表 学年
+      ,g.XQM as g_XQ_XQM--学期数据表 学期码
+      ,gb.MC as g_XQ_XQM_MC--学期代码表 名称
+      ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
+      ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZXS_10_02_JXJSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_JXJLX AS d ON a.JXJLXM = d.DM /*奖学金类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_JLZZZJLY AS e ON a.JXJLYM = e.DM /*奖学金来源码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFSH = f.DM /*是否审核*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS g ON a.XQID = g.ID /*学期ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
@@ -85,5 +94,6 @@ FROM dbo.EDU_ZZXS_10_02_JXJSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS gb ON g.XQM = gb.DM /*学期码*/
 GO

@@ -1002,11 +1002,13 @@
   JXJLXM         EDU_JY_JXJLX                       DM
   JXJLYM         EDU_JY_JLZZZJLY                    DM
   SFSH           EDU_JY_SFBZ                        DM
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZZXS_10_03_ZXJSJ
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZXJLX          EDU_ZZ_ZXJFL                       DM
   SFSH           EDU_JY_SFBZ                        DM
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZZXS_13_A01_XSJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSXXID         EDU_ZZXS_01_01_XSXX                ID

@@ -86,6 +86,11 @@ namespace HanRuEdu.LDAL
             public String SFSH { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Ñ§ÆÚ")]
+            public Int32 XQID { get; set; }
+
+
         }
     }
 }

@@ -182,6 +182,7 @@ EDU_ZZXS_10_02_JXJSJ  奖学金数据子类表
   ZZDWHGR       资助单位或个人          nvarchar(60)   非主
   JXJLYM        奖学金来源码            nvarchar(1)    非主        奖励资助资金来源代码表
   SFSH          是否审核                nvarchar(1)    非主        是否标志代码表
+  XQID          学期ID                  int            非主        学期数据表
 
 EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   XSXXID        学生ID                  int            主键        学生信息数据表
@@ -196,6 +197,7 @@ EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   ZZDWHGR       资助单位或个人          nvarchar(60)   非主
   ZXJLX         助学金类型              nvarchar(1)    非主        助学金分类代码
   SFSH          是否审核                nvarchar(1)    非主        是否标志代码表
+  XQID          学期ID                  int            非主        学期数据表
 
 EDU_ZZXS_13_A01_XSJL  学生简历表
   SCHOOLID      学校ID                  int            主键        学校配置表
