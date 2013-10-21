@@ -250,6 +250,7 @@ EDU_OAXT_15_A04_ZCRK  资产入库表
   Vender        厂家                    nvarchar(200)  非主
   Registdate    登记时间                datetime       非主
   Remark        备注                    nvarchar(100)  非主
+  Status        审核状态                int            非主
 
 EDU_OAXT_15_A05_ZCJH  资产借还表
   ID            编号                    int            主键
@@ -298,6 +299,7 @@ EDU_OAXT_15_A08_BXGL  报修管理表
   StartDate     开始时间                datetime       非主
   Status        状态                    int            非主
   Remark        备注                    nvarchar(300)  非主
+  SumCount      数量                    decimal(8, 2)  非主
 
 EDU_OAXT_15_A09_WXJH  维修计划表
   ID            编号                    int            主键

@@ -15,6 +15,7 @@ SELECT a.[ID]--编号
       ,a.[Vender]--厂家
       ,a.[Registdate]--登记时间
       ,a.[Remark]--备注
+      ,a.[Status]--审核状态
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
       ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID

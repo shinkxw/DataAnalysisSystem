@@ -36,23 +36,23 @@
     </table>
     <table name="EDU_ZZXS_01_A01_XSXX" explanation="学生扩展数据表">
         <field_area>
-            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" />
             <name="XNID" exp="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
-            <name="ZZXQID" exp="学期表" type="int" null="F" p="F" remark="EDU_ZZJX_01_03_ZZXQ" />
-            <name="JTDZQH" exp="家庭地址区划码" type="nvarchar(6)" null="T" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
+            <name="ZZXQID" exp="学期表" type="int" null="F" p="F" />
+            <name="JTDZQH" exp="家庭地址区划码" type="nvarchar(6)" null="T" p="F" />
             <name="JTXXDZ" exp="家庭详细地址" type="nvarchar(50)" null="T" p="F" />
             <name="HJXXDZ" exp="户籍详细地址" type="nvarchar(50)" null="T" p="F" />
-            <name="HJXZ" exp="户籍性质代码" type="nvarchar(1)" null="T" p="F" remark="EDU_ZJ_HJXZ" />
-            <name="BYJX" exp="不宜军训" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_SFBZ" />
+            <name="HJXZ" exp="户籍性质代码" type="nvarchar(1)" null="T" p="F" />
+            <name="BYJX" exp="不宜军训" type="nvarchar(1)" null="T" p="F" />
             <name="CSBZR" exp="初三班主任" type="nvarchar(10)" null="T" p="F" />
             <name="DRZW" exp="曾担任何种职务" type="text" null="T" p="F" />
             <name="YYDR" exp="愿意担任班干部，何职" type="text" null="T" p="F" />
             <name="BZ" exp="备注" type="text" null="T" p="F" />
-            <name="BYLX" exp="毕业生类型" type="nvarchar(1)" null="F" p="F" remark="EDU_ZJ_BYSLX" />
-            <name="XSLX" exp="学生类型" type="nvarchar(5)" null="F" p="F" remark="EDU_JY_XSLB" />
-            <name="SFZS" exp="是否住宿" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="BYLX" exp="毕业生类型" type="nvarchar(1)" null="F" p="F" />
+            <name="XSLX" exp="学生类型" type="nvarchar(5)" null="F" p="F" />
+            <name="SFZS" exp="是否住宿" type="nvarchar(1)" null="F" p="F" />
             <name="XSBMSJ" exp="学生报名时间" type="nvarchar(8)" null="T" p="F" />
         </field_area>
     </table>

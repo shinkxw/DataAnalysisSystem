@@ -96,6 +96,11 @@ namespace HanRuEdu.LDAL
             public String Remark { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉóºË×´Ì¬")]
+            public Int32 Status { get; set; }
+
+
         }
     }
 }

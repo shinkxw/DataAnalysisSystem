@@ -2112,6 +2112,7 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A04_ZCRK](
 	[Vender]  nvarchar(200)  NOT NULL,--厂家
 	[Registdate]  datetime  NOT NULL,--登记时间
 	[Remark]  nvarchar(100)  NOT NULL,--备注
+	[Status]  int  NOT NULL,--审核状态
 CONSTRAINT [PK_EDU_OAXT_15_A04_ZCRK] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2204,6 +2205,7 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A08_BXGL](
 	[StartDate]  datetime  NOT NULL,--开始时间
 	[Status]  int  NOT NULL,--状态
 	[Remark]  nvarchar(300)  NOT NULL,--备注
+	[SumCount]  decimal(8, 2)  NOT NULL,--数量
 CONSTRAINT [PK_EDU_OAXT_15_A08_BXGL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3302,6 +3304,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记时间' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A04_ZCRK', @level2type=N'COLUMN',@level2name=N'Remark'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A04_ZCRK', @level2type=N'COLUMN',@level2name=N'Status'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产借还表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A05_ZCJH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A05_ZCJH', @level2type=N'COLUMN',@level2name=N'ID'
@@ -3389,6 +3393,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A08_BXGL', @level2type=N'COLUMN',@level2name=N'Status'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A08_BXGL', @level2type=N'COLUMN',@level2name=N'Remark'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A08_BXGL', @level2type=N'COLUMN',@level2name=N'SumCount'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'维修计划表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A09_WXJH'
 GO

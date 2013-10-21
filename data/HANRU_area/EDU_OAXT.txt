@@ -293,6 +293,7 @@
             <name="Vender" exp="厂家" type="nvarchar(200)" null="F" p="F" />
             <name="Registdate" exp="登记时间" type="datetime" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+            <name="Status" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A05_ZCJH" explanation="资产借还表">
@@ -349,6 +350,7 @@
             <name="StartDate" exp="开始时间" type="datetime" null="F" p="F" />
             <name="Status" exp="状态" type="int" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(300)" null="F" p="F" />
+            <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A09_WXJH" explanation="维修计划表">
