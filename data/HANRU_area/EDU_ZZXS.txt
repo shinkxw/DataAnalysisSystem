@@ -225,21 +225,6 @@
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_13_A01_XSJL" explanation="学生简历表">
-        <field_area>
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="T" />
-            <name="YYNL" exp="英语能力" type="nvarchar(50)" null="F" p="F" />
-            <name="GZNX" exp="工作年限" type="int" null="F" p="F" />
-            <name="ZWPJ" exp="自我评价" type="nvarchar(300)" null="F" p="F" />
-            <name="JYJL" exp="教育经历" type="nvarchar(200)" null="F" p="F" />
-            <name="SHZS" exp="所获证书" type="nvarchar(200)" null="F" p="F" />
-            <name="GZJY" exp="工作经验" type="nvarchar(500)" null="F" p="F" />
-            <name="QZYX" exp="求职意向" type="nvarchar(200)" null="F" p="F" />
-            <name="JNZC" exp="技能专长" type="nvarchar(300)" null="F" p="F" />
-            <name="XMJY" exp="项目经验" type="nvarchar(600)" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZXS_14_A01_XSKHXM" explanation="学生考核项目表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

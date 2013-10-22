@@ -199,19 +199,6 @@ EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   SFSH          是否审核                nvarchar(1)    非主        是否标志代码表
   XQID          学期ID                  int            非主        学期数据表
 
-EDU_ZZXS_13_A01_XSJL  学生简历表
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  XSXXID        学生信息ID              int            主键        学生信息数据表
-  YYNL          英语能力                nvarchar(50)   非主
-  GZNX          工作年限                int            非主
-  ZWPJ          自我评价                nvarchar(300)  非主
-  JYJL          教育经历                nvarchar(200)  非主
-  SHZS          所获证书                nvarchar(200)  非主
-  GZJY          工作经验                nvarchar(500)  非主
-  QZYX          求职意向                nvarchar(200)  非主
-  JNZC          技能专长                nvarchar(300)  非主
-  XMJY          项目经验                nvarchar(600)  非主
-
 EDU_ZZXS_14_A01_XSKHXM  学生考核项目表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表

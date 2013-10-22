@@ -44,6 +44,6 @@ EDU_ZZZS_02_01_RXCJ  入学成绩数据表
 EDU_ZZZS_03_01_KSKMCJ  考生科目成绩数据类表
   XSXXID        考生ID                  int            主键        学生信息数据表
   SCHOOLID      学校ID                  int            主键        学校配置表
-  KMM           科目码                  nvarchar(2)    主键        中考科目代码
+  KMM           科目码                  nvarchar(2)    主键
   ZKFS          中考分数                decimal(5, 1)  非主
 
