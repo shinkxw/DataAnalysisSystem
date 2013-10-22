@@ -55,6 +55,8 @@ class MDTable
   def name_space_name;a = @name.split('_');"#{a[0]}_#{a[1]}" end
   #返回标准表的获取值方法名
   def select_method_name;a = @name.split('_');"#{a[1]}_#{a[2]}" end
+  #返回第一位版本号
+  def first_num;@name.split('_')[2].to_i end
   #返回所有主键
   def get_primary_key;@field_area.select{|field| field.p == "T"} end
   #获得第一个字段的字段名

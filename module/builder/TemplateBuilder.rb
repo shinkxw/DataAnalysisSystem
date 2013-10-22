@@ -29,6 +29,7 @@ class TemplateBuilder
   #生成指定命名空间的模板
   def build_name_space_template(name_space)
     name_space.each do |table|
+      next unless $t_range.include?(table.first_num)
       @tab.to_0
       @file_hash["Controllers/#{table.library_name.upcase}/#{table.lname}Controller.cs"] = make_controller(table)
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
