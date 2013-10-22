@@ -17,7 +17,7 @@ SELECT a.[ID]--编号
       ,a.[ZPRS]--招聘人数
       ,a.[education]--学历要求
       ,a.[Age]--年龄要求
-      ,a.[abstract]--岗位简介
+      ,a.[GWJJ]--岗位简介
       ,a.[Major]--专业要求
       ,a.[Base]--基本情况
       ,a.[experience]--工作经验
@@ -47,7 +47,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
 
 FROM dbo.EDU_ZZJX_20_A03_GWXX AS a LEFT OUTER JOIN

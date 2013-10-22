@@ -277,7 +277,7 @@
             <name="MSN" exp="msn" type="nvarchar(100)" null="F" p="F" />
             <name="Address" exp="公司地址" type="nvarchar(200)" null="F" p="F" />
             <name="Website" exp="网址" type="nvarchar(200)" null="F" p="F" />
-            <name="Abstract" exp="公司简介" type="nvarchar(500)" null="F" p="F" />
+            <name="GSJJ" exp="公司简介" type="nvarchar(500)" null="F" p="F" />
             <name="Status" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
@@ -311,7 +311,7 @@
             <name="ZPRS" exp="招聘人数" type="int" null="F" p="F" />
             <name="education" exp="学历要求" type="nvarchar(100)" null="F" p="F" />
             <name="Age" exp="年龄要求" type="nvarchar(100)" null="F" p="F" />
-            <name="abstract" exp="岗位简介" type="text" null="F" p="F" />
+            <name="GWJJ" exp="岗位简介" type="text" null="F" p="F" />
             <name="Major" exp="专业要求" type="nvarchar(100)" null="F" p="F" />
             <name="Base" exp="基本情况" type="text" null="F" p="F" />
             <name="experience" exp="工作经验" type="nvarchar(200)" null="F" p="F" />

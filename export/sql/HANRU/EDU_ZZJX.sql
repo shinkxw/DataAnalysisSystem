@@ -590,7 +590,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_20_A01_QYGL](
 	[MSN]  nvarchar(100)  NOT NULL,--msn
 	[Address]  nvarchar(200)  NOT NULL,--公司地址
 	[Website]  nvarchar(200)  NOT NULL,--网址
-	[Abstract]  nvarchar(500)  NOT NULL,--公司简介
+	[GSJJ]  nvarchar(500)  NOT NULL,--公司简介
 	[Status]  int  NOT NULL,--审核状态
 CONSTRAINT [PK_EDU_ZZJX_20_A01_QYGL] PRIMARY KEY CLUSTERED
 (
@@ -642,7 +642,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_20_A03_GWXX](
 	[ZPRS]  int  NOT NULL,--招聘人数
 	[education]  nvarchar(100)  NOT NULL,--学历要求
 	[Age]  nvarchar(100)  NOT NULL,--年龄要求
-	[abstract]  text  NOT NULL,--岗位简介
+	[GWJJ]  text  NOT NULL,--岗位简介
 	[Major]  nvarchar(100)  NOT NULL,--专业要求
 	[Base]  text  NOT NULL,--基本情况
 	[experience]  nvarchar(200)  NOT NULL,--工作经验
@@ -1275,7 +1275,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司地址' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A01_QYGL', @level2type=N'COLUMN',@level2name=N'Website'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A01_QYGL', @level2type=N'COLUMN',@level2name=N'Abstract'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A01_QYGL', @level2type=N'COLUMN',@level2name=N'GSJJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A01_QYGL', @level2type=N'COLUMN',@level2name=N'Status'
 GO
@@ -1331,7 +1331,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学历要求' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年龄要求' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'Age'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'abstract'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'GWJJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业要求' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'Major'
 GO

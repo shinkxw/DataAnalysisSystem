@@ -30,7 +30,7 @@ namespace HanRuEdu.LDAL
             MSN = "";
             Address = "";
             Website = "";
-            Abstract = "";
+            GSJJ = "";
         }
         public class EDU_ZZJX_20_A01_QYGL_metadata
         {
@@ -205,7 +205,7 @@ namespace HanRuEdu.LDAL
             [Display(Name = "¹«Ë¾¼ò½é")]
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String Abstract { get; set; }
+            public String GSJJ { get; set; }
 
 
             [Required(ErrorMessage = "±ØÌî")]

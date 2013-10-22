@@ -18,7 +18,7 @@ namespace HanRuEdu.LDAL
             Computer = "";
             education = "";
             Age = "";
-            abstract = "";
+            GWJJ = "";
             Major = "";
             Base = "";
             experience = "";
@@ -117,7 +117,7 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
             [Display(Name = "¸ÚÎ»¼ò½é")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String abstract { get; set; }
+            public String GWJJ { get; set; }
 
 
             [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]

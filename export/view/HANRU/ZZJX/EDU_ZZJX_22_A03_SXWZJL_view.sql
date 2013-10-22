@@ -33,7 +33,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号

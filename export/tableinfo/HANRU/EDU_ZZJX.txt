@@ -238,7 +238,7 @@ EDU_ZZJX_20_A01_QYGL  企业管理表
   MSN           msn                     nvarchar(100)  非主
   Address       公司地址                nvarchar(200)  非主
   Website       网址                    nvarchar(200)  非主
-  Abstract      公司简介                nvarchar(500)  非主
+  GSJJ          公司简介                nvarchar(500)  非主
   Status        审核状态                int            非主
 
 EDU_ZZJX_20_A02_XQHD  校企互动表
@@ -268,7 +268,7 @@ EDU_ZZJX_20_A03_GWXX  岗位信息表
   ZPRS          招聘人数                int            非主
   education     学历要求                nvarchar(100)  非主
   Age           年龄要求                nvarchar(100)  非主
-  abstract      岗位简介                text           非主
+  GWJJ          岗位简介                text           非主
   Major         专业要求                nvarchar(100)  非主
   Base          基本情况                text           非主
   experience    工作经验                nvarchar(200)  非主

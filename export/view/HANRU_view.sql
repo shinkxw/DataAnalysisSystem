@@ -10431,7 +10431,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
 
 FROM dbo.EDU_ZZJX_20_A02_XQHD AS a LEFT OUTER JOIN
@@ -10456,7 +10456,7 @@ SELECT a.[ID]--编号
       ,a.[ZPRS]--招聘人数
       ,a.[education]--学历要求
       ,a.[Age]--年龄要求
-      ,a.[abstract]--岗位简介
+      ,a.[GWJJ]--岗位简介
       ,a.[Major]--专业要求
       ,a.[Base]--基本情况
       ,a.[experience]--工作经验
@@ -10486,7 +10486,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
 
 FROM dbo.EDU_ZZJX_20_A03_GWXX AS a LEFT OUTER JOIN
@@ -10642,7 +10642,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
       ,d.SCHOOLID as d_GWXX_SCHOOLID--岗位信息表 学校
       ,d.ComID as d_GWXX_ComID--岗位信息表 企业ID
@@ -10658,7 +10658,7 @@ SELECT a.[ID]--编号
       ,d.ZPRS as d_GWXX_ZPRS--岗位信息表 招聘人数
       ,d.education as d_GWXX_education--岗位信息表 学历要求
       ,d.Age as d_GWXX_Age--岗位信息表 年龄要求
-      ,d.abstract as d_GWXX_abstract--岗位信息表 岗位简介
+      ,d.GWJJ as d_GWXX_GWJJ--岗位信息表 岗位简介
       ,d.Major as d_GWXX_Major--岗位信息表 专业要求
       ,d.Base as d_GWXX_Base--岗位信息表 基本情况
       ,d.experience as d_GWXX_experience--岗位信息表 工作经验
@@ -10902,7 +10902,7 @@ SELECT a.[ID]--编号
       ,d.ZPRS as d_GWXX_ZPRS--岗位信息表 招聘人数
       ,d.education as d_GWXX_education--岗位信息表 学历要求
       ,d.Age as d_GWXX_Age--岗位信息表 年龄要求
-      ,d.abstract as d_GWXX_abstract--岗位信息表 岗位简介
+      ,d.GWJJ as d_GWXX_GWJJ--岗位信息表 岗位简介
       ,d.Major as d_GWXX_Major--岗位信息表 专业要求
       ,d.Base as d_GWXX_Base--岗位信息表 基本情况
       ,d.experience as d_GWXX_experience--岗位信息表 工作经验
@@ -10932,7 +10932,7 @@ SELECT a.[ID]--编号
       ,e.MSN as e_QYGL_MSN--企业管理表 msn
       ,e.Address as e_QYGL_Address--企业管理表 公司地址
       ,e.Website as e_QYGL_Website--企业管理表 网址
-      ,e.Abstract as e_QYGL_Abstract--企业管理表 公司简介
+      ,e.GSJJ as e_QYGL_GSJJ--企业管理表 公司简介
       ,e.Status as e_QYGL_Status--企业管理表 审核状态
       ,f.SCHOOLID as f_GWXX_SCHOOLID--岗位信息表 学校
       ,f.ComID as f_GWXX_ComID--岗位信息表 企业ID
@@ -10948,7 +10948,7 @@ SELECT a.[ID]--编号
       ,f.ZPRS as f_GWXX_ZPRS--岗位信息表 招聘人数
       ,f.education as f_GWXX_education--岗位信息表 学历要求
       ,f.Age as f_GWXX_Age--岗位信息表 年龄要求
-      ,f.abstract as f_GWXX_abstract--岗位信息表 岗位简介
+      ,f.GWJJ as f_GWXX_GWJJ--岗位信息表 岗位简介
       ,f.Major as f_GWXX_Major--岗位信息表 专业要求
       ,f.Base as f_GWXX_Base--岗位信息表 基本情况
       ,f.experience as f_GWXX_experience--岗位信息表 工作经验
@@ -10978,7 +10978,7 @@ SELECT a.[ID]--编号
       ,g.MSN as g_QYGL_MSN--企业管理表 msn
       ,g.Address as g_QYGL_Address--企业管理表 公司地址
       ,g.Website as g_QYGL_Website--企业管理表 网址
-      ,g.Abstract as g_QYGL_Abstract--企业管理表 公司简介
+      ,g.GSJJ as g_QYGL_GSJJ--企业管理表 公司简介
       ,g.Status as g_QYGL_Status--企业管理表 审核状态
 
 FROM dbo.EDU_ZZJX_22_A02_SXDWBG AS a LEFT OUTER JOIN
@@ -11037,7 +11037,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
@@ -11145,7 +11145,7 @@ SELECT a.[ID]--编号
       ,c.MSN as c_QYGL_MSN--企业管理表 msn
       ,c.Address as c_QYGL_Address--企业管理表 公司地址
       ,c.Website as c_QYGL_Website--企业管理表 网址
-      ,c.Abstract as c_QYGL_Abstract--企业管理表 公司简介
+      ,c.GSJJ as c_QYGL_GSJJ--企业管理表 公司简介
       ,c.Status as c_QYGL_Status--企业管理表 审核状态
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
