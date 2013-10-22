@@ -125,6 +125,7 @@
             <name="DISPLAYTYPE" exp="内外网" type="int" null="F" p="F" />
             <name="OPENFLAG" exp="开启状态" type="int" null="F" p="F" />
             <name="LLQX" exp="浏览权限" type="nvarchar(50)" null="T" p="F" />
+            <name="INDEXSHOW" exp="能否显示在主页上" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZPJ" explanation="文章评价表">

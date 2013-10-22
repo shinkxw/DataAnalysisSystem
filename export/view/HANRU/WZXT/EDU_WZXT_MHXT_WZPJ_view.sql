@@ -43,6 +43,7 @@ SELECT a.[ID]--评价ID
       ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 内外网
       ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 开启状态
       ,d.LLQX as d_WZWZ_LLQX--网站文章 浏览权限
+      ,d.INDEXSHOW as d_WZWZ_INDEXSHOW--网站文章 能否显示在主页上
 
 FROM dbo.EDU_WZXT_MHXT_WZPJ AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

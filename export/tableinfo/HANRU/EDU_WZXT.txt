@@ -104,6 +104,7 @@ EDU_WZXT_MHXT_WZWZ  网站文章
   DISPLAYTYPE   内外网                  int            非主
   OPENFLAG      开启状态                int            非主
   LLQX          浏览权限                nvarchar(50)   非主
+  INDEXSHOW     能否显示在主页上        int            非主
 
 EDU_WZXT_MHXT_WZPJ  文章评价表
   ID            评价ID                  int            主键

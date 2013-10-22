@@ -3765,6 +3765,7 @@ SELECT a.[ID]--网站文章ID
       ,a.[DISPLAYTYPE]--内外网
       ,a.[OPENFLAG]--开启状态
       ,a.[LLQX]--浏览权限
+      ,a.[INDEXSHOW]--能否显示在主页上
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
@@ -3835,6 +3836,7 @@ SELECT a.[ID]--评价ID
       ,d.DISPLAYTYPE as d_WZWZ_DISPLAYTYPE--网站文章 内外网
       ,d.OPENFLAG as d_WZWZ_OPENFLAG--网站文章 开启状态
       ,d.LLQX as d_WZWZ_LLQX--网站文章 浏览权限
+      ,d.INDEXSHOW as d_WZWZ_INDEXSHOW--网站文章 能否显示在主页上
 
 FROM dbo.EDU_WZXT_MHXT_WZPJ AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

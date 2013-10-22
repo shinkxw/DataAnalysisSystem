@@ -157,6 +157,11 @@ namespace HanRuEdu.LDAL
             public String LLQX { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "能否显示在主页上")]
+            public Int32 INDEXSHOW { get; set; }
+
+
         }
     }
 }

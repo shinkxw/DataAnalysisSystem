@@ -27,6 +27,7 @@ SELECT a.[ID]--网站文章ID
       ,a.[DISPLAYTYPE]--内外网
       ,a.[OPENFLAG]--开启状态
       ,a.[LLQX]--浏览权限
+      ,a.[INDEXSHOW]--能否显示在主页上
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
