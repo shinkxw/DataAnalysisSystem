@@ -63,7 +63,7 @@ class Sql
   end
   #É¾³ý×Ö¶Î
   def self.delete_field(field)
-    "ALTER TABLE #{field.table.name} DROP COLUMN #{field.name}"
+    "ALTER TABLE #{field.table.name} DROP COLUMN [#{field.name}]"
   end
   #ÐÞ¸Ä×Ö¶ÎÀàÐÍ
   def self.update_ftype(field)

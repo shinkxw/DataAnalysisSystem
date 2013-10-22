@@ -212,3 +212,151 @@ EDU_ZZJX_10_A05_KTJDSJ  课题阶段数据表
   JDGZNR        阶段工作内容            text           非主
   SCSJ          上传时间                datetime       非主
 
+EDU_ZZJX_20_A01_QYGL  企业管理表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  Name          企业名称                nvarchar(50)   非主
+  UserName      用户名                  nvarchar(50)   非主
+  Password      密码                    nvarchar(64)   非主
+  UserID        用户表id(预留)          int            非主
+  QYXZ          企业性质                nvarchar(200)  非主
+  QYGM          组织规模                nvarchar(200)  非主
+  ZZJG          组织机构                nvarchar(200)  非主
+  ZYJYFW        主要经营范围            nvarchar(500)  非主
+  License       营业执照                nvarchar(50)   非主
+  CompanyType   企业类型                int            非主
+  QYRS          企业人数                nvarchar(50)   非主
+  Regcapital    注册资金                nvarchar(50)   非主
+  PostNum       邮编                    nvarchar(50)   非主
+  Fox           传真                    nvarchar(50)   非主
+  Manager       负责人                  nvarchar(50)   非主
+  Job           职位                    nvarchar(50)   非主
+  Cellphone     手机号码                nvarchar(50)   非主
+  OfficNum      公司电话                nvarchar(50)   非主
+  Email         电子邮件                nvarchar(50)   非主
+  qq            qq                      nvarchar(50)   非主
+  MSN           msn                     nvarchar(100)  非主
+  Address       公司地址                nvarchar(200)  非主
+  Website       网址                    nvarchar(200)  非主
+  Abstract      公司简介                nvarchar(500)  非主
+  Status        审核状态                int            非主
+
+EDU_ZZJX_20_A02_XQHD  校企互动表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ComID         企业ID                  int            非主        企业管理表
+  ReactionTime  反馈时间                datetime       非主
+  AdviseToSchool企业对学校工作建议      text           非主
+  AdviseToArt   企业对学生职业技能建议  text           非主
+  OtherAdvise   其他建议                text           非主
+  Retroaction   反馈内容                text           非主
+  AdviseToStudent实习生管理工作的建议    text           非主
+
+EDU_ZZJX_20_A03_GWXX  岗位信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ComID         企业ID                  int            非主        企业管理表
+  JobName       岗位名称                nvarchar(50)   非主
+  PubTime       招聘开始时间            datetime       非主
+  EndTime       招聘结束时间            datetime       非主
+  WorkType      工作形式                int            非主
+  Sex           性别要求                int            非主
+  monthlypay    岗位薪酬                nvarchar(100)  非主
+  LanguageRequire语言要求                nvarchar(100)  非主
+  WorkPlace     工作地点                nvarchar(100)  非主
+  Computer      计算机水平              nvarchar(100)  非主
+  ZPRS          招聘人数                int            非主
+  education     学历要求                nvarchar(100)  非主
+  Age           年龄要求                nvarchar(100)  非主
+  abstract      岗位简介                text           非主
+  Major         专业要求                nvarchar(100)  非主
+  Base          基本情况                text           非主
+  experience    工作经验                nvarchar(200)  非主
+  GWSHZT        岗位审核状态            int            非主
+  Status        岗位当前状态            int            非主
+
+EDU_ZZJX_21_A01_SXBJGL  实习班级管理表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XNID          学年ID                  int            非主        学年表
+  XQID          学期ID                  int            非主        学期数据表
+  BZRID         班主任ID                int            非主        教职工基本数据子类表
+
+EDU_ZZJX_21_A02_SXSGL  实习生管理表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ComID         企业ID                  int            非主        企业管理表
+  JobID         岗位ID                  int            非主        岗位信息表
+  SZBID         实习班ID                int            非主        实习班级管理表
+  StuID         学生ID                  int            非主        学生信息数据表
+  Resume        简历                    text           非主
+  GSSHZT        公司审核状态            int            非主
+  TypeID        录取类型                int            非主
+  Status        实习生状态              int            非主
+
+EDU_ZZJX_22_A01_SXJL  实习记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  StuID         学生ID                  int            非主        学生信息数据表
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  SXNR          实习内容                text           非主
+  SXFS          实习反思                text           非主
+  ZWPD          自我评定                int            非主
+  ZDSFXM        指导师傅姓名            nvarchar(50)   非主
+  ZDSFPY        指导师傅评语            text           非主
+  ZDSFPDSJ      指导师傅评定时间        datetime       非主
+  ZFPD          师傅评定                int            非主
+  ZDJSXM        指导教师姓名            nvarchar(50)   非主
+  ZDJSPY        指导教师评语            text           非主
+  ZDJSPDSJ      指导教师评定时间        datetime       非主
+  JSPD          教师评定                int            非主
+
+EDU_ZZJX_22_A02_SXDWBG  实习单位变更表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  StuID          变更学生ID             int            非主        学生信息数据表
+  OrgJobID      变更前岗位ID            int            非主        岗位信息表
+  OrgComID      变更前企业ID            int            非主        企业管理表
+  NowJobID      变更后岗位ID            int            非主        岗位信息表
+  NowComID      变更后企业ID            int            非主        企业管理表
+
+EDU_ZZJX_22_A03_SXWZJL  实习违章纪录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ComID         企业ID                  int            非主        企业管理表
+  StuID         学生ID                  int            非主        学生信息数据表
+  WzTime        违章时间                datetime       非主
+  WGWZJL        违规违章记录            nvarchar(300)  非主
+  JYJXJGJCS     经验教训及改进措施      nvarchar(300)  非主
+
+EDU_ZZJX_22_A04_SXJD  实习鉴定表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  StuID         学生ID                  int            非主
+  XF            学分                    int            非主
+  SFHZ          是否汇总                int            非主
+  JDRID         鉴定人ID                int            非主
+
+EDU_ZZJX_22_A05_SXTS  实习投诉表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ComID         企业ID                  int            非主        企业管理表
+  StuID         学生ID                  int            非主        学生信息数据表
+  TsTime        投诉时间                datetime       非主
+  TsReason      投诉原因                text           非主
+  TsResult      投诉结果                text           非主
+  ComSuggest    投诉建议                text           非主
+  TypeID        投诉类型                int            非主
+
+EDU_ZZJX_22_A06_SXJC  实习奖惩表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  StuID         学生ID                  int            非主        学生信息数据表
+  XNID          学年ID                  int            非主        学年表
+  XQID          学期ID                  int            非主        学期数据表
+  typeid        奖惩类型                int            非主
+  Apprail       处理结果                text           非主
+  Remark        备注                    text           非主
+  AppraierID    添加人ID                int            非主
+
