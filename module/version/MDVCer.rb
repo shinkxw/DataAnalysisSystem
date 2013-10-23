@@ -5,15 +5,18 @@ class MDVCer
   attr_reader :version_arr#版本对象数组
   attr_reader :work_copy#工作副本
   #初始化
-  def initialize(area)
-    @area,@work_copy = area,nil
+  def initialize(work_area)
+    @area,@work_copy = work_area.area,nil
     @ver_path = "#{$root}/data/version/#{@area.name}_area/"
     @work_copy_path = @ver_path + 'WorkCopy.'
     @log_path = "#{$root}/data/#{@area.name}更新日志.txt"
     load_work_copy
     load_area_vision
     @version_arr.sort_by! {|v| v.update_date}.reverse!
-    build_new_version if has_update?
+    if has_update?
+      work_area.backup_work_area
+      build_new_version
+    end
     build_update_log
     save_version
   end

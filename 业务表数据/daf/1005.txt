@@ -318,30 +318,30 @@
     </table>
     <table name="ZZXS1201" explanation="社团基本数据子类表">
         <field_area>
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="STMC" explanation="社团名称" type="nvarchar(30)" null="F" p="T" identity="F" remark="社团名称 编号：ZZXS120101 " />
-            <name="STBH" explanation="社团编号" type="nvarchar(4)" null="F" p="F" identity="F" remark="社团编号 编号：ZZXS120102 解释/举例：学校自编 " />
-            <name="CLRQ" explanation="成立日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="成立日期 编号：ZZXS120103 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
-            <name="CLMD" explanation="成立目的" type="nvarchar(60)" null="T" p="F" identity="F" remark="成立目的 编号：ZZXS120104 " />
-            <name="ZYHDXS" explanation="主要活动形式" type="nvarchar(60)" null="F" p="F" identity="F" remark="主要活动形式 编号：ZZXS120105 " />
-            <name="CSR" explanation="创始人" type="nvarchar(36)" null="F" p="F" identity="F" remark="创始人 编号：ZZXS120106 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
-            <name="PZBM" explanation="批准部门" type="nvarchar(30)" null="F" p="F" identity="F" remark="批准部门 编号：ZZXS120107 " />
-            <name="STXZ" explanation="社团性质" type="nvarchar(30)" null="F" p="F" identity="F" remark="社团性质 编号：ZZXS120108 " />
-            <name="RS" explanation="人数" type="decimal(3)" null="F" p="F" identity="F" remark="人数 编号：ZZXS120109 " />
-            <name="DQFZR" explanation="当前负责人" type="nvarchar(36)" null="F" p="F" identity="F" remark="当前负责人 编号：ZZXS120110 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
-            <name="FZRDH" explanation="负责人电话" type="nvarchar(30)" null="F" p="F" identity="F" remark="负责人电话 编号：ZZXS120111 引用自JCTB010104 YDDH 移动电话 C 30 NULL NULL NULL NULL" />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="STMC" explanation="社团名称" type="nvarchar(30)" null="F" p="T" identity="F" />
+            <name="STBH" explanation="社团编号" type="nvarchar(4)" null="F" p="F" identity="F" />
+            <name="CLRQ" explanation="成立日期" type="nvarchar(8)" null="F" p="F" identity="F" />
+            <name="CLMD" explanation="成立目的" type="nvarchar(60)" null="T" p="F" identity="F" />
+            <name="ZYHDXS" explanation="主要活动形式" type="nvarchar(60)" null="F" p="F" identity="F" />
+            <name="CSR" explanation="创始人" type="nvarchar(36)" null="F" p="F" identity="F" />
+            <name="PZBM" explanation="批准部门" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="STXZ" explanation="社团性质" type="nvarchar(30)" null="F" p="F" identity="F" />
+            <name="RS" explanation="人数" type="decimal(3)" null="F" p="F" identity="F" />
+            <name="DQFZR" explanation="当前负责人" type="nvarchar(36)" null="F" p="F" identity="F" />
+            <name="FZRDH" explanation="负责人电话" type="nvarchar(30)" null="F" p="F" identity="F" />
         </field_area>
     </table>
     <table name="ZZXS1202" explanation="学生参与社团情况数据子类表">
         <field_area>
-            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" remark="学校ID" />
-            <name="STBH" explanation="社团编号" type="nvarchar(4)" null="T" p="F" identity="F" remark="社团编号 编号：ZZXS120102 引用自ZZXS120102 STBH 社团编号 C 4 M NULL 学校自编 NULL" />
-            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" identity="F" remark="姓名 编号：JCTB020101 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
-            <name="CDRQ" explanation="参团日期" type="nvarchar(8)" null="F" p="F" identity="F" remark="参团日期 编号：ZZXS120201 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
-            <name="STZW" explanation="社团职务" type="nvarchar(50)" null="F" p="F" identity="F" remark="社团职务 编号：ZZXS120202 " />
-            <name="GZNR" explanation="工作内容" type="text" null="F" p="F" identity="F" remark="工作内容 编号：ZZXS120203 " />
-            <name="STPJ" explanation="社团评价" type="text" null="F" p="F" identity="F" remark="社团评价 编号：ZZXS120204 " />
-            <name="DQZT" explanation="当前状态" type="nvarchar(1)" null="F" p="F" identity="F" remark="当前状态 编号：ZZXS120205 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1在职0离职 " />
+            <name="SCHOOLID" explanation="学校名" type="int" null="F" p="T" identity="F" />
+            <name="STBH" explanation="社团编号" type="nvarchar(4)" null="T" p="F" identity="F" />
+            <name="XM" explanation="姓名" type="nvarchar(36)" null="F" p="F" identity="F" />
+            <name="CDRQ" explanation="参团日期" type="nvarchar(8)" null="F" p="F" identity="F" />
+            <name="STZW" explanation="社团职务" type="nvarchar(50)" null="F" p="F" identity="F" />
+            <name="GZNR" explanation="工作内容" type="text" null="F" p="F" identity="F" />
+            <name="STPJ" explanation="社团评价" type="text" null="F" p="F" identity="F" />
+            <name="DQZT" explanation="当前状态" type="nvarchar(1)" null="F" p="F" identity="F" remark="值空间：JY/T1001SFBZ是否标志代码 解释/举例：1在职0离职 " />
         </field_area>
     </table>
     <table name="ZZZS01" explanation="考生数据类表">

@@ -7,18 +7,18 @@ class MDWork_Area
   @@temporary_path = "#{@@data_path}/temporary"
   @@backup_path = "#{@@data_path}/backup"
   @@enter_path = "#{$root}/enter"
-  @@backup_max_num = 3
+  @@backup_max_num = 1
   #初始化
   def initialize(area)
     @area,@doc = area,nil
     @area.is_valid?
     @area.sort_table
     save_to_temporary
-    backup_work_area
+    #backup_work_area
   end
   #输出所有
   def export_all(need_commit = false)
-    @vc = MDVCer.new(area)
+    @vc = MDVCer.new(self)
     fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
     fs_config = {'@sql'=>"#{fs_root}/BASE",'@view'=>"#{fs_root}/VIEW",
                  '@tableinfo'=>"#{fs_root}/表信息",

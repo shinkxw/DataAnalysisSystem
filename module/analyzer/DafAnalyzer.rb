@@ -3,12 +3,10 @@
 #DAF数据解析器
 class DafAnalyzer
   attr_reader :arr_reader#待分析的字符串
-  attr_reader :analyzer_version#解析器版本
   attr_reader :area#分析结果
   #初始化
   def initialize(log = Log.new)
     @arr_reader = nil
-    @analyzer_version = "0.1"
     @area = nil
     @log = log
   end
@@ -23,7 +21,7 @@ class DafAnalyzer
       #version = line_analyze(line)["version"]#获得DAF版本
       line = get_valid_line(@arr_reader)
     end
-    @area = MDArea.new(folder_name,@analyzer_version)
+    @area = MDArea.new(folder_name)
     while line != nil
       hash = line_analyze(line)#获得前缀及键值对
       case state

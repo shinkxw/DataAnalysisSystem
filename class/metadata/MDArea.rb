@@ -7,15 +7,13 @@ class MDArea
   attr_accessor :name#元数据域名称
   attr_accessor :table_relation_str_arr#表关联信息数组
   attr_accessor :generation_time#生成时间
-  attr_accessor :analyzer_version#解析器版本
   attr_accessor :error_relation_str#出错关联语句
   #初始化
-  def initialize(name,analyzer_version = "0.1")
+  def initialize(name)
     @name = name
     @name_space_arr = []
     @table_relation_str_arr = nil
     @generation_time = Time.now.strftime("%Y/%m/%d %X")
-    @analyzer_version = analyzer_version
   end
   #增加命名空间
   def add_name_space(name_space)

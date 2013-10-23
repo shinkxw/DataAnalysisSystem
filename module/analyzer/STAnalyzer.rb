@@ -117,7 +117,7 @@ class STAnalyzer
   end
   #将表数据转换为元数据
   def to_be_metadata
-    @area = MDArea.new("STAnalyzer",@analyzer_version)
+    @area = MDArea.new("STAnalyzer")
     name_space = MDNameSpace.new("STAnalyzer","STAnalyzer","")
     @table_arr.each do |st|
       name_space.add_table(st.to_mdtable)
