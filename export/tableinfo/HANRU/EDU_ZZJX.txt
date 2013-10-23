@@ -259,13 +259,13 @@ EDU_ZZJX_20_A03_GWXX  岗位信息表
   JobName       岗位名称                nvarchar(50)   非主
   PubTime       招聘开始时间            datetime       非主
   EndTime       招聘结束时间            datetime       非主
-  WorkType      工作形式                int            非主
-  Sex           性别要求                int            非主
+  WorkType      工作形式                nvarchar(100)  非主
+  Sex           性别要求                nvarchar(100)  非主
   monthlypay    岗位薪酬                nvarchar(100)  非主
   LanguageRequire语言要求                nvarchar(100)  非主
   WorkPlace     工作地点                nvarchar(100)  非主
   Computer      计算机水平              nvarchar(100)  非主
-  ZPRS          招聘人数                int            非主
+  ZPRS          招聘人数                nvarchar(100)  非主
   education     学历要求                nvarchar(100)  非主
   Age           年龄要求                nvarchar(100)  非主
   GWJJ          岗位简介                text           非主

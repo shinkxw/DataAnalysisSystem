@@ -633,13 +633,13 @@ CREATE TABLE [dbo].[EDU_ZZJX_20_A03_GWXX](
 	[JobName]  nvarchar(50)  NOT NULL,--岗位名称
 	[PubTime]  datetime  NOT NULL,--招聘开始时间
 	[EndTime]  datetime  NOT NULL,--招聘结束时间
-	[WorkType]  int  NOT NULL,--工作形式
-	[Sex]  int  NOT NULL,--性别要求
+	[WorkType]  nvarchar(100)  NOT NULL,--工作形式
+	[Sex]  nvarchar(100)  NOT NULL,--性别要求
 	[monthlypay]  nvarchar(100)  NOT NULL,--岗位薪酬
 	[LanguageRequire]  nvarchar(100)  NOT NULL,--语言要求
 	[WorkPlace]  nvarchar(100)  NOT NULL,--工作地点
 	[Computer]  nvarchar(100)  NOT NULL,--计算机水平
-	[ZPRS]  int  NOT NULL,--招聘人数
+	[ZPRS]  nvarchar(100)  NOT NULL,--招聘人数
 	[education]  nvarchar(100)  NOT NULL,--学历要求
 	[Age]  nvarchar(100)  NOT NULL,--年龄要求
 	[GWJJ]  text  NOT NULL,--岗位简介

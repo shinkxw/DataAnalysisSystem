@@ -12,10 +12,13 @@ namespace HanRuEdu.LDAL
             JobName = "";
             PubTime = new DateTime(1900, 1, 1);
             EndTime = new DateTime(1900, 1, 1);
+            WorkType = "";
+            Sex = "";
             monthlypay = "";
             LanguageRequire = "";
             WorkPlace = "";
             Computer = "";
+            ZPRS = "";
             education = "";
             Age = "";
             GWJJ = "";
@@ -57,14 +60,18 @@ namespace HanRuEdu.LDAL
             public DateTime EndTime { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "工作形式")]
-            public Int32 WorkType { get; set; }
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String WorkType { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "性别要求")]
-            public Int32 Sex { get; set; }
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String Sex { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -95,9 +102,11 @@ namespace HanRuEdu.LDAL
             public String Computer { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "招聘人数")]
-            public Int32 ZPRS { get; set; }
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZPRS { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

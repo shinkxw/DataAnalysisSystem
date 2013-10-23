@@ -302,13 +302,13 @@
             <name="JobName" exp="岗位名称" type="nvarchar(50)" null="F" p="F" />
             <name="PubTime" exp="招聘开始时间" type="datetime" null="F" p="F" />
             <name="EndTime" exp="招聘结束时间" type="datetime" null="F" p="F" />
-            <name="WorkType" exp="工作形式" type="int" null="F" p="F" />
-            <name="Sex" exp="性别要求" type="int" null="F" p="F" />
+            <name="WorkType" exp="工作形式" type="nvarchar(100)" null="F" p="F" />
+            <name="Sex" exp="性别要求" type="nvarchar(100)" null="F" p="F" />
             <name="monthlypay" exp="岗位薪酬" type="nvarchar(100)" null="F" p="F" />
             <name="LanguageRequire" exp="语言要求" type="nvarchar(100)" null="F" p="F" />
             <name="WorkPlace" exp="工作地点" type="nvarchar(100)" null="F" p="F" />
             <name="Computer" exp="计算机水平" type="nvarchar(100)" null="F" p="F" />
-            <name="ZPRS" exp="招聘人数" type="int" null="F" p="F" />
+            <name="ZPRS" exp="招聘人数" type="nvarchar(100)" null="F" p="F" />
             <name="education" exp="学历要求" type="nvarchar(100)" null="F" p="F" />
             <name="Age" exp="年龄要求" type="nvarchar(100)" null="F" p="F" />
             <name="GWJJ" exp="岗位简介" type="text" null="F" p="F" />
