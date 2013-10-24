@@ -167,3 +167,48 @@ EDU_ZZJG_12_A02_XC  薪酬表
   JE            金额                    decimal(8, 2)  非主
   FFSJ          发放时间                datetime       非主
 
+EDU_ZZJG_13_A01_KSLX  课时类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  XCLXMC        类型名称                nvarchar(30)   非主
+
+EDU_ZZJG_13_A02_KS  课时表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  JZGJBSJID     教工基本信息ID          int            非主
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  XCLXID        薪酬类型ID              int            非主
+  JE            金额                    decimal(8, 2)  非主
+  FFSJ          发放时间                datetime       非主
+
+EDU_ZZJG_14_A01_BKLX  备课类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  XCLXMC        类型名称                nvarchar(30)   非主
+
+EDU_ZZJG_14_A02_BK  备课表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  JZGJBSJID     教工基本信息ID          int            非主
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  XCLXID        薪酬类型ID              int            非主
+  JE            金额                    decimal(8, 2)  非主
+  FFSJ          发放时间                datetime       非主
+
+EDU_ZZJG_15_A01_ZYPGLX  作业批改类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  XCLXMC        类型名称                nvarchar(30)   非主
+
+EDU_ZZJG_15_A02_ZYPG  作业批改表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  JZGJBSJID     教工基本信息ID          int            非主
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  XCLXID        薪酬类型ID              int            非主
+  JE            金额                    decimal(8, 2)  非主
+  FFSJ          发放时间                datetime       非主
+

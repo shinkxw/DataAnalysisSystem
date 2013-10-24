@@ -286,11 +286,16 @@ EDU_ZZJX_21_A01_SXBJGL  实习班级管理表
 EDU_ZZJX_21_A02_SXSGL  实习生管理表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  ComID         企业ID                  int            非主        企业管理表
-  JobID         岗位ID                  int            非主        岗位信息表
   SZBID         实习班ID                int            非主        实习班级管理表
   StuID         学生ID                  int            非主        学生信息数据表
   Resume        简历                    text           非主
+  Status        实习生状态              int            非主
+
+EDU_ZZJX_21_A03_SXGW  实习岗位表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  SXSID         实习生ID                int            非主        实习生管理表
+  JobID         岗位ID                  int            非主        岗位信息表
   GSSHZT        公司审核状态            int            非主
   TypeID        录取类型                int            非主
   Status        实习生状态              int            非主

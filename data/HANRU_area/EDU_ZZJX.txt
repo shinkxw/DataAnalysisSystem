@@ -333,11 +333,18 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="ComID" exp="企业ID" type="int" null="F" p="F" />
-            <name="JobID" exp="岗位ID" type="int" null="F" p="F" />
             <name="SZBID" exp="实习班ID" type="int" null="F" p="F" />
             <name="StuID" exp="学生ID" type="int" null="F" p="F" />
             <name="Resume" exp="简历" type="text" null="F" p="F" />
+            <name="Status" exp="实习生状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_21_A03_SXGW" explanation="实习岗位表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
+            <name="JobID" exp="岗位ID" type="int" null="F" p="F" />
             <name="GSSHZT" exp="公司审核状态" type="int" null="F" p="F" />
             <name="TypeID" exp="录取类型" type="int" null="F" p="F" />
             <name="Status" exp="实习生状态" type="int" null="F" p="F" />
