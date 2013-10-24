@@ -10500,6 +10500,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XNID]--学年ID
       ,a.[XQID]--学期ID
+      ,a.[BJMC]--班级名称
       ,a.[BZRID]--班主任ID
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
@@ -10667,6 +10668,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_SXBJGL_SCHOOLID--实习班级管理表 学校
       ,e.XNID as e_SXBJGL_XNID--实习班级管理表 学年ID
       ,e.XQID as e_SXBJGL_XQID--实习班级管理表 学期ID
+      ,e.BJMC as e_SXBJGL_BJMC--实习班级管理表 班级名称
       ,e.BZRID as e_SXBJGL_BZRID--实习班级管理表 班主任ID
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号

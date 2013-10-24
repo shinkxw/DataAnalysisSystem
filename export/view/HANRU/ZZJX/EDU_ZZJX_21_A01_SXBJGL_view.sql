@@ -6,6 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XNID]--学年ID
       ,a.[XQID]--学期ID
+      ,a.[BJMC]--班级名称
       ,a.[BZRID]--班主任ID
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年

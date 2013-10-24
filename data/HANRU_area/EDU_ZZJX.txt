@@ -325,6 +325,7 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="XNID" exp="学年ID" type="int" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="BJMC" exp="班级名称" type="nvarchar(50)" null="F" p="F" />
             <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
         </field_area>
     </table>
