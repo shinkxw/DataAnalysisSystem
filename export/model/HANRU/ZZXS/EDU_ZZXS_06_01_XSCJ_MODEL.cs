@@ -112,6 +112,11 @@ namespace HanRuEdu.LDAL
             public decimal QMCJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程清单")]
+            public Int32 KCQDID { get; set; }
+
+
         }
     }
 }

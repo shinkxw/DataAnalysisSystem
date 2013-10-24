@@ -27,6 +27,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "教学计划")]
+            public Int32 JXJHID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学分要求")]
             [Range(typeof(decimal), "0", "99")]
             public decimal XFYQ { get; set; }

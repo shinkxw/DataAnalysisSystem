@@ -16,6 +16,11 @@ namespace HanRuEdu.LDAL
         public class EDU_ZZJX_03_01_ZTJXJH_metadata
         {
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
 
@@ -77,6 +82,11 @@ namespace HanRuEdu.LDAL
             [Display(Name = "附件")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String FJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业人数")]
+            public Int32 ZYRS { get; set; }
 
 
         }

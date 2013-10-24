@@ -51,13 +51,16 @@
     </table>
     <table name="EDU_ZZJX_01_A02_JSRK" explanation="教师任课表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="KXH" exp="课序号" type="int" null="F" p="T" />
+            <name="KXH" exp="课序号" type="int" null="F" p="F" />
             <name="JSID" exp="教师表ID" type="int" null="F" p="F" />
             <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="F" />
             <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
             <name="JXDG" exp="教学大纲" type="text" null="F" p="F" />
+            <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
+            <name="SFZRLS" exp="是否主任老师" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_02_01_ZZNJ" explanation="学校年级数据表">
@@ -90,8 +93,9 @@
     </table>
     <table name="EDU_ZZJX_03_01_ZTJXJH" explanation="总体教学计划数据子类表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="F" />
             <name="JHNJ" exp="计划年级" type="nvarchar(4)" null="F" p="F" />
             <name="ZYXXID" exp="专业编号" type="int" null="F" p="F" />
             <name="JHZYMC" exp="计划专业名称" type="nvarchar(50)" null="T" p="F" />
@@ -101,13 +105,16 @@
             <name="PYMB" exp="培养目标" type="text" null="T" p="F" />
             <name="SFKY" exp="是否可用" type="nvarchar(1)" null="F" p="F" />
             <name="FJ" exp="附件" type="text" null="T" p="F" />
+            <name="ZYRS" exp="专业人数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_03_A01_XQXFGL" explanation="学期学分管理表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
+            <name="JXJHID" exp="教学计划ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="F" />
             <name="ZDXF" exp="最高学分" type="decimal(3, 1)" null="T" p="F" />
             <name="ZGXF" exp="最低学分" type="decimal(3, 1)" null="F" p="F" />
         </field_area>
@@ -116,22 +123,28 @@
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="KCFLM" exp="课程分类码" type="nvarchar(1)" null="F" p="T" />
+            <name="JXJHID" exp="教学计划ID" type="int" null="F" p="F" />
             <name="XFYQ" exp="学分要求" type="decimal(2, 1)" null="F" p="F" />
             <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_03_03_JXJHKCQD" explanation="教学计划课程清单数据子类表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="T" />
-            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="T" />
+            <name="JXJHID" exp="教学计划ID" type="int" null="F" p="F" />
+            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="F" />
+            <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
             <name="KCMC" exp="课程名称" type="nvarchar(100)" null="F" p="F" />
             <name="YXKC" exp="预修课程" type="nvarchar(200)" null="T" p="F" />
             <name="SFHXKC" exp="是否核心（骨干）" type="nvarchar(1)" null="T" p="F" />
             <name="KCFLM" exp="课程分类码" type="nvarchar(1)" null="F" p="F" />
             <name="KCSXM" exp="课程属性码" type="nvarchar(1)" null="F" p="F" />
             <name="ZXXQ" exp="执行学期" type="decimal(2, 0)" null="F" p="F" />
+            <name="ZKS" exp="总课时" type="int" null="F" p="F" />
+            <name="LLKS" exp="理论课时" type="int" null="F" p="F" />
+            <name="SJKS" exp="实践课时" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_05_02_JSJXGZLTJ" explanation="教师教学工作量统计数据子类表">

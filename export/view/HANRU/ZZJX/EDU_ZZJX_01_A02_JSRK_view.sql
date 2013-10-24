@@ -2,13 +2,16 @@
 --教师任课表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_A02_JSRK_DISP]
 AS
-SELECT a.[SCHOOLID]--学校ID
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
       ,a.[KXH]--课序号
       ,a.[JSID]--教师表ID
       ,a.[KCH]--课程号
       ,a.[JHBH]--计划编号
       ,a.[XQID]--学期ID
       ,a.[JXDG]--教学大纲
+      ,a.[KCQDID]--课程清单ID
+      ,a.[SFZRLS]--是否主任老师
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -94,30 +97,39 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
       ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
-      ,e.SCHOOLID as e_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
-      ,e.JHNJ as e_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级
-      ,e.ZYXXID as e_ZTJXJH_ZYXXID--总体教学计划数据子类表 专业编号
-      ,e.JHZYMC as e_ZTJXJH_JHZYMC--总体教学计划数据子类表 计划专业名称
-      ,e.ZXFYQ as e_ZTJXJH_ZXFYQ--总体教学计划数据子类表 总学分要求
-      ,e.JLNY as e_ZTJXJH_JLNY--总体教学计划数据子类表 建立年月
-      ,e.SYXZ as e_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
-      ,e.PYMB as e_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
-      ,e.SFKY as e_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,eb.MC as e_ZTJXJH_SFKY_MC--授课方式代码表 名称
-      ,e.FJ as e_ZTJXJH_FJ--总体教学计划数据子类表 附件
-      ,f.SCHOOLID as f_XQ_SCHOOLID--学期数据表 学校名
-      ,f.XNID as f_XQ_XNID--学期数据表 学年
-      ,f.XQM as f_XQ_XQM--学期数据表 学期码
-      ,fb.MC as f_XQ_XQM_MC--学期代码表 名称
-      ,f.XQMC as f_XQ_XQMC--学期数据表 学期名称
-      ,f.XQKSRQ as f_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,f.XQJSRQ as f_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
+      ,e.XNID as e_XQ_XNID--学期数据表 学年
+      ,e.XQM as e_XQ_XQM--学期数据表 学期码
+      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
+      ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,f.SCHOOLID as f_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
+      ,f.JXJHID as f_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
+      ,f.KCH as f_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
+      ,f.JHBH as f_JXJHKCQD_JHBH--教学计划课程清单数据子类表 计划编号
+      ,f.XQID as f_JXJHKCQD_XQID--教学计划课程清单数据子类表 学期ID
+      ,f.KCMC as f_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
+      ,f.YXKC as f_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
+      ,f.SFHXKC as f_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
+      ,fb.MC as f_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,f.KCFLM as f_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
+      ,fc.MC as f_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,f.KCSXM as f_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
+      ,fd.MC as f_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,fd.SM as f_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,f.ZXXQ as f_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
+      ,f.ZKS as f_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
+      ,f.LLKS as f_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
+      ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
+      ,g.MC as g_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_02_KC AS d ON a.KCH = d.KCH /*课程号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_03_01_ZTJXJH AS e ON a.JHBH = e.JHBH /*计划编号*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS f ON a.XQID = f.ID /*学期ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_03_03_JXJHKCQD AS f ON a.KCQDID = f.ID /*课程清单ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS g ON a.SFZRLS = g.DM /*是否主任老师*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
@@ -139,6 +151,8 @@ FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS eb ON e.SFKY = eb.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS fb ON f.XQM = fb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS fb ON f.SFHXKC = fb.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS fc ON f.KCFLM = fc.DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS fd ON f.KCSXM = fd.DM /*课程属性码*/
 GO

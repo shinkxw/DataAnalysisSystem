@@ -14,8 +14,18 @@ namespace HanRuEdu.LDAL
         public class EDU_ZZJX_03_A01_XQXFGL_metadata
         {
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教学计划")]
+            public Int32 JXJHID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

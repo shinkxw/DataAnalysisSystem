@@ -205,7 +205,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="XCLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
+            <name="KSLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_13_A02_KS" explanation="课时表">
@@ -215,16 +215,16 @@
             <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
             <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
-            <name="XCLXID" exp="薪酬类型ID" type="int" null="F" p="F" />
-            <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="KSLXID" exp="课时类型ID" type="int" null="F" p="F" />
+            <name="SL" exp="数量" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_14_A01_BKLX" explanation="备课类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="XCLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
+            <name="BKLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_14_A02_BK" explanation="备课表">
@@ -234,16 +234,16 @@
             <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
             <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
-            <name="XCLXID" exp="薪酬类型ID" type="int" null="F" p="F" />
-            <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="BKLXID" exp="备课类型ID" type="int" null="F" p="F" />
+            <name="SL" exp="数量" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_15_A01_ZYPGLX" explanation="作业批改类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="XCLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
+            <name="PGLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_15_A02_ZYPG" explanation="作业批改表">
@@ -253,9 +253,9 @@
             <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
             <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
-            <name="XCLXID" exp="薪酬类型ID" type="int" null="F" p="F" />
-            <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="PGLXID" exp="批改类型ID" type="int" null="F" p="F" />
+            <name="SL" exp="数量" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

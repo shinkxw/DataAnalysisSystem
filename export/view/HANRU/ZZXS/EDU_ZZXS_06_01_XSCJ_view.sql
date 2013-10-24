@@ -19,6 +19,7 @@ SELECT a.[XSXXID]--学生ID
       ,a.[CJLRRQ]--成绩录入日期
       ,a.[QZCJ]--期中成绩
       ,a.[QMCJ]--期末成绩
+      ,a.[KCQDID]--课程清单ID
       ,b.SCHOOLID as b_XSXX_SCHOOLID--学生信息数据表 学校名
       ,b.XH as b_XSXX_XH--学生信息数据表 学号
       ,b.XM as b_XSXX_XM--学生信息数据表 姓名
@@ -231,6 +232,24 @@ SELECT a.[XSXXID]--学生ID
       ,h.DZXX as h_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,i.SCHOOLID as i_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
+      ,i.JXJHID as i_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
+      ,i.KCH as i_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
+      ,i.JHBH as i_JXJHKCQD_JHBH--教学计划课程清单数据子类表 计划编号
+      ,i.XQID as i_JXJHKCQD_XQID--教学计划课程清单数据子类表 学期ID
+      ,i.KCMC as i_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
+      ,i.YXKC as i_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
+      ,i.SFHXKC as i_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
+      ,ib.MC as i_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,i.KCFLM as i_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
+      ,ic.MC as i_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,i.KCSXM as i_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
+      ,id.MC as i_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,id.SM as i_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,i.ZXXQ as i_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
+      ,i.ZKS as i_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
+      ,i.LLKS as i_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
+      ,i.SJKS as i_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
 
 FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -239,6 +258,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_KSXZ AS f ON a.KSXZ = f.DM /*考试性质*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.RKJGID = g.ID /*任课教工ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.CJLRJGID = h.ID /*成绩录入教工ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_03_03_JXJHKCQD AS i ON a.KCQDID = i.ID /*课程清单ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
@@ -293,5 +313,8 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS hq ON h.GWLBM = hq.DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS hr ON h.SFJZJS = hr.DM /*是否兼职教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS hs ON h.SFSSXJS = hs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ht ON h.DQZTM = ht.DM /*当前状态码*/
+      dbo.EDU_JY_JZGDQZT AS ht ON h.DQZTM = ht.DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS ib ON i.SFHXKC = ib.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS ic ON i.KCFLM = ic.DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS id ON i.KCSXM = id.DM /*课程属性码*/
 GO

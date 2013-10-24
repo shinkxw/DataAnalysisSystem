@@ -18,8 +18,18 @@ namespace HanRuEdu.LDAL
         public class EDU_ZZJX_03_03_JXJHKCQD_metadata
         {
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教学计划")]
+            public Int32 JXJHID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -78,6 +88,21 @@ namespace HanRuEdu.LDAL
             [Display(Name = "执行学期")]
             [Range(typeof(decimal), "0", "99")]
             public decimal ZXXQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "总课时")]
+            public Int32 ZKS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "理论课时")]
+            public Int32 LLKS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "实践课时")]
+            public Int32 SJKS { get; set; }
 
 
         }

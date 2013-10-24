@@ -280,6 +280,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_06_01_XSCJ](
 	[CJLRRQ]  nvarchar(8)  NOT NULL,--成绩录入日期
 	[QZCJ]  decimal(5, 1)  NULL,--期中成绩
 	[QMCJ]  decimal(5, 1)  NULL,--期末成绩
+	[KCQDID]  int  NOT NULL,--课程清单ID
 CONSTRAINT [PK_EDU_ZZXS_06_01_XSCJ] PRIMARY KEY CLUSTERED
 (
 	[XSXXID] ASC,
@@ -774,6 +775,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'期中成绩' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'QZCJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'期末成绩' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'QMCJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程清单ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'KCQDID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学籍基本数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_07_01_XJSJ'
 GO

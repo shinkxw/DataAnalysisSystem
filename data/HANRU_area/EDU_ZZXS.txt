@@ -137,6 +137,7 @@
             <name="CJLRRQ" exp="成绩录入日期" type="nvarchar(8)" null="F" p="F" />
             <name="QZCJ" exp="期中成绩" type="decimal(5, 1)" null="T" p="F" />
             <name="QMCJ" exp="期末成绩" type="decimal(5, 1)" null="T" p="F" />
+            <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_07_01_XJSJ" explanation="学籍基本数据表">

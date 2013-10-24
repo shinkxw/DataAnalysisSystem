@@ -2,7 +2,8 @@
 --总体教学计划数据子类表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_03_01_ZTJXJH_DISP]
 AS
-SELECT a.[SCHOOLID]--学校ID
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
       ,a.[JHBH]--计划编号
       ,a.[JHNJ]--计划年级
       ,a.[ZYXXID]--专业编号
@@ -13,6 +14,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[PYMB]--培养目标
       ,a.[SFKY]--是否可用
       ,a.[FJ]--附件
+      ,a.[ZYRS]--专业人数
       ,c.SCHOOLID as c_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,c.NJMC as c_ZZNJ_NJMC--学校年级数据表 年级名称
       ,c.SSNF as c_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -34,12 +36,12 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,dc.MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
-      ,e.MC as e_SKFS_MC--授课方式代码表 名称
+      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_03_01_ZTJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS c ON a.JHNJ = c.NJDM /*计划年级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS e ON a.SFKY = e.DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.SFKY = e.DM /*是否可用*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cb ON c.NJZT = cb.DM /*年级状态*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS dc ON d.SSZYML = dc.DM /*所属专业目录*/

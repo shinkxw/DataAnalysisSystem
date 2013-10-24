@@ -12,9 +12,15 @@ namespace HanRuEdu.LDAL
             KCH = "";
             JHBH = "";
             JXDG = "";
+            SFZRLS = "";
         }
         public class EDU_ZZJX_01_A02_JSRK_metadata
         {
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
+
+
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
@@ -53,6 +59,18 @@ namespace HanRuEdu.LDAL
             [Display(Name = "教学大纲")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String JXDG { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程清单")]
+            public Int32 KCQDID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "是否主任老师")]
+            [StringLength(1)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SFZRLS { get; set; }
 
 
         }
