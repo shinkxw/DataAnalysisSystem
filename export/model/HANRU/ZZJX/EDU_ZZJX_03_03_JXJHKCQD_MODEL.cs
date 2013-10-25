@@ -105,6 +105,12 @@ namespace HanRuEdu.LDAL
             public Int32 SJKS { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Ñ§·Ö")]
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal XF { get; set; }
+
+
         }
     }
 }

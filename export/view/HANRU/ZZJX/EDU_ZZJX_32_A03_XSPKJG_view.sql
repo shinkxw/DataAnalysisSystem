@@ -52,6 +52,7 @@ SELECT a.[ID]--编号
       ,g.ZKS as g_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,g.LLKS as g_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
       ,g.SJKS as g_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
+      ,g.XF as g_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,h.SCHOOLID as h_XSXX_SCHOOLID--学生信息数据表 学校名
       ,h.XH as h_XSXX_XH--学生信息数据表 学号
       ,h.XM as h_XSXX_XM--学生信息数据表 姓名

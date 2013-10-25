@@ -43,6 +43,7 @@ SELECT a.[ID]--编号
       ,f.ZKS as f_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,f.LLKS as f_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
       ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
+      ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
 
 FROM dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_32_A01_EXAM AS c ON a.ExamID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

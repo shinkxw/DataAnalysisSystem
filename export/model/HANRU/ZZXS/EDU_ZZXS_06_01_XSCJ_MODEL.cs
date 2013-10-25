@@ -17,13 +17,18 @@ namespace HanRuEdu.LDAL
         public class EDU_ZZXS_06_01_XSCJ_metadata
         {
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学生")]
-            public Int32 XSXXID { get; set; }
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学生")]
+            public Int32 XSXXID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

@@ -413,6 +413,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_03_03_JXJHKCQD](
 	[ZKS]  int  NOT NULL,--总课时
 	[LLKS]  int  NOT NULL,--理论课时
 	[SJKS]  int  NOT NULL,--实践课时
+	[XF]  decimal(4, 1)  NOT NULL,--学分
 CONSTRAINT [PK_EDU_ZZJX_03_03_JXJHKCQD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1268,6 +1269,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'理论课时' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_03_03_JXJHKCQD', @level2type=N'COLUMN',@level2name=N'LLKS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实践课时' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_03_03_JXJHKCQD', @level2type=N'COLUMN',@level2name=N'SJKS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_03_03_JXJHKCQD', @level2type=N'COLUMN',@level2name=N'XF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师教学工作量统计数据子类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_05_02_JSJXGZLTJ'
 GO

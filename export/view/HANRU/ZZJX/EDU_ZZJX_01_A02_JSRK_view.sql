@@ -122,6 +122,7 @@ SELECT a.[ID]--编号
       ,f.ZKS as f_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,f.LLKS as f_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
       ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
+      ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,g.MC as g_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN

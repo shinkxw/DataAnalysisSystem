@@ -105,10 +105,11 @@ EDU_ZZXS_02_A02_XSJTJJ  学生家庭经济情况数据表
   JXDDBX        就学地低保线            money          非主
 
 EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
-  XSXXID        学生ID                  int            主键        学生信息数据表
+  ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
-  KCH           课程号                  nvarchar(6)    主键        课程数据子类表
-  XQID          学期ID                  int            主键        学期数据表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  KCH           课程号                  nvarchar(6)    非主        课程数据子类表
+  XQID          学期ID                  int            非主        学期数据表
   KCMC          课程名称                nvarchar(100)  非主
   XF            学分                    decimal(2, 1)  非主
   XQMC          学期名称                nvarchar(10)   非主
@@ -199,6 +200,56 @@ EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   ZXJLX         助学金类型              nvarchar(1)    非主        助学金分类代码
   SFSH          是否审核                nvarchar(1)    非主        是否标志代码表
   XQID          学期ID                  int            非主        学期数据表
+
+EDU_ZZXS_12_A01_STJBSJ  社团基本数据子类表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  STMC          社团名称                nvarchar(30)   非主
+  STBH          社团编号                nvarchar(4)    非主
+  CLRQ          成立日期                datetime       非主
+  CLMD          成立目的                text           非主
+  CSR           创始人                  nvarchar(36)   非主
+  PZBM          批准部门                nvarchar(30)   非主
+  STXZ          社团性质                nvarchar(30)   非主
+  ZYHDXS        主要活动形式            text           非主
+  RS            人数                    decimal(3, 0)  非主
+  DQFZR         当前负责人              nvarchar(36)   非主
+  FZRDH         负责人电话              nvarchar(30)   非主
+  ZDLS          指导老师                nvarchar(36)   非主
+  ZDLSDH        指导老师电话            nvarchar(30)   非主
+
+EDU_ZZXS_12_A02_STCY  社团成员表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  STID          社团ID                  int            非主        社团基本数据子类表
+  STBH          社团编号                nvarchar(4)    非主
+  XM            学生姓名                nvarchar(36)   非主
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  BJID          学生班级ID              nvarchar(10)   非主        学校班级数据表
+  CDRQ          参团日期                datetime       非主
+  STZW          社团职务                nvarchar(50)   非主
+  GZNR          工作内容                text           非主
+  STPJ          社团评价                text           非主
+  DQZT          当前状态                nvarchar(1)    非主        是否标志代码表
+  TJRID         添加人ID                int            非主        教职工基本数据子类表
+  SHRID         审核人ID                int            非主        教职工基本数据子类表
+  SHSJ          审核时间                datetime       非主
+  SHZT          审核状态                int            非主
+
+EDU_ZZXS_12_A03_STCJLX  社团成绩类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  CJLXMC        类型名称                nvarchar(30)   非主
+
+EDU_ZZXS_12_A04_XSSTCJ  学生社团成绩表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  STCYID        社团成员表ID            int            非主        社团成员表
+  CJLXID        成绩类型ID              int            非主        社团成绩类型表
+  FS            分数                    decimal(4, 1)  非主
+  TJSJ          添加时间                datetime       非主
+  TJRID         添加人ID                int            非主        教职工基本数据子类表
 
 EDU_ZZXS_14_A01_XSKHXM  学生考核项目表
   ID            编号                    int            主键
