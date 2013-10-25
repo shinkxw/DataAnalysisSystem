@@ -916,6 +916,35 @@
   StuID          EDU_ZZXS_01_01_XSXX                ID
   XNID           EDU_SYS_01_XN                      ID
   XQID           EDU_ELE_01_XQ                      ID
+<EDU_ZZJX_30_A01_CLASSROOM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_30_A02_EXAMROOM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  RoomID         EDU_ZZJX_30_A01_CLASSROOM          ID
+  ExamID         EDU_ZZJX_32_A01_EXAM               ID
+<EDU_ZZJX_31_A01_KSSDLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_31_A02_KSCC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ExamID         EDU_ZZJX_32_A01_EXAM               ID
+  TypeID         EDU_ZZJX_31_A01_KSSDLX             ID
+<EDU_ZZJX_32_A01_EXAM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XqID           EDU_ELE_01_XQ                      ID
+<EDU_ZZJX_32_A02_ZYKCPKJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ExamID         EDU_ZZJX_32_A01_EXAM               ID
+  EXAMROOMID     EDU_ZZJX_30_A02_EXAMROOM           ID
+  CCID           EDU_ZZJX_31_A02_KSCC               ID
+  KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
+<EDU_ZZJX_32_A03_XSPKJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KCPKID         EDU_ZZJX_32_A02_ZYKCPKJG           ID
+  ExamID         EDU_ZZJX_32_A01_EXAM               ID
+  EXAMROOMID     EDU_ZZJX_30_A02_EXAMROOM           ID
+  CCID           EDU_ZZJX_31_A02_KSCC               ID
+  KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
+  StudentID      EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM

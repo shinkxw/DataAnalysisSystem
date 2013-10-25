@@ -441,4 +441,78 @@
             <name="AppraierID" exp="添加人ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_30_A01_CLASSROOM" explanation="教室表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Name" exp="教室名称" type="nvarchar(128)" null="F" p="F" />
+            <name="Place" exp="地点" type="nvarchar(128)" null="F" p="F" />
+            <name="Counts" exp="座位数" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_30_A02_EXAMROOM" explanation="考场表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Name" exp="考场名称" type="nvarchar(128)" null="F" p="F" />
+            <name="RoomID" exp="教室ID" type="int" null="F" p="F" />
+            <name="ExamID" exp="考试ID" type="int" null="F" p="F" />
+            <name="StuCount" exp="考生容纳人数" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_31_A01_KSSDLX" explanation="考试时段类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TypeName" exp="类型名" type="nvarchar(128)" null="F" p="F" />
+            <name="StartTime" exp="开始时间" type="nvarchar(128)" null="F" p="F" />
+            <name="EndTime" exp="结束时间" type="nvarchar(128)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_31_A02_KSCC" explanation="考试场次表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ExamID" exp="考试ID" type="int" null="F" p="F" />
+            <name="Name" exp="场次名称" type="nvarchar(128)" null="F" p="F" />
+            <name="TypeID" exp="考试时段类型" type="int" null="F" p="F" />
+            <name="ExamDate" exp="考试日期" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_32_A01_EXAM" explanation="考试表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Name" exp="考试名称" type="nvarchar(128)" null="F" p="F" />
+            <name="CJKSKMLM" exp="参加考试科目列表" type="text" null="F" p="F" />
+            <name="StartDate" exp="开始日期" type="datetime" null="F" p="F" />
+            <name="EndDate" exp="截止日期" type="datetime" null="F" p="F" />
+            <name="XqID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DffsID" exp="登分方式" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_32_A02_ZYKCPKJG" explanation="专业课程排考结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ExamID" exp="考试ID" type="int" null="F" p="F" />
+            <name="EXAMROOMID" exp="考场ID" type="int" null="F" p="F" />
+            <name="CCID" exp="场次ID" type="int" null="F" p="F" />
+            <name="KCQDID" exp="考试科目ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_32_A03_XSPKJG" explanation="学生排考结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCPKID" exp="专业课程排考结果ID" type="int" null="F" p="F" />
+            <name="ExamID" exp="考试ID" type="int" null="F" p="F" />
+            <name="EXAMROOMID" exp="考场ID" type="int" null="F" p="F" />
+            <name="CCID" exp="场次ID" type="int" null="F" p="F" />
+            <name="KCQDID" exp="考试科目ID" type="int" null="F" p="F" />
+            <name="StudentID" exp="学生" type="int" null="F" p="F" />
+            <name="SeatID" exp="座位号" type="int" null="F" p="F" />
+            <name="AdmissionID" exp="准考证号" type="nvarchar(24)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

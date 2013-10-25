@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             KSSJ = new DateTime(1900, 1, 1);
             JSSJ = new DateTime(1900, 1, 1);
-            FFSJ = new DateTime(1900, 1, 1);
+            TJSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZJG_15_A02_ZYPG_metadata
         {
@@ -41,19 +41,18 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "薪酬类型")]
-            public Int32 XCLXID { get; set; }
+            [Display(Name = "批改类型")]
+            public Int32 PGLXID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "金额")]
-            [Range(typeof(decimal), "0", "99999999")]
-            public decimal JE { get; set; }
+            [Display(Name = "数量")]
+            public Int32 SL { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "发放时间")]
-            public DateTime FFSJ { get; set; }
+            [Display(Name = "添加时间")]
+            public DateTime TJSJ { get; set; }
 
 
         }

@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_14_A01_BKLX()
         {
-            XCLXMC = "";
+            BKLXMC = "";
         }
         public class EDU_ZZJG_14_A01_BKLX_metadata
         {
@@ -27,7 +27,7 @@ namespace HanRuEdu.LDAL
             [Display(Name = "¿‡–Õ√˚≥∆")]
             [StringLength(30)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String XCLXMC { get; set; }
+            public String BKLXMC { get; set; }
 
 
         }
