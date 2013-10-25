@@ -91,6 +91,7 @@ class TemplateBuilder
     str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n\n#{@tab.t}if (#{table.lname_dc}_model != null)\n#{@tab.t}"
     str << "{\n#{@tab.long}"
     table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
       str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{get_relation(field)}\n"
     end
     str << "#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
@@ -194,6 +195,7 @@ class TemplateBuilder
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
+      next if field.name == 'SCHOOLID'
       index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}sortable="true">@Html.LabelFor(m => m.#{field.name}))
       index_str << "</th><!--#{field.explanation}-->\n"
     end
