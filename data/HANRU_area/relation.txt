@@ -790,6 +790,9 @@
   XQID           EDU_ELE_01_XQ                      ID
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
   SFZRLS         EDU_JY_SFBZ                        DM
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
 <EDU_ZZJX_02_01_ZZNJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   NJZT           EDU_JY_SFBZ                        DM
@@ -907,6 +910,8 @@
   StuID          EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZJX_22_A04_SXJD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  StuID          EDU_ZZXS_01_01_XSXX                ID
+  JDRID          EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_22_A05_SXTS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ComID          EDU_ZZJX_20_A01_QYGL               ID

@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             JHBH = "";
             JXDG = "";
             SFZRLS = "";
+            NJID = "";
+            BJID = "";
         }
         public class EDU_ZZJX_01_A02_JSRK_metadata
         {
@@ -71,6 +73,25 @@ namespace HanRuEdu.LDAL
             [StringLength(1)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SFZRLS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业")]
+            public Int32 ZYXXID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级")]
+            [StringLength(4)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJID { get; set; }
 
 
         }

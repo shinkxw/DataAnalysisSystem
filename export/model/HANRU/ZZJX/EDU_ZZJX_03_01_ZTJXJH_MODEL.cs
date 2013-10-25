@@ -40,7 +40,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "专业编号")]
+            [Display(Name = "专业")]
             public Int32 ZYXXID { get; set; }
 
 

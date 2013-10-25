@@ -12,7 +12,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
       ,c.JHBH as c_ZTJXJH_JHBH--总体教学计划数据子类表 计划编号
       ,c.JHNJ as c_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级
-      ,c.ZYXXID as c_ZTJXJH_ZYXXID--总体教学计划数据子类表 专业编号
+      ,c.ZYXXID as c_ZTJXJH_ZYXXID--总体教学计划数据子类表 专业ID
       ,c.JHZYMC as c_ZTJXJH_JHZYMC--总体教学计划数据子类表 计划专业名称
       ,c.ZXFYQ as c_ZTJXJH_ZXFYQ--总体教学计划数据子类表 总学分要求
       ,c.JLNY as c_ZTJXJH_JLNY--总体教学计划数据子类表 建立年月

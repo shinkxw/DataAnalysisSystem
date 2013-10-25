@@ -6,7 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[JHBH]--计划编号
       ,a.[JHNJ]--计划年级
-      ,a.[ZYXXID]--专业编号
+      ,a.[ZYXXID]--专业ID
       ,a.[JHZYMC]--计划专业名称
       ,a.[ZXFYQ]--总学分要求
       ,a.[JLNY]--建立年月
@@ -40,7 +40,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZZJX_03_01_ZTJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS c ON a.JHNJ = c.NJDM /*计划年级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFKY = e.DM /*是否可用*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS cb ON c.NJZT = cb.DM /*年级状态*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN

@@ -61,6 +61,9 @@
             <name="JXDG" exp="教学大纲" type="text" null="F" p="F" />
             <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
             <name="SFZRLS" exp="是否主任老师" type="nvarchar(1)" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_02_01_ZZNJ" exp="学校年级数据表">
@@ -97,7 +100,7 @@
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="JHBH" exp="计划编号" type="nvarchar(5)" null="F" p="F" />
             <name="JHNJ" exp="计划年级" type="nvarchar(4)" null="F" p="F" />
-            <name="ZYXXID" exp="专业编号" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
             <name="JHZYMC" exp="计划专业名称" type="nvarchar(50)" null="T" p="F" />
             <name="ZXFYQ" exp="总学分要求" type="decimal(3, 0)" null="F" p="F" />
             <name="JLNY" exp="建立年月" type="nvarchar(6)" null="T" p="F" />
