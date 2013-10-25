@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZXDY" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZXDY_04_A01_ZZGW" explanation="值周岗位数据表">
+    <table name="EDU_ZXDY_04_A01_ZZGW" exp="值周岗位数据表">
         <field_area>
             <name="ID" exp="值周岗位表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -8,7 +8,7 @@
             <name="GWGZNR" exp="岗位工作内容" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_04_A02_ZZRYAP" explanation="值周人员安排表">
+    <table name="EDU_ZXDY_04_A02_ZZRYAP" exp="值周人员安排表">
         <field_area>
             <name="ID" exp="值周人员安排表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -22,7 +22,7 @@
             <name="ZYMCLB" exp="组员名称列表" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_04_A03_ZZGWFP" explanation="值周岗位分配表">
+    <table name="EDU_ZXDY_04_A03_ZZGWFP" exp="值周岗位分配表">
         <field_area>
             <name="ID" exp="值周岗位分配表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -33,14 +33,14 @@
             <name="JSID" exp="教师ID" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_04_A04_GWFPMB" explanation="岗位分配模板表">
+    <table name="EDU_ZXDY_04_A04_GWFPMB" exp="岗位分配模板表">
         <field_area>
             <name="ID" exp="岗位分配模板表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
             <name="MBMC" exp="模板名称" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_04_A05_TBZZJS" explanation="特别值周教师表">
+    <table name="EDU_ZXDY_04_A05_TBZZJS" exp="特别值周教师表">
         <field_area>
             <name="ID" exp="特别值周教师表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -50,7 +50,7 @@
             <name="YXRQ" exp="有效日期" type="datetime" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_04_A06_ZZZC" explanation="值周周次表">
+    <table name="EDU_ZXDY_04_A06_ZZZC" exp="值周周次表">
         <field_area>
             <name="ID" exp="周次表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -60,7 +60,7 @@
             <name="XQJSRQ" exp="结束日期" type="datetime" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_04_A07_MBFPNR" explanation="模板分配内容表">
+    <table name="EDU_ZXDY_04_A07_MBFPNR" exp="模板分配内容表">
         <field_area>
             <name="ID" exp="模板内容表ID" type="int" null="F" p="T" />
             <name="MBID" exp="模板表ID" type="int" null="F" p="F" />
@@ -69,7 +69,7 @@
             <name="DYRYH" exp="对应人员号" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_05_A01_ZZDFDL" explanation="值周打分大类表">
+    <table name="EDU_ZXDY_05_A01_ZZDFDL" exp="值周打分大类表">
         <field_area>
             <name="ID" exp="值周打分大类表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -77,7 +77,7 @@
             <name="DLMC" exp="大类名称" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_05_A02_ZZDFXZ" explanation="值周打分细则表">
+    <table name="EDU_ZXDY_05_A02_ZZDFXZ" exp="值周打分细则表">
         <field_area>
             <name="ID" exp="值周打分细则表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -86,7 +86,7 @@
             <name="XZFZ" exp="细则分值" type="decimal(6, 2)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_05_A03_ZZDFD" explanation="值周打分单表">
+    <table name="EDU_ZXDY_05_A03_ZZDFD" exp="值周打分单表">
         <field_area>
             <name="ID" exp="值周打分单表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -103,7 +103,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_06_A01_ZZXJ" explanation="值周小结表">
+    <table name="EDU_ZXDY_06_A01_ZZXJ" exp="值周小结表">
         <field_area>
             <name="ID" exp="值周小结表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -113,7 +113,7 @@
             <name="ZZJCQKFK" exp="值周检查情况反馈" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXDY_06_A02_GQXJH" explanation="国旗下讲话表">
+    <table name="EDU_ZXDY_06_A02_GQXJH" exp="国旗下讲话表">
         <field_area>
             <name="ID" exp="国旗下讲话表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />

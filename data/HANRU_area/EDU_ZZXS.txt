@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZXS" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZXS_01_01_XSXX" explanation="学生信息数据表">
+    <table name="EDU_ZZXS_01_01_XSXX" exp="学生信息数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
@@ -34,7 +34,7 @@
             <name="ZP" exp="照片(路径)" type="nvarchar(100)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_01_A01_XSXX" explanation="学生扩展数据表">
+    <table name="EDU_ZZXS_01_A01_XSXX" exp="学生扩展数据表">
         <field_area>
             <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -56,7 +56,7 @@
             <name="XSBMSJ" exp="学生报名时间" type="nvarchar(8)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_02_01_XSJTXX" explanation="学生家庭信息数据表">
+    <table name="EDU_ZZXS_02_01_XSJTXX" exp="学生家庭信息数据表">
         <field_area>
             <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
@@ -72,7 +72,7 @@
             <name="LJZJHCZ" exp="离家最近火车站" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_02_A01_XSLXR" explanation="学生联系人数据表">
+    <table name="EDU_ZZXS_02_A01_XSLXR" exp="学生联系人数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
@@ -89,7 +89,7 @@
             <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_02_02_XSJTCY" explanation="学生家庭成员数据表">
+    <table name="EDU_ZZXS_02_02_XSJTCY" exp="学生家庭成员数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
@@ -103,7 +103,7 @@
             <name="YDDH" exp="移动电话" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_02_A02_XSJTJJ" explanation="学生家庭经济情况数据表">
+    <table name="EDU_ZZXS_02_A02_XSJTJJ" exp="学生家庭经济情况数据表">
         <field_area>
             <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -118,7 +118,7 @@
             <name="JXDDBX" exp="就学地低保线" type="money" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_06_01_XSCJ" explanation="学生成绩数据类表">
+    <table name="EDU_ZZXS_06_01_XSCJ" exp="学生成绩数据类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -141,7 +141,7 @@
             <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_07_01_XJSJ" explanation="学籍基本数据表">
+    <table name="EDU_ZZXS_07_01_XJSJ" exp="学籍基本数据表">
         <field_area>
             <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
@@ -155,7 +155,7 @@
             <name="XSDQZTM" exp="学生当前状态码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_XSDQZT" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_07_02_XJYD" explanation="学籍异动数据子类表">
+    <table name="EDU_ZZXS_07_02_XJYD" exp="学籍异动数据子类表">
         <field_area>
             <name="ID" exp="学籍异动表编号" type="int" null="F" p="T" />
             <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
@@ -180,7 +180,7 @@
             <name="XNJ" exp="现年级" type="nvarchar(4)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_07_03_XSZCXX" explanation="学生注册信息数据子类表">
+    <table name="EDU_ZZXS_07_03_XSZCXX" exp="学生注册信息数据子类表">
         <field_area>
             <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -194,7 +194,7 @@
             <name="WASZCXQM" exp="未按时注册学期码" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_10_02_JXJSJ" explanation="奖学金数据子类表">
+    <table name="EDU_ZZXS_10_02_JXJSJ" exp="奖学金数据子类表">
         <field_area>
             <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -210,7 +210,7 @@
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_10_03_ZXJSJ" explanation="助学金数据子类表">
+    <table name="EDU_ZZXS_10_03_ZXJSJ" exp="助学金数据子类表">
         <field_area>
             <name="XSXXID" exp="学生ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -227,7 +227,7 @@
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_12_A01_STJBSJ" explanation="社团基本数据子类表">
+    <table name="EDU_ZZXS_12_A01_STJBSJ" exp="社团基本数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -246,7 +246,7 @@
             <name="ZDLSDH" exp="指导老师电话" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_12_A02_STCY" explanation="社团成员表">
+    <table name="EDU_ZZXS_12_A02_STCY" exp="社团成员表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -266,14 +266,14 @@
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_12_A03_STCJLX" explanation="社团成绩类型表">
+    <table name="EDU_ZZXS_12_A03_STCJLX" exp="社团成绩类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="CJLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_12_A04_XSSTCJ" explanation="学生社团成绩表">
+    <table name="EDU_ZZXS_12_A04_XSSTCJ" exp="学生社团成绩表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -285,14 +285,14 @@
             <name="TJRID" exp="添加人ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_14_A01_XSKHXM" explanation="学生考核项目表">
+    <table name="EDU_ZZXS_14_A01_XSKHXM" exp="学生考核项目表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="XMMC" exp="项目名称" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_14_A02_XSKHBSJ" explanation="学生考核表数据表">
+    <table name="EDU_ZZXS_14_A02_XSKHBSJ" exp="学生考核表数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -303,7 +303,7 @@
             <name="KHJSIDLB" exp="考核教师ID列表" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_14_A03_XSRCXWGFKHSJ" explanation="学生日常行为规范考核数据表">
+    <table name="EDU_ZZXS_14_A03_XSRCXWGFKHSJ" exp="学生日常行为规范考核数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -315,7 +315,7 @@
             <name="JLJSID" exp="记录教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_14_A04_XSWWYTZQSJ" explanation="学生五位一体值勤数据表">
+    <table name="EDU_ZZXS_14_A04_XSWWYTZQSJ" exp="学生五位一体值勤数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -328,14 +328,14 @@
             <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_14_A05_XSWWYTZQXM" explanation="学生五位一体值勤项目表">
+    <table name="EDU_ZZXS_14_A05_XSWWYTZQXM" exp="学生五位一体值勤项目表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="ZQXMMC" exp="值勤项目名称" type="nvarchar(36)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_14_A06_XSWWYTZQRYAP" explanation="学生五位一体值勤人员安排表">
+    <table name="EDU_ZZXS_14_A06_XSWWYTZQRYAP" exp="学生五位一体值勤人员安排表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />

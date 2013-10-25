@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZFC" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZFC_02_01_JZWJBSJ" explanation="建筑物基本数据类表">
+    <table name="EDU_ZZFC_02_01_JZWJBSJ" exp="建筑物基本数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="ID" exp="建筑物ID" type="int" null="F" p="T" />
@@ -71,7 +71,7 @@
             <name="GLY" exp="管理员" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZFC_08_01_XSSS" explanation="学生宿舍数据类表">
+    <table name="EDU_ZZFC_08_01_XSSS" exp="学生宿舍数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="ID" exp="宿舍ID" type="int" null="F" p="T" />
@@ -92,7 +92,7 @@
             <name="SSM" exp="宿舍名" type="nvarchar(128)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZFC_08_A01_SSCW" explanation="宿舍床位表">
+    <table name="EDU_ZZFC_08_A01_SSCW" exp="宿舍床位表">
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="ID" exp="床位ID" type="int" null="F" p="T" />
@@ -103,7 +103,7 @@
             <name="SFRZ" exp="是否入住" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZFC_08_A02_YHZSJL" explanation="用户住宿记录表">
+    <table name="EDU_ZZFC_08_A02_YHZSJL" exp="用户住宿记录表">
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="ID" exp="住宿记录ID" type="int" null="F" p="T" />
@@ -119,7 +119,7 @@
             <name="SHR" exp="审核人" type="nvarchar(128)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZFC_08_A03_ZWHCY" explanation="住委会成员表">
+    <table name="EDU_ZZFC_08_A03_ZWHCY" exp="住委会成员表">
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="ID" exp="成员ID" type="int" null="F" p="T" />

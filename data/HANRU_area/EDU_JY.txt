@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_JY" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_JY_ZYZXTZBZMC" explanation="中央专项投资补助名称代码表">
+    <table name="EDU_JY_ZYZXTZBZMC" exp="中央专项投资补助名称代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(12)" null="F" p="F" />
@@ -23,7 +23,7 @@
             <DM="Z" MC="中央其他工程" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXXSLY" explanation="中小学学生来源代码表">
+    <table name="EDU_JY_ZXXXSLY" exp="中小学学生来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -34,7 +34,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXSYSLB" explanation="中小学实验室类别代码表">
+    <table name="EDU_JY_ZXXSYSLB" exp="中小学实验室类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -46,7 +46,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXSYLB" explanation="中小学实验类别代码表">
+    <table name="EDU_JY_ZXXSYLB" exp="中小学实验类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -58,7 +58,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXKCDJ" explanation="中小学课程等级代码表">
+    <table name="EDU_JY_ZXXKCDJ" exp="中小学课程等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -69,7 +69,7 @@
             <DM="3" MC="校本课程" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXKC" explanation="中小学课程代码表">
+    <table name="EDU_JY_ZXXKC" exp="中小学课程代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -103,7 +103,7 @@
             <DM="62" MC="劳动与技术" SYXX="小学、初中" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXBZLB" explanation="中小学编制类别代码表">
+    <table name="EDU_JY_ZXXBZLB" exp="中小学编制类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -119,7 +119,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZXXBJLX" explanation="中小学班级类型代码表">
+    <table name="EDU_JY_ZXXBJLX" exp="中小学班级类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(13)" null="F" p="F" />
@@ -146,7 +146,7 @@
             <DM="42" MC="高中特长班（文体艺智等班）" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZWLB" explanation="职务类别代码表">
+    <table name="EDU_JY_ZWLB" exp="职务类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -178,7 +178,7 @@
             <DM="44" MC="社会团体其他职" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZTLX" explanation="载体类型代码表">
+    <table name="EDU_JY_ZTLX" exp="载体类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -193,7 +193,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZTBXS" explanation="招投标形式代码表">
+    <table name="EDU_JY_ZTBXS" exp="招投标形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -204,7 +204,7 @@
             <DM="3" MC="无招标" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZSDX" explanation="招生对象代码表">
+    <table name="EDU_JY_ZSDX" exp="招生对象代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -223,7 +223,7 @@
             <DM="811" MC="五年制高职中职段学生" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZPHLB" explanation="招聘会类别代码表">
+    <table name="EDU_JY_ZPHLB" exp="招聘会类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -236,7 +236,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZLPZXS" explanation="专利批准形式代码表">
+    <table name="EDU_JY_ZLPZXS" exp="专利批准形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -248,7 +248,7 @@
             <DM="3" MC="国内、外" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZLLX" explanation="专利类型代码表">
+    <table name="EDU_JY_ZLLX" exp="专利类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -260,7 +260,7 @@
             <DM="4" MC="PCT或外国申请" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZLFLZT" explanation="专利法律状态代码表">
+    <table name="EDU_JY_ZLFLZT" exp="专利法律状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -273,7 +273,7 @@
             <DM="5" MC="终止专利" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZJLB" explanation="专家类别代码表">
+    <table name="EDU_JY_ZJLB" exp="专家类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(17)" null="F" p="F" />
@@ -302,7 +302,7 @@
             <DM="99" MC="其他专家" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZDZYXXZYML" explanation="中等职业学校专业目录">
+    <table name="EDU_JY_ZDZYXXZYML" exp="中等职业学校专业目录">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(6)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(13)" null="F" p="F" />
@@ -669,7 +669,7 @@
             <DM="199900" MC="其他其他专业" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZDYT" explanation="占地用途代码表">
+    <table name="EDU_JY_ZDYT" exp="占地用途代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -682,7 +682,7 @@
             <DM="9" MC="其他用地" />
         </data_area>
     </table>
-    <table name="EDU_JY_ZCZK" explanation="注册状况代码表">
+    <table name="EDU_JY_ZCZK" exp="注册状况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -693,7 +693,7 @@
             <DM="3" MC="未报到" />
         </data_area>
     </table>
-    <table name="EDU_JY_YZBLXW" explanation="严重不良行为代码表">
+    <table name="EDU_JY_YZBLXW" exp="严重不良行为代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(18)" null="F" p="F" />
@@ -710,7 +710,7 @@
             <DM="9" MC="其他严重危害社会的行为" />
         </data_area>
     </table>
-    <table name="EDU_JY_YTZT" explanation="议题状态代码表">
+    <table name="EDU_JY_YTZT" exp="议题状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -721,7 +721,7 @@
             <DM="3" MC="已结题" />
         </data_area>
     </table>
-    <table name="EDU_JY_YSLZFLKM" explanation="预算类总分类科目代码表">
+    <table name="EDU_JY_YSLZFLKM" exp="预算类总分类科目代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -735,7 +735,7 @@
             <DM="6" MC="预算" />
         </data_area>
     </table>
-    <table name="EDU_JY_YQXZ" explanation="仪器现状代码表">
+    <table name="EDU_JY_YQXZ" exp="仪器现状代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -752,7 +752,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_YQSYFX" explanation="仪器使用方向代码表">
+    <table name="EDU_JY_YQSYFX" exp="仪器使用方向代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -768,7 +768,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_YJSZXJHLB" explanation="研究生专项计划类别代码表">
+    <table name="EDU_JY_YJSZXJHLB" exp="研究生专项计划类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -784,7 +784,7 @@
             <DM="0" MC="无专项计划" SYFW="硕士研究生、博士研究生" />
         </data_area>
     </table>
-    <table name="EDU_JY_YJSRXFS" explanation="研究生入学方式代码表">
+    <table name="EDU_JY_YJSRXFS" exp="研究生入学方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -822,7 +822,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_YJSLQTJLB" explanation="研究生录取调剂类别代码表">
+    <table name="EDU_JY_YJSLQTJLB" exp="研究生录取调剂类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -833,7 +833,7 @@
             <DM="2" MC="调剂出" SM="指报考本校（或本院系）第一志愿未被录取而调剂到外校（或本校其他院系）录取。" />
         </data_area>
     </table>
-    <table name="EDU_JY_YEBJLX" explanation="幼儿班级类型代码表">
+    <table name="EDU_JY_YEBJLX" exp="幼儿班级类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -845,7 +845,7 @@
             <DM="4" MC="大班" />
         </data_area>
     </table>
-    <table name="EDU_JY_YBLB" explanation="阅办类别代码表">
+    <table name="EDU_JY_YBLB" exp="阅办类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -862,7 +862,7 @@
             <DM="8" MC="暂存" SM="公文的暂存，是指对既不应立卷归档或清退，又暂不宜销毁的公文，仍需再留存一定时期以备查用" />
         </data_area>
     </table>
-    <table name="EDU_JY_XZDWLX" explanation="协作单位类型代码表">
+    <table name="EDU_JY_XZDWLX" exp="协作单位类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -875,7 +875,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XZ" explanation="学制代码表">
+    <table name="EDU_JY_XZ" exp="学制代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -888,7 +888,7 @@
             <DM="4" MC="四年制" SYXX="初中" />
         </data_area>
     </table>
-    <table name="EDU_JY_XXXZ" explanation="学校性质代码表">
+    <table name="EDU_JY_XXXZ" exp="学校性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -908,7 +908,7 @@
             <DM="12" MC="民族院校" />
         </data_area>
     </table>
-    <table name="EDU_JY_XXWWYHJL" explanation="校学位委员会结论代码表">
+    <table name="EDU_JY_XXWWYHJL" exp="校学位委员会结论代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -921,7 +921,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XXJYJGJBZ" explanation="学校（教育机构）举办者代码表">
+    <table name="EDU_JY_XXJYJGJBZ" exp="学校（教育机构）举办者代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(16)" null="F" p="F" />
@@ -950,7 +950,7 @@
             <DM="999" MC="民办" />
         </data_area>
     </table>
-    <table name="EDU_JY_XXDWCC" explanation="学校单位层次代码表">
+    <table name="EDU_JY_XXDWCC" exp="学校单位层次代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -961,7 +961,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XXBG" explanation="学校变更代码表">
+    <table name="EDU_JY_XXBG" exp="学校变更代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -975,7 +975,7 @@
             <DM="6" MC="升格" />
         </data_area>
     </table>
-    <table name="EDU_JY_XXBB" explanation="学校办别代码表">
+    <table name="EDU_JY_XXBB" exp="学校办别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -992,7 +992,7 @@
             <DM="23" MC="民办公助" />
         </data_area>
     </table>
-    <table name="EDU_JY_XX" explanation="血型代码表">
+    <table name="EDU_JY_XX" exp="血型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1011,7 +1011,7 @@
             <DM="9" MC="其他血型" JC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XWLB" explanation="学位类别代码表">
+    <table name="EDU_JY_XWLB" exp="学位类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1025,7 +1025,7 @@
             <DM="32" MC="专业学位博士" />
         </data_area>
     </table>
-    <table name="EDU_JY_XTXYY" explanation="休退学原因代码表">
+    <table name="EDU_JY_XTXYY" exp="休退学原因代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -1040,7 +1040,7 @@
             <DM="6" MC="其他" SYXX="高等教育、中等职业教育" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSTZDB" explanation="学生体质达标代码表">
+    <table name="EDU_JY_XSTZDB" exp="学生体质达标代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -1052,7 +1052,7 @@
             <DM="4" MC="不及格" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSTTJB" explanation="学术团体级别代码表">
+    <table name="EDU_JY_XSTTJB" exp="学术团体级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -1065,7 +1065,7 @@
             <DM="5" MC="县（区、旗）级学术团体" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSSFTZFS" explanation="学生收费调整方式代码表">
+    <table name="EDU_JY_XSSFTZFS" exp="学生收费调整方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -1081,7 +1081,7 @@
             <DM="7" MC="缓+贷" SM="缓收并贷款缴学费" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSNL" explanation="学生年龄代码表">
+    <table name="EDU_JY_XSNL" exp="学生年龄代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1128,7 +1128,7 @@
             <DM="38" MC="31岁及以上" SYXX="高等教育各类学校" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSLY" explanation="学生来源代码表">
+    <table name="EDU_JY_XSLY" exp="学生来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(20)" null="F" p="F" />
@@ -1169,7 +1169,7 @@
             <DM="299" MC="不便分类的其他从业人员" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSLB" explanation="学生类别代码表">
+    <table name="EDU_JY_XSLB" exp="学生类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(5)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(14)" null="F" p="F" />
@@ -1291,7 +1291,7 @@
             <DM="93300" MC="其他培训学生学生" SM="含社会培训机构" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSJLLX" explanation="学术交流类型代码表">
+    <table name="EDU_JY_XSJLLX" exp="学术交流类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(15)" null="F" p="F" />
@@ -1314,7 +1314,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSHYDJ" explanation="学术会议等级代码表">
+    <table name="EDU_JY_XSHYDJ" exp="学术会议等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(15)" null="F" p="F" />
@@ -1329,7 +1329,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSHJLB" explanation="学生获奖类别代码表">
+    <table name="EDU_JY_XSHJLB" exp="学生获奖类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1345,7 +1345,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSDQZT" explanation="学生当前状态代码表">
+    <table name="EDU_JY_XSDQZT" exp="学生当前状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1370,7 +1370,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XSBD" explanation="学生变动代码表">
+    <table name="EDU_JY_XSBD" exp="学生变动代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -1389,7 +1389,7 @@
             <DM="28" MC="辍学" />
         </data_area>
     </table>
-    <table name="EDU_JY_XQ" explanation="学期代码表">
+    <table name="EDU_JY_XQ" exp="学期代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -1401,7 +1401,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XMZXZT" explanation="项目执行状态代码表">
+    <table name="EDU_JY_XMZXZT" exp="项目执行状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -1413,7 +1413,7 @@
             <DM="4" MC="结题" />
         </data_area>
     </table>
-    <table name="EDU_JY_XMLY" explanation="项目来源代码表">
+    <table name="EDU_JY_XMLY" exp="项目来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(12)" null="F" p="F" />
@@ -1443,7 +1443,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XMLX" explanation="项目类型代码表">
+    <table name="EDU_JY_XMLX" exp="项目类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1459,7 +1459,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XMJFLY" explanation="项目经费来源代码表">
+    <table name="EDU_JY_XMJFLY" exp="项目经费来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(16)" null="F" p="F" />
@@ -1482,7 +1482,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XKMLKJ" explanation="学科门类（科技）代码表">
+    <table name="EDU_JY_XKMLKJ" exp="学科门类（科技）代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -1495,7 +1495,7 @@
             <DM="5" MC="人文与社会科学" />
         </data_area>
     </table>
-    <table name="EDU_JY_XJYDYY" explanation="学籍异动原因代码表">
+    <table name="EDU_JY_XJYDYY" exp="学籍异动原因代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(13)" null="F" p="F" />
@@ -1557,7 +1557,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XJYDLB" explanation="学籍异动类别代码表">
+    <table name="EDU_JY_XJYDLB" exp="学籍异动类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -1600,7 +1600,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_XFNHDJ" explanation="消防耐火等级代码表">
+    <table name="EDU_JY_XFNHDJ" exp="消防耐火等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -1612,7 +1612,7 @@
             <DM="4" MC="四级" />
         </data_area>
     </table>
-    <table name="EDU_JY_WYHRZ" explanation="委员会任职代码表">
+    <table name="EDU_JY_WYHRZ" exp="委员会任职代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -1624,7 +1624,7 @@
             <DM="4" MC="秘书长/秘书" />
         </data_area>
     </table>
-    <table name="EDU_JY_WWJZDJ" explanation="文物建筑等级代码表">
+    <table name="EDU_JY_WWJZDJ" exp="文物建筑等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -1637,7 +1637,7 @@
             <DM="X" MC="非文物建筑" />
         </data_area>
     </table>
-    <table name="EDU_JY_WJZJZLX" explanation="外籍专家证类型代码表">
+    <table name="EDU_JY_WJZJZLX" exp="外籍专家证类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -1646,7 +1646,7 @@
             <DM="1" MC="教科文卫类" />
         </data_area>
     </table>
-    <table name="EDU_JY_WJZJLHQD" explanation="外籍专家来华渠道代码表">
+    <table name="EDU_JY_WJZJLHQD" exp="外籍专家来华渠道代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -1664,7 +1664,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_WJLB" explanation="违纪类别代码表">
+    <table name="EDU_JY_WJLB" exp="违纪类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(13)" null="F" p="F" />
@@ -1686,7 +1686,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_WJFL" explanation="文件分类代码表">
+    <table name="EDU_JY_WJFL" exp="文件分类代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -1715,7 +1715,7 @@
             <DM="20" MC="议案" SM="议案是由具有法定提案权的国家机关、会议常设或临时设立的机构和组织，以及一定数量的个人，向权利机构提出进行审议并作出决定的议事原案。每个国家的议案提交程序和规定都是不一样的，但是都是行使国家权利的重要手段。" />
         </data_area>
     </table>
-    <table name="EDU_JY_WCXS" explanation="完成形式代码表">
+    <table name="EDU_JY_WCXS" exp="完成形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -1726,7 +1726,7 @@
             <DM="3" MC="本单位为协作单位" />
         </data_area>
     </table>
-    <table name="EDU_JY_TSQKZT" explanation="图书期刊状态代码表">
+    <table name="EDU_JY_TSQKZT" exp="图书期刊状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -1742,7 +1742,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_TSJYXXJD" explanation="特殊教育学习阶段代码表">
+    <table name="EDU_JY_TSJYXXJD" exp="特殊教育学习阶段代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -1754,7 +1754,7 @@
             <DM="4" MC="大学阶段" />
         </data_area>
     </table>
-    <table name="EDU_JY_TJXMLB" explanation="体检项目类别代码表">
+    <table name="EDU_JY_TJXMLB" exp="体检项目类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -1778,7 +1778,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SZLB" explanation="三助类别代码表">
+    <table name="EDU_JY_SZLB" exp="三助类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -1789,7 +1789,7 @@
             <DM="3" MC="助管" />
         </data_area>
     </table>
-    <table name="EDU_JY_SZDQJJSX" explanation="所在地区经济属性代码表">
+    <table name="EDU_JY_SZDQJJSX" exp="所在地区经济属性代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -1800,7 +1800,7 @@
             <DM="2" MC="省级贫困县" />
         </data_area>
     </table>
-    <table name="EDU_JY_SZDCXLX" explanation="所在地城乡类型代码表">
+    <table name="EDU_JY_SZDCXLX" exp="所在地城乡类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -1819,7 +1819,7 @@
             <DM="220" MC="村庄" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYZLB" explanation="实验者类别代码表">
+    <table name="EDU_JY_SYZLB" exp="实验者类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -1835,7 +1835,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYZK" explanation="使用状况代码表">
+    <table name="EDU_JY_SYZK" exp="使用状况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -1851,7 +1851,7 @@
             <DM="8" MC="担保" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYYQ" explanation="实验要求代码表">
+    <table name="EDU_JY_SYYQ" exp="实验要求代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -1862,7 +1862,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYSPGJG" explanation="实验室评估结果代码表">
+    <table name="EDU_JY_SYSPGJG" exp="实验室评估结果代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -1878,7 +1878,7 @@
             <DM="31" MC="校级评估合格" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYSLB" explanation="实验室类别代码表">
+    <table name="EDU_JY_SYSLB" exp="实验室类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(12)" null="F" p="F" />
@@ -1890,7 +1890,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYSFY" explanation="实验室费用代码表">
+    <table name="EDU_JY_SYSFY" exp="实验室费用代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -1906,7 +1906,7 @@
             <DM="8" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYQLB" explanation="授予权类别代码表">
+    <table name="EDU_JY_SYQLB" exp="授予权类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -1918,7 +1918,7 @@
             <DM="3" MC="学士学位授予权" />
         </data_area>
     </table>
-    <table name="EDU_JY_SYLB" explanation="实验类别代码表">
+    <table name="EDU_JY_SYLB" exp="实验类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(16)" null="F" p="F" />
@@ -1931,7 +1931,7 @@
             <DM="9" MC="其他（含毕业论文和毕业设计实验）" />
         </data_area>
     </table>
-    <table name="EDU_JY_SSMZSYJXMS" explanation="少数民族双语教学模式代码表">
+    <table name="EDU_JY_SSMZSYJXMS" exp="少数民族双语教学模式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -1943,7 +1943,7 @@
             <DM="3" MC="三类模式" SM="部分学科用民族语授课，部分学科用汉语授课的双语教学模式" />
         </data_area>
     </table>
-    <table name="EDU_JY_SRFLX" explanation="受让方类型代码表">
+    <table name="EDU_JY_SRFLX" exp="受让方类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -1959,7 +1959,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SKFS" explanation="授课方式代码表">
+    <table name="EDU_JY_SKFS" exp="授课方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -1974,7 +1974,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SJGZMC" explanation="世界各洲名称代码表">
+    <table name="EDU_JY_SJGZMC" exp="世界各洲名称代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -1989,7 +1989,7 @@
             <DM="7" MC="南极洲" />
         </data_area>
     </table>
-    <table name="EDU_JY_SJDWZZ" explanation="设计单位资质代码表">
+    <table name="EDU_JY_SJDWZZ" exp="设计单位资质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2001,7 +2001,7 @@
             <DM="D" MC="无" />
         </data_area>
     </table>
-    <table name="EDU_JY_SHSJLX" explanation="社会实践类型代码表">
+    <table name="EDU_JY_SHSJLX" exp="社会实践类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(14)" null="F" p="F" />
@@ -2031,7 +2031,7 @@
             <DM="99" MC="其他相应工作" />
         </data_area>
     </table>
-    <table name="EDU_JY_SHSJDJ" explanation="社会实践等级代码表">
+    <table name="EDU_JY_SHSJDJ" exp="社会实践等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -2041,7 +2041,7 @@
             <DM="2" MC="院系级及以下" />
         </data_area>
     </table>
-    <table name="EDU_JY_SHJJXY" explanation="社会经济效益代码表">
+    <table name="EDU_JY_SHJJXY" exp="社会经济效益代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(14)" null="F" p="F" />
@@ -2062,7 +2062,7 @@
             <DM="13" MC="国防" />
         </data_area>
     </table>
-    <table name="EDU_JY_SHDWXZ" explanation="社会单位性质代码表">
+    <table name="EDU_JY_SHDWXZ" exp="社会单位性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -2093,7 +2093,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SGTZSCZZ" explanation="施工图纸审查资质代码表">
+    <table name="EDU_JY_SGTZSCZZ" exp="施工图纸审查资质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2105,7 +2105,7 @@
             <DM="D" MC="无" />
         </data_area>
     </table>
-    <table name="EDU_JY_SGDWZZDJ" explanation="施工单位资质等级代码表">
+    <table name="EDU_JY_SGDWZZDJ" exp="施工单位资质等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2118,7 +2118,7 @@
             <DM="5" MC="无" />
         </data_area>
     </table>
-    <table name="EDU_JY_SFZJLX" explanation="身份证件类型代码表">
+    <table name="EDU_JY_SFZJLX" exp="身份证件类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -2138,7 +2138,7 @@
             <DM="Z" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_SFXSLB" explanation="师范学生类别代码表">
+    <table name="EDU_JY_SFXSLB" exp="师范学生类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(15)" null="F" p="F" />
@@ -2160,7 +2160,7 @@
             <DM="2" MC="非师范类学生" />
         </data_area>
     </table>
-    <table name="EDU_JY_SFBZ" explanation="是否标志代码表">
+    <table name="EDU_JY_SFBZ" exp="是否标志代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -2171,7 +2171,7 @@
             <DM="2" MC="不确定" />
         </data_area>
     </table>
-    <table name="EDU_JY_SCMS" explanation="色彩模式代码表">
+    <table name="EDU_JY_SCMS" exp="色彩模式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2182,7 +2182,7 @@
             <DM="3" MC="彩色" />
         </data_area>
     </table>
-    <table name="EDU_JY_RXNL" explanation="入学年龄代码表">
+    <table name="EDU_JY_RXNL" exp="入学年龄代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -2196,7 +2196,7 @@
             <DM="5" MC="13岁" SYXX="初中" />
         </data_area>
     </table>
-    <table name="EDU_JY_RXFS" explanation="入学方式代码表">
+    <table name="EDU_JY_RXFS" exp="入学方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -2218,7 +2218,7 @@
             <DM="99" MC="其他" SYXX="中小学校、中等职业学校、高等学校" />
         </data_area>
     </table>
-    <table name="EDU_JY_RKZK" explanation="任课状况代码表">
+    <table name="EDU_JY_RKZK" exp="任课状况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -2237,7 +2237,7 @@
             <DM="29" MC="其他课" />
         </data_area>
     </table>
-    <table name="EDU_JY_RKXD" explanation="任课学段代码表">
+    <table name="EDU_JY_RKXD" exp="任课学段代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -2255,7 +2255,7 @@
             <DM="Z" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_RKKCLB" explanation="任课课程类别代码表">
+    <table name="EDU_JY_RKKCLB" exp="任课课程类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -2283,7 +2283,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_RKJS" explanation="任课角色代码表">
+    <table name="EDU_JY_RKJS" exp="任课角色代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2296,7 +2296,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_QKWB" explanation="缺考舞弊代码表">
+    <table name="EDU_JY_QKWB" exp="缺考舞弊代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2306,7 +2306,7 @@
             <DM="2" MC="舞弊" />
         </data_area>
     </table>
-    <table name="EDU_JY_QGLB" explanation="勤工类别代码表">
+    <table name="EDU_JY_QGLB" exp="勤工类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -2322,7 +2322,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_QGJGYXZYML" explanation="全国技工院校专业目录">
+    <table name="EDU_JY_QGJGYXZYML" exp="全国技工院校专业目录">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(7)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(26)" null="F" p="F" />
@@ -2922,7 +2922,7 @@
             <DM="0749—3" MC="高级" />
         </data_area>
     </table>
-    <table name="EDU_JY_QDFS" explanation="取得方式代码表">
+    <table name="EDU_JY_QDFS" exp="取得方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -2935,7 +2935,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_PYXZ" explanation="聘用性质代码表">
+    <table name="EDU_JY_PYXZ" exp="聘用性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -2948,7 +2948,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_PYFS" explanation="培养方式代码表">
+    <table name="EDU_JY_PYFS" exp="培养方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -2971,7 +2971,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_PYCC" explanation="培养层次代码表">
+    <table name="EDU_JY_PYCC" exp="培养层次代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -2984,7 +2984,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_PXZYSSCY" explanation="培训专业所属产业代码表">
+    <table name="EDU_JY_PXZYSSCY" exp="培训专业所属产业代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -2995,7 +2995,7 @@
             <DM="3" MC="第三产业" />
         </data_area>
     </table>
-    <table name="EDU_JY_PXZSLXY" explanation="培训证书类型代码表">
+    <table name="EDU_JY_PXZSLXY" exp="培训证书类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3005,7 +3005,7 @@
             <DM="2" MC="岗位证书" />
         </data_area>
     </table>
-    <table name="EDU_JY_PXJXSX" explanation="培训进修时限代码表">
+    <table name="EDU_JY_PXJXSX" exp="培训进修时限代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -3018,7 +3018,7 @@
             <DM="5" MC="一年及以上" />
         </data_area>
     </table>
-    <table name="EDU_JY_PTHSPDJ" explanation="普通话水平等级代码表">
+    <table name="EDU_JY_PTHSPDJ" exp="普通话水平等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3032,7 +3032,7 @@
             <DM="6" MC="三级乙等" />
         </data_area>
     </table>
-    <table name="EDU_JY_PRQK" explanation="聘任情况代码表">
+    <table name="EDU_JY_PRQK" exp="聘任情况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3047,7 +3047,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_NJ" explanation="年级代码表">
+    <table name="EDU_JY_NJ" exp="年级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3066,7 +3066,7 @@
             <DM="10" MC="六年级及以上" SYJYLX="小学、成人高等教育" />
         </data_area>
     </table>
-    <table name="EDU_JY_LZLB" explanation="论著类别代码表">
+    <table name="EDU_JY_LZLB" exp="论著类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3098,7 +3098,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LXLZYY" explanation="离校离职原因代码表">
+    <table name="EDU_JY_LXLZYY" exp="离校离职原因代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(12)" null="F" p="F" />
@@ -3124,7 +3124,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LWBGXS" explanation="论文报告形式代码表">
+    <table name="EDU_JY_LWBGXS" exp="论文报告形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3136,7 +3136,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LQLB" explanation="录取类别代码表">
+    <table name="EDU_JY_LQLB" exp="录取类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -3167,7 +3167,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LHLXSZDGZLB" explanation="来华留学生重点关注类别代码表">
+    <table name="EDU_JY_LHLXSZDGZLB" exp="来华留学生重点关注类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -3180,7 +3180,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LHLXSSFLB" explanation="来华留学生收费类别代码表">
+    <table name="EDU_JY_LHLXSSFLB" exp="来华留学生收费类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -3193,7 +3193,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LHLXSJFLY" explanation="来华留学生经费来源代码表">
+    <table name="EDU_JY_LHLXSJFLY" exp="来华留学生经费来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -3217,7 +3217,7 @@
             <DM="62" MC="外国企业奖学金" />
         </data_area>
     </table>
-    <table name="EDU_JY_LGYY" explanation="离岗原因代码表">
+    <table name="EDU_JY_LGYY" exp="离岗原因代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3234,7 +3234,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_LFFWLB" explanation="来访访问类别代码表">
+    <table name="EDU_JY_LFFWLB" exp="来访访问类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3244,7 +3244,7 @@
             <DM="2" MC="顺访" />
         </data_area>
     </table>
-    <table name="EDU_JY_LFDBTCYSF" explanation="来访代表团成员身份代码表">
+    <table name="EDU_JY_LFDBTCYSF" exp="来访代表团成员身份代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3261,7 +3261,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KZSFLD" explanation="抗震设防烈度代码">
+    <table name="EDU_JY_KZSFLD" exp="抗震设防烈度代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="JC" exp="简称" type="nchar(4)" null="T" p="F" />
@@ -3277,7 +3277,7 @@
             <DM="9" JC="9度" MC="抗震设防烈度为9度" />
         </data_area>
     </table>
-    <table name="EDU_JY_KZSFBZ" explanation="抗震设防标准代码">
+    <table name="EDU_JY_KZSFBZ" exp="抗震设防标准代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="JC" exp="简称" type="nchar(2)" null="T" p="F" />
@@ -3291,7 +3291,7 @@
             <DM="4" JC="丁类" MC="适度设防类" SM="指使用上人员稀少且震损不致产生次生灾害，允许在一定条件下适度降低要求的建筑。允许比本地区抗震设防烈度的要求适当降低其抗震措施，但抗震设防烈度为6度时不应降低。一般情况下，仍应按本地区抗震设防烈度确定其地震作用" />
         </data_area>
     </table>
-    <table name="EDU_JY_KWZD" explanation="刊物装订代码表">
+    <table name="EDU_JY_KWZD" exp="刊物装订代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3302,7 +3302,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KWJB" explanation="刊物级别代码表">
+    <table name="EDU_JY_KWJB" exp="刊物级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(14)" null="F" p="F" />
@@ -3325,7 +3325,7 @@
             <DM="49" MC="院校其他公开发行学术刊物" />
         </data_area>
     </table>
-    <table name="EDU_JY_KSXZ" explanation="考试性质代码表">
+    <table name="EDU_JY_KSXZ" exp="考试性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -3344,7 +3344,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KSXS" explanation="考试形式代码表">
+    <table name="EDU_JY_KSXS" exp="考试形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3354,7 +3354,7 @@
             <DM="2" MC="考查" />
         </data_area>
     </table>
-    <table name="EDU_JY_KSFS" explanation="考试方式代码表">
+    <table name="EDU_JY_KSFS" exp="考试方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3371,7 +3371,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KNYY" explanation="困难原因代码表">
+    <table name="EDU_JY_KNYY" exp="困难原因代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3384,7 +3384,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KNCD" explanation="困难程度代码表">
+    <table name="EDU_JY_KNCD" exp="困难程度代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3397,7 +3397,7 @@
             <DM="3" MC="不困难" />
         </data_area>
     </table>
-    <table name="EDU_JY_KMLB" explanation="科目类别代码表">
+    <table name="EDU_JY_KMLB" exp="科目类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3410,7 +3410,7 @@
             <DM="5" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KMJC" explanation="科目级次代码表">
+    <table name="EDU_JY_KMJC" exp="科目级次代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3424,7 +3424,7 @@
             <DM="5" MC="五级分类科目" />
         </data_area>
     </table>
-    <table name="EDU_JY_KCXZ" explanation="课程性质代码表">
+    <table name="EDU_JY_KCXZ" exp="课程性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3435,7 +3435,7 @@
             <DM="3" MC="专业课" />
         </data_area>
     </table>
-    <table name="EDU_JY_KCSX" explanation="课程属性代码表">
+    <table name="EDU_JY_KCSX" exp="课程属性代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3453,7 +3453,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KCLX" explanation="课程类型代码表">
+    <table name="EDU_JY_KCLX" exp="课程类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3471,7 +3471,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_KCLB" explanation="课程类别代码表">
+    <table name="EDU_JY_KCLB" exp="课程类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -3486,7 +3486,7 @@
             <DM="9" MC="其他类" />
         </data_area>
     </table>
-    <table name="EDU_JY_KCJB" explanation="课程级别代码表">
+    <table name="EDU_JY_KCJB" exp="课程级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -3499,7 +3499,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWZK" explanation="建筑物状况代码表">
+    <table name="EDU_JY_JZWZK" exp="建筑物状况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3516,7 +3516,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWYT" explanation="建筑物用途代码表">
+    <table name="EDU_JY_JZWYT" exp="建筑物用途代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -3544,7 +3544,7 @@
             <DM="51" MC="其他配套设施" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWPMXS" explanation="建筑物平面形式代码表">
+    <table name="EDU_JY_JZWPMXS" exp="建筑物平面形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3557,7 +3557,7 @@
             <DM="5" MC="混合式组合" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWLBXS" explanation="建筑物楼板形式代码表">
+    <table name="EDU_JY_JZWLBXS" exp="建筑物楼板形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3569,7 +3569,7 @@
             <DM="4" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWJG" explanation="建筑物结构代码表">
+    <table name="EDU_JY_JZWJG" exp="建筑物结构代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3583,7 +3583,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWJDNR" explanation="建筑物鉴定内容代码表">
+    <table name="EDU_JY_JZWJDNR" exp="建筑物鉴定内容代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -3596,7 +3596,7 @@
             <DM="5" MC="其他鉴定" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWJCXS" explanation="建筑物基础形式代码表">
+    <table name="EDU_JY_JZWJCXS" exp="建筑物基础形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -3613,7 +3613,7 @@
             <DM="31" MC="其他基础形式" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWFL" explanation="建筑物分类代码表">
+    <table name="EDU_JY_JZWFL" exp="建筑物分类代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3625,7 +3625,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZWAQPCJL" explanation="建筑物安全排查结论代码表">
+    <table name="EDU_JY_JZWAQPCJL" exp="建筑物安全排查结论代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -3636,7 +3636,7 @@
             <DM="3" MC="存在重大安全隐患" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZGLY" explanation="教职工来源代码表">
+    <table name="EDU_JY_JZGLY" exp="教职工来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -3657,7 +3657,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZGLB" explanation="教职工类别代码表">
+    <table name="EDU_JY_JZGLB" exp="教职工类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(19)" null="F" p="F" />
@@ -3687,7 +3687,7 @@
             <DM="99" MC="其他教职工" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZGDQZT" explanation="教职工当前状态代码表">
+    <table name="EDU_JY_JZGDQZT" exp="教职工当前状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3712,7 +3712,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JZFX" explanation="记账方向代码表">
+    <table name="EDU_JY_JZFX" exp="记账方向代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -3722,7 +3722,7 @@
             <DM="2" MC="贷方" />
         </data_area>
     </table>
-    <table name="EDU_JY_JYZT" explanation="纪要状态代码表">
+    <table name="EDU_JY_JYZT" exp="纪要状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -3733,7 +3733,7 @@
             <DM="3" MC="已分发" />
         </data_area>
     </table>
-    <table name="EDU_JY_JYLSFS" explanation="就业落实方式代码表">
+    <table name="EDU_JY_JYLSFS" exp="就业落实方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -3750,7 +3750,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JXYFXZ" explanation="教学用房性质代码表">
+    <table name="EDU_JY_JXYFXZ" exp="教学用房性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3770,7 +3770,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JXLX" explanation="教学类型代码表">
+    <table name="EDU_JY_JXLX" exp="教学类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3794,7 +3794,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JXJLX" explanation="奖学金类型代码表">
+    <table name="EDU_JY_JXJLX" exp="奖学金类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(13)" null="F" p="F" />
@@ -3825,7 +3825,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JTLB" explanation="家庭类别代码表">
+    <table name="EDU_JY_JTLB" exp="家庭类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -3842,7 +3842,7 @@
             <DM="9" MC="五保户" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSZYQK" explanation="教室占用情况代码表">
+    <table name="EDU_JY_JSZYQK" exp="教室占用情况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3857,7 +3857,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSNL" explanation="教师年龄代码表">
+    <table name="EDU_JY_JSNL" exp="教师年龄代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -3878,7 +3878,7 @@
             <DM="12" MC="66岁及以上" SYXX="中等职业教育各类学校，高等教育各类学校" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSLX" explanation="教室类型代码表">
+    <table name="EDU_JY_JSLX" exp="教室类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -3893,7 +3893,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSLDLB" explanation="教师流动类别代码表">
+    <table name="EDU_JY_JSLDLB" exp="教师流动类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(21)" null="F" p="F" />
@@ -3905,7 +3905,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSJB" explanation="竞赛级别代码表">
+    <table name="EDU_JY_JSJB" exp="竞赛级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -3919,7 +3919,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSHJLB" explanation="教师获奖类别代码表">
+    <table name="EDU_JY_JSHJLB" exp="教师获奖类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -3936,7 +3936,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JSBD" explanation="教师变动代码表">
+    <table name="EDU_JY_JSBD" exp="教师变动代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -3962,7 +3962,7 @@
             <DM="215" MC="减少其他" SYXX="小学、初中、普通高中、特殊教育、中职、高校" />
         </data_area>
     </table>
-    <table name="EDU_JY_JS" explanation="角色代码表">
+    <table name="EDU_JY_JS" exp="角色代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -4079,7 +4079,7 @@
             <DM="729" MC="转让成果普通参加者" />
         </data_area>
     </table>
-    <table name="EDU_JY_JNXFZK" explanation="缴纳学费状况代码表">
+    <table name="EDU_JY_JNXFZK" exp="缴纳学费状况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -4091,7 +4091,7 @@
             <DM="4" MC="部分缴纳" />
         </data_area>
     </table>
-    <table name="EDU_JY_JLZZZJLY" explanation="奖励资助资金来源代码表">
+    <table name="EDU_JY_JLZZZJLY" exp="奖励资助资金来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(13)" null="F" p="F" />
@@ -4107,7 +4107,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JLFS" explanation="奖励方式代码表">
+    <table name="EDU_JY_JLFS" exp="奖励方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -4120,7 +4120,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JLDWZZ" explanation="监理单位资质代码表">
+    <table name="EDU_JY_JLDWZZ" exp="监理单位资质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -4132,7 +4132,7 @@
             <DM="D" MC="无" />
         </data_area>
     </table>
-    <table name="EDU_JY_JLDJ" explanation="奖励等级代码表">
+    <table name="EDU_JY_JLDJ" exp="奖励等级代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -4147,7 +4147,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JKRLB" explanation="监考人类别代码表">
+    <table name="EDU_JY_JKRLB" exp="监考人类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -4160,7 +4160,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JJCD" explanation="紧急程度代码表">
+    <table name="EDU_JY_JJCD" exp="紧急程度代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -4174,7 +4174,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JHWCQK" explanation="计划完成情况代码表">
+    <table name="EDU_JY_JHWCQK" exp="计划完成情况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -4187,7 +4187,7 @@
             <DM="5" MC="正在进行" />
         </data_area>
     </table>
-    <table name="EDU_JY_JGZNLX" explanation="机构职能类型代码表">
+    <table name="EDU_JY_JGZNLX" exp="机构职能类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -4201,7 +4201,7 @@
             <DM="6" MC="综合机构" />
         </data_area>
     </table>
-    <table name="EDU_JY_JFLY" explanation="经费来源代码表">
+    <table name="EDU_JY_JFLY" exp="经费来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -4215,7 +4215,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JFKM" explanation="经费科目代码表">
+    <table name="EDU_JY_JFKM" exp="经费科目代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -4230,7 +4230,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JDJL" explanation="鉴定结论代码表">
+    <table name="EDU_JY_JDJL" exp="鉴定结论代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -4249,7 +4249,7 @@
             <DM="99" MC="一般水平" />
         </data_area>
     </table>
-    <table name="EDU_JY_JDFS" explanation="就读方式代码表">
+    <table name="EDU_JY_JDFS" exp="就读方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -4261,7 +4261,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_JB" explanation="级别代码表">
+    <table name="EDU_JY_JB" exp="级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(17)" null="F" p="F" />
@@ -4289,7 +4289,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_HZXS" explanation="合作形式代码表">
+    <table name="EDU_JY_HZXS" exp="合作形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -4304,7 +4304,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_HYJBXS" explanation="会议举办形式代码表">
+    <table name="EDU_JY_HYJBXS" exp="会议举办形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -4318,7 +4318,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_HYGZLB" explanation="行业工种类别代码表">
+    <table name="EDU_JY_HYGZLB" exp="行业工种类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -4339,7 +4339,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_HSKCJ" explanation="汉语水平考试成绩代码表">
+    <table name="EDU_JY_HSKCJ" exp="汉语水平考试成绩代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(17)" null="F" p="F" />
@@ -4359,7 +4359,7 @@
             <DM="12" MC="HSK高等A级（分数等级：11级）" />
         </data_area>
     </table>
-    <table name="EDU_JY_HKQCZK" explanation="户口迁出状况代码表">
+    <table name="EDU_JY_HKQCZK" exp="户口迁出状况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -4371,7 +4371,7 @@
             <DM="4" MC="户口不在校" />
         </data_area>
     </table>
-    <table name="EDU_JY_HJLX" explanation="获奖类型代码表">
+    <table name="EDU_JY_HJLX" exp="获奖类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -4382,7 +4382,7 @@
             <DM="3" MC="个人单项" />
         </data_area>
     </table>
-    <table name="EDU_JY_HDXLFS" explanation="获得学历方式代码表">
+    <table name="EDU_JY_HDXLFS" exp="获得学历方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -4394,7 +4394,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_HDLX" explanation="活动类型代码表">
+    <table name="EDU_JY_HDLX" exp="活动类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -4414,7 +4414,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_HDFS" explanation="获得方式代码表">
+    <table name="EDU_JY_HDFS" exp="获得方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -4433,7 +4433,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GZNX" explanation="工作年限代码表">
+    <table name="EDU_JY_GZNX" exp="工作年限代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -4445,7 +4445,7 @@
             <DM="4" MC="21年及以上" />
         </data_area>
     </table>
-    <table name="EDU_JY_GZGZZYML" explanation="普通高等学校高职高专教育指导性专业目录（试行）">
+    <table name="EDU_JY_GZGZZYML" exp="普通高等学校高职高专教育指导性专业目录（试行）">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(6)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(14)" null="F" p="F" />
@@ -5670,7 +5670,7 @@
             <DM="690399" MC="司法技术类其他专业" />
         </data_area>
     </table>
-    <table name="EDU_JY_GZGWXZ" explanation="工作岗位性质代码表">
+    <table name="EDU_JY_GZGWXZ" exp="工作岗位性质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -5686,7 +5686,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GXJZGLY" explanation="高校教职工来源代码表">
+    <table name="EDU_JY_GXJZGLY" exp="高校教职工来源代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -5729,7 +5729,7 @@
             <DM="99" MC="其他进校人员" />
         </data_area>
     </table>
-    <table name="EDU_JY_GXBYQX" explanation="高校毕业去向代码表">
+    <table name="EDU_JY_GXBYQX" exp="高校毕业去向代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -5747,7 +5747,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GWZY" explanation="岗位职业代码表">
+    <table name="EDU_JY_GWZY" exp="岗位职业代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(11)" null="F" p="F" />
@@ -5793,7 +5793,7 @@
             <DM="80" MC="其他工作" />
         </data_area>
     </table>
-    <table name="EDU_JY_GWZT" explanation="公文状态代码表">
+    <table name="EDU_JY_GWZT" exp="公文状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -5810,7 +5810,7 @@
             <DM="9" MC="已办结" />
         </data_area>
     </table>
-    <table name="EDU_JY_GWLB" explanation="岗位类别代码表">
+    <table name="EDU_JY_GWLB" exp="岗位类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -5822,7 +5822,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GWFZFS" explanation="公文封装方式代码表">
+    <table name="EDU_JY_GWFZFS" exp="公文封装方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -5838,7 +5838,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GSQK" explanation="供水情况代码表">
+    <table name="EDU_JY_GSQK" exp="供水情况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -5849,7 +5849,7 @@
             <DM="3" MC="无水源" />
         </data_area>
     </table>
-    <table name="EDU_JY_GNFS" explanation="供暖方式代码表">
+    <table name="EDU_JY_GNFS" exp="供暖方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -5864,7 +5864,7 @@
             <DM="7" MC="无采暖" />
         </data_area>
     </table>
-    <table name="EDU_JY_GLJB" explanation="管理级别代码表">
+    <table name="EDU_JY_GLJB" exp="管理级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -5879,7 +5879,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GKKM" explanation="高考科目代码表">
+    <table name="EDU_JY_GKKM" exp="高考科目代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -5900,7 +5900,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GKFS" explanation="公开方式代码表">
+    <table name="EDU_JY_GKFS" exp="公开方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -5911,7 +5911,7 @@
             <DM="3" MC="不予公开" />
         </data_area>
     </table>
-    <table name="EDU_JY_GJWXZDWLX" explanation="国（境）外协作单位类型代码表">
+    <table name="EDU_JY_GJWXZDWLX" exp="国（境）外协作单位类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -5928,7 +5928,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GDLX" explanation="攻读类型代码表">
+    <table name="EDU_JY_GDLX" exp="攻读类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(15)" null="F" p="F" />
@@ -5942,7 +5942,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_GATQW" explanation="港澳台侨外代码表">
+    <table name="EDU_JY_GATQW" exp="港澳台侨外代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -5966,7 +5966,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_FYWTLB" explanation="反映问题类别代码表">
+    <table name="EDU_JY_FYWTLB" exp="反映问题类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -5998,7 +5998,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_FWYFPGG" explanation="服务业发票规格代码表">
+    <table name="EDU_JY_FWYFPGG" exp="服务业发票规格代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(1)" null="F" p="F" />
@@ -6008,7 +6008,7 @@
             <DM="2" MC="本" />
         </data_area>
     </table>
-    <table name="EDU_JY_FWLX" explanation="房屋类型代码表">
+    <table name="EDU_JY_FWLX" exp="房屋类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -6019,7 +6019,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_FWCQ" explanation="房屋产权代码表">
+    <table name="EDU_JY_FWCQ" exp="房屋产权代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -6038,7 +6038,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_FSFS" explanation="发送方式代码表">
+    <table name="EDU_JY_FSFS" exp="发送方式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -6053,7 +6053,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_FLFX" explanation="分流方向代码表">
+    <table name="EDU_JY_FLFX" exp="分流方向代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -6071,7 +6071,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_FLBJ" explanation="分录标记代码表">
+    <table name="EDU_JY_FLBJ" exp="分录标记代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -6082,7 +6082,7 @@
             <DM="3" MC="多贷多借" />
         </data_area>
     </table>
-    <table name="EDU_JY_FJYT" explanation="房间用途代码表">
+    <table name="EDU_JY_FJYT" exp="房间用途代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -6126,7 +6126,7 @@
             <DM="9" MC="其他用房" SYXX="小学、中学、职业初中、幼儿园、特殊教育学校" />
         </data_area>
     </table>
-    <table name="EDU_JY_FJSYZT" explanation="房间使用状态代码表">
+    <table name="EDU_JY_FJSYZT" exp="房间使用状态代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -6138,7 +6138,7 @@
             <DM="4" MC="不能使用" />
         </data_area>
     </table>
-    <table name="EDU_JY_FJFLB" explanation="附加分类别代码表">
+    <table name="EDU_JY_FJFLB" exp="附加分类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -6153,7 +6153,7 @@
             <DM="9" MC="其他自主认定" />
         </data_area>
     </table>
-    <table name="EDU_JY_FDYNL" explanation="辅导员年龄代码表">
+    <table name="EDU_JY_FDYNL" exp="辅导员年龄代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -6166,7 +6166,7 @@
             <DM="5" MC="51岁及以上" />
         </data_area>
     </table>
-    <table name="EDU_JY_DZWJLX" explanation="电子文件类型代码表">
+    <table name="EDU_JY_DZWJLX" exp="电子文件类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -6184,7 +6184,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_DWLB" explanation="单位类别代码表">
+    <table name="EDU_JY_DWLB" exp="单位类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -6202,7 +6202,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_DWBB" explanation="单位办别代码表">
+    <table name="EDU_JY_DWBB" exp="单位办别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -6215,7 +6215,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_DSLB" explanation="导师类别代码表">
+    <table name="EDU_JY_DSLB" exp="导师类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -6231,7 +6231,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_DKDWZZ" explanation="地勘单位资质代码表">
+    <table name="EDU_JY_DKDWZZ" exp="地勘单位资质代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -6243,7 +6243,7 @@
             <DM="D" MC="无" />
         </data_area>
     </table>
-    <table name="EDU_JY_DAYWXW" explanation="档案业务行为代码表">
+    <table name="EDU_JY_DAYWXW" exp="档案业务行为代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -6260,7 +6260,7 @@
             <DM="80" MC="统计" SM="档案统计" />
         </data_area>
     </table>
-    <table name="EDU_JY_DAWJZHLX" explanation="档案文件组合类型代码表">
+    <table name="EDU_JY_DAWJZHLX" exp="档案文件组合类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -6270,7 +6270,7 @@
             <DM="2" MC="组合文件" />
         </data_area>
     </table>
-    <table name="EDU_JY_DAGXLX" explanation="档案关系类型代码表">
+    <table name="EDU_JY_DAGXLX" exp="档案关系类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -6306,7 +6306,7 @@
             <DM="28" MC="业务—文档—机构人员" />
         </data_area>
     </table>
-    <table name="EDU_JY_DAGX" explanation="档案关系代码表">
+    <table name="EDU_JY_DAGX" exp="档案关系代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -6328,7 +6328,7 @@
             <DM="14" MC="隶属/被隶属" />
         </data_area>
     </table>
-    <table name="EDU_JY_DAGB" explanation="档案稿本代码表">
+    <table name="EDU_JY_DAGB" exp="档案稿本代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(3)" null="F" p="F" />
@@ -6343,7 +6343,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_DABGQX" explanation="档案保管期限代码表">
+    <table name="EDU_JY_DABGQX" exp="档案保管期限代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -6362,7 +6362,7 @@
             <DM="34" MC="3" ZMDM="年" SM="适用于会计档案" />
         </data_area>
     </table>
-    <table name="EDU_JY_CWPL" explanation="财务票类代码表">
+    <table name="EDU_JY_CWPL" exp="财务票类代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -6376,7 +6376,7 @@
             <DM="6" MC="服务业发票" />
         </data_area>
     </table>
-    <table name="EDU_JY_CSQK" explanation="厕所情况代码表">
+    <table name="EDU_JY_CSQK" exp="厕所情况代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -6387,7 +6387,7 @@
             <DM="3" MC="无厕所" />
         </data_area>
     </table>
-    <table name="EDU_JY_CQSHJZHXSTTZWYY" explanation="辞去社会兼职或学术团体职务原因代码表">
+    <table name="EDU_JY_CQSHJZHXSTTZWYY" exp="辞去社会兼职或学术团体职务原因代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -6404,7 +6404,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_CQ" explanation="产权代码表">
+    <table name="EDU_JY_CQ" exp="产权代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -6415,7 +6415,7 @@
             <DM="3" MC="产权非属学校共同使用" />
         </data_area>
     </table>
-    <table name="EDU_JY_CJRLX" explanation="残疾人类型代码表">
+    <table name="EDU_JY_CJRLX" exp="残疾人类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -6427,7 +6427,7 @@
             <DM="9" MC="其他残疾" />
         </data_area>
     </table>
-    <table name="EDU_JY_CGMD" explanation="出国目的代码表">
+    <table name="EDU_JY_CGMD" exp="出国目的代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(20)" null="F" p="F" />
@@ -6492,7 +6492,7 @@
             <DM="99" MC="其他原因出国" />
         </data_area>
     </table>
-    <table name="EDU_JY_CGLX" explanation="成果类型代码表">
+    <table name="EDU_JY_CGLX" exp="成果类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(10)" null="F" p="F" />
@@ -6520,7 +6520,7 @@
             <DM="999" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_CGHJLB" explanation="成果获奖类别代码表">
+    <table name="EDU_JY_CGHJLB" exp="成果获奖类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -6541,7 +6541,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_CFMC" explanation="处分名称代码表">
+    <table name="EDU_JY_CFMC" exp="处分名称代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -6555,7 +6555,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_CBSJB" explanation="出版社级别代码表">
+    <table name="EDU_JY_CBSJB" exp="出版社级别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(9)" null="F" p="F" />
@@ -6566,7 +6566,7 @@
             <DM="3" MC="国外（境外）出版社" />
         </data_area>
     </table>
-    <table name="EDU_JY_BZYD" explanation="编制异动代码表">
+    <table name="EDU_JY_BZYD" exp="编制异动代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -6577,7 +6577,7 @@
             <DM="9" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_BZLB" explanation="编制类别代码表">
+    <table name="EDU_JY_BZLB" exp="编制类别代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -6593,7 +6593,7 @@
             <DM="99" MC="其他类" />
         </data_area>
     </table>
-    <table name="EDU_JY_BYQX" explanation="毕业去向代码表">
+    <table name="EDU_JY_BYQX" exp="毕业去向代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(12)" null="F" p="F" />
@@ -6613,7 +6613,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_JY_BXLX" explanation="办学类型代码表">
+    <table name="EDU_JY_BXLX" exp="办学类型代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(3)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(16)" null="F" p="F" />
@@ -6698,7 +6698,7 @@
             <DM="933" MC="其他培训机构（含社会培训机构）" />
         </data_area>
     </table>
-    <table name="EDU_JY_BE" explanation="班额代码表">
+    <table name="EDU_JY_BE" exp="班额代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -6712,7 +6712,7 @@
             <DM="6" MC="66人及以上" />
         </data_area>
     </table>
-    <table name="EDU_JY_AQJXXS" explanation="安全教学形式代码表">
+    <table name="EDU_JY_AQJXXS" exp="安全教学形式代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />

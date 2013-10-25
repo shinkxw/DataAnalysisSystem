@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_WZXT" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_WZXT_VIP" explanation="网站会员">
+    <table name="EDU_WZXT_VIP" exp="网站会员">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
@@ -15,7 +15,7 @@
             <name="AUDITORNAME" exp="审核人" type="nvarchar(50)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_TPXT_TPYS" explanation="投票样式库">
+    <table name="EDU_WZXT_TPXT_TPYS" exp="投票样式库">
         <field_area>
             <name="ID" exp="样式ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -24,7 +24,7 @@
             <name="SHOWIMG" exp="效果图" type="nvarchar(500)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_TPXT_TPXX" explanation="投票题目选项">
+    <table name="EDU_WZXT_TPXT_TPXX" exp="投票题目选项">
         <field_area>
             <name="ID" exp="投票题目选项ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -35,7 +35,7 @@
             <name="SUMTP" exp="已选人数" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_TPXT_TPTM" explanation="投票题目">
+    <table name="EDU_WZXT_TPXT_TPTM" exp="投票题目">
         <field_area>
             <name="ID" exp="投票题目ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -46,7 +46,7 @@
             <name="CONTENT" exp="内容" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_TPXT_TPSZ" explanation="投票设置">
+    <table name="EDU_WZXT_TPXT_TPSZ" exp="投票设置">
         <field_area>
             <name="ID" exp="投票设置ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -59,7 +59,7 @@
             <name="STARTSTATU" exp="是否开启" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_TPXT_TPJL" explanation="投票记录">
+    <table name="EDU_WZXT_TPXT_TPJL" exp="投票记录">
         <field_area>
             <name="ID" exp="投票记录ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -69,7 +69,7 @@
             <name="TPTIME" exp="投票时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_YQLJLX" explanation="友情链接类型">
+    <table name="EDU_WZXT_MHXT_YQLJLX" exp="友情链接类型">
         <field_area>
             <name="ID" exp="友情链接类型ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -78,7 +78,7 @@
             <name="SHOWSTYLE" exp="显示方式" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_YQLJ" explanation="友情链接">
+    <table name="EDU_WZXT_MHXT_YQLJ" exp="友情链接">
         <field_area>
             <name="ID" exp="友情链接ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -89,7 +89,7 @@
             <name="URL" exp="链接" type="nvarchar(300)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_WZYS" explanation="样式库">
+    <table name="EDU_WZXT_MHXT_WZYS" exp="样式库">
         <field_area>
             <name="ID" exp="样式库ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -98,7 +98,7 @@
             <name="SHOWIMG" exp="效果图" type="nvarchar(500)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_WZWZ" explanation="网站文章">
+    <table name="EDU_WZXT_MHXT_WZWZ" exp="网站文章">
         <field_area>
             <name="ID" exp="网站文章ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -128,7 +128,7 @@
             <name="INDEXSHOW" exp="能否显示在主页上" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_WZPJ" explanation="文章评价表">
+    <table name="EDU_WZXT_MHXT_WZPJ" exp="文章评价表">
         <field_area>
             <name="ID" exp="评价ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
@@ -143,7 +143,7 @@
             <name="HF" exp="回复" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_WZPZ" explanation="网站配置">
+    <table name="EDU_WZXT_MHXT_WZPZ" exp="网站配置">
         <field_area>
             <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -154,7 +154,7 @@
             <name="URL" exp="完整网址" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_NWIP" explanation="内网IP配置">
+    <table name="EDU_WZXT_MHXT_NWIP" exp="内网IP配置">
         <field_area>
             <name="ID" exp="内网IP配置ID" type="int" null="F" p="T" />
             <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
@@ -162,7 +162,7 @@
             <name="IP" exp="IP地址" type="nvarchar(40)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_WZLM" explanation="网站栏目（导航）">
+    <table name="EDU_WZXT_MHXT_WZLM" exp="网站栏目（导航）">
         <field_area>
             <name="ID" exp="网站栏目（导航）ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -181,7 +181,7 @@
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_WZGG" explanation="网站广告">
+    <table name="EDU_WZXT_MHXT_WZGG" exp="网站广告">
         <field_area>
             <name="ID" exp="网站广告ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -192,7 +192,7 @@
             <name="SHOWSTATU" exp="是否显示" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_FWLL" explanation="访问履历">
+    <table name="EDU_WZXT_MHXT_FWLL" exp="访问履历">
         <field_area>
             <name="ID" exp="访问履历ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -202,7 +202,7 @@
             <name="ACCESSTIME" exp="访问时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_FBQX" explanation="发布权限">
+    <table name="EDU_WZXT_MHXT_FBQX" exp="发布权限">
         <field_area>
             <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -212,7 +212,7 @@
             <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_FBJS" explanation="发布角色表">
+    <table name="EDU_WZXT_MHXT_FBJS" exp="发布角色表">
         <field_area>
             <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -222,7 +222,7 @@
             <name="LMMCLB" exp="栏目名称列表" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_YHFBQX" explanation="用户发布权限表">
+    <table name="EDU_WZXT_MHXT_YHFBQX" exp="用户发布权限表">
         <field_area>
             <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />

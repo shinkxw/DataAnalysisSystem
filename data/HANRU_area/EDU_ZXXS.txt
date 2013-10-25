@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZXXS" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZXXS_01_01_XSXX" explanation="学生基本数据子类表">
+    <table name="EDU_ZXXS_01_01_XSXX" exp="学生基本数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
@@ -43,7 +43,7 @@
             <name="XJH" exp="学籍号" type="nvarchar(30)" null="T" p="F" remark="全国唯一的学籍号" />
         </field_area>
     </table>
-    <table name="EDU_ZXXS_01_06_XSJTCY" explanation="学生家庭成员数据表">
+    <table name="EDU_ZXXS_01_06_XSJTCY" exp="学生家庭成员数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
@@ -67,7 +67,7 @@
             <name="SJHM" exp="手机号码" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXXS_02_A01_XSJTXX" explanation="学生家庭信息数据表">
+    <table name="EDU_ZXXS_02_A01_XSJTXX" exp="学生家庭信息数据表">
         <field_area>
             <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -83,7 +83,7 @@
             <name="LJZJHCZ" exp="离家最近火车站" type="nvarchar(30)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXXS_02_06_ZXKSCJ" explanation="在校考试成绩数据子类表">
+    <table name="EDU_ZXXS_02_06_ZXKSCJ" exp="在校考试成绩数据子类表">
         <field_area>
             <name="ID" exp="考试成绩表" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
@@ -114,7 +114,7 @@
             <name="SJID" exp="试卷ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXXS_07_A02_XJYD" explanation="学籍异动数据子类表">
+    <table name="EDU_ZXXS_07_A02_XJYD" exp="学籍异动数据子类表">
         <field_area>
             <name="ID" exp="学籍异动表编号" type="int" null="F" p="T" />
             <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />

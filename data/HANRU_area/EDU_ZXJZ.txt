@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZXJZ" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZXJZ_01_01_JZGJBSJ" explanation="教职工基本数据子类表">
+    <table name="EDU_ZXJZ_01_01_JZGJBSJ" exp="教职工基本数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -47,7 +47,7 @@
             <name="ZYRKXD" exp="主要任课学段" type="nvarchar(1)" null="F" p="F" remark="主要任课学段 编号：ZXJZ010120 值空间：JY/T1001RKXD任课学段代码 " />
         </field_area>
     </table>
-    <table name="EDU_ZXJZ_02_A01_XNGWSJ" explanation="校内岗位数据子类表">
+    <table name="EDU_ZXJZ_02_A01_XNGWSJ" exp="校内岗位数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
@@ -60,7 +60,7 @@
             <name="JGH" exp="机构号" type="nvarchar(10)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXJZ_07_02_RKSJ" explanation="任课数据子类表">
+    <table name="EDU_ZXJZ_07_02_RKSJ" exp="任课数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />

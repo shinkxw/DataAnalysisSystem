@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZXTW" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZXTW_03_A01_XSMZJL" explanation="学生门诊记录">
+    <table name="EDU_ZXTW_03_A01_XSMZJL" exp="学生门诊记录">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />

@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_SYS" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_SYS_01_CONFIG" explanation="全局配置表">
+    <table name="EDU_SYS_01_CONFIG" exp="全局配置表">
         <field_area>
             <name="ID" exp="配置ID" type="int" null="F" p="T" />
             <name="VALUE" exp="配置值" type="nvarchar(200)" null="F" p="F" />
@@ -16,14 +16,14 @@
             <ID="2001" VALUE="600" />
         </data_area>
     </table>
-    <table name="EDU_SYS_01_XN" explanation="学年表">
+    <table name="EDU_SYS_01_XN" exp="学年表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
             <name="XN" exp="学年" type="nvarchar(9)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_SYS_01_MODULE" explanation="">
+    <table name="EDU_SYS_01_MODULE" exp="">
         <field_area>
             <name="ID" exp="" type="int" null="F" p="T" />
             <name="APPID" exp="" type="int" null="F" p="F" />

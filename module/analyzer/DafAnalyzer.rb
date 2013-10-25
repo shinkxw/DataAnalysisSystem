@@ -36,7 +36,8 @@ class DafAnalyzer
         end 
       when "namespace"
         if hash[:line_prefix] == "table"
-          table = MDTable.new(hash[:name],hash[:explanation],hash[:remark])
+          exp = hash[:explanation] ? hash[:explanation] : hash[:exp]
+          table = MDTable.new(hash[:name],exp,hash[:remark])
           state = "table"
         elsif hash[:line_prefix] == "/namespace"
           @area.add_name_space(name_space)

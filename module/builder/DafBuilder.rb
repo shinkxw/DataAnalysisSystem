@@ -71,7 +71,7 @@ class DafBuilder
   end
   #生成表的daf字符串
   def build_table_daf(table)
-    @daf_str << %(#{@tab}<table name="#{table.name}" explanation="#{table.explanation}">\n)
+    @daf_str << %(#{@tab}<table name="#{table.name}" exp="#{table.explanation}">\n)
     build_field_area_daf(table.field_area)
     build_data_area_daf(table.data_area) if table.has_data?
     @daf_str << "#{@tab}</table>\n"

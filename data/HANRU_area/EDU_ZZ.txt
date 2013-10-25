@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZ" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZ_ZYZWLB" explanation="主要职务类别代码">
+    <table name="EDU_ZZ_ZYZWLB" exp="主要职务类别代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(6)" null="F" p="F" />
@@ -11,7 +11,7 @@
             <DM="3" MC="学校联系人" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_ZXJFL" explanation="助学金分类代码">
+    <table name="EDU_ZZ_ZXJFL" exp="助学金分类代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -24,7 +24,7 @@
             <DM="5" MC="其他助学金" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_ZKKM" explanation="中考科目代码">
+    <table name="EDU_ZZ_ZKKM" exp="中考科目代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -42,7 +42,7 @@
             <DM="99" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_XKSH" explanation="学生选课审核状态代码">
+    <table name="EDU_ZZ_XKSH" exp="学生选课审核状态代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(5)" null="F" p="F" />
@@ -53,7 +53,7 @@
             <DM="3" MC="审核未通过" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_SXJDLB" explanation="实习基地类别代码">
+    <table name="EDU_ZZ_SXJDLB" exp="实习基地类别代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -67,7 +67,7 @@
             <DM="6" MC="外省市校外" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_SXJDJNSXSSL" explanation="实习基地接纳实习生数量代码">
+    <table name="EDU_ZZ_SXJDJNSXSSL" exp="实习基地接纳实习生数量代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -81,7 +81,7 @@
             <DM="6" MC="100人以上" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_PGQK" explanation="评估情况代码">
+    <table name="EDU_ZZ_PGQK" exp="评估情况代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(8)" null="F" p="F" />
@@ -95,7 +95,7 @@
             <DM="6" MC="其他" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_KCFL" explanation="课程分类代码">
+    <table name="EDU_ZZ_KCFL" exp="课程分类代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(7)" null="F" p="F" />
@@ -112,7 +112,7 @@
             <DM="9" MC="军训" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_JZJSGW" explanation="兼职教师岗位代码">
+    <table name="EDU_ZZ_JZJSGW" exp="兼职教师岗位代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(4)" null="F" p="F" />
@@ -124,7 +124,7 @@
             <DM="4" MC="管理工作" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_HJXZ" explanation="户籍性质代码">
+    <table name="EDU_ZZ_HJXZ" exp="户籍性质代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
@@ -135,7 +135,7 @@
             <DM="3" MC="城市" />
         </data_area>
     </table>
-    <table name="EDU_ZZ_JKKM" explanation="驾考科目代码">
+    <table name="EDU_ZZ_JKKM" exp="驾考科目代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
             <name="MC" exp="科目名称" type="nvarchar(20)" null="F" p="F" />

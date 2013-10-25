@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZZXX" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZZXX_01_01_ZZXX" explanation="学校基本数据表">
+    <table name="EDU_ZZXX_01_01_ZZXX" exp="学校基本数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="XXDM" exp="学校代码" type="nvarchar(10)" null="F" p="F" />
@@ -26,7 +26,7 @@
             <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXX_03_01_XNJG" explanation="校内机构数据类表">
+    <table name="EDU_ZZXX_03_01_XNJG" exp="校内机构数据类表">
         <field_area>
             <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
@@ -44,7 +44,7 @@
             <name="FZRH" exp="负责人号" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXX_03_A01_JGGW" explanation="机构岗位表">
+    <table name="EDU_ZZXX_03_A01_JGGW" exp="机构岗位表">
         <field_area>
             <name="ID" exp="岗位表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -54,7 +54,7 @@
             <name="GWSM" exp="岗位说明" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXX_10_A01_XYAQSJ" explanation="校园安全数据表">
+    <table name="EDU_ZZXX_10_A01_XYAQSJ" exp="校园安全数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />

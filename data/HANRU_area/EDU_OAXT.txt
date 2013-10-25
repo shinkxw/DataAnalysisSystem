@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_OAXT" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_OAXT_01_01_WJJBSJ" explanation="文件基本数据类表">
+    <table name="EDU_OAXT_01_01_WJJBSJ" exp="文件基本数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="ID" exp="文件ID" type="int" null="F" p="T" />
@@ -18,7 +18,7 @@
             <name="CSDW" exp="抄送单位" type="text" null="F" p="F" remark="解释/举例：多个单位用逗号隔开 " />
         </field_area>
     </table>
-    <table name="EDU_OAXT_02_01_SWCL" explanation="收文处理子类表">
+    <table name="EDU_OAXT_02_01_SWCL" exp="收文处理子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -35,7 +35,7 @@
             <name="FYFS" exp="翻印份数" type="decimal(4, 0)" null="T" p="F" remark="单位：份 " />
         </field_area>
     </table>
-    <table name="EDU_OAXT_02_02_WJYB" explanation="文件阅办子类表">
+    <table name="EDU_OAXT_02_02_WJYB" exp="文件阅办子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -49,7 +49,7 @@
             <name="YBRQ" exp="阅办日期" type="nvarchar(8)" null="T" p="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_03_01_FWCL" explanation="发文处理子类表">
+    <table name="EDU_OAXT_03_01_FWCL" exp="发文处理子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -74,7 +74,7 @@
             <name="FZFSM" exp="封装方式码" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001GWFZFS封装方式代码 " />
         </field_area>
     </table>
-    <table name="EDU_OAXT_03_02_HG" explanation="核稿子类表">
+    <table name="EDU_OAXT_03_02_HG" exp="核稿子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -85,7 +85,7 @@
             <name="HGRQ" exp="核稿日期" type="nvarchar(8)" null="F" p="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_03_03_HQ" explanation="会签子类表">
+    <table name="EDU_OAXT_03_03_HQ" exp="会签子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -96,7 +96,7 @@
             <name="HQRQ" exp="会签日期" type="nvarchar(8)" null="F" p="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_03_04_CP" explanation="呈批子类表">
+    <table name="EDU_OAXT_03_04_CP" exp="呈批子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -107,7 +107,7 @@
             <name="PFRQ" exp="批复日期" type="nvarchar(8)" null="F" p="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_04_01_WJQT" explanation="文件清退数据类表">
+    <table name="EDU_OAXT_04_01_WJQT" exp="文件清退数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -118,7 +118,7 @@
             <name="JBRGH" exp="经办人工号" type="nvarchar(20)" null="F" p="F" remark="工号" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_05_01_WJXH" explanation="文件销毁数据类表">
+    <table name="EDU_OAXT_05_01_WJXH" exp="文件销毁数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -130,7 +130,7 @@
             <name="JBRGH" exp="经办人工号" type="nvarchar(20)" null="F" p="F" remark="学号或工号" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_06_01_WJJQ" explanation="文件借阅数据类表">
+    <table name="EDU_OAXT_06_01_WJJQ" exp="文件借阅数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="WJID" exp="文件ID" type="int" null="F" p="T" />
@@ -143,7 +143,7 @@
             <name="JYYY" exp="借阅原因" type="nvarchar(80)" null="T" p="F" remark="借阅原因 编号：ZZBG060005 " />
         </field_area>
     </table>
-    <table name="EDU_OAXT_10_A01_TZ" explanation="通知数据表">
+    <table name="EDU_OAXT_10_A01_TZ" exp="通知数据表">
         <field_area>
             <name="ID" exp="通知ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -161,7 +161,7 @@
             <name="FSZT" exp="发送状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_10_A02_TZYDJL" explanation="通知阅读记录">
+    <table name="EDU_OAXT_10_A02_TZYDJL" exp="通知阅读记录">
         <field_area>
             <name="ID" exp="通知阅读记录ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -171,7 +171,7 @@
             <name="SFYD" exp="是否已阅读" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_10_A03_GG" explanation="公告数据表">
+    <table name="EDU_OAXT_10_A03_GG" exp="公告数据表">
         <field_area>
             <name="ID" exp="公告ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -183,7 +183,7 @@
             <name="ZT" exp="公告状态" type="int" null="F" p="F" remark="正常、已过期" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_11_A01_YJ" explanation="邮件数据表">
+    <table name="EDU_OAXT_11_A01_YJ" exp="邮件数据表">
         <field_area>
             <name="ID" exp="邮件ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -202,7 +202,7 @@
             <name="YJLX" exp="邮件类型" type="int" null="F" p="F" remark="1收件箱2草稿箱3已发送4已删除" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_12_A01_SJFB" explanation="数据发布类表">
+    <table name="EDU_OAXT_12_A01_SJFB" exp="数据发布类表">
         <field_area>
             <name="ID" exp="数据发布ID" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" remark="学校ID" />
@@ -222,7 +222,7 @@
             <name="SJZT" exp="数据状态" type="nvarchar(10)" null="F" p="F" remark="解释/举例：待审批/已审批 " />
         </field_area>
     </table>
-    <table name="EDU_OAXT_13_A01_DWSJ" explanation="单位数据表">
+    <table name="EDU_OAXT_13_A01_DWSJ" exp="单位数据表">
         <field_area>
             <name="ID" exp="单位ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -232,7 +232,7 @@
             <name="DWCYIDLB" exp="单位成员ID列表" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_14_A01_GRRCXX" explanation="个人日程信息表">
+    <table name="EDU_OAXT_14_A01_GRRCXX" exp="个人日程信息表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -245,7 +245,7 @@
             <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A01_ZCML" explanation="资产目录表">
+    <table name="EDU_OAXT_15_A01_ZCML" exp="资产目录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -254,7 +254,7 @@
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A02_ZCDL" explanation="资产大类表">
+    <table name="EDU_OAXT_15_A02_ZCDL" exp="资产大类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -262,7 +262,7 @@
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A03_ZCKC" explanation="资产库存表">
+    <table name="EDU_OAXT_15_A03_ZCKC" exp="资产库存表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -278,7 +278,7 @@
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A04_ZCRK" explanation="资产入库表">
+    <table name="EDU_OAXT_15_A04_ZCRK" exp="资产入库表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -296,7 +296,7 @@
             <name="Status" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A05_ZCJH" explanation="资产借还表">
+    <table name="EDU_OAXT_15_A05_ZCJH" exp="资产借还表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -309,7 +309,7 @@
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A06_ZCBG" explanation="资产变更表">
+    <table name="EDU_OAXT_15_A06_ZCBG" exp="资产变更表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -322,7 +322,7 @@
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A07_BXLX" explanation="报修类型表">
+    <table name="EDU_OAXT_15_A07_BXLX" exp="报修类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -330,7 +330,7 @@
             <name="Remark" exp="备注" type="nvarchar(300)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A08_BXGL" explanation="报修管理表">
+    <table name="EDU_OAXT_15_A08_BXGL" exp="报修管理表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -353,7 +353,7 @@
             <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A09_WXJH" explanation="维修计划表">
+    <table name="EDU_OAXT_15_A09_WXJH" exp="维修计划表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -362,7 +362,7 @@
             <name="Content" exp="维修内容" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A10_ZCBF" explanation="资产报废表">
+    <table name="EDU_OAXT_15_A10_ZCBF" exp="资产报废表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -374,7 +374,7 @@
             <name="Statu" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A11_ZCPD" explanation="资产盘点表">
+    <table name="EDU_OAXT_15_A11_ZCPD" exp="资产盘点表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -385,7 +385,7 @@
             <name="Statu" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_15_A12_ZCPDMX" explanation="资产盘点明细表">
+    <table name="EDU_OAXT_15_A12_ZCPDMX" exp="资产盘点明细表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -396,14 +396,14 @@
             <name="RealSum" exp="实存数" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_20_A01_LCMBLX" explanation="流程模板类型表">
+    <table name="EDU_OAXT_20_A01_LCMBLX" exp="流程模板类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="LXMC" exp="类型名称" type="nvarchar(100)" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_20_A02_LCBDSJ" explanation="流程表单数据表">
+    <table name="EDU_OAXT_20_A02_LCBDSJ" exp="流程表单数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -413,7 +413,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_20_A03_LCMB" explanation="流程模板表">
+    <table name="EDU_OAXT_20_A03_LCMB" exp="流程模板表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -426,7 +426,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_20_A04_LCBZ" explanation="流程步骤表">
+    <table name="EDU_OAXT_20_A04_LCBZ" exp="流程步骤表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -439,7 +439,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_20_A05_LCSL" explanation="流程实例表">
+    <table name="EDU_OAXT_20_A05_LCSL" exp="流程实例表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -457,7 +457,7 @@
             <name="LXMC" exp="类型名称" type="nvarchar(100)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_20_A06_LCSHJL" explanation="流程审核记录表">
+    <table name="EDU_OAXT_20_A06_LCSHJL" exp="流程审核记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -473,7 +473,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_21_A01_QJLX" explanation="请假类型表">
+    <table name="EDU_OAXT_21_A01_QJLX" exp="请假类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -481,7 +481,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_21_A02_QJSQ" explanation="请假申请表">
+    <table name="EDU_OAXT_21_A02_QJSQ" exp="请假申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -501,7 +501,7 @@
             <name="XJSJ" exp="销假时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_21_A03_QJSQXGJL" explanation="请假申请修改记录表">
+    <table name="EDU_OAXT_21_A03_QJSQXGJL" exp="请假申请修改记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -528,7 +528,7 @@
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_22_A01_HYSSJ" explanation="会议室数据表">
+    <table name="EDU_OAXT_22_A01_HYSSJ" exp="会议室数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -538,7 +538,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_22_A02_HYSQ" explanation="会议申请表">
+    <table name="EDU_OAXT_22_A02_HYSQ" exp="会议申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -561,7 +561,7 @@
             <name="FJ" exp="附件" type="nvarchar(300)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_22_A03_HYSQXGJL" explanation="会议申请修改记录表">
+    <table name="EDU_OAXT_22_A03_HYSQXGJL" exp="会议申请修改记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -594,7 +594,7 @@
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_23_A01_GWSQ" explanation="公文申请表">
+    <table name="EDU_OAXT_23_A01_GWSQ" exp="公文申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -614,7 +614,7 @@
             <name="WJBH" exp="文件编号" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_23_A02_GWSQXGJL" explanation="公文申请修改记录表">
+    <table name="EDU_OAXT_23_A02_GWSQXGJL" exp="公文申请修改记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -642,7 +642,7 @@
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_24_A01_YCSQ" explanation="用车申请表">
+    <table name="EDU_OAXT_24_A01_YCSQ" exp="用车申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -659,7 +659,7 @@
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_24_A02_YCSQXGJL" explanation="用车申请修改记录表">
+    <table name="EDU_OAXT_24_A02_YCSQXGJL" exp="用车申请修改记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -686,7 +686,7 @@
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_24_A03_CLSJ" explanation="车辆数据表">
+    <table name="EDU_OAXT_24_A03_CLSJ" exp="车辆数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -698,7 +698,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_25_A01_CGSQ" explanation="采购申请表">
+    <table name="EDU_OAXT_25_A01_CGSQ" exp="采购申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -712,7 +712,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_25_A02_CGSQXGJL" explanation="采购申请修改记录表">
+    <table name="EDU_OAXT_25_A02_CGSQXGJL" exp="采购申请修改记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -736,7 +736,7 @@
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_30_A01_DSJ" explanation="大事记表">
+    <table name="EDU_OAXT_30_A01_DSJ" exp="大事记表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
@@ -744,7 +744,7 @@
             <name="NR" exp="内容" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_OAXT_31_A01_GRTXL" explanation="个人通讯录表">
+    <table name="EDU_OAXT_31_A01_GRTXL" exp="个人通讯录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />

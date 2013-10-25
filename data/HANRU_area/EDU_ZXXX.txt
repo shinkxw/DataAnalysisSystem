@@ -1,6 +1,6 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZXXX" provider="reallocate_namespace" generation_time="">
-    <table name="EDU_ZXXX_01_01_ZXXX" explanation="学校基本数据子类表">
+    <table name="EDU_ZXXX_01_01_ZXXX" exp="学校基本数据子类表">
         <field_area>
             <name="ID" exp="学校ID" type="int" null="F" p="T" />
             <name="XXDM" exp="学校代码" type="nvarchar(10)" null="F" p="F" />
@@ -39,14 +39,14 @@
             <name="ZSBJ" exp="招生半径" type="nvarchar(30)" null="T" p="F" remark="解释/举例：招生的地区范围 " />
         </field_area>
     </table>
-    <table name="EDU_ZXXX_02_01_NJ" explanation="年级数据类表">
+    <table name="EDU_ZXXX_02_01_NJ" exp="年级数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="NJ" exp="年级号" type="nvarchar(10)" null="F" p="T" />
             <name="NJMC" exp="年级名称" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXXX_03_01_BJ" explanation="班级数据类表">
+    <table name="EDU_ZXXX_03_01_BJ" exp="班级数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="BH" exp="班号" type="nvarchar(10)" null="F" p="T" remark="学校自编" />
@@ -65,7 +65,7 @@
             <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXXX_04_01_JG" explanation="机构数据类表">
+    <table name="EDU_ZXXX_04_01_JG" exp="机构数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
             <name="JGH" exp="机构号" type="nvarchar(10)" null="F" p="T" remark="解释/举例：指教研室、研究室及党政各机构的代码，学校自编 " />
@@ -75,7 +75,7 @@
             <name="FZRGH" exp="负责人工号" type="nvarchar(20)" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZXXX_04_A01_JGGW" explanation="机构岗位表">
+    <table name="EDU_ZXXX_04_A01_JGGW" exp="机构岗位表">
         <field_area>
             <name="ID" exp="岗位表ID" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
