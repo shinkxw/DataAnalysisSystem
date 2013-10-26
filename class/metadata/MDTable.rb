@@ -52,7 +52,14 @@ class MDTable
     "db_#{%w(ele sys).include?(ln) ? ln + '01' : ln}"
   end
   #返回表所属的命名空间名
-  def name_space_name;a = @name.split('_');"#{a[0]}_#{a[1]}" end
+  def name_space_name
+    if @name.include?('_')
+      a = @name.split('_')
+      "#{a[0]}_#{a[1]}"
+    else
+      @name[0, 4]
+    end
+  end
   #返回标准表的获取值方法名
   def select_method_name;a = @name.split('_');"#{a[1]}_#{a[2]}" end
   #返回第一位版本号

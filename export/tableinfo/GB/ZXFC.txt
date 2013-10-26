@@ -1,0 +1,231 @@
+ZXFC01  学校用地数据类表
+  SCHOOLID      学校名                  int            主键
+  YDBH          用地编号                nvarchar(2)    主键
+  TDCQM         土地产权码              nvarchar(1)    非主
+  XQH           校区号                  money          非主
+  TDSYZKM       土地使用状况码          nvarchar(1)    非主
+  ZDYTM         占地用途码              nvarchar(2)    非主
+  ZDMJ          占地面积                decimal(8, 0)  非主
+  YDDZ          用地地址                text           非主
+  YDBZ          用地备注                nvarchar(60)   非主
+  XXDWCCM       学校单位层次码          nvarchar(1)    非主
+  FWYDZMJ       房屋用地总面积          decimal(8, 0)  非主
+  TYCDMJ        体育场地面积            decimal(8, 0)  非主
+  LHYDMJ        绿化用地面积            decimal(8, 0)  非主
+  NLYDMJ        农、林场用地面积         decimal(8, 0)  非主
+  QTYDMJ        其他用地面积            decimal(8, 0)  非主
+
+ZXFC0201  建筑物基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  JZWH          建筑物号                nvarchar(6)    主键
+  JZWMC         建筑物名称              nvarchar(30)   非主
+  FWCQ          房屋产权                nvarchar(1)    非主
+  SYZKM         使用状况码              nvarchar(1)    非主
+  XQH           校区号                  nvarchar(2)    非主
+  JZWFLM        建筑物分类码            nvarchar(1)    非主
+  JZWJGM        建筑物结构码            nvarchar(1)    非主
+  JZWCS         建筑物层数              decimal(2, 0)  非主
+  JCNY          建成年月                nvarchar(6)    非主
+  JZWTZZE       建筑物投资总额          money          非主
+  JFLYM         经费来源码              nvarchar(1)    非主
+  ZJZMJ         总建筑面积              decimal(102, 0)非主
+  ZSYMJ         总使用面积              decimal(102, 0)非主
+  KZSFLDM       抗震设防烈度码          nvarchar(1)    非主
+  KZSFBZM       抗震设防标准码          nvarchar(1)    非主
+  JZWDZ         建筑物地址              nvarchar(180)  非主
+  JZWZKM        建筑物状况码            nvarchar(2)    非主
+  JZWTP         建筑物图片              nvarchar(200)  非主
+  JZWPMT        建筑物平面图            nvarchar(200)  非主
+  QSZH          权属证号                nvarchar(60)   非主
+  JZWZDMJ       建筑物占地面积          decimal(8, 0)  非主
+  XXDWCCM       学校单位层次码          nvarchar(1)    非主
+  JZWWZZK       建筑物位置状况          nvarchar(1)    非主
+  GHSPWH        规划审批文号            nvarchar(24)   非主
+  ZHFZNL        综合防灾能力            nvarchar(60)   非主
+  GHSYNX        规划使用年限            decimal(3, 0)  非主
+  SFYYJBXCS     是否有预警避险措施      nvarchar(1)    非主
+  SFYYJBNCS     是否可用于应急避难场所  nvarchar(1)    非主
+  CQZH          产权证号                nvarchar(20)   非主
+  JZWYTM        建筑物用途码            nvarchar(2)    非主
+  JZWZGD        建筑物总高度            decimal(3, 0)  非主
+  WFJDBM        危房鉴定部门            nvarchar(60)   非主
+  WFJDWH        危房鉴定文号            nvarchar(20)   非主
+  WFJDRQ        危房鉴定日期            nvarchar(8)    非主
+  GNFSM         供暖方式码              nvarchar(1)    非主
+  JZWJCXSM      建筑物基础形式码        nvarchar(1)    非主
+  JZWPMXSM      建筑物平面形式码        nvarchar(1)    非主
+  JZWLBXSM      建筑物楼板形式码        nvarchar(1)    非主
+  GZZ           构造柱                  nvarchar(1)    非主
+  QL            圈梁                    nvarchar(1)    非主
+  ZJAQGZWCRQ    最近安全改造完成日期    nvarchar(8)    非主
+  ZJAQGZHYJSYNX 最近安全改造后预计使用年限decimal(2, 0)  非主
+  ZXLXM         专项类型                nvarchar(1)    非主
+  ZYZXTZBZMCM   中央专项投资补助名称码  nvarchar(1)    非主
+  WWJZDJM       文物建筑等码            nvarchar(1)    非主
+  JXJFZYF       教学及辅助用房          decimal(8, 0)  非主
+  QZJS          其中教室                decimal(8, 0)  非主
+  QZSYS         其中实验室              decimal(8, 0)  非主
+  QZTSS         其中图书室              decimal(8, 0)  非主
+  QZWJS         其中微机室              decimal(8, 0)  非主
+  QZYYS         其中语音室              decimal(8, 0)  非主
+  QZTYHDS       其中体育活动室          decimal(8, 0)  非主
+  QZQTJFYF      其中其他教辅用房        decimal(8, 0)  非主
+  SHYF          生活用房                decimal(8, 0)  非主
+  QZXSSS        其中学生宿舍            decimal(8, 0)  非主
+  QZST          其中食堂                decimal(8, 0)  非主
+  QZCS          其中厕所                decimal(8, 0)  非主
+  QZGLF         其中锅炉房(开水房)      decimal(8, 0)  非主
+  QZYS          其中浴室                decimal(8, 0)  非主
+  QZJGSS        其中教工宿舍            decimal(8, 0)  非主
+  QZQTSHYF      其中其他生活用房        decimal(8, 0)  非主
+  XZBGYF        行政办公用房            decimal(8, 0)  非主
+  QZJSBGS       其中教师办公室          decimal(8, 0)  非主
+  QZWSBJS       其中卫生保健室          decimal(8, 0)  非主
+  QZQTXZBGYF    其中其他行政办公用房    decimal(8, 0)  非主
+  QTYF          其他用房                decimal(8, 0)  非主
+
+ZXFC0202  建筑物档案数据子类表
+  SCHOOLID      学校名                  int            主键
+  TZJHSPDW      投资计划审批单位        nvarchar(60)   非主
+  TZJHSPWH      投资计划审批文号        nvarchar(30)   非主
+  LXPFDW        立项批复单位            nvarchar(60)   非主
+  LXPFWH        立项批复文号            nvarchar(30)   非主
+  KXXYJBGPFDW   可行性研究报告批复单位  nvarchar(60)   非主
+  KXXYJBGPFWH   可行性研究报告批复文号  nvarchar(30)   非主
+  GHXKZH        规划(建设)许可证号      nvarchar(30)   非主
+  JSDW          建设单位                nvarchar(60)   非主
+  JSDWFZR       建设单位负责人          nvarchar(36)   非主
+  DKDWMC        地勘单位名称            nvarchar(60)   非主
+  DKDWFRDB      地勘单位法人代表        nvarchar(36)   非主
+  DKDWZZM       地勘单位资质码          nvarchar(1)    非主
+  DKDWKCHTH     地勘单位勘察合同号      nvarchar(30)   非主
+  SHEJDWMC      设计单位名称            nvarchar(60)   非主
+  SHEJDWFRDB    设计单位法人代表        nvarchar(36)   非主
+  SJDWZZM       设计单位资质码          nvarchar(1)    非主
+  SJDWTZSJHTH   设计单位图纸设计合同号  nvarchar(30)   非主
+  SGTZSCDWMC    施工图纸审查单位名称    nvarchar(60)   非主
+  SGTZSCDWFRDB  施工图纸审查单位法人代表nvarchar(36)   非主
+  SGTZSCZZM     施工图纸审查资质码      nvarchar(1)    非主
+  SGTZSCHTH     施工图纸审查合同号      nvarchar(30)   非主
+  ZTBXSM        招投标形式码            nvarchar(1)    非主
+  GCJLDWMC      工程监理单位名称        nvarchar(60)   非主
+  GCJLDWFRDB    工程监理单位法人代表    nvarchar(36)   非主
+  JLDWZZM       监理单位资质码          nvarchar(1)    非主
+  GCJLDWJLHTH   工程监理单位监理合同号  nvarchar(30)   非主
+  SGDWMC        施工单位名称            nvarchar(60)   非主
+  SGDWFRDB      施工单位法人代表        nvarchar(36)   非主
+  SGDWZZDJM     施工单位资质等级码      nvarchar(1)    非主
+  SGDWSGHTH     施工单位施工合同号      nvarchar(30)   非主
+  ZJDWMC        质监单位名称            nvarchar(60)   非主
+  ZJDWFRDB      质监单位法人代表        nvarchar(36)   非主
+  SGXKZH        施工许可证号            nvarchar(30)   非主
+  JGYSJG        竣工验收结果            nvarchar(1)    非主
+  JGYSBAH       竣工验收备案号          nvarchar(30)   非主
+  SHENJDWMC     审计单位名称            nvarchar(60)   非主
+  SHENJDWFRDB   审计单位法人代表        nvarchar(36)   非主
+  SJDWZZ        审计单位资质            nvarchar(50)   非主
+  SJDWSJBGH     审计单位审计报告号      nvarchar(36)   非主
+  SJJSGJSZLSFWZCD设计及施工技术资料是否完整存档nvarchar(1)    非主
+  BZ            备注                    text           非主
+
+ZXFC0301  建筑物安全排查数据子类表
+  SCHOOLID      学校名                  int            主键
+  PCRQ          排查日期                nvarchar(8)    主键
+  KCZLSFWZ      勘察资料是否完整        nvarchar(1)    非主
+  SJWJSFWZ      设计文件是否完整        nvarchar(1)    非主
+  SGZLSFWZ      施工资料是否完整        nvarchar(1)    非主
+  JCWJSFWZ      检查文件是否完整        nvarchar(1)    非主
+  JGZLSFWZ      竣工资料是否完整        nvarchar(1)    非主
+  XFNHDJM       消防耐火等级码          nvarchar(1)    非主
+  XFNHDJSFFHGFYQ消防耐火等级是否符合规范要求nvarchar(1)    非主
+  XFPTSSSFWHYX  消防配套设施是否完好有效nvarchar(1)    非主
+  XFAQSSSFFHGFYQ消防安全疏散是否符合规范要求nvarchar(1)    非主
+  SFYDZWX       是否有地震威胁          nvarchar(1)    非主
+  DZWXFZBZ      地震威胁防灾标准        nvarchar(200)  非主
+  DZLSSZQK      地震历史受灾情况        nvarchar(200)  非主
+  SFYHSWX       是否有洪水威胁          nvarchar(1)    非主
+  HSWXFZBZ      洪水威胁防灾标准        nvarchar(200)  非主
+  HSLSSZQK      洪水历史受灾情况        nvarchar(200)  非主
+  SFYTFWX       是否有台风威胁          nvarchar(1)    非主
+  TFWXFZBZ      台风威胁防灾标准        nvarchar(200)  非主
+  TFLSSZQK      台风历史受灾情况        nvarchar(200)  非主
+  SFYLJWX       是否有雷击威胁          nvarchar(1)    非主
+  LJWXFYBZ      雷击威胁防御标准        nvarchar(200)  非主
+  LJLSSZQK      雷击历史受灾情况        nvarchar(200)  非主
+  SFYKBHCWX     是否有库坝湖池威胁      nvarchar(1)    非主
+  KBHCWXFZBZ    库坝湖池威胁防灾标准    nvarchar(200)  非主
+  KBHCLSSZQK    库坝湖池历史受灾情况    nvarchar(200)  非主
+  SFYQTYDAQWX   是否有其他用地安全威胁  nvarchar(1)    非主
+  QTYDAQWXQKHLSSZQK其他用地安全威胁情况和历史受灾情况nvarchar(200)  非主
+  LSSYHWXGZQK   历史使用和维修改造情况  nvarchar(200)  非主
+  XCJCQK        现场检查情况            nvarchar(200)  非主
+  CZDZYWTHAQYH  存在的主要问题和安全隐患nvarchar(200)  非主
+  JZWAQPCJLM    建筑物安全排查结论码    nvarchar(1)    非主
+  PCDW          排查单位                nvarchar(60)   非主
+  PCR           排查人                  nvarchar(36)   非主
+
+ZXFC0302  建筑物鉴定数据子类表
+  SCHOOLID      学校名                  int            主键
+  JZWJDNRM      建筑物鉴定内容码        nvarchar(1)    主键
+  KZJDDW        抗震鉴定单位            nvarchar(60)   非主
+  KZJDDWZZ      抗震鉴定单位资质        nvarchar(50)   非主
+  KZJDKZSFLDM   抗震鉴定抗震设防烈度码  nvarchar(1)    非主
+  KZJDJL        抗震鉴定结论            nvarchar(1)    非主
+  KZJDJZDCHCLYJ 抗震鉴定减灾对策和处理意见nvarchar(200)  非主
+  KZJDBGBH      抗震鉴定报告编号        nvarchar(200)  非主
+  KZJDBGRQ      抗震鉴定报告日期        nvarchar(8)    非主
+  KZJDZCY       抗震鉴定组成员          nvarchar(200)  非主
+  KZJDZRR       抗震鉴定责任人          nvarchar(36)   非主
+  KZJDFY        抗震鉴定费用            money          非主
+  XSAQJDDW      建筑物安全鉴定单位      nvarchar(60)   非主
+  XSAQJDDWZZ    建筑物安全鉴定单位资质  nvarchar(50)   非主
+  XSAQJDJL      建筑物安全鉴定结论      nvarchar(50)   非主
+  XSAQJDBGBH    建筑物安全鉴定报告编号  nvarchar(30)   非主
+  XSAQJDBGRQ    校舍安全鉴定报告日期    nvarchar(8)    非主
+  XSAQJDZCY     校舍安全鉴定组成员      nvarchar(200)  非主
+  XSAQJDZRR     校舍安全鉴定责任人      nvarchar(36)   非主
+  XSAQJDFY      校舍安全鉴定费用        money          非主
+  KHKYJDDW      抗洪抗淹鉴定单位        nvarchar(60)   非主
+  KHKYJDDWZZ    抗洪抗淹鉴定单位资质    nvarchar(50)   非主
+  KHKYJDYWZBCS  抗洪抗淹鉴定有无自保措施nvarchar(1)    非主
+  KHKYJDYWBXCS  抗洪抗淹鉴定有无避险措施nvarchar(1)    非主
+  KHKYJDJL      抗洪抗淹鉴定结论        nvarchar(1)    非主
+  KHKYJDBGBH    抗洪抗淹鉴定报告编号    nvarchar(30)   非主
+  KHKYJDBGRQ    抗洪抗淹鉴定报告日期    nvarchar(8)    非主
+  KHKYJDZCY     抗洪抗淹鉴定组成员      nvarchar(200)  非主
+  KHKYJDZRR     抗洪抗淹鉴定责任人      nvarchar(36)   非主
+  KHKYJDFY      抗洪抗淹鉴定费用        money          非主
+  KFYSDW        抗风验算单位            nvarchar(60)   非主
+  KFYSDWZZ      抗风验算单位资质        nvarchar(50)   非主
+  KFYSJL        抗风验算结论            nvarchar(1)    非主
+  KFYSBGBH      抗风验算报告编号        nvarchar(30)   非主
+  KFYSBGRQ      抗风验算报告日期        nvarchar(8)    非主
+  KFYSZCY       抗风验算组成员          nvarchar(200)  非主
+  KFYSZRR       抗风验算责任人          nvarchar(36)   非主
+  KFYSFY        抗风验算费用            money          非主
+  QTJDMC        其他鉴定名称            nvarchar(60)   非主
+  QTJDDW        其他鉴定单位            nvarchar(60)   非主
+  QTJDDWZZ      其他鉴定单位资质        nvarchar(50)   非主
+  QTJDJL        其他鉴定结论            nvarchar(1)    非主
+  QTJDBGBH      其他鉴定报告编号        nvarchar(30)   非主
+  QTJDBGRQ      其他鉴定报告日期        nvarchar(8)    非主
+  QTJDZCY       其他鉴定组成员          nvarchar(200)  非主
+  QTJDZRR       其他鉴定责任人          nvarchar(36)   非主
+  QTJDFY        其他鉴定费用            money          非主
+  ZHFZPJ        综合防灾评价            nvarchar(200)  非主
+  ZHJDJL        综合鉴定结论            nvarchar(1)    非主
+  HXSYNX        后续使用年限            decimal(2, 0)  非主
+  CLYJ          处理意见                nvarchar(1)    非主
+  QTJY          其他建议                nvarchar(200)  非主
+  QBJDFY        全部鉴定费用            money          非主
+
+ZXFC04  房间数据类表
+  SCHOOLID      学校名                  int            主键
+  FJBH          房间编号                nvarchar(12)   主键
+  FJMC          房间名称                nvarchar(60)   非主
+  FJYTM         房间用途码              nvarchar(2)    非主
+  JXYFXZM       教学用房性质码          nvarchar(2)    非主
+  FJLC          房间所处楼层            nvarchar(3)    非主
+  FJJZMJ        房间建筑面积            decimal(82, 0) 非主
+  FJSYMJ        房间使用面积            decimal(82, 0) 非主
+

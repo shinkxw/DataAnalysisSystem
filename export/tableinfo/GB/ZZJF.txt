@@ -1,0 +1,16 @@
+ZZJF01  学校办学经费拨入情况数据类表
+  SCHOOLID      学校名                  int            主键
+  JFKMM         经费科目码              nvarchar(1)    主键
+  JFLYM         经费来源码              nvarchar(1)    非主
+  JFBRE         经费拨入额              money          非主
+  BRRQ          拨入日期                nvarchar(8)    非主
+  JFXDYTMS      经费限定用途描述        text           非主
+  JFBRJBR       经费拨入经办人          nvarchar(36)   非主
+
+ZZJF02  学校办学经费使用情况数据类表
+  SCHOOLID      学校名                  int            主键
+  JFZCXM        经费支出项目            nvarchar(100)  主键
+  JFZCE         经费支出额              money          非主
+  ZCRQ          支出日期                nvarchar(8)    非主
+  JFYTMS        经费用途描述            text           非主
+

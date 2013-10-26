@@ -1,0 +1,101 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZXTW" provider="reallocate_namespace" generation_time="">
+    <table name="ZXTW0101" exp="体能与水平测试子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="CSXM" exp="测试项目" type="nvarchar(60)" null="F" p="T" remark="测试项目 编号：ZXTW010101 解释/举例：指体能测评、水平测试、选拔测试项目名称 " />
+            <name="CSRQ" exp="测试日期" type="nvarchar(8)" null="F" p="F" remark="测试日期 编号：ZXTW010102 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CSCJ" exp="测试成绩" type="nvarchar(20)" null="F" p="F" remark="测试成绩 编号：ZXTW010103 解释/举例：分数类或等级类成绩 " />
+            <name="CSJL" exp="测试结论" type="nvarchar(60)" null="F" p="F" remark="测试结论 编号：ZXTW010104 解释/举例：包括授予的证书或等级运动员称号 " />
+            <name="CSDW" exp="测试单位" type="nvarchar(60)" null="F" p="F" remark="测试单位 编号：ZXTW010105 解释/举例：进行测试的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZXTW0102" exp="体育锻炼子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KHRQ" exp="考核日期" type="nvarchar(8)" null="F" p="T" remark="考核日期 编号：ZXTW010201 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KHXN" exp="考核学年" type="nvarchar(9)" null="F" p="F" remark="考核学年 编号：ZXTW010202 引用自JCTB010205 XN 学年（度） C 9 NULL NULL 格式：YYYY-YYYY，如：2001-2002 NULL" />
+            <name="DLCQL" exp="锻炼出勤率" type="decimal(62, 0)" null="T" p="F" remark="锻炼出勤率 编号：ZXTW010203 解释/举例：单位：% " />
+            <name="KPJL" exp="考评结论" type="nvarchar(60)" null="F" p="F" remark="考评结论 编号：ZXTW010204 " />
+            <name="SRTYGZ" exp="所任体育工作" type="nvarchar(30)" null="T" p="F" remark="所任体育工作 编号：ZXTW010205 解释/举例：指担任的学生体育工作职务名称 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0103" exp="体育达标子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="DBXM" exp="达标项目" type="nvarchar(60)" null="F" p="T" remark="达标项目 编号：ZXTW010301 " />
+            <name="DBRQ" exp="达标日期" type="nvarchar(8)" null="F" p="F" remark="达标日期 编号：ZXTW010302 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SYDW" exp="授予单位" type="nvarchar(60)" null="F" p="F" remark="授予单位 编号：ZXTW010303 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZXTW0104" exp="体育竞赛子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HJXM" exp="获奖项目" type="nvarchar(60)" null="F" p="T" remark="获奖项目 编号：ZXTW010401 " />
+            <name="HJMC" exp="获奖名次" type="nvarchar(40)" null="F" p="F" remark="获奖名次 编号：ZXTW010402 解释/举例：第X名或X等奖 " />
+            <name="HJRQ" exp="获奖日期" type="nvarchar(8)" null="T" p="F" remark="获奖日期 编号：ZXTW010403 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XMLB" exp="项目类别" type="nvarchar(60)" null="T" p="F" remark="项目类别 编号：ZXTW010404 " />
+            <name="JSJB" exp="竞赛级别" type="nvarchar(30)" null="T" p="F" remark="竞赛级别 编号：ZXTW010405 " />
+            <name="BJDW" exp="颁奖单位" type="nvarchar(60)" null="F" p="F" remark="颁奖单位 编号：ZXTW010406 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZXTW0201" exp="体检批次子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="TJRQ" exp="体检日期" type="nvarchar(8)" null="F" p="T" remark="体检日期 编号：ZXTW020101 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="TJPC" exp="体检批次" type="nvarchar(20)" null="F" p="F" remark="体检批次 编号：ZXTW020102 解释/举例：当年体检的批次 " />
+            <name="TJDW" exp="体检单位" type="nvarchar(60)" null="F" p="F" remark="体检单位 编号：ZXTW020103 解释/举例：负责体检单位的名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="TJJL" exp="体检结论" type="text" null="F" p="F" remark="体检结论 编号：ZXTW020104 解释/举例：体检的总结性意见与建议 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0202" exp="自述项目子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZZ" exp="症状" type="nvarchar(60)" null="F" p="T" remark="症状 编号：ZXTW020201 解释/举例：表现症状及程度 " />
+            <name="ZSRQ" exp="自述日期" type="nvarchar(8)" null="F" p="F" remark="自述日期 编号：ZXTW020202 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="ZSSM" exp="自述说明" type="text" null="F" p="F" remark="自述说明 编号：ZXTW020203 解释/举例：特别需要说明事项及内容 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0203" exp="生活习惯与病史子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XGYBS" exp="生活习惯与病史" type="nvarchar(60)" null="F" p="T" remark="生活习惯与病史 编号：ZXTW020301 " />
+            <name="SM" exp="说明" type="text" null="F" p="F" remark="说明 编号：ZXTW020302 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0204" exp="家族病史子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="T" remark="姓名 编号：ZXTW020401 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" remark="关系码 编号：ZXTW020402 值空间：GB/T4761 解释/举例：采用两位代码 " />
+            <name="JBMC" exp="疾病名称" type="nvarchar(60)" null="F" p="F" remark="疾病名称 编号：ZXTW020403 解释/举例：无疾病不填 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0205" exp="体检项目子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="TJXMMC" exp="体检项目名称" type="nvarchar(60)" null="F" p="T" remark="体检项目名称 编号：ZXTW020501 " />
+            <name="TJXMLBM" exp="体检项目类别码" type="nvarchar(2)" null="F" p="F" remark="体检项目类别码 编号：ZXTW020502 值空间：JY/T1001TJXMLB体检项目类别代码 " />
+            <name="JCJG" exp="检查结果" type="nvarchar(60)" null="F" p="F" remark="检查结果 编号：ZXTW020503 " />
+            <name="SM" exp="说明" type="text" null="F" p="F" remark="说明 编号：ZXTW020302 解释/举例：特别需要说明事项及内容 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0206" exp="疾病与治疗子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JBMC" exp="疾病名称" type="nvarchar(60)" null="F" p="T" remark="疾病名称 编号：ZXTW020601 解释/举例：无疾病不填 " />
+            <name="ZLFA" exp="治疗方案" type="text" null="F" p="F" remark="治疗方案 编号：ZXTW020602 解释/举例：实际治疗方案 " />
+            <name="ZDYY" exp="诊断医院" type="nvarchar(60)" null="F" p="F" remark="诊断医院 编号：ZXTW020603 解释/举例：诊断的医院名称 " />
+            <name="ZDYJ" exp="诊断意见" type="nvarchar(60)" null="F" p="F" remark="诊断意见 编号：ZXTW020604 解释/举例：诊断的意见 " />
+        </field_area>
+    </table>
+    <table name="ZXTW0207" exp="学生防疫注射子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZSLBM" exp="注射类别码" type="nvarchar(2)" null="T" p="F" remark="注射类别码 编号：ZXTW020701 解释/举例：学校自行编码 " />
+            <name="ZSRQ" exp="注射日期" type="nvarchar(8)" null="T" p="F" remark="注射日期 编号：ZXTW020702 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="WZSYYM" exp="未注射原因" type="nvarchar(200)" null="T" p="F" remark="未注射原因 编号：ZXTW020703 " />
+            <name="JCHJG" exp="检查后结果" type="nvarchar(10)" null="T" p="F" remark="检查后结果 编号：ZXTW020704 " />
+        </field_area>
+    </table>
+</namespace>

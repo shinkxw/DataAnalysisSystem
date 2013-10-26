@@ -1,0 +1,311 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZXKY" provider="reallocate_namespace" generation_time="">
+    <table name="ZXKY0101" exp="科技项目子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XMBH" exp="项目编号" type="nvarchar(8)" null="F" p="T" remark="项目编号 编号：ZXKY010101 解释/举例：全校统一编写的项目序号 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="F" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="XMMC" exp="项目名称" type="nvarchar(60)" null="F" p="F" remark="项目名称 编号：ZXKY010102 " />
+            <name="ZXBH" exp="专项编号" type="nvarchar(20)" null="F" p="F" remark="专项编号 编号：ZXKY010103 解释/举例：国家专项课题（863计划等）的专门编号 " />
+            <name="KSRQ" exp="开始日期" type="nvarchar(8)" null="F" p="F" remark="开始日期 编号：ZXKY010104 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JSRQ" exp="结束日期" type="nvarchar(8)" null="F" p="F" remark="结束日期 编号：ZXKY010105 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FZR" exp="项目负责人" type="nvarchar(36)" null="F" p="F" remark="项目负责人 编号：ZXKY010106 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="WTDW" exp="项目委托单位" type="nvarchar(60)" null="T" p="F" remark="项目委托单位 编号：ZXKY010107 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="XMLYM" exp="项目来源码" type="nvarchar(2)" null="F" p="F" remark="项目来源码 编号：ZXKY010108 值空间：JY/T1001XMLY项目来源代码 " />
+            <name="MJM" exp="密级码" type="nvarchar(1)" null="T" p="F" remark="密级码 编号：ZXKY010109 值空间：GB/T7156 " />
+            <name="XMLXM" exp="项目类型码" type="nvarchar(1)" null="F" p="F" remark="项目类型码 编号：ZXKY010110 值空间：JY/T1001XMLX项目类型代码 " />
+            <name="SHJJXYM" exp="社会经济效益码" type="nvarchar(2)" null="F" p="F" remark="社会经济效益码 编号：ZXKY010111 值空间：JY/T1001SHJJXY社会经济效益代码 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="HZGJM" exp="合作国家码" type="nvarchar(3)" null="T" p="F" remark="合作国家码 编号：ZXKY010113 值空间：GB/T2659 解释/举例：采用三位数字代码 " />
+            <name="JHWCQKM" exp="计划完成情况码" type="nvarchar(1)" null="T" p="F" remark="计划完成情况码 编号：ZXKY010114 值空间：JY/T1001JHWCQK计划完成情况代码 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0102" exp="项目协作单位子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XZDW" exp="协作单位" type="nvarchar(60)" null="F" p="T" remark="协作单位 编号：ZXKY010201 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="XZDWLXM" exp="协作单位类型码" type="nvarchar(1)" null="T" p="F" remark="协作单位类型码 编号：ZXKY010202 值空间：JY/T1001XZDWLX协作单位类型代码 " />
+            <name="TRRL" exp="投入人力" type="decimal(5, 0)" null="T" p="F" remark="投入人力 编号：ZXKY010203 解释/举例：协作单位投入的人员数目，单位：人 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0103" exp="项目经费子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JHJFZE" exp="计划经费总额" type="money" null="F" p="T" remark="计划经费总额 编号：ZXKY010301 " />
+            <name="XMJFLYM" exp="项目经费来源码" type="nvarchar(2)" null="F" p="F" remark="项目经费来源码 编号：ZXKY010302 值空间：JY/T1001XMJFLY项目经费来源代码 " />
+            <name="BRRQ" exp="拔入日期" type="nvarchar(8)" null="F" p="F" remark="拔入日期 编号：ZXKY010303 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BKS" exp="拔款数" type="money" null="F" p="F" remark="拔款数 编号：ZXKY010304 解释/举例：本次拨款的金额 " />
+            <name="ZCRQ" exp="支出日期" type="nvarchar(8)" null="F" p="F" remark="支出日期 编号：ZXKY010305 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KYRYJF" exp="科研人员经费" type="money" null="T" p="F" remark="科研人员经费 编号：ZXKY010306 解释/举例：用于支付科研人员的费用 " />
+            <name="YWJF" exp="业务经费" type="money" null="T" p="F" remark="业务经费 编号：ZXKY010307 解释/举例：从事业务发生的费用 " />
+            <name="YQSBJF" exp="仪器设备经费" type="money" null="T" p="F" remark="仪器设备经费 编号：ZXKY010308 解释/举例：购买仪器设备的费用 " />
+            <name="GLJF" exp="管理经费" type="money" null="T" p="F" remark="管理经费 编号：ZXKY010309 解释/举例：项目管理支出的相关费用 " />
+            <name="QTJF" exp="其他经费" type="money" null="T" p="F" remark="其他经费 编号：ZXKY010310 " />
+            <name="BFXZDWJF" exp="拨付协作单位经费" type="money" null="T" p="F" remark="拨付协作单位经费 编号：ZXKY010311 解释/举例：支付合作单位的费用 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0104" exp="项目人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="F" p="T" remark="工号 编号：JCJG010101 解释/举例：参与项目的人员的工号，按人逐一填写 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="T" p="F" remark="姓名 编号：JCTB020101 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="GZL" exp="工作量" type="decimal(62, 0)" null="T" p="F" remark="工作量 编号：ZXKY010401 解释/举例：本人参与课题的工作量比例，单位：％ " />
+        </field_area>
+    </table>
+    <table name="ZXKY0105" exp="项目合同管理子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HTBH" exp="合同编号" type="nvarchar(10)" null="F" p="T" remark="合同编号 编号：ZXKY010501 解释/举例：学校统一编写合同序号，建议前4位为合同签订年份＋2位类别号＋4位流水号 " />
+            <name="HTMC" exp="合同名称" type="nvarchar(100)" null="F" p="F" remark="合同名称 编号：ZXKY010502 " />
+            <name="XMBH" exp="项目编号" type="nvarchar(10)" null="F" p="F" remark="项目编号 编号：ZXKY010503 " />
+            <name="JF" exp="甲方" type="nvarchar(60)" null="F" p="F" remark="甲方 编号：ZXKY010504 " />
+            <name="YF" exp="乙方" type="nvarchar(60)" null="F" p="F" remark="乙方 编号：ZXKY010505 " />
+            <name="BF" exp="丙方" type="nvarchar(60)" null="T" p="F" remark="丙方 编号：ZXKY010506 " />
+            <name="HTLXM" exp="合同类型码" type="nvarchar(1)" null="T" p="F" remark="合同类型码 编号：ZXKY010507 解释/举例：学校自行编码 " />
+            <name="HTQDRQ" exp="合同签订日期" type="nvarchar(8)" null="T" p="F" remark="合同签订日期 编号：ZXKY010508 解释/举例：合同签署日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HTJZRQ" exp="合同截止日期" type="nvarchar(8)" null="T" p="F" remark="合同截止日期 编号：ZXKY010509 解释/举例：合同约定终止日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HTJE" exp="合同金额" type="money" null="F" p="F" remark="合同金额 编号：ZXKY010510 解释/举例：单位：万元 " />
+            <name="QDDD" exp="签订地点" type="nvarchar(60)" null="T" p="F" remark="签订地点 编号：ZXKY010511 " />
+            <name="SFYGD" exp="是否已归档" type="nvarchar(1)" null="T" p="F" remark="是否已归档 编号：ZXKY010512 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="HTKSRQ" exp="合同开始日期" type="nvarchar(8)" null="T" p="F" remark="合同开始日期 编号：ZXKY010513 解释/举例：合同开始执行日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HTJSRQ" exp="合同结束日期" type="nvarchar(8)" null="T" p="F" remark="合同结束日期 编号：ZXKY010514 解释/举例：合同实际终止日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KTFLM" exp="课题分类码" type="nvarchar(2)" null="T" p="F" remark="课题分类码 编号：ZXKY010515 值空间：JY/T1001HDLX活动类型代码 " />
+            <name="RDH" exp="认定号" type="nvarchar(20)" null="T" p="F" remark="认定号 编号：ZXKY010516 解释/举例：科学技术行政管理部门对本行政区划得技术合同认定登记编号 " />
+            <name="DRQ" exp="认定日期" type="nvarchar(8)" null="T" p="F" remark="认定日期 编号：ZXKY010517 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXKY0201" exp="科技著作子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZZBH" exp="著作编号" type="nvarchar(8)" null="F" p="T" remark="著作编号 编号：ZXKY020101 解释/举例：全校统一编写的科技著作序号 " />
+            <name="ZZZWMC" exp="著作中文名称" type="nvarchar(60)" null="F" p="F" remark="著作中文名称 编号：ZXKY020102 解释/举例：科技著作的中文全称 " />
+            <name="ZZYWMC" exp="著作英文名称" type="nvarchar(180)" null="F" p="F" remark="著作英文名称 编号：ZXKY020103 解释/举例：科技著作的英文全称 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="T" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="XMLYM" exp="所属项目来源码" type="nvarchar(2)" null="T" p="F" remark="所属项目来源码 编号：ZXKY020104 值空间：JY/T1001XMLY项目来源代码 " />
+            <name="LZLBM" exp="论著类别码" type="nvarchar(2)" null="F" p="F" remark="论著类别码 编号：ZXKY020105 值空间：JY/T1001LZLB论著类别代码 " />
+            <name="ZGYZM" exp="中国语种码" type="nvarchar(3)" null="T" p="F" remark="中国语种码 编号：ZXKY020106 值空间：GB/T4881 解释/举例：采用三位数字代码 " />
+            <name="YZM" exp="语种码" type="nvarchar(2)" null="T" p="F" remark="语种码 编号：ZXKY020107 值空间：GB/T4880 " />
+            <name="CBSMC" exp="出版社名称" type="nvarchar(60)" null="F" p="F" remark="出版社名称 编号：JCBX040122 解释/举例：出版著作的出版社名称 " />
+            <name="CBSJBM" exp="出版社级别码" type="nvarchar(1)" null="T" p="F" remark="出版社级别码 编号：JCBX040123 值空间：JY/T1001CBSJB出版社级别代码 解释/举例：出版社的级别，多个出版社以第一个出版社为准 " />
+            <name="CBRQ" exp="出版日期" type="nvarchar(8)" null="F" p="F" remark="出版日期 编号：JCBX040125 解释/举例：著作出版的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CBH" exp="出版号" type="nvarchar(30)" null="T" p="F" remark="出版号 编号：JCBX040107 解释/举例：出版物相应的ISBN、ISSN等标准出版号 " />
+            <name="ZZZS" exp="著作字数" type="decimal(8, 0)" null="F" p="F" remark="著作字数 编号：ZXKY020108 解释/举例：著作的总字数，单位：字 " />
+            <name="SSXMBH" exp="所属项目编号" type="nvarchar(8)" null="T" p="F" remark="所属项目编号 编号：ZXKY020109 解释/举例：如果是某项目的成果，填写该项目编号，否则为空 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0202" exp="科技著作人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="F" p="T" remark="工号 编号：JCJG010101 解释/举例：参与编写著作人员的工号，按人逐一填写 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSM" exp="角色码" type="nvarchar(3)" null="F" p="F" remark="角色码 编号：ZXKY020201 值空间：JY/T1001JS角色代码 " />
+            <name="ZS" exp="字数" type="decimal(8, 0)" null="F" p="F" remark="字数 编号：ZXKY020202 解释/举例：在著作中本人所写的字数，单位：字 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0301" exp="科技论文子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="LWBH" exp="论文编号" type="nvarchar(8)" null="T" p="F" remark="论文编号 编号：ZXKY030101 解释/举例：全校统一编写的科技论文序号 " />
+            <name="LWZWMC" exp="论文中文名称" type="nvarchar(60)" null="F" p="F" remark="论文中文名称 编号：ZXKY030102 解释/举例：论文的中文全称 " />
+            <name="LWYWMC" exp="论文英文名称" type="nvarchar(180)" null="F" p="F" remark="论文英文名称 编号：ZXKY030103 解释/举例：论文的英文全称 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="T" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="LWLXM" exp="论文类型码" type="nvarchar(1)" null="T" p="F" remark="论文类型码 编号：ZXKY030104 值空间：JY/T1001XMLX项目类型代码 " />
+            <name="LZLBM" exp="论著类别码" type="nvarchar(2)" null="T" p="F" remark="论著类别码 编号：ZXKY030105 值空间：JY/T1001LZLB论著类别代码 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="XKMLM" exp="学科门类码" type="nvarchar(1)" null="F" p="F" remark="学科门类码 编号：ZXKY030106 值空间：JY/T1001XKMLKJ学科门类（科技）代码 " />
+            <name="XMLYM" exp="所属项目来源码" type="nvarchar(2)" null="T" p="F" remark="所属项目来源码 编号：ZXKY030107 值空间：JY/T1001XMLY项目来源代码 " />
+            <name="ZGYZM" exp="中国语种码" type="nvarchar(3)" null="T" p="F" remark="中国语种码 编号：ZXKY020106 值空间：GB/T4881 解释/举例：采用三位数字代码 " />
+            <name="YZM" exp="语种码" type="nvarchar(2)" null="T" p="F" remark="语种码 编号：ZXKY020107 值空间：GB/T4880 " />
+            <name="SFSCISL" exp="是否SCI收录" type="nvarchar(1)" null="F" p="F" remark="是否SCI收录 编号：ZXKY030108 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SFEISL" exp="是否EI收录" type="nvarchar(1)" null="F" p="F" remark="是否EI收录 编号：ZXKY030109 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SFISTPSL" exp="是否ISTP收录" type="nvarchar(1)" null="F" p="F" remark="是否ISTP收录 编号：ZXKY030110 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SFISRSL" exp="是否ISR收录" type="nvarchar(1)" null="F" p="F" remark="是否ISR收录 编号：ZXKY030111 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SSXMBH" exp="所属项目编号" type="nvarchar(8)" null="T" p="F" remark="所属项目编号 编号：ZXKY020109 解释/举例：如果是某项目的成果，填写该项目编号，否则为空 引用自ZXKY020109 SSXMBH 所属项目编号 C 8 O NULL 如果是某项目的成果，填写该项目编号，否则为空 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXKY0302" exp="科技论文发表子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KWMC" exp="刊物名称" type="nvarchar(180)" null="F" p="T" remark="刊物名称 编号：ZXKY030201 解释/举例：发表论文的刊物名称 " />
+            <name="FBRQ" exp="发表日期" type="nvarchar(8)" null="F" p="F" remark="发表日期 编号：ZXKY030202 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CBH" exp="出版号" type="nvarchar(30)" null="F" p="F" remark="出版号 编号：JCBX040107 解释/举例：出版物相应的ISBN、ISSN等标准出版号 引用自JCBX040107 TSCBH 图书出版号 C 30 M NULL 图书相应的ISBN等标准出版号 NULL" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="F" p="F" remark="国籍/地区码 编号：JCTB020110 解释/举例：用三位数字代码 引用自JCTB020110 GJDQM 国籍/地区码 C 3 NULL GB/T2659 采用三字母代码，如：CHN中国，USA美国 NULL" />
+            <name="KWJBM" exp="刊物级别码" type="nvarchar(2)" null="F" p="F" remark="刊物级别码 编号：ZXKY030203 值空间：JY/T1001KWJB刊物级别代码 " />
+            <name="NH" exp="年号" type="nvarchar(4)" null="F" p="F" remark="年号 编号：JCBX040210 解释/举例：论文发表的年号 引用自JCTB010201 ND 年度（年份、年） C 4 NULL GB/T7408 格式：YYYY，如：2008 NULL" />
+            <name="JH" exp="卷号" type="nvarchar(10)" null="F" p="F" remark="卷号 编号：JCBX040211 解释/举例：发表论文刊物的卷次号 引用自JCBX040211 JH 卷号 C 10 O NULL NULL NULL" />
+            <name="QH" exp="期号" type="nvarchar(10)" null="F" p="F" remark="期号 编号：JCBX040212 引用自JCBX040212 QH 期号 C 10 O NULL NULL NULL" />
+            <name="ZQH" exp="总期号" type="nvarchar(10)" null="T" p="F" remark="总期号 编号：JCBX040213 引用自JCBX040213 ZQH 总期号 C 10 O NULL NULL NULL" />
+            <name="QSYS" exp="起始页数" type="decimal(6, 0)" null="F" p="F" remark="起始页数 编号：ZXKY030204 解释/举例：论文在发表刊物中的起始页数，单位：页 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0303" exp="科技论文报告子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HYBH" exp="会议编号" type="nvarchar(8)" null="F" p="T" remark="会议编号 编号：ZXKY030301 解释/举例：报告科技论文的学术会议编号 " />
+            <name="BGXSM" exp="论文报告形式码" type="nvarchar(1)" null="T" p="F" remark="论文报告形式码 编号：ZXKY030302 值空间：JY/T1001LWBGXS论文报告形式代码 " />
+            <name="LWJMC" exp="论文集名称" type="nvarchar(60)" null="F" p="F" remark="论文集名称 编号：ZXKY030303 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0304" exp="科技论文人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="F" p="T" remark="工号 编号：JCJG010101 解释/举例：参与编写科技论文人员的工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSM" exp="角色码" type="nvarchar(3)" null="F" p="F" remark="角色码 编号：ZXKY020201 值空间：JY/T1001JS角色代码 " />
+        </field_area>
+    </table>
+    <table name="ZXKY04" exp="学术会议数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HYBH" exp="会议编号" type="nvarchar(8)" null="F" p="T" remark="会议编号 编号：ZXKY040001 解释/举例：学校统一编写的学术会议序号 " />
+            <name="HYZWMC" exp="会议中文名称" type="nvarchar(60)" null="F" p="F" remark="会议中文名称 编号：ZXKY040002 " />
+            <name="HYYWMC" exp="会议英文名称" type="nvarchar(180)" null="F" p="F" remark="会议英文名称 编号：ZXKY040003 " />
+            <name="HYDD" exp="会议地点" type="nvarchar(180)" null="F" p="F" remark="会议地点 编号：ZXKY040004 解释/举例：学术会议开会的具体地点 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
+            <name="HYQSRQ" exp="会议起始日期" type="nvarchar(8)" null="F" p="F" remark="会议起始日期 编号：ZXKY040005 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HYZZRQ" exp="会议终止日期" type="nvarchar(8)" null="F" p="F" remark="会议终止日期 编号：ZXKY040006 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="HYDJM" exp="会议等级类型码" type="nvarchar(1)" null="F" p="F" remark="会议等级类型码 编号：ZXKY040007 值空间：JY/T1001XSHYDJ学术会议等级代码 " />
+            <name="HYJBXSM" exp="会议举办形式码" type="nvarchar(1)" null="F" p="F" remark="会议举办形式码 编号：ZXKY040008 值空间：JY/T1001HYJBXS会议举办形式代码 " />
+            <name="JBDW" exp="举办单位" type="nvarchar(60)" null="F" p="F" remark="举办单位 编号：ZXKY040009 解释/举例：举办学术会议的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="F" p="F" remark="国籍/地区码 编号：JCTB020110 解释/举例：用三位数字代码 引用自JCTB020110 GJDQM 国籍/地区码 C 3 NULL GB/T2659 采用三字母代码，如：CHN中国，USA美国 NULL" />
+            <name="HYRS" exp="参加会议人数" type="decimal(6, 0)" null="F" p="F" remark="参加会议人数 编号：ZXKY040010 解释/举例：参加学术会议的总人数，单位：人 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0501" exp="鉴定成果子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JDCGBH" exp="鉴定成果编号" type="nvarchar(8)" null="F" p="T" remark="鉴定成果编号 编号：ZXKY050101 解释/举例：由全校统一编排的签定成果序号 " />
+            <name="JDCGMC" exp="鉴定成果名称" type="nvarchar(60)" null="F" p="F" remark="鉴定成果名称 编号：ZXKY050102 解释/举例：鉴定成果详细名称 " />
+            <name="JDPWH" exp="鉴定批文号" type="nvarchar(24)" null="F" p="F" remark="鉴定批文号 编号：ZXKY050103 解释/举例：成果取得正式鉴定承认的批文号，若无不填 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="F" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="XMLYM" exp="所属项目来源码" type="nvarchar(2)" null="F" p="F" remark="所属项目来源码 编号：ZXKY050104 值空间：JY/T1001XMLY项目来源代码 " />
+            <name="WCXSM" exp="完成形式码" type="nvarchar(1)" null="F" p="F" remark="完成形式码 编号：ZXKY050105 值空间：JY/T1001WCXS完成形式代码 " />
+            <name="CGLXM" exp="成果类型码" type="nvarchar(3)" null="F" p="F" remark="成果类型码 编号：ZXKY050106 值空间：JY/T1001CGLX成果类型代码 " />
+            <name="JDDWMC" exp="鉴定单位名称" type="nvarchar(60)" null="F" p="F" remark="鉴定单位名称 编号：ZXKY050107 解释/举例：组织鉴定的单位全称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="JDRQ" exp="鉴定日期" type="nvarchar(8)" null="F" p="F" remark="鉴定日期 编号：ZXKY050108 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JDJLM" exp="鉴定结论码" type="nvarchar(2)" null="F" p="F" remark="鉴定结论码 编号：ZXKY050109 值空间：JY/T1001JDJL鉴定结论代码 " />
+            <name="SSXMBH" exp="所属项目编号" type="nvarchar(8)" null="T" p="F" remark="所属项目编号 编号：ZXKY020109 解释/举例：如果是某项目的成果，填写该项目编号，否则为空 引用自ZXKY020109 SSXMBH 所属项目编号 C 8 O NULL 如果是某项目的成果，填写该项目编号，否则为空 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXKY0502" exp="鉴定成果人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="F" p="T" remark="工号 编号：JCJG010101 解释/举例：完成成果的人员工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSM" exp="角色码" type="nvarchar(3)" null="F" p="F" remark="角色码 编号：ZXKY020201 值空间：JY/T1001JS角色代码 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0601" exp="专利成果子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZLCGBH" exp="专利成果编号" type="nvarchar(8)" null="F" p="T" remark="专利成果编号 编号：ZXKY060101 解释/举例：学校统一编排的专利成果序号 " />
+            <name="ZLCGMC" exp="专利成果名称" type="nvarchar(60)" null="F" p="F" remark="专利成果名称 编号：ZXKY060102 解释/举例：专利成果详细名称 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="T" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="SQBH" exp="申请编号" type="nvarchar(20)" null="F" p="F" remark="申请编号 编号：ZXKY060103 解释/举例：申请专利被批准的编号 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="ZLLXM" exp="专利类型码" type="nvarchar(1)" null="F" p="F" remark="专利类型码 编号：ZXKY060104 值空间：JY/T1001ZLLX专利类型代码 " />
+            <name="PZRQ" exp="批准日期" type="nvarchar(8)" null="F" p="F" remark="批准日期 编号：ZXKY060105 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="ZLPZXSM" exp="批准形式码" type="nvarchar(1)" null="F" p="F" remark="批准形式码 编号：ZXKY060106 值空间：JY/T1001ZLPZXS专利批准形式代码 " />
+            <name="ZSBH" exp="证书编号" type="nvarchar(20)" null="F" p="F" remark="证书编号 编号：ZXKY060107 解释/举例：获得专利的证书编号，若无不填 " />
+            <name="ZLFLZTM" exp="法律状态码" type="nvarchar(1)" null="F" p="F" remark="法律状态码 编号：ZXKY060108 值空间：JY/T1001ZLFLZT专利法律状态代码 " />
+            <name="JNRQ" exp="交纳专利年费日期" type="nvarchar(8)" null="T" p="F" remark="交纳专利年费日期 编号：ZXKY060109 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JNJE" exp="交纳金额" type="money" null="T" p="F" remark="交纳金额 编号：ZXKY060110 解释/举例：专利年费交纳的金额 " />
+            <name="SSXMBH" exp="所属项目编号" type="nvarchar(8)" null="T" p="F" remark="所属项目编号 编号：ZXKY020109 解释/举例：如果是某项目的成果，填写该项目编号，否则为空 引用自ZXKY020109 SSXMBH 所属项目编号 C 8 O NULL 如果是某项目的成果，填写该项目编号，否则为空 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXKY0602" exp="专利人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="F" p="T" remark="工号 编号：JCJG010101 解释/举例：参与专利成果研制、开发人员的工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSM" exp="角色码" type="nvarchar(3)" null="F" p="F" remark="角色码 编号：ZXKY020201 值空间：JY/T1001JS角色代码 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0603" exp="专利出售子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="CSRQ" exp="出售日期" type="nvarchar(8)" null="F" p="T" remark="出售日期 编号：ZXKY060301 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CSJERMB" exp="出售金额（人民币）" type="money" null="F" p="F" remark="出售金额（人民币） 编号：ZXKY060302 解释/举例：出售专利获得的人民币金额 " />
+            <name="CSJEMY" exp="出售金额（美元）" type="money" null="T" p="F" remark="出售金额（美元） 编号：ZXKY060303 解释/举例：出售专利获得的美元金额，单位：美元 " />
+            <name="SSDW" exp="受售单位" type="nvarchar(60)" null="T" p="F" remark="受售单位 编号：ZXKY060304 解释/举例：购买专利的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SSDWGBM" exp="受售单位国别码" type="nvarchar(3)" null="T" p="F" remark="受售单位国别码 编号：ZXKY060305 解释/举例：购买单位所在的国家，采用三位数字代码 引用自JCTB020110 GJDQM 国籍/地区码 C 3 NULL GB/T2659 采用三字母代码，如：CHN中国，USA美国 NULL" />
+            <name="SRRMB" exp="本年实际收入（人民币）" type="money" null="F" p="F" remark="本年实际收入（人民币） 编号：ZXKY060306 解释/举例：本年度出售专利所得的人民币实际收入 " />
+            <name="SRMY" exp="本年实际收入（美元）" type="money" null="T" p="F" remark="本年实际收入（美元） 编号：ZXKY060307 解释/举例：本年度出售专利所得的美元实际收入，单位：美元 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0701" exp="技术转让子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HTBH" exp="合同编号" type="nvarchar(10)" null="F" p="T" remark="合同编号 编号：ZXKY010501 解释/举例：学校统一编写合同序号，建议前4位为合同签订年份＋2位类别号＋4位流水号 " />
+            <name="HTMC" exp="合同名称" type="nvarchar(100)" null="F" p="F" remark="合同名称 编号：ZXKY010502 " />
+            <name="CJJE" exp="成交金额" type="money" null="F" p="F" remark="成交金额 编号：ZXKY070101 解释/举例：转让技术成交的金额 " />
+            <name="SJSR" exp="本年度实际收入" type="money" null="F" p="F" remark="本年度实际收入 编号：ZXKY070102 解释/举例：本年度转让技术所得实际收入 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="T" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="QDRQ" exp="签定日期" type="nvarchar(8)" null="F" p="F" remark="签定日期 编号：ZXKY070103 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FZRGH" exp="负责人工号" type="nvarchar(20)" null="T" p="F" remark="负责人工号 编号：ZXKY070104 解释/举例：负责技术转让的人员工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="SRFMC" exp="受让方名称" type="nvarchar(180)" null="F" p="F" remark="受让方名称 编号：ZXKY070105 " />
+            <name="SRFLXM" exp="受让方类型码" type="nvarchar(1)" null="F" p="F" remark="受让方类型码 编号：ZXKY070106 值空间：JY/T1001SRFLX受让方类型代码 " />
+            <name="SHJJXYM" exp="社会经济效益码" type="nvarchar(2)" null="F" p="F" remark="社会经济效益码 编号：ZXKY010111 值空间：JY/T1001SHJJXY社会经济效益代码 " />
+            <name="SSXMBH" exp="所属项目编号" type="nvarchar(8)" null="T" p="F" remark="所属项目编号 编号：ZXKY020109 解释/举例：如果是某项目的成果，填写该项目编号，否则为空 引用自ZXKY020109 SSXMBH 所属项目编号 C 8 O NULL 如果是某项目的成果，填写该项目编号，否则为空 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXKY0702" exp="技术转让人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="CJRGH" exp="参加人工号" type="nvarchar(20)" null="F" p="T" remark="参加人工号 编号：ZXKY070201 解释/举例：参与技术研发人员的工号，分人逐一填写 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSM" exp="角色码" type="nvarchar(3)" null="F" p="F" remark="角色码 编号：ZXKY020201 值空间：JY/T1001JS角色代码 " />
+        </field_area>
+    </table>
+    <table name="ZXKY0801" exp="获奖成果子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HJCGBH" exp="获奖成果编号" type="nvarchar(8)" null="F" p="T" remark="获奖成果编号 编号：ZXKY080101 解释/举例：获奖成果的编号，学校统一编写 " />
+            <name="HJCGMC" exp="获奖成果名称" type="nvarchar(60)" null="F" p="F" remark="获奖成果名称 编号：ZXKY080102 解释/举例：获奖成果的名称 " />
+            <name="XMLYM" exp="所属项目来源码" type="nvarchar(2)" null="T" p="F" remark="所属项目来源码 编号：ZXKY080103 值空间：JY/T1001XMLY项目来源代码 " />
+            <name="DWH" exp="单位号" type="nvarchar(5)" null="T" p="F" remark="单位号 编号：JCTB010301 " />
+            <name="HJRQ" exp="获奖日期" type="nvarchar(8)" null="F" p="F" remark="获奖日期 编号：ZXKY080104 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CGHJLBM" exp="获奖类别码" type="nvarchar(1)" null="T" p="F" remark="获奖类别码 编号：ZXKY080105 值空间：JY/T1001CGHJLB成果获奖类别代码 " />
+            <name="HJJBM" exp="获奖级别码" type="nvarchar(2)" null="F" p="F" remark="获奖级别码 编号：ZXKY080106 值空间：JY/T1001JB级别代码 " />
+            <name="JLDJM" exp="奖励等级码" type="nvarchar(1)" null="F" p="F" remark="奖励等级码 编号：ZXKY080107 值空间：JY/T1001JLDJ奖励等级代码 " />
+            <name="XKLYM" exp="学科领域码" type="nvarchar(5)" null="F" p="F" remark="学科领域码 编号：ZXKY010112 值空间：GB/T13745 解释/举例：取其一、二级分类代码 " />
+            <name="SJDW" exp="授奖单位" type="nvarchar(60)" null="F" p="F" remark="授奖单位 编号：ZXKY080108 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SSXMBH" exp="所属项目编号" type="nvarchar(8)" null="T" p="F" remark="所属项目编号 编号：ZXKY020109 解释/举例：如果是某项目的成果，填写该项目编号，否则为空 引用自ZXKY020109 SSXMBH 所属项目编号 C 8 O NULL 如果是某项目的成果，填写该项目编号，否则为空 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXKY0802" exp="获奖成果人员子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HJZGH" exp="获奖者工号" type="nvarchar(20)" null="F" p="T" remark="获奖者工号 编号：ZXKY080201 解释/举例：参与获奖成果研发人员的工号，分人逐一填写 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSM" exp="角色码" type="nvarchar(3)" null="F" p="F" remark="角色码 编号：ZXKY020201 值空间：JY/T1001JS角色代码 " />
+        </field_area>
+    </table>
+    <table name="ZXKY09" exp="教案数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JABH" exp="教案编号" type="nvarchar(12)" null="T" p="F" remark="教案编号 编号：ZXKY090001 解释/举例：教育行政部门统一编写的教案序号 " />
+            <name="JABT" exp="教案标题" type="nvarchar(60)" null="F" p="F" remark="教案标题 编号：ZXKY090002 解释/举例：教案的中文全称 " />
+            <name="JAYWBT" exp="教案英文标题" type="nvarchar(180)" null="T" p="F" remark="教案英文标题 编号：ZXKY090003 解释/举例：教案的英文全称 " />
+            <name="GJC" exp="关键词" type="nvarchar(20)" null="F" p="F" remark="关键词 编号：ZXKY090004 " />
+            <name="JAZZ" exp="教案作者" type="nvarchar(180)" null="F" p="F" remark="教案作者 编号：ZXKY090005 " />
+            <name="JAKCMC" exp="教案课程名称" type="nvarchar(60)" null="T" p="F" remark="教案课程名称 编号：ZXKY090006 解释/举例：教案归属课程名称 " />
+            <name="SYFW" exp="适用范围" type="nvarchar(60)" null="T" p="F" remark="适用范围 编号：ZXKY090007 " />
+            <name="KCFLM" exp="课程分类码" type="nvarchar(2)" null="F" p="F" remark="课程分类码 编号：ZXKY090008 值空间：JY/T1001ZXXKC中小学课程代码 " />
+            <name="ZW" exp="正文" type="text" null="T" p="F" remark="正文 编号：ZXKY090009 " />
+            <name="CKWX" exp="参考文献" type="text" null="T" p="F" remark="参考文献 编号：ZXKY090010 " />
+        </field_area>
+    </table>
+    <table name="ZXKY10" exp="课件数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KJBH" exp="课件编号" type="nvarchar(12)" null="T" p="F" remark="课件编号 编号：ZXKY100001 解释/举例：教育行政部门统一编写的课件序号 " />
+            <name="KJBT" exp="课件标题" type="nvarchar(60)" null="F" p="F" remark="课件标题 编号：ZXKY100002 解释/举例：课件的中文全称 " />
+            <name="KJYWBT" exp="课件英文标题" type="nvarchar(180)" null="T" p="F" remark="课件英文标题 编号：ZXKY100003 解释/举例：课件的英文全称 " />
+            <name="GJC" exp="关键词" type="nvarchar(20)" null="F" p="F" remark="关键词 编号：ZXKY090004 " />
+            <name="KJZZ" exp="课件作者" type="nvarchar(180)" null="F" p="F" remark="课件作者 编号：ZXKY100004 " />
+            <name="KJKCMC" exp="课件课程名称" type="nvarchar(60)" null="T" p="F" remark="课件课程名称 编号：ZXKY100005 解释/举例：课件归属课程名称 " />
+            <name="SYFW" exp="适用范围" type="nvarchar(60)" null="T" p="F" remark="适用范围 编号：ZXKY090007 " />
+            <name="KCFLM" exp="课程分类码" type="nvarchar(2)" null="F" p="F" remark="课程分类码 编号：ZXKY090008 值空间：JY/T1001ZXXKC中小学课程代码 " />
+            <name="KJNR" exp="课件内容" type="nvarchar(200)" null="T" p="F" remark="课件内容 编号：ZXKY100006 " />
+            <name="CKWX" exp="参考文献" type="text" null="T" p="F" remark="参考文献 编号：ZXKY100007 " />
+        </field_area>
+    </table>
+</namespace>

@@ -1,0 +1,76 @@
+ZXTW0101  体能与水平测试子类表
+  SCHOOLID      学校名                  int            主键
+  CSXM          测试项目                nvarchar(60)   主键
+  CSRQ          测试日期                nvarchar(8)    非主
+  CSCJ          测试成绩                nvarchar(20)   非主
+  CSJL          测试结论                nvarchar(60)   非主
+  CSDW          测试单位                nvarchar(60)   非主
+
+ZXTW0102  体育锻炼子类表
+  SCHOOLID      学校名                  int            主键
+  KHRQ          考核日期                nvarchar(8)    主键
+  KHXN          考核学年                nvarchar(9)    非主
+  DLCQL         锻炼出勤率              decimal(62, 0) 非主
+  KPJL          考评结论                nvarchar(60)   非主
+  SRTYGZ        所任体育工作            nvarchar(30)   非主
+
+ZXTW0103  体育达标子类表
+  SCHOOLID      学校名                  int            主键
+  DBXM          达标项目                nvarchar(60)   主键
+  DBRQ          达标日期                nvarchar(8)    非主
+  SYDW          授予单位                nvarchar(60)   非主
+
+ZXTW0104  体育竞赛子类表
+  SCHOOLID      学校名                  int            主键
+  HJXM          获奖项目                nvarchar(60)   主键
+  HJMC          获奖名次                nvarchar(40)   非主
+  HJRQ          获奖日期                nvarchar(8)    非主
+  XMLB          项目类别                nvarchar(60)   非主
+  JSJB          竞赛级别                nvarchar(30)   非主
+  BJDW          颁奖单位                nvarchar(60)   非主
+
+ZXTW0201  体检批次子类表
+  SCHOOLID      学校名                  int            主键
+  TJRQ          体检日期                nvarchar(8)    主键
+  TJPC          体检批次                nvarchar(20)   非主
+  TJDW          体检单位                nvarchar(60)   非主
+  TJJL          体检结论                text           非主
+
+ZXTW0202  自述项目子类表
+  SCHOOLID      学校名                  int            主键
+  ZZ            症状                    nvarchar(60)   主键
+  ZSRQ          自述日期                nvarchar(8)    非主
+  ZSSM          自述说明                text           非主
+
+ZXTW0203  生活习惯与病史子类表
+  SCHOOLID      学校名                  int            主键
+  XGYBS         生活习惯与病史          nvarchar(60)   主键
+  SM            说明                    text           非主
+
+ZXTW0204  家族病史子类表
+  SCHOOLID      学校名                  int            主键
+  XM            姓名                    nvarchar(36)   主键
+  GXM           关系码                  nvarchar(2)    非主
+  JBMC          疾病名称                nvarchar(60)   非主
+
+ZXTW0205  体检项目子类表
+  SCHOOLID      学校名                  int            主键
+  TJXMMC        体检项目名称            nvarchar(60)   主键
+  TJXMLBM       体检项目类别码          nvarchar(2)    非主
+  JCJG          检查结果                nvarchar(60)   非主
+  SM            说明                    text           非主
+
+ZXTW0206  疾病与治疗子类表
+  SCHOOLID      学校名                  int            主键
+  JBMC          疾病名称                nvarchar(60)   主键
+  ZLFA          治疗方案                text           非主
+  ZDYY          诊断医院                nvarchar(60)   非主
+  ZDYJ          诊断意见                nvarchar(60)   非主
+
+ZXTW0207  学生防疫注射子类表
+  SCHOOLID      学校名                  int            主键
+  ZSLBM         注射类别码              nvarchar(2)    非主
+  ZSRQ          注射日期                nvarchar(8)    非主
+  WZSYYM        未注射原因              nvarchar(200)  非主
+  JCHJG         检查后结果              nvarchar(10)   非主
+

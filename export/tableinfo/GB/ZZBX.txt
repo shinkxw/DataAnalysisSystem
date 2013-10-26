@@ -1,0 +1,72 @@
+ZZBX0101  仪器设备基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQDM          校区代码                nvarchar(2)    主键
+  YQBH          仪器设备编号            nvarchar(80)   非主
+  YQZWMC        仪器设备中文名称        nvarchar(100)  非主
+  YQYWMC        仪器设备英文名称        nvarchar(100)  非主
+  CQM           产权码                  nvarchar(1)    非主
+  YQXH          仪器设备型号            nvarchar(80)   非主
+  SCCJ          生产厂家                nvarchar(180)  非主
+  CCH           出厂号                  nvarchar(30)   非主
+  CCRQ          出厂日期                nvarchar(8)    非主
+  SCGBDQM       生产国别/地区码         nvarchar(3)    非主
+  JFKMM         经费科目码              nvarchar(1)    非主
+  JGBZ          价格币种                nvarchar(3)    非主
+  YQJG          仪器价格                money          非主
+  GZRQ          购置日期                nvarchar(8)    非主
+  BFNX          报废年限                decimal(2, 0)  非主
+  DJH           单据号                  nvarchar(16)   非主
+  TP            图片                    nvarchar(200)  非主
+  YQDD          仪器地点                nvarchar(60)   非主
+  SBFZRH        设备负责人号            nvarchar(20)   非主
+  JSZB          技术指标                text           非主
+  YQPZ          仪器配置                text           非主
+  YQSM          仪器说明                text           非主
+  CWZH          财务帐号                nvarchar(20)   非主
+  GHS           供货商                  nvarchar(60)   非主
+  SYZT          使用状态                nvarchar(1)    非主
+  BFZT码         报废状态码              nvarchar(1)    非主
+
+ZZBX0102  仪器设备使用信息数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQDM          校区代码                nvarchar(2)    非主
+  YQBH          仪器设备编号            nvarchar(80)   非主
+  YQXZDM        仪器现状代码            nvarchar(1)    非主
+  YQSYFXDM      仪器使用方向代码        nvarchar(1)    非主
+  SYJGH         使用机构号              nvarchar(6)    非主
+  JSRGH         经手人工号              nvarchar(20)   非主
+  LYDW          领用单位                nvarchar(60)   非主
+  LYRGH         领用人工号              nvarchar(20)   非主
+  WHRS          维护人数                decimal(2, 0)  非主
+  SYRSS         使用人时数              decimal(8, 0)  非主
+  KSSYGS        开设实验个数            decimal(6, 0)  非主
+  KSSYSS        开设实验时数            decimal(8, 0)  非主
+  JXSS          教学时数                decimal(8, 0)  非主
+  KYSS          科研时数                decimal(8, 0)  非主
+  SHXMSS        社会项目时数            decimal(8, 0)  非主
+  BGRGH         保管人工号              nvarchar(20)   非主
+
+ZZBX02  图书数据类表
+  SCHOOLID      学校名                  int            主键
+  TSBH          图书编号                nvarchar(10)   主键
+  ZBT           正标题                  nvarchar(180)  非主
+  BLBT          并列标题                nvarchar(180)  非主
+  FBT           副标题                  nvarchar(180)  非主
+  TSCBH         图书出版号              nvarchar(30)   非主
+  DYZZ          第一作者                nvarchar(30)   非主
+  QTZZ          其他作者                nvarchar(90)   非主
+  RGRQ          入馆日期                nvarchar(8)    非主
+  RGRYGH        入馆人员工号            nvarchar(20)   非主
+  WXLXM         文献类型码              nvarchar(2)    非主
+  FLH           分类号                  nvarchar(20)   非主
+  ZGYZM         中国语种码              nvarchar(3)    非主
+  YZM           语种码                  nvarchar(2)    非主
+  BC            版次                    nvarchar(30)   非主
+  CSMC          丛书名称                nvarchar(180)  非主
+  CSBZ          丛书编者                nvarchar(180)  非主
+  CBS           出版社                  nvarchar(180)  非主
+  CBSJBM        出版社级别码            nvarchar(1)    非主
+  CBD           出版地                  nvarchar(60)   非主
+  CBRQ          出版日期                nvarchar(8)    非主
+  FXDW          发行单位                nvarchar(60)   非主
+

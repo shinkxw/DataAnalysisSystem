@@ -1,0 +1,144 @@
+JCXS0101  学生基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  XH            学号                    nvarchar(20)   主键
+  XM            姓名                    nvarchar(36)   非主
+  YWXM          英文姓名                nvarchar(60)   非主
+  XMPY          姓名拼音                nvarchar(60)   非主
+  CYM           曾用名                  nvarchar(36)   非主
+  XBM           性别码                  nvarchar(1)    非主
+  CSRQ          出生日期                nvarchar(8)    非主
+  CSDM          出生地码                nvarchar(6)    非主
+  JG            籍贯                    nvarchar(20)   非主
+  MZM           民族码                  nvarchar(2)    非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主
+  SFZJLXM       身份证件类型码          nvarchar(1)    非主
+  SFZJH         身份证件号              nvarchar(20)   非主
+  HYZKM         婚姻状况码              nvarchar(2)    非主
+  GATQWM        港澳台侨外码            nvarchar(2)    非主
+  ZZMMM         政治面貌码              nvarchar(2)    非主
+  JKZKM         健康状况码              nvarchar(1)    非主
+  XYZJM         信仰宗教码              nvarchar(2)    非主
+  XXM           血型码                  nvarchar(1)    非主
+  ZP            照片                    nvarchar(200)  非主
+  SFZJYXQ       身份证件有效期          nvarchar(17)   非主
+  SFDSZN        是否独生子女            nvarchar(1)    非主
+
+JCXS0110  学生来源数据子类表
+  SCHOOLID      学校名                  int            主键
+  YXXMC         原学校名称              nvarchar(60)   非主
+  YXH           原学号                  nvarchar(20)   非主
+  RXFSM         入学方式码              nvarchar(2)    非主
+  LYDQM         来源地区码              nvarchar(6)    非主
+  XSLYM         学生来源码              nvarchar(3)    非主
+  JDFSM         就读方式码              nvarchar(1)    非主
+
+JCXS0201  学籍基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  RXNY          入学年月                nvarchar(6)    主键
+  XSLBM         学生类别码              nvarchar(5)    非主
+  XZ            学制                    decimal(3, 1)  非主
+  ZYM           专业码                  nvarchar(6)    非主
+  SZBH          所在班号                nvarchar(10)   非主
+  SZNJ          所在年级                nvarchar(10)   非主
+  XSDQZTM       学生当前状态码          nvarchar(2)    非主
+
+JCXS0202  学籍异动数据子类表
+  SCHOOLID      学校名                  int            主键
+  YDLBM         异动类别码              nvarchar(2)    主键
+  YDRQ          异动日期                nvarchar(8)    非主
+  YDYYM         异动原因码              nvarchar(2)    非主
+  SPRQ          审批日期                nvarchar(8)    非主
+  SPWH          审批文号                nvarchar(24)   非主
+  YDLYXXM       异动来源学校码          nvarchar(10)   非主
+  YDQXXXM       异动去向学校码          nvarchar(10)   非主
+  YDSM          异动说明                text           非主
+  YYXSH         原院系所号              nvarchar(10)   非主
+  YZYM          原专业码                nvarchar(6)    非主
+  YBH           原班号                  nvarchar(10)   非主
+  YNJ           原年级                  nvarchar(10)   非主
+  YXZ           原学制                  decimal(3, 1)  非主
+  XYXSH         现院系所号              nvarchar(10)   非主
+  XZYM          现专业码                nvarchar(6)    非主
+  XBH           现班号                  nvarchar(10)   非主
+  XNJ           现年级                  nvarchar(10)   非主
+  XXZ           现学制                  decimal(3, 1)  非主
+
+JCXS0203  成绩数据子类表
+  SCHOOLID      学校名                  int            主键
+  XN            学年（度）                nvarchar(9)    主键
+  XQM           学期码                  nvarchar(1)    非主
+  KSRQ          考试日期                nvarchar(8)    非主
+  KCH           课程号                  nvarchar(10)   非主
+  PSCJ          平时成绩                decimal(5, 1)  非主
+  KSFSM         考试方式码              nvarchar(1)    非主
+  KSXZM         考试性质码              nvarchar(2)    非主
+  KSXSM         考试形式码              nvarchar(1)    非主
+  FSLKSCJ       分数类考试成绩          decimal(5, 1)  非主
+  DJLKSCJ       等级类考试成绩          nvarchar(1)    非主
+  KCCJ          课程成绩                decimal(5, 1)  非主
+  KCDJCJM       课程等级成绩码          nvarchar(1)    非主
+  RKJSGH        任课教师工号            nvarchar(20)   非主
+  CJLRRH        成绩录入人号            nvarchar(20)   非主
+  CJLRRQ        成绩录入日期            nvarchar(8)    非主
+  CJLRSJ        成绩录入时间            nvarchar(6)    非主
+
+JCXS0204  奖励数据子类表
+  SCHOOLID      学校名                  int            主键
+  JLMC          奖励名称                nvarchar(60)   主键
+  JLJBM         奖励级别码              nvarchar(2)    非主
+  JLDJM         奖励等级码              nvarchar(1)    非主
+  HJLBM         获奖类别码              nvarchar(1)    非主
+  JLYY          奖励原因                nvarchar(100)  非主
+  JLJE          奖励金额                money          非主
+  JLWH          奖励文号                nvarchar(24)   非主
+  JLXND         奖励学年度              nvarchar(9)    非主
+  BJDW          颁奖单位                nvarchar(60)   非主
+  JLLXM         奖励类型码              nvarchar(1)    非主
+  JLFSM         奖励方式码              nvarchar(1)    非主
+
+JCXS0205  惩处数据子类表
+  SCHOOLID      学校名                  int            主键
+  WJRQ          违纪日期                nvarchar(8)    非主
+  WJJK          违纪简况                nvarchar(100)  非主
+  WJLBM         违纪类别码              nvarchar(2)    非主
+  CFMCM         处分名称码              nvarchar(1)    非主
+  CFYY          处分原因                nvarchar(100)  非主
+  CFRQ          处分日期                nvarchar(8)    非主
+  CFWH          处分文号                nvarchar(24)   非主
+  CFCXRQ        处分撤消日期            nvarchar(8)    非主
+  CFCXWH        处分撤消文号            nvarchar(24)   非主
+
+JCXS0301  毕业数据子类表
+  SCHOOLID      学校名                  int            主键
+  JSXYNY        结束学业年月            nvarchar(6)    主键
+  JSXYM         结束学业码              nvarchar(1)    非主
+  JSXYYYSM      结束学业原因说明        nvarchar(100)  非主
+  BYZSH         毕业证书号              nvarchar(20)   非主
+  XWZSH         学位证书号              nvarchar(20)   非主
+  JYZSH         结业证书号              nvarchar(20)   非主
+  HBYZSRQ       获毕业证书日期          nvarchar(8)    非主
+  HXWZSRQ       获学位证书日期          nvarchar(8)    非主
+  HJYZSRQ       获结业证书日期          nvarchar(8)    非主
+
+JCXS0302  就业数据子类表
+  SCHOOLID      学校名                  int            主键
+  XYSBH         协议书编号              nvarchar(10)   非主
+  XYQDRQ        协议签订日期            nvarchar(8)    非主
+  XYNX          协议年限                nvarchar(1)    非主
+  BDRQ          报到日期                nvarchar(8)    非主
+  JYLSFSM       就业落实方式码          nvarchar(1)    非主
+  BYQXM         毕业去向码              nvarchar(2)    非主
+  JSDW          接收单位                nvarchar(60)   非主
+  DWSZDQHM      单位所在地区划码        nvarchar(6)    非主
+  DWZGBM        单位主管部门            nvarchar(60)   非主
+  SHDWXZM       社会单位性质码          nvarchar(2)    非主
+  DWJJXZM       单位经济性质码          nvarchar(3)    非主
+  DWTGDDY       单位提供的待遇          text           非主
+  DAJSDZ        档案接收地址            nvarchar(60)   非主
+  JSDYZBM       接收地邮政编码          nvarchar(6)    非主
+  GZGWXZM       工作岗位性质码          nvarchar(1)    非主
+  DWHYM         单位行业码              nvarchar(4)    非主
+  BDZH          报到证号                nvarchar(11)   非主
+  YRDWYRXSM     用人单位用人形式码      nvarchar(2)    非主
+  PQF           派遣费                  money          非主
+

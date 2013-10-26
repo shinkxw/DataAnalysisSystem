@@ -1,0 +1,44 @@
+JCXX0101  学校基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  XXDM          学校代码                nvarchar(10)   主键
+  XXMC          学校名称                nvarchar(60)   非主
+  XXYWMC        学校英文名称            nvarchar(180)  非主
+  XXDZ          学校地址                nvarchar(180)  非主
+  XXYZBM        学校邮政编码            nvarchar(6)    非主
+  XZQHM         行政区划码              nvarchar(6)    非主
+  JXNY          建校年月                nvarchar(6)    非主
+  XQR           校庆日                  nvarchar(60)   非主
+  XXBXLXM       学校办学类型码          nvarchar(3)    非主
+  XXJBZM        学校举办者码            nvarchar(3)    非主
+  XXZGBMM       学校主管部门码          nvarchar(3)    非主
+  FDDBRH        法定代表人号            nvarchar(20)   非主
+  FRZSH         法人证书号              nvarchar(20)   非主
+  XZGH          校长工号                nvarchar(20)   非主
+  XZXM          校长姓名                nvarchar(36)   非主
+  DWFZRH        党委负责人号            nvarchar(20)   非主
+  ZZJGM         组织机构码              nvarchar(10)   非主
+  LXDH          联系电话                nvarchar(30)   非主
+  CZDH          传真电话                nvarchar(30)   非主
+  DZXX          电子信箱                nvarchar(40)   非主
+  ZYDZ          主页地址                nvarchar(60)   非主
+  LSYG          历史沿革                text           非主
+
+JCXX0102  校区基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQH           校区号                  nvarchar(2)    主键
+  XQMC          校区名称                nvarchar(30)   非主
+  XQDZ          校区地址                nvarchar(180)  非主
+  XQYZBM        校区邮政编码            nvarchar(6)    非主
+  XQLXDH        校区联系电话            nvarchar(30)   非主
+  XQCZDH        校区传真电话            nvarchar(30)   非主
+  XQFZRH        校区负责人号            nvarchar(20)   非主
+
+JCXX02  班级数据类表
+  SCHOOLID      学校名                  int            主键
+  BH            班号                    nvarchar(10)   主键
+  BJMC          班级名称                nvarchar(20)   非主
+  JBNY          建班年月                nvarchar(6)    非主
+  SSNJ          所属年级                nvarchar(10)   非主
+  BZRGH         班主任工号              nvarchar(20)   非主
+  BZXH          班长学号                nvarchar(20)   非主
+

@@ -1,0 +1,238 @@
+ZZJX0101  专业基本信息数据子类表
+  SCHOOLID      学校名                  int            主键
+  ZYBH          专业编号                decimal(4, 0)  主键
+  ZYDM          专业代码                nvarchar(6)    非主
+  ZYMC          专业名称                nvarchar(50)   非主
+  ZYYWMC        专业英文名称            nvarchar(100)  非主
+  XZ            学制                    decimal(3, 1)  非主
+  ZYFXMC        专业方向名称            nvarchar(100)  非主
+  ZYJC          专业简称                nvarchar(100)  非主
+  JLNY          建立年月                nvarchar(6)    非主
+  ZYJSS         专业教师数              decimal(2, 0)  非主
+  KSJGH         开设机构号              nvarchar(6)    非主
+  ZXF           总学分                  nvarchar(10)   非主
+
+ZZJX0102  课程数据子类表
+  SCHOOLID      学校名                  int            主键
+  KCH           课程号                  nvarchar(6)    主键
+  KCMC          课程名称                nvarchar(100)  非主
+  KCYWM         课程英文名              nvarchar(100)  非主
+  KCBM          课程别名                nvarchar(100)  非主
+  KCJS          课程介绍                nvarchar(200)  非主
+  XF            学分                    decimal(2, 1)  非主
+  ZXS           总学时                  decimal(2, 0)  非主
+  LLXS          理论学时                decimal(2, 0)  非主
+  SJXS          实践学时                decimal(2, 0)  非主
+  QTXS          其他学时                decimal(2, 0)  非主
+  CKSM          参考书目                text           非主
+  KKDW          开课单位                nvarchar(6)    非主
+  KSXS          考试形式                nvarchar(1)    非主
+  SKFSM         授课方式码              nvarchar(1)    非主
+  KCFY          课程费用                money          非主
+
+ZZJX0103  学期数据子类表
+  SCHOOLID      学校名                  int            主键
+  XN            学年（度）                nvarchar(9)    主键
+  XQM           学期码                  nvarchar(1)    非主
+  XQMC          学期名称                nvarchar(10)   非主
+  XQKSRQ        学期开始日期            nvarchar(8)    非主
+  XQJSRQ        学期结束日期            nvarchar(8)    非主
+
+ZZJX0201  学校年级数据子类表
+  SCHOOLID      学校名                  int            主键
+  NJDM          年级代码                nvarchar(4)    主键
+  NJMC          年级名称                nvarchar(10)   非主
+  SSNF          所属年份                nvarchar(4)    非主
+  NJZT          年级状态                nvarchar(1)    非主
+
+ZZJX0202  学校班级数据子类表
+  SCHOOLID      学校名                  int            主键
+  XZBDM         行政班代码              nvarchar(10)   主键
+  NJDM          年级代码                nvarchar(4)    非主
+  XZBMC         行政班名称              nvarchar(50)   非主
+  ZYDM          专业代码                nvarchar(6)    非主
+  JBNY          建班年月                nvarchar(6)    非主
+  BZRGH         班主任工号              nvarchar(20)   非主
+  JSBH          教室编号                nvarchar(10)   非主
+  NANSRS        男生人数                decimal(4, 0)  非主
+  NVSRS         女生人数                decimal(4, 0)  非主
+  ZRS           总人数                  decimal(4, 0)  非主
+  BZXH          班长学号                nvarchar(20)   非主
+  JXJH          教学计划                nvarchar(5)    非主
+  JGH           机构号                  nvarchar(6)    非主
+  XQDM          校区代码                nvarchar(2)    非主
+
+ZZJX0301  总体教学计划数据子类表
+  SCHOOLID      学校名                  int            主键
+  JHBH          计划编号                nvarchar(5)    主键
+  JHNJ          计划年级                nvarchar(4)    非主
+  JHZYMC        计划专业名称            nvarchar(50)   非主
+  ZXFYQ         总学分要求              decimal(3, 0)  非主
+  JLNY          建立年月                nvarchar(6)    非主
+  SYXZ          适用学制                decimal(3, 1)  非主
+  PYMB          培养目标                text           非主
+  SFKY          是否可用                nvarchar(3)    非主
+  FJ            附件                    text           非主
+
+ZZJX0302  教学计划分类学分要求数据子类
+  SCHOOLID      学校名                  int            主键
+  KCFLM         课程分类码              nvarchar(1)    主键
+  XFYQ          学分要求                decimal(21, 0) 非主
+  JHBH          计划编号                nvarchar(5)    非主
+
+ZZJX0303  教学计划课程清单数据子类表
+  SCHOOLID      学校名                  int            主键
+  KCH           课程号                  nvarchar(6)    主键
+  KCMC          课程名称                nvarchar(100)  非主
+  YXKC          预修课程                nvarchar(200)  非主
+  SFHXKC        是否核心（骨干）课程      nvarchar(1)    非主
+  KCFLM         课程分类码              nvarchar(1)    非主
+  KCSXM         课程属性码              nvarchar(1)    非主
+  ZXXQ          执行学期                decimal(2, 0)  非主
+
+ZZJX0304  排课数据信息数据子类表
+  SCHOOLID      学校名                  int            主键
+  KXH           课序号                  nvarchar(10)   主键
+  KKDW          开课单位                nvarchar(6)    非主
+  XQMC          学期名称                nvarchar(10)   非主
+  SKSJ          上课时间                nvarchar(50)   非主
+  JXDD          教学地点                nvarchar(30)   非主
+  JXZY          教学资源                nvarchar(200)  非主
+  JHRS          计划人数                decimal(4, 0)  非主
+  YXRS          已选人数                decimal(4, 0)  非主
+  JXBSZXQ       教学班所在校区          nvarchar(2)    非主
+  XKNJ          选课年级                nvarchar(4)    非主
+  QSZ           起始周                  decimal(2, 0)  非主
+  ZZZ           终止周                  decimal(2, 0)  非主
+  JSJGH         教师教工号              nvarchar(20)   非主
+  JSXM          教师姓名                nvarchar(36)   非主
+  ZXS           周学时                  decimal(2, 0)  非主
+  SKXZBDM       上课行政班代码          nvarchar(10)   非主
+  JXBMC         教学班名称              nvarchar(30)   非主
+  KCSM          开课说明                text           非主
+
+ZZJX0401  教材基本信息数据子类表
+  SCHOOLID      学校名                  int            主键
+  JCDM          教材代码                nvarchar(13)   主键
+  JCMC          教材名称                nvarchar(60)   非主
+  CBH           出版号                  nvarchar(30)   非主
+  DYZZ          第一作者                nvarchar(30)   非主
+  QTZZ          其他作者                nvarchar(90)   非主
+  BC            版次                    nvarchar(30)   非主
+  YC            印次                    nvarchar(2)    非主
+  JG            价格                    money          非主
+  CBS           出版社                  nvarchar(180)  非主
+  CBRQ          出版日期                nvarchar(8)    非主
+  SFYLXC        是否有练习册            nvarchar(1)    非主
+  SFYJCJF       是否有教参教辅          nvarchar(1)    非主
+  NRJJ          内容简介                text           非主
+
+ZZJX0402  教材选用信息数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQM           学期码                  nvarchar(1)    主键
+  ZYMC          专业名称                nvarchar(50)   非主
+  NJDM          年级代码                nvarchar(4)    非主
+  KCMC          课程名称                nvarchar(100)  非主
+  JCDM          教材代码                nvarchar(13)   非主
+  XYSL          选用数量                decimal(5, 0)  非主
+
+ZZJX0501  学生选课情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  XH            学号                    nvarchar(20)   主键
+  KXH           课序号                  nvarchar(10)   非主
+  SFDX          是否代选                nvarchar(1)    非主
+  XKSHZT        选课审核状态            nvarchar(1)    非主
+  XKSJ          选课时间                nvarchar(6)    非主
+  SHRQ          审核日期                nvarchar(8)    非主
+  SHR           审核人                  nvarchar(20)   非主
+
+ZZJX0502  教师教学工作量统计数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQMC          学期名称                nvarchar(10)   主键
+  JSXM          教师姓名                nvarchar(36)   非主
+  RJKCMS        任教课程门数            decimal(4, 0)  非主
+  LLZXS         理论总学时              decimal(4, 0)  非主
+  SJZXS         实践总学时              decimal(4, 0)  非主
+  QTZXS         其他总学时              decimal(4, 0)  非主
+  XSZS          学生总数                decimal(4, 0)  非主
+  ZXFS          总学分数                decimal(5, 1)  非主
+
+ZZJX0601  教师考勤情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQMC          学期名称                nvarchar(10)   主键
+  JSXM          教师姓名                nvarchar(36)   非主
+  CQCS          出勤次数                decimal(3, 0)  非主
+  KKCS          旷课次数                decimal(3, 0)  非主
+  CDCS          迟到次数                decimal(3, 0)  非主
+  ZTCS          早退次数                decimal(3, 0)  非主
+  QJCS          请假次数                decimal(3, 0)  非主
+  JQCS          记勤次数                decimal(3, 0)  非主
+
+ZZJX0602  学生考勤情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  XQMC          学期名称                nvarchar(10)   主键
+  XZBMC         行政班名称              nvarchar(50)   非主
+  XH            学号                    nvarchar(20)   非主
+  KKCS          旷课次数                decimal(3, 0)  非主
+  CDCS          迟到次数                decimal(3, 0)  非主
+  ZTCS          早退次数                decimal(3, 0)  非主
+  QJCS          请假次数                decimal(3, 0)  非主
+
+ZZJX0701  校外实习基地信息数据子类表
+  SCHOOLID      学校名                  int            主键
+  QYBH          企业编号                nvarchar(20)   主键
+  JDHZHTBH      基地合作合同编号        nvarchar(20)   非主
+  JDHZHTMC      基地合作合同名称        nvarchar(50)   非主
+  JDLBM         基地类别码              nvarchar(1)    非主
+  DWMC          单位名称                nvarchar(50)   非主
+  QYXZQ         企业行政区              nvarchar(6)    非主
+  QYDZ          企业地址                nvarchar(180)  非主
+  QYXZ          企业性质                nvarchar(2)    非主
+  FRDB          法人代表                nvarchar(36)   非主
+  QYLXR         企业联系人              nvarchar(36)   非主
+  QYYZBM        企业邮政编码            nvarchar(6)    非主
+  QYLXDH        企业联系电话            nvarchar(30)   非主
+
+ZZJX0702  校外实习基地接纳情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  QYBH          企业编号                nvarchar(20)   主键
+  JNRQ          接纳日期                nvarchar(8)    非主
+  ZDJNSXSRS     最大接纳实习生人数      nvarchar(1)    非主
+  SJJNSXSRS     实际接纳实习生人数      decimal(5, 0)  非主
+  SXSLJDJYRS    实习生留基地就业人数    decimal(5, 0)  非主
+  SXSDY         实习生待遇              nvarchar(100)  非主
+
+ZZJX0703  学生校外实习情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  SXQSRQ        受训起始日期            nvarchar(8)    主键
+  SXJSRQ        受训结束日期            nvarchar(8)    非主
+  QYBH          企业编号                nvarchar(20)   非主
+  SXGWMC        受训岗位名称            nvarchar(50)   非主
+  SXDS          实训导师                nvarchar(36)   非主
+  SFGMSXZRBX    是否购买实习责任保险    nvarchar(1)    非主
+  BXFZFZ        保险费支付者            nvarchar(50)   非主
+  SXXC          实习薪酬                money          非主
+  SFSDGSX       是否是顶岗实习          nvarchar(1)    非主
+  XSHJXZM       学生户籍性质码          nvarchar(1)    非主
+
+ZZJX0704  校内实习基地数据子类表
+  SCHOOLID      学校名                  int            主键
+  XNJDMC        校内基地名称            nvarchar(50)   主键
+  JDDZ          基地地址                nvarchar(180)  非主
+  JDYZBM        基地邮政编码            nvarchar(6)    非主
+  JDDH          基地电话                nvarchar(30)   非主
+  JDFZR         基地负责人              nvarchar(36)   非主
+  LJJNRS        累计接纳人数            decimal(5, 0)  非主
+
+ZZJX0705  学生校内实习情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  XH            学号                    nvarchar(20)   主键
+  XM            姓名                    nvarchar(36)   非主
+  SXIKSRQ       实习开始日期            nvarchar(8)    非主
+  SXIJSRQ       实习结束日期            nvarchar(8)    非主
+  XNJDMC        校内基地名称            nvarchar(6)    非主
+  SXNR          实习内容                text           非主
+  SXIGWMC       实习岗位名称            nvarchar(50)   非主
+  SXIDSXM       实习导师姓名            nvarchar(36)   非主
+  SXCJ          实习成绩                decimal(5, 1)  非主
+

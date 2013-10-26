@@ -1,0 +1,260 @@
+JCJG0101  教职工基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  GH            工号                    nvarchar(20)   主键
+  XM            姓名                    nvarchar(36)   非主
+  YWXM          英文姓名                nvarchar(60)   非主
+  XMPY          姓名拼音                nvarchar(60)   非主
+  CYM           曾用名                  nvarchar(36)   非主
+  XBM           性别码                  nvarchar(1)    非主
+  CSRQ          出生日期                nvarchar(8)    非主
+  CSDM          出生地码                nvarchar(6)    非主
+  JG            籍贯                    nvarchar(20)   非主
+  MZM           民族码                  nvarchar(2)    非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主
+  SFZJLXM       身份证件类型码          nvarchar(1)    非主
+  SFZJH         身份证件号              nvarchar(20)   非主
+  HYZKM         婚姻状况码              nvarchar(2)    非主
+  GATQWM        港澳台侨外码            nvarchar(2)    非主
+  ZZMMM         政治面貌码              nvarchar(2)    非主
+  JKZKM         健康状况码              nvarchar(1)    非主
+  XYZJM         信仰宗教码              nvarchar(2)    非主
+  XXM           血型码                  nvarchar(1)    非主
+  ZP            照片                    nvarchar(200)  非主
+  SFZJYXQ       身份证件有效期          nvarchar(17)   非主
+
+JCJG0110  奖励数据子类表
+  SCHOOLID      学校名                  int            主键
+  HJXM          获奖项目                nvarchar(60)   非主
+  JLJBM         奖励级别码              nvarchar(2)    非主
+  JLDJM         奖励等级码              nvarchar(1)    非主
+  HJLBM         获奖类别码              nvarchar(1)    非主
+  JLFSM         奖励方式码              nvarchar(1)    非主
+  JLMC          奖励名称                nvarchar(60)   非主
+  JLMCM         奖励名称码              nvarchar(4)    非主
+  HJYY          获奖原因                text           非主
+  JLNR          奖励内容                text           非主
+  BJDW          颁奖单位                nvarchar(60)   非主
+  HJRQ          获奖日期                nvarchar(8)    非主
+  RYCHM         荣誉称号码              nvarchar(3)    非主
+  HJJSM         获奖角色码              nvarchar(3)    非主
+
+JCJG0111  惩处数据子类表
+  SCHOOLID      学校名                  int            主键
+  CCMC          惩处名称                nvarchar(20)   主键
+  JLCFM         纪律处分码              nvarchar(2)    非主
+  CCYY          惩处原因                nvarchar(80)   非主
+  CCNR          惩处内容                nvarchar(80)   非主
+  CCDW          惩处单位                nvarchar(60)   非主
+  CCWH          惩处文号                nvarchar(24)   非主
+  CCRQ          惩处日期                nvarchar(8)    非主
+  CCCXRQ        惩处撤销日期            nvarchar(8)    非主
+  CCCXWH        惩处撤消文号            nvarchar(24)   非主
+  CCCXYY        惩处撤消原因            nvarchar(80)   非主
+
+JCJG0201  语言能力数据子类表
+  SCHOOLID      学校名                  int            主键
+  WGYZM         外国语种码              nvarchar(2)    非主
+  WGYZSLCDM     外国语种熟练程度码      nvarchar(1)    非主
+  ZGYZM         中国语种码              nvarchar(3)    非主
+  ZGYZSLCDM     中国语种熟练程度码      nvarchar(1)    非主
+  PTHSPDJM      普通话水平等级码        nvarchar(30)   非主
+
+JCJG0202  专业技术职务数据子类表
+  SCHOOLID      学校名                  int            主键
+  RZZGMCM       任职资格名称码          nvarchar(3)    非主
+  QDZGTJM       取得资格途径码          nvarchar(1)    非主
+  PSDW          评审单位                nvarchar(60)   非主
+  PDRQ          评定日期                nvarchar(8)    非主
+  PRZWM         聘任职务码              nvarchar(3)    非主
+  PRDW          聘任单位                nvarchar(60)   非主
+  PRQSRQ        聘任起始日期            nvarchar(8)    非主
+  PRZZRQ        聘任终止日期            nvarchar(8)    非主
+  PRQKM         聘任情况码              nvarchar(1)    非主
+  JPRQ          解聘日期                nvarchar(8)    非主
+  JPYY          解聘原因                nvarchar(80)   非主
+
+JCJG0203  岗位证书数据子类表
+  SCHOOLID      学校名                  int            主键
+  GWZSMC        岗位证书名称            nvarchar(40)   主键
+  GWZSBH        岗位证书编号            nvarchar(20)   非主
+  BFDW          颁发单位                nvarchar(60)   非主
+  BFRQ          颁发日期                nvarchar(8)    非主
+
+JCJG0204  工人技术等级及职务数据子类表
+  SCHOOLID      学校名                  int            主键
+  GRJSDJM       工人技术等级码          nvarchar(1)    主键
+  GRJSZWM       工人技术职务码          nvarchar(1)    非主
+  GRGZM         工人工种码              nvarchar(2)    非主
+  DJFZJG        等级发证机关            nvarchar(60)   非主
+  DJPDRQ        等级评定日期            nvarchar(8)    非主
+
+JCJG0205  党政职务数据子类表
+  SCHOOLID      学校名                  int            主键
+  ZWMC          职务名称                nvarchar(60)   主键
+  ZWMCM         职务名称码              nvarchar(4)    非主
+  ZWLBM         职务类别码              nvarchar(2)    非主
+  ZWFLM         职位分类码              nvarchar(4)    非主
+  ZWJBM         职务级别码              nvarchar(2)    非主
+  RZRQ          任职日期                nvarchar(8)    非主
+  RZBM          任职部门                nvarchar(60)   非主
+  RZFSM         任职方式码              nvarchar(1)    非主
+  RZYY          任职原因                nvarchar(80)   非主
+  RZWH          任职文号                nvarchar(24)   非主
+  RZPZDW        任职批准单位            nvarchar(60)   非主
+  ZWBDLBM       职务变动类别码          nvarchar(1)    非主
+  DQRZZK        当前任职状况            nvarchar(1)    非主
+  ZWPX          职务排序                nvarchar(2)    非主
+  ZGHCSDGZ      主管或从事的工作        nvarchar(40)   非主
+  MZRQ          免职日期                nvarchar(8)    非主
+  MZFSM         免职方式码              nvarchar(1)    非主
+  MZYYM         免职原因码              nvarchar(2)    非主
+  MZWH          免职文号                nvarchar(24)   非主
+  MZPZDW        免职批准单位            nvarchar(60)   非主
+
+JCJG0301  社会兼职职务数据子类表
+  SCHOOLID      学校名                  int            主键
+  SHJZM         社会兼职码              nvarchar(4)    主键
+  SHJZQSRQ      社会兼职起始日期        nvarchar(8)    非主
+  SHJZZZRQ      社会兼职终止日期        nvarchar(8)    非主
+  SHJZCZYYM     社会兼职辞职原因码      nvarchar(1)    非主
+
+JCJG0302  学术团体兼职数据子类表
+  SCHOOLID      学校名                  int            主键
+  XSTTMC        学术团体名称            nvarchar(60)   主键
+  XSTTJBM       学术团体级别码          nvarchar(1)    非主
+  XXTTLSHZGDW   学术团体隶属或主管单位  nvarchar(60)   非主
+  XSJZZW        学术兼职职务            nvarchar(20)   非主
+  XSJZQSRQ      学术兼职起始日期        nvarchar(8)    非主
+  XSJZZZRQ      学术兼职终止日期        nvarchar(8)    非主
+  XSJZCZYYM     学术兼职辞职原因码      nvarchar(1)    非主
+
+JCJG0401  国内进修学习数据子类表
+  SCHOOLID      学校名                  int            主键
+  JXXZM         进修性质码              nvarchar(1)    主键
+  XXFSM         学习方式码              nvarchar(1)    非主
+  XXQSNY        学习起始年月            nvarchar(6)    非主
+  XXZZNY        学习终止年月            nvarchar(6)    非主
+  ZXS           总学时                  decimal(3, 0)  非主
+  XXNR          学习内容                nvarchar(80)   非主
+  JXBMC         进修班名称              nvarchar(40)   非主
+  ZBDW          主办单位                nvarchar(60)   非主
+  ZBDWXZM       主办单位性质码          nvarchar(1)    非主
+  ZXDW          在学单位                nvarchar(60)   非主
+  ZXDWLBM       在学单位类别码          nvarchar(1)    非主
+  JXJGM         进修结果码              nvarchar(1)    非主
+
+JCJG0402  出国（境）进修学习数据子类表
+  SCHOOLID      学校名                  int            主键
+  CGRQ          出国（境）日期            nvarchar(8)    主键
+  CGMDM         出国（境）目的码          nvarchar(3)    非主
+  CGGBM         出国（境）国别码          nvarchar(3)    非主
+  SQDWYWMC      所去单位英文名称        nvarchar(180)  非主
+  SQDWZWMC      所去单位中文名称        nvarchar(60)   非主
+  PCDW          派出单位                nvarchar(60)   非主
+  TZMC          团组名称                nvarchar(40)   非主
+  CGJFLYM       出国（境）经费来源码      nvarchar(1)    非主
+  SPDW          审批单位                nvarchar(60)   非主
+  SPRQ          审批日期                nvarchar(8)    非主
+  SPWH          审批文号                nvarchar(24)   非主
+  PZQX          批准期限                nvarchar(3)    非主
+  XXGZNR        学习工作内容            nvarchar(80)   非主
+  XXGZCJ        学习工作成绩            text           非主
+  YHGRQ         应回国日期              nvarchar(8)    非主
+  SHGRQ         实回国日期              nvarchar(8)    非主
+  HZHTXZH       护照号/通行证号         nvarchar(20)   非主
+  ZJYXQ         证件有效期              nvarchar(17)   非主
+
+JCJG0501  组织考察数据子类表
+  SCHOOLID      学校名                  int            主键
+  KCLBM         考察（考核）类别码        nvarchar(1)    非主
+  KCRQ          考察（考核）日期          nvarchar(8)    非主
+  KCYJ          考察（考核）意见          text           非主
+  KCJGM         考察（考核）结果码        nvarchar(1)    非主
+  KCZZJKCR      考察（考核）组织及考察人  nvarchar(120)  非主
+
+JCJG0502  教职工考核数据子类表
+  SCHOOLID      学校名                  int            主键
+  KHLBM         考核类别码              nvarchar(1)    非主
+  KHRQ          考核日期                nvarchar(8)    非主
+  KHNR          考核内容                nvarchar(80)   非主
+  KHJGM         考核结果码              nvarchar(1)    非主
+  KHFZRGH       考核负责人工号          nvarchar(20)   非主
+  KHPY          考核评语                text           非主
+  KHBM          考核部门                nvarchar(60)   非主
+
+JCJG0503  工人考技考工数据子类表
+  SCHOOLID      学校名                  int            主键
+  KGNY          考工年月                nvarchar(6)    主键
+  KHGZM         考核工种码              nvarchar(2)    非主
+  KGBM          考工部门                nvarchar(60)   非主
+  JSJB          技术级别                nvarchar(20)   非主
+  KGZSH         考工证书号              nvarchar(20)   非主
+  KGPY          考工评语                text           非主
+  KGCJ          考工成绩                nvarchar(20)   非主
+
+JCJG0601  来源数据子类表
+  SCHOOLID      学校名                  int            主键
+  LDWRQ         来单位日期              nvarchar(8)    主键
+  LYM           来源码                  nvarchar(2)    非主
+  LYDQM         来源地区码              nvarchar(6)    非主
+  LDWYY         来单位原因              nvarchar(80)   非主
+  YDWMC         原单位名称              nvarchar(60)   非主
+  YDZZWM        原党政职务码            nvarchar(4)    非主
+  YJSZWM        原技术职务码            nvarchar(3)    非主
+  YCSXKM        原从事学科码            nvarchar(5)    非主
+  YGZZE         原工资总额              money          非主
+  YJHLJT        原教护龄津贴            money          非主
+
+JCJG0602  部门调动数据子类表
+  SCHOOLID      学校名                  int            主键
+  BMDDRQ        部门调动日期            nvarchar(8)    主键
+  BMDDYY        部门调动原因            nvarchar(80)   非主
+  ZZNDCBMH      组织内调出部门号        nvarchar(10)   非主
+  ZZNDRBMH      组织内调入部门号        nvarchar(10)   非主
+  GZZYRQ        工资转移日期            nvarchar(8)    非主
+  WSDAH         文书档案号              nvarchar(10)   非主
+
+JCJG0603  离岗数据子类表
+  SCHOOLID      学校名                  int            主键
+  LGRQ          离岗日期                nvarchar(8)    非主
+  LGYYM         离岗原因码              nvarchar(1)    非主
+  FGRQ          返岗日期                nvarchar(8)    非主
+  GZZYRQ        工资转移日期            nvarchar(8)    非主
+  WSDAH         文书档案号              nvarchar(10)   非主
+
+JCJG0604  病休数据子类表
+  SCHOOLID      学校名                  int            主键
+  BXQSRQ        病休起始日期            nvarchar(8)    主键
+  BXZDYY        病休诊断医院            nvarchar(60)   非主
+  BXZDZM        病休诊断证明            text           非主
+  HFGZRQ        恢复工作日期            nvarchar(8)    非主
+  KFZDYY        康复诊断医院            nvarchar(60)   非主
+  KFZDZM        康复诊断证明            text           非主
+  GZZYRQ        工资转移日期            nvarchar(8)    非主
+  WSDAH         文书档案号              nvarchar(10)   非主
+
+JCJG0701  离职数据子类表
+  SCHOOLID      学校名                  int            主键
+  LZRQ          离职日期                nvarchar(8)    主键
+  LZYYM         离职原因码              nvarchar(2)    非主
+  LZQX          离职去向                nvarchar(60)   非主
+
+JCJG0702  离退休数据子类表
+  SCHOOLID      学校名                  int            主键
+  LTLBM         离退类别码              nvarchar(1)    主键
+  LTQSRQ        离退起始日期            nvarchar(8)    非主
+  LTHXSJBM      离退后享受级别码        nvarchar(3)    非主
+  LTXFZFDW      离退休费支付单位        nvarchar(60)   非主
+  LTHGLDW       离退后管理单位          nvarchar(60)   非主
+  YDAZDD        异地安置地点            nvarchar(60)   非主
+
+JCJG0703  返聘数据子类表
+  SCHOOLID      学校名                  int            主键
+  FPQSRQ        返聘起始日期            nvarchar(8)    非主
+  FPZZRQ        返聘终止日期            nvarchar(8)    非主
+  FPDWH         返聘单位号              nvarchar(10)   非主
+  FPGW          返聘岗位                nvarchar(20)   非主
+  FPCJ          返聘酬金                money          非主
+  FPJLY         返聘金来源              nvarchar(20)   非主
+  FPGZL         返聘工作量              decimal(4, 0)  非主
+

@@ -1,0 +1,262 @@
+ZXKY0101  科技项目子类表
+  SCHOOLID      学校名                  int            主键
+  XMBH          项目编号                nvarchar(8)    主键
+  DWH           单位号                  nvarchar(5)    非主
+  XMMC          项目名称                nvarchar(60)   非主
+  ZXBH          专项编号                nvarchar(20)   非主
+  KSRQ          开始日期                nvarchar(8)    非主
+  JSRQ          结束日期                nvarchar(8)    非主
+  FZR           项目负责人              nvarchar(36)   非主
+  WTDW          项目委托单位            nvarchar(60)   非主
+  XMLYM         项目来源码              nvarchar(2)    非主
+  MJM           密级码                  nvarchar(1)    非主
+  XMLXM         项目类型码              nvarchar(1)    非主
+  SHJJXYM       社会经济效益码          nvarchar(2)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  HZGJM         合作国家码              nvarchar(3)    非主
+  JHWCQKM       计划完成情况码          nvarchar(1)    非主
+
+ZXKY0102  项目协作单位子类表
+  SCHOOLID      学校名                  int            主键
+  XZDW          协作单位                nvarchar(60)   主键
+  XZDWLXM       协作单位类型码          nvarchar(1)    非主
+  TRRL          投入人力                decimal(5, 0)  非主
+
+ZXKY0103  项目经费子类表
+  SCHOOLID      学校名                  int            主键
+  JHJFZE        计划经费总额            money          主键
+  XMJFLYM       项目经费来源码          nvarchar(2)    非主
+  BRRQ          拔入日期                nvarchar(8)    非主
+  BKS           拔款数                  money          非主
+  ZCRQ          支出日期                nvarchar(8)    非主
+  KYRYJF        科研人员经费            money          非主
+  YWJF          业务经费                money          非主
+  YQSBJF        仪器设备经费            money          非主
+  GLJF          管理经费                money          非主
+  QTJF          其他经费                money          非主
+  BFXZDWJF      拨付协作单位经费        money          非主
+
+ZXKY0104  项目人员子类表
+  SCHOOLID      学校名                  int            主键
+  GH            工号                    nvarchar(20)   主键
+  XM            姓名                    nvarchar(36)   非主
+  GZL           工作量                  decimal(62, 0) 非主
+
+ZXKY0105  项目合同管理子类表
+  SCHOOLID      学校名                  int            主键
+  HTBH          合同编号                nvarchar(10)   主键
+  HTMC          合同名称                nvarchar(100)  非主
+  XMBH          项目编号                nvarchar(10)   非主
+  JF            甲方                    nvarchar(60)   非主
+  YF            乙方                    nvarchar(60)   非主
+  BF            丙方                    nvarchar(60)   非主
+  HTLXM         合同类型码              nvarchar(1)    非主
+  HTQDRQ        合同签订日期            nvarchar(8)    非主
+  HTJZRQ        合同截止日期            nvarchar(8)    非主
+  HTJE          合同金额                money          非主
+  QDDD          签订地点                nvarchar(60)   非主
+  SFYGD         是否已归档              nvarchar(1)    非主
+  HTKSRQ        合同开始日期            nvarchar(8)    非主
+  HTJSRQ        合同结束日期            nvarchar(8)    非主
+  KTFLM         课题分类码              nvarchar(2)    非主
+  RDH           认定号                  nvarchar(20)   非主
+  DRQ           认定日期                nvarchar(8)    非主
+
+ZXKY0201  科技著作子类表
+  SCHOOLID      学校名                  int            主键
+  ZZBH          著作编号                nvarchar(8)    主键
+  ZZZWMC        著作中文名称            nvarchar(60)   非主
+  ZZYWMC        著作英文名称            nvarchar(180)  非主
+  DWH           单位号                  nvarchar(5)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  XMLYM         所属项目来源码          nvarchar(2)    非主
+  LZLBM         论著类别码              nvarchar(2)    非主
+  ZGYZM         中国语种码              nvarchar(3)    非主
+  YZM           语种码                  nvarchar(2)    非主
+  CBSMC         出版社名称              nvarchar(60)   非主
+  CBSJBM        出版社级别码            nvarchar(1)    非主
+  CBRQ          出版日期                nvarchar(8)    非主
+  CBH           出版号                  nvarchar(30)   非主
+  ZZZS          著作字数                decimal(8, 0)  非主
+  SSXMBH        所属项目编号            nvarchar(8)    非主
+
+ZXKY0202  科技著作人员子类表
+  SCHOOLID      学校名                  int            主键
+  GH            工号                    nvarchar(20)   主键
+  JSM           角色码                  nvarchar(3)    非主
+  ZS            字数                    decimal(8, 0)  非主
+
+ZXKY0301  科技论文子类表
+  SCHOOLID      学校名                  int            主键
+  LWBH          论文编号                nvarchar(8)    非主
+  LWZWMC        论文中文名称            nvarchar(60)   非主
+  LWYWMC        论文英文名称            nvarchar(180)  非主
+  DWH           单位号                  nvarchar(5)    非主
+  LWLXM         论文类型码              nvarchar(1)    非主
+  LZLBM         论著类别码              nvarchar(2)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  XKMLM         学科门类码              nvarchar(1)    非主
+  XMLYM         所属项目来源码          nvarchar(2)    非主
+  ZGYZM         中国语种码              nvarchar(3)    非主
+  YZM           语种码                  nvarchar(2)    非主
+  SFSCISL       是否SCI收录             nvarchar(1)    非主
+  SFEISL        是否EI收录              nvarchar(1)    非主
+  SFISTPSL      是否ISTP收录            nvarchar(1)    非主
+  SFISRSL       是否ISR收录             nvarchar(1)    非主
+  SSXMBH        所属项目编号            nvarchar(8)    非主
+
+ZXKY0302  科技论文发表子类表
+  SCHOOLID      学校名                  int            主键
+  KWMC          刊物名称                nvarchar(180)  主键
+  FBRQ          发表日期                nvarchar(8)    非主
+  CBH           出版号                  nvarchar(30)   非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主
+  KWJBM         刊物级别码              nvarchar(2)    非主
+  NH            年号                    nvarchar(4)    非主
+  JH            卷号                    nvarchar(10)   非主
+  QH            期号                    nvarchar(10)   非主
+  ZQH           总期号                  nvarchar(10)   非主
+  QSYS          起始页数                decimal(6, 0)  非主
+
+ZXKY0303  科技论文报告子类表
+  SCHOOLID      学校名                  int            主键
+  HYBH          会议编号                nvarchar(8)    主键
+  BGXSM         论文报告形式码          nvarchar(1)    非主
+  LWJMC         论文集名称              nvarchar(60)   非主
+
+ZXKY0304  科技论文人员子类表
+  SCHOOLID      学校名                  int            主键
+  GH            工号                    nvarchar(20)   主键
+  JSM           角色码                  nvarchar(3)    非主
+
+ZXKY04  学术会议数据类表
+  SCHOOLID      学校名                  int            主键
+  HYBH          会议编号                nvarchar(8)    主键
+  HYZWMC        会议中文名称            nvarchar(60)   非主
+  HYYWMC        会议英文名称            nvarchar(180)  非主
+  HYDD          会议地点                nvarchar(180)  非主
+  HYQSRQ        会议起始日期            nvarchar(8)    非主
+  HYZZRQ        会议终止日期            nvarchar(8)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  HYDJM         会议等级类型码          nvarchar(1)    非主
+  HYJBXSM       会议举办形式码          nvarchar(1)    非主
+  JBDW          举办单位                nvarchar(60)   非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主
+  HYRS          参加会议人数            decimal(6, 0)  非主
+
+ZXKY0501  鉴定成果子类表
+  SCHOOLID      学校名                  int            主键
+  JDCGBH        鉴定成果编号            nvarchar(8)    主键
+  JDCGMC        鉴定成果名称            nvarchar(60)   非主
+  JDPWH         鉴定批文号              nvarchar(24)   非主
+  DWH           单位号                  nvarchar(5)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  XMLYM         所属项目来源码          nvarchar(2)    非主
+  WCXSM         完成形式码              nvarchar(1)    非主
+  CGLXM         成果类型码              nvarchar(3)    非主
+  JDDWMC        鉴定单位名称            nvarchar(60)   非主
+  JDRQ          鉴定日期                nvarchar(8)    非主
+  JDJLM         鉴定结论码              nvarchar(2)    非主
+  SSXMBH        所属项目编号            nvarchar(8)    非主
+
+ZXKY0502  鉴定成果人员子类表
+  SCHOOLID      学校名                  int            主键
+  GH            工号                    nvarchar(20)   主键
+  JSM           角色码                  nvarchar(3)    非主
+
+ZXKY0601  专利成果子类表
+  SCHOOLID      学校名                  int            主键
+  ZLCGBH        专利成果编号            nvarchar(8)    主键
+  ZLCGMC        专利成果名称            nvarchar(60)   非主
+  DWH           单位号                  nvarchar(5)    非主
+  SQBH          申请编号                nvarchar(20)   非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  ZLLXM         专利类型码              nvarchar(1)    非主
+  PZRQ          批准日期                nvarchar(8)    非主
+  ZLPZXSM       批准形式码              nvarchar(1)    非主
+  ZSBH          证书编号                nvarchar(20)   非主
+  ZLFLZTM       法律状态码              nvarchar(1)    非主
+  JNRQ          交纳专利年费日期        nvarchar(8)    非主
+  JNJE          交纳金额                money          非主
+  SSXMBH        所属项目编号            nvarchar(8)    非主
+
+ZXKY0602  专利人员子类表
+  SCHOOLID      学校名                  int            主键
+  GH            工号                    nvarchar(20)   主键
+  JSM           角色码                  nvarchar(3)    非主
+
+ZXKY0603  专利出售子类表
+  SCHOOLID      学校名                  int            主键
+  CSRQ          出售日期                nvarchar(8)    主键
+  CSJERMB       出售金额（人民币）        money          非主
+  CSJEMY        出售金额（美元）          money          非主
+  SSDW          受售单位                nvarchar(60)   非主
+  SSDWGBM       受售单位国别码          nvarchar(3)    非主
+  SRRMB         本年实际收入（人民币）    money          非主
+  SRMY          本年实际收入（美元）      money          非主
+
+ZXKY0701  技术转让子类表
+  SCHOOLID      学校名                  int            主键
+  HTBH          合同编号                nvarchar(10)   主键
+  HTMC          合同名称                nvarchar(100)  非主
+  CJJE          成交金额                money          非主
+  SJSR          本年度实际收入          money          非主
+  DWH           单位号                  nvarchar(5)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  QDRQ          签定日期                nvarchar(8)    非主
+  FZRGH         负责人工号              nvarchar(20)   非主
+  SRFMC         受让方名称              nvarchar(180)  非主
+  SRFLXM        受让方类型码            nvarchar(1)    非主
+  SHJJXYM       社会经济效益码          nvarchar(2)    非主
+  SSXMBH        所属项目编号            nvarchar(8)    非主
+
+ZXKY0702  技术转让人员子类表
+  SCHOOLID      学校名                  int            主键
+  CJRGH         参加人工号              nvarchar(20)   主键
+  JSM           角色码                  nvarchar(3)    非主
+
+ZXKY0801  获奖成果子类表
+  SCHOOLID      学校名                  int            主键
+  HJCGBH        获奖成果编号            nvarchar(8)    主键
+  HJCGMC        获奖成果名称            nvarchar(60)   非主
+  XMLYM         所属项目来源码          nvarchar(2)    非主
+  DWH           单位号                  nvarchar(5)    非主
+  HJRQ          获奖日期                nvarchar(8)    非主
+  CGHJLBM       获奖类别码              nvarchar(1)    非主
+  HJJBM         获奖级别码              nvarchar(2)    非主
+  JLDJM         奖励等级码              nvarchar(1)    非主
+  XKLYM         学科领域码              nvarchar(5)    非主
+  SJDW          授奖单位                nvarchar(60)   非主
+  SSXMBH        所属项目编号            nvarchar(8)    非主
+
+ZXKY0802  获奖成果人员子类表
+  SCHOOLID      学校名                  int            主键
+  HJZGH         获奖者工号              nvarchar(20)   主键
+  JSM           角色码                  nvarchar(3)    非主
+
+ZXKY09  教案数据类表
+  SCHOOLID      学校名                  int            主键
+  JABH          教案编号                nvarchar(12)   非主
+  JABT          教案标题                nvarchar(60)   非主
+  JAYWBT        教案英文标题            nvarchar(180)  非主
+  GJC           关键词                  nvarchar(20)   非主
+  JAZZ          教案作者                nvarchar(180)  非主
+  JAKCMC        教案课程名称            nvarchar(60)   非主
+  SYFW          适用范围                nvarchar(60)   非主
+  KCFLM         课程分类码              nvarchar(2)    非主
+  ZW            正文                    text           非主
+  CKWX          参考文献                text           非主
+
+ZXKY10  课件数据类表
+  SCHOOLID      学校名                  int            主键
+  KJBH          课件编号                nvarchar(12)   非主
+  KJBT          课件标题                nvarchar(60)   非主
+  KJYWBT        课件英文标题            nvarchar(180)  非主
+  GJC           关键词                  nvarchar(20)   非主
+  KJZZ          课件作者                nvarchar(180)  非主
+  KJKCMC        课件课程名称            nvarchar(60)   非主
+  SYFW          适用范围                nvarchar(60)   非主
+  KCFLM         课程分类码              nvarchar(2)    非主
+  KJNR          课件内容                nvarchar(200)  非主
+  CKWX          参考文献                text           非主
+

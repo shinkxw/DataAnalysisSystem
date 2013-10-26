@@ -1,0 +1,62 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZXDY" provider="reallocate_namespace" generation_time="">
+    <table name="ZXDY0101" exp="德育课程数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="DYKCMC" exp="德育课程名称" type="nvarchar(60)" null="F" p="T" remark="德育课程名称 编号：ZXDY010101 引用自JCTB010404 KCMC 课程名称 C 60 NULL NULL NULL NULL" />
+            <name="JXSJ" exp="教学时间" type="decimal(2, 0)" null="F" p="F" remark="教学时间 编号：ZXAQ050004 解释/举例：周课时数 " />
+            <name="ZZJS" exp="专职教师数量" type="decimal(2, 0)" null="T" p="F" remark="专职教师数量 编号：ZXAQ050005 解释/举例：单位：人 " />
+            <name="JZJS" exp="兼职教师数量" type="decimal(2, 0)" null="T" p="F" remark="兼职教师数量 编号：ZXAQ040006 解释/举例：单位：人 " />
+        </field_area>
+    </table>
+    <table name="ZXDY0102" exp="团队活动数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HDSJ" exp="活动时间" type="nvarchar(8)" null="F" p="T" remark="活动时间 编号：ZXDY010201 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HDZZLB" exp="活动组织类别" type="nvarchar(60)" null="F" p="F" remark="活动组织类别 编号：ZXDY010202 解释/举例：例如：少先队、共青团等 " />
+            <name="HDJS" exp="活动介绍" type="text" null="F" p="F" remark="活动介绍 编号：ZXDY010203 " />
+        </field_area>
+    </table>
+    <table name="ZXDY0103" exp="社团情况数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="STMC" exp="社团名称" type="nvarchar(100)" null="F" p="T" remark="社团名称 编号：ZXDY010301 " />
+            <name="CLRQ" exp="成立日期" type="nvarchar(8)" null="F" p="F" remark="成立日期 编号：ZXDY010302 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="STJJ" exp="社团简介" type="text" null="F" p="F" remark="社团简介 编号：ZXDY010303 " />
+        </field_area>
+    </table>
+    <table name="ZXDY0201" exp="严重不良行为学生数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XJH" exp="学籍号" type="nvarchar(30)" null="F" p="T" remark="学籍号 编号：ZXXS010114 引用自ZXXS010114 XJH 学籍号 C 30 O NULL 全国唯一的学籍号 NULL" />
+            <name="YZBLXWLBM" exp="严重不良行为类别码" type="nvarchar(1)" null="F" p="F" remark="严重不良行为类别码 编号：ZXDY020101 值空间：JY/T1001YZBLXW严重不良行为代码 " />
+            <name="TXRGH" exp="填写人工号" type="nvarchar(20)" null="F" p="F" remark="填写人工号 编号：ZXDY020102 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="TXRQ" exp="填写日期" type="nvarchar(8)" null="F" p="F" remark="填写日期 编号：ZXDY020103 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXDY0202" exp="学生欺侮数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="CYQWRS" exp="参与欺侮人数" type="decimal(2, 0)" null="F" p="T" remark="参与欺侮人数 编号：ZXDY020201 " />
+            <name="SQWRS" exp="受欺侮人数" type="decimal(2, 0)" null="F" p="F" remark="受欺侮人数 编号：ZXDY020202 " />
+            <name="FSRQ" exp="发生日期" type="nvarchar(8)" null="F" p="F" remark="发生日期 编号：ZXDY020203 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="QKMS" exp="情况描述" type="text" null="F" p="F" remark="情况描述 编号：ZXDY020204 " />
+        </field_area>
+    </table>
+    <table name="ZXDY0203" exp="未成年学生犯罪数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XJH" exp="学籍号" type="nvarchar(30)" null="F" p="T" remark="学籍号 编号：ZXXS010114 引用自ZXXS010114 XJH 学籍号 C 30 O NULL 全国唯一的学籍号 NULL" />
+            <name="FZRQ" exp="犯罪日期" type="nvarchar(8)" null="F" p="F" remark="犯罪日期 编号：ZXDY020301 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FZQKSM" exp="犯罪情况描述" type="text" null="F" p="F" remark="犯罪情况描述 编号：ZXDY020302 " />
+        </field_area>
+    </table>
+    <table name="ZXDY0204" exp="专兼职心理健康教师数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XLJKJSGH" exp="心理健康教师工号" type="nvarchar(20)" null="F" p="T" remark="心理健康教师工号 编号：ZXDY020401 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="SFZZJS" exp="是否专职教师" type="nvarchar(1)" null="F" p="F" remark="是否专职教师 编号：ZXDY020402 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SFXLZY" exp="是否心理专业" type="nvarchar(1)" null="F" p="F" remark="是否心理专业 编号：ZXDY020403 值空间：JY/T1001SFBZ是否标志代码 " />
+        </field_area>
+    </table>
+</namespace>

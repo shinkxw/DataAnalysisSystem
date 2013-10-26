@@ -1,0 +1,81 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZZBX" provider="reallocate_namespace" generation_time="">
+    <table name="ZZBX0101" exp="仪器设备基本数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XQDM" exp="校区代码" type="nvarchar(2)" null="F" p="T" remark="校区代码 编号：ZZXX020001 引用自ZZXX020001 XQDM 校区代码 C 2 M NULL NULL JCXX010201" />
+            <name="YQBH" exp="仪器设备编号" type="nvarchar(80)" null="F" p="F" remark="仪器设备编号 编号：ZZBX010101 " />
+            <name="YQZWMC" exp="仪器设备中文名称" type="nvarchar(100)" null="F" p="F" remark="仪器设备中文名称 编号：ZZBX010102 解释/举例：产品标牌上的汉字名称，进口产品用英译汉名称，包括仪器、设备、教具和玩具等 " />
+            <name="YQYWMC" exp="仪器设备英文名称" type="nvarchar(100)" null="F" p="F" remark="仪器设备英文名称 编号：ZZBX010103 " />
+            <name="CQM" exp="产权码" type="nvarchar(1)" null="F" p="F" remark="产权码 编号：JCBX030105 引用自JCBX030105 CQM 产权码 C 1 M JY/T1001CQ产权代码 NULL NULL" />
+            <name="YQXH" exp="仪器设备型号" type="nvarchar(80)" null="F" p="F" remark="仪器设备型号 编号：ZZBX010104 " />
+            <name="SCCJ" exp="生产厂家" type="nvarchar(180)" null="F" p="F" remark="生产厂家 编号：JCBX030112 引用自JCBX030112 SCCJ 生产厂家 C 180 M NULL 指生产厂家的汉字名，进口产品用英译汉名或外文名 NULL" />
+            <name="CCH" exp="出厂号" type="nvarchar(30)" null="T" p="F" remark="出厂号 编号：JCBX030113 引用自JCBX030113 CCH 出厂号 C 30 M NULL 厂家标注在产品上的唯一号 NULL" />
+            <name="CCRQ" exp="出厂日期" type="nvarchar(8)" null="T" p="F" remark="出厂日期 编号：JCBX030108 引用自JCBX030108 CCRQ 出厂日期 C 8 M NULL NULL JCTB010203" />
+            <name="SCGBDQM" exp="生产国别/地区码" type="nvarchar(3)" null="T" p="F" remark="生产国别/地区码 编号：JCBX030109 引用自JCBX030109 SCGBDQM 生产国别/地区码 C 3 M GB/T2659 指仪器的生产国，用三位字母代码 NULL" />
+            <name="JFKMM" exp="经费科目码" type="nvarchar(1)" null="T" p="F" remark="经费科目码 编号：JCBX030110 引用自JCBX030110 JFKMM 经费科目码 C 1 M JY/T1001JFKM经费科目代码 NULL NULL" />
+            <name="JGBZ" exp="价格币种" type="nvarchar(3)" null="T" p="F" remark="价格币种 编号：JCBX030120 引用自JCBX030120 JGBZ 价格币种 C 3 O GB/T12406 NULL NULL" />
+            <name="YQJG" exp="仪器价格" type="money" null="T" p="F" remark="仪器价格 编号：JCBX030121 引用自JCBX030121 YQJG 仪器价格 M NULL O NULL NULL NULL" />
+            <name="GZRQ" exp="购置日期" type="nvarchar(8)" null="F" p="F" remark="购置日期 编号：ZZBX010105 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BFNX" exp="报废年限" type="decimal(2, 0)" null="T" p="F" remark="报废年限 编号：ZZBX010106 " />
+            <name="DJH" exp="单据号" type="nvarchar(16)" null="T" p="F" remark="单据号 编号：JCBX030114 引用自JCBX030114 DJH 单据号 C 16 M NULL 采购凭证单据号或进口产品订货合同号 NULL" />
+            <name="TP" exp="图片" type="nvarchar(200)" null="T" p="F" remark="图片 编号：JCBX030115 引用自JCBX030115 TP 图片 B NULL M NULL 指仪器设备的图片 NULL" />
+            <name="YQDD" exp="仪器地点" type="nvarchar(60)" null="T" p="F" remark="仪器地点 编号：JCBX030116 引用自JCBX030116 YQDD 仪器地点 C 60 M NULL NULL NULL" />
+            <name="SBFZRH" exp="设备负责人号" type="nvarchar(20)" null="T" p="F" remark="设备负责人号 编号：JCBX030117 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSZB" exp="技术指标" type="text" null="T" p="F" remark="技术指标 编号：JCBX030118 引用自JCBX030118 JSZB 技术指标 T NULL M NULL NULL NULL" />
+            <name="YQPZ" exp="仪器配置" type="text" null="T" p="F" remark="仪器配置 编号：JCBX030119 引用自JCBX030119 YQPZ 仪器配置 T NULL M NULL NULL NULL" />
+            <name="YQSM" exp="仪器说明" type="text" null="T" p="F" remark="仪器说明 编号：JCBX030122 引用自JCBX030122 YQSM 仪器说明 T NULL O NULL NULL NULL" />
+            <name="CWZH" exp="财务帐号" type="nvarchar(20)" null="T" p="F" remark="财务帐号 编号：JCBX030123 引用自JCBX030123 CWZH 财务帐号 C 20 O NULL 指校内财务帐号 NULL" />
+            <name="GHS" exp="供货商" type="nvarchar(60)" null="T" p="F" remark="供货商 编号：JCBX030124 引用自JCBX030124 GHS 供货商 C 60 O NULL 供货商的名称 NULL" />
+            <name="SYZT" exp="使用状态" type="nvarchar(1)" null="F" p="F" remark="使用状态 编号：ZZBX010107 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1可用2不可用 " />
+            <name="BFZT码" exp="报废状态码" type="nvarchar(1)" null="F" p="F" remark="报废状态码 编号：ZZBX010108 值空间：JY/T1001YQXZ仪器现状代码 " />
+        </field_area>
+    </table>
+    <table name="ZZBX0102" exp="仪器设备使用信息数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XQDM" exp="校区代码" type="nvarchar(2)" null="T" p="F" remark="校区代码 编号：ZZXX020001 引用自ZZXX020001 XQDM 校区代码 C 2 M NULL NULL JCXX010201" />
+            <name="YQBH" exp="仪器设备编号" type="nvarchar(80)" null="F" p="F" remark="仪器设备编号 编号：ZZBX010101 引用自ZZBX010101 YQBH 仪器设备编号 C 80 M NULL NULL JCBX030001" />
+            <name="YQXZDM" exp="仪器现状代码" type="nvarchar(1)" null="F" p="F" remark="仪器现状代码 编号：ZZBX010201 值空间：JY/T1001YQXZ仪器现状代码 " />
+            <name="YQSYFXDM" exp="仪器使用方向代码" type="nvarchar(1)" null="F" p="F" remark="仪器使用方向代码 编号：ZZBX010202 值空间：JY/T1001YQSYFX仪器使用方向代码 " />
+            <name="SYJGH" exp="使用机构号" type="nvarchar(6)" null="F" p="F" remark="使用机构号 编号：ZZBX010203 " />
+            <name="JSRGH" exp="经手人工号" type="nvarchar(20)" null="T" p="F" remark="经手人工号 编号：ZZBX010204 解释/举例：校内首次办理使用手续人工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="LYDW" exp="领用单位" type="nvarchar(60)" null="T" p="F" remark="领用单位 编号：ZZBX010205 解释/举例：仪器设备校内调动后，新使用单位名称 " />
+            <name="LYRGH" exp="领用人工号" type="nvarchar(20)" null="T" p="F" remark="领用人工号 编号：ZZBX010206 解释/举例：仪器设备校内调动后，新使用单位办理领用手续人工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="WHRS" exp="维护人数" type="decimal(2, 0)" null="T" p="F" remark="维护人数 编号：ZZBX010207 解释/举例：仪器设备专职操作维护人员数量，兼职按工作量折算为全时人员数时只取整数，单位：人 " />
+            <name="SYRSS" exp="使用人时数" type="decimal(8, 0)" null="T" p="F" remark="使用人时数 编号：ZZBX010208 解释/举例：单位：人时 " />
+            <name="KSSYGS" exp="开设实验个数" type="decimal(6, 0)" null="T" p="F" remark="开设实验个数 编号：ZZBX010209 解释/举例：单位：个 " />
+            <name="KSSYSS" exp="开设实验时数" type="decimal(8, 0)" null="T" p="F" remark="开设实验时数 编号：ZZBX010210 解释/举例：单位：小时 " />
+            <name="JXSS" exp="教学时数" type="decimal(8, 0)" null="T" p="F" remark="教学时数 编号：ZZBX010211 解释/举例：单位：小时 " />
+            <name="KYSS" exp="科研时数" type="decimal(8, 0)" null="T" p="F" remark="科研时数 编号：ZZBX010212 解释/举例：单位：小时 " />
+            <name="SHXMSS" exp="社会项目时数" type="decimal(8, 0)" null="T" p="F" remark="社会项目时数 编号：ZZBX010213 解释/举例：单位：小时 " />
+            <name="BGRGH" exp="保管人工号" type="nvarchar(20)" null="T" p="F" remark="保管人工号 编号：ZZBX010214 解释/举例：指日常保管人工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+        </field_area>
+    </table>
+    <table name="ZZBX02" exp="图书数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="TSBH" exp="图书编号" type="nvarchar(10)" null="F" p="T" remark="图书编号 编号：JCBX040101 引用自JCBX040101 TSBH 图书编号 C 10 M NULL 指校内图书资料的编号，包括图书、磁带、录象带、磁盘、光盘等，学校自编 NULL" />
+            <name="ZBT" exp="正标题" type="nvarchar(180)" null="F" p="F" remark="正标题 编号：JCBX040103 引用自JCBX040103 ZBT 正标题 C 180 M NULL 填写中文或英文 NULL" />
+            <name="BLBT" exp="并列标题" type="nvarchar(180)" null="T" p="F" remark="并列标题 编号：JCBX040104 引用自JCBX040104 BLBT 并列标题 C 180 O NULL 填写中文或英文 NULL" />
+            <name="FBT" exp="副标题" type="nvarchar(180)" null="T" p="F" remark="副标题 编号：JCBX040105 引用自JCBX040105 FBT 副标题 C 180 O NULL 填写中文或英文 NULL" />
+            <name="TSCBH" exp="图书出版号" type="nvarchar(30)" null="T" p="F" remark="图书出版号 编号：JCBX040107 引用自JCBX040107 TSCBH 图书出版号 C 30 M NULL 图书相应的ISBN等标准出版号 NULL" />
+            <name="DYZZ" exp="第一作者" type="nvarchar(30)" null="F" p="F" remark="第一作者 编号：JCBX040108 引用自JCBX040108 DYZZ 第一作者 C 30 M NULL 图书第一作者名称 NULL" />
+            <name="QTZZ" exp="其他作者" type="nvarchar(90)" null="T" p="F" remark="其他作者 编号：JCBX040109 引用自JCBX040109 QTZZ 其他作者 C 90 O NULL 图书其他作者名称 NULL" />
+            <name="RGRQ" exp="入馆日期" type="nvarchar(8)" null="F" p="F" remark="入馆日期 编号：ZZBX020001 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="RGRYGH" exp="入馆人员工号" type="nvarchar(20)" null="F" p="F" remark="入馆人员工号 编号：ZZBX020002 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="WXLXM" exp="文献类型码" type="nvarchar(2)" null="F" p="F" remark="文献类型码 编号：JCBX040111 引用自JCBX040111 WXLXM 文献类型码 C 2 O GB/T3469 NULL NULL" />
+            <name="FLH" exp="分类号" type="nvarchar(20)" null="F" p="F" remark="分类号 编号：JCBX040113 引用自JCBX040113 FLH 分类号 C 20 O NULL 按《中国图书馆分类法》进行分类的编号 NULL" />
+            <name="ZGYZM" exp="中国语种码" type="nvarchar(3)" null="T" p="F" remark="中国语种码 编号：JCBX040114 引用自JCBX040114 ZGYZM 中国语种码 C 3 O GB/T4881 NULL NULL" />
+            <name="YZM" exp="语种码" type="nvarchar(2)" null="T" p="F" remark="语种码 编号：JCBX040115 引用自JCBX040115 YZM 语种码 C 2 O GB/T4880.1 NULL NULL" />
+            <name="BC" exp="版次" type="nvarchar(30)" null="T" p="F" remark="版次 编号：JCBX040118 引用自JCBX040118 BC 版次 C 30 O NULL NULL NULL" />
+            <name="CSMC" exp="丛书名称" type="nvarchar(180)" null="T" p="F" remark="丛书名称 编号：JCBX040120 引用自JCBX040120 CSMC 丛书名称 C 180 O NULL 指系列丛书的名称 NULL" />
+            <name="CSBZ" exp="丛书编者" type="nvarchar(180)" null="T" p="F" remark="丛书编者 编号：JCBX040121 引用自JCBX040121 CSBZ 丛书编者 C 180 O NULL 指系列丛书的编者名称 NULL" />
+            <name="CBS" exp="出版社" type="nvarchar(180)" null="F" p="F" remark="出版社 编号：JCBX040122 引用自JCBX040122 CBS 出版社 C 180 O NULL 出版社名称，多个出版社可并列 NULL" />
+            <name="CBSJBM" exp="出版社级别码" type="nvarchar(1)" null="T" p="F" remark="出版社级别码 编号：JCBX040123 引用自JCBX040123 CBSJBM 出版社级别码 C 1 O JY/T1001CBSJB出版社级别代码 多个出版社以第一个出版社为准 NULL" />
+            <name="CBD" exp="出版地" type="nvarchar(60)" null="T" p="F" remark="出版地 编号：JCBX040124 引用自JCBX040124 CBD 出版地 C 60 O NULL NULL NULL" />
+            <name="CBRQ" exp="出版日期" type="nvarchar(8)" null="F" p="F" remark="出版日期 编号：JCBX040125 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FXDW" exp="发行单位" type="nvarchar(60)" null="T" p="F" remark="发行单位 编号：JCBX040126 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+</namespace>

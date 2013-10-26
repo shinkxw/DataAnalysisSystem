@@ -1,0 +1,45 @@
+ZXDY0101  德育课程数据子类表
+  SCHOOLID      学校名                  int            主键
+  DYKCMC        德育课程名称            nvarchar(60)   主键
+  JXSJ          教学时间                decimal(2, 0)  非主
+  ZZJS          专职教师数量            decimal(2, 0)  非主
+  JZJS          兼职教师数量            decimal(2, 0)  非主
+
+ZXDY0102  团队活动数据子类表
+  SCHOOLID      学校名                  int            主键
+  HDSJ          活动时间                nvarchar(8)    主键
+  HDZZLB        活动组织类别            nvarchar(60)   非主
+  HDJS          活动介绍                text           非主
+
+ZXDY0103  社团情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  STMC          社团名称                nvarchar(100)  主键
+  CLRQ          成立日期                nvarchar(8)    非主
+  STJJ          社团简介                text           非主
+
+ZXDY0201  严重不良行为学生数据子类表
+  SCHOOLID      学校名                  int            主键
+  XJH           学籍号                  nvarchar(30)   主键
+  YZBLXWLBM     严重不良行为类别码      nvarchar(1)    非主
+  TXRGH         填写人工号              nvarchar(20)   非主
+  TXRQ          填写日期                nvarchar(8)    非主
+
+ZXDY0202  学生欺侮数据子类表
+  SCHOOLID      学校名                  int            主键
+  CYQWRS        参与欺侮人数            decimal(2, 0)  主键
+  SQWRS         受欺侮人数              decimal(2, 0)  非主
+  FSRQ          发生日期                nvarchar(8)    非主
+  QKMS          情况描述                text           非主
+
+ZXDY0203  未成年学生犯罪数据子类表
+  SCHOOLID      学校名                  int            主键
+  XJH           学籍号                  nvarchar(30)   主键
+  FZRQ          犯罪日期                nvarchar(8)    非主
+  FZQKSM        犯罪情况描述            text           非主
+
+ZXDY0204  专兼职心理健康教师数据子类表
+  SCHOOLID      学校名                  int            主键
+  XLJKJSGH      心理健康教师工号        nvarchar(20)   主键
+  SFZZJS        是否专职教师            nvarchar(1)    非主
+  SFXLZY        是否心理专业            nvarchar(1)    非主
+

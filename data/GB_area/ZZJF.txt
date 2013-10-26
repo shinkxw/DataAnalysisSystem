@@ -1,0 +1,23 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZZJF" provider="reallocate_namespace" generation_time="">
+    <table name="ZZJF01" exp="学校办学经费拨入情况数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JFKMM" exp="经费科目码" type="nvarchar(1)" null="F" p="T" remark="经费科目码 编号：ZZJF010001 值空间：JY/T1001JFKM经费科目代码 " />
+            <name="JFLYM" exp="经费来源码" type="nvarchar(1)" null="F" p="F" remark="经费来源码 编号：ZZJF010002 值空间：JY/T1001JFLY经费来源代码 " />
+            <name="JFBRE" exp="经费拨入额" type="money" null="F" p="F" remark="经费拨入额 编号：ZZJF010003 解释/举例：单位：万元 " />
+            <name="BRRQ" exp="拨入日期" type="nvarchar(8)" null="F" p="F" remark="拨入日期 编号：ZZJF010004 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JFXDYTMS" exp="经费限定用途描述" type="text" null="T" p="F" remark="经费限定用途描述 编号：ZZJF010005 解释/举例：拨入的经费主要用途 " />
+            <name="JFBRJBR" exp="经费拨入经办人" type="nvarchar(36)" null="F" p="F" remark="经费拨入经办人 编号：ZZJF010006 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+        </field_area>
+    </table>
+    <table name="ZZJF02" exp="学校办学经费使用情况数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JFZCXM" exp="经费支出项目" type="nvarchar(100)" null="F" p="T" remark="经费支出项目 编号：ZZJF020001 解释/举例：学校或教育部门填写 " />
+            <name="JFZCE" exp="经费支出额" type="money" null="F" p="F" remark="经费支出额 编号：ZZJF020002 解释/举例：单位：万元 " />
+            <name="ZCRQ" exp="支出日期" type="nvarchar(8)" null="F" p="F" remark="支出日期 编号：ZZJF020003 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JFYTMS" exp="经费用途描述" type="text" null="T" p="F" remark="经费用途描述 编号：ZZJF020004 解释/举例：学校对此次经费的用途进行描述 " />
+        </field_area>
+    </table>
+</namespace>

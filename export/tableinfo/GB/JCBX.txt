@@ -1,0 +1,328 @@
+JCBX0101  补助性收入数据子类表
+  SCHOOLID      学校名                  int            主键
+  JYSYFBK       教育事业费拨款          money          非主
+  QTBK          其他拨款                money          非主
+  JYFFJ         教育费附加              money          非主
+  DFJYFFJ       地方教育费附加          money          非主
+  DFJJ          地方基金                money          非主
+  JBJSBK        基本建设拨款            money          非主
+
+JCBX0102  经营性收入数据子类表
+  SCHOOLID      学校名                  int            主键
+  XZFSR         学杂费收入              money          非主
+  JYSR          经营收入                money          非主
+  FSDWSJSR      附属单位上缴收入        money          非主
+
+JCBX0103  其他收入数据子类表
+  SCHOOLID      学校名                  int            主键
+  GATJHWJKSR    港澳台及海外捐款收入    money          非主
+  QTJKSR        其他捐款收入            money          非主
+  ZCCZSR        资产处置收入            money          非主
+  LHBXSR        联合办学（班）收入        money          非主
+  QTPXBKSR      其他培训拨款收入        money          非主
+
+JCBX0104  工资福利支出数据子类表
+  SCHOOLID      学校名                  int            主键
+  JBGZ          基本工资                money          非主
+  JTBT          津贴补贴                money          非主
+  JJJXGZ        奖金及绩效工资          money          非主
+  SHBZJF        社会保障缴费            money          非主
+  QTGZFLXZC     其他工资福利性支出      money          非主
+
+JCBX0105  对个人和家庭的补助性支出数据子类表
+  SCHOOLID      学校名                  int            主键
+  LTXF          离退休费                money          非主
+  YLF           医疗费                  money          非主
+  ZXJ           助学金                  money          非主
+  QTBZXZC       其他补助性支出          money          非主
+
+JCBX0106  商品和服务性支出数据子类表
+  SCHOOLID      学校名                  int            主键
+  BGF           办公费                  money          非主
+  SF            水费                    money          非主
+  DF            电费                    money          非主
+  YDF           邮电费                  money          非主
+  QNF           取暖费                  money          非主
+  CLF           差旅费                  money          非主
+  WXF           维修（护）费              money          非主
+  PXF           培训费                  money          非主
+  ZYCLF         专用材料费              money          非主
+  LWF           劳务费                  money          非主
+  FLF           福利费                  money          非主
+  QTSPHFWXFY    其他商品和服务性费用    money          非主
+
+JCBX0107  债务利息支出数据子类表
+  SCHOOLID      学校名                  int            主键
+  XGJYHJKFX     向国家银行借款付息      money          非主
+  QTGNJKFX      其他国内借款付息        money          非主
+  XGWZFJKFX     向国外政府借款付息      money          非主
+  XGJZZJKFX     向国际组织借款付息      money          非主
+  QTGWJKFX      其他国外借款付息        money          非主
+
+JCBX0108  其他资本性支出数据子类表
+  SCHOOLID      学校名                  int            主键
+  BGSBGZF       办公设备购置费          money          非主
+  ZYSBGZF       专用设备购置费          money          非主
+  JTGJGZF       交通工具购置费          money          非主
+  XXWLGJF       信息网络购建费          money          非主
+  FWJZGJF       房屋建筑物购建费        money          非主
+  DXXSF         大型修缮费              money          非主
+  JBJSZCF       基本建设支出费          money          非主
+
+JCBX0109  债务资金来源数据子类表
+  SCHOOLID      学校名                  int            主键
+  GWJRJGDK      国外金融机构贷款        money          非主
+  GNJRJGDK      国内金融机构贷款        money          非主
+  QSGDWGCK      欠施工单位工程款        money          非主
+  JGRK          借（欠）个人款            money          非主
+  JQTDWK        借（欠）其他单位款        money          非主
+  QQTLYK        欠其他来源款            money          非主
+
+JCBX0201  学校用地数据子类表
+  SCHOOLID      学校名                  int            主键
+  FWJZWGJHDXXSZW房屋建筑物购建和大型修缮债务money          非主
+  TDZYFZW       土地征用费债务          money          非主
+  SBGZZW        设备购置债务            money          非主
+  QTYTZW        其他用途债务            money          非主
+  YDBH          用地编号                nvarchar(2)    非主
+  TDCQM         土地产权码              nvarchar(1)    非主
+  TDSYZKM       土地使用状况码          nvarchar(1)    非主
+  XQH           校区号                  nvarchar(2)    非主
+  ZDYTM         占地用途码              nvarchar(2)    非主
+  ZDMJ          占地面积                decimal(8, 0)  非主
+  YDDZ          用地地址                text           非主
+  YDBZ          用地备注                text           非主
+  TDZH          土地证号                nvarchar(60)   非主
+
+JCBX0202  学校建筑物基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  JZWH          建筑物号                nvarchar(6)    主键
+  JZWMC         建筑物名称              nvarchar(30)   非主
+  FWCQM         房屋产权码              nvarchar(1)    非主
+  SYZKM         使用状况码              nvarchar(1)    非主
+  XQH           校区号                  nvarchar(2)    非主
+  JZWFLM        建筑物分类码            nvarchar(1)    非主
+  JZWJGM        建筑物结构码            nvarchar(1)    非主
+  JZWCS         建筑物层数              decimal(2, 0)  非主
+  JCNY          建成年月                nvarchar(6)    非主
+  JZWTZZE       建筑物投资总额          money          非主
+  JFLYM         经费来源码              nvarchar(1)    非主
+  ZJZMJ         总建筑面积              decimal(102, 0)非主
+  ZSYMJ         总使用面积              decimal(102, 0)非主
+  KZSFLDM       抗震设防烈度码          nvarchar(1)    非主
+  KZSFBZM       抗震设防标准码          nvarchar(1)    非主
+  JZWDZ         建筑物地址              nvarchar(180)  非主
+  JZWZKM        建筑物状况码            nvarchar(2)    非主
+  JZWTP         建筑物图片              nvarchar(200)  非主
+  JZWPMT        建筑物平面图            nvarchar(200)  非主
+  QSZH          权属证号                nvarchar(60)   非主
+  JZWZDMJ       建筑物占地面积          decimal(8, 0)  非主
+  SJSYNX        设计使用年限            decimal(3, 0)  非主
+
+JCBX0203  建筑物房间子类表
+  SCHOOLID      学校名                  int            主键
+  FJH           房间号                  nvarchar(12)   主键
+  FJMC          房间名称                nvarchar(30)   非主
+  FJYTM         房间用途码              nvarchar(2)    非主
+  FJLC          房间楼层                nvarchar(3)    非主
+  FJJZMJ        房间建筑面积            decimal(82, 0) 非主
+  FJSYMJ        房间使用面积            decimal(82, 0) 非主
+
+JCBX0204  建筑物修缮子类表
+  SCHOOLID      学校名                  int            主键
+  JZWH          建筑物号                nvarchar(6)    主键
+  FJH           房间号                  nvarchar(12)   非主
+  XSKSRQ        修缮开始日期            nvarchar(8)    非主
+  XSJSRQ        修缮结束日期            nvarchar(8)    非主
+  XSNR          修缮内容                text           非主
+  XSJF          修缮经费                money          非主
+  XSDW          修缮单位                nvarchar(60)   非主
+  JFLYM         经费来源码              nvarchar(1)    非主
+  JBRH          经办人号                nvarchar(20)   非主
+  XSSM          修缮说明                text           非主
+
+JCBX0205  学校设施数据子类表
+  SCHOOLID      学校名                  int            主键
+  SSH           设施号                  nvarchar(6)    非主
+  SSCQM         设施产权码              nvarchar(1)    非主
+  SSSYZKM       设施使用状况码          nvarchar(1)    非主
+  SSXXDWCCM     所属学校单位层次码      nvarchar(1)    非主
+  SSMC          设施名称                nvarchar(60)   非主
+  JSNY          建设年月                nvarchar(6)    非主
+  JSFY          建设费用                money          非主
+  XSNY          修缮年月                nvarchar(6)    非主
+  XSFY          修缮费用                money          非主
+  SYSFZC        使用是否正常            nvarchar(1)    非主
+
+JCBX0301  仪器设备基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  YQH           仪器号                  nvarchar(10)   主键
+  YQMC          仪器名称                nvarchar(60)   非主
+  YQYWMC        仪器英文名称            nvarchar(180)  非主
+  XXDWCCM       学校单位层次码          nvarchar(1)    非主
+  CQM           产权码                  nvarchar(1)    非主
+  SYZKM         使用状况码              nvarchar(1)    非主
+  FLM           分类码                  nvarchar(8)    非主
+  YQXH          仪器型号                nvarchar(40)   非主
+  CCRQ          出厂日期                nvarchar(8)    非主
+  SCGBDQM       生产国别/地区码         nvarchar(3)    非主
+  JFKMM         经费科目码              nvarchar(1)    非主
+  GZRQ          购置日期                nvarchar(8)    非主
+  SCCJ          生产厂家                nvarchar(180)  非主
+  CCH           出厂号                  nvarchar(30)   非主
+  DJH           单据号                  nvarchar(16)   非主
+  TP            图片                    nvarchar(200)  非主
+  YQDD          仪器地点                nvarchar(60)   非主
+  SBFZRH        设备负责人号            nvarchar(20)   非主
+  JSZB          技术指标                text           非主
+  YQPZ          仪器配置                text           非主
+  JGBZ          价格币种                nvarchar(3)    非主
+  YQJG          仪器价格                money          非主
+  YQSM          仪器说明                text           非主
+  CWZH          财务帐号                nvarchar(20)   非主
+  GHS           供货商                  nvarchar(60)   非主
+  BXJZRQ        保修截止日期            nvarchar(8)    非主
+  SBLY          设备来源                nvarchar(4)    非主
+  SFJMGZYQ      是否精密贵重仪器        nvarchar(1)    非主
+
+JCBX0302  仪器设备附件数据子类表
+  SCHOOLID      学校名                  int            主键
+  FJBH          附件编号                nvarchar(6)    主键
+  FJSL          附件数量                decimal(3, 0)  非主
+  FUJMC         附件名称                nvarchar(60)   非主
+  FJXHGG        附件型号规格            nvarchar(100)  非主
+  FJJG          附件价格                money          非主
+  FJYWMC        附件英文名称            nvarchar(180)  非主
+  RMBZJ         人民币总价              money          非主
+  CCRQ          出厂日期                nvarchar(8)    非主
+  SCGBDQM       生产国别/地区码         nvarchar(3)    非主
+  GZRQ          购置日期                nvarchar(8)    非主
+  SCCJ          生产厂家                nvarchar(180)  非主
+  CCH           出厂号                  nvarchar(30)   非主
+  GHS           供货商                  nvarchar(60)   非主
+
+JCBX0303  仪器设备管理数据子类表
+  SCHOOLID      学校名                  int            主键
+  XZM           现状码                  nvarchar(1)    主键
+  SYFXM         使用方向码              nvarchar(1)    非主
+  SYDWH         使用单位号              nvarchar(10)   非主
+  JSRH          经手人号                nvarchar(20)   非主
+  LYDW          领用单位                nvarchar(10)   非主
+  LYRH          领用人号                nvarchar(20)   非主
+  WHRS          维护人数                decimal(2, 0)  非主
+  SYRSS         使用人时数              decimal(8, 0)  非主
+  KSSYGS        开设实验个数            decimal(6, 0)  非主
+  KSSYSS        开设实验时数            decimal(8, 0)  非主
+  JXSS          教学时数                decimal(8, 0)  非主
+  KYSS          科研时数                decimal(8, 0)  非主
+  SHXMSS        社会项目时数            decimal(8, 0)  非主
+  BGRH          保管人号                nvarchar(20)   非主
+
+JCBX0304  仪器设备报损、报废数据子类表
+  SCHOOLID      学校名                  int            主键
+  BSBFRQ        报损报废日期            nvarchar(8)    主键
+  BSBFYY        报损报废原因            nvarchar(80)   非主
+  CLJG          处理结果                text           非主
+  JBRH          经办人号                nvarchar(20)   非主
+  SFSM          损废说明                text           非主
+
+JCBX0305  软件资源数据子类表
+  SCHOOLID      学校名                  int            主键
+  RJBH          软件编号                nvarchar(16)   主键
+  RJMC          软件名称                nvarchar(60)   非主
+  RJFLM         软件分类码              nvarchar(8)    非主
+  BBH           版本号                  nvarchar(40)   非主
+  JZLX          介质类型                nvarchar(20)   非主
+  JZSL          介质数量                decimal(3, 0)  非主
+  SQFW          授权范围                nvarchar(200)  非主
+  SCGBDQM       生产国别/地区码         nvarchar(3)    非主
+  JFKMM         经费科目码              nvarchar(1)    非主
+  GZRQ          购置日期                nvarchar(8)    非主
+  SCCJ          生产厂家                nvarchar(180)  非主
+  CCH           出厂号                  nvarchar(30)   非主
+  DJH           单据号                  nvarchar(16)   非主
+  DJ            单价                    money          非主
+  AZTSF         安装调试费              money          非主
+  PXJJSZCF      培训及技术支持费        money          非主
+
+JCBX0307  实验室基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  SYSH          实验室号                nvarchar(10)   主键
+  SYSMC         实验室名称              nvarchar(60)   非主
+  JLRQ          建立日期                nvarchar(8)    非主
+  JZMJ          建筑面积                decimal(82, 0) 非主
+  SYMJ          使用面积                decimal(82, 0) 非主
+  SYSWZ         实验室位置              nvarchar(60)   非主
+  FZRH          负责人号                nvarchar(20)   非主
+  SYSLBM        实验室类别码            nvarchar(1)    非主
+  SYSDH         实验室电话              nvarchar(30)   非主
+  SYSJS         实验室介绍              text           非主
+
+JCBX0308  实验项目数据子类表
+  SCHOOLID      学校名                  int            主键
+  SYXH          实验序号                nvarchar(15)   非主
+  SYMC          实验名称                nvarchar(60)   非主
+  LSKCH         隶属课程号              nvarchar(10)   非主
+  SYLBM         实验类别码              nvarchar(1)    非主
+  ZYFLM         专业分类码              nvarchar(6)    非主
+  SYYQM         实验要求码              nvarchar(1)    非主
+  SYZLBM        实验者类别码            nvarchar(1)    非主
+  SYZRS         实验者人数              decimal(4, 0)  非主
+  MZRS          每组人数                decimal(3, 0)  非主
+  SYSS          实验时数                decimal(3, 0)  非主
+  HJJBM         获奖级别码              nvarchar(2)    非主
+  DKJSH         带课教师号              nvarchar(20)   非主
+  SYDD          实验地点                nvarchar(60)   非主
+
+JCBX0401  图书基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  TSBH          图书编号                nvarchar(10)   主键
+  TSTXM         图书条形码              nvarchar(14)   非主
+  ZBT           正标题                  nvarchar(180)  非主
+  BLBT          并列标题                nvarchar(180)  非主
+  FBT           副标题                  nvarchar(180)  非主
+  JSGJZ         检索关键字              nvarchar(60)   非主
+  TSCBH         图书出版号              nvarchar(30)   非主
+  DYZZ          第一作者                nvarchar(30)   非主
+  QTZZ          其他作者                nvarchar(90)   非主
+  JG            价格                    money          非主
+  WXLXM         文献类型码              nvarchar(2)    非主
+  ZDM           装订码                  nvarchar(1)    非主
+  FLH           分类号                  nvarchar(20)   非主
+  ZGYZM         中国语种码              nvarchar(3)    非主
+  YZM           语种码                  nvarchar(2)    非主
+  KB            开本                    nvarchar(30)   非主
+  YS            页数                    decimal(6, 0)  非主
+  BC            版次                    nvarchar(30)   非主
+  TSFJMC        图书附件名称            nvarchar(180)  非主
+  CSMC          丛书名称                nvarchar(180)  非主
+  CSBZ          丛书编者                nvarchar(180)  非主
+  CBS           出版社                  nvarchar(180)  非主
+  CBSJBM        出版社级别码            nvarchar(1)    非主
+  CBD           出版地                  nvarchar(60)   非主
+  CBRQ          出版日期                nvarchar(8)    非主
+  FXDW          发行单位                nvarchar(60)   非主
+  BZ            备注                    text           非主
+  TSZTM         图书状态码              nvarchar(1)    非主
+
+JCBX0402  期刊基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  QKBH          期刊编号                nvarchar(10)   主键
+  QKTXM         期刊条形码              nvarchar(14)   非主
+  QKZWMC        期刊中文名称            nvarchar(60)   非主
+  QKYWMC        期刊英文名称            nvarchar(180)  非主
+  QKCBH         期刊出版号              nvarchar(30)   非主
+  BJB           编辑部                  nvarchar(60)   非主
+  ZB            主编                    nvarchar(36)   非主
+  MQDJ          每期单价                money          非主
+  CKNY          创刊年月                nvarchar(6)    非主
+  NH            年号                    nvarchar(4)    非主
+  JH            卷号                    nvarchar(10)   非主
+  QH            期号                    nvarchar(10)   非主
+  ZQH           总期号                  nvarchar(10)   非主
+  FLH           分类号                  nvarchar(20)   非主
+  ZGYZM         中国语种码              nvarchar(3)    非主
+  YZM           语种码                  nvarchar(2)    非主
+  QKLBM         期刊类别码              nvarchar(5)    非主
+  QKZTM         期刊状态码              nvarchar(1)    非主
+

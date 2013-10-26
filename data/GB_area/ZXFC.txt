@@ -1,0 +1,246 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZXFC" provider="reallocate_namespace" generation_time="">
+    <table name="ZXFC01" exp="学校用地数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="YDBH" exp="用地编号" type="nvarchar(2)" null="F" p="T" remark="用地编号 编号：JCBX020101 引用自JCBX020101 YDBH 用地编号 C 2 M NULL 学校自编 NULL" />
+            <name="TDCQM" exp="土地产权码" type="nvarchar(1)" null="F" p="F" remark="土地产权码 编号：JCBX020102 引用自JCBX020102 TDCQM 土地产权码 C 1 M JY/T1001CQ产权代码 NULL NULL" />
+            <name="XQH" exp="校区号" type="money" null="T" p="F" remark="校区号 编号：JCBX010201 引用自JCBX010201 XZFSR 学杂费收入 M NULL O NULL 单位：元 NULL" />
+            <name="TDSYZKM" exp="土地使用状况码" type="nvarchar(1)" null="F" p="F" remark="土地使用状况码 编号：JCBX020103 引用自JCBX020103 TDSYZKM 土地使用状况码 C 1 M JY/T1001SYZK使用状况代码 NULL NULL" />
+            <name="ZDYTM" exp="占地用途码" type="nvarchar(2)" null="F" p="F" remark="占地用途码 编号：JCBX020104 引用自JCBX020104 ZDYTM 占地用途码 C 2 M JY/T1001ZDYT占地用途代码 NULL NULL" />
+            <name="ZDMJ" exp="占地面积" type="decimal(8, 0)" null="F" p="F" remark="占地面积 编号：JCBX020105 引用自JCBX020105 ZDMJ 占地面积 N 8 M NULL 单位：平方米 NULL" />
+            <name="YDDZ" exp="用地地址" type="text" null="T" p="F" remark="用地地址 编号：JCBX020106 引用自JCBX020106 YDDZ 用地地址 T NULL O NULL 对用地地址等的说明 NULL" />
+            <name="YDBZ" exp="用地备注" type="nvarchar(60)" null="T" p="F" remark="用地备注 编号：JCBX020107 引用自JCBX020107 TDZH 土地证号 C 60 O NULL NULL NULL" />
+            <name="XXDWCCM" exp="学校单位层次码" type="nvarchar(1)" null="T" p="F" remark="学校单位层次码 编号：ZXFC010001 值空间：JY/T1001XXDWCC学校单位层次代码 " />
+            <name="FWYDZMJ" exp="房屋用地总面积" type="decimal(8, 0)" null="F" p="F" remark="房屋用地总面积 编号：ZXFC010002 解释/举例：单位：平方米 " />
+            <name="TYCDMJ" exp="体育场地面积" type="decimal(8, 0)" null="F" p="F" remark="体育场地面积 编号：ZXFC010003 解释/举例：单位：平方米 " />
+            <name="LHYDMJ" exp="绿化用地面积" type="decimal(8, 0)" null="F" p="F" remark="绿化用地面积 编号：ZXFC010004 解释/举例：单位：平方米 " />
+            <name="NLYDMJ" exp="农、林场用地面积" type="decimal(8, 0)" null="F" p="F" remark="农、林场用地面积 编号：ZXFC010005 解释/举例：单位：平方米 " />
+            <name="QTYDMJ" exp="其他用地面积" type="decimal(8, 0)" null="F" p="F" remark="其他用地面积 编号：ZXFC010006 解释/举例：单位：平方米 " />
+        </field_area>
+    </table>
+    <table name="ZXFC0201" exp="建筑物基本数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JZWH" exp="建筑物号" type="nvarchar(6)" null="F" p="T" remark="建筑物号 编号：JCBX020201 解释/举例：学校自编的建筑物编号 引用自JCBX020201 JZWH 建筑物号 C 6 M NULL 学校自编 NULL" />
+            <name="JZWMC" exp="建筑物名称" type="nvarchar(30)" null="F" p="F" remark="建筑物名称 编号：JCBX020202 解释/举例：指建筑物的汉字名称 引用自JCBX020202 JZWMC 建筑物名称 C 30 M NULL 指建筑物的汉字名称 NULL" />
+            <name="FWCQ" exp="房屋产权" type="nvarchar(1)" null="F" p="F" remark="房屋产权 编号：JCBX020203 值空间：JY/T1001CQ产权代码 引用自JCBX020203 FWCQM 房屋产权码 C 1 M JY/T1001CQ产权代码 NULL NULL" />
+            <name="SYZKM" exp="使用状况码" type="nvarchar(1)" null="F" p="F" remark="使用状况码 编号：JCBX020204 值空间：JY/T1001SYZK使用状况代码 引用自JCBX020204 SYZKM 使用状况码 C 1 M JY/T1001SYZK使用状况代码 NULL NULL" />
+            <name="XQH" exp="校区号" type="nvarchar(2)" null="T" p="F" remark="校区号 编号：JCXX010201 引用自JCXX010201 XQH 校区号 C 2 M NULL 学校自编 NULL" />
+            <name="JZWFLM" exp="建筑物分类码" type="nvarchar(1)" null="F" p="F" remark="建筑物分类码 编号：JCBX020205 值空间：JY/T1001JZWFL建筑物分类代码 引用自JCBX020205 JZWFLM 建筑物分类码 C 1 M JY/T1001JZWFL建筑物分类代码 NULL NULL" />
+            <name="JZWJGM" exp="建筑物结构码" type="nvarchar(1)" null="F" p="F" remark="建筑物结构码 编号：JCBX020206 值空间：JY/T1001JZWJG建筑物结构代码 引用自JCBX020206 JZWJGM 建筑物结构码 C 1 O JY/T1001JZWJG建筑物结构代码 NULL NULL" />
+            <name="JZWCS" exp="建筑物层数" type="decimal(2, 0)" null="T" p="F" remark="建筑物层数 编号：JCBX020207 解释/举例：含地下室，单位：层 引用自JCBX020207 JZWCS 建筑物层数 N 2 O NULL 含地下室，单位：层 NULL" />
+            <name="JCNY" exp="建成年月" type="nvarchar(6)" null="T" p="F" remark="建成年月 编号：JCBX020208 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="JZWTZZE" exp="建筑物投资总额" type="money" null="F" p="F" remark="建筑物投资总额 编号：JCBX020209 引用自JCBX020209 JZWTZZE 建筑物投资总额 M NULL M NULL 单位：元 NULL" />
+            <name="JFLYM" exp="经费来源码" type="nvarchar(1)" null="F" p="F" remark="经费来源码 编号：JCBX020210 值空间：JY/T1001JFLY经费来源代码 引用自JCBX020210 JFLYM 经费来源码 C 1 M JY/T1001JFLY经费来源代码 NULL NULL" />
+            <name="ZJZMJ" exp="总建筑面积" type="decimal(102, 0)" null="F" p="F" remark="总建筑面积 编号：JCBX020211 解释/举例：单位：平方米 引用自JCBX020211 ZJZMJ 总建筑面积 N 102 M NULL 单位：平方米 NULL" />
+            <name="ZSYMJ" exp="总使用面积" type="decimal(102, 0)" null="T" p="F" remark="总使用面积 编号：JCBX020212 解释/举例：单位：平方米 引用自JCBX020212 ZSYMJ 总使用面积 N 102 O NULL 单位：平方米 NULL" />
+            <name="KZSFLDM" exp="抗震设防烈度码" type="nvarchar(1)" null="F" p="F" remark="抗震设防烈度码 编号：JCBX020213 值空间：JY/T1001KZSFLD抗震设防烈度代码 引用自JCBX020213 KZSFLDM 抗震设防烈度码 C 1 M JY/T1001KZSFLD抗震设防烈度代码 NULL NULL" />
+            <name="KZSFBZM" exp="抗震设防标准码" type="nvarchar(1)" null="F" p="F" remark="抗震设防标准码 编号：JCBX020214 值空间：JY/T1001KZSFBZ抗震设防标准代码 引用自JCBX020214 KZSFBZM 抗震设防标准码 C 1 M JY/T1001KZSFBZ抗震设防标准代码 NULL NULL" />
+            <name="JZWDZ" exp="建筑物地址" type="nvarchar(180)" null="T" p="F" remark="建筑物地址 编号：JCBX020215 解释/举例：指建筑物的详细地址 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
+            <name="JZWZKM" exp="建筑物状况码" type="nvarchar(2)" null="F" p="F" remark="建筑物状况码 编号：JCBX020216 值空间：JY/T1001JZWZK建筑物状况代码 引用自JCBX020216 JZWZKM 建筑物状况码 C 2 M JY/T1001JZWZK建筑物状况代码 NULL NULL" />
+            <name="JZWTP" exp="建筑物图片" type="nvarchar(200)" null="T" p="F" remark="建筑物图片 编号：JCBX020217 解释/举例：指建筑物的照片 引用自JCBX020217 JZWTP 建筑物图片 B NULL O NULL 指建筑物的照片 NULL" />
+            <name="JZWPMT" exp="建筑物平面图" type="nvarchar(200)" null="T" p="F" remark="建筑物平面图 编号：JCBX020218 解释/举例：指建筑物的建筑平面图 引用自JCBX020218 JZWPMT 建筑物平面图 B NULL O NULL 指建筑物的建筑平面图 NULL" />
+            <name="QSZH" exp="权属证号" type="nvarchar(60)" null="T" p="F" remark="权属证号 编号：JCBX020219 引用自JCBX020219 QSZH 权属证号 C 60 O NULL NULL NULL" />
+            <name="JZWZDMJ" exp="建筑物占地面积" type="decimal(8, 0)" null="T" p="F" remark="建筑物占地面积 编号：JCBX020220 解释/举例：单位：平方米 引用自JCBX020220 JZWZDMJ 建筑物占地面积 N 8 O NULL 单位：平方米 NULL" />
+            <name="XXDWCCM" exp="学校单位层次码" type="nvarchar(1)" null="T" p="F" remark="学校单位层次码 编号：ZXFC020101 值空间：JY/T1001XXDWCC学校单位层次代码 " />
+            <name="JZWWZZK" exp="建筑物位置状况" type="nvarchar(1)" null="F" p="F" remark="建筑物位置状况 编号：ZXFC020102 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1校内0校外 " />
+            <name="GHSPWH" exp="规划审批文号" type="nvarchar(24)" null="T" p="F" remark="规划审批文号 编号：ZXFC020103 " />
+            <name="ZHFZNL" exp="综合防灾能力" type="nvarchar(60)" null="T" p="F" remark="综合防灾能力 编号：ZXFC020104 " />
+            <name="GHSYNX" exp="规划使用年限" type="decimal(3, 0)" null="T" p="F" remark="规划使用年限 编号：ZXFC020105 " />
+            <name="SFYYJBXCS" exp="是否有预警避险措施" type="nvarchar(1)" null="T" p="F" remark="是否有预警避险措施 编号：ZXFC020106 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SFYYJBNCS" exp="是否可用于应急避难场所" type="nvarchar(1)" null="T" p="F" remark="是否可用于应急避难场所 编号：ZXFC020107 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="CQZH" exp="产权证号" type="nvarchar(20)" null="T" p="F" remark="产权证号 编号：ZXFC020108 " />
+            <name="JZWYTM" exp="建筑物用途码" type="nvarchar(2)" null="F" p="F" remark="建筑物用途码 编号：ZXFC020109 值空间：JY/T1001JZWYT建筑物用途代码 " />
+            <name="JZWZGD" exp="建筑物总高度" type="decimal(3, 0)" null="T" p="F" remark="建筑物总高度 编号：ZXFC020110 解释/举例：单位：米 " />
+            <name="WFJDBM" exp="危房鉴定部门" type="nvarchar(60)" null="T" p="F" remark="危房鉴定部门 编号：ZXFC020111 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="WFJDWH" exp="危房鉴定文号" type="nvarchar(20)" null="T" p="F" remark="危房鉴定文号 编号：ZXFC020112 " />
+            <name="WFJDRQ" exp="危房鉴定日期" type="nvarchar(8)" null="T" p="F" remark="危房鉴定日期 编号：ZXFC020113 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="GNFSM" exp="供暖方式码" type="nvarchar(1)" null="T" p="F" remark="供暖方式码 编号：ZXFC020114 值空间：JY/T1001GNFS供暖方式代码 " />
+            <name="JZWJCXSM" exp="建筑物基础形式码" type="nvarchar(1)" null="T" p="F" remark="建筑物基础形式码 编号：ZXFC020115 值空间：JY/T1001JZWJCXS建筑物基础形式代码 " />
+            <name="JZWPMXSM" exp="建筑物平面形式码" type="nvarchar(1)" null="T" p="F" remark="建筑物平面形式码 编号：ZXFC020116 值空间：JY/T1001JZWPMXS建筑物平面形式代码 " />
+            <name="JZWLBXSM" exp="建筑物楼板形式码" type="nvarchar(1)" null="T" p="F" remark="建筑物楼板形式码 编号：ZXFC020117 值空间：JY/T1001JZWLBXS建筑物楼板形式代码 " />
+            <name="GZZ" exp="构造柱" type="nvarchar(1)" null="T" p="F" remark="构造柱 编号：ZXFC020118 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="QL" exp="圈梁" type="nvarchar(1)" null="T" p="F" remark="圈梁 编号：ZXFC020119 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="ZJAQGZWCRQ" exp="最近安全改造完成日期" type="nvarchar(8)" null="T" p="F" remark="最近安全改造完成日期 编号：ZXFC020120 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="ZJAQGZHYJSYNX" exp="最近安全改造后预计使用年限" type="decimal(2, 0)" null="T" p="F" remark="最近安全改造后预计使用年限 编号：ZXFC020121 解释/举例：单位：年 " />
+            <name="ZXLXM" exp="专项类型" type="nvarchar(1)" null="T" p="F" remark="专项类型 编号：ZXFC020122 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1中央专项项目0非中央专项项目 " />
+            <name="ZYZXTZBZMCM" exp="中央专项投资补助名称码" type="nvarchar(1)" null="T" p="F" remark="中央专项投资补助名称码 编号：ZXFC020123 值空间：JY/T1001ZYZXTZBZMC中央专项投资补助名称代码 " />
+            <name="WWJZDJM" exp="文物建筑等码" type="nvarchar(1)" null="T" p="F" remark="文物建筑等码 编号：ZXFC020124 值空间：JY/T1001WWJZDJ文物建筑等级代码 " />
+            <name="JXJFZYF" exp="教学及辅助用房" type="decimal(8, 0)" null="F" p="F" remark="教学及辅助用房 编号：ZXFC020125 解释/举例：该数据项为教室、实验室、图书室、微机室、语音室、体育活动室及其他教辅用房的总和，单位：平方米 " />
+            <name="QZJS" exp="其中教室" type="decimal(8, 0)" null="F" p="F" remark="其中教室 编号：ZXFC020126 解释/举例：单位：平方米 " />
+            <name="QZSYS" exp="其中实验室" type="decimal(8, 0)" null="F" p="F" remark="其中实验室 编号：ZXFC020127 解释/举例：单位：平方米 " />
+            <name="QZTSS" exp="其中图书室" type="decimal(8, 0)" null="F" p="F" remark="其中图书室 编号：ZXFC020128 解释/举例：单位：平方米 " />
+            <name="QZWJS" exp="其中微机室" type="decimal(8, 0)" null="F" p="F" remark="其中微机室 编号：ZXFC020129 解释/举例：单位：平方米 " />
+            <name="QZYYS" exp="其中语音室" type="decimal(8, 0)" null="F" p="F" remark="其中语音室 编号：ZXFC020130 解释/举例：单位：平方米 " />
+            <name="QZTYHDS" exp="其中体育活动室" type="decimal(8, 0)" null="F" p="F" remark="其中体育活动室 编号：ZXFC020131 解释/举例：单位：平方米 " />
+            <name="QZQTJFYF" exp="其中其他教辅用房" type="decimal(8, 0)" null="F" p="F" remark="其中其他教辅用房 编号：ZXFC020132 解释/举例：单位：平方米 " />
+            <name="SHYF" exp="生活用房" type="decimal(8, 0)" null="F" p="F" remark="生活用房 编号：ZXFC020133 解释/举例：该数据项为学生宿舍、食堂、厕所、锅炉房（开水房）、浴室、教工宿舍及其他生活用房的总和，单位：平方米 " />
+            <name="QZXSSS" exp="其中学生宿舍" type="decimal(8, 0)" null="F" p="F" remark="其中学生宿舍 编号：ZXFC020134 解释/举例：单位：平方米 " />
+            <name="QZST" exp="其中食堂" type="decimal(8, 0)" null="F" p="F" remark="其中食堂 编号：ZXFC020135 解释/举例：单位：平方米 " />
+            <name="QZCS" exp="其中厕所" type="decimal(8, 0)" null="F" p="F" remark="其中厕所 编号：ZXFC020136 解释/举例：单位：平方米 " />
+            <name="QZGLF" exp="其中锅炉房(开水房)" type="decimal(8, 0)" null="F" p="F" remark="其中锅炉房(开水房) 编号：ZXFC020137 解释/举例：单位：平方米 " />
+            <name="QZYS" exp="其中浴室" type="decimal(8, 0)" null="F" p="F" remark="其中浴室 编号：ZXFC020138 解释/举例：单位：平方米 " />
+            <name="QZJGSS" exp="其中教工宿舍" type="decimal(8, 0)" null="F" p="F" remark="其中教工宿舍 编号：ZXFC020139 解释/举例：单位：平方米 " />
+            <name="QZQTSHYF" exp="其中其他生活用房" type="decimal(8, 0)" null="F" p="F" remark="其中其他生活用房 编号：ZXFC020140 解释/举例：单位：平方米 " />
+            <name="XZBGYF" exp="行政办公用房" type="decimal(8, 0)" null="F" p="F" remark="行政办公用房 编号：ZXFC020141 解释/举例：该数据项为教师办公室、卫生保健室及其他行政办公用房的总和，单位：平方米 " />
+            <name="QZJSBGS" exp="其中教师办公室" type="decimal(8, 0)" null="F" p="F" remark="其中教师办公室 编号：ZXFC020142 解释/举例：单位：平方米 " />
+            <name="QZWSBJS" exp="其中卫生保健室" type="decimal(8, 0)" null="F" p="F" remark="其中卫生保健室 编号：ZXFC020143 解释/举例：单位：平方米 " />
+            <name="QZQTXZBGYF" exp="其中其他行政办公用房" type="decimal(8, 0)" null="F" p="F" remark="其中其他行政办公用房 编号：ZXFC020144 解释/举例：单位：平方米 " />
+            <name="QTYF" exp="其他用房" type="decimal(8, 0)" null="F" p="F" remark="其他用房 编号：ZXFC020145 解释/举例：非教学及辅助用房、生活用房、行政办公用房的用房总和，单位：平方米 " />
+        </field_area>
+    </table>
+    <table name="ZXFC0202" exp="建筑物档案数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="TZJHSPDW" exp="投资计划审批单位" type="nvarchar(60)" null="T" p="F" remark="投资计划审批单位 编号：ZXFC020201 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="TZJHSPWH" exp="投资计划审批文号" type="nvarchar(30)" null="T" p="F" remark="投资计划审批文号 编号：ZXFC020202 " />
+            <name="LXPFDW" exp="立项批复单位" type="nvarchar(60)" null="T" p="F" remark="立项批复单位 编号：ZXFC020203 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="LXPFWH" exp="立项批复文号" type="nvarchar(30)" null="T" p="F" remark="立项批复文号 编号：ZXFC020204 " />
+            <name="KXXYJBGPFDW" exp="可行性研究报告批复单位" type="nvarchar(60)" null="T" p="F" remark="可行性研究报告批复单位 编号：ZXFC020205 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="KXXYJBGPFWH" exp="可行性研究报告批复文号" type="nvarchar(30)" null="T" p="F" remark="可行性研究报告批复文号 编号：ZXFC020206 " />
+            <name="GHXKZH" exp="规划(建设)许可证号" type="nvarchar(30)" null="T" p="F" remark="规划(建设)许可证号 编号：ZXFC020207 " />
+            <name="JSDW" exp="建设单位" type="nvarchar(60)" null="T" p="F" remark="建设单位 编号：ZXFC020208 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="JSDWFZR" exp="建设单位负责人" type="nvarchar(36)" null="T" p="F" remark="建设单位负责人 编号：ZXFC020209 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="DKDWMC" exp="地勘单位名称" type="nvarchar(60)" null="T" p="F" remark="地勘单位名称 编号：ZXFC020210 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="DKDWFRDB" exp="地勘单位法人代表" type="nvarchar(36)" null="T" p="F" remark="地勘单位法人代表 编号：ZXFC020211 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="DKDWZZM" exp="地勘单位资质码" type="nvarchar(1)" null="T" p="F" remark="地勘单位资质码 编号：ZXFC020212 值空间：JY/T1001DKDWZZ地勘单位资质代码 " />
+            <name="DKDWKCHTH" exp="地勘单位勘察合同号" type="nvarchar(30)" null="T" p="F" remark="地勘单位勘察合同号 编号：ZXFC020213 " />
+            <name="SHEJDWMC" exp="设计单位名称" type="nvarchar(60)" null="T" p="F" remark="设计单位名称 编号：ZXFC020214 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SHEJDWFRDB" exp="设计单位法人代表" type="nvarchar(36)" null="T" p="F" remark="设计单位法人代表 编号：ZXFC020215 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="SJDWZZM" exp="设计单位资质码" type="nvarchar(1)" null="T" p="F" remark="设计单位资质码 编号：ZXFC020216 值空间：JY/T1001SJDWZZ设计单位资质代码 " />
+            <name="SJDWTZSJHTH" exp="设计单位图纸设计合同号" type="nvarchar(30)" null="T" p="F" remark="设计单位图纸设计合同号 编号：ZXFC020217 " />
+            <name="SGTZSCDWMC" exp="施工图纸审查单位名称" type="nvarchar(60)" null="T" p="F" remark="施工图纸审查单位名称 编号：ZXFC020218 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SGTZSCDWFRDB" exp="施工图纸审查单位法人代表" type="nvarchar(36)" null="T" p="F" remark="施工图纸审查单位法人代表 编号：ZXFC020219 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="SGTZSCZZM" exp="施工图纸审查资质码" type="nvarchar(1)" null="T" p="F" remark="施工图纸审查资质码 编号：ZXFC020220 值空间：JY/T1001SGTZSCZZ施工图纸审查资质代码 " />
+            <name="SGTZSCHTH" exp="施工图纸审查合同号" type="nvarchar(30)" null="T" p="F" remark="施工图纸审查合同号 编号：ZXFC020221 " />
+            <name="ZTBXSM" exp="招投标形式码" type="nvarchar(1)" null="T" p="F" remark="招投标形式码 编号：ZXFC020222 值空间：JY/T1001ZTBXS招投标形式代码 " />
+            <name="GCJLDWMC" exp="工程监理单位名称" type="nvarchar(60)" null="T" p="F" remark="工程监理单位名称 编号：ZXFC020223 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="GCJLDWFRDB" exp="工程监理单位法人代表" type="nvarchar(36)" null="T" p="F" remark="工程监理单位法人代表 编号：ZXFC020224 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="JLDWZZM" exp="监理单位资质码" type="nvarchar(1)" null="T" p="F" remark="监理单位资质码 编号：ZXFC020225 值空间：JY/T1001JLDWZZ监理单位资质代码 " />
+            <name="GCJLDWJLHTH" exp="工程监理单位监理合同号" type="nvarchar(30)" null="T" p="F" remark="工程监理单位监理合同号 编号：ZXFC020226 " />
+            <name="SGDWMC" exp="施工单位名称" type="nvarchar(60)" null="T" p="F" remark="施工单位名称 编号：ZXFC020227 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SGDWFRDB" exp="施工单位法人代表" type="nvarchar(36)" null="T" p="F" remark="施工单位法人代表 编号：ZXFC020228 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="SGDWZZDJM" exp="施工单位资质等级码" type="nvarchar(1)" null="T" p="F" remark="施工单位资质等级码 编号：ZXFC020229 值空间：JY/T1001SGDWZZDJ施工单位资质等级代码 " />
+            <name="SGDWSGHTH" exp="施工单位施工合同号" type="nvarchar(30)" null="T" p="F" remark="施工单位施工合同号 编号：ZXFC020230 " />
+            <name="ZJDWMC" exp="质监单位名称" type="nvarchar(60)" null="T" p="F" remark="质监单位名称 编号：ZXFC020231 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="ZJDWFRDB" exp="质监单位法人代表" type="nvarchar(36)" null="T" p="F" remark="质监单位法人代表 编号：ZXFC020232 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="SGXKZH" exp="施工许可证号" type="nvarchar(30)" null="T" p="F" remark="施工许可证号 编号：ZXFC020233 " />
+            <name="JGYSJG" exp="竣工验收结果" type="nvarchar(1)" null="T" p="F" remark="竣工验收结果 编号：ZXFC020234 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1验收通过0验收不通过 " />
+            <name="JGYSBAH" exp="竣工验收备案号" type="nvarchar(30)" null="T" p="F" remark="竣工验收备案号 编号：ZXFC020235 " />
+            <name="SHENJDWMC" exp="审计单位名称" type="nvarchar(60)" null="T" p="F" remark="审计单位名称 编号：ZXFC020236 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SHENJDWFRDB" exp="审计单位法人代表" type="nvarchar(36)" null="T" p="F" remark="审计单位法人代表 编号：ZXFC020237 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="SJDWZZ" exp="审计单位资质" type="nvarchar(50)" null="T" p="F" remark="审计单位资质 编号：ZXFC020238 " />
+            <name="SJDWSJBGH" exp="审计单位审计报告号" type="nvarchar(36)" null="T" p="F" remark="审计单位审计报告号 编号：ZXFC020239 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="SJJSGJSZLSFWZCD" exp="设计及施工技术资料是否完整存档" type="nvarchar(1)" null="T" p="F" remark="设计及施工技术资料是否完整存档 编号：ZXFC020240 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1完整0不完整 " />
+            <name="BZ" exp="备注" type="text" null="T" p="F" remark="备注 编号：ZXFC020241 " />
+        </field_area>
+    </table>
+    <table name="ZXFC0301" exp="建筑物安全排查数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="PCRQ" exp="排查日期" type="nvarchar(8)" null="F" p="T" remark="排查日期 编号：ZXFC030101 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KCZLSFWZ" exp="勘察资料是否完整" type="nvarchar(1)" null="T" p="F" remark="勘察资料是否完整 编号：ZXFC030102 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1完整0不完整 " />
+            <name="SJWJSFWZ" exp="设计文件是否完整" type="nvarchar(1)" null="T" p="F" remark="设计文件是否完整 编号：ZXFC030103 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1完整0不完整 " />
+            <name="SGZLSFWZ" exp="施工资料是否完整" type="nvarchar(1)" null="T" p="F" remark="施工资料是否完整 编号：ZXFC030104 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1完整0不完整 " />
+            <name="JCWJSFWZ" exp="检查文件是否完整" type="nvarchar(1)" null="T" p="F" remark="检查文件是否完整 编号：ZXFC030105 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1完整0不完整 " />
+            <name="JGZLSFWZ" exp="竣工资料是否完整" type="nvarchar(1)" null="T" p="F" remark="竣工资料是否完整 编号：ZXFC030106 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1完整0不完整 " />
+            <name="XFNHDJM" exp="消防耐火等级码" type="nvarchar(1)" null="T" p="F" remark="消防耐火等级码 编号：ZXFC030107 值空间：JY/T1001XFNHDJ消防耐火等级代码 " />
+            <name="XFNHDJSFFHGFYQ" exp="消防耐火等级是否符合规范要求" type="nvarchar(1)" null="T" p="F" remark="消防耐火等级是否符合规范要求 编号：ZXFC030108 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1符合0不符合 " />
+            <name="XFPTSSSFWHYX" exp="消防配套设施是否完好有效" type="nvarchar(1)" null="T" p="F" remark="消防配套设施是否完好有效 编号：ZXFC030109 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1是0否 " />
+            <name="XFAQSSSFFHGFYQ" exp="消防安全疏散是否符合规范要求" type="nvarchar(1)" null="T" p="F" remark="消防安全疏散是否符合规范要求 编号：ZXFC030110 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1符合0不符合 " />
+            <name="SFYDZWX" exp="是否有地震威胁" type="nvarchar(1)" null="T" p="F" remark="是否有地震威胁 编号：ZXFC030111 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="DZWXFZBZ" exp="地震威胁防灾标准" type="nvarchar(200)" null="T" p="F" remark="地震威胁防灾标准 编号：ZXFC030112 " />
+            <name="DZLSSZQK" exp="地震历史受灾情况" type="nvarchar(200)" null="T" p="F" remark="地震历史受灾情况 编号：ZXFC030113 " />
+            <name="SFYHSWX" exp="是否有洪水威胁" type="nvarchar(1)" null="T" p="F" remark="是否有洪水威胁 编号：ZXFC030114 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="HSWXFZBZ" exp="洪水威胁防灾标准" type="nvarchar(200)" null="T" p="F" remark="洪水威胁防灾标准 编号：ZXFC030115 " />
+            <name="HSLSSZQK" exp="洪水历史受灾情况" type="nvarchar(200)" null="T" p="F" remark="洪水历史受灾情况 编号：ZXFC030116 " />
+            <name="SFYTFWX" exp="是否有台风威胁" type="nvarchar(1)" null="T" p="F" remark="是否有台风威胁 编号：ZXFC030117 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="TFWXFZBZ" exp="台风威胁防灾标准" type="nvarchar(200)" null="T" p="F" remark="台风威胁防灾标准 编号：ZXFC030118 " />
+            <name="TFLSSZQK" exp="台风历史受灾情况" type="nvarchar(200)" null="T" p="F" remark="台风历史受灾情况 编号：ZXFC030119 " />
+            <name="SFYLJWX" exp="是否有雷击威胁" type="nvarchar(1)" null="T" p="F" remark="是否有雷击威胁 编号：ZXFC030120 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="LJWXFYBZ" exp="雷击威胁防御标准" type="nvarchar(200)" null="T" p="F" remark="雷击威胁防御标准 编号：ZXFC030121 " />
+            <name="LJLSSZQK" exp="雷击历史受灾情况" type="nvarchar(200)" null="T" p="F" remark="雷击历史受灾情况 编号：ZXFC030122 " />
+            <name="SFYKBHCWX" exp="是否有库坝湖池威胁" type="nvarchar(1)" null="T" p="F" remark="是否有库坝湖池威胁 编号：ZXFC030123 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="KBHCWXFZBZ" exp="库坝湖池威胁防灾标准" type="nvarchar(200)" null="T" p="F" remark="库坝湖池威胁防灾标准 编号：ZXFC030124 " />
+            <name="KBHCLSSZQK" exp="库坝湖池历史受灾情况" type="nvarchar(200)" null="T" p="F" remark="库坝湖池历史受灾情况 编号：ZXFC030125 " />
+            <name="SFYQTYDAQWX" exp="是否有其他用地安全威胁" type="nvarchar(1)" null="T" p="F" remark="是否有其他用地安全威胁 编号：ZXFC030126 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="QTYDAQWXQKHLSSZQK" exp="其他用地安全威胁情况和历史受灾情况" type="nvarchar(200)" null="T" p="F" remark="其他用地安全威胁情况和历史受灾情况 编号：ZXFC030127 " />
+            <name="LSSYHWXGZQK" exp="历史使用和维修改造情况" type="nvarchar(200)" null="T" p="F" remark="历史使用和维修改造情况 编号：ZXFC030128 " />
+            <name="XCJCQK" exp="现场检查情况" type="nvarchar(200)" null="T" p="F" remark="现场检查情况 编号：ZXFC030129 " />
+            <name="CZDZYWTHAQYH" exp="存在的主要问题和安全隐患" type="nvarchar(200)" null="T" p="F" remark="存在的主要问题和安全隐患 编号：ZXFC030130 " />
+            <name="JZWAQPCJLM" exp="建筑物安全排查结论码" type="nvarchar(1)" null="F" p="F" remark="建筑物安全排查结论码 编号：ZXFC030131 值空间：JY/T1001JZWAQPCJL建筑物安全排查结论代码 " />
+            <name="PCDW" exp="排查单位" type="nvarchar(60)" null="F" p="F" remark="排查单位 编号：ZXFC030132 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="PCR" exp="排查人" type="nvarchar(36)" null="F" p="F" remark="排查人 编号：ZXFC030133 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+        </field_area>
+    </table>
+    <table name="ZXFC0302" exp="建筑物鉴定数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JZWJDNRM" exp="建筑物鉴定内容码" type="nvarchar(1)" null="F" p="T" remark="建筑物鉴定内容码 编号：ZXFC030201 值空间：JY/T1001JZWJDNRDM建筑物鉴定内容代码 " />
+            <name="KZJDDW" exp="抗震鉴定单位" type="nvarchar(60)" null="T" p="F" remark="抗震鉴定单位 编号：ZXFC030202 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="KZJDDWZZ" exp="抗震鉴定单位资质" type="nvarchar(50)" null="T" p="F" remark="抗震鉴定单位资质 编号：ZXFC030203 " />
+            <name="KZJDKZSFLDM" exp="抗震鉴定抗震设防烈度码" type="nvarchar(1)" null="T" p="F" remark="抗震鉴定抗震设防烈度码 编号：ZXFC030204 值空间：JY/T1001KZSFLD抗震设防烈度代码 " />
+            <name="KZJDJL" exp="抗震鉴定结论" type="nvarchar(1)" null="T" p="F" remark="抗震鉴定结论 编号：ZXFC030205 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1符合抗震要求0不符合抗震要求 " />
+            <name="KZJDJZDCHCLYJ" exp="抗震鉴定减灾对策和处理意见" type="nvarchar(200)" null="T" p="F" remark="抗震鉴定减灾对策和处理意见 编号：ZXFC030206 " />
+            <name="KZJDBGBH" exp="抗震鉴定报告编号" type="nvarchar(200)" null="T" p="F" remark="抗震鉴定报告编号 编号：ZXFC030207 " />
+            <name="KZJDBGRQ" exp="抗震鉴定报告日期" type="nvarchar(8)" null="T" p="F" remark="抗震鉴定报告日期 编号：ZXFC030208 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KZJDZCY" exp="抗震鉴定组成员" type="nvarchar(200)" null="T" p="F" remark="抗震鉴定组成员 编号：ZXFC030209 " />
+            <name="KZJDZRR" exp="抗震鉴定责任人" type="nvarchar(36)" null="T" p="F" remark="抗震鉴定责任人 编号：ZXFC030210 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="KZJDFY" exp="抗震鉴定费用" type="money" null="T" p="F" remark="抗震鉴定费用 编号：ZXFC030211 " />
+            <name="XSAQJDDW" exp="建筑物安全鉴定单位" type="nvarchar(60)" null="T" p="F" remark="建筑物安全鉴定单位 编号：ZXFC030212 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="XSAQJDDWZZ" exp="建筑物安全鉴定单位资质" type="nvarchar(50)" null="T" p="F" remark="建筑物安全鉴定单位资质 编号：ZXFC030213 " />
+            <name="XSAQJDJL" exp="建筑物安全鉴定结论" type="nvarchar(50)" null="T" p="F" remark="建筑物安全鉴定结论 编号：ZXFC030214 " />
+            <name="XSAQJDBGBH" exp="建筑物安全鉴定报告编号" type="nvarchar(30)" null="T" p="F" remark="建筑物安全鉴定报告编号 编号：ZXFC030215 " />
+            <name="XSAQJDBGRQ" exp="校舍安全鉴定报告日期" type="nvarchar(8)" null="T" p="F" remark="校舍安全鉴定报告日期 编号：ZXFC030216 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XSAQJDZCY" exp="校舍安全鉴定组成员" type="nvarchar(200)" null="T" p="F" remark="校舍安全鉴定组成员 编号：ZXFC030217 " />
+            <name="XSAQJDZRR" exp="校舍安全鉴定责任人" type="nvarchar(36)" null="T" p="F" remark="校舍安全鉴定责任人 编号：ZXFC030218 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="XSAQJDFY" exp="校舍安全鉴定费用" type="money" null="T" p="F" remark="校舍安全鉴定费用 编号：ZXFC030219 " />
+            <name="KHKYJDDW" exp="抗洪抗淹鉴定单位" type="nvarchar(60)" null="T" p="F" remark="抗洪抗淹鉴定单位 编号：ZXFC030220 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="KHKYJDDWZZ" exp="抗洪抗淹鉴定单位资质" type="nvarchar(50)" null="T" p="F" remark="抗洪抗淹鉴定单位资质 编号：ZXFC030221 " />
+            <name="KHKYJDYWZBCS" exp="抗洪抗淹鉴定有无自保措施" type="nvarchar(1)" null="T" p="F" remark="抗洪抗淹鉴定有无自保措施 编号：ZXFC030222 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="KHKYJDYWBXCS" exp="抗洪抗淹鉴定有无避险措施" type="nvarchar(1)" null="T" p="F" remark="抗洪抗淹鉴定有无避险措施 编号：ZXFC030223 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1有0无 " />
+            <name="KHKYJDJL" exp="抗洪抗淹鉴定结论" type="nvarchar(1)" null="T" p="F" remark="抗洪抗淹鉴定结论 编号：ZXFC030224 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1符合0不符合 " />
+            <name="KHKYJDBGBH" exp="抗洪抗淹鉴定报告编号" type="nvarchar(30)" null="T" p="F" remark="抗洪抗淹鉴定报告编号 编号：ZXFC030225 " />
+            <name="KHKYJDBGRQ" exp="抗洪抗淹鉴定报告日期" type="nvarchar(8)" null="T" p="F" remark="抗洪抗淹鉴定报告日期 编号：ZXFC030226 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KHKYJDZCY" exp="抗洪抗淹鉴定组成员" type="nvarchar(200)" null="T" p="F" remark="抗洪抗淹鉴定组成员 编号：ZXFC030227 " />
+            <name="KHKYJDZRR" exp="抗洪抗淹鉴定责任人" type="nvarchar(36)" null="T" p="F" remark="抗洪抗淹鉴定责任人 编号：ZXFC030228 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="KHKYJDFY" exp="抗洪抗淹鉴定费用" type="money" null="T" p="F" remark="抗洪抗淹鉴定费用 编号：ZXFC030229 " />
+            <name="KFYSDW" exp="抗风验算单位" type="nvarchar(60)" null="T" p="F" remark="抗风验算单位 编号：ZXFC030230 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="KFYSDWZZ" exp="抗风验算单位资质" type="nvarchar(50)" null="T" p="F" remark="抗风验算单位资质 编号：ZXFC030231 " />
+            <name="KFYSJL" exp="抗风验算结论" type="nvarchar(1)" null="T" p="F" remark="抗风验算结论 编号：ZXFC030232 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1符合0不符合 " />
+            <name="KFYSBGBH" exp="抗风验算报告编号" type="nvarchar(30)" null="T" p="F" remark="抗风验算报告编号 编号：ZXFC030233 " />
+            <name="KFYSBGRQ" exp="抗风验算报告日期" type="nvarchar(8)" null="T" p="F" remark="抗风验算报告日期 编号：ZXFC030234 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KFYSZCY" exp="抗风验算组成员" type="nvarchar(200)" null="T" p="F" remark="抗风验算组成员 编号：ZXFC030235 " />
+            <name="KFYSZRR" exp="抗风验算责任人" type="nvarchar(36)" null="T" p="F" remark="抗风验算责任人 编号：ZXFC030236 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="KFYSFY" exp="抗风验算费用" type="money" null="T" p="F" remark="抗风验算费用 编号：ZXFC030237 " />
+            <name="QTJDMC" exp="其他鉴定名称" type="nvarchar(60)" null="T" p="F" remark="其他鉴定名称 编号：ZXFC030238 " />
+            <name="QTJDDW" exp="其他鉴定单位" type="nvarchar(60)" null="T" p="F" remark="其他鉴定单位 编号：ZXFC030239 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="QTJDDWZZ" exp="其他鉴定单位资质" type="nvarchar(50)" null="T" p="F" remark="其他鉴定单位资质 编号：ZXFC030240 " />
+            <name="QTJDJL" exp="其他鉴定结论" type="nvarchar(1)" null="T" p="F" remark="其他鉴定结论 编号：ZXFC030241 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1符合0不符合 " />
+            <name="QTJDBGBH" exp="其他鉴定报告编号" type="nvarchar(30)" null="T" p="F" remark="其他鉴定报告编号 编号：ZXFC030242 " />
+            <name="QTJDBGRQ" exp="其他鉴定报告日期" type="nvarchar(8)" null="T" p="F" remark="其他鉴定报告日期 编号：ZXFC030243 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="QTJDZCY" exp="其他鉴定组成员" type="nvarchar(200)" null="T" p="F" remark="其他鉴定组成员 编号：ZXFC030244 " />
+            <name="QTJDZRR" exp="其他鉴定责任人" type="nvarchar(36)" null="T" p="F" remark="其他鉴定责任人 编号：ZXFC030245 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="QTJDFY" exp="其他鉴定费用" type="money" null="T" p="F" remark="其他鉴定费用 编号：ZXFC030246 " />
+            <name="ZHFZPJ" exp="综合防灾评价" type="nvarchar(200)" null="T" p="F" remark="综合防灾评价 编号：ZXFC030247 " />
+            <name="ZHJDJL" exp="综合鉴定结论" type="nvarchar(1)" null="F" p="F" remark="综合鉴定结论 编号：ZXFC030248 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1安全0不安全 " />
+            <name="HXSYNX" exp="后续使用年限" type="decimal(2, 0)" null="T" p="F" remark="后续使用年限 编号：ZXFC030249 " />
+            <name="CLYJ" exp="处理意见" type="nvarchar(1)" null="T" p="F" remark="处理意见 编号：ZXFC030250 解释/举例：1加固改造2拆除 " />
+            <name="QTJY" exp="其他建议" type="nvarchar(200)" null="T" p="F" remark="其他建议 编号：ZXFC030251 " />
+            <name="QBJDFY" exp="全部鉴定费用" type="money" null="T" p="F" remark="全部鉴定费用 编号：ZXFC030252 " />
+        </field_area>
+    </table>
+    <table name="ZXFC04" exp="房间数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="FJBH" exp="房间编号" type="nvarchar(12)" null="F" p="T" remark="房间编号 编号：ZXFC040001 解释/举例：学校自编，前六位为建筑物编号，后六位为房间在该建筑物内的编号 " />
+            <name="FJMC" exp="房间名称" type="nvarchar(60)" null="F" p="F" remark="房间名称 编号：ZXFC040002 解释/举例：指房间的汉字名称 " />
+            <name="FJYTM" exp="房间用途码" type="nvarchar(2)" null="F" p="F" remark="房间用途码 编号：ZXFC040003 值空间：JY/T1001FJYT房间用途代码 " />
+            <name="JXYFXZM" exp="教学用房性质码" type="nvarchar(2)" null="F" p="F" remark="教学用房性质码 编号：ZXFC040004 值空间：JY/T1001JXYFXZ教学用房性质代码 " />
+            <name="FJLC" exp="房间所处楼层" type="nvarchar(3)" null="T" p="F" remark="房间所处楼层 编号：ZXFC040005 解释/举例：指房间所在的楼层，地上楼层直接用阿拉伯数字表示，地下楼层在阿拉伯数字前加“B”号，如“2”表示地上2层，“B2”表示地下2层 " />
+            <name="FJJZMJ" exp="房间建筑面积" type="decimal(82, 0)" null="F" p="F" remark="房间建筑面积 编号：ZXFC040006 解释/举例：取二位小数，单位：平方米 " />
+            <name="FJSYMJ" exp="房间使用面积" type="decimal(82, 0)" null="T" p="F" remark="房间使用面积 编号：ZXFC040007 解释/举例：取二位小数，单位：平方米 " />
+        </field_area>
+    </table>
+</namespace>

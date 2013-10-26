@@ -1,0 +1,179 @@
+JCTB0101  通用通讯数据子类表
+  SCHOOLID      学校名                  int            主键
+  YZBM          邮政编码                nvarchar(6)    非主
+  TXDZ          通信地址                nvarchar(180)  非主
+  DH            电话                    nvarchar(30)   非主
+  YDDH          移动电话                nvarchar(30)   非主
+  CZDH          传真电话                nvarchar(30)   非主
+  DZXX          电子信箱                nvarchar(40)   非主
+  WLDZ          网络地址                nvarchar(60)   非主
+  JSTXH         即时通讯号              nvarchar(40)   非主
+
+JCTB0102  通用时间数据子类表
+  SCHOOLID      学校名                  int            主键
+  ND            年度（年份、年）           nvarchar(4)    非主
+  NY            年月                    nvarchar(6)    非主
+  RQ            日期                    nvarchar(8)    非主
+  SJ            时间                    nvarchar(6)    非主
+  XN            学年（度）                nvarchar(9)    非主
+  XQM           学期码                  nvarchar(1)    非主
+  YXQ           有效期                  nvarchar(17)   非主
+
+JCTB0103  单位基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  DWH           单位号                  nvarchar(10)   非主
+  DWMC          单位名称                nvarchar(60)   非主
+  DWYWMC        单位英文名称            nvarchar(180)  非主
+  DWJC          单位简称                nvarchar(12)   非主
+  DWYWJC        单位英文简称            nvarchar(8)    非主
+  DWJP          单位简拼                nvarchar(6)    非主
+  DWDZ          单位地址                nvarchar(180)  非主
+  LSDWH         隶属单位号              nvarchar(10)   非主
+  DWLBM         单位类别码              nvarchar(1)    非主
+  DWBBM         单位办别码              nvarchar(1)    非主
+  DWYXBS        单位有效标识            nvarchar(1)    非主
+  SXRQ          失效日期                nvarchar(8)    非主
+  SFST          是否实体                nvarchar(1)    非主
+  JLNY          建立年月                nvarchar(6)    非主
+  DWFZRH        单位负责人号            nvarchar(20)   非主
+
+JCTB0104  通用教学数据子类表
+  SCHOOLID      学校名                  int            主键
+  NJ            年级                    nvarchar(10)   非主
+  XZ            学制                    decimal(3, 1)  非主
+  KCH           课程号                  nvarchar(10)   非主
+  KCMC          课程名称                nvarchar(60)   非主
+  KCYWMC        课程英文名称            nvarchar(180)  非主
+  KSFSM         考试方式码              nvarchar(1)    非主
+  ZYM           专业码                  nvarchar(6)    非主
+  ZYMC          专业名称                nvarchar(60)   非主
+
+JCTB0201  人员基本数据子类表
+  SCHOOLID      学校名                  int            主键
+  XM            姓名                    nvarchar(36)   非主
+  YWXM          英文姓名                nvarchar(60)   非主
+  XMPY          姓名拼音                nvarchar(60)   非主
+  CYM           曾用名                  nvarchar(36)   非主
+  XBM           性别码                  nvarchar(1)    非主
+  CSRQ          出生日期                nvarchar(8)    非主
+  CSDM          出生地码                nvarchar(6)    非主
+  JG            籍贯                    nvarchar(20)   非主
+  MZM           民族码                  nvarchar(2)    非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主
+  SFZJLXM       身份证件类型码          nvarchar(1)    非主
+  SFZJH         身份证件号              nvarchar(20)   非主
+  HYZKM         婚姻状况码              nvarchar(2)    非主
+  GATQWM        港澳台侨外码            nvarchar(2)    非主
+  ZZMMM         政治面貌码              nvarchar(2)    非主
+  JKZKM         健康状况码              nvarchar(1)    非主
+  XYZJM         信仰宗教码              nvarchar(2)    非主
+  XXM           血型码                  nvarchar(1)    非主
+  ZP            照片                    nvarchar(200)  非主
+  RYH           人员号                  nvarchar(20)   非主
+  SFZJYXQ       身份证件有效期          nvarchar(17)   非主
+  SFDSZN        是否独生子女            nvarchar(1)    非主
+
+JCTB0202  学习简历数据子类表
+  SCHOOLID      学校名                  int            主键
+  XXQSRQ        学习起始日期            nvarchar(8)    主键
+  XXZZRQ        学习终止日期            nvarchar(8)    非主
+  XXDW          学习单位                nvarchar(60)   非主
+  XXNR          学习内容                nvarchar(80)   非主
+  SXZYMC        所学专业名称            nvarchar(60)   非主
+  SHXWM         所获学位码              nvarchar(3)    非主
+  XXZMR         学习证明人              nvarchar(36)   非主
+  XXJLBZ        学习简历备注            text           非主
+
+JCTB0203  工作简历数据子类表
+  SCHOOLID      学校名                  int            主键
+  GZQSRQ        工作起始日期            nvarchar(8)    主键
+  GZZZRQ        工作终止日期            nvarchar(8)    非主
+  GZDW          工作单位                nvarchar(60)   非主
+  GZNR          工作内容                nvarchar(80)   非主
+  CRDZZW        曾任党政职务            nvarchar(40)   非主
+  CRZYJSZWM     曾任专业技术职务码      nvarchar(3)    非主
+  GZZMR         工作证明人              nvarchar(36)   非主
+  GZJLBZ        工作简历备注            text           非主
+
+JCTB0204  政治面貌数据子类表
+  SCHOOLID      学校名                  int            主键
+  ZZMMM         政治面貌码              nvarchar(2)    主键
+  CJRQ          参加日期                nvarchar(8)    非主
+  CJSZDW        参加所在单位            nvarchar(60)   非主
+  JSR           介绍人                  nvarchar(36)   非主
+  ZZRQ          转正日期                nvarchar(8)    非主
+  YCLBM         异常类别码              nvarchar(2)    非主
+  YCYY          异常原因                nvarchar(80)   非主
+  YCRQ          异常日期                nvarchar(8)    非主
+  ZRRQ          转入日期                nvarchar(8)    非主
+  ZRQDW         转入前单位              nvarchar(60)   非主
+  ZCRQ          转出日期                nvarchar(8)    非主
+  ZCDW          转出单位                nvarchar(60)   非主
+
+JCTB0205  学历学位数据子类表
+  SCHOOLID      学校名                  int            主键
+  RXNY          入学年月                nvarchar(6)    主键
+  XZ            学制                    decimal(3, 1)  非主
+  XXFSM         学习方式码              nvarchar(1)    非主
+  XXXSM         学习形式码              nvarchar(2)    非主
+  XLM           学历码                  nvarchar(2)    非主
+  SXZYM         所学专业码              nvarchar(6)    非主
+  JSXYNY        结束学业年月            nvarchar(6)    非主
+  BYYXXHDW      毕肄业学校或单位        nvarchar(60)   非主
+  XLZSH         学历证书号              nvarchar(20)   非主
+  HDXWM         获得学位码              nvarchar(3)    非主
+  SXWDWMC       授学位单位名称          nvarchar(60)   非主
+  SXWGJDQM      授学位国家/地区码       nvarchar(3)    非主
+  HXWZYM        获学位专业码            nvarchar(6)    非主
+  HXWRQ         获学位日期              nvarchar(8)    非主
+  XWZSH         学位证书号              nvarchar(20)   非主
+
+JCTB0206  家庭通讯方式数据子类表
+  SCHOOLID      学校名                  int            主键
+  JTZZ          家庭住址                nvarchar(180)  主键
+  JTYZBM        家庭邮政编码            nvarchar(6)    非主
+  JTDH          家庭电话                nvarchar(30)   非主
+  JTDZXX        家庭电子信箱            nvarchar(40)   非主
+
+JCTB0207  家庭成员数据子类表
+  SCHOOLID      学校名                  int            主键
+  GXM           关系码                  nvarchar(2)    主键
+  CYXM          成员姓名                nvarchar(36)   非主
+  CSNY          出生年月                nvarchar(6)    非主
+  MZM           民族码                  nvarchar(2)    非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主
+  JKZKM         健康状况码              nvarchar(1)    非主
+  CYGZDW        成员工作单位            nvarchar(60)   非主
+  CYEM          从业码                  nvarchar(2)    非主
+  ZYJSZWM       专业技术职务码          nvarchar(3)    非主
+  ZWJBM         职务级别码              nvarchar(2)    非主
+  DH            电话                    nvarchar(30)   非主
+  DZXX          电子信箱                nvarchar(40)   非主
+
+JCTB0208  联系人数据子类表
+  SCHOOLID      学校名                  int            主键
+  GXM           关系码                  nvarchar(2)    主键
+  LXRXM         联系人姓名              nvarchar(36)   非主
+  YZBM          邮政编码                nvarchar(6)    非主
+  TXDZ          通信地址                nvarchar(180)  非主
+  DH            电话                    nvarchar(30)   非主
+  YDDH          移动电话                nvarchar(30)   非主
+  CZDH          传真电话                nvarchar(30)   非主
+  DZXX          电子信箱                nvarchar(40)   非主
+  WLDZ          网络地址                nvarchar(60)   非主
+  JSTXH         即时通讯号              nvarchar(40)   非主
+
+JCTB0209  家庭经济情况数据子类表
+  SCHOOLID      学校名                  int            主键
+  JTRK          家庭人口                decimal(2, 0)  非主
+  SYRK          赡养人口                decimal(2, 0)  非主
+  LDLRK         劳动力人口              decimal(2, 0)  非主
+  JTRJYSR       家庭人均月收入          money          非主
+  JTZYSRLY      家庭主要收入来源        nvarchar(100)  非主
+  JTLBM         家庭类别码              nvarchar(1)    非主
+  KNYYM         困难原因码              nvarchar(1)    非主
+  KNCDM         困难程度码              nvarchar(2)    非主
+  SFDB          是否低保                nvarchar(1)    非主
+  RXQHKLBM      入学前户口类别码        nvarchar(1)    非主
+  JXDDBX        就学地低保线            money          非主
+

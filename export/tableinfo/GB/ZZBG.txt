@@ -1,0 +1,165 @@
+ZZBG01  文件基本数据类表
+  SCHOOLID      学校名                  int            主键
+  WJBH          文件编号                nvarchar(10)   主键
+  WJWH          文件文号                nvarchar(24)   非主
+  BT            标题                    nvarchar(60)   非主
+  ZTC           主题词                  text           非主
+  MJM           密级码                  nvarchar(1)    非主
+  JJCDM         紧急程度码              nvarchar(1)    非主
+  YS            页数                    decimal(6, 0)  非主
+  WJFLM         文件分类码              nvarchar(2)    非主
+  ZW            正文                    text           非主
+  FJ            附件                    text           非主
+  FWRQ          发文日期                nvarchar(8)    非主
+  CSDW          抄送单位                text           非主
+
+ZZBG0201  收文处理子类表
+  SCHOOLID      学校名                  int            主键
+  QSRGH         签收人工号              nvarchar(20)   主键
+  CFRGH         拆封人工号              nvarchar(20)   非主
+  DJRGH         登记人工号              nvarchar(20)   非主
+  SWRQ          收文日期                nvarchar(8)    非主
+  LWDW          来文单位                nvarchar(60)   非主
+  FS            份数                    decimal(3, 0)  非主
+  CLQK          处理情况                text           非主
+  FYFS          翻印份数                decimal(4, 0)  非主
+
+ZZBG0202  文件阅办子类表
+  SCHOOLID      学校名                  int            主键
+  YBLBM         阅办类别码              nvarchar(1)    非主
+  YBJB          阅办级别                nvarchar(30)   非主
+  YBDW          阅办单位                nvarchar(60)   非主
+  YBDWBH        阅办单位编号            nvarchar(10)   非主
+  YBRGH         阅办人工号              nvarchar(17)   非主
+  YBYJ          阅办意见                text           非主
+  YBRQ          阅办日期                nvarchar(8)    非主
+
+ZZBG0301  发文处理子类表
+  SCHOOLID      学校名                  int            主键
+  NGRGH         拟稿人工号              nvarchar(17)   主键
+  NGRQ          拟稿日期                nvarchar(8)    非主
+  QFRGH         签发人工号              nvarchar(20)   非主
+  QFRQ          签发日期                nvarchar(8)    非主
+  FSFW          发送范围                nvarchar(60)   非主
+  FSFSM         发送方式码              nvarchar(1)    非主
+  DJRGH         登记人工号              nvarchar(20)   非主
+  DJRQ          登记日期                nvarchar(8)    非主
+  FWJS          发文件数                decimal(4, 0)  非主
+  GWFWRQ        公文发文日期            nvarchar(8)    非主
+  CLQK          处理情况                text           非主
+  DZRGH         打字人工号              nvarchar(20)   非主
+  JDRGH         校对人工号              nvarchar(20)   非主
+  FZFSM         封装方式码              nvarchar(1)    非主
+
+ZZBG0302  核稿子类表
+  SCHOOLID      学校名                  int            主键
+  HGRGH         核稿人工号              nvarchar(20)   主键
+  HGDW          核稿单位                nvarchar(60)   非主
+  HGYJ          核稿意见                text           非主
+  HGRQ          核稿日期                nvarchar(8)    非主
+
+ZZBG0303  会签子类表
+  SCHOOLID      学校名                  int            主键
+  HQR           会签人                  nvarchar(36)   主键
+  HQDW          会签单位                nvarchar(60)   非主
+  HQYJ          会签意见                text           非主
+  HQRQ          会签日期                nvarchar(8)    非主
+
+ZZBG0304  呈批子类表
+  SCHOOLID      学校名                  int            主键
+  PFR           批复人                  nvarchar(36)   主键
+  PFDW          批复单位                nvarchar(60)   非主
+  PFYJ          批复意见                text           非主
+  PFRQ          批复日期                nvarchar(8)    非主
+
+ZZBG04  文件清退数据类表
+  SCHOOLID      学校名                  int            主键
+  QTRQ          清退日期                nvarchar(8)    主键
+  QTFW          清退范围                nvarchar(180)  非主
+  QTSM          清退说明                text           非主
+  JBRGH         经办人工号              nvarchar(20)   非主
+
+ZZBG05  文件销毁数据类表
+  SCHOOLID      学校名                  int            主键
+  XHRQ          销毁日期                nvarchar(8)    主键
+  XHSPRGH       销毁审批人工号          nvarchar(20)   非主
+  XHSM          销毁说明                text           非主
+  JBRGH         经办人工号              nvarchar(20)   非主
+
+ZZBG06  文件借阅数据类表
+  SCHOOLID      学校名                  int            主键
+  JYR           借阅人                  nvarchar(36)   主键
+  JYRQ          借阅日期                nvarchar(8)    非主
+  JYSPRGH       借阅审批人工号          nvarchar(20)   非主
+  JYJBRGH       借阅经办人工号          nvarchar(20)   非主
+  JYYY          借阅原因                nvarchar(80)   非主
+
+ZZBG07  文件归档数据类表
+  SCHOOLID      学校名                  int            主键
+  GDRGH         归档人工号              nvarchar(20)   主键
+  GDRQ          归档日期                nvarchar(8)    非主
+  BZ            备注                    text           非主
+  WJQZH         文件全宗号              nvarchar(10)   非主
+  WJMLH         文件目录号              nvarchar(5)    非主
+  WJAJH         文件案卷号              nvarchar(5)    非主
+
+ZZBG08  档案登记数据类表
+  SCHOOLID      学校名                  int            主键
+  QZH           全宗号                  nvarchar(10)   主键
+  ND            年度                    nvarchar(4)    非主
+  MLH           目录号                  nvarchar(5)    非主
+  AJH           案卷号                  nvarchar(5)    非主
+  TM            题名                    nvarchar(120)  非主
+  ZTC           主题词                  text           非主
+  QSRQ          起始日期                nvarchar(8)    非主
+  JZRQ          截止日期                nvarchar(8)    非主
+  BGQXM         保管期限码              nvarchar(1)    非主
+  MJM           密级码                  nvarchar(1)    非主
+  YS            页数                    decimal(6, 0)  非主
+  FS            份数                    decimal(8, 0)  非主
+  BZDW          编制单位                nvarchar(60)   非主
+  CFWZ          存放位置                nvarchar(60)   非主
+  DAFLM         档案分类码              nvarchar(2)    非主
+
+ZZBG09  会议管理数据类表
+  SCHOOLID      学校名                  int            主键
+  HYBH          会议编号                nvarchar(10)   主键
+  HYMC          会议名称                nvarchar(60)   非主
+  HYFW          会议范围                text           非主
+  HYZYNR        会议主要内容            text           非主
+  HYZCR         会议主持人              nvarchar(30)   非主
+  HYKSSJ        会议开始时间            nvarchar(12)   非主
+  HYJSSJ        会议结束时间            nvarchar(12)   非主
+  HYDD          会议地点                nvarchar(60)   非主
+  HYJY          会议纪要                text           非主
+
+ZZBG10  制章类表
+  SCHOOLID      学校名                  int            主键
+  GZBH          公章编号                nvarchar(4)    主键
+  ZZMC          制章名称                nvarchar(60)   非主
+  BGDWMC        保管单位名称            nvarchar(60)   非主
+  BGRGH         保管人工号              nvarchar(20)   非主
+  PZDW          批准单位                nvarchar(60)   非主
+  PZRGH         批准人工号              nvarchar(20)   非主
+  PZWH          批准文号                nvarchar(10)   非主
+  PZRQ          批准日期                nvarchar(8)    非主
+  SXRQ          生效日期                nvarchar(8)    非主
+  ZFPZWH        作废批准文号            nvarchar(10)   非主
+  ZFRQ          作废日期                nvarchar(8)    非主
+  ZFPZRH        作废批准人号            nvarchar(20)   非主
+  YZTY          印章图样                nvarchar(200)  非主
+
+ZZBG11  用印类表
+  SCHOOLID      学校名                  int            主键
+  YYDJH         用印登记号              nvarchar(15)   主键
+  GZBH          公章编号                nvarchar(4)    非主
+  YYSY          用印事由                nvarchar(200)  非主
+  SYGLH         事由关联号              nvarchar(50)   非主
+  YYCS          用印次数                decimal(5, 0)  非主
+  YRPZRH        用印批准人号            nvarchar(20)   非主
+  YYPZRQ        用印批准日期            nvarchar(8)    非主
+  YYRQ          用印日期                nvarchar(8)    非主
+  YYSQRQ        用印申请日期            nvarchar(8)    非主
+  SQRGH         申请人工号              nvarchar(20)   非主
+  ZSRGH         执行人工号              nvarchar(20)   非主
+

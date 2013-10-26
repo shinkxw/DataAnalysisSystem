@@ -1,0 +1,71 @@
+ZXSB0101  实验室数据子类表
+  SCHOOLID      学校名                  int            主键
+  SYSBH         实验室编号              nvarchar(5)    主键
+  SYSMC         实验室名称              nvarchar(60)   非主
+  JLNY          建立年月                nvarchar(6)    非主
+  JZMJ          建筑面积                decimal(82, 0) 非主
+  SYMJ          使用面积                decimal(82, 0) 非主
+  SYSWZ         实验室位置              nvarchar(60)   非主
+  FZRGH         实验室负责人            nvarchar(20)   非主
+  SYSLBM        实验室类别码            nvarchar(1)    非主
+  ZCE           支出额                  decimal(10, 0) 非主
+  TRE           投入额                  decimal(10, 0) 非主
+  JLJBM         奖励级别码              nvarchar(2)    非主
+
+ZXSB0102  实验项目数据子类表
+  SCHOOLID      学校名                  int            主键
+  SYXH          实验序号                nvarchar(8)    非主
+  SYMC          实验名称                nvarchar(60)   非主
+  LSKCH         隶属课程号              nvarchar(8)    非主
+  SYLBM         实验类别码              nvarchar(1)    非主
+  SYZLBM        实验者类别码            nvarchar(1)    非主
+  SYZRS         实验者人数              decimal(4, 0)  非主
+  MZRS          每组人数                decimal(3, 0)  非主
+  SYSS          实验时数                decimal(4, 0)  非主
+  HJJBM         获奖级别码              nvarchar(2)    非主
+
+ZXSB0202  规格数据子类表
+  SCHOOLID      学校名                  int            主键
+  GG            规格                    nvarchar(30)   主键
+  JMGG          精密规格                nvarchar(50)   非主
+
+ZXSB0203  价格数据子类表
+  SCHOOLID      学校名                  int            主键
+  DJ            单价                    money          主键
+  JKDJ          进口单价                money          非主
+  FJZJ          附件总价                money          非主
+  FJJKJ         附件进口价              money          非主
+
+ZXSB0204  附件数据子类表
+  SCHOOLID      学校名                  int            主键
+  FJBH          附件编号                nvarchar(19)   主键
+  FJSL          附件数量                decimal(3, 0)  非主
+  FJMC          附件名称                nvarchar(60)   非主
+  FJXHGG        附件型号规格            nvarchar(30)   非主
+
+ZXSB0205  使用管理数据子类表
+  SCHOOLID      学校名                  int            主键
+  XZM           现状码                  nvarchar(1)    主键
+  SYFXM         使用方向码              nvarchar(1)    非主
+  SYDW          使用单位                nvarchar(60)   非主
+  JSRGH         经手人工号              nvarchar(20)   非主
+  LYDW          领用单位                nvarchar(60)   非主
+  LYRGH         领用人工号              nvarchar(20)   非主
+  YQFZR         仪器负责人              nvarchar(20)   非主
+  WHRS          维护人数                decimal(2, 0)  非主
+  SYRSS         使用人时数              decimal(8, 0)  非主
+  KSSYGS        开设实验个数            decimal(6, 0)  非主
+  KSSYSS        开设实验时数            decimal(8, 0)  非主
+  KYXMSS        科研项目时数            decimal(8, 0)  非主
+  SHXMSS        社会服务项目时数        decimal(8, 0)  非主
+  WHF           维护费                  decimal(82, 0) 非主
+  ZCLBM         资产类别码              nvarchar(1)    非主
+
+ZXSB0206  报损、报废数据子类表
+  SCHOOLID      学校名                  int            主键
+  BSBFRQ        报损报废日期            nvarchar(8)    主键
+  BSBFYY        报损报废原因            nvarchar(80)   非主
+  CLJG          处理结果                text           非主
+  JBRGH         经办人工号              nvarchar(20)   非主
+  SM            说明                    text           非主
+

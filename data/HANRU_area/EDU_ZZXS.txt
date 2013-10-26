@@ -346,4 +346,23 @@
             <name="ZQJSSJ" exp="值勤结束时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_15_A01_RYCH" exp="荣誉称号数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="PGLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_15_A02_RYCHSQ" exp="学生荣誉称号表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="PGLXID" exp="批改类型ID" type="int" null="F" p="F" />
+            <name="SL" exp="数量" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

@@ -1,0 +1,261 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZZXS" provider="reallocate_namespace" generation_time="">
+    <table name="ZZXS0101" exp="学生基本数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XH" exp="学号" type="nvarchar(20)" null="F" p="T" remark="学号 编号：JCXS010101 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" remark="姓名 编号：JCTB020101 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" remark="英文姓名 编号：JCTB020102 引用自JCTB020102 YWXM 英文姓名 C 60 NULL NULL 例：ChristopherFrancisPatten NULL" />
+            <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="F" p="F" remark="姓名拼音 编号：JCTB020103 引用自JCTB020103 XMPY 姓名拼音 C 60 NULL NULL 例：ZHANGZhenhua， NULL" />
+            <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" remark="曾用名 编号：JCTB020104 引用自JCTB020104 CYM 曾用名 C 36 NULL NULL 指曾经正式使用过的姓名 NULL" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" remark="身份证件类型码 编号：JCTB020111 引用自JCTB020111 SFZJLXM 身份证件类型码 C 1 NULL JY/T1001SFZJLX身份证件类型代码 NULL NULL" />
+            <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="F" remark="身份证件号 编号：JCTB020112 引用自JCTB020112 SFZJH 身份证件号 C 20 NULL NULL 如：公民身份号码 NULL" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" remark="性别码 编号：JCTB020105 引用自JCTB020105 XBM 性别码 C 1 NULL GB/T2261.1 NULL NULL" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" remark="血型码 编号：JCTB020118 引用自JCTB020118 XXM 血型码 C 1 NULL JY/T1001XX血型代码 NULL NULL" />
+            <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" remark="出生日期 编号：JCTB020106 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CSDM" exp="出生地码" type="nvarchar(6)" null="F" p="F" remark="出生地码 编号：JCTB020107 引用自JCTB020107 CSDM 出生地码 C 6 NULL GB/T2260 NULL NULL" />
+            <name="JG" exp="籍贯" type="nvarchar(20)" null="F" p="F" remark="籍贯 编号：JCTB020108 引用自JCTB020108 JG 籍贯 C 20 NULL NULL NULL NULL" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" remark="民族码 编号：JCTB020109 引用自JCTB020109 MZM 民族码 C 2 NULL GB/T3304 取用2位数字代码，如：01汉族，02蒙古族 NULL" />
+            <name="HYZKM" exp="婚姻状况码" type="nvarchar(2)" null="F" p="F" remark="婚姻状况码 编号：JCTB020113 引用自JCTB020113 HYZKM 婚姻状况码 C 2 NULL GB/T2261.2 NULL NULL" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" remark="信仰宗教码 编号：JCTB020117 引用自JCTB020117 XYZJM 信仰宗教码 C 2 NULL GA214.12 NULL NULL" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" remark="港澳台侨外码 编号：JCTB020114 引用自JCTB020114 GATQWM 港澳台侨外码 C 2 NULL JY/T1001GATQW港澳台侨外代码 NULL NULL" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" remark="健康状况码 编号：JCTB020116 引用自JCTB020116 JKZKM 健康状况码 C 1 NULL GB/T2261.3 采用1位数字代码 NULL" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="政治面貌码 编号：JCTB020115 引用自JCTB020115 ZZMMM 政治面貌码 C 2 NULL GB/T4762 可采用简称，如：01中共党员，04民革会员 NULL" />
+            <name="HKSZDXZQHM" exp="户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" remark="户口所在地行政区划码 编号：ZZXS010101 值空间：GB/T2260 " />
+            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" remark="户口类别码 编号：ZZXS010102 值空间：GA324.1 解释/举例：如：0未落常住户1非农业家庭2农业家庭户口 " />
+            <name="SFSLDRK" exp="是否是流动人口" type="nvarchar(1)" null="F" p="F" remark="是否是流动人口 编号：ZZXS010103 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" remark="国籍/地区码 编号：JCTB020110 引用自JCTB020110 GJDQM 国籍/地区码 C 3 NULL GB/T2659 采用三字母代码，如：CHN中国，USA美国 NULL" />
+            <name="TC" exp="特长" type="text" null="T" p="F" remark="特长 编号：ZZXS010104 解释/举例：指某一方面特殊的能力或技能 " />
+            <name="XSLXDH" exp="学生联系电话" type="nvarchar(30)" null="T" p="F" remark="学生联系电话 编号：ZZXS010105 解释/举例：本人的联系电话号码 引用自JCTB010104 YDDH 移动电话 C 30 NULL NULL NULL NULL" />
+            <name="WLDZ" exp="网络地址" type="nvarchar(60)" null="T" p="F" remark="网络地址 编号：JCTB010107 引用自JCTB010107 WLDZ 网络地址 C 60 NULL NULL 如主页、博客、微博网址 NULL" />
+            <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" p="F" remark="即时通讯号 编号：JCTB010108 引用自JCTB010108 JSTXH 即时通讯号 C 40 NULL NULL 如MSN/QQ等号码 NULL" />
+            <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" remark="电子信箱 编号：JCTB010106 引用自JCTB010106 DZXX 电子信箱 C 40 NULL NULL 电子邮件地址 NULL" />
+            <name="ZP" exp="照片" type="nvarchar(200)" null="T" p="F" remark="照片 编号：JCTB020119 引用自JCTB020119 ZP 照片 B NULL NULL NULL 近期正面免冠证件照片 NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS0102" exp="学生指纹串信息数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="DYZWXX" exp="第一指纹信息" type="nvarchar(15)" null="F" p="T" remark="第一指纹信息 编号：ZZXS010201 值空间：GA426.7 " />
+            <name="DEZWXX" exp="第二指纹信息" type="nvarchar(15)" null="T" p="F" remark="第二指纹信息 编号：ZZXS010202 引用自ZZXS010201 DYZWXX 第一指纹信息 C 15 M GA426.7 NULL NULL" />
+            <name="DSZWXX" exp="第三指纹信息" type="nvarchar(15)" null="T" p="F" remark="第三指纹信息 编号：ZZXS010203 引用自ZZXS010201 DYZWXX 第一指纹信息 C 15 M GA426.7 NULL NULL" />
+            <name="CJRQ" exp="采集日期" type="nvarchar(8)" null="T" p="F" remark="采集日期 编号：ZZXS010204 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CJBZ" exp="采集备注" type="text" null="T" p="F" remark="采集备注 编号：ZZXS010205 " />
+        </field_area>
+    </table>
+    <table name="ZZXS0201" exp="家庭基本数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JTZZ" exp="家庭住址" type="nvarchar(180)" null="F" p="T" remark="家庭住址 编号：JCTB020601 引用自JCTB010102 TXDZ 通信地址 C 180 NULL NULL 指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址 NULL" />
+            <name="JTYZBM" exp="家庭邮政编码" type="nvarchar(6)" null="F" p="F" remark="家庭邮政编码 编号：JCTB020602 引用自JCTB010101 YZBM 邮政编码 C 6 NULL NULL NULL NULL" />
+            <name="JTDH" exp="家庭电话" type="nvarchar(30)" null="T" p="F" remark="家庭电话 编号：JCTB020603 引用自JCTB010103 DH 电话 C 30 NULL NULL 即电话号码 NULL" />
+            <name="JTLXR" exp="家庭联系人" type="nvarchar(36)" null="F" p="F" remark="家庭联系人 编号：ZZXS020101 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="JTDZXX" exp="家庭电子信箱" type="nvarchar(40)" null="T" p="F" remark="家庭电子信箱 编号：JCTB020604 引用自JCTB010106 DZXX 电子信箱 C 40 NULL NULL 电子邮件地址 NULL" />
+            <name="JTRK" exp="家庭人口" type="decimal(2, 0)" null="T" p="F" remark="家庭人口 编号：JCTB020901 引用自JCTB020901 JTRK 家庭人口 N 2 O NULL 指本人家庭户口人口数 NULL" />
+            <name="JTZYSRLY" exp="家庭主要收入来源" type="nvarchar" null="T" p="F" remark="家庭主要收入来源 编号：ZZXS020102 " />
+            <name="JTYSRJE" exp="家庭月收入金额" type="money" null="T" p="F" remark="家庭月收入金额 编号：ZZXS020103 " />
+            <name="JTNSRJE" exp="家庭年收入金额" type="money" null="T" p="F" remark="家庭年收入金额 编号：ZZXS020104 " />
+            <name="LJZJHCZ" exp="离家最近火车站" type="nvarchar(30)" null="T" p="F" remark="离家最近火车站 编号：ZZXS020105 " />
+        </field_area>
+    </table>
+    <table name="ZZXS0202" exp="家庭成员信息数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="T" remark="姓名 编号：JCTB020101 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" remark="关系码 编号：JCTB020701 引用自JCTB020701 GXM 关系码 C 2 M NULL NULL NULL" />
+            <name="JTCYZYM" exp="家庭成员职业码" type="nvarchar(3)" null="F" p="F" remark="家庭成员职业码 编号：ZZXS020201 值空间：GB/T6565 解释/举例：0国家机关、党群组织、企业、事业单位负责人；01中国共产党中央委员会和地方各级组织负责人；021国家权力机关及其工作机构负责人 " />
+            <name="SZDW" exp="所在单位" type="nvarchar(60)" null="T" p="F" remark="所在单位 编号：ZZXS020202 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="T" p="F" remark="政治面貌码 编号：JCTB020115 引用自JCTB020115 ZZMMM 政治面貌码 C 2 NULL GB/T4762 可采用简称，如：01中共党员，04民革会员 NULL" />
+            <name="DH" exp="电话" type="nvarchar(30)" null="T" p="F" remark="电话 编号：JCTB010103 引用自JCTB010103 DH 电话 C 30 NULL NULL 即电话号码 NULL" />
+            <name="YDDH" exp="移动电话" type="nvarchar(30)" null="T" p="F" remark="移动电话 编号：JCTB010104 引用自JCTB010104 YDDH 移动电话 C 30 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS06" exp="学生成绩数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="T" remark="课程号 编号：ZZJX010201 引用自ZZJX010201 KCH 课程号 C 6 M NULL 学校自编 NULL" />
+            <name="KCMC" exp="课程名称" type="nvarchar(100)" null="F" p="F" remark="课程名称 编号：ZZJX010202 引用自ZZJX010202 KCMC 课程名称 C 100 M NULL NULL NULL" />
+            <name="XF" exp="学分" type="decimal(2, 1)" null="F" p="F" remark="学分 编号：ZZJX010206 引用自ZZJX010206 XF 学分 N 21 M NULL 如：2.5 NULL" />
+            <name="XQMC" exp="学期名称" type="nvarchar(10)" null="F" p="F" remark="学期名称 编号：ZZJX010301 引用自ZZJX010301 XQMC 学期名称 C 10 M NULL 学校自编。例如：2010年春季学期；2009年秋季学期 NULL" />
+            <name="PSCJ" exp="平时成绩" type="decimal(5, 1)" null="T" p="F" remark="平时成绩 编号：ZZXS060101 " />
+            <name="CJ" exp="成绩" type="decimal(5, 1)" null="F" p="F" remark="成绩 编号：ZZXS060102 " />
+            <name="KSXZ" exp="考试性质" type="nvarchar(2)" null="T" p="F" remark="考试性质 编号：ZZXS060103 值空间：JY/T1001KSXZ考试性质代码表 " />
+            <name="RKJGH" exp="任课教工号" type="nvarchar(20)" null="T" p="F" remark="任课教工号 编号：ZZXS060104 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="CJLRJGH" exp="成绩录入教工号" type="nvarchar(20)" null="T" p="F" remark="成绩录入教工号 编号：ZZXS060105 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="CJLRRQ" exp="成绩录入日期" type="nvarchar(8)" null="F" p="F" remark="成绩录入日期 编号：ZZXS060106 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS0702" exp="学籍异动数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="YDLBM" exp="异动类别码" type="nvarchar(2)" null="F" p="T" remark="异动类别码 编号：JCXS020201 引用自JCXS020201 YDLBM 异动类别码 C 2 M JY/T1001XJYDLB学籍异动类别代码 NULL NULL" />
+            <name="YDRQ" exp="异动日期" type="nvarchar(8)" null="F" p="F" remark="异动日期 编号：JCXS020202 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="YDYYM" exp="异动原因码" type="nvarchar(2)" null="F" p="F" remark="异动原因码 编号：JCXS020203 引用自JCXS020203 YDYYM 异动原因码 C 2 M JY/T1001XJYDYY学籍异动原因代码 NULL NULL" />
+            <name="SPRQ" exp="审批日期" type="nvarchar(8)" null="T" p="F" remark="审批日期 编号：JCXS020204 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SPWH" exp="审批文号" type="nvarchar(24)" null="T" p="F" remark="审批文号 编号：JCXS020205 引用自JCXS020205 SPWH 审批文号 C 24 O NULL 审批的正式文号，无正式文号不填 NULL" />
+            <name="JBRGH" exp="经办人工号" type="nvarchar(20)" null="T" p="F" remark="经办人工号 编号：ZZXS070201 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="YDLYXXM" exp="异动来源学校码" type="nvarchar(10)" null="T" p="F" remark="异动来源学校码 编号：JCXS020206 引用自JCXX010101 XXDM 学校代码 C 10 M 学校（机构）标识码 NULL NULL" />
+            <name="YDQXXXM" exp="异动去向学校码" type="nvarchar(10)" null="T" p="F" remark="异动去向学校码 编号：JCXS020207 引用自JCXX010101 XXDM 学校代码 C 10 M 学校（机构）标识码 NULL NULL" />
+            <name="YDSM" exp="异动说明" type="text" null="T" p="F" remark="异动说明 编号：JCXS020208 引用自JCXS020208 YDSM 异动说明 T NULL O NULL NULL NULL" />
+            <name="YZYM" exp="原专业码" type="nvarchar(6)" null="F" p="F" remark="原专业码 编号：JCXS020210 引用自JCTB010407 ZYM 专业码 C 6 NULL 学位授予和人才培养学科目录专业学位授予和人才培养目录普通高等学校本科专业目录普通高等学校高职高专教育指导性专业目录（试行）中等职业学校专业目录 NULL NULL" />
+            <name="YBH" exp="原班号" type="nvarchar(10)" null="F" p="F" remark="原班号 编号：JCXS020211 引用自JCXX020001 BH 班号 C 10 M NULL 学校自编 NULL" />
+            <name="YNJ" exp="原年级" type="nvarchar(10)" null="F" p="F" remark="原年级 编号：JCXS020212 引用自JCTB010401 NJ 年级 C 10 NULL NULL NULL NULL" />
+            <name="XZYM" exp="现专业码" type="nvarchar(6)" null="F" p="F" remark="现专业码 编号：JCXS020215 引用自JCTB010407 ZYM 专业码 C 6 NULL 学位授予和人才培养学科目录专业学位授予和人才培养目录普通高等学校本科专业目录普通高等学校高职高专教育指导性专业目录（试行）中等职业学校专业目录 NULL NULL" />
+            <name="XBH" exp="现班号" type="nvarchar(10)" null="F" p="F" remark="现班号 编号：JCXS020216 引用自JCXX020001 BH 班号 C 10 M NULL 学校自编 NULL" />
+            <name="XNJ" exp="现年级" type="nvarchar(10)" null="F" p="F" remark="现年级 编号：JCXS020217 引用自JCTB010401 NJ 年级 C 10 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS0703" exp="学生注册信息数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZCZKM" exp="注册状况码" type="nvarchar(1)" null="F" p="T" remark="注册状况码 编号：ZZXS070301 值空间：JY/T1001ZCZK注册状况代码 解释/举例：1注册2报到3未报到 " />
+            <name="ZCRQ" exp="注册日期" type="nvarchar(8)" null="F" p="F" remark="注册日期 编号：ZZXS070302 " />
+            <name="BDRQ" exp="报到日期" type="nvarchar(8)" null="F" p="F" remark="报到日期 编号：ZZXS070303 " />
+            <name="WZCYY" exp="未注册原因" type="nvarchar(100)" null="F" p="F" remark="未注册原因 编号：ZZXS070304 " />
+            <name="WZCWBDQX" exp="未注册/未报到去向" type="nvarchar(40)" null="F" p="F" remark="未注册/未报到去向 编号：ZZXS070305 " />
+            <name="SFQJ" exp="是否请假" type="nvarchar(1)" null="F" p="F" remark="是否请假 编号：ZZXS070306 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="WASZCXQM" exp="未按时注册学期码" type="nvarchar(1)" null="F" p="F" remark="未按时注册学期码 编号：ZZXS070307 引用自JCTB010206 XQM 学期码 C 1 NULL JY/T1001XQ学期代码 NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS1001" exp="学生资助经费发放过程数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="T" remark="身份证件号 编号：JCTB020112 引用自JCTB020112 SFZJH 身份证件号 C 20 NULL NULL 如：公民身份号码 NULL" />
+            <name="SZRQ" exp="受助日期" type="nvarchar(8)" null="F" p="F" remark="受助日期 编号：ZZXS100101 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SZLX" exp="受助类型" type="nvarchar(1)" null="F" p="F" remark="受助类型 编号：ZZXS100102 值空间：XSSZLX学生受资助类型码 " />
+            <name="ZZJFLYM" exp="资助经费来源码" type="nvarchar(1)" null="F" p="F" remark="资助经费来源码 编号：ZZXS100103 值空间：JY/T1001JLZZZJLY奖励资助资金来源代码 " />
+            <name="ZZJE" exp="资助金额" type="money" null="T" p="F" remark="资助金额 编号：ZZXS100104 " />
+            <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" remark="资助单位或个人 编号：ZZXS100105 " />
+            <name="YHKH" exp="银行卡号" type="nvarchar(30)" null="T" p="F" remark="银行卡号 编号：ZZXS100106 " />
+            <name="FFFSSM" exp="发放方式说明" type="nvarchar(200)" null="T" p="F" remark="发放方式说明 编号：ZZXS100107 解释/举例：如果没使用银行卡，需要说明发放方式 " />
+        </field_area>
+    </table>
+    <table name="ZZXS1002" exp="奖学金数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JXJMC" exp="奖学金名称" type="nvarchar(30)" null="F" p="T" remark="奖学金名称 编号：ZZXS100201 " />
+            <name="JXJBH" exp="奖学金编号" type="nvarchar(2)" null="F" p="F" remark="奖学金编号 编号：ZZXS100202 " />
+            <name="JXJDJ" exp="奖学金等级" type="nvarchar(20)" null="F" p="F" remark="奖学金等级 编号：ZZXS100203 " />
+            <name="JXJLXM" exp="奖学金类型码" type="nvarchar(2)" null="F" p="F" remark="奖学金类型码 编号：ZZXS100204 值空间：JY/T1001JXJLX奖学金类型代码 " />
+            <name="JXJE" exp="奖学金额" type="money" null="F" p="F" remark="奖学金额 编号：ZZXS100205 解释/举例：单位：元 " />
+            <name="HJNY" exp="获奖年月" type="nvarchar(6)" null="F" p="F" remark="获奖年月 编号：ZZXS100206 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" remark="资助单位或个人 编号：ZZXS100105 解释/举例：授予奖学金的单位或人名 引用自ZZXS100105 ZZDWHGR 资助单位或个人 C 60 O NULL NULL NULL" />
+            <name="JXJLYM" exp="奖学金来源码" type="nvarchar(1)" null="T" p="F" remark="奖学金来源码 编号：ZZXS100207 值空间：JY/T1001JLZZZJLY奖励资助资金来源代码 " />
+        </field_area>
+    </table>
+    <table name="ZZXS1003" exp="助学金数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZKBMH" exp="中考报名号" type="nvarchar(10)" null="T" p="F" remark="中考报名号 编号：ZZXS100301 " />
+            <name="YHKH" exp="银行卡号" type="nvarchar(30)" null="F" p="F" remark="银行卡号 编号：ZZXS100106 引用自ZZXS100106 YHKH 银行卡号 C 30 O NULL NULL NULL" />
+            <name="ZXJE" exp="助学金额" type="money" null="F" p="F" remark="助学金额 编号：ZZXS100302 解释/举例：单位：元 " />
+            <name="SFNY" exp="始发年月" type="nvarchar(6)" null="F" p="F" remark="始发年月 编号：ZZXS100303 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="TFNY" exp="停发年月" type="nvarchar(6)" null="F" p="F" remark="停发年月 编号：ZZXS100304 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="TFYY" exp="停发原因" type="nvarchar(80)" null="F" p="F" remark="停发原因 编号：ZZXS100305 解释/举例：停发原因说明 " />
+            <name="ZXJMC" exp="助学金名称" type="nvarchar(60)" null="F" p="F" remark="助学金名称 编号：ZZXS100306 " />
+            <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" remark="资助单位或个人 编号：ZZXS100105 引用自ZZXS100105 ZZDWHGR 资助单位或个人 C 60 O NULL NULL NULL" />
+            <name="ZXJLX" exp="助学金类型" type="nvarchar(1)" null="F" p="F" remark="助学金类型 编号：ZZXS100307 值空间：ZXJFL助学金分类代码 " />
+        </field_area>
+    </table>
+    <table name="ZZXS1004" exp="助学贷款信息数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="DKSQNY" exp="贷款申请年月" type="nvarchar(6)" null="F" p="T" remark="贷款申请年月 编号：ZZXS100401 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="DKHTH" exp="贷款合同号" type="nvarchar(12)" null="F" p="F" remark="贷款合同号 编号：ZZXS100402 " />
+            <name="DKZJE" exp="贷款总金额" type="money" null="F" p="F" remark="贷款总金额 编号：ZZXS100403 解释/举例：单位：元 " />
+            <name="DKNS" exp="贷款年数" type="decimal(3, 1)" null="F" p="F" remark="贷款年数 编号：ZZXS100404 " />
+            <name="SQHKR" exp="首期还款日" type="nvarchar(8)" null="F" p="F" remark="首期还款日 编号：ZZXS100405 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HKZZR" exp="还款终止日" type="nvarchar(8)" null="F" p="F" remark="还款终止日 编号：ZZXS100406 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JKYTM" exp="借款用途码" type="nvarchar(1)" null="F" p="F" remark="借款用途码 编号：ZZXS100407 解释/举例：学校自行编码学费/生活费/学费生活费 " />
+            <name="DKYH" exp="贷款银行" type="nvarchar(60)" null="F" p="F" remark="贷款银行 编号：ZZXS100408 " />
+            <name="QYR" exp="签约日" type="nvarchar(8)" null="F" p="F" remark="签约日 编号：ZZXS100409 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SFYCXCH" exp="是否一次性偿还" type="nvarchar(1)" null="F" p="F" remark="是否一次性偿还 编号：ZZXS100410 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1一次性偿还0分期偿还 " />
+            <name="DBFS" exp="担保方式" type="nvarchar(10)" null="F" p="F" remark="担保方式 编号：ZZXS100411 值空间：信用/担保 " />
+            <name="SFYQ" exp="是否延期" type="nvarchar(1)" null="F" p="F" remark="是否延期 编号：ZZXS100412 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="YQNX" exp="延期年限" type="decimal(2, 0)" null="F" p="F" remark="延期年限 编号：ZZXS100413 " />
+            <name="HDRQ" exp="获贷日期" type="nvarchar(8)" null="F" p="F" remark="获贷日期 编号：ZZXS100414 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS1005" exp="免学费数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="MXFXSSFZHM" exp="免学费学生身份证号码" type="nvarchar(20)" null="F" p="T" remark="免学费学生身份证号码 编号：ZZXS100501 引用自JCTB020112 SFZJH 身份证件号 C 20 NULL NULL 如：公民身份号码 NULL" />
+            <name="JMYY" exp="减免原因" type="nvarchar(60)" null="F" p="F" remark="减免原因 编号：ZZXS100502 " />
+            <name="JMJE" exp="减免金额" type="money" null="F" p="F" remark="减免金额 编号：ZZXS100503 " />
+            <name="MXFSFNY" exp="免学费始发年月" type="nvarchar(6)" null="F" p="F" remark="免学费始发年月 编号：ZZXS100504 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="MXFTFNY" exp="免学费停发年月" type="nvarchar(6)" null="T" p="F" remark="免学费停发年月 编号：ZZXS100505 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="JFLYM" exp="经费来源码" type="nvarchar(1)" null="F" p="F" remark="经费来源码 编号：ZZXS100506 值空间：JY/T1001JLZZZJLY奖励资助资金来源代码表 " />
+        </field_area>
+    </table>
+    <table name="ZZXS1006" exp="临时困难补助数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="BZSQRQ" exp="补助申请日期" type="nvarchar(8)" null="F" p="T" remark="补助申请日期 编号：ZZXS100601 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SQYY" exp="申请原因" type="nvarchar(200)" null="F" p="F" remark="申请原因 编号：ZZXS100602 " />
+            <name="BZJE" exp="补助金额" type="money" null="F" p="F" remark="补助金额 编号：ZZXS100603 " />
+            <name="BZRQ" exp="补助日期" type="nvarchar(8)" null="F" p="F" remark="补助日期 编号：ZZXS100604 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS1101" exp="毕业数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="SHRQ" exp="审核日期" type="nvarchar(8)" null="F" p="T" remark="审核日期 编号：ZZXS110101 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CZZGH" exp="操作者工号" type="nvarchar(20)" null="F" p="F" remark="操作者工号 编号：ZZXS110102 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="JSXYNY" exp="结束学业年月" type="nvarchar(6)" null="F" p="F" remark="结束学业年月 编号：JCXS030101 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="JSXYM" exp="结束学业码" type="nvarchar(1)" null="F" p="F" remark="结束学业码 编号：JCXS030102 引用自JCXS030102 JSXYM 结束学业码 C 1 M GB/T14946.1－2009附录A.27 NULL NULL" />
+            <name="BYZSH" exp="毕业证书号" type="nvarchar(20)" null="T" p="F" remark="毕业证书号 编号：JCXS030104 引用自JCTB020508 XLZSH 学历证书号 C 20 O NULL NULL NULL" />
+            <name="FFRQ" exp="发放日期" type="nvarchar(8)" null="T" p="F" remark="发放日期 编号：ZZXS110103 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SFZSLQ" exp="是否证书领取" type="nvarchar(1)" null="T" p="F" remark="是否证书领取 编号：ZZXS110104 值空间：JY/T1001SFBZ是否标志代码 解释/举例：１领取０未领取 " />
+        </field_area>
+    </table>
+    <table name="ZZXS1102" exp="就业数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XYSBH" exp="协议书编号" type="nvarchar(10)" null="T" p="F" remark="协议书编号 编号：JCXS030201 引用自JCXS030201 XYSBH 协议书编号 C 10 O NULL 学校自编 NULL" />
+            <name="XYQDRQ" exp="协议签订日期" type="nvarchar(8)" null="F" p="F" remark="协议签订日期 编号：JCXS030202 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XYNX" exp="协议年限" type="nvarchar(1)" null="F" p="F" remark="协议年限 编号：JCXS030203 引用自JCXS030203 XYNX 协议年限 C 1 O NULL NULL NULL" />
+            <name="BDRQ" exp="报到日期" type="nvarchar(8)" null="T" p="F" remark="报到日期 编号：JCXS030204 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BYQXM" exp="毕业去向码" type="nvarchar(2)" null="F" p="F" remark="毕业去向码 编号：JCXS030206 引用自JCXS030206 BYQXM 毕业去向码 C 2 M JY/T1001BYQX毕业去向代码JY/T1001GXBYQX高校毕业去向代码 中小学、中职学生采用BYQX毕业去向代码，高校毕业生采用GXBYQX高校毕业去向代码 NULL" />
+            <name="JSDW" exp="接收单位" type="nvarchar(60)" null="T" p="F" remark="接收单位 编号：JCXS030207 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="DWSZDQHM" exp="单位所在地区划码" type="nvarchar(6)" null="T" p="F" remark="单位所在地区划码 编号：JCXS030208 引用自JCXS030208 DWSZDQHM 单位所在地区划码 C 6 O GB/T2260 接收单位所在地区划码 NULL" />
+            <name="DWZGBM" exp="单位主管部门" type="nvarchar(60)" null="T" p="F" remark="单位主管部门 编号：JCXS030209 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="DWLXDH" exp="单位联系电话" type="nvarchar(30)" null="T" p="F" remark="单位联系电话 编号：ZZXS110201 引用自JCTB010103 DH 电话 C 30 NULL NULL 即电话号码 NULL" />
+            <name="SHDWXZM" exp="社会单位性质码" type="nvarchar(2)" null="T" p="F" remark="社会单位性质码 编号：JCXS030210 引用自JCXS030210 SHDWXZM 社会单位性质码 C 2 O JY/T1001SHDWXZ社会单位性质代码 NULL NULL" />
+            <name="DWJJXZM" exp="单位经济性质码" type="nvarchar(3)" null="T" p="F" remark="单位经济性质码 编号：JCXS030211 引用自JCXS030211 DWJJXZM 单位经济性质码 C 3 O GB/T12402 NULL NULL" />
+            <name="DWTGDDY" exp="单位提供的待遇" type="text" null="T" p="F" remark="单位提供的待遇 编号：JCXS030212 引用自JCXS030212 DWTGDDY 单位提供的待遇 T NULL O NULL NULL NULL" />
+            <name="DAJSDZ" exp="档案接收地址" type="nvarchar(60)" null="F" p="F" remark="档案接收地址 编号：JCXS030213 引用自JCXS030213 DAJSDZ 档案接收地址 C 60 O NULL NULL NULL" />
+            <name="JSDYM" exp="接收地邮码" type="nvarchar(6)" null="F" p="F" remark="接收地邮码 编号：JCXS030214 引用自JCTB010101 YZBM 邮政编码 C 6 NULL NULL NULL NULL" />
+            <name="GZGWXZM" exp="工作岗位性质码" type="nvarchar(1)" null="T" p="F" remark="工作岗位性质码 编号：JCXS030215 引用自JCXS030215 GZGWXZM 工作岗位性质码 C 1 O JY/T1001GZGWXZ工作岗位性质代码 NULL NULL" />
+            <name="DWHYM" exp="单位行业码" type="nvarchar(4)" null="T" p="F" remark="单位行业码 编号：JCXS030216 引用自JCXS030216 DWHYM 单位行业码 C 4 O GB/T4754 NULL NULL" />
+            <name="BDZH" exp="报到证号" type="nvarchar(11)" null="T" p="F" remark="报到证号 编号：JCXS030217 引用自JCXS030217 BDZH 报到证号 C 11 O NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="ZZXS1201" exp="社团基本数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="STMC" exp="社团名称" type="nvarchar(30)" null="F" p="T" />
+            <name="STBH" exp="社团编号" type="nvarchar(4)" null="F" p="F" />
+            <name="CLRQ" exp="成立日期" type="nvarchar(8)" null="F" p="F" />
+            <name="CLMD" exp="成立目的" type="nvarchar(60)" null="T" p="F" />
+            <name="ZYHDXS" exp="主要活动形式" type="nvarchar(60)" null="F" p="F" />
+            <name="CSR" exp="创始人" type="nvarchar(36)" null="F" p="F" />
+            <name="PZBM" exp="批准部门" type="nvarchar(30)" null="F" p="F" />
+            <name="STXZ" exp="社团性质" type="nvarchar(30)" null="F" p="F" />
+            <name="RS" exp="人数" type="decimal(3, 0)" null="F" p="F" />
+            <name="DQFZR" exp="当前负责人" type="nvarchar(36)" null="F" p="F" />
+            <name="FZRDH" exp="负责人电话" type="nvarchar(30)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="ZZXS1202" exp="学生参与社团情况数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="STBH" exp="社团编号" type="nvarchar(4)" null="T" p="F" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="CDRQ" exp="参团日期" type="nvarchar(8)" null="F" p="F" />
+            <name="STZW" exp="社团职务" type="nvarchar(50)" null="F" p="F" />
+            <name="GZNR" exp="工作内容" type="text" null="F" p="F" />
+            <name="STPJ" exp="社团评价" type="text" null="F" p="F" />
+            <name="DQZT" exp="当前状态" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 解释/举例：1在职0离职 " />
+        </field_area>
+    </table>
+</namespace>

@@ -1,0 +1,60 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="ZZZS" provider="reallocate_namespace" generation_time="">
+    <table name="ZZZS01" exp="考生数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZKZH" exp="准考证号" type="nvarchar(15)" null="F" p="T" remark="准考证号 编号：ZZZS010001 解释/举例：目前采用的是9位号 " />
+            <name="KSH" exp="考生号" type="nvarchar(20)" null="F" p="F" remark="考生号 编号：ZZZS010002 解释/举例：目前采用的是14位号 " />
+            <name="KQXZQHM" exp="考区行政区划码" type="nvarchar(6)" null="T" p="F" remark="考区行政区划码 编号：ZZZS010003 值空间：GB/T2260 " />
+            <name="RXNY" exp="入学年月" type="nvarchar(6)" null="F" p="F" remark="入学年月 编号：ZZZS010004 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="YSWGYZM" exp="应试外国语种码" type="nvarchar(2)" null="F" p="F" remark="应试外国语种码 编号：ZZZS010005 值空间：GB/T4880.1 解释/举例：采用代码第1部分：2字母代码；en英语，de德语 " />
+            <name="BKZYM1" exp="报考专业码1" type="nvarchar(6)" null="T" p="F" remark="报考专业码1 编号：ZZZS010006 值空间：中等职业学校专业目录 " />
+            <name="BKZYM2" exp="报考专业码2" type="nvarchar(6)" null="T" p="F" remark="报考专业码2 编号：ZZZS010007 值空间：中等职业学校专业目录 " />
+            <name="BKZYM3" exp="报考专业码3" type="nvarchar(6)" null="T" p="F" remark="报考专业码3 编号：ZZZS010008 值空间：中等职业学校专业目录 " />
+            <name="BKZYM4" exp="报考专业码4" type="nvarchar(6)" null="T" p="F" remark="报考专业码4 编号：ZZZS010009 值空间：中等职业学校专业目录 " />
+            <name="BKZYM5" exp="报考专业码5" type="nvarchar(6)" null="T" p="F" remark="报考专业码5 编号：ZZZS010010 值空间：中等职业学校专业目录 " />
+            <name="BKZYM6" exp="报考专业码6" type="nvarchar(6)" null="T" p="F" remark="报考专业码6 编号：ZZZS010011 值空间：中等职业学校专业目录 " />
+            <name="KSFSM" exp="考试方式码" type="nvarchar(2)" null="F" p="F" remark="考试方式码 编号：ZZZS010012 值空间：JY/T1001KSFS考试方式代码 " />
+            <name="BYZX" exp="毕业中学" type="nvarchar(10)" null="F" p="F" remark="毕业中学 编号：ZZZS010013 解释/举例：学校自行编号 " />
+            <name="BYZXYZBM" exp="毕业中学邮政编码" type="nvarchar(6)" null="F" p="F" remark="毕业中学邮政编码 编号：ZZZS010014 引用自JCTB010101 YZBM 邮政编码 C 6 NULL NULL NULL NULL" />
+            <name="KSTC" exp="考生特长" type="nvarchar(100)" null="T" p="F" remark="考生特长 编号：ZZZS010015 " />
+            <name="JLYCC" exp="奖励与惩处" type="nvarchar(200)" null="T" p="F" remark="奖励与惩处 编号：ZZZS010016 " />
+            <name="JSHJ" exp="竞赛获奖" type="nvarchar(200)" null="T" p="F" remark="竞赛获奖 编号：ZZZS010017 解释/举例：各类竞赛获奖信息 " />
+            <name="SHGZ" exp="社会工作" type="nvarchar(200)" null="T" p="F" remark="社会工作 编号：ZZZS010018 解释/举例：社会工作等信息 " />
+            <name="TJJL" exp="体检结论" type="nvarchar(20)" null="T" p="F" remark="体检结论 编号：ZZZS010019 解释/举例：合格/专业受限 " />
+            <name="JZBS" exp="家族病史" type="nvarchar(20)" null="T" p="F" remark="家族病史 编号：ZZZS010020 解释/举例：精神病/癫痫/肿瘤/心脏病 " />
+            <name="KSJWBS" exp="考生既往病史" type="nvarchar(100)" null="T" p="F" remark="考生既往病史 编号：ZZZS010021 " />
+            <name="SG" exp="身高" type="decimal(5, 1)" null="T" p="F" remark="身高 编号：ZZZS010022 解释/举例：单位：厘米 " />
+            <name="KSSL" exp="考生视力" type="decimal(3, 1)" null="T" p="F" remark="考生视力 编号：ZZZS010023 " />
+        </field_area>
+    </table>
+    <table name="ZZZS02" exp="考生总分数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="RXZF" exp="入学总分" type="decimal(5, 1)" null="T" p="F" remark="入学总分 编号：ZZZS020001 解释/举例：中考总分＋附加分 " />
+            <name="GKZF" exp="中考总分" type="decimal(5, 1)" null="T" p="F" remark="中考总分 编号：ZZZS020002 " />
+            <name="FJF" exp="附加分" type="decimal(5, 1)" null="T" p="F" remark="附加分 编号：ZZZS020003 " />
+            <name="FJFLBM" exp="附加分类别码" type="nvarchar(1)" null="T" p="F" remark="附加分类别码 编号：ZZZS020004 值空间：JY/T1001FJFLB附加分类别代码 解释/举例：指少数民族学生、国内外获奖学生或文体特长生等类别 " />
+        </field_area>
+    </table>
+    <table name="ZZZS03" exp="考生科目成绩数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KMM" exp="科目码" type="decimal(2, 0)" null="F" p="T" remark="科目码 编号：ZZZS030001 值空间：ZKKM中考科目代码 " />
+            <name="ZKFS" exp="中考分数" type="decimal(5, 1)" null="F" p="F" remark="中考分数 编号：ZZZS030002 " />
+        </field_area>
+    </table>
+    <table name="ZZZS04" exp="考生录取数据类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="TZSH" exp="通知书号" type="nvarchar(30)" null="F" p="T" remark="通知书号 编号：ZZZS040001 " />
+            <name="LQZY" exp="录取志愿" type="nvarchar(1)" null="T" p="F" remark="录取志愿 编号：ZZZS040002 解释/举例：第几志愿专业录取：1第1志愿录取9调剂专业录取 " />
+            <name="SYDXZQHM" exp="生源地行政区划码" type="nvarchar(6)" null="T" p="F" remark="生源地行政区划码 编号：ZZZS040003 值空间：GB/T2260 " />
+            <name="BXZYH" exp="本校专业号" type="decimal(4, 0)" null="F" p="F" remark="本校专业号 编号：ZZZS040004 解释/举例：学校自行编号 引用自ZZJX010101 ZYBH 专业编号 N 4 M NULL 学校自编 NULL" />
+            <name="XZ" exp="学制" type="decimal(3, 1)" null="F" p="F" remark="学制 编号：JCTB010402 引用自JCTB010402 XZ 学制 N 31 NULL NULL 以年为单位 NULL" />
+            <name="SFGFYL" exp="是否公费医疗" type="nvarchar(1)" null="F" p="F" remark="是否公费医疗 编号：ZZZS040005 值空间：JY/T1001SFBZ是否标志代码 解释/举例：学籍管理部门提供 " />
+            <name="XZBDM" exp="行政班代码" type="nvarchar(10)" null="F" p="F" remark="行政班代码 编号：ZZJX020201 引用自JCXX020001 BH 班号 C 10 M NULL 学校自编 NULL" />
+            <name="ZSDX" exp="招生对象" type="nvarchar(3)" null="T" p="F" remark="招生对象 编号：ZZZS040006 值空间：JY/T1001ZSDX招生对象代码 " />
+        </field_area>
+    </table>
+</namespace>

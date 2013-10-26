@@ -1,0 +1,51 @@
+ZXJX01  课程数据类
+  SCHOOLID      学校名                  int            主键
+  KCH           课程号                  nvarchar(10)   主键
+  KCMC          课程名称                nvarchar(60)   非主
+  KCM           课程码                  nvarchar(2)    非主
+  KCDJM         课程等级码              nvarchar(1)    非主
+  KCBM          课程别名                nvarchar(60)   非主
+  KCJJ          课程简介                text           非主
+  KCYQ          课程要求                text           非主
+  ZXS           总学时                  decimal(3, 0)  非主
+  ZHXS          周学时                  decimal(2, 0)  非主
+  ZXXS          自学学时                decimal(3, 0)  非主
+  SKFSM         授课方式码              nvarchar(1)    非主
+  JCBM          教材编码                text           非主
+  CKSM          参考书目                text           非主
+
+ZXJX02  教材数据类
+  SCHOOLID      学校名                  int            主键
+  JCBM          教材编码                nvarchar(10)   主键
+  JCMC          教材名称                nvarchar(200)  非主
+  ISBN          ISBN                    nvarchar(20)   非主
+  ZZ            作者                    nvarchar(200)  非主
+  BB            版别                    nvarchar(20)   非主
+  YC            印次                    nvarchar(10)   非主
+  DJ            定价                    decimal(52, 0) 非主
+  CBS           出版社                  nvarchar(200)  非主
+  FXBH          发行编号                nvarchar(20)   非主
+  CBRQ          出版日期                nvarchar(8)    非主
+  ZD            装订                    nvarchar(20)   非主
+  KB            开本                    nvarchar(20)   非主
+  ZS            字数                    decimal(8, 0)  非主
+  YS            页数                    decimal(6, 0)  非主
+  NRJJ          内容简介                text           非主
+
+ZXJX03  教学计划数据类表
+  SCHOOLID      学校名                  int            主键
+  KCH           课程号                  nvarchar(2)    主键
+  SKNJ          授课年级                nvarchar(10)   非主
+  SKXN          上课学年                nvarchar(9)    非主
+  SKXQM         上课学期码              nvarchar(1)    非主
+  KSFSM         考试方式码              nvarchar(1)    非主
+
+ZXJX04  排课数据类表
+  SCHOOLID      学校名                  int            主键
+  KCH           课程号                  nvarchar(2)    主键
+  SKJSGH        授课教师工号            nvarchar(20)   非主
+  FJBH          房间编号                               非主
+  SKRQ          授课日期                nvarchar(8)    非主
+  KSKJS         开始课节数              decimal(2, 0)  非主
+  JSKJS         结束课节数              decimal(2, 0)  非主
+

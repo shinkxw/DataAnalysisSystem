@@ -1,0 +1,54 @@
+ZXAQ01  安全管理机构数据类表
+  SCHOOLID      学校名                  int            主键
+  JGMC          机构名称                nvarchar(60)   主键
+  FZR           负责人工号              nvarchar(20)   非主
+  RYBZ          专职工作人员人数        decimal(5, 0)  非主
+
+ZXAQ02  安全保卫人员数据类表
+  SCHOOLID      学校名                  int            主键
+  ABLY          保安来源                nvarchar(100)  主键
+  ABSL          保安数量                decimal(3, 0)  非主
+  GSMC          保安公司名称            nvarchar(60)   非主
+  JFLY          经费来源                nvarchar(100)  非主
+  JZBARYSL      兼职保安人员数量        decimal(3, 0)  非主
+
+ZXAQ03  物防数据子类
+  SCHOOLID      学校名                  int            主键
+  SFFBGL        是否封闭管理            nvarchar(1)    主键
+  YWWQHL        有无围墙护栏            nvarchar(1)    非主
+  WQHLCD        围墙护栏长度            decimal(5, 0)  非主
+  YWFHQJ        有无防护器具            nvarchar(1)    非主
+  FHQJMC        防护器具名称            nvarchar(100)  非主
+
+ZXAQ04  技术防范措施数据类表
+  SCHOOLID      学校名                  int            主键
+  SPJKSL        视频监控数量            decimal(3, 0)  主键
+  BJZZSL        报警装置数量            decimal(3, 0)  非主
+
+ZXAQ05  安全教育数据类表
+  SCHOOLID      学校名                  int            主键
+  KCDJM         课程等级码              nvarchar(1)    主键
+  JXNR          教学内容                nvarchar(200)  非主
+  JXXSM         教学形式码              nvarchar(1)    非主
+  JXSJ          教学时间                decimal(2, 0)  非主
+  ZZJS          专职教师数量            decimal(2, 0)  非主
+  JZJS          兼职教师数量            decimal(2, 0)  非主
+  JXPJFS        教学评价方式            nvarchar(1)    非主
+
+ZXAQ06  安全规章制度数据类表
+  SCHOOLID      学校名                  int            主键
+  YWYJYA        有无应急预案            nvarchar(1)    主键
+  YWYJYLZD      有无应急演练制度        nvarchar(1)    非主
+  YWDJZD        有无登记制度            nvarchar(1)    非主
+  YWSTGLZD      有无食堂管理制度        nvarchar(1)    非主
+  YWZSGLZD      有无住宿管理制度        nvarchar(1)    非主
+  YWXFAQZD      有无消防安全制度        nvarchar(1)    非主
+  YWJCZD        有无检查制度            nvarchar(1)    非主
+
+ZXAQ07  应急演练数据类
+  SCHOOLID      学校名                  int            主键
+  YLRQ          演练日期                nvarchar(8)    主键
+  YLYSCD        演练用时长度            decimal(3, 1)  非主
+  YLNR          演练内容                text           非主
+  YLXS          演练形式                nvarchar(100)  非主
+

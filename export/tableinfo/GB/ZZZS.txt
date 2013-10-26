@@ -1,0 +1,49 @@
+ZZZS01  考生数据类表
+  SCHOOLID      学校名                  int            主键
+  ZKZH          准考证号                nvarchar(15)   主键
+  KSH           考生号                  nvarchar(20)   非主
+  KQXZQHM       考区行政区划码          nvarchar(6)    非主
+  RXNY          入学年月                nvarchar(6)    非主
+  YSWGYZM       应试外国语种码          nvarchar(2)    非主
+  BKZYM1        报考专业码1             nvarchar(6)    非主
+  BKZYM2        报考专业码2             nvarchar(6)    非主
+  BKZYM3        报考专业码3             nvarchar(6)    非主
+  BKZYM4        报考专业码4             nvarchar(6)    非主
+  BKZYM5        报考专业码5             nvarchar(6)    非主
+  BKZYM6        报考专业码6             nvarchar(6)    非主
+  KSFSM         考试方式码              nvarchar(2)    非主
+  BYZX          毕业中学                nvarchar(10)   非主
+  BYZXYZBM      毕业中学邮政编码        nvarchar(6)    非主
+  KSTC          考生特长                nvarchar(100)  非主
+  JLYCC         奖励与惩处              nvarchar(200)  非主
+  JSHJ          竞赛获奖                nvarchar(200)  非主
+  SHGZ          社会工作                nvarchar(200)  非主
+  TJJL          体检结论                nvarchar(20)   非主
+  JZBS          家族病史                nvarchar(20)   非主
+  KSJWBS        考生既往病史            nvarchar(100)  非主
+  SG            身高                    decimal(5, 1)  非主
+  KSSL          考生视力                decimal(3, 1)  非主
+
+ZZZS02  考生总分数据类表
+  SCHOOLID      学校名                  int            主键
+  RXZF          入学总分                decimal(5, 1)  非主
+  GKZF          中考总分                decimal(5, 1)  非主
+  FJF           附加分                  decimal(5, 1)  非主
+  FJFLBM        附加分类别码            nvarchar(1)    非主
+
+ZZZS03  考生科目成绩数据类表
+  SCHOOLID      学校名                  int            主键
+  KMM           科目码                  decimal(2, 0)  主键
+  ZKFS          中考分数                decimal(5, 1)  非主
+
+ZZZS04  考生录取数据类表
+  SCHOOLID      学校名                  int            主键
+  TZSH          通知书号                nvarchar(30)   主键
+  LQZY          录取志愿                nvarchar(1)    非主
+  SYDXZQHM      生源地行政区划码        nvarchar(6)    非主
+  BXZYH         本校专业号              decimal(4, 0)  非主
+  XZ            学制                    decimal(3, 1)  非主
+  SFGFYL        是否公费医疗            nvarchar(1)    非主
+  XZBDM         行政班代码              nvarchar(10)   非主
+  ZSDX          招生对象                nvarchar(3)    非主
+

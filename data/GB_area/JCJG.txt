@@ -1,0 +1,307 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="JCJG" provider="reallocate_namespace" generation_time="">
+    <table name="JCJG0101" exp="教职工基本数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="F" p="T" remark="工号 编号：JCJG010101 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" remark="姓名 编号：JCTB020101 引用自JCTB020101 XM 姓名 C 36 NULL NULL 例：张振华；买买提·阿不都热依木 NULL" />
+            <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" remark="英文姓名 编号：JCTB020102 引用自JCTB020102 YWXM 英文姓名 C 60 NULL NULL 例：ChristopherFrancisPatten NULL" />
+            <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="T" p="F" remark="姓名拼音 编号：JCTB020103 引用自JCTB020103 XMPY 姓名拼音 C 60 NULL NULL 例：ZHANGZhenhua， NULL" />
+            <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" remark="曾用名 编号：JCTB020104 引用自JCTB020104 CYM 曾用名 C 36 NULL NULL 指曾经正式使用过的姓名 NULL" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" remark="性别码 编号：JCTB020105 引用自JCTB020105 XBM 性别码 C 1 NULL GB/T2261.1 NULL NULL" />
+            <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" remark="出生日期 编号：JCTB020106 引用自JCTB020106 CSRQ 出生日期 C 8 NULL NULL NULL JCTB010203" />
+            <name="CSDM" exp="出生地码" type="nvarchar(6)" null="F" p="F" remark="出生地码 编号：JCTB020107 引用自JCTB020107 CSDM 出生地码 C 6 NULL GB/T2260 NULL NULL" />
+            <name="JG" exp="籍贯" type="nvarchar(20)" null="T" p="F" remark="籍贯 编号：JCTB020108 引用自JCTB020108 JG 籍贯 C 20 NULL NULL NULL NULL" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="T" p="F" remark="民族码 编号：JCTB020109 引用自JCTB020109 MZM 民族码 C 2 NULL GB/T3304 取用2位数字代码，如：01汉族，02蒙古族 NULL" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="F" p="F" remark="国籍/地区码 编号：JCTB020110 引用自JCTB020110 GJDQM 国籍/地区码 C 3 NULL GB/T2659 采用三字母代码，如：CHN中国，USA美国 NULL" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" remark="身份证件类型码 编号：JCTB020111 引用自JCTB020111 SFZJLXM 身份证件类型码 C 1 NULL JY/T1001SFZJLX身份证件类型代码 NULL NULL" />
+            <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="F" remark="身份证件号 编号：JCTB020112 引用自JCTB020112 SFZJH 身份证件号 C 20 NULL NULL 如：公民身份号码 NULL" />
+            <name="HYZKM" exp="婚姻状况码" type="nvarchar(2)" null="T" p="F" remark="婚姻状况码 编号：JCTB020113 引用自JCTB020113 HYZKM 婚姻状况码 C 2 NULL GB/T2261.2 NULL NULL" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" remark="港澳台侨外码 编号：JCTB020114 引用自JCTB020114 GATQWM 港澳台侨外码 C 2 NULL JY/T1001GATQW港澳台侨外代码 NULL NULL" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="政治面貌码 编号：JCTB020115 引用自JCTB020115 ZZMMM 政治面貌码 C 2 NULL GB/T4762 可采用简称，如：01中共党员，04民革会员 NULL" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" remark="健康状况码 编号：JCTB020116 引用自JCTB020116 JKZKM 健康状况码 C 1 NULL GB/T2261.3 采用1位数字代码 NULL" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" remark="信仰宗教码 编号：JCTB020117 引用自JCTB020117 XYZJM 信仰宗教码 C 2 NULL GA214.12 NULL NULL" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" remark="血型码 编号：JCTB020118 引用自JCTB020118 XXM 血型码 C 1 NULL JY/T1001XX血型代码 NULL NULL" />
+            <name="ZP" exp="照片" type="nvarchar(200)" null="T" p="F" remark="照片 编号：JCTB020119 引用自JCTB020119 ZP 照片 B NULL NULL NULL 近期正面免冠证件照片 NULL" />
+            <name="SFZJYXQ" exp="身份证件有效期" type="nvarchar(17)" null="T" p="F" remark="身份证件有效期 编号：JCTB020121 引用自JCTB020121 SFZJYXQ 身份证件有效期 C 17 NULL NULL NULL JCTB010207" />
+        </field_area>
+    </table>
+    <table name="JCJG0110" exp="奖励数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="HJXM" exp="获奖项目" type="nvarchar(60)" null="T" p="F" remark="获奖项目 编号：JCJG011001 解释/举例：获得奖励的项目名称 " />
+            <name="JLJBM" exp="奖励级别码" type="nvarchar(2)" null="F" p="F" remark="奖励级别码 编号：JCJG011002 值空间：JY/T1001JB级别代码 " />
+            <name="JLDJM" exp="奖励等级码" type="nvarchar(1)" null="F" p="F" remark="奖励等级码 编号：JCJG011003 值空间：JY/T1001JLDJ奖励等级代码 " />
+            <name="HJLBM" exp="获奖类别码" type="nvarchar(1)" null="T" p="F" remark="获奖类别码 编号：JCJG011004 值空间：JY/T1001JSHJLB教师获奖类别代码 " />
+            <name="JLFSM" exp="奖励方式码" type="nvarchar(1)" null="T" p="F" remark="奖励方式码 编号：JCJG011005 值空间：JY/T1001JLFS奖励方式代码 解释/举例：给予荣誉或物质奖励的形式 " />
+            <name="JLMC" exp="奖励名称" type="nvarchar(60)" null="F" p="F" remark="奖励名称 编号：JCJG011006 " />
+            <name="JLMCM" exp="奖励名称码" type="nvarchar(4)" null="T" p="F" remark="奖励名称码 编号：JCJG011007 值空间：GB/T8563.1 " />
+            <name="HJYY" exp="获奖原因" type="text" null="T" p="F" remark="获奖原因 编号：JCJG011008 " />
+            <name="JLNR" exp="奖励内容" type="text" null="T" p="F" remark="奖励内容 编号：JCJG011009 解释/举例：获得奖励的具体内容描述 " />
+            <name="BJDW" exp="颁奖单位" type="nvarchar(60)" null="T" p="F" remark="颁奖单位 编号：JCJG011010 解释/举例：授予奖励的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="HJRQ" exp="获奖日期" type="nvarchar(8)" null="T" p="F" remark="获奖日期 编号：JCJG011011 解释/举例：颁布奖励的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="RYCHM" exp="荣誉称号码" type="nvarchar(3)" null="T" p="F" remark="荣誉称号码 编号：JCJG011012 值空间：GB/T8563.2 " />
+            <name="HJJSM" exp="获奖角色码" type="nvarchar(3)" null="F" p="F" remark="获奖角色码 编号：JCJG011013 值空间：JY/T1001JS角色代码 解释/举例：本人在获奖项目中的角色 " />
+        </field_area>
+    </table>
+    <table name="JCJG0111" exp="惩处数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="CCMC" exp="惩处名称" type="nvarchar(20)" null="F" p="T" remark="惩处名称 编号：JCJG011101 解释/举例：指受到党和国家某级组织或司法行政部门给予处分的名称 " />
+            <name="JLCFM" exp="纪律处分码" type="nvarchar(2)" null="T" p="F" remark="纪律处分码 编号：JCJG011102 值空间：GB/T8563.3 " />
+            <name="CCYY" exp="惩处原因" type="nvarchar(80)" null="T" p="F" remark="惩处原因 编号：JCJG011103 " />
+            <name="CCNR" exp="惩处内容" type="nvarchar(80)" null="T" p="F" remark="惩处内容 编号：JCJG011104 解释/举例：处分包括的具体内容 " />
+            <name="CCDW" exp="惩处单位" type="nvarchar(60)" null="F" p="F" remark="惩处单位 编号：JCJG011105 解释/举例：给予处分的组织机构名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="CCWH" exp="惩处文号" type="nvarchar(24)" null="T" p="F" remark="惩处文号 编号：JCJG011106 解释/举例：给予处分的发文文号 " />
+            <name="CCRQ" exp="惩处日期" type="nvarchar(8)" null="F" p="F" remark="惩处日期 编号：JCJG011107 解释/举例：给予处分的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CCCXRQ" exp="惩处撤销日期" type="nvarchar(8)" null="F" p="F" remark="惩处撤销日期 编号：JCJG011108 解释/举例：处分的撤消日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CCCXWH" exp="惩处撤消文号" type="nvarchar(24)" null="T" p="F" remark="惩处撤消文号 编号：JCJG011109 解释/举例：撤消处分的发文文号 " />
+            <name="CCCXYY" exp="惩处撤消原因" type="nvarchar(80)" null="T" p="F" remark="惩处撤消原因 编号：JCJG011110 " />
+        </field_area>
+    </table>
+    <table name="JCJG0201" exp="语言能力数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="WGYZM" exp="外国语种码" type="nvarchar(2)" null="T" p="F" remark="外国语种码 编号：JCJG020101 值空间：GB/T4880.1 解释/举例：例：en英语，de德语 " />
+            <name="WGYZSLCDM" exp="外国语种熟练程度码" type="nvarchar(1)" null="T" p="F" remark="外国语种熟练程度码 编号：JCJG020102 值空间：GB/T6865 " />
+            <name="ZGYZM" exp="中国语种码" type="nvarchar(3)" null="T" p="F" remark="中国语种码 编号：JCJG020103 值空间：GB/T4881 解释/举例：用三位数字代码 " />
+            <name="ZGYZSLCDM" exp="中国语种熟练程度码" type="nvarchar(1)" null="T" p="F" remark="中国语种熟练程度码 编号：JCJG020104 值空间：GB/T6865 " />
+            <name="PTHSPDJM" exp="普通话水平等级码" type="nvarchar(30)" null="T" p="F" remark="普通话水平等级码 编号：JCJG020105 值空间：JY/T1001PTHSPDJ普通话水平等级代码 解释/举例：参加普通话水平测试所达到的等级 " />
+        </field_area>
+    </table>
+    <table name="JCJG0202" exp="专业技术职务数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="RZZGMCM" exp="任职资格名称码" type="nvarchar(3)" null="T" p="F" remark="任职资格名称码 编号：JCJG020201 值空间：GB/T8561 解释/举例：例：011教授 " />
+            <name="QDZGTJM" exp="取得资格途径码" type="nvarchar(1)" null="T" p="F" remark="取得资格途径码 编号：JCJG020202 值空间：GB/T14946.1－2009附录A.11 解释/举例：指通过专业技术职务任职资格评审委员会评审或参加国家统一专业技术资格考试 " />
+            <name="PSDW" exp="评审单位" type="nvarchar(60)" null="T" p="F" remark="评审单位 编号：JCJG020203 解释/举例：专业技术职务任职资格评审委员会或其授权的组织机构名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="PDRQ" exp="评定日期" type="nvarchar(8)" null="T" p="F" remark="评定日期 编号：JCJG020204 解释/举例：经专业技术职务任职资格评审委员会评审或参加国家统一专业技术资格考试合格而取得的专业技术资格的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="PRZWM" exp="聘任职务码" type="nvarchar(3)" null="F" p="F" remark="聘任职务码 编号：JCJG020205 值空间：GB/T8561 解释/举例：空白为未任任何专业技术职务 " />
+            <name="PRDW" exp="聘任单位" type="nvarchar(60)" null="T" p="F" remark="聘任单位 编号：JCJG020206 解释/举例：聘任专业技术职务的具体单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="PRQSRQ" exp="聘任起始日期" type="nvarchar(8)" null="F" p="F" remark="聘任起始日期 编号：JCJG020207 解释/举例：专业技术职务聘任通知和聘书所认定的聘任开始日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="PRZZRQ" exp="聘任终止日期" type="nvarchar(8)" null="F" p="F" remark="聘任终止日期 编号：JCJG020208 解释/举例：专业技术职务聘任通知和聘书所认定的聘任终止日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="PRQKM" exp="聘任情况码" type="nvarchar(1)" null="T" p="F" remark="聘任情况码 编号：JCJG020209 值空间：JY/T1001PRQK聘任情况代码 解释/举例：当前专业技术职务的聘任情况 " />
+            <name="JPRQ" exp="解聘日期" type="nvarchar(8)" null="T" p="F" remark="解聘日期 编号：JCJG020210 解释/举例：指非正常情况终止聘任的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="JPYY" exp="解聘原因" type="nvarchar(80)" null="T" p="F" remark="解聘原因 编号：JCJG020211 解释/举例：解除聘任专业技术职务的原因 " />
+        </field_area>
+    </table>
+    <table name="JCJG0203" exp="岗位证书数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GWZSMC" exp="岗位证书名称" type="nvarchar(40)" null="F" p="T" remark="岗位证书名称 编号：JCJG020301 解释/举例：由具有岗位评定资格单位考核并批准的岗位证书名称 " />
+            <name="GWZSBH" exp="岗位证书编号" type="nvarchar(20)" null="T" p="F" remark="岗位证书编号 编号：JCJG020302 " />
+            <name="BFDW" exp="颁发单位" type="nvarchar(60)" null="F" p="F" remark="颁发单位 编号：JCJG020303 解释/举例：批准并签发岗位证书的组织机构名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="BFRQ" exp="颁发日期" type="nvarchar(8)" null="T" p="F" remark="颁发日期 编号：JCJG020304 解释/举例：批准并签发岗位证书的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="JCJG0204" exp="工人技术等级及职务数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="GRJSDJM" exp="工人技术等级码" type="nvarchar(1)" null="F" p="T" remark="工人技术等级码 编号：JCJG020401 值空间：GB/T14946.1－2009附录A.13 解释/举例：指经工人技术考评组织评审并正式批准或经国家统一的职业技能鉴定机构考核合格取得的技术等级名称 " />
+            <name="GRJSZWM" exp="工人技术职务码" type="nvarchar(1)" null="T" p="F" remark="工人技术职务码 编号：JCJG020402 值空间：GB/T14946.1－2009附录A.13 解释/举例：指正式聘任的工人技术职务名称 " />
+            <name="GRGZM" exp="工人工种码" type="nvarchar(2)" null="T" p="F" remark="工人工种码 编号：JCJG020403 值空间：JY/T1001HYGZLB行业工种类别代码 " />
+            <name="DJFZJG" exp="等级发证机关" type="nvarchar(60)" null="T" p="F" remark="等级发证机关 编号：JCJG020404 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="DJPDRQ" exp="等级评定日期" type="nvarchar(8)" null="T" p="F" remark="等级评定日期 编号：JCJG020405 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+        </field_area>
+    </table>
+    <table name="JCJG0205" exp="党政职务数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="ZWMC" exp="职务名称" type="nvarchar(60)" null="F" p="T" remark="职务名称 编号：JCJG020501 " />
+            <name="ZWMCM" exp="职务名称码" type="nvarchar(4)" null="T" p="F" remark="职务名称码 编号：JCJG020502 值空间：GB/T12403 " />
+            <name="ZWLBM" exp="职务类别码" type="nvarchar(2)" null="T" p="F" remark="职务类别码 编号：JCJG020503 值空间：JY/T1001ZWLB职务类别代码 " />
+            <name="ZWFLM" exp="职位分类码" type="nvarchar(4)" null="T" p="F" remark="职位分类码 编号：JCJG020504 值空间：GB/T14946.1－2009附录A.6 " />
+            <name="ZWJBM" exp="职务级别码" type="nvarchar(2)" null="F" p="F" remark="职务级别码 编号：JCJG020505 值空间：GB/T12407 " />
+            <name="RZRQ" exp="任职日期" type="nvarchar(8)" null="F" p="F" remark="任职日期 编号：JCJG020506 解释/举例：由某级党委、国家行政机关及其组织、人事管理部门正式任命通知时间，或由某级人民代表大会（或人大常委会）、某级政协及人民团体会议选举通过及决定职务的生效日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="RZBM" exp="任职部门" type="nvarchar(60)" null="T" p="F" remark="任职部门 编号：JCJG020507 " />
+            <name="RZFSM" exp="任职方式码" type="nvarchar(1)" null="T" p="F" remark="任职方式码 编号：JCJG020508 值空间：GB/T14946.1-2009附录A.4 " />
+            <name="RZYY" exp="任职原因" type="nvarchar(80)" null="T" p="F" remark="任职原因 编号：JCJG020509 " />
+            <name="RZWH" exp="任职文号" type="nvarchar(24)" null="T" p="F" remark="任职文号 编号：JCJG020510 解释/举例：按干部管理权限，由某级党委、国家行政机关及其组织、人事管理部门、人大常委会或人民团体会议决定颁发的职务任命书或公告的文件编号 " />
+            <name="RZPZDW" exp="任职批准单位" type="nvarchar(60)" null="T" p="F" remark="任职批准单位 编号：JCJG020511 解释/举例：批准任职并签发任职通知的组织机构名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="ZWBDLBM" exp="职务变动类别码" type="nvarchar(1)" null="T" p="F" remark="职务变动类别码 编号：JCJG020512 值空间：GB/T14946.1－2009附录A.7 " />
+            <name="DQRZZK" exp="当前任职状况" type="nvarchar(1)" null="F" p="F" remark="当前任职状况 编号：JCJG020513 值空间：GB/T14946.1－2009附录A.8 " />
+            <name="ZWPX" exp="职务排序" type="nvarchar(2)" null="T" p="F" remark="职务排序 编号：JCJG020514 解释/举例：指领导干部在领导班子内排列的顺序号 " />
+            <name="ZGHCSDGZ" exp="主管或从事的工作" type="nvarchar(40)" null="T" p="F" remark="主管或从事的工作 编号：JCJG020515 " />
+            <name="MZRQ" exp="免职日期" type="nvarchar(8)" null="T" p="F" remark="免职日期 编号：JCJG020516 解释/举例：按干部管理权限，由某级党委、国家行政机关及其组织、人事管理部门、人大常委会或人民团体会议批准免去职务生效日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="MZFSM" exp="免职方式码" type="nvarchar(1)" null="T" p="F" remark="免职方式码 编号：JCJG020517 值空间：GB/T14946.1－2009附录A.9 " />
+            <name="MZYYM" exp="免职原因码" type="nvarchar(2)" null="T" p="F" remark="免职原因码 编号：JCJG020518 值空间：GB/T14946.1－2009附录A.10 " />
+            <name="MZWH" exp="免职文号" type="nvarchar(24)" null="T" p="F" remark="免职文号 编号：JCJG020519 解释/举例：按干部管理权限，由某级党委、国家行政机关及其组织、人事管理部门、人大常委会或人民团体会议决定颁发的职务免职书或公告的文件编号 " />
+            <name="MZPZDW" exp="免职批准单位" type="nvarchar(60)" null="T" p="F" remark="免职批准单位 编号：JCJG020520 解释/举例：批准免职并签发免职通知的组织机构名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+        </field_area>
+    </table>
+    <table name="JCJG0301" exp="社会兼职职务数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="SHJZM" exp="社会兼职码" type="nvarchar(4)" null="F" p="T" remark="社会兼职码 编号：JCJG030101 值空间：GB/T12408 解释/举例：指县级以上人大、政协、民主党派、工会、共青团、妇联、侨联、科协，中国科学院和中国工程院院士的兼职职务 " />
+            <name="SHJZQSRQ" exp="社会兼职起始日期" type="nvarchar(8)" null="F" p="F" remark="社会兼职起始日期 编号：JCJG030102 解释/举例：兼职职务任命的批准日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SHJZZZRQ" exp="社会兼职终止日期" type="nvarchar(8)" null="T" p="F" remark="社会兼职终止日期 编号：JCJG030103 解释/举例：兼职职务的终止日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SHJZCZYYM" exp="社会兼职辞职原因码" type="nvarchar(1)" null="T" p="F" remark="社会兼职辞职原因码 编号：JCJG030104 值空间：JY/T1001CQSHJZHXSTTZWYY辞去社会兼职或学术团体职务原因代码 " />
+        </field_area>
+    </table>
+    <table name="JCJG0302" exp="学术团体兼职数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XSTTMC" exp="学术团体名称" type="nvarchar(60)" null="F" p="T" remark="学术团体名称 编号：JCJG030201 解释/举例：兼职的学术团体名称 " />
+            <name="XSTTJBM" exp="学术团体级别码" type="nvarchar(1)" null="T" p="F" remark="学术团体级别码 编号：JCJG030202 值空间：JY/T1001XSTTJB学术团体级别代码 " />
+            <name="XXTTLSHZGDW" exp="学术团体隶属或主管单位" type="nvarchar(60)" null="T" p="F" remark="学术团体隶属或主管单位 编号：JCJG030203 解释/举例：学术团体隶属或主管单位的名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="XSJZZW" exp="学术兼职职务" type="nvarchar(20)" null="F" p="F" remark="学术兼职职务 编号：JCJG030204 解释/举例：本人在学术团体内兼任的职务 " />
+            <name="XSJZQSRQ" exp="学术兼职起始日期" type="nvarchar(8)" null="T" p="F" remark="学术兼职起始日期 编号：JCJG030205 解释/举例：兼任职务的批准日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XSJZZZRQ" exp="学术兼职终止日期" type="nvarchar(8)" null="T" p="F" remark="学术兼职终止日期 编号：JCJG030206 解释/举例：兼任职务的终止日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="XSJZCZYYM" exp="学术兼职辞职原因码" type="nvarchar(1)" null="T" p="F" remark="学术兼职辞职原因码 编号：JCJG030207 值空间：JY/T1001CQSHJZHXSTTZWYY辞去社会兼职或学术团体职务原因代码 " />
+        </field_area>
+    </table>
+    <table name="JCJG0401" exp="国内进修学习数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="JXXZM" exp="进修性质码" type="nvarchar(1)" null="F" p="T" remark="进修性质码 编号：JCJG040101 值空间：GB/T14946.1－2009附录A.24 " />
+            <name="XXFSM" exp="学习方式码" type="nvarchar(1)" null="F" p="F" remark="学习方式码 编号：JCJG040102 值空间：GB/T14946.1－2009附录A.25 " />
+            <name="XXQSNY" exp="学习起始年月" type="nvarchar(6)" null="F" p="F" remark="学习起始年月 编号：JCJG040103 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="XXZZNY" exp="学习终止年月" type="nvarchar(6)" null="T" p="F" remark="学习终止年月 编号：JCJG040104 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="ZXS" exp="总学时" type="decimal(3, 0)" null="T" p="F" remark="总学时 编号：JCJG040105 解释/举例：指实际学习的累计时间 " />
+            <name="XXNR" exp="学习内容" type="nvarchar(80)" null="T" p="F" remark="学习内容 编号：JCJG040106 " />
+            <name="JXBMC" exp="进修班名称" type="nvarchar(40)" null="F" p="F" remark="进修班名称 编号：JCJG040107 " />
+            <name="ZBDW" exp="主办单位" type="nvarchar(60)" null="F" p="F" remark="主办单位 编号：JCJG040108 解释/举例：主办和组织学习的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="ZBDWXZM" exp="主办单位性质码" type="nvarchar(1)" null="T" p="F" remark="主办单位性质码 编号：JCJG040109 值空间：JY/T1001SHDWXZ社会单位性质代码 " />
+            <name="ZXDW" exp="在学单位" type="nvarchar(60)" null="T" p="F" remark="在学单位 编号：JCJG040110 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="ZXDWLBM" exp="在学单位类别码" type="nvarchar(1)" null="T" p="F" remark="在学单位类别码 编号：JCJG040111 值空间：GB/T14946.1－2009附录A.26 " />
+            <name="JXJGM" exp="进修结果码" type="nvarchar(1)" null="T" p="F" remark="进修结果码 编号：JCJG040112 值空间：GB/T14946.1－2009附录A.27 " />
+        </field_area>
+    </table>
+    <table name="JCJG0402" exp="出国（境）进修学习数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="CGRQ" exp="出国（境）日期" type="nvarchar(8)" null="F" p="T" remark="出国（境）日期 编号：JCJG040201 解释/举例：出国（境）日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="CGMDM" exp="出国（境）目的码" type="nvarchar(3)" null="T" p="F" remark="出国（境）目的码 编号：JCJG040202 值空间：JY/T1001CGMD出国目的代码 " />
+            <name="CGGBM" exp="出国（境）国别码" type="nvarchar(3)" null="F" p="F" remark="出国（境）国别码 编号：JCJG040203 值空间：GB/T2659 解释/举例：用三字母国别代码，如CHN中国 " />
+            <name="SQDWYWMC" exp="所去单位英文名称" type="nvarchar(180)" null="F" p="F" remark="所去单位英文名称 编号：JCJG040204 引用自JCTB010303 DWYWMC 单位英文名称 C 180 NULL NULL NULL NULL" />
+            <name="SQDWZWMC" exp="所去单位中文名称" type="nvarchar(60)" null="T" p="F" remark="所去单位中文名称 编号：JCJG040205 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="PCDW" exp="派出单位" type="nvarchar(60)" null="T" p="F" remark="派出单位 编号：JCJG040206 解释/举例：派遣本人出国（境）学习、工作的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="TZMC" exp="团组名称" type="nvarchar(40)" null="T" p="F" remark="团组名称 编号：JCJG040207 解释/举例：出国（境）工作或学习派出团组的具体名称 " />
+            <name="CGJFLYM" exp="出国（境）经费来源码" type="nvarchar(1)" null="T" p="F" remark="出国（境）经费来源码 编号：JCJG040208 值空间：GB/T14946.1－2009附录A.28 " />
+            <name="SPDW" exp="审批单位" type="nvarchar(60)" null="T" p="F" remark="审批单位 编号：JCJG040209 解释/举例：批准出国（境）并签发审批文件的上级主管部门名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="SPRQ" exp="审批日期" type="nvarchar(8)" null="T" p="F" remark="审批日期 编号：JCJG040210 解释/举例：批准出国（境）并签发审批文件的具体日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SPWH" exp="审批文号" type="nvarchar(24)" null="T" p="F" remark="审批文号 编号：JCJG040211 解释/举例：批准出国（境）学习工作的单位签发的批准文件编号 " />
+            <name="PZQX" exp="批准期限" type="nvarchar(3)" null="T" p="F" remark="批准期限 编号：JCJG040212 解释/举例：批准在国（境）外滞留的期限，单位：月 " />
+            <name="XXGZNR" exp="学习工作内容" type="nvarchar(80)" null="T" p="F" remark="学习工作内容 编号：JCJG040213 解释/举例：出国（境）学习工作的主要内容 " />
+            <name="XXGZCJ" exp="学习工作成绩" type="text" null="T" p="F" remark="学习工作成绩 编号：JCJG040214 解释/举例：出国（境）学习工作的完成情况和主要成绩 " />
+            <name="YHGRQ" exp="应回国日期" type="nvarchar(8)" null="T" p="F" remark="应回国日期 编号：JCJG040215 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="SHGRQ" exp="实回国日期" type="nvarchar(8)" null="T" p="F" remark="实回国日期 编号：JCJG040216 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="HZHTXZH" exp="护照号/通行证号" type="nvarchar(20)" null="T" p="F" remark="护照号/通行证号 编号：JCJG040217 解释/举例：通行证即“往来港澳通行证” " />
+            <name="ZJYXQ" exp="证件有效期" type="nvarchar(17)" null="T" p="F" remark="证件有效期 编号：JCJG040218 引用自JCTB010207 YXQ 有效期 C 17 NULL NULL 格式：YYYYMMDD-YYYYMMDD NULL" />
+        </field_area>
+    </table>
+    <table name="JCJG0501" exp="组织考察数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KCLBM" exp="考察（考核）类别码" type="nvarchar(1)" null="T" p="F" remark="考察（考核）类别码 编号：JCJG050101 值空间：GB/T14946.1－2009附录A.18 " />
+            <name="KCRQ" exp="考察（考核）日期" type="nvarchar(8)" null="F" p="F" remark="考察（考核）日期 编号：JCJG050102 解释/举例：组织、干部、人事部门组派的考察组进行考察（考核）的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KCYJ" exp="考察（考核）意见" type="text" null="F" p="F" remark="考察（考核）意见 编号：JCJG050103 解释/举例：组织、干部、人事部门组派的考察组对德、才、勤、绩诸方面的评价意见 " />
+            <name="KCJGM" exp="考察（考核）结果码" type="nvarchar(1)" null="F" p="F" remark="考察（考核）结果码 编号：JCJG050104 值空间：GB/T14946.1－2009附录A.19 解释/举例：经考核委员会或考察小组审核后，由部门负责人确定的考核结论 " />
+            <name="KCZZJKCR" exp="考察（考核）组织及考察人" type="nvarchar(120)" null="F" p="F" remark="考察（考核）组织及考察人 编号：JCJG050105 解释/举例：组织、干部、人事部门组派的考察组名称及直接参与考核的考察组成员姓名，以及确定考察结论的部门负责人姓名 " />
+        </field_area>
+    </table>
+    <table name="JCJG0502" exp="教职工考核数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KHLBM" exp="考核类别码" type="nvarchar(1)" null="T" p="F" remark="考核类别码 编号：JCJG050201 值空间：GB/T14946.1－2009附录A.18 " />
+            <name="KHRQ" exp="考核日期" type="nvarchar(8)" null="F" p="F" remark="考核日期 编号：JCJG050202 解释/举例：业务考核的具体日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KHNR" exp="考核内容" type="nvarchar(80)" null="T" p="F" remark="考核内容 编号：JCJG050203 解释/举例：业务考核的主要内容 " />
+            <name="KHJGM" exp="考核结果码" type="nvarchar(1)" null="F" p="F" remark="考核结果码 编号：JCJG050204 值空间：GB/T14946.1－2009附录A.19 " />
+            <name="KHFZRGH" exp="考核负责人工号" type="nvarchar(20)" null="T" p="F" remark="考核负责人工号 编号：JCJG050205 解释/举例：负责业务考核的人员工号 引用自JCTB020120 RYH 人员号 C 20 NULL NULL 学号或工号 NULL" />
+            <name="KHPY" exp="考核评语" type="text" null="T" p="F" remark="考核评语 编号：JCJG050206 解释/举例：业务考核的结论和评语 " />
+            <name="KHBM" exp="考核部门" type="nvarchar(60)" null="T" p="F" remark="考核部门 编号：JCJG050207 解释/举例：负责考核的部门名称 " />
+        </field_area>
+    </table>
+    <table name="JCJG0503" exp="工人考技考工数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="KGNY" exp="考工年月" type="nvarchar(6)" null="F" p="T" remark="考工年月 编号：JCJG050301 解释/举例：参加招工或技术级别考试的年月 引用自JCTB010202 NY 年月 C 6 NULL GB/T7408 格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="KHGZM" exp="考核工种码" type="nvarchar(2)" null="F" p="F" remark="考核工种码 编号：JCJG050302 值空间：JY/T1001HYGZLB行业工种类别代码 " />
+            <name="KGBM" exp="考工部门" type="nvarchar(60)" null="F" p="F" remark="考工部门 编号：JCJG050303 解释/举例：主管考试的部门 " />
+            <name="JSJB" exp="技术级别" type="nvarchar(20)" null="T" p="F" remark="技术级别 编号：JCJG050304 解释/举例：报考的技术级别 " />
+            <name="KGZSH" exp="考工证书号" type="nvarchar(20)" null="T" p="F" remark="考工证书号 编号：JCJG050305 解释/举例：考工考技获得的证书号 " />
+            <name="KGPY" exp="考工评语" type="text" null="T" p="F" remark="考工评语 编号：JCJG050306 解释/举例：考工考技的评语 " />
+            <name="KGCJ" exp="考工成绩" type="nvarchar(20)" null="T" p="F" remark="考工成绩 编号：JCJG050307 解释/举例：分数类或等级类成绩 " />
+        </field_area>
+    </table>
+    <table name="JCJG0601" exp="来源数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="LDWRQ" exp="来单位日期" type="nvarchar(8)" null="F" p="T" remark="来单位日期 编号：JCJG060101 解释/举例：来单位工作的实际报到年月，以人事部门记载为准 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="LYM" exp="来源码" type="nvarchar(2)" null="F" p="F" remark="来源码 编号：JCJG060102 值空间：JY/T1001JZGLY教职工来源代码JY/T1001GXJZGLY高校教职工来源代码 解释/举例：中小学、中职和幼儿园采用JZGLY教职工来源代码，高校采用GXJZGLY高校教职工来源代码 " />
+            <name="LYDQM" exp="来源地区码" type="nvarchar(6)" null="F" p="F" remark="来源地区码 编号：JCJG060103 值空间：GB/T2260 " />
+            <name="LDWYY" exp="来单位原因" type="nvarchar(80)" null="T" p="F" remark="来单位原因 编号：JCJG060104 " />
+            <name="YDWMC" exp="原单位名称" type="nvarchar(60)" null="T" p="F" remark="原单位名称 编号：JCJG060105 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="YDZZWM" exp="原党政职务码" type="nvarchar(4)" null="T" p="F" remark="原党政职务码 编号：JCJG060106 值空间：GB/T12403 " />
+            <name="YJSZWM" exp="原技术职务码" type="nvarchar(3)" null="T" p="F" remark="原技术职务码 编号：JCJG060107 值空间：GB/T8561 解释/举例：空白为未任任何专业技术职务 " />
+            <name="YCSXKM" exp="原从事学科码" type="nvarchar(5)" null="T" p="F" remark="原从事学科码 编号：JCJG060108 值空间：GB/T13745 解释/举例：采用一、二级分类代码 " />
+            <name="YGZZE" exp="原工资总额" type="money" null="F" p="F" remark="原工资总额 编号：JCJG060109 " />
+            <name="YJHLJT" exp="原教护龄津贴" type="money" null="T" p="F" remark="原教护龄津贴 编号：JCJG060110 " />
+        </field_area>
+    </table>
+    <table name="JCJG0602" exp="部门调动数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="BMDDRQ" exp="部门调动日期" type="nvarchar(8)" null="F" p="T" remark="部门调动日期 编号：JCJG060201 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BMDDYY" exp="部门调动原因" type="nvarchar(80)" null="T" p="F" remark="部门调动原因 编号：JCJG060202 " />
+            <name="ZZNDCBMH" exp="组织内调出部门号" type="nvarchar(10)" null="F" p="F" remark="组织内调出部门号 编号：JCJG060203 解释/举例：组织自行编号：组织内部调动后原院系所部中心号 " />
+            <name="ZZNDRBMH" exp="组织内调入部门号" type="nvarchar(10)" null="F" p="F" remark="组织内调入部门号 编号：JCJG060204 解释/举例：组织自行编号：组织内部调动后现院系所部中心号 " />
+            <name="GZZYRQ" exp="工资转移日期" type="nvarchar(8)" null="T" p="F" remark="工资转移日期 编号：JCJG060205 解释/举例：个人劳资转移日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="WSDAH" exp="文书档案号" type="nvarchar(10)" null="T" p="F" remark="文书档案号 编号：JCJG060206 解释/举例：跟个人变动有关的文件档案编号 " />
+        </field_area>
+    </table>
+    <table name="JCJG0603" exp="离岗数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="LGRQ" exp="离岗日期" type="nvarchar(8)" null="T" p="F" remark="离岗日期 编号：JCJG060301 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="LGYYM" exp="离岗原因码" type="nvarchar(1)" null="T" p="F" remark="离岗原因码 编号：JCJG060302 值空间：JY/T1001LGYY离岗原因代码 " />
+            <name="FGRQ" exp="返岗日期" type="nvarchar(8)" null="T" p="F" remark="返岗日期 编号：JCJG060303 解释/举例：返回工作岗位的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="GZZYRQ" exp="工资转移日期" type="nvarchar(8)" null="T" p="F" remark="工资转移日期 编号：JCJG060205 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="WSDAH" exp="文书档案号" type="nvarchar(10)" null="T" p="F" remark="文书档案号 编号：JCJG060206 引用自JCJG060206 WSDAH 文书档案号 C 10 O NULL 跟个人变动有关的文件档案编号 NULL" />
+        </field_area>
+    </table>
+    <table name="JCJG0604" exp="病休数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="BXQSRQ" exp="病休起始日期" type="nvarchar(8)" null="F" p="T" remark="病休起始日期 编号：JCJG060401 解释/举例：因病休假的起始日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="BXZDYY" exp="病休诊断医院" type="nvarchar(60)" null="T" p="F" remark="病休诊断医院 编号：JCJG060402 解释/举例：病休诊断的医院名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="BXZDZM" exp="病休诊断证明" type="text" null="T" p="F" remark="病休诊断证明 编号：JCJG060403 解释/举例：医院开据的病休诊断证明 " />
+            <name="HFGZRQ" exp="恢复工作日期" type="nvarchar(8)" null="F" p="F" remark="恢复工作日期 编号：JCJG060404 解释/举例：病休恢复工作的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="KFZDYY" exp="康复诊断医院" type="nvarchar(60)" null="T" p="F" remark="康复诊断医院 编号：JCJG060405 解释/举例：进行康复诊断的医院名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="KFZDZM" exp="康复诊断证明" type="text" null="T" p="F" remark="康复诊断证明 编号：JCJG060406 解释/举例：医院开具的康复诊断证明 " />
+            <name="GZZYRQ" exp="工资转移日期" type="nvarchar(8)" null="T" p="F" remark="工资转移日期 编号：JCJG060205 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="WSDAH" exp="文书档案号" type="nvarchar(10)" null="T" p="F" remark="文书档案号 编号：JCJG060206 引用自JCJG060206 WSDAH 文书档案号 C 10 O NULL 跟个人变动有关的文件档案编号 NULL" />
+        </field_area>
+    </table>
+    <table name="JCJG0701" exp="离职数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="LZRQ" exp="离职日期" type="nvarchar(8)" null="F" p="T" remark="离职日期 编号：JCJG070101 解释/举例：离开本单位的日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="LZYYM" exp="离职原因码" type="nvarchar(2)" null="F" p="F" remark="离职原因码 编号：JCJG070102 值空间：GB/T14946.1－2009附录A.10 " />
+            <name="LZQX" exp="离职去向" type="nvarchar(60)" null="T" p="F" remark="离职去向 编号：JCJG070103 解释/举例：离开本单位工作岗位后的去向 " />
+        </field_area>
+    </table>
+    <table name="JCJG0702" exp="离退休数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="LTLBM" exp="离退类别码" type="nvarchar(1)" null="F" p="T" remark="离退类别码 编号：JCJG070201 值空间：GB/T14946.1-2009附录A.62 " />
+            <name="LTQSRQ" exp="离退起始日期" type="nvarchar(8)" null="F" p="F" remark="离退起始日期 编号：JCJG070202 解释/举例：由组织、人事部门批准的离退休日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="LTHXSJBM" exp="离退后享受级别码" type="nvarchar(3)" null="F" p="F" remark="离退后享受级别码 编号：JCJG070203 值空间：GB/T12407 " />
+            <name="LTXFZFDW" exp="离退休费支付单位" type="nvarchar(60)" null="T" p="F" remark="离退休费支付单位 编号：JCJG070204 解释/举例：离退休后，支付离退休费的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="LTHGLDW" exp="离退后管理单位" type="nvarchar(60)" null="T" p="F" remark="离退后管理单位 编号：JCJG070205 解释/举例：离退后的具体管理单位名称 " />
+            <name="YDAZDD" exp="异地安置地点" type="nvarchar(60)" null="T" p="F" remark="异地安置地点 编号：JCJG070206 解释/举例：离退后安置到异地生活的地点 " />
+        </field_area>
+    </table>
+    <table name="JCJG0703" exp="返聘数据子类表">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="FPQSRQ" exp="返聘起始日期" type="nvarchar(8)" null="T" p="F" remark="返聘起始日期 编号：JCJG070301 解释/举例：离退休后被重新聘任工作的起始日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FPZZRQ" exp="返聘终止日期" type="nvarchar(8)" null="T" p="F" remark="返聘终止日期 编号：JCJG070302 解释/举例：离退休后被重新聘任工作的终止日期 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="FPDWH" exp="返聘单位号" type="nvarchar(10)" null="F" p="F" remark="返聘单位号 编号：JCJG070303 解释/举例：重新聘任的工作单位号，学校自编 引用自JCTB010301 DWH 单位号 C 10 NULL NULL 自行编码 NULL" />
+            <name="FPGW" exp="返聘岗位" type="nvarchar(20)" null="T" p="F" remark="返聘岗位 编号：JCJG070304 解释/举例：重新聘任的工作岗位 " />
+            <name="FPCJ" exp="返聘酬金" type="money" null="T" p="F" remark="返聘酬金 编号：JCJG070305 解释/举例：重新聘任工作的劳动报酬，单位：元/月 " />
+            <name="FPJLY" exp="返聘金来源" type="nvarchar(20)" null="T" p="F" remark="返聘金来源 编号：JCJG070306 解释/举例：返聘资金的经费来源 " />
+            <name="FPGZL" exp="返聘工作量" type="decimal(4, 0)" null="T" p="F" remark="返聘工作量 编号：JCJG070307 解释/举例：单位：小时/月 " />
+        </field_area>
+    </table>
+</namespace>

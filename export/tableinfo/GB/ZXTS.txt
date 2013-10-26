@@ -1,0 +1,70 @@
+ZXTS0102  图书订购子类表
+  SCHOOLID      学校名                  int            主键
+  DGH           订购号                  nvarchar(10)   主键
+  YDJG          预订价格                money          非主
+  YDCS          预订册数                decimal(6, 0)  非主
+  YDRQ          预订日期                nvarchar(8)    非主
+  HDFSM         获得方式码              nvarchar(2)    非主
+  ZDRGH         征订人工号              nvarchar(20)   非主
+  BZ            备注                    text           非主
+
+ZXTS0103  图书到货子类表
+  SCHOOLID      学校名                  int            主键
+  DGH           订购号                  nvarchar(10)   主键
+  SDJG          实到价格                money          非主
+  SDCS          实到册数                decimal(6, 0)  非主
+  DHRQ          到货日期                nvarchar(8)    非主
+  JSRGH         经手人工号              nvarchar(20)   非主
+  BZ            备注                    text           非主
+
+ZXTS0104  图书编目子类表
+  SCHOOLID      学校名                  int            主键
+  PJH           排架号                  nvarchar(10)   主键
+  JCH           卷次号                  nvarchar(10)   非主
+  BMRQ          编目日期                nvarchar(8)    非主
+  GCD           馆藏地                  nvarchar(180)  非主
+
+ZXTS0105  图书借阅与归还子类表
+  SCHOOLID      学校名                  int            主键
+  JYRQ          借阅日期                nvarchar(8)    主键
+  JYR           借阅人                  nvarchar(36)   非主
+  GHRQ          归还日期                nvarchar(8)    非主
+  BZ            备注                    text           非主
+
+ZXTS0106  图书减少子类表
+  SCHOOLID      学校名                  int            主键
+  JSRQ          减少日期                nvarchar(8)    主键
+  JSYY          减少原因                nvarchar(80)   非主
+  JSJG          减少结果                text           非主
+  JSRGH         经手人工号              nvarchar(20)   非主
+
+ZXTS0202  期刊征订子类表
+  SCHOOLID      学校名                  int            主键
+  QKDGH         期刊订购号              nvarchar(10)   主键
+  YDJG          预订价格                money          非主
+  YDCS          预订册数                decimal(6, 0)  非主
+  YDND          预订年度                nvarchar(4)    非主
+  HDFSM         获得方式码              nvarchar(2)    非主
+  ZDRGH         征订人工号              nvarchar(20)   非主
+  BZ            备注                    text           非主
+
+ZXTS0203  期刊合订编目子类表
+  SCHOOLID      学校名                  int            主键
+  HDQK          合订情况                nvarchar(1)    主键
+  BMRQ          编目日期                nvarchar(8)    非主
+  GCD           馆藏地                  nvarchar(180)  非主
+
+ZXTS0204  期刊借阅与归还子类表
+  SCHOOLID      学校名                  int            主键
+  JYRQ          借阅日期                nvarchar(8)    主键
+  JYR           借阅人                  nvarchar(36)   非主
+  GHRQ          归还日期                nvarchar(8)    非主
+  BZ            备注                    text           非主
+
+ZXTS0205  期刊减少子类表
+  SCHOOLID      学校名                  int            主键
+  JSRQ          减少日期                nvarchar(8)    主键
+  JSYY          减少原因                nvarchar(80)   非主
+  JSJG          减少结果                text           非主
+  JSRGH         经手人工号              nvarchar(20)   非主
+
