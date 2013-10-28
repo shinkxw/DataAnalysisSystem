@@ -139,6 +139,16 @@
             <name="QZCJ" exp="期中成绩" type="decimal(5, 1)" null="T" p="F" />
             <name="QMCJ" exp="期末成绩" type="decimal(5, 1)" null="T" p="F" />
             <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
+            <name="CJLXID" exp="成绩类型ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_06_02_XSCJLX" exp="学生成绩类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(100)" null="F" p="F" />
+            <name="QZ" exp="权重" type="int" null="F" p="F" />
+            <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_07_01_XJSJ" exp="学籍基本数据表">
@@ -351,6 +361,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="CHMC" exp="称号名称" type="nvarchar(30)" null="F" p="F" />
+            <name="SYDW" exp="授予单位" type="nvarchar(50)" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
@@ -361,9 +372,85 @@
             <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
             <name="RYCHID" exp="荣誉称号ID" type="int" null="F" p="F" />
-            <name="SYDW" exp="授予单位" type="nvarchar(50)" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
-            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="SQYY" exp="申请原因" type="text" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_16_A01_PKSLX" exp="贫困生类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_16_A02_PKSXX" exp="贫困生信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="PKSLXID" exp="贫困生类型ID" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SQYY" exp="申请原因" type="text" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_17_A01_TYXX" exp="团员信息扩展表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="RTSJ" exp="入团时间" type="datetime" null="F" p="F" />
+            <name="ZRD" exp="转入地" type="nvarchar(50)" null="F" p="F" />
+            <name="ZRSJ" exp="转入时间" type="datetime" null="F" p="F" />
+            <name="ZCSJ" exp="转出时间" type="datetime" null="F" p="F" />
+            <name="DQZT" exp="当前状态" type="int" null="F" p="F" />
+            <name="JBJSID" exp="经办教师ID" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_17_A02_RYCH" exp="团费收缴记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="SJJE" exp="收缴金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_17_A03_RDJJTY" exp="入党积极团员数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="PDYY" exp="评定原因" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_17_A04_TYSXHB" exp="团员思想汇报数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="HBNR" exp="汇报内容" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
             <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>

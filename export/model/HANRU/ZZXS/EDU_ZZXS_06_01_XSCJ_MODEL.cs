@@ -122,6 +122,11 @@ namespace HanRuEdu.LDAL
             public Int32 KCQDID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "成绩类型")]
+            public Int32 CJLXID { get; set; }
+
+
         }
     }
 }

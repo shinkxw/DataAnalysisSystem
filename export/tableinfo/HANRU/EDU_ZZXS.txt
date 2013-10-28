@@ -124,6 +124,14 @@ EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
   QZCJ          期中成绩                decimal(5, 1)  非主
   QMCJ          期末成绩                decimal(5, 1)  非主
   KCQDID        课程清单ID              int            非主        教学计划课程清单数据子类表
+  CJLXID        成绩类型ID              int            非主        学生成绩类型表
+
+EDU_ZZXS_06_02_XSCJLX  学生成绩类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  LXMC          类型名称                nvarchar(100)  非主
+  QZ            权重                    int            非主
+  KCQDID        课程清单ID              int            非主        教学计划课程清单数据子类表
 
 EDU_ZZXS_07_01_XJSJ  学籍基本数据表
   XSXXID        学生信息数据表          int            主键        学生信息数据表
@@ -302,18 +310,83 @@ EDU_ZZXS_14_A06_XSWWYTZQRYAP  学生五位一体值勤人员安排表
 
 EDU_ZZXS_15_A01_RYCH  荣誉称号数据表
   ID            编号                    int            主键
-  SCHOOLID      学校                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
   CHMC          称号名称                nvarchar(30)   非主
+  SYDW          授予单位                nvarchar(50)   非主
   BZ            备注                    text           非主
 
 EDU_ZZXS_15_A02_RYCHSQ  学生荣誉称号表
   ID            编号                    int            主键
-  SCHOOLID      学校                    int            主键
-  XSXXID        学生ID                  int            非主
-  XQID          学期ID                  int            非主
-  RYCHID        荣誉称号ID              int            非主
-  SYDW          授予单位                nvarchar(50)   非主
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  XQID          学期ID                  int            非主        学期数据表
+  RYCHID        荣誉称号ID              int            非主        荣誉称号数据表
+  BZ            备注                    text           非主
+  SQYY          申请原因                text           非主
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+
+EDU_ZZXS_16_A01_PKSLX  贫困生类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  LXMC          类型名称                nvarchar(30)   非主
+  NR            内容                    text           非主
+  BZ            备注                    text           非主
+
+EDU_ZZXS_16_A02_PKSXX  贫困生信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  XQID          学期ID                  int            非主        学期数据表
+  PKSLXID       贫困生类型ID            int            非主        贫困生类型表
+  BZ            备注                    text           非主
+  SQYY          申请原因                text           非主
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+
+EDU_ZZXS_17_A01_TYXX  团员信息扩展表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  RTSJ          入团时间                datetime       非主
+  ZRD           转入地                  nvarchar(50)   非主
+  ZRSJ          转入时间                datetime       非主
+  ZCSJ          转出时间                datetime       非主
+  DQZT          当前状态                int            非主
+  JBJSID        经办教师ID              int            非主        教职工基本数据子类表
+  BZ            备注                    text           非主
+
+EDU_ZZXS_17_A02_RYCH  团费收缴记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  SJJE          收缴金额                decimal(8, 2)  非主
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZZXS_17_A03_RDJJTY  入党积极团员数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  XQID          学期ID                  int            非主        学期数据表
+  PDYY          评定原因                text           非主
   BZ            备注                    text           非主
   TJSJ          添加时间                datetime       非主
-  TJJSID        添加教师ID              int            非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+
+EDU_ZZXS_17_A04_TYSXHB  团员思想汇报数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  XQID          学期ID                  int            非主        学期数据表
+  HBNR          汇报内容                text           非主
+  BZ            备注                    text           非主
+  TJSJ          添加时间                datetime       非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
 

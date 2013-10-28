@@ -95,7 +95,7 @@ class MDArea
       name_space_name = table.name_space_name
       name_space = find_name_space(name_space_name)
       if name_space == nil
-        name_space = MDNameSpace.new(name_space_name,"reallocate_namespace","")
+        name_space = MDNameSpace.new(name_space_name,"reallocate_namespace")
         add_name_space(name_space)
       end
       name_space.add_table(table)

@@ -21,6 +21,7 @@ SELECT a.[ID]--编号
       ,a.[QZCJ]--期中成绩
       ,a.[QMCJ]--期末成绩
       ,a.[KCQDID]--课程清单ID
+      ,a.[CJLXID]--成绩类型ID
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名
@@ -252,6 +253,10 @@ SELECT a.[ID]--编号
       ,i.LLKS as i_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
       ,i.SJKS as i_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,i.XF as i_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
+      ,j.SCHOOLID as j_XSCJLX_SCHOOLID--学生成绩类型表 学校ID
+      ,j.LXMC as j_XSCJLX_LXMC--学生成绩类型表 类型名称
+      ,j.QZ as j_XSCJLX_QZ--学生成绩类型表 权重
+      ,j.KCQDID as j_XSCJLX_KCQDID--学生成绩类型表 课程清单ID
 
 FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -261,6 +266,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.RKJGID = g.ID /*任课教工ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.CJLRJGID = h.ID /*成绩录入教工ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS i ON a.KCQDID = i.ID /*课程清单ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_06_02_XSCJLX AS j ON a.CJLXID = j.ID /*成绩类型ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN

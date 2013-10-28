@@ -131,4 +131,34 @@
             <name="GZNR" exp="工作内容" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZFC_10_A01_SSKHXM" exp="宿舍考核项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LX" exp="类型" type="int" null="F" p="F" />
+            <name="XMMC" exp="项目名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A02_SSKHJG" exp="宿舍考核结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="QSID" exp="寝室ID" type="int" null="F" p="F" />
+            <name="KHXMID" exp="考核项目ID" type="int" null="F" p="F" />
+            <name="KHSJ" exp="考核时间" type="datetime" null="F" p="F" />
+            <name="KHFZ" exp="考核分值" type="decimal(4, 1)" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A03_BZRXQ" exp="班主任下寝室表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="XQSJ" exp="下寝时间" type="datetime" null="F" p="F" />
+            <name="XQCS" exp="下寝次数" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
