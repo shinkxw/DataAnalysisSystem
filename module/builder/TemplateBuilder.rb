@@ -222,7 +222,7 @@ class TemplateBuilder
       elsif field.type == 'datetime'
         info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       elsif field.type == 'text'
-        info_atr << "                    @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+        info_atr << "                    @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:600px; height:50px\" })\n"
         info_atr << %(                    @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
       else
         info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"

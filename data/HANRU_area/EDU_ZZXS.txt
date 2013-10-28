@@ -420,7 +420,7 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXS_17_A02_RYCH" exp="团费收缴记录表">
+    <table name="EDU_ZZXS_17_A02_TFSJJL" exp="团费收缴记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />

@@ -807,9 +807,9 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_17_A01
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_17_A01_TYXX_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_17_A02_RYCH_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_17_A02_TFSJJL_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZZXS_17_A02_RYCH_DISP
+   drop view VIEW_EDU_ZZXS_17_A02_TFSJJL_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_17_A03_RDJJTY_DISP')
             and   type = 'V')
@@ -15387,7 +15387,7 @@ FROM dbo.EDU_ZZXS_17_A01_TYXX AS a LEFT OUTER JOIN
 GO
 
 --团费收缴记录表
-CREATE VIEW [dbo].[VIEW_EDU_ZZXS_17_A02_RYCH_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZZXS_17_A02_TFSJJL_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -15453,7 +15453,7 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
 
-FROM dbo.EDU_ZZXS_17_A02_RYCH AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZZXS_17_A02_TFSJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSXXID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN

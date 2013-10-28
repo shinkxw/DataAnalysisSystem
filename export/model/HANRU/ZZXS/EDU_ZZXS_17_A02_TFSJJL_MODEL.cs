@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZXS_17_A02_RYCH_metadata))]
-    public partial class EDU_ZZXS_17_A02_RYCH
+    [MetadataType(typeof(EDU_ZZXS_17_A02_TFSJJL_metadata))]
+    public partial class EDU_ZZXS_17_A02_TFSJJL
     {
-        public EDU_ZZXS_17_A02_RYCH()
+        public EDU_ZZXS_17_A02_TFSJJL()
         {
             TJSJ = new DateTime(1900, 1, 1);
         }
-        public class EDU_ZZXS_17_A02_RYCH_metadata
+        public class EDU_ZZXS_17_A02_TFSJJL_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

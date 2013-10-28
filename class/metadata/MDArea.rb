@@ -41,7 +41,17 @@ class MDArea
   def find_name_space(name_space_name);find{|ns| ns.name == name_space_name} end
   #判断元数据域是否有效
   def is_valid?
-    p "MDArea: 表名重复" if get_table_name_arr.uniq! != nil
+    tname_arr = get_table_name_arr
+    p "MDArea: 表名重复" if tname_arr.uniq! != nil
+    hash = {}
+    tname_arr.each do |n|
+      lname = n.split('_')[-1]
+      if hash[lname] && hash[lname].split('_')[1] == n.split('_')[1]
+        p "MDArea: #{hash[lname]}与#{n}表名重复" if lname != 'XSXX'
+      else
+        hash[lname] = n
+      end
+    end
     each{|name_space| name_space.is_valid?};true
   end
   #使用覆盖型方式合成新的元数据域
