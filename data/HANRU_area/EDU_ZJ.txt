@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ZJ" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_ZJ" provider="reallocate_namespace">
     <table name="EDU_ZJ_KPZT" exp="考评主体代码">
         <field_area>
             <name="DM" exp="代码" type="int" null="F" p="T" />

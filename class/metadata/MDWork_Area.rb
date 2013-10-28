@@ -62,10 +62,7 @@ class MDWork_Area
     if dir_path_arr.size > @@backup_max_num
       dir_path_arr.sort! {|a, b| File::ctime(a) <=> File::ctime(b)}
       dir_path_arr.pop(@@backup_max_num)
-      dir_path_arr.each do |dir_path|
-        DirManager.remove_dir(dir_path)
-        #puts "MDWork_Area: 备份#{dir_path}已删除"
-      end
+      dir_path_arr.each{|dir_path| DirManager.remove_dir(dir_path)}
     end
   end
   #输出Sql脚本

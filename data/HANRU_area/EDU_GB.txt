@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_GB" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_GB" provider="reallocate_namespace">
     <table name="EDU_GB_ZZMMYCLB" exp="政治面貌异常类别代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />

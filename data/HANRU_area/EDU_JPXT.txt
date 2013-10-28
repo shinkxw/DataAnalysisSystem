@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_JPXT" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_JPXT" provider="reallocate_namespace">
     <table name="EDU_JPXT_01_01_JLCSJ" exp="教练车数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

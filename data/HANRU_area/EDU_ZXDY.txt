@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ZXDY" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_ZXDY" provider="reallocate_namespace">
     <table name="EDU_ZXDY_04_A01_ZZGW" exp="值周岗位数据表">
         <field_area>
             <name="ID" exp="值周岗位表ID" type="int" null="F" p="T" />

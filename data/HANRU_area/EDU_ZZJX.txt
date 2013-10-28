@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ZZJX" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_ZZJX" provider="reallocate_namespace">
     <table name="EDU_ZZJX_01_01_ZYXX" exp="专业基本信息数据表">
         <field_area>
             <name="ZYBH" exp="专业编号" type="int" null="F" p="T" />

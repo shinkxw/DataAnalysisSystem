@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_JY" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_JY" provider="reallocate_namespace">
     <table name="EDU_JY_ZYZXTZBZMC" exp="中央专项投资补助名称代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />

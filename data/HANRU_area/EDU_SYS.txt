@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_SYS" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_SYS" provider="reallocate_namespace">
     <table name="EDU_SYS_01_CONFIG" exp="È«¾ÖÅäÖÃ±í">
         <field_area>
             <name="ID" exp="ÅäÖÃID" type="int" null="F" p="T" />

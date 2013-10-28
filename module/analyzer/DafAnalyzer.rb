@@ -27,7 +27,7 @@ class DafAnalyzer
       case state
       when "file"
         if hash[:line_prefix] == "namespace"
-          name_space = MDNameSpace.new(hash[:name],hash[:provider],hash[:generation_time])
+          name_space = MDNameSpace.new(hash[:name],hash[:provider])
           state = "namespace"
         elsif hash[:line_prefix] != nil
           @log.push("DafAnalyzer: ±Í«©”–ŒÛ" + line)

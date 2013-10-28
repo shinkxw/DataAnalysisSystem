@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ZZ" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_ZZ" provider="reallocate_namespace">
     <table name="EDU_ZZ_ZYZWLB" exp="主要职务类别代码">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />

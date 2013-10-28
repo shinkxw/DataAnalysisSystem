@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ZZJG" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_ZZJG" provider="reallocate_namespace">
     <table name="EDU_ZZJG_01_01_JZGJBSJ" exp="教职工基本数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

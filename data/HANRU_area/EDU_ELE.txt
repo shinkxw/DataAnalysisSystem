@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="EDU_ELE" provider="reallocate_namespace" generation_time="">
+<namespace name="EDU_ELE" provider="reallocate_namespace">
     <table name="EDU_ELE_01_USER" exp="应用系统用户表">
         <field_area>
             <name="LOGINNAME" exp="用户名" type="nvarchar(20)" null="F" p="T" />

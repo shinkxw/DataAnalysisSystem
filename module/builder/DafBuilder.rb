@@ -64,8 +64,7 @@ class DafBuilder
   #生成命名空间的daf字符串
   def build_name_space_daf(name_space)
     @daf_str << %(<namespace name="#{name_space.name}" )
-    @daf_str << %(provider="#{name_space.provider}" )
-    @daf_str << "generation_time=\"\">\n"
+    @daf_str << "provider=\"#{name_space.provider}\">\n"
     name_space.each{|table| build_table_daf(table)}
     @daf_str << "</namespace>\n"
   end

@@ -6,15 +6,11 @@ class MDNameSpace
   attr_reader :name#命名空间名称
   attr_reader :table_arr#命名空间中表的数组
   attr_accessor :provider#命名空间提供者
-  attr_accessor :generation_time#命名空间生成时间
-  attr_accessor :config#命名空间配置
   #初始化
-  def initialize(name,provider,generation_time = '',config = '')
+  def initialize(name,provider)
     @name = name
     @table_arr = []
     @provider = provider
-    @generation_time = generation_time
-    @config = config
   end
   #增加表
   def add_table(table)

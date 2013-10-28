@@ -6,14 +6,12 @@ class MDArea
   attr_reader :name_space_arr#命名空间数组
   attr_accessor :name#元数据域名称
   attr_accessor :table_relation_str_arr#表关联信息数组
-  attr_accessor :generation_time#生成时间
   attr_accessor :error_relation_str#出错关联语句
   #初始化
   def initialize(name)
     @name = name
     @name_space_arr = []
     @table_relation_str_arr = nil
-    @generation_time = Time.now.strftime("%Y/%m/%d %X")
   end
   #增加命名空间
   def add_name_space(name_space)
@@ -34,15 +32,13 @@ class MDArea
     get_table_arr.each{|table| table_hash[table.name] = table}
     table_hash
   end
-  #查找表名并返回该表对象,无则返回nil
+  #查找指定名称的表对象,无则返回nil
   def find_table(table_name)
     @table_hash ||= get_table_hash
     @table_hash[table_name]
   end
-  #查找是否存在该名字的命名空间,无则返回nil
-  def find_name_space(name_space_name)
-    find{|name_space| name_space.name == name_space_name}
-  end
+  #查找指定名称的命名空间对象,无则返回nil
+  def find_name_space(name_space_name);find{|ns| ns.name == name_space_name} end
   #判断元数据域是否有效
   def is_valid?
     p "MDArea: 表名重复" if get_table_name_arr.uniq! != nil
@@ -110,9 +106,7 @@ class MDArea
   #获得所有表名的数组
   def get_table_name_arr;map(&:get_table_name_arr).flatten end
   #计算域的特征值
-  def get_ev
-    Compressor.arr_com(get_table_arr.map(&:get_ev))
-  end
+  def get_ev;Compressor.arr_com(get_table_arr.map(&:get_ev)) end
   #迭代命名空间
   def each;@name_space_arr.each{|name_space| yield(name_space)} end
 end
