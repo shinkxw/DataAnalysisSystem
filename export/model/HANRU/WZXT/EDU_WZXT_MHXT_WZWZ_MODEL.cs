@@ -162,6 +162,16 @@ namespace HanRuEdu.LDAL
             public Int32 INDEXSHOW { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否置顶")]
+            public Int32 SFZD { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "置顶优先级")]
+            public Int32 ZDYXJ { get; set; }
+
+
         }
     }
 }

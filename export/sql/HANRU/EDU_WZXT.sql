@@ -312,6 +312,8 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZWZ](
 	[OPENFLAG]  int  NOT NULL,--开启状态
 	[LLQX]  nvarchar(50)  NULL,--浏览权限
 	[INDEXSHOW]  int  NOT NULL,--能否显示在主页上
+	[SFZD]  int  NOT NULL,--是否置顶
+	[ZDYXJ]  int  NOT NULL,--置顶优先级
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZWZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -709,6 +711,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览权限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'LLQX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'能否显示在主页上' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'INDEXSHOW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否置顶' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'SFZD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'置顶优先级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'ZDYXJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文章评价表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPJ'
 GO
