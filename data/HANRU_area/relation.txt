@@ -813,6 +813,7 @@
   ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
   ZZNJID         EDU_ZZJX_02_01_ZZNJ                NJDM
   JGH            EDU_ZZXX_03_01_XNJG                JGH
+  BZRID          EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_03_01_ZTJXJH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JHNJ           EDU_ZZJX_02_01_ZZNJ                NJDM
@@ -954,6 +955,8 @@
   EXAMROOMID     EDU_ZZJX_30_A02_EXAMROOM           ID
   CCID           EDU_ZZJX_31_A02_KSCC               ID
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
 <EDU_ZZJX_32_A03_XSPKJG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KCPKID         EDU_ZZJX_32_A02_ZYKCPKJG           ID
@@ -962,6 +965,10 @@
   CCID           EDU_ZZJX_31_A02_KSCC               ID
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
   StudentID      EDU_ZZXS_01_01_XSXX                ID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
+  KSSDLXID       EDU_ZZJX_31_A01_KSSDLX             ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM

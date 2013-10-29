@@ -92,6 +92,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,e.JXJH as e_ZZBJ_JXJH--学校班级数据表 教学计划
       ,e.JGH as e_ZZBJ_JGH--学校班级数据表 机构号
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份

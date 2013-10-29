@@ -162,6 +162,7 @@ SELECT a.[ID]--编号
       ,j.JXJH as j_ZZBJ_JXJH--学校班级数据表 教学计划
       ,j.JGH as j_ZZBJ_JGH--学校班级数据表 机构号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

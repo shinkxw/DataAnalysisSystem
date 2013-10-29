@@ -24,6 +24,7 @@ SELECT a.[ID]--编号
       ,c.JXJH as c_ZZBJ_JXJH--学校班级数据表 教学计划
       ,c.JGH as c_ZZBJ_JGH--学校班级数据表 机构号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.SCHOOLID as d_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,d.SSLID as d_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号

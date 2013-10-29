@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_32_A03_XSPKJG()
         {
             AdmissionID = "";
+            NJID = "";
+            BJID = "";
         }
         public class EDU_ZZJX_32_A03_XSPKJG_metadata
         {
@@ -63,6 +65,30 @@ namespace HanRuEdu.LDAL
             [StringLength(24)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String AdmissionID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业")]
+            public Int32 ZYXXID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级")]
+            [StringLength(4)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "考试时段类型")]
+            public Int32 KSSDLXID { get; set; }
 
 
         }

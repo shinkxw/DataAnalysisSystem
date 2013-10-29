@@ -173,6 +173,7 @@ SELECT a.[ID]--学籍异动表编号
       ,h.JXJH as h_ZZBJ_JXJH--学校班级数据表 教学计划
       ,h.JGH as h_ZZBJ_JGH--学校班级数据表 机构号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -208,6 +209,7 @@ SELECT a.[ID]--学籍异动表编号
       ,k.JXJH as k_ZZBJ_JXJH--学校班级数据表 教学计划
       ,k.JGH as k_ZZBJ_JGH--学校班级数据表 机构号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,l.SCHOOLID as l_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份

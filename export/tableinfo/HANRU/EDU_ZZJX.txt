@@ -79,6 +79,7 @@ EDU_ZZJX_02_02_ZZBJ  学校班级数据表
   JXJH          教学计划                text           非主
   JGH           机构号                  nvarchar(6)    非主        校内机构数据类表
   XQDM          校区代码                nvarchar(2)    非主
+  BZRID         班主任ID                int            非主        教职工基本数据子类表
 
 EDU_ZZJX_03_01_ZTJXJH  总体教学计划数据子类表
   ID            编号                    int            主键
@@ -430,6 +431,8 @@ EDU_ZZJX_32_A02_ZYKCPKJG  专业课程排考结果表
   EXAMROOMID    考场ID                  int            非主        考场表
   CCID          场次ID                  int            非主        考试场次表
   KCQDID        考试科目ID              int            非主        教学计划课程清单数据子类表
+  ZYXXID        专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
 
 EDU_ZZJX_32_A03_XSPKJG  学生排考结果表
   ID            编号                    int            主键
@@ -442,4 +445,8 @@ EDU_ZZJX_32_A03_XSPKJG  学生排考结果表
   StudentID     学生                    int            非主        学生信息数据表
   SeatID        座位号                  int            非主
   AdmissionID   准考证号                nvarchar(24)   非主
+  ZYXXID        专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
+  KSSDLXID      考试时段类型ID          int            非主        考试时段类型表
 

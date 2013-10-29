@@ -110,6 +110,10 @@ namespace HanRuEdu.LDAL
             public String XQDM { get; set; }
 
 
+            [Display(Name = "°àÖ÷ÈÎ")]
+            public Int32 BZRID { get; set; }
+
+
         }
     }
 }
