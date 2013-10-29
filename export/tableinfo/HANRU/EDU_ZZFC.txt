@@ -124,6 +124,7 @@ EDU_ZZFC_10_A01_SSKHXM  宿舍考核项目表
   SCHOOLID      学校                    int            主键        学校配置表
   LX            类型                    int            非主
   XMMC          项目名称                nvarchar(50)   非主
+  SFYXPB        是否影响评比            int            非主
 
 EDU_ZZFC_10_A02_SSKHJG  宿舍考核结果表
   ID            编号                    int            主键

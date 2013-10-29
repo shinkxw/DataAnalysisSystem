@@ -35,6 +35,11 @@ namespace HanRuEdu.LDAL
             public String XMMC { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否影响评比")]
+            public Int32 SFYXPB { get; set; }
+
+
         }
     }
 }

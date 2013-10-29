@@ -8131,6 +8131,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_SSKHXM_SCHOOLID--宿舍考核项目表 学校
       ,e.LX as e_SSKHXM_LX--宿舍考核项目表 类型
       ,e.XMMC as e_SSKHXM_XMMC--宿舍考核项目表 项目名称
+      ,e.SFYXPB as e_SSKHXM_SFYXPB--宿舍考核项目表 是否影响评比
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

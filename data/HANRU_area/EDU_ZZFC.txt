@@ -137,6 +137,7 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="LX" exp="类型" type="int" null="F" p="F" />
             <name="XMMC" exp="项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SFYXPB" exp="是否影响评比" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZFC_10_A02_SSKHJG" exp="宿舍考核结果表">

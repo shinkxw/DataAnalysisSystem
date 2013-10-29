@@ -223,6 +223,7 @@ CREATE TABLE [dbo].[EDU_ZZFC_10_A01_SSKHXM](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[LX]  int  NOT NULL,--类型
 	[XMMC]  nvarchar(50)  NOT NULL,--项目名称
+	[SFYXPB]  int  NOT NULL,--是否影响评比
 CONSTRAINT [PK_EDU_ZZFC_10_A01_SSKHXM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -514,6 +515,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A01_SSKHXM', @level2type=N'COLUMN',@level2name=N'LX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'项目名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A01_SSKHXM', @level2type=N'COLUMN',@level2name=N'XMMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否影响评比' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A01_SSKHXM', @level2type=N'COLUMN',@level2name=N'SFYXPB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'宿舍考核结果表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A02_SSKHJG'
 GO
