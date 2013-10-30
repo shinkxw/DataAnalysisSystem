@@ -140,6 +140,9 @@
             <name="QMCJ" exp="期末成绩" type="decimal(5, 1)" null="T" p="F" />
             <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
             <name="CJLXID" exp="成绩类型ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_06_02_XSCJLX" exp="学生成绩类型表">
@@ -410,6 +413,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
             <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
             <name="RTSJ" exp="入团时间" type="datetime" null="F" p="F" />
             <name="ZRD" exp="转入地" type="nvarchar(50)" null="F" p="F" />
@@ -425,7 +429,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="TYXXID" exp="团员信息表ID" type="int" null="F" p="F" />
             <name="SJJE" exp="收缴金额" type="decimal(8, 2)" null="F" p="F" />
             <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
         </field_area>

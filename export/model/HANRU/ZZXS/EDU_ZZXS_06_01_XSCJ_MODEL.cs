@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             KCMC = "";
             XQMC = "";
             CJLRRQ = "";
+            NJID = "";
+            BJID = "";
         }
         public class EDU_ZZXS_06_01_XSCJ_metadata
         {
@@ -125,6 +127,25 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "成绩类型")]
             public Int32 CJLXID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业")]
+            public Int32 ZYXXID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级")]
+            [StringLength(4)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJID { get; set; }
 
 
         }

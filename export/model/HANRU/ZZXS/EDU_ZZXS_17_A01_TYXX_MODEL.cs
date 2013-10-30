@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_17_A01_TYXX()
         {
+            BJID = "";
             RTSJ = new DateTime(1900, 1, 1);
             ZRD = "";
             ZRSJ = new DateTime(1900, 1, 1);
@@ -25,6 +26,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

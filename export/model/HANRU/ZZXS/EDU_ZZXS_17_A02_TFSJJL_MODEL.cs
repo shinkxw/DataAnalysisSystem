@@ -29,8 +29,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学生")]
-            public Int32 XSXXID { get; set; }
+            [Display(Name = "团员信息表")]
+            public Int32 TYXXID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

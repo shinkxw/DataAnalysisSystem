@@ -1028,6 +1028,9 @@
   CJLRJGID       EDU_ZZJG_01_01_JZGJBSJ             ID
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
   CJLXID         EDU_ZZXS_06_02_XSCJLX              ID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
 <EDU_ZZXS_06_02_XSCJLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
@@ -1127,12 +1130,13 @@
   TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXS_17_A01_TYXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   JBJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXS_17_A02_TFSJJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
-  XSXXID         EDU_ZZXS_01_01_XSXX                ID
+  TYXXID         EDU_ZZXS_17_A01_TYXX               ID
 <EDU_ZZXS_17_A03_RDJJTY
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSXXID         EDU_ZZXS_01_01_XSXX                ID

@@ -125,6 +125,9 @@ EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
   QMCJ          期末成绩                decimal(5, 1)  非主
   KCQDID        课程清单ID              int            非主        教学计划课程清单数据子类表
   CJLXID        成绩类型ID              int            非主        学生成绩类型表
+  ZYXXID        专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
 
 EDU_ZZXS_06_02_XSCJLX  学生成绩类型表
   ID            编号                    int            主键
@@ -353,6 +356,7 @@ EDU_ZZXS_16_A02_PKSXX  贫困生信息表
 EDU_ZZXS_17_A01_TYXX  团员信息扩展表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
   XSXXID        学生ID                  int            非主        学生信息数据表
   RTSJ          入团时间                datetime       非主
   ZRD           转入地                  nvarchar(50)   非主
@@ -366,7 +370,7 @@ EDU_ZZXS_17_A02_TFSJJL  团费收缴记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   XQID          学期ID                  int            非主        学期数据表
-  XSXXID        学生ID                  int            非主        学生信息数据表
+  TYXXID        团员信息表ID            int            非主        团员信息扩展表
   SJJE          收缴金额                decimal(8, 2)  非主
   TJSJ          添加时间                datetime       非主
 
