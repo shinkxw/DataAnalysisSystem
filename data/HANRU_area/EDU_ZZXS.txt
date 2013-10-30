@@ -429,6 +429,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
             <name="TYXXID" exp="团员信息表ID" type="int" null="F" p="F" />
             <name="SJJE" exp="收缴金额" type="decimal(8, 2)" null="F" p="F" />
             <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />

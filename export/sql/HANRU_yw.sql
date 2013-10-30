@@ -12044,6 +12044,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_17_A02_TFSJJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[XQID]  int  NOT NULL,--学期ID
+	[XSXXID]  int  NOT NULL,--学生ID
 	[TYXXID]  int  NOT NULL,--团员信息表ID
 	[SJJE]  decimal(8, 2)  NOT NULL,--收缴金额
 	[TJSJ]  datetime  NULL,--添加时间
@@ -12786,6 +12787,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_17_A02_TFSJJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_17_A02_TFSJJL', @level2type=N'COLUMN',@level2name=N'XQID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_17_A02_TFSJJL', @level2type=N'COLUMN',@level2name=N'XSXXID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'团员信息表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_17_A02_TFSJJL', @level2type=N'COLUMN',@level2name=N'TYXXID'
 GO

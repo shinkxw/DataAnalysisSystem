@@ -370,6 +370,7 @@ EDU_ZZXS_17_A02_TFSJJL  团费收缴记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   XQID          学期ID                  int            非主        学期数据表
+  XSXXID        学生ID                  int            非主        学生信息数据表
   TYXXID        团员信息表ID            int            非主        团员信息扩展表
   SJJE          收缴金额                decimal(8, 2)  非主
   TJSJ          添加时间                datetime       非主

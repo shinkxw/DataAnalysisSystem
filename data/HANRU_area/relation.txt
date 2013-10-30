@@ -1136,6 +1136,7 @@
 <EDU_ZZXS_17_A02_TFSJJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
+  XSXXID         EDU_ZZXS_01_01_XSXX                ID
   TYXXID         EDU_ZZXS_17_A01_TYXX               ID
 <EDU_ZZXS_17_A03_RDJJTY
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
