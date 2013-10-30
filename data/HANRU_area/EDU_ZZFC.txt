@@ -162,4 +162,16 @@
             <name="XQCS" exp="下寝次数" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZFC_10_A04_YDKHPB" exp="月度考核评比表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YF" exp="月份" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="QSID" exp="寝室ID" type="int" null="F" p="F" />
+            <name="PBJG" exp="评比结果" type="nvarchar(10)" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
