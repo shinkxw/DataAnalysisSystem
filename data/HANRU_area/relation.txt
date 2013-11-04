@@ -333,14 +333,13 @@
 <EDU_WZXT_MHXT_FBQX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
-<EDU_WZXT_MHXT_FBJS
+<EDU_WZXT_MHXT_JSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
-<EDU_WZXT_MHXT_YHFBQX
+<EDU_WZXT_MHXT_YHQX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
   LOGINNAME      EDU_ELE_01_USER                    LOGINNAME
-  SFXYSH         EDU_JY_SFBZ                        DM
 <EDU_ZJ_ZJZY
   ZYMLLB         EDU_ZJ_ZYML                        DM
 <EDU_ZXDY_04_A01_ZZGW

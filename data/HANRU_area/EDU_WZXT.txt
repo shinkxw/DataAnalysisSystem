@@ -214,24 +214,26 @@
             <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_FBJS" exp="发布角色表">
+    <table name="EDU_WZXT_MHXT_JSXX" exp="角色信息表">
         <field_area>
-            <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ID" exp="角色ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="JSMC" exp="角色名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JSMC" exp="角色名称" type="nvarchar(20)" null="F" p="F" />
+            <name="JSLX" exp="角色类型" type="int" null="F" p="F" />
             <name="LMIDLB" exp="栏目ID列表" type="text" null="F" p="F" />
             <name="LMMCLB" exp="栏目名称列表" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_WZXT_MHXT_YHFBQX" exp="用户发布权限表">
+    <table name="EDU_WZXT_MHXT_YHQX" exp="用户权限表">
         <field_area>
-            <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ID" exp="权限ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
             <name="LOGINNAME" exp="用户名" type="nvarchar(20)" null="F" p="F" />
-            <name="JSIDLB" exp="角色ID列表" type="text" null="F" p="F" />
-            <name="SFXYSH" exp="是否需要审核" type="nvarchar(1)" null="T" p="F" />
+            <name="LX" exp="类型" type="int" null="F" p="F" />
+            <name="JSIDLST" exp="角色ID列表" type="text" null="F" p="F" />
+            <name="JSNAMELST" exp="角色名称列表" type="text" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

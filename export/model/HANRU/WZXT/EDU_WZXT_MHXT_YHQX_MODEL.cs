@@ -4,23 +4,24 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_WZXT_MHXT_YHFBQX_metadata))]
-    public partial class EDU_WZXT_MHXT_YHFBQX
+    [MetadataType(typeof(EDU_WZXT_MHXT_YHQX_metadata))]
+    public partial class EDU_WZXT_MHXT_YHQX
     {
-        public EDU_WZXT_MHXT_YHFBQX()
+        public EDU_WZXT_MHXT_YHQX()
         {
             LOGINNAME = "";
-            JSIDLB = "";
+            JSIDLST = "";
+            JSNAMELST = "";
         }
-        public class EDU_WZXT_MHXT_YHFBQX_metadata
+        public class EDU_WZXT_MHXT_YHQX_metadata
         {
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "发布权限")]
+            [Display(Name = "权限")]
             public Int32 ID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学校名")]
+            [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
 
 
@@ -36,16 +37,21 @@ namespace HanRuEdu.LDAL
             public String LOGINNAME { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "类型")]
+            public Int32 LX { get; set; }
+
+
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "角色ID列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JSIDLB { get; set; }
+            public String JSIDLST { get; set; }
 
 
-            [Display(Name = "是否需要审核")]
-            [StringLength(1)]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "角色名称列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SFXYSH { get; set; }
+            public String JSNAMELST { get; set; }
 
 
         }

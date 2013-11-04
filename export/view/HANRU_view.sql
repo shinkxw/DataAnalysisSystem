@@ -299,13 +299,13 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_F
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_FBQX_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_FBJS_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_JSXX_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_WZXT_MHXT_FBJS_DISP
+   drop view VIEW_EDU_WZXT_MHXT_JSXX_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_YHFBQX_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_YHQX_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_WZXT_MHXT_YHFBQX_DISP
+   drop view VIEW_EDU_WZXT_MHXT_YHQX_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DISP')
             and   type = 'V')
@@ -4086,13 +4086,14 @@ FROM dbo.EDU_WZXT_MHXT_FBQX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
 GO
 
---发布角色表
-CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_FBJS_DISP]
+--角色信息表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_JSXX_DISP]
 AS
-SELECT a.[ID]--发布权限ID
-      ,a.[SCHOOLID]--学校名
+SELECT a.[ID]--角色ID
+      ,a.[SCHOOLID]--学校ID
       ,a.[WEBID]--网站ID
       ,a.[JSMC]--角色名称
+      ,a.[JSLX]--角色类型
       ,a.[LMIDLB]--栏目ID列表
       ,a.[LMMCLB]--栏目名称列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -4102,19 +4103,20 @@ SELECT a.[ID]--发布权限ID
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
-FROM dbo.EDU_WZXT_MHXT_FBJS AS a LEFT OUTER JOIN
-      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+FROM dbo.EDU_WZXT_MHXT_JSXX AS a LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
---用户发布权限表
-CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_YHFBQX_DISP]
+--用户权限表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_YHQX_DISP]
 AS
-SELECT a.[ID]--发布权限ID
-      ,a.[SCHOOLID]--学校名
+SELECT a.[ID]--权限ID
+      ,a.[SCHOOLID]--学校ID
       ,a.[WEBID]--网站ID
       ,a.[LOGINNAME]--用户名
-      ,a.[JSIDLB]--角色ID列表
-      ,a.[SFXYSH]--是否需要审核
+      ,a.[LX]--类型
+      ,a.[JSIDLST]--角色ID列表
+      ,a.[JSNAMELST]--角色名称列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
@@ -4136,12 +4138,10 @@ SELECT a.[ID]--发布权限ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
-FROM dbo.EDU_WZXT_MHXT_YHFBQX AS a LEFT OUTER JOIN
-      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.LOGINNAME = d.LOGINNAME /*用户名*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS e ON a.SFXYSH = e.DM /*是否需要审核*/
+FROM dbo.EDU_WZXT_MHXT_YHQX AS a LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.LOGINNAME = d.LOGINNAME /*用户名*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO
 
 --自建专业代码

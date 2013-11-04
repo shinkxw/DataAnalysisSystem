@@ -1,11 +1,12 @@
 
---发布角色表
-CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_FBJS_DISP]
+--角色信息表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_MHXT_JSXX_DISP]
 AS
-SELECT a.[ID]--发布权限ID
-      ,a.[SCHOOLID]--学校名
+SELECT a.[ID]--角色ID
+      ,a.[SCHOOLID]--学校ID
       ,a.[WEBID]--网站ID
       ,a.[JSMC]--角色名称
+      ,a.[JSLX]--角色类型
       ,a.[LMIDLB]--栏目ID列表
       ,a.[LMMCLB]--栏目名称列表
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
@@ -15,6 +16,6 @@ SELECT a.[ID]--发布权限ID
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
 
-FROM dbo.EDU_WZXT_MHXT_FBJS AS a LEFT OUTER JOIN
-      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+FROM dbo.EDU_WZXT_MHXT_JSXX AS a LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
