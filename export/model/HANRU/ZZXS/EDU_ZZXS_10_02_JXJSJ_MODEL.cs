@@ -19,13 +19,23 @@ namespace HanRuEdu.LDAL
         public class EDU_ZZXS_10_02_JXJSJ_metadata
         {
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学生")]
-            public Int32 XSXXID { get; set; }
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学校名")]
+            [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学期")]
+            public Int32 XQID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学生")]
+            public Int32 XSXXID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -84,11 +94,6 @@ namespace HanRuEdu.LDAL
             [StringLength(1)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SFSH { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学期")]
-            public Int32 XQID { get; set; }
 
 
         }

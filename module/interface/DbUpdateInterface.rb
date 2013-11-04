@@ -160,7 +160,7 @@ class DbUpdateInterface < BaseInterface
     DBEntity.open() do |db|
       num = 1
       db.get_db_name.each do |db_name|
-        puts "   #{db_name.fill_cn(22)}#{num.to_s}"
+        puts "   #{db_name.fill_cn(28,'-')}#{num.to_s}"
         @db_hash[num.to_s] = db_name
         num += 1
       end
