@@ -15,12 +15,12 @@ SELECT a.[ID]--编号
       ,c.KCMC as c_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,c.YXKC as c_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,c.SFHXKC as c_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,cb.MC as c_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[cb].MC as c_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
       ,c.KCFLM as c_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
-      ,cc.MC as c_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,[cc].MC as c_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,c.KCSXM as c_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
-      ,cd.MC as c_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
-      ,cd.SM as c_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,[cd].MC as c_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,[cd].SM as c_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
       ,c.ZXXQ as c_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
       ,c.ZKS as c_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,c.LLKS as c_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
@@ -29,7 +29,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZZXS_06_02_XSCJLX AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS c ON a.KCQDID = c.ID /*课程清单ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS cb ON c.SFHXKC = cb.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_KCFL AS cc ON c.KCFLM = cc.DM /*课程分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KCSX AS cd ON c.KCSXM = cd.DM /*课程属性码*/
+      dbo.EDU_JY_SKFS AS [cb] ON c.SFHXKC = [cb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS [cc] ON c.KCFLM = [cc].DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS [cd] ON c.KCSXM = [cd].DM /*课程属性码*/
 GO

@@ -12,7 +12,7 @@ SELECT a.[ID]--编号
       ,c.XM as c_XYSJ_XM--学员数据表 姓名
       ,c.SFZH as c_XYSJ_SFZH--学员数据表 身份证号
       ,c.XBM as c_XYSJ_XBM--学员数据表 性别码
-      ,cb.MC as c_XYSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_XYSJ_XBM_MC--人的性别代码 名称
       ,c.LXDH as c_XYSJ_LXDH--学员数据表 联系电话
       ,c.ZZ as c_XYSJ_ZZ--学员数据表 住址
       ,c.BMSJ as c_XYSJ_BMSJ--学员数据表 报名时间
@@ -26,5 +26,5 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_JPXT_03_03_XYHFXX AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_03_01_XYSJ AS c ON a.XYID = c.ID /*学员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/
 GO

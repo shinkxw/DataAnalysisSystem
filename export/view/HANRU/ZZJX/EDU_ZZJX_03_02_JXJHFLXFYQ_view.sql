@@ -18,12 +18,12 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SYXZ as d_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
       ,d.PYMB as d_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
       ,d.SFKY as d_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,db.MC as d_ZTJXJH_SFKY_MC--是否标志代码表 名称
+      ,[db].MC as d_ZTJXJH_SFKY_MC--是否标志代码表 名称
       ,d.FJ as d_ZTJXJH_FJ--总体教学计划数据子类表 附件
       ,d.ZYRS as d_ZTJXJH_ZYRS--总体教学计划数据子类表 专业人数
 
 FROM dbo.EDU_ZZJX_03_02_JXJHFLXFYQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS c ON a.KCFLM = c.DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS d ON a.JXJHID = d.ID /*教学计划ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS db ON d.SFKY = db.DM /*是否可用*/
+      dbo.EDU_JY_SFBZ AS [db] ON d.SFKY = [db].DM /*是否可用*/
 GO

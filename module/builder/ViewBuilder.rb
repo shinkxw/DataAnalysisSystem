@@ -85,7 +85,7 @@ class ViewBuilder
               bz_table = field.relation.table
               bz_table.field_area.each do |bz_field|
                 if field.relation.name != bz_field.name
-                  select_str << "      ,#{@@Short_name[index]}#{@@Short_name[i2]}.#{bz_field.name} as "
+                  select_str << "      ,[#{@@Short_name[index]}#{@@Short_name[i2]}].#{bz_field.name} as "
                   select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}"
                   select_str << "_#{field.name}_#{bz_field.name}--#{bz_table.explanation} #{bz_field.explanation}\n"
                 end
@@ -117,13 +117,13 @@ class ViewBuilder
     @bz_inf_arr.each do |bz_inf|
       from_str << " LEFT OUTER JOIN\n      "
       from_str << "dbo.#{bz_inf[0].relation.table.name} "
-      from_str << "AS #{bz_inf[1]}#{bz_inf[2]} ON"
-      from_str << get_table_relation_str(bz_inf[0],"#{bz_inf[1]}#{bz_inf[2]}",bz_inf[1])
+      from_str << "AS [#{bz_inf[1]}#{bz_inf[2]}] ON"
+      from_str << get_table_relation_str(bz_inf[0],"[#{bz_inf[1]}#{bz_inf[2]}]",bz_inf[1])
     end
     from_str << "\nGO\n"
   end
   #获得表关联语句
-  def get_table_relation_str(this_field,that_short_name,this_short_name = "a")
+  def get_table_relation_str(this_field,that_short_name,this_short_name = 'a')
     from_str = ""
     this_table = this_field.table
     that_field = this_field.relation

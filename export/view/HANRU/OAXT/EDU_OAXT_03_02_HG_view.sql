@@ -15,15 +15,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -47,7 +47,7 @@ SELECT a.[SCHOOLID]--学校名
 FROM dbo.EDU_OAXT_03_02_HG AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.HGRID = d.LOGINNAME /*核稿人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO

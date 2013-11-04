@@ -26,14 +26,14 @@ SELECT a.[ID]--编号
       ,d.RKZZNY as d_RKSJ_RKZZNY--任课数据子类表 任课终止年月
       ,d.RKZXS as d_RKSJ_RKZXS--任课数据子类表 任课总学时
       ,d.RKXDM as d_RKSJ_RKXDM--任课数据子类表 任课学段码
-      ,db.MC as d_RKSJ_RKXDM_MC--任课学段代码表 名称
+      ,[db].MC as d_RKSJ_RKXDM_MC--任课学段代码表 名称
       ,d.RKJSM as d_RKSJ_RKJSM--任课数据子类表 任课角色码
-      ,dc.MC as d_RKSJ_RKJSM_MC--任课角色代码表 名称
+      ,[dc].MC as d_RKSJ_RKJSM_MC--任课角色代码表 名称
       ,d.SKBJ as d_RKSJ_SKBJ--任课数据子类表 授课班级
       ,d.SKRS as d_RKSJ_SKRS--任课数据子类表 授课人数
       ,d.ZKS as d_RKSJ_ZKS--任课数据子类表 周课时
       ,d.SFLT as d_RKSJ_SFLT--任课数据子类表 是否连堂
-      ,dd.MC as d_RKSJ_SFLT_MC--是否标志代码表 名称
+      ,[dd].MC as d_RKSJ_SFLT_MC--是否标志代码表 名称
       ,d.NJID as d_RKSJ_NJID--任课数据子类表 年级号
       ,d.XQID as d_RKSJ_XQID--任课数据子类表 学期
       ,d.XNID as d_RKSJ_XNID--任课数据子类表 学年
@@ -41,7 +41,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZXJX_05_A02_KSKM AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.SSKSID = c.ID /*所属考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_07_02_RKSJ AS d ON a.JSRKID = d.ID /*教师任课编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS db ON d.RKXDM = db.DM /*任课学段码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKJS AS dc ON d.RKJSM = dc.DM /*任课角色码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dd ON d.SFLT = dd.DM /*是否连堂*/
+      dbo.EDU_JY_RKXD AS [db] ON d.RKXDM = [db].DM /*任课学段码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKJS AS [dc] ON d.RKJSM = [dc].DM /*任课角色码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dd] ON d.SFLT = [dd].DM /*是否连堂*/
 GO

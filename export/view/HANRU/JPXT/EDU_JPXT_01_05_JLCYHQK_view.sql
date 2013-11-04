@@ -24,7 +24,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
       ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
-      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[db].MC as d_JLYSJ_XBM_MC--人的性别代码 名称
       ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
       ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -54,5 +54,5 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_01_05_JLCYHQK AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/
 GO

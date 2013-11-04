@@ -186,33 +186,59 @@ EDU_ZZXS_07_03_XSZCXX  学生注册信息数据子类表
 EDU_ZZXS_10_02_JXJSJ  奖学金数据子类表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
-  XQID          学期ID                  int            非主        学期数据表
-  XSXXID        学生ID                  int            非主        学生信息数据表
   JXJMC         奖学金名称              nvarchar(30)   非主
   JXJBH         奖学金编号              nvarchar(2)    非主
   JXJDJ         奖学金等级              nvarchar(20)   非主
   JXJLXM        奖学金类型码            nvarchar(2)    非主        奖学金类型代码表
   JXJE          奖学金额                decimal(8, 2)  非主
-  HJSJ          获奖时间                datetime       非主
   ZZDWHGR       资助单位或个人          nvarchar(60)   非主
   JXJLYM        奖学金来源码            nvarchar(1)    非主        奖励资助资金来源代码表
-  SFSH          是否审核                nvarchar(1)    非主        是否标志代码表
+  BZ            备注                    text           非主
 
 EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
-  XQID          学期ID                  int            非主        学期数据表
-  XSXXID        学生ID                  int            非主        学生信息数据表
-  ZKBMH         中考报名号              nvarchar(10)   非主
-  YHKH          银行卡号                nvarchar(30)   非主
   ZXJE          助学金额                decimal(8, 2)  非主
-  SFSJ          始发时间                datetime       非主
-  TFSJ          停发时间                datetime       非主
-  TFYY          停发原因                nvarchar(80)   非主
   ZXJMC         助学金名称              nvarchar(60)   非主
   ZZDWHGR       资助单位或个人          nvarchar(60)   非主
   ZXJLX         助学金类型              nvarchar(1)    非主        助学金分类代码
-  SFSH          是否审核                nvarchar(1)    非主        是否标志代码表
+  BZ            备注                    text           非主
+
+EDU_ZZXS_10_A12_XSHJXJ  学生获奖学金表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  JXJID         奖学金ID                int            非主        奖学金数据子类表
+  HDJE          获得金额                decimal(8, 2)  非主
+  HJSJ          获奖时间                datetime       非主
+  BZ            备注                    text           非主
+  SQYY          申请原因                text           非主
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+
+EDU_ZZXS_10_A13_XSHZXJ  学生获助学金表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  ZXJID         助学金ID                int            非主        助学金数据子类表
+  ZKBMH         中考报名号              nvarchar(10)   非主
+  YHKH          银行卡号                nvarchar(30)   非主
+  HDJE          获得金额                decimal(8, 2)  非主
+  SFSJ          始发时间                datetime       非主
+  TFSJ          停发时间                datetime       非主
+  TFYY          停发原因                nvarchar(80)   非主
+  BZ            备注                    text           非主
+  SQYY          申请原因                text           非主
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
 
 EDU_ZZXS_12_A01_STJBSJ  社团基本数据子类表
   ID            编号                    int            主键

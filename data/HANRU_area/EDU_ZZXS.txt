@@ -211,35 +211,65 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
             <name="JXJMC" exp="奖学金名称" type="nvarchar(30)" null="F" p="F" />
             <name="JXJBH" exp="奖学金编号" type="nvarchar(2)" null="F" p="F" />
             <name="JXJDJ" exp="奖学金等级" type="nvarchar(20)" null="F" p="F" />
             <name="JXJLXM" exp="奖学金类型码" type="nvarchar(2)" null="F" p="F" />
             <name="JXJE" exp="奖学金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="HJSJ" exp="获奖时间" type="datetime" null="F" p="F" />
             <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
             <name="JXJLYM" exp="奖学金来源码" type="nvarchar(1)" null="T" p="F" />
-            <name="SFSH" exp="是否审核" type="nvarchar(1)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_10_03_ZXJSJ" exp="助学金数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
-            <name="ZKBMH" exp="中考报名号" type="nvarchar(10)" null="T" p="F" />
-            <name="YHKH" exp="银行卡号" type="nvarchar(30)" null="F" p="F" />
             <name="ZXJE" exp="助学金额" type="decimal(8, 2)" null="F" p="F" />
-            <name="SFSJ" exp="始发时间" type="datetime" null="F" p="F" />
-            <name="TFSJ" exp="停发时间" type="datetime" null="F" p="F" />
-            <name="TFYY" exp="停发原因" type="nvarchar(80)" null="F" p="F" />
             <name="ZXJMC" exp="助学金名称" type="nvarchar(60)" null="F" p="F" />
             <name="ZZDWHGR" exp="资助单位或个人" type="nvarchar(60)" null="T" p="F" />
             <name="ZXJLX" exp="助学金类型" type="nvarchar(1)" null="F" p="F" />
-            <name="SFSH" exp="是否审核" type="nvarchar(1)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_10_A12_XSHJXJ" exp="学生获奖学金表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="JXJID" exp="奖学金ID" type="int" null="F" p="F" />
+            <name="HDJE" exp="获得金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="HJSJ" exp="获奖时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SQYY" exp="申请原因" type="text" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_10_A13_XSHZXJ" exp="学生获助学金表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="ZXJID" exp="助学金ID" type="int" null="F" p="F" />
+            <name="ZKBMH" exp="中考报名号" type="nvarchar(10)" null="T" p="F" />
+            <name="YHKH" exp="银行卡号" type="nvarchar(30)" null="F" p="F" />
+            <name="HDJE" exp="获得金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="SFSJ" exp="始发时间" type="datetime" null="F" p="F" />
+            <name="TFSJ" exp="停发时间" type="datetime" null="F" p="F" />
+            <name="TFYY" exp="停发原因" type="nvarchar(80)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SQYY" exp="申请原因" type="text" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_12_A01_STJBSJ" exp="社团基本数据子类表">

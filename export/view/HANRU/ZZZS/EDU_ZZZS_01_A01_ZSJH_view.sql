@@ -10,8 +10,8 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,cb.MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[cb].MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
       ,c.ZYMC as c_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,c.XZ as c_ZYXX_XZ--专业基本信息数据表 学制
@@ -22,7 +22,7 @@ SELECT a.[ID]--编号
       ,c.KSJGH as c_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,c.ZXF as c_ZYXX_ZXF--专业基本信息数据表 总学分
       ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,cc.MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
       ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,d.SCHOOLID as d_XN_SCHOOLID--学年表 学校名
       ,d.XN as d_XN_XN--学年表 学年
@@ -30,6 +30,6 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS cc ON c.SSZYML = cc.DM /*所属专业目录*/
+      dbo.EDU_ZJ_ZJZY AS [cb] ON c.ZYDM = [cb].DM /*专业代码*/ AND c.SSZYML = [cb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [cc] ON c.SSZYML = [cc].DM /*所属专业目录*/
 GO

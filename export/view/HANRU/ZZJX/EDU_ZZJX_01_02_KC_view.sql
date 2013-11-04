@@ -27,9 +27,9 @@ SELECT a.[KCH]--课程号
       ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,cb.MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[cb].MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
-      ,cc.MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,[cc].MC as c_XNJG_SFST_MC--是否标志代码表 名称
       ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
       ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
@@ -40,6 +40,6 @@ FROM dbo.EDU_ZZJX_01_02_KC AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS c ON a.KKDW = c.JGH /*开课单位*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_KSXS AS d ON a.KSXS = d.DM /*考试形式*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS e ON a.SKFSM = e.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.JGYXBS = cb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.JGYXBS = [cb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFST = [cc].DM /*是否实体*/
 GO

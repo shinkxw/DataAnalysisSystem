@@ -19,13 +19,13 @@ SELECT a.[ID]--编号
       ,c.SYXZ as c_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
       ,c.PYMB as c_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
       ,c.SFKY as c_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,cb.MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
+      ,[cb].MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
       ,c.FJ as c_ZTJXJH_FJ--总体教学计划数据子类表 附件
       ,c.ZYRS as c_ZTJXJH_ZYRS--总体教学计划数据子类表 专业人数
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -33,6 +33,6 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJX_03_A01_XQXFGL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS c ON a.JXJHID = c.ID /*教学计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.SFKY = cb.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFKY = [cb].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO

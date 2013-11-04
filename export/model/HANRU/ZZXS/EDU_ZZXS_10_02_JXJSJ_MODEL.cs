@@ -13,8 +13,7 @@ namespace HanRuEdu.LDAL
             JXJBH = "";
             JXJDJ = "";
             JXJLXM = "";
-            HJSJ = new DateTime(1900, 1, 1);
-            SFSH = "";
+            BZ = "";
         }
         public class EDU_ZZXS_10_02_JXJSJ_metadata
         {
@@ -26,16 +25,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学期")]
-            public Int32 XQID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学生")]
-            public Int32 XSXXID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -72,11 +61,6 @@ namespace HanRuEdu.LDAL
             public decimal JXJE { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "获奖时间")]
-            public DateTime HJSJ { get; set; }
-
-
             [Display(Name = "资助单位或个人")]
             [StringLength(60)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
@@ -90,10 +74,9 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "是否审核")]
-            [StringLength(1)]
+            [Display(Name = "备注")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SFSH { get; set; }
+            public String BZ { get; set; }
 
 
         }

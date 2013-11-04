@@ -20,10 +20,10 @@ SELECT a.[ID]--编号
       ,d.KPNRMC as d_KPNRSJ_KPNRMC--考评内容数据表 考评内容名称
       ,d.KPNRLX as d_KPNRSJ_KPNRLX--考评内容数据表 考评内容类型
       ,d.KPZTID as d_KPNRSJ_KPZTID--考评内容数据表 考评主体ID
-      ,db.MC as d_KPNRSJ_KPZTID_MC--考评主体代码 名称
+      ,[db].MC as d_KPNRSJ_KPZTID_MC--考评主体代码 名称
 
 FROM dbo.EDU_ZZJG_11_A07_KPBHNR AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_11_A04_KPSJ AS c ON a.KPID = c.ID /*考评ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_11_A05_KPNRSJ AS d ON a.KPNRID = d.ID /*考评内容ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_KPZT AS db ON d.KPZTID = db.DM /*考评主体ID*/
+      dbo.EDU_ZJ_KPZT AS [db] ON d.KPZTID = [db].DM /*考评主体ID*/
 GO

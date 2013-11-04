@@ -631,6 +631,30 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_03_03_
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_03_03_JXJHKCQD_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_04_01_JCJBXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_04_01_JCJBXX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_04_02_JCXYXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_04_02_JCXYXX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_04_A03_JSJCLY_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_04_A03_JSJCLY_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_04_A04_XSJCLY_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_04_A04_XSJCLY_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_04_A05_JCFK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_04_A05_JCFK_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_04_A06_JCBF_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_04_A06_JCBF_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_05_02_JSJXGZLTJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_05_02_JSJXGZLTJ_DISP
@@ -779,6 +803,14 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_10_03_
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_10_03_ZXJSJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_10_A12_XSHJXJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZXS_10_A12_XSHJXJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_10_A13_XSHZXJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZXS_10_A13_XSHZXJ_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_12_A02_STCY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_12_A02_STCY_DISP
@@ -907,14 +939,14 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ELE_01_SCHOOL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --学期数据表
@@ -1060,7 +1092,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -1068,7 +1100,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ELE_05_XL AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO
 
 --校历周表
@@ -1128,7 +1160,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
       ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
-      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[db].MC as d_JLYSJ_XBM_MC--人的性别代码 名称
       ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
       ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1158,7 +1190,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_01_01_JLCSJ AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_05_01_CLXH AS c ON a.CLXHID = c.ID /*车辆型号ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.DQJLYID = d.ID /*当前教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/
 GO
 
 --教练车保管履历表
@@ -1186,7 +1218,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
       ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
-      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[db].MC as d_JLYSJ_XBM_MC--人的性别代码 名称
       ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
       ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1216,7 +1248,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_01_02_JLCBGLL AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/
 GO
 
 --教练车维修情况表
@@ -1300,7 +1332,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
       ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
-      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[db].MC as d_JLYSJ_XBM_MC--人的性别代码 名称
       ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
       ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1330,7 +1362,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_01_05_JLCYHQK AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/
 GO
 
 --教练车材料消耗表
@@ -1358,7 +1390,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,d.XM as d_JLYSJ_XM--教练员数据表 姓名
       ,d.XBM as d_JLYSJ_XBM--教练员数据表 性别码
-      ,db.MC as d_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[db].MC as d_JLYSJ_XBM_MC--人的性别代码 名称
       ,d.SFZH as d_JLYSJ_SFZH--教练员数据表 身份证号
       ,d.JSZH as d_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,d.JSZYXQ as d_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1388,7 +1420,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_JPXT_01_06_JLCCLXH AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_01_01_JLCSJ AS c ON a.JLCID = c.ID /*教练车ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS d ON a.JLYID = d.ID /*教练员ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/
 GO
 
 --教练员数据表
@@ -1444,7 +1476,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,c.XM as c_JLYSJ_XM--教练员数据表 姓名
       ,c.XBM as c_JLYSJ_XBM--教练员数据表 性别码
-      ,cb.MC as c_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JLYSJ_XBM_MC--人的性别代码 名称
       ,c.SFZH as c_JLYSJ_SFZH--教练员数据表 身份证号
       ,c.JSZH as c_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,c.JSZYXQ as c_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1473,7 +1505,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_JPXT_02_02_JLYWJQK AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS c ON a.JLYID = c.ID /*教练员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/
 GO
 
 --教练员安全情况表
@@ -1488,7 +1520,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,c.XM as c_JLYSJ_XM--教练员数据表 姓名
       ,c.XBM as c_JLYSJ_XBM--教练员数据表 性别码
-      ,cb.MC as c_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JLYSJ_XBM_MC--人的性别代码 名称
       ,c.SFZH as c_JLYSJ_SFZH--教练员数据表 身份证号
       ,c.JSZH as c_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,c.JSZYXQ as c_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1517,7 +1549,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_JPXT_02_03_JLYAQQK AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS c ON a.JLYID = c.ID /*教练员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/
 GO
 
 --教练员奖惩情况表
@@ -1532,7 +1564,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,c.XM as c_JLYSJ_XM--教练员数据表 姓名
       ,c.XBM as c_JLYSJ_XBM--教练员数据表 性别码
-      ,cb.MC as c_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JLYSJ_XBM_MC--人的性别代码 名称
       ,c.SFZH as c_JLYSJ_SFZH--教练员数据表 身份证号
       ,c.JSZH as c_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,c.JSZYXQ as c_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1561,7 +1593,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_JPXT_02_04_JLYJCQK AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS c ON a.JLYID = c.ID /*教练员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/
 GO
 
 --学员数据表
@@ -1589,7 +1621,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,e.XM as e_JLYSJ_XM--教练员数据表 姓名
       ,e.XBM as e_JLYSJ_XBM--教练员数据表 性别码
-      ,eb.MC as e_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[eb].MC as e_JLYSJ_XBM_MC--人的性别代码 名称
       ,e.SFZH as e_JLYSJ_SFZH--教练员数据表 身份证号
       ,e.JSZH as e_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,e.JSZYXQ as e_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1618,7 +1650,7 @@ SELECT a.[ID]--编号
       ,f.SCHOOLID as f_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,f.XM as f_JLYSJ_XM--教练员数据表 姓名
       ,f.XBM as f_JLYSJ_XBM--教练员数据表 性别码
-      ,fb.MC as f_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[fb].MC as f_JLYSJ_XBM_MC--人的性别代码 名称
       ,f.SFZH as f_JLYSJ_SFZH--教练员数据表 身份证号
       ,f.JSZH as f_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,f.JSZYXQ as f_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -1650,8 +1682,8 @@ FROM dbo.EDU_JPXT_03_01_XYSJ AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_05_01_CLXH AS d ON a.SXCXID = d.ID /*所选车型ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SSJLYID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS f ON a.YJJLYID = f.ID /*引荐教练员ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fb] ON f.XBM = [fb].DM /*性别码*/
 GO
 
 --学员考试结果表
@@ -1666,7 +1698,7 @@ SELECT a.[ID]--编号
       ,c.XM as c_XYSJ_XM--学员数据表 姓名
       ,c.SFZH as c_XYSJ_SFZH--学员数据表 身份证号
       ,c.XBM as c_XYSJ_XBM--学员数据表 性别码
-      ,cb.MC as c_XYSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_XYSJ_XBM_MC--人的性别代码 名称
       ,c.LXDH as c_XYSJ_LXDH--学员数据表 联系电话
       ,c.ZZ as c_XYSJ_ZZ--学员数据表 住址
       ,c.BMSJ as c_XYSJ_BMSJ--学员数据表 报名时间
@@ -1679,16 +1711,16 @@ SELECT a.[ID]--编号
       ,c.BYSJ as c_XYSJ_BYSJ--学员数据表 毕业时间
       ,d.SCHOOLID as d_KMKS_SCHOOLID--科目考试表 学校ID
       ,d.KMDM as d_KMKS_KMDM--科目考试表 科目代码
-      ,db.MC as d_KMKS_KMDM_MC--驾考科目代码 科目名称
-      ,db.KSSX as d_KMKS_KMDM_KSSX--驾考科目代码 考试顺序
+      ,[db].MC as d_KMKS_KMDM_MC--驾考科目代码 科目名称
+      ,[db].KSSX as d_KMKS_KMDM_KSSX--驾考科目代码 考试顺序
       ,d.KSSJ as d_KMKS_KSSJ--科目考试表 考试时间
       ,d.BZ as d_KMKS_BZ--科目考试表 备注
 
 FROM dbo.EDU_JPXT_03_02_XYKSJG AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_03_01_XYSJ AS c ON a.XYID = c.ID /*学员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_04_01_KMKS AS d ON a.KMKSID = d.ID /*科目考试ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_JKKM AS db ON d.KMDM = db.DM /*科目代码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_JKKM AS [db] ON d.KMDM = [db].DM /*科目代码*/
 GO
 
 --学员回访信息表
@@ -1704,7 +1736,7 @@ SELECT a.[ID]--编号
       ,c.XM as c_XYSJ_XM--学员数据表 姓名
       ,c.SFZH as c_XYSJ_SFZH--学员数据表 身份证号
       ,c.XBM as c_XYSJ_XBM--学员数据表 性别码
-      ,cb.MC as c_XYSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_XYSJ_XBM_MC--人的性别代码 名称
       ,c.LXDH as c_XYSJ_LXDH--学员数据表 联系电话
       ,c.ZZ as c_XYSJ_ZZ--学员数据表 住址
       ,c.BMSJ as c_XYSJ_BMSJ--学员数据表 报名时间
@@ -1718,7 +1750,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_JPXT_03_03_XYHFXX AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_03_01_XYSJ AS c ON a.XYID = c.ID /*学员ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/
 GO
 
 --科目考试表
@@ -1788,15 +1820,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -1852,9 +1884,9 @@ FROM dbo.EDU_OAXT_02_01_SWCL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.QSRID = d.LOGINNAME /*签收人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.CFRID = e.LOGINNAME /*拆封人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.DJRID = f.LOGINNAME /*登记人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --文件阅办子类表
@@ -1876,15 +1908,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -1911,9 +1943,9 @@ FROM dbo.EDU_OAXT_02_02_WJYB AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.YBRID = d.LOGINNAME /*阅办人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_YBLB AS e ON a.YBLBM = e.DM /*阅办类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --发文处理子类表
@@ -1946,15 +1978,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2046,9 +2078,9 @@ FROM dbo.EDU_OAXT_03_01_FWCL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS h ON a.JDRID = h.LOGINNAME /*校对人ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_FSFS AS i ON a.FSFSM = i.DM /*发送方式码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWFZFS AS j ON a.FZFSM = j.DM /*封装方式码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --核稿子类表
@@ -2067,15 +2099,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2099,9 +2131,9 @@ SELECT a.[SCHOOLID]--学校名
 FROM dbo.EDU_OAXT_03_02_HG AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.HGRID = d.LOGINNAME /*核稿人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --会签子类表
@@ -2120,15 +2152,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2152,9 +2184,9 @@ SELECT a.[SCHOOLID]--学校名
 FROM dbo.EDU_OAXT_03_03_HQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.HQRID = d.LOGINNAME /*会签人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --呈批子类表
@@ -2173,15 +2205,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2205,9 +2237,9 @@ SELECT a.[SCHOOLID]--学校名
 FROM dbo.EDU_OAXT_03_04_CP AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.PFRID = d.LOGINNAME /*批复人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --文件清退数据类表
@@ -2226,15 +2258,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2258,9 +2290,9 @@ SELECT a.[SCHOOLID]--学校名
 FROM dbo.EDU_OAXT_04_01_WJQT AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.JBRID = d.LOGINNAME /*经办人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --文件销毁数据类表
@@ -2280,15 +2312,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2328,9 +2360,9 @@ FROM dbo.EDU_OAXT_05_01_WJXH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.XHSPRID = d.LOGINNAME /*销毁审批人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.JBRID = e.LOGINNAME /*经办人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --文件借阅数据类表
@@ -2351,15 +2383,15 @@ SELECT a.[SCHOOLID]--学校名
       ,c.BT as c_WJJBSJ_BT--文件基本数据类表 标题
       ,c.ZTC as c_WJJBSJ_ZTC--文件基本数据类表 主题词
       ,c.MJM as c_WJJBSJ_MJM--文件基本数据类表 密级码
-      ,cb.HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
-      ,cb.HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
-      ,cb.MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
+      ,[cb].HYPYDM as c_WJJBSJ_MJM_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,[cb].HZDM as c_WJJBSJ_MJM_HZDM--文献保密等级代码与标识 汉字代码
+      ,[cb].MC as c_WJJBSJ_MJM_MC--文献保密等级代码与标识 名称
       ,c.JJCDM as c_WJJBSJ_JJCDM--文件基本数据类表 紧急程度码
-      ,cc.MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
+      ,[cc].MC as c_WJJBSJ_JJCDM_MC--紧急程度代码表 名称
       ,c.YS as c_WJJBSJ_YS--文件基本数据类表 页数
       ,c.WJFLM as c_WJJBSJ_WJFLM--文件基本数据类表 文件分类码
-      ,cd.MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
-      ,cd.SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
+      ,[cd].MC as c_WJJBSJ_WJFLM_MC--文件分类代码表 名称
+      ,[cd].SM as c_WJJBSJ_WJFLM_SM--文件分类代码表 说明
       ,c.ZW as c_WJJBSJ_ZW--文件基本数据类表 正文
       ,c.FJ as c_WJJBSJ_FJ--文件基本数据类表 附件
       ,c.FWRQ as c_WJJBSJ_FWRQ--文件基本数据类表 发文日期
@@ -2399,9 +2431,9 @@ FROM dbo.EDU_OAXT_06_01_WJJQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.JYSPRID = d.LOGINNAME /*借阅审批人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.JYJBRID = e.LOGINNAME /*借阅经办人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_WXBMZJ AS cb ON c.MJM = cb.DM /*密级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JJCD AS cc ON c.JJCDM = cc.DM /*紧急程度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WJFL AS cd ON c.WJFLM = cd.DM /*文件分类码*/
+      dbo.EDU_GB_WXBMZJ AS [cb] ON c.MJM = [cb].DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JJCD AS [cc] ON c.JJCDM = [cc].DM /*紧急程度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
 --通知数据表
@@ -4126,14 +4158,14 @@ SELECT a.[ID]--值周岗位表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZXDY_04_A01_ZZGW AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --值周人员安排表
@@ -4152,7 +4184,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4170,14 +4202,14 @@ SELECT a.[ID]--值周人员安排表ID
       ,e.BJRYCH as e_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,e.XZ as e_BJ_XZ--班级数据类表 学制
       ,e.BJLXM as e_BJ_BJLXM--班级数据类表 班级类型码
-      ,eb.MC as e_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[eb].MC as e_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,e.WLLX as e_BJ_WLLX--班级数据类表 文理类型
       ,e.BYRQ as e_BJ_BYRQ--班级数据类表 毕业日期
       ,e.SFSSMZSYJXB as e_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,ec.MC as e_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[ec].MC as e_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,e.SYJXMSM as e_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,ed.MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,ed.SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[ed].MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
@@ -4200,10 +4232,10 @@ FROM dbo.EDU_ZXDY_04_A02_ZZRYAP AS a LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS e ON a.ZZBJ = e.BH /*值周班级班号*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.ZZID = f.LOGINNAME /*组长ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS eb ON e.BJLXM = eb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ec ON e.SFSSMZSYJXB = ec.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS ed ON e.SYJXMSM = ed.DM /*双语教学模式码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [eb] ON e.BJLXM = [eb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ec] ON e.SFSSMZSYJXB = [ec].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [ed] ON e.SYJXMSM = [ed].DM /*双语教学模式码*/
 GO
 
 --值周岗位分配表
@@ -4219,7 +4251,7 @@ SELECT a.[ID]--值周岗位分配表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4252,7 +4284,7 @@ FROM dbo.EDU_ZXDY_04_A03_ZZGWFP AS a LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A01_ZZGW AS e ON a.GWID = e.ID /*岗位ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.JSID = f.LOGINNAME /*教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --特别值周教师表
@@ -4267,7 +4299,7 @@ SELECT a.[ID]--特别值周教师表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4290,7 +4322,7 @@ SELECT a.[ID]--特别值周教师表ID
 FROM dbo.EDU_ZXDY_04_A05_TBZZJS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.JSID = d.LOGINNAME /*教师ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --值周周次表
@@ -4305,14 +4337,14 @@ SELECT a.[ID]--周次表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZXDY_04_A06_ZZZC AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --模板分配内容表
@@ -4344,14 +4376,14 @@ SELECT a.[ID]--值周打分大类表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZXDY_05_A01_ZZDFDL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --值周打分细则表
@@ -4389,7 +4421,7 @@ SELECT a.[ID]--值周打分单表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4407,14 +4439,14 @@ SELECT a.[ID]--值周打分单表ID
       ,e.BJRYCH as e_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,e.XZ as e_BJ_XZ--班级数据类表 学制
       ,e.BJLXM as e_BJ_BJLXM--班级数据类表 班级类型码
-      ,eb.MC as e_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[eb].MC as e_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,e.WLLX as e_BJ_WLLX--班级数据类表 文理类型
       ,e.BYRQ as e_BJ_BYRQ--班级数据类表 毕业日期
       ,e.SFSSMZSYJXB as e_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,ec.MC as e_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[ec].MC as e_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,e.SYJXMSM as e_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,ed.MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,ed.SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[ed].MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--值周打分细则表 学校ID
       ,f.SSDLID as f_ZZDFXZ_SSDLID--值周打分细则表 所属大类ID
@@ -4442,10 +4474,10 @@ FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS e ON a.BJ = e.BH /*班级*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_05_A02_ZZDFXZ AS f ON a.SSXZID = f.ID /*所属细则*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS g ON a.DFJSID = g.LOGINNAME /*打分教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS eb ON e.BJLXM = eb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ec ON e.SFSSMZSYJXB = ec.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS ed ON e.SYJXMSM = ed.DM /*双语教学模式码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [eb] ON e.BJLXM = [eb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ec] ON e.SFSSMZSYJXB = [ec].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [ed] ON e.SYJXMSM = [ed].DM /*双语教学模式码*/
 GO
 
 --值周小结表
@@ -4460,7 +4492,7 @@ SELECT a.[ID]--值周小结表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4473,7 +4505,7 @@ SELECT a.[ID]--值周小结表ID
 FROM dbo.EDU_ZXDY_06_A01_ZZXJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --国旗下讲话表
@@ -4488,7 +4520,7 @@ SELECT a.[ID]--国旗下讲话表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4501,7 +4533,7 @@ SELECT a.[ID]--国旗下讲话表ID
 FROM dbo.EDU_ZXDY_06_A02_GQXJH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_04_A06_ZZZC AS d ON a.ZCID = d.ID /*周次ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --课程数据类
@@ -4554,7 +4586,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4562,7 +4594,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZXJX_05_A01_KS AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO
 
 --考试科目数据表
@@ -4592,14 +4624,14 @@ SELECT a.[ID]--编号
       ,d.RKZZNY as d_RKSJ_RKZZNY--任课数据子类表 任课终止年月
       ,d.RKZXS as d_RKSJ_RKZXS--任课数据子类表 任课总学时
       ,d.RKXDM as d_RKSJ_RKXDM--任课数据子类表 任课学段码
-      ,db.MC as d_RKSJ_RKXDM_MC--任课学段代码表 名称
+      ,[db].MC as d_RKSJ_RKXDM_MC--任课学段代码表 名称
       ,d.RKJSM as d_RKSJ_RKJSM--任课数据子类表 任课角色码
-      ,dc.MC as d_RKSJ_RKJSM_MC--任课角色代码表 名称
+      ,[dc].MC as d_RKSJ_RKJSM_MC--任课角色代码表 名称
       ,d.SKBJ as d_RKSJ_SKBJ--任课数据子类表 授课班级
       ,d.SKRS as d_RKSJ_SKRS--任课数据子类表 授课人数
       ,d.ZKS as d_RKSJ_ZKS--任课数据子类表 周课时
       ,d.SFLT as d_RKSJ_SFLT--任课数据子类表 是否连堂
-      ,dd.MC as d_RKSJ_SFLT_MC--是否标志代码表 名称
+      ,[dd].MC as d_RKSJ_SFLT_MC--是否标志代码表 名称
       ,d.NJID as d_RKSJ_NJID--任课数据子类表 年级号
       ,d.XQID as d_RKSJ_XQID--任课数据子类表 学期
       ,d.XNID as d_RKSJ_XNID--任课数据子类表 学年
@@ -4607,9 +4639,9 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZXJX_05_A02_KSKM AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.SSKSID = c.ID /*所属考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_07_02_RKSJ AS d ON a.JSRKID = d.ID /*教师任课编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS db ON d.RKXDM = db.DM /*任课学段码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKJS AS dc ON d.RKJSM = dc.DM /*任课角色码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dd ON d.SFLT = dd.DM /*是否连堂*/
+      dbo.EDU_JY_RKXD AS [db] ON d.RKXDM = [db].DM /*任课学段码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKJS AS [dc] ON d.RKJSM = [dc].DM /*任课角色码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dd] ON d.SFLT = [dd].DM /*是否连堂*/
 GO
 
 --面批记录表
@@ -4637,37 +4669,37 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cb.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.CSDM as c_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,cc.MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cf.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.HYZKM as c_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,cg.MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ch.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ci.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cj.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,ck.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,cl.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,cl.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,c.SFZJYXQ as c_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,c.JGH as c_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -4675,14 +4707,14 @@ SELECT a.[ID]--编号
       ,c.XZZ as c_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,c.HKSZD as c_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,c.HKXZM as c_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,cm.MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[cm].MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,c.XLM as c_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,cn.MC as c_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[cn].MC as c_JZGJBSJ_XLM_MC--学历代码 名称
       ,c.GZNY as c_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,c.DABH as c_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,c.DAWB as c_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,c.TXDZ as c_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -4692,16 +4724,16 @@ SELECT a.[ID]--编号
       ,c.ZYDZ as c_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,c.TC as c_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,c.GWZYM as c_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,cp.MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,cq.MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
-      ,db.MC as d_KC_KCM_MC--中小学课程代码表 名称
-      ,db.SYXX as d_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,[db].MC as d_KC_KCM_MC--中小学课程代码表 名称
+      ,[db].SYXX as d_KC_KCM_SYXX--中小学课程代码表 适用学校
       ,d.KCDJM as d_KC_KCDJM--课程数据类 课程等级码
-      ,dc.MC as d_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,[dc].MC as d_KC_KCDJM_MC--中小学课程等级代码表 名称
       ,d.KCBM as d_KC_KCBM--课程数据类 课程别名
       ,d.KCJJ as d_KC_KCJJ--课程数据类 课程简介
       ,d.KCYQ as d_KC_KCYQ--课程数据类 课程要求
@@ -4709,12 +4741,12 @@ SELECT a.[ID]--编号
       ,d.ZHXS as d_KC_ZHXS--课程数据类 周学时
       ,d.ZXXS as d_KC_ZXXS--课程数据类 自学学时
       ,d.SKFSM as d_KC_SKFSM--课程数据类 授课方式码
-      ,dd.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dd].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.JCBM as d_KC_JCBM--课程数据类 教材编码
       ,d.CKSM as d_KC_CKSM--课程数据类 参考书目
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
-      ,de.MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,e.XH as e_XSXX_XH--学生基本数据子类表 学号
       ,e.XM as e_XSXX_XM--学生基本数据子类表 姓名
@@ -4722,53 +4754,53 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,e.CYM as e_XSXX_CYM--学生基本数据子类表 曾用名
       ,e.XBM as e_XSXX_XBM--学生基本数据子类表 性别码
-      ,eb.MC as e_XSXX_XBM_MC--人的性别代码 名称
+      ,[eb].MC as e_XSXX_XBM_MC--人的性别代码 名称
       ,e.CSRQ as e_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,e.CSDM as e_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,ec.MC as e_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ec].MC as e_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,e.JG as e_XSXX_JG--学生基本数据子类表 籍贯
       ,e.MZM as e_XSXX_MZM--学生基本数据子类表 民族码
-      ,ed.MZMC as e_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.GJDQM as e_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,ee.GJDQMCJC as e_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ee.EZMDM as e_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ee.SZMDM as e_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ee].GJDQMCJC as e_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ee].EZMDM as e_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ee].SZMDM as e_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.SFZJLXM as e_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,ef.MC as e_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[ef].MC as e_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,e.HYZKM as e_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,eg.MC as e_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,e.GATQWM as e_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,eh.MC as e_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,eh.SM as e_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[eh].MC as e_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[eh].SM as e_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,e.ZZMMM as e_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,ei.MC as e_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ei.JC as e_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ei].MC as e_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ei].JC as e_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,e.JKZKM as e_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,ej.MC as e_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,ej.SM as e_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ej].MC as e_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ej].SM as e_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,e.XYZJM as e_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,ek.MC as e_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ek].MC as e_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,e.XXM as e_XSXX_XXM--学生基本数据子类表 血型码
-      ,el.MC as e_XSXX_XXM_MC--血型代码表 名称
-      ,el.JC as e_XSXX_XXM_JC--血型代码表 简称
+      ,[el].MC as e_XSXX_XXM_MC--血型代码表 名称
+      ,[el].JC as e_XSXX_XXM_JC--血型代码表 简称
       ,e.ZP as e_XSXX_ZP--学生基本数据子类表 照片
       ,e.SFZJYXQ as e_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,e.DSZYBZ as e_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,em.MC as e_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[em].MC as e_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,e.RXNY as e_XSXX_RXNY--学生基本数据子类表 入学年月
       ,e.NJ as e_XSXX_NJ--学生基本数据子类表 年级
       ,e.BH as e_XSXX_BH--学生基本数据子类表 班号
       ,e.XSLBM as e_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,en.MC as e_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,en.SM as e_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[en].MC as e_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[en].SM as e_XSXX_XSLBM_SM--学生类别代码表 说明
       ,e.XZZ as e_XSXX_XZZ--学生基本数据子类表 现住址
       ,e.HKSZD as e_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,e.HKXZM as e_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,eo.MC as e_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[eo].MC as e_XSXX_HKXZM_MC--户口类别代码 名称
       ,e.SFLDRK as e_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,ep.MC as e_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[ep].MC as e_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,e.TC as e_XSXX_TC--学生基本数据子类表 特长
       ,e.LXDH as e_XSXX_LXDH--学生基本数据子类表 联系电话
       ,e.TXDZ as e_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -4781,7 +4813,7 @@ SELECT a.[ID]--编号
       ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
       ,g.XNID as g_XQ_XNID--学期数据表 学年
       ,g.XQM as g_XQ_XQM--学期数据表 学期码
-      ,gb.MC as g_XQ_XQM_MC--学期代码表 名称
+      ,[gb].MC as g_XQ_XQM_MC--学期代码表 名称
       ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
       ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
       ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -4796,14 +4828,14 @@ SELECT a.[ID]--编号
       ,i.BJRYCH as i_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,i.XZ as i_BJ_XZ--班级数据类表 学制
       ,i.BJLXM as i_BJ_BJLXM--班级数据类表 班级类型码
-      ,ib.MC as i_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[ib].MC as i_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,i.WLLX as i_BJ_WLLX--班级数据类表 文理类型
       ,i.BYRQ as i_BJ_BYRQ--班级数据类表 毕业日期
       ,i.SFSSMZSYJXB as i_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,ic.MC as i_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[ic].MC as i_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,i.SYJXMSM as i_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[id].MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
       ,j.XLID as j_XLZ_XLID--校历周表 校历ID
@@ -4821,45 +4853,45 @@ FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS h ON a.NJID = h.NJ /*年级*/ AND a.SCHOOLID = h.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS i ON a.BJID = i.BH /*班级*/ AND a.SCHOOLID = i.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS j ON a.XLZID = j.ID /*校历周ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKXZM = cm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS cn ON c.XLM = cn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS cp ON c.GWZYM = cp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS cq ON c.ZYRKXD = cq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS db ON d.KCM = db.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS dc ON d.KCDJM = dc.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dd ON d.SKFSM = dd.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS de ON d.SFZK = de.DM /*是否主课*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ec ON e.CSDM = ec.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ee ON e.GJDQM = ee.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS ef ON e.SFZJLXM = ef.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZKM = eg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS eh ON e.GATQWM = eh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ei ON e.ZZMMM = ei.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ej ON e.JKZKM = ej.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ek ON e.XYZJM = ek.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS el ON e.XXM = el.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS em ON e.DSZYBZ = em.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS en ON e.XSLBM = en.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS eo ON e.HKXZM = eo.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ep ON e.SFLDRK = ep.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS gb ON g.XQM = gb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS ib ON i.BJLXM = ib.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ic ON i.SFSSMZSYJXB = ic.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS id ON i.SYJXMSM = id.DM /*双语教学模式码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKXZM = [cm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [cn] ON c.XLM = [cn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [cp] ON c.GWZYM = [cp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [cq] ON c.ZYRKXD = [cq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS [db] ON d.KCM = [db].DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS [dc] ON d.KCDJM = [dc].DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dd] ON d.SKFSM = [dd].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [de] ON d.SFZK = [de].DM /*是否主课*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ec] ON e.CSDM = [ec].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ee] ON e.GJDQM = [ee].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ef] ON e.SFZJLXM = [ef].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZKM = [eg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [eh] ON e.GATQWM = [eh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ei] ON e.ZZMMM = [ei].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ej] ON e.JKZKM = [ej].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ek] ON e.XYZJM = [ek].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [el] ON e.XXM = [el].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [em] ON e.DSZYBZ = [em].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [en] ON e.XSLBM = [en].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [eo] ON e.HKXZM = [eo].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ep] ON e.SFLDRK = [ep].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [gb] ON g.XQM = [gb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [ib] ON i.BJLXM = [ib].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ic] ON i.SFSSMZSYJXB = [ic].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [id] ON i.SYJXMSM = [id].DM /*双语教学模式码*/
 GO
 
 --学生学习过程性评价结果表
@@ -4890,53 +4922,53 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,e.CYM as e_XSXX_CYM--学生基本数据子类表 曾用名
       ,e.XBM as e_XSXX_XBM--学生基本数据子类表 性别码
-      ,eb.MC as e_XSXX_XBM_MC--人的性别代码 名称
+      ,[eb].MC as e_XSXX_XBM_MC--人的性别代码 名称
       ,e.CSRQ as e_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,e.CSDM as e_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,ec.MC as e_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ec].MC as e_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,e.JG as e_XSXX_JG--学生基本数据子类表 籍贯
       ,e.MZM as e_XSXX_MZM--学生基本数据子类表 民族码
-      ,ed.MZMC as e_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.GJDQM as e_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,ee.GJDQMCJC as e_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ee.EZMDM as e_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ee.SZMDM as e_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ee].GJDQMCJC as e_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ee].EZMDM as e_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ee].SZMDM as e_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.SFZJLXM as e_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,ef.MC as e_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[ef].MC as e_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,e.HYZKM as e_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,eg.MC as e_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,e.GATQWM as e_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,eh.MC as e_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,eh.SM as e_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[eh].MC as e_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[eh].SM as e_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,e.ZZMMM as e_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,ei.MC as e_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ei.JC as e_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ei].MC as e_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ei].JC as e_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,e.JKZKM as e_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,ej.MC as e_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,ej.SM as e_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ej].MC as e_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ej].SM as e_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,e.XYZJM as e_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,ek.MC as e_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ek].MC as e_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,e.XXM as e_XSXX_XXM--学生基本数据子类表 血型码
-      ,el.MC as e_XSXX_XXM_MC--血型代码表 名称
-      ,el.JC as e_XSXX_XXM_JC--血型代码表 简称
+      ,[el].MC as e_XSXX_XXM_MC--血型代码表 名称
+      ,[el].JC as e_XSXX_XXM_JC--血型代码表 简称
       ,e.ZP as e_XSXX_ZP--学生基本数据子类表 照片
       ,e.SFZJYXQ as e_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,e.DSZYBZ as e_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,em.MC as e_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[em].MC as e_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,e.RXNY as e_XSXX_RXNY--学生基本数据子类表 入学年月
       ,e.NJ as e_XSXX_NJ--学生基本数据子类表 年级
       ,e.BH as e_XSXX_BH--学生基本数据子类表 班号
       ,e.XSLBM as e_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,en.MC as e_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,en.SM as e_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[en].MC as e_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[en].SM as e_XSXX_XSLBM_SM--学生类别代码表 说明
       ,e.XZZ as e_XSXX_XZZ--学生基本数据子类表 现住址
       ,e.HKSZD as e_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,e.HKXZM as e_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,eo.MC as e_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[eo].MC as e_XSXX_HKXZM_MC--户口类别代码 名称
       ,e.SFLDRK as e_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,ep.MC as e_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[ep].MC as e_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,e.TC as e_XSXX_TC--学生基本数据子类表 特长
       ,e.LXDH as e_XSXX_LXDH--学生基本数据子类表 联系电话
       ,e.TXDZ as e_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -4947,10 +4979,10 @@ SELECT a.[ID]--编号
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
       ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
       ,f.KCM as f_KC_KCM--课程数据类 课程码
-      ,fb.MC as f_KC_KCM_MC--中小学课程代码表 名称
-      ,fb.SYXX as f_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,[fb].MC as f_KC_KCM_MC--中小学课程代码表 名称
+      ,[fb].SYXX as f_KC_KCM_SYXX--中小学课程代码表 适用学校
       ,f.KCDJM as f_KC_KCDJM--课程数据类 课程等级码
-      ,fc.MC as f_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,[fc].MC as f_KC_KCDJM_MC--中小学课程等级代码表 名称
       ,f.KCBM as f_KC_KCBM--课程数据类 课程别名
       ,f.KCJJ as f_KC_KCJJ--课程数据类 课程简介
       ,f.KCYQ as f_KC_KCYQ--课程数据类 课程要求
@@ -4958,37 +4990,37 @@ SELECT a.[ID]--编号
       ,f.ZHXS as f_KC_ZHXS--课程数据类 周学时
       ,f.ZXXS as f_KC_ZXXS--课程数据类 自学学时
       ,f.SKFSM as f_KC_SKFSM--课程数据类 授课方式码
-      ,fd.MC as f_KC_SKFSM_MC--授课方式代码表 名称
+      ,[fd].MC as f_KC_SKFSM_MC--授课方式代码表 名称
       ,f.JCBM as f_KC_JCBM--课程数据类 教材编码
       ,f.CKSM as f_KC_CKSM--课程数据类 参考书目
       ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
       ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
-      ,fe.MC as f_KC_SFZK_MC--是否标志代码表 名称
+      ,[fe].MC as f_KC_SFZK_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_08_A01_XXGCXPJPZ AS c ON a.PZID = c.ID /*评价配置ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS d ON a.XLZID = d.ID /*校历周ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS e ON a.XSXXID = e.ID /*学生ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_01_01_KC AS f ON a.SSKCH = f.KCH /*所属课程号*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ec ON e.CSDM = ec.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ee ON e.GJDQM = ee.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS ef ON e.SFZJLXM = ef.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZKM = eg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS eh ON e.GATQWM = eh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ei ON e.ZZMMM = ei.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ej ON e.JKZKM = ej.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ek ON e.XYZJM = ek.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS el ON e.XXM = el.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS em ON e.DSZYBZ = em.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS en ON e.XSLBM = en.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS eo ON e.HKXZM = eo.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ep ON e.SFLDRK = ep.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS fb ON f.KCM = fb.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS fc ON f.KCDJM = fc.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS fd ON f.SKFSM = fd.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fe ON f.SFZK = fe.DM /*是否主课*/
+      dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ec] ON e.CSDM = [ec].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ee] ON e.GJDQM = [ee].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ef] ON e.SFZJLXM = [ef].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZKM = [eg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [eh] ON e.GATQWM = [eh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ei] ON e.ZZMMM = [ei].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ej] ON e.JKZKM = [ej].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ek] ON e.XYZJM = [ek].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [el] ON e.XXM = [el].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [em] ON e.DSZYBZ = [em].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [en] ON e.XSLBM = [en].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [eo] ON e.HKXZM = [eo].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ep] ON e.SFLDRK = [ep].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS [fb] ON f.KCM = [fb].DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS [fc] ON f.KCDJM = [fc].DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [fd] ON f.SKFSM = [fd].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fe] ON f.SFZK = [fe].DM /*是否主课*/
 GO
 
 --调课申请数据表
@@ -5018,37 +5050,37 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cb.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.CSDM as c_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,cc.MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cf.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.HYZKM as c_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,cg.MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ch.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ci.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cj.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,ck.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,cl.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,cl.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,c.SFZJYXQ as c_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,c.JGH as c_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -5056,14 +5088,14 @@ SELECT a.[ID]--编号
       ,c.XZZ as c_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,c.HKSZD as c_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,c.HKXZM as c_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,cm.MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[cm].MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,c.XLM as c_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,cn.MC as c_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[cn].MC as c_JZGJBSJ_XLM_MC--学历代码 名称
       ,c.GZNY as c_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,c.DABH as c_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,c.DAWB as c_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,c.TXDZ as c_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -5073,16 +5105,16 @@ SELECT a.[ID]--编号
       ,c.ZYDZ as c_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,c.TC as c_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,c.GWZYM as c_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,cp.MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,cq.MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
-      ,db.MC as d_KC_KCM_MC--中小学课程代码表 名称
-      ,db.SYXX as d_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,[db].MC as d_KC_KCM_MC--中小学课程代码表 名称
+      ,[db].SYXX as d_KC_KCM_SYXX--中小学课程代码表 适用学校
       ,d.KCDJM as d_KC_KCDJM--课程数据类 课程等级码
-      ,dc.MC as d_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,[dc].MC as d_KC_KCDJM_MC--中小学课程等级代码表 名称
       ,d.KCBM as d_KC_KCBM--课程数据类 课程别名
       ,d.KCJJ as d_KC_KCJJ--课程数据类 课程简介
       ,d.KCYQ as d_KC_KCYQ--课程数据类 课程要求
@@ -5090,12 +5122,12 @@ SELECT a.[ID]--编号
       ,d.ZHXS as d_KC_ZHXS--课程数据类 周学时
       ,d.ZXXS as d_KC_ZXXS--课程数据类 自学学时
       ,d.SKFSM as d_KC_SKFSM--课程数据类 授课方式码
-      ,dd.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dd].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.JCBM as d_KC_JCBM--课程数据类 教材编码
       ,d.CKSM as d_KC_CKSM--课程数据类 参考书目
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
-      ,de.MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
       ,e.MC as e_TKLX_MC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
       ,f.XLID as f_XLZ_XLID--校历周表 校历ID
@@ -5150,26 +5182,26 @@ FROM dbo.EDU_ZXJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_05_WEEKDAY AS m ON a.TKHXQ = m.ID /*调课后星期*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_SD AS n ON a.TKHSD = n.ID /*调课后时段*/ AND a.SCHOOLID = n.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_JC AS o ON a.TKHJC = o.ID /*调课后节次*/ AND a.SCHOOLID = o.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKXZM = cm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS cn ON c.XLM = cn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS cp ON c.GWZYM = cp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS cq ON c.ZYRKXD = cq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS db ON d.KCM = db.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS dc ON d.KCDJM = dc.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dd ON d.SKFSM = dd.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS de ON d.SFZK = de.DM /*是否主课*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKXZM = [cm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [cn] ON c.XLM = [cn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [cp] ON c.GWZYM = [cp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [cq] ON c.ZYRKXD = [cq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS [db] ON d.KCM = [db].DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS [dc] ON d.KCDJM = [dc].DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dd] ON d.SKFSM = [dd].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [de] ON d.SFZK = [de].DM /*是否主课*/
 GO
 
 --教师过程性评价记录表
@@ -5187,7 +5219,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -5204,37 +5236,37 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,eb.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[eb].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.CSDM as e_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,ec.MC as e_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ec].MC as e_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ee.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ee.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ee.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ee].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ee].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ee].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,ef.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[ef].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.HYZKM as e_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,eg.MC as e_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,eh.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,eh.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[eh].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[eh].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ei.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ei.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ei].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ei].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ej.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ej.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ej].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ej].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,ek.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[ek].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,el.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,el.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[el].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[el].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,e.SFZJYXQ as e_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,e.JGH as e_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -5242,14 +5274,14 @@ SELECT a.[ID]--编号
       ,e.XZZ as e_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,e.HKSZD as e_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,e.HKXZM as e_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,em.MC as e_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[em].MC as e_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,e.XLM as e_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,en.MC as e_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[en].MC as e_JZGJBSJ_XLM_MC--学历代码 名称
       ,e.GZNY as e_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,e.DABH as e_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,e.DAWB as e_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,e.TXDZ as e_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -5259,9 +5291,9 @@ SELECT a.[ID]--编号
       ,e.ZYDZ as e_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,e.TC as e_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,e.GWZYM as e_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,ep.MC as e_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[ep].MC as e_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,e.ZYRKXD as e_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,eq.MC as e_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[eq].MC as e_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,f.SCHOOLID as f_JSGCXPJXM_SCHOOLID--教师过程性评价考核项目表 学校ID
       ,f.XMMC as f_JSGCXPJXM_XMMC--教师过程性评价考核项目表 项目名称
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位
@@ -5275,23 +5307,23 @@ FROM dbo.EDU_ZXJX_10_A01_JSGCXPJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS d ON a.XLZID = d.ID /*考评周*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS e ON a.JSID = e.ID /*教师*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_10_A02_JSGCXPJXM AS f ON a.PJXMID = f.ID /*考评项目*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ec ON e.CSDM = ec.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ee ON e.GJDQM = ee.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS ef ON e.SFZJLXM = ef.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZKM = eg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS eh ON e.GATQWM = eh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ei ON e.ZZMMM = ei.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ej ON e.JKZKM = ej.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ek ON e.XYZJM = ek.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS el ON e.XXM = el.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS em ON e.HKXZM = em.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS en ON e.XLM = en.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS ep ON e.GWZYM = ep.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS eq ON e.ZYRKXD = eq.DM /*主要任课学段*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ec] ON e.CSDM = [ec].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ee] ON e.GJDQM = [ee].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ef] ON e.SFZJLXM = [ef].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZKM = [eg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [eh] ON e.GATQWM = [eh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ei] ON e.ZZMMM = [ei].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ej] ON e.JKZKM = [ej].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ek] ON e.XYZJM = [ek].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [el] ON e.XXM = [el].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [em] ON e.HKXZM = [em].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [en] ON e.XLM = [en].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [ep] ON e.GWZYM = [ep].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [eq] ON e.ZYRKXD = [eq].DM /*主要任课学段*/
 GO
 
 --教师每周上课数表
@@ -5311,37 +5343,37 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cb.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.CSDM as c_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,cc.MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cf.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.HYZKM as c_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,cg.MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ch.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ci.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cj.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,ck.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,cl.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,cl.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,c.SFZJYXQ as c_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,c.JGH as c_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -5349,14 +5381,14 @@ SELECT a.[ID]--编号
       ,c.XZZ as c_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,c.HKSZD as c_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,c.HKXZM as c_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,cm.MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[cm].MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,c.XLM as c_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,cn.MC as c_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[cn].MC as c_JZGJBSJ_XLM_MC--学历代码 名称
       ,c.GZNY as c_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,c.DABH as c_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,c.DAWB as c_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,c.TXDZ as c_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -5366,9 +5398,9 @@ SELECT a.[ID]--编号
       ,c.ZYDZ as c_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,c.TC as c_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,c.GWZYM as c_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,cp.MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,cq.MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,d.SCHOOLID as d_XLZ_SCHOOLID--校历周表 学校ID
       ,d.XLID as d_XLZ_XLID--校历周表 校历ID
       ,d.NAME as d_XLZ_NAME--校历周表 校历周名称
@@ -5382,24 +5414,24 @@ SELECT a.[ID]--编号
       ,e.RKZZNY as e_RKSJ_RKZZNY--任课数据子类表 任课终止年月
       ,e.RKZXS as e_RKSJ_RKZXS--任课数据子类表 任课总学时
       ,e.RKXDM as e_RKSJ_RKXDM--任课数据子类表 任课学段码
-      ,eb.MC as e_RKSJ_RKXDM_MC--任课学段代码表 名称
+      ,[eb].MC as e_RKSJ_RKXDM_MC--任课学段代码表 名称
       ,e.RKJSM as e_RKSJ_RKJSM--任课数据子类表 任课角色码
-      ,ec.MC as e_RKSJ_RKJSM_MC--任课角色代码表 名称
+      ,[ec].MC as e_RKSJ_RKJSM_MC--任课角色代码表 名称
       ,e.SKBJ as e_RKSJ_SKBJ--任课数据子类表 授课班级
       ,e.SKRS as e_RKSJ_SKRS--任课数据子类表 授课人数
       ,e.ZKS as e_RKSJ_ZKS--任课数据子类表 周课时
       ,e.SFLT as e_RKSJ_SFLT--任课数据子类表 是否连堂
-      ,ed.MC as e_RKSJ_SFLT_MC--是否标志代码表 名称
+      ,[ed].MC as e_RKSJ_SFLT_MC--是否标志代码表 名称
       ,e.NJID as e_RKSJ_NJID--任课数据子类表 年级号
       ,e.XQID as e_RKSJ_XQID--任课数据子类表 学期
       ,e.XNID as e_RKSJ_XNID--任课数据子类表 学年
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
       ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
       ,f.KCM as f_KC_KCM--课程数据类 课程码
-      ,fb.MC as f_KC_KCM_MC--中小学课程代码表 名称
-      ,fb.SYXX as f_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,[fb].MC as f_KC_KCM_MC--中小学课程代码表 名称
+      ,[fb].SYXX as f_KC_KCM_SYXX--中小学课程代码表 适用学校
       ,f.KCDJM as f_KC_KCDJM--课程数据类 课程等级码
-      ,fc.MC as f_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,[fc].MC as f_KC_KCDJM_MC--中小学课程等级代码表 名称
       ,f.KCBM as f_KC_KCBM--课程数据类 课程别名
       ,f.KCJJ as f_KC_KCJJ--课程数据类 课程简介
       ,f.KCYQ as f_KC_KCYQ--课程数据类 课程要求
@@ -5407,41 +5439,41 @@ SELECT a.[ID]--编号
       ,f.ZHXS as f_KC_ZHXS--课程数据类 周学时
       ,f.ZXXS as f_KC_ZXXS--课程数据类 自学学时
       ,f.SKFSM as f_KC_SKFSM--课程数据类 授课方式码
-      ,fd.MC as f_KC_SKFSM_MC--授课方式代码表 名称
+      ,[fd].MC as f_KC_SKFSM_MC--授课方式代码表 名称
       ,f.JCBM as f_KC_JCBM--课程数据类 教材编码
       ,f.CKSM as f_KC_CKSM--课程数据类 参考书目
       ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
       ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
-      ,fe.MC as f_KC_SFZK_MC--是否标志代码表 名称
+      ,[fe].MC as f_KC_SFZK_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_10_A03_JSMZSKS AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS d ON a.XLZID = d.ID /*校历周ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_07_02_RKSJ AS e ON a.JSRKID = e.ID /*教师任课ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_01_01_KC AS f ON a.KCH = f.KCH /*课程号*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKXZM = cm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS cn ON c.XLM = cn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS cp ON c.GWZYM = cp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS cq ON c.ZYRKXD = cq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS eb ON e.RKXDM = eb.DM /*任课学段码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKJS AS ec ON e.RKJSM = ec.DM /*任课角色码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ed ON e.SFLT = ed.DM /*是否连堂*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS fb ON f.KCM = fb.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS fc ON f.KCDJM = fc.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS fd ON f.SKFSM = fd.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fe ON f.SFZK = fe.DM /*是否主课*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKXZM = [cm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [cn] ON c.XLM = [cn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [cp] ON c.GWZYM = [cp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [cq] ON c.ZYRKXD = [cq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [eb] ON e.RKXDM = [eb].DM /*任课学段码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKJS AS [ec] ON e.RKJSM = [ec].DM /*任课角色码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ed] ON e.SFLT = [ed].DM /*是否连堂*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS [fb] ON f.KCM = [fb].DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS [fc] ON f.KCDJM = [fc].DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [fd] ON f.SKFSM = [fd].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fe] ON f.SFZK = [fe].DM /*是否主课*/
 GO
 
 --教职工基本数据子类表
@@ -5557,37 +5589,37 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,d.CYM as d_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,d.XBM as d_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,db.MC as d_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[db].MC as d_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,d.CSRQ as d_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,d.CSDM as d_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,dc.MC as d_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[dc].MC as d_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,d.MZM as d_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,dd.MZMC as d_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,dd.ZMDM as d_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[dd].MZMC as d_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[dd].ZMDM as d_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.GJDQM as d_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,de.GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,de.EZMDM as d_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,de.SZMDM as d_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[de].GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[de].EZMDM as d_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[de].SZMDM as d_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.SFZJLXM as d_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,df.MC as d_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[df].MC as d_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,d.HYZKM as d_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,dg.MC as d_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,d.GATQWM as d_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,dh.MC as d_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,dh.SM as d_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[dh].MC as d_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[dh].SM as d_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,d.ZZMMM as d_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,di.MC as d_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,di.JC as d_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[di].MC as d_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[di].JC as d_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,d.JKZKM as d_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,dj.MC as d_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,d.XYZJM as d_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,dk.MC as d_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[dk].MC as d_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,d.XXM as d_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,dl.MC as d_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,dl.JC as d_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[dl].MC as d_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[dl].JC as d_JZGJBSJ_XXM_JC--血型代码表 简称
       ,d.ZP as d_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,d.SFZJYXQ as d_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,d.JGH as d_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -5595,14 +5627,14 @@ SELECT a.[ID]--编号
       ,d.XZZ as d_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,d.HKSZD as d_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,d.HKXZM as d_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,dm.MC as d_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[dm].MC as d_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,d.XLM as d_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,dn.MC as d_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[dn].MC as d_JZGJBSJ_XLM_MC--学历代码 名称
       ,d.GZNY as d_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,d.LXNY as d_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,d.CJNY as d_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,d.BZLBM as d_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,do.MC as d_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[do].MC as d_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,d.DABH as d_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,d.DAWB as d_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,d.TXDZ as d_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -5612,9 +5644,9 @@ SELECT a.[ID]--编号
       ,d.ZYDZ as d_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,d.TC as d_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,d.GWZYM as d_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,dp.MC as d_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[dp].MC as d_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,dq.MC as d_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[dq].MC as d_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.SCHOOLID as f_JG_SCHOOLID--机构数据类表 学校名
       ,f.LSJGH as f_JG_LSJGH--机构数据类表 隶属机构号
@@ -5627,22 +5659,22 @@ FROM dbo.EDU_ZXJZ_02_A01_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_04_01_JG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.XBM = db.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dc ON d.CSDM = dc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS dd ON d.MZM = dd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS de ON d.GJDQM = de.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS df ON d.SFZJLXM = df.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS dh ON d.GATQWM = dh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS di ON d.ZZMMM = di.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dk ON d.XYZJM = dk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dl ON d.XXM = dl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKXZM = dm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS dn ON d.XLM = dn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS do ON d.BZLBM = do.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS dp ON d.GWZYM = dp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS dq ON d.ZYRKXD = dq.DM /*主要任课学段*/
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [de] ON d.GJDQM = [de].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [df] ON d.SFZJLXM = [df].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [dh] ON d.GATQWM = [dh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [di] ON d.ZZMMM = [di].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dk] ON d.XYZJM = [dk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dl] ON d.XXM = [dl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKXZM = [dm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [dn] ON d.XLM = [dn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [do] ON d.BZLBM = [do].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [dp] ON d.GWZYM = [dp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [dq] ON d.ZYRKXD = [dq].DM /*主要任课学段*/
 GO
 
 --任课数据子类表
@@ -5671,37 +5703,37 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cb.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.CSDM as c_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,cc.MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cf.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.HYZKM as c_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,cg.MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ch.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ci.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cj.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,ck.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,cl.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,cl.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,c.SFZJYXQ as c_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,c.JGH as c_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -5709,14 +5741,14 @@ SELECT a.[ID]--编号
       ,c.XZZ as c_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,c.HKSZD as c_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,c.HKXZM as c_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,cm.MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[cm].MC as c_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,c.XLM as c_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,cn.MC as c_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[cn].MC as c_JZGJBSJ_XLM_MC--学历代码 名称
       ,c.GZNY as c_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,c.DABH as c_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,c.DAWB as c_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,c.TXDZ as c_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -5726,16 +5758,16 @@ SELECT a.[ID]--编号
       ,c.ZYDZ as c_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,c.TC as c_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,c.GWZYM as c_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,cp.MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,cq.MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
-      ,db.MC as d_KC_KCM_MC--中小学课程代码表 名称
-      ,db.SYXX as d_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,[db].MC as d_KC_KCM_MC--中小学课程代码表 名称
+      ,[db].SYXX as d_KC_KCM_SYXX--中小学课程代码表 适用学校
       ,d.KCDJM as d_KC_KCDJM--课程数据类 课程等级码
-      ,dc.MC as d_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,[dc].MC as d_KC_KCDJM_MC--中小学课程等级代码表 名称
       ,d.KCBM as d_KC_KCBM--课程数据类 课程别名
       ,d.KCJJ as d_KC_KCJJ--课程数据类 课程简介
       ,d.KCYQ as d_KC_KCYQ--课程数据类 课程要求
@@ -5743,12 +5775,12 @@ SELECT a.[ID]--编号
       ,d.ZHXS as d_KC_ZHXS--课程数据类 周学时
       ,d.ZXXS as d_KC_ZXXS--课程数据类 自学学时
       ,d.SKFSM as d_KC_SKFSM--课程数据类 授课方式码
-      ,dd.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dd].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.JCBM as d_KC_JCBM--课程数据类 教材编码
       ,d.CKSM as d_KC_CKSM--课程数据类 参考书目
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
-      ,de.MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
       ,e.MC as e_RKXD_MC--任课学段代码表 名称
       ,f.MC as f_RKJS_MC--任课角色代码表 名称
       ,g.SCHOOLID as g_BJ_SCHOOLID--班级数据类表 学校名
@@ -5760,14 +5792,14 @@ SELECT a.[ID]--编号
       ,g.BJRYCH as g_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,g.XZ as g_BJ_XZ--班级数据类表 学制
       ,g.BJLXM as g_BJ_BJLXM--班级数据类表 班级类型码
-      ,gb.MC as g_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[gb].MC as g_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,g.WLLX as g_BJ_WLLX--班级数据类表 文理类型
       ,g.BYRQ as g_BJ_BYRQ--班级数据类表 毕业日期
       ,g.SFSSMZSYJXB as g_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,gc.MC as g_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[gc].MC as g_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,g.SYJXMSM as g_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,gd.MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,gd.SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[gd].MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
@@ -5775,7 +5807,7 @@ SELECT a.[ID]--编号
       ,j.SCHOOLID as j_XQ_SCHOOLID--学期数据表 学校名
       ,j.XNID as j_XQ_XNID--学期数据表 学年
       ,j.XQM as j_XQ_XQM--学期数据表 学期码
-      ,jb.MC as j_XQ_XQM_MC--学期代码表 名称
+      ,[jb].MC as j_XQ_XQM_MC--学期代码表 名称
       ,j.XQMC as j_XQ_XQMC--学期数据表 学期名称
       ,j.XQKSRQ as j_XQ_XQKSRQ--学期数据表 学期开始日期
       ,j.XQJSRQ as j_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -5792,30 +5824,30 @@ FROM dbo.EDU_ZXJZ_07_02_RKSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS i ON a.NJID = i.NJ /*年级号*/ AND a.SCHOOLID = i.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS j ON a.XQID = j.ID /*学期*/ AND a.SCHOOLID = j.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS k ON a.XNID = k.ID /*学年*/ AND a.SCHOOLID = k.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKXZM = cm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS cn ON c.XLM = cn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS cp ON c.GWZYM = cp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS cq ON c.ZYRKXD = cq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS db ON d.KCM = db.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS dc ON d.KCDJM = dc.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dd ON d.SKFSM = dd.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS de ON d.SFZK = de.DM /*是否主课*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS gb ON g.BJLXM = gb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gc ON g.SFSSMZSYJXB = gc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS gd ON g.SYJXMSM = gd.DM /*双语教学模式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS jb ON j.XQM = jb.DM /*学期码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKXZM = [cm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [cn] ON c.XLM = [cn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [cp] ON c.GWZYM = [cp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [cq] ON c.ZYRKXD = [cq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS [db] ON d.KCM = [db].DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS [dc] ON d.KCDJM = [dc].DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dd] ON d.SKFSM = [dd].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [de] ON d.SFZK = [de].DM /*是否主课*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [gb] ON g.BJLXM = [gb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gc] ON g.SFSSMZSYJXB = [gc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [gd] ON g.SYJXMSM = [gd].DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [jb] ON j.XQM = [jb].DM /*学期码*/
 GO
 
 --学生门诊记录
@@ -5837,53 +5869,53 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生基本数据子类表 曾用名
       ,c.XBM as c_XSXX_XBM--学生基本数据子类表 性别码
-      ,cb.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,cc.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生基本数据子类表 籍贯
       ,c.MZM as c_XSXX_MZM--学生基本数据子类表 民族码
-      ,cd.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,cf.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,c.HYZKM as c_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,ch.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,ci.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,ck.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_XSXX_XXM--学生基本数据子类表 血型码
-      ,cl.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cl.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.ZP as c_XSXX_ZP--学生基本数据子类表 照片
       ,c.SFZJYXQ as c_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,c.DSZYBZ as c_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,cm.MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[cm].MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,c.RXNY as c_XSXX_RXNY--学生基本数据子类表 入学年月
       ,c.NJ as c_XSXX_NJ--学生基本数据子类表 年级
       ,c.BH as c_XSXX_BH--学生基本数据子类表 班号
       ,c.XSLBM as c_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,cn.MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,cn.SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[cn].MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[cn].SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
       ,c.XZZ as c_XSXX_XZZ--学生基本数据子类表 现住址
       ,c.HKSZD as c_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,c.HKXZM as c_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,co.MC as c_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[co].MC as c_XSXX_HKXZM_MC--户口类别代码 名称
       ,c.SFLDRK as c_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,cp.MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[cp].MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,c.TC as c_XSXX_TC--学生基本数据子类表 特长
       ,c.LXDH as c_XSXX_LXDH--学生基本数据子类表 联系电话
       ,c.TXDZ as c_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -5900,37 +5932,37 @@ SELECT a.[ID]--编号
       ,d.BJRYCH as d_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,d.XZ as d_BJ_XZ--班级数据类表 学制
       ,d.BJLXM as d_BJ_BJLXM--班级数据类表 班级类型码
-      ,db.MC as d_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[db].MC as d_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,d.WLLX as d_BJ_WLLX--班级数据类表 文理类型
       ,d.BYRQ as d_BJ_BYRQ--班级数据类表 毕业日期
       ,d.SFSSMZSYJXB as d_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,dc.MC as d_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[dc].MC as d_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,d.SYJXMSM as d_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,dd.MC as d_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,dd.SM as d_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[dd].MC as d_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[dd].SM as d_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,d.BZRID as d_BJ_BZRID--班级数据类表 班主任ID
 
 FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS d ON a.BJID = d.BH /*班级*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cm ON c.DSZYBZ = cm.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS cn ON c.XSLBM = cn.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS co ON c.HKXZM = co.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cp ON c.SFLDRK = cp.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS db ON d.BJLXM = db.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dc ON d.SFSSMZSYJXB = dc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS dd ON d.SYJXMSM = dd.DM /*双语教学模式码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cm] ON c.DSZYBZ = [cm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [db] ON d.BJLXM = [db].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFSSMZSYJXB = [dc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [dd] ON d.SYJXMSM = [dd].DM /*双语教学模式码*/
 GO
 
 --学生基本数据子类表
@@ -6005,14 +6037,14 @@ SELECT a.[ID]--编号
       ,p.BJRYCH as p_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,p.XZ as p_BJ_XZ--班级数据类表 学制
       ,p.BJLXM as p_BJ_BJLXM--班级数据类表 班级类型码
-      ,pb.MC as p_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[pb].MC as p_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,p.WLLX as p_BJ_WLLX--班级数据类表 文理类型
       ,p.BYRQ as p_BJ_BYRQ--班级数据类表 毕业日期
       ,p.SFSSMZSYJXB as p_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,pc.MC as p_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[pc].MC as p_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,p.SYJXMSM as p_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,pd.MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,pd.SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[pd].MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[pd].SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,p.BZRID as p_BJ_BZRID--班级数据类表 班主任ID
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
@@ -6037,9 +6069,9 @@ FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS q ON a.XSLBM = q.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS r ON a.HKXZM = r.DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFLDRK = s.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS pb ON p.BJLXM = pb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS pc ON p.SFSSMZSYJXB = pc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS pd ON p.SYJXMSM = pd.DM /*双语教学模式码*/
+      dbo.EDU_JY_ZXXBJLX AS [pb] ON p.BJLXM = [pb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [pc] ON p.SFSSMZSYJXB = [pc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [pd] ON p.SYJXMSM = [pd].DM /*双语教学模式码*/
 GO
 
 --学生家庭成员数据表
@@ -6072,53 +6104,53 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生基本数据子类表 曾用名
       ,c.XBM as c_XSXX_XBM--学生基本数据子类表 性别码
-      ,cb.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,cc.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生基本数据子类表 籍贯
       ,c.MZM as c_XSXX_MZM--学生基本数据子类表 民族码
-      ,cd.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,cf.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,c.HYZKM as c_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,ch.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,ci.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,ck.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_XSXX_XXM--学生基本数据子类表 血型码
-      ,cl.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cl.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.ZP as c_XSXX_ZP--学生基本数据子类表 照片
       ,c.SFZJYXQ as c_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,c.DSZYBZ as c_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,cm.MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[cm].MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,c.RXNY as c_XSXX_RXNY--学生基本数据子类表 入学年月
       ,c.NJ as c_XSXX_NJ--学生基本数据子类表 年级
       ,c.BH as c_XSXX_BH--学生基本数据子类表 班号
       ,c.XSLBM as c_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,cn.MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,cn.SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[cn].MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[cn].SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
       ,c.XZZ as c_XSXX_XZZ--学生基本数据子类表 现住址
       ,c.HKSZD as c_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,c.HKXZM as c_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,co.MC as c_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[co].MC as c_XSXX_HKXZM_MC--户口类别代码 名称
       ,c.SFLDRK as c_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,cp.MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[cp].MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,c.TC as c_XSXX_TC--学生基本数据子类表 特长
       ,c.LXDH as c_XSXX_LXDH--学生基本数据子类表 联系电话
       ,c.TXDZ as c_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -6154,21 +6186,21 @@ FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS k ON a.SFJHR = k.DM /*是否监护人*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS l ON a.XBM = l.DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_XL AS m ON a.XLM = m.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cm ON c.DSZYBZ = cm.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS cn ON c.XSLBM = cn.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS co ON c.HKXZM = co.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cp ON c.SFLDRK = cp.DM /*是否流动人口*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cm] ON c.DSZYBZ = [cm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/
 GO
 
 --学生家庭信息数据表
@@ -6193,53 +6225,53 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生基本数据子类表 曾用名
       ,b.XBM as b_XSXX_XBM--学生基本数据子类表 性别码
-      ,bb.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bb].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.CSRQ as b_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,bc.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[bc].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生基本数据子类表 籍贯
       ,b.MZM as b_XSXX_MZM--学生基本数据子类表 民族码
-      ,bd.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bd.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bd].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bd].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.GJDQM as b_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,be.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,be.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,be.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[be].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[be].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[be].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,bf.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bf].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,b.HYZKM as b_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,bh.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bh.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bh].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bh].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,bi.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bi.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bi].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bi].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.JKZKM as b_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.XYZJM as b_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,bk.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bk].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.XXM as b_XSXX_XXM--学生基本数据子类表 血型码
-      ,bl.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bl.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bl].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bl].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.ZP as b_XSXX_ZP--学生基本数据子类表 照片
       ,b.SFZJYXQ as b_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,b.DSZYBZ as b_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,bm.MC as b_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[bm].MC as b_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,b.RXNY as b_XSXX_RXNY--学生基本数据子类表 入学年月
       ,b.NJ as b_XSXX_NJ--学生基本数据子类表 年级
       ,b.BH as b_XSXX_BH--学生基本数据子类表 班号
       ,b.XSLBM as b_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,bn.MC as b_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,bn.SM as b_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[bn].MC as b_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[bn].SM as b_XSXX_XSLBM_SM--学生类别代码表 说明
       ,b.XZZ as b_XSXX_XZZ--学生基本数据子类表 现住址
       ,b.HKSZD as b_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,b.HKXZM as b_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,bo.MC as b_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[bo].MC as b_XSXX_HKXZM_MC--户口类别代码 名称
       ,b.SFLDRK as b_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,bp.MC as b_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[bp].MC as b_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,b.TC as b_XSXX_TC--学生基本数据子类表 特长
       ,b.LXDH as b_XSXX_LXDH--学生基本数据子类表 联系电话
       ,b.TXDZ as b_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -6250,21 +6282,21 @@ SELECT a.[XSXXID]--学生信息数据表
 
 FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bc ON b.CSDM = bc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS be ON b.GJDQM = be.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bf ON b.SFZJLXM = bf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bh ON b.GATQWM = bh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bi ON b.ZZMMM = bi.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bk ON b.XYZJM = bk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bm ON b.DSZYBZ = bm.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS bn ON b.XSLBM = bn.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bo ON b.HKXZM = bo.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bp ON b.SFLDRK = bp.DM /*是否流动人口*/
+      dbo.EDU_GB_RDXB AS [bb] ON b.XBM = [bb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bc] ON b.CSDM = [bc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bd] ON b.MZM = [bd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [be] ON b.GJDQM = [be].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [bf] ON b.SFZJLXM = [bf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bh] ON b.GATQWM = [bh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bi] ON b.ZZMMM = [bi].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bk] ON b.XYZJM = [bk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bl] ON b.XXM = [bl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bm] ON b.DSZYBZ = [bm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [bn] ON b.XSLBM = [bn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bo] ON b.HKXZM = [bo].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/
 GO
 
 --在校考试成绩数据子类表
@@ -6304,53 +6336,53 @@ SELECT a.[ID]--考试成绩表
       ,c.XMPY as c_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生基本数据子类表 曾用名
       ,c.XBM as c_XSXX_XBM--学生基本数据子类表 性别码
-      ,cb.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cb].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.CSRQ as c_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,cc.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[cc].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生基本数据子类表 籍贯
       ,c.MZM as c_XSXX_MZM--学生基本数据子类表 民族码
-      ,cd.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.GJDQM as c_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,ce.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ce.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ce.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ce].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ce].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ce].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,cf.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cf].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,c.HYZKM as c_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,ch.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ch.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ch].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ch].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,ci.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ci.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ci].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ci].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.JKZKM as c_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.XYZJM as c_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,ck.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ck].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.XXM as c_XSXX_XXM--学生基本数据子类表 血型码
-      ,cl.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cl.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cl].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cl].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.ZP as c_XSXX_ZP--学生基本数据子类表 照片
       ,c.SFZJYXQ as c_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,c.DSZYBZ as c_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,cm.MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[cm].MC as c_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,c.RXNY as c_XSXX_RXNY--学生基本数据子类表 入学年月
       ,c.NJ as c_XSXX_NJ--学生基本数据子类表 年级
       ,c.BH as c_XSXX_BH--学生基本数据子类表 班号
       ,c.XSLBM as c_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,cn.MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,cn.SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[cn].MC as c_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[cn].SM as c_XSXX_XSLBM_SM--学生类别代码表 说明
       ,c.XZZ as c_XSXX_XZZ--学生基本数据子类表 现住址
       ,c.HKSZD as c_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,c.HKXZM as c_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,co.MC as c_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[co].MC as c_XSXX_HKXZM_MC--户口类别代码 名称
       ,c.SFLDRK as c_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,cp.MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[cp].MC as c_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,c.TC as c_XSXX_TC--学生基本数据子类表 特长
       ,c.LXDH as c_XSXX_LXDH--学生基本数据子类表 联系电话
       ,c.TXDZ as c_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -6362,10 +6394,10 @@ SELECT a.[ID]--考试成绩表
       ,e.SCHOOLID as e_KC_SCHOOLID--课程数据类 学校名
       ,e.KCMC as e_KC_KCMC--课程数据类 课程名称
       ,e.KCM as e_KC_KCM--课程数据类 课程码
-      ,eb.MC as e_KC_KCM_MC--中小学课程代码表 名称
-      ,eb.SYXX as e_KC_KCM_SYXX--中小学课程代码表 适用学校
+      ,[eb].MC as e_KC_KCM_MC--中小学课程代码表 名称
+      ,[eb].SYXX as e_KC_KCM_SYXX--中小学课程代码表 适用学校
       ,e.KCDJM as e_KC_KCDJM--课程数据类 课程等级码
-      ,ec.MC as e_KC_KCDJM_MC--中小学课程等级代码表 名称
+      ,[ec].MC as e_KC_KCDJM_MC--中小学课程等级代码表 名称
       ,e.KCBM as e_KC_KCBM--课程数据类 课程别名
       ,e.KCJJ as e_KC_KCJJ--课程数据类 课程简介
       ,e.KCYQ as e_KC_KCYQ--课程数据类 课程要求
@@ -6373,12 +6405,12 @@ SELECT a.[ID]--考试成绩表
       ,e.ZHXS as e_KC_ZHXS--课程数据类 周学时
       ,e.ZXXS as e_KC_ZXXS--课程数据类 自学学时
       ,e.SKFSM as e_KC_SKFSM--课程数据类 授课方式码
-      ,ed.MC as e_KC_SKFSM_MC--授课方式代码表 名称
+      ,[ed].MC as e_KC_SKFSM_MC--授课方式代码表 名称
       ,e.JCBM as e_KC_JCBM--课程数据类 教材编码
       ,e.CKSM as e_KC_CKSM--课程数据类 参考书目
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
-      ,ee.MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -6386,37 +6418,37 @@ SELECT a.[ID]--考试成绩表
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fb.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fb].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.CSDM as f_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,fc.MC as f_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[fc].MC as f_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fe.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fe.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fe.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fe].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fe].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fe].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,ff.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[ff].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.HYZKM as f_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,fg.MC as f_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fh.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fh.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fh].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fh].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fi.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fi.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fi].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fi].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,fj.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,fj.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[fj].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[fj].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fk.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fk].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fl.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fl.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fl].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fl].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,f.SFZJYXQ as f_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,f.JGH as f_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -6424,14 +6456,14 @@ SELECT a.[ID]--考试成绩表
       ,f.XZZ as f_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,f.HKSZD as f_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,f.HKXZM as f_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,fm.MC as f_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[fm].MC as f_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,f.XLM as f_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,fn.MC as f_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[fn].MC as f_JZGJBSJ_XLM_MC--学历代码 名称
       ,f.GZNY as f_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,f.DABH as f_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,f.DAWB as f_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,f.TXDZ as f_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -6441,9 +6473,9 @@ SELECT a.[ID]--考试成绩表
       ,f.ZYDZ as f_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,f.TC as f_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,f.GWZYM as f_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,fp.MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[fp].MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,fq.MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -6451,37 +6483,37 @@ SELECT a.[ID]--考试成绩表
       ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,gb.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[gb].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,g.CSDM as g_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,gc.MC as g_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[gc].MC as g_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ge.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ge.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ge.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ge].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ge].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ge].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,gf.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[gf].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,g.HYZKM as g_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,gg.MC as g_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[gg].MC as g_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,gh.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,gh.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[gh].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gh].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,gi.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,gi.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[gi].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gi].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,gj.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,gj.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[gj].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gj].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,gk.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[gk].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,gl.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,gl.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[gl].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[gl].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,g.SFZJYXQ as g_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,g.JGH as g_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -6489,14 +6521,14 @@ SELECT a.[ID]--考试成绩表
       ,g.XZZ as g_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,g.HKSZD as g_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,g.HKXZM as g_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,gm.MC as g_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[gm].MC as g_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,g.XLM as g_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,gn.MC as g_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[gn].MC as g_JZGJBSJ_XLM_MC--学历代码 名称
       ,g.GZNY as g_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,go.MC as g_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,g.DABH as g_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,g.DAWB as g_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,g.TXDZ as g_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -6506,9 +6538,9 @@ SELECT a.[ID]--考试成绩表
       ,g.ZYDZ as g_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,g.TC as g_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,g.GWZYM as g_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,gp.MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[gp].MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,gq.MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[gq].MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,h.MC as h_KSFS_MC--考试方式代码表 名称
       ,h.SM as h_KSFS_SM--考试方式代码表 说明
       ,i.MC as i_KSXZ_MC--考试性质代码表 名称
@@ -6517,7 +6549,7 @@ SELECT a.[ID]--考试成绩表
       ,k.SCHOOLID as k_XQ_SCHOOLID--学期数据表 学校名
       ,k.XNID as k_XQ_XNID--学期数据表 学年
       ,k.XQM as k_XQ_XQM--学期数据表 学期码
-      ,kb.MC as k_XQ_XQM_MC--学期代码表 名称
+      ,[kb].MC as k_XQ_XQM_MC--学期代码表 名称
       ,k.XQMC as k_XQ_XQMC--学期数据表 学期名称
       ,k.XQKSRQ as k_XQ_XQKSRQ--学期数据表 学期开始日期
       ,k.XQJSRQ as k_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -6534,14 +6566,14 @@ SELECT a.[ID]--考试成绩表
       ,n.BJRYCH as n_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,n.XZ as n_BJ_XZ--班级数据类表 学制
       ,n.BJLXM as n_BJ_BJLXM--班级数据类表 班级类型码
-      ,nb.MC as n_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[nb].MC as n_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,n.WLLX as n_BJ_WLLX--班级数据类表 文理类型
       ,n.BYRQ as n_BJ_BYRQ--班级数据类表 毕业日期
       ,n.SFSSMZSYJXB as n_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,nc.MC as n_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[nc].MC as n_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,n.SYJXMSM as n_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,nd.MC as n_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,nd.SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[nd].MC as n_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[nd].SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,n.BZRID as n_BJ_BZRID--班级数据类表 班主任ID
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
@@ -6575,61 +6607,61 @@ FROM dbo.EDU_ZXXS_02_06_ZXKSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS n ON a.BJID = n.BH /*班级*/ AND a.SCHOOLID = n.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS o ON a.SSKSID = o.ID /*所属考试ID*/ AND a.SCHOOLID = o.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A02_KSKM AS p ON a.SSKSKMID = p.ID /*所属考试科目ID*/ AND a.SCHOOLID = p.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cb ON c.XBM = cb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cc ON c.CSDM = cc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ce ON c.GJDQM = ce.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cf ON c.SFZJLXM = cf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ch ON c.GATQWM = ch.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ci ON c.ZZMMM = ci.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ck ON c.XYZJM = ck.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cl ON c.XXM = cl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cm ON c.DSZYBZ = cm.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS cn ON c.XSLBM = cn.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS co ON c.HKXZM = co.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cp ON c.SFLDRK = cp.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKC AS eb ON e.KCM = eb.DM /*课程码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXKCDJ AS ec ON e.KCDJM = ec.DM /*课程等级码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS ed ON e.SKFSM = ed.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ee ON e.SFZK = ee.DM /*是否主课*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fc ON f.CSDM = fc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fe ON f.GJDQM = fe.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS ff ON f.SFZJLXM = ff.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZKM = fg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fh ON f.GATQWM = fh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fi ON f.ZZMMM = fi.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS fj ON f.JKZKM = fj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fk ON f.XYZJM = fk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fl ON f.XXM = fl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fm ON f.HKXZM = fm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS fn ON f.XLM = fn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS fp ON f.GWZYM = fp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS fq ON f.ZYRKXD = fq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS gb ON g.XBM = gb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gc ON g.CSDM = gc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ge ON g.GJDQM = ge.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS gf ON g.SFZJLXM = gf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS gg ON g.HYZKM = gg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS gh ON g.GATQWM = gh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS gi ON g.ZZMMM = gi.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS gj ON g.JKZKM = gj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS gk ON g.XYZJM = gk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS gl ON g.XXM = gl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS gm ON g.HKXZM = gm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS gn ON g.XLM = gn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS gp ON g.GWZYM = gp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS gq ON g.ZYRKXD = gq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS kb ON k.XQM = kb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS nb ON n.BJLXM = nb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS nc ON n.SFSSMZSYJXB = nc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS nd ON n.SYJXMSM = nd.DM /*双语教学模式码*/
+      dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ce] ON c.GJDQM = [ce].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [cf] ON c.SFZJLXM = [cf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ch] ON c.GATQWM = [ch].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ci] ON c.ZZMMM = [ci].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ck] ON c.XYZJM = [ck].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cl] ON c.XXM = [cl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cm] ON c.DSZYBZ = [cm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKC AS [eb] ON e.KCM = [eb].DM /*课程码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXKCDJ AS [ec] ON e.KCDJM = [ec].DM /*课程等级码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [ed] ON e.SKFSM = [ed].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ee] ON e.SFZK = [ee].DM /*是否主课*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fb] ON f.XBM = [fb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fc] ON f.CSDM = [fc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fe] ON f.GJDQM = [fe].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ff] ON f.SFZJLXM = [ff].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZKM = [fg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fh] ON f.GATQWM = [fh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fi] ON f.ZZMMM = [fi].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [fj] ON f.JKZKM = [fj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fk] ON f.XYZJM = [fk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fl] ON f.XXM = [fl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fm] ON f.HKXZM = [fm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [fn] ON f.XLM = [fn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [fp] ON f.GWZYM = [fp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [fq] ON f.ZYRKXD = [fq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gb] ON g.XBM = [gb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gc] ON g.CSDM = [gc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ge] ON g.GJDQM = [ge].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gf] ON g.SFZJLXM = [gf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZKM = [gg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gh] ON g.GATQWM = [gh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gi] ON g.ZZMMM = [gi].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gj] ON g.JKZKM = [gj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gk] ON g.XYZJM = [gk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [gl] ON g.XXM = [gl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gm] ON g.HKXZM = [gm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [gn] ON g.XLM = [gn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [gp] ON g.GWZYM = [gp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [gq] ON g.ZYRKXD = [gq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [kb] ON k.XQM = [kb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [nb] ON n.BJLXM = [nb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [nc] ON n.SFSSMZSYJXB = [nc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [nd] ON n.SYJXMSM = [nd].DM /*双语教学模式码*/
 GO
 
 --学籍异动数据子类表
@@ -6659,53 +6691,53 @@ SELECT a.[ID]--学籍异动表编号
       ,b.XMPY as b_XSXX_XMPY--学生基本数据子类表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生基本数据子类表 曾用名
       ,b.XBM as b_XSXX_XBM--学生基本数据子类表 性别码
-      ,bb.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bb].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.CSRQ as b_XSXX_CSRQ--学生基本数据子类表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生基本数据子类表 出生地码
-      ,bc.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[bc].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生基本数据子类表 籍贯
       ,b.MZM as b_XSXX_MZM--学生基本数据子类表 民族码
-      ,bd.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bd.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bd].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bd].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.GJDQM as b_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
-      ,be.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,be.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,be.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[be].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[be].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[be].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
-      ,bf.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bf].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生基本数据子类表 身份证件号
       ,b.HYZKM as b_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
-      ,bh.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bh.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bh].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bh].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
-      ,bi.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bi.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bi].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bi].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.JKZKM as b_XSXX_JKZKM--学生基本数据子类表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.XYZJM as b_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
-      ,bk.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bk].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.XXM as b_XSXX_XXM--学生基本数据子类表 血型码
-      ,bl.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bl.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bl].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bl].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.ZP as b_XSXX_ZP--学生基本数据子类表 照片
       ,b.SFZJYXQ as b_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
       ,b.DSZYBZ as b_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
-      ,bm.MC as b_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,[bm].MC as b_XSXX_DSZYBZ_MC--是否标志代码表 名称
       ,b.RXNY as b_XSXX_RXNY--学生基本数据子类表 入学年月
       ,b.NJ as b_XSXX_NJ--学生基本数据子类表 年级
       ,b.BH as b_XSXX_BH--学生基本数据子类表 班号
       ,b.XSLBM as b_XSXX_XSLBM--学生基本数据子类表 学生类别码
-      ,bn.MC as b_XSXX_XSLBM_MC--学生类别代码表 名称
-      ,bn.SM as b_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,[bn].MC as b_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[bn].SM as b_XSXX_XSLBM_SM--学生类别代码表 说明
       ,b.XZZ as b_XSXX_XZZ--学生基本数据子类表 现住址
       ,b.HKSZD as b_XSXX_HKSZD--学生基本数据子类表 户口所在地
       ,b.HKXZM as b_XSXX_HKXZM--学生基本数据子类表 户口性质码
-      ,bo.MC as b_XSXX_HKXZM_MC--户口类别代码 名称
+      ,[bo].MC as b_XSXX_HKXZM_MC--户口类别代码 名称
       ,b.SFLDRK as b_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
-      ,bp.MC as b_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,[bp].MC as b_XSXX_SFLDRK_MC--是否标志代码表 名称
       ,b.TC as b_XSXX_TC--学生基本数据子类表 特长
       ,b.LXDH as b_XSXX_LXDH--学生基本数据子类表 联系电话
       ,b.TXDZ as b_XSXX_TXDZ--学生基本数据子类表 通信地址
@@ -6722,37 +6754,37 @@ SELECT a.[ID]--学籍异动表编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fb.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fb].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.CSDM as f_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,fc.MC as f_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[fc].MC as f_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fe.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fe.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fe.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fe].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fe].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fe].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,ff.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[ff].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.HYZKM as f_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,fg.MC as f_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fh.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fh.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fh].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fh].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fi.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fi.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fi].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fi].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,fj.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,fj.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[fj].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[fj].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fk.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fk].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fl.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fl.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fl].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fl].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,f.SFZJYXQ as f_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,f.JGH as f_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -6760,14 +6792,14 @@ SELECT a.[ID]--学籍异动表编号
       ,f.XZZ as f_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,f.HKSZD as f_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,f.HKXZM as f_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,fm.MC as f_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[fm].MC as f_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,f.XLM as f_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,fn.MC as f_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[fn].MC as f_JZGJBSJ_XLM_MC--学历代码 名称
       ,f.GZNY as f_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,f.DABH as f_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,f.DAWB as f_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,f.TXDZ as f_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -6777,9 +6809,9 @@ SELECT a.[ID]--学籍异动表编号
       ,f.ZYDZ as f_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,f.TC as f_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,f.GWZYM as f_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,fp.MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[fp].MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,fq.MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,g.SCHOOLID as g_BJ_SCHOOLID--班级数据类表 学校名
       ,g.NJ as g_BJ_NJ--班级数据类表 年级号
       ,g.BJ as g_BJ_BJ--班级数据类表 班级名称
@@ -6789,14 +6821,14 @@ SELECT a.[ID]--学籍异动表编号
       ,g.BJRYCH as g_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,g.XZ as g_BJ_XZ--班级数据类表 学制
       ,g.BJLXM as g_BJ_BJLXM--班级数据类表 班级类型码
-      ,gb.MC as g_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[gb].MC as g_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,g.WLLX as g_BJ_WLLX--班级数据类表 文理类型
       ,g.BYRQ as g_BJ_BYRQ--班级数据类表 毕业日期
       ,g.SFSSMZSYJXB as g_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,gc.MC as g_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[gc].MC as g_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,g.SYJXMSM as g_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,gd.MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,gd.SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[gd].MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
@@ -6809,14 +6841,14 @@ SELECT a.[ID]--学籍异动表编号
       ,i.BJRYCH as i_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,i.XZ as i_BJ_XZ--班级数据类表 学制
       ,i.BJLXM as i_BJ_BJLXM--班级数据类表 班级类型码
-      ,ib.MC as i_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[ib].MC as i_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,i.WLLX as i_BJ_WLLX--班级数据类表 文理类型
       ,i.BYRQ as i_BJ_BYRQ--班级数据类表 毕业日期
       ,i.SFSSMZSYJXB as i_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,ic.MC as i_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[ic].MC as i_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,i.SYJXMSM as i_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,id.MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,id.SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[id].MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
@@ -6830,43 +6862,43 @@ FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS h ON a.YNJ = h.NJ /*原年级*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS i ON a.XBH = i.BH /*现班号*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS j ON a.XNJ = j.NJ /*现年级*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bb ON b.XBM = bb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bc ON b.CSDM = bc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS be ON b.GJDQM = be.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bf ON b.SFZJLXM = bf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bh ON b.GATQWM = bh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bi ON b.ZZMMM = bi.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bk ON b.XYZJM = bk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bl ON b.XXM = bl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bm ON b.DSZYBZ = bm.DM /*独生子女标志*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XSLB AS bn ON b.XSLBM = bn.DM /*学生类别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bo ON b.HKXZM = bo.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bp ON b.SFLDRK = bp.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fc ON f.CSDM = fc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fe ON f.GJDQM = fe.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS ff ON f.SFZJLXM = ff.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZKM = fg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fh ON f.GATQWM = fh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fi ON f.ZZMMM = fi.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS fj ON f.JKZKM = fj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fk ON f.XYZJM = fk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fl ON f.XXM = fl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fm ON f.HKXZM = fm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS fn ON f.XLM = fn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS fp ON f.GWZYM = fp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS fq ON f.ZYRKXD = fq.DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS gb ON g.BJLXM = gb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gc ON g.SFSSMZSYJXB = gc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS gd ON g.SYJXMSM = gd.DM /*双语教学模式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS ib ON i.BJLXM = ib.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ic ON i.SFSSMZSYJXB = ic.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS id ON i.SYJXMSM = id.DM /*双语教学模式码*/
+      dbo.EDU_GB_RDXB AS [bb] ON b.XBM = [bb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bc] ON b.CSDM = [bc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bd] ON b.MZM = [bd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [be] ON b.GJDQM = [be].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [bf] ON b.SFZJLXM = [bf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bh] ON b.GATQWM = [bh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bi] ON b.ZZMMM = [bi].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bk] ON b.XYZJM = [bk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bl] ON b.XXM = [bl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bm] ON b.DSZYBZ = [bm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [bn] ON b.XSLBM = [bn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bo] ON b.HKXZM = [bo].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fb] ON f.XBM = [fb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fc] ON f.CSDM = [fc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fe] ON f.GJDQM = [fe].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ff] ON f.SFZJLXM = [ff].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZKM = [fg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fh] ON f.GATQWM = [fh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fi] ON f.ZZMMM = [fi].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [fj] ON f.JKZKM = [fj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fk] ON f.XYZJM = [fk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fl] ON f.XXM = [fl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fm] ON f.HKXZM = [fm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [fn] ON f.XLM = [fn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [fp] ON f.GWZYM = [fp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [fq] ON f.ZYRKXD = [fq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [gb] ON g.BJLXM = [gb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gc] ON g.SFSSMZSYJXB = [gc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [gd] ON g.SYJXMSM = [gd].DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [ib] ON i.BJLXM = [ib].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ic] ON i.SFSSMZSYJXB = [ic].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [id] ON i.SYJXMSM = [id].DM /*双语教学模式码*/
 GO
 
 --学校基本数据子类表
@@ -6967,37 +6999,37 @@ SELECT a.[SCHOOLID]--学校名
       ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,gb.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[gb].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,g.CSDM as g_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
-      ,gc.MC as g_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[gc].MC as g_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
       ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ge.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ge.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ge.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ge].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ge].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ge].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,gf.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[gf].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,g.HYZKM as g_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
-      ,gg.MC as g_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,[gg].MC as g_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
       ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,gh.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,gh.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[gh].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gh].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,gi.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,gi.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[gi].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gi].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,gj.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,gj.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[gj].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gj].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,gk.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[gk].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,gl.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,gl.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[gl].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[gl].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片
       ,g.SFZJYXQ as g_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
       ,g.JGH as g_JZGJBSJ_JGH--教职工基本数据子类表 机构号
@@ -7005,14 +7037,14 @@ SELECT a.[SCHOOLID]--学校名
       ,g.XZZ as g_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
       ,g.HKSZD as g_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
       ,g.HKXZM as g_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
-      ,gm.MC as g_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,[gm].MC as g_JZGJBSJ_HKXZM_MC--户口类别代码 名称
       ,g.XLM as g_JZGJBSJ_XLM--教职工基本数据子类表 学历码
-      ,gn.MC as g_JZGJBSJ_XLM_MC--学历代码 名称
+      ,[gn].MC as g_JZGJBSJ_XLM_MC--学历代码 名称
       ,g.GZNY as g_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
       ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,go.MC as g_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
       ,g.DABH as g_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
       ,g.DAWB as g_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
       ,g.TXDZ as g_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
@@ -7022,9 +7054,9 @@ SELECT a.[SCHOOLID]--学校名
       ,g.ZYDZ as g_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
       ,g.TC as g_JZGJBSJ_TC--教职工基本数据子类表 特长
       ,g.GWZYM as g_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
-      ,gp.MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,[gp].MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
-      ,gq.MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,[gq].MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
 
 FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -7032,22 +7064,22 @@ FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFSSMZSYJXB = e.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS f ON a.SYJXMSM = f.DM /*双语教学模式码*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS g ON a.BZRID = g.ID /*班主任ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS gb ON g.XBM = gb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gc ON g.CSDM = gc.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ge ON g.GJDQM = ge.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS gf ON g.SFZJLXM = gf.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS gg ON g.HYZKM = gg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS gh ON g.GATQWM = gh.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS gi ON g.ZZMMM = gi.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS gj ON g.JKZKM = gj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS gk ON g.XYZJM = gk.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS gl ON g.XXM = gl.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS gm ON g.HKXZM = gm.DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_XL AS gn ON g.XLM = gn.DM /*学历码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWZY AS gp ON g.GWZYM = gp.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS gq ON g.ZYRKXD = gq.DM /*主要任课学段*/
+      dbo.EDU_GB_RDXB AS [gb] ON g.XBM = [gb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gc] ON g.CSDM = [gc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ge] ON g.GJDQM = [ge].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gf] ON g.SFZJLXM = [gf].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZKM = [gg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gh] ON g.GATQWM = [gh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gi] ON g.ZZMMM = [gi].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gj] ON g.JKZKM = [gj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gk] ON g.XYZJM = [gk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [gl] ON g.XXM = [gl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gm] ON g.HKXZM = [gm].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [gn] ON g.XLM = [gn].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [gp] ON g.GWZYM = [gp].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [gq] ON g.ZYRKXD = [gq].DM /*主要任课学段*/
 GO
 
 --机构数据类表
@@ -7658,70 +7690,70 @@ SELECT a.[SCHOOLID]--学校名
       ,c.JZWH as c_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,c.JZWMC as c_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
       ,c.SYZKM as c_JZWJBSJ_SYZKM--建筑物基本数据类表 使用状况码
-      ,cb.MC as c_JZWJBSJ_SYZKM_MC--使用状况代码表 名称
+      ,[cb].MC as c_JZWJBSJ_SYZKM_MC--使用状况代码表 名称
       ,c.FWCQ as c_JZWJBSJ_FWCQ--建筑物基本数据类表 房屋产权
-      ,cc.MC as c_JZWJBSJ_FWCQ_MC--产权代码表 名称
+      ,[cc].MC as c_JZWJBSJ_FWCQ_MC--产权代码表 名称
       ,c.XQH as c_JZWJBSJ_XQH--建筑物基本数据类表 校区号
       ,c.JZWFLM as c_JZWJBSJ_JZWFLM--建筑物基本数据类表 建筑物分类码
-      ,cd.MC as c_JZWJBSJ_JZWFLM_MC--建筑物分类代码表 名称
+      ,[cd].MC as c_JZWJBSJ_JZWFLM_MC--建筑物分类代码表 名称
       ,c.JZWJGM as c_JZWJBSJ_JZWJGM--建筑物基本数据类表 建筑物结构码
-      ,ce.MC as c_JZWJBSJ_JZWJGM_MC--建筑物结构代码表 名称
+      ,[ce].MC as c_JZWJBSJ_JZWJGM_MC--建筑物结构代码表 名称
       ,c.JZWCS as c_JZWJBSJ_JZWCS--建筑物基本数据类表 建筑物层数
       ,c.JCNY as c_JZWJBSJ_JCNY--建筑物基本数据类表 建成年月
       ,c.JZWTZZE as c_JZWJBSJ_JZWTZZE--建筑物基本数据类表 建筑物投资总额
       ,c.JFLYM as c_JZWJBSJ_JFLYM--建筑物基本数据类表 经费来源码
-      ,cf.MC as c_JZWJBSJ_JFLYM_MC--经费来源代码表 名称
+      ,[cf].MC as c_JZWJBSJ_JFLYM_MC--经费来源代码表 名称
       ,c.ZJZMJ as c_JZWJBSJ_ZJZMJ--建筑物基本数据类表 总建筑面积
       ,c.ZSYMJ as c_JZWJBSJ_ZSYMJ--建筑物基本数据类表 总使用面积
       ,c.KZSFLDM as c_JZWJBSJ_KZSFLDM--建筑物基本数据类表 抗震设防烈度码
-      ,cg.JC as c_JZWJBSJ_KZSFLDM_JC--抗震设防烈度代码 简称
-      ,cg.MC as c_JZWJBSJ_KZSFLDM_MC--抗震设防烈度代码 名称
+      ,[cg].JC as c_JZWJBSJ_KZSFLDM_JC--抗震设防烈度代码 简称
+      ,[cg].MC as c_JZWJBSJ_KZSFLDM_MC--抗震设防烈度代码 名称
       ,c.KZSFBZM as c_JZWJBSJ_KZSFBZM--建筑物基本数据类表 抗震设防标准码
-      ,ch.JC as c_JZWJBSJ_KZSFBZM_JC--抗震设防标准代码 简称
-      ,ch.MC as c_JZWJBSJ_KZSFBZM_MC--抗震设防标准代码 名称
-      ,ch.SM as c_JZWJBSJ_KZSFBZM_SM--抗震设防标准代码 说明
+      ,[ch].JC as c_JZWJBSJ_KZSFBZM_JC--抗震设防标准代码 简称
+      ,[ch].MC as c_JZWJBSJ_KZSFBZM_MC--抗震设防标准代码 名称
+      ,[ch].SM as c_JZWJBSJ_KZSFBZM_SM--抗震设防标准代码 说明
       ,c.JZWDZ as c_JZWJBSJ_JZWDZ--建筑物基本数据类表 建筑物地址
       ,c.JZWZKM as c_JZWJBSJ_JZWZKM--建筑物基本数据类表 建筑物状况码
-      ,ci.MC as c_JZWJBSJ_JZWZKM_MC--建筑物状况代码表 名称
-      ,ci.SM as c_JZWJBSJ_JZWZKM_SM--建筑物状况代码表 说明
+      ,[ci].MC as c_JZWJBSJ_JZWZKM_MC--建筑物状况代码表 名称
+      ,[ci].SM as c_JZWJBSJ_JZWZKM_SM--建筑物状况代码表 说明
       ,c.JZWTP as c_JZWJBSJ_JZWTP--建筑物基本数据类表 建筑物图片
       ,c.JZWPMT as c_JZWJBSJ_JZWPMT--建筑物基本数据类表 建筑物平面图
       ,c.XXDWCCM as c_JZWJBSJ_XXDWCCM--建筑物基本数据类表 学校单位层次码
-      ,cj.MC as c_JZWJBSJ_XXDWCCM_MC--学校单位层次代码表 名称
+      ,[cj].MC as c_JZWJBSJ_XXDWCCM_MC--学校单位层次代码表 名称
       ,c.JZWWZZK as c_JZWJBSJ_JZWWZZK--建筑物基本数据类表 建筑物位置状况
       ,c.GHSPWH as c_JZWJBSJ_GHSPWH--建筑物基本数据类表 规划审批文号
       ,c.ZHFZNL as c_JZWJBSJ_ZHFZNL--建筑物基本数据类表 综合防灾能力
       ,c.GHSYNX as c_JZWJBSJ_GHSYNX--建筑物基本数据类表 规划使用年限
       ,c.SFYYJBXCS as c_JZWJBSJ_SFYYJBXCS--建筑物基本数据类表 是否有预警避险措施
-      ,ck.MC as c_JZWJBSJ_SFYYJBXCS_MC--是否标志代码表 名称
+      ,[ck].MC as c_JZWJBSJ_SFYYJBXCS_MC--是否标志代码表 名称
       ,c.SFKYYYJBNCS as c_JZWJBSJ_SFKYYYJBNCS--建筑物基本数据类表 是否可用于应急避难场所
-      ,cl.MC as c_JZWJBSJ_SFKYYYJBNCS_MC--是否标志代码表 名称
+      ,[cl].MC as c_JZWJBSJ_SFKYYYJBNCS_MC--是否标志代码表 名称
       ,c.CQZH as c_JZWJBSJ_CQZH--建筑物基本数据类表 产权证号
       ,c.JZWYTM as c_JZWJBSJ_JZWYTM--建筑物基本数据类表 建筑物用途码
-      ,cm.MC as c_JZWJBSJ_JZWYTM_MC--建筑物用途代码表 名称
+      ,[cm].MC as c_JZWJBSJ_JZWYTM_MC--建筑物用途代码表 名称
       ,c.JZWZGD as c_JZWJBSJ_JZWZGD--建筑物基本数据类表 建筑物总高度
       ,c.WFJDBM as c_JZWJBSJ_WFJDBM--建筑物基本数据类表 危房鉴定部门
       ,c.WFJDWH as c_JZWJBSJ_WFJDWH--建筑物基本数据类表 危房鉴定文号
       ,c.WFJDRQ as c_JZWJBSJ_WFJDRQ--建筑物基本数据类表 危房鉴定日期
       ,c.GNFSM as c_JZWJBSJ_GNFSM--建筑物基本数据类表 供暖方式码
-      ,cn.MC as c_JZWJBSJ_GNFSM_MC--供暖方式代码表 名称
+      ,[cn].MC as c_JZWJBSJ_GNFSM_MC--供暖方式代码表 名称
       ,c.JZWJCXSM as c_JZWJBSJ_JZWJCXSM--建筑物基本数据类表 建筑物基础形式码
-      ,co.MC as c_JZWJBSJ_JZWJCXSM_MC--建筑物基础形式代码表 名称
+      ,[co].MC as c_JZWJBSJ_JZWJCXSM_MC--建筑物基础形式代码表 名称
       ,c.JZWPMXSM as c_JZWJBSJ_JZWPMXSM--建筑物基本数据类表 建筑物平面形式码
-      ,cp.MC as c_JZWJBSJ_JZWPMXSM_MC--建筑物平面形式代码表 名称
+      ,[cp].MC as c_JZWJBSJ_JZWPMXSM_MC--建筑物平面形式代码表 名称
       ,c.JZWLBXSM as c_JZWJBSJ_JZWLBXSM--建筑物基本数据类表 建筑物楼板形式码
-      ,cq.MC as c_JZWJBSJ_JZWLBXSM_MC--建筑物楼板形式代码表 名称
+      ,[cq].MC as c_JZWJBSJ_JZWLBXSM_MC--建筑物楼板形式代码表 名称
       ,c.SFYGZZ as c_JZWJBSJ_SFYGZZ--建筑物基本数据类表 是否有构造柱
-      ,cr.MC as c_JZWJBSJ_SFYGZZ_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZWJBSJ_SFYGZZ_MC--是否标志代码表 名称
       ,c.QL as c_JZWJBSJ_QL--建筑物基本数据类表 圈梁
-      ,cs.MC as c_JZWJBSJ_QL_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZWJBSJ_QL_MC--是否标志代码表 名称
       ,c.ZJAQGZWCRQ as c_JZWJBSJ_ZJAQGZWCRQ--建筑物基本数据类表 最近安全改造完成日期
       ,c.ZJAQGZHYJSYNX as c_JZWJBSJ_ZJAQGZHYJSYNX--建筑物基本数据类表 最近安全改造后预计使用年限
       ,c.ZXLXM as c_JZWJBSJ_ZXLXM--建筑物基本数据类表 专项类型
       ,c.ZYZXTZBZMCM as c_JZWJBSJ_ZYZXTZBZMCM--建筑物基本数据类表 中央专项投资补助名称码
-      ,ct.MC as c_JZWJBSJ_ZYZXTZBZMCM_MC--中央专项投资补助名称代码表 名称
+      ,[ct].MC as c_JZWJBSJ_ZYZXTZBZMCM_MC--中央专项投资补助名称代码表 名称
       ,c.WWJZDJM as c_JZWJBSJ_WWJZDJM--建筑物基本数据类表 文物建筑等级码
-      ,cu.MC as c_JZWJBSJ_WWJZDJM_MC--文物建筑等级代码表 名称
+      ,[cu].MC as c_JZWJBSJ_WWJZDJM_MC--文物建筑等级代码表 名称
       ,c.JXJFZYF as c_JZWJBSJ_JXJFZYF--建筑物基本数据类表 教学及辅助用房
       ,c.QZJS as c_JZWJBSJ_QZJS--建筑物基本数据类表 其中教室
       ,c.QZSYS as c_JZWJBSJ_QZSYS--建筑物基本数据类表 其中实验室
@@ -7753,26 +7785,26 @@ FROM dbo.EDU_ZZFC_08_01_XSSS AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS d ON a.RZXB = d.DM /*入住性别*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFKY = e.DM /*是否可用*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.AZDSJ = f.DM /*安装电视机*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SYZK AS cb ON c.SYZKM = cb.DM /*使用状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_CQ AS cc ON c.FWCQ = cc.DM /*房屋产权*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWFL AS cd ON c.JZWFLM = cd.DM /*建筑物分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWJG AS ce ON c.JZWJGM = ce.DM /*建筑物结构码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JFLY AS cf ON c.JFLYM = cf.DM /*经费来源码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KZSFLD AS cg ON c.KZSFLDM = cg.DM /*抗震设防烈度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KZSFBZ AS ch ON c.KZSFBZM = ch.DM /*抗震设防标准码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWZK AS ci ON c.JZWZKM = ci.DM /*建筑物状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXDWCC AS cj ON c.XXDWCCM = cj.DM /*学校单位层次码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ck ON c.SFYYJBXCS = ck.DM /*是否有预警避险措施*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cl ON c.SFKYYYJBNCS = cl.DM /*是否可用于应急避难场所*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWYT AS cm ON c.JZWYTM = cm.DM /*建筑物用途码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GNFS AS cn ON c.GNFSM = cn.DM /*供暖方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWJCXS AS co ON c.JZWJCXSM = co.DM /*建筑物基础形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWPMXS AS cp ON c.JZWPMXSM = cp.DM /*建筑物平面形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWLBXS AS cq ON c.JZWLBXSM = cq.DM /*建筑物楼板形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFYGZZ = cr.DM /*是否有构造柱*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.QL = cs.DM /*圈梁*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZYZXTZBZMC AS ct ON c.ZYZXTZBZMCM = ct.DM /*中央专项投资补助名称码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WWJZDJ AS cu ON c.WWJZDJM = cu.DM /*文物建筑等级码*/
+      dbo.EDU_JY_SYZK AS [cb] ON c.SYZKM = [cb].DM /*使用状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_CQ AS [cc] ON c.FWCQ = [cc].DM /*房屋产权*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWFL AS [cd] ON c.JZWFLM = [cd].DM /*建筑物分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWJG AS [ce] ON c.JZWJGM = [ce].DM /*建筑物结构码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JFLY AS [cf] ON c.JFLYM = [cf].DM /*经费来源码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KZSFLD AS [cg] ON c.KZSFLDM = [cg].DM /*抗震设防烈度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KZSFBZ AS [ch] ON c.KZSFBZM = [ch].DM /*抗震设防标准码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWZK AS [ci] ON c.JZWZKM = [ci].DM /*建筑物状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXDWCC AS [cj] ON c.XXDWCCM = [cj].DM /*学校单位层次码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ck] ON c.SFYYJBXCS = [ck].DM /*是否有预警避险措施*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cl] ON c.SFKYYYJBNCS = [cl].DM /*是否可用于应急避难场所*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWYT AS [cm] ON c.JZWYTM = [cm].DM /*建筑物用途码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GNFS AS [cn] ON c.GNFSM = [cn].DM /*供暖方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWJCXS AS [co] ON c.JZWJCXSM = [co].DM /*建筑物基础形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWPMXS AS [cp] ON c.JZWPMXSM = [cp].DM /*建筑物平面形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWLBXS AS [cq] ON c.JZWLBXSM = [cq].DM /*建筑物楼板形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFYGZZ = [cr].DM /*是否有构造柱*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.QL = [cs].DM /*圈梁*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZYZXTZBZMC AS [ct] ON c.ZYZXTZBZMCM = [ct].DM /*中央专项投资补助名称码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WWJZDJ AS [cu] ON c.WWJZDJM = [cu].DM /*文物建筑等级码*/
 GO
 
 --宿舍床位表
@@ -7789,70 +7821,70 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.JZWH as c_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,c.JZWMC as c_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
       ,c.SYZKM as c_JZWJBSJ_SYZKM--建筑物基本数据类表 使用状况码
-      ,cb.MC as c_JZWJBSJ_SYZKM_MC--使用状况代码表 名称
+      ,[cb].MC as c_JZWJBSJ_SYZKM_MC--使用状况代码表 名称
       ,c.FWCQ as c_JZWJBSJ_FWCQ--建筑物基本数据类表 房屋产权
-      ,cc.MC as c_JZWJBSJ_FWCQ_MC--产权代码表 名称
+      ,[cc].MC as c_JZWJBSJ_FWCQ_MC--产权代码表 名称
       ,c.XQH as c_JZWJBSJ_XQH--建筑物基本数据类表 校区号
       ,c.JZWFLM as c_JZWJBSJ_JZWFLM--建筑物基本数据类表 建筑物分类码
-      ,cd.MC as c_JZWJBSJ_JZWFLM_MC--建筑物分类代码表 名称
+      ,[cd].MC as c_JZWJBSJ_JZWFLM_MC--建筑物分类代码表 名称
       ,c.JZWJGM as c_JZWJBSJ_JZWJGM--建筑物基本数据类表 建筑物结构码
-      ,ce.MC as c_JZWJBSJ_JZWJGM_MC--建筑物结构代码表 名称
+      ,[ce].MC as c_JZWJBSJ_JZWJGM_MC--建筑物结构代码表 名称
       ,c.JZWCS as c_JZWJBSJ_JZWCS--建筑物基本数据类表 建筑物层数
       ,c.JCNY as c_JZWJBSJ_JCNY--建筑物基本数据类表 建成年月
       ,c.JZWTZZE as c_JZWJBSJ_JZWTZZE--建筑物基本数据类表 建筑物投资总额
       ,c.JFLYM as c_JZWJBSJ_JFLYM--建筑物基本数据类表 经费来源码
-      ,cf.MC as c_JZWJBSJ_JFLYM_MC--经费来源代码表 名称
+      ,[cf].MC as c_JZWJBSJ_JFLYM_MC--经费来源代码表 名称
       ,c.ZJZMJ as c_JZWJBSJ_ZJZMJ--建筑物基本数据类表 总建筑面积
       ,c.ZSYMJ as c_JZWJBSJ_ZSYMJ--建筑物基本数据类表 总使用面积
       ,c.KZSFLDM as c_JZWJBSJ_KZSFLDM--建筑物基本数据类表 抗震设防烈度码
-      ,cg.JC as c_JZWJBSJ_KZSFLDM_JC--抗震设防烈度代码 简称
-      ,cg.MC as c_JZWJBSJ_KZSFLDM_MC--抗震设防烈度代码 名称
+      ,[cg].JC as c_JZWJBSJ_KZSFLDM_JC--抗震设防烈度代码 简称
+      ,[cg].MC as c_JZWJBSJ_KZSFLDM_MC--抗震设防烈度代码 名称
       ,c.KZSFBZM as c_JZWJBSJ_KZSFBZM--建筑物基本数据类表 抗震设防标准码
-      ,ch.JC as c_JZWJBSJ_KZSFBZM_JC--抗震设防标准代码 简称
-      ,ch.MC as c_JZWJBSJ_KZSFBZM_MC--抗震设防标准代码 名称
-      ,ch.SM as c_JZWJBSJ_KZSFBZM_SM--抗震设防标准代码 说明
+      ,[ch].JC as c_JZWJBSJ_KZSFBZM_JC--抗震设防标准代码 简称
+      ,[ch].MC as c_JZWJBSJ_KZSFBZM_MC--抗震设防标准代码 名称
+      ,[ch].SM as c_JZWJBSJ_KZSFBZM_SM--抗震设防标准代码 说明
       ,c.JZWDZ as c_JZWJBSJ_JZWDZ--建筑物基本数据类表 建筑物地址
       ,c.JZWZKM as c_JZWJBSJ_JZWZKM--建筑物基本数据类表 建筑物状况码
-      ,ci.MC as c_JZWJBSJ_JZWZKM_MC--建筑物状况代码表 名称
-      ,ci.SM as c_JZWJBSJ_JZWZKM_SM--建筑物状况代码表 说明
+      ,[ci].MC as c_JZWJBSJ_JZWZKM_MC--建筑物状况代码表 名称
+      ,[ci].SM as c_JZWJBSJ_JZWZKM_SM--建筑物状况代码表 说明
       ,c.JZWTP as c_JZWJBSJ_JZWTP--建筑物基本数据类表 建筑物图片
       ,c.JZWPMT as c_JZWJBSJ_JZWPMT--建筑物基本数据类表 建筑物平面图
       ,c.XXDWCCM as c_JZWJBSJ_XXDWCCM--建筑物基本数据类表 学校单位层次码
-      ,cj.MC as c_JZWJBSJ_XXDWCCM_MC--学校单位层次代码表 名称
+      ,[cj].MC as c_JZWJBSJ_XXDWCCM_MC--学校单位层次代码表 名称
       ,c.JZWWZZK as c_JZWJBSJ_JZWWZZK--建筑物基本数据类表 建筑物位置状况
       ,c.GHSPWH as c_JZWJBSJ_GHSPWH--建筑物基本数据类表 规划审批文号
       ,c.ZHFZNL as c_JZWJBSJ_ZHFZNL--建筑物基本数据类表 综合防灾能力
       ,c.GHSYNX as c_JZWJBSJ_GHSYNX--建筑物基本数据类表 规划使用年限
       ,c.SFYYJBXCS as c_JZWJBSJ_SFYYJBXCS--建筑物基本数据类表 是否有预警避险措施
-      ,ck.MC as c_JZWJBSJ_SFYYJBXCS_MC--是否标志代码表 名称
+      ,[ck].MC as c_JZWJBSJ_SFYYJBXCS_MC--是否标志代码表 名称
       ,c.SFKYYYJBNCS as c_JZWJBSJ_SFKYYYJBNCS--建筑物基本数据类表 是否可用于应急避难场所
-      ,cl.MC as c_JZWJBSJ_SFKYYYJBNCS_MC--是否标志代码表 名称
+      ,[cl].MC as c_JZWJBSJ_SFKYYYJBNCS_MC--是否标志代码表 名称
       ,c.CQZH as c_JZWJBSJ_CQZH--建筑物基本数据类表 产权证号
       ,c.JZWYTM as c_JZWJBSJ_JZWYTM--建筑物基本数据类表 建筑物用途码
-      ,cm.MC as c_JZWJBSJ_JZWYTM_MC--建筑物用途代码表 名称
+      ,[cm].MC as c_JZWJBSJ_JZWYTM_MC--建筑物用途代码表 名称
       ,c.JZWZGD as c_JZWJBSJ_JZWZGD--建筑物基本数据类表 建筑物总高度
       ,c.WFJDBM as c_JZWJBSJ_WFJDBM--建筑物基本数据类表 危房鉴定部门
       ,c.WFJDWH as c_JZWJBSJ_WFJDWH--建筑物基本数据类表 危房鉴定文号
       ,c.WFJDRQ as c_JZWJBSJ_WFJDRQ--建筑物基本数据类表 危房鉴定日期
       ,c.GNFSM as c_JZWJBSJ_GNFSM--建筑物基本数据类表 供暖方式码
-      ,cn.MC as c_JZWJBSJ_GNFSM_MC--供暖方式代码表 名称
+      ,[cn].MC as c_JZWJBSJ_GNFSM_MC--供暖方式代码表 名称
       ,c.JZWJCXSM as c_JZWJBSJ_JZWJCXSM--建筑物基本数据类表 建筑物基础形式码
-      ,co.MC as c_JZWJBSJ_JZWJCXSM_MC--建筑物基础形式代码表 名称
+      ,[co].MC as c_JZWJBSJ_JZWJCXSM_MC--建筑物基础形式代码表 名称
       ,c.JZWPMXSM as c_JZWJBSJ_JZWPMXSM--建筑物基本数据类表 建筑物平面形式码
-      ,cp.MC as c_JZWJBSJ_JZWPMXSM_MC--建筑物平面形式代码表 名称
+      ,[cp].MC as c_JZWJBSJ_JZWPMXSM_MC--建筑物平面形式代码表 名称
       ,c.JZWLBXSM as c_JZWJBSJ_JZWLBXSM--建筑物基本数据类表 建筑物楼板形式码
-      ,cq.MC as c_JZWJBSJ_JZWLBXSM_MC--建筑物楼板形式代码表 名称
+      ,[cq].MC as c_JZWJBSJ_JZWLBXSM_MC--建筑物楼板形式代码表 名称
       ,c.SFYGZZ as c_JZWJBSJ_SFYGZZ--建筑物基本数据类表 是否有构造柱
-      ,cr.MC as c_JZWJBSJ_SFYGZZ_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZWJBSJ_SFYGZZ_MC--是否标志代码表 名称
       ,c.QL as c_JZWJBSJ_QL--建筑物基本数据类表 圈梁
-      ,cs.MC as c_JZWJBSJ_QL_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZWJBSJ_QL_MC--是否标志代码表 名称
       ,c.ZJAQGZWCRQ as c_JZWJBSJ_ZJAQGZWCRQ--建筑物基本数据类表 最近安全改造完成日期
       ,c.ZJAQGZHYJSYNX as c_JZWJBSJ_ZJAQGZHYJSYNX--建筑物基本数据类表 最近安全改造后预计使用年限
       ,c.ZXLXM as c_JZWJBSJ_ZXLXM--建筑物基本数据类表 专项类型
       ,c.ZYZXTZBZMCM as c_JZWJBSJ_ZYZXTZBZMCM--建筑物基本数据类表 中央专项投资补助名称码
-      ,ct.MC as c_JZWJBSJ_ZYZXTZBZMCM_MC--中央专项投资补助名称代码表 名称
+      ,[ct].MC as c_JZWJBSJ_ZYZXTZBZMCM_MC--中央专项投资补助名称代码表 名称
       ,c.WWJZDJM as c_JZWJBSJ_WWJZDJM--建筑物基本数据类表 文物建筑等级码
-      ,cu.MC as c_JZWJBSJ_WWJZDJM_MC--文物建筑等级代码表 名称
+      ,[cu].MC as c_JZWJBSJ_WWJZDJM_MC--文物建筑等级代码表 名称
       ,c.JXJFZYF as c_JZWJBSJ_JXJFZYF--建筑物基本数据类表 教学及辅助用房
       ,c.QZJS as c_JZWJBSJ_QZJS--建筑物基本数据类表 其中教室
       ,c.QZSYS as c_JZWJBSJ_QZSYS--建筑物基本数据类表 其中实验室
@@ -7880,13 +7912,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
       ,d.FJBM as d_XSSS_FJBM--学生宿舍数据类表 房间编号
       ,d.RZXB as d_XSSS_RZXB--学生宿舍数据类表 入住性别
-      ,db.MC as d_XSSS_RZXB_MC--人的性别代码 名称
+      ,[db].MC as d_XSSS_RZXB_MC--人的性别代码 名称
       ,d.SFKY as d_XSSS_SFKY--学生宿舍数据类表 是否可用
-      ,dc.MC as d_XSSS_SFKY_MC--是否标志代码表 名称
+      ,[dc].MC as d_XSSS_SFKY_MC--是否标志代码表 名称
       ,d.KZRS as d_XSSS_KZRS--学生宿舍数据类表 可住人数
       ,d.WLDK as d_XSSS_WLDK--学生宿舍数据类表 网络端口
       ,d.AZDSJ as d_XSSS_AZDSJ--学生宿舍数据类表 安装电视机
-      ,dd.MC as d_XSSS_AZDSJ_MC--是否标志代码表 名称
+      ,[dd].MC as d_XSSS_AZDSJ_MC--是否标志代码表 名称
       ,d.DHDK as d_XSSS_DHDK--学生宿舍数据类表 电话端口
       ,d.DHHM as d_XSSS_DHHM--学生宿舍数据类表 电话号码
       ,d.SBDS as d_XSSS_SBDS--学生宿舍数据类表 水表底数
@@ -7900,29 +7932,29 @@ FROM dbo.EDU_ZZFC_08_A01_SSCW AS a LEFT OUTER JOIN
       dbo.EDU_ZZFC_02_01_JZWJBSJ AS c ON a.SSLID = c.ID /*宿舍楼ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZFC_08_01_XSSS AS d ON a.SSID = d.ID /*宿舍ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFRZ = e.DM /*是否入住*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SYZK AS cb ON c.SYZKM = cb.DM /*使用状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_CQ AS cc ON c.FWCQ = cc.DM /*房屋产权*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWFL AS cd ON c.JZWFLM = cd.DM /*建筑物分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWJG AS ce ON c.JZWJGM = ce.DM /*建筑物结构码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JFLY AS cf ON c.JFLYM = cf.DM /*经费来源码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KZSFLD AS cg ON c.KZSFLDM = cg.DM /*抗震设防烈度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KZSFBZ AS ch ON c.KZSFBZM = ch.DM /*抗震设防标准码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWZK AS ci ON c.JZWZKM = ci.DM /*建筑物状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXDWCC AS cj ON c.XXDWCCM = cj.DM /*学校单位层次码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ck ON c.SFYYJBXCS = ck.DM /*是否有预警避险措施*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cl ON c.SFKYYYJBNCS = cl.DM /*是否可用于应急避难场所*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWYT AS cm ON c.JZWYTM = cm.DM /*建筑物用途码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GNFS AS cn ON c.GNFSM = cn.DM /*供暖方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWJCXS AS co ON c.JZWJCXSM = co.DM /*建筑物基础形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWPMXS AS cp ON c.JZWPMXSM = cp.DM /*建筑物平面形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWLBXS AS cq ON c.JZWLBXSM = cq.DM /*建筑物楼板形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFYGZZ = cr.DM /*是否有构造柱*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.QL = cs.DM /*圈梁*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZYZXTZBZMC AS ct ON c.ZYZXTZBZMCM = ct.DM /*中央专项投资补助名称码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WWJZDJ AS cu ON c.WWJZDJM = cu.DM /*文物建筑等级码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.RZXB = db.DM /*入住性别*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dc ON d.SFKY = dc.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dd ON d.AZDSJ = dd.DM /*安装电视机*/
+      dbo.EDU_JY_SYZK AS [cb] ON c.SYZKM = [cb].DM /*使用状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_CQ AS [cc] ON c.FWCQ = [cc].DM /*房屋产权*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWFL AS [cd] ON c.JZWFLM = [cd].DM /*建筑物分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWJG AS [ce] ON c.JZWJGM = [ce].DM /*建筑物结构码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JFLY AS [cf] ON c.JFLYM = [cf].DM /*经费来源码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KZSFLD AS [cg] ON c.KZSFLDM = [cg].DM /*抗震设防烈度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KZSFBZ AS [ch] ON c.KZSFBZM = [ch].DM /*抗震设防标准码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWZK AS [ci] ON c.JZWZKM = [ci].DM /*建筑物状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXDWCC AS [cj] ON c.XXDWCCM = [cj].DM /*学校单位层次码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ck] ON c.SFYYJBXCS = [ck].DM /*是否有预警避险措施*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cl] ON c.SFKYYYJBNCS = [cl].DM /*是否可用于应急避难场所*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWYT AS [cm] ON c.JZWYTM = [cm].DM /*建筑物用途码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GNFS AS [cn] ON c.GNFSM = [cn].DM /*供暖方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWJCXS AS [co] ON c.JZWJCXSM = [co].DM /*建筑物基础形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWPMXS AS [cp] ON c.JZWPMXSM = [cp].DM /*建筑物平面形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWLBXS AS [cq] ON c.JZWLBXSM = [cq].DM /*建筑物楼板形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFYGZZ = [cr].DM /*是否有构造柱*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.QL = [cs].DM /*圈梁*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZYZXTZBZMC AS [ct] ON c.ZYZXTZBZMCM = [ct].DM /*中央专项投资补助名称码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WWJZDJ AS [cu] ON c.WWJZDJM = [cu].DM /*文物建筑等级码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [db] ON d.RZXB = [db].DM /*入住性别*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFKY = [dc].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dd] ON d.AZDSJ = [dd].DM /*安装电视机*/
 GO
 
 --用户住宿记录表
@@ -7944,70 +7976,70 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.JZWH as c_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,c.JZWMC as c_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
       ,c.SYZKM as c_JZWJBSJ_SYZKM--建筑物基本数据类表 使用状况码
-      ,cb.MC as c_JZWJBSJ_SYZKM_MC--使用状况代码表 名称
+      ,[cb].MC as c_JZWJBSJ_SYZKM_MC--使用状况代码表 名称
       ,c.FWCQ as c_JZWJBSJ_FWCQ--建筑物基本数据类表 房屋产权
-      ,cc.MC as c_JZWJBSJ_FWCQ_MC--产权代码表 名称
+      ,[cc].MC as c_JZWJBSJ_FWCQ_MC--产权代码表 名称
       ,c.XQH as c_JZWJBSJ_XQH--建筑物基本数据类表 校区号
       ,c.JZWFLM as c_JZWJBSJ_JZWFLM--建筑物基本数据类表 建筑物分类码
-      ,cd.MC as c_JZWJBSJ_JZWFLM_MC--建筑物分类代码表 名称
+      ,[cd].MC as c_JZWJBSJ_JZWFLM_MC--建筑物分类代码表 名称
       ,c.JZWJGM as c_JZWJBSJ_JZWJGM--建筑物基本数据类表 建筑物结构码
-      ,ce.MC as c_JZWJBSJ_JZWJGM_MC--建筑物结构代码表 名称
+      ,[ce].MC as c_JZWJBSJ_JZWJGM_MC--建筑物结构代码表 名称
       ,c.JZWCS as c_JZWJBSJ_JZWCS--建筑物基本数据类表 建筑物层数
       ,c.JCNY as c_JZWJBSJ_JCNY--建筑物基本数据类表 建成年月
       ,c.JZWTZZE as c_JZWJBSJ_JZWTZZE--建筑物基本数据类表 建筑物投资总额
       ,c.JFLYM as c_JZWJBSJ_JFLYM--建筑物基本数据类表 经费来源码
-      ,cf.MC as c_JZWJBSJ_JFLYM_MC--经费来源代码表 名称
+      ,[cf].MC as c_JZWJBSJ_JFLYM_MC--经费来源代码表 名称
       ,c.ZJZMJ as c_JZWJBSJ_ZJZMJ--建筑物基本数据类表 总建筑面积
       ,c.ZSYMJ as c_JZWJBSJ_ZSYMJ--建筑物基本数据类表 总使用面积
       ,c.KZSFLDM as c_JZWJBSJ_KZSFLDM--建筑物基本数据类表 抗震设防烈度码
-      ,cg.JC as c_JZWJBSJ_KZSFLDM_JC--抗震设防烈度代码 简称
-      ,cg.MC as c_JZWJBSJ_KZSFLDM_MC--抗震设防烈度代码 名称
+      ,[cg].JC as c_JZWJBSJ_KZSFLDM_JC--抗震设防烈度代码 简称
+      ,[cg].MC as c_JZWJBSJ_KZSFLDM_MC--抗震设防烈度代码 名称
       ,c.KZSFBZM as c_JZWJBSJ_KZSFBZM--建筑物基本数据类表 抗震设防标准码
-      ,ch.JC as c_JZWJBSJ_KZSFBZM_JC--抗震设防标准代码 简称
-      ,ch.MC as c_JZWJBSJ_KZSFBZM_MC--抗震设防标准代码 名称
-      ,ch.SM as c_JZWJBSJ_KZSFBZM_SM--抗震设防标准代码 说明
+      ,[ch].JC as c_JZWJBSJ_KZSFBZM_JC--抗震设防标准代码 简称
+      ,[ch].MC as c_JZWJBSJ_KZSFBZM_MC--抗震设防标准代码 名称
+      ,[ch].SM as c_JZWJBSJ_KZSFBZM_SM--抗震设防标准代码 说明
       ,c.JZWDZ as c_JZWJBSJ_JZWDZ--建筑物基本数据类表 建筑物地址
       ,c.JZWZKM as c_JZWJBSJ_JZWZKM--建筑物基本数据类表 建筑物状况码
-      ,ci.MC as c_JZWJBSJ_JZWZKM_MC--建筑物状况代码表 名称
-      ,ci.SM as c_JZWJBSJ_JZWZKM_SM--建筑物状况代码表 说明
+      ,[ci].MC as c_JZWJBSJ_JZWZKM_MC--建筑物状况代码表 名称
+      ,[ci].SM as c_JZWJBSJ_JZWZKM_SM--建筑物状况代码表 说明
       ,c.JZWTP as c_JZWJBSJ_JZWTP--建筑物基本数据类表 建筑物图片
       ,c.JZWPMT as c_JZWJBSJ_JZWPMT--建筑物基本数据类表 建筑物平面图
       ,c.XXDWCCM as c_JZWJBSJ_XXDWCCM--建筑物基本数据类表 学校单位层次码
-      ,cj.MC as c_JZWJBSJ_XXDWCCM_MC--学校单位层次代码表 名称
+      ,[cj].MC as c_JZWJBSJ_XXDWCCM_MC--学校单位层次代码表 名称
       ,c.JZWWZZK as c_JZWJBSJ_JZWWZZK--建筑物基本数据类表 建筑物位置状况
       ,c.GHSPWH as c_JZWJBSJ_GHSPWH--建筑物基本数据类表 规划审批文号
       ,c.ZHFZNL as c_JZWJBSJ_ZHFZNL--建筑物基本数据类表 综合防灾能力
       ,c.GHSYNX as c_JZWJBSJ_GHSYNX--建筑物基本数据类表 规划使用年限
       ,c.SFYYJBXCS as c_JZWJBSJ_SFYYJBXCS--建筑物基本数据类表 是否有预警避险措施
-      ,ck.MC as c_JZWJBSJ_SFYYJBXCS_MC--是否标志代码表 名称
+      ,[ck].MC as c_JZWJBSJ_SFYYJBXCS_MC--是否标志代码表 名称
       ,c.SFKYYYJBNCS as c_JZWJBSJ_SFKYYYJBNCS--建筑物基本数据类表 是否可用于应急避难场所
-      ,cl.MC as c_JZWJBSJ_SFKYYYJBNCS_MC--是否标志代码表 名称
+      ,[cl].MC as c_JZWJBSJ_SFKYYYJBNCS_MC--是否标志代码表 名称
       ,c.CQZH as c_JZWJBSJ_CQZH--建筑物基本数据类表 产权证号
       ,c.JZWYTM as c_JZWJBSJ_JZWYTM--建筑物基本数据类表 建筑物用途码
-      ,cm.MC as c_JZWJBSJ_JZWYTM_MC--建筑物用途代码表 名称
+      ,[cm].MC as c_JZWJBSJ_JZWYTM_MC--建筑物用途代码表 名称
       ,c.JZWZGD as c_JZWJBSJ_JZWZGD--建筑物基本数据类表 建筑物总高度
       ,c.WFJDBM as c_JZWJBSJ_WFJDBM--建筑物基本数据类表 危房鉴定部门
       ,c.WFJDWH as c_JZWJBSJ_WFJDWH--建筑物基本数据类表 危房鉴定文号
       ,c.WFJDRQ as c_JZWJBSJ_WFJDRQ--建筑物基本数据类表 危房鉴定日期
       ,c.GNFSM as c_JZWJBSJ_GNFSM--建筑物基本数据类表 供暖方式码
-      ,cn.MC as c_JZWJBSJ_GNFSM_MC--供暖方式代码表 名称
+      ,[cn].MC as c_JZWJBSJ_GNFSM_MC--供暖方式代码表 名称
       ,c.JZWJCXSM as c_JZWJBSJ_JZWJCXSM--建筑物基本数据类表 建筑物基础形式码
-      ,co.MC as c_JZWJBSJ_JZWJCXSM_MC--建筑物基础形式代码表 名称
+      ,[co].MC as c_JZWJBSJ_JZWJCXSM_MC--建筑物基础形式代码表 名称
       ,c.JZWPMXSM as c_JZWJBSJ_JZWPMXSM--建筑物基本数据类表 建筑物平面形式码
-      ,cp.MC as c_JZWJBSJ_JZWPMXSM_MC--建筑物平面形式代码表 名称
+      ,[cp].MC as c_JZWJBSJ_JZWPMXSM_MC--建筑物平面形式代码表 名称
       ,c.JZWLBXSM as c_JZWJBSJ_JZWLBXSM--建筑物基本数据类表 建筑物楼板形式码
-      ,cq.MC as c_JZWJBSJ_JZWLBXSM_MC--建筑物楼板形式代码表 名称
+      ,[cq].MC as c_JZWJBSJ_JZWLBXSM_MC--建筑物楼板形式代码表 名称
       ,c.SFYGZZ as c_JZWJBSJ_SFYGZZ--建筑物基本数据类表 是否有构造柱
-      ,cr.MC as c_JZWJBSJ_SFYGZZ_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZWJBSJ_SFYGZZ_MC--是否标志代码表 名称
       ,c.QL as c_JZWJBSJ_QL--建筑物基本数据类表 圈梁
-      ,cs.MC as c_JZWJBSJ_QL_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZWJBSJ_QL_MC--是否标志代码表 名称
       ,c.ZJAQGZWCRQ as c_JZWJBSJ_ZJAQGZWCRQ--建筑物基本数据类表 最近安全改造完成日期
       ,c.ZJAQGZHYJSYNX as c_JZWJBSJ_ZJAQGZHYJSYNX--建筑物基本数据类表 最近安全改造后预计使用年限
       ,c.ZXLXM as c_JZWJBSJ_ZXLXM--建筑物基本数据类表 专项类型
       ,c.ZYZXTZBZMCM as c_JZWJBSJ_ZYZXTZBZMCM--建筑物基本数据类表 中央专项投资补助名称码
-      ,ct.MC as c_JZWJBSJ_ZYZXTZBZMCM_MC--中央专项投资补助名称代码表 名称
+      ,[ct].MC as c_JZWJBSJ_ZYZXTZBZMCM_MC--中央专项投资补助名称代码表 名称
       ,c.WWJZDJM as c_JZWJBSJ_WWJZDJM--建筑物基本数据类表 文物建筑等级码
-      ,cu.MC as c_JZWJBSJ_WWJZDJM_MC--文物建筑等级代码表 名称
+      ,[cu].MC as c_JZWJBSJ_WWJZDJM_MC--文物建筑等级代码表 名称
       ,c.JXJFZYF as c_JZWJBSJ_JXJFZYF--建筑物基本数据类表 教学及辅助用房
       ,c.QZJS as c_JZWJBSJ_QZJS--建筑物基本数据类表 其中教室
       ,c.QZSYS as c_JZWJBSJ_QZSYS--建筑物基本数据类表 其中实验室
@@ -8035,13 +8067,13 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
       ,d.FJBM as d_XSSS_FJBM--学生宿舍数据类表 房间编号
       ,d.RZXB as d_XSSS_RZXB--学生宿舍数据类表 入住性别
-      ,db.MC as d_XSSS_RZXB_MC--人的性别代码 名称
+      ,[db].MC as d_XSSS_RZXB_MC--人的性别代码 名称
       ,d.SFKY as d_XSSS_SFKY--学生宿舍数据类表 是否可用
-      ,dc.MC as d_XSSS_SFKY_MC--是否标志代码表 名称
+      ,[dc].MC as d_XSSS_SFKY_MC--是否标志代码表 名称
       ,d.KZRS as d_XSSS_KZRS--学生宿舍数据类表 可住人数
       ,d.WLDK as d_XSSS_WLDK--学生宿舍数据类表 网络端口
       ,d.AZDSJ as d_XSSS_AZDSJ--学生宿舍数据类表 安装电视机
-      ,dd.MC as d_XSSS_AZDSJ_MC--是否标志代码表 名称
+      ,[dd].MC as d_XSSS_AZDSJ_MC--是否标志代码表 名称
       ,d.DHDK as d_XSSS_DHDK--学生宿舍数据类表 电话端口
       ,d.DHHM as d_XSSS_DHHM--学生宿舍数据类表 电话号码
       ,d.SBDS as d_XSSS_SBDS--学生宿舍数据类表 水表底数
@@ -8055,36 +8087,36 @@ SELECT a.[SCHOOLID]--学校ID
       ,e.CWM as e_SSCW_CWM--宿舍床位表 床位名
       ,e.BZ as e_SSCW_BZ--宿舍床位表 备注
       ,e.SFRZ as e_SSCW_SFRZ--宿舍床位表 是否入住
-      ,eb.MC as e_SSCW_SFRZ_MC--是否标志代码表 名称
+      ,[eb].MC as e_SSCW_SFRZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZFC_08_A02_YHZSJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZFC_02_01_JZWJBSJ AS c ON a.SSLID = c.ID /*宿舍楼ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZFC_08_01_XSSS AS d ON a.SSID = d.ID /*宿舍ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZFC_08_A01_SSCW AS e ON a.CWID = e.ID /*床位ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SYZK AS cb ON c.SYZKM = cb.DM /*使用状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_CQ AS cc ON c.FWCQ = cc.DM /*房屋产权*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWFL AS cd ON c.JZWFLM = cd.DM /*建筑物分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWJG AS ce ON c.JZWJGM = ce.DM /*建筑物结构码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JFLY AS cf ON c.JFLYM = cf.DM /*经费来源码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KZSFLD AS cg ON c.KZSFLDM = cg.DM /*抗震设防烈度码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KZSFBZ AS ch ON c.KZSFBZM = ch.DM /*抗震设防标准码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWZK AS ci ON c.JZWZKM = ci.DM /*建筑物状况码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XXDWCC AS cj ON c.XXDWCCM = cj.DM /*学校单位层次码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ck ON c.SFYYJBXCS = ck.DM /*是否有预警避险措施*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cl ON c.SFKYYYJBNCS = cl.DM /*是否可用于应急避难场所*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWYT AS cm ON c.JZWYTM = cm.DM /*建筑物用途码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GNFS AS cn ON c.GNFSM = cn.DM /*供暖方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWJCXS AS co ON c.JZWJCXSM = co.DM /*建筑物基础形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWPMXS AS cp ON c.JZWPMXSM = cp.DM /*建筑物平面形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZWLBXS AS cq ON c.JZWLBXSM = cq.DM /*建筑物楼板形式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFYGZZ = cr.DM /*是否有构造柱*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.QL = cs.DM /*圈梁*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZYZXTZBZMC AS ct ON c.ZYZXTZBZMCM = ct.DM /*中央专项投资补助名称码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_WWJZDJ AS cu ON c.WWJZDJM = cu.DM /*文物建筑等级码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.RZXB = db.DM /*入住性别*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dc ON d.SFKY = dc.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dd ON d.AZDSJ = dd.DM /*安装电视机*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS eb ON e.SFRZ = eb.DM /*是否入住*/
+      dbo.EDU_JY_SYZK AS [cb] ON c.SYZKM = [cb].DM /*使用状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_CQ AS [cc] ON c.FWCQ = [cc].DM /*房屋产权*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWFL AS [cd] ON c.JZWFLM = [cd].DM /*建筑物分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWJG AS [ce] ON c.JZWJGM = [ce].DM /*建筑物结构码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JFLY AS [cf] ON c.JFLYM = [cf].DM /*经费来源码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KZSFLD AS [cg] ON c.KZSFLDM = [cg].DM /*抗震设防烈度码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KZSFBZ AS [ch] ON c.KZSFBZM = [ch].DM /*抗震设防标准码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWZK AS [ci] ON c.JZWZKM = [ci].DM /*建筑物状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XXDWCC AS [cj] ON c.XXDWCCM = [cj].DM /*学校单位层次码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ck] ON c.SFYYJBXCS = [ck].DM /*是否有预警避险措施*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cl] ON c.SFKYYYJBNCS = [cl].DM /*是否可用于应急避难场所*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWYT AS [cm] ON c.JZWYTM = [cm].DM /*建筑物用途码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GNFS AS [cn] ON c.GNFSM = [cn].DM /*供暖方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWJCXS AS [co] ON c.JZWJCXSM = [co].DM /*建筑物基础形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWPMXS AS [cp] ON c.JZWPMXSM = [cp].DM /*建筑物平面形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZWLBXS AS [cq] ON c.JZWLBXSM = [cq].DM /*建筑物楼板形式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFYGZZ = [cr].DM /*是否有构造柱*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.QL = [cs].DM /*圈梁*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZYZXTZBZMC AS [ct] ON c.ZYZXTZBZMCM = [ct].DM /*中央专项投资补助名称码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_WWJZDJ AS [cu] ON c.WWJZDJM = [cu].DM /*文物建筑等级码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [db] ON d.RZXB = [db].DM /*入住性别*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFKY = [dc].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dd] ON d.AZDSJ = [dd].DM /*安装电视机*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [eb] ON e.SFRZ = [eb].DM /*是否入住*/
 GO
 
 --宿舍考核结果表
@@ -8118,13 +8150,13 @@ SELECT a.[ID]--编号
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
       ,d.FJBM as d_XSSS_FJBM--学生宿舍数据类表 房间编号
       ,d.RZXB as d_XSSS_RZXB--学生宿舍数据类表 入住性别
-      ,db.MC as d_XSSS_RZXB_MC--人的性别代码 名称
+      ,[db].MC as d_XSSS_RZXB_MC--人的性别代码 名称
       ,d.SFKY as d_XSSS_SFKY--学生宿舍数据类表 是否可用
-      ,dc.MC as d_XSSS_SFKY_MC--是否标志代码表 名称
+      ,[dc].MC as d_XSSS_SFKY_MC--是否标志代码表 名称
       ,d.KZRS as d_XSSS_KZRS--学生宿舍数据类表 可住人数
       ,d.WLDK as d_XSSS_WLDK--学生宿舍数据类表 网络端口
       ,d.AZDSJ as d_XSSS_AZDSJ--学生宿舍数据类表 安装电视机
-      ,dd.MC as d_XSSS_AZDSJ_MC--是否标志代码表 名称
+      ,[dd].MC as d_XSSS_AZDSJ_MC--是否标志代码表 名称
       ,d.DHDK as d_XSSS_DHDK--学生宿舍数据类表 电话端口
       ,d.DHHM as d_XSSS_DHHM--学生宿舍数据类表 电话号码
       ,d.SBDS as d_XSSS_SBDS--学生宿舍数据类表 水表底数
@@ -8143,60 +8175,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -8210,28 +8242,28 @@ FROM dbo.EDU_ZZFC_10_A02_SSKHJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZFC_08_01_XSSS AS d ON a.QSID = d.ID /*寝室ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZFC_10_A01_SSKHXM AS e ON a.KHXMID = e.ID /*考核项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.TJJSID = f.ID /*添加教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS db ON d.RZXB = db.DM /*入住性别*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dc ON d.SFKY = dc.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dd ON d.AZDSJ = dd.DM /*安装电视机*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_GB_RDXB AS [db] ON d.RZXB = [db].DM /*入住性别*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFKY = [dc].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dd] ON d.AZDSJ = [dd].DM /*安装电视机*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --班主任下寝室表
@@ -8250,60 +8282,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -8330,25 +8362,25 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZFC_10_A03_BZRXQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.BZRID = c.ID /*班主任ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS d ON a.BJID = d.XZBDM /*班级ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --月度考核评比表
@@ -8365,7 +8397,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -8389,13 +8421,13 @@ SELECT a.[ID]--编号
       ,e.SSLBM as e_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
       ,e.FJBM as e_XSSS_FJBM--学生宿舍数据类表 房间编号
       ,e.RZXB as e_XSSS_RZXB--学生宿舍数据类表 入住性别
-      ,eb.MC as e_XSSS_RZXB_MC--人的性别代码 名称
+      ,[eb].MC as e_XSSS_RZXB_MC--人的性别代码 名称
       ,e.SFKY as e_XSSS_SFKY--学生宿舍数据类表 是否可用
-      ,ec.MC as e_XSSS_SFKY_MC--是否标志代码表 名称
+      ,[ec].MC as e_XSSS_SFKY_MC--是否标志代码表 名称
       ,e.KZRS as e_XSSS_KZRS--学生宿舍数据类表 可住人数
       ,e.WLDK as e_XSSS_WLDK--学生宿舍数据类表 网络端口
       ,e.AZDSJ as e_XSSS_AZDSJ--学生宿舍数据类表 安装电视机
-      ,ed.MC as e_XSSS_AZDSJ_MC--是否标志代码表 名称
+      ,[ed].MC as e_XSSS_AZDSJ_MC--是否标志代码表 名称
       ,e.DHDK as e_XSSS_DHDK--学生宿舍数据类表 电话端口
       ,e.DHHM as e_XSSS_DHHM--学生宿舍数据类表 电话号码
       ,e.SBDS as e_XSSS_SBDS--学生宿舍数据类表 水表底数
@@ -8410,60 +8442,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -8477,29 +8509,29 @@ FROM dbo.EDU_ZZFC_10_A04_YDKHPB AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS d ON a.BJID = d.XZBDM /*班级ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZFC_08_01_XSSS AS e ON a.QSID = e.ID /*寝室ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.TJJSID = f.ID /*添加教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS eb ON e.RZXB = eb.DM /*入住性别*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ec ON e.SFKY = ec.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ed ON e.AZDSJ = ed.DM /*安装电视机*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [eb] ON e.RZXB = [eb].DM /*入住性别*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ec] ON e.SFKY = [ec].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ed] ON e.AZDSJ = [ed].DM /*安装电视机*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --教职工基本数据子类表
@@ -8614,60 +8646,60 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.XMPY as b_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,b.CYM as b_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,b.SFZJLXM as b_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,bb.MC as b_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,b.CSRQ as b_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,b.XBM as b_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,bc.MC as b_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,b.MZM as b_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,bd.MZMC as b_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bd.ZMDM as b_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bd].MZMC as b_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bd].ZMDM as b_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.XXM as b_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,be.MC as b_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,be.JC as b_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[be].MC as b_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[be].JC as b_JZGJBSJ_XXM_JC--血型代码表 简称
       ,b.JKZKM as b_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,bf.MC as b_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,bf.SM as b_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bf].MC as b_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bf].SM as b_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,b.HYZTM as b_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,bg.MC as b_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,b.ZZMMM as b_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,bh.MC as b_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,bh.JC as b_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[bh].MC as b_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[bh].JC as b_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,b.GATQWM as b_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,bi.MC as b_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JG as b_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,b.GJDQM as b_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,bj.GJDQMCJC as b_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bj.EZMDM as b_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bj.SZMDM as b_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bj].GJDQMCJC as b_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bj].EZMDM as b_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bj].SZMDM as b_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.CSDXZQHM as b_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,bk.MC as b_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bk].MC as b_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.XYZJM as b_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,bl.MC as b_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[bl].MC as b_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,b.JZGHKSZDXZQHM as b_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,bm.MC as b_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bm].MC as b_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,bn.MC as b_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[bn].MC as b_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,b.DQZZ as b_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,b.DQZZYZBM as b_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,b.CJGZNY as b_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,b.CJNY as b_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,b.LXNY as b_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,b.BZLBM as b_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,bo.MC as b_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[bo].MC as b_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,b.JZGLBM as b_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,bp.MC as b_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,bp.SM as b_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[bp].MC as b_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[bp].SM as b_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,b.GWLBM as b_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,bq.MC as b_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[bq].MC as b_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,b.SFJZJS as b_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,br.MC as b_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[br].MC as b_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,b.SFSSXJS as b_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,bs.MC as b_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[bs].MC as b_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,b.ZP as b_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,b.DQZTM as b_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,bt.MC as b_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[bt].MC as b_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,b.YDDH as b_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,b.GDDH as b_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,b.TXDZYZBM as b_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -8678,25 +8710,25 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
 
 FROM dbo.EDU_ZZJG_01_A01_JZGKZ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS b ON a.JZGJBSJID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bd ON b.MZM = bd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS be ON b.XXM = be.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bf ON b.JKZKM = bf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZTM = bg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bh ON b.ZZMMM = bh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bj ON b.GJDQM = bj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bk ON b.CSDXZQHM = bk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bl ON b.XYZJM = bl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bm ON b.JZGHKSZDXZQHM = bm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bn ON b.HKLBM = bn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS bo ON b.BZLBM = bo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS bp ON b.JZGLBM = bp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS bq ON b.GWLBM = bq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS br ON b.SFJZJS = br.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bs ON b.SFSSXJS = bs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS bt ON b.DQZTM = bt.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bd] ON b.MZM = [bd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [be] ON b.XXM = [be].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bf] ON b.JKZKM = [bf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZTM = [bg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bh] ON b.ZZMMM = [bh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bj] ON b.GJDQM = [bj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bk] ON b.CSDXZQHM = [bk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bl] ON b.XYZJM = [bl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bm] ON b.JZGHKSZDXZQHM = [bm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bn] ON b.HKLBM = [bn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [bo] ON b.BZLBM = [bo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [bp] ON b.JZGLBM = [bp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [bq] ON b.GWLBM = [bq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [br] ON b.SFJZJS = [br].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bs] ON b.SFSSXJS = [bs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [bt] ON b.DQZTM = [bt].DM /*当前状态码*/
 GO
 
 --校内岗位数据子类表
@@ -8723,60 +8755,60 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,d.CYM as d_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,d.SFZJLXM as d_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,db.MC as d_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,d.CSRQ as d_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,d.XBM as d_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,dc.MC as d_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,d.MZM as d_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,dd.MZMC as d_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,dd.ZMDM as d_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[dd].MZMC as d_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[dd].ZMDM as d_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.XXM as d_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,de.MC as d_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,de.JC as d_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[de].MC as d_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[de].JC as d_JZGJBSJ_XXM_JC--血型代码表 简称
       ,d.JKZKM as d_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,df.MC as d_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,df.SM as d_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[df].MC as d_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[df].SM as d_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,d.HYZTM as d_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,dg.MC as d_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,d.ZZMMM as d_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,dh.MC as d_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,dh.JC as d_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[dh].MC as d_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[dh].JC as d_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,d.GATQWM as d_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,di.MC as d_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JG as d_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,d.GJDQM as d_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,dj.GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,dj.EZMDM as d_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,dj.SZMDM as d_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[dj].GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[dj].EZMDM as d_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[dj].SZMDM as d_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.CSDXZQHM as d_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,dk.MC as d_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dk].MC as d_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.XYZJM as d_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,dl.MC as d_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[dl].MC as d_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,d.JZGHKSZDXZQHM as d_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,dm.MC as d_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dm].MC as d_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,dn.MC as d_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[dn].MC as d_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,d.DQZZ as d_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,d.DQZZYZBM as d_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,d.CJGZNY as d_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,d.CJNY as d_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,d.LXNY as d_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,d.BZLBM as d_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,do.MC as d_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[do].MC as d_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,d.JZGLBM as d_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,dp.MC as d_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,dp.SM as d_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[dp].MC as d_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[dp].SM as d_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,d.GWLBM as d_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,dq.MC as d_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[dq].MC as d_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,d.SFJZJS as d_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,dr.MC as d_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[dr].MC as d_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,d.SFSSXJS as d_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,ds.MC as d_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[ds].MC as d_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,d.ZP as d_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,d.DQZTM as d_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,dt.MC as d_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[dt].MC as d_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,d.YDDH as d_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,d.GDDH as d_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,d.TXDZYZBM as d_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -8794,9 +8826,9 @@ SELECT a.[ID]--编号
       ,f.LSSJJGH as f_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,f.LSXQH as f_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,f.JGYXBS as f_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,fb.MC as f_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[fb].MC as f_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,f.SFST as f_XNJG_SFST--校内机构数据类表 是否实体
-      ,fc.MC as f_XNJG_SFST_MC--是否标志代码表 名称
+      ,[fc].MC as f_XNJG_SFST_MC--是否标志代码表 名称
       ,f.JLNY as f_XNJG_JLNY--校内机构数据类表 建立年月
       ,f.JGYZBM as f_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,f.FZRH as f_XNJG_FZRH--校内机构数据类表 负责人号
@@ -8806,27 +8838,27 @@ FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS dd ON d.MZM = dd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS de ON d.XXM = de.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS df ON d.JKZKM = df.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZTM = dg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dh ON d.ZZMMM = dh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS dj ON d.GJDQM = dj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dk ON d.CSDXZQHM = dk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dl ON d.XYZJM = dl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dm ON d.JZGHKSZDXZQHM = dm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dn ON d.HKLBM = dn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS do ON d.BZLBM = do.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS dp ON d.JZGLBM = dp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS dq ON d.GWLBM = dq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dr ON d.SFJZJS = dr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ds ON d.SFSSXJS = ds.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS dt ON d.DQZTM = dt.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fb ON f.JGYXBS = fb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fc ON f.SFST = fc.DM /*是否实体*/
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [de] ON d.XXM = [de].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [df] ON d.JKZKM = [df].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZTM = [dg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dh] ON d.ZZMMM = [dh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [dj] ON d.GJDQM = [dj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dk] ON d.CSDXZQHM = [dk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dl] ON d.XYZJM = [dl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dm] ON d.JZGHKSZDXZQHM = [dm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dn] ON d.HKLBM = [dn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [do] ON d.BZLBM = [do].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [dp] ON d.JZGLBM = [dp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [dq] ON d.GWLBM = [dq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dr] ON d.SFJZJS = [dr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ds] ON d.SFSSXJS = [ds].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [dt] ON d.DQZTM = [dt].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fb] ON f.JGYXBS = [fb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fc] ON f.SFST = [fc].DM /*是否实体*/
 GO
 
 --加班登记表
@@ -8845,60 +8877,60 @@ SELECT a.[ID]--加班登记表ID
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -8911,25 +8943,25 @@ SELECT a.[ID]--加班登记表ID
 FROM dbo.EDU_ZZJG_04_A01_JBDJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_JBLX AS d ON a.JBLX = d.DM /*加班类型*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --教职工专业能力与资格证书数据类表
@@ -8950,60 +8982,60 @@ SELECT a.[SCHOOLID]--学校名
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -9016,25 +9048,25 @@ SELECT a.[SCHOOLID]--学校名
 FROM dbo.EDU_ZZJG_07_01_JZGZYNL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS d ON a.SFSZYZGZS = d.DM /*是否是职业资格证书*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --考评选项表
@@ -9073,7 +9105,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -9081,7 +9113,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJG_11_A04_KPSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO
 
 --考评内容数据表
@@ -9112,14 +9144,14 @@ SELECT a.[ID]--编号
       ,c.KPNRMC as c_KPNRSJ_KPNRMC--考评内容数据表 考评内容名称
       ,c.KPNRLX as c_KPNRSJ_KPNRLX--考评内容数据表 考评内容类型
       ,c.KPZTID as c_KPNRSJ_KPZTID--考评内容数据表 考评主体ID
-      ,cb.MC as c_KPNRSJ_KPZTID_MC--考评主体代码 名称
+      ,[cb].MC as c_KPNRSJ_KPZTID_MC--考评主体代码 名称
       ,d.SCHOOLID as d_KPFS_SCHOOLID--考评方式表 学校
       ,d.KPFSMC as d_KPFS_KPFSMC--考评方式表 考评方式名称
 
 FROM dbo.EDU_ZZJG_11_A06_KPNRXM AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_11_A05_KPNRSJ AS c ON a.KPNRID = c.ID /*考评内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_11_A03_KPFS AS d ON a.KPFSID = d.ID /*考评方式ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_KPZT AS cb ON c.KPZTID = cb.DM /*考评主体ID*/
+      dbo.EDU_ZJ_KPZT AS [cb] ON c.KPZTID = [cb].DM /*考评主体ID*/
 GO
 
 --考评包含内容表
@@ -9143,12 +9175,12 @@ SELECT a.[ID]--编号
       ,d.KPNRMC as d_KPNRSJ_KPNRMC--考评内容数据表 考评内容名称
       ,d.KPNRLX as d_KPNRSJ_KPNRLX--考评内容数据表 考评内容类型
       ,d.KPZTID as d_KPNRSJ_KPZTID--考评内容数据表 考评主体ID
-      ,db.MC as d_KPNRSJ_KPZTID_MC--考评主体代码 名称
+      ,[db].MC as d_KPNRSJ_KPZTID_MC--考评主体代码 名称
 
 FROM dbo.EDU_ZZJG_11_A07_KPBHNR AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_11_A04_KPSJ AS c ON a.KPID = c.ID /*考评ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_11_A05_KPNRSJ AS d ON a.KPNRID = d.ID /*考评内容ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_KPZT AS db ON d.KPZTID = db.DM /*考评主体ID*/
+      dbo.EDU_ZJ_KPZT AS [db] ON d.KPZTID = [db].DM /*考评主体ID*/
 GO
 
 --考评人员表
@@ -9224,60 +9256,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -9291,25 +9323,25 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJG_12_A02_XC AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教工基本信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_12_A01_XCLX AS d ON a.XCLXID = d.ID /*薪酬类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --课时表
@@ -9330,60 +9362,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -9397,25 +9429,25 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJG_13_A02_KS AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教工基本信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_13_A01_KSLX AS d ON a.KSLXID = d.ID /*课时类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --备课表
@@ -9436,60 +9468,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -9503,25 +9535,25 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJG_14_A02_BK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教工基本信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_14_A01_BKLX AS d ON a.BKLXID = d.ID /*备课类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --作业批改表
@@ -9542,60 +9574,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -9609,25 +9641,25 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJG_15_A02_ZYPG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教工基本信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_15_A01_ZYPGLX AS d ON a.PGLXID = d.ID /*批改类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/
 GO
 
 --专业基本信息数据表
@@ -9648,7 +9680,7 @@ SELECT a.[ZYBH]--专业编号
       ,a.[SSZYML]--所属专业目录
       ,a.[ZYLB]--专业类别名称
       ,c.ZYMLLB as c_ZJZY_ZYMLLB--自建专业代码 专业目录类别
-      ,cb.MC as c_ZJZY_ZYMLLB_MC--专业目录代码 名称
+      ,[cb].MC as c_ZJZY_ZYMLLB_MC--专业目录代码 名称
       ,c.MC as c_ZJZY_MC--自建专业代码 名称
       ,d.SCHOOLID as d_XNJG_SCHOOLID--校内机构数据类表 学校名
       ,d.JGMC as d_XNJG_JGMC--校内机构数据类表 机构名称
@@ -9659,9 +9691,9 @@ SELECT a.[ZYBH]--专业编号
       ,d.LSSJJGH as d_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,d.LSXQH as d_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,d.JGYXBS as d_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,db.MC as d_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[db].MC as d_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,d.SFST as d_XNJG_SFST--校内机构数据类表 是否实体
-      ,dc.MC as d_XNJG_SFST_MC--是否标志代码表 名称
+      ,[dc].MC as d_XNJG_SFST_MC--是否标志代码表 名称
       ,d.JLNY as d_XNJG_JLNY--校内机构数据类表 建立年月
       ,d.JGYZBM as d_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,d.FZRH as d_XNJG_FZRH--校内机构数据类表 负责人号
@@ -9671,9 +9703,9 @@ FROM dbo.EDU_ZZJX_01_01_ZYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS c ON a.ZYDM = c.DM /*专业代码*/ AND a.SSZYML = c.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS d ON a.KSJGH = d.JGH /*开设机构号*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS e ON a.SSZYML = e.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS cb ON c.ZYMLLB = cb.DM /*专业目录类别*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS db ON d.JGYXBS = db.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dc ON d.SFST = dc.DM /*是否实体*/
+      dbo.EDU_ZJ_ZYML AS [cb] ON c.ZYMLLB = [cb].DM /*专业目录类别*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [db] ON d.JGYXBS = [db].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFST = [dc].DM /*是否实体*/
 GO
 
 --课程评价表
@@ -9734,9 +9766,9 @@ SELECT a.[KCH]--课程号
       ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,cb.MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[cb].MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
-      ,cc.MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,[cc].MC as c_XNJG_SFST_MC--是否标志代码表 名称
       ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
       ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
@@ -9747,8 +9779,8 @@ FROM dbo.EDU_ZZJX_01_02_KC AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS c ON a.KKDW = c.JGH /*开课单位*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_KSXS AS d ON a.KSXS = d.DM /*考试形式*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS e ON a.SKFSM = e.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.JGYXBS = cb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.JGYXBS = [cb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFST = [cc].DM /*是否实体*/
 GO
 
 --教师任课表
@@ -9774,60 +9806,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -9848,14 +9880,14 @@ SELECT a.[ID]--编号
       ,d.CKSM as d_KC_CKSM--课程数据子类表 参考书目
       ,d.KKDW as d_KC_KKDW--课程数据子类表 开课单位
       ,d.KSXS as d_KC_KSXS--课程数据子类表 考试形式
-      ,db.MC as d_KC_KSXS_MC--考试形式代码表 名称
+      ,[db].MC as d_KC_KSXS_MC--考试形式代码表 名称
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
-      ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dc].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
-      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -9867,12 +9899,12 @@ SELECT a.[ID]--编号
       ,f.KCMC as f_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,f.YXKC as f_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,f.SFHXKC as f_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,fb.MC as f_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[fb].MC as f_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
       ,f.KCFLM as f_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
-      ,fc.MC as f_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,[fc].MC as f_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,f.KCSXM as f_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
-      ,fd.MC as f_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
-      ,fd.SM as f_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,[fd].MC as f_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,[fd].SM as f_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
       ,f.ZXXQ as f_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
       ,f.ZKS as f_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,f.LLKS as f_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
@@ -9881,8 +9913,8 @@ SELECT a.[ID]--编号
       ,g.MC as g_SFBZ_MC--是否标志代码表 名称
       ,h.SCHOOLID as h_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,h.ZYDM as h_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,hb.ZYMLLB as h_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,hb.MC as h_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[hb].ZYMLLB as h_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[hb].MC as h_ZYXX_ZYDM_MC--自建专业代码 名称
       ,h.ZYMC as h_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,h.ZYYWMC as h_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,h.XZ as h_ZYXX_XZ--专业基本信息数据表 学制
@@ -9893,13 +9925,13 @@ SELECT a.[ID]--编号
       ,h.KSJGH as h_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,h.ZXF as h_ZYXX_ZXF--专业基本信息数据表 总学分
       ,h.SSZYML as h_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,hc.MC as h_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[hc].MC as h_ZYXX_SSZYML_MC--专业目录代码 名称
       ,h.ZYLB as h_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
       ,i.NJZT as i_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,ib.MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[ib].MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,j.SCHOOLID as j_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,j.ZYXXID as j_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,j.ZZNJID as j_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -9925,34 +9957,34 @@ FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS h ON a.ZYXXID = h.ZYBH /*专业ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS i ON a.NJID = i.NJDM /*年级ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS j ON a.BJID = j.XZBDM /*班级ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS fb ON f.SFHXKC = fb.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_KCFL AS fc ON f.KCFLM = fc.DM /*课程分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KCSX AS fd ON f.KCSXM = fd.DM /*课程属性码*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS hb ON h.ZYDM = hb.DM /*专业代码*/ AND h.SSZYML = hb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS hc ON h.SSZYML = hc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ib ON i.NJZT = ib.DM /*年级状态*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [db] ON d.KSXS = [db].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dc] ON d.SKFSM = [dc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [fb] ON f.SFHXKC = [fb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS [fc] ON f.KCFLM = [fc].DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS [fd] ON f.KCSXM = [fd].DM /*课程属性码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [hb] ON h.ZYDM = [hb].DM /*专业代码*/ AND h.SSZYML = [hb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [hc] ON h.SSZYML = [hc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ib] ON i.NJZT = [ib].DM /*年级状态*/
 GO
 
 --学校年级数据表
@@ -9990,8 +10022,8 @@ SELECT a.[XZBDM]--行政班代码
       ,a.[BZRID]--班主任ID
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,cb.MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[cb].MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
       ,c.ZYMC as c_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,c.XZ as c_ZYXX_XZ--专业基本信息数据表 学制
@@ -10002,13 +10034,13 @@ SELECT a.[XZBDM]--行政班代码
       ,c.KSJGH as c_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,c.ZXF as c_ZYXX_ZXF--专业基本信息数据表 总学分
       ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,cc.MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
       ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,d.SCHOOLID as d_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,d.NJMC as d_ZZNJ_NJMC--学校年级数据表 年级名称
       ,d.SSNF as d_ZZNJ_SSNF--学校年级数据表 所属年份
       ,d.NJZT as d_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,db.MC as d_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[db].MC as d_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,e.SCHOOLID as e_XNJG_SCHOOLID--校内机构数据类表 学校名
       ,e.JGMC as e_XNJG_JGMC--校内机构数据类表 机构名称
       ,e.JGYWMC as e_XNJG_JGYWMC--校内机构数据类表 机构英文名称
@@ -10018,9 +10050,9 @@ SELECT a.[XZBDM]--行政班代码
       ,e.LSSJJGH as e_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,e.LSXQH as e_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,e.JGYXBS as e_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,eb.MC as e_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[eb].MC as e_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,e.SFST as e_XNJG_SFST--校内机构数据类表 是否实体
-      ,ec.MC as e_XNJG_SFST_MC--是否标志代码表 名称
+      ,[ec].MC as e_XNJG_SFST_MC--是否标志代码表 名称
       ,e.JLNY as e_XNJG_JLNY--校内机构数据类表 建立年月
       ,e.JGYZBM as e_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,e.FZRH as e_XNJG_FZRH--校内机构数据类表 负责人号
@@ -10031,60 +10063,60 @@ SELECT a.[XZBDM]--行政班代码
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -10098,30 +10130,30 @@ FROM dbo.EDU_ZZJX_02_02_ZZBJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS d ON a.ZZNJID = d.NJDM /*学校年级数据表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS e ON a.JGH = e.JGH /*机构号*/ AND a.SCHOOLID = e.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.BZRID = f.ID /*班主任ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS cc ON c.SSZYML = cc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS db ON d.NJZT = db.DM /*年级状态*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS eb ON e.JGYXBS = eb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ec ON e.SFST = ec.DM /*是否实体*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_ZJ_ZJZY AS [cb] ON c.ZYDM = [cb].DM /*专业代码*/ AND c.SSZYML = [cb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [cc] ON c.SSZYML = [cc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [db] ON d.NJZT = [db].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [eb] ON e.JGYXBS = [eb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ec] ON e.SFST = [ec].DM /*是否实体*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --总体教学计划数据子类表
@@ -10144,11 +10176,11 @@ SELECT a.[ID]--编号
       ,c.NJMC as c_ZZNJ_NJMC--学校年级数据表 年级名称
       ,c.SSNF as c_ZZNJ_SSNF--学校年级数据表 所属年份
       ,c.NJZT as c_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,cb.MC as c_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[cb].MC as c_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,db.ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,db.MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
       ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
@@ -10159,7 +10191,7 @@ SELECT a.[ID]--编号
       ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,dc.MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
@@ -10167,9 +10199,9 @@ FROM dbo.EDU_ZZJX_03_01_ZTJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS c ON a.JHNJ = c.NJDM /*计划年级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFKY = e.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.NJZT = cb.DM /*年级状态*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS dc ON d.SSZYML = dc.DM /*所属专业目录*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.NJZT = [cb].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/
 GO
 
 --学期学分管理表
@@ -10192,13 +10224,13 @@ SELECT a.[ID]--编号
       ,c.SYXZ as c_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
       ,c.PYMB as c_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
       ,c.SFKY as c_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,cb.MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
+      ,[cb].MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
       ,c.FJ as c_ZTJXJH_FJ--总体教学计划数据子类表 附件
       ,c.ZYRS as c_ZTJXJH_ZYRS--总体教学计划数据子类表 专业人数
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -10206,8 +10238,8 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJX_03_A01_XQXFGL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS c ON a.JXJHID = c.ID /*教学计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.SFKY = cb.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFKY = [cb].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO
 
 --教学计划分类学分要求数据子类
@@ -10229,14 +10261,14 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SYXZ as d_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
       ,d.PYMB as d_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
       ,d.SFKY as d_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,db.MC as d_ZTJXJH_SFKY_MC--是否标志代码表 名称
+      ,[db].MC as d_ZTJXJH_SFKY_MC--是否标志代码表 名称
       ,d.FJ as d_ZTJXJH_FJ--总体教学计划数据子类表 附件
       ,d.ZYRS as d_ZTJXJH_ZYRS--总体教学计划数据子类表 专业人数
 
 FROM dbo.EDU_ZZJX_03_02_JXJHFLXFYQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS c ON a.KCFLM = c.DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS d ON a.JXJHID = d.ID /*教学计划ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS db ON d.SFKY = db.DM /*是否可用*/
+      dbo.EDU_JY_SFBZ AS [db] ON d.SFKY = [db].DM /*是否可用*/
 GO
 
 --教学计划课程清单数据子类表
@@ -10268,7 +10300,7 @@ SELECT a.[ID]--编号
       ,c.SYXZ as c_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
       ,c.PYMB as c_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
       ,c.SFKY as c_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,cb.MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
+      ,[cb].MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
       ,c.FJ as c_ZTJXJH_FJ--总体教学计划数据子类表 附件
       ,c.ZYRS as c_ZTJXJH_ZYRS--总体教学计划数据子类表 专业人数
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
@@ -10284,14 +10316,14 @@ SELECT a.[ID]--编号
       ,d.CKSM as d_KC_CKSM--课程数据子类表 参考书目
       ,d.KKDW as d_KC_KKDW--课程数据子类表 开课单位
       ,d.KSXS as d_KC_KSXS--课程数据子类表 考试形式
-      ,db.MC as d_KC_KSXS_MC--考试形式代码表 名称
+      ,[db].MC as d_KC_KSXS_MC--考试形式代码表 名称
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
-      ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dc].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
-      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -10307,10 +10339,942 @@ FROM dbo.EDU_ZZJX_03_03_JXJHKCQD AS a LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS f ON a.SFHXKC = f.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS g ON a.KCFLM = g.DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KCSX AS h ON a.KCSXM = h.DM /*课程属性码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.SFKY = cb.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFKY = [cb].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [db] ON d.KSXS = [db].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dc] ON d.SKFSM = [dc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/
+GO
+
+--教材基本信息表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_01_JCJBXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JCDM]--教材代码
+      ,a.[JCMC]--教材名称
+      ,a.[CBH]--出版号
+      ,a.[DYZZ]--第一作者
+      ,a.[QTZZ]--其他作者
+      ,a.[BC]--版次
+      ,a.[YC]--印次
+      ,a.[JG]--价格
+      ,a.[CBS]--出版社
+      ,a.[CBRQ]--出版日期
+      ,a.[SFYLXC]--是否有练习册
+      ,a.[SFYJCJF]--是否有教参教辅
+      ,a.[NRJJ]--内容简介
+      ,a.[DQZT]--当前状态
+      ,a.[ZDKC]--最低库存
+      ,a.[DQKC]--当前库存
+      ,c.MC as c_SFBZ_MC--是否标志代码表 名称
+      ,d.MC as d_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_ZZJX_04_01_JCJBXX AS a LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS c ON a.SFYLXC = c.DM /*是否有练习册*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS d ON a.SFYJCJF = d.DM /*是否有教参教辅*/
+GO
+
+--教材选用信息表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_02_JCXYXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZYXXID]--专业ID
+      ,a.[NJID]--年级ID
+      ,a.[KCID]--课程ID
+      ,a.[JCID]--教材ID
+      ,a.[XYSL]--选用数量
+      ,a.[SQRID]--申请人ID
+      ,a.[SQSJ]--申请时间
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHSJ]--审核时间
+      ,a.[SFRK]--是否入库
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
+      ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
+      ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
+      ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
+      ,d.ZYFXMC as d_ZYXX_ZYFXMC--专业基本信息数据表 专业方向名称
+      ,d.ZYJC as d_ZYXX_ZYJC--专业基本信息数据表 专业简称
+      ,d.JLNY as d_ZYXX_JLNY--专业基本信息数据表 建立年月
+      ,d.ZYJSS as d_ZYXX_ZYJSS--专业基本信息数据表 专业教师数
+      ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
+      ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
+      ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.SCHOOLID as e_ZZNJ_SCHOOLID--学校年级数据表 学校名
+      ,e.NJMC as e_ZZNJ_NJMC--学校年级数据表 年级名称
+      ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
+      ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
+      ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.SCHOOLID as f_KC_SCHOOLID--课程数据子类表 学校ID
+      ,f.KCMC as f_KC_KCMC--课程数据子类表 课程名称
+      ,f.KCYWM as f_KC_KCYWM--课程数据子类表 课程英文名
+      ,f.KCBM as f_KC_KCBM--课程数据子类表 课程别名
+      ,f.KCJS as f_KC_KCJS--课程数据子类表 课程介绍
+      ,f.XF as f_KC_XF--课程数据子类表 学分
+      ,f.ZXS as f_KC_ZXS--课程数据子类表 总学时
+      ,f.LLXS as f_KC_LLXS--课程数据子类表 理论学时
+      ,f.SJXS as f_KC_SJXS--课程数据子类表 实践学时
+      ,f.QTXS as f_KC_QTXS--课程数据子类表 其他学时
+      ,f.CKSM as f_KC_CKSM--课程数据子类表 参考书目
+      ,f.KKDW as f_KC_KKDW--课程数据子类表 开课单位
+      ,f.KSXS as f_KC_KSXS--课程数据子类表 考试形式
+      ,[fb].MC as f_KC_KSXS_MC--考试形式代码表 名称
+      ,f.SKFSM as f_KC_SKFSM--课程数据子类表 授课方式码
+      ,[fc].MC as f_KC_SKFSM_MC--授课方式代码表 名称
+      ,f.KCFY as f_KC_KCFY--课程数据子类表 课程费用
+      ,g.SCHOOLID as g_JCJBXX_SCHOOLID--教材基本信息表 学校ID
+      ,g.JCDM as g_JCJBXX_JCDM--教材基本信息表 教材代码
+      ,g.JCMC as g_JCJBXX_JCMC--教材基本信息表 教材名称
+      ,g.CBH as g_JCJBXX_CBH--教材基本信息表 出版号
+      ,g.DYZZ as g_JCJBXX_DYZZ--教材基本信息表 第一作者
+      ,g.QTZZ as g_JCJBXX_QTZZ--教材基本信息表 其他作者
+      ,g.BC as g_JCJBXX_BC--教材基本信息表 版次
+      ,g.YC as g_JCJBXX_YC--教材基本信息表 印次
+      ,g.JG as g_JCJBXX_JG--教材基本信息表 价格
+      ,g.CBS as g_JCJBXX_CBS--教材基本信息表 出版社
+      ,g.CBRQ as g_JCJBXX_CBRQ--教材基本信息表 出版日期
+      ,g.SFYLXC as g_JCJBXX_SFYLXC--教材基本信息表 是否有练习册
+      ,[gb].MC as g_JCJBXX_SFYLXC_MC--是否标志代码表 名称
+      ,g.SFYJCJF as g_JCJBXX_SFYJCJF--教材基本信息表 是否有教参教辅
+      ,[gc].MC as g_JCJBXX_SFYJCJF_MC--是否标志代码表 名称
+      ,g.NRJJ as g_JCJBXX_NRJJ--教材基本信息表 内容简介
+      ,g.DQZT as g_JCJBXX_DQZT--教材基本信息表 当前状态
+      ,g.ZDKC as g_JCJBXX_ZDKC--教材基本信息表 最低库存
+      ,g.DQKC as g_JCJBXX_DQKC--教材基本信息表 当前库存
+      ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,h.XM as h_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,h.YWXM as h_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,h.XMPY as h_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,h.CYM as h_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,h.SFZJLXM as h_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[hb].MC as h_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,h.SFZJH as h_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,h.CSRQ as h_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,h.XBM as h_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[hc].MC as h_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,h.MZM as h_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[hd].MZMC as h_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[hd].ZMDM as h_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,h.XXM as h_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[he].MC as h_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[he].JC as h_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,h.JKZKM as h_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[hf].MC as h_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[hf].SM as h_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,h.HYZTM as h_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[hg].MC as h_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,h.ZZMMM as h_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[hh].MC as h_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[hh].JC as h_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,h.GATQWM as h_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[hi].MC as h_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[hi].SM as h_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,h.JG as h_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,h.GJDQM as h_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[hj].GJDQMCJC as h_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[hj].EZMDM as h_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[hj].SZMDM as h_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,h.CSDXZQHM as h_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[hk].MC as h_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,h.XYZJM as h_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[hl].MC as h_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,h.JZGHKSZDXZQHM as h_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[hm].MC as h_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,h.HKLBM as h_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[hn].MC as h_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,h.DQZZ as h_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,h.DQZZYZBM as h_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,h.CJGZNY as h_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,h.CJNY as h_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,h.LXNY as h_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,h.BZLBM as h_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[ho].MC as h_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,h.JZGLBM as h_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[hp].MC as h_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[hp].SM as h_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,h.GWLBM as h_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[hq].MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,h.SFJZJS as h_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[hr].MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,h.SFSSXJS as h_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[hs].MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,h.ZP as h_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,h.DQZTM as h_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[ht].MC as h_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,h.YDDH as h_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,h.GDDH as h_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,h.TXDZYZBM as h_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,h.TXDZ as h_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,h.DZXX as h_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,i.GH as i_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,i.XM as i_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,i.YWXM as i_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,i.XMPY as i_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,i.CYM as i_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,i.SFZJLXM as i_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[ib].MC as i_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,i.SFZJH as i_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,i.CSRQ as i_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,i.XBM as i_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[ic].MC as i_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,i.MZM as i_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[id].MZMC as i_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[id].ZMDM as i_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,i.XXM as i_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[ie].MC as i_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ie].JC as i_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,i.JKZKM as i_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[if].MC as i_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[if].SM as i_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,i.HYZTM as i_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[ig].MC as i_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,i.ZZMMM as i_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[ih].MC as i_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ih].JC as i_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,i.GATQWM as i_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[ii].MC as i_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ii].SM as i_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,i.JG as i_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,i.GJDQM as i_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[ij].GJDQMCJC as i_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ij].EZMDM as i_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ij].SZMDM as i_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,i.CSDXZQHM as i_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[ik].MC as i_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,i.XYZJM as i_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[il].MC as i_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,i.JZGHKSZDXZQHM as i_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[im].MC as i_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,i.HKLBM as i_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[in].MC as i_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,i.DQZZ as i_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,i.DQZZYZBM as i_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,i.CJGZNY as i_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,i.CJNY as i_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,i.LXNY as i_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,i.BZLBM as i_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[io].MC as i_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,i.JZGLBM as i_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[ip].MC as i_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ip].SM as i_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,i.GWLBM as i_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[iq].MC as i_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,i.SFJZJS as i_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[ir].MC as i_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,i.SFSSXJS as i_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[is].MC as i_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,i.ZP as i_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,i.DQZTM as i_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[it].MC as i_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,i.YDDH as i_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,i.GDDH as i_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,i.TXDZYZBM as i_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,i.TXDZ as i_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,i.DZXX as i_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,i.WLDZ as i_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,j.MC as j_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_ZZJX_04_02_JCXYXX AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_01_ZZNJ AS e ON a.NJID = e.NJDM /*年级ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_02_KC AS f ON a.KCID = f.KCH /*课程ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_04_01_JCJBXX AS g ON a.JCID = g.ID /*教材ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.SQRID = h.ID /*申请人ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS i ON a.SHRID = i.ID /*审核人ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS j ON a.SFRK = j.DM /*是否入库*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [eb] ON e.NJZT = [eb].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [fb] ON f.KSXS = [fb].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [fc] ON f.SKFSM = [fc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gb] ON g.SFYLXC = [gb].DM /*是否有练习册*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gc] ON g.SFYJCJF = [gc].DM /*是否有教参教辅*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [hc] ON h.XBM = [hc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [hd] ON h.MZM = [hd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [he] ON h.XXM = [he].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [hf] ON h.JKZKM = [hf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [hg] ON h.HYZTM = [hg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [hh] ON h.ZZMMM = [hh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [hi] ON h.GATQWM = [hi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [hj] ON h.GJDQM = [hj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hk] ON h.CSDXZQHM = [hk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [hl] ON h.XYZJM = [hl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hm] ON h.JZGHKSZDXZQHM = [hm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [hn] ON h.HKLBM = [hn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [ho] ON h.BZLBM = [ho].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [hp] ON h.JZGLBM = [hp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [hq] ON h.GWLBM = [hq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hr] ON h.SFJZJS = [hr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hs] ON h.SFSSXJS = [hs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ht] ON h.DQZTM = [ht].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ib] ON i.SFZJLXM = [ib].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ic] ON i.XBM = [ic].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [id] ON i.MZM = [id].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ie] ON i.XXM = [ie].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [if] ON i.JKZKM = [if].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [ig] ON i.HYZTM = [ig].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ih] ON i.ZZMMM = [ih].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ii] ON i.GATQWM = [ii].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ij] ON i.GJDQM = [ij].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ik] ON i.CSDXZQHM = [ik].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [il] ON i.XYZJM = [il].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [im] ON i.JZGHKSZDXZQHM = [im].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [in] ON i.HKLBM = [in].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [io] ON i.BZLBM = [io].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ip] ON i.JZGLBM = [ip].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [iq] ON i.GWLBM = [iq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ir] ON i.SFJZJS = [ir].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [is] ON i.SFSSXJS = [is].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [it] ON i.DQZTM = [it].DM /*当前状态码*/
+GO
+
+--教师教材领用表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_A03_JSJCLY_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZYXXID]--专业ID
+      ,a.[NJID]--年级ID
+      ,a.[KCID]--课程ID
+      ,a.[JCID]--教材ID
+      ,a.[LYSL]--领用数量
+      ,a.[LYJSID]--领用教师ID
+      ,a.[LYSJ]--领用时间
+      ,a.[JSR]--经手人
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
+      ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
+      ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
+      ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
+      ,d.ZYFXMC as d_ZYXX_ZYFXMC--专业基本信息数据表 专业方向名称
+      ,d.ZYJC as d_ZYXX_ZYJC--专业基本信息数据表 专业简称
+      ,d.JLNY as d_ZYXX_JLNY--专业基本信息数据表 建立年月
+      ,d.ZYJSS as d_ZYXX_ZYJSS--专业基本信息数据表 专业教师数
+      ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
+      ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
+      ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.SCHOOLID as e_ZZNJ_SCHOOLID--学校年级数据表 学校名
+      ,e.NJMC as e_ZZNJ_NJMC--学校年级数据表 年级名称
+      ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
+      ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
+      ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.SCHOOLID as f_KC_SCHOOLID--课程数据子类表 学校ID
+      ,f.KCMC as f_KC_KCMC--课程数据子类表 课程名称
+      ,f.KCYWM as f_KC_KCYWM--课程数据子类表 课程英文名
+      ,f.KCBM as f_KC_KCBM--课程数据子类表 课程别名
+      ,f.KCJS as f_KC_KCJS--课程数据子类表 课程介绍
+      ,f.XF as f_KC_XF--课程数据子类表 学分
+      ,f.ZXS as f_KC_ZXS--课程数据子类表 总学时
+      ,f.LLXS as f_KC_LLXS--课程数据子类表 理论学时
+      ,f.SJXS as f_KC_SJXS--课程数据子类表 实践学时
+      ,f.QTXS as f_KC_QTXS--课程数据子类表 其他学时
+      ,f.CKSM as f_KC_CKSM--课程数据子类表 参考书目
+      ,f.KKDW as f_KC_KKDW--课程数据子类表 开课单位
+      ,f.KSXS as f_KC_KSXS--课程数据子类表 考试形式
+      ,[fb].MC as f_KC_KSXS_MC--考试形式代码表 名称
+      ,f.SKFSM as f_KC_SKFSM--课程数据子类表 授课方式码
+      ,[fc].MC as f_KC_SKFSM_MC--授课方式代码表 名称
+      ,f.KCFY as f_KC_KCFY--课程数据子类表 课程费用
+      ,g.SCHOOLID as g_JCJBXX_SCHOOLID--教材基本信息表 学校ID
+      ,g.JCDM as g_JCJBXX_JCDM--教材基本信息表 教材代码
+      ,g.JCMC as g_JCJBXX_JCMC--教材基本信息表 教材名称
+      ,g.CBH as g_JCJBXX_CBH--教材基本信息表 出版号
+      ,g.DYZZ as g_JCJBXX_DYZZ--教材基本信息表 第一作者
+      ,g.QTZZ as g_JCJBXX_QTZZ--教材基本信息表 其他作者
+      ,g.BC as g_JCJBXX_BC--教材基本信息表 版次
+      ,g.YC as g_JCJBXX_YC--教材基本信息表 印次
+      ,g.JG as g_JCJBXX_JG--教材基本信息表 价格
+      ,g.CBS as g_JCJBXX_CBS--教材基本信息表 出版社
+      ,g.CBRQ as g_JCJBXX_CBRQ--教材基本信息表 出版日期
+      ,g.SFYLXC as g_JCJBXX_SFYLXC--教材基本信息表 是否有练习册
+      ,[gb].MC as g_JCJBXX_SFYLXC_MC--是否标志代码表 名称
+      ,g.SFYJCJF as g_JCJBXX_SFYJCJF--教材基本信息表 是否有教参教辅
+      ,[gc].MC as g_JCJBXX_SFYJCJF_MC--是否标志代码表 名称
+      ,g.NRJJ as g_JCJBXX_NRJJ--教材基本信息表 内容简介
+      ,g.DQZT as g_JCJBXX_DQZT--教材基本信息表 当前状态
+      ,g.ZDKC as g_JCJBXX_ZDKC--教材基本信息表 最低库存
+      ,g.DQKC as g_JCJBXX_DQKC--教材基本信息表 当前库存
+      ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,h.XM as h_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,h.YWXM as h_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,h.XMPY as h_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,h.CYM as h_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,h.SFZJLXM as h_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[hb].MC as h_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,h.SFZJH as h_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,h.CSRQ as h_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,h.XBM as h_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[hc].MC as h_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,h.MZM as h_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[hd].MZMC as h_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[hd].ZMDM as h_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,h.XXM as h_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[he].MC as h_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[he].JC as h_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,h.JKZKM as h_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[hf].MC as h_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[hf].SM as h_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,h.HYZTM as h_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[hg].MC as h_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,h.ZZMMM as h_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[hh].MC as h_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[hh].JC as h_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,h.GATQWM as h_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[hi].MC as h_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[hi].SM as h_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,h.JG as h_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,h.GJDQM as h_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[hj].GJDQMCJC as h_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[hj].EZMDM as h_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[hj].SZMDM as h_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,h.CSDXZQHM as h_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[hk].MC as h_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,h.XYZJM as h_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[hl].MC as h_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,h.JZGHKSZDXZQHM as h_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[hm].MC as h_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,h.HKLBM as h_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[hn].MC as h_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,h.DQZZ as h_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,h.DQZZYZBM as h_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,h.CJGZNY as h_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,h.CJNY as h_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,h.LXNY as h_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,h.BZLBM as h_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[ho].MC as h_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,h.JZGLBM as h_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[hp].MC as h_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[hp].SM as h_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,h.GWLBM as h_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[hq].MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,h.SFJZJS as h_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[hr].MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,h.SFSSXJS as h_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[hs].MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,h.ZP as h_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,h.DQZTM as h_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[ht].MC as h_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,h.YDDH as h_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,h.GDDH as h_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,h.TXDZYZBM as h_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,h.TXDZ as h_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,h.DZXX as h_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+
+FROM dbo.EDU_ZZJX_04_A03_JSJCLY AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_01_ZZNJ AS e ON a.NJID = e.NJDM /*年级ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_02_KC AS f ON a.KCID = f.KCH /*课程ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_04_01_JCJBXX AS g ON a.JCID = g.ID /*教材ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.LYJSID = h.ID /*领用教师ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [eb] ON e.NJZT = [eb].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [fb] ON f.KSXS = [fb].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [fc] ON f.SKFSM = [fc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gb] ON g.SFYLXC = [gb].DM /*是否有练习册*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gc] ON g.SFYJCJF = [gc].DM /*是否有教参教辅*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [hc] ON h.XBM = [hc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [hd] ON h.MZM = [hd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [he] ON h.XXM = [he].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [hf] ON h.JKZKM = [hf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [hg] ON h.HYZTM = [hg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [hh] ON h.ZZMMM = [hh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [hi] ON h.GATQWM = [hi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [hj] ON h.GJDQM = [hj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hk] ON h.CSDXZQHM = [hk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [hl] ON h.XYZJM = [hl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hm] ON h.JZGHKSZDXZQHM = [hm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [hn] ON h.HKLBM = [hn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [ho] ON h.BZLBM = [ho].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [hp] ON h.JZGLBM = [hp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [hq] ON h.GWLBM = [hq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hr] ON h.SFJZJS = [hr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hs] ON h.SFSSXJS = [hs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ht] ON h.DQZTM = [ht].DM /*当前状态码*/
+GO
+
+--学生教材领用表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_A04_XSJCLY_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[ZYXXID]--专业ID
+      ,a.[NJID]--年级ID
+      ,a.[BJID]--班级ID
+      ,a.[KCID]--课程ID
+      ,a.[JCID]--教材ID
+      ,a.[LYSL]--领用数量
+      ,a.[LYXSID]--领用学生ID
+      ,a.[LYSJ]--领用时间
+      ,a.[JSR]--经手人
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
+      ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
+      ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
+      ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
+      ,d.ZYFXMC as d_ZYXX_ZYFXMC--专业基本信息数据表 专业方向名称
+      ,d.ZYJC as d_ZYXX_ZYJC--专业基本信息数据表 专业简称
+      ,d.JLNY as d_ZYXX_JLNY--专业基本信息数据表 建立年月
+      ,d.ZYJSS as d_ZYXX_ZYJSS--专业基本信息数据表 专业教师数
+      ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
+      ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
+      ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.SCHOOLID as e_ZZNJ_SCHOOLID--学校年级数据表 学校名
+      ,e.NJMC as e_ZZNJ_NJMC--学校年级数据表 年级名称
+      ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
+      ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
+      ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.SCHOOLID as f_ZZBJ_SCHOOLID--学校班级数据表 学校名
+      ,f.ZYXXID as f_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
+      ,f.ZZNJID as f_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
+      ,f.XZBMC as f_ZZBJ_XZBMC--学校班级数据表 行政班名称
+      ,f.JBNY as f_ZZBJ_JBNY--学校班级数据表 建班年月
+      ,f.BZRGH as f_ZZBJ_BZRGH--学校班级数据表 班主任工号
+      ,f.JSBH as f_ZZBJ_JSBH--学校班级数据表 教室编号
+      ,f.NANSRS as f_ZZBJ_NANSRS--学校班级数据表 男生人数
+      ,f.NVSRS as f_ZZBJ_NVSRS--学校班级数据表 女生人数
+      ,f.ZRS as f_ZZBJ_ZRS--学校班级数据表 总人数
+      ,f.BZXH as f_ZZBJ_BZXH--学校班级数据表 班长学号
+      ,f.JXJH as f_ZZBJ_JXJH--学校班级数据表 教学计划
+      ,f.JGH as f_ZZBJ_JGH--学校班级数据表 机构号
+      ,f.XQDM as f_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,f.BZRID as f_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,g.SCHOOLID as g_KC_SCHOOLID--课程数据子类表 学校ID
+      ,g.KCMC as g_KC_KCMC--课程数据子类表 课程名称
+      ,g.KCYWM as g_KC_KCYWM--课程数据子类表 课程英文名
+      ,g.KCBM as g_KC_KCBM--课程数据子类表 课程别名
+      ,g.KCJS as g_KC_KCJS--课程数据子类表 课程介绍
+      ,g.XF as g_KC_XF--课程数据子类表 学分
+      ,g.ZXS as g_KC_ZXS--课程数据子类表 总学时
+      ,g.LLXS as g_KC_LLXS--课程数据子类表 理论学时
+      ,g.SJXS as g_KC_SJXS--课程数据子类表 实践学时
+      ,g.QTXS as g_KC_QTXS--课程数据子类表 其他学时
+      ,g.CKSM as g_KC_CKSM--课程数据子类表 参考书目
+      ,g.KKDW as g_KC_KKDW--课程数据子类表 开课单位
+      ,g.KSXS as g_KC_KSXS--课程数据子类表 考试形式
+      ,[gb].MC as g_KC_KSXS_MC--考试形式代码表 名称
+      ,g.SKFSM as g_KC_SKFSM--课程数据子类表 授课方式码
+      ,[gc].MC as g_KC_SKFSM_MC--授课方式代码表 名称
+      ,g.KCFY as g_KC_KCFY--课程数据子类表 课程费用
+      ,h.SCHOOLID as h_JCJBXX_SCHOOLID--教材基本信息表 学校ID
+      ,h.JCDM as h_JCJBXX_JCDM--教材基本信息表 教材代码
+      ,h.JCMC as h_JCJBXX_JCMC--教材基本信息表 教材名称
+      ,h.CBH as h_JCJBXX_CBH--教材基本信息表 出版号
+      ,h.DYZZ as h_JCJBXX_DYZZ--教材基本信息表 第一作者
+      ,h.QTZZ as h_JCJBXX_QTZZ--教材基本信息表 其他作者
+      ,h.BC as h_JCJBXX_BC--教材基本信息表 版次
+      ,h.YC as h_JCJBXX_YC--教材基本信息表 印次
+      ,h.JG as h_JCJBXX_JG--教材基本信息表 价格
+      ,h.CBS as h_JCJBXX_CBS--教材基本信息表 出版社
+      ,h.CBRQ as h_JCJBXX_CBRQ--教材基本信息表 出版日期
+      ,h.SFYLXC as h_JCJBXX_SFYLXC--教材基本信息表 是否有练习册
+      ,[hb].MC as h_JCJBXX_SFYLXC_MC--是否标志代码表 名称
+      ,h.SFYJCJF as h_JCJBXX_SFYJCJF--教材基本信息表 是否有教参教辅
+      ,[hc].MC as h_JCJBXX_SFYJCJF_MC--是否标志代码表 名称
+      ,h.NRJJ as h_JCJBXX_NRJJ--教材基本信息表 内容简介
+      ,h.DQZT as h_JCJBXX_DQZT--教材基本信息表 当前状态
+      ,h.ZDKC as h_JCJBXX_ZDKC--教材基本信息表 最低库存
+      ,h.DQKC as h_JCJBXX_DQKC--教材基本信息表 当前库存
+      ,i.SCHOOLID as i_XSXX_SCHOOLID--学生信息数据表 学校名
+      ,i.XH as i_XSXX_XH--学生信息数据表 学号
+      ,i.XM as i_XSXX_XM--学生信息数据表 姓名
+      ,i.YWXM as i_XSXX_YWXM--学生信息数据表 英文姓名
+      ,i.XMPY as i_XSXX_XMPY--学生信息数据表 姓名拼音
+      ,i.CYM as i_XSXX_CYM--学生信息数据表 曾用名
+      ,i.SFZJLXM as i_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
+      ,[ib].MC as i_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,i.SFZJH as i_XSXX_SFZJH--学生信息数据表 身份证件号
+      ,i.XBM as i_XSXX_XBM--学生信息数据表 性别码
+      ,[ic].MC as i_XSXX_XBM_MC--人的性别代码 名称
+      ,i.XXM as i_XSXX_XXM--学生信息数据表 血型码
+      ,[id].MC as i_XSXX_XXM_MC--血型代码表 名称
+      ,[id].JC as i_XSXX_XXM_JC--血型代码表 简称
+      ,i.CSRQ as i_XSXX_CSRQ--学生信息数据表 出生日期
+      ,i.CSDM as i_XSXX_CSDM--学生信息数据表 出生地码
+      ,[ie].MC as i_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,i.JG as i_XSXX_JG--学生信息数据表 籍贯
+      ,i.MZM as i_XSXX_MZM--学生信息数据表 民族码
+      ,[if].MZMC as i_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[if].ZMDM as i_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,i.HYZKM as i_XSXX_HYZKM--学生信息数据表 婚姻状况码
+      ,[ig].MC as i_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,i.XYZJM as i_XSXX_XYZJM--学生信息数据表 信仰宗教码
+      ,[ih].MC as i_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,i.GATQWM as i_XSXX_GATQWM--学生信息数据表 港澳台侨外码
+      ,[ii].MC as i_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ii].SM as i_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,i.JKZKM as i_XSXX_JKZKM--学生信息数据表 健康状况码
+      ,[ij].MC as i_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ij].SM as i_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,i.ZZMMM as i_XSXX_ZZMMM--学生信息数据表 政治面貌码
+      ,[ik].MC as i_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ik].JC as i_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,i.HKSZDXZQHM as i_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
+      ,[il].MC as i_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,i.HKLBM as i_XSXX_HKLBM--学生信息数据表 户口类别码
+      ,[im].MC as i_XSXX_HKLBM_MC--户口类别代码 名称
+      ,i.SFSLDRK as i_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
+      ,[in].MC as i_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,i.GJDQM as i_XSXX_GJDQM--学生信息数据表 国籍/地区
+      ,[io].GJDQMCJC as i_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[io].EZMDM as i_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[io].SZMDM as i_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,i.TC as i_XSXX_TC--学生信息数据表 特长
+      ,i.XSLXDH as i_XSXX_XSLXDH--学生信息数据表 学生联系电话
+      ,i.WLDZ as i_XSXX_WLDZ--学生信息数据表 网络地址
+      ,i.JSTXH as i_XSXX_JSTXH--学生信息数据表 即时通讯号
+      ,i.DZXX as i_XSXX_DZXX--学生信息数据表 电子信箱
+      ,i.ZP as i_XSXX_ZP--学生信息数据表 照片(路径)
+
+FROM dbo.EDU_ZZJX_04_A04_XSJCLY AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_01_ZZNJ AS e ON a.NJID = e.NJDM /*年级ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_02_ZZBJ AS f ON a.BJID = f.XZBDM /*班级ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_02_KC AS g ON a.KCID = g.KCH /*课程ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_04_01_JCJBXX AS h ON a.JCID = h.ID /*教材ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_01_01_XSXX AS i ON a.LYXSID = i.ID /*领用学生ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [eb] ON e.NJZT = [eb].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [gb] ON g.KSXS = [gb].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [gc] ON g.SKFSM = [gc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hb] ON h.SFYLXC = [hb].DM /*是否有练习册*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hc] ON h.SFYJCJF = [hc].DM /*是否有教参教辅*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ib] ON i.SFZJLXM = [ib].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ic] ON i.XBM = [ic].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [id] ON i.XXM = [id].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ie] ON i.CSDM = [ie].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [if] ON i.MZM = [if].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [ig] ON i.HYZKM = [ig].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ih] ON i.XYZJM = [ih].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ii] ON i.GATQWM = [ii].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ij] ON i.JKZKM = [ij].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ik] ON i.ZZMMM = [ik].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [il] ON i.HKSZDXZQHM = [il].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [im] ON i.HKLBM = [im].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [in] ON i.SFSLDRK = [in].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [io] ON i.GJDQM = [io].DM /*国籍/地区*/
+GO
+
+--教材反馈表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_A05_JCFK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[JCID]--教材ID
+      ,a.[FKXX]--反馈信息
+      ,a.[FKSJ]--反馈时间
+      ,a.[FKJSID]--反馈教师ID
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_JCJBXX_SCHOOLID--教材基本信息表 学校ID
+      ,d.JCDM as d_JCJBXX_JCDM--教材基本信息表 教材代码
+      ,d.JCMC as d_JCJBXX_JCMC--教材基本信息表 教材名称
+      ,d.CBH as d_JCJBXX_CBH--教材基本信息表 出版号
+      ,d.DYZZ as d_JCJBXX_DYZZ--教材基本信息表 第一作者
+      ,d.QTZZ as d_JCJBXX_QTZZ--教材基本信息表 其他作者
+      ,d.BC as d_JCJBXX_BC--教材基本信息表 版次
+      ,d.YC as d_JCJBXX_YC--教材基本信息表 印次
+      ,d.JG as d_JCJBXX_JG--教材基本信息表 价格
+      ,d.CBS as d_JCJBXX_CBS--教材基本信息表 出版社
+      ,d.CBRQ as d_JCJBXX_CBRQ--教材基本信息表 出版日期
+      ,d.SFYLXC as d_JCJBXX_SFYLXC--教材基本信息表 是否有练习册
+      ,[db].MC as d_JCJBXX_SFYLXC_MC--是否标志代码表 名称
+      ,d.SFYJCJF as d_JCJBXX_SFYJCJF--教材基本信息表 是否有教参教辅
+      ,[dc].MC as d_JCJBXX_SFYJCJF_MC--是否标志代码表 名称
+      ,d.NRJJ as d_JCJBXX_NRJJ--教材基本信息表 内容简介
+      ,d.DQZT as d_JCJBXX_DQZT--教材基本信息表 当前状态
+      ,d.ZDKC as d_JCJBXX_ZDKC--教材基本信息表 最低库存
+      ,d.DQKC as d_JCJBXX_DQKC--教材基本信息表 当前库存
+      ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,e.YWXM as e_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,e.TXDZ as e_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+
+FROM dbo.EDU_ZZJX_04_A05_JCFK AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_04_01_JCJBXX AS d ON a.JCID = d.ID /*教材ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.FKJSID = e.ID /*反馈教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [db] ON d.SFYLXC = [db].DM /*是否有练习册*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFYJCJF = [dc].DM /*是否有教参教辅*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
+GO
+
+--教材报废表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_A06_JCBF_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[JCID]--教材ID
+      ,a.[BFSL]--报废数量
+      ,a.[BFYY]--报废原因
+      ,a.[BFSJ]--报废时间
+      ,a.[JSRID]--经手人ID
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_JCJBXX_SCHOOLID--教材基本信息表 学校ID
+      ,d.JCDM as d_JCJBXX_JCDM--教材基本信息表 教材代码
+      ,d.JCMC as d_JCJBXX_JCMC--教材基本信息表 教材名称
+      ,d.CBH as d_JCJBXX_CBH--教材基本信息表 出版号
+      ,d.DYZZ as d_JCJBXX_DYZZ--教材基本信息表 第一作者
+      ,d.QTZZ as d_JCJBXX_QTZZ--教材基本信息表 其他作者
+      ,d.BC as d_JCJBXX_BC--教材基本信息表 版次
+      ,d.YC as d_JCJBXX_YC--教材基本信息表 印次
+      ,d.JG as d_JCJBXX_JG--教材基本信息表 价格
+      ,d.CBS as d_JCJBXX_CBS--教材基本信息表 出版社
+      ,d.CBRQ as d_JCJBXX_CBRQ--教材基本信息表 出版日期
+      ,d.SFYLXC as d_JCJBXX_SFYLXC--教材基本信息表 是否有练习册
+      ,[db].MC as d_JCJBXX_SFYLXC_MC--是否标志代码表 名称
+      ,d.SFYJCJF as d_JCJBXX_SFYJCJF--教材基本信息表 是否有教参教辅
+      ,[dc].MC as d_JCJBXX_SFYJCJF_MC--是否标志代码表 名称
+      ,d.NRJJ as d_JCJBXX_NRJJ--教材基本信息表 内容简介
+      ,d.DQZT as d_JCJBXX_DQZT--教材基本信息表 当前状态
+      ,d.ZDKC as d_JCJBXX_ZDKC--教材基本信息表 最低库存
+      ,d.DQKC as d_JCJBXX_DQKC--教材基本信息表 当前库存
+      ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,e.YWXM as e_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,e.TXDZ as e_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+
+FROM dbo.EDU_ZZJX_04_A06_JCBF AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_04_01_JCJBXX AS d ON a.JCID = d.ID /*教材ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.JSRID = e.ID /*经手人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [db] ON d.SFYLXC = [db].DM /*是否有练习册*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dc] ON d.SFYJCJF = [dc].DM /*是否有教参教辅*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
 GO
 
 --教师教学工作量统计数据子类表
@@ -10334,60 +11298,60 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -10398,7 +11362,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -10406,26 +11370,26 @@ SELECT a.[SCHOOLID]--学校ID
 FROM dbo.EDU_ZZJX_05_02_JSJXGZLTJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO
 
 --代管费收取表
@@ -10447,43 +11411,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -10495,7 +11459,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
-      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -10506,60 +11470,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -10573,40 +11537,40 @@ FROM dbo.EDU_ZZJX_08_A01_DGFSQ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SHRID = f.ID /*审核人员ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --调课申请数据表
@@ -10636,60 +11600,60 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,c.CYM as c_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,c.SFZJLXM as c_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,cb.MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,c.CSRQ as c_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,c.XBM as c_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,cc.MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,c.MZM as c_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,cd.MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cd.ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cd].MZMC as c_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cd].ZMDM as c_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.XXM as c_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ce.MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ce.JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ce].MC as c_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ce].JC as c_JZGJBSJ_XXM_JC--血型代码表 简称
       ,c.JKZKM as c_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,cf.MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,cf.SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cf].MC as c_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cf].SM as c_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,c.HYZTM as c_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,cg.MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,c.ZZMMM as c_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,ch.MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,ch.JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[ch].MC as c_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ch].JC as c_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,c.GATQWM as c_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ci.MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JG as c_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,c.GJDQM as c_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,cj.GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,cj.EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,cj.SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[cj].GJDQMCJC as c_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[cj].EZMDM as c_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[cj].SZMDM as c_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.CSDXZQHM as c_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ck.MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ck].MC as c_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.XYZJM as c_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,cl.MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[cl].MC as c_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,c.JZGHKSZDXZQHM as c_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,cm.MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cm].MC as c_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,cn.MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[cn].MC as c_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,c.DQZZ as c_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,c.DQZZYZBM as c_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,c.CJGZNY as c_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,c.CJNY as c_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,c.LXNY as c_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,c.BZLBM as c_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,co.MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[co].MC as c_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,c.JZGLBM as c_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,cp.MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,cp.SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[cp].MC as c_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[cp].SM as c_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,c.GWLBM as c_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,cq.MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[cq].MC as c_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,c.SFJZJS as c_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,cr.MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[cr].MC as c_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,c.SFSSXJS as c_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,cs.MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[cs].MC as c_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,c.ZP as c_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,c.DQZTM as c_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ct.MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ct].MC as c_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,c.YDDH as c_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,c.GDDH as c_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,c.TXDZYZBM as c_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -10710,9 +11674,9 @@ SELECT a.[ID]--编号
       ,d.CKSM as d_KC_CKSM--课程数据子类表 参考书目
       ,d.KKDW as d_KC_KKDW--课程数据子类表 开课单位
       ,d.KSXS as d_KC_KSXS--课程数据子类表 考试形式
-      ,db.MC as d_KC_KSXS_MC--考试形式代码表 名称
+      ,[db].MC as d_KC_KSXS_MC--考试形式代码表 名称
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
-      ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dc].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
       ,e.MC as e_TKLX_MC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
@@ -10768,27 +11732,27 @@ FROM dbo.EDU_ZZJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_05_WEEKDAY AS m ON a.TKHXQ = m.ID /*调课后星期*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_SD AS n ON a.TKHSD = n.ID /*调课后时段*/ AND a.SCHOOLID = n.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_JC AS o ON a.TKHJC = o.ID /*调课后节次*/ AND a.SCHOOLID = o.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cd ON c.MZM = cd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ce ON c.XXM = ce.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cf ON c.JKZKM = cf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZTM = cg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ch ON c.ZZMMM = ch.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS cj ON c.GJDQM = cj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ck ON c.CSDXZQHM = ck.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS cl ON c.XYZJM = cl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cm ON c.JZGHKSZDXZQHM = cm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cn ON c.HKLBM = cn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS co ON c.BZLBM = co.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS cp ON c.JZGLBM = cp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS cq ON c.GWLBM = cq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cr ON c.SFJZJS = cr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cs ON c.SFSSXJS = cs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ct ON c.DQZTM = ct.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ce] ON c.XXM = [ce].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cf] ON c.JKZKM = [cf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZTM = [cg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ch] ON c.ZZMMM = [ch].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [cj] ON c.GJDQM = [cj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ck] ON c.CSDXZQHM = [ck].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [cl] ON c.XYZJM = [cl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cm] ON c.JZGHKSZDXZQHM = [cm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cn] ON c.HKLBM = [cn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [cp] ON c.JZGLBM = [cp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [cq] ON c.GWLBM = [cq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cr] ON c.SFJZJS = [cr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cs] ON c.SFSSXJS = [cs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ct] ON c.DQZTM = [ct].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [db] ON d.KSXS = [db].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dc] ON d.SKFSM = [dc].DM /*授课方式码*/
 GO
 
 --论文数据表
@@ -10808,7 +11772,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -10819,60 +11783,60 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,eb.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,ec.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ee.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ee.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ef.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ef.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,eg.MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,eh.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,eh.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ei.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ei.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ej.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ej.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ej.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ek.MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,el.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,em.MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,en.MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,ep.MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,ep.SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,et.MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -10885,26 +11849,26 @@ FROM dbo.EDU_ZZJX_10_A01_LWSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.SCJSID = e.ID /*上传教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS eb ON e.SFZJLXM = eb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS ec ON e.XBM = ec.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ee ON e.XXM = ee.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ef ON e.JKZKM = ef.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZTM = eg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS eh ON e.ZZMMM = eh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ei ON e.GATQWM = ei.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ej ON e.GJDQM = ej.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ek ON e.CSDXZQHM = ek.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS el ON e.XYZJM = el.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS em ON e.JZGHKSZDXZQHM = em.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS en ON e.HKLBM = en.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
 GO
 
 --科研活动数据表
@@ -10924,7 +11888,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -10936,60 +11900,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -11003,26 +11967,26 @@ FROM dbo.EDU_ZZJX_10_A02_KYHDSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFFB = e.DM /*是否发布*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SCJSID = f.ID /*上传教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --参评信息数据表
@@ -11042,7 +12006,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -11054,60 +12018,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -11121,26 +12085,26 @@ FROM dbo.EDU_ZZJX_10_A03_CPXXSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFFB = e.DM /*是否发布*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SCJSID = f.ID /*上传教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --课题数据表
@@ -11165,7 +12129,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -11176,60 +12140,60 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,eb.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,ec.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ee.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ee.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ef.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ef.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,eg.MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,eh.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,eh.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ei.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ei.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ej.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ej.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ej.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ek.MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,el.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,em.MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,en.MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,ep.MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,ep.SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,et.MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -11244,60 +12208,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -11311,45 +12275,45 @@ FROM dbo.EDU_ZZJX_10_A04_KTSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.SQJSID = e.ID /*申请教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SHJSID = f.ID /*审核教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS eb ON e.SFZJLXM = eb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS ec ON e.XBM = ec.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ee ON e.XXM = ee.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ef ON e.JKZKM = ef.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZTM = eg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS eh ON e.ZZMMM = eh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ei ON e.GATQWM = ei.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ej ON e.GJDQM = ej.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ek ON e.CSDXZQHM = ek.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS el ON e.XYZJM = el.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS em ON e.JZGHKSZDXZQHM = em.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS en ON e.HKLBM = en.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --课题阶段数据表
@@ -11491,7 +12455,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -11502,60 +12466,60 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,eb.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,ec.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ee.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ee.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ef.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ef.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,eg.MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,eh.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,eh.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ei.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ei.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ej.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ej.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ej.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ek.MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,el.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,em.MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,en.MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,ep.MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,ep.SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,et.MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -11568,26 +12532,26 @@ FROM dbo.EDU_ZZJX_21_A01_SXBJGL AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.BZRID = e.ID /*班主任ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS eb ON e.SFZJLXM = eb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS ec ON e.XBM = ec.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ee ON e.XXM = ee.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ef ON e.JKZKM = ef.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZTM = eg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS eh ON e.ZZMMM = eh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ei ON e.GATQWM = ei.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ej ON e.GJDQM = ej.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ek ON e.CSDXZQHM = ek.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS el ON e.XYZJM = el.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS em ON e.JZGHKSZDXZQHM = em.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS en ON e.HKLBM = en.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
 GO
 
 --实习生管理表
@@ -11611,43 +12575,43 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
@@ -11658,20 +12622,20 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJX_21_A02_SXSGL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A01_SXBJGL AS c ON a.SZBID = c.ID /*实习班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.StuID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
 GO
 
 --实习岗位表
@@ -11741,43 +12705,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -11787,20 +12751,20 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZZJX_22_A01_SXJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.StuID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/
 GO
 
 --实习单位变更表
@@ -11820,43 +12784,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -11962,20 +12926,20 @@ FROM dbo.EDU_ZZJX_22_A02_SXDWBG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A01_QYGL AS e ON a.OrgComID = e.ID /*变更前企业ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A03_GWXX AS f ON a.NowJobID = f.ID /*变更后岗位ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A01_QYGL AS g ON a.NowComID = g.ID /*变更后企业ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/
 GO
 
 --实习违章纪录表
@@ -12021,43 +12985,43 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
@@ -12068,20 +13032,20 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJX_22_A03_SXWZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A01_QYGL AS c ON a.ComID = c.ID /*企业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.StuID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
 GO
 
 --实习鉴定表
@@ -12100,43 +13064,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -12150,60 +13114,60 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,d.CYM as d_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,d.SFZJLXM as d_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,db.MC as d_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,d.CSRQ as d_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,d.XBM as d_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,dc.MC as d_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,d.MZM as d_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,dd.MZMC as d_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,dd.ZMDM as d_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[dd].MZMC as d_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[dd].ZMDM as d_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.XXM as d_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,de.MC as d_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,de.JC as d_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[de].MC as d_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[de].JC as d_JZGJBSJ_XXM_JC--血型代码表 简称
       ,d.JKZKM as d_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,df.MC as d_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,df.SM as d_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[df].MC as d_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[df].SM as d_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,d.HYZTM as d_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,dg.MC as d_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,d.ZZMMM as d_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,dh.MC as d_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,dh.JC as d_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[dh].MC as d_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[dh].JC as d_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,d.GATQWM as d_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,di.MC as d_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JG as d_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,d.GJDQM as d_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,dj.GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,dj.EZMDM as d_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,dj.SZMDM as d_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[dj].GJDQMCJC as d_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[dj].EZMDM as d_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[dj].SZMDM as d_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.CSDXZQHM as d_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,dk.MC as d_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dk].MC as d_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.XYZJM as d_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,dl.MC as d_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[dl].MC as d_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,d.JZGHKSZDXZQHM as d_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,dm.MC as d_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dm].MC as d_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,dn.MC as d_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[dn].MC as d_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,d.DQZZ as d_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,d.DQZZYZBM as d_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,d.CJGZNY as d_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,d.CJNY as d_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,d.LXNY as d_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,d.BZLBM as d_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,do.MC as d_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[do].MC as d_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,d.JZGLBM as d_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,dp.MC as d_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,dp.SM as d_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[dp].MC as d_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[dp].SM as d_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,d.GWLBM as d_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,dq.MC as d_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[dq].MC as d_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,d.SFJZJS as d_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,dr.MC as d_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[dr].MC as d_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,d.SFSSXJS as d_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,ds.MC as d_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[ds].MC as d_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,d.ZP as d_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,d.DQZTM as d_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,dt.MC as d_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[dt].MC as d_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,d.YDDH as d_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,d.GDDH as d_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,d.TXDZYZBM as d_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -12215,39 +13179,39 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJX_22_A04_SXJD AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.StuID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JDRID = d.ID /*鉴定人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS dd ON d.MZM = dd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS de ON d.XXM = de.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS df ON d.JKZKM = df.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZTM = dg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dh ON d.ZZMMM = dh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS dj ON d.GJDQM = dj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dk ON d.CSDXZQHM = dk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dl ON d.XYZJM = dl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dm ON d.JZGHKSZDXZQHM = dm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dn ON d.HKLBM = dn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS do ON d.BZLBM = do.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS dp ON d.JZGLBM = dp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS dq ON d.GWLBM = dq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dr ON d.SFJZJS = dr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ds ON d.SFSSXJS = ds.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS dt ON d.DQZTM = dt.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [de] ON d.XXM = [de].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [df] ON d.JKZKM = [df].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZTM = [dg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dh] ON d.ZZMMM = [dh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [dj] ON d.GJDQM = [dj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dk] ON d.CSDXZQHM = [dk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dl] ON d.XYZJM = [dl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dm] ON d.JZGHKSZDXZQHM = [dm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dn] ON d.HKLBM = [dn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [do] ON d.BZLBM = [do].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [dp] ON d.JZGLBM = [dp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [dq] ON d.GWLBM = [dq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dr] ON d.SFJZJS = [dr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ds] ON d.SFSSXJS = [ds].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [dt] ON d.DQZTM = [dt].DM /*当前状态码*/
 GO
 
 --实习投诉表
@@ -12295,43 +13259,43 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
@@ -12342,20 +13306,20 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZJX_22_A05_SXTS AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A01_QYGL AS c ON a.ComID = c.ID /*企业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.StuID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
 GO
 
 --实习奖惩表
@@ -12377,43 +13341,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -12425,7 +13389,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
-      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -12434,21 +13398,21 @@ FROM dbo.EDU_ZZJX_22_A06_SXJC AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.StuID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/
 GO
 
 --考场表
@@ -12517,14 +13481,14 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZJX_32_A01_EXAM AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XqID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO
 
 --专业课程排考结果表
@@ -12563,12 +13527,12 @@ SELECT a.[ID]--编号
       ,f.KCMC as f_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,f.YXKC as f_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,f.SFHXKC as f_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,fb.MC as f_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[fb].MC as f_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
       ,f.KCFLM as f_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
-      ,fc.MC as f_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,[fc].MC as f_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,f.KCSXM as f_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
-      ,fd.MC as f_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
-      ,fd.SM as f_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,[fd].MC as f_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,[fd].SM as f_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
       ,f.ZXXQ as f_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
       ,f.ZKS as f_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,f.LLKS as f_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
@@ -12576,8 +13540,8 @@ SELECT a.[ID]--编号
       ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,gb.ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,gb.MC as g_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[gb].ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[gb].MC as g_ZYXX_ZYDM_MC--自建专业代码 名称
       ,g.ZYMC as g_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,g.ZYYWMC as g_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,g.XZ as g_ZYXX_XZ--专业基本信息数据表 学制
@@ -12588,13 +13552,13 @@ SELECT a.[ID]--编号
       ,g.KSJGH as g_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,g.ZXF as g_ZYXX_ZXF--专业基本信息数据表 总学分
       ,g.SSZYML as g_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,gc.MC as g_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[gc].MC as g_ZYXX_SSZYML_MC--专业目录代码 名称
       ,g.ZYLB as g_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,h.SCHOOLID as h_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,h.NJMC as h_ZZNJ_NJMC--学校年级数据表 年级名称
       ,h.SSNF as h_ZZNJ_SSNF--学校年级数据表 所属年份
       ,h.NJZT as h_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,hb.MC as h_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[hb].MC as h_ZZNJ_NJZT_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_32_A01_EXAM AS c ON a.ExamID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -12603,12 +13567,12 @@ FROM dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS f ON a.KCQDID = f.ID /*考试科目ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS g ON a.ZYXXID = g.ZYBH /*专业ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS h ON a.NJID = h.NJDM /*年级ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS fb ON f.SFHXKC = fb.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_KCFL AS fc ON f.KCFLM = fc.DM /*课程分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KCSX AS fd ON f.KCSXM = fd.DM /*课程属性码*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS gb ON g.ZYDM = gb.DM /*专业代码*/ AND g.SSZYML = gb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS gc ON g.SSZYML = gc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hb ON h.NJZT = hb.DM /*年级状态*/
+      dbo.EDU_JY_SKFS AS [fb] ON f.SFHXKC = [fb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS [fc] ON f.KCFLM = [fc].DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS [fd] ON f.KCSXM = [fd].DM /*课程属性码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [gb] ON g.ZYDM = [gb].DM /*专业代码*/ AND g.SSZYML = [gb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [gc] ON g.SSZYML = [gc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hb] ON h.NJZT = [hb].DM /*年级状态*/
 GO
 
 --学生排考结果表
@@ -12660,12 +13624,12 @@ SELECT a.[ID]--编号
       ,g.KCMC as g_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,g.YXKC as g_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,g.SFHXKC as g_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,gb.MC as g_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[gb].MC as g_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
       ,g.KCFLM as g_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
-      ,gc.MC as g_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,[gc].MC as g_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,g.KCSXM as g_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
-      ,gd.MC as g_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
-      ,gd.SM as g_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,[gd].MC as g_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,[gd].SM as g_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
       ,g.ZXXQ as g_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
       ,g.ZKS as g_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,g.LLKS as g_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
@@ -12678,43 +13642,43 @@ SELECT a.[ID]--编号
       ,h.XMPY as h_XSXX_XMPY--学生信息数据表 姓名拼音
       ,h.CYM as h_XSXX_CYM--学生信息数据表 曾用名
       ,h.SFZJLXM as h_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,hb.MC as h_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[hb].MC as h_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,h.SFZJH as h_XSXX_SFZJH--学生信息数据表 身份证件号
       ,h.XBM as h_XSXX_XBM--学生信息数据表 性别码
-      ,hc.MC as h_XSXX_XBM_MC--人的性别代码 名称
+      ,[hc].MC as h_XSXX_XBM_MC--人的性别代码 名称
       ,h.XXM as h_XSXX_XXM--学生信息数据表 血型码
-      ,hd.MC as h_XSXX_XXM_MC--血型代码表 名称
-      ,hd.JC as h_XSXX_XXM_JC--血型代码表 简称
+      ,[hd].MC as h_XSXX_XXM_MC--血型代码表 名称
+      ,[hd].JC as h_XSXX_XXM_JC--血型代码表 简称
       ,h.CSRQ as h_XSXX_CSRQ--学生信息数据表 出生日期
       ,h.CSDM as h_XSXX_CSDM--学生信息数据表 出生地码
-      ,he.MC as h_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[he].MC as h_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,h.JG as h_XSXX_JG--学生信息数据表 籍贯
       ,h.MZM as h_XSXX_MZM--学生信息数据表 民族码
-      ,hf.MZMC as h_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,hf.ZMDM as h_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[hf].MZMC as h_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[hf].ZMDM as h_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,h.HYZKM as h_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,hg.MC as h_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[hg].MC as h_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,h.XYZJM as h_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,hh.MC as h_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[hh].MC as h_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,h.GATQWM as h_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,hi.MC as h_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,hi.SM as h_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[hi].MC as h_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[hi].SM as h_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,h.JKZKM as h_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,hj.MC as h_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,hj.SM as h_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[hj].MC as h_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[hj].SM as h_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,h.ZZMMM as h_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,hk.MC as h_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,hk.JC as h_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[hk].MC as h_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[hk].JC as h_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,h.HKSZDXZQHM as h_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,hl.MC as h_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[hl].MC as h_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,h.HKLBM as h_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,hm.MC as h_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[hm].MC as h_XSXX_HKLBM_MC--户口类别代码 名称
       ,h.SFSLDRK as h_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,hn.MC as h_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[hn].MC as h_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,h.GJDQM as h_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,ho.GJDQMCJC as h_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ho.EZMDM as h_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ho.SZMDM as h_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ho].GJDQMCJC as h_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ho].EZMDM as h_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ho].SZMDM as h_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,h.TC as h_XSXX_TC--学生信息数据表 特长
       ,h.XSLXDH as h_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,h.WLDZ as h_XSXX_WLDZ--学生信息数据表 网络地址
@@ -12723,8 +13687,8 @@ SELECT a.[ID]--编号
       ,h.ZP as h_XSXX_ZP--学生信息数据表 照片(路径)
       ,i.SCHOOLID as i_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,i.ZYDM as i_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,ib.ZYMLLB as i_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,ib.MC as i_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[ib].ZYMLLB as i_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[ib].MC as i_ZYXX_ZYDM_MC--自建专业代码 名称
       ,i.ZYMC as i_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,i.ZYYWMC as i_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,i.XZ as i_ZYXX_XZ--专业基本信息数据表 学制
@@ -12735,13 +13699,13 @@ SELECT a.[ID]--编号
       ,i.KSJGH as i_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,i.ZXF as i_ZYXX_ZXF--专业基本信息数据表 总学分
       ,i.SSZYML as i_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,ic.MC as i_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[ic].MC as i_ZYXX_SSZYML_MC--专业目录代码 名称
       ,i.ZYLB as i_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,j.SCHOOLID as j_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,j.NJMC as j_ZZNJ_NJMC--学校年级数据表 年级名称
       ,j.SSNF as j_ZZNJ_SSNF--学校年级数据表 所属年份
       ,j.NJZT as j_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,jb.MC as j_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[jb].MC as j_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,k.ZZNJID as k_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -12773,26 +13737,26 @@ FROM dbo.EDU_ZZJX_32_A03_XSPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS j ON a.NJID = j.NJDM /*年级ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS k ON a.BJID = k.XZBDM /*班级ID*/ AND a.SCHOOLID = k.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_31_A01_KSSDLX AS l ON a.KSSDLXID = l.ID /*考试时段类型ID*/ AND a.SCHOOLID = l.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS gb ON g.SFHXKC = gb.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_KCFL AS gc ON g.KCFLM = gc.DM /*课程分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KCSX AS gd ON g.KCSXM = gd.DM /*课程属性码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS hb ON h.SFZJLXM = hb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS hc ON h.XBM = hc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS hd ON h.XXM = hd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS he ON h.CSDM = he.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS hf ON h.MZM = hf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS hg ON h.HYZKM = hg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS hh ON h.XYZJM = hh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS hi ON h.GATQWM = hi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS hj ON h.JKZKM = hj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS hk ON h.ZZMMM = hk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS hl ON h.HKSZDXZQHM = hl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS hm ON h.HKLBM = hm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hn ON h.SFSLDRK = hn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ho ON h.GJDQM = ho.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS ib ON i.ZYDM = ib.DM /*专业代码*/ AND i.SSZYML = ib.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS ic ON i.SSZYML = ic.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS jb ON j.NJZT = jb.DM /*年级状态*/
+      dbo.EDU_JY_SKFS AS [gb] ON g.SFHXKC = [gb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS [gc] ON g.KCFLM = [gc].DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS [gd] ON g.KCSXM = [gd].DM /*课程属性码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [hc] ON h.XBM = [hc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [hd] ON h.XXM = [hd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [he] ON h.CSDM = [he].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [hf] ON h.MZM = [hf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [hg] ON h.HYZKM = [hg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [hh] ON h.XYZJM = [hh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [hi] ON h.GATQWM = [hi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [hj] ON h.JKZKM = [hj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [hk] ON h.ZZMMM = [hk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hl] ON h.HKSZDXZQHM = [hl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [hm] ON h.HKLBM = [hm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hn] ON h.SFSLDRK = [hn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ho] ON h.GJDQM = [ho].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [ib] ON i.ZYDM = [ib].DM /*专业代码*/ AND i.SSZYML = [ib].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [ic] ON i.SSZYML = [ic].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [jb] ON j.NJZT = [jb].DM /*年级状态*/
 GO
 
 --学生信息数据表
@@ -12895,43 +13859,43 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -12940,8 +13904,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,db.ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,db.MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
       ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
@@ -12952,14 +13916,14 @@ SELECT a.[XSXXID]--学生信息数据表
       ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,dc.MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
       ,e.XN as e_XN_XN--学年表 学年
       ,f.SCHOOLID as f_XQ_SCHOOLID--学期数据表 学校名
       ,f.XNID as f_XQ_XNID--学期数据表 学年
       ,f.XQM as f_XQ_XQM--学期数据表 学期码
-      ,fb.MC as f_XQ_XQM_MC--学期代码表 名称
+      ,[fb].MC as f_XQ_XQM_MC--学期代码表 名称
       ,f.XQMC as f_XQ_XQMC--学期数据表 学期名称
       ,f.XQKSRQ as f_XQ_XQKSRQ--学期数据表 学期开始日期
       ,f.XQJSRQ as f_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -12982,23 +13946,23 @@ FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZJ_BYSLX AS j ON a.BYLX = j.DM /*毕业生类型*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS k ON a.XSLX = k.DM /*学生类型*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS l ON a.SFZS = l.DM /*是否住宿*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS dc ON d.SSZYML = dc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS fb ON f.XQM = fb.DM /*学期码*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [fb] ON f.XQM = [fb].DM /*学期码*/
 GO
 
 --学生家庭信息数据表
@@ -13023,43 +13987,43 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13069,20 +14033,20 @@ SELECT a.[XSXXID]--学生信息数据表
 
 FROM dbo.EDU_ZZXS_02_01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/
 GO
 
 --学生联系人数据表
@@ -13108,43 +14072,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13156,20 +14120,20 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZXS_02_A01_XSLXR AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生信息数据表*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_JTGX AS d ON a.GXM = d.DM /*关系码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/
 GO
 
 --学生家庭成员数据表
@@ -13192,43 +14156,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13245,20 +14209,20 @@ FROM dbo.EDU_ZZXS_02_02_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_GB_JTGX AS d ON a.GXM = d.DM /*关系码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZYFL AS e ON a.JTCYZYM = e.DM /*家庭成员职业码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZZMM AS f ON a.ZZMMM = f.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/
 GO
 
 --学生家庭经济情况数据表
@@ -13282,43 +14246,43 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13339,20 +14303,20 @@ FROM dbo.EDU_ZZXS_02_A02_XSJTJJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_KNCD AS f ON a.KNCDM = f.DM /*困难程度码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS g ON a.SFDB = g.DM /*是否低保*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS h ON a.RXQHKLBM = h.DM /*入学前户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/
 GO
 
 --学生成绩数据类表
@@ -13388,43 +14352,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13444,14 +14408,14 @@ SELECT a.[ID]--编号
       ,d.CKSM as d_KC_CKSM--课程数据子类表 参考书目
       ,d.KKDW as d_KC_KKDW--课程数据子类表 开课单位
       ,d.KSXS as d_KC_KSXS--课程数据子类表 考试形式
-      ,db.MC as d_KC_KSXS_MC--考试形式代码表 名称
+      ,[db].MC as d_KC_KSXS_MC--考试形式代码表 名称
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
-      ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dc].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
-      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -13464,60 +14428,60 @@ SELECT a.[ID]--编号
       ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,gb.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[gb].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,gc.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[gc].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ge.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ge.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ge].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ge].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
       ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,gf.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,gf.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[gf].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gf].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,g.HYZTM as g_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,gg.MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[gg].MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,gh.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,gh.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[gh].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gh].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,gi.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,gi.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[gi].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gi].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,gj.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,gj.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,gj.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[gj].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[gj].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[gj].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,g.CSDXZQHM as g_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,gk.MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gk].MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,gl.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[gl].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,g.JZGHKSZDXZQHM as g_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,gm.MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gm].MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.HKLBM as g_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,gn.MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[gn].MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,g.DQZZ as g_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,g.DQZZYZBM as g_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,g.CJGZNY as g_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,go.MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,g.JZGLBM as g_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,gp.MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,gp.SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[gp].MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[gp].SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,g.GWLBM as g_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,gq.MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[gq].MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,gr.MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[gr].MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,gs.MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[gs].MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,gt.MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[gt].MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,g.YDDH as g_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,g.GDDH as g_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -13532,60 +14496,60 @@ SELECT a.[ID]--编号
       ,h.XMPY as h_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,h.CYM as h_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,h.SFZJLXM as h_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,hb.MC as h_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[hb].MC as h_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,h.SFZJH as h_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,h.CSRQ as h_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,h.XBM as h_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,hc.MC as h_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[hc].MC as h_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,h.MZM as h_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,hd.MZMC as h_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,hd.ZMDM as h_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[hd].MZMC as h_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[hd].ZMDM as h_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,h.XXM as h_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,he.MC as h_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,he.JC as h_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[he].MC as h_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[he].JC as h_JZGJBSJ_XXM_JC--血型代码表 简称
       ,h.JKZKM as h_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,hf.MC as h_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,hf.SM as h_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[hf].MC as h_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[hf].SM as h_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,h.HYZTM as h_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,hg.MC as h_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[hg].MC as h_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,h.ZZMMM as h_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,hh.MC as h_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,hh.JC as h_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[hh].MC as h_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[hh].JC as h_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,h.GATQWM as h_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,hi.MC as h_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,hi.SM as h_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[hi].MC as h_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[hi].SM as h_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,h.JG as h_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,h.GJDQM as h_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,hj.GJDQMCJC as h_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,hj.EZMDM as h_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,hj.SZMDM as h_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[hj].GJDQMCJC as h_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[hj].EZMDM as h_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[hj].SZMDM as h_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,h.CSDXZQHM as h_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,hk.MC as h_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[hk].MC as h_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,h.XYZJM as h_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,hl.MC as h_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[hl].MC as h_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,h.JZGHKSZDXZQHM as h_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,hm.MC as h_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[hm].MC as h_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,h.HKLBM as h_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,hn.MC as h_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[hn].MC as h_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,h.DQZZ as h_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,h.DQZZYZBM as h_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,h.CJGZNY as h_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,h.CJNY as h_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,h.LXNY as h_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,h.BZLBM as h_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,ho.MC as h_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[ho].MC as h_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,h.JZGLBM as h_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,hp.MC as h_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,hp.SM as h_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[hp].MC as h_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[hp].SM as h_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,h.GWLBM as h_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,hq.MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[hq].MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,h.SFJZJS as h_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,hr.MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[hr].MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,h.SFSSXJS as h_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,hs.MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[hs].MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,h.ZP as h_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,h.DQZTM as h_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ht.MC as h_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ht].MC as h_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,h.YDDH as h_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,h.GDDH as h_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,h.TXDZYZBM as h_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -13601,12 +14565,12 @@ SELECT a.[ID]--编号
       ,i.KCMC as i_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,i.YXKC as i_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,i.SFHXKC as i_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,ib.MC as i_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[ib].MC as i_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
       ,i.KCFLM as i_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
-      ,ic.MC as i_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,[ic].MC as i_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,i.KCSXM as i_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
-      ,id.MC as i_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
-      ,id.SM as i_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,[id].MC as i_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,[id].SM as i_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
       ,i.ZXXQ as i_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
       ,i.ZKS as i_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,i.LLKS as i_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
@@ -13618,8 +14582,8 @@ SELECT a.[ID]--编号
       ,j.KCQDID as j_XSCJLX_KCQDID--学生成绩类型表 课程清单ID
       ,k.SCHOOLID as k_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,k.ZYDM as k_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,kb.ZYMLLB as k_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,kb.MC as k_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[kb].ZYMLLB as k_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[kb].MC as k_ZYXX_ZYDM_MC--自建专业代码 名称
       ,k.ZYMC as k_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,k.ZYYWMC as k_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,k.XZ as k_ZYXX_XZ--专业基本信息数据表 学制
@@ -13630,13 +14594,13 @@ SELECT a.[ID]--编号
       ,k.KSJGH as k_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,k.ZXF as k_ZYXX_ZXF--专业基本信息数据表 总学分
       ,k.SSZYML as k_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,kc.MC as k_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[kc].MC as k_ZYXX_SSZYML_MC--专业目录代码 名称
       ,k.ZYLB as k_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,l.SCHOOLID as l_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份
       ,l.NJZT as l_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,lb.MC as l_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[lb].MC as l_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,m.SCHOOLID as m_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,m.ZYXXID as m_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,m.ZZNJID as m_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -13665,67 +14629,67 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS k ON a.ZYXXID = k.ZYBH /*专业ID*/ AND a.SCHOOLID = k.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS l ON a.NJID = l.NJDM /*年级ID*/ AND a.SCHOOLID = l.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS m ON a.BJID = m.XZBDM /*班级ID*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS gb ON g.SFZJLXM = gb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS gc ON g.XBM = gc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ge ON g.XXM = ge.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS gf ON g.JKZKM = gf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS gg ON g.HYZTM = gg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS gh ON g.ZZMMM = gh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS gi ON g.GATQWM = gi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS gj ON g.GJDQM = gj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gk ON g.CSDXZQHM = gk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS gl ON g.XYZJM = gl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gm ON g.JZGHKSZDXZQHM = gm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS gn ON g.HKLBM = gn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS gp ON g.JZGLBM = gp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS gq ON g.GWLBM = gq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gr ON g.SFJZJS = gr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gs ON g.SFSSXJS = gs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS gt ON g.DQZTM = gt.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS hb ON h.SFZJLXM = hb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS hc ON h.XBM = hc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS hd ON h.MZM = hd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS he ON h.XXM = he.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS hf ON h.JKZKM = hf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS hg ON h.HYZTM = hg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS hh ON h.ZZMMM = hh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS hi ON h.GATQWM = hi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS hj ON h.GJDQM = hj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS hk ON h.CSDXZQHM = hk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS hl ON h.XYZJM = hl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS hm ON h.JZGHKSZDXZQHM = hm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS hn ON h.HKLBM = hn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS ho ON h.BZLBM = ho.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS hp ON h.JZGLBM = hp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS hq ON h.GWLBM = hq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hr ON h.SFJZJS = hr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hs ON h.SFSSXJS = hs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ht ON h.DQZTM = ht.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS ib ON i.SFHXKC = ib.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_KCFL AS ic ON i.KCFLM = ic.DM /*课程分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KCSX AS id ON i.KCSXM = id.DM /*课程属性码*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS kb ON k.ZYDM = kb.DM /*专业代码*/ AND k.SSZYML = kb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS kc ON k.SSZYML = kc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS lb ON l.NJZT = lb.DM /*年级状态*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [db] ON d.KSXS = [db].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dc] ON d.SKFSM = [dc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ge] ON g.XXM = [ge].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gf] ON g.JKZKM = [gf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZTM = [gg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gh] ON g.ZZMMM = [gh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gi] ON g.GATQWM = [gi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [gj] ON g.GJDQM = [gj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gk] ON g.CSDXZQHM = [gk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gl] ON g.XYZJM = [gl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gm] ON g.JZGHKSZDXZQHM = [gm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gn] ON g.HKLBM = [gn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [gp] ON g.JZGLBM = [gp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [gq] ON g.GWLBM = [gq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gr] ON g.SFJZJS = [gr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [hc] ON h.XBM = [hc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [hd] ON h.MZM = [hd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [he] ON h.XXM = [he].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [hf] ON h.JKZKM = [hf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [hg] ON h.HYZTM = [hg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [hh] ON h.ZZMMM = [hh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [hi] ON h.GATQWM = [hi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [hj] ON h.GJDQM = [hj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hk] ON h.CSDXZQHM = [hk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [hl] ON h.XYZJM = [hl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hm] ON h.JZGHKSZDXZQHM = [hm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [hn] ON h.HKLBM = [hn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [ho] ON h.BZLBM = [ho].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [hp] ON h.JZGLBM = [hp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [hq] ON h.GWLBM = [hq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hr] ON h.SFJZJS = [hr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hs] ON h.SFSSXJS = [hs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ht] ON h.DQZTM = [ht].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [ib] ON i.SFHXKC = [ib].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS [ic] ON i.KCFLM = [ic].DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS [id] ON i.KCSXM = [id].DM /*课程属性码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [kb] ON k.ZYDM = [kb].DM /*专业代码*/ AND k.SSZYML = [kb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [kc] ON k.SSZYML = [kc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [lb] ON l.NJZT = [lb].DM /*年级状态*/
 GO
 
 --学生成绩类型表
@@ -13744,12 +14708,12 @@ SELECT a.[ID]--编号
       ,c.KCMC as c_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,c.YXKC as c_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,c.SFHXKC as c_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,cb.MC as c_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[cb].MC as c_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
       ,c.KCFLM as c_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
-      ,cc.MC as c_JXJHKCQD_KCFLM_MC--课程分类代码 名称
+      ,[cc].MC as c_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,c.KCSXM as c_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
-      ,cd.MC as c_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
-      ,cd.SM as c_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
+      ,[cd].MC as c_JXJHKCQD_KCSXM_MC--课程属性代码表 名称
+      ,[cd].SM as c_JXJHKCQD_KCSXM_SM--课程属性代码表 说明
       ,c.ZXXQ as c_JXJHKCQD_ZXXQ--教学计划课程清单数据子类表 执行学期
       ,c.ZKS as c_JXJHKCQD_ZKS--教学计划课程清单数据子类表 总课时
       ,c.LLKS as c_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
@@ -13758,9 +14722,9 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZZXS_06_02_XSCJLX AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS c ON a.KCQDID = c.ID /*课程清单ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS cb ON c.SFHXKC = cb.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_KCFL AS cc ON c.KCFLM = cc.DM /*课程分类码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KCSX AS cd ON c.KCSXM = cd.DM /*课程属性码*/
+      dbo.EDU_JY_SKFS AS [cb] ON c.SFHXKC = [cb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_KCFL AS [cc] ON c.KCFLM = [cc].DM /*课程分类码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KCSX AS [cd] ON c.KCSXM = [cd].DM /*课程属性码*/
 GO
 
 --学籍基本数据表
@@ -13783,43 +14747,43 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13828,8 +14792,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,db.ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,db.MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
       ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
@@ -13840,7 +14804,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,dc.MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,e.SCHOOLID as e_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,e.ZYXXID as e_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
@@ -13861,7 +14825,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,fb.MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,g.MC as g_XSLB_MC--学生类别代码表 名称
       ,g.SM as g_XSLB_SM--学生类别代码表 说明
       ,h.MC as h_XSDQZT_MC--学生当前状态代码表 名称
@@ -13874,23 +14838,23 @@ FROM dbo.EDU_ZZXS_07_01_XJSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS f ON a.ZZNJID = f.NJDM /*学校年级数据表*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS g ON a.XSLBM = g.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS h ON a.XSDQZTM = h.DM /*学生当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS dc ON d.SSZYML = dc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fb ON f.NJZT = fb.DM /*年级状态*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fb] ON f.NJZT = [fb].DM /*年级状态*/
 GO
 
 --学籍异动数据子类表
@@ -13924,43 +14888,43 @@ SELECT a.[ID]--学籍异动表编号
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -13976,60 +14940,60 @@ SELECT a.[ID]--学籍异动表编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -14039,8 +15003,8 @@ SELECT a.[ID]--学籍异动表编号
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,gb.ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,gb.MC as g_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[gb].ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[gb].MC as g_ZYXX_ZYDM_MC--自建专业代码 名称
       ,g.ZYMC as g_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,g.ZYYWMC as g_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,g.XZ as g_ZYXX_XZ--专业基本信息数据表 学制
@@ -14051,7 +15015,7 @@ SELECT a.[ID]--学籍异动表编号
       ,g.KSJGH as g_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,g.ZXF as g_ZYXX_ZXF--专业基本信息数据表 总学分
       ,g.SSZYML as g_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,gc.MC as g_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[gc].MC as g_ZYXX_SSZYML_MC--专业目录代码 名称
       ,g.ZYLB as g_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,h.SCHOOLID as h_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,h.ZYXXID as h_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
@@ -14072,11 +15036,11 @@ SELECT a.[ID]--学籍异动表编号
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
       ,i.NJZT as i_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,ib.MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[ib].MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,j.SCHOOLID as j_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,j.ZYDM as j_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,jb.ZYMLLB as j_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,jb.MC as j_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[jb].ZYMLLB as j_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[jb].MC as j_ZYXX_ZYDM_MC--自建专业代码 名称
       ,j.ZYMC as j_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,j.ZYYWMC as j_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,j.XZ as j_ZYXX_XZ--专业基本信息数据表 学制
@@ -14087,7 +15051,7 @@ SELECT a.[ID]--学籍异动表编号
       ,j.KSJGH as j_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,j.ZXF as j_ZYXX_ZXF--专业基本信息数据表 总学分
       ,j.SSZYML as j_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,jc.MC as j_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[jc].MC as j_ZYXX_SSZYML_MC--专业目录代码 名称
       ,j.ZYLB as j_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
@@ -14108,7 +15072,7 @@ SELECT a.[ID]--学籍异动表编号
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份
       ,l.NJZT as l_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,lb.MC as l_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[lb].MC as l_ZZNJ_NJZT_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZXS_07_02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -14121,45 +15085,45 @@ FROM dbo.EDU_ZZXS_07_02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS j ON a.XZYID = j.ZYBH /*现专业ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS k ON a.XBH = k.XZBDM /*现班号*/ AND a.SCHOOLID = k.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS l ON a.XNJ = l.NJDM /*现年级*/ AND a.SCHOOLID = l.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS gb ON g.ZYDM = gb.DM /*专业代码*/ AND g.SSZYML = gb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS gc ON g.SSZYML = gc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ib ON i.NJZT = ib.DM /*年级状态*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS jb ON j.ZYDM = jb.DM /*专业代码*/ AND j.SSZYML = jb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS jc ON j.SSZYML = jc.DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS lb ON l.NJZT = lb.DM /*年级状态*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [gb] ON g.ZYDM = [gb].DM /*专业代码*/ AND g.SSZYML = [gb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [gc] ON g.SSZYML = [gc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ib] ON i.NJZT = [ib].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [jb] ON j.ZYDM = [jb].DM /*专业代码*/ AND j.SSZYML = [jb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [jc] ON j.SSZYML = [jc].DM /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [lb] ON l.NJZT = [lb].DM /*年级状态*/
 GO
 
 --学生注册信息数据子类表
@@ -14182,43 +15146,43 @@ SELECT a.[XSXXID]--学生ID
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -14228,7 +15192,7 @@ SELECT a.[XSXXID]--学生ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -14242,21 +15206,21 @@ FROM dbo.EDU_ZZXS_07_03_XSZCXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_ZCZK AS e ON a.ZCZKM = e.DM /*注册状况码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFQJ = f.DM /*是否请假*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS g ON a.WASZCXQM = g.DM /*未按时注册学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO
 
 --奖学金数据子类表
@@ -14264,99 +15228,20 @@ CREATE VIEW [dbo].[VIEW_EDU_ZZXS_10_02_JXJSJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
-      ,a.[XQID]--学期ID
-      ,a.[XSXXID]--学生ID
       ,a.[JXJMC]--奖学金名称
       ,a.[JXJBH]--奖学金编号
       ,a.[JXJDJ]--奖学金等级
       ,a.[JXJLXM]--奖学金类型码
       ,a.[JXJE]--奖学金额
-      ,a.[HJSJ]--获奖时间
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[JXJLYM]--奖学金来源码
-      ,a.[SFSH]--是否审核
-      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
-      ,c.XNID as c_XQ_XNID--学期数据表 学年
-      ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
-      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
-      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
-      ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
-      ,d.XH as d_XSXX_XH--学生信息数据表 学号
-      ,d.XM as d_XSXX_XM--学生信息数据表 姓名
-      ,d.YWXM as d_XSXX_YWXM--学生信息数据表 英文姓名
-      ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
-      ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
-      ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
-      ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
-      ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
-      ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
-      ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
-      ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
-      ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
-      ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
-      ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
-      ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
-      ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
-      ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
-      ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
-      ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
-      ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
-      ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
-      ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
-      ,d.TC as d_XSXX_TC--学生信息数据表 特长
-      ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
-      ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
-      ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
-      ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
-      ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
-      ,e.MC as e_JXJLX_MC--奖学金类型代码表 名称
-      ,f.MC as f_JLZZZJLY_MC--奖励资助资金来源代码表 名称
-      ,g.MC as g_SFBZ_MC--是否标志代码表 名称
+      ,a.[BZ]--备注
+      ,c.MC as c_JXJLX_MC--奖学金类型代码表 名称
+      ,d.MC as d_JLZZZJLY_MC--奖励资助资金来源代码表 名称
 
 FROM dbo.EDU_ZZXS_10_02_JXJSJ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSXXID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JXJLX AS e ON a.JXJLXM = e.DM /*奖学金类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JLZZZJLY AS f ON a.JXJLYM = f.DM /*奖学金来源码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS g ON a.SFSH = g.DM /*是否审核*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/
+      dbo.EDU_JY_JXJLX AS c ON a.JXJLXM = c.DM /*奖学金类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JLZZZJLY AS d ON a.JXJLYM = d.DM /*奖学金来源码*/
 GO
 
 --助学金数据子类表
@@ -14364,22 +15249,38 @@ CREATE VIEW [dbo].[VIEW_EDU_ZZXS_10_03_ZXJSJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
-      ,a.[XQID]--学期ID
-      ,a.[XSXXID]--学生ID
-      ,a.[ZKBMH]--中考报名号
-      ,a.[YHKH]--银行卡号
       ,a.[ZXJE]--助学金额
-      ,a.[SFSJ]--始发时间
-      ,a.[TFSJ]--停发时间
-      ,a.[TFYY]--停发原因
       ,a.[ZXJMC]--助学金名称
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[ZXJLX]--助学金类型
-      ,a.[SFSH]--是否审核
+      ,a.[BZ]--备注
+      ,c.MC as c_ZXJFL_MC--助学金分类代码 名称
+
+FROM dbo.EDU_ZZXS_10_03_ZXJSJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZZ_ZXJFL AS c ON a.ZXJLX = c.DM /*助学金类型*/
+GO
+
+--学生获奖学金表
+CREATE VIEW [dbo].[VIEW_EDU_ZZXS_10_A12_XSHJXJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[XSXXID]--学生ID
+      ,a.[JXJID]--奖学金ID
+      ,a.[HDJE]--获得金额
+      ,a.[HJSJ]--获奖时间
+      ,a.[BZ]--备注
+      ,a.[SQYY]--申请原因
+      ,a.[SQSJ]--申请时间
+      ,a.[SHZT]--审核状态
+      ,a.[SHSJ]--审核时间
+      ,a.[SHJSID]--审核教师ID
+      ,a.[TJJSID]--添加教师ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -14390,72 +15291,542 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
-      ,e.MC as e_ZXJFL_MC--助学金分类代码 名称
-      ,f.MC as f_SFBZ_MC--是否标志代码表 名称
+      ,e.SCHOOLID as e_JXJSJ_SCHOOLID--奖学金数据子类表 学校ID
+      ,e.JXJMC as e_JXJSJ_JXJMC--奖学金数据子类表 奖学金名称
+      ,e.JXJBH as e_JXJSJ_JXJBH--奖学金数据子类表 奖学金编号
+      ,e.JXJDJ as e_JXJSJ_JXJDJ--奖学金数据子类表 奖学金等级
+      ,e.JXJLXM as e_JXJSJ_JXJLXM--奖学金数据子类表 奖学金类型码
+      ,[eb].MC as e_JXJSJ_JXJLXM_MC--奖学金类型代码表 名称
+      ,e.JXJE as e_JXJSJ_JXJE--奖学金数据子类表 奖学金额
+      ,e.ZZDWHGR as e_JXJSJ_ZZDWHGR--奖学金数据子类表 资助单位或个人
+      ,e.JXJLYM as e_JXJSJ_JXJLYM--奖学金数据子类表 奖学金来源码
+      ,[ec].MC as e_JXJSJ_JXJLYM_MC--奖励资助资金来源代码表 名称
+      ,e.BZ as e_JXJSJ_BZ--奖学金数据子类表 备注
+      ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,f.YWXM as f_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,f.TXDZ as f_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,g.YWXM as g_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[gb].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[gc].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[ge].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ge].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[gf].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gf].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,g.HYZTM as g_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[gg].MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[gh].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gh].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[gi].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gi].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[gj].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[gj].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[gj].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,g.CSDXZQHM as g_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[gk].MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[gl].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,g.JZGHKSZDXZQHM as g_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[gm].MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,g.HKLBM as g_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[gn].MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,g.DQZZ as g_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,g.DQZZYZBM as g_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,g.CJGZNY as g_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,g.JZGLBM as g_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[gp].MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[gp].SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,g.GWLBM as g_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[gq].MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[gr].MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[gs].MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[gt].MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,g.YDDH as g_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,g.GDDH as g_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,g.TXDZ as g_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,g.DZXX as g_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
 
-FROM dbo.EDU_ZZXS_10_03_ZXJSJ AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZZXS_10_A12_XSHJXJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSXXID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZ_ZXJFL AS e ON a.ZXJLX = e.DM /*助学金类型*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS f ON a.SFSH = f.DM /*是否审核*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/
+      dbo.EDU_ZZXS_10_02_JXJSJ AS e ON a.JXJID = e.ID /*奖学金ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SHJSID = f.ID /*审核教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.TJJSID = g.ID /*添加教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JXJLX AS [eb] ON e.JXJLXM = [eb].DM /*奖学金类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JLZZZJLY AS [ec] ON e.JXJLYM = [ec].DM /*奖学金来源码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ge] ON g.XXM = [ge].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gf] ON g.JKZKM = [gf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZTM = [gg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gh] ON g.ZZMMM = [gh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gi] ON g.GATQWM = [gi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [gj] ON g.GJDQM = [gj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gk] ON g.CSDXZQHM = [gk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gl] ON g.XYZJM = [gl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gm] ON g.JZGHKSZDXZQHM = [gm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gn] ON g.HKLBM = [gn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [gp] ON g.JZGLBM = [gp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [gq] ON g.GWLBM = [gq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gr] ON g.SFJZJS = [gr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/
+GO
+
+--学生获助学金表
+CREATE VIEW [dbo].[VIEW_EDU_ZZXS_10_A13_XSHZXJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XQID]--学期ID
+      ,a.[XSXXID]--学生ID
+      ,a.[ZXJID]--助学金ID
+      ,a.[ZKBMH]--中考报名号
+      ,a.[YHKH]--银行卡号
+      ,a.[HDJE]--获得金额
+      ,a.[SFSJ]--始发时间
+      ,a.[TFSJ]--停发时间
+      ,a.[TFYY]--停发原因
+      ,a.[BZ]--备注
+      ,a.[SQYY]--申请原因
+      ,a.[SQSJ]--申请时间
+      ,a.[SHZT]--审核状态
+      ,a.[SHSJ]--审核时间
+      ,a.[SHJSID]--审核教师ID
+      ,a.[TJJSID]--添加教师ID
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
+      ,d.XH as d_XSXX_XH--学生信息数据表 学号
+      ,d.XM as d_XSXX_XM--学生信息数据表 姓名
+      ,d.YWXM as d_XSXX_YWXM--学生信息数据表 英文姓名
+      ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
+      ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
+      ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
+      ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
+      ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
+      ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,d.TC as d_XSXX_TC--学生信息数据表 特长
+      ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
+      ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
+      ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
+      ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
+      ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,e.SCHOOLID as e_ZXJSJ_SCHOOLID--助学金数据子类表 学校ID
+      ,e.ZXJE as e_ZXJSJ_ZXJE--助学金数据子类表 助学金额
+      ,e.ZXJMC as e_ZXJSJ_ZXJMC--助学金数据子类表 助学金名称
+      ,e.ZZDWHGR as e_ZXJSJ_ZZDWHGR--助学金数据子类表 资助单位或个人
+      ,e.ZXJLX as e_ZXJSJ_ZXJLX--助学金数据子类表 助学金类型
+      ,[eb].MC as e_ZXJSJ_ZXJLX_MC--助学金分类代码 名称
+      ,e.BZ as e_ZXJSJ_BZ--助学金数据子类表 备注
+      ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,f.YWXM as f_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,f.TXDZ as f_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,g.YWXM as g_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[gb].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[gc].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[ge].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ge].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[gf].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gf].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,g.HYZTM as g_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
+      ,[gg].MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[gh].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gh].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[gi].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gi].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[gj].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[gj].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[gj].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,g.CSDXZQHM as g_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
+      ,[gk].MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[gl].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,g.JZGHKSZDXZQHM as g_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
+      ,[gm].MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,g.HKLBM as g_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
+      ,[gn].MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,g.DQZZ as g_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
+      ,g.DQZZYZBM as g_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
+      ,g.CJGZNY as g_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
+      ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,g.JZGLBM as g_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
+      ,[gp].MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[gp].SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,g.GWLBM as g_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
+      ,[gq].MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
+      ,[gr].MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
+      ,[gs].MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
+      ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
+      ,[gt].MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,g.YDDH as g_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
+      ,g.GDDH as g_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
+      ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
+      ,g.TXDZ as g_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,g.DZXX as g_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
+      ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+
+FROM dbo.EDU_ZZXS_10_A13_XSHZXJ AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSXXID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_10_03_ZXJSJ AS e ON a.ZXJID = e.ID /*助学金ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SHJSID = f.ID /*审核教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.TJJSID = g.ID /*添加教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_ZZ_ZXJFL AS [eb] ON e.ZXJLX = [eb].DM /*助学金类型*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ge] ON g.XXM = [ge].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gf] ON g.JKZKM = [gf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZTM = [gg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gh] ON g.ZZMMM = [gh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gi] ON g.GATQWM = [gi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [gj] ON g.GJDQM = [gj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gk] ON g.CSDXZQHM = [gk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gl] ON g.XYZJM = [gl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gm] ON g.JZGHKSZDXZQHM = [gm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gn] ON g.HKLBM = [gn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [gp] ON g.JZGLBM = [gp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [gq] ON g.GWLBM = [gq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gr] ON g.SFJZJS = [gr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/
 GO
 
 --社团成员表
@@ -14498,43 +15869,43 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
@@ -14564,60 +15935,60 @@ SELECT a.[ID]--编号
       ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,gb.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[gb].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,gc.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[gc].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ge.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ge.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ge].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ge].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
       ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,gf.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,gf.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[gf].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gf].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,g.HYZTM as g_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,gg.MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[gg].MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,gh.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,gh.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[gh].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gh].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,gi.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,gi.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[gi].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gi].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,gj.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,gj.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,gj.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[gj].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[gj].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[gj].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,g.CSDXZQHM as g_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,gk.MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gk].MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,gl.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[gl].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,g.JZGHKSZDXZQHM as g_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,gm.MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gm].MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.HKLBM as g_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,gn.MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[gn].MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,g.DQZZ as g_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,g.DQZZYZBM as g_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,g.CJGZNY as g_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,go.MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,g.JZGLBM as g_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,gp.MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,gp.SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[gp].MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[gp].SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,g.GWLBM as g_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,gq.MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[gq].MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,gr.MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[gr].MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,gs.MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[gs].MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,gt.MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[gt].MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,g.YDDH as g_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,g.GDDH as g_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -14632,60 +16003,60 @@ SELECT a.[ID]--编号
       ,h.XMPY as h_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,h.CYM as h_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,h.SFZJLXM as h_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,hb.MC as h_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[hb].MC as h_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,h.SFZJH as h_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,h.CSRQ as h_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,h.XBM as h_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,hc.MC as h_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[hc].MC as h_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,h.MZM as h_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,hd.MZMC as h_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,hd.ZMDM as h_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[hd].MZMC as h_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[hd].ZMDM as h_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,h.XXM as h_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,he.MC as h_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,he.JC as h_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[he].MC as h_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[he].JC as h_JZGJBSJ_XXM_JC--血型代码表 简称
       ,h.JKZKM as h_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,hf.MC as h_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,hf.SM as h_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[hf].MC as h_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[hf].SM as h_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,h.HYZTM as h_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,hg.MC as h_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[hg].MC as h_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,h.ZZMMM as h_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,hh.MC as h_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,hh.JC as h_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[hh].MC as h_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[hh].JC as h_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,h.GATQWM as h_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,hi.MC as h_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,hi.SM as h_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[hi].MC as h_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[hi].SM as h_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,h.JG as h_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,h.GJDQM as h_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,hj.GJDQMCJC as h_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,hj.EZMDM as h_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,hj.SZMDM as h_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[hj].GJDQMCJC as h_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[hj].EZMDM as h_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[hj].SZMDM as h_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,h.CSDXZQHM as h_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,hk.MC as h_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[hk].MC as h_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,h.XYZJM as h_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,hl.MC as h_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[hl].MC as h_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,h.JZGHKSZDXZQHM as h_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,hm.MC as h_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[hm].MC as h_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,h.HKLBM as h_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,hn.MC as h_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[hn].MC as h_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,h.DQZZ as h_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,h.DQZZYZBM as h_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,h.CJGZNY as h_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,h.CJNY as h_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,h.LXNY as h_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,h.BZLBM as h_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,ho.MC as h_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[ho].MC as h_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,h.JZGLBM as h_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,hp.MC as h_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,hp.SM as h_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[hp].MC as h_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[hp].SM as h_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,h.GWLBM as h_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,hq.MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[hq].MC as h_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,h.SFJZJS as h_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,hr.MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[hr].MC as h_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,h.SFSSXJS as h_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,hs.MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[hs].MC as h_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,h.ZP as h_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,h.DQZTM as h_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ht.MC as h_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ht].MC as h_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,h.YDDH as h_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,h.GDDH as h_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,h.TXDZYZBM as h_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -14701,58 +16072,58 @@ FROM dbo.EDU_ZZXS_12_A02_STCY AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.DQZT = f.DM /*当前状态*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.TJRID = g.ID /*添加人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.SHRID = h.ID /*审核人ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS gb ON g.SFZJLXM = gb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS gc ON g.XBM = gc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ge ON g.XXM = ge.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS gf ON g.JKZKM = gf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS gg ON g.HYZTM = gg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS gh ON g.ZZMMM = gh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS gi ON g.GATQWM = gi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS gj ON g.GJDQM = gj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gk ON g.CSDXZQHM = gk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS gl ON g.XYZJM = gl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gm ON g.JZGHKSZDXZQHM = gm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS gn ON g.HKLBM = gn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS gp ON g.JZGLBM = gp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS gq ON g.GWLBM = gq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gr ON g.SFJZJS = gr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gs ON g.SFSSXJS = gs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS gt ON g.DQZTM = gt.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS hb ON h.SFZJLXM = hb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS hc ON h.XBM = hc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS hd ON h.MZM = hd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS he ON h.XXM = he.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS hf ON h.JKZKM = hf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS hg ON h.HYZTM = hg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS hh ON h.ZZMMM = hh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS hi ON h.GATQWM = hi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS hj ON h.GJDQM = hj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS hk ON h.CSDXZQHM = hk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS hl ON h.XYZJM = hl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS hm ON h.JZGHKSZDXZQHM = hm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS hn ON h.HKLBM = hn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS ho ON h.BZLBM = ho.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS hp ON h.JZGLBM = hp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS hq ON h.GWLBM = hq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hr ON h.SFJZJS = hr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS hs ON h.SFSSXJS = hs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ht ON h.DQZTM = ht.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ge] ON g.XXM = [ge].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gf] ON g.JKZKM = [gf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZTM = [gg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gh] ON g.ZZMMM = [gh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gi] ON g.GATQWM = [gi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [gj] ON g.GJDQM = [gj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gk] ON g.CSDXZQHM = [gk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gl] ON g.XYZJM = [gl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gm] ON g.JZGHKSZDXZQHM = [gm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gn] ON g.HKLBM = [gn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [gp] ON g.JZGLBM = [gp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [gq] ON g.GWLBM = [gq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gr] ON g.SFJZJS = [gr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [hc] ON h.XBM = [hc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [hd] ON h.MZM = [hd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [he] ON h.XXM = [he].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [hf] ON h.JKZKM = [hf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [hg] ON h.HYZTM = [hg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [hh] ON h.ZZMMM = [hh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [hi] ON h.GATQWM = [hi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [hj] ON h.GJDQM = [hj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hk] ON h.CSDXZQHM = [hk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [hl] ON h.XYZJM = [hl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [hm] ON h.JZGHKSZDXZQHM = [hm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [hn] ON h.HKLBM = [hn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [ho] ON h.BZLBM = [ho].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [hp] ON h.JZGLBM = [hp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [hq] ON h.GWLBM = [hq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hr] ON h.SFJZJS = [hr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hs] ON h.SFSSXJS = [hs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ht] ON h.DQZTM = [ht].DM /*当前状态码*/
 GO
 
 --学生社团成绩表
@@ -14769,7 +16140,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -14784,7 +16155,7 @@ SELECT a.[ID]--编号
       ,d.GZNR as d_STCY_GZNR--社团成员表 工作内容
       ,d.STPJ as d_STCY_STPJ--社团成员表 社团评价
       ,d.DQZT as d_STCY_DQZT--社团成员表 当前状态
-      ,db.MC as d_STCY_DQZT_MC--是否标志代码表 名称
+      ,[db].MC as d_STCY_DQZT_MC--是否标志代码表 名称
       ,d.TJRID as d_STCY_TJRID--社团成员表 添加人ID
       ,d.SHRID as d_STCY_SHRID--社团成员表 审核人ID
       ,d.SHSJ as d_STCY_SHSJ--社团成员表 审核时间
@@ -14798,60 +16169,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -14865,27 +16236,27 @@ FROM dbo.EDU_ZZXS_12_A04_XSSTCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_12_A02_STCY AS d ON a.STCYID = d.ID /*社团成员表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_12_A03_STCJLX AS e ON a.CJLXID = e.ID /*成绩类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.TJRID = f.ID /*添加人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS db ON d.DQZT = db.DM /*当前状态*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [db] ON d.DQZT = [db].DM /*当前状态*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --学生日常行为规范考核数据表
@@ -14929,60 +16300,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -14996,25 +16367,25 @@ FROM dbo.EDU_ZZXS_14_A03_XSRCXWGFKHSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_14_A02_XSKHBSJ AS d ON a.KHBID = d.ID /*考核表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_14_A01_XSKHXM AS e ON a.KHXMID = e.ID /*考核项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.JLJSID = f.ID /*记录教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/
 GO
 
 --学生五位一体值勤数据表
@@ -15075,43 +16446,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -15121,7 +16492,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -15136,60 +16507,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -15204,60 +16575,60 @@ SELECT a.[ID]--编号
       ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,gb.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[gb].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,gc.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[gc].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ge.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ge.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ge].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ge].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
       ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,gf.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,gf.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[gf].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gf].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,g.HYZTM as g_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,gg.MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[gg].MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,gh.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,gh.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[gh].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gh].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,gi.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,gi.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[gi].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gi].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,gj.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,gj.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,gj.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[gj].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[gj].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[gj].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,g.CSDXZQHM as g_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,gk.MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gk].MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,gl.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[gl].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,g.JZGHKSZDXZQHM as g_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,gm.MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gm].MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.HKLBM as g_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,gn.MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[gn].MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,g.DQZZ as g_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,g.DQZZYZBM as g_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,g.CJGZNY as g_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,go.MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,g.JZGLBM as g_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,gp.MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,gp.SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[gp].MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[gp].SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,g.GWLBM as g_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,gq.MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[gq].MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,gr.MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[gr].MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,gs.MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[gs].MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,gt.MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[gt].MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,g.YDDH as g_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,g.GDDH as g_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -15272,59 +16643,59 @@ FROM dbo.EDU_ZZXS_15_A02_RYCHSQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_15_A01_RYCH AS e ON a.RYCHID = e.ID /*荣誉称号ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SHJSID = f.ID /*审核教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.TJJSID = g.ID /*添加教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS gb ON g.SFZJLXM = gb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS gc ON g.XBM = gc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ge ON g.XXM = ge.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS gf ON g.JKZKM = gf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS gg ON g.HYZTM = gg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS gh ON g.ZZMMM = gh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS gi ON g.GATQWM = gi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS gj ON g.GJDQM = gj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gk ON g.CSDXZQHM = gk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS gl ON g.XYZJM = gl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gm ON g.JZGHKSZDXZQHM = gm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS gn ON g.HKLBM = gn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS gp ON g.JZGLBM = gp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS gq ON g.GWLBM = gq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gr ON g.SFJZJS = gr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gs ON g.SFSSXJS = gs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS gt ON g.DQZTM = gt.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ge] ON g.XXM = [ge].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gf] ON g.JKZKM = [gf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZTM = [gg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gh] ON g.ZZMMM = [gh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gi] ON g.GATQWM = [gi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [gj] ON g.GJDQM = [gj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gk] ON g.CSDXZQHM = [gk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gl] ON g.XYZJM = [gl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gm] ON g.JZGHKSZDXZQHM = [gm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gn] ON g.HKLBM = [gn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [gp] ON g.JZGLBM = [gp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [gq] ON g.GWLBM = [gq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gr] ON g.SFJZJS = [gr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/
 GO
 
 --贫困生信息表
@@ -15349,43 +16720,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -15395,7 +16766,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -15410,60 +16781,60 @@ SELECT a.[ID]--编号
       ,f.XMPY as f_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,f.CYM as f_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,f.SFZJLXM as f_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,fb.MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[fb].MC as f_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,f.SFZJH as f_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,f.CSRQ as f_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,f.XBM as f_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,fc.MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[fc].MC as f_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,f.MZM as f_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,fd.MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,fd.ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[fd].MZMC as f_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[fd].ZMDM as f_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,f.XXM as f_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,fe.MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,fe.JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[fe].MC as f_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[fe].JC as f_JZGJBSJ_XXM_JC--血型代码表 简称
       ,f.JKZKM as f_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ff.MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ff.SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ff].MC as f_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ff].SM as f_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,f.HYZTM as f_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,fg.MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[fg].MC as f_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,f.ZZMMM as f_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,fh.MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,fh.JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[fh].MC as f_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[fh].JC as f_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,f.GATQWM as f_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,fi.MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,fi.SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[fi].MC as f_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[fi].SM as f_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,f.JG as f_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,f.GJDQM as f_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,fj.GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,fj.EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,fj.SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[fj].GJDQMCJC as f_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[fj].EZMDM as f_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[fj].SZMDM as f_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,f.CSDXZQHM as f_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,fk.MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fk].MC as f_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.XYZJM as f_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,fl.MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[fl].MC as f_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,f.JZGHKSZDXZQHM as f_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,fm.MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[fm].MC as f_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,f.HKLBM as f_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,fn.MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[fn].MC as f_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,f.DQZZ as f_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,f.DQZZYZBM as f_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,f.CJGZNY as f_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,f.CJNY as f_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,f.LXNY as f_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,f.BZLBM as f_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,fo.MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[fo].MC as f_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,f.JZGLBM as f_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,fp.MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,fp.SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[fp].MC as f_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[fp].SM as f_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,f.GWLBM as f_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,fq.MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[fq].MC as f_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,f.SFJZJS as f_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,fr.MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[fr].MC as f_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,f.SFSSXJS as f_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,fs.MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[fs].MC as f_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,f.ZP as f_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,f.DQZTM as f_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,ft.MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[ft].MC as f_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,f.YDDH as f_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,f.GDDH as f_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,f.TXDZYZBM as f_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -15478,60 +16849,60 @@ SELECT a.[ID]--编号
       ,g.XMPY as g_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,g.CYM as g_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,g.SFZJLXM as g_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,gb.MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[gb].MC as g_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,g.SFZJH as g_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,g.CSRQ as g_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,g.XBM as g_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,gc.MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[gc].MC as g_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,g.MZM as g_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,gd.MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,gd.ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[gd].MZMC as g_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[gd].ZMDM as g_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,g.XXM as g_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ge.MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ge.JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ge].MC as g_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ge].JC as g_JZGJBSJ_XXM_JC--血型代码表 简称
       ,g.JKZKM as g_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,gf.MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,gf.SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[gf].MC as g_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[gf].SM as g_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,g.HYZTM as g_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,gg.MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[gg].MC as g_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,g.ZZMMM as g_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,gh.MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,gh.JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[gh].MC as g_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[gh].JC as g_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,g.GATQWM as g_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,gi.MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,gi.SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[gi].MC as g_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[gi].SM as g_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,g.JG as g_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,g.GJDQM as g_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,gj.GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,gj.EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,gj.SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[gj].GJDQMCJC as g_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[gj].EZMDM as g_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[gj].SZMDM as g_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,g.CSDXZQHM as g_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,gk.MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gk].MC as g_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.XYZJM as g_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,gl.MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[gl].MC as g_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,g.JZGHKSZDXZQHM as g_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,gm.MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[gm].MC as g_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,g.HKLBM as g_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,gn.MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[gn].MC as g_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,g.DQZZ as g_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,g.DQZZYZBM as g_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,g.CJGZNY as g_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,g.CJNY as g_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,g.LXNY as g_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,g.BZLBM as g_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,go.MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[go].MC as g_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,g.JZGLBM as g_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,gp.MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,gp.SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[gp].MC as g_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[gp].SM as g_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,g.GWLBM as g_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,gq.MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[gq].MC as g_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,g.SFJZJS as g_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,gr.MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[gr].MC as g_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,g.SFSSXJS as g_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,gs.MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[gs].MC as g_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,g.ZP as g_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,g.DQZTM as g_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,gt.MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[gt].MC as g_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,g.YDDH as g_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,g.GDDH as g_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,g.TXDZYZBM as g_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -15546,59 +16917,59 @@ FROM dbo.EDU_ZZXS_16_A02_PKSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_16_A01_PKSLX AS e ON a.PKSLXID = e.ID /*贫困生类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.SHJSID = f.ID /*审核教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS g ON a.TJJSID = g.ID /*添加教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS fb ON f.SFZJLXM = fb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fc ON f.XBM = fc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS fd ON f.MZM = fd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS fe ON f.XXM = fe.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ff ON f.JKZKM = ff.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS fg ON f.HYZTM = fg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS fh ON f.ZZMMM = fh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS fi ON f.GATQWM = fi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS fj ON f.GJDQM = fj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fk ON f.CSDXZQHM = fk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS fl ON f.XYZJM = fl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS fm ON f.JZGHKSZDXZQHM = fm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS fn ON f.HKLBM = fn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS fo ON f.BZLBM = fo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS fp ON f.JZGLBM = fp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS fq ON f.GWLBM = fq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fr ON f.SFJZJS = fr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS fs ON f.SFSSXJS = fs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS ft ON f.DQZTM = ft.DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS gb ON g.SFZJLXM = gb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS gc ON g.XBM = gc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS gd ON g.MZM = gd.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ge ON g.XXM = ge.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS gf ON g.JKZKM = gf.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS gg ON g.HYZTM = gg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS gh ON g.ZZMMM = gh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS gi ON g.GATQWM = gi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS gj ON g.GJDQM = gj.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gk ON g.CSDXZQHM = gk.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS gl ON g.XYZJM = gl.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS gm ON g.JZGHKSZDXZQHM = gm.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS gn ON g.HKLBM = gn.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS go ON g.BZLBM = go.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS gp ON g.JZGLBM = gp.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS gq ON g.GWLBM = gq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gr ON g.SFJZJS = gr.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS gs ON g.SFSSXJS = gs.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS gt ON g.DQZTM = gt.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fc] ON f.XBM = [fc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [fe] ON f.XXM = [fe].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ff] ON f.JKZKM = [ff].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [fg] ON f.HYZTM = [fg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [fh] ON f.ZZMMM = [fh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [fi] ON f.GATQWM = [fi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [fj] ON f.GJDQM = [fj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fk] ON f.CSDXZQHM = [fk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [fl] ON f.XYZJM = [fl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [fm] ON f.JZGHKSZDXZQHM = [fm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [fn] ON f.HKLBM = [fn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [fo] ON f.BZLBM = [fo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [fp] ON f.JZGLBM = [fp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [fq] ON f.GWLBM = [fq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fr] ON f.SFJZJS = [fr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fs] ON f.SFSSXJS = [fs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [ft] ON f.DQZTM = [ft].DM /*当前状态码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ge] ON g.XXM = [ge].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [gf] ON g.JKZKM = [gf].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [gg] ON g.HYZTM = [gg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [gh] ON g.ZZMMM = [gh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [gi] ON g.GATQWM = [gi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [gj] ON g.GJDQM = [gj].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gk] ON g.CSDXZQHM = [gk].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [gl] ON g.XYZJM = [gl].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [gm] ON g.JZGHKSZDXZQHM = [gm].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [gn] ON g.HKLBM = [gn].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [gp] ON g.JZGLBM = [gp].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [gq] ON g.GWLBM = [gq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gr] ON g.SFJZJS = [gr].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/
 GO
 
 --团员信息扩展表
@@ -15637,43 +17008,43 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
@@ -15687,60 +17058,60 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,eb.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,ec.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ee.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ee.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ef.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ef.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,eg.MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,eh.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,eh.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ei.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ei.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ej.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ej.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ej.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ek.MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,el.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,em.MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,en.MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,ep.MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,ep.SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,et.MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -15753,39 +17124,39 @@ FROM dbo.EDU_ZZXS_17_A01_TYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS c ON a.BJID = c.XZBDM /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSXXID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.JBJSID = e.ID /*经办教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS eb ON e.SFZJLXM = eb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS ec ON e.XBM = ec.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ee ON e.XXM = ee.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ef ON e.JKZKM = ef.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZTM = eg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS eh ON e.ZZMMM = eh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ei ON e.GATQWM = ei.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ej ON e.GJDQM = ej.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ek ON e.CSDXZQHM = ek.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS el ON e.XYZJM = el.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS em ON e.JZGHKSZDXZQHM = em.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS en ON e.HKLBM = en.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
 GO
 
 --团费收缴记录表
@@ -15801,7 +17172,7 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -15812,43 +17183,43 @@ SELECT a.[ID]--编号
       ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
       ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
       ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,db.MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
       ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
-      ,dc.MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
       ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
-      ,dd.MC as d_XSXX_XXM_MC--血型代码表 名称
-      ,dd.JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
       ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
       ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
-      ,de.MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
       ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
-      ,df.MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,df.ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,dg.MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,dh.MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,di.MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,di.SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,dj.MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,dj.SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,dk.MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,dk.JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,dl.MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,dm.MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
       ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,dn.MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,do.GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,do.EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,do.SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,d.TC as d_XSXX_TC--学生信息数据表 特长
       ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
@@ -15870,21 +17241,21 @@ FROM dbo.EDU_ZZXS_17_A02_TFSJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSXXID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_17_A01_TYXX AS e ON a.TYXXID = e.ID /*团员信息表ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS db ON d.SFZJLXM = db.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS dc ON d.XBM = dc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS dd ON d.XXM = dd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS de ON d.CSDM = de.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS df ON d.MZM = df.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS dg ON d.HYZKM = dg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS dh ON d.XYZJM = dh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS di ON d.GATQWM = di.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS dj ON d.JKZKM = dj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS dk ON d.ZZMMM = dk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS dl ON d.HKSZDXZQHM = dl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS dm ON d.HKLBM = dm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS dn ON d.SFSLDRK = dn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS do ON d.GJDQM = do.DM /*国籍/地区*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
 GO
 
 --入党积极团员数据表
@@ -15905,43 +17276,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -15951,7 +17322,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -15962,60 +17333,60 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,eb.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,ec.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ee.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ee.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ef.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ef.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,eg.MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,eh.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,eh.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ei.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ei.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ej.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ej.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ej.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ek.MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,el.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,em.MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,en.MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,ep.MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,ep.SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,et.MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -16028,40 +17399,40 @@ FROM dbo.EDU_ZZXS_17_A03_RDJJTY AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.TJJSID = e.ID /*添加教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS eb ON e.SFZJLXM = eb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS ec ON e.XBM = ec.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ee ON e.XXM = ee.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ef ON e.JKZKM = ef.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZTM = eg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS eh ON e.ZZMMM = eh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ei ON e.GATQWM = ei.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ej ON e.GJDQM = ej.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ek ON e.CSDXZQHM = ek.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS el ON e.XYZJM = el.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS em ON e.JZGHKSZDXZQHM = em.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS en ON e.HKLBM = en.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
 GO
 
 --团员思想汇报数据表
@@ -16082,43 +17453,43 @@ SELECT a.[ID]--编号
       ,c.XMPY as c_XSXX_XMPY--学生信息数据表 姓名拼音
       ,c.CYM as c_XSXX_CYM--学生信息数据表 曾用名
       ,c.SFZJLXM as c_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,cb.MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[cb].MC as c_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,c.SFZJH as c_XSXX_SFZJH--学生信息数据表 身份证件号
       ,c.XBM as c_XSXX_XBM--学生信息数据表 性别码
-      ,cc.MC as c_XSXX_XBM_MC--人的性别代码 名称
+      ,[cc].MC as c_XSXX_XBM_MC--人的性别代码 名称
       ,c.XXM as c_XSXX_XXM--学生信息数据表 血型码
-      ,cd.MC as c_XSXX_XXM_MC--血型代码表 名称
-      ,cd.JC as c_XSXX_XXM_JC--血型代码表 简称
+      ,[cd].MC as c_XSXX_XXM_MC--血型代码表 名称
+      ,[cd].JC as c_XSXX_XXM_JC--血型代码表 简称
       ,c.CSRQ as c_XSXX_CSRQ--学生信息数据表 出生日期
       ,c.CSDM as c_XSXX_CSDM--学生信息数据表 出生地码
-      ,ce.MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[ce].MC as c_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,c.JG as c_XSXX_JG--学生信息数据表 籍贯
       ,c.MZM as c_XSXX_MZM--学生信息数据表 民族码
-      ,cf.MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,cf.ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[cf].MZMC as c_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[cf].ZMDM as c_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,c.HYZKM as c_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,cg.MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[cg].MC as c_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,c.XYZJM as c_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,ch.MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[ch].MC as c_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,c.GATQWM as c_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,ci.MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,ci.SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ci].MC as c_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ci].SM as c_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,c.JKZKM as c_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,cj.MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,cj.SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[cj].MC as c_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[cj].SM as c_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,c.ZZMMM as c_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,ck.MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,ck.JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[ck].MC as c_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[ck].JC as c_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,c.HKSZDXZQHM as c_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,cl.MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[cl].MC as c_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,c.HKLBM as c_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,cm.MC as c_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[cm].MC as c_XSXX_HKLBM_MC--户口类别代码 名称
       ,c.SFSLDRK as c_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,cn.MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[cn].MC as c_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,c.GJDQM as c_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,co.GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,co.EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,co.SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[co].GJDQMCJC as c_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[co].EZMDM as c_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[co].SZMDM as c_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,c.TC as c_XSXX_TC--学生信息数据表 特长
       ,c.XSLXDH as c_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,c.WLDZ as c_XSXX_WLDZ--学生信息数据表 网络地址
@@ -16128,7 +17499,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,db.MC as d_XQ_XQM_MC--学期代码表 名称
+      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -16139,60 +17510,60 @@ SELECT a.[ID]--编号
       ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
       ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
       ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
-      ,eb.MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[eb].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
       ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
       ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
       ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
-      ,ec.MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,[ec].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
       ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
-      ,ed.MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,ed.ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
-      ,ee.MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
-      ,ee.JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,[ee].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[ee].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
       ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
-      ,ef.MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
-      ,ef.SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,[ef].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ef].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
       ,e.HYZTM as e_JZGJBSJ_HYZTM--教职工基本数据子类表 婚姻状态码
-      ,eg.MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
+      ,[eg].MC as e_JZGJBSJ_HYZTM_MC--婚姻状况代码 名称
       ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
-      ,eh.MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
-      ,eh.JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,[eh].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[eh].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
       ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
-      ,ei.MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
-      ,ei.SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,[ei].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ei].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
       ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
       ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
-      ,ej.GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,ej.EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,ej.SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[ej].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ej].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ej].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,e.CSDXZQHM as e_JZGJBSJ_CSDXZQHM--教职工基本数据子类表 出生地行政区划码
-      ,ek.MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[ek].MC as e_JZGJBSJ_CSDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
-      ,el.MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,[el].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
       ,e.JZGHKSZDXZQHM as e_JZGJBSJ_JZGHKSZDXZQHM--教职工基本数据子类表 教职工户口所在地行政区划码
-      ,em.MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[em].MC as e_JZGJBSJ_JZGHKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,e.HKLBM as e_JZGJBSJ_HKLBM--教职工基本数据子类表 户口类别码
-      ,en.MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
+      ,[en].MC as e_JZGJBSJ_HKLBM_MC--户口类别代码 名称
       ,e.DQZZ as e_JZGJBSJ_DQZZ--教职工基本数据子类表 当前住址
       ,e.DQZZYZBM as e_JZGJBSJ_DQZZYZBM--教职工基本数据子类表 当前住址邮政编码
       ,e.CJGZNY as e_JZGJBSJ_CJGZNY--教职工基本数据子类表 参加工作年月
       ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
       ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
       ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
-      ,eo.MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--编制类别代码表 名称
       ,e.JZGLBM as e_JZGJBSJ_JZGLBM--教职工基本数据子类表 教职工类别码
-      ,ep.MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
-      ,ep.SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
+      ,[ep].MC as e_JZGJBSJ_JZGLBM_MC--教职工类别代码表 名称
+      ,[ep].SM as e_JZGJBSJ_JZGLBM_SM--教职工类别代码表 说明
       ,e.GWLBM as e_JZGJBSJ_GWLBM--教职工基本数据子类表 岗位类别码
-      ,eq.MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
+      ,[eq].MC as e_JZGJBSJ_GWLBM_MC--岗位类别代码表 名称
       ,e.SFJZJS as e_JZGJBSJ_SFJZJS--教职工基本数据子类表 是否兼职教师
-      ,er.MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
+      ,[er].MC as e_JZGJBSJ_SFJZJS_MC--是否标志代码表 名称
       ,e.SFSSXJS as e_JZGJBSJ_SFSSXJS--教职工基本数据子类表 是否双师型教师
-      ,es.MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
+      ,[es].MC as e_JZGJBSJ_SFSSXJS_MC--是否标志代码表 名称
       ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片(路径)
       ,e.DQZTM as e_JZGJBSJ_DQZTM--教职工基本数据子类表 当前状态码
-      ,et.MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
+      ,[et].MC as e_JZGJBSJ_DQZTM_MC--教职工当前状态代码表 名称
       ,e.YDDH as e_JZGJBSJ_YDDH--教职工基本数据子类表 移动电话
       ,e.GDDH as e_JZGJBSJ_GDDH--教职工基本数据子类表 固定电话
       ,e.TXDZYZBM as e_JZGJBSJ_TXDZYZBM--教职工基本数据子类表 通信地址邮政编码
@@ -16205,40 +17576,40 @@ FROM dbo.EDU_ZZXS_17_A04_TYSXHB AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.TJJSID = e.ID /*添加教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS cb ON c.SFZJLXM = cb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS cc ON c.XBM = cc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS cd ON c.XXM = cd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ce ON c.CSDM = ce.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS cf ON c.MZM = cf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS cg ON c.HYZKM = cg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS ch ON c.XYZJM = ch.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ci ON c.GATQWM = ci.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS cj ON c.JKZKM = cj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS ck ON c.ZZMMM = ck.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS cl ON c.HKSZDXZQHM = cl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS cm ON c.HKLBM = cm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cn ON c.SFSLDRK = cn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS co ON c.GJDQM = co.DM /*国籍/地区*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS db ON d.XQM = db.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS eb ON e.SFZJLXM = eb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS ec ON e.XBM = ec.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS ed ON e.MZM = ed.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS ee ON e.XXM = ee.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS ef ON e.JKZKM = ef.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS eg ON e.HYZTM = eg.DM /*婚姻状态码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS eh ON e.ZZMMM = eh.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS ei ON e.GATQWM = ei.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS ej ON e.GJDQM = ej.DM /*国籍/地区码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS ek ON e.CSDXZQHM = ek.DM /*出生地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS el ON e.XYZJM = el.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS em ON e.JZGHKSZDXZQHM = em.DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS en ON e.HKLBM = en.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_BZLB AS eo ON e.BZLBM = eo.DM /*编制类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGLB AS ep ON e.JZGLBM = ep.DM /*教职工类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GWLB AS eq ON e.GWLBM = eq.DM /*岗位类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS er ON e.SFJZJS = er.DM /*是否兼职教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS es ON e.SFSSXJS = es.DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS et ON e.DQZTM = et.DM /*当前状态码*/
+      dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ce] ON c.CSDM = [ce].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cf] ON c.MZM = [cf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [cg] ON c.HYZKM = [cg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ch] ON c.XYZJM = [ch].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ci] ON c.GATQWM = [ci].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [cj] ON c.JKZKM = [cj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ck] ON c.ZZMMM = [ck].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [cl] ON c.HKSZDXZQHM = [cl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [cm] ON c.HKLBM = [cm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cn] ON c.SFSLDRK = [cn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [ee] ON e.XXM = [ee].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ef] ON e.JKZKM = [ef].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZTM = [eg].DM /*婚姻状态码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [eh] ON e.ZZMMM = [eh].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ei] ON e.GATQWM = [ei].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ej] ON e.GJDQM = [ej].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ek] ON e.CSDXZQHM = [ek].DM /*出生地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [el] ON e.XYZJM = [el].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [em] ON e.JZGHKSZDXZQHM = [em].DM /*教职工户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [en] ON e.HKLBM = [en].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_BZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGLB AS [ep] ON e.JZGLBM = [ep].DM /*教职工类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWLB AS [eq] ON e.GWLBM = [eq].DM /*岗位类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
+      dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
 GO
 
 --学校基本数据表
@@ -16306,9 +17677,9 @@ SELECT a.[JGH]--机构号
       ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,cb.MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[cb].MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
-      ,cc.MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,[cc].MC as c_XNJG_SFST_MC--是否标志代码表 名称
       ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
       ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
@@ -16319,8 +17690,8 @@ FROM dbo.EDU_ZZXX_03_01_XNJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS c ON a.LSSJJGH = c.JGH /*隶属上级机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS d ON a.JGYXBS = d.DM /*机构有效标识*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFST = e.DM /*是否实体*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.JGYXBS = cb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.JGYXBS = [cb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFST = [cc].DM /*是否实体*/
 GO
 
 --机构岗位表
@@ -16341,17 +17712,17 @@ SELECT a.[ID]--岗位表ID
       ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
       ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
       ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,cb.MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,[cb].MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
       ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
-      ,cc.MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,[cc].MC as c_XNJG_SFST_MC--是否标志代码表 名称
       ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
       ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
 
 FROM dbo.EDU_ZZXX_03_A01_JGGW AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.JGYXBS = cb.DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cc ON c.SFST = cc.DM /*是否实体*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.JGYXBS = [cb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFST = [cc].DM /*是否实体*/
 GO
 
 --校园安全数据表
@@ -16422,43 +17793,43 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -16475,20 +17846,20 @@ FROM dbo.EDU_ZZZS_01_01_ZSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS d ON a.KQXZQHM = d.DM /*考区行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_GB_YZMCEZM AS e ON a.YSWGYZM = e.DM /*应试外国语种码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KSFS AS f ON a.KSFSM = f.DM /*考试方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/
 GO
 
 --招生计划数据表
@@ -16502,8 +17873,8 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,cb.ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,cb.MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[cb].MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
       ,c.ZYMC as c_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,c.XZ as c_ZYXX_XZ--专业基本信息数据表 学制
@@ -16514,7 +17885,7 @@ SELECT a.[ID]--编号
       ,c.KSJGH as c_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,c.ZXF as c_ZYXX_ZXF--专业基本信息数据表 总学分
       ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,cc.MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
       ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,d.SCHOOLID as d_XN_SCHOOLID--学年表 学校名
       ,d.XN as d_XN_XN--学年表 学年
@@ -16522,8 +17893,8 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZZZS_01_A01_ZSJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYXXID = c.ZYBH /*专业基本信息*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS d ON a.XNID = d.ID /*学年*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS cb ON c.ZYDM = cb.DM /*专业代码*/ AND c.SSZYML = cb.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS cc ON c.SSZYML = cc.DM /*所属专业目录*/
+      dbo.EDU_ZJ_ZJZY AS [cb] ON c.ZYDM = [cb].DM /*专业代码*/ AND c.SSZYML = [cb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [cc] ON c.SSZYML = [cc].DM /*所属专业目录*/
 GO
 
 --入学成绩数据表
@@ -16542,43 +17913,43 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -16590,20 +17961,20 @@ SELECT a.[XSXXID]--学生信息数据表
 FROM dbo.EDU_ZZZS_02_01_RXCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_FJFLB AS d ON a.FJFLBM = d.DM /*附加分类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/
 GO
 
 --考生科目成绩数据类表
@@ -16620,43 +17991,43 @@ SELECT a.[XSXXID]--考生ID
       ,b.XMPY as b_XSXX_XMPY--学生信息数据表 姓名拼音
       ,b.CYM as b_XSXX_CYM--学生信息数据表 曾用名
       ,b.SFZJLXM as b_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
-      ,bb.MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,[bb].MC as b_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
       ,b.SFZJH as b_XSXX_SFZJH--学生信息数据表 身份证件号
       ,b.XBM as b_XSXX_XBM--学生信息数据表 性别码
-      ,bc.MC as b_XSXX_XBM_MC--人的性别代码 名称
+      ,[bc].MC as b_XSXX_XBM_MC--人的性别代码 名称
       ,b.XXM as b_XSXX_XXM--学生信息数据表 血型码
-      ,bd.MC as b_XSXX_XXM_MC--血型代码表 名称
-      ,bd.JC as b_XSXX_XXM_JC--血型代码表 简称
+      ,[bd].MC as b_XSXX_XXM_MC--血型代码表 名称
+      ,[bd].JC as b_XSXX_XXM_JC--血型代码表 简称
       ,b.CSRQ as b_XSXX_CSRQ--学生信息数据表 出生日期
       ,b.CSDM as b_XSXX_CSDM--学生信息数据表 出生地码
-      ,be.MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,[be].MC as b_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
       ,b.JG as b_XSXX_JG--学生信息数据表 籍贯
       ,b.MZM as b_XSXX_MZM--学生信息数据表 民族码
-      ,bf.MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
-      ,bf.ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,[bf].MZMC as b_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[bf].ZMDM as b_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
       ,b.HYZKM as b_XSXX_HYZKM--学生信息数据表 婚姻状况码
-      ,bg.MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,[bg].MC as b_XSXX_HYZKM_MC--婚姻状况代码 名称
       ,b.XYZJM as b_XSXX_XYZJM--学生信息数据表 信仰宗教码
-      ,bh.MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,[bh].MC as b_XSXX_XYZJM_MC--宗教信仰代码 名称
       ,b.GATQWM as b_XSXX_GATQWM--学生信息数据表 港澳台侨外码
-      ,bi.MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
-      ,bi.SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,[bi].MC as b_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[bi].SM as b_XSXX_GATQWM_SM--港澳台侨外代码表 说明
       ,b.JKZKM as b_XSXX_JKZKM--学生信息数据表 健康状况码
-      ,bj.MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
-      ,bj.SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,[bj].MC as b_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[bj].SM as b_XSXX_JKZKM_SM--健康状况1位数字代码 说明
       ,b.ZZMMM as b_XSXX_ZZMMM--学生信息数据表 政治面貌码
-      ,bk.MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
-      ,bk.JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,[bk].MC as b_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[bk].JC as b_XSXX_ZZMMM_JC--政治面貌代码 简称
       ,b.HKSZDXZQHM as b_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
-      ,bl.MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,[bl].MC as b_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
       ,b.HKLBM as b_XSXX_HKLBM--学生信息数据表 户口类别码
-      ,bm.MC as b_XSXX_HKLBM_MC--户口类别代码 名称
+      ,[bm].MC as b_XSXX_HKLBM_MC--户口类别代码 名称
       ,b.SFSLDRK as b_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
-      ,bn.MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,[bn].MC as b_XSXX_SFSLDRK_MC--是否标志代码表 名称
       ,b.GJDQM as b_XSXX_GJDQM--学生信息数据表 国籍/地区
-      ,bo.GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
-      ,bo.EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
-      ,bo.SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,[bo].GJDQMCJC as b_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[bo].EZMDM as b_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[bo].SZMDM as b_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
       ,b.TC as b_XSXX_TC--学生信息数据表 特长
       ,b.XSLXDH as b_XSXX_XSLXDH--学生信息数据表 学生联系电话
       ,b.WLDZ as b_XSXX_WLDZ--学生信息数据表 网络地址
@@ -16666,18 +18037,18 @@ SELECT a.[XSXXID]--考生ID
 
 FROM dbo.EDU_ZZZS_03_01_KSKMCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*考生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFZJLX AS bb ON b.SFZJLXM = bb.DM /*身份证件类型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS bc ON b.XBM = bc.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XX AS bd ON b.XXM = bd.DM /*血型码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS be ON b.CSDM = be.DM /*出生地码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS bf ON b.MZM = bf.DM /*民族码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HYZZ AS bg ON b.HYZKM = bg.DM /*婚姻状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZJXY AS bh ON b.XYZJM = bh.DM /*信仰宗教码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_GATQW AS bi ON b.GATQWM = bi.DM /*港澳台侨外码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_JKZKYWSZ AS bj ON b.JKZKM = bj.DM /*健康状况码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZZMM AS bk ON b.ZZMMM = bk.DM /*政治面貌码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS bl ON b.HKSZDXZQHM = bl.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_HKLB AS bm ON b.HKLBM = bm.DM /*户口类别码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS bn ON b.SFSLDRK = bn.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS bo ON b.GJDQM = bo.DM /*国籍/地区*/
+      dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [be] ON b.CSDM = [be].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [bf] ON b.MZM = [bf].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [bg] ON b.HYZKM = [bg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [bh] ON b.XYZJM = [bh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [bi] ON b.GATQWM = [bi].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [bj] ON b.JKZKM = [bj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [bk] ON b.ZZMMM = [bk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [bl] ON b.HKSZDXZQHM = [bl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [bm] ON b.HKLBM = [bm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [bn] ON b.SFSLDRK = [bn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/
 GO

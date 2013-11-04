@@ -28,7 +28,7 @@ SELECT a.[ID]--编号
       ,c.SYXZ as c_ZTJXJH_SYXZ--总体教学计划数据子类表 适用学制
       ,c.PYMB as c_ZTJXJH_PYMB--总体教学计划数据子类表 培养目标
       ,c.SFKY as c_ZTJXJH_SFKY--总体教学计划数据子类表 是否可用
-      ,cb.MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
+      ,[cb].MC as c_ZTJXJH_SFKY_MC--是否标志代码表 名称
       ,c.FJ as c_ZTJXJH_FJ--总体教学计划数据子类表 附件
       ,c.ZYRS as c_ZTJXJH_ZYRS--总体教学计划数据子类表 专业人数
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
@@ -44,14 +44,14 @@ SELECT a.[ID]--编号
       ,d.CKSM as d_KC_CKSM--课程数据子类表 参考书目
       ,d.KKDW as d_KC_KKDW--课程数据子类表 开课单位
       ,d.KSXS as d_KC_KSXS--课程数据子类表 考试形式
-      ,db.MC as d_KC_KSXS_MC--考试形式代码表 名称
+      ,[db].MC as d_KC_KSXS_MC--考试形式代码表 名称
       ,d.SKFSM as d_KC_SKFSM--课程数据子类表 授课方式码
-      ,dc.MC as d_KC_SKFSM_MC--授课方式代码表 名称
+      ,[dc].MC as d_KC_SKFSM_MC--授课方式代码表 名称
       ,d.KCFY as d_KC_KCFY--课程数据子类表 课程费用
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
-      ,eb.MC as e_XQ_XQM_MC--学期代码表 名称
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -67,8 +67,8 @@ FROM dbo.EDU_ZZJX_03_03_JXJHKCQD AS a LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS f ON a.SFHXKC = f.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS g ON a.KCFLM = g.DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KCSX AS h ON a.KCSXM = h.DM /*课程属性码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.SFKY = cb.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS db ON d.KSXS = db.DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS dc ON d.SKFSM = dc.DM /*授课方式码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS eb ON e.XQM = eb.DM /*学期码*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFKY = [cb].DM /*是否可用*/ LEFT OUTER JOIN
+      dbo.EDU_JY_KSXS AS [db] ON d.KSXS = [db].DM /*考试形式*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SKFS AS [dc] ON d.SKFSM = [dc].DM /*授课方式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/
 GO

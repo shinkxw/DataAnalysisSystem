@@ -71,14 +71,14 @@ SELECT a.[ID]--编号
       ,p.BJRYCH as p_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,p.XZ as p_BJ_XZ--班级数据类表 学制
       ,p.BJLXM as p_BJ_BJLXM--班级数据类表 班级类型码
-      ,pb.MC as p_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[pb].MC as p_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,p.WLLX as p_BJ_WLLX--班级数据类表 文理类型
       ,p.BYRQ as p_BJ_BYRQ--班级数据类表 毕业日期
       ,p.SFSSMZSYJXB as p_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,pc.MC as p_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[pc].MC as p_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,p.SYJXMSM as p_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,pd.MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,pd.SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[pd].MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[pd].SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,p.BZRID as p_BJ_BZRID--班级数据类表 班主任ID
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
@@ -103,7 +103,7 @@ FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS q ON a.XSLBM = q.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS r ON a.HKXZM = r.DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFLDRK = s.DM /*是否流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS pb ON p.BJLXM = pb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS pc ON p.SFSSMZSYJXB = pc.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS pd ON p.SYJXMSM = pd.DM /*双语教学模式码*/
+      dbo.EDU_JY_ZXXBJLX AS [pb] ON p.BJLXM = [pb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [pc] ON p.SFSSMZSYJXB = [pc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [pd] ON p.SYJXMSM = [pd].DM /*双语教学模式码*/
 GO

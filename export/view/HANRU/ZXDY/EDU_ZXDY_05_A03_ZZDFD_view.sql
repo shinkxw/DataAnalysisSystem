@@ -18,7 +18,7 @@ SELECT a.[ID]--值周打分单表ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,cb.MC as c_XQ_XQM_MC--学期代码表 名称
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
@@ -36,14 +36,14 @@ SELECT a.[ID]--值周打分单表ID
       ,e.BJRYCH as e_BJ_BJRYCH--班级数据类表 班级荣誉称号
       ,e.XZ as e_BJ_XZ--班级数据类表 学制
       ,e.BJLXM as e_BJ_BJLXM--班级数据类表 班级类型码
-      ,eb.MC as e_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,[eb].MC as e_BJ_BJLXM_MC--中小学班级类型代码表 名称
       ,e.WLLX as e_BJ_WLLX--班级数据类表 文理类型
       ,e.BYRQ as e_BJ_BYRQ--班级数据类表 毕业日期
       ,e.SFSSMZSYJXB as e_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
-      ,ec.MC as e_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,[ec].MC as e_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
       ,e.SYJXMSM as e_BJ_SYJXMSM--班级数据类表 双语教学模式码
-      ,ed.MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
-      ,ed.SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,[ed].MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--值周打分细则表 学校ID
       ,f.SSDLID as f_ZZDFXZ_SSDLID--值周打分细则表 所属大类ID
@@ -71,8 +71,8 @@ FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS e ON a.BJ = e.BH /*班级*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXDY_05_A02_ZZDFXZ AS f ON a.SSXZID = f.ID /*所属细则*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS g ON a.DFJSID = g.LOGINNAME /*打分教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS cb ON c.XQM = cb.DM /*学期码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_ZXXBJLX AS eb ON e.BJLXM = eb.DM /*班级类型码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS ec ON e.SFSSMZSYJXB = ec.DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS ed ON e.SYJXMSM = ed.DM /*双语教学模式码*/
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [eb] ON e.BJLXM = [eb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ec] ON e.SFSSMZSYJXB = [ec].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [ed] ON e.SYJXMSM = [ed].DM /*双语教学模式码*/
 GO

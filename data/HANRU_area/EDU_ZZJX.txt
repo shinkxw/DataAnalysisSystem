@@ -152,6 +152,100 @@
             <name="XF" exp="学分" type="decimal(4, 1)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_04_01_JCJBXX" exp="教材基本信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JCDM" exp="教材代码" type="nvarchar(13)" null="F" p="F" />
+            <name="JCMC" exp="教材名称" type="nvarchar(60)" null="F" p="F" />
+            <name="CBH" exp="出版号" type="nvarchar(30)" null="T" p="F" />
+            <name="DYZZ" exp="第一作者" type="nvarchar(30)" null="F" p="F" />
+            <name="QTZZ" exp="其他作者" type="nvarchar(90)" null="T" p="F" />
+            <name="BC" exp="版次" type="nvarchar(30)" null="F" p="F" />
+            <name="YC" exp="印次" type="nvarchar(2)" null="T" p="F" />
+            <name="JG" exp="价格" type="decimal(8, 2)" null="T" p="F" />
+            <name="CBS" exp="出版社" type="nvarchar(180)" null="T" p="F" />
+            <name="CBRQ" exp="出版日期" type="nvarchar(8)" null="T" p="F" />
+            <name="SFYLXC" exp="是否有练习册" type="nvarchar(1)" null="T" p="F" />
+            <name="SFYJCJF" exp="是否有教参教辅" type="nvarchar(1)" null="T" p="F" />
+            <name="NRJJ" exp="内容简介" type="text" null="T" p="F" />
+            <name="DQZT" exp="当前状态" type="int" null="F" p="F" />
+            <name="ZDKC" exp="最低库存" type="int" null="F" p="F" />
+            <name="DQKC" exp="当前库存" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_04_02_JCXYXX" exp="教材选用信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="KCID" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
+            <name="XYSL" exp="选用数量" type="int" null="F" p="F" />
+            <name="SQRID" exp="申请人ID" type="int" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SFRK" exp="是否入库" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_04_A03_JSJCLY" exp="教师教材领用表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="KCID" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
+            <name="LYSL" exp="领用数量" type="int" null="F" p="F" />
+            <name="LYJSID" exp="领用教师ID" type="int" null="F" p="F" />
+            <name="LYSJ" exp="领用时间" type="datetime" null="F" p="F" />
+            <name="JSR" exp="经手人" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_04_A04_XSJCLY" exp="学生教材领用表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="KCID" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
+            <name="LYSL" exp="领用数量" type="int" null="F" p="F" />
+            <name="LYXSID" exp="领用学生ID" type="int" null="F" p="F" />
+            <name="LYSJ" exp="领用时间" type="datetime" null="F" p="F" />
+            <name="JSR" exp="经手人" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_04_A05_JCFK" exp="教材反馈表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
+            <name="FKXX" exp="反馈信息" type="text" null="F" p="F" />
+            <name="FKSJ" exp="反馈时间" type="datetime" null="F" p="F" />
+            <name="FKJSID" exp="反馈教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_04_A06_JCBF" exp="教材报废表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
+            <name="BFSL" exp="报废数量" type="int" null="F" p="F" />
+            <name="BFYY" exp="报废原因" type="text" null="F" p="F" />
+            <name="BFSJ" exp="报废时间" type="datetime" null="F" p="F" />
+            <name="JSRID" exp="经手人ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_05_02_JSJXGZLTJ" exp="教师教学工作量统计数据子类表">
         <field_area>
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />

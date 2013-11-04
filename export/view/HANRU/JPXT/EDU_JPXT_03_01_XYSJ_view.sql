@@ -24,7 +24,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,e.XM as e_JLYSJ_XM--教练员数据表 姓名
       ,e.XBM as e_JLYSJ_XBM--教练员数据表 性别码
-      ,eb.MC as e_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[eb].MC as e_JLYSJ_XBM_MC--人的性别代码 名称
       ,e.SFZH as e_JLYSJ_SFZH--教练员数据表 身份证号
       ,e.JSZH as e_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,e.JSZYXQ as e_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -53,7 +53,7 @@ SELECT a.[ID]--编号
       ,f.SCHOOLID as f_JLYSJ_SCHOOLID--教练员数据表 学校ID
       ,f.XM as f_JLYSJ_XM--教练员数据表 姓名
       ,f.XBM as f_JLYSJ_XBM--教练员数据表 性别码
-      ,fb.MC as f_JLYSJ_XBM_MC--人的性别代码 名称
+      ,[fb].MC as f_JLYSJ_XBM_MC--人的性别代码 名称
       ,f.SFZH as f_JLYSJ_SFZH--教练员数据表 身份证号
       ,f.JSZH as f_JLYSJ_JSZH--教练员数据表 驾驶证号
       ,f.JSZYXQ as f_JLYSJ_JSZYXQ--教练员数据表 驾驶证有效期
@@ -85,6 +85,6 @@ FROM dbo.EDU_JPXT_03_01_XYSJ AS a LEFT OUTER JOIN
       dbo.EDU_JPXT_05_01_CLXH AS d ON a.SXCXID = d.ID /*所选车型ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS e ON a.SSJLYID = e.ID /*所属教练员ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JPXT_02_01_JLYSJ AS f ON a.YJJLYID = f.ID /*引荐教练员ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS eb ON e.XBM = eb.DM /*性别码*/ LEFT OUTER JOIN
-      dbo.EDU_GB_RDXB AS fb ON f.XBM = fb.DM /*性别码*/
+      dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [fb] ON f.XBM = [fb].DM /*性别码*/
 GO

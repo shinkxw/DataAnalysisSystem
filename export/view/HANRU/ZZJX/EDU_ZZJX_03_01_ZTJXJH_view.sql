@@ -19,11 +19,11 @@ SELECT a.[ID]--编号
       ,c.NJMC as c_ZZNJ_NJMC--学校年级数据表 年级名称
       ,c.SSNF as c_ZZNJ_SSNF--学校年级数据表 所属年份
       ,c.NJZT as c_ZZNJ_NJZT--学校年级数据表 年级状态
-      ,cb.MC as c_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,[cb].MC as c_ZZNJ_NJZT_MC--是否标志代码表 名称
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
-      ,db.ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
-      ,db.MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[db].MC as d_ZYXX_ZYDM_MC--自建专业代码 名称
       ,d.ZYMC as d_ZYXX_ZYMC--专业基本信息数据表 专业名称
       ,d.ZYYWMC as d_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
       ,d.XZ as d_ZYXX_XZ--专业基本信息数据表 学制
@@ -34,7 +34,7 @@ SELECT a.[ID]--编号
       ,d.KSJGH as d_ZYXX_KSJGH--专业基本信息数据表 开设机构号
       ,d.ZXF as d_ZYXX_ZXF--专业基本信息数据表 总学分
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
-      ,dc.MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
@@ -42,7 +42,7 @@ FROM dbo.EDU_ZZJX_03_01_ZTJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS c ON a.JHNJ = c.NJDM /*计划年级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFKY = e.DM /*是否可用*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS cb ON c.NJZT = cb.DM /*年级状态*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZJZY AS db ON d.ZYDM = db.DM /*专业代码*/ AND d.SSZYML = db.ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_ZJ_ZYML AS dc ON d.SSZYML = dc.DM /*所属专业目录*/
+      dbo.EDU_JY_SFBZ AS [cb] ON c.NJZT = [cb].DM /*年级状态*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/
 GO
