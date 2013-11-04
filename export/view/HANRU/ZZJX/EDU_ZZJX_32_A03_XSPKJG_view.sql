@@ -9,7 +9,7 @@ SELECT a.[ID]--编号
       ,a.[EXAMROOMID]--考场ID
       ,a.[CCID]--场次ID
       ,a.[KCQDID]--考试科目ID
-      ,a.[StudentID]--学生
+      ,a.[StudentID]--学生ID
       ,a.[SeatID]--座位号
       ,a.[AdmissionID]--准考证号
       ,a.[ZYXXID]--专业ID
@@ -23,6 +23,11 @@ SELECT a.[ID]--编号
       ,c.KCQDID as c_ZYKCPKJG_KCQDID--专业课程排考结果表 考试科目ID
       ,c.ZYXXID as c_ZYKCPKJG_ZYXXID--专业课程排考结果表 专业ID
       ,c.NJID as c_ZYKCPKJG_NJID--专业课程排考结果表 年级ID
+      ,c.BJID as c_ZYKCPKJG_BJID--专业课程排考结果表 班级ID
+      ,c.CKRS as c_ZYKCPKJG_CKRS--专业课程排考结果表 参考人数
+      ,c.SKRS as c_ZYKCPKJG_SKRS--专业课程排考结果表 实考人数
+      ,c.ZJKLSID as c_ZYKCPKJG_ZJKLSID--专业课程排考结果表 主监考老师ID
+      ,c.FJKLSID as c_ZYKCPKJG_FJKLSID--专业课程排考结果表 副监考老师ID
       ,d.SCHOOLID as d_EXAM_SCHOOLID--考试表 学校
       ,d.Name as d_EXAM_Name--考试表 考试名称
       ,d.CJKSKMLM as d_EXAM_CJKSKMLM--考试表 参加考试科目列表
@@ -156,7 +161,7 @@ FROM dbo.EDU_ZZJX_32_A03_XSPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_30_A02_EXAMROOM AS e ON a.EXAMROOMID = e.ID /*考场ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_31_A02_KSCC AS f ON a.CCID = f.ID /*场次ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS g ON a.KCQDID = g.ID /*考试科目ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZZXS_01_01_XSXX AS h ON a.StudentID = h.ID /*学生*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_01_01_XSXX AS h ON a.StudentID = h.ID /*学生ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS i ON a.ZYXXID = i.ZYBH /*专业ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS j ON a.NJID = j.NJDM /*年级ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS k ON a.BJID = k.XZBDM /*班级ID*/ AND a.SCHOOLID = k.SCHOOLID /*学校*/ LEFT OUTER JOIN

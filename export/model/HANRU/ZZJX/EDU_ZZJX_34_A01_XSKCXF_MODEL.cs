@@ -4,15 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJX_32_A02_ZYKCPKJG_metadata))]
-    public partial class EDU_ZZJX_32_A02_ZYKCPKJG
+    [MetadataType(typeof(EDU_ZZJX_34_A01_XSKCXF_metadata))]
+    public partial class EDU_ZZJX_34_A01_XSKCXF
     {
-        public EDU_ZZJX_32_A02_ZYKCPKJG()
+        public EDU_ZZJX_34_A01_XSKCXF()
         {
             NJID = "";
             BJID = "";
         }
-        public class EDU_ZZJX_32_A02_ZYKCPKJG_metadata
+        public class EDU_ZZJX_34_A01_XSKCXF_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -25,23 +25,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "考试")]
-            public Int32 ExamID { get; set; }
+            [Display(Name = "学生")]
+            public Int32 StudentID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "考场")]
-            public Int32 EXAMROOMID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "场次")]
-            public Int32 CCID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "考试科目")]
-            public Int32 KCQDID { get; set; }
+            [Display(Name = "学期")]
+            public Int32 XQID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -64,23 +54,14 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "参考人数")]
-            public Int32 CKRS { get; set; }
+            [Display(Name = "考试科目")]
+            public Int32 KCQDID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "实考人数")]
-            public Int32 SKRS { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "主监考老师")]
-            public Int32 ZJKLSID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "副监考老师")]
-            public Int32 FJKLSID { get; set; }
+            [Display(Name = "获得学分")]
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal XF { get; set; }
 
 
         }

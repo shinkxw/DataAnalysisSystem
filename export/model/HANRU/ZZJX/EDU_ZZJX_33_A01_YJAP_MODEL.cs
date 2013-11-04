@@ -4,15 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJX_32_A02_ZYKCPKJG_metadata))]
-    public partial class EDU_ZZJX_32_A02_ZYKCPKJG
+    [MetadataType(typeof(EDU_ZZJX_33_A01_YJAP_metadata))]
+    public partial class EDU_ZZJX_33_A01_YJAP
     {
-        public EDU_ZZJX_32_A02_ZYKCPKJG()
+        public EDU_ZZJX_33_A01_YJAP()
         {
             NJID = "";
             BJID = "";
         }
-        public class EDU_ZZJX_32_A02_ZYKCPKJG_metadata
+        public class EDU_ZZJX_33_A01_YJAP_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -22,6 +22,16 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学校")]
             public Int32 SCHOOLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业课程排考结果")]
+            public Int32 ZYKCPKJGID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "阅卷教师")]
+            public Int32 TeacherID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -37,11 +47,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "场次")]
             public Int32 CCID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "考试科目")]
-            public Int32 KCQDID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -64,23 +69,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "参考人数")]
-            public Int32 CKRS { get; set; }
+            [Display(Name = "考试科目")]
+            public Int32 KCQDID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "实考人数")]
-            public Int32 SKRS { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "主监考老师")]
-            public Int32 ZJKLSID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "副监考老师")]
-            public Int32 FJKLSID { get; set; }
+            [Display(Name = "阅卷方式")]
+            public Int32 YJFS { get; set; }
 
 
         }

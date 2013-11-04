@@ -600,6 +600,11 @@
             <name="KCQDID" exp="考试科目ID" type="int" null="F" p="F" />
             <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
             <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="CKRS" exp="参考人数" type="int" null="F" p="F" />
+            <name="SKRS" exp="实考人数" type="int" null="F" p="F" />
+            <name="ZJKLSID" exp="主监考老师ID" type="int" null="F" p="F" />
+            <name="FJKLSID" exp="副监考老师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_32_A03_XSPKJG" exp="学生排考结果表">
@@ -611,13 +616,42 @@
             <name="EXAMROOMID" exp="考场ID" type="int" null="F" p="F" />
             <name="CCID" exp="场次ID" type="int" null="F" p="F" />
             <name="KCQDID" exp="考试科目ID" type="int" null="F" p="F" />
-            <name="StudentID" exp="学生" type="int" null="F" p="F" />
+            <name="StudentID" exp="学生ID" type="int" null="F" p="F" />
             <name="SeatID" exp="座位号" type="int" null="F" p="F" />
             <name="AdmissionID" exp="准考证号" type="nvarchar(24)" null="F" p="F" />
             <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
             <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
             <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
             <name="KSSDLXID" exp="考试时段类型ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_33_A01_YJAP" exp="阅卷安排表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZYKCPKJGID" exp="专业课程排考结果ID" type="int" null="F" p="F" />
+            <name="TeacherID" exp="阅卷教师ID" type="int" null="F" p="F" />
+            <name="ExamID" exp="考试ID" type="int" null="F" p="F" />
+            <name="EXAMROOMID" exp="考场ID" type="int" null="F" p="F" />
+            <name="CCID" exp="场次ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="KCQDID" exp="考试科目ID" type="int" null="F" p="F" />
+            <name="YJFS" exp="阅卷方式" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_34_A01_XSKCXF" exp="学生课程学分表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="StudentID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="KCQDID" exp="考试科目ID" type="int" null="F" p="F" />
+            <name="XF" exp="获得学分" type="decimal(4, 1)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

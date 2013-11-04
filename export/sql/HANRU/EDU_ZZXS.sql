@@ -361,6 +361,8 @@ CREATE TABLE [dbo].[EDU_ZZXS_06_01_XSCJ](
 	[ZYXXID]  int  NOT NULL,--专业ID
 	[NJID]  nvarchar(4)  NOT NULL,--年级ID
 	[BJID]  nvarchar(10)  NOT NULL,--班级ID
+	[SHZT]  int  NOT NULL,--审核状态
+	[SHRID]  int  NOT NULL,--审核人ID
 CONSTRAINT [PK_EDU_ZZXS_06_01_XSCJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1199,6 +1201,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'NJID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'BJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'SHRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生成绩类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_02_XSCJLX'
 GO

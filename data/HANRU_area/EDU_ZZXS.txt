@@ -143,6 +143,8 @@
             <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
             <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
             <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_06_02_XSCJLX" exp="学生成绩类型表">

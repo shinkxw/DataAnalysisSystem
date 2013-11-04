@@ -148,6 +148,16 @@ namespace HanRuEdu.LDAL
             public String BJID { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉóºË×´Ì¬")]
+            public Int32 SHZT { get; set; }
+
+
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉóºËÈË")]
+            public Int32 SHRID { get; set; }
+
+
         }
     }
 }
