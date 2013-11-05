@@ -98,7 +98,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
     str << "{\n#{@tab.l}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}//throw new Exception(\"¼ÇÂ¼²»´æÔÚ\");\n"
     str << "#{@tab.s}}\n#{@tab.t}#{table.db_name}.SaveChanges();\n"
-    str << "#{@tab.s}}\n"
+    str << "#{@tab.s}}\n\n"
   end
   def make_controller_InitViewBag(table)
     str = "#{@tab.t}public void InitViewBag()\n#{@tab.t}"
@@ -109,7 +109,7 @@ class TemplateBuilder
   def make_controller_index(table)
     str = "#{@tab.t}public ActionResult Index()\n#{@tab.t}"
     str << "{\n#{@tab.l}return View(new #{table.name}());\n"
-    str << "#{@tab.s}}\n"
+    str << "#{@tab.s}}\n\n"
   end
   def make_controller_create(table)
     str = "#{@tab.t}public ActionResult Create()\n#{@tab.t}"
@@ -191,7 +191,7 @@ class TemplateBuilder
   def make_index(table)
     index_str = "@model HanRuEdu.LDAL.#{table.name}\n"
     index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"\n)
-    index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname}/index_jsonstr\")',\n"
+    index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index_jsonstr\")',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|

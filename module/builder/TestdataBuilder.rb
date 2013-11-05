@@ -43,7 +43,7 @@ class TestdataBuilder
         proc_arr << get_def_proc(field)
       end
     end
-    Array.new(data_num){|i| proc_arr.map{|proc| proc.call(i)}}
+    Array.new(data_num){|i| proc_arr.map{|proc| proc.is_a?(String) ? proc : proc.call(i)}}
   end
   #获得默认的数据生成方法
   def get_def_proc(field)
@@ -84,4 +84,3 @@ class TestdataBuilder
     (0...length).collect{chars[rand(chars_size)]}.join
   end
 end
-
