@@ -23,7 +23,7 @@
             <name="XN" exp="学年" type="nvarchar(9)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_SYS_01_MODULE" exp="">
+    <table name="EDU_SYS_01_MODULE" exp="导航表">
         <field_area>
             <name="ID" exp="" type="int" null="F" p="T" />
             <name="APPID" exp="" type="int" null="F" p="F" />

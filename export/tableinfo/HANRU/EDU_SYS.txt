@@ -7,7 +7,7 @@ EDU_SYS_01_XN  学年表
   SCHOOLID      学校名                  int            主键        学校配置表
   XN            学年                    nvarchar(9)    非主
 
-EDU_SYS_01_MODULE  
+EDU_SYS_01_MODULE  导航表
   ID                                    int            主键
   APPID                                 int            非主
   NAME                                  nvarchar(20)   非主

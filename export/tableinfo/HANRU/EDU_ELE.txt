@@ -74,6 +74,13 @@ EDU_ELE_02_YHFZ  用户分组表
   FZMC          分组名称                nvarchar(100)  非主
   FZYHID        分组用户ID列表          text           非主
 
+EDU_ELE_02_YHKJDH  用户快捷导航表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  MODULEID      MODULE表ID              int            非主        导航表
+  LoginName     用户名                  nvarchar(20)   非主        应用系统用户表
+  OrderID       序号                    int            非主
+
 EDU_ELE_03_APPRZ  应用日志表
   ID            编号                    int            自增主键
   SCHOOLID      学校名                  int            非主        学校配置表

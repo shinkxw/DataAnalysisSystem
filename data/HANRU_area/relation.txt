@@ -15,6 +15,10 @@
   APPID          EDU_ELE_01_APP                     ID
   YHID           EDU_ELE_01_USER                    LOGINNAME
   SJFZID         EDU_ELE_02_YHFZ                    ID
+<EDU_ELE_02_YHKJDH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  MODULEID       EDU_SYS_01_MODULE                  ID
+  LoginName      EDU_ELE_01_USER                    LOGINNAME
 <EDU_ELE_03_APPRZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   YHID           EDU_ELE_01_USER                    LOGINNAME

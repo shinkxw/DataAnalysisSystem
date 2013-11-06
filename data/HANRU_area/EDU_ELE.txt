@@ -90,6 +90,15 @@
             <name="FZYHID" exp="分组用户ID列表" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ELE_02_YHKJDH" exp="用户快捷导航表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="MODULEID" exp="MODULE表ID" type="int" null="F" p="F" />
+            <name="LoginName" exp="用户名" type="nvarchar(20)" null="F" p="F" />
+            <name="OrderID" exp="序号" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ELE_03_APPRZ" exp="应用日志表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
