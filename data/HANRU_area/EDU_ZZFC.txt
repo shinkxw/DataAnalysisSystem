@@ -174,4 +174,13 @@
             <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZFC_10_A05_PBXXB" exp="评比选项表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XXMC" exp="选项名称" type="nvarchar(50)" null="F" p="F" />
+            <name="XXLX" exp="选项类型" type="int" null="F" p="F" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

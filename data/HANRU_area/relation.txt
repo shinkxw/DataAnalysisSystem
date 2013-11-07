@@ -696,6 +696,8 @@
   BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
   QSID           EDU_ZZFC_08_01_XSSS                ID
   TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZFC_10_A05_PBXXB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM

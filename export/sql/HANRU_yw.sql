@@ -7910,6 +7910,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZFC_10_A04_YDKH
             and   type = 'U')
    drop table EDU_ZZFC_10_A04_YDKHPB
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZFC_10_A05_PBXXB')
+            and   type = 'U')
+   drop table EDU_ZZFC_10_A05_PBXXB
+go
 --建筑物基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZFC_02_01_JZWJBSJ]') AND type in (N'U'))
 BEGIN
@@ -8157,6 +8162,24 @@ CREATE TABLE [dbo].[EDU_ZZFC_10_A04_YDKHPB](
 	[PBJG]  nvarchar(10)  NOT NULL,--评比结果
 	[TJJSID]  int  NOT NULL,--添加教师ID
 CONSTRAINT [PK_EDU_ZZFC_10_A04_YDKHPB] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--评比选项表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZFC_10_A05_PBXXB]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZFC_10_A05_PBXXB](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[XXMC]  nvarchar(50)  NOT NULL,--选项名称
+	[XXLX]  int  NOT NULL,--选项类型
+	[FZ]  decimal(5, 2)  NOT NULL,--分值
+CONSTRAINT [PK_EDU_ZZFC_10_A05_PBXXB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
@@ -8459,6 +8482,18 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评比结果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A04_YDKHPB', @level2type=N'COLUMN',@level2name=N'PBJG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A04_YDKHPB', @level2type=N'COLUMN',@level2name=N'TJJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评比选项表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A05_PBXXB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A05_PBXXB', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A05_PBXXB', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A05_PBXXB', @level2type=N'COLUMN',@level2name=N'XXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A05_PBXXB', @level2type=N'COLUMN',@level2name=N'XXLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_10_A05_PBXXB', @level2type=N'COLUMN',@level2name=N'FZ'
 GO
 --空间名：EDU_ZZJG  生成器：SqlBuilder0.1
 

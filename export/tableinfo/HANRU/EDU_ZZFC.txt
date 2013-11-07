@@ -154,3 +154,10 @@ EDU_ZZFC_10_A04_YDKHPB  月度考核评比表
   PBJG          评比结果                nvarchar(10)   非主
   TJJSID        添加教师ID              int            非主        教职工基本数据子类表
 
+EDU_ZZFC_10_A05_PBXXB  评比选项表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XXMC          选项名称                nvarchar(50)   非主
+  XXLX          选项类型                int            非主
+  FZ            分值                    decimal(5, 2)  非主
+
