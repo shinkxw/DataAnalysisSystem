@@ -493,4 +493,86 @@
             <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_18_A01_WJLX" exp="违纪类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="WJLXMC" exp="违纪类型名称" type="nvarchar(30)" null="F" p="F" />
+            <name="WJNRFW" exp="违纪内容范围" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_18_A02_CFLX" exp="处分类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="CFLXMC" exp="处分类型名称" type="nvarchar(30)" null="F" p="F" />
+            <name="CFGLDW" exp="处分管理单位" type="nvarchar(30)" null="F" p="F" />
+            <name="SFCZCKQ" exp="是否存在查看期" type="nvarchar(1)" null="F" p="F" />
+            <name="CKQ" exp="查看期" type="int" null="F" p="F" />
+            <name="SFQXJC" exp="是否允许解除" type="nvarchar(1)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_18_A03_JCCFBZ" exp="解除处分步骤表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="CFLXID" exp="处分类型ID" type="int" null="F" p="F" />
+            <name="BZMC" exp="步骤名称" type="nvarchar(100)" null="F" p="F" />
+            <name="SHRIDLB" exp="审核人ID列表" type="text" null="F" p="F" />
+            <name="SHRMCLB" exp="审核人名称列表" type="text" null="F" p="F" />
+            <name="SYBZID" exp="上一步骤ID" type="int" null="F" p="F" />
+            <name="XYBZID" exp="下一步骤ID" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_18_A04_XSCFXX" exp="学生处分信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="WJLXID" exp="违纪类型ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DQZT" exp="当前状态" type="int" null="F" p="F" />
+            <name="WJQK" exp="违纪情况" type="text" null="F" p="F" />
+            <name="JYCFLXID" exp="建议处分类型ID" type="int" null="F" p="F" />
+            <name="SBSJ" exp="上报时间" type="datetime" null="F" p="F" />
+            <name="SBJSID" exp="上报教师ID" type="int" null="F" p="F" />
+            <name="ZZCFLXID" exp="最终处分类型ID" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_18_A05_JCCFSQ" exp="解除处分申请表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSCFXXID" exp="学生处分信息ID" type="int" null="F" p="F" />
+            <name="JCYY" exp="解除原因" type="text" null="F" p="F" />
+            <name="YJTL" exp="依据条例" type="text" null="F" p="F" />
+            <name="DQZT" exp="当前状态" type="int" null="F" p="F" />
+            <name="DQBZID" exp="当前步骤ID" type="int" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SQXSID" exp="申请学生ID" type="int" null="F" p="F" />
+            <name="SQTHYY" exp="申请退回原因" type="text" null="F" p="F" />
+            <name="ZHSHSJ" exp="最后审核时间" type="datetime" null="F" p="F" />
+            <name="ZHSHJSID" exp="最后审核教师ID" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_18_A06_JCCFSQSHJL" exp="解除处分申请审核记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSCFXXID" exp="学生处分信息ID" type="int" null="F" p="F" />
+            <name="JCCFSQID" exp="解除处分申请ID" type="int" null="F" p="F" />
+            <name="BZID" exp="步骤ID" type="int" null="F" p="F" />
+            <name="SHJG" exp="审核结果" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

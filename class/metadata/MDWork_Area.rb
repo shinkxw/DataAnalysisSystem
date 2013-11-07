@@ -17,7 +17,7 @@ class MDWork_Area
     #backup_work_area
   end
   #输出所有
-  def export_all(need_commit = false)
+  def export_all(need_commit = true)
     @vc = MDVCer.new(self)
     fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
     fs_config = {'@sql'=>"#{fs_root}/BASE",'@view'=>"#{fs_root}/VIEW",

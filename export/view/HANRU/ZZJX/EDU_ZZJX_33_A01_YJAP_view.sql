@@ -166,6 +166,7 @@ SELECT a.[ID]--编号
       ,k.LLKS as k_JXJHKCQD_LLKS--教学计划课程清单数据子类表 理论课时
       ,k.SJKS as k_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,k.XF as k_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
+      ,k.XFRDHGX as k_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
 
 FROM dbo.EDU_ZZJX_33_A01_YJAP AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS c ON a.ZYKCPKJGID = c.ID /*专业课程排考结果ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

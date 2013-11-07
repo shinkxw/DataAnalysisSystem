@@ -425,3 +425,73 @@ EDU_ZZXS_17_A04_TYSXHB  团员思想汇报数据表
   TJSJ          添加时间                datetime       非主
   TJJSID        添加教师ID              int            非主        教职工基本数据子类表
 
+EDU_ZZXS_18_A01_WJLX  违纪类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  WJLXMC        违纪类型名称            nvarchar(30)   非主
+  WJNRFW        违纪内容范围            text           非主
+  BZ            备注                    text           非主
+
+EDU_ZZXS_18_A02_CFLX  处分类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  CFLXMC        处分类型名称            nvarchar(30)   非主
+  CFGLDW        处分管理单位            nvarchar(30)   非主
+  SFCZCKQ       是否存在查看期          nvarchar(1)    非主        是否标志代码表
+  CKQ           查看期                  int            非主
+  SFQXJC        是否允许解除            nvarchar(1)    非主        是否标志代码表
+  BZ            备注                    text           非主
+
+EDU_ZZXS_18_A03_JCCFBZ  解除处分步骤表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  CFLXID        处分类型ID              int            非主        处分类型表
+  BZMC          步骤名称                nvarchar(100)  非主
+  SHRIDLB       审核人ID列表            text           非主
+  SHRMCLB       审核人名称列表          text           非主
+  SYBZID        上一步骤ID              int            非主        解除处分步骤表
+  XYBZID        下一步骤ID              int            非主        解除处分步骤表
+  BZ            备注                    text           非主
+
+EDU_ZZXS_18_A04_XSCFXX  学生处分信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  WJLXID        违纪类型ID              int            非主        违纪类型表
+  XQID          学期ID                  int            非主        学期数据表
+  DQZT          当前状态                int            非主
+  WJQK          违纪情况                text           非主
+  JYCFLXID      建议处分类型ID          int            非主        处分类型表
+  SBSJ          上报时间                datetime       非主
+  SBJSID        上报教师ID              int            非主        教职工基本数据子类表
+  ZZCFLXID      最终处分类型ID          int            非主        处分类型表
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  BZ            备注                    text           非主
+
+EDU_ZZXS_18_A05_JCCFSQ  解除处分申请表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSCFXXID      学生处分信息ID          int            非主        学生处分信息表
+  JCYY          解除原因                text           非主
+  YJTL          依据条例                text           非主
+  DQZT          当前状态                int            非主
+  DQBZID        当前步骤ID              int            非主        解除处分步骤表
+  SQSJ          申请时间                datetime       非主
+  SQXSID        申请学生ID              int            非主        学生信息数据表
+  SQTHYY        申请退回原因            text           非主
+  ZHSHSJ        最后审核时间            datetime       非主
+  ZHSHJSID      最后审核教师ID          int            非主        教职工基本数据子类表
+  BZ            备注                    text           非主
+
+EDU_ZZXS_18_A06_JCCFSQSHJL  解除处分申请审核记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSCFXXID      学生处分信息ID          int            非主        学生处分信息表
+  JCCFSQID      解除处分申请ID          int            非主        解除处分申请表
+  BZID          步骤ID                  int            非主        解除处分步骤表
+  SHJG          审核结果                int            非主
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  BZ            备注                    text           非主
+

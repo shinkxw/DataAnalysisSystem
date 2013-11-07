@@ -111,6 +111,12 @@ namespace HanRuEdu.LDAL
             public decimal XF { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学分认定合格线")]
+            [Range(typeof(decimal), "0", "99999")]
+            public decimal XFRDHGX { get; set; }
+
+
         }
     }
 }

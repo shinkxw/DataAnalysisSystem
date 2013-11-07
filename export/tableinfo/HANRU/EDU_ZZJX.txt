@@ -129,6 +129,7 @@ EDU_ZZJX_03_03_JXJHKCQD  教学计划课程清单数据子类表
   LLKS          理论课时                int            非主
   SJKS          实践课时                int            非主
   XF            学分                    decimal(4, 1)  非主
+  XFRDHGX       学分认定合格线          decimal(5, 1)  非主
 
 EDU_ZZJX_04_01_JCJBXX  教材基本信息表
   ID            编号                    int            主键

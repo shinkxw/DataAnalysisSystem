@@ -150,6 +150,7 @@
             <name="LLKS" exp="理论课时" type="int" null="F" p="F" />
             <name="SJKS" exp="实践课时" type="int" null="F" p="F" />
             <name="XF" exp="学分" type="decimal(4, 1)" null="F" p="F" />
+            <name="XFRDHGX" exp="学分认定合格线" type="decimal(5, 1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_04_01_JCJBXX" exp="教材基本信息表">

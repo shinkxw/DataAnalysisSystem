@@ -25,7 +25,11 @@ class MDDiffer
     fname_arr2 = table2.get_field_name_arr
     f1_diff = (fname_arr1 - fname_arr2).map{|fn| table1.find_field(fn)}#t1独有字段
     f2_diff = (fname_arr2 - fname_arr1).map{|fn| table2.find_field(fn)}#t2独有字段
-    @diff.add_field_diff(f1_diff,f2_diff)
+    if f1_diff.find{|f| f.p == 'T'}#主键删除则重建表
+      @diff.add_table_diff([table1],[table2]) 
+    else
+      @diff.add_field_diff(f1_diff,f2_diff)
+    end
     (fname_arr1 & fname_arr2).each do |fn|
       compare_field(table1.find_field(fn),table2.find_field(fn))
     end
