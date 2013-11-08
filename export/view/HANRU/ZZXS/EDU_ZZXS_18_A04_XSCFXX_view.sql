@@ -83,8 +83,8 @@ SELECT a.[ID]--编号
       ,f.SFCZCKQ as f_CFLX_SFCZCKQ--处分类型表 是否存在查看期
       ,[fb].MC as f_CFLX_SFCZCKQ_MC--是否标志代码表 名称
       ,f.CKQ as f_CFLX_CKQ--处分类型表 查看期
-      ,f.SFQXJC as f_CFLX_SFQXJC--处分类型表 是否允许解除
-      ,[fc].MC as f_CFLX_SFQXJC_MC--是否标志代码表 名称
+      ,f.SFYXJC as f_CFLX_SFYXJC--处分类型表 是否允许解除
+      ,[fc].MC as f_CFLX_SFYXJC_MC--是否标志代码表 名称
       ,f.BZ as f_CFLX_BZ--处分类型表 备注
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -160,8 +160,8 @@ SELECT a.[ID]--编号
       ,h.SFCZCKQ as h_CFLX_SFCZCKQ--处分类型表 是否存在查看期
       ,[hb].MC as h_CFLX_SFCZCKQ_MC--是否标志代码表 名称
       ,h.CKQ as h_CFLX_CKQ--处分类型表 查看期
-      ,h.SFQXJC as h_CFLX_SFQXJC--处分类型表 是否允许解除
-      ,[hc].MC as h_CFLX_SFQXJC_MC--是否标志代码表 名称
+      ,h.SFYXJC as h_CFLX_SFYXJC--处分类型表 是否允许解除
+      ,[hc].MC as h_CFLX_SFYXJC_MC--是否标志代码表 名称
       ,h.BZ as h_CFLX_BZ--处分类型表 备注
       ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,i.GH as i_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -256,7 +256,7 @@ FROM dbo.EDU_ZZXS_18_A04_XSCFXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_SJGGHDQMC AS [co] ON c.GJDQM = [co].DM /*国籍/地区*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [fb] ON f.SFCZCKQ = [fb].DM /*是否存在查看期*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [fc] ON f.SFQXJC = [fc].DM /*是否允许解除*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [fc] ON f.SFYXJC = [fc].DM /*是否允许解除*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [gb] ON g.SFZJLXM = [gb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [gc] ON g.XBM = [gc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
@@ -277,7 +277,7 @@ FROM dbo.EDU_ZZXS_18_A04_XSCFXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [gs] ON g.SFSSXJS = [gs].DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS [gt] ON g.DQZTM = [gt].DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [hb] ON h.SFCZCKQ = [hb].DM /*是否存在查看期*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [hc] ON h.SFQXJC = [hc].DM /*是否允许解除*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hc] ON h.SFYXJC = [hc].DM /*是否允许解除*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [ib] ON i.SFZJLXM = [ib].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ic] ON i.XBM = [ic].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [id] ON i.MZM = [id].DM /*民族码*/ LEFT OUTER JOIN

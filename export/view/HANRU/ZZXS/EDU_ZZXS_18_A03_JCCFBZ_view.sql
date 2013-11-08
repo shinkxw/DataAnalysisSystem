@@ -17,8 +17,8 @@ SELECT a.[ID]--编号
       ,c.SFCZCKQ as c_CFLX_SFCZCKQ--处分类型表 是否存在查看期
       ,[cb].MC as c_CFLX_SFCZCKQ_MC--是否标志代码表 名称
       ,c.CKQ as c_CFLX_CKQ--处分类型表 查看期
-      ,c.SFQXJC as c_CFLX_SFQXJC--处分类型表 是否允许解除
-      ,[cc].MC as c_CFLX_SFQXJC_MC--是否标志代码表 名称
+      ,c.SFYXJC as c_CFLX_SFYXJC--处分类型表 是否允许解除
+      ,[cc].MC as c_CFLX_SFYXJC_MC--是否标志代码表 名称
       ,c.BZ as c_CFLX_BZ--处分类型表 备注
       ,d.SCHOOLID as d_JCCFBZ_SCHOOLID--解除处分步骤表 学校
       ,d.CFLXID as d_JCCFBZ_CFLXID--解除处分步骤表 处分类型ID
@@ -42,5 +42,5 @@ FROM dbo.EDU_ZZXS_18_A03_JCCFBZ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_18_A03_JCCFBZ AS d ON a.SYBZID = d.ID /*上一步骤ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_18_A03_JCCFBZ AS e ON a.XYBZID = e.ID /*下一步骤ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cb] ON c.SFCZCKQ = [cb].DM /*是否存在查看期*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [cc] ON c.SFQXJC = [cc].DM /*是否允许解除*/
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFYXJC = [cc].DM /*是否允许解除*/
 GO

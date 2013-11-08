@@ -510,7 +510,7 @@
             <name="CFGLDW" exp="处分管理单位" type="nvarchar(30)" null="F" p="F" />
             <name="SFCZCKQ" exp="是否存在查看期" type="nvarchar(1)" null="F" p="F" />
             <name="CKQ" exp="查看期" type="int" null="F" p="F" />
-            <name="SFQXJC" exp="是否允许解除" type="nvarchar(1)" null="F" p="F" />
+            <name="SFYXJC" exp="是否允许解除" type="nvarchar(1)" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>

@@ -439,7 +439,7 @@ EDU_ZZXS_18_A02_CFLX  处分类型表
   CFGLDW        处分管理单位            nvarchar(30)   非主
   SFCZCKQ       是否存在查看期          nvarchar(1)    非主        是否标志代码表
   CKQ           查看期                  int            非主
-  SFQXJC        是否允许解除            nvarchar(1)    非主        是否标志代码表
+  SFYXJC        是否允许解除            nvarchar(1)    非主        是否标志代码表
   BZ            备注                    text           非主
 
 EDU_ZZXS_18_A03_JCCFBZ  解除处分步骤表

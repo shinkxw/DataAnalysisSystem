@@ -12,7 +12,7 @@ namespace HanRuEdu.LDAL
             CFLXMC = "";
             CFGLDW = "";
             SFCZCKQ = "";
-            SFQXJC = "";
+            SFYXJC = "";
             BZ = "";
         }
         public class EDU_ZZXS_18_A02_CFLX_metadata
@@ -57,7 +57,7 @@ namespace HanRuEdu.LDAL
             [Display(Name = "是否允许解除")]
             [StringLength(1)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SFQXJC { get; set; }
+            public String SFYXJC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

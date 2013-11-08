@@ -183,4 +183,17 @@
             <name="FZ" exp="分值" type="decimal(5, 2)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZFC_10_A06_YDKHDD" exp="月度考核等第表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YF" exp="月份" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="DD" exp="等第" type="nvarchar(10)" null="F" p="F" />
+            <name="PBFZ" exp="评比分值" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+            <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

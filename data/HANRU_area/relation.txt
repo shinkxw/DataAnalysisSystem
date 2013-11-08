@@ -698,6 +698,12 @@
   TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZFC_10_A05_PBXXB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZFC_10_A06_YDKHDD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
+  TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  SSLID          EDU_ZZFC_02_01_JZWJBSJ             ID
 <EDU_ZZJG_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM
@@ -1236,7 +1242,7 @@
 <EDU_ZZXS_18_A02_CFLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFCZCKQ        EDU_JY_SFBZ                        DM
-  SFQXJC         EDU_JY_SFBZ                        DM
+  SFYXJC         EDU_JY_SFBZ                        DM
 <EDU_ZZXS_18_A03_JCCFBZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CFLXID         EDU_ZZXS_18_A02_CFLX               ID

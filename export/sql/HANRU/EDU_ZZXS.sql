@@ -1011,7 +1011,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_18_A02_CFLX](
 	[CFGLDW]  nvarchar(30)  NOT NULL,--处分管理单位
 	[SFCZCKQ]  nvarchar(1)  NOT NULL,--是否存在查看期
 	[CKQ]  int  NOT NULL,--查看期
-	[SFQXJC]  nvarchar(1)  NOT NULL,--是否允许解除
+	[SFYXJC]  nvarchar(1)  NOT NULL,--是否允许解除
 	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_ZZXS_18_A02_CFLX] PRIMARY KEY CLUSTERED
 (
@@ -1934,7 +1934,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否存在查看期
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'查看期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A02_CFLX', @level2type=N'COLUMN',@level2name=N'CKQ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否允许解除' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A02_CFLX', @level2type=N'COLUMN',@level2name=N'SFQXJC'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否允许解除' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A02_CFLX', @level2type=N'COLUMN',@level2name=N'SFYXJC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A02_CFLX', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
