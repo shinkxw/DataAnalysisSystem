@@ -5,7 +5,7 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
-$t_app_name,$t_dir_name,$t_range = 'JWXT','bygl',11..11
+$t_app_name,$t_dir_name,$t_range = 'XGXT','bygl',11..11
 #AreaManager.set_conn(DBConnector.new('D:\xz.mdb',db_type: 'ac'))
 AreaManager.set_conn(DBConnector.new('192.168.0.8,1444'))#192.168.0.8,1444
 AreaManager.load_area_and_db('HANRU','HanRuEdu') do |work_area,db|#HANRU

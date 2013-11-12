@@ -12537,12 +12537,12 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZXS_11_01_BYSJ](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
+	[XQID]  int  NOT NULL,--学期ID
 	[XSXXID]  int  NOT NULL,--学生ID
-	[CZZGH]  nvarchar(20)  NOT NULL,--操作者工号
-	[JSXYNY]  nvarchar(6)  NOT NULL,--结束学业年月
+	[JSXYNY]  datetime  NOT NULL,--结束学业年月
 	[JSXYM]  nvarchar(1)  NOT NULL,--结束学业码
 	[BYZSH]  nvarchar(20)  NULL,--毕业证书号
-	[FFRQ]  nvarchar(8)  NULL,--发放日期
+	[FFRQ]  datetime  NULL,--发放时间
 	[SFZSLQ]  nvarchar(1)  NULL,--是否证书领取
 	[TJJSID]  int  NOT NULL,--添加教师ID
 	[TJSJ]  datetime  NOT NULL,--添加时间
@@ -13081,7 +13081,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZXS_19_A01_BWSJ](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[BWMC]  int  NOT NULL,--班委名称
+	[BWMC]  nvarchar(100)  NOT NULL,--班委名称
 CONSTRAINT [PK_EDU_ZZXS_19_A01_BWSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -13577,9 +13577,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'XSXXID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作者工号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'CZZGH'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'XSXXID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束学业年月' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'JSXYNY'
 GO
@@ -13587,7 +13587,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束学业码' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'毕业证书号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'BYZSH'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发放日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'FFRQ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发放时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'FFRQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否证书领取' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_11_01_BYSJ', @level2type=N'COLUMN',@level2name=N'SFZSLQ'
 GO

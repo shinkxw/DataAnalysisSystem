@@ -9,9 +9,9 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_11_01_BYSJ()
         {
-            CZZGH = "";
-            JSXYNY = "";
+            JSXYNY = new DateTime(1900, 1, 1);
             JSXYM = "";
+            FFRQ = new DateTime(1900, 1, 1);
             TJSJ = new DateTime(1900, 1, 1);
             SHSJ = new DateTime(1900, 1, 1);
         }
@@ -28,22 +28,18 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "学期")]
+            public Int32 XQID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学生")]
             public Int32 XSXXID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "操作者工号")]
-            [StringLength(20)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CZZGH { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "结束学业年月")]
-            [StringLength(6)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JSXYNY { get; set; }
+            public DateTime JSXYNY { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -59,10 +55,8 @@ namespace HanRuEdu.LDAL
             public String BYZSH { get; set; }
 
 
-            [Display(Name = "发放日期")]
-            [StringLength(8)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FFRQ { get; set; }
+            [Display(Name = "发放时间")]
+            public DateTime FFRQ { get; set; }
 
 
             [Display(Name = "是否证书领取")]
