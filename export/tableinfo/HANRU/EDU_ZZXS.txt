@@ -242,6 +242,22 @@ EDU_ZZXS_10_A13_XSHZXJ  学生获助学金表
   SHJSID        审核教师ID              int            非主        教职工基本数据子类表
   TJJSID        添加教师ID              int            非主        教职工基本数据子类表
 
+EDU_ZZXS_11_01_BYSJ  毕业数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  CZZGH         操作者工号              nvarchar(20)   非主
+  JSXYNY        结束学业年月            nvarchar(6)    非主
+  JSXYM         结束学业码              nvarchar(1)    非主        教育培训结果代码
+  BYZSH         毕业证书号              nvarchar(20)   非主
+  FFRQ          发放日期                nvarchar(8)    非主
+  SFZSLQ        是否证书领取            nvarchar(1)    非主        是否标志代码表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  TJSJ          添加时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  SHSJ          审核时间                datetime       非主
+
 EDU_ZZXS_12_A01_STJBSJ  社团基本数据子类表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
@@ -494,4 +510,19 @@ EDU_ZZXS_18_A06_JCCFSQSHJL  解除处分申请审核记录表
   SHSJ          审核时间                datetime       非主
   SHJSID        审核教师ID              int            非主        教职工基本数据子类表
   BZ            备注                    text           非主
+
+EDU_ZZXS_19_A01_BWSJ  班委数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BWMC          班委名称                int            非主
+
+EDU_ZZXS_19_A02_BWCY  班委成员表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BWID          班委ID                  int            非主        班委数据表
+  XSXXID        学生ID                  int            非主        学生信息数据表
+  XQID          学期ID                  int            非主        学期数据表
+  ZYXXID        专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
 

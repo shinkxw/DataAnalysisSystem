@@ -563,3 +563,23 @@ EDU_ZZJX_34_A01_XSKCXF  学生课程学分表
   KCQDID        考试科目ID              int            非主        教学计划课程清单数据子类表
   XF            获得学分                decimal(4, 1)  非主
 
+EDU_ZZJX_35_A01_TKXZ  听课小组
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XZMC          小组名称                nvarchar(100)  非主
+  XZCY          小组成员                text           非主
+  XZCYMC        小组成员名称            text           非主
+
+EDU_ZZJX_35_A02_GKKSQ  公开课申请
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KCMC          课程名称                nvarchar(100)  非主
+  SKSJ          上课时间                datetime       非主
+  SKDD          上课地点                nvarchar(100)  非主
+  KCJJ          课程简介                text           非主
+  TKXZID        听课小组ID              int            非主        听课小组
+  SHZT          审核状态                int            非主
+  SFGS          是否公示                int            非主
+  SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表
+  SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
+

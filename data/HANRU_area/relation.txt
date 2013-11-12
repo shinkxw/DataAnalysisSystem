@@ -1049,6 +1049,13 @@
   NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
   BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
+<EDU_ZZJX_35_A01_TKXZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_35_A02_GKKSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TKXZID         EDU_ZZJX_35_A01_TKXZ               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM
@@ -1163,6 +1170,13 @@
   ZXJID          EDU_ZZXS_10_03_ZXJSJ               ID
   SHJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
   TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZXS_11_01_BYSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSXXID         EDU_ZZXS_01_01_XSXX                ID
+  JSXYM          EDU_GB_JYPXJG                      DM
+  SFZSLQ         EDU_JY_SFBZ                        DM
+  TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  SHJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXS_12_A01_STJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXS_12_A02_STCY
@@ -1269,6 +1283,16 @@
   JCCFSQID       EDU_ZZXS_18_A05_JCCFSQ             ID
   BZID           EDU_ZZXS_18_A03_JCCFBZ             ID
   SHJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZXS_19_A01_BWSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZXS_19_A02_BWCY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BWID           EDU_ZZXS_19_A01_BWSJ               ID
+  XSXXID         EDU_ZZXS_01_01_XSXX                ID
+  XQID           EDU_ELE_01_XQ                      ID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
 <EDU_ZZXX_01_01_ZZXX
   XXJBZM         EDU_JY_XXJYJGJBZ                   DM
   XXZGBMM        EDU_JY_XXJYJGJBZ                   DM

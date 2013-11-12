@@ -274,6 +274,24 @@
             <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_11_01_BYSJ" exp="毕业数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="CZZGH" exp="操作者工号" type="nvarchar(20)" null="F" p="F" />
+            <name="JSXYNY" exp="结束学业年月" type="nvarchar(6)" null="F" p="F" />
+            <name="JSXYM" exp="结束学业码" type="nvarchar(1)" null="F" p="F" />
+            <name="BYZSH" exp="毕业证书号" type="nvarchar(20)" null="T" p="F" />
+            <name="FFRQ" exp="发放日期" type="nvarchar(8)" null="T" p="F" />
+            <name="SFZSLQ" exp="是否证书领取" type="nvarchar(1)" null="T" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZXS_12_A01_STJBSJ" exp="社团基本数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -573,6 +591,25 @@
             <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
             <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_19_A01_BWSJ" exp="班委数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BWMC" exp="班委名称" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_19_A02_BWCY" exp="班委成员表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BWID" exp="班委ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

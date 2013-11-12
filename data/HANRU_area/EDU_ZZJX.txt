@@ -655,4 +655,28 @@
             <name="XF" exp="获得学分" type="decimal(4, 1)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_35_A01_TKXZ" exp="听课小组">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XZMC" exp="小组名称" type="nvarchar(100)" null="F" p="F" />
+            <name="XZCY" exp="小组成员" type="text" null="F" p="F" />
+            <name="XZCYMC" exp="小组成员名称" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_35_A02_GKKSQ" exp="公开课申请">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCMC" exp="课程名称" type="nvarchar(100)" null="F" p="F" />
+            <name="SKSJ" exp="上课时间" type="datetime" null="F" p="F" />
+            <name="SKDD" exp="上课地点" type="nvarchar(100)" null="F" p="F" />
+            <name="KCJJ" exp="课程简介" type="text" null="F" p="F" />
+            <name="TKXZID" exp="听课小组ID" type="int" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SFGS" exp="是否公示" type="int" null="F" p="F" />
+            <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
