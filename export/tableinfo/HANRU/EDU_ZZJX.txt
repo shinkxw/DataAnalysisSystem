@@ -580,6 +580,6 @@ EDU_ZZJX_35_A02_GKKSQ  公开课申请
   TKXZID        听课小组ID              int            非主        听课小组
   SHZT          审核状态                int            非主
   SFGS          是否公示                int            非主
-  SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表
+  SQRID         申请人ID                int            非主        教职工基本数据子类表
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
 

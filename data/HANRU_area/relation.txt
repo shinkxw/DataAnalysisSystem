@@ -1054,7 +1054,7 @@
 <EDU_ZZJX_35_A02_GKKSQ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   TKXZID         EDU_ZZJX_35_A01_TKXZ               ID
-  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SQRID          EDU_ZZJG_01_01_JZGJBSJ             ID
   SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

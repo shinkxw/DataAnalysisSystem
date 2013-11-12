@@ -1327,7 +1327,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_35_A02_GKKSQ](
 	[TKXZID]  int  NOT NULL,--听课小组ID
 	[SHZT]  int  NOT NULL,--审核状态
 	[SFGS]  int  NOT NULL,--是否公示
-	[SQRID]  nvarchar(20)  NOT NULL,--申请人ID
+	[SQRID]  int  NOT NULL,--申请人ID
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
 CONSTRAINT [PK_EDU_ZZJX_35_A02_GKKSQ] PRIMARY KEY CLUSTERED
 (

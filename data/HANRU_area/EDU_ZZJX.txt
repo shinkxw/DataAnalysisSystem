@@ -675,7 +675,7 @@
             <name="TKXZID" exp="Ìý¿ÎÐ¡×éID" type="int" null="F" p="F" />
             <name="SHZT" exp="ÉóºË×´Ì¬" type="int" null="F" p="F" />
             <name="SFGS" exp="ÊÇ·ñ¹«Ê¾" type="int" null="F" p="F" />
-            <name="SQRID" exp="ÉêÇëÈËID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQRID" exp="ÉêÇëÈËID" type="int" null="F" p="F" />
             <name="SHRID" exp="ÉóºËÈËID" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>

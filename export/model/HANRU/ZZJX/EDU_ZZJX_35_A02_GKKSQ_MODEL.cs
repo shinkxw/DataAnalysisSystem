@@ -13,7 +13,6 @@ namespace HanRuEdu.LDAL
             SKSJ = new DateTime(1900, 1, 1);
             SKDD = "";
             KCJJ = "";
-            SQRID = "";
             SHRID = "";
         }
         public class EDU_ZZJX_35_A02_GKKSQ_metadata
@@ -68,11 +67,9 @@ namespace HanRuEdu.LDAL
             public Int32 SFGS { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "申请人")]
-            [StringLength(20)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SQRID { get; set; }
+            public Int32 SQRID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
