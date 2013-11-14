@@ -225,6 +225,7 @@ EDU_ZZJG_16_A01_ZPGWSJ  招聘岗位数据表
 EDU_ZZJG_16_A02_YPJSSJ  应聘教师数据表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
+  YPGWID        应聘岗位ID              int            非主        招聘岗位数据表
   XM            姓名                    nvarchar(36)   非主
   YWXM          英文姓名                nvarchar(60)   非主
   XMPY          姓名拼音                nvarchar(60)   非主

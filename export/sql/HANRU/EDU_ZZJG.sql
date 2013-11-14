@@ -603,6 +603,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZJG_16_A02_YPJSSJ](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校名
+	[YPGWID]  int  NOT NULL,--应聘岗位ID
 	[XM]  nvarchar(36)  NOT NULL,--姓名
 	[YWXM]  nvarchar(60)  NULL,--英文姓名
 	[XMPY]  nvarchar(60)  NOT NULL,--姓名拼音
@@ -1063,6 +1064,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_16_A02_YPJSSJ', @level2type=N'COLUMN',@level2name=N'ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_16_A02_YPJSSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应聘岗位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_16_A02_YPJSSJ', @level2type=N'COLUMN',@level2name=N'YPGWID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_16_A02_YPJSSJ', @level2type=N'COLUMN',@level2name=N'XM'
 GO

@@ -804,6 +804,7 @@
   SFKQ           EDU_JY_SFBZ                        DM
 <EDU_ZZJG_16_A02_YPJSSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YPGWID         EDU_ZZJG_16_A01_ZPGWSJ             ID
   SFZJLXM        EDU_JY_SFZJLX                      DM
   XBM            EDU_GB_RDXB                        DM
   MZM            EDU_GB_ZGGMZMCDLMZMPXF             DM

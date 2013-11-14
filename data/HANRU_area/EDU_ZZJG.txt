@@ -274,6 +274,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="YPGWID" exp="应聘岗位ID" type="int" null="F" p="F" />
             <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
             <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" />
             <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="F" p="F" />

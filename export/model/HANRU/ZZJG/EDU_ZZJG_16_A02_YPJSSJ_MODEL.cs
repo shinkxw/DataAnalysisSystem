@@ -49,6 +49,11 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "应聘岗位")]
+            public Int32 YPGWID { get; set; }
+
+
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "姓名")]
             [StringLength(36)]
