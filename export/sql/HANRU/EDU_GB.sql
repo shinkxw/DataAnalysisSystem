@@ -440,6 +440,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_GB_GDXXDASTFL')
    drop table EDU_GB_GDXXDASTFL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_GB_LWGDXXDASTFL')
+            and   type = 'U')
+   drop table EDU_GB_LWGDXXDASTFL
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_GB_GBZWMCTZ')
             and   type = 'U')
    drop table EDU_GB_GBZWMCTZ
@@ -13971,6 +13976,35 @@ INSERT INTO [EDU_GB_GDXXDASTFL]([DM] ,[MC]) VALUES('XS15', '奖惩记录')
 INSERT INTO [EDU_GB_GDXXDASTFL]([DM] ,[MC]) VALUES('XS16', '党团组织档案')
 INSERT INTO [EDU_GB_GDXXDASTFL]([DM] ,[MC]) VALUES('XS17', '毕业生登记表')
 
+--两位高等学校档案实体分类码
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_GB_LWGDXXDASTFL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_GB_LWGDXXDASTFL](
+	[DM]  nvarchar(2)  NOT NULL,--代码
+	[MC]  nvarchar(31)  NOT NULL,--名称
+CONSTRAINT [PK_EDU_GB_LWGDXXDASTFL] PRIMARY KEY CLUSTERED
+(
+	[DM] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('DQ', '党群')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('XZ', '行政')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('JX', '教学')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('KY', '科学研究')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('CP', '产品生产与科技开发')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('JJ', '基本建设')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('SB', '仪器设备')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('CB', '出版')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('WS', '外事')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('CK', '财会')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('SX', '声像')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('RW', '人物')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('SW', '实物')
+INSERT INTO [EDU_GB_LWGDXXDASTFL]([DM] ,[MC]) VALUES('XS', '学生')
+
 --干部职务名称特征代码表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_GB_GBZWMCTZ]') AND type in (N'U'))
 BEGIN
@@ -15067,6 +15101,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_GB_GDXXDASTFL', @level2type=N'COLUMN',@level2name=N'DM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_GB_GDXXDASTFL', @level2type=N'COLUMN',@level2name=N'MC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'两位高等学校档案实体分类码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_GB_LWGDXXDASTFL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_GB_LWGDXXDASTFL', @level2type=N'COLUMN',@level2name=N'DM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_GB_LWGDXXDASTFL', @level2type=N'COLUMN',@level2name=N'MC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'干部职务名称特征代码表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_GB_GBZWMCTZ'
 GO

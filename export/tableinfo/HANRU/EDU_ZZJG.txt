@@ -212,3 +212,60 @@ EDU_ZZJG_15_A02_ZYPG  作业批改表
   SL            数量                    int            非主
   TJSJ          添加时间                datetime       非主
 
+EDU_ZZJG_16_A01_ZPGWSJ  招聘岗位数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  ZPGWMC        招聘岗位名称            nvarchar(36)   非主
+  ZWMC          职务名称                nvarchar(10)   非主
+  ZPRS          招聘人数                int            非主
+  GWQSNY        岗位起始年月            nvarchar(6)    非主
+  GWJSNY        岗位结束年月            nvarchar(6)    非主
+  SFKQ          是否开启                nvarchar(1)    非主        是否标志代码表
+
+EDU_ZZJG_16_A02_YPJSSJ  应聘教师数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  XM            姓名                    nvarchar(36)   非主
+  YWXM          英文姓名                nvarchar(60)   非主
+  XMPY          姓名拼音                nvarchar(60)   非主
+  CYM           曾用名                  nvarchar(36)   非主
+  SFZJLXM       身份证件类型码          nvarchar(1)    非主        身份证件类型代码表
+  SFZJH         身份证件号              nvarchar(20)   非主
+  CSRQ          出生日期                nvarchar(8)    非主
+  XBM           性别码                  nvarchar(1)    非主        人的性别代码
+  MZM           民族码                  nvarchar(2)    非主        中国各民族名称的罗马字母拼写法和代码
+  XXM           血型码                  nvarchar(1)    非主        血型代码表
+  JKZKM         健康状况码              nvarchar(1)    非主        健康状况1位数字代码
+  HYZTM         婚姻状态码              nvarchar(2)    非主        婚姻状况代码
+  ZZMMM         政治面貌码              nvarchar(2)    非主        政治面貌代码
+  GATQWM        港澳台侨外码            nvarchar(2)    非主        港澳台侨外代码表
+  JG            籍贯                    nvarchar(20)   非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主        世界各国和地区名称代码
+  CSDXZQHM      出生地行政区划码        nvarchar(6)    非主        中华人民共和国行政区划代码
+  XYZJM         信仰宗教码              nvarchar(2)    非主        宗教信仰代码
+  JZGHKSZDXZQHM 教职工户口所在地行政区划码nvarchar(6)    非主        中华人民共和国行政区划代码
+  HKLBM         户口类别码              nvarchar(1)    非主        户口类别代码
+  DQZZ          当前住址                nvarchar(180)  非主
+  DQZZYZBM      当前住址邮政编码        nvarchar(6)    非主
+  CJGZNY        参加工作年月            nvarchar(6)    非主
+  CJNY          从教年月                nvarchar(6)    非主
+  BZLBM         编制类别码              nvarchar(2)    非主        编制类别代码表
+  JZGLBM        教职工类别码            nvarchar(2)    非主        教职工类别代码表
+  GWLBM         岗位类别码              nvarchar(1)    非主        岗位类别代码表
+  SFJZJS        是否兼职教师            nvarchar(1)    非主        是否标志代码表
+  SFSSXJS       是否双师型教师          nvarchar(1)    非主        是否标志代码表
+  ZP            照片(路径)              nvarchar(100)  非主
+  YDDH          移动电话                nvarchar(30)   非主
+  GDDH          固定电话                nvarchar(30)   非主
+  TXDZYZBM      通信地址邮政编码        nvarchar(6)    非主
+  TXDZ          通信地址                nvarchar(180)  非主
+  DZXX          电子信箱                nvarchar(40)   非主
+  WLDZ          网络地址                nvarchar(60)   非主
+  JSTXH         即时通讯号              nvarchar(40)   非主
+  BZ            备注                    text           非主
+  TJSJ          添加时间                datetime       非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  SHJG          审核结果                int            非主
+  SHSJ          审核时间                datetime       非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+

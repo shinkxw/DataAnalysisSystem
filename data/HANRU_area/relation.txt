@@ -799,6 +799,31 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
   PGLXID         EDU_ZZJG_15_A01_ZYPGLX             ID
+<EDU_ZZJG_16_A01_ZPGWSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SFKQ           EDU_JY_SFBZ                        DM
+<EDU_ZZJG_16_A02_YPJSSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SFZJLXM        EDU_JY_SFZJLX                      DM
+  XBM            EDU_GB_RDXB                        DM
+  MZM            EDU_GB_ZGGMZMCDLMZMPXF             DM
+  XXM            EDU_JY_XX                          DM
+  JKZKM          EDU_GB_JKZKYWSZ                    DM
+  HYZTM          EDU_GB_HYZZ                        DM
+  ZZMMM          EDU_GB_ZZMM                        DM
+  GATQWM         EDU_JY_GATQW                       DM
+  GJDQM          EDU_GB_SJGGHDQMC                   DM
+  CSDXZQHM       EDU_GB_ZHRMGHGXZQH                 DM
+  XYZJM          EDU_GB_ZJXY                        DM
+  JZGHKSZDXZQHM  EDU_GB_ZHRMGHGXZQH                 DM
+  HKLBM          EDU_GB_HKLB                        DM
+  BZLBM          EDU_JY_BZLB                        DM
+  JZGLBM         EDU_JY_JZGLB                       DM
+  GWLBM          EDU_JY_GWLB                        DM
+  SFJZJS         EDU_JY_SFBZ                        DM
+  SFSSXJS        EDU_JY_SFBZ                        DM
+  TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  SHJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_01_01_ZYXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYDM           EDU_ZJ_ZJZY                        DM

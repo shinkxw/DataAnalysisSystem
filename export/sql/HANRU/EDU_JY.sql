@@ -1155,6 +1155,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_JY_DABGQX')
    drop table EDU_JY_DABGQX
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_JY_YWDABGQX')
+            and   type = 'U')
+   drop table EDU_JY_YWDABGQX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_JY_CWPL')
             and   type = 'U')
    drop table EDU_JY_CWPL
@@ -9213,6 +9218,26 @@ INSERT INTO [EDU_JY_DABGQX]([DM] ,[MC] ,[ZMDM] ,[SM]) VALUES('32', '10', '年', '
 INSERT INTO [EDU_JY_DABGQX]([DM] ,[MC] ,[ZMDM] ,[SM]) VALUES('33', '5', '年', '适用于会计档案')
 INSERT INTO [EDU_JY_DABGQX]([DM] ,[MC] ,[ZMDM] ,[SM]) VALUES('34', '3', '年', '适用于会计档案')
 
+--一位档案保管期限代码表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_JY_YWDABGQX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_JY_YWDABGQX](
+	[DM]  nvarchar(1)  NOT NULL,--代码
+	[MC]  nvarchar(2)  NOT NULL,--名称
+	[ZMDM]  nchar(1)  NULL,--字母代码
+	[SM]  nvarchar(15)  NULL,--说明
+CONSTRAINT [PK_EDU_JY_YWDABGQX] PRIMARY KEY CLUSTERED
+(
+	[DM] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+INSERT INTO [EDU_JY_YWDABGQX]([DM] ,[MC] ,[ZMDM]) VALUES('1', '永久', 'Y')
+INSERT INTO [EDU_JY_YWDABGQX]([DM] ,[MC] ,[ZMDM] ,[SM]) VALUES('2', '长期', 'C', '指保管期限为十六年至五十年左右')
+INSERT INTO [EDU_JY_YWDABGQX]([DM] ,[MC] ,[ZMDM] ,[SM]) VALUES('3', '短期', 'D', '指保管期限为十五年以下')
+
 --财务票类代码表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_JY_CWPL]') AND type in (N'U'))
 BEGIN
@@ -11163,6 +11188,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字母代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_DABGQX', @level2type=N'COLUMN',@level2name=N'ZMDM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'说明' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_DABGQX', @level2type=N'COLUMN',@level2name=N'SM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'一位档案保管期限代码表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_YWDABGQX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_YWDABGQX', @level2type=N'COLUMN',@level2name=N'DM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_YWDABGQX', @level2type=N'COLUMN',@level2name=N'MC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字母代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_YWDABGQX', @level2type=N'COLUMN',@level2name=N'ZMDM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'说明' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_YWDABGQX', @level2type=N'COLUMN',@level2name=N'SM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'财务票类代码表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_JY_CWPL'
 GO
