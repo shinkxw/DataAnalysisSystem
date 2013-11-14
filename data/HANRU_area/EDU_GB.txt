@@ -12871,6 +12871,28 @@
             <DM="XS17" MC="毕业生登记表" />
         </data_area>
     </table>
+    <table name="EDU_GB_LWGDXXDASTFL" exp="两位高等学校档案实体分类码">
+        <field_area>
+            <name="DM" exp="代码" type="nvarchar(2)" null="F" p="T" />
+            <name="MC" exp="名称" type="nvarchar(31)" null="F" p="F" />
+        </field_area>
+        <data_area>
+            <DM="DQ" MC="党群" />
+            <DM="XZ" MC="行政" />
+            <DM="JX" MC="教学" />
+            <DM="KY" MC="科学研究" />
+            <DM="CP" MC="产品生产与科技开发" />
+            <DM="JJ" MC="基本建设" />
+            <DM="SB" MC="仪器设备" />
+            <DM="CB" MC="出版" />
+            <DM="WS" MC="外事" />
+            <DM="CK" MC="财会" />
+            <DM="SX" MC="声像" />
+            <DM="RW" MC="人物" />
+            <DM="SW" MC="实物" />
+            <DM="XS" MC="学生" />
+        </data_area>
+    </table>
     <table name="EDU_GB_GBZWMCTZ" exp="干部职务名称特征代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />

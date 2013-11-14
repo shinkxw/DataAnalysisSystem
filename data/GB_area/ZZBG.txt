@@ -130,18 +130,18 @@
     <table name="ZZBG08" exp="档案登记数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
-            <name="QZH" exp="全宗号" type="nvarchar(10)" null="F" p="T" remark="全宗号 编号：ZZBG080001 " />
-            <name="ND" exp="年度" type="nvarchar(4)" null="F" p="F" remark="年度 编号：ZZBG080002 解释/举例：档案登记的年度 引用自JCTB010201 ND 年度（年份、年） C 4 NULL GB/T7408 格式：YYYY，如：2008 NULL" />
-            <name="MLH" exp="目录号" type="nvarchar(5)" null="F" p="F" remark="目录号 编号：ZZBG080003 " />
-            <name="AJH" exp="案卷号" type="nvarchar(5)" null="F" p="F" remark="案卷号 编号：ZZBG080004 " />
-            <name="TM" exp="题名" type="nvarchar(120)" null="F" p="F" remark="题名 编号：ZZBG080005 解释/举例：文件的标题名称 " />
-            <name="ZTC" exp="主题词" type="text" null="F" p="F" remark="主题词 编号：ZZBG080006 解释/举例：文件的主题词，多个主题词用逗号隔开 " />
-            <name="QSRQ" exp="起始日期" type="nvarchar(8)" null="T" p="F" remark="起始日期 编号：ZZBG080007 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
-            <name="JZRQ" exp="截止日期" type="nvarchar(8)" null="T" p="F" remark="截止日期 编号：ZZBG080008 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="QZH" exp="全宗号" type="nvarchar(10)" null="F" p="T" />
+            <name="ND" exp="年度" type="nvarchar(4)" null="F" p="F" />
+            <name="MLH" exp="目录号" type="nvarchar(5)" null="F" p="F" />
+            <name="AJH" exp="案卷号" type="nvarchar(5)" null="F" p="F" />
+            <name="TM" exp="题名" type="nvarchar(120)" null="F" p="F" />
+            <name="ZTC" exp="主题词" type="text" null="F" p="F" />
+            <name="QSRQ" exp="起始日期" type="nvarchar(8)" null="T" p="F" />
+            <name="JZRQ" exp="截止日期" type="nvarchar(8)" null="T" p="F" />
             <name="BGQXM" exp="保管期限码" type="nvarchar(1)" null="F" p="F" remark="保管期限码 编号：ZZBG080009 值空间：JY/T1001BGQX保管期限代码 " />
             <name="MJM" exp="密级码" type="nvarchar(1)" null="T" p="F" remark="密级码 编号：ZZBG080010 值空间：GB/T7156 " />
-            <name="YS" exp="页数" type="decimal(6, 0)" null="F" p="F" remark="页数 编号：ZZBG080011 解释/举例：文件的总页数，单位：页 " />
-            <name="FS" exp="份数" type="decimal(8, 0)" null="F" p="F" remark="份数 编号：ZZBG080012 解释/举例：文件的份数，单位：份 " />
+            <name="YS" exp="页数" type="decimal(6, 0)" null="F" p="F" />
+            <name="FS" exp="份数" type="decimal(8, 0)" null="F" p="F" />
             <name="BZDW" exp="编制单位" type="nvarchar(60)" null="T" p="F" remark="编制单位 编号：ZZBG080013 解释/举例：完成档案登记的单位名称 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
             <name="CFWZ" exp="存放位置" type="nvarchar(60)" null="F" p="F" remark="存放位置 编号：ZZBG080014 解释/举例：指文件存放的地点或架号 " />
             <name="DAFLM" exp="档案分类码" type="nvarchar(2)" null="F" p="F" remark="档案分类码 编号：ZZBG080015 值空间：JY/T1001附录C高等学校档案实体分类法 解释/举例：取前两位 " />

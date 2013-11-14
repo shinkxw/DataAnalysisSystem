@@ -967,6 +967,12 @@ EDU_JY_DABGQX  档案保管期限代码表
   ZMDM          字母代码                nchar(1)       非主
   SM            说明                    nvarchar(15)   非主
 
+EDU_JY_YWDABGQX  一位档案保管期限代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+  ZMDM          字母代码                nchar(1)       非主
+  SM            说明                    nvarchar(15)   非主
+
 EDU_JY_CWPL  财务票类代码表
   DM            代码                    nvarchar(1)    主键
   MC            名称                    nvarchar(6)    非主

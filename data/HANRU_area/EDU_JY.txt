@@ -6362,6 +6362,19 @@
             <DM="34" MC="3" ZMDM="年" SM="适用于会计档案" />
         </data_area>
     </table>
+    <table name="EDU_JY_YWDABGQX" exp="一位档案保管期限代码表">
+        <field_area>
+            <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />
+            <name="MC" exp="名称" type="nvarchar(2)" null="F" p="F" />
+            <name="ZMDM" exp="字母代码" type="nchar(1)" null="T" p="F" />
+            <name="SM" exp="说明" type="nvarchar(15)" null="T" p="F" />
+        </field_area>
+        <data_area>
+            <DM="1" MC="永久" ZMDM="Y" />
+            <DM="2" MC="长期" ZMDM="C" SM="指保管期限为十六年至五十年左右" />
+            <DM="3" MC="短期" ZMDM="D" SM="指保管期限为十五年以下" />
+        </data_area>
+    </table>
     <table name="EDU_JY_CWPL" exp="财务票类代码表">
         <field_area>
             <name="DM" exp="代码" type="nvarchar(1)" null="F" p="T" />

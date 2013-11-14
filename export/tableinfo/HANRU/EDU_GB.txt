@@ -369,6 +369,10 @@ EDU_GB_GDXXDASTFL  高等学校档案实体分类法
   DM            代码                    nvarchar(6)    主键
   MC            名称                    nvarchar(31)   非主
 
+EDU_GB_LWGDXXDASTFL  两位高等学校档案实体分类码
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(31)   非主
+
 EDU_GB_GBZWMCTZ  干部职务名称特征代码表
   DM            代码                    nvarchar(1)    主键
   MC            名称                    nvarchar(8)    非主
