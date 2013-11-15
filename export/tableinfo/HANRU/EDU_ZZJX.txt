@@ -583,3 +583,32 @@ EDU_ZZJX_35_A02_GKKSQ  公开课申请
   SQRID         申请人ID                int            非主        教职工基本数据子类表
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
 
+EDU_ZZJX_36_A01_JXJH  见习计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  JHMC          计划名称                nvarchar(100)  非主
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  JXDWID        见习单位                int            非主        企业管理表
+  JXNR          见习内容                text           非主
+  JXXS          见习学生                text           非主
+  SFKQ          是否开启                int            非主
+
+EDU_ZZJX_36_A02_JXBG  见习报告表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JXJHID        见习计划ID              int            非主        见习计划表
+  XSXXID        学生信息ID              int            非主        学生信息数据表
+  BGNR          报告内容                text           非主
+  BGSJ          报告时间                datetime       非主
+
+EDU_ZZJX_36_A03_JXPJ  见习评价表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JXJHID        见习计划ID              int            非主        见习计划表
+  XSXXID        学生信息ID              int            非主        学生信息数据表
+  PJNR          评价内容                text           非主
+  PJSJ          评价时间                datetime       非主
+  PJJSID        评价教师ID              int            非主        教职工基本数据子类表
+

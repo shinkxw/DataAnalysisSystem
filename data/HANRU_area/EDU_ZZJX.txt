@@ -679,4 +679,39 @@
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_36_A01_JXJH" exp="见习计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="JHMC" exp="计划名称" type="nvarchar(100)" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="JXDWID" exp="见习单位" type="int" null="F" p="F" />
+            <name="JXNR" exp="见习内容" type="text" null="F" p="F" />
+            <name="JXXS" exp="见习学生" type="text" null="F" p="F" />
+            <name="SFKQ" exp="是否开启" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_36_A02_JXBG" exp="见习报告表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JXJHID" exp="见习计划ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
+            <name="BGNR" exp="报告内容" type="text" null="F" p="F" />
+            <name="BGSJ" exp="报告时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_36_A03_JXPJ" exp="见习评价表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JXJHID" exp="见习计划ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
+            <name="PJNR" exp="评价内容" type="text" null="F" p="F" />
+            <name="PJSJ" exp="评价时间" type="datetime" null="F" p="F" />
+            <name="PJJSID" exp="评价教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
