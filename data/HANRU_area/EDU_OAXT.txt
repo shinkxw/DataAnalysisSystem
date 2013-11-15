@@ -143,6 +143,27 @@
             <name="JYYY" exp="借阅原因" type="nvarchar(80)" null="T" p="F" remark="借阅原因 编号：ZZBG060005 " />
         </field_area>
     </table>
+    <table name="EDU_OAXT_08_01_DADJ" exp="档案登记数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="QZH" exp="全宗号" type="nvarchar(10)" null="F" p="F" />
+            <name="ND" exp="年度" type="nvarchar(4)" null="F" p="F" />
+            <name="MLH" exp="目录号" type="nvarchar(5)" null="F" p="F" />
+            <name="AJH" exp="案卷号" type="nvarchar(5)" null="F" p="F" />
+            <name="TM" exp="题名" type="nvarchar(120)" null="F" p="F" />
+            <name="ZTC" exp="主题词" type="text" null="F" p="F" />
+            <name="QSRQ" exp="起始日期" type="datetime" null="T" p="F" />
+            <name="JZRQ" exp="截止日期" type="datetime" null="T" p="F" />
+            <name="BGQXM" exp="保管期限码" type="nvarchar(1)" null="F" p="F" />
+            <name="MJM" exp="密级码" type="nvarchar(1)" null="T" p="F" />
+            <name="YS" exp="页数" type="decimal(6, 0)" null="F" p="F" />
+            <name="FS" exp="份数" type="decimal(8, 0)" null="F" p="F" />
+            <name="BZDW" exp="编制单位" type="nvarchar(60)" null="T" p="F" />
+            <name="CFWZ" exp="存放位置" type="nvarchar(60)" null="F" p="F" />
+            <name="DAFLM" exp="档案分类码" type="nvarchar(2)" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_10_A01_TZ" exp="通知数据表">
         <field_area>
             <name="ID" exp="通知ID" type="int" null="F" p="T" />
@@ -751,6 +772,41 @@
             <name="GRID" exp="个人ID" type="nvarchar(20)" null="F" p="F" />
             <name="LXRXM" exp="联系人姓名" type="nvarchar(50)" null="F" p="F" />
             <name="LXRDH" exp="联系人电话" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_32_A01_DCWJ" exp="调查问卷数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="Title" exp="问卷名称" type="nvarchar(300)" null="F" p="F" />
+            <name="Type" exp="调查对象类型" type="int" null="F" p="F" remark="（平台用户、ip地址）" />
+            <name="Users" exp="参选人员" type="text" null="F" p="F" />
+            <name="DoneUsers" exp="已参选人员" type="text" null="F" p="F" />
+            <name="StartTime" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="EndTime" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="IsStart" exp="是否开启" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_32_A02_DCWJTM" exp="调查问卷题目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="WJID" exp="所属问卷" type="int" null="F" p="F" />
+            <name="TypeID" exp="题目类型" type="int" null="F" p="F" />
+            <name="Title" exp="题目" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_32_A03_DCWJTMXX" exp="问卷题目选项表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="TMID" exp="所属题目" type="int" null="F" p="F" />
+            <name="WJID" exp="所属问卷" type="int" null="F" p="F" />
+            <name="SelectItem" exp="选项" type="nvarchar(100)" null="F" p="F" />
+            <name="SelectContent" exp="选项内容" type="nvarchar(500)" null="F" p="F" />
+            <name="Votes" exp="票数" type="int" null="F" p="F" />
+            <name="VoteUsers" exp="投票人" type="text" null="F" p="F" />
+            <name="VoteUsersXM" exp="投票人姓名" type="text" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

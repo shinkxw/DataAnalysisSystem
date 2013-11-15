@@ -145,6 +145,11 @@
   WJID           EDU_OAXT_01_01_WJJBSJ              ID
   JYSPRID        EDU_ELE_01_USER                    LOGINNAME
   JYJBRID        EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_08_01_DADJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BGQXM          EDU_JY_YWDABGQX                    DM
+  MJM            EDU_GB_WXBMZJ                      DM
+  DAFLM          EDU_GB_LWGDXXDASTFL                DM
 <EDU_OAXT_10_A01_TZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FSRID          EDU_ELE_01_USER                    LOGINNAME
@@ -277,6 +282,15 @@
 <EDU_OAXT_31_A01_GRTXL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GRID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_32_A01_DCWJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_32_A02_DCWJTM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_32_A01_DCWJ               ID
+<EDU_OAXT_32_A03_DCWJTMXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TMID           EDU_OAXT_32_A02_DCWJTM             ID
+  WJID           EDU_OAXT_32_A01_DCWJ               ID
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP

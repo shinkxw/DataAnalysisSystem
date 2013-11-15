@@ -121,6 +121,25 @@ EDU_OAXT_06_01_WJJQ  文件借阅数据类表
   JYJBRGH       借阅经办人工号          nvarchar(20)   非主
   JYYY          借阅原因                nvarchar(80)   非主
 
+EDU_OAXT_08_01_DADJ  档案登记数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  QZH           全宗号                  nvarchar(10)   非主
+  ND            年度                    nvarchar(4)    非主
+  MLH           目录号                  nvarchar(5)    非主
+  AJH           案卷号                  nvarchar(5)    非主
+  TM            题名                    nvarchar(120)  非主
+  ZTC           主题词                  text           非主
+  QSRQ          起始日期                datetime       非主
+  JZRQ          截止日期                datetime       非主
+  BGQXM         保管期限码              nvarchar(1)    非主        一位档案保管期限代码表
+  MJM           密级码                  nvarchar(1)    非主        文献保密等级代码与标识
+  YS            页数                    decimal(6, 0)  非主
+  FS            份数                    decimal(8, 0)  非主
+  BZDW          编制单位                nvarchar(60)   非主
+  CFWZ          存放位置                nvarchar(60)   非主
+  DAFLM         档案分类码              nvarchar(2)    非主        两位高等学校档案实体分类码
+
 EDU_OAXT_10_A01_TZ  通知数据表
   ID            通知ID                  int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -650,4 +669,33 @@ EDU_OAXT_31_A01_GRTXL  个人通讯录表
   GRID          个人ID                  nvarchar(20)   非主        应用系统用户表
   LXRXM         联系人姓名              nvarchar(50)   非主
   LXRDH         联系人电话              nvarchar(50)   非主
+
+EDU_OAXT_32_A01_DCWJ  调查问卷数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  Title         问卷名称                nvarchar(300)  非主
+  Type          调查对象类型            int            非主
+  Users         参选人员                text           非主
+  DoneUsers     已参选人员              text           非主
+  StartTime     开始时间                datetime       非主
+  EndTime       结束时间                datetime       非主
+  IsStart       是否开启                int            非主
+
+EDU_OAXT_32_A02_DCWJTM  调查问卷题目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  WJID          所属问卷                int            非主        调查问卷数据表
+  TypeID        题目类型                int            非主
+  Title         题目                    nvarchar(300)  非主
+
+EDU_OAXT_32_A03_DCWJTMXX  问卷题目选项表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  TMID          所属题目                int            非主        调查问卷题目表
+  WJID          所属问卷                int            非主        调查问卷数据表
+  SelectItem    选项                    nvarchar(100)  非主
+  SelectContent 选项内容                nvarchar(500)  非主
+  Votes         票数                    int            非主
+  VoteUsers     投票人                  text           非主
+  VoteUsersXM   投票人姓名              text           非主
 

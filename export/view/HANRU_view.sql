@@ -135,6 +135,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_06_01_
             and   type = 'V')
    drop view VIEW_EDU_OAXT_06_01_WJJQ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_08_01_DADJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_08_01_DADJ_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_10_A01_TZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_10_A01_TZ_DISP
@@ -238,6 +242,14 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_31_A01_GRTXL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_31_A01_GRTXL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_32_A02_DCWJTM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_32_A02_DCWJTM_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_32_A03_DCWJTMXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_32_A03_DCWJTMXX_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_VIP_DISP')
             and   type = 'V')
@@ -2529,6 +2541,40 @@ FROM dbo.EDU_OAXT_06_01_WJJQ AS a LEFT OUTER JOIN
       dbo.EDU_JY_WJFL AS [cd] ON c.WJFLM = [cd].DM /*文件分类码*/
 GO
 
+--档案登记数据表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_08_01_DADJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[QZH]--全宗号
+      ,a.[ND]--年度
+      ,a.[MLH]--目录号
+      ,a.[AJH]--案卷号
+      ,a.[TM]--题名
+      ,a.[ZTC]--主题词
+      ,a.[QSRQ]--起始日期
+      ,a.[JZRQ]--截止日期
+      ,a.[BGQXM]--保管期限码
+      ,a.[MJM]--密级码
+      ,a.[YS]--页数
+      ,a.[FS]--份数
+      ,a.[BZDW]--编制单位
+      ,a.[CFWZ]--存放位置
+      ,a.[DAFLM]--档案分类码
+      ,c.MC as c_YWDABGQX_MC--一位档案保管期限代码表 名称
+      ,c.ZMDM as c_YWDABGQX_ZMDM--一位档案保管期限代码表 字母代码
+      ,c.SM as c_YWDABGQX_SM--一位档案保管期限代码表 说明
+      ,d.HYPYDM as d_WXBMZJ_HYPYDM--文献保密等级代码与标识 汉语拼音代码
+      ,d.HZDM as d_WXBMZJ_HZDM--文献保密等级代码与标识 汉字代码
+      ,d.MC as d_WXBMZJ_MC--文献保密等级代码与标识 名称
+      ,e.MC as e_LWGDXXDASTFL_MC--两位高等学校档案实体分类码 名称
+
+FROM dbo.EDU_OAXT_08_01_DADJ AS a LEFT OUTER JOIN
+      dbo.EDU_JY_YWDABGQX AS c ON a.BGQXM = c.DM /*保管期限码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_WXBMZJ AS d ON a.MJM = d.DM /*密级码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_LWGDXXDASTFL AS e ON a.DAFLM = e.DM /*档案分类码*/
+GO
+
 --通知数据表
 CREATE VIEW [dbo].[VIEW_EDU_OAXT_10_A01_TZ_DISP]
 AS
@@ -3696,6 +3742,57 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_OAXT_31_A01_GRTXL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.GRID = c.LOGINNAME /*个人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--调查问卷题目表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_32_A02_DCWJTM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[WJID]--所属问卷
+      ,a.[TypeID]--题目类型
+      ,a.[Title]--题目
+      ,c.SCHOOLID as c_DCWJ_SCHOOLID--调查问卷数据表 学校
+      ,c.Title as c_DCWJ_Title--调查问卷数据表 问卷名称
+      ,c.Type as c_DCWJ_Type--调查问卷数据表 调查对象类型
+      ,c.Users as c_DCWJ_Users--调查问卷数据表 参选人员
+      ,c.DoneUsers as c_DCWJ_DoneUsers--调查问卷数据表 已参选人员
+      ,c.StartTime as c_DCWJ_StartTime--调查问卷数据表 开始时间
+      ,c.EndTime as c_DCWJ_EndTime--调查问卷数据表 结束时间
+      ,c.IsStart as c_DCWJ_IsStart--调查问卷数据表 是否开启
+
+FROM dbo.EDU_OAXT_32_A02_DCWJTM AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_32_A01_DCWJ AS c ON a.WJID = c.ID /*所属问卷*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--问卷题目选项表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_32_A03_DCWJTMXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[TMID]--所属题目
+      ,a.[WJID]--所属问卷
+      ,a.[SelectItem]--选项
+      ,a.[SelectContent]--选项内容
+      ,a.[Votes]--票数
+      ,a.[VoteUsers]--投票人
+      ,a.[VoteUsersXM]--投票人姓名
+      ,c.SCHOOLID as c_DCWJTM_SCHOOLID--调查问卷题目表 学校
+      ,c.WJID as c_DCWJTM_WJID--调查问卷题目表 所属问卷
+      ,c.TypeID as c_DCWJTM_TypeID--调查问卷题目表 题目类型
+      ,c.Title as c_DCWJTM_Title--调查问卷题目表 题目
+      ,d.SCHOOLID as d_DCWJ_SCHOOLID--调查问卷数据表 学校
+      ,d.Title as d_DCWJ_Title--调查问卷数据表 问卷名称
+      ,d.Type as d_DCWJ_Type--调查问卷数据表 调查对象类型
+      ,d.Users as d_DCWJ_Users--调查问卷数据表 参选人员
+      ,d.DoneUsers as d_DCWJ_DoneUsers--调查问卷数据表 已参选人员
+      ,d.StartTime as d_DCWJ_StartTime--调查问卷数据表 开始时间
+      ,d.EndTime as d_DCWJ_EndTime--调查问卷数据表 结束时间
+      ,d.IsStart as d_DCWJ_IsStart--调查问卷数据表 是否开启
+
+FROM dbo.EDU_OAXT_32_A03_DCWJTMXX AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_32_A02_DCWJTM AS c ON a.TMID = c.ID /*所属题目*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_32_A01_DCWJ AS d ON a.WJID = d.ID /*所属问卷*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --网站会员
