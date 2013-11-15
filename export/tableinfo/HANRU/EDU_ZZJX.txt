@@ -612,3 +612,31 @@ EDU_ZZJX_36_A03_JXPJ  见习评价表
   PJSJ          评价时间                datetime       非主
   PJJSID        评价教师ID              int            非主        教职工基本数据子类表
 
+EDU_ZZJX_37_A01_JNJDXM  技能鉴定项目
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JNMC          技能名称                nvarchar(100)  非主
+  JNZY          技能专业                nvarchar(100)  非主
+  JNGZ          技能工种                nvarchar(100)  非主
+  JDJG          鉴定机构                nvarchar(100)  非主
+  SBZT          申报状态                int            非主
+
+EDU_ZZJX_37_A02_JNJDAP  技能鉴定安排
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KSMC          考试名称                nvarchar(100)  非主
+  JDXMID        鉴定项目ID              int            非主        技能鉴定项目
+  KSSJ          考试时间                int            非主
+  KSDD          考试地点                text           非主
+  KSXS          考试学生                text           非主
+
+EDU_ZZJX_37_A03_JNJDCJ  技能鉴定成绩
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JDXMID        鉴定项目ID              int            非主        技能鉴定项目
+  JNJDAPID      技能鉴定安排ID          int            非主        技能鉴定安排
+  XSXXID        学生信息ID              int            非主        学生信息数据表
+  CJ            成绩                    int            非主
+  DJJSID        登记教师ID              int            非主        教职工基本数据子类表
+  DJSJ          登记时间                datetime       非主
+

@@ -714,4 +714,38 @@
             <name="PJJSID" exp="评价教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_37_A01_JNJDXM" exp="技能鉴定项目">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JNMC" exp="技能名称" type="nvarchar(100)" null="F" p="F" />
+            <name="JNZY" exp="技能专业" type="nvarchar(100)" null="F" p="F" />
+            <name="JNGZ" exp="技能工种" type="nvarchar(100)" null="F" p="F" />
+            <name="JDJG" exp="鉴定机构" type="nvarchar(100)" null="F" p="F" />
+            <name="SBZT" exp="申报状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_37_A02_JNJDAP" exp="技能鉴定安排">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KSMC" exp="考试名称" type="nvarchar(100)" null="F" p="F" />
+            <name="JDXMID" exp="鉴定项目ID" type="int" null="F" p="F" />
+            <name="KSSJ" exp="考试时间" type="int" null="F" p="F" />
+            <name="KSDD" exp="考试地点" type="text" null="F" p="F" />
+            <name="KSXS" exp="考试学生" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_37_A03_JNJDCJ" exp="技能鉴定成绩">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JDXMID" exp="鉴定项目ID" type="int" null="F" p="F" />
+            <name="JNJDAPID" exp="技能鉴定安排ID" type="int" null="F" p="F" />
+            <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
+            <name="CJ" exp="成绩" type="int" null="F" p="F" />
+            <name="DJJSID" exp="登记教师ID" type="int" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

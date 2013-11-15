@@ -1109,6 +1109,17 @@
   JXJHID         EDU_ZZJX_36_A01_JXJH               ID
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   PJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJX_37_A01_JNJDXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_37_A02_JNJDAP
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JDXMID         EDU_ZZJX_37_A01_JNJDXM             ID
+<EDU_ZZJX_37_A03_JNJDCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JDXMID         EDU_ZZJX_37_A01_JNJDXM             ID
+  JNJDAPID       EDU_ZZJX_37_A02_JNJDAP             ID
+  XSXXID         EDU_ZZXS_01_01_XSXX                ID
+  DJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM
