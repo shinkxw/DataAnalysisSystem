@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[XSXXID]--学生信息ID
       ,a.[BGNR]--报告内容
       ,a.[BGSJ]--报告时间
+      ,a.[BGBT]--报告标题
       ,c.SCHOOLID as c_JXJH_SCHOOLID--见习计划表 学校
       ,c.XQID as c_JXJH_XQID--见习计划表 学期ID
       ,c.JHMC as c_JXJH_JHMC--见习计划表 计划名称

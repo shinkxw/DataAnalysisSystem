@@ -701,6 +701,7 @@
             <name="XSXXID" exp="学生信息ID" type="int" null="F" p="F" />
             <name="BGNR" exp="报告内容" type="text" null="F" p="F" />
             <name="BGSJ" exp="报告时间" type="datetime" null="F" p="F" />
+            <name="BGBT" exp="报告标题" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_36_A03_JXPJ" exp="见习评价表">

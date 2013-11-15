@@ -11300,6 +11300,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_36_A02_JXBG](
 	[XSXXID]  int  NOT NULL,--学生信息ID
 	[BGNR]  text  NOT NULL,--报告内容
 	[BGSJ]  datetime  NOT NULL,--报告时间
+	[BGBT]  nvarchar(100)  NOT NULL,--报告标题
 CONSTRAINT [PK_EDU_ZZJX_36_A02_JXBG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -12502,6 +12503,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报告内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_36_A02_JXBG', @level2type=N'COLUMN',@level2name=N'BGNR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报告时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_36_A02_JXBG', @level2type=N'COLUMN',@level2name=N'BGSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报告标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_36_A02_JXBG', @level2type=N'COLUMN',@level2name=N'BGBT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'见习评价表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_36_A03_JXPJ'
 GO

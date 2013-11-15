@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             BGNR = "";
             BGSJ = new DateTime(1900, 1, 1);
+            BGBT = "";
         }
         public class EDU_ZZJX_36_A02_JXBG_metadata
         {
@@ -43,6 +44,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "报告时间")]
             public DateTime BGSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "报告标题")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BGBT { get; set; }
 
 
         }
