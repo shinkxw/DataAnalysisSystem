@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_37_A02_JNJDAP()
         {
             KSMC = "";
+            KSSJ = new DateTime(1900, 1, 1);
             KSDD = "";
             KSXS = "";
         }
@@ -39,7 +40,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "考试时间")]
-            public Int32 KSSJ { get; set; }
+            public DateTime KSSJ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

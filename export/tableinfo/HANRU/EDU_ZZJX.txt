@@ -627,7 +627,7 @@ EDU_ZZJX_37_A02_JNJDAP  技能鉴定安排
   SCHOOLID      学校                    int            主键        学校配置表
   KSMC          考试名称                nvarchar(100)  非主
   JDXMID        鉴定项目ID              int            非主        技能鉴定项目
-  KSSJ          考试时间                int            非主
+  KSSJ          考试时间                datetime       非主
   KSDD          考试地点                text           非主
   KSXS          考试学生                text           非主
 

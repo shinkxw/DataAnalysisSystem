@@ -11358,7 +11358,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_37_A02_JNJDAP](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[KSMC]  nvarchar(100)  NOT NULL,--考试名称
 	[JDXMID]  int  NOT NULL,--鉴定项目ID
-	[KSSJ]  int  NOT NULL,--考试时间
+	[KSSJ]  datetime  NOT NULL,--考试时间
 	[KSDD]  text  NOT NULL,--考试地点
 	[KSXS]  text  NOT NULL,--考试学生
 CONSTRAINT [PK_EDU_ZZJX_37_A02_JNJDAP] PRIMARY KEY CLUSTERED

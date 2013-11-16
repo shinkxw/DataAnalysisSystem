@@ -732,7 +732,7 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="KSMC" exp="考试名称" type="nvarchar(100)" null="F" p="F" />
             <name="JDXMID" exp="鉴定项目ID" type="int" null="F" p="F" />
-            <name="KSSJ" exp="考试时间" type="int" null="F" p="F" />
+            <name="KSSJ" exp="考试时间" type="datetime" null="F" p="F" />
             <name="KSDD" exp="考试地点" type="text" null="F" p="F" />
             <name="KSXS" exp="考试学生" type="text" null="F" p="F" />
         </field_area>
