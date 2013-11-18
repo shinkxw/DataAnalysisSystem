@@ -1,0 +1,29 @@
+  config = { ID: { fn: 'ID', p: Proc.new{|s| s}},
+             SCHOOLID: { fn: '', p: Proc.new{|s| s}},
+             WEBID: { fn: '', p: Proc.new{|s| s}},
+             TYPENAME: { fn: '', p: Proc.new{|s| s}},
+             LMID: { fn: '', p: Proc.new{|s| s}},
+             TITLE: { fn: '', p: Proc.new{|s| s}},
+             PUBLISHERNAME: { fn: '', p: Proc.new{|s| s}},
+             AUTHOR: { fn: 'fbr', p: Proc.new{|s| s}},
+             AUTHORDEPART: { fn: '', p: Proc.new{|s| s}},
+             PUBLISHDATE: { fn: '', p: Proc.new{|s| s}},
+             CONTENT: { fn: '', p: Proc.new{|s| s}},
+             URL: { fn: '', p: Proc.new{|s| s}},
+             IMAGEURL: { fn: '', p: Proc.new{|s| s}},
+             ATTACHMENTNAME: { fn: '', p: Proc.new{|s| s}},
+             ATTACHMENT: { fn: '', p: Proc.new{|s| s}},
+             CHICKNUB: { fn: '', p: Proc.new{|s| s}},
+             AUDITSTATU: { fn: '', p: Proc.new{|s| s}},
+             AUDITOR: { fn: '', p: Proc.new{|s| s}},
+             AUDITORNAME: { fn: '', p: Proc.new{|s| s}},
+             AUDITTIME: { fn: '', p: Proc.new{|s| s}},
+             REMARK: { fn: '', p: Proc.new{|s| s}},
+             SUMMARY: { fn: '', p: Proc.new{|s| s}},
+             DISPLAYTYPE: { fn: '', p: Proc.new{|s| s}},
+             OPENFLAG: { fn: '', p: Proc.new{|s| s}},
+             LLQX: { fn: '', p: Proc.new{|s| s}}}
+             
+  md = DBDataMigrate.new(db)
+  md.get_table_info('News')
+  md.update_data('EDU_WZXT_MHXT_WZWZ',config)

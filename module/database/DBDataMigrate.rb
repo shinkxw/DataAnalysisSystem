@@ -60,10 +60,10 @@ class DBDataMigrate
     istr = ""
     data_arr.each do |data|
       istr << prefix_str
-      istr << "[PUBLISHDATE] = #{data[9]},\n[AUDITTIME] = #{data[19]}\n"
-      istr << "WHERE ID='#{data[0]}' and WEBID='#{data[2]}'\nGO\n"
+      istr << "[AUTHOR] = '#{data[7]}'\n"
+      istr << "WHERE ID='#{data[0]}' and SCHOOLID='1' and WEBID='3'\nGO\n"
     end
-    FileWriter.new(Dir.pwd << "/UP/#{table_name}.sql").write_str(istr)
+    FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
   end
   #根据config将hash表的内容进行转换
   #该config为一个hash表，键为结果字段，值为输入字段(无则为nil)与处理方法组成的hash表
