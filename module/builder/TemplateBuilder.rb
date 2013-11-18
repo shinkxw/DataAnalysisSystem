@@ -199,15 +199,16 @@ class TemplateBuilder
       index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}sortable="true">@Html.LabelFor(m => m.#{field.name}))
       index_str << "</th><!--#{field.explanation}-->\n"
     end
+    path_pre_str = "#{@directory_name}/#{table.lname_dc}"
     index_str << "        </tr>\n    </thead>\n</table>\n"
-    index_str << %(@{\n    ViewData["index_create"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/create");\n)
-    index_str << %(    ViewData["index_edit"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/edit");\n)
-    index_str << %(    //ViewData["index_detail"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/details");\n)
-    index_str << %(    //ViewData["index_del"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/delete");\n)
-    index_str << %(    ViewData["index_multi_del"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/delete");\n)
+    index_str << %(@{\n    ViewData["index_create"] = Url.Content("~/#{path_pre_str}/create");\n)
+    index_str << %(    ViewData["index_edit"] = Url.Content("~/#{path_pre_str}/edit");\n)
+    index_str << %(    //ViewData["index_detail"] = Url.Content("~/#{path_pre_str}/details");\n)
+    index_str << %(    //ViewData["index_del"] = Url.Content("~/#{path_pre_str}/delete");\n)
+    index_str << %(    ViewData["index_multi_del"] = Url.Content("~/#{path_pre_str}/delete");\n)
     index_str << %(    ViewData["index_id_name"] = "ID";\n)
-    index_str << %(    //ViewData["index_outdata"] = Url.Content("~/zsgl/xsdj/OutExcel");\n)
-    index_str << %(    //ViewData["index_indata"] = Url.Content("~/zsgl/xsdj/ImportData");\n}\n)
+    index_str << %(    //ViewData["index_outdata"] = Url.Content("~/#{path_pre_str}/OutExcel");\n)
+    index_str << %(    //ViewData["index_indata"] = Url.Content("~/#{path_pre_str}/ImportData");\n}\n)
     index_str << %(@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)\n)
   end
   def make_table_info(table,title)
