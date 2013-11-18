@@ -5,6 +5,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZXX_01_01_ZZXX'
    drop table EDU_ZZXX_01_01_ZZXX
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZXX_02_01_ZZXQSJ')
+            and   type = 'U')
+   drop table EDU_ZZXX_02_01_ZZXQSJ
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZXX_03_01_XNJG')
             and   type = 'U')
    drop table EDU_ZZXX_03_01_XNJG
@@ -48,6 +53,33 @@ CREATE TABLE [dbo].[EDU_ZZXX_01_01_ZZXX](
 CONSTRAINT [PK_EDU_ZZXX_01_01_ZZXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--校区数据表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZXX_02_01_ZZXQSJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZXX_02_01_ZZXQSJ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[XQDM]  nvarchar(2)  NOT NULL,--校区代码
+	[XQMC]  nvarchar(30)  NOT NULL,--校区名称
+	[XQDZ]  nvarchar(180)  NOT NULL,--校区地址
+	[XQLXDH]  nvarchar(30)  NOT NULL,--校区联系电话
+	[XQFZRH]  nvarchar(20)  NOT NULL,--校区负责人号
+	[DZYJ]  nvarchar(40)  NOT NULL,--电子邮件
+	[XQYZBM]  nvarchar(6)  NOT NULL,--校区邮政编码
+	[XQSZDXZQHM]  nvarchar(6)  NULL,--校区所在地行政区划码
+	[XQMJ]  decimal(20, 0)  NOT NULL,--校区面积
+	[XQJZMJ]  decimal(20, 0)  NULL,--校区建筑面积
+	[XQJXKYSBZZ]  decimal(10, 2)  NULL,--校区教学科研仪器设备总值
+	[XQGDZCZZ]  decimal(10, 2)  NULL,--校区固定资产总值
+CONSTRAINT [PK_EDU_ZZXX_02_01_ZZXQSJ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -166,6 +198,36 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'传真电话' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_01_01_ZZXX', @level2type=N'COLUMN',@level2name=N'CZDH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电子信箱' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_01_01_ZZXX', @level2type=N'COLUMN',@level2name=N'DZXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQDM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQDZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区联系电话' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQLXDH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区负责人号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQFZRH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电子邮件' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'DZYJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区邮政编码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQYZBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区所在地行政区划码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQSZDXZQHM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区面积' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQMJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区建筑面积' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQJZMJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区教学科研仪器设备总值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQJXKYSBZZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校区固定资产总值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_02_01_ZZXQSJ', @level2type=N'COLUMN',@level2name=N'XQGDZCZZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校内机构数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_01_XNJG'
 GO

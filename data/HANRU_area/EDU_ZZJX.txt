@@ -749,4 +749,42 @@
             <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_38_A01_ZZJXB" exp="中职教学班表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ZZXQID" exp="校区ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="JXBMC" exp="教学班级名称" type="nvarchar(100)" null="F" p="F" />
+            <name="TEACHERID1" exp="主任老师ID" type="int" null="F" p="F" />
+            <name="TEACHERID2" exp="辅助老师ID" type="int" null="F" p="F" />
+            <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
+            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="F" />
+            <name="CLASSROOM" exp="教室ID" type="int" null="F" p="F" />
+            <name="ZDBJ" exp="指定班级" type="text" null="F" p="F" />
+            <name="ZDBJMC" exp="指定班级名称" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_38_A02_ZZPKJGJL" exp="中职排课结果记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="ZZXQID" exp="校区ID" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="JXBID" exp="教学班级ID" type="int" null="F" p="F" />
+            <name="TEACHERID1" exp="主任老师ID" type="int" null="F" p="F" />
+            <name="TEACHERID2" exp="辅助老师ID" type="int" null="F" p="F" />
+            <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
+            <name="KCH" exp="课程号" type="nvarchar(6)" null="F" p="F" />
+            <name="CLASSROOM" exp="教室ID" type="int" null="F" p="F" />
+            <name="ZZBJID" exp="行政班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="WEEKDAY" exp="工作日ID" type="int" null="F" p="F" />
+            <name="PERIOD" exp="时段ID" type="int" null="F" p="F" />
+            <name="SESSION" exp="节次ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

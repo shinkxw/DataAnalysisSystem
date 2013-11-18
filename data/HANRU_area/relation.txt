@@ -1147,6 +1147,33 @@
   JNJDAPID       EDU_ZZJX_37_A02_JNJDAP             ID
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   DJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJX_38_A01_ZZJXB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ZZXQID         EDU_ZZXX_02_01_ZZXQSJ              ID
+  XQID           EDU_ELE_01_XQ                      ID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  TEACHERID1     EDU_ZZJG_01_01_JZGJBSJ             ID
+  TEACHERID2     EDU_ZZJG_01_01_JZGJBSJ             ID
+  KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
+  KCH            EDU_ZZJX_01_02_KC                  KCH
+  CLASSROOM      EDU_ZZJX_30_A01_CLASSROOM          ID
+<EDU_ZZJX_38_A02_ZZPKJGJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ZZXQID         EDU_ZZXX_02_01_ZZXQSJ              ID
+  XQID           EDU_ELE_01_XQ                      ID
+  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  JXBID          EDU_ZZJX_38_A01_ZZJXB              ID
+  TEACHERID1     EDU_ZZJG_01_01_JZGJBSJ             ID
+  TEACHERID2     EDU_ZZJG_01_01_JZGJBSJ             ID
+  KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID
+  KCH            EDU_ZZJX_01_02_KC                  KCH
+  CLASSROOM      EDU_ZZJX_30_A01_CLASSROOM          ID
+  ZZBJID         EDU_ZZJX_02_02_ZZBJ                XZBDM
+  WEEKDAY        EDU_ELE_05_WEEKDAY                 ID
+  PERIOD         EDU_ELE_05_SD                      ID
+  SESSION        EDU_ELE_05_JC                      ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM

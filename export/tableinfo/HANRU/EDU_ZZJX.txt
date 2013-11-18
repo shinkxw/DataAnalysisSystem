@@ -641,3 +641,37 @@ EDU_ZZJX_37_A03_JNJDCJ  技能鉴定成绩
   DJJSID        登记教师ID              int            非主        教职工基本数据子类表
   DJSJ          登记时间                datetime       非主
 
+EDU_ZZJX_38_A01_ZZJXB  中职教学班表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  ZZXQID        校区ID                  int            非主        校区数据表
+  XQID          学期ID                  int            非主        学期数据表
+  ZYXXID        专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  JXBMC         教学班级名称            nvarchar(100)  非主
+  TEACHERID1    主任老师ID              int            非主        教职工基本数据子类表
+  TEACHERID2    辅助老师ID              int            非主        教职工基本数据子类表
+  KCQDID        课程清单ID              int            非主        教学计划课程清单数据子类表
+  KCH           课程号                  nvarchar(6)    非主        课程数据子类表
+  CLASSROOM     教室ID                  int            非主        教室表
+  ZDBJ          指定班级                text           非主
+  ZDBJMC        指定班级名称            text           非主
+
+EDU_ZZJX_38_A02_ZZPKJGJL  中职排课结果记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  ZZXQID        校区ID                  int            非主        校区数据表
+  XQID          学期ID                  int            非主        学期数据表
+  ZYXXID        专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  JXBID         教学班级ID              int            非主        中职教学班表
+  TEACHERID1    主任老师ID              int            非主        教职工基本数据子类表
+  TEACHERID2    辅助老师ID              int            非主        教职工基本数据子类表
+  KCQDID        课程清单ID              int            非主        教学计划课程清单数据子类表
+  KCH           课程号                  nvarchar(6)    非主        课程数据子类表
+  CLASSROOM     教室ID                  int            非主        教室表
+  ZZBJID        行政班级ID              nvarchar(10)   非主        学校班级数据表
+  WEEKDAY       工作日ID                int            非主        星期
+  PERIOD        时段ID                  int            非主        时段
+  SESSION       节次ID                  int            非主        节次
+
