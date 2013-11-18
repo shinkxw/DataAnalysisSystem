@@ -22,6 +22,22 @@ EDU_ZZXX_01_01_ZZXX  学校基本数据表
   CZDH          传真电话                nvarchar(30)   非主
   DZXX          电子信箱                nvarchar(40)   非主
 
+EDU_ZZXX_02_01_ZZXQSJ  校区数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  XQDM          校区代码                nvarchar(2)    非主
+  XQMC          校区名称                nvarchar(30)   非主
+  XQDZ          校区地址                nvarchar(180)  非主
+  XQLXDH        校区联系电话            nvarchar(30)   非主
+  XQFZRH        校区负责人号            nvarchar(20)   非主
+  DZYJ          电子邮件                nvarchar(40)   非主
+  XQYZBM        校区邮政编码            nvarchar(6)    非主
+  XQSZDXZQHM    校区所在地行政区划码    nvarchar(6)    非主        中华人民共和国行政区划代码
+  XQMJ          校区面积                decimal(20, 0) 非主
+  XQJZMJ        校区建筑面积            decimal(20, 0) 非主
+  XQJXKYSBZZ    校区教学科研仪器设备总值decimal(10, 2) 非主
+  XQGDZCZZ      校区固定资产总值        decimal(10, 2) 非主
+
 EDU_ZZXX_03_01_XNJG  校内机构数据类表
   JGH           机构号                  nvarchar(6)    主键
   SCHOOLID      学校名                  int            主键        学校配置表

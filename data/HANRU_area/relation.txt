@@ -1390,6 +1390,9 @@
   XXZGBMM        EDU_JY_XXJYJGJBZ                   DM
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXPGLX         EDU_ZZ_PGQK                        DM
+<EDU_ZZXX_02_01_ZZXQSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQSZDXZQHM     EDU_GB_ZHRMGHGXZQH                 DM
 <EDU_ZZXX_03_01_XNJG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LSSJJGH        EDU_ZZXX_03_01_XNJG                JGH
