@@ -14,6 +14,8 @@ namespace HanRuEdu.LDAL
             KCH = "";
             ZDBJ = "";
             ZDBJMC = "";
+            T1NAME = "";
+            T2NAME = "";
         }
         public class EDU_ZZJX_38_A01_ZZJXB_metadata
         {
@@ -93,6 +95,25 @@ namespace HanRuEdu.LDAL
             [Display(Name = "指定班级名称")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZDBJMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "人数")]
+            public Int32 RS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "主任老师姓名")]
+            [StringLength(36)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String T1NAME { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "辅助老师姓名")]
+            [StringLength(36)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String T2NAME { get; set; }
 
 
         }

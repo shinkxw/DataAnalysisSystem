@@ -53,16 +53,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "主任老师")]
-            public Int32 TEACHERID1 { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "辅助老师")]
-            public Int32 TEACHERID2 { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "课程清单")]
             public Int32 KCQDID { get; set; }
 

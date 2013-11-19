@@ -16,6 +16,9 @@ SELECT a.[ID]--编号
       ,a.[CLASSROOM]--教室ID
       ,a.[ZDBJ]--指定班级
       ,a.[ZDBJMC]--指定班级名称
+      ,a.[RS]--人数
+      ,a.[T1NAME]--主任老师姓名
+      ,a.[T2NAME]--辅助老师姓名
       ,c.SCHOOLID as c_ZZXQSJ_SCHOOLID--校区数据表 学校名
       ,c.XQDM as c_ZZXQSJ_XQDM--校区数据表 校区代码
       ,c.XQMC as c_ZZXQSJ_XQMC--校区数据表 校区名称
