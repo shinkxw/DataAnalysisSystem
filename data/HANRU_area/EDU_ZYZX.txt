@@ -209,4 +209,53 @@
             <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZYZX_02_A01_SJLX" exp="试卷类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_02_A02_SJZSD" exp="试卷知识点表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCH" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="ZSDMC" exp="知识点名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_02_A03_SJTM" exp="试卷题目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCH" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="ZSDID" exp="知识点ID" type="int" null="F" p="F" />
+            <name="LXID" exp="类型ID" type="int" null="F" p="F" />
+            <name="TM" exp="题目" type="text" null="F" p="F" />
+            <name="NDXS" exp="难度系数" type="decimal(6, 2)" null="F" p="F" />
+            <name="FZ" exp="分值" type="decimal(5, 1)" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SCRID" exp="上传人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_02_A04_SJ" exp="试卷表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCH" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="SYFF" exp="适用范围" type="nvarchar(50)" null="F" p="F" />
+            <name="SJMC" exp="试卷名称" type="nvarchar(50)" null="F" p="F" />
+            <name="NDXS" exp="难度系数" type="decimal(6, 2)" null="F" p="F" />
+            <name="FZ" exp="分值" type="decimal(5, 1)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SCRID" exp="上传人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

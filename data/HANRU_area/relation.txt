@@ -652,6 +652,23 @@
   WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
 <EDU_ZYZX_MHXT_FBQX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_02_A01_SJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_02_A02_SJZSD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KCH            EDU_ZZJX_01_02_KC                  KCH
+<EDU_ZYZX_02_A03_SJTM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KCH            EDU_ZZJX_01_02_KC                  KCH
+  ZSDID          EDU_ZYZX_02_A02_SJZSD              ID
+  LXID           EDU_ZYZX_02_A01_SJLX               ID
+  SCRID          EDU_ELE_01_USER                    LOGINNAME
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYZX_02_A04_SJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KCH            EDU_ZZJX_01_02_KC                  KCH
+  SCRID          EDU_ELE_01_USER                    LOGINNAME
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZZFC_02_01_JZWJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SYZKM          EDU_JY_SYZK                        DM
