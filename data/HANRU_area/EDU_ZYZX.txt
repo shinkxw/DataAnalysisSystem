@@ -209,7 +209,7 @@
             <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZYZX_02_A01_SJLX" exp="试卷类型表">
+    <table name="EDU_ZYZX_02_A01_SJLX" exp="试题类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
