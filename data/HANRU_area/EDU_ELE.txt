@@ -96,8 +96,8 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="APPUSERID" exp="应用用户ID" type="int" null="F" p="F" />
-            <name="CSMC" exp="参数名称" type="int" null="F" p="F" />
-            <name="CSZ" exp="参数值" type="int" null="F" p="F" />
+            <name="CSMC" exp="参数名称" type="nvarchar(50)" null="F" p="F" />
+            <name="CSZ" exp="参数值" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_02_YHFZ" exp="用户分组表">

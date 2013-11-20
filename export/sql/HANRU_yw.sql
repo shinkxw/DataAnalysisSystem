@@ -255,8 +255,8 @@ CREATE TABLE [dbo].[EDU_ELE_01_APPDLCS](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[APPUSERID]  int  NOT NULL,--应用用户ID
-	[CSMC]  int  NOT NULL,--参数名称
-	[CSZ]  int  NOT NULL,--参数值
+	[CSMC]  nvarchar(50)  NOT NULL,--参数名称
+	[CSZ]  text  NOT NULL,--参数值
 CONSTRAINT [PK_EDU_ELE_01_APPDLCS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

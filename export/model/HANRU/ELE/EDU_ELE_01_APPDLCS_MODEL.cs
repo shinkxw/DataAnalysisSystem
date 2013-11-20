@@ -9,6 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ELE_01_APPDLCS()
         {
+            CSMC = "";
+            CSZ = "";
         }
         public class EDU_ELE_01_APPDLCS_metadata
         {
@@ -27,14 +29,17 @@ namespace HanRuEdu.LDAL
             public Int32 APPUSERID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "参数名称")]
-            public Int32 CSMC { get; set; }
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CSMC { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "参数值")]
-            public Int32 CSZ { get; set; }
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CSZ { get; set; }
 
 
         }

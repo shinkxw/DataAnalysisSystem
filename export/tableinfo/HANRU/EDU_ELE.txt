@@ -79,8 +79,8 @@ EDU_ELE_01_APPDLCS  第三方应用登录参数表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   APPUSERID     应用用户ID              int            非主        第三方应用用户表
-  CSMC          参数名称                int            非主
-  CSZ           参数值                  int            非主
+  CSMC          参数名称                nvarchar(50)   非主
+  CSZ           参数值                  text           非主
 
 EDU_ELE_02_YHFZ  用户分组表
   ID            分组ID                  int            主键

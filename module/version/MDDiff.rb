@@ -48,7 +48,12 @@ class MDDiff
   #在数据库中转换字段属性
   def db_field_transform(dp,f1,f2,db)
     case dp
-    when 'type' then db.update_ftype(f2)
+    when 'type'
+      if (f1.type == 'int' && f2.type == 'text') || (f2.type == 'int' && f1.type == 'text')
+        @rebuild_table_arr << f2.table
+      else
+        db.update_ftype(f2)
+      end
     when 'null'
       f2.null == 'T' ? db.field_null(f2) : db.field_not_null(f2)
     when 'explanation'
