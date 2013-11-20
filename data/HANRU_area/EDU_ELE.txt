@@ -31,6 +31,8 @@
             <name="DLFS" exp="登录方式" type="int" null="F" p="F" remark="TOKEN,模拟" />
             <name="STATUS" exp="应用状态" type="int" null="F" p="F" remark="是否生效等" />
             <name="TYPE" exp="应用类别" type="int" null="F" p="F" />
+            <name="DLCSLB" exp="登录参数列表" type="text" null="F" p="F" />
+            <name="MNDLJS" exp="模拟登录JS" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_SCHOOL" exp="学校配置表">
@@ -77,6 +79,25 @@
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="APPID" exp="应用ID" type="int" null="F" p="T" />
             <name="VALUE" exp="配置值" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_01_APPUSER" exp="第三方应用用户表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="APPID" exp="应用ID" type="int" null="F" p="F" />
+            <name="YHMC" exp="用户名称" type="nvarchar(36)" null="F" p="F" />
+            <name="YHZT" exp="用户状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_01_APPDLCS" exp="第三方应用登录参数表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="APPUSERID" exp="应用用户ID" type="int" null="F" p="F" />
+            <name="CSMC" exp="参数名称" type="int" null="F" p="F" />
+            <name="CSZ" exp="参数值" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_02_YHFZ" exp="用户分组表">

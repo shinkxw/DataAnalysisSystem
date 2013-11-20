@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             URL = "";
             AUTHIP = "";
             SM = "";
+            DLCSLB = "";
+            MNDLJS = "";
         }
         public class EDU_ELE_01_APP_metadata
         {
@@ -66,6 +68,18 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "应用类别")]
             public Int32 TYPE { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "登录参数列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DLCSLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "模拟登录JS")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String MNDLJS { get; set; }
 
 
         }

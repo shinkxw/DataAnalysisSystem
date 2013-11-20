@@ -26,6 +26,8 @@ EDU_ELE_01_APP  应用表
   DLFS          登录方式                int            非主
   STATUS        应用状态                int            非主
   TYPE          应用类别                int            非主
+  DLCSLB        登录参数列表            text           非主
+  MNDLJS        模拟登录JS              text           非主
 
 EDU_ELE_01_SCHOOL  学校配置表
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -64,6 +66,21 @@ EDU_ELE_01_CONFIG  应用系统配置表
   SCHOOLID      学校ID                  int            主键
   APPID         应用ID                  int            主键
   VALUE         配置值                  nvarchar(200)  非主
+
+EDU_ELE_01_APPUSER  第三方应用用户表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  APPID         应用ID                  int            非主        应用表
+  YHMC          用户名称                nvarchar(36)   非主
+  YHZT          用户状态                int            非主
+
+EDU_ELE_01_APPDLCS  第三方应用登录参数表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  APPUSERID     应用用户ID              int            非主        第三方应用用户表
+  CSMC          参数名称                int            非主
+  CSZ           参数值                  int            非主
 
 EDU_ELE_02_YHFZ  用户分组表
   ID            分组ID                  int            主键

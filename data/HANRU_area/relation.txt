@@ -10,6 +10,13 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID
   XQM            EDU_JY_XQ                          DM
+<EDU_ELE_01_APPUSER
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  APPID          EDU_ELE_01_APP                     ID
+<EDU_ELE_01_APPDLCS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPUSERID      EDU_ELE_01_APPUSER                 ID
 <EDU_ELE_02_YHFZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
