@@ -32,28 +32,30 @@ class TemplateBuilder
       next unless $t_range.include?(table.first_num)
       @tab.to_0
       @file_hash["Controllers/#{table.library_name.upcase}/#{table.lname}Controller.cs"] = make_controller(table)
-      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
-      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'添加')
-      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'编辑')
+      #@file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
+      #@file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'添加')
+      #@file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'编辑')
     end
   end
   def make_controller(table)
-    str = "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
-    str << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
-    str << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
-    str << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
-    str << "{\n#{@tab.l}public class #{table.name.split("_")[-1]}Controller : #{@app_name}Controller\n#{@tab.t}"
-    str << make_controller_index_jsonstr(table)
-    str << make_controller_add(table)
-    str << make_controller_upd(table)
-    str << make_controller_InitViewBag(table)
-    str << make_controller_index(table)
-    str << make_controller_create(table)
-    str << make_controller_edit(table)
-    str << make_controller_delete(table,false)
-    str << make_controller_delete(table,true)
-    str << make_controller_get_max_ID(table)
-    str << "#{@tab.s}}\n}"
+    str = ''
+    #~ str << "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
+    #~ str << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
+    #~ str << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
+    #~ str << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
+    #~ str << "{\n#{@tab.l}public class #{table.name.split("_")[-1]}Controller : #{@app_name}Controller\n#{@tab.t}"
+    #~ str << make_controller_index_jsonstr(table)
+    #~ str << make_controller_add(table)
+    #~ str << make_controller_upd(table)
+    #~ str << make_controller_InitViewBag(table)
+    #~ str << make_controller_index(table)
+    #~ str << make_controller_create(table)
+    #~ str << make_controller_edit(table)
+    #~ str << make_controller_delete(table,false)
+    #~ str << make_controller_delete(table,true)
+    str << make_controller_importdata(table)
+    #~ str << make_controller_get_max_ID(table)
+    #~ str << "#{@tab.s}}\n}"
   end
   def make_controller_index_jsonstr(table)
     str = %({\n#{@tab.l}public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")\n#{@tab.t})
@@ -71,7 +73,7 @@ class TemplateBuilder
   def make_controller_add(table)
     str = "#{@tab.t}public void Add#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}"
-    str << "//#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}"
+    str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}"
     str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n"
   end
@@ -147,7 +149,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.s}}\n\n"
   end
   def make_controller_delete(table,is_multi)
-    str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(String id#{'Lst' if is_multi})\n#{@tab.t}"
+    str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(#{is_multi ? 'String' : 'int'} id#{'Lst' if is_multi})\n#{@tab.t}"
     str << "{\n#{@tab.l}try\n#{@tab.t}"
     str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}" if is_multi
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n"
@@ -161,6 +163,65 @@ class TemplateBuilder
     str << "{\n#{@tab.l}return \"删除出错！\" + e.Message;\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.s}}#{'*/' unless is_multi}\n\n"
+  end
+  def make_controller_importdata(table)
+    str = "#{@tab.t}public ActionResult ImportData()\n#{@tab.t}"
+    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}"
+    str << "#{table.name} model = new #{table.name}();\n#{@tab.t}"
+    str << "return View(model);\n"
+    str << "#{@tab.s}}\n\n"
+    str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult ImportData(#{table.name} #{table.lname_dc})\n#{@tab.t}"
+    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}int sucss = 0;\n#{@tab.t}string msg = \"\";\n#{@tab.t}try\n#{@tab.t}"
+    str << "{\n#{@tab.l}HttpPostedFileBase file = Request.Files[\"xmlfile\"];\n#{@tab.t}if (file == null || file.ContentLength == 0)\n#{@tab.t}"
+    str << "{\n#{@tab.l}SetTopCenter(string.Format(\"请使用不为空的xml电子文档\"));\n#{@tab.t}return View();\n#{@tab.t}"
+    str << "#{@tab.s}}\n#{@tab.t}string filename = Request.Files[\"xmlfile\"].FileName;\n#{@tab.t}"
+    str << "string IsXls = System.IO.Path.GetExtension(filename).ToString().ToLower();\n#{@tab.t}"
+    str << "string name = System.IO.Path.GetFileName(filename).ToString().ToLower();\n#{@tab.t}"
+    str << %(if (IsXls != ".xml" && IsXls != ".xls" && IsXls != ".xlsx")\n#{@tab.t})
+    str << "{\n#{@tab.l}SetTopCenter(string.Format(\"请使用不为空的xml电子文档\"));\n#{@tab.t}return View();\n"
+    str << "#{@tab.s}}\n#{@tab.t}string path = CurUser.SchoolConf.ServTmpPath;\n#{@tab.t}"
+    str << "if (!System.IO.Directory.Exists(path))\n#{@tab.t}"
+    str << "{\n#{@tab.l}System.IO.Directory.CreateDirectory(path);\n"
+    str << "#{@tab.s}}\n#{@tab.t}string savePath = path + name;\n#{@tab.t}Request.Files[0].SaveAs(savePath);\n#{@tab.t}"
+    str << "List<Hashtable> lst = XmlHelper.xmlhelper.get_column_data(savePath, 2, \"\");\n\n#{@tab.t}"
+    str << %(msg += "<span >数据正确性检测。。。。。。</span><br>";\n#{@tab.t})
+    str << "bool flag = true; int rowid = 0;\n#{@tab.t}"
+    str << "List<#{table.name}> CheckList = new List<#{table.name}>();\n#{@tab.t}"
+    str << "foreach (Hashtable ht in lst)\n#{@tab.t}"
+    str << "{\n#{@tab.l}rowid++;\n#{@tab.t}#{table.name} model = new #{table.name}();\n#{@tab.t}"
+    table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
+      str << "model.#{field.name}= #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
+    end
+    table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
+      str << "if (ht.Contains(\"#{field.explanation}\"))\n#{@tab.t}"
+      str << "{\n#{@tab.l}"
+      str << "\n"
+      str << "#{@tab.s}}\n#{@tab.t}"
+      str << %(else\n#{@tab.t}{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：课程名不能为空！</span><br>"; }\n#{@tab.t})
+    end
+    str << "CheckList.Add(model);\n"
+    str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
+    str << %({\n#{@tab.l}msg += "<span  >数据正确性检测通过！</span><br>";\n#{@tab.t})
+    str << "foreach (var item in CheckList)\n#{@tab.t}"
+    str << "{\n#{@tab.l}AddJxjhkcqd(item);\n#{@tab.t}sucss++;\n"
+    str << %(#{@tab.s}}\n#{@tab.t}msg += "<span >成功导入" + sucss + "条记录！</span><br>";\n)
+    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
+    str << %({\n#{@tab.l}msg += "<span  style=\\"color:red;\\">请先修改数据再上传。。。。。。</span><br>";\n)
+    str << "#{@tab.s}}\n#{@tab.s}}\n#{@tab.t}"
+    str << "catch (DbEntityValidationException e)\n#{@tab.t}"
+    str << "{\n#{@tab.l}string msgstr = \"\";\n#{@tab.t}"
+    str << "foreach (var em in e.EntityValidationErrors)\n#{@tab.t}"
+    str << "{\n#{@tab.l}foreach (var m in em.ValidationErrors)\n#{@tab.t}"
+    str << %({\n#{@tab.l}msgstr += m.ErrorMessage + ";";\n)
+    str << "#{@tab.s}}\n#{@tab.s}}\n#{@tab.t}"
+    str << %(msg += "<span  style=\\"color:red;\\">第" + (sucss + 1) + "行，导入失败，原因：" + msgstr + "</span><br>";\n)
+    str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
+    str << %({\n#{@tab.l}msg += "<span  style=\\"color:red;\\">第" + (sucss+1) + "行，导入失败，原因：" + GetExceptionErrMsg(e) + "</span><br>";\n#{@tab.t})
+    str << "#{@tab.s}}\n#{@tab.t}ViewBag.msg = msg;\n#{@tab.t}"
+    str << "return View(#{table.lname_dc});\n"
+    str << "#{@tab.s}}\n\n"
   end
   def make_controller_get_max_ID(table)
     str = "#{@tab.t}private static int Max_#{table.lname}_ID = 0;\n#{@tab.t}"

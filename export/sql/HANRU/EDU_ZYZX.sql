@@ -480,7 +480,7 @@ CONSTRAINT [PK_EDU_ZYZX_MHXT_FBQX] PRIMARY KEY CLUSTERED
 END
 GO
 
---试卷类型表
+--试题类型表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_02_A01_SJLX]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZYZX_02_A01_SJLX](
@@ -556,6 +556,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_02_A04_SJ](
 	[SCSJ]  datetime  NOT NULL,--上传时间
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
 	[SHSJ]  datetime  NOT NULL,--审核时间
+	[FJ]  text  NOT NULL,--附件
 CONSTRAINT [PK_EDU_ZYZX_02_A04_SJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -882,7 +883,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目文字' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_MHXT_FBQX', @level2type=N'COLUMN',@level2name=N'LMNAMELIST'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'试卷类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A01_SJLX'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'试题类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A01_SJLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A01_SJLX', @level2type=N'COLUMN',@level2name=N'ID'
 GO
@@ -955,4 +956,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A04_SJ', @level2type=N'COLUMN',@level2name=N'SHRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A04_SJ', @level2type=N'COLUMN',@level2name=N'SHSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附件' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A04_SJ', @level2type=N'COLUMN',@level2name=N'FJ'
 GO

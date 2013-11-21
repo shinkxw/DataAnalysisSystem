@@ -173,7 +173,7 @@ EDU_ZYZX_MHXT_FBQX  发布权限
   LMLIST        栏目                    text           非主
   LMNAMELIST    栏目文字                text           非主
 
-EDU_ZYZX_02_A01_SJLX  试卷类型表
+EDU_ZYZX_02_A01_SJLX  试题类型表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   LXMC          类型名称                nvarchar(50)   非主
@@ -189,7 +189,7 @@ EDU_ZYZX_02_A03_SJTM  试卷题目表
   SCHOOLID      学校                    int            主键        学校配置表
   KCH           课程ID                  nvarchar(6)    非主        课程数据子类表
   ZSDID         知识点ID                int            非主        试卷知识点表
-  LXID          类型ID                  int            非主        试卷类型表
+  LXID          类型ID                  int            非主        试题类型表
   TM            题目                    text           非主
   NDXS          难度系数                decimal(6, 2)  非主
   FZ            分值                    decimal(5, 1)  非主
@@ -213,4 +213,5 @@ EDU_ZYZX_02_A04_SJ  试卷表
   SCSJ          上传时间                datetime       非主
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
   SHSJ          审核时间                datetime       非主
+  FJ            附件                    text           非主
 

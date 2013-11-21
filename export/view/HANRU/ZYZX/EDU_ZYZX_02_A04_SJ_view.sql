@@ -15,6 +15,7 @@ SELECT a.[ID]--编号
       ,a.[SCSJ]--上传时间
       ,a.[SHRID]--审核人ID
       ,a.[SHSJ]--审核时间
+      ,a.[FJ]--附件
       ,c.SCHOOLID as c_KC_SCHOOLID--课程数据子类表 学校ID
       ,c.KCMC as c_KC_KCMC--课程数据子类表 课程名称
       ,c.KCYWM as c_KC_KCYWM--课程数据子类表 课程英文名

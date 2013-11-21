@@ -49,8 +49,7 @@ class ModelBuilder
             @model_str << %(            [Required(ErrorMessage = "必填")]\n)
           end
         end
-        display_name = /^(?<name>.*?)ID$/ =~ field.explanation ? name : field.explanation
-        @model_str << %(            [Display(Name = "#{display_name}")]\n)
+        @model_str << %(            [Display(Name = "#{field.display_name}")]\n)
         #字段类型解析
         if type[0] == "String" && type.size > 1
           @model_str << "            [StringLength(#{type[1]})]\n"

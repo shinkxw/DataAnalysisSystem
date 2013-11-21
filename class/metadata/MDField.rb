@@ -109,6 +109,8 @@ class MDField
     #~ end
     true
   end
+  #获得显示用字段名称
+  def display_name;/^(?<dis_name>.*?)ID$/ =~ @explanation ? dis_name : @explanation end
   #判断说明是否存在
   def has_exp?;@explanation != '' && @explanation != nil end
   #判断备注是否存在

@@ -35,8 +35,8 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_SJZSD_SCHOOLID--试卷知识点表 学校
       ,d.KCH as d_SJZSD_KCH--试卷知识点表 课程ID
       ,d.ZSDMC as d_SJZSD_ZSDMC--试卷知识点表 知识点名称
-      ,e.SCHOOLID as e_SJLX_SCHOOLID--试卷类型表 学校
-      ,e.LXMC as e_SJLX_LXMC--试卷类型表 类型名称
+      ,e.SCHOOLID as e_SJLX_SCHOOLID--试题类型表 学校
+      ,e.LXMC as e_SJLX_LXMC--试题类型表 类型名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码

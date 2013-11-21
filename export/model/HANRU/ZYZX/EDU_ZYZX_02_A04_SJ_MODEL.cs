@@ -17,6 +17,7 @@ namespace HanRuEdu.LDAL
             SCSJ = new DateTime(1900, 1, 1);
             SHRID = "";
             SHSJ = new DateTime(1900, 1, 1);
+            FJ = "";
         }
         public class EDU_ZYZX_02_A04_SJ_metadata
         {
@@ -96,6 +97,12 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "审核时间")]
             public DateTime SHSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "附件")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FJ { get; set; }
 
 
         }
