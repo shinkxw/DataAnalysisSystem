@@ -192,17 +192,44 @@ class TemplateBuilder
       next if %w(ID SCHOOLID).include? field.name
       str << "model.#{field.name}= #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
     end
+    str << "\n#{@tab.t}"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
       str << "if (ht.Contains(\"#{field.display_name}\"))\n#{@tab.t}"
       str << "{\n#{@tab.l}"
-      if field.relation && field.relation.table.bz_library_name
-        str << "model.#{field.name} = #{field.relation.table.bz_library_name}LDAL.GetZZ_KCFLDM(ht[\"#{field.display_name}\"].ToString());\n"
+      if field.relation
+        rt = field.relation.table
+        if field.relation.table.bz_library_name
+          str << "model.#{field.name} = #{rt.bz_library_name}LDAL.Get#{rt.select_method_name}DM(ht[\"#{field.display_name}\"].ToString());\n#{@tab.t}"
+        else
+          str << "String value = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
+          str << "//#{rt.name} #{rt.lname_dc} = #{rt.db_name}.#{rt.name}.FirstOrDefault(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID && e == value);\n#{@tab.t}"
+          str << "//if (#{rt.lname_dc} != null) model.#{field.name} = #{rt.lname_dc}.ID;\n#{@tab.t}"
+        end
+        case field.split_type[0]
+        when 'int';str << "//if (model.#{field.name} == 0)\n#{@tab.t}"
+        when 'String';str << "//if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
+        else @log << "TemplateBuilder: refield type wrong: #{field.split_type[0]}"
+        end
+        str << %(//{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：未找到#{field.display_name}！</span><br>"; }\n)
       else
-        str << "\n"
+        case field.split_type[0]
+        when 'int'
+          str << "int value = 0;\n#{@tab.t}int.TryParse(ht[\"#{field.display_name}\"].ToString(), out value);\n#{@tab.t}model.#{field.name} = value;\n"
+        when 'DateTime'
+          str << "String value = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
+          str << "if (value != \"\") { model.#{field.name} = Convert.ToDateTime(value); }"
+        when 'String'
+          str << "model.#{field.name} = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
+          str << "if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
+          str << %({ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n)
+        when 'decimal'
+          str << "decimal value = 0;\n#{@tab.t}decimal.TryParse(ht[\"#{field.display_name}\"].ToString(), out value);\n#{@tab.t}model.#{field.name} = value;\n"
+        else @log << "TemplateBuilder: type wrong: #{field.split_type[0]}"
+        end
       end
       str << "#{@tab.s}}\n#{@tab.t}"
-      str << %(else\n#{@tab.t}{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
+      str << %(//else { flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
     end
     str << "CheckList.Add(model);\n"
     str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
