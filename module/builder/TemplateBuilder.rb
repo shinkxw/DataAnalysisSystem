@@ -34,6 +34,7 @@ class TemplateBuilder
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'ÃÌº”')
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'±‡º≠')
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Details.cshtml"] = make_details(table)
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Importdata.cshtml"] = make_importdata(table)
     end
   end
@@ -332,6 +333,16 @@ class TemplateBuilder
     end
     info_str << %(        </table>\n        <br />\n        @{ ViewData["ce_cancel"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/index");}\n)
     info_str << %(        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n    </div>\n}\n)
+  end
+  def make_details(table)
+    str = "@model HanRuEdu.LDAL.#{table.view_name}\n"
+    str << %(<div id="dlg" class="easyui-panel" title="œÍœ∏" style="width: 900px; height: 500px; padding: 10px 20px">\n)
+    str << %(    <center>  <h1 ><span style="font-size:smaller;">#{table.explanation}–≈œ¢</span></h1></center>\n)
+    str << %(    <table class="admintable">\n        <tr>\n            <td width="50%"></td>\n            <td width="50%"></td>\n        </tr>\n\n)
+    table.each_field do |field|
+      str << "        <tr>\n            <td>#{field.display_name}</td>\n            <td>@Html.DisplayFor(m => m.#{field.name})</td>\n        </tr>\n\n"
+    end
+    str << "    </table>\n    <br />\n</div>\n"
   end
   def make_importdata(table)
     str = "@model HanRuEdu.LDAL.#{table.name}\n"

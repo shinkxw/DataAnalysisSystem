@@ -27,7 +27,7 @@ class MDWork_Area
     export_sql;export_sql(false)
     export_view;export_view(false)
     export_model;export_template
-    export_tableinfo;export_migrate_config
+    export_tableinfo;
     MDDoc.set_fsc(nil)
     SVN.commit('D:\技术部\代码\Trunk\DB\SQL') if need_commit
   end

@@ -11,6 +11,7 @@ AreaManager.set_conn(DBConnector.new('192.168.0.8,1444'))#192.168.0.8,1444
 AreaManager.load_area_and_db('HANRU','HanRuEdu') do |work_area,db|#HANRU
   #work_area.export_tableinfo
   #work_area.export_all#ÉÏ´«
-  work_area.export_all(false)
+  #work_area.export_all(false)
   #DBUpdater.new(work_area.area,db).update_db
+  work_area.export_template
 end
