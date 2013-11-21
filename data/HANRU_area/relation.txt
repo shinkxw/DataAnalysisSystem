@@ -940,7 +940,7 @@
   JXJHID         EDU_ZZJX_03_01_ZTJXJH              ID
   KCH            EDU_ZZJX_01_02_KC                  KCH
   XQID           EDU_ELE_01_XQ                      ID
-  SFHXKC         EDU_JY_SKFS                        DM
+  SFHXKC         EDU_JY_SFBZ                        DM
   KCFLM          EDU_ZZ_KCFL                        DM
   KCSXM          EDU_JY_KCSX                        DM
 <EDU_ZZJX_04_01_JCJBXX

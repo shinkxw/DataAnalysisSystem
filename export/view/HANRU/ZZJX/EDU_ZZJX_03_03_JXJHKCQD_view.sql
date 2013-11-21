@@ -56,7 +56,7 @@ SELECT a.[ID]--编号
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
-      ,f.MC as f_SKFS_MC--授课方式代码表 名称
+      ,f.MC as f_SFBZ_MC--是否标志代码表 名称
       ,g.MC as g_KCFL_MC--课程分类代码 名称
       ,h.MC as h_KCSX_MC--课程属性代码表 名称
       ,h.SM as h_KCSX_SM--课程属性代码表 说明
@@ -65,7 +65,7 @@ FROM dbo.EDU_ZZJX_03_03_JXJHKCQD AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_01_ZTJXJH AS c ON a.JXJHID = c.ID /*教学计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_02_KC AS d ON a.KCH = d.KCH /*课程号*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS f ON a.SFHXKC = f.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS f ON a.SFHXKC = f.DM /*是否核心（骨干）*/ LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS g ON a.KCFLM = g.DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KCSX AS h ON a.KCSXM = h.DM /*课程属性码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cb] ON c.SFKY = [cb].DM /*是否可用*/ LEFT OUTER JOIN

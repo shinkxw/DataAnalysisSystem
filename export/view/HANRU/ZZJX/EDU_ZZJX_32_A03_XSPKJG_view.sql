@@ -53,7 +53,7 @@ SELECT a.[ID]--编号
       ,g.KCMC as g_JXJHKCQD_KCMC--教学计划课程清单数据子类表 课程名称
       ,g.YXKC as g_JXJHKCQD_YXKC--教学计划课程清单数据子类表 预修课程
       ,g.SFHXKC as g_JXJHKCQD_SFHXKC--教学计划课程清单数据子类表 是否核心（骨干）
-      ,[gb].MC as g_JXJHKCQD_SFHXKC_MC--授课方式代码表 名称
+      ,[gb].MC as g_JXJHKCQD_SFHXKC_MC--是否标志代码表 名称
       ,g.KCFLM as g_JXJHKCQD_KCFLM--教学计划课程清单数据子类表 课程分类码
       ,[gc].MC as g_JXJHKCQD_KCFLM_MC--课程分类代码 名称
       ,g.KCSXM as g_JXJHKCQD_KCSXM--教学计划课程清单数据子类表 课程属性码
@@ -167,7 +167,7 @@ FROM dbo.EDU_ZZJX_32_A03_XSPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS j ON a.NJID = j.NJDM /*年级ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS k ON a.BJID = k.XZBDM /*班级ID*/ AND a.SCHOOLID = k.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_31_A01_KSSDLX AS l ON a.KSSDLXID = l.ID /*考试时段类型ID*/ AND a.SCHOOLID = l.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS [gb] ON g.SFHXKC = [gb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [gb] ON g.SFHXKC = [gb].DM /*是否核心（骨干）*/ LEFT OUTER JOIN
       dbo.EDU_ZZ_KCFL AS [gc] ON g.KCFLM = [gc].DM /*课程分类码*/ LEFT OUTER JOIN
       dbo.EDU_JY_KCSX AS [gd] ON g.KCSXM = [gd].DM /*课程属性码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN

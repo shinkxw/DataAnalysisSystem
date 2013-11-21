@@ -2,6 +2,7 @@
 # encoding: GBK
 #元数据表类
 class MDTable
+  @@bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
   attr_reader :name#表名称
   attr_reader :field_area#表中字段域
   attr_accessor :data_area#表数据域
@@ -90,6 +91,8 @@ class MDTable
   def get_primary_key_name_arr
     @field_area.select{|field| field.p == "T"}.map(&:name)
   end
+  #如是标准表,返回其库名
+  def bz_library_name;@@bztable_hash[library_name.to_sym] end
   #在有说明时返回说明，否则返回名字
   def gname;has_exp? ? @explanation : @name end
   #计算表的特征值

@@ -14,7 +14,6 @@ class TemplateBuilder
     @app_name = $t_app_name || ' '
     @directory_name = $t_dir_name || ' '
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
-    @bztable_hash = { gb: 'GB', jy: 'JB', zz: 'ZZB', zj: 'ZJ'}
     @log = log
   end
   #生成模板数据
@@ -32,9 +31,9 @@ class TemplateBuilder
       next unless $t_range.include?(table.first_num)
       @tab.to_0
       @file_hash["Controllers/#{table.library_name.upcase}/#{table.lname}Controller.cs"] = make_controller(table)
-      #@file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
-      #@file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'添加')
-      #@file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'编辑')
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'添加')
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'编辑')
     end
   end
   def make_controller(table)
@@ -195,11 +194,15 @@ class TemplateBuilder
     end
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      str << "if (ht.Contains(\"#{field.explanation}\"))\n#{@tab.t}"
+      str << "if (ht.Contains(\"#{field.display_name}\"))\n#{@tab.t}"
       str << "{\n#{@tab.l}"
-      str << "\n"
+      if field.relation && field.relation.table.bz_library_name
+        str << "model.#{field.name} = #{field.relation.table.bz_library_name}LDAL.GetZZ_KCFLDM(ht[\"#{field.display_name}\"].ToString());\n"
+      else
+        str << "\n"
+      end
       str << "#{@tab.s}}\n#{@tab.t}"
-      str << %(else\n#{@tab.t}{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：课程名不能为空！</span><br>"; }\n#{@tab.t})
+      str << %(else\n#{@tab.t}{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
     end
     str << "CheckList.Add(model);\n"
     str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
@@ -279,7 +282,7 @@ class TemplateBuilder
     info_atr << %(        <table class="admintable">\n            <tr>\n                <td width="50%"></td>\n                <td width="50%"></td>\n            </tr>\n\n)
     table.each_field do |field|
       info_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
-      if field.relation && @bztable_hash[field.relation.table.library_name.to_sym]
+      if field.relation && field.relation.table.bz_library_name
         info_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
         info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
@@ -296,7 +299,7 @@ class TemplateBuilder
   end
   #获得一个字段的值列表
   def get_selLst(field)
-    lname = @bztable_hash[field.relation.table.library_name.to_sym] if field.relation
+    lname = field.relation.table.bz_library_name if field.relation
     if lname
       mname = field.relation.table.select_method_name
       result = "ViewBag.#{mname}Lst = #{lname}LDAL.Get#{mname}SelLst();\n#{@tab.t}"
