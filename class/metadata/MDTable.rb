@@ -73,8 +73,10 @@ class MDTable
   def get_relation;@field_area.select{|field| field.relation != nil} end
   #判断是否与表关联
   def has_relation?;@field_area.find{|field| field.relation != nil} end
+  #如有视图,返回视图的名称,否则返回表名
+  def view_name;has_view? ? "VIEW_#{@name}_DISP" : @name end
   #判断是否需要视图
-  def has_view?;@field_area.find{|f| f.relation != nil && f.relation.name != 'SCHOOLID'} end
+  def has_view?;@field_area.find{|f| f.relation && f.relation.name != 'SCHOOLID'} end
   #是否有数据
   def has_data?;@data_area.data_arr.size != 0 end
   #判断说明是否存在

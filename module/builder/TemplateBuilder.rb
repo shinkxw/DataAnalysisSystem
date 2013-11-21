@@ -39,27 +39,28 @@ class TemplateBuilder
   end
   def make_controller(table)
     str = ''
-    #~ str << "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
-    #~ str << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
-    #~ str << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
-    #~ str << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
-    #~ str << "{\n#{@tab.l}public class #{table.name.split("_")[-1]}Controller : #{@app_name}Controller\n#{@tab.t}"
-    #~ str << make_controller_index_jsonstr(table)
-    #~ str << make_controller_add(table)
-    #~ str << make_controller_upd(table)
-    #~ str << make_controller_InitViewBag(table)
-    #~ str << make_controller_index(table)
-    #~ str << make_controller_create(table)
-    #~ str << make_controller_edit(table)
-    #~ str << make_controller_delete(table,false)
-    #~ str << make_controller_delete(table,true)
+    str << "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Web;\n"
+    str << "using System.Web.Mvc;\nusing System.Data;\nusing System.Data.Entity;\nusing System.Collections;\n"
+    str << "using HanRuEdu.LDAL;\nusing System.Text;\nusing System.Data.Entity.Validation;\nusing HanRuEdu.#{@app_name}.Common;\n\n"
+    str << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
+    str << "{\n#{@tab.l}public class #{table.name.split("_")[-1]}Controller : #{@app_name}Controller\n#{@tab.t}"
+    str << make_controller_index_jsonstr(table)
+    str << make_controller_add(table)
+    str << make_controller_upd(table)
+    str << make_controller_InitViewBag(table)
+    str << make_controller_index(table)
+    str << make_controller_create(table)
+    str << make_controller_edit(table)
+    str << make_controller_details(table)
+    str << make_controller_delete(table,false)
+    str << make_controller_delete(table,true)
     str << make_controller_importdata(table)
-    #~ str << make_controller_get_max_ID(table)
-    #~ str << "#{@tab.s}}\n}"
+    str << make_controller_get_max_ID(table)
+    str << "#{@tab.s}}\n}"
   end
   def make_controller_index_jsonstr(table)
     str = %({\n#{@tab.l}public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")\n#{@tab.t})
-    str << "{\n#{@tab.l}List<#{'VIEW_' if table.has_view?}#{table.name}#{'_DISP' if table.has_view?}> model = #{table.db_name}.#{'VIEW_' if table.has_view?}#{table.name}#{'_DISP' if table.has_view?}.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
+    str << "{\n#{@tab.l}List<#{table.view_name}> model = #{table.db_name}.#{table.view_name}.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
     str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey)).ToList();\n"
     str << "#{@tab.s}}\n\n#{@tab.t}if (!String.IsNullOrEmpty(sort))\n#{@tab.t}"
     str << "{\n#{@tab.l}if (order.Equals(\"desc\"))\n#{@tab.t}"
@@ -133,7 +134,7 @@ class TemplateBuilder
   def make_controller_edit(table)
     str = "#{@tab.t}public ActionResult Edit(int id)\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}\n#{@tab.t}"
-    str << "#{table.name} #{table.lname_dc}= #{table.db_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}"
+    str << "#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}"
     str << "return View(#{table.lname_dc});\n#{@tab.s}}\n\n"
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Edit(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
@@ -147,6 +148,12 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(e.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.s}}\n\n"
+  end
+  def make_controller_details(table)
+    str = "#{@tab.t}public ActionResult Details(int id)\n#{@tab.t}"
+    str << "{\n#{@tab.l}"
+    str << "#{table.view_name} view = #{table.db_name}.#{table.view_name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}"
+    str << "return View(view);\n#{@tab.s}}\n\n"
   end
   def make_controller_delete(table,is_multi)
     str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(#{is_multi ? 'String' : 'int'} id#{'Lst' if is_multi})\n#{@tab.t}"
@@ -191,7 +198,7 @@ class TemplateBuilder
     str << "{\n#{@tab.l}rowid++;\n#{@tab.t}#{table.name} model = new #{table.name}();\n#{@tab.t}"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      str << "model.#{field.name}= #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
+      str << "model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
     end
     str << "\n#{@tab.t}"
     table.each_field do |field|
