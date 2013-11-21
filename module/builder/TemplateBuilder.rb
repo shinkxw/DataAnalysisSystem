@@ -34,6 +34,7 @@ class TemplateBuilder
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Create.cshtml"] = make_table_info(table,'添加')
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Edit.cshtml"] = make_table_info(table,'编辑')
+      @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Importdata.cshtml"] = make_importdata(table)
     end
   end
   def make_controller(table)
@@ -172,7 +173,7 @@ class TemplateBuilder
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult ImportData(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}int sucss = 0;\n#{@tab.t}string msg = \"\";\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}HttpPostedFileBase file = Request.Files[\"xmlfile\"];\n#{@tab.t}if (file == null || file.ContentLength == 0)\n#{@tab.t}"
-    str << "{\n#{@tab.l}SetTopCenter(string.Format(\"请使用不为空的xml电子文档\"));\n#{@tab.t}return View();\n#{@tab.t}"
+    str << "{\n#{@tab.l}SetTopCenter(string.Format(\"请使用不为空的xml电子文档\"));\n#{@tab.t}return View();\n"
     str << "#{@tab.s}}\n#{@tab.t}string filename = Request.Files[\"xmlfile\"].FileName;\n#{@tab.t}"
     str << "string IsXls = System.IO.Path.GetExtension(filename).ToString().ToLower();\n#{@tab.t}"
     str << "string name = System.IO.Path.GetFileName(filename).ToString().ToLower();\n#{@tab.t}"
@@ -206,6 +207,7 @@ class TemplateBuilder
           str << "//#{rt.name} #{rt.lname_dc} = #{rt.db_name}.#{rt.name}.FirstOrDefault(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID && e == value);\n#{@tab.t}"
           str << "//if (#{rt.lname_dc} != null) model.#{field.name} = #{rt.lname_dc}.ID;\n#{@tab.t}"
         end
+        str << "\n#{@tab.t}"
         case field.split_type[0]
         when 'int';str << "//if (model.#{field.name} == 0)\n#{@tab.t}"
         when 'String';str << "//if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
@@ -303,26 +305,41 @@ class TemplateBuilder
     index_str << %(@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)\n)
   end
   def make_table_info(table,title)
-    info_atr = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial("SingleZTree")\n)
-    info_atr << %(    <div id="dlg" class="easyui-panel" title="#{title}" style="width: 900px; height: 500px; padding: 10px 20px">\n)
-    info_atr << %(        <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
-    info_atr << %(        <table class="admintable">\n            <tr>\n                <td width="50%"></td>\n                <td width="50%"></td>\n            </tr>\n\n)
+    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial("SingleZTree")\n)
+    info_str << %(    <div id="dlg" class="easyui-panel" title="#{title}" style="width: 900px; height: 500px; padding: 10px 20px">\n)
+    info_str << %(        <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
+    info_str << %(        <table class="admintable">\n            <tr>\n                <td width="50%"></td>\n                <td width="50%"></td>\n            </tr>\n\n)
     table.each_field do |field|
-      info_atr << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
+      info_str << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
       if field.relation && field.relation.table.bz_library_name
-        info_atr << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
+        info_str << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
-        info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
+        info_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       elsif field.type == 'text'
-        info_atr << "                    @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:600px; height:50px\" })\n"
-        info_atr << %(                    @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
+        info_str << "                    @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:600px; height:50px\" })\n"
+        info_str << %(                    @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
       else
-        info_atr << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+        info_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
       end
-      info_atr << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
+      info_str << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
     end
-    info_atr << %(        </table>\n        <br />\n        @{ ViewData["ce_cancel"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/index");}\n)
-    info_atr << %(        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n    </div>\n}\n)
+    info_str << %(        </table>\n        <br />\n        @{ ViewData["ce_cancel"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/index");}\n)
+    info_str << %(        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n    </div>\n}\n)
+  end
+  def make_importdata(table)
+    str = "@model HanRuEdu.LDAL.#{table.name}\n"
+    str << %(@using (Html.BeginForm("ImportData", "#{table.lname}", FormMethod.Post, new { enctype = "multipart/form-data" }))\n{ \n)
+    str << %(    <p style="text-align: center">\n)
+    str << %(        <input id="xmlfile" name="xmlfile" type="file" />\n)
+    str << %(        <input id="Submit1" type="submit" value="上传" />\n)
+    str << %(        <a href="@Url.Content("~/Content/NowDownload/Excels/.xls")">模板下载</a>\n)
+    str << "    </p>\n    <hr />\n    <p>\n        导入小贴士：\n"
+    str << "        <li>.本导入只支持XML格式的文件</li>\n"
+    str << "        <li>.选择EXCEL的【文件另存为...】菜单，在保持类型处选择“XML表格”类型，可保存为XML格式文件。 </li>\n"
+    str << "        <li>.建议用户直接在导入模板上填充要导入的数据，即可上传导入。</li>\n"
+    str << "    </p>\n"
+    str << %(    <p style="padding: 30px;">\n)
+    str << "        <br />\n        <br />\n        @Html.Raw(ViewBag.msg)\n    </p>\n}\n"
   end
   #获得一个字段的值列表
   def get_selLst(field)
