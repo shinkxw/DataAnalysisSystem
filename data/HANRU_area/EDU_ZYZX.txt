@@ -209,6 +209,92 @@
             <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZYZX_01_A01_ZYFL" exp="资源分类">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="FLMC" exp="分类名称" type="nvarchar(50)" null="F" p="F" />
+            <name="FFLID" exp="父分类ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="SFSYZS" exp="是否首页展示" type="int" null="F" p="F" />
+            <name="SFQY" exp="是否启用" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_01_A02_ZYML" exp="资源目录">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="MLMC" exp="目录名称" type="nvarchar(50)" null="F" p="F" />
+            <name="FMLID" exp="父目录ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="YYZID" exp="拥有者ID" type="nvarchar(20)" null="F" p="F" />
+            <name="WJLXIDLB" exp="上传文件类型ID列表" type="nvarchar(200)" null="F" p="F" />
+            <name="FWQX" exp="访问权限" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_01_A03_WJLX" exp="文件类型">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_01_A04_ZYMLQX" exp="资源目录权限">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZYMLID" exp="资源目录ID" type="int" null="F" p="F" />
+            <name="YHLX" exp="用户类型" type="int" null="F" p="F" />
+            <name="QXLB" exp="权限列表" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_01_A05_ZYWJQX" exp="资源文件权限">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZYWJID" exp="资源文件ID" type="int" null="F" p="F" />
+            <name="YHLX" exp="用户类型" type="int" null="F" p="F" />
+            <name="QXLB" exp="权限列表" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_01_A06_ZYWJ" exp="资源文件">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZYFLID" exp="资源类型" type="int" null="F" p="F" />
+            <name="ZYMLID" exp="资源目录" type="int" null="F" p="F" />
+            <name="ZYBT" exp="资源标题" type="nvarchar(50)" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(100)" null="F" p="F" />
+            <name="GJZ" exp="关键字" type="nvarchar(50)" null="F" p="F" />
+            <name="YYZID" exp="拥有者ID" type="nvarchar(20)" null="F" p="F" />
+            <name="ZYLLLX" exp="资源浏览类型" type="int" null="F" p="F" />
+            <name="WJLXID" exp="文件类型" type="int" null="F" p="F" />
+            <name="ZYNR" exp="资源内容" type="text" null="F" p="F" />
+            <name="FJMC" exp="附件名称" type="nvarchar(300)" null="F" p="F" />
+            <name="FJDX" exp="附件大小" type="nvarchar(300)" null="F" p="F" />
+            <name="FJLJ" exp="附件路径" type="nvarchar(300)" null="F" p="F" />
+            <name="ZYZT" exp="资源状态" type="int" null="F" p="F" />
+            <name="ZYPJ" exp="资源评级" type="int" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+            <name="SYNJ" exp="适用年级" type="nvarchar(30)" null="F" p="F" />
+            <name="SYXK" exp="适用学科" type="nvarchar(30)" null="F" p="F" />
+            <name="LLRC" exp="浏览人次" type="int" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_01_A07_ZYWJPJ" exp="资源文件评价">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZYWJID" exp="资源文件ID" type="int" null="F" p="F" />
+            <name="PF" exp="评分" type="int" null="F" p="F" />
+            <name="PL" exp="评论" type="nvarchar(200)" null="F" p="F" />
+            <name="PJRID" exp="评价人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="PJSJ" exp="评价时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZYZX_02_A01_SJLX" exp="试题类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

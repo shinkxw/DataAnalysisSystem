@@ -173,6 +173,78 @@ EDU_ZYZX_MHXT_FBQX  发布权限
   LMLIST        栏目                    text           非主
   LMNAMELIST    栏目文字                text           非主
 
+EDU_ZYZX_01_A01_ZYFL  资源分类
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  FLMC          分类名称                nvarchar(50)   非主
+  FFLID         父分类ID                int            非主        资源分类
+  PLSX          排列顺序                int            非主
+  SFSYZS        是否首页展示            int            非主
+  SFQY          是否启用                int            非主
+
+EDU_ZYZX_01_A02_ZYML  资源目录
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MLMC          目录名称                nvarchar(50)   非主
+  FMLID         父目录ID                int            非主        资源目录
+  PLSX          排列顺序                int            非主
+  YYZID         拥有者ID                nvarchar(20)   非主        应用系统用户表
+  WJLXIDLB      上传文件类型ID列表      nvarchar(200)  非主
+  FWQX          访问权限                int            非主
+
+EDU_ZYZX_01_A03_WJLX  文件类型
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  LXMC          类型名称                nvarchar(50)   非主
+
+EDU_ZYZX_01_A04_ZYMLQX  资源目录权限
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZYMLID        资源目录ID              int            非主        资源目录
+  YHLX          用户类型                int            非主
+  QXLB          权限列表                nvarchar(200)  非主
+
+EDU_ZYZX_01_A05_ZYWJQX  资源文件权限
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZYWJID        资源文件ID              int            非主        资源文件
+  YHLX          用户类型                int            非主
+  QXLB          权限列表                nvarchar(200)  非主
+
+EDU_ZYZX_01_A06_ZYWJ  资源文件
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZYFLID        资源类型                int            非主        资源分类
+  ZYMLID        资源目录                int            非主        资源目录
+  ZYBT          资源标题                nvarchar(50)   非主
+  BZ            备注                    nvarchar(100)  非主
+  GJZ           关键字                  nvarchar(50)   非主
+  YYZID         拥有者ID                nvarchar(20)   非主        应用系统用户表
+  ZYLLLX        资源浏览类型            int            非主
+  WJLXID        文件类型                int            非主        文件类型
+  ZYNR          资源内容                text           非主
+  FJMC          附件名称                nvarchar(300)  非主
+  FJDX          附件大小                nvarchar(300)  非主
+  FJLJ          附件路径                nvarchar(300)  非主
+  ZYZT          资源状态                int            非主
+  ZYPJ          资源评级                int            非主
+  SCSJ          上传时间                datetime       非主
+  SYNJ          适用年级                nvarchar(30)   非主
+  SYXK          适用学科                nvarchar(30)   非主
+  LLRC          浏览人次                int            非主
+  SHZT          审核状态                int            非主
+  SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
+  SHSJ          审核时间                datetime       非主
+
+EDU_ZYZX_01_A07_ZYWJPJ  资源文件评价
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZYWJID        资源文件ID              int            非主        资源文件
+  PF            评分                    int            非主
+  PL            评论                    nvarchar(200)  非主
+  PJRID         评价人ID                nvarchar(20)   非主        应用系统用户表
+  PJSJ          评价时间                datetime       非主
+
 EDU_ZYZX_02_A01_SJLX  试题类型表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表

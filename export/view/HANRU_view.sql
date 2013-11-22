@@ -523,6 +523,30 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_MHXT_F
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_MHXT_FWLL_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A01_ZYFL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A01_ZYFL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A02_ZYML_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A02_ZYML_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A04_ZYMLQX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A04_ZYMLQX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A05_ZYWJQX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A05_ZYWJQX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A06_ZYWJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A06_ZYWJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A07_ZYWJPJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A07_ZYWJPJ_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_02_A02_SJZSD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZYZX_02_A02_SJZSD_DISP
@@ -7874,6 +7898,254 @@ SELECT a.[ID]--访问履历ID
 
 FROM dbo.EDU_ZYZX_MHXT_FWLL AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--资源分类
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A01_ZYFL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[FLMC]--分类名称
+      ,a.[FFLID]--父分类ID
+      ,a.[PLSX]--排列顺序
+      ,a.[SFSYZS]--是否首页展示
+      ,a.[SFQY]--是否启用
+      ,c.SCHOOLID as c_ZYFL_SCHOOLID--资源分类 学校
+      ,c.FLMC as c_ZYFL_FLMC--资源分类 分类名称
+      ,c.FFLID as c_ZYFL_FFLID--资源分类 父分类ID
+      ,c.PLSX as c_ZYFL_PLSX--资源分类 排列顺序
+      ,c.SFSYZS as c_ZYFL_SFSYZS--资源分类 是否首页展示
+      ,c.SFQY as c_ZYFL_SFQY--资源分类 是否启用
+
+FROM dbo.EDU_ZYZX_01_A01_ZYFL AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A01_ZYFL AS c ON a.FFLID = c.ID /*父分类ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--资源目录
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A02_ZYML_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[MLMC]--目录名称
+      ,a.[FMLID]--父目录ID
+      ,a.[PLSX]--排列顺序
+      ,a.[YYZID]--拥有者ID
+      ,a.[WJLXIDLB]--上传文件类型ID列表
+      ,a.[FWQX]--访问权限
+      ,c.SCHOOLID as c_ZYML_SCHOOLID--资源目录 学校
+      ,c.MLMC as c_ZYML_MLMC--资源目录 目录名称
+      ,c.FMLID as c_ZYML_FMLID--资源目录 父目录ID
+      ,c.PLSX as c_ZYML_PLSX--资源目录 排列顺序
+      ,c.YYZID as c_ZYML_YYZID--资源目录 拥有者ID
+      ,c.WJLXIDLB as c_ZYML_WJLXIDLB--资源目录 上传文件类型ID列表
+      ,c.FWQX as c_ZYML_FWQX--资源目录 访问权限
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_ZYZX_01_A02_ZYML AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A02_ZYML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.YYZID = d.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--资源目录权限
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A04_ZYMLQX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYMLID]--资源目录ID
+      ,a.[YHLX]--用户类型
+      ,a.[QXLB]--权限列表
+      ,c.SCHOOLID as c_ZYML_SCHOOLID--资源目录 学校
+      ,c.MLMC as c_ZYML_MLMC--资源目录 目录名称
+      ,c.FMLID as c_ZYML_FMLID--资源目录 父目录ID
+      ,c.PLSX as c_ZYML_PLSX--资源目录 排列顺序
+      ,c.YYZID as c_ZYML_YYZID--资源目录 拥有者ID
+      ,c.WJLXIDLB as c_ZYML_WJLXIDLB--资源目录 上传文件类型ID列表
+      ,c.FWQX as c_ZYML_FWQX--资源目录 访问权限
+
+FROM dbo.EDU_ZYZX_01_A04_ZYMLQX AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A02_ZYML AS c ON a.ZYMLID = c.ID /*资源目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--资源文件权限
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A05_ZYWJQX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYWJID]--资源文件ID
+      ,a.[YHLX]--用户类型
+      ,a.[QXLB]--权限列表
+      ,c.SCHOOLID as c_ZYWJ_SCHOOLID--资源文件 学校
+      ,c.ZYFLID as c_ZYWJ_ZYFLID--资源文件 资源类型
+      ,c.ZYMLID as c_ZYWJ_ZYMLID--资源文件 资源目录
+      ,c.ZYBT as c_ZYWJ_ZYBT--资源文件 资源标题
+      ,c.BZ as c_ZYWJ_BZ--资源文件 备注
+      ,c.GJZ as c_ZYWJ_GJZ--资源文件 关键字
+      ,c.YYZID as c_ZYWJ_YYZID--资源文件 拥有者ID
+      ,c.ZYLLLX as c_ZYWJ_ZYLLLX--资源文件 资源浏览类型
+      ,c.WJLXID as c_ZYWJ_WJLXID--资源文件 文件类型
+      ,c.ZYNR as c_ZYWJ_ZYNR--资源文件 资源内容
+      ,c.FJMC as c_ZYWJ_FJMC--资源文件 附件名称
+      ,c.FJDX as c_ZYWJ_FJDX--资源文件 附件大小
+      ,c.FJLJ as c_ZYWJ_FJLJ--资源文件 附件路径
+      ,c.ZYZT as c_ZYWJ_ZYZT--资源文件 资源状态
+      ,c.ZYPJ as c_ZYWJ_ZYPJ--资源文件 资源评级
+      ,c.SCSJ as c_ZYWJ_SCSJ--资源文件 上传时间
+      ,c.SYNJ as c_ZYWJ_SYNJ--资源文件 适用年级
+      ,c.SYXK as c_ZYWJ_SYXK--资源文件 适用学科
+      ,c.LLRC as c_ZYWJ_LLRC--资源文件 浏览人次
+      ,c.SHZT as c_ZYWJ_SHZT--资源文件 审核状态
+      ,c.SHRID as c_ZYWJ_SHRID--资源文件 审核人ID
+      ,c.SHSJ as c_ZYWJ_SHSJ--资源文件 审核时间
+
+FROM dbo.EDU_ZYZX_01_A05_ZYWJQX AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A06_ZYWJ AS c ON a.ZYWJID = c.ID /*资源文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--资源文件
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A06_ZYWJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYFLID]--资源类型
+      ,a.[ZYMLID]--资源目录
+      ,a.[ZYBT]--资源标题
+      ,a.[BZ]--备注
+      ,a.[GJZ]--关键字
+      ,a.[YYZID]--拥有者ID
+      ,a.[ZYLLLX]--资源浏览类型
+      ,a.[WJLXID]--文件类型
+      ,a.[ZYNR]--资源内容
+      ,a.[FJMC]--附件名称
+      ,a.[FJDX]--附件大小
+      ,a.[FJLJ]--附件路径
+      ,a.[ZYZT]--资源状态
+      ,a.[ZYPJ]--资源评级
+      ,a.[SCSJ]--上传时间
+      ,a.[SYNJ]--适用年级
+      ,a.[SYXK]--适用学科
+      ,a.[LLRC]--浏览人次
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHSJ]--审核时间
+      ,c.SCHOOLID as c_ZYFL_SCHOOLID--资源分类 学校
+      ,c.FLMC as c_ZYFL_FLMC--资源分类 分类名称
+      ,c.FFLID as c_ZYFL_FFLID--资源分类 父分类ID
+      ,c.PLSX as c_ZYFL_PLSX--资源分类 排列顺序
+      ,c.SFSYZS as c_ZYFL_SFSYZS--资源分类 是否首页展示
+      ,c.SFQY as c_ZYFL_SFQY--资源分类 是否启用
+      ,d.SCHOOLID as d_ZYML_SCHOOLID--资源目录 学校
+      ,d.MLMC as d_ZYML_MLMC--资源目录 目录名称
+      ,d.FMLID as d_ZYML_FMLID--资源目录 父目录ID
+      ,d.PLSX as d_ZYML_PLSX--资源目录 排列顺序
+      ,d.YYZID as d_ZYML_YYZID--资源目录 拥有者ID
+      ,d.WJLXIDLB as d_ZYML_WJLXIDLB--资源目录 上传文件类型ID列表
+      ,d.FWQX as d_ZYML_FWQX--资源目录 访问权限
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,e.PWD as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.SCHOOLID as f_WJLX_SCHOOLID--文件类型 学校
+      ,f.LXMC as f_WJLX_LXMC--文件类型 类型名称
+      ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
+      ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
+      ,g.PWD as g_USER_PWD--应用系统用户表 密码
+      ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
+      ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
+      ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
+      ,g.ROLEIDLst as g_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,g.XM as g_USER_XM--应用系统用户表 姓名
+      ,g.XB as g_USER_XB--应用系统用户表 性别
+      ,g.QQ as g_USER_QQ--应用系统用户表 QQ
+      ,g.DZYJ as g_USER_DZYJ--应用系统用户表 电子邮件
+      ,g.LXDH as g_USER_LXDH--应用系统用户表 联系电话
+      ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_ZYZX_01_A06_ZYWJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A01_ZYFL AS c ON a.ZYFLID = c.ID /*资源类型*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A02_ZYML AS d ON a.ZYMLID = d.ID /*资源目录*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.YYZID = e.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A03_WJLX AS f ON a.WJLXID = f.ID /*文件类型*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS g ON a.SHRID = g.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
+GO
+
+--资源文件评价
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A07_ZYWJPJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYWJID]--资源文件ID
+      ,a.[PF]--评分
+      ,a.[PL]--评论
+      ,a.[PJRID]--评价人ID
+      ,a.[PJSJ]--评价时间
+      ,c.SCHOOLID as c_ZYWJ_SCHOOLID--资源文件 学校
+      ,c.ZYFLID as c_ZYWJ_ZYFLID--资源文件 资源类型
+      ,c.ZYMLID as c_ZYWJ_ZYMLID--资源文件 资源目录
+      ,c.ZYBT as c_ZYWJ_ZYBT--资源文件 资源标题
+      ,c.BZ as c_ZYWJ_BZ--资源文件 备注
+      ,c.GJZ as c_ZYWJ_GJZ--资源文件 关键字
+      ,c.YYZID as c_ZYWJ_YYZID--资源文件 拥有者ID
+      ,c.ZYLLLX as c_ZYWJ_ZYLLLX--资源文件 资源浏览类型
+      ,c.WJLXID as c_ZYWJ_WJLXID--资源文件 文件类型
+      ,c.ZYNR as c_ZYWJ_ZYNR--资源文件 资源内容
+      ,c.FJMC as c_ZYWJ_FJMC--资源文件 附件名称
+      ,c.FJDX as c_ZYWJ_FJDX--资源文件 附件大小
+      ,c.FJLJ as c_ZYWJ_FJLJ--资源文件 附件路径
+      ,c.ZYZT as c_ZYWJ_ZYZT--资源文件 资源状态
+      ,c.ZYPJ as c_ZYWJ_ZYPJ--资源文件 资源评级
+      ,c.SCSJ as c_ZYWJ_SCSJ--资源文件 上传时间
+      ,c.SYNJ as c_ZYWJ_SYNJ--资源文件 适用年级
+      ,c.SYXK as c_ZYWJ_SYXK--资源文件 适用学科
+      ,c.LLRC as c_ZYWJ_LLRC--资源文件 浏览人次
+      ,c.SHZT as c_ZYWJ_SHZT--资源文件 审核状态
+      ,c.SHRID as c_ZYWJ_SHRID--资源文件 审核人ID
+      ,c.SHSJ as c_ZYWJ_SHSJ--资源文件 审核时间
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+
+FROM dbo.EDU_ZYZX_01_A07_ZYWJPJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A06_ZYWJ AS c ON a.ZYWJID = c.ID /*资源文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.PJRID = d.LOGINNAME /*评价人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --试卷知识点表

@@ -245,7 +245,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
     str << %({\n#{@tab.l}msg += "<span  >数据正确性检测通过！</span><br>";\n#{@tab.t})
     str << "foreach (var item in CheckList)\n#{@tab.t}"
-    str << "{\n#{@tab.l}AddJxjhkcqd(item);\n#{@tab.t}sucss++;\n"
+    str << "{\n#{@tab.l}Add#{table.lname.capitalize}(item);\n#{@tab.t}sucss++;\n"
     str << %(#{@tab.s}}\n#{@tab.t}msg += "<span >成功导入" + sucss + "条记录！</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
     str << %({\n#{@tab.l}msg += "<span  style=\\"color:red;\\">请先修改数据再上传。。。。。。</span><br>";\n)
