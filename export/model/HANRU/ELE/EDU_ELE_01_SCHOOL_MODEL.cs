@@ -15,6 +15,7 @@ namespace HanRuEdu.LDAL
             ModuleIdList = "";
             CreateTime = new DateTime(1900, 1, 1);
             YXTID = "";
+            LOGO = "";
         }
         public class EDU_ELE_01_SCHOOL_metadata
         {
@@ -90,6 +91,13 @@ namespace HanRuEdu.LDAL
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String YXTID { get; set; }
+
+
+            [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
+            [Display(Name = "Í¼±ê")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String LOGO { get; set; }
 
 
         }
