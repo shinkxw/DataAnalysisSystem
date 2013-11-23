@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZYZX_02_A04_SJ()
         {
-            KCH = "";
             SYFF = "";
             SJMC = "";
             NR = "";
@@ -31,11 +30,9 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "课程")]
-            [StringLength(6)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KCH { get; set; }
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程库")]
+            public Int32 KCKID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

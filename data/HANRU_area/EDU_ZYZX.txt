@@ -277,7 +277,7 @@
             <name="ZYPJ" exp="资源评级" type="int" null="F" p="F" />
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
             <name="SYNJ" exp="适用年级" type="nvarchar(30)" null="F" p="F" />
-            <name="SYXK" exp="适用学科" type="nvarchar(30)" null="F" p="F" />
+            <name="SYXK" exp="适用学科" type="int" null="F" p="F" />
             <name="LLRC" exp="浏览人次" type="int" null="F" p="F" />
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
@@ -306,7 +306,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="KCH" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="KCKID" exp="课程库ID" type="int" null="F" p="F" />
             <name="ZSDMC" exp="知识点名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
@@ -314,7 +314,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="KCH" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="KCKID" exp="课程库ID" type="int" null="F" p="F" />
             <name="ZSDID" exp="知识点ID" type="int" null="F" p="F" />
             <name="LXID" exp="类型ID" type="int" null="F" p="F" />
             <name="TM" exp="题目" type="text" null="F" p="F" />
@@ -331,7 +331,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="KCH" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
+            <name="KCKID" exp="课程库ID" type="int" null="F" p="F" />
             <name="SYFF" exp="适用范围" type="nvarchar(50)" null="F" p="F" />
             <name="SJMC" exp="试卷名称" type="nvarchar(50)" null="F" p="F" />
             <name="NDXS" exp="难度系数" type="decimal(6, 2)" null="F" p="F" />
@@ -343,6 +343,14 @@
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
             <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
             <name="FJ" exp="附件" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZYZX_03_A01_KCK" exp="课程库表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCDM" exp="课程代码" type="nvarchar(20)" null="F" p="F" />
+            <name="KCMC" exp="课程名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

@@ -680,6 +680,7 @@
   ZYMLID         EDU_ZYZX_01_A02_ZYML               ID
   YYZID          EDU_ELE_01_USER                    LOGINNAME
   WJLXID         EDU_ZYZX_01_A03_WJLX               ID
+  SYXK           EDU_ZYZX_03_A01_KCK                ID
   SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYZX_01_A07_ZYWJPJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
@@ -689,19 +690,21 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZYZX_02_A02_SJZSD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  KCH            EDU_ZZJX_01_02_KC                  KCH
+  KCKID          EDU_ZYZX_03_A01_KCK                ID
 <EDU_ZYZX_02_A03_SJTM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  KCH            EDU_ZZJX_01_02_KC                  KCH
+  KCKID          EDU_ZYZX_03_A01_KCK                ID
   ZSDID          EDU_ZYZX_02_A02_SJZSD              ID
   LXID           EDU_ZYZX_02_A01_SJLX               ID
   SCRID          EDU_ELE_01_USER                    LOGINNAME
   SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYZX_02_A04_SJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  KCH            EDU_ZZJX_01_02_KC                  KCH
+  KCKID          EDU_ZYZX_03_A01_KCK                ID
   SCRID          EDU_ELE_01_USER                    LOGINNAME
   SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYZX_03_A01_KCK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZFC_02_01_JZWJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SYZKM          EDU_JY_SYZK                        DM

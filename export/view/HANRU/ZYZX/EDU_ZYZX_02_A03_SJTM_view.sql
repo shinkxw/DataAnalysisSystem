@@ -4,7 +4,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZYZX_02_A03_SJTM_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[KCH]--课程ID
+      ,a.[KCKID]--课程库ID
       ,a.[ZSDID]--知识点ID
       ,a.[LXID]--类型ID
       ,a.[TM]--题目
@@ -15,25 +15,11 @@ SELECT a.[ID]--编号
       ,a.[SCSJ]--上传时间
       ,a.[SHRID]--审核人ID
       ,a.[SHSJ]--审核时间
-      ,c.SCHOOLID as c_KC_SCHOOLID--课程数据子类表 学校ID
-      ,c.KCMC as c_KC_KCMC--课程数据子类表 课程名称
-      ,c.KCYWM as c_KC_KCYWM--课程数据子类表 课程英文名
-      ,c.KCBM as c_KC_KCBM--课程数据子类表 课程别名
-      ,c.KCJS as c_KC_KCJS--课程数据子类表 课程介绍
-      ,c.XF as c_KC_XF--课程数据子类表 学分
-      ,c.ZXS as c_KC_ZXS--课程数据子类表 总学时
-      ,c.LLXS as c_KC_LLXS--课程数据子类表 理论学时
-      ,c.SJXS as c_KC_SJXS--课程数据子类表 实践学时
-      ,c.QTXS as c_KC_QTXS--课程数据子类表 其他学时
-      ,c.CKSM as c_KC_CKSM--课程数据子类表 参考书目
-      ,c.KKDW as c_KC_KKDW--课程数据子类表 开课单位
-      ,c.KSXS as c_KC_KSXS--课程数据子类表 考试形式
-      ,[cb].MC as c_KC_KSXS_MC--考试形式代码表 名称
-      ,c.SKFSM as c_KC_SKFSM--课程数据子类表 授课方式码
-      ,[cc].MC as c_KC_SKFSM_MC--授课方式代码表 名称
-      ,c.KCFY as c_KC_KCFY--课程数据子类表 课程费用
+      ,c.SCHOOLID as c_KCK_SCHOOLID--课程库表 学校
+      ,c.KCDM as c_KCK_KCDM--课程库表 课程代码
+      ,c.KCMC as c_KCK_KCMC--课程库表 课程名称
       ,d.SCHOOLID as d_SJZSD_SCHOOLID--试卷知识点表 学校
-      ,d.KCH as d_SJZSD_KCH--试卷知识点表 课程ID
+      ,d.KCKID as d_SJZSD_KCKID--试卷知识点表 课程库ID
       ,d.ZSDMC as d_SJZSD_ZSDMC--试卷知识点表 知识点名称
       ,e.SCHOOLID as e_SJLX_SCHOOLID--试题类型表 学校
       ,e.LXMC as e_SJLX_LXMC--试题类型表 类型名称
@@ -69,11 +55,9 @@ SELECT a.[ID]--编号
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
 
 FROM dbo.EDU_ZYZX_02_A03_SJTM AS a LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_02_KC AS c ON a.KCH = c.KCH /*课程ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_03_A01_KCK AS c ON a.KCKID = c.ID /*课程库ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZYZX_02_A02_SJZSD AS d ON a.ZSDID = d.ID /*知识点ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZYZX_02_A01_SJLX AS e ON a.LXID = e.ID /*类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.SCRID = f.LOGINNAME /*上传人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS g ON a.SHRID = g.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS [cb] ON c.KSXS = [cb].DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS [cc] ON c.SKFSM = [cc].DM /*授课方式码*/
+      dbo.EDU_ELE_01_USER AS g ON a.SHRID = g.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
 GO

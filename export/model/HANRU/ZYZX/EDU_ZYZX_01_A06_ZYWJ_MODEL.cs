@@ -19,7 +19,6 @@ namespace HanRuEdu.LDAL
             FJLJ = "";
             SCSJ = new DateTime(1900, 1, 1);
             SYNJ = "";
-            SYXK = "";
             SHRID = "";
             SHSJ = new DateTime(1900, 1, 1);
         }
@@ -132,11 +131,9 @@ namespace HanRuEdu.LDAL
             public String SYNJ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "适用学科")]
-            [StringLength(30)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SYXK { get; set; }
+            public Int32 SYXK { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

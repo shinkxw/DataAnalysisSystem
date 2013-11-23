@@ -55,26 +55,30 @@ SELECT a.[ID]--编号
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,f.SCHOOLID as f_WJLX_SCHOOLID--文件类型 学校
       ,f.LXMC as f_WJLX_LXMC--文件类型 类型名称
-      ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
-      ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
-      ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
-      ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
-      ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
-      ,g.ROLEIDLst as g_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,g.XM as g_USER_XM--应用系统用户表 姓名
-      ,g.XB as g_USER_XB--应用系统用户表 性别
-      ,g.QQ as g_USER_QQ--应用系统用户表 QQ
-      ,g.DZYJ as g_USER_DZYJ--应用系统用户表 电子邮件
-      ,g.LXDH as g_USER_LXDH--应用系统用户表 联系电话
-      ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.SCHOOLID as g_KCK_SCHOOLID--课程库表 学校
+      ,g.KCDM as g_KCK_KCDM--课程库表 课程代码
+      ,g.KCMC as g_KCK_KCMC--课程库表 课程名称
+      ,h.SCHOOLID as h_USER_SCHOOLID--应用系统用户表 学校ID
+      ,h.APPID as h_USER_APPID--应用系统用户表 应用ID
+      ,h.PWD as h_USER_PWD--应用系统用户表 密码
+      ,h.STATUS as h_USER_STATUS--应用系统用户表 用户状态
+      ,h.USERTYPE as h_USER_USERTYPE--应用系统用户表 用户类别
+      ,h.USERID as h_USER_USERID--应用系统用户表 用户ID
+      ,h.ROLEIDLst as h_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,h.XM as h_USER_XM--应用系统用户表 姓名
+      ,h.XB as h_USER_XB--应用系统用户表 性别
+      ,h.QQ as h_USER_QQ--应用系统用户表 QQ
+      ,h.DZYJ as h_USER_DZYJ--应用系统用户表 电子邮件
+      ,h.LXDH as h_USER_LXDH--应用系统用户表 联系电话
+      ,h.ZJDLSJ as h_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,h.DLCGCS as h_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,h.YHCJSJ as h_USER_YHCJSJ--应用系统用户表 用户创建时间
 
 FROM dbo.EDU_ZYZX_01_A06_ZYWJ AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_01_A01_ZYFL AS c ON a.ZYFLID = c.ID /*资源类型*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZYZX_01_A02_ZYML AS d ON a.ZYMLID = d.ID /*资源目录*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.YYZID = e.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZYZX_01_A03_WJLX AS f ON a.WJLXID = f.ID /*文件类型*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS g ON a.SHRID = g.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
+      dbo.EDU_ZYZX_03_A01_KCK AS g ON a.SYXK = g.ID /*适用学科*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS h ON a.SHRID = h.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/
 GO

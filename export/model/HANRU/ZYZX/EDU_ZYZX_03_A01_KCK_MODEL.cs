@@ -4,14 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZYZX_02_A02_SJZSD_metadata))]
-    public partial class EDU_ZYZX_02_A02_SJZSD
+    [MetadataType(typeof(EDU_ZYZX_03_A01_KCK_metadata))]
+    public partial class EDU_ZYZX_03_A01_KCK
     {
-        public EDU_ZYZX_02_A02_SJZSD()
+        public EDU_ZYZX_03_A01_KCK()
         {
-            ZSDMC = "";
+            KCDM = "";
+            KCMC = "";
         }
-        public class EDU_ZYZX_02_A02_SJZSD_metadata
+        public class EDU_ZYZX_03_A01_KCK_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -23,16 +24,18 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "课程库")]
-            public Int32 KCKID { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "课程代码")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCDM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "知识点名称")]
+            [Display(Name = "课程名称")]
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String ZSDMC { get; set; }
+            public String KCMC { get; set; }
 
 
         }
