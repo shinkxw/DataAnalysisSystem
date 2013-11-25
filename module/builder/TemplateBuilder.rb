@@ -296,7 +296,7 @@ class TemplateBuilder
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
-      next if field.name == 'SCHOOLID'
+      next if %w(ID SCHOOLID).include? field.name
       index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}sortable="true">@Html.LabelFor(m => m.#{field.name}))
       index_str << "</th><!--#{field.explanation}-->\n"
     end
