@@ -291,7 +291,7 @@ class TemplateBuilder
   end
   def make_index(table)
     index_str = "@model HanRuEdu.LDAL.#{table.name}\n"
-    index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:900px;height:500px"\n)
+    index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:auto;height:500px"\n)
     index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index_jsonstr\")',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
@@ -314,25 +314,24 @@ class TemplateBuilder
   end
   def make_table_info(table,title)
     info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial("SingleZTree")\n)
-    info_str << %(    <div id="dlg" class="easyui-panel" title="#{title}" style="width: 900px; height: 500px; padding: 10px 20px">\n)
-    info_str << %(        <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
-    info_str << %(        <table class="admintable">\n            <tr>\n                <td width="50%"></td>\n                <td width="50%"></td>\n            </tr>\n\n)
+    info_str << %(    <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
+    info_str << %(    <table class="admintable">\n        <tr>\n            <td width="50%"></td>\n            <td width="50%"></td>\n        </tr>\n\n)
     table.each_field do |field|
-      info_str << "            <tr>\n                <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n                <td>\n"
+      info_str << "        <tr>\n            <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n            <td>\n"
       if field.relation && field.relation.table.bz_library_name
-        info_str << "                    @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
+        info_str << "                @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
-        info_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
+        info_str << "                @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       elsif field.type == 'text'
-        info_str << "                    @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:600px; height:50px\" })\n"
-        info_str << %(                    @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
+        info_str << "                @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:600px; height:50px\" })\n"
+        info_str << %(                @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
       else
-        info_str << "                    @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
+        info_str << "                @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
       end
-      info_str << "                    @Html.ValidationMessageFor(m => m.#{field.name})\n                </td>\n            </tr>\n\n"
+      info_str << "                @Html.ValidationMessageFor(m => m.#{field.name})\n            </td>\n        </tr>\n\n"
     end
-    info_str << %(        </table>\n        <br />\n        @{ ViewData["ce_cancel"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/index");}\n)
-    info_str << %(        @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n    </div>\n}\n)
+    info_str << %(    </table>\n    <br />\n    ViewData["ce_cancel"] = Url.Content("~/#{@directory_name}/#{table.lname_dc}/index");\n)
+    info_str << %(    @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n}\n)
   end
   def make_details(table)
     str = "@model HanRuEdu.LDAL.#{table.view_name}\n"
