@@ -323,8 +323,8 @@ class TemplateBuilder
       elsif field.type == 'datetime'
         info_str << "                @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-datetimebox\", style = \"width:150px; \" })\n"
       elsif field.type == 'text'
-        info_str << "                @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:600px; height:50px\" })\n"
-        info_str << %(                @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "650", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
+        info_str << "                @Html.TextAreaFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:800px; height:60px\" })\n"
+        info_str << %(                @*@Html.MYeWebEditorFor(m=>m.#{field.name}, null, new FckConfig { Height = "350", Width = "850", Skin = FckSkin.Default, ToolbarSet = FckToolbarSet.Basic }, Url.Content("~/") )*@\n)
       else
         info_str << "                @Html.TextBoxFor(m => m.#{field.name}, new { @class = \"easyui-validatebox\", style = \"width:150px; \" })\n"
       end
