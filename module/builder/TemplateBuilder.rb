@@ -315,9 +315,9 @@ class TemplateBuilder
   def make_table_info(table,title)
     info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial("SingleZTree")\n)
     info_str << %(    <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
-    info_str << %(    <table class="admintable">\n        <tr>\n            <td width="50%"></td>\n            <td width="50%"></td>\n        </tr>\n\n)
+    info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
-      info_str << "        <tr>\n            <td> @Html.LabelFor(m => m.#{field.name}) </td> <!--#{field.explanation}-->\n            <td>\n"
+      info_str << "        <tr>\n            <th> @Html.LabelFor(m => m.#{field.name}) </th> <!--#{field.explanation}-->\n            <td>\n"
       if field.relation && field.relation.table.bz_library_name
         info_str << "                @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
@@ -337,9 +337,9 @@ class TemplateBuilder
     str = "@model HanRuEdu.LDAL.#{table.view_name}\n"
     str << %(<div id="dlg" class="easyui-panel" title="œÍœ∏" style="width: 900px; height: 500px; padding: 10px 20px">\n)
     str << %(    <center>  <h1 ><span style="font-size:smaller;">#{table.explanation}–≈œ¢</span></h1></center>\n)
-    str << %(    <table class="admintable">\n        <tr>\n            <td width="50%"></td>\n            <td width="50%"></td>\n        </tr>\n\n)
+    str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
-      str << "        <tr>\n            <td>#{field.display_name}</td>\n            <td>@Html.DisplayFor(m => m.#{field.name})</td>\n        </tr>\n\n"
+      str << "        <tr>\n            <th>#{field.display_name}</th>\n            <td>@Html.DisplayFor(m => m.#{field.name})</td>\n        </tr>\n\n"
     end
     str << "    </table>\n    <br />\n</div>\n"
   end

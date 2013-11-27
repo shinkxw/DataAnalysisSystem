@@ -1083,7 +1083,7 @@
   StuID          EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZJX_21_A03_SXGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+  StuID          EDU_ZZXS_01_01_XSXX                ID
   JobID          EDU_ZZJX_20_A03_GWXX               ID
 <EDU_ZZJX_22_A01_SXJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

@@ -456,7 +456,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
+            <name="StuID" exp="学生ID" type="int" null="F" p="F" />
             <name="JobID" exp="岗位ID" type="int" null="F" p="F" />
             <name="GSSHZT" exp="公司审核状态" type="int" null="F" p="F" />
             <name="TypeID" exp="录取类型" type="int" null="F" p="F" />

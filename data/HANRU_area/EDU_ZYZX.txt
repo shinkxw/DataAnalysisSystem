@@ -229,7 +229,7 @@
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
             <name="YYZID" exp="拥有者ID" type="nvarchar(20)" null="F" p="F" />
             <name="WJLXIDLB" exp="上传文件类型ID列表" type="nvarchar(200)" null="F" p="F" />
-            <name="FWQX" exp="访问权限" type="int" null="F" p="F" />
+            <name="FWQX" exp="访问权限" type="int" null="F" p="F" remark="私人或公有" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_01_A03_WJLX" exp="文件类型">
@@ -267,13 +267,13 @@
             <name="BZ" exp="备注" type="nvarchar(100)" null="F" p="F" />
             <name="GJZ" exp="关键字" type="nvarchar(50)" null="F" p="F" />
             <name="YYZID" exp="拥有者ID" type="nvarchar(20)" null="F" p="F" />
-            <name="ZYLLLX" exp="资源浏览类型" type="int" null="F" p="F" />
+            <name="ZYLLLX" exp="资源浏览类型" type="int" null="F" p="F" remark="公网 内网" />
             <name="WJLXID" exp="文件类型" type="int" null="F" p="F" />
             <name="ZYNR" exp="资源内容" type="text" null="F" p="F" />
             <name="FJMC" exp="附件名称" type="nvarchar(300)" null="F" p="F" />
             <name="FJDX" exp="附件大小" type="nvarchar(300)" null="F" p="F" />
             <name="FJLJ" exp="附件路径" type="nvarchar(300)" null="F" p="F" />
-            <name="ZYZT" exp="资源状态" type="int" null="F" p="F" />
+            <name="ZYZT" exp="资源状态" type="int" null="F" p="F" remark="私人或公有" />
             <name="ZYPJ" exp="资源评级" type="int" null="F" p="F" />
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
             <name="SYNJ" exp="适用年级" type="nvarchar(30)" null="F" p="F" />
