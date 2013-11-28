@@ -335,13 +335,12 @@ class TemplateBuilder
   end
   def make_details(table)
     str = "@model HanRuEdu.LDAL.#{table.view_name}\n"
-    str << %(<div id="dlg" class="easyui-panel" title="详细" style="width: 900px; height: 500px; padding: 10px 20px">\n)
-    str << %(    <center>  <h1 ><span style="font-size:smaller;">#{table.explanation}信息</span></h1></center>\n)
-    str << %(    <table class="admintable">\n\n)
+    str << %(<center>  <h1 ><span style="font-size:smaller;">#{table.explanation}信息</span></h1></center>\n)
+    str << %(<table class="admintable">\n\n)
     table.each_field do |field|
-      str << "        <tr>\n            <th>#{field.display_name}</th>\n            <td>@Html.DisplayFor(m => m.#{field.name})</td>\n        </tr>\n\n"
+      str << "    <tr>\n        <th>#{field.display_name}</th>\n        <td>@Html.DisplayFor(m => m.#{field.name})</td>\n    </tr>\n\n"
     end
-    str << "    </table>\n    <br />\n</div>\n"
+    str << "</table>\n"
   end
   def make_importdata(table)
     str = "@model HanRuEdu.LDAL.#{table.name}\n"
