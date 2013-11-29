@@ -14,7 +14,10 @@ class DBDataMigrate
   end
   #生成插入数据脚本
   def insert_data(table_name, config, mb = 50)
-    data_arr = get_data_arr(config)
+    data_hash = convert_data(config)
+    field_names = data_hash.keys
+    data_arr = field_names.map{|field_name| data_hash[field_name]}.transpose
+
     prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
     istr = ""
     str_arr = []
