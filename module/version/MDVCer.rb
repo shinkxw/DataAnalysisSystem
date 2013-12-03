@@ -30,7 +30,8 @@ class MDVCer
   def build_new_version
     pre_area = FileLoader.new(@work_copy_path + 'daf').get_obj
     @work_copy = MDVersion.new(@area, pre_area)
-    version_arr.unshift(@work_copy)
+    @version_arr.unshift(@work_copy)
+    puts @work_copy.build_log
   end
   #查询工作区是否被更新
   def has_update?;@area.get_ev != @work_copy.ev end

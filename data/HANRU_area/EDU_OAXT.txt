@@ -615,6 +615,16 @@
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_22_A04_HYJY" exp="会议纪要表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="HYID" exp="会议ID" type="int" null="F" p="F" />
+            <name="HYJYNR" exp="会议纪要内容" type="text" null="F" p="F" />
+            <name="JLRID" exp="记录人" type="nvarchar(20)" null="F" p="F" />
+            <name="JLSJ" exp="记录时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_23_A01_GWSQ" exp="公文申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

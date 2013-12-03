@@ -529,6 +529,14 @@ EDU_OAXT_22_A03_HYSQXGJL  会议申请修改记录表
   DQBZSHZT      当前步骤审核状态        int            非主
   SQRBMID       申请人部门ID            int            非主
 
+EDU_OAXT_22_A04_HYJY  会议纪要表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  HYID          会议ID                  int            非主        会议申请表
+  HYJYNR        会议纪要内容            text           非主
+  JLRID         记录人                  nvarchar(20)   非主        应用系统用户表
+  JLSJ          记录时间                datetime       非主
+
 EDU_OAXT_23_A01_GWSQ  公文申请表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
