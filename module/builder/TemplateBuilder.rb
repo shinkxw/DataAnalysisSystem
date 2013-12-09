@@ -199,7 +199,7 @@ class TemplateBuilder
     str << "{\n#{@tab.l}rowid++;\n#{@tab.t}#{table.name} model = new #{table.name}();\n#{@tab.t}"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      str << "model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
+      str << "//model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
     end
     str << "\n#{@tab.t}"
     table.each_field do |field|
