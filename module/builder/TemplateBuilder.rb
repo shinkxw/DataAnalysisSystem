@@ -345,17 +345,21 @@ class TemplateBuilder
   def make_importdata(table)
     str = "@model HanRuEdu.LDAL.#{table.name}\n"
     str << %(@using (Html.BeginForm("ImportData", "#{table.lname}", FormMethod.Post, new { enctype = "multipart/form-data" }))\n{ \n)
-    str << %(    <p style="text-align: center">\n)
-    str << %(        <input id="xmlfile" name="xmlfile" type="file" />\n)
-    str << %(        <input id="Submit1" type="submit" value="上传" />\n)
-    str << %(        <a href="@Url.Content("~/Content/NowDownload/Excels/.xls")">模板下载</a>\n)
-    str << "    </p>\n    <hr />\n    <p>\n        导入小贴士：\n"
-    str << "        <li>.本导入只支持XML格式的文件</li>\n"
-    str << "        <li>.选择EXCEL的【文件另存为...】菜单，在保持类型处选择“XML表格”类型，可保存为XML格式文件。 </li>\n"
-    str << "        <li>.建议用户直接在导入模板上填充要导入的数据，即可上传导入。</li>\n"
-    str << "    </p>\n"
-    str << %(    <p style="padding: 30px;">\n)
-    str << "        <br />\n        <br />\n        @Html.Raw(ViewBag.msg)\n    </p>\n}\n"
+    str << %(    <div style="padding: 10px;"><br />\n)
+    str << %(        <p style="text-align: center">\n)
+    str << %(            <input id="xmlfile" name="xmlfile" type="file" />\n)
+    str << %(            <input id="Submit1" type="submit" value="上传" />\n)
+    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/.xls")">模板下载</a>\n)
+    str << "        </p>\n        <hr />\n"
+    str << "        <p>\n"
+    str << %(            <span style="color: red">导入小贴士：<br />\n)
+    str << "                1.本导入只支持XML格式的文件<br />\n"
+    str << "                2.选择EXCEL的【文件另存为。。。】菜单，在保持类型处选择“XML表格”类型，可保存为XML格式文件。<br />\n"
+    str << "                3.建议用户直接在导入模板上填充要导入的数据，即可上传导入。<br />\n"
+    str << "            </span>\n"
+    str << "        </p>\n"
+    str << %(        <p style="padding: 30px;">\n)
+    str << "            <br />\n            <br />\n            @Html.Raw(ViewBag.msg)\n        </p>\n    </div>\n}\n"
   end
   #获得一个字段的值列表
   def get_selLst(field)
