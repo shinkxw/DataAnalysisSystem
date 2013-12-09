@@ -119,6 +119,8 @@
             <name="MODULEID" exp="MODULE表ID" type="int" null="F" p="F" />
             <name="LoginName" exp="用户名" type="nvarchar(20)" null="F" p="F" />
             <name="OrderID" exp="序号" type="int" null="F" p="F" />
+            <name="NAME" exp="显示名称" type="nvarchar(50)" null="F" p="F" />
+            <name="LINK" exp="链接" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_03_APPRZ" exp="应用日志表">

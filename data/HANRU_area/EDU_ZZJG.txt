@@ -57,6 +57,19 @@
             <name="XXJL" exp="学习经历" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_01_A02_JZGNLZS" exp="教职工能力证书表">
+        <field_area>
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="BYZS" exp="毕业证书" type="nvarchar(100)" null="T" p="F" />
+            <name="XWZS" exp="学位证书" type="nvarchar(100)" null="T" p="F" />
+            <name="ZCZS" exp="职称证书" type="nvarchar(100)" null="T" p="F" />
+            <name="PTHZS" exp="普通话证书" type="nvarchar(100)" null="T" p="F" />
+            <name="JSZGZ" exp="教师资格证" type="nvarchar(100)" null="T" p="F" />
+            <name="JSJHGZ" exp="计算机合格证" type="nvarchar(100)" null="T" p="F" />
+            <name="JNZS" exp="技能证书" type="nvarchar(100)" null="T" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJG_02_02_XNGWSJ" exp="校内岗位数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -387,6 +400,42 @@
             <name="HDNR" exp="活动内容" type="text" null="F" p="F" />
             <name="SCJSID" exp="上传教师ID" type="int" null="F" p="F" />
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_18_A01_JSGRRY" exp="教师个人荣誉表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="F" />
+            <name="RYNR" exp="荣誉内容" type="text" null="F" p="F" />
+            <name="HQSJ" exp="获取时间" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_18_A02_JSNDKH" exp="教师年度考核表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="F" />
+            <name="KHNR" exp="考核内容" type="text" null="F" p="F" />
+            <name="KHSJ" exp="考核时间" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_18_A03_JSDRBZRJL" exp="教师担任班主任记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="F" />
+            <name="DRBJ" exp="担任班级" type="nvarchar(50)" null="F" p="F" />
+            <name="DRSJ" exp="担任时间" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_18_A04_JSRGJL" exp="教师任岗记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="F" />
+            <name="DRGW" exp="担任岗位" type="nvarchar(200)" null="F" p="F" />
+            <name="DRSJ" exp="担任时间" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

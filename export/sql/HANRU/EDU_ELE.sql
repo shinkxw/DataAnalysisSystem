@@ -297,6 +297,8 @@ CREATE TABLE [dbo].[EDU_ELE_02_YHKJDH](
 	[MODULEID]  int  NOT NULL,--MODULE表ID
 	[LoginName]  nvarchar(20)  NOT NULL,--用户名
 	[OrderID]  int  NOT NULL,--序号
+	[NAME]  nvarchar(50)  NOT NULL,--显示名称
+	[LINK]  text  NOT NULL,--链接
 CONSTRAINT [PK_EDU_ELE_02_YHKJDH] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -665,6 +667,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_02_YHKJDH', @level2type=N'COLUMN',@level2name=N'LoginName'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'序号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_02_YHKJDH', @level2type=N'COLUMN',@level2name=N'OrderID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'显示名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_02_YHKJDH', @level2type=N'COLUMN',@level2name=N'NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_02_YHKJDH', @level2type=N'COLUMN',@level2name=N'LINK'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用日志表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_APPRZ'
 GO

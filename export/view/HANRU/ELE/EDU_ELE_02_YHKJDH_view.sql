@@ -7,6 +7,8 @@ SELECT a.[ID]--编号
       ,a.[MODULEID]--MODULE表ID
       ,a.[LoginName]--用户名
       ,a.[OrderID]--序号
+      ,a.[NAME]--显示名称
+      ,a.[LINK]--链接
       ,c.APPID as c_MODULE_APPID--导航表 
       ,c.NAME as c_MODULE_NAME--导航表 
       ,c.Depth as c_MODULE_Depth--导航表 

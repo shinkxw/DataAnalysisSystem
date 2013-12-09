@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ELE_02_YHKJDH()
         {
             LoginName = "";
+            NAME = "";
+            LINK = "";
         }
         public class EDU_ELE_02_YHKJDH_metadata
         {
@@ -38,6 +40,19 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "序号")]
             public Int32 OrderID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "显示名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NAME { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "链接")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String LINK { get; set; }
 
 
         }

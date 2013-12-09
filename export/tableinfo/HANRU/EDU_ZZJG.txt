@@ -51,6 +51,17 @@ EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   LDJN          劳动技能                text           非主
   XXJL          学习经历                text           非主
 
+EDU_ZZJG_01_A02_JZGNLZS  教职工能力证书表
+  JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  BYZS          毕业证书                nvarchar(100)  非主
+  XWZS          学位证书                nvarchar(100)  非主
+  ZCZS          职称证书                nvarchar(100)  非主
+  PTHZS         普通话证书              nvarchar(100)  非主
+  JSZGZ         教师资格证              nvarchar(100)  非主
+  JSJHGZ        计算机合格证            nvarchar(100)  非主
+  JNZS          技能证书                nvarchar(100)  非主
+
 EDU_ZZJG_02_02_XNGWSJ  校内岗位数据子类表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
@@ -326,4 +337,32 @@ EDU_ZZJG_17_A06_DZBHDXX  党支部活动信息表
   HDNR          活动内容                text           非主
   SCJSID        上传教师ID              int            非主        教职工基本数据子类表
   SCSJ          上传时间                datetime       非主
+
+EDU_ZZJG_18_A01_JSGRRY  教师个人荣誉表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  RYNR          荣誉内容                text           非主
+  HQSJ          获取时间                nvarchar(50)   非主
+
+EDU_ZZJG_18_A02_JSNDKH  教师年度考核表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  KHNR          考核内容                text           非主
+  KHSJ          考核时间                nvarchar(50)   非主
+
+EDU_ZZJG_18_A03_JSDRBZRJL  教师担任班主任记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  DRBJ          担任班级                nvarchar(50)   非主
+  DRSJ          担任时间                nvarchar(50)   非主
+
+EDU_ZZJG_18_A04_JSRGJL  教师任岗记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  DRGW          担任岗位                nvarchar(200)  非主
+  DRSJ          担任时间                nvarchar(50)   非主
 
