@@ -309,7 +309,7 @@ class TemplateBuilder
     index_str << %(    ViewData["index_multi_del"] = Url.Content("~/#{path_pre_str}/delete");\n)
     index_str << %(    ViewData["index_id_name"] = "ID";\n)
     index_str << %(    //ViewData["index_outdata"] = Url.Content("~/#{path_pre_str}/OutExcel");\n)
-    index_str << %(    //ViewData["index_indata"] = Url.Content("~/#{path_pre_str}/ImportData");\n}\n)
+    index_str << %(    //ViewData["index_indata_newpage"] = Url.Content("~/#{path_pre_str}/ImportData");\n}\n)
     index_str << %(@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)\n)
   end
   def make_table_info(table,title)
@@ -359,7 +359,7 @@ class TemplateBuilder
     str << "            </span>\n"
     str << "        </p>\n"
     str << %(        <p style="padding: 30px;">\n)
-    str << "            <br />\n            <br />\n            @Html.Raw(ViewBag.msg)\n        </p>\n    </div>\n}\n"
+    str << "           @Html.Raw(ViewBag.msg)\n        </p>\n    </div>\n}\n"
   end
   #获得一个字段的值列表
   def get_selLst(field)
