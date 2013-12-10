@@ -56,6 +56,11 @@ namespace HanRuEdu.LDAL
             public DateTime FFSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "发放批次")]
+            public Int32 FFPCID { get; set; }
+
+
         }
     }
 }

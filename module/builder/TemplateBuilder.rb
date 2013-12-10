@@ -317,6 +317,7 @@ class TemplateBuilder
     info_str << %(    <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
     info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
       info_str << "        <tr>\n            <th> @Html.LabelFor(m => m.#{field.name}) </th> <!--#{field.explanation}-->\n            <td>\n"
       if field.relation && field.relation.table.bz_library_name
         info_str << "                @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"

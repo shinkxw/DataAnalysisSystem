@@ -177,6 +177,12 @@ EDU_ZZJG_12_A02_XC  薪酬表
   XCLXID        薪酬类型ID              int            非主        薪酬类型表
   JE            金额                    decimal(8, 2)  非主
   FFSJ          发放时间                datetime       非主
+  FFPCID        发放批次ID              int            非主        薪酬每月发放批次表
+
+EDU_ZZJG_12_A03_XCMYFFPC  薪酬每月发放批次表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  PCMC          批次名称                nvarchar(30)   非主
 
 EDU_ZZJG_13_A01_KSLX  课时类型表
   ID            编号                    int            主键

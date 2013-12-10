@@ -212,6 +212,14 @@
             <name="XCLXID" exp="薪酬类型ID" type="int" null="F" p="F" />
             <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
             <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="FFPCID" exp="发放批次ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_12_A03_XCMYFFPC" exp="薪酬每月发放批次表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="PCMC" exp="批次名称" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_13_A01_KSLX" exp="课时类型表">
