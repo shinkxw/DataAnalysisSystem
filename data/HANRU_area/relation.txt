@@ -606,90 +606,6 @@
 <EDU_ZXXX_04_A01_JGGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JGH            EDU_ZXXX_04_01_JG                  JGH
-<EDU_ZYZX_VIP
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-<EDU_ZYZX_TPXT_TPYS
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-<EDU_ZYZX_TPXT_TPXX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  TPID           EDU_ZYZX_TPXT_TPSZ                 ID
-  TMID           EDU_ZYZX_TPXT_TPTM                 ID
-<EDU_ZYZX_TPXT_TPTM
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  TPID           EDU_ZYZX_TPXT_TPSZ                 ID
-<EDU_ZYZX_TPXT_TPSZ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  CSSID          EDU_ZYZX_TPXT_TPYS                 ID
-<EDU_ZYZX_TPXT_TPJL
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  TPID           EDU_ZYZX_TPXT_TPSZ                 ID
-<EDU_ZYZX_MHXT_YQLJLX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-<EDU_ZYZX_MHXT_YQLJ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  TYPEID         EDU_ZYZX_MHXT_YQLJLX               ID
-<EDU_ZYZX_MHXT_WZYS
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-<EDU_ZYZX_MHXT_WZWZ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  LMID           EDU_ZYZX_MHXT_WZLM                 ID
-<EDU_ZYZX_MHXT_WZPJ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  WZID           EDU_ZYZX_MHXT_WZWZ                 ID
-<EDU_ZYZX_MHXT_WZPZ
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  CSSID          EDU_ZYZX_MHXT_WZYS                 ID
-<EDU_ZYZX_MHXT_WZLM
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-  PID            EDU_ZYZX_MHXT_WZLM                 ID
-<EDU_ZYZX_MHXT_WZGG
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-<EDU_ZYZX_MHXT_FWLL
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
-<EDU_ZYZX_MHXT_FBQX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-<EDU_ZYZX_01_A01_ZYFL
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  FFLID          EDU_ZYZX_01_A01_ZYFL               ID
-<EDU_ZYZX_01_A02_ZYML
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  FMLID          EDU_ZYZX_01_A02_ZYML               ID
-  YYZID          EDU_ELE_01_USER                    LOGINNAME
-<EDU_ZYZX_01_A03_WJLX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-<EDU_ZYZX_01_A04_ZYMLQX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  ZYMLID         EDU_ZYZX_01_A02_ZYML               ID
-<EDU_ZYZX_01_A05_ZYWJQX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  ZYWJID         EDU_ZYZX_01_A06_ZYWJ               ID
-<EDU_ZYZX_01_A06_ZYWJ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  ZYFLID         EDU_ZYZX_01_A01_ZYFL               ID
-  ZYMLID         EDU_ZYZX_01_A02_ZYML               ID
-  YYZID          EDU_ELE_01_USER                    LOGINNAME
-  WJLXID         EDU_ZYZX_01_A03_WJLX               ID
-  SYXK           EDU_ZYZX_03_A01_KCK                ID
-  SHRID          EDU_ELE_01_USER                    LOGINNAME
-<EDU_ZYZX_01_A07_ZYWJPJ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  ZYWJID         EDU_ZYZX_01_A06_ZYWJ               ID
-  PJRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYZX_02_A01_SJLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZYZX_02_A02_SJZSD
@@ -1528,3 +1444,128 @@
 <EDU_ZZZS_03_01_KSKMCJ
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+
+以下为出错的关联语句:
+
+<EDU_ZYZX_VIP
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_VIP
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_TPXT_TPYS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_TPXT_TPYS
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_TPXT_TPXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_TPXT_TPXX
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_TPXT_TPXX
+  TPID           EDU_ZYZX_TPXT_TPSZ                 ID
+<EDU_ZYZX_TPXT_TPXX
+  TMID           EDU_ZYZX_TPXT_TPTM                 ID
+<EDU_ZYZX_TPXT_TPTM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_TPXT_TPTM
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_TPXT_TPTM
+  TPID           EDU_ZYZX_TPXT_TPSZ                 ID
+<EDU_ZYZX_TPXT_TPSZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_TPXT_TPSZ
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_TPXT_TPSZ
+  CSSID          EDU_ZYZX_TPXT_TPYS                 ID
+<EDU_ZYZX_TPXT_TPJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_TPXT_TPJL
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_TPXT_TPJL
+  TPID           EDU_ZYZX_TPXT_TPSZ                 ID
+<EDU_ZYZX_MHXT_YQLJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_YQLJLX
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_YQLJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_YQLJ
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_YQLJ
+  TYPEID         EDU_ZYZX_MHXT_YQLJLX               ID
+<EDU_ZYZX_MHXT_WZYS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_WZYS
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_WZWZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_WZWZ
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_WZWZ
+  LMID           EDU_ZYZX_MHXT_WZLM                 ID
+<EDU_ZYZX_MHXT_WZPJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_WZPJ
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_WZPJ
+  WZID           EDU_ZYZX_MHXT_WZWZ                 ID
+<EDU_ZYZX_MHXT_WZPZ
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_WZPZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_WZPZ
+  CSSID          EDU_ZYZX_MHXT_WZYS                 ID
+<EDU_ZYZX_MHXT_WZLM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_WZLM
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_WZLM
+  PID            EDU_ZYZX_MHXT_WZLM                 ID
+<EDU_ZYZX_MHXT_WZGG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_WZGG
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_FWLL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_MHXT_FWLL
+  WEBID          EDU_ZYZX_MHXT_WZPZ                 WEBID
+<EDU_ZYZX_MHXT_FBQX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A01_ZYFL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A01_ZYFL
+  FFLID          EDU_ZYZX_01_A01_ZYFL               ID
+<EDU_ZYZX_01_A02_ZYML
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A02_ZYML
+  FMLID          EDU_ZYZX_01_A02_ZYML               ID
+<EDU_ZYZX_01_A02_ZYML
+  YYZID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYZX_01_A03_WJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A04_ZYMLQX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A04_ZYMLQX
+  ZYMLID         EDU_ZYZX_01_A02_ZYML               ID
+<EDU_ZYZX_01_A05_ZYWJQX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A05_ZYWJQX
+  ZYWJID         EDU_ZYZX_01_A06_ZYWJ               ID
+<EDU_ZYZX_01_A06_ZYWJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A06_ZYWJ
+  ZYFLID         EDU_ZYZX_01_A01_ZYFL               ID
+<EDU_ZYZX_01_A06_ZYWJ
+  ZYMLID         EDU_ZYZX_01_A02_ZYML               ID
+<EDU_ZYZX_01_A06_ZYWJ
+  YYZID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYZX_01_A06_ZYWJ
+  WJLXID         EDU_ZYZX_01_A03_WJLX               ID
+<EDU_ZYZX_01_A06_ZYWJ
+  SYXK           EDU_ZYZX_03_A01_KCK                ID
+<EDU_ZYZX_01_A06_ZYWJ
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYZX_01_A07_ZYWJPJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_01_A07_ZYWJPJ
+  ZYWJID         EDU_ZYZX_01_A06_ZYWJ               ID
+<EDU_ZYZX_01_A07_ZYWJPJ
+  PJRID          EDU_ELE_01_USER                    LOGINNAME
