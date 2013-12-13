@@ -44,6 +44,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -59,6 +61,8 @@ SELECT a.[SCHOOLID]--学校名
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_05_01_WJXH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

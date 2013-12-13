@@ -100,6 +100,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZZJX_35_A02_GKKSQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_35_A01_TKXZ AS c ON a.TKXZID = c.ID /*听课小组ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

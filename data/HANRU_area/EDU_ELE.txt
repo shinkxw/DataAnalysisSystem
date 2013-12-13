@@ -18,6 +18,8 @@
             <name="ZJDLSJ" exp="最近一次登录时间" type="datetime" null="F" p="F" />
             <name="DLCGCS" exp="登录成功次数" type="int" null="F" p="F" />
             <name="YHCJSJ" exp="用户创建时间" type="datetime" null="F" p="F" />
+            <name="YHRY" exp="用户荣誉" type="int" null="F" p="F" />
+            <name="YHJF" exp="用户积分" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_APP" exp="应用表">
@@ -219,6 +221,30 @@
             <name="CDDZ" exp="场地地址" type="nvarchar(200)" null="F" p="F" />
             <name="CDLX" exp="场地类型" type="int" null="F" p="F" />
             <name="CDFZR" exp="场地负责人" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_07_JFBD" exp="积分变动表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
+            <name="APPID" exp="应用ID" type="int" null="F" p="F" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BDSJ" exp="变动时间" type="datetime" null="F" p="F" />
+            <name="BDTM" exp="变动条目" type="nvarchar(30)" null="F" p="F" />
+            <name="BDJF" exp="变动积分" type="int" null="F" p="F" />
+            <name="CZXX" exp="操作信息" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_07_RYBD" exp="荣誉变动表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
+            <name="APPID" exp="应用ID" type="int" null="F" p="F" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BDSJ" exp="变动时间" type="datetime" null="F" p="F" />
+            <name="BDTM" exp="变动条目" type="nvarchar(30)" null="F" p="F" />
+            <name="BDRY" exp="变动荣誉" type="int" null="F" p="F" />
+            <name="CZXX" exp="操作信息" type="text" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

@@ -23,6 +23,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_APP_SCHOOLID--应用表 学校ID
       ,d.NAME as d_APP_NAME--应用表 应用名称
       ,d.URL as d_APP_URL--应用表 网址

@@ -34,6 +34,8 @@ SELECT a.[ID]--分组ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_YHFZ_SCHOOLID--用户分组表 学校ID
       ,e.APPID as e_YHFZ_APPID--用户分组表 应用ID
       ,e.YHID as e_YHFZ_YHID--用户分组表 用户ID

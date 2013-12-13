@@ -15,6 +15,8 @@ EDU_ELE_01_USER  应用系统用户表
   ZJDLSJ        最近一次登录时间        datetime       非主
   DLCGCS        登录成功次数            int            非主
   YHCJSJ        用户创建时间            datetime       非主
+  YHRY          用户荣誉                int            非主
+  YHJF          用户积分                int            非主
 
 EDU_ELE_01_APP  应用表
   ID            应用ID                  int            主键
@@ -180,4 +182,24 @@ EDU_ELE_06_CDSJ  场地数据表
   CDDZ          场地地址                nvarchar(200)  非主
   CDLX          场地类型                int            非主
   CDFZR         场地负责人              nvarchar(36)   非主
+
+EDU_ELE_07_JFBD  积分变动表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  APPID         应用ID                  int            非主        应用表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  BDSJ          变动时间                datetime       非主
+  BDTM          变动条目                nvarchar(30)   非主
+  BDJF          变动积分                int            非主
+  CZXX          操作信息                text           非主
+
+EDU_ELE_07_RYBD  荣誉变动表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校名                  int            非主        学校配置表
+  APPID         应用ID                  int            非主        应用表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  BDSJ          变动时间                datetime       非主
+  BDTM          变动条目                nvarchar(30)   非主
+  BDRY          变动荣誉                int            非主
+  CZXX          操作信息                text           非主
 

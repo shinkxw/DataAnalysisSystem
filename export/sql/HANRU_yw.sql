@@ -94,6 +94,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_06_CDSJ')
             and   type = 'U')
    drop table EDU_ELE_06_CDSJ
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_07_JFBD')
+            and   type = 'U')
+   drop table EDU_ELE_07_JFBD
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_07_RYBD')
+            and   type = 'U')
+   drop table EDU_ELE_07_RYBD
+go
 --应用系统用户表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_USER]') AND type in (N'U'))
 BEGIN
@@ -114,6 +124,8 @@ CREATE TABLE [dbo].[EDU_ELE_01_USER](
 	[ZJDLSJ]  datetime  NOT NULL,--最近一次登录时间
 	[DLCGCS]  int  NOT NULL,--登录成功次数
 	[YHCJSJ]  datetime  NOT NULL,--用户创建时间
+	[YHRY]  int  NOT NULL,--用户荣誉
+	[YHJF]  int  NOT NULL,--用户积分
 CONSTRAINT [PK_EDU_ELE_01_USER] PRIMARY KEY CLUSTERED
 (
 	[LOGINNAME] ASC,
@@ -485,6 +497,46 @@ CONSTRAINT [PK_EDU_ELE_06_CDSJ] PRIMARY KEY CLUSTERED
 END
 GO
 
+--积分变动表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_07_JFBD]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_07_JFBD](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[APPID]  int  NOT NULL,--应用ID
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[BDSJ]  datetime  NOT NULL,--变动时间
+	[BDTM]  nvarchar(30)  NOT NULL,--变动条目
+	[BDJF]  int  NOT NULL,--变动积分
+	[CZXX]  text  NOT NULL,--操作信息
+CONSTRAINT [PK_EDU_ELE_07_JFBD] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--荣誉变动表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_07_RYBD]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_07_RYBD](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[APPID]  int  NOT NULL,--应用ID
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[BDSJ]  datetime  NOT NULL,--变动时间
+	[BDTM]  nvarchar(30)  NOT NULL,--变动条目
+	[BDRY]  int  NOT NULL,--变动荣誉
+	[CZXX]  text  NOT NULL,--操作信息
+CONSTRAINT [PK_EDU_ELE_07_RYBD] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用系统用户表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER'
 GO
@@ -519,6 +571,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登录成功次数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'DLCGCS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户创建时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHCJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHRY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户积分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHJF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP'
 GO
@@ -813,6 +869,42 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'场地类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_06_CDSJ', @level2type=N'COLUMN',@level2name=N'CDLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'场地负责人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_06_CDSJ', @level2type=N'COLUMN',@level2name=N'CDFZR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'积分变动表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'APPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'BDSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动条目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'BDTM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动积分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'BDJF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作信息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_JFBD', @level2type=N'COLUMN',@level2name=N'CZXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'荣誉变动表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'APPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'BDSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动条目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'BDTM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'BDRY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作信息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'CZXX'
 GO
 --空间名：EDU_JPXT  生成器：SqlBuilder0.1
 
@@ -7413,6 +7505,56 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位说明' , @l
 GO
 --空间名：EDU_ZYZX  生成器：SqlBuilder0.1
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A01_ZYML')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A01_ZYML
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A03_WJLX')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A03_WJLX
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A06_ZYWJ')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A06_ZYWJ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A07_ZYWJXZ')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A07_ZYWJXZ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A08_ZYWJPL')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A08_ZYWJPL
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A09_ZYWJPF')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A09_ZYWJPF
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A10_TZGG')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A10_TZGG
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A11_YQLJLX')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A11_YQLJLX
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A12_YQLJ')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A12_YQLJ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A13_ZXDY')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A13_ZXDY
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_02_A01_SJLX')
             and   type = 'U')
    drop table EDU_ZYZX_02_A01_SJLX
@@ -7437,6 +7579,225 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_03_A01_KCK'
             and   type = 'U')
    drop table EDU_ZYZX_03_A01_KCK
 go
+--资源目录
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A01_ZYML]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A01_ZYML](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[MLMC]  nvarchar(50)  NOT NULL,--目录名称
+	[FMLID]  int  NOT NULL,--父目录ID
+	[PLSX]  int  NOT NULL,--排列顺序
+	[SFSYZS]  int  NOT NULL,--是否首页展示
+	[SFQY]  int  NOT NULL,--是否启用
+CONSTRAINT [PK_EDU_ZYZX_01_A01_ZYML] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--文件类型
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A03_WJLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A03_WJLX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[LXMC]  nvarchar(50)  NOT NULL,--类型名称
+CONSTRAINT [PK_EDU_ZYZX_01_A03_WJLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资源文件
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A06_ZYWJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A06_ZYWJ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[ZYMLID]  int  NOT NULL,--资源目录
+	[ZYBT]  nvarchar(50)  NOT NULL,--资源标题
+	[SYDX]  nvarchar(30)  NOT NULL,--适用对象
+	[GJZ]  nvarchar(50)  NOT NULL,--关键字
+	[JJ]  nvarchar(200)  NOT NULL,--简介
+	[ZYLX]  int  NOT NULL,--资源类型
+	[SYXZ]  int  NOT NULL,--使用限制
+	[LY]  nvarchar(20)  NOT NULL,--来源
+	[YYZID]  nvarchar(20)  NOT NULL,--拥有者ID
+	[ZYMC]  nvarchar(300)  NOT NULL,--资源名称
+	[ZYDX]  nvarchar(300)  NOT NULL,--资源大小
+	[ZYLJ]  nvarchar(300)  NOT NULL,--资源路径
+	[WJLXID]  int  NOT NULL,--文件类型
+	[ZYPJ]  int  NOT NULL,--资源评级
+	[SLT]  nvarchar(300)  NOT NULL,--缩略图
+	[SCSJ]  datetime  NOT NULL,--上传时间
+	[LLRC]  int  NOT NULL,--浏览人次
+	[XZRC]  int  NOT NULL,--下载人次
+	[PLRC]  int  NOT NULL,--评论人次
+	[PFRC]  int  NOT NULL,--评分人次
+	[ZYZT]  int  NOT NULL,--资源状态
+	[SHZT]  int  NOT NULL,--审核状态
+	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
+	[SHSJ]  datetime  NOT NULL,--审核时间
+CONSTRAINT [PK_EDU_ZYZX_01_A06_ZYWJ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资源文件下载
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A07_ZYWJXZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A07_ZYWJXZ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[ZYWJID]  int  NOT NULL,--资源文件ID
+	[XZRID]  nvarchar(20)  NOT NULL,--下载人ID
+	[XZSJ]  datetime  NOT NULL,--下载时间
+CONSTRAINT [PK_EDU_ZYZX_01_A07_ZYWJXZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资源文件评论
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A08_ZYWJPL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A08_ZYWJPL](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[ZYWJID]  int  NOT NULL,--资源文件ID
+	[PL]  nvarchar(200)  NOT NULL,--评论
+	[PLRID]  nvarchar(20)  NOT NULL,--评论人ID
+	[PLSJ]  datetime  NOT NULL,--评论时间
+CONSTRAINT [PK_EDU_ZYZX_01_A08_ZYWJPL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资源文件评分
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A09_ZYWJPF]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A09_ZYWJPF](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[ZYWJID]  int  NOT NULL,--资源文件ID
+	[PF]  int  NOT NULL,--评分
+	[PFRID]  nvarchar(20)  NOT NULL,--评分人ID
+	[PFSJ]  datetime  NOT NULL,--评分时间
+CONSTRAINT [PK_EDU_ZYZX_01_A09_ZYWJPF] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--通知公告
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A10_TZGG]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A10_TZGG](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[TITLE]  nvarchar(100)  NOT NULL,--标题
+	[FBRID]  nvarchar(20)  NOT NULL,--发布人ID
+	[FBRXM]  nvarchar(50)  NOT NULL,--发布人姓名
+	[FBBM]  nvarchar(50)  NULL,--发布部门
+	[FBSJ]  datetime  NOT NULL,--发布时间
+	[NR]  text  NULL,--内容
+	[TPDZ]  nvarchar(300)  NULL,--图片地址
+	[DJL]  int  NULL,--点击量
+	[SHZT]  int  NOT NULL,--审核状态
+	[SHRID]  nvarchar(20)  NULL,--审核人ID
+	[SHRXM]  nvarchar(50)  NULL,--审核人姓名
+	[SHSJ]  datetime  NOT NULL,--审核时间
+	[SFXS]  int  NOT NULL,--是否显示
+	[SFZD]  int  NOT NULL,--是否置顶
+CONSTRAINT [PK_EDU_ZYZX_01_A10_TZGG] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--友情链接类型
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A11_YQLJLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A11_YQLJLX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[NAME]  nvarchar(50)  NOT NULL,--类型名
+	[SHOWSTYLE]  int  NOT NULL,--显示方式
+CONSTRAINT [PK_EDU_ZYZX_01_A11_YQLJLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--友情链接
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A12_YQLJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A12_YQLJ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[YQLJLXID]  int  NOT NULL,--友情链接类型ID
+	[TITLE]  nvarchar(50)  NOT NULL,--标题
+	[IMAGEURL]  nvarchar(500)  NULL,--图片
+	[URL]  nvarchar(300)  NOT NULL,--链接
+CONSTRAINT [PK_EDU_ZYZX_01_A12_YQLJ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC,
+	[YQLJLXID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--在线答疑
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A13_ZXDY]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A13_ZXDY](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[WENTI]  nvarchar(500)  NOT NULL,--问题
+	[TWR]  nvarchar(30)  NOT NULL,--提问人
+	[TWSJ]  datetime  NOT NULL,--提问时间
+	[DAAN]  nvarchar(500)  NULL,--答案
+	[HDR]  nvarchar(30)  NOT NULL,--回答人
+	[HDSJ]  datetime  NOT NULL,--回答时间
+	[ZT]  int  NOT NULL,--状态
+CONSTRAINT [PK_EDU_ZYZX_01_A13_ZXDY] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --试题类型表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_02_A01_SJLX]') AND type in (N'U'))
 BEGIN
@@ -7541,6 +7902,202 @@ END
 GO
 
 --以下为添加注释语句
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源目录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'MLMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'父目录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'FMLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'PLSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否首页展示' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFSYZS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否启用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFQY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX', @level2type=N'COLUMN',@level2name=N'LXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源目录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYMLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYBT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'适用对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SYDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'关键字' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'GJZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'JJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'使用限制' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SYXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'来源' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'LY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'拥有者ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'YYZID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源大小' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源路径' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYLJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'WJLXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源评级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYPJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'缩略图' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SLT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览人次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'LLRC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下载人次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'XZRC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论人次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'PLRC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分人次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'PFRC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SHSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件下载' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ', @level2type=N'COLUMN',@level2name=N'ZYWJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下载人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ', @level2type=N'COLUMN',@level2name=N'XZRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下载时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ', @level2type=N'COLUMN',@level2name=N'XZSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件评论' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL', @level2type=N'COLUMN',@level2name=N'ZYWJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL', @level2type=N'COLUMN',@level2name=N'PL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL', @level2type=N'COLUMN',@level2name=N'PLRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A08_ZYWJPL', @level2type=N'COLUMN',@level2name=N'PLSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件评分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF', @level2type=N'COLUMN',@level2name=N'ZYWJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF', @level2type=N'COLUMN',@level2name=N'PF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF', @level2type=N'COLUMN',@level2name=N'PFRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A09_ZYWJPF', @level2type=N'COLUMN',@level2name=N'PFSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'通知公告' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'TITLE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'FBRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布人姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'FBRXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布部门' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'FBBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'FBSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'NR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'TPDZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'点击量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'DJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SHRXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SHSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否显示' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SFXS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否置顶' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A10_TZGG', @level2type=N'COLUMN',@level2name=N'SFZD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'友情链接类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A11_YQLJLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A11_YQLJLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A11_YQLJLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A11_YQLJLX', @level2type=N'COLUMN',@level2name=N'NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'显示方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A11_YQLJLX', @level2type=N'COLUMN',@level2name=N'SHOWSTYLE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'友情链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'友情链接类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ', @level2type=N'COLUMN',@level2name=N'YQLJLXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ', @level2type=N'COLUMN',@level2name=N'TITLE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ', @level2type=N'COLUMN',@level2name=N'IMAGEURL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A12_YQLJ', @level2type=N'COLUMN',@level2name=N'URL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'在线答疑' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'问题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'WENTI'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'提问人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'TWR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'提问时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'TWSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'答案' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'DAAN'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'回答人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'HDR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'回答时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'HDSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A13_ZXDY', @level2type=N'COLUMN',@level2name=N'ZT'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'试题类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A01_SJLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_02_A01_SJLX', @level2type=N'COLUMN',@level2name=N'ID'

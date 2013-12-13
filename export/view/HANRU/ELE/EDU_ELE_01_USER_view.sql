@@ -18,6 +18,8 @@ SELECT a.[LOGINNAME]--用户名
       ,a.[ZJDLSJ]--最近一次登录时间
       ,a.[DLCGCS]--登录成功次数
       ,a.[YHCJSJ]--用户创建时间
+      ,a.[YHRY]--用户荣誉
+      ,a.[YHJF]--用户积分
       ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
       ,c.NAME as c_APP_NAME--应用表 应用名称
       ,c.URL as c_APP_URL--应用表 网址

@@ -38,6 +38,8 @@ SELECT a.[ID]--编号
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -53,6 +55,8 @@ SELECT a.[ID]--编号
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZYZX_02_A03_SJTM AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_03_A01_KCK AS c ON a.KCKID = c.ID /*课程库ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

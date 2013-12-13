@@ -26,6 +26,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_OAXT_14_A01_GRRCXX AS a LEFT OUTER JOIN

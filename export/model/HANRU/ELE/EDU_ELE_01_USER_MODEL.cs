@@ -118,6 +118,16 @@ namespace HanRuEdu.LDAL
             public DateTime YHCJSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "用户荣誉")]
+            public Int32 YHRY { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "用户积分")]
+            public Int32 YHJF { get; set; }
+
+
         }
     }
 }

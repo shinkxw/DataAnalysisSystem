@@ -57,6 +57,8 @@ SELECT a.[ID]--值周人员安排表ID
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXDY_04_A02_ZZRYAP AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

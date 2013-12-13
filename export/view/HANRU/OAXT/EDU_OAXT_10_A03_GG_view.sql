@@ -25,6 +25,8 @@ SELECT a.[ID]--公告ID
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_10_A03_GG AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/

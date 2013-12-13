@@ -36,4 +36,22 @@
             <name="OrderIndex" exp="" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_SYS_02_JFCONFIG" exp="积分配置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="GNMC" exp="功能名称" type="nvarchar(30)" null="F" p="F" />
+            <name="APPID" exp="应用ID" type="int" null="F" p="F" />
+            <name="JF" exp="积分" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_SYS_02_RYCONFIG" exp="荣誉配置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="GNMC" exp="功能名称" type="nvarchar(30)" null="F" p="F" />
+            <name="APPID" exp="应用ID" type="int" null="F" p="F" />
+            <name="RY" exp="荣誉" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

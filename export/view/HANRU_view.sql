@@ -47,6 +47,14 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_05_JC_D
             and   type = 'V')
    drop view VIEW_EDU_ELE_05_JC_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_07_JFBD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ELE_07_JFBD_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_07_RYBD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ELE_07_RYBD_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_01_JLCSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_JPXT_01_01_JLCSJ_DISP
@@ -466,6 +474,34 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXX_04_A01_JGGW_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXX_04_A01_JGGW_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A01_ZYML_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A01_ZYML_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A06_ZYWJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A06_ZYWJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A07_ZYWJXZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A07_ZYWJXZ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A08_ZYWJPL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A08_ZYWJPL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A09_ZYWJPF_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A09_ZYWJPF_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A10_TZGG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A10_TZGG_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_01_A12_YQLJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZYZX_01_A12_YQLJ_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZYZX_02_A02_SJZSD_DISP')
             and   type = 'V')
@@ -1015,6 +1051,8 @@ SELECT a.[LOGINNAME]--用户名
       ,a.[ZJDLSJ]--最近一次登录时间
       ,a.[DLCGCS]--登录成功次数
       ,a.[YHCJSJ]--用户创建时间
+      ,a.[YHRY]--用户荣誉
+      ,a.[YHJF]--用户积分
       ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
       ,c.NAME as c_APP_NAME--应用表 应用名称
       ,c.URL as c_APP_URL--应用表 网址
@@ -1103,6 +1141,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_APP_SCHOOLID--应用表 学校ID
       ,d.NAME as d_APP_NAME--应用表 应用名称
       ,d.URL as d_APP_URL--应用表 网址
@@ -1172,6 +1212,8 @@ SELECT a.[ID]--分组ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_YHFZ_SCHOOLID--用户分组表 学校ID
       ,e.APPID as e_YHFZ_APPID--用户分组表 应用ID
       ,e.YHID as e_YHFZ_YHID--用户分组表 用户ID
@@ -1218,6 +1260,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ELE_02_YHKJDH AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_MODULE AS c ON a.MODULEID = c.ID /*MODULE表ID*/ LEFT OUTER JOIN
@@ -1251,6 +1295,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ELE_03_APPRZ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*操作用户*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -1282,6 +1328,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ELE_03_APPLL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*操作用户*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -1346,6 +1394,94 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ELE_05_JC AS a LEFT OUTER JOIN
       dbo.EDU_ELE_05_SD AS c ON a.SDID = c.ID /*所属时段ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--积分变动表
+CREATE VIEW [dbo].[VIEW_EDU_ELE_07_JFBD_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[APPID]--应用ID
+      ,a.[YHID]--用户ID
+      ,a.[BDSJ]--变动时间
+      ,a.[BDTM]--变动条目
+      ,a.[BDJF]--变动积分
+      ,a.[CZXX]--操作信息
+      ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
+      ,c.NAME as c_APP_NAME--应用表 应用名称
+      ,c.URL as c_APP_URL--应用表 网址
+      ,c.AUTHIP as c_APP_AUTHIP--应用表 限用IP
+      ,c.SM as c_APP_SM--应用表 说明
+      ,c.DLFS as c_APP_DLFS--应用表 登录方式
+      ,c.STATUS as c_APP_STATUS--应用表 应用状态
+      ,c.TYPE as c_APP_TYPE--应用表 应用类别
+      ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
+      ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ELE_07_JFBD AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.YHID = d.LOGINNAME /*用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/
+GO
+
+--荣誉变动表
+CREATE VIEW [dbo].[VIEW_EDU_ELE_07_RYBD_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[APPID]--应用ID
+      ,a.[YHID]--用户ID
+      ,a.[BDSJ]--变动时间
+      ,a.[BDTM]--变动条目
+      ,a.[BDRY]--变动荣誉
+      ,a.[CZXX]--操作信息
+      ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
+      ,c.NAME as c_APP_NAME--应用表 应用名称
+      ,c.URL as c_APP_URL--应用表 网址
+      ,c.AUTHIP as c_APP_AUTHIP--应用表 限用IP
+      ,c.SM as c_APP_SM--应用表 说明
+      ,c.DLFS as c_APP_DLFS--应用表 登录方式
+      ,c.STATUS as c_APP_STATUS--应用表 应用状态
+      ,c.TYPE as c_APP_TYPE--应用表 应用类别
+      ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
+      ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ELE_07_RYBD AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.YHID = d.LOGINNAME /*用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/
 GO
 
 --教练车数据表
@@ -2058,6 +2194,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -2073,6 +2211,8 @@ SELECT a.[SCHOOLID]--学校名
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -2088,6 +2228,8 @@ SELECT a.[SCHOOLID]--学校名
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_02_01_SWCL AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2146,6 +2288,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.MC as e_YBLB_MC--阅办类别代码表 名称
       ,e.SM as e_YBLB_SM--阅办类别代码表 说明
 
@@ -2216,6 +2360,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -2231,6 +2377,8 @@ SELECT a.[SCHOOLID]--学校名
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -2246,6 +2394,8 @@ SELECT a.[SCHOOLID]--学校名
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -2261,6 +2411,8 @@ SELECT a.[SCHOOLID]--学校名
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
       ,h.SCHOOLID as h_USER_SCHOOLID--应用系统用户表 学校ID
       ,h.APPID as h_USER_APPID--应用系统用户表 应用ID
       ,h.PWD as h_USER_PWD--应用系统用户表 密码
@@ -2276,6 +2428,8 @@ SELECT a.[SCHOOLID]--学校名
       ,h.ZJDLSJ as h_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,h.DLCGCS as h_USER_DLCGCS--应用系统用户表 登录成功次数
       ,h.YHCJSJ as h_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,h.YHRY as h_USER_YHRY--应用系统用户表 用户荣誉
+      ,h.YHJF as h_USER_YHJF--应用系统用户表 用户积分
       ,i.MC as i_FSFS_MC--发送方式代码表 名称
       ,j.MC as j_GWFZFS_MC--公文封装方式代码表 名称
 
@@ -2337,6 +2491,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_03_02_HG AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2390,6 +2546,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_03_03_HQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2443,6 +2601,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_03_04_CP AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2496,6 +2656,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_04_01_WJQT AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2550,6 +2712,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -2565,6 +2729,8 @@ SELECT a.[SCHOOLID]--学校名
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_05_01_WJXH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2621,6 +2787,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -2636,6 +2804,8 @@ SELECT a.[SCHOOLID]--学校名
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_06_01_WJJQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -2712,6 +2882,8 @@ SELECT a.[ID]--通知ID
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_10_A01_TZ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.FSRID = c.LOGINNAME /*发送人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
@@ -2754,6 +2926,8 @@ SELECT a.[ID]--通知阅读记录ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_OAXT_10_A02_TZYDJL AS a LEFT OUTER JOIN
@@ -2788,6 +2962,8 @@ SELECT a.[ID]--公告ID
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_10_A03_GG AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
@@ -2826,6 +3002,8 @@ SELECT a.[ID]--邮件ID
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -2841,6 +3019,8 @@ SELECT a.[ID]--邮件ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -2856,6 +3036,8 @@ SELECT a.[ID]--邮件ID
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_OAXT_11_A01_YJ AS a LEFT OUTER JOIN
@@ -2924,6 +3106,8 @@ SELECT a.[ID]--单位ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_13_A01_DWSJ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_13_A01_DWSJ AS c ON a.SJDWID = c.ID /*上级单位ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -2957,6 +3141,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_OAXT_14_A01_GRRCXX AS a LEFT OUTER JOIN
@@ -3207,6 +3393,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_15_A10_ZCBF AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3255,6 +3443,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_15_A12_ZCPDMX AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3388,6 +3578,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -3403,6 +3595,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_LCBZ_SCHOOLID--流程步骤表 学校
       ,f.BZMC as f_LCBZ_BZMC--流程步骤表 步骤名称
       ,f.LCMBID as f_LCBZ_LCMBID--流程步骤表 流程模板ID
@@ -3472,6 +3666,8 @@ SELECT a.[ID]--编号
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -3487,6 +3683,8 @@ SELECT a.[ID]--编号
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_20_A06_LCSHJL AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3546,6 +3744,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -3561,6 +3761,8 @@ SELECT a.[ID]--编号
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_21_A02_QJSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3619,6 +3821,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -3634,6 +3838,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_HYSSJ_SCHOOLID--会议室数据表 学校
       ,f.FJMC as f_HYSSJ_FJMC--会议室数据表 房间名称
       ,f.FJDZ as f_HYSSJ_FJDZ--会议室数据表 房间地址
@@ -3654,6 +3860,8 @@ SELECT a.[ID]--编号
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_22_A02_HYSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3705,6 +3913,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_22_A04_HYJY AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_22_A02_HYSQ AS c ON a.HYID = c.ID /*会议ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3758,6 +3968,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_23_A01_GWSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3808,6 +4020,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_CLSJ_SCHOOLID--车辆数据表 学校
       ,e.CLMC as e_CLSJ_CLMC--车辆数据表 车辆名称
       ,e.CLPP as e_CLSJ_CLPP--车辆数据表 车辆品牌
@@ -3863,6 +4077,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_25_A01_CGSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3892,6 +4108,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_OAXT_31_A01_GRTXL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.GRID = c.LOGINNAME /*个人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -4473,6 +4691,8 @@ SELECT a.[ID]--权限ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_WZXT_MHXT_YHQX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -4569,6 +4789,8 @@ SELECT a.[ID]--值周人员安排表ID
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXDY_04_A02_ZZRYAP AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -4621,6 +4843,8 @@ SELECT a.[ID]--值周岗位分配表ID
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXDY_04_A03_ZZGWFP AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -4661,6 +4885,8 @@ SELECT a.[ID]--特别值周教师表ID
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXDY_04_A05_TBZZJS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -4810,6 +5036,8 @@ SELECT a.[ID]--值周打分单表ID
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXDY_05_A03_ZZDFD AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -7463,6 +7691,352 @@ FROM dbo.EDU_ZXXX_04_A01_JGGW AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
+--资源目录
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A01_ZYML_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[MLMC]--目录名称
+      ,a.[FMLID]--父目录ID
+      ,a.[PLSX]--排列顺序
+      ,a.[SFSYZS]--是否首页展示
+      ,a.[SFQY]--是否启用
+      ,c.SCHOOLID as c_ZYML_SCHOOLID--资源目录 学校
+      ,c.MLMC as c_ZYML_MLMC--资源目录 目录名称
+      ,c.FMLID as c_ZYML_FMLID--资源目录 父目录ID
+      ,c.PLSX as c_ZYML_PLSX--资源目录 排列顺序
+      ,c.SFSYZS as c_ZYML_SFSYZS--资源目录 是否首页展示
+      ,c.SFQY as c_ZYML_SFQY--资源目录 是否启用
+
+FROM dbo.EDU_ZYZX_01_A01_ZYML AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A01_ZYML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--资源文件
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A06_ZYWJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYMLID]--资源目录
+      ,a.[ZYBT]--资源标题
+      ,a.[SYDX]--适用对象
+      ,a.[GJZ]--关键字
+      ,a.[JJ]--简介
+      ,a.[ZYLX]--资源类型
+      ,a.[SYXZ]--使用限制
+      ,a.[LY]--来源
+      ,a.[YYZID]--拥有者ID
+      ,a.[ZYMC]--资源名称
+      ,a.[ZYDX]--资源大小
+      ,a.[ZYLJ]--资源路径
+      ,a.[WJLXID]--文件类型
+      ,a.[ZYPJ]--资源评级
+      ,a.[SLT]--缩略图
+      ,a.[SCSJ]--上传时间
+      ,a.[LLRC]--浏览人次
+      ,a.[XZRC]--下载人次
+      ,a.[PLRC]--评论人次
+      ,a.[PFRC]--评分人次
+      ,a.[ZYZT]--资源状态
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHSJ]--审核时间
+      ,c.SCHOOLID as c_ZYML_SCHOOLID--资源目录 学校
+      ,c.MLMC as c_ZYML_MLMC--资源目录 目录名称
+      ,c.FMLID as c_ZYML_FMLID--资源目录 父目录ID
+      ,c.PLSX as c_ZYML_PLSX--资源目录 排列顺序
+      ,c.SFSYZS as c_ZYML_SFSYZS--资源目录 是否首页展示
+      ,c.SFQY as c_ZYML_SFQY--资源目录 是否启用
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,e.SCHOOLID as e_WJLX_SCHOOLID--文件类型 学校
+      ,e.LXMC as e_WJLX_LXMC--文件类型 类型名称
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,f.PWD as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZYZX_01_A06_ZYWJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A01_ZYML AS c ON a.ZYMLID = c.ID /*资源目录*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.YYZID = d.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A03_WJLX AS e ON a.WJLXID = e.ID /*文件类型*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.SHRID = f.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/
+GO
+
+--资源文件下载
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A07_ZYWJXZ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYWJID]--资源文件ID
+      ,a.[XZRID]--下载人ID
+      ,a.[XZSJ]--下载时间
+      ,c.SCHOOLID as c_ZYWJ_SCHOOLID--资源文件 学校
+      ,c.ZYMLID as c_ZYWJ_ZYMLID--资源文件 资源目录
+      ,c.ZYBT as c_ZYWJ_ZYBT--资源文件 资源标题
+      ,c.SYDX as c_ZYWJ_SYDX--资源文件 适用对象
+      ,c.GJZ as c_ZYWJ_GJZ--资源文件 关键字
+      ,c.JJ as c_ZYWJ_JJ--资源文件 简介
+      ,c.ZYLX as c_ZYWJ_ZYLX--资源文件 资源类型
+      ,c.SYXZ as c_ZYWJ_SYXZ--资源文件 使用限制
+      ,c.LY as c_ZYWJ_LY--资源文件 来源
+      ,c.YYZID as c_ZYWJ_YYZID--资源文件 拥有者ID
+      ,c.ZYMC as c_ZYWJ_ZYMC--资源文件 资源名称
+      ,c.ZYDX as c_ZYWJ_ZYDX--资源文件 资源大小
+      ,c.ZYLJ as c_ZYWJ_ZYLJ--资源文件 资源路径
+      ,c.WJLXID as c_ZYWJ_WJLXID--资源文件 文件类型
+      ,c.ZYPJ as c_ZYWJ_ZYPJ--资源文件 资源评级
+      ,c.SLT as c_ZYWJ_SLT--资源文件 缩略图
+      ,c.SCSJ as c_ZYWJ_SCSJ--资源文件 上传时间
+      ,c.LLRC as c_ZYWJ_LLRC--资源文件 浏览人次
+      ,c.XZRC as c_ZYWJ_XZRC--资源文件 下载人次
+      ,c.PLRC as c_ZYWJ_PLRC--资源文件 评论人次
+      ,c.PFRC as c_ZYWJ_PFRC--资源文件 评分人次
+      ,c.ZYZT as c_ZYWJ_ZYZT--资源文件 资源状态
+      ,c.SHZT as c_ZYWJ_SHZT--资源文件 审核状态
+      ,c.SHRID as c_ZYWJ_SHRID--资源文件 审核人ID
+      ,c.SHSJ as c_ZYWJ_SHSJ--资源文件 审核时间
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZYZX_01_A07_ZYWJXZ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A06_ZYWJ AS c ON a.ZYWJID = c.ID /*资源文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.XZRID = d.LOGINNAME /*下载人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--资源文件评论
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A08_ZYWJPL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYWJID]--资源文件ID
+      ,a.[PL]--评论
+      ,a.[PLRID]--评论人ID
+      ,a.[PLSJ]--评论时间
+      ,c.SCHOOLID as c_ZYWJ_SCHOOLID--资源文件 学校
+      ,c.ZYMLID as c_ZYWJ_ZYMLID--资源文件 资源目录
+      ,c.ZYBT as c_ZYWJ_ZYBT--资源文件 资源标题
+      ,c.SYDX as c_ZYWJ_SYDX--资源文件 适用对象
+      ,c.GJZ as c_ZYWJ_GJZ--资源文件 关键字
+      ,c.JJ as c_ZYWJ_JJ--资源文件 简介
+      ,c.ZYLX as c_ZYWJ_ZYLX--资源文件 资源类型
+      ,c.SYXZ as c_ZYWJ_SYXZ--资源文件 使用限制
+      ,c.LY as c_ZYWJ_LY--资源文件 来源
+      ,c.YYZID as c_ZYWJ_YYZID--资源文件 拥有者ID
+      ,c.ZYMC as c_ZYWJ_ZYMC--资源文件 资源名称
+      ,c.ZYDX as c_ZYWJ_ZYDX--资源文件 资源大小
+      ,c.ZYLJ as c_ZYWJ_ZYLJ--资源文件 资源路径
+      ,c.WJLXID as c_ZYWJ_WJLXID--资源文件 文件类型
+      ,c.ZYPJ as c_ZYWJ_ZYPJ--资源文件 资源评级
+      ,c.SLT as c_ZYWJ_SLT--资源文件 缩略图
+      ,c.SCSJ as c_ZYWJ_SCSJ--资源文件 上传时间
+      ,c.LLRC as c_ZYWJ_LLRC--资源文件 浏览人次
+      ,c.XZRC as c_ZYWJ_XZRC--资源文件 下载人次
+      ,c.PLRC as c_ZYWJ_PLRC--资源文件 评论人次
+      ,c.PFRC as c_ZYWJ_PFRC--资源文件 评分人次
+      ,c.ZYZT as c_ZYWJ_ZYZT--资源文件 资源状态
+      ,c.SHZT as c_ZYWJ_SHZT--资源文件 审核状态
+      ,c.SHRID as c_ZYWJ_SHRID--资源文件 审核人ID
+      ,c.SHSJ as c_ZYWJ_SHSJ--资源文件 审核时间
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZYZX_01_A08_ZYWJPL AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A06_ZYWJ AS c ON a.ZYWJID = c.ID /*资源文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.PLRID = d.LOGINNAME /*评论人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--资源文件评分
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A09_ZYWJPF_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYWJID]--资源文件ID
+      ,a.[PF]--评分
+      ,a.[PFRID]--评分人ID
+      ,a.[PFSJ]--评分时间
+      ,c.SCHOOLID as c_ZYWJ_SCHOOLID--资源文件 学校
+      ,c.ZYMLID as c_ZYWJ_ZYMLID--资源文件 资源目录
+      ,c.ZYBT as c_ZYWJ_ZYBT--资源文件 资源标题
+      ,c.SYDX as c_ZYWJ_SYDX--资源文件 适用对象
+      ,c.GJZ as c_ZYWJ_GJZ--资源文件 关键字
+      ,c.JJ as c_ZYWJ_JJ--资源文件 简介
+      ,c.ZYLX as c_ZYWJ_ZYLX--资源文件 资源类型
+      ,c.SYXZ as c_ZYWJ_SYXZ--资源文件 使用限制
+      ,c.LY as c_ZYWJ_LY--资源文件 来源
+      ,c.YYZID as c_ZYWJ_YYZID--资源文件 拥有者ID
+      ,c.ZYMC as c_ZYWJ_ZYMC--资源文件 资源名称
+      ,c.ZYDX as c_ZYWJ_ZYDX--资源文件 资源大小
+      ,c.ZYLJ as c_ZYWJ_ZYLJ--资源文件 资源路径
+      ,c.WJLXID as c_ZYWJ_WJLXID--资源文件 文件类型
+      ,c.ZYPJ as c_ZYWJ_ZYPJ--资源文件 资源评级
+      ,c.SLT as c_ZYWJ_SLT--资源文件 缩略图
+      ,c.SCSJ as c_ZYWJ_SCSJ--资源文件 上传时间
+      ,c.LLRC as c_ZYWJ_LLRC--资源文件 浏览人次
+      ,c.XZRC as c_ZYWJ_XZRC--资源文件 下载人次
+      ,c.PLRC as c_ZYWJ_PLRC--资源文件 评论人次
+      ,c.PFRC as c_ZYWJ_PFRC--资源文件 评分人次
+      ,c.ZYZT as c_ZYWJ_ZYZT--资源文件 资源状态
+      ,c.SHZT as c_ZYWJ_SHZT--资源文件 审核状态
+      ,c.SHRID as c_ZYWJ_SHRID--资源文件 审核人ID
+      ,c.SHSJ as c_ZYWJ_SHSJ--资源文件 审核时间
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZYZX_01_A09_ZYWJPF AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A06_ZYWJ AS c ON a.ZYWJID = c.ID /*资源文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.PFRID = d.LOGINNAME /*评分人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--通知公告
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A10_TZGG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[TITLE]--标题
+      ,a.[FBRID]--发布人ID
+      ,a.[FBRXM]--发布人姓名
+      ,a.[FBBM]--发布部门
+      ,a.[FBSJ]--发布时间
+      ,a.[NR]--内容
+      ,a.[TPDZ]--图片地址
+      ,a.[DJL]--点击量
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHRXM]--审核人姓名
+      ,a.[SHSJ]--审核时间
+      ,a.[SFXS]--是否显示
+      ,a.[SFZD]--是否置顶
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZYZX_01_A10_TZGG AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SHRID = d.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/
+GO
+
+--友情链接
+CREATE VIEW [dbo].[VIEW_EDU_ZYZX_01_A12_YQLJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[YQLJLXID]--友情链接类型ID
+      ,a.[TITLE]--标题
+      ,a.[IMAGEURL]--图片
+      ,a.[URL]--链接
+      ,c.SCHOOLID as c_YQLJLX_SCHOOLID--友情链接类型 学校名
+      ,c.NAME as c_YQLJLX_NAME--友情链接类型 类型名
+      ,c.SHOWSTYLE as c_YQLJLX_SHOWSTYLE--友情链接类型 显示方式
+
+FROM dbo.EDU_ZYZX_01_A12_YQLJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZYZX_01_A11_YQLJLX AS c ON a.YQLJLXID = c.ID /*友情链接类型ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
 --试卷知识点表
 CREATE VIEW [dbo].[VIEW_EDU_ZYZX_02_A02_SJZSD_DISP]
 AS
@@ -7517,6 +8091,8 @@ SELECT a.[ID]--编号
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -7532,6 +8108,8 @@ SELECT a.[ID]--编号
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZYZX_02_A03_SJTM AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_03_A01_KCK AS c ON a.KCKID = c.ID /*课程库ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -7576,6 +8154,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -7591,6 +8171,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZYZX_02_A04_SJ AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_03_A01_KCK AS c ON a.KCKID = c.ID /*课程库ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -11581,6 +12163,8 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZZJX_01_A01_KCPJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.PJR = c.LOGINNAME /*评价人*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
@@ -16335,6 +16919,8 @@ SELECT a.[ID]--编号
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZZJX_35_A02_GKKSQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_35_A01_TKXZ AS c ON a.TKXZID = c.ID /*听课小组ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22692,6 +23278,8 @@ SELECT a.[ID]--编号
       ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZXX_10_A01_XYAQSJ AS a LEFT OUTER JOIN

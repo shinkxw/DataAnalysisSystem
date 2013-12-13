@@ -57,6 +57,8 @@ SELECT a.[SCHOOLID]--学校名
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -72,6 +74,8 @@ SELECT a.[SCHOOLID]--学校名
       ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -87,6 +91,8 @@ SELECT a.[SCHOOLID]--学校名
       ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -102,6 +108,8 @@ SELECT a.[SCHOOLID]--学校名
       ,g.ZJDLSJ as g_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,g.DLCGCS as g_USER_DLCGCS--应用系统用户表 登录成功次数
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
+      ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
       ,h.SCHOOLID as h_USER_SCHOOLID--应用系统用户表 学校ID
       ,h.APPID as h_USER_APPID--应用系统用户表 应用ID
       ,h.PWD as h_USER_PWD--应用系统用户表 密码
@@ -117,6 +125,8 @@ SELECT a.[SCHOOLID]--学校名
       ,h.ZJDLSJ as h_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,h.DLCGCS as h_USER_DLCGCS--应用系统用户表 登录成功次数
       ,h.YHCJSJ as h_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,h.YHRY as h_USER_YHRY--应用系统用户表 用户荣誉
+      ,h.YHJF as h_USER_YHJF--应用系统用户表 用户积分
       ,i.MC as i_FSFS_MC--发送方式代码表 名称
       ,j.MC as j_GWFZFS_MC--公文封装方式代码表 名称
 

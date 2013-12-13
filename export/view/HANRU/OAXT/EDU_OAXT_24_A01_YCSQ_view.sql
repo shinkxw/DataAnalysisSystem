@@ -43,6 +43,8 @@ SELECT a.[ID]--编号
       ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
       ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_CLSJ_SCHOOLID--车辆数据表 学校
       ,e.CLMC as e_CLSJ_CLMC--车辆数据表 车辆名称
       ,e.CLPP as e_CLSJ_CLPP--车辆数据表 车辆品牌
