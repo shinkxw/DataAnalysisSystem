@@ -50,8 +50,8 @@
     </table>
     <table name="EDU_ZYZX_01_A07_ZYWJXZ" exp="资源文件下载">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="ZYWJID" exp="资源文件ID" type="int" null="F" p="F" />
             <name="XZRID" exp="下载人ID" type="nvarchar(20)" null="F" p="F" />
             <name="XZSJ" exp="下载时间" type="datetime" null="F" p="F" />
@@ -59,8 +59,8 @@
     </table>
     <table name="EDU_ZYZX_01_A08_ZYWJPL" exp="资源文件评论">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="ZYWJID" exp="资源文件ID" type="int" null="F" p="F" />
             <name="PL" exp="评论" type="nvarchar(200)" null="F" p="F" />
             <name="PLRID" exp="评论人ID" type="nvarchar(20)" null="F" p="F" />
@@ -69,8 +69,8 @@
     </table>
     <table name="EDU_ZYZX_01_A09_ZYWJPF" exp="资源文件评分">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="ZYWJID" exp="资源文件ID" type="int" null="F" p="F" />
             <name="PF" exp="评分" type="int" null="F" p="F" />
             <name="PFRID" exp="评分人ID" type="nvarchar(20)" null="F" p="F" />

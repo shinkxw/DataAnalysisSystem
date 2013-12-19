@@ -203,3 +203,17 @@ EDU_ELE_07_RYBD  荣誉变动表
   BDRY          变动荣誉                int            非主
   CZXX          操作信息                text           非主
 
+EDU_ELE_08_JFCONFIG  积分配置表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键
+  GNMC          功能名称                nvarchar(30)   非主
+  APPID         应用ID                  int            非主
+  JF            积分                    int            非主
+
+EDU_ELE_08_RYCONFIG  荣誉配置表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键
+  GNMC          功能名称                nvarchar(30)   非主
+  APPID         应用ID                  int            非主
+  RY            荣誉                    int            非主
+

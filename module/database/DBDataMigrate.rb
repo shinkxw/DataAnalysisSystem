@@ -49,8 +49,8 @@ class DBDataMigrate
     istr = ''
     data_arr.each do |data|
       istr << prefix_str
-      istr << "[AUTHOR] = '#{data[7]}'\n"
-      istr << "WHERE ID='#{data[0]}' and SCHOOLID='1' and WEBID='3'\nGO\n"
+      istr << "[CONTENT] = '#{data[1]}'\n"
+      istr << "WHERE ID='#{data[0]}' and SCHOOLID='1' and WEBID='101'\nGO\n"
     end
     FileWriter.new(Dir.pwd << "/QY/#{table_name}.sql").write_str(istr)
   end

@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_SYS_02_JFCONFIG_metadata))]
-    public partial class EDU_SYS_02_JFCONFIG
+    [MetadataType(typeof(EDU_ELE_08_JFCONFIG_metadata))]
+    public partial class EDU_ELE_08_JFCONFIG
     {
-        public EDU_SYS_02_JFCONFIG()
+        public EDU_ELE_08_JFCONFIG()
         {
             GNMC = "";
         }
-        public class EDU_SYS_02_JFCONFIG_metadata
+        public class EDU_ELE_08_JFCONFIG_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

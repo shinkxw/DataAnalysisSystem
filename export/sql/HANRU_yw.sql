@@ -104,6 +104,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_07_RYBD')
             and   type = 'U')
    drop table EDU_ELE_07_RYBD
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_08_JFCONFIG')
+            and   type = 'U')
+   drop table EDU_ELE_08_JFCONFIG
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_08_RYCONFIG')
+            and   type = 'U')
+   drop table EDU_ELE_08_RYCONFIG
+go
 --应用系统用户表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_USER]') AND type in (N'U'))
 BEGIN
@@ -537,6 +547,42 @@ CONSTRAINT [PK_EDU_ELE_07_RYBD] PRIMARY KEY CLUSTERED
 END
 GO
 
+--积分配置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_08_JFCONFIG]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_08_JFCONFIG](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[GNMC]  nvarchar(30)  NOT NULL,--功能名称
+	[APPID]  int  NOT NULL,--应用ID
+	[JF]  int  NOT NULL,--积分
+CONSTRAINT [PK_EDU_ELE_08_JFCONFIG] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--荣誉配置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_08_RYCONFIG]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_08_RYCONFIG](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校名
+	[GNMC]  nvarchar(30)  NOT NULL,--功能名称
+	[APPID]  int  NOT NULL,--应用ID
+	[RY]  int  NOT NULL,--荣誉
+CONSTRAINT [PK_EDU_ELE_08_RYCONFIG] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用系统用户表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER'
 GO
@@ -905,6 +951,30 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'变动荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'BDRY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作信息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_07_RYBD', @level2type=N'COLUMN',@level2name=N'CZXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'积分配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_JFCONFIG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_JFCONFIG', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_JFCONFIG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_JFCONFIG', @level2type=N'COLUMN',@level2name=N'GNMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_JFCONFIG', @level2type=N'COLUMN',@level2name=N'APPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'积分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_JFCONFIG', @level2type=N'COLUMN',@level2name=N'JF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'荣誉配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'GNMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'APPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'RY'
 GO
 --空间名：EDU_JPXT  生成器：SqlBuilder0.1
 
@@ -7658,15 +7728,14 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A07_ZYWJXZ]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZYZX_01_A07_ZYWJXZ](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[ZYWJID]  int  NOT NULL,--资源文件ID
 	[XZRID]  nvarchar(20)  NOT NULL,--下载人ID
 	[XZSJ]  datetime  NOT NULL,--下载时间
 CONSTRAINT [PK_EDU_ZYZX_01_A07_ZYWJXZ] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -7676,7 +7745,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A08_ZYWJPL]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZYZX_01_A08_ZYWJPL](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[ZYWJID]  int  NOT NULL,--资源文件ID
 	[PL]  nvarchar(200)  NOT NULL,--评论
@@ -7684,8 +7753,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_01_A08_ZYWJPL](
 	[PLSJ]  datetime  NOT NULL,--评论时间
 CONSTRAINT [PK_EDU_ZYZX_01_A08_ZYWJPL] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -7695,7 +7763,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A09_ZYWJPF]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZYZX_01_A09_ZYWJPF](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[ZYWJID]  int  NOT NULL,--资源文件ID
 	[PF]  int  NOT NULL,--评分
@@ -7703,8 +7771,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_01_A09_ZYWJPF](
 	[PFSJ]  datetime  NOT NULL,--评分时间
 CONSTRAINT [PK_EDU_ZYZX_01_A09_ZYWJPF] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END

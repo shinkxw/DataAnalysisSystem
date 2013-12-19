@@ -1,4 +1,9 @@
-
+  #мЬу╬ндуб
+  md.get_table_info('EDU_WZXT_MHXT_WZWZ')
+  config = { ID: { fn: 'ID', p: Proc.new{|str| str}},
+           CONTENT: { fn: 'CONTENT', p: 'content'},
+           }
+  md.update_data('EDU_WZXT_MHXT_WZWZ',config)
   
   md = DBDataMigrate.new(db)
   #мЬу╬ндуб

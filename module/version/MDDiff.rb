@@ -61,11 +61,7 @@ class MDDiff
     when 'p'
       @rebuild_table_arr << f2.table
     when 'identity'
-      if f1.identity == 'T'
-        @rebuild_table_arr << f2.table
-      else
-        puts "无法设置已有字段为自增属性"
-      end
+      @rebuild_table_arr << f2.table
     else puts "#{dp}属性差异暂时无法更新"
     end
   end
