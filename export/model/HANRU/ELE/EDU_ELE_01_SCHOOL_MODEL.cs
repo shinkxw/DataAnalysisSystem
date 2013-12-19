@@ -100,6 +100,12 @@ namespace HanRuEdu.LDAL
             public String LOGO { get; set; }
 
 
+            [Display(Name = "Ê¶±ð´úÂë")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SBDM { get; set; }
+
+
         }
     }
 }
