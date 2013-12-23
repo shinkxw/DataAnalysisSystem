@@ -187,7 +187,6 @@ CREATE TABLE [dbo].[EDU_ELE_01_SCHOOL](
 	[CreateTime]  datetime  NOT NULL,--开户时间
 	[YXTID]  nvarchar(500)  NOT NULL,--翼校通ID
 	[LOGO]  nvarchar(500)  NOT NULL,--图标
-	[SBDM]  nvarchar(50)  NULL,--识别代码
 CONSTRAINT [PK_EDU_ELE_01_SCHOOL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC
@@ -676,8 +675,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'翼校通ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'YXTID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图标' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'LOGO'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'识别代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL', @level2type=N'COLUMN',@level2name=N'SBDM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_XQ'
 GO

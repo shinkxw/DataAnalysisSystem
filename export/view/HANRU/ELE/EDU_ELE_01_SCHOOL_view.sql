@@ -16,7 +16,6 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[CreateTime]--开户时间
       ,a.[YXTID]--翼校通ID
       ,a.[LOGO]--图标
-      ,a.[SBDM]--识别代码
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

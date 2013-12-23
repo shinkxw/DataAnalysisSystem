@@ -53,7 +53,6 @@
             <name="CreateTime" exp="开户时间" type="datetime" null="F" p="F" />
             <name="YXTID" exp="翼校通ID" type="nvarchar(500)" null="F" p="F" />
             <name="LOGO" exp="图标" type="nvarchar(500)" null="F" p="F" />
-            <name="SBDM" exp="识别代码" type="nvarchar(50)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_XQ" exp="学期数据表">
