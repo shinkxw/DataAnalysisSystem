@@ -60,6 +60,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_03_APPLL')
    drop table EDU_ELE_03_APPLL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_03_GNFW')
+            and   type = 'U')
+   drop table EDU_ELE_03_GNFW
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_03_XNJS')
+            and   type = 'U')
+   drop table EDU_ELE_03_XNJS
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_04_PKJGJL')
             and   type = 'U')
    drop table EDU_ELE_04_PKJGJL
@@ -364,6 +374,43 @@ CREATE TABLE [dbo].[EDU_ELE_03_APPLL](
 	[CZBM]  nvarchar(100)  NOT NULL,--操作表名
 	[CZXX]  text  NOT NULL,--操作信息
 CONSTRAINT [PK_EDU_ELE_03_APPLL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--功能访问表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_03_GNFW]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_03_GNFW](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[APPID]  int  NOT NULL,--应用ID
+	[MODULEID]  int  NOT NULL,--功能ID
+	[NAME]  nvarchar(20)  NOT NULL,--功能名称
+	[LINK]  nvarchar(100)  NOT NULL,--地址
+	[FWL]  int  NOT NULL,--访问量
+CONSTRAINT [PK_EDU_ELE_03_GNFW] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--性能监视表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_03_XNJS]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_03_XNJS](
+	[ID]  int  identity,--编号
+	[JLSJ]  datetime  NOT NULL,--记录时间
+	[CPUSYL]  decimal(5, 2)  NOT NULL,--CPU使用率
+	[NCSYL]  decimal(5, 2)  NOT NULL,--内存使用率
+	[ZXRS]  int  NOT NULL,--在线人数
+	[QQS]  int  NOT NULL,--请求数
+CONSTRAINT [PK_EDU_ELE_03_XNJS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -811,6 +858,36 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作表名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_APPLL', @level2type=N'COLUMN',@level2name=N'CZBM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作信息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_APPLL', @level2type=N'COLUMN',@level2name=N'CZXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能访问表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'APPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'MODULEID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'LINK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'访问量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_GNFW', @level2type=N'COLUMN',@level2name=N'FWL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'性能监视表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'记录时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'JLSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'CPU使用率' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'CPUSYL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内存使用率' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'NCSYL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'在线人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'ZXRS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'请求数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'QQS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排课结果记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL'
 GO
