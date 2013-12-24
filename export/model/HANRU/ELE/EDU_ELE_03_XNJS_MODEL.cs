@@ -25,14 +25,22 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "CPU使用率")]
-            [Range(typeof(decimal), "0", "99999")]
-            public decimal CPUSYL { get; set; }
+            public float CPUSYL { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "内存使用率")]
-            [Range(typeof(decimal), "0", "99999")]
-            public decimal NCSYL { get; set; }
+            public float NCSYL { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "磁盘读取速度")]
+            public float CPDQSD { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "磁盘写入速度")]
+            public float CPXRSD { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

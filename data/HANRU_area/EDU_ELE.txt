@@ -152,7 +152,7 @@
     </table>
     <table name="EDU_ELE_03_GNFW" exp="功能访问表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="APPID" exp="应用ID" type="int" null="F" p="F" />
             <name="MODULEID" exp="功能ID" type="int" null="F" p="F" />
@@ -165,8 +165,10 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="JLSJ" exp="记录时间" type="datetime" null="F" p="F" />
-            <name="CPUSYL" exp="CPU使用率" type="decimal(5, 2)" null="F" p="F" />
-            <name="NCSYL" exp="内存使用率" type="decimal(5, 2)" null="F" p="F" />
+            <name="CPUSYL" exp="CPU使用率" type="float" null="F" p="F" />
+            <name="NCSYL" exp="内存使用率" type="float" null="F" p="F" />
+            <name="CPDQSD" exp="磁盘读取速度" type="float" null="F" p="F" />
+            <name="CPXRSD" exp="磁盘写入速度" type="float" null="F" p="F" />
             <name="ZXRS" exp="在线人数" type="int" null="F" p="F" />
             <name="QQS" exp="请求数" type="int" null="F" p="F" />
         </field_area>

@@ -55,6 +55,7 @@ class ModelBuilder
           @model_str << "            [StringLength(#{type[1]})]\n"
         elsif type[0] == "decimal"
           @model_str << %(            [Range(typeof(decimal), "#{type[1]}", "#{type[2]}")]\n)
+        elsif type[0] == "float"
         elsif type[0] == "UN"
           p "ModelBuilder: this type cannot be analyze: #{type[0]}"
         end

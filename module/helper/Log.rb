@@ -20,4 +20,7 @@ class Log
     @log_arr.push(log)
     puts log
   end
+  def << (log)
+    push log
+  end
 end

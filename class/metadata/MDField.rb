@@ -63,7 +63,7 @@ class MDField
     return @default if has_default?#如果字段存在存在默认值，则返回默认值
     @type =~ /([^(]+?)(?:\((.+?)\)|$)/
     case $1
-    when 'int','decimal','money' then return '0'
+    when 'int','decimal','money','float' then return '0'
     when 'nchar','nvarchar','text','datetime' then return "''"
     else 
       puts "MDField: 类型#{$1}没有设置默认值！"
@@ -82,6 +82,7 @@ class MDField
     when 'text';result = ['String']
     when 'money';result = ['decimal','0','9999999']
     when 'nchar','nvarchar';result = ['String',value]
+    when 'float';result = ['float']
     when 'decimal'
       if value =~ /(.+?),(.+?)/
         zw = $1.to_i

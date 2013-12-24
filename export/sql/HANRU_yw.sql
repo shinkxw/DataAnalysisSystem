@@ -385,7 +385,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_03_GNFW]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ELE_03_GNFW](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[APPID]  int  NOT NULL,--应用ID
 	[MODULEID]  int  NOT NULL,--功能ID
@@ -406,8 +406,10 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ELE_03_XNJS](
 	[ID]  int  identity,--编号
 	[JLSJ]  datetime  NOT NULL,--记录时间
-	[CPUSYL]  decimal(5, 2)  NOT NULL,--CPU使用率
-	[NCSYL]  decimal(5, 2)  NOT NULL,--内存使用率
+	[CPUSYL]  float  NOT NULL,--CPU使用率
+	[NCSYL]  float  NOT NULL,--内存使用率
+	[CPDQSD]  float  NOT NULL,--磁盘读取速度
+	[CPXRSD]  float  NOT NULL,--磁盘写入速度
 	[ZXRS]  int  NOT NULL,--在线人数
 	[QQS]  int  NOT NULL,--请求数
 CONSTRAINT [PK_EDU_ELE_03_XNJS] PRIMARY KEY CLUSTERED
@@ -884,6 +886,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'CPU使用率' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'CPUSYL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内存使用率' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'NCSYL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'磁盘读取速度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'CPDQSD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'磁盘写入速度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'CPXRSD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'在线人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'ZXRS'
 GO
