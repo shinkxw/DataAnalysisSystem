@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             HDMC = "";
             HDNR = "";
             SCSJ = new DateTime(1900, 1, 1);
+            HDSJ = new DateTime(1900, 1, 1);
         }
         public class EDU_ZZJG_17_A06_DZBHDXX_metadata
         {
@@ -56,6 +57,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "上传时间")]
             public DateTime SCSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "活动时间")]
+            public DateTime HDSJ { get; set; }
 
 
         }

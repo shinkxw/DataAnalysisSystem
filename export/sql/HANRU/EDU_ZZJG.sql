@@ -869,6 +869,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_17_A06_DZBHDXX](
 	[HDNR]  text  NOT NULL,--活动内容
 	[SCJSID]  int  NOT NULL,--上传教师ID
 	[SCSJ]  datetime  NOT NULL,--上传时间
+	[HDSJ]  datetime  NOT NULL,--活动时间
 CONSTRAINT [PK_EDU_ZZJG_17_A06_DZBHDXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1578,6 +1579,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_17_A06_DZBHDXX', @level2type=N'COLUMN',@level2name=N'SCJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_17_A06_DZBHDXX', @level2type=N'COLUMN',@level2name=N'SCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'活动时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_17_A06_DZBHDXX', @level2type=N'COLUMN',@level2name=N'HDSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师个人荣誉表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY'
 GO

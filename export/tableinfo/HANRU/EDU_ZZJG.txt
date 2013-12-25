@@ -343,6 +343,7 @@ EDU_ZZJG_17_A06_DZBHDXX  党支部活动信息表
   HDNR          活动内容                text           非主
   SCJSID        上传教师ID              int            非主        教职工基本数据子类表
   SCSJ          上传时间                datetime       非主
+  HDSJ          活动时间                datetime       非主
 
 EDU_ZZJG_18_A01_JSGRRY  教师个人荣誉表
   ID            编号                    int            主键
