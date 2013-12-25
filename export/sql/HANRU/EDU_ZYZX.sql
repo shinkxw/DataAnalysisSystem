@@ -140,6 +140,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_01_A06_ZYWJ](
 	[SHZT]  int  NOT NULL,--审核状态
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
 	[SHSJ]  datetime  NOT NULL,--审核时间
+	[ZYDXKB]  int  NOT NULL,--资源大小(KB)
 CONSTRAINT [PK_EDU_ZYZX_01_A06_ZYWJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -471,6 +472,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SHRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'SHSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源大小(KB)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A06_ZYWJ', @level2type=N'COLUMN',@level2name=N'ZYDXKB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源文件下载' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A07_ZYWJXZ'
 GO

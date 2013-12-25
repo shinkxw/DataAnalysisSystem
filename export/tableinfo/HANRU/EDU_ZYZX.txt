@@ -39,6 +39,7 @@ EDU_ZYZX_01_A06_ZYWJ  资源文件
   SHZT          审核状态                int            非主
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
   SHSJ          审核时间                datetime       非主
+  ZYDXKB        资源大小(KB)            int            非主
 
 EDU_ZYZX_01_A07_ZYWJXZ  资源文件下载
   ID            编号                    int            自增主键

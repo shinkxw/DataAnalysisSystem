@@ -28,6 +28,7 @@ SELECT a.[ID]--编号
       ,a.[SHZT]--审核状态
       ,a.[SHRID]--审核人ID
       ,a.[SHSJ]--审核时间
+      ,a.[ZYDXKB]--资源大小(KB)
       ,c.SCHOOLID as c_ZYML_SCHOOLID--资源目录 学校
       ,c.MLMC as c_ZYML_MLMC--资源目录 目录名称
       ,c.FMLID as c_ZYML_FMLID--资源目录 父目录ID

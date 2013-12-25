@@ -46,6 +46,7 @@
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
             <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="ZYDXKB" exp="资源大小(KB)" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_01_A07_ZYWJXZ" exp="资源文件下载">

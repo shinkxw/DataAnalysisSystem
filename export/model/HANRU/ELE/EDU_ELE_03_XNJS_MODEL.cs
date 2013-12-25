@@ -48,11 +48,6 @@ namespace HanRuEdu.LDAL
             public Int32 ZXRS { get; set; }
 
 
-            [Required(ErrorMessage = "±ØÌî")]
-            [Display(Name = "ÇëÇóÊı")]
-            public Int32 QQS { get; set; }
-
-
         }
     }
 }

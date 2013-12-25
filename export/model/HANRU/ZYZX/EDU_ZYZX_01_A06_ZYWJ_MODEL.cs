@@ -177,6 +177,11 @@ namespace HanRuEdu.LDAL
             public DateTime SHSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "资源大小(KB)")]
+            public Int32 ZYDXKB { get; set; }
+
+
         }
     }
 }

@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,c.SHZT as c_ZYWJ_SHZT--资源文件 审核状态
       ,c.SHRID as c_ZYWJ_SHRID--资源文件 审核人ID
       ,c.SHSJ as c_ZYWJ_SHSJ--资源文件 审核时间
+      ,c.ZYDXKB as c_ZYWJ_ZYDXKB--资源文件 资源大小(KB)
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码

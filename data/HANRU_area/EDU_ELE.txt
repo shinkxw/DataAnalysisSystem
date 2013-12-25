@@ -170,7 +170,6 @@
             <name="CPDQSD" exp="磁盘读取速度" type="float" null="F" p="F" />
             <name="CPXRSD" exp="磁盘写入速度" type="float" null="F" p="F" />
             <name="ZXRS" exp="在线人数" type="int" null="F" p="F" />
-            <name="QQS" exp="请求数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_04_PKJGJL" exp="排课结果记录表">
