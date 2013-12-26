@@ -37,7 +37,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "¿¼ÆÀ·ÖÖµ")]
-            public Int32 KPFZID { get; set; }
+            public Int32 KPFZ { get; set; }
 
 
         }

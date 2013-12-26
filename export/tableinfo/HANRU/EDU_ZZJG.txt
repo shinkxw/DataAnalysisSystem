@@ -91,18 +91,12 @@ EDU_ZZJG_07_01_JZGZYNL  教职工专业能力与资格证书数据类表
   ZSBZ          证书备注                text           非主
   SFSZYZGZS     是否是职业资格证书      nvarchar(1)    非主        是否标志代码表
 
-EDU_ZZJG_11_A01_KPFZ  考评分值表
-  ID            编号                    int            主键
-  SCHOOLID      学校                    int            主键        学校配置表
-  FZMC          分值名称                nvarchar(20)   非主
-  FSZ           分数值                  int            非主
-
 EDU_ZZJG_11_A02_KPXX  考评选项表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   XXMC          选项名称                nvarchar(20)   非主
   KPFSID        考评方式ID              int            非主        考评方式表
-  KPFZID        考评分值ID              int            非主        考评分值表
+  KPFZ          考评分值                int            非主
 
 EDU_ZZJG_11_A03_KPFS  考评方式表
   ID            编号                    int            主键

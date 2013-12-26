@@ -774,12 +774,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
   SFSZYZGZS      EDU_JY_SFBZ                        DM
-<EDU_ZZJG_11_A01_KPFZ
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_11_A02_KPXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KPFSID         EDU_ZZJG_11_A03_KPFS               ID
-  KPFZID         EDU_ZZJG_11_A01_KPFZ               ID
 <EDU_ZZJG_11_A03_KPFS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_11_A04_KPSJ

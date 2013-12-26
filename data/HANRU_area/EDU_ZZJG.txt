@@ -105,21 +105,13 @@
             <name="SFSZYZGZS" exp="是否是职业资格证书" type="nvarchar(1)" null="F" p="F" remark="是否是职业资格证书 编号：ZZJG070006 值空间：JY/T1001SFBZ是否标志代码 " />
         </field_area>
     </table>
-    <table name="EDU_ZZJG_11_A01_KPFZ" exp="考评分值表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="FZMC" exp="分值名称" type="nvarchar(20)" null="F" p="F" />
-            <name="FSZ" exp="分数值" type="int" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZJG_11_A02_KPXX" exp="考评选项表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="XXMC" exp="选项名称" type="nvarchar(20)" null="F" p="F" />
             <name="KPFSID" exp="考评方式ID" type="int" null="F" p="F" />
-            <name="KPFZID" exp="考评分值ID" type="int" null="F" p="F" />
+            <name="KPFZ" exp="考评分值" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_11_A03_KPFS" exp="考评方式表">

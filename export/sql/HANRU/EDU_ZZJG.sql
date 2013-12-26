@@ -30,11 +30,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_07_01_JZGZY
    drop table EDU_ZZJG_07_01_JZGZYNL
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_11_A01_KPFZ')
-            and   type = 'U')
-   drop table EDU_ZZJG_11_A01_KPFZ
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_11_A02_KPXX')
             and   type = 'U')
    drop table EDU_ZZJG_11_A02_KPXX
@@ -339,23 +334,6 @@ CONSTRAINT [PK_EDU_ZZJG_07_01_JZGZYNL] PRIMARY KEY CLUSTERED
 END
 GO
 
---考评分值表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_11_A01_KPFZ]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZJG_11_A01_KPFZ](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校
-	[FZMC]  nvarchar(20)  NOT NULL,--分值名称
-	[FSZ]  int  NOT NULL,--分数值
-CONSTRAINT [PK_EDU_ZZJG_11_A01_KPFZ] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
 --考评选项表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_11_A02_KPXX]') AND type in (N'U'))
 BEGIN
@@ -364,7 +342,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_11_A02_KPXX](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[XXMC]  nvarchar(20)  NOT NULL,--选项名称
 	[KPFSID]  int  NOT NULL,--考评方式ID
-	[KPFZID]  int  NOT NULL,--考评分值ID
+	[KPFZ]  int  NOT NULL,--考评分值
 CONSTRAINT [PK_EDU_ZZJG_11_A02_KPXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1126,16 +1104,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'证书备注' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否是职业资格证书' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_07_01_JZGZYNL', @level2type=N'COLUMN',@level2name=N'SFSZYZGZS'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评分值表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A01_KPFZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A01_KPFZ', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A01_KPFZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A01_KPFZ', @level2type=N'COLUMN',@level2name=N'FZMC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分数值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A01_KPFZ', @level2type=N'COLUMN',@level2name=N'FSZ'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评选项表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A02_KPXX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A02_KPXX', @level2type=N'COLUMN',@level2name=N'ID'
@@ -1146,7 +1114,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项名称' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评方式ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A02_KPXX', @level2type=N'COLUMN',@level2name=N'KPFSID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评分值ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A02_KPXX', @level2type=N'COLUMN',@level2name=N'KPFZID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A02_KPXX', @level2type=N'COLUMN',@level2name=N'KPFZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评方式表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_11_A03_KPFS'
 GO
