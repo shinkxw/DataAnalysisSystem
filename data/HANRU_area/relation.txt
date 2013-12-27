@@ -896,6 +896,10 @@
 <EDU_ZZJG_18_A04_JSRGJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJG_19_A01_JJFFJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
+  SFTZG          EDU_JY_SFBZ                        DM
 <EDU_ZZJX_01_01_ZYXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYDM           EDU_ZJ_ZJZY                        DM

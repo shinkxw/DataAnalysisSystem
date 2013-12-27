@@ -439,4 +439,17 @@
             <name="DRSJ" exp="担任时间" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_19_A01_JJFFJL" exp="奖金发放记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="JGXM" exp="教工姓名" type="nvarchar(50)" null="F" p="F" />
+            <name="JJMC" exp="奖金名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="SFTZG" exp="是否通知过" type="nvarchar(1)" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
