@@ -35,7 +35,7 @@ class ModelBuilder
           @model_str << %(            #{field.name} = "";\n)
         end
         if field.type == 'datetime'
-          @model_str << "            #{field.name} = new DateTime(1900, 1, 1);\n"
+          @model_str << "            #{field.name} = DateTime.Now;\n"
         end
       end
       @model_str << "        }\n"

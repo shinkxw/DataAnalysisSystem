@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_19_A01_JJFFJL()
         {
-            JGXM = "";
             JJMC = "";
             FFSJ = new DateTime(1900, 1, 1);
             SFTZG = "";
@@ -30,13 +29,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "教工基本信息")]
             public Int32 JZGJBSJID { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "教工姓名")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JGXM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

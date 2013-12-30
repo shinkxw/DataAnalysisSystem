@@ -12103,7 +12103,6 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[JZGJBSJID]--教工基本信息ID
-      ,a.[JGXM]--教工姓名
       ,a.[JJMC]--奖金名称
       ,a.[JE]--金额
       ,a.[FFSJ]--发放时间

@@ -941,7 +941,6 @@ CREATE TABLE [dbo].[EDU_ZZJG_19_A01_JJFFJL](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[JZGJBSJID]  int  NOT NULL,--教工基本信息ID
-	[JGXM]  nvarchar(50)  NOT NULL,--教工姓名
 	[JJMC]  nvarchar(50)  NOT NULL,--奖金名称
 	[JE]  decimal(8, 2)  NOT NULL,--金额
 	[FFSJ]  datetime  NOT NULL,--发放时间
@@ -1631,8 +1630,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_19_A01_JJFFJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教工基本信息ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_19_A01_JJFFJL', @level2type=N'COLUMN',@level2name=N'JZGJBSJID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教工姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_19_A01_JJFFJL', @level2type=N'COLUMN',@level2name=N'JGXM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'奖金名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_19_A01_JJFFJL', @level2type=N'COLUMN',@level2name=N'JJMC'
 GO
