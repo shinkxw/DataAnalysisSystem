@@ -223,9 +223,12 @@ class TemplateBuilder
         end
         str << %(//{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：未找到#{field.display_name}！</span><br>"; }\n)
       else
-        case field.split_type[0]
-        when 'int'
-          str << "int value = 0;\n#{@tab.t}int.TryParse(ht[\"#{field.display_name}\"].ToString(), out value);\n#{@tab.t}model.#{field.name} = value;\n"
+        field_type = field.split_type[0]
+        case field_type
+        when 'int','decimal','float'
+          str << "#{field_type} value = 0;\n#{@tab.t}if (#{field_type}.TryParse(ht[\"#{field.display_name}\"].ToString(), out value))\n#{@tab.t}"
+          str << "{ model.#{field.name} = value; }\n#{@tab.t}"
+          str << %(else { flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}有误！</span><br>"; }\n)
         when 'DateTime'
           str << "String value = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
           str << "if (value != \"\") { model.#{field.name} = Convert.ToDateTime(value); }"
@@ -233,10 +236,6 @@ class TemplateBuilder
           str << "model.#{field.name} = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
           str << "if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
           str << %({ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n)
-        when 'decimal'
-          str << "decimal value = 0;\n#{@tab.t}decimal.TryParse(ht[\"#{field.display_name}\"].ToString(), out value);\n#{@tab.t}model.#{field.name} = value;\n"
-        when 'float'
-          str << "float value = 0;\n#{@tab.t}float.TryParse(ht[\"#{field.display_name}\"].ToString(), out value);\n#{@tab.t}model.#{field.name} = value;\n"
         else @log << "TemplateBuilder: type wrong: #{field.split_type[0]}"
         end
       end
