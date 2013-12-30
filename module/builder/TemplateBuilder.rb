@@ -350,7 +350,8 @@ class TemplateBuilder
     str << %(        <p style="text-align: center">\n)
     str << %(            <input id="xmlfile" name="xmlfile" type="file" />\n)
     str << %(            <input id="Submit1" type="submit" value="上传" />\n)
-    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/.xls")">模板下载</a>\n)
+    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/#{table.lname_dc}.xls")">模板下载</a>\n)
+    str << %(            　　<a href="@Url.Content("~/#{@directory_name}/#{table.lname_dc}/index")">返回</a>\n)
     str << "        </p>\n        <hr />\n"
     str << "        <p>\n"
     str << %(            <span style="color: red">导入小贴士：<br />\n)
