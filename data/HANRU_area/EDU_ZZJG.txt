@@ -3,40 +3,40 @@
     <table name="EDU_ZZJG_01_01_JZGJBSJ" exp="教职工基本数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="GH" exp="工号" type="nvarchar(20)" null="T" p="F" />
             <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
             <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" />
             <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="F" p="F" />
             <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" />
-            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFZJLX" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" />
             <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="F" />
             <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" />
-            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_RDXB" />
-            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZGGMZMCDLMZMPXF" />
-            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_XX" />
-            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" remark="EDU_GB_ZZMM" />
-            <name="HYZTM" exp="婚姻状态码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_HYZZ" />
-            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZZMM" />
-            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" remark="EDU_JY_GATQW" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" />
+            <name="HYZTM" exp="婚姻状态码" type="nvarchar(2)" null="F" p="F" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" />
             <name="JG" exp="籍贯" type="nvarchar(20)" null="F" p="F" />
-            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" remark="EDU_GB_SJGGHDQMC" />
-            <name="CSDXZQHM" exp="出生地行政区划码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" remark="EDU_GB_ZJXY" />
-            <name="JZGHKSZDXZQHM" exp="教职工户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_HKLB" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" />
+            <name="CSDXZQHM" exp="出生地行政区划码" type="nvarchar(6)" null="F" p="F" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" />
+            <name="JZGHKSZDXZQHM" exp="教职工户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" />
+            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" />
             <name="DQZZ" exp="当前住址" type="nvarchar(180)" null="F" p="F" />
             <name="DQZZYZBM" exp="当前住址邮政编码" type="nvarchar(6)" null="F" p="F" />
             <name="CJGZNY" exp="参加工作年月" type="nvarchar(6)" null="F" p="F" />
             <name="CJNY" exp="从教年月" type="nvarchar(6)" null="F" p="F" />
             <name="LXNY" exp="来校年月" type="nvarchar(6)" null="F" p="F" />
-            <name="BZLBM" exp="编制类别码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_BZLB" />
-            <name="JZGLBM" exp="教职工类别码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_JZGLB" />
-            <name="GWLBM" exp="岗位类别码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_GWLB" />
-            <name="SFJZJS" exp="是否兼职教师" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
-            <name="SFSSXJS" exp="是否双师型教师" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="BZLBM" exp="编制类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="JZGLBM" exp="教职工类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="GWLBM" exp="岗位类别码" type="nvarchar(1)" null="F" p="F" />
+            <name="SFJZJS" exp="是否兼职教师" type="nvarchar(1)" null="F" p="F" />
+            <name="SFSSXJS" exp="是否双师型教师" type="nvarchar(1)" null="F" p="F" />
             <name="ZP" exp="照片(路径)" type="nvarchar(100)" null="T" p="F" />
-            <name="DQZTM" exp="当前状态码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_JZGDQZT" />
+            <name="DQZTM" exp="当前状态码" type="nvarchar(2)" null="F" p="F" />
             <name="YDDH" exp="移动电话" type="nvarchar(30)" null="F" p="F" />
             <name="GDDH" exp="固定电话" type="nvarchar(30)" null="T" p="F" />
             <name="TXDZYZBM" exp="通信地址邮政编码" type="nvarchar(6)" null="T" p="F" />
@@ -73,14 +73,14 @@
     <table name="EDU_ZZJG_02_02_XNGWSJ" exp="校内岗位数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="GWID" exp="岗位表ID" type="int" null="F" p="F" />
-            <name="JZGJBSJID" exp="教职工基本数据子类表" type="int" null="F" p="F" remark="EDU_ZZJG_01_01_JZGJBSJ" />
+            <name="JZGJBSJID" exp="教职工基本数据子类表" type="int" null="F" p="F" />
             <name="GWQSNY" exp="岗位起始年月" type="nvarchar(6)" null="F" p="F" />
             <name="GWJSNY" exp="岗位结束年月" type="nvarchar(6)" null="F" p="F" />
-            <name="SFZG" exp="是否在岗" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="SFZG" exp="是否在岗" type="nvarchar(1)" null="F" p="F" />
             <name="ZWMC" exp="职务名称" type="nvarchar(10)" null="F" p="F" />
-            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="F" remark="EDU_ZZXX_03_01_XNJG" />
+            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_04_A01_JBDJ" exp="加班登记表">
@@ -95,14 +95,14 @@
     </table>
     <table name="EDU_ZZJG_07_01_JZGZYNL" exp="教职工专业能力与资格证书数据类表">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="T" />
-            <name="ZSMC" exp="证书名称" type="nvarchar(40)" null="F" p="T" remark="证书名称 编号：ZZJG070001 引用自JCJG020301 GWZSMC 岗位证书名称 C 40 M NULL 由具有岗位评定资格单位考核并批准的岗位证书名称 NULL" />
-            <name="ZSBH" exp="证书编号" type="nvarchar(20)" null="T" p="F" remark="证书编号 编号：ZZJG070002 引用自JCJG020302 GWZSBH 岗位证书编号 C 20 O NULL NULL NULL" />
-            <name="ZSBFDW" exp="证书颁发单位" type="nvarchar(60)" null="T" p="F" remark="证书颁发单位 编号：ZZJG070003 引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
-            <name="ZSBFRQ" exp="证书颁发日期" type="nvarchar(8)" null="F" p="F" remark="证书颁发日期 编号：ZZJG070004 引用自JCTB010203 RQ 日期 C 8 NULL GB/T7408 格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
-            <name="ZSBZ" exp="证书备注" type="text" null="T" p="F" remark="证书备注 编号：ZZJG070005 " />
-            <name="SFSZYZGZS" exp="是否是职业资格证书" type="nvarchar(1)" null="F" p="F" remark="是否是职业资格证书 编号：ZZJG070006 值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="ZSMC" exp="证书名称" type="nvarchar(40)" null="F" p="T" />
+            <name="ZSBH" exp="证书编号" type="nvarchar(20)" null="T" p="F" />
+            <name="ZSBFDW" exp="证书颁发单位" type="nvarchar(60)" null="T" p="F" />
+            <name="ZSBFRQ" exp="证书颁发日期" type="nvarchar(8)" null="F" p="F" />
+            <name="ZSBZ" exp="证书备注" type="text" null="T" p="F" />
+            <name="SFSZYZGZS" exp="是否是职业资格证书" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_11_A02_KPXX" exp="考评选项表">
@@ -292,31 +292,31 @@
             <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" />
             <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="F" p="F" />
             <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" />
-            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFZJLX" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" />
             <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="F" />
             <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" />
-            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_RDXB" />
-            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZGGMZMCDLMZMPXF" />
-            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_XX" />
-            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" remark="EDU_GB_ZZMM" />
-            <name="HYZTM" exp="婚姻状态码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_HYZZ" />
-            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_ZZMM" />
-            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" remark="EDU_JY_GATQW" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" />
+            <name="HYZTM" exp="婚姻状态码" type="nvarchar(2)" null="F" p="F" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" />
             <name="JG" exp="籍贯" type="nvarchar(20)" null="F" p="F" />
-            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" remark="EDU_GB_SJGGHDQMC" />
-            <name="CSDXZQHM" exp="出生地行政区划码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" remark="EDU_GB_ZJXY" />
-            <name="JZGHKSZDXZQHM" exp="教职工户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" remark="EDU_GB_HKLB" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" />
+            <name="CSDXZQHM" exp="出生地行政区划码" type="nvarchar(6)" null="F" p="F" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" />
+            <name="JZGHKSZDXZQHM" exp="教职工户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" />
+            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" />
             <name="DQZZ" exp="当前住址" type="nvarchar(180)" null="F" p="F" />
             <name="DQZZYZBM" exp="当前住址邮政编码" type="nvarchar(6)" null="F" p="F" />
             <name="CJGZNY" exp="参加工作年月" type="nvarchar(6)" null="F" p="F" />
             <name="CJNY" exp="从教年月" type="nvarchar(6)" null="F" p="F" />
-            <name="BZLBM" exp="编制类别码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_BZLB" />
-            <name="JZGLBM" exp="教职工类别码" type="nvarchar(2)" null="F" p="F" remark="EDU_JY_JZGLB" />
-            <name="GWLBM" exp="岗位类别码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_GWLB" />
-            <name="SFJZJS" exp="是否兼职教师" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
-            <name="SFSSXJS" exp="是否双师型教师" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_SFBZ" />
+            <name="BZLBM" exp="编制类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="JZGLBM" exp="教职工类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="GWLBM" exp="岗位类别码" type="nvarchar(1)" null="F" p="F" />
+            <name="SFJZJS" exp="是否兼职教师" type="nvarchar(1)" null="F" p="F" />
+            <name="SFSSXJS" exp="是否双师型教师" type="nvarchar(1)" null="F" p="F" />
             <name="ZP" exp="照片(路径)" type="nvarchar(100)" null="T" p="F" />
             <name="YDDH" exp="移动电话" type="nvarchar(30)" null="F" p="F" />
             <name="GDDH" exp="固定电话" type="nvarchar(30)" null="T" p="F" />
