@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ELE_07_RYBD()
         {
             YHID = "";
-            BDSJ = new DateTime(1900, 1, 1);
+            BDSJ = DateTime.Now;
             BDTM = "";
             CZXX = "";
         }

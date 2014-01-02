@@ -56,7 +56,7 @@ class TemplateBuilder
     str << make_controller_delete(table,false)
     str << make_controller_delete(table,true)
     str << make_controller_importdata(table)
-    str << make_controller_get_max_ID(table)
+    str << make_controller_get_max_ID(table) unless table.has_identity?
     str << "#{@tab.s}}\n}"
   end
   def make_controller_index_jsonstr(table)
@@ -75,7 +75,7 @@ class TemplateBuilder
   def make_controller_add(table)
     str = "#{@tab.t}public void Add#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}"
-    str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}"
+    str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
     str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n"
   end

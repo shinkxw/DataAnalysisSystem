@@ -12,8 +12,8 @@ namespace HanRuEdu.LDAL
             Title = "";
             Users = "";
             DoneUsers = "";
-            StartTime = new DateTime(1900, 1, 1);
-            EndTime = new DateTime(1900, 1, 1);
+            StartTime = DateTime.Now;
+            EndTime = DateTime.Now;
         }
         public class EDU_OAXT_32_A01_DCWJ_metadata
         {

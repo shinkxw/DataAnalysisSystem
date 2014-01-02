@@ -9,8 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXDY_05_A03_ZZDFD()
         {
-            FSSJ = new DateTime(1900, 1, 1);
-            DFSJ = new DateTime(1900, 1, 1);
+            FSSJ = DateTime.Now;
+            DFSJ = DateTime.Now;
             DFJSID = "";
             BZ = "";
         }

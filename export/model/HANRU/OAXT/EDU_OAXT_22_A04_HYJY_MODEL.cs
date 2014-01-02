@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             HYJYNR = "";
             JLRID = "";
-            JLSJ = new DateTime(1900, 1, 1);
+            JLSJ = DateTime.Now;
         }
         public class EDU_OAXT_22_A04_HYJY_metadata
         {

@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_08_A01_DGFSQ()
         {
-            JFRQ = new DateTime(1900, 1, 1);
+            JFRQ = DateTime.Now;
             SFYSH = "";
         }
         public class EDU_ZZJX_08_A01_DGFSQ_metadata

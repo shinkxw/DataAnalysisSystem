@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_JPXT_02_02_JLYWJQK()
         {
             TSR = "";
-            TSSJ = new DateTime(1900, 1, 1);
+            TSSJ = DateTime.Now;
             LXDH = "";
             TSNR = "";
             CLJG = "";

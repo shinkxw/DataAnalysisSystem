@@ -9,11 +9,11 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_10_A12_XSHJXJ()
         {
-            HJSJ = new DateTime(1900, 1, 1);
+            HJSJ = DateTime.Now;
             BZ = "";
             SQYY = "";
-            SQSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZZXS_10_A12_XSHJXJ_metadata
         {

@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             NJID = "";
             KCID = "";
-            SQSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
             SFRK = "";
         }
         public class EDU_ZZJX_04_02_JCXYXX_metadata

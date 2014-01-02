@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_02_03_JLYAQQK()
         {
-            LRSJ = new DateTime(1900, 1, 1);
+            LRSJ = DateTime.Now;
             AQQK = "";
             BZ = "";
         }

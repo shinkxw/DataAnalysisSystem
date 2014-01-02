@@ -9,8 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_14_A06_XSWWYTZQRYAP()
         {
-            ZQKSSJ = new DateTime(1900, 1, 1);
-            ZQJSSJ = new DateTime(1900, 1, 1);
+            ZQKSSJ = DateTime.Now;
+            ZQJSSJ = DateTime.Now;
         }
         public class EDU_ZZXS_14_A06_XSWWYTZQRYAP_metadata
         {

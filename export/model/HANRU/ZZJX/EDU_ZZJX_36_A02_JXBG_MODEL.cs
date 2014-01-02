@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_36_A02_JXBG()
         {
             BGNR = "";
-            BGSJ = new DateTime(1900, 1, 1);
+            BGSJ = DateTime.Now;
             BGBT = "";
         }
         public class EDU_ZZJX_36_A02_JXBG_metadata

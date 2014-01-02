@@ -15,8 +15,8 @@ namespace HanRuEdu.LDAL
             AJH = "";
             TM = "";
             ZTC = "";
-            QSRQ = new DateTime(1900, 1, 1);
-            JZRQ = new DateTime(1900, 1, 1);
+            QSRQ = DateTime.Now;
+            JZRQ = DateTime.Now;
             BGQXM = "";
             CFWZ = "";
             DAFLM = "";

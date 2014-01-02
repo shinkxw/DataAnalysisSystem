@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_JPXT_04_01_KMKS()
         {
             KMDM = "";
-            KSSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_JPXT_04_01_KMKS_metadata

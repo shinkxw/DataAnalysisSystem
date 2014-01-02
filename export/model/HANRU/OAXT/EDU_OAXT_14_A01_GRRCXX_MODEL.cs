@@ -12,8 +12,8 @@ namespace HanRuEdu.LDAL
             YHID = "";
             BT = "";
             NR = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
             SFTS = "";
         }
         public class EDU_OAXT_14_A01_GRRCXX_metadata

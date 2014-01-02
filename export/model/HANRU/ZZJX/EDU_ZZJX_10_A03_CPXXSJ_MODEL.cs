@@ -12,7 +12,7 @@ namespace HanRuEdu.LDAL
             XXMC = "";
             XXNR = "";
             SFFB = "";
-            SCSJ = new DateTime(1900, 1, 1);
+            SCSJ = DateTime.Now;
         }
         public class EDU_ZZJX_10_A03_CPXXSJ_metadata
         {

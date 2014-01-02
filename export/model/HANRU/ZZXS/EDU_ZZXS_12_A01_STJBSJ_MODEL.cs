@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             STMC = "";
             STBH = "";
-            CLRQ = new DateTime(1900, 1, 1);
+            CLRQ = DateTime.Now;
             CSR = "";
             PZBM = "";
             STXZ = "";

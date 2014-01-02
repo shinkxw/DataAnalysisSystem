@@ -12,13 +12,13 @@ namespace HanRuEdu.LDAL
             XGYHID = "";
             XGYHXM = "";
             YCYY = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            SQSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            SQSJ = DateTime.Now;
             SQRID = "";
             BZ = "";
             LCMBMC = "";
             DQBZMC = "";
-            JSSJ = new DateTime(1900, 1, 1);
+            JSSJ = DateTime.Now;
         }
         public class EDU_OAXT_24_A02_YCSQXGJL_metadata
         {

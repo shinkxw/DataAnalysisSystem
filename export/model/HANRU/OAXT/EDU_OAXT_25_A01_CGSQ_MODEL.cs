@@ -12,7 +12,7 @@ namespace HanRuEdu.LDAL
             CGDMC = "";
             CGNR = "";
             FJ = "";
-            SQSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
             SQRID = "";
             BZ = "";
         }

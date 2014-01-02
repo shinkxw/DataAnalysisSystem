@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             Name = "";
             Info = "";
-            Productdate = new DateTime(1900, 1, 1);
+            Productdate = DateTime.Now;
             Merchant = "";
             Vender = "";
             Remark = "";

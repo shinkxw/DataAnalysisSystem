@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             KPMC = "";
             BPRIDLB = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
         }
         public class EDU_ZZJG_11_A04_KPSJ_metadata
         {

@@ -9,9 +9,9 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_15_A02_ZYPG()
         {
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
-            TJSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
+            TJSJ = DateTime.Now;
         }
         public class EDU_ZZJG_15_A02_ZYPG_metadata
         {

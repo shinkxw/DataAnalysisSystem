@@ -19,9 +19,9 @@ namespace HanRuEdu.LDAL
             ZYDX = "";
             ZYLJ = "";
             SLT = "";
-            SCSJ = new DateTime(1900, 1, 1);
+            SCSJ = DateTime.Now;
             SHRID = "";
-            SHSJ = new DateTime(1900, 1, 1);
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZYZX_01_A06_ZYWJ_metadata
         {

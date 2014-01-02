@@ -12,7 +12,7 @@ namespace HanRuEdu.LDAL
             TypeName = "";
             Name = "";
             Option = "";
-            RegistTime = new DateTime(1900, 1, 1);
+            RegistTime = DateTime.Now;
             Remark = "";
         }
         public class EDU_OAXT_15_A06_ZCBG_metadata

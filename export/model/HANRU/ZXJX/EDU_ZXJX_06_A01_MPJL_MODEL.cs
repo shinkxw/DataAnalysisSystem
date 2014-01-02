@@ -12,8 +12,8 @@ namespace HanRuEdu.LDAL
             MPKC = "";
             NJID = "";
             BJID = "";
-            MPSJ = new DateTime(1900, 1, 1);
-            RRSJ = new DateTime(1900, 1, 1);
+            MPSJ = DateTime.Now;
+            RRSJ = DateTime.Now;
         }
         public class EDU_ZXJX_06_A01_MPJL_metadata
         {

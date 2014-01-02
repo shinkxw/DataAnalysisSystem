@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_18_A06_JCCFSQSHJL()
         {
-            SHSJ = new DateTime(1900, 1, 1);
+            SHSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_ZZXS_18_A06_JCCFSQSHJL_metadata

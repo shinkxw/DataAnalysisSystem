@@ -4,15 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZYZX_01_A07_ZYWJXZ_metadata))]
-    public partial class EDU_ZYZX_01_A07_ZYWJXZ
+    [MetadataType(typeof(EDU_ZZJG_20_A02_XSPJDFXM_metadata))]
+    public partial class EDU_ZZJG_20_A02_XSPJDFXM
     {
-        public EDU_ZYZX_01_A07_ZYWJXZ()
+        public EDU_ZZJG_20_A02_XSPJDFXM()
         {
-            XZRID = "";
-            XZSJ = DateTime.Now;
+            DFXMMC = "";
         }
-        public class EDU_ZYZX_01_A07_ZYWJXZ_metadata
+        public class EDU_ZZJG_20_A02_XSPJDFXM_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -25,20 +24,20 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "资源文件")]
-            public Int32 ZYWJID { get; set; }
+            [Display(Name = "打分方式")]
+            public Int32 DFFSID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "下载人")]
-            [StringLength(20)]
+            [Display(Name = "打分项目名称")]
+            [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String XZRID { get; set; }
+            public String DFXMMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "下载时间")]
-            public DateTime XZSJ { get; set; }
+            [Display(Name = "分值")]
+            public Int32 FZ { get; set; }
 
 
         }

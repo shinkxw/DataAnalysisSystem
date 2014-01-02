@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             FBRID = "";
             FBBM = "";
-            FBSJ = new DateTime(1900, 1, 1);
+            FBSJ = DateTime.Now;
             BT = "";
             NR = "";
         }

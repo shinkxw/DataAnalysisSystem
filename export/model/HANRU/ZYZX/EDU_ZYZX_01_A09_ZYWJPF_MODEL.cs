@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZYZX_01_A09_ZYWJPF()
         {
             PFRID = "";
-            PFSJ = new DateTime(1900, 1, 1);
+            PFSJ = DateTime.Now;
         }
         public class EDU_ZYZX_01_A09_ZYWJPF_metadata
         {

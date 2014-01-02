@@ -12,9 +12,9 @@ namespace HanRuEdu.LDAL
             KTMC = "";
             KTZT = "";
             KTNR = "";
-            SQSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
-            JXSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
+            JXSJ = DateTime.Now;
         }
         public class EDU_ZZJX_10_A04_KTSJ_metadata
         {

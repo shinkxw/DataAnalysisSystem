@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXJX_10_A01_JSGCXPJJL()
         {
-            LRSJ = new DateTime(1900, 1, 1);
+            LRSJ = DateTime.Now;
         }
         public class EDU_ZXJX_10_A01_JSGCXPJJL_metadata
         {

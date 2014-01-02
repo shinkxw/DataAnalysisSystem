@@ -10,10 +10,10 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_17_A01_TYXX()
         {
             BJID = "";
-            RTSJ = new DateTime(1900, 1, 1);
+            RTSJ = DateTime.Now;
             ZRD = "";
-            ZRSJ = new DateTime(1900, 1, 1);
-            ZCSJ = new DateTime(1900, 1, 1);
+            ZRSJ = DateTime.Now;
+            ZCSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_ZZXS_17_A01_TYXX_metadata

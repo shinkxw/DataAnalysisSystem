@@ -19,9 +19,9 @@ namespace HanRuEdu.LDAL
             HYDZ = "";
             YHRYIDLB = "";
             YHRYXMLB = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
-            SQSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
+            SQSJ = DateTime.Now;
             SQRID = "";
             BZ = "";
             LCMBMC = "";

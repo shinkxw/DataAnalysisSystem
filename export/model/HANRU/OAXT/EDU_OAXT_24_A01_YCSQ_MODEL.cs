@@ -10,11 +10,11 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_24_A01_YCSQ()
         {
             YCYY = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            SQSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            SQSJ = DateTime.Now;
             SQRID = "";
             BZ = "";
-            JSSJ = new DateTime(1900, 1, 1);
+            JSSJ = DateTime.Now;
         }
         public class EDU_OAXT_24_A01_YCSQ_metadata
         {

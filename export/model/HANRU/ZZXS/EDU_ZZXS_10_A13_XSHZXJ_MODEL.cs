@@ -10,13 +10,13 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_10_A13_XSHZXJ()
         {
             YHKH = "";
-            SFSJ = new DateTime(1900, 1, 1);
-            TFSJ = new DateTime(1900, 1, 1);
+            SFSJ = DateTime.Now;
+            TFSJ = DateTime.Now;
             TFYY = "";
             BZ = "";
             SQYY = "";
-            SQSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZZXS_10_A13_XSHZXJ_metadata
         {

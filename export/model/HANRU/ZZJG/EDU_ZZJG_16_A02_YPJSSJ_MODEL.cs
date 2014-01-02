@@ -34,8 +34,8 @@ namespace HanRuEdu.LDAL
             YDDH = "";
             DZXX = "";
             BZ = "";
-            TJSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            TJSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZZJG_16_A02_YPJSSJ_metadata
         {

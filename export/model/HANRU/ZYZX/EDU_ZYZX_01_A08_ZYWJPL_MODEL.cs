@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             PL = "";
             PLRID = "";
-            PLSJ = new DateTime(1900, 1, 1);
+            PLSJ = DateTime.Now;
         }
         public class EDU_ZYZX_01_A08_ZYWJPL_metadata
         {

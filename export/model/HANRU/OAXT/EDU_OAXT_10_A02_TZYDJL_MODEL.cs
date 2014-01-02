@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_10_A02_TZYDJL()
         {
             BTZRID = "";
-            YDRQ = new DateTime(1900, 1, 1);
+            YDRQ = DateTime.Now;
             SFYD = "";
         }
         public class EDU_OAXT_10_A02_TZYDJL_metadata

@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_22_A03_SXWZJL()
         {
-            WzTime = new DateTime(1900, 1, 1);
+            WzTime = DateTime.Now;
             WGWZJL = "";
             JYJXJGJCS = "";
         }

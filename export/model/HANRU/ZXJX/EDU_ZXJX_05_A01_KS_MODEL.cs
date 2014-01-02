@@ -10,10 +10,10 @@ namespace HanRuEdu.LDAL
         public EDU_ZXJX_05_A01_KS()
         {
             KSMC = "";
-            KSKSSJ = new DateTime(1900, 1, 1);
-            KSJSSJ = new DateTime(1900, 1, 1);
-            DFKSSJ = new DateTime(1900, 1, 1);
-            DFJSSJ = new DateTime(1900, 1, 1);
+            KSKSSJ = DateTime.Now;
+            KSJSSJ = DateTime.Now;
+            DFKSSJ = DateTime.Now;
+            DFJSSJ = DateTime.Now;
         }
         public class EDU_ZXJX_05_A01_KS_metadata
         {

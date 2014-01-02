@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ELE_03_APPRZ()
         {
             YHID = "";
-            CZSJ = new DateTime(1900, 1, 1);
+            CZSJ = DateTime.Now;
             CZYY = "";
             CZLX = "";
         }

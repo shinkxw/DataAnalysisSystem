@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZFC_08_A03_ZWHCY()
         {
-            TJSJ = new DateTime(1900, 1, 1);
+            TJSJ = DateTime.Now;
             ZWMC = "";
             GZNR = "";
         }

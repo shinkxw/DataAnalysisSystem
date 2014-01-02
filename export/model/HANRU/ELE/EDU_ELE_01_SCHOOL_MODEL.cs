@@ -13,7 +13,7 @@ namespace HanRuEdu.LDAL
             MatchURL = "";
             MenhuURL = "";
             ModuleIdList = "";
-            CreateTime = new DateTime(1900, 1, 1);
+            CreateTime = DateTime.Now;
             YXTID = "";
             LOGO = "";
         }

@@ -14,10 +14,10 @@ namespace HanRuEdu.LDAL
             XBM = "";
             LXDH = "";
             ZZ = "";
-            BMSJ = new DateTime(1900, 1, 1);
+            BMSJ = DateTime.Now;
             SFQK = "";
             ZJQK = "";
-            BYSJ = new DateTime(1900, 1, 1);
+            BYSJ = DateTime.Now;
         }
         public class EDU_JPXT_03_01_XYSJ_metadata
         {

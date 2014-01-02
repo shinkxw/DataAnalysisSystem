@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             HDMC = "";
             HDNR = "";
-            SCSJ = new DateTime(1900, 1, 1);
-            HDSJ = new DateTime(1900, 1, 1);
+            SCSJ = DateTime.Now;
+            HDSJ = DateTime.Now;
         }
         public class EDU_ZZJG_17_A06_DZBHDXX_metadata
         {

@@ -10,8 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_20_A03_GWXX()
         {
             JobName = "";
-            PubTime = new DateTime(1900, 1, 1);
-            EndTime = new DateTime(1900, 1, 1);
+            PubTime = DateTime.Now;
+            EndTime = DateTime.Now;
             WorkType = "";
             Sex = "";
             monthlypay = "";

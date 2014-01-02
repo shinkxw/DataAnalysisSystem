@@ -11,9 +11,9 @@ namespace HanRuEdu.LDAL
         {
             WENTI = "";
             TWR = "";
-            TWSJ = new DateTime(1900, 1, 1);
+            TWSJ = DateTime.Now;
             HDR = "";
-            HDSJ = new DateTime(1900, 1, 1);
+            HDSJ = DateTime.Now;
         }
         public class EDU_ZYZX_01_A13_ZXDY_metadata
         {

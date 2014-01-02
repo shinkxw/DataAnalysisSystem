@@ -9,10 +9,10 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_17_A01_DYXX()
         {
-            RDSJ = new DateTime(1900, 1, 1);
+            RDSJ = DateTime.Now;
             RDDD = "";
             RDJSR = "";
-            TJSJ = new DateTime(1900, 1, 1);
+            TJSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_ZZJG_17_A01_DYXX_metadata

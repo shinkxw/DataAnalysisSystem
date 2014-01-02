@@ -10,8 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_36_A01_JXJH()
         {
             JHMC = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
             JXNR = "";
             JXXS = "";
         }

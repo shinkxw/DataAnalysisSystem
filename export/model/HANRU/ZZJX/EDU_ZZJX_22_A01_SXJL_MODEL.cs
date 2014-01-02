@@ -9,16 +9,16 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_22_A01_SXJL()
         {
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
             SXNR = "";
             SXFS = "";
             ZDSFXM = "";
             ZDSFPY = "";
-            ZDSFPDSJ = new DateTime(1900, 1, 1);
+            ZDSFPDSJ = DateTime.Now;
             ZDJSXM = "";
             ZDJSPY = "";
-            ZDJSPDSJ = new DateTime(1900, 1, 1);
+            ZDJSPDSJ = DateTime.Now;
         }
         public class EDU_ZZJX_22_A01_SXJL_metadata
         {

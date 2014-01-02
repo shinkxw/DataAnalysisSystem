@@ -10,8 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZXDY_04_A06_ZZZC()
         {
             ZCM = "";
-            XQKSRQ = new DateTime(1900, 1, 1);
-            XQJSRQ = new DateTime(1900, 1, 1);
+            XQKSRQ = DateTime.Now;
+            XQJSRQ = DateTime.Now;
         }
         public class EDU_ZXDY_04_A06_ZZZC_metadata
         {

@@ -17,8 +17,8 @@ namespace HanRuEdu.LDAL
             QQ = "";
             DZYJ = "";
             LXDH = "";
-            ZJDLSJ = new DateTime(1900, 1, 1);
-            YHCJSJ = new DateTime(1900, 1, 1);
+            ZJDLSJ = DateTime.Now;
+            YHCJSJ = DateTime.Now;
         }
         public class EDU_ELE_01_USER_metadata
         {

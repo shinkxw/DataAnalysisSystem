@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             ACCESSIP = "";
             ACCESSURL = "";
-            ACCESSTIME = new DateTime(1900, 1, 1);
+            ACCESSTIME = DateTime.Now;
         }
         public class EDU_WZXT_MHXT_FWLL_metadata
         {

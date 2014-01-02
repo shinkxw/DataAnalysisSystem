@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_14_A03_XSRCXWGFKHSJ()
         {
             KHBJDM = "";
-            KHSJ = new DateTime(1900, 1, 1);
+            KHSJ = DateTime.Now;
         }
         public class EDU_ZZXS_14_A03_XSRCXWGFKHSJ_metadata
         {

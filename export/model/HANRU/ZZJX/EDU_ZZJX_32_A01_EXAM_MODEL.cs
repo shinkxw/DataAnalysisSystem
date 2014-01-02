@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             Name = "";
             CJKSKMLM = "";
-            StartDate = new DateTime(1900, 1, 1);
-            EndDate = new DateTime(1900, 1, 1);
+            StartDate = DateTime.Now;
+            EndDate = DateTime.Now;
         }
         public class EDU_ZZJX_32_A01_EXAM_metadata
         {

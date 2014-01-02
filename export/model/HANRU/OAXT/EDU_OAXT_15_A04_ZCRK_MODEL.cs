@@ -11,10 +11,10 @@ namespace HanRuEdu.LDAL
         {
             Name = "";
             Info = "";
-            Productdate = new DateTime(1900, 1, 1);
+            Productdate = DateTime.Now;
             Merchant = "";
             Vender = "";
-            Registdate = new DateTime(1900, 1, 1);
+            Registdate = DateTime.Now;
             Remark = "";
         }
         public class EDU_OAXT_15_A04_ZCRK_metadata

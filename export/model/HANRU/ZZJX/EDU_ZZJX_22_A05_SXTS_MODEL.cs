@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_22_A05_SXTS()
         {
-            TsTime = new DateTime(1900, 1, 1);
+            TsTime = DateTime.Now;
             TsReason = "";
             TsResult = "";
             ComSuggest = "";

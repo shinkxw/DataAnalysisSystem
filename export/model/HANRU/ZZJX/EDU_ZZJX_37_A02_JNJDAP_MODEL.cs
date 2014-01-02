@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_37_A02_JNJDAP()
         {
             KSMC = "";
-            KSSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
             KSDD = "";
             KSXS = "";
         }

@@ -9,8 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZFC_08_A02_YHZSJL()
         {
-            RZSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            RZSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
             SHR = "";
         }
         public class EDU_ZZFC_08_A02_YHZSJL_metadata

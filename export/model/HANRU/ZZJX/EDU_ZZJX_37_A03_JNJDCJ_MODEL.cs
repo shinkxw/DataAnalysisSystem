@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_37_A03_JNJDCJ()
         {
-            DJSJ = new DateTime(1900, 1, 1);
+            DJSJ = DateTime.Now;
         }
         public class EDU_ZZJX_37_A03_JNJDCJ_metadata
         {

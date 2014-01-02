@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_20_A03_LCMB()
         {
             MBMC = "";
-            TJSJ = new DateTime(1900, 1, 1);
+            TJSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_OAXT_20_A03_LCMB_metadata

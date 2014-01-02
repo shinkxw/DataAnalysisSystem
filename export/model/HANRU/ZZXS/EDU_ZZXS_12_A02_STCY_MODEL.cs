@@ -11,12 +11,12 @@ namespace HanRuEdu.LDAL
         {
             XM = "";
             BJID = "";
-            CDRQ = new DateTime(1900, 1, 1);
+            CDRQ = DateTime.Now;
             STZW = "";
             GZNR = "";
             STPJ = "";
             DQZT = "";
-            SHSJ = new DateTime(1900, 1, 1);
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZZXS_12_A02_STCY_metadata
         {

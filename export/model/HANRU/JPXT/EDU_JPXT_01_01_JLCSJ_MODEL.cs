@@ -9,12 +9,12 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_01_01_JLCSJ()
         {
-            GMSJ = new DateTime(1900, 1, 1);
+            GMSJ = DateTime.Now;
             PP = "";
             CPH = "";
             CJH = "";
-            BFSJ = new DateTime(1900, 1, 1);
-            EBRQ = new DateTime(1900, 1, 1);
+            BFSJ = DateTime.Now;
+            EBRQ = DateTime.Now;
         }
         public class EDU_JPXT_01_01_JLCSJ_metadata
         {

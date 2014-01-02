@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_20_A02_XQHD()
         {
-            ReactionTime = new DateTime(1900, 1, 1);
+            ReactionTime = DateTime.Now;
             AdviseToSchool = "";
             AdviseToArt = "";
             OtherAdvise = "";

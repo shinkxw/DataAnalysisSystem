@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             JXBMC = "";
             ZQNR = "";
-            ZQSJ = new DateTime(1900, 1, 1);
-            TJSJ = new DateTime(1900, 1, 1);
+            ZQSJ = DateTime.Now;
+            TJSJ = DateTime.Now;
         }
         public class EDU_ZZXS_14_A04_XSWWYTZQSJ_metadata
         {

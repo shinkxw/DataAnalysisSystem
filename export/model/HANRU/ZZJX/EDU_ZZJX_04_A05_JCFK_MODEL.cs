@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_04_A05_JCFK()
         {
             FKXX = "";
-            FKSJ = new DateTime(1900, 1, 1);
+            FKSJ = DateTime.Now;
         }
         public class EDU_ZZJX_04_A05_JCFK_metadata
         {

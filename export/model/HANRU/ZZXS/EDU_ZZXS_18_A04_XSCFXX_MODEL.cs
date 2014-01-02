@@ -10,8 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_18_A04_XSCFXX()
         {
             WJQK = "";
-            SBSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            SBSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_ZZXS_18_A04_XSCFXX_metadata

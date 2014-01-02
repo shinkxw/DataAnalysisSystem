@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZFC_10_A03_BZRXQ()
         {
             BJID = "";
-            XQSJ = new DateTime(1900, 1, 1);
+            XQSJ = DateTime.Now;
         }
         public class EDU_ZZFC_10_A03_BZRXQ_metadata
         {

@@ -10,8 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZXTW_03_A01_XSMZJL()
         {
             BJID = "";
-            JZKSSJ = new DateTime(1900, 1, 1);
-            JZJSSJ = new DateTime(1900, 1, 1);
+            JZKSSJ = DateTime.Now;
+            JZJSSJ = DateTime.Now;
             JZYY = "";
             ZDJG = "";
         }

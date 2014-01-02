@@ -10,13 +10,13 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_21_A02_QJSQ()
         {
             QJYY = "";
-            KSSJ = new DateTime(1900, 1, 1);
-            JSSJ = new DateTime(1900, 1, 1);
-            SQSJ = new DateTime(1900, 1, 1);
+            KSSJ = DateTime.Now;
+            JSSJ = DateTime.Now;
+            SQSJ = DateTime.Now;
             SQRID = "";
             BZ = "";
             XJRID = "";
-            XJSJ = new DateTime(1900, 1, 1);
+            XJSJ = DateTime.Now;
         }
         public class EDU_OAXT_21_A02_QJSQ_metadata
         {

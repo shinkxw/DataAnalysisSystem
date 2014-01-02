@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             SQRID = "";
             SPRID = "";
-            SQSJ = new DateTime(1900, 1, 1);
-            YXQ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
+            YXQ = DateTime.Now;
             FJ = "";
             BZ = "";
         }

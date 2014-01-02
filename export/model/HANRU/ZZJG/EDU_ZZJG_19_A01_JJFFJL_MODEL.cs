@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJG_19_A01_JJFFJL()
         {
             JJMC = "";
-            FFSJ = new DateTime(1900, 1, 1);
+            FFSJ = DateTime.Now;
             SFTZG = "";
             BZ = "";
         }

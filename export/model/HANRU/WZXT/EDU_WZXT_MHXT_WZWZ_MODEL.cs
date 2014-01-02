@@ -12,8 +12,8 @@ namespace HanRuEdu.LDAL
             TITLE = "";
             PUBLISHERNAME = "";
             AUTHOR = "";
-            PUBLISHDATE = new DateTime(1900, 1, 1);
-            AUDITTIME = new DateTime(1900, 1, 1);
+            PUBLISHDATE = DateTime.Now;
+            AUDITTIME = DateTime.Now;
         }
         public class EDU_WZXT_MHXT_WZWZ_metadata
         {

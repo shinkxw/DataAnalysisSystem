@@ -9,8 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_JPXT_01_02_JLCBGLL()
         {
-            BGKSSJ = new DateTime(1900, 1, 1);
-            BGJSSJ = new DateTime(1900, 1, 1);
+            BGKSSJ = DateTime.Now;
+            BGJSSJ = DateTime.Now;
             BGZT = "";
         }
         public class EDU_JPXT_01_02_JLCBGLL_metadata

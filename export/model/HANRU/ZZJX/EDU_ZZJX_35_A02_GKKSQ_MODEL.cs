@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_35_A02_GKKSQ()
         {
             KCMC = "";
-            SKSJ = new DateTime(1900, 1, 1);
+            SKSJ = DateTime.Now;
             SKDD = "";
             KCJJ = "";
             SHRID = "";

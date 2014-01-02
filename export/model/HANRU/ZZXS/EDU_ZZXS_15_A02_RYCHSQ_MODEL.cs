@@ -11,8 +11,8 @@ namespace HanRuEdu.LDAL
         {
             BZ = "";
             SQYY = "";
-            SQSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZZXS_15_A02_RYCHSQ_metadata
         {

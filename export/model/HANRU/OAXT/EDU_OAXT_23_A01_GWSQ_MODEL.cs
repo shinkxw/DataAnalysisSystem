@@ -15,7 +15,7 @@ namespace HanRuEdu.LDAL
             SJRIDLB = "";
             SJRXMLB = "";
             YDQK = "";
-            SQSJ = new DateTime(1900, 1, 1);
+            SQSJ = DateTime.Now;
             SQRID = "";
             BZ = "";
             SWDW = "";

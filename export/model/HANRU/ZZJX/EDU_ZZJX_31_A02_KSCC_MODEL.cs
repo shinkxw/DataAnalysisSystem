@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_31_A02_KSCC()
         {
             Name = "";
-            ExamDate = new DateTime(1900, 1, 1);
+            ExamDate = DateTime.Now;
         }
         public class EDU_ZZJX_31_A02_KSCC_metadata
         {

@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             HBNR = "";
             BZ = "";
-            TJSJ = new DateTime(1900, 1, 1);
+            TJSJ = DateTime.Now;
         }
         public class EDU_ZZXS_17_A04_TYSXHB_metadata
         {

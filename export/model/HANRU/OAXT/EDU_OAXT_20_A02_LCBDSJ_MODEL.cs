@@ -11,7 +11,7 @@ namespace HanRuEdu.LDAL
         {
             BDMC = "";
             BDNR = "";
-            TJSJ = new DateTime(1900, 1, 1);
+            TJSJ = DateTime.Now;
             BZ = "";
         }
         public class EDU_OAXT_20_A02_LCBDSJ_metadata

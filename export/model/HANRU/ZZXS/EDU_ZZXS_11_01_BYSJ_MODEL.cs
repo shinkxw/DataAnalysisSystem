@@ -9,11 +9,11 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_11_01_BYSJ()
         {
-            JSXYNY = new DateTime(1900, 1, 1);
+            JSXYNY = DateTime.Now;
             JSXYM = "";
-            FFRQ = new DateTime(1900, 1, 1);
-            TJSJ = new DateTime(1900, 1, 1);
-            SHSJ = new DateTime(1900, 1, 1);
+            FFRQ = DateTime.Now;
+            TJSJ = DateTime.Now;
+            SHSJ = DateTime.Now;
         }
         public class EDU_ZZXS_11_01_BYSJ_metadata
         {

@@ -14,12 +14,12 @@ namespace HanRuEdu.LDAL
             Repairplace = "";
             Repaircontent = "";
             Repairpeople = "";
-            RepairDate = new DateTime(1900, 1, 1);
+            RepairDate = DateTime.Now;
             ReadrID = "";
             Readr = "";
             Applicant = "";
             Evaluate = "";
-            StartDate = new DateTime(1900, 1, 1);
+            StartDate = DateTime.Now;
             Remark = "";
         }
         public class EDU_OAXT_15_A08_BXGL_metadata
