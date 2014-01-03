@@ -541,6 +541,55 @@
             <name="AppraierID" exp="添加人ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_23_A01_DGSXYQLJLX" exp="顶岗实习友情链接类型">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="NAME" exp="类型名" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_23_A02_DGSXYQLJ" exp="顶岗实习友情链接">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
+            <name="YQLJLXID" exp="友情链接类型ID" type="int" null="F" p="F" />
+            <name="TITLE" exp="标题" type="nvarchar(50)" null="F" p="F" />
+            <name="IMAGEURL" exp="图片" type="nvarchar(500)" null="T" p="F" />
+            <name="URL" exp="链接" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_23_A03_DGSXMHLM" exp="顶岗实习门户栏目">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LMMC" exp="栏目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="LMLJ" exp="栏目链接" type="nvarchar(300)" null="F" p="F" />
+            <name="CJ" exp="层级" type="int" null="F" p="F" />
+            <name="FLMID" exp="父栏目ID" type="int" null="F" p="F" />
+            <name="SFQY" exp="是否启用" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_23_A04_DGSXMHWZ" exp="顶岗实习门户文章">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="LMID" exp="栏目ID" type="int" null="F" p="F" />
+            <name="BT" exp="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="FBR" exp="发布人" type="nvarchar(50)" null="F" p="F" />
+            <name="ZZ" exp="作者" type="nvarchar(50)" null="F" p="F" />
+            <name="ZZBM" exp="作者部门" type="nvarchar(50)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+            <name="ZY" exp="摘要" type="text" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="DJL" exp="点击量" type="int" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHR" exp="审核人" type="nvarchar(50)" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="ZDYXJ" exp="置顶优先级" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_30_A01_CLASSROOM" exp="教室表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

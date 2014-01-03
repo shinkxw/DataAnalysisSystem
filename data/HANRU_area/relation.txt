@@ -1115,6 +1115,18 @@
   StuID          EDU_ZZXS_01_01_XSXX                ID
   XNID           EDU_SYS_01_XN                      ID
   XQID           EDU_ELE_01_XQ                      ID
+<EDU_ZZJX_23_A01_DGSXYQLJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_23_A02_DGSXYQLJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YQLJLXID       EDU_ZZJX_23_A01_DGSXYQLJLX         ID
+<EDU_ZZJX_23_A03_DGSXMHLM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FLMID          EDU_ZZJX_23_A03_DGSXMHLM           ID
+<EDU_ZZJX_23_A04_DGSXMHWZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LMID           EDU_ZZJX_23_A03_DGSXMHLM           ID
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZZJX_30_A01_CLASSROOM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_30_A02_EXAMROOM
