@@ -8,7 +8,6 @@ SELECT a.[ID]--编号
       ,a.[KPBJID]--考评班级ID
       ,a.[JZGJBSJID]--教职工ID
       ,a.[IP]--IP地址
-      ,a.[PJSJ]--评教时间
       ,a.[FZ]--分值
       ,c.SCHOOLID as c_XSPJKPTM_SCHOOLID--学生评教考评题目表 学校
       ,c.KPID as c_XSPJKPTM_KPID--学生评教考评题目表 ID
@@ -94,7 +93,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZZJG_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_20_A05_XSPJKPTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS d ON a.KPBJID = d.ID /*考评班级ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS d ON a.KPBJID = d.ID /*考评班级ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.JZGJBSJID = e.ID /*教职工ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN

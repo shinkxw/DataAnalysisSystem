@@ -4,28 +4,19 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJG_20_A07_XSPJKPJG_metadata))]
-    public partial class EDU_ZZJG_20_A07_XSPJKPJG
+    [MetadataType(typeof(EDU_ZZJG_20_A08_XSPJTJJL_metadata))]
+    public partial class EDU_ZZJG_20_A08_XSPJTJJL
     {
-        public EDU_ZZJG_20_A07_XSPJKPJG()
+        public EDU_ZZJG_20_A08_XSPJTJJL()
         {
             IP = "";
+            TJSJ = DateTime.Now;
         }
-        public class EDU_ZZJG_20_A07_XSPJKPJG_metadata
+        public class EDU_ZZJG_20_A08_XSPJTJJL_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
             public Int32 ID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学校")]
-            public Int32 SCHOOLID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "考评题目")]
-            public Int32 KPTMID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -34,8 +25,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "教职工")]
-            public Int32 JZGJBSJID { get; set; }
+            [Display(Name = "识别码")]
+            public Int32 SBM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -46,8 +37,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "分值")]
-            public Int32 FZ { get; set; }
+            [Display(Name = "提交时间")]
+            public DateTime TJSJ { get; set; }
 
 
         }

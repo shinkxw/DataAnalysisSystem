@@ -683,6 +683,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_20_A07
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_20_A07_XSPJKPJG_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_20_A08_XSPJTJJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJG_20_A08_XSPJTJJL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_01_ZYXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_01_ZYXX_DISP
@@ -12325,7 +12329,6 @@ SELECT a.[ID]--编号
       ,a.[KPBJID]--考评班级ID
       ,a.[JZGJBSJID]--教职工ID
       ,a.[IP]--IP地址
-      ,a.[PJSJ]--评教时间
       ,a.[FZ]--分值
       ,c.SCHOOLID as c_XSPJKPTM_SCHOOLID--学生评教考评题目表 学校
       ,c.KPID as c_XSPJKPTM_KPID--学生评教考评题目表 ID
@@ -12411,7 +12414,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZZJG_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_20_A05_XSPJKPTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS d ON a.KPBJID = d.ID /*考评班级ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS d ON a.KPBJID = d.ID /*考评班级ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.JZGJBSJID = e.ID /*教职工ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
@@ -12432,6 +12435,29 @@ FROM dbo.EDU_ZZJG_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [er] ON e.SFJZJS = [er].DM /*是否兼职教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [es] ON e.SFSSXJS = [es].DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS [et] ON e.DQZTM = [et].DM /*当前状态码*/
+GO
+
+--学生评教提交记录表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJG_20_A08_XSPJTJJL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[KPBJID]--考评班级ID
+      ,a.[SBM]--识别码
+      ,a.[IP]--IP地址
+      ,a.[TJSJ]--提交时间
+      ,b.SCHOOLID as b_XSPJKPBJ_SCHOOLID--学生评教考评班级表 学校
+      ,b.KPID as b_XSPJKPBJ_KPID--学生评教考评班级表 考评ID
+      ,b.BJMC as b_XSPJKPBJ_BJMC--学生评教考评班级表 班级名称
+      ,b.BPJGIDLB as b_XSPJKPBJ_BPJGIDLB--学生评教考评班级表 被评教工ID列表
+      ,b.DYKCMCLB as b_XSPJKPBJ_DYKCMCLB--学生评教考评班级表 对应课程名称列表
+      ,b.YPRS as b_XSPJKPBJ_YPRS--学生评教考评班级表 应评人数
+      ,b.SBM as b_XSPJKPBJ_SBM--学生评教考评班级表 识别码
+      ,b.KQSJ as b_XSPJKPBJ_KQSJ--学生评教考评班级表 开启时间
+      ,b.ZDGBSJ as b_XSPJKPBJ_ZDGBSJ--学生评教考评班级表 自动关闭时间
+      ,b.ZT as b_XSPJKPBJ_ZT--学生评教考评班级表 状态
+
+FROM dbo.EDU_ZZJG_20_A08_XSPJTJJL AS a LEFT OUTER JOIN
+      dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS b ON a.KPBJID = b.ID /*考评班级ID*/
 GO
 
 --专业基本信息数据表
