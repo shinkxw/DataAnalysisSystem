@@ -494,7 +494,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="KPID" exp="ID" type="int" null="F" p="F" />
+            <name="KPID" exp="考评ID" type="int" null="F" p="F" />
             <name="TMID" exp="考评题目ID" type="int" null="F" p="F" />
         </field_area>
     </table>
@@ -505,6 +505,7 @@
             <name="KPID" exp="考评ID" type="int" null="F" p="F" />
             <name="BJMC" exp="班级名称" type="nvarchar(50)" null="F" p="F" />
             <name="BPJGIDLB" exp="被评教工ID列表" type="text" null="F" p="F" />
+            <name="BPJGXMLB" exp="被评教工姓名列表" type="text" null="F" p="F" />
             <name="DYKCMCLB" exp="对应课程名称列表" type="text" null="F" p="F" />
             <name="YPRS" exp="应评人数" type="int" null="F" p="F" />
             <name="SBM" exp="识别码" type="int" null="F" p="F" />

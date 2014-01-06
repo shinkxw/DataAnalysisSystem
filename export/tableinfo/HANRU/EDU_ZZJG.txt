@@ -411,7 +411,7 @@ EDU_ZZJG_20_A04_XSPJKP  学生评教考评表
 EDU_ZZJG_20_A05_XSPJKPTM  学生评教考评题目表
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主        学校配置表
-  KPID          ID                      int            非主        学生评教考评表
+  KPID          考评ID                  int            非主        学生评教考评表
   TMID          考评题目ID              int            非主        学生评教题目表
 
 EDU_ZZJG_20_A06_XSPJKPBJ  学生评教考评班级表
@@ -420,6 +420,7 @@ EDU_ZZJG_20_A06_XSPJKPBJ  学生评教考评班级表
   KPID          考评ID                  int            非主        学生评教考评表
   BJMC          班级名称                nvarchar(50)   非主
   BPJGIDLB      被评教工ID列表          text           非主
+  BPJGXMLB      被评教工姓名列表        text           非主
   DYKCMCLB      对应课程名称列表        text           非主
   YPRS          应评人数                int            非主
   SBM           识别码                  int            非主

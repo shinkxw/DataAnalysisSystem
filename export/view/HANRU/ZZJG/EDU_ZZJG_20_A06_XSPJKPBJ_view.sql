@@ -7,6 +7,7 @@ SELECT a.[ID]--编号
       ,a.[KPID]--考评ID
       ,a.[BJMC]--班级名称
       ,a.[BPJGIDLB]--被评教工ID列表
+      ,a.[BPJGXMLB]--被评教工姓名列表
       ,a.[DYKCMCLB]--对应课程名称列表
       ,a.[YPRS]--应评人数
       ,a.[SBM]--识别码

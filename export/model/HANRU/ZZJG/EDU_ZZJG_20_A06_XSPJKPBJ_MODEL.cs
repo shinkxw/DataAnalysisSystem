@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             BJMC = "";
             BPJGIDLB = "";
+            BPJGXMLB = "";
             DYKCMCLB = "";
             KQSJ = DateTime.Now;
         }
@@ -42,6 +43,12 @@ namespace HanRuEdu.LDAL
             [Display(Name = "被评教工ID列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BPJGIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "被评教工姓名列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BPJGXMLB { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

@@ -10,12 +10,13 @@ SELECT a.[ID]--编号
       ,a.[IP]--IP地址
       ,a.[FZ]--分值
       ,c.SCHOOLID as c_XSPJKPTM_SCHOOLID--学生评教考评题目表 学校
-      ,c.KPID as c_XSPJKPTM_KPID--学生评教考评题目表 ID
+      ,c.KPID as c_XSPJKPTM_KPID--学生评教考评题目表 考评ID
       ,c.TMID as c_XSPJKPTM_TMID--学生评教考评题目表 考评题目ID
       ,d.SCHOOLID as d_XSPJKPBJ_SCHOOLID--学生评教考评班级表 学校
       ,d.KPID as d_XSPJKPBJ_KPID--学生评教考评班级表 考评ID
       ,d.BJMC as d_XSPJKPBJ_BJMC--学生评教考评班级表 班级名称
       ,d.BPJGIDLB as d_XSPJKPBJ_BPJGIDLB--学生评教考评班级表 被评教工ID列表
+      ,d.BPJGXMLB as d_XSPJKPBJ_BPJGXMLB--学生评教考评班级表 被评教工姓名列表
       ,d.DYKCMCLB as d_XSPJKPBJ_DYKCMCLB--学生评教考评班级表 对应课程名称列表
       ,d.YPRS as d_XSPJKPBJ_YPRS--学生评教考评班级表 应评人数
       ,d.SBM as d_XSPJKPBJ_SBM--学生评教考评班级表 识别码

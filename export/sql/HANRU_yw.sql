@@ -10088,7 +10088,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZJG_20_A05_XSPJKPTM](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[KPID]  int  NOT NULL,--ID
+	[KPID]  int  NOT NULL,--考评ID
 	[TMID]  int  NOT NULL,--考评题目ID
 CONSTRAINT [PK_EDU_ZZJG_20_A05_XSPJKPTM] PRIMARY KEY CLUSTERED
 (
@@ -10107,6 +10107,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_20_A06_XSPJKPBJ](
 	[KPID]  int  NOT NULL,--考评ID
 	[BJMC]  nvarchar(50)  NOT NULL,--班级名称
 	[BPJGIDLB]  text  NOT NULL,--被评教工ID列表
+	[BPJGXMLB]  text  NOT NULL,--被评教工姓名列表
 	[DYKCMCLB]  text  NOT NULL,--对应课程名称列表
 	[YPRS]  int  NOT NULL,--应评人数
 	[SBM]  int  NOT NULL,--识别码
@@ -10904,7 +10905,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A05_XSPJKPTM', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A05_XSPJKPTM', @level2type=N'COLUMN',@level2name=N'KPID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A05_XSPJKPTM', @level2type=N'COLUMN',@level2name=N'KPID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评题目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A05_XSPJKPTM', @level2type=N'COLUMN',@level2name=N'TMID'
 GO
@@ -10919,6 +10920,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A06_XSPJKPBJ', @level2type=N'COLUMN',@level2name=N'BJMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被评教工ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A06_XSPJKPBJ', @level2type=N'COLUMN',@level2name=N'BPJGIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被评教工姓名列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A06_XSPJKPBJ', @level2type=N'COLUMN',@level2name=N'BPJGXMLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对应课程名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A06_XSPJKPBJ', @level2type=N'COLUMN',@level2name=N'DYKCMCLB'
 GO

@@ -11,6 +11,7 @@ SELECT a.[ID]--编号
       ,b.KPID as b_XSPJKPBJ_KPID--学生评教考评班级表 考评ID
       ,b.BJMC as b_XSPJKPBJ_BJMC--学生评教考评班级表 班级名称
       ,b.BPJGIDLB as b_XSPJKPBJ_BPJGIDLB--学生评教考评班级表 被评教工ID列表
+      ,b.BPJGXMLB as b_XSPJKPBJ_BPJGXMLB--学生评教考评班级表 被评教工姓名列表
       ,b.DYKCMCLB as b_XSPJKPBJ_DYKCMCLB--学生评教考评班级表 对应课程名称列表
       ,b.YPRS as b_XSPJKPBJ_YPRS--学生评教考评班级表 应评人数
       ,b.SBM as b_XSPJKPBJ_SBM--学生评教考评班级表 识别码

@@ -23,7 +23,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "±ØÌî")]
-            [Display(Name = "")]
+            [Display(Name = "¿¼ÆÀ")]
             public Int32 KPID { get; set; }
 
 
