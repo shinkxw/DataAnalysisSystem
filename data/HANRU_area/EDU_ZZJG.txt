@@ -103,6 +103,7 @@
             <name="ZSBFRQ" exp="证书颁发日期" type="nvarchar(8)" null="F" p="F" />
             <name="ZSBZ" exp="证书备注" type="text" null="T" p="F" />
             <name="SFSZYZGZS" exp="是否是职业资格证书" type="nvarchar(1)" null="F" p="F" />
+            <name="JJ" exp="简介" type="text" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_11_A02_KPXX" exp="考评选项表">

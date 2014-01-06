@@ -63,6 +63,11 @@ namespace HanRuEdu.LDAL
             public String SFSZYZGZS { get; set; }
 
 
+            [Display(Name = "¼ò½é")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JJ { get; set; }
+
+
         }
     }
 }

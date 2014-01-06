@@ -90,6 +90,7 @@ EDU_ZZJG_07_01_JZGZYNL  教职工专业能力与资格证书数据类表
   ZSBFRQ        证书颁发日期            nvarchar(8)    非主
   ZSBZ          证书备注                text           非主
   SFSZYZGZS     是否是职业资格证书      nvarchar(1)    非主        是否标志代码表
+  JJ            简介                    text           非主
 
 EDU_ZZJG_11_A02_KPXX  考评选项表
   ID            编号                    int            主键
