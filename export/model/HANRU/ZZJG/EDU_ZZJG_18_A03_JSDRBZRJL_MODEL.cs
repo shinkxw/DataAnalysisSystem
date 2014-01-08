@@ -10,7 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJG_18_A03_JSDRBZRJL()
         {
             DRBJ = "";
-            DRSJ = "";
         }
         public class EDU_ZZJG_18_A03_JSDRBZRJL_metadata
         {
@@ -36,11 +35,16 @@ namespace HanRuEdu.LDAL
             public String DRBJ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "担任时间")]
-            [StringLength(50)]
+            [Range(typeof(decimal), "0", "99999")]
+            public decimal DRSJ { get; set; }
+
+
+            [Display(Name = "备注")]
+            [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DRSJ { get; set; }
+            public String BZ { get; set; }
 
 
         }

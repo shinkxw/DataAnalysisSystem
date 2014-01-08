@@ -72,6 +72,11 @@ namespace HanRuEdu.LDAL
             public String JGH { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Ñ§ÆÚ")]
+            public Int32 XQID { get; set; }
+
+
         }
     }
 }

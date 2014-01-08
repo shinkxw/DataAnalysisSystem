@@ -9763,6 +9763,7 @@ SELECT a.[ID]--编号
       ,a.[SFZG]--是否在岗
       ,a.[ZWMC]--职务名称
       ,a.[JGH]--机构号
+      ,a.[XQID]--学期ID
       ,c.SCHOOLID as c_JGGW_SCHOOLID--机构岗位表 学校ID
       ,c.JGH as c_JGGW_JGH--机构岗位表 机构号
       ,c.GWBH as c_JGGW_GWBH--机构岗位表 岗位编号
@@ -9852,12 +9853,20 @@ SELECT a.[ID]--编号
       ,f.JLNY as f_XNJG_JLNY--校内机构数据类表 建立年月
       ,f.JGYZBM as f_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
       ,f.FZRH as f_XNJG_FZRH--校内机构数据类表 负责人号
+      ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
+      ,g.XNID as g_XQ_XNID--学期数据表 学年
+      ,g.XQM as g_XQ_XQM--学期数据表 学期码
+      ,[gb].MC as g_XQ_XQM_MC--学期代码表 名称
+      ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
+      ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_A01_JGGW AS c ON a.GWID = c.ID /*岗位表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
       dbo.EDU_ZZXX_03_01_XNJG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS g ON a.XQID = g.ID /*学期ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
@@ -9878,7 +9887,8 @@ FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [ds] ON d.SFSSXJS = [ds].DM /*是否双师型教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZGDQZT AS [dt] ON d.DQZTM = [dt].DM /*当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [fb] ON f.JGYXBS = [fb].DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [fc] ON f.SFST = [fc].DM /*是否实体*/
+      dbo.EDU_JY_SFBZ AS [fc] ON f.SFST = [fc].DM /*是否实体*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [gb] ON g.XQM = [gb].DM /*学期码*/
 GO
 
 --加班登记表
@@ -11942,6 +11952,7 @@ SELECT a.[ID]--编号
       ,a.[JZGJBSJID]--教职工ID
       ,a.[DRBJ]--担任班级
       ,a.[DRSJ]--担任时间
+      ,a.[BZ]--备注
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
