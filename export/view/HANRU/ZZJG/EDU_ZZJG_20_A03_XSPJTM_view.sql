@@ -6,7 +6,6 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[DFFSID]--打分方式ID
       ,a.[PJXM]--评教项目
-      ,a.[PJTM]--评教条目
       ,a.[PJZB]--评教指标
       ,a.[ZT]--状态
       ,c.SCHOOLID as c_XSPJDFFS_SCHOOLID--学生评教打分方式表 学校

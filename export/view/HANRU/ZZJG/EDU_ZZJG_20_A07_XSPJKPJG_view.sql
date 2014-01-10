@@ -9,9 +9,11 @@ SELECT a.[ID]--编号
       ,a.[JZGJBSJID]--教职工ID
       ,a.[IP]--IP地址
       ,a.[FZ]--分值
-      ,c.SCHOOLID as c_XSPJKPTM_SCHOOLID--学生评教考评题目表 学校
-      ,c.KPID as c_XSPJKPTM_KPID--学生评教考评题目表 考评ID
-      ,c.TMID as c_XSPJKPTM_TMID--学生评教考评题目表 考评题目ID
+      ,c.SCHOOLID as c_XSPJTM_SCHOOLID--学生评教题目表 学校
+      ,c.DFFSID as c_XSPJTM_DFFSID--学生评教题目表 打分方式ID
+      ,c.PJXM as c_XSPJTM_PJXM--学生评教题目表 评教项目
+      ,c.PJZB as c_XSPJTM_PJZB--学生评教题目表 评教指标
+      ,c.ZT as c_XSPJTM_ZT--学生评教题目表 状态
       ,d.SCHOOLID as d_XSPJKPBJ_SCHOOLID--学生评教考评班级表 学校
       ,d.KPID as d_XSPJKPBJ_KPID--学生评教考评班级表 考评ID
       ,d.BJMC as d_XSPJKPBJ_BJMC--学生评教考评班级表 班级名称
@@ -93,7 +95,7 @@ SELECT a.[ID]--编号
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
 
 FROM dbo.EDU_ZZJG_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
-      dbo.EDU_ZZJG_20_A05_XSPJKPTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_20_A03_XSPJTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS d ON a.KPBJID = d.ID /*考评班级ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.JZGJBSJID = e.ID /*教职工ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN

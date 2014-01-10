@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="ZZXX" provider="reallocate_namespace" generation_time="">
+<namespace name="ZZXX" provider="reallocate_namespace">
     <table name="ZZXX0101" exp="学校基本数据子类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />

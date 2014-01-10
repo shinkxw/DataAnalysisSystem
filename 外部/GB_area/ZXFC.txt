@@ -1,5 +1,5 @@
 <?daf version="0.1" analyzer_name="0.1"?>
-<namespace name="ZXFC" provider="reallocate_namespace" generation_time="">
+<namespace name="ZXFC" provider="reallocate_namespace">
     <table name="ZXFC01" exp="学校用地数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />

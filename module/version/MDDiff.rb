@@ -18,7 +18,10 @@ class MDDiff
   #将数据库1转换为2
   def db_transform(db)
     @rebuild_table_arr = []
-    @t1_diff_arr.each{|table| db.delete_table(table.name)}#删表
+    @t1_diff_arr.each do |table|#删表
+      puts "需要删除#{table.name}，请问是否删除?(Y/N)"
+      db.delete_table(table.name) if KbInput.get_bool
+    end
     @t2_diff_arr.each{|table| db.create_table(table)}#建表
     @f1_diff_arr.each{|field| db.delete_field(field)}#删字段
     @f2_diff_arr.each{|f| db.add_field(f);add_pro_diff(f.ef,f)}#加字段
@@ -49,12 +52,11 @@ class MDDiff
   def db_field_transform(dp,f1,f2,db)
     case dp
     when 'type'
-      @rebuild_table_arr << f2.table
-      #~ if (f1.type == 'int' && f2.type == 'text') || (f2.type == 'int' && f1.type == 'text')
-        #~ @rebuild_table_arr << f2.table
-      #~ else
-        #~ db.update_ftype(f2)
-      #~ end
+      if (f1.db_type == 'nvarchar' && f2.db_type == 'nvarchar')
+        db.update_ftype(f2)
+      else
+        @rebuild_table_arr << f2.table
+      end
     when 'null'
       f2.null == 'T' ? db.field_null(f2) : db.field_not_null(f2)
     when 'explanation'

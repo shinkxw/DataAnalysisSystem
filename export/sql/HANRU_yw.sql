@@ -10053,8 +10053,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_20_A03_XSPJTM](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[DFFSID]  int  NOT NULL,--打分方式ID
 	[PJXM]  nvarchar(50)  NOT NULL,--评教项目
-	[PJTM]  nvarchar(50)  NOT NULL,--评教条目
-	[PJZB]  nvarchar(50)  NOT NULL,--评教指标
+	[PJZB]  nvarchar(300)  NOT NULL,--评教指标
 	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZZJG_20_A03_XSPJTM] PRIMARY KEY CLUSTERED
 (
@@ -10112,7 +10111,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_20_A06_XSPJKPBJ](
 	[BPJGXMLB]  text  NOT NULL,--被评教工姓名列表
 	[DYKCMCLB]  text  NOT NULL,--对应课程名称列表
 	[YPRS]  int  NOT NULL,--应评人数
-	[SBM]  int  NOT NULL,--识别码
+	[SBM]  nvarchar(9)  NOT NULL,--识别码
 	[KQSJ]  datetime  NOT NULL,--开启时间
 	[ZDGBSJ]  int  NOT NULL,--自动关闭时间
 	[ZT]  int  NOT NULL,--状态
@@ -10149,7 +10148,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZJG_20_A08_XSPJTJJL](
 	[ID]  int  identity,--编号
 	[KPBJID]  int  NOT NULL,--考评班级ID
-	[SBM]  int  NOT NULL,--识别码
+	[SBM]  nvarchar(9)  NOT NULL,--识别码
 	[IP]  nvarchar(50)  NOT NULL,--IP地址
 	[TJSJ]  datetime  NOT NULL,--提交时间
 CONSTRAINT [PK_EDU_ZZJG_20_A08_XSPJTJJL] PRIMARY KEY CLUSTERED
@@ -10884,8 +10883,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A03_XSPJTM', @level2type=N'COLUMN',@level2name=N'DFFSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教项目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A03_XSPJTM', @level2type=N'COLUMN',@level2name=N'PJXM'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教条目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A03_XSPJTM', @level2type=N'COLUMN',@level2name=N'PJTM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教指标' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A03_XSPJTM', @level2type=N'COLUMN',@level2name=N'PJZB'
 GO

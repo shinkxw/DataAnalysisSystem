@@ -14,7 +14,6 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XSPJTM_SCHOOLID--学生评教题目表 学校
       ,d.DFFSID as d_XSPJTM_DFFSID--学生评教题目表 打分方式ID
       ,d.PJXM as d_XSPJTM_PJXM--学生评教题目表 评教项目
-      ,d.PJTM as d_XSPJTM_PJTM--学生评教题目表 评教条目
       ,d.PJZB as d_XSPJTM_PJZB--学生评教题目表 评教指标
       ,d.ZT as d_XSPJTM_ZT--学生评教题目表 状态
 

@@ -10,7 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJG_20_A03_XSPJTM()
         {
             PJXM = "";
-            PJTM = "";
             PJZB = "";
         }
         public class EDU_ZZJG_20_A03_XSPJTM_metadata
@@ -38,15 +37,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "评教条目")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String PJTM { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "评教指标")]
-            [StringLength(50)]
+            [StringLength(300)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String PJZB { get; set; }
 

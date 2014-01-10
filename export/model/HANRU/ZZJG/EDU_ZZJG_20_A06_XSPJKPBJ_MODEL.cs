@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             BPJGIDLB = "";
             BPJGXMLB = "";
             DYKCMCLB = "";
+            SBM = "";
             KQSJ = DateTime.Now;
         }
         public class EDU_ZZJG_20_A06_XSPJKPBJ_metadata
@@ -62,9 +63,11 @@ namespace HanRuEdu.LDAL
             public Int32 YPRS { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "识别码")]
-            public Int32 SBM { get; set; }
+            [StringLength(9)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SBM { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

@@ -98,6 +98,11 @@ class MDField
     end
     result
   end
+  #获得数据库类型
+  def db_type
+    @type =~ /([^(]+?)(?:\((.+?)\)|$)/
+    $1
+  end
   #判断字段数据是否有效
   def is_valid?
     puts "MDField: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == "T" && @p == "F"
