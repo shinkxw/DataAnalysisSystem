@@ -142,6 +142,14 @@ EDU_ELE_03_XNJS  性能监视表
   CPXRSD        磁盘写入速度            float          非主
   ZXRS          在线人数                int            非主
 
+EDU_ELE_03_XHSJJL  消耗时间记录表
+  ID            编号                    int            自增主键
+  APPID         应用ID                  int            非主
+  NAME          功能名称                nvarchar(20)   非主
+  LINK          地址                    nvarchar(100)  非主
+  MAXTIME       最高消耗时间            int            非主
+  JLCS          记录次数                int            非主
+
 EDU_ELE_04_PKJGJL  排课结果记录表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键

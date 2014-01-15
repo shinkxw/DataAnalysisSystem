@@ -19248,7 +19248,6 @@ GO
 
 INSERT INTO [EDU_JY_SFBZ]([DM] ,[MC]) VALUES('0', '否')
 INSERT INTO [EDU_JY_SFBZ]([DM] ,[MC]) VALUES('1', '是')
-INSERT INTO [EDU_JY_SFBZ]([DM] ,[MC]) VALUES('2', '不确定')
 
 --色彩模式代码表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_JY_SCMS]') AND type in (N'U'))

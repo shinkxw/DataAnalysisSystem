@@ -2168,7 +2168,6 @@
         <data_area>
             <DM="0" MC="否" />
             <DM="1" MC="是" />
-            <DM="2" MC="不确定" />
         </data_area>
     </table>
     <table name="EDU_JY_SCMS" exp="色彩模式代码表">

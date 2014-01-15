@@ -760,6 +760,9 @@
 <EDU_ZZJG_01_A02_JZGNLZS
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_01_A03_GRXXBJKG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SFKQ           EDU_JY_SFBZ                        DM
 <EDU_ZZJG_02_02_XNGWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GWID           EDU_ZZXX_03_A01_JGGW               ID

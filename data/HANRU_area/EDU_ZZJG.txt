@@ -70,6 +70,14 @@
             <name="JNZS" exp="技能证书" type="nvarchar(100)" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_01_A03_GRXXBJKG" exp="个人信息编辑开关表">
+        <field_area>
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="SCSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="HDSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="SFKQ" exp="是否开启" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJG_02_02_XNGWSJ" exp="校内岗位数据子类表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

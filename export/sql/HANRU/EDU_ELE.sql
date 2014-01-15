@@ -70,6 +70,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_03_XNJS')
    drop table EDU_ELE_03_XNJS
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_03_XHSJJL')
+            and   type = 'U')
+   drop table EDU_ELE_03_XHSJJL
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_04_PKJGJL')
             and   type = 'U')
    drop table EDU_ELE_04_PKJGJL
@@ -412,6 +417,24 @@ CREATE TABLE [dbo].[EDU_ELE_03_XNJS](
 	[CPXRSD]  float  NOT NULL,--磁盘写入速度
 	[ZXRS]  int  NOT NULL,--在线人数
 CONSTRAINT [PK_EDU_ELE_03_XNJS] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--消耗时间记录表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_03_XHSJJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_03_XHSJJL](
+	[ID]  int  identity,--编号
+	[APPID]  int  NOT NULL,--应用ID
+	[NAME]  nvarchar(20)  NOT NULL,--功能名称
+	[LINK]  nvarchar(100)  NOT NULL,--地址
+	[MAXTIME]  int  NOT NULL,--最高消耗时间
+	[JLCS]  int  NOT NULL,--记录次数
+CONSTRAINT [PK_EDU_ELE_03_XHSJJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -891,6 +914,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'磁盘写入速度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'CPXRSD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'在线人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XNJS', @level2type=N'COLUMN',@level2name=N'ZXRS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'消耗时间记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL', @level2type=N'COLUMN',@level2name=N'APPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL', @level2type=N'COLUMN',@level2name=N'NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL', @level2type=N'COLUMN',@level2name=N'LINK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高消耗时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL', @level2type=N'COLUMN',@level2name=N'MAXTIME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'记录次数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_03_XHSJJL', @level2type=N'COLUMN',@level2name=N'JLCS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排课结果记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_04_PKJGJL'
 GO
