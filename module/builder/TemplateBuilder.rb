@@ -349,13 +349,13 @@ class TemplateBuilder
     str << %(    <div style="padding: 10px;"><br />\n)
     str << %(        <p style="text-align: center">\n)
     str << %(            <input id="xmlfile" name="xmlfile" type="file" />\n)
-    str << %(            <input id="Submit1" type="submit" value="上传" />\n)
-    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/#{table.lname_dc}.xls")">模板下载</a>\n)
-    str << %(            　　<a href="@Url.Content("~/#{@directory_name}/#{table.lname_dc}/index")">返回</a>\n)
+    str << %(            <input id="Submit1" type="submit" value="上传" />　\n)
+    str << %(            <a href="@Url.Content("~/#{@directory_name}/#{table.lname_dc}/index")" class="easyui-linkbutton" iconCls="icon-back" >返回列表</a>\n)
     str << "        </p>\n        <hr />\n"
     str << "        <p>\n"
+    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/#{table.lname_dc}.xls")">模板下载</a><br />\n)
     str << %(            <span style="color: red">导入小贴士：<br />\n)
-    str << "                1.本导入只支持XML格式的文件<br />\n"
+    str << "                1.本导入只支持XML格式的文件。<br />\n"
     str << "                2.选择EXCEL的【文件另存为。。。】菜单，在保持类型处选择“XML表格”类型，可保存为XML格式文件。<br />\n"
     str << "                3.建议用户直接在导入模板上填充要导入的数据，即可上传导入。<br />\n"
     str << "            </span>\n"

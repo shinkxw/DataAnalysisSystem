@@ -435,6 +435,30 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_07_02_
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_07_02_RKSJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_20_A02_XSPJDFXM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_20_A02_XSPJDFXM_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_20_A03_XSPJTM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_20_A03_XSPJTM_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_20_A05_XSPJKPTM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_20_A05_XSPJKPTM_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_20_A06_XSPJKPBJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_20_A06_XSPJKPBJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_20_A07_XSPJKPJG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_20_A07_XSPJKPJG_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_20_A08_XSPJTJJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_20_A08_XSPJTJJL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXTW_03_A01_XSMZJL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXTW_03_A01_XSMZJL_DISP
@@ -6463,6 +6487,225 @@ FROM dbo.EDU_ZXJZ_07_02_RKSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [gc] ON g.SFSSMZSYJXB = [gc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS [gd] ON g.SYJXMSM = [gd].DM /*双语教学模式码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [jb] ON j.XQM = [jb].DM /*学期码*/
+GO
+
+--学生评教打分项目表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_20_A02_XSPJDFXM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[DFFSID]--打分方式ID
+      ,a.[DFXMMC]--打分项目名称
+      ,a.[FZ]--分值
+      ,c.SCHOOLID as c_XSPJDFFS_SCHOOLID--学生评教打分方式表 学校
+      ,c.DFFSMC as c_XSPJDFFS_DFFSMC--学生评教打分方式表 打分方式名称
+      ,c.ZT as c_XSPJDFFS_ZT--学生评教打分方式表 状态
+
+FROM dbo.EDU_ZXJZ_20_A02_XSPJDFXM AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A01_XSPJDFFS AS c ON a.DFFSID = c.ID /*打分方式ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--学生评教题目表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_20_A03_XSPJTM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[DFFSID]--打分方式ID
+      ,a.[PJXM]--评教项目
+      ,a.[PJZB]--评教指标
+      ,a.[ZT]--状态
+      ,c.SCHOOLID as c_XSPJDFFS_SCHOOLID--学生评教打分方式表 学校
+      ,c.DFFSMC as c_XSPJDFFS_DFFSMC--学生评教打分方式表 打分方式名称
+      ,c.ZT as c_XSPJDFFS_ZT--学生评教打分方式表 状态
+
+FROM dbo.EDU_ZXJZ_20_A03_XSPJTM AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A01_XSPJDFFS AS c ON a.DFFSID = c.ID /*打分方式ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--学生评教考评题目表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_20_A05_XSPJKPTM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[KPID]--考评ID
+      ,a.[TMID]--考评题目ID
+      ,c.SCHOOLID as c_XSPJKP_SCHOOLID--学生评教考评表 学校
+      ,c.KPMC as c_XSPJKP_KPMC--学生评教考评表 考评名称
+      ,c.KSSJ as c_XSPJKP_KSSJ--学生评教考评表 开始时间
+      ,c.JSSJ as c_XSPJKP_JSSJ--学生评教考评表 结束时间
+      ,c.ZT as c_XSPJKP_ZT--学生评教考评表 状态
+      ,d.SCHOOLID as d_XSPJTM_SCHOOLID--学生评教题目表 学校
+      ,d.DFFSID as d_XSPJTM_DFFSID--学生评教题目表 打分方式ID
+      ,d.PJXM as d_XSPJTM_PJXM--学生评教题目表 评教项目
+      ,d.PJZB as d_XSPJTM_PJZB--学生评教题目表 评教指标
+      ,d.ZT as d_XSPJTM_ZT--学生评教题目表 状态
+
+FROM dbo.EDU_ZXJZ_20_A05_XSPJKPTM AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A04_XSPJKP AS c ON a.KPID = c.ID /*考评ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A03_XSPJTM AS d ON a.TMID = d.ID /*考评题目ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--学生评教考评班级表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_20_A06_XSPJKPBJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[KPID]--考评ID
+      ,a.[BJMC]--班级名称
+      ,a.[BPJGIDLB]--被评教工ID列表
+      ,a.[BPJGXMLB]--被评教工姓名列表
+      ,a.[DYKCMCLB]--对应课程名称列表
+      ,a.[YPRS]--应评人数
+      ,a.[SBM]--识别码
+      ,a.[KQSJ]--开启时间
+      ,a.[ZDGBSJ]--自动关闭时间
+      ,a.[ZT]--状态
+      ,c.SCHOOLID as c_XSPJKP_SCHOOLID--学生评教考评表 学校
+      ,c.KPMC as c_XSPJKP_KPMC--学生评教考评表 考评名称
+      ,c.KSSJ as c_XSPJKP_KSSJ--学生评教考评表 开始时间
+      ,c.JSSJ as c_XSPJKP_JSSJ--学生评教考评表 结束时间
+      ,c.ZT as c_XSPJKP_ZT--学生评教考评表 状态
+
+FROM dbo.EDU_ZXJZ_20_A06_XSPJKPBJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A04_XSPJKP AS c ON a.KPID = c.ID /*考评ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--学生评教考评结果表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_20_A07_XSPJKPJG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[KPTMID]--考评题目ID
+      ,a.[KPBJID]--考评班级ID
+      ,a.[JZGJBSJID]--教职工ID
+      ,a.[IP]--IP地址
+      ,a.[FZ]--分值
+      ,c.SCHOOLID as c_XSPJTM_SCHOOLID--学生评教题目表 学校
+      ,c.DFFSID as c_XSPJTM_DFFSID--学生评教题目表 打分方式ID
+      ,c.PJXM as c_XSPJTM_PJXM--学生评教题目表 评教项目
+      ,c.PJZB as c_XSPJTM_PJZB--学生评教题目表 评教指标
+      ,c.ZT as c_XSPJTM_ZT--学生评教题目表 状态
+      ,d.SCHOOLID as d_XSPJKPBJ_SCHOOLID--学生评教考评班级表 学校
+      ,d.KPID as d_XSPJKPBJ_KPID--学生评教考评班级表 考评ID
+      ,d.BJMC as d_XSPJKPBJ_BJMC--学生评教考评班级表 班级名称
+      ,d.BPJGIDLB as d_XSPJKPBJ_BPJGIDLB--学生评教考评班级表 被评教工ID列表
+      ,d.BPJGXMLB as d_XSPJKPBJ_BPJGXMLB--学生评教考评班级表 被评教工姓名列表
+      ,d.DYKCMCLB as d_XSPJKPBJ_DYKCMCLB--学生评教考评班级表 对应课程名称列表
+      ,d.YPRS as d_XSPJKPBJ_YPRS--学生评教考评班级表 应评人数
+      ,d.SBM as d_XSPJKPBJ_SBM--学生评教考评班级表 识别码
+      ,d.KQSJ as d_XSPJKPBJ_KQSJ--学生评教考评班级表 开启时间
+      ,d.ZDGBSJ as d_XSPJKPBJ_ZDGBSJ--学生评教考评班级表 自动关闭时间
+      ,d.ZT as d_XSPJKPBJ_ZT--学生评教考评班级表 状态
+      ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,e.YWXM as e_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,e.XMPY as e_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,e.CYM as e_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,e.XBM as e_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[eb].MC as e_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,e.CSRQ as e_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,e.CSDM as e_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
+      ,[ec].MC as e_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,e.JG as e_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,e.MZM as e_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[ed].MZMC as e_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[ed].ZMDM as e_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,e.GJDQM as e_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[ee].GJDQMCJC as e_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ee].EZMDM as e_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ee].SZMDM as e_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,e.SFZJLXM as e_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[ef].MC as e_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,e.SFZJH as e_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,e.HYZKM as e_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
+      ,[eg].MC as e_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,e.GATQWM as e_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[eh].MC as e_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[eh].SM as e_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,e.ZZMMM as e_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[ei].MC as e_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ei].JC as e_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,e.JKZKM as e_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[ej].MC as e_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ej].SM as e_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,e.XYZJM as e_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[ek].MC as e_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,e.XXM as e_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[el].MC as e_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[el].JC as e_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,e.ZP as e_JZGJBSJ_ZP--教职工基本数据子类表 照片
+      ,e.SFZJYXQ as e_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
+      ,e.JGH as e_JZGJBSJ_JGH--教职工基本数据子类表 机构号
+      ,e.JTZZ as e_JZGJBSJ_JTZZ--教职工基本数据子类表 家庭住址
+      ,e.XZZ as e_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
+      ,e.HKSZD as e_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
+      ,e.HKXZM as e_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
+      ,[em].MC as e_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,e.XLM as e_JZGJBSJ_XLM--教职工基本数据子类表 学历码
+      ,[en].MC as e_JZGJBSJ_XLM_MC--学历代码 名称
+      ,e.GZNY as e_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
+      ,e.LXNY as e_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,e.CJNY as e_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,e.BZLBM as e_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[eo].MC as e_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,e.DABH as e_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
+      ,e.DAWB as e_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
+      ,e.TXDZ as e_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,e.LXDH as e_JZGJBSJ_LXDH--教职工基本数据子类表 联系电话
+      ,e.YZBM as e_JZGJBSJ_YZBM--教职工基本数据子类表 邮政编码
+      ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,e.ZYDZ as e_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
+      ,e.TC as e_JZGJBSJ_TC--教职工基本数据子类表 特长
+      ,e.GWZYM as e_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
+      ,[ep].MC as e_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,e.ZYRKXD as e_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
+      ,[eq].MC as e_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+
+FROM dbo.EDU_ZXJZ_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A03_XSPJTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A06_XSPJKPBJ AS d ON a.KPBJID = d.ID /*考评班级ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS e ON a.JZGJBSJID = e.ID /*教职工ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ec] ON e.CSDM = [ec].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ee] ON e.GJDQM = [ee].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [ef] ON e.SFZJLXM = [ef].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [eg] ON e.HYZKM = [eg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [eh] ON e.GATQWM = [eh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ei] ON e.ZZMMM = [ei].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ej] ON e.JKZKM = [ej].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ek] ON e.XYZJM = [ek].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [el] ON e.XXM = [el].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [em] ON e.HKXZM = [em].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [en] ON e.XLM = [en].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [eo] ON e.BZLBM = [eo].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [ep] ON e.GWZYM = [ep].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [eq] ON e.ZYRKXD = [eq].DM /*主要任课学段*/
+GO
+
+--学生评教提交记录表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_20_A08_XSPJTJJL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[KPBJID]--考评班级ID
+      ,a.[SBM]--识别码
+      ,a.[IP]--IP地址
+      ,a.[TJSJ]--提交时间
+      ,b.SCHOOLID as b_XSPJKPBJ_SCHOOLID--学生评教考评班级表 学校
+      ,b.KPID as b_XSPJKPBJ_KPID--学生评教考评班级表 考评ID
+      ,b.BJMC as b_XSPJKPBJ_BJMC--学生评教考评班级表 班级名称
+      ,b.BPJGIDLB as b_XSPJKPBJ_BPJGIDLB--学生评教考评班级表 被评教工ID列表
+      ,b.BPJGXMLB as b_XSPJKPBJ_BPJGXMLB--学生评教考评班级表 被评教工姓名列表
+      ,b.DYKCMCLB as b_XSPJKPBJ_DYKCMCLB--学生评教考评班级表 对应课程名称列表
+      ,b.YPRS as b_XSPJKPBJ_YPRS--学生评教考评班级表 应评人数
+      ,b.SBM as b_XSPJKPBJ_SBM--学生评教考评班级表 识别码
+      ,b.KQSJ as b_XSPJKPBJ_KQSJ--学生评教考评班级表 开启时间
+      ,b.ZDGBSJ as b_XSPJKPBJ_ZDGBSJ--学生评教考评班级表 自动关闭时间
+      ,b.ZT as b_XSPJKPBJ_ZT--学生评教考评班级表 状态
+
+FROM dbo.EDU_ZXJZ_20_A08_XSPJTJJL AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_20_A06_XSPJKPBJ AS b ON a.KPBJID = b.ID /*考评班级ID*/
 GO
 
 --学生门诊记录
