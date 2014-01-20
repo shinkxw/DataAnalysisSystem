@@ -236,4 +236,25 @@
             <name="JSNAMELST" exp="角色名称列表" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_WZXT_ZDJZ_WZMB" exp="网站模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="MBMC" exp="模板名称" type="nvarchar(300)" null="F" p="F" />
+            <name="WJJMC" exp="文件夹名称" type="nvarchar(300)" null="F" p="F" />
+            <name="WZLX" exp="网站类型" type="nvarchar(300)" null="F" p="F" />
+            <name="TP" exp="图片" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_WZXT_ZDJZ_SYBK" exp="首页板块表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="WEBID" exp="网站ID" type="int" null="F" p="F" />
+            <name="BKMC" exp="板块名称" type="nvarchar(300)" null="F" p="F" />
+            <name="XSFS" exp="显示方式" type="nvarchar(200)" null="F" p="F" />
+            <name="XWLYK" exp="新闻来源库" type="int" null="F" p="F" />
+            <name="XWMLID" exp="新闻目录ID" type="int" null="F" p="F" />
+            <name="XWXSSL" exp="新闻显示数量" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

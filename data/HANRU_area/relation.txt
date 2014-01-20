@@ -377,6 +377,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
   LOGINNAME      EDU_ELE_01_USER                    LOGINNAME
+<EDU_WZXT_ZDJZ_SYBK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
 <EDU_ZJ_ZJZY
   ZYMLLB         EDU_ZJ_ZYML                        DM
 <EDU_ZXDY_04_A01_ZZGW

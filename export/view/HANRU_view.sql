@@ -343,6 +343,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_MHXT_Y
             and   type = 'V')
    drop view VIEW_EDU_WZXT_MHXT_YHQX_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_ZDJZ_SYBK_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_WZXT_ZDJZ_SYBK_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZJ_ZJZY_DISP
@@ -4765,6 +4769,28 @@ SELECT a.[ID]--权限ID
 FROM dbo.EDU_WZXT_MHXT_YHQX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.LOGINNAME = d.LOGINNAME /*用户名*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
+GO
+
+--首页板块表
+CREATE VIEW [dbo].[VIEW_EDU_WZXT_ZDJZ_SYBK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[WEBID]--网站ID
+      ,a.[BKMC]--板块名称
+      ,a.[XSFS]--显示方式
+      ,a.[XWLYK]--新闻来源库
+      ,a.[XWMLID]--新闻目录ID
+      ,a.[XWXSSL]--新闻显示数量
+      ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
+      ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
+      ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
+      ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
+      ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
+      ,c.URL as c_WZPZ_URL--网站配置 完整网址
+
+FROM dbo.EDU_WZXT_ZDJZ_SYBK AS a LEFT OUTER JOIN
+      dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
 --自建专业代码

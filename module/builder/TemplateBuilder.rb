@@ -197,10 +197,6 @@ class TemplateBuilder
     str << "List<#{table.name}> CheckList = new List<#{table.name}>();\n#{@tab.t}"
     str << "foreach (Hashtable ht in lst)\n#{@tab.t}"
     str << "{\n#{@tab.l}rowid++;\n#{@tab.t}#{table.name} model = new #{table.name}();\n#{@tab.t}"
-    table.each_field do |field|
-      next if %w(ID SCHOOLID).include? field.name
-      str << "//model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
-    end
     str << "\n#{@tab.t}"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
@@ -221,7 +217,7 @@ class TemplateBuilder
         when 'String';str << "//if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
         else @log << "TemplateBuilder: refield type wrong: #{field.split_type[0]}"
         end
-        str << %(//{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：未找到#{field.display_name}！</span><br>"; }\n)
+        str << %(//{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：未找到该#{field.display_name}！</span><br>"; }\n)
       else
         field_type = field.split_type[0]
         case field_type
@@ -245,8 +241,11 @@ class TemplateBuilder
     str << "CheckList.Add(model);\n"
     str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
     str << %({\n#{@tab.l}msg += "<span  >数据正确性检测通过！</span><br>";\n#{@tab.t})
-    str << "foreach (var item in CheckList)\n#{@tab.t}"
-    str << "{\n#{@tab.l}Add#{table.lname.capitalize}(item);\n#{@tab.t}sucss++;\n"
+    str << "foreach (var item in CheckList)\n#{@tab.t}{\n#{@tab.l}"
+    table.each_field do |field|
+      str << "//item.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
+    end
+    str << "#{table.db_name}.#{table.name}.Add(item);\n#{@tab.t}#{table.db_name}.SaveChanges();\n#{@tab.t}sucss++;\n"
     str << %(#{@tab.s}}\n#{@tab.t}msg += "<span >成功导入" + sucss + "条记录！</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
     str << %({\n#{@tab.l}msg += "<span  style=\\"color:red;\\">请先修改数据再上传。。。。。。</span><br>";\n)
@@ -266,7 +265,7 @@ class TemplateBuilder
   end
   def make_controller_get_max_ID(table)
     str = "#{@tab.t}private static int Max_#{table.lname}_ID = 0;\n#{@tab.t}"
-    str << "private static object syncIDLock = new object();\n#{@tab.t}"
+    str << "private static object sync#{table.lname}IDLock = new object();\n#{@tab.t}"
     str << "//获取#{table.explanation}最大ID\n#{@tab.t}"
     str << "public int GetMax_#{table.lname}_ID()\n#{@tab.t}"
     str << "{\n#{@tab.l}int maxId = 0;\n#{@tab.t}lock (syncIDLock)\n#{@tab.t}"

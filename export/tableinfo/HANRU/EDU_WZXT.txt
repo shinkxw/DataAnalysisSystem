@@ -196,3 +196,20 @@ EDU_WZXT_MHXT_YHQX  用户权限表
   JSIDLST       角色ID列表              text           非主
   JSNAMELST     角色名称列表            text           非主
 
+EDU_WZXT_ZDJZ_WZMB  网站模板表
+  ID            编号                    int            主键
+  MBMC          模板名称                nvarchar(300)  非主
+  WJJMC         文件夹名称              nvarchar(300)  非主
+  WZLX          网站类型                nvarchar(300)  非主
+  TP            图片                    nvarchar(300)  非主
+
+EDU_WZXT_ZDJZ_SYBK  首页板块表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  WEBID         网站ID                  int            非主        网站配置
+  BKMC          板块名称                nvarchar(300)  非主
+  XSFS          显示方式                nvarchar(200)  非主
+  XWLYK         新闻来源库              int            非主
+  XWMLID        新闻目录ID              int            非主
+  XWXSSL        新闻显示数量            int            非主
+
