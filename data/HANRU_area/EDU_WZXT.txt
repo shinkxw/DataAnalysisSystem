@@ -248,12 +248,12 @@
     <table name="EDU_WZXT_ZDJZ_SYBK" exp="首页板块表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="F" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
             <name="BKMC" exp="板块名称" type="nvarchar(300)" null="F" p="F" />
             <name="XSFS" exp="显示方式" type="nvarchar(200)" null="F" p="F" />
             <name="XWLYK" exp="新闻来源库" type="int" null="F" p="F" />
-            <name="XWMLID" exp="新闻目录ID" type="int" null="F" p="F" />
+            <name="XWLMID" exp="新闻栏目ID" type="text" null="F" p="F" />
             <name="XWXSSL" exp="新闻显示数量" type="int" null="F" p="F" />
         </field_area>
     </table>

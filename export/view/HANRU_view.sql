@@ -4808,7 +4808,7 @@ SELECT a.[ID]--编号
       ,a.[BKMC]--板块名称
       ,a.[XSFS]--显示方式
       ,a.[XWLYK]--新闻来源库
-      ,a.[XWMLID]--新闻目录ID
+      ,a.[XWLMID]--新闻栏目ID
       ,a.[XWXSSL]--新闻显示数量
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名

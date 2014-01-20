@@ -5242,11 +5242,13 @@ CREATE TABLE [dbo].[EDU_WZXT_ZDJZ_SYBK](
 	[BKMC]  nvarchar(300)  NOT NULL,--板块名称
 	[XSFS]  nvarchar(200)  NOT NULL,--显示方式
 	[XWLYK]  int  NOT NULL,--新闻来源库
-	[XWMLID]  int  NOT NULL,--新闻目录ID
+	[XWLMID]  text  NOT NULL,--新闻栏目ID
 	[XWXSSL]  int  NOT NULL,--新闻显示数量
 CONSTRAINT [PK_EDU_WZXT_ZDJZ_SYBK] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC
+	[ID] ASC,
+	[SCHOOLID] ASC,
+	[WEBID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -5637,7 +5639,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'显示方式' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻来源库' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'XWLYK'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻目录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'XWMLID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻栏目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'XWLMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻显示数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'XWXSSL'
 GO

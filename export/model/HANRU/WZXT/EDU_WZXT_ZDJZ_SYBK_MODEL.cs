@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             BKMC = "";
             XSFS = "";
+            XWLMID = "";
         }
         public class EDU_WZXT_ZDJZ_SYBK_metadata
         {
@@ -48,9 +49,10 @@ namespace HanRuEdu.LDAL
             public Int32 XWLYK { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "新闻目录")]
-            public Int32 XWMLID { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "新闻栏目")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XWLMID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

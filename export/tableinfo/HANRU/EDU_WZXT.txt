@@ -205,11 +205,11 @@ EDU_WZXT_ZDJZ_WZMB  网站模板表
 
 EDU_WZXT_ZDJZ_SYBK  首页板块表
   ID            编号                    int            主键
-  SCHOOLID      学校ID                  int            非主        学校配置表
-  WEBID         网站ID                  int            非主        网站配置
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  WEBID         网站ID                  int            主键        网站配置
   BKMC          板块名称                nvarchar(300)  非主
   XSFS          显示方式                nvarchar(200)  非主
   XWLYK         新闻来源库              int            非主
-  XWMLID        新闻目录ID              int            非主
+  XWLMID        新闻栏目ID              text           非主
   XWXSSL        新闻显示数量            int            非主
 
