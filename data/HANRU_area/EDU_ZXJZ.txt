@@ -80,6 +80,115 @@
             <name="XNID" exp="学年" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJZ_12_A01_XCLX" exp="薪酬类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XCLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_12_A02_XC" exp="薪酬表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="XCLXID" exp="薪酬类型ID" type="int" null="F" p="F" />
+            <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="FFPCID" exp="发放批次ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_12_A03_XCMYFFPC" exp="薪酬每月发放批次表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="PCMC" exp="批次名称" type="nvarchar(30)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_17_A01_DYXX" exp="党员信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="RDSJ" exp="入党时间" type="datetime" null="F" p="F" />
+            <name="RDDD" exp="入党地点" type="nvarchar(100)" null="F" p="F" />
+            <name="RDJSR" exp="入党介绍人" type="nvarchar(100)" null="F" p="F" />
+            <name="DQZT" exp="当前状态" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_17_A02_DFSJJL" exp="党费收缴记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DYXXID" exp="党员信息ID" type="int" null="F" p="F" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="SJJE" exp="收缴金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_17_A03_DZBSJ" exp="党支部数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="DZBMC" exp="党支部名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SS" exp="所属" type="nvarchar(50)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_17_A04_DZBZWSJ" exp="党支部职位数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="DZBID" exp="党支部ID" type="int" null="F" p="F" />
+            <name="ZWMC" exp="职位名称" type="nvarchar(50)" null="F" p="F" />
+            <name="GZNR" exp="工作内容" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_17_A05_DZBCYXX" exp="党支部成员信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="DYXXID" exp="党员信息ID" type="int" null="F" p="F" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="DZBID" exp="党支部ID" type="int" null="F" p="F" />
+            <name="DZBZWID" exp="党支部职位ID" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_17_A06_DZBHDXX" exp="党支部活动信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DZBID" exp="党支部ID" type="int" null="F" p="F" />
+            <name="HDMC" exp="活动名称" type="nvarchar(50)" null="F" p="F" />
+            <name="HDNR" exp="活动内容" type="text" null="F" p="F" />
+            <name="SCJSID" exp="上传教师ID" type="int" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+            <name="HDSJ" exp="活动时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_19_A01_JJFFJL" exp="奖金发放记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="F" />
+            <name="JJMC" exp="奖金名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JE" exp="金额" type="decimal(8, 2)" null="F" p="F" />
+            <name="FFSJ" exp="发放时间" type="datetime" null="F" p="F" />
+            <name="SFTZG" exp="是否通知过" type="nvarchar(1)" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZXJZ_20_A01_XSPJDFFS" exp="学生评教打分方式表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

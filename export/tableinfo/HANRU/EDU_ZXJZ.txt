@@ -72,6 +72,95 @@ EDU_ZXJZ_07_02_RKSJ  任课数据子类表
   XQID          学期                    int            非主        学期数据表
   XNID          学年                    int            非主        学年表
 
+EDU_ZXJZ_12_A01_XCLX  薪酬类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XCLXMC        类型名称                nvarchar(30)   非主
+
+EDU_ZXJZ_12_A02_XC  薪酬表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教工基本信息ID          int            非主        教职工基本数据子类表
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  XCLXID        薪酬类型ID              int            非主        薪酬类型表
+  JE            金额                    decimal(8, 2)  非主
+  FFSJ          发放时间                datetime       非主
+  FFPCID        发放批次ID              int            非主        薪酬每月发放批次表
+
+EDU_ZXJZ_12_A03_XCMYFFPC  薪酬每月发放批次表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  PCMC          批次名称                nvarchar(30)   非主
+
+EDU_ZXJZ_17_A01_DYXX  党员信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教工基本信息ID          int            非主        教职工基本数据子类表
+  RDSJ          入党时间                datetime       非主
+  RDDD          入党地点                nvarchar(100)  非主
+  RDJSR         入党介绍人              nvarchar(100)  非主
+  DQZT          当前状态                int            非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  TJSJ          添加时间                datetime       非主
+  BZ            备注                    text           非主
+
+EDU_ZXJZ_17_A02_DFSJJL  党费收缴记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  DYXXID        党员信息ID              int            非主        党员信息表
+  JZGJBSJID     教工基本信息ID          int            非主        教职工基本数据子类表
+  SJJE          收缴金额                decimal(8, 2)  非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZXJZ_17_A03_DZBSJ  党支部数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  DZBMC         党支部名称              nvarchar(50)   非主
+  SS            所属                    nvarchar(50)   非主
+  BZ            备注                    text           非主
+
+EDU_ZXJZ_17_A04_DZBZWSJ  党支部职位数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  DZBID         党支部ID                int            非主        党支部数据表
+  ZWMC          职位名称                nvarchar(50)   非主
+  GZNR          工作内容                text           非主
+  BZ            备注                    text           非主
+
+EDU_ZXJZ_17_A05_DZBCYXX  党支部成员信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  DYXXID        党员信息ID              int            非主        党员信息表
+  JZGJBSJID     教工基本信息ID          int            非主        教职工基本数据子类表
+  DZBID         党支部ID                int            非主        党支部数据表
+  DZBZWID       党支部职位ID            int            非主        党支部职位数据表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZXJZ_17_A06_DZBHDXX  党支部活动信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  DZBID         党支部ID                int            非主        党支部数据表
+  HDMC          活动名称                nvarchar(50)   非主
+  HDNR          活动内容                text           非主
+  SCJSID        上传教师ID              int            非主        教职工基本数据子类表
+  SCSJ          上传时间                datetime       非主
+  HDSJ          活动时间                datetime       非主
+
+EDU_ZXJZ_19_A01_JJFFJL  奖金发放记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  JZGJBSJID     教工基本信息ID          int            非主        教职工基本数据子类表
+  JJMC          奖金名称                nvarchar(50)   非主
+  JE            金额                    decimal(8, 2)  非主
+  FFSJ          发放时间                datetime       非主
+  SFTZG         是否通知过              nvarchar(1)    非主        是否标志代码表
+  BZ            备注                    nvarchar(200)  非主
+
 EDU_ZXJZ_20_A01_XSPJDFFS  学生评教打分方式表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
