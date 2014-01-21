@@ -102,9 +102,9 @@ class MDDiff
   #生成差异日志
   def build_log
     log = ''
-    @t1_diff_arr.each{|t| log << "删除了表: #{t.gname}\n"}
+    @t1_diff_arr.each{|t| log << "删除了表: #{t.gname}(#{t.name})\n"}
     @f1_diff_arr.each{|f| log << "删除了表<#{f.table.gname}>中<#{f.gname}>字段\n"}
-    @t2_diff_arr.each{|t| log << "添加了表: #{t.gname}\n"}
+    @t2_diff_arr.each{|t| log << "添加了表: #{t.gname}(#{t.name})\n"}
     @f2_diff_arr.each{|f| log << "在表<#{f.table.gname}>中添加了<#{f.gname}>字段\n"}
     @pro_diff_hash.each do |o1,o2|
       case o1.class.to_s

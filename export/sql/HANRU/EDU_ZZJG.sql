@@ -160,11 +160,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_17_A06_DZBH
    drop table EDU_ZZJG_17_A06_DZBHDXX
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_18_A01_JSGRRY')
-            and   type = 'U')
-   drop table EDU_ZZJG_18_A01_JSGRRY
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_18_A02_JSNDKH')
             and   type = 'U')
    drop table EDU_ZZJG_18_A02_JSNDKH
@@ -173,11 +168,6 @@ go
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_18_A03_JSDRBZRJL')
             and   type = 'U')
    drop table EDU_ZZJG_18_A03_JSDRBZRJL
-go
-
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_18_A04_JSRGJL')
-            and   type = 'U')
-   drop table EDU_ZZJG_18_A04_JSRGJL
 go
 
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_19_A01_JJFFJL')
@@ -925,24 +915,6 @@ CONSTRAINT [PK_EDU_ZZJG_17_A06_DZBHDXX] PRIMARY KEY CLUSTERED
 END
 GO
 
---教师个人荣誉表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_18_A01_JSGRRY]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZJG_18_A01_JSGRRY](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校
-	[JZGJBSJID]  int  NOT NULL,--教职工ID
-	[RYNR]  text  NOT NULL,--荣誉内容
-	[HQSJ]  nvarchar(50)  NOT NULL,--获取时间
-CONSTRAINT [PK_EDU_ZZJG_18_A01_JSGRRY] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
 --教师年度考核表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_18_A02_JSNDKH]') AND type in (N'U'))
 BEGIN
@@ -972,24 +944,6 @@ CREATE TABLE [dbo].[EDU_ZZJG_18_A03_JSDRBZRJL](
 	[DRSJ]  decimal(5, 2)  NOT NULL,--担任时间
 	[BZ]  nvarchar(500)  NULL,--备注
 CONSTRAINT [PK_EDU_ZZJG_18_A03_JSDRBZRJL] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
---教师任岗记录表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_18_A04_JSRGJL]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZJG_18_A04_JSRGJL](
-	[ID]  int  NOT NULL,--编号
-	[SCHOOLID]  int  NOT NULL,--学校
-	[JZGJBSJID]  int  NOT NULL,--教职工ID
-	[DRGW]  nvarchar(200)  NOT NULL,--担任岗位
-	[DRSJ]  nvarchar(50)  NOT NULL,--担任时间
-CONSTRAINT [PK_EDU_ZZJG_18_A04_JSRGJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
@@ -1801,18 +1755,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传时间' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'活动时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_17_A06_DZBHDXX', @level2type=N'COLUMN',@level2name=N'HDSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师个人荣誉表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY', @level2type=N'COLUMN',@level2name=N'JZGJBSJID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'荣誉内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY', @level2type=N'COLUMN',@level2name=N'RYNR'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'获取时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A01_JSGRRY', @level2type=N'COLUMN',@level2name=N'HQSJ'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师年度考核表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A02_JSNDKH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A02_JSNDKH', @level2type=N'COLUMN',@level2name=N'ID'
@@ -1838,18 +1780,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'担任时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A03_JSDRBZRJL', @level2type=N'COLUMN',@level2name=N'DRSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A03_JSDRBZRJL', @level2type=N'COLUMN',@level2name=N'BZ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师任岗记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A04_JSRGJL'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A04_JSRGJL', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A04_JSRGJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A04_JSRGJL', @level2type=N'COLUMN',@level2name=N'JZGJBSJID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'担任岗位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A04_JSRGJL', @level2type=N'COLUMN',@level2name=N'DRGW'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'担任时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_18_A04_JSRGJL', @level2type=N'COLUMN',@level2name=N'DRSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'奖金发放记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_19_A01_JJFFJL'
 GO

@@ -77,6 +77,7 @@ class MDArea
       elsif /^ *(?<field_name>[^ ]+) +(?<rtable_name>[^ ]+) +(?<rfield_name>[^ ]+) *\n$/ =~ line
         r_table = find_table(rtable_name)
         if table != nil && r_table != nil
+          puts "MDArea: 表#{table.name}与#{r_table.name}关联错误" if (table.stype == 'ZZ' && r_table.stype == 'ZX') || (table.stype == 'ZX' && r_table.stype == 'ZZ')
           field = table.find_field(field_name)
           r_field = r_table.find_field(rfield_name)
           if field != nil && r_field != nil

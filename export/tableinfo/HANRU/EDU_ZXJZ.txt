@@ -43,6 +43,17 @@ EDU_ZXJZ_01_01_JZGJBSJ  教职工基本数据子类表
   GWZYM         岗位职业码              nvarchar(2)    非主        岗位职业代码表
   ZYRKXD        主要任课学段            nvarchar(1)    非主        任课学段代码表
 
+EDU_ZXJZ_01_A02_JZGNLZS  教职工能力证书数据类表
+  SCHOOLID      学校名                  int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            主键        教职工基本数据子类表
+  ZSMC          证书名称                nvarchar(40)   主键
+  ZSBH          证书编号                nvarchar(20)   非主
+  ZSBFDW        证书颁发单位            nvarchar(60)   非主
+  ZSBFRQ        证书颁发日期            nvarchar(8)    非主
+  ZSBZ          证书备注                text           非主
+  SFSZYZGZS     是否是职业资格证书      nvarchar(1)    非主        是否标志代码表
+  JJ            简介                    text           非主
+
 EDU_ZXJZ_02_A01_XNGWSJ  校内岗位数据子类表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
@@ -53,6 +64,7 @@ EDU_ZXJZ_02_A01_XNGWSJ  校内岗位数据子类表
   SFZG          是否在岗                nvarchar(1)    非主        是否标志代码表
   ZWMC          职务名称                nvarchar(10)   非主
   JGH           机构号                  nvarchar(10)   非主        机构数据类表
+  XQID          学期ID                  int            非主        学期数据表
 
 EDU_ZXJZ_07_02_RKSJ  任课数据子类表
   ID            编号                    int            主键
@@ -150,6 +162,14 @@ EDU_ZXJZ_17_A06_DZBHDXX  党支部活动信息表
   SCJSID        上传教师ID              int            非主        教职工基本数据子类表
   SCSJ          上传时间                datetime       非主
   HDSJ          活动时间                datetime       非主
+
+EDU_ZXJZ_18_A03_JSDRBZRJL  教师担任班主任记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  DRBJ          担任班级                nvarchar(50)   非主
+  DRSJ          担任时间                decimal(5, 2)  非主
+  BZ            备注                    nvarchar(500)  非主
 
 EDU_ZXJZ_19_A01_JJFFJL  奖金发放记录表
   ID            编号                    int            自增主键

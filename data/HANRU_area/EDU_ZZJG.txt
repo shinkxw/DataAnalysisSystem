@@ -413,15 +413,6 @@
             <name="HDSJ" exp="活动时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJG_18_A01_JSGRRY" exp="教师个人荣誉表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="F" />
-            <name="RYNR" exp="荣誉内容" type="text" null="F" p="F" />
-            <name="HQSJ" exp="获取时间" type="nvarchar(50)" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZJG_18_A02_JSNDKH" exp="教师年度考核表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -439,15 +430,6 @@
             <name="DRBJ" exp="担任班级" type="nvarchar(50)" null="F" p="F" />
             <name="DRSJ" exp="担任时间" type="decimal(5, 2)" null="F" p="F" />
             <name="BZ" exp="备注" type="nvarchar(500)" null="T" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJG_18_A04_JSRGJL" exp="教师任岗记录表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="F" />
-            <name="DRGW" exp="担任岗位" type="nvarchar(200)" null="F" p="F" />
-            <name="DRSJ" exp="担任时间" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_19_A01_JJFFJL" exp="奖金发放记录表">

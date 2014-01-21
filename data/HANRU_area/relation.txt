@@ -509,12 +509,17 @@
   BZLBM          EDU_JY_ZXXBZLB                     DM
   GWZYM          EDU_JY_GWZY                        DM
   ZYRKXD         EDU_JY_RKXD                        DM
+<EDU_ZXJZ_01_A02_JZGNLZS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
+  SFSZYZGZS      EDU_JY_SFBZ                        DM
 <EDU_ZXJZ_02_A01_XNGWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GWID           EDU_ZXXX_04_A01_JGGW               ID
   JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
   SFZG           EDU_JY_SFBZ                        DM
   JGH            EDU_ZXXX_04_01_JG                  JGH
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZXJZ_07_02_RKSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
@@ -562,6 +567,9 @@
   XQID           EDU_ELE_01_XQ                      ID
   DZBID          EDU_ZXJZ_17_A03_DZBSJ              ID
   SCJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
+<EDU_ZXJZ_18_A03_JSDRBZRJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
 <EDU_ZXJZ_19_A01_JJFFJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
@@ -955,16 +963,10 @@
   XQID           EDU_ELE_01_XQ                      ID
   DZBID          EDU_ZZJG_17_A03_DZBSJ              ID
   SCJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
-<EDU_ZZJG_18_A01_JSGRRY
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJG_18_A02_JSNDKH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJG_18_A03_JSDRBZRJL
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
-<EDU_ZZJG_18_A04_JSRGJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJG_19_A01_JJFFJL

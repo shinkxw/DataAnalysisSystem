@@ -268,7 +268,7 @@ class TemplateBuilder
     str << "private static object sync#{table.lname}IDLock = new object();\n#{@tab.t}"
     str << "//获取#{table.explanation}最大ID\n#{@tab.t}"
     str << "public int GetMax_#{table.lname}_ID()\n#{@tab.t}"
-    str << "{\n#{@tab.l}int maxId = 0;\n#{@tab.t}lock (syncIDLock)\n#{@tab.t}"
+    str << "{\n#{@tab.l}int maxId = 0;\n#{@tab.t}lock (sync#{table.lname}IDLock)\n#{@tab.t}"
     str << "{\n#{@tab.l}if (Max_#{table.lname}_ID == 0)\n#{@tab.t}"
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}"
     str << ".FirstOrDefault();\n#{@tab.t}"

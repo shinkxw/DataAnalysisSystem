@@ -45,6 +45,8 @@ class MDTable
   def lname;@name.split('_')[-1] end
   #返回表名的最后一个字段的小写形式
   def lname_dc;@name.split('_')[-1].downcase end
+  #返回表所属学校类型
+  def stype;@name.split('_')[1][0..1] end
   #返回表所在库名的小写形式
   def library_name;@name.split('_')[1].downcase end
   #返回数据库实体对象名
