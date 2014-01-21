@@ -513,6 +513,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
   SFSZYZGZS      EDU_JY_SFBZ                        DM
+<EDU_ZXJZ_01_A03_GRXXBJKG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SFKQ           EDU_JY_SFBZ                        DM
 <EDU_ZXJZ_02_A01_XNGWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GWID           EDU_ZXXX_04_A01_JGGW               ID

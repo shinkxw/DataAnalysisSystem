@@ -19,8 +19,12 @@ class MDDiff
   def db_transform(db)
     @rebuild_table_arr = []
     @t1_diff_arr.each do |table|#删表
-      puts "需要删除#{table.name}，请问是否删除?(Y/N)"
-      db.delete_table(table.name) if KbInput.get_bool
+      if db.has_data?(table.name)
+        puts "需要删除#{table.name}，请问是否删除?(Y/N)"
+        db.delete_table(table.name) if KbInput.get_bool
+      else
+        db.delete_table(table.name)
+      end
     end
     @t2_diff_arr.each{|table| db.create_table(table)}#建表
     @f1_diff_arr.each{|field| db.delete_field(field)}#删字段

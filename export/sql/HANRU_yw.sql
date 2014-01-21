@@ -6723,6 +6723,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXJZ_01_A02_JZGN
    drop table EDU_ZXJZ_01_A02_JZGNLZS
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXJZ_01_A03_GRXXBJKG')
+            and   type = 'U')
+   drop table EDU_ZXJZ_01_A03_GRXXBJKG
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXJZ_02_A01_XNGWSJ')
             and   type = 'U')
    drop table EDU_ZXJZ_02_A01_XNGWSJ
@@ -6901,6 +6906,22 @@ CONSTRAINT [PK_EDU_ZXJZ_01_A02_JZGNLZS] PRIMARY KEY CLUSTERED
 	[SCHOOLID] ASC,
 	[JZGJBSJID] ASC,
 	[ZSMC] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--个人信息编辑开关表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXJZ_01_A03_GRXXBJKG]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZXJZ_01_A03_GRXXBJKG](
+	[SCHOOLID]  int  NOT NULL,--学校
+	[SCSJ]  datetime  NOT NULL,--开始时间
+	[HDSJ]  datetime  NOT NULL,--结束时间
+	[SFKQ]  nvarchar(1)  NOT NULL,--是否开启
+CONSTRAINT [PK_EDU_ZXJZ_01_A03_GRXXBJKG] PRIMARY KEY CLUSTERED
+(
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -7431,6 +7452,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否是职业资格证书' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A02_JZGNLZS', @level2type=N'COLUMN',@level2name=N'SFSZYZGZS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A02_JZGNLZS', @level2type=N'COLUMN',@level2name=N'JJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人信息编辑开关表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A03_GRXXBJKG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A03_GRXXBJKG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A03_GRXXBJKG', @level2type=N'COLUMN',@level2name=N'SCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A03_GRXXBJKG', @level2type=N'COLUMN',@level2name=N'HDSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否开启' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A03_GRXXBJKG', @level2type=N'COLUMN',@level2name=N'SFKQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校内岗位数据子类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_02_A01_XNGWSJ'
 GO

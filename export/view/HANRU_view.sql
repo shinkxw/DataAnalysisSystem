@@ -435,6 +435,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_01_A02
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_01_A02_JZGNLZS_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_01_A03_GRXXBJKG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJZ_01_A03_GRXXBJKG_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP
@@ -6356,6 +6360,19 @@ FROM dbo.EDU_ZXJZ_01_A02_JZGNLZS AS a LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBZLB AS [co] ON c.BZLBM = [co].DM /*编制类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWZY AS [cp] ON c.GWZYM = [cp].DM /*岗位职业码*/ LEFT OUTER JOIN
       dbo.EDU_JY_RKXD AS [cq] ON c.ZYRKXD = [cq].DM /*主要任课学段*/
+GO
+
+--个人信息编辑开关表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_01_A03_GRXXBJKG_DISP]
+AS
+SELECT a.[SCHOOLID]--学校
+      ,a.[SCSJ]--开始时间
+      ,a.[HDSJ]--结束时间
+      ,a.[SFKQ]--是否开启
+      ,c.MC as c_SFBZ_MC--是否标志代码表 名称
+
+FROM dbo.EDU_ZXJZ_01_A03_GRXXBJKG AS a LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS c ON a.SFKQ = c.DM /*是否开启*/
 GO
 
 --校内岗位数据子类表
