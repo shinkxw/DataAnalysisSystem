@@ -23,6 +23,8 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
       ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
       ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型

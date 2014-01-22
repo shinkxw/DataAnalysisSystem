@@ -154,6 +154,8 @@
             <name="WEBURL" exp="网址" type="nvarchar(500)" null="F" p="F" />
             <name="CSSID" exp="网站样式" type="int" null="F" p="F" />
             <name="URL" exp="完整网址" type="nvarchar(500)" null="F" p="F" />
+            <name="YS" exp="页首" type="text" null="T" p="F" />
+            <name="YW" exp="页尾" type="text" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_NWIP" exp="内网IP配置">
@@ -255,6 +257,8 @@
             <name="XWLYK" exp="新闻来源库" type="int" null="F" p="F" />
             <name="XWLMID" exp="新闻栏目ID" type="text" null="F" p="F" />
             <name="XWXSSL" exp="新闻显示数量" type="int" null="F" p="F" />
+            <name="PXFS" exp="排序方式" type="int" null="F" p="F" />
+            <name="BKLJ" exp="板块链接" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

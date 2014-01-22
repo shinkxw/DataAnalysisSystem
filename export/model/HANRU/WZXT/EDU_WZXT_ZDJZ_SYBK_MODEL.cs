@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             BKMC = "";
             XSFS = "";
             XWLMID = "";
+            BKLJ = "";
         }
         public class EDU_WZXT_ZDJZ_SYBK_metadata
         {
@@ -58,6 +59,18 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "新闻显示数量")]
             public Int32 XWXSSL { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "排序方式")]
+            public Int32 PXFS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "板块链接")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BKLJ { get; set; }
 
 
         }

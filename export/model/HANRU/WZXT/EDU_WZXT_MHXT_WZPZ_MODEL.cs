@@ -56,6 +56,16 @@ namespace HanRuEdu.LDAL
             public String URL { get; set; }
 
 
+            [Display(Name = "Ò³Ê×")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String YS { get; set; }
+
+
+            [Display(Name = "Ò³Î²")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String YW { get; set; }
+
+
         }
     }
 }

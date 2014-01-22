@@ -5056,6 +5056,8 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZPZ](
 	[WEBURL]  nvarchar(500)  NOT NULL,--网址
 	[CSSID]  int  NOT NULL,--网站样式
 	[URL]  nvarchar(500)  NOT NULL,--完整网址
+	[YS]  text  NULL,--页首
+	[YW]  text  NULL,--页尾
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZPZ] PRIMARY KEY CLUSTERED
 (
 	[WEBID] ASC,
@@ -5244,6 +5246,8 @@ CREATE TABLE [dbo].[EDU_WZXT_ZDJZ_SYBK](
 	[XWLYK]  int  NOT NULL,--新闻来源库
 	[XWLMID]  text  NOT NULL,--新闻栏目ID
 	[XWXSSL]  int  NOT NULL,--新闻显示数量
+	[PXFS]  int  NOT NULL,--排序方式
+	[BKLJ]  nvarchar(500)  NOT NULL,--板块链接
 CONSTRAINT [PK_EDU_WZXT_ZDJZ_SYBK] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5495,6 +5499,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网站样式' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'完整网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'URL'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'页首' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'YS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'页尾' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZPZ', @level2type=N'COLUMN',@level2name=N'YW'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内网IP配置' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内网IP配置ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_NWIP', @level2type=N'COLUMN',@level2name=N'ID'
@@ -5642,6 +5650,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻栏目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'XWLMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻显示数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'XWXSSL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排序方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'PXFS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'板块链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_ZDJZ_SYBK', @level2type=N'COLUMN',@level2name=N'BKLJ'
 GO
 --空间名：EDU_ZXDY  生成器：SqlBuilder0.1
 

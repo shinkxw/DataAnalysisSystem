@@ -3176,6 +3176,8 @@ SELECT a.[ID]--数据发布ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_OAXT_12_A01_SJFB AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4290,6 +4292,8 @@ SELECT a.[SCHOOLID]--学校名
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_VIP AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4309,6 +4313,8 @@ SELECT a.[ID]--样式ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_TPXT_TPYS AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4330,6 +4336,8 @@ SELECT a.[ID]--投票题目选项ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
@@ -4367,6 +4375,8 @@ SELECT a.[ID]--投票题目ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
@@ -4399,6 +4409,8 @@ SELECT a.[ID]--投票设置ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_TPYS_SCHOOLID--投票样式库 学校名
       ,d.WEBID as d_TPYS_WEBID--投票样式库 网站ID
       ,d.NAME as d_TPYS_NAME--投票样式库 样式名
@@ -4424,6 +4436,8 @@ SELECT a.[ID]--投票记录ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_TPSZ_SCHOOLID--投票设置 学校名
       ,d.WEBID as d_TPSZ_WEBID--投票设置 网站ID
       ,d.TITLE as d_TPSZ_TITLE--投票设置 标题
@@ -4452,6 +4466,8 @@ SELECT a.[ID]--友情链接类型ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_MHXT_YQLJLX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4473,6 +4489,8 @@ SELECT a.[ID]--友情链接ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_YQLJLX_SCHOOLID--友情链接类型 学校名
       ,d.WEBID as d_YQLJLX_WEBID--友情链接类型 网站ID
       ,d.NAME as d_YQLJLX_NAME--友情链接类型 类型名
@@ -4497,6 +4515,8 @@ SELECT a.[ID]--样式库ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_MHXT_WZYS AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4539,6 +4559,8 @@ SELECT a.[ID]--网站文章ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
       ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
       ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
@@ -4579,6 +4601,8 @@ SELECT a.[ID]--评价ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_WZWZ_SCHOOLID--网站文章 学校名
       ,d.WEBID as d_WZWZ_WEBID--网站文章 网站ID
       ,d.TYPENAME as d_WZWZ_TYPENAME--网站文章 类型名称
@@ -4622,12 +4646,16 @@ SELECT a.[WEBID]--网站ID
       ,a.[WEBURL]--网址
       ,a.[CSSID]--网站样式
       ,a.[URL]--完整网址
+      ,a.[YS]--页首
+      ,a.[YW]--页尾
       ,b.SCHOOLID as b_WZPZ_SCHOOLID--网站配置 学校名
       ,b.WEBNAME as b_WZPZ_WEBNAME--网站配置 网站名
       ,b.STATUID as b_WZPZ_STATUID--网站配置 是否开启
       ,b.WEBURL as b_WZPZ_WEBURL--网站配置 网址
       ,b.CSSID as b_WZPZ_CSSID--网站配置 网站样式
       ,b.URL as b_WZPZ_URL--网站配置 完整网址
+      ,b.YS as b_WZPZ_YS--网站配置 页首
+      ,b.YW as b_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_WZYS_SCHOOLID--样式库 学校名
       ,d.WEBID as d_WZYS_WEBID--样式库 网站ID
       ,d.NAME as d_WZYS_NAME--样式库 样式名
@@ -4662,6 +4690,8 @@ SELECT a.[ID]--网站栏目（导航）ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_WZLM_SCHOOLID--网站栏目（导航） 学校名
       ,d.WEBID as d_WZLM_WEBID--网站栏目（导航） 网站ID
       ,d.LMSHOWSTYLE as d_WZLM_LMSHOWSTYLE--网站栏目（导航） 栏目使用类型
@@ -4698,6 +4728,8 @@ SELECT a.[ID]--网站广告ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_MHXT_WZGG AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4718,6 +4750,8 @@ SELECT a.[ID]--访问履历ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_MHXT_FWLL AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4738,6 +4772,8 @@ SELECT a.[ID]--发布权限ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_MHXT_FBQX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
@@ -4759,6 +4795,8 @@ SELECT a.[ID]--角色ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_MHXT_JSXX AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
@@ -4780,6 +4818,8 @@ SELECT a.[ID]--权限ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -4814,12 +4854,16 @@ SELECT a.[ID]--编号
       ,a.[XWLYK]--新闻来源库
       ,a.[XWLMID]--新闻栏目ID
       ,a.[XWXSSL]--新闻显示数量
+      ,a.[PXFS]--排序方式
+      ,a.[BKLJ]--板块链接
       ,c.SCHOOLID as c_WZPZ_SCHOOLID--网站配置 学校名
       ,c.WEBNAME as c_WZPZ_WEBNAME--网站配置 网站名
       ,c.STATUID as c_WZPZ_STATUID--网站配置 是否开启
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
 
 FROM dbo.EDU_WZXT_ZDJZ_SYBK AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/

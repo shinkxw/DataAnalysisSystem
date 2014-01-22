@@ -15,6 +15,8 @@ SELECT a.[ID]--权限ID
       ,c.WEBURL as c_WZPZ_WEBURL--网站配置 网址
       ,c.CSSID as c_WZPZ_CSSID--网站配置 网站样式
       ,c.URL as c_WZPZ_URL--网站配置 完整网址
+      ,c.YS as c_WZPZ_YS--网站配置 页首
+      ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码

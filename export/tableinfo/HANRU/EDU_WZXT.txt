@@ -129,6 +129,8 @@ EDU_WZXT_MHXT_WZPZ  网站配置
   WEBURL        网址                    nvarchar(500)  非主
   CSSID         网站样式                int            非主        样式库
   URL           完整网址                nvarchar(500)  非主
+  YS            页首                    text           非主
+  YW            页尾                    text           非主
 
 EDU_WZXT_MHXT_NWIP  内网IP配置
   ID            内网IP配置ID            int            主键
@@ -212,4 +214,6 @@ EDU_WZXT_ZDJZ_SYBK  首页板块表
   XWLYK         新闻来源库              int            非主
   XWLMID        新闻栏目ID              text           非主
   XWXSSL        新闻显示数量            int            非主
+  PXFS          排序方式                int            非主
+  BKLJ          板块链接                nvarchar(500)  非主
 
