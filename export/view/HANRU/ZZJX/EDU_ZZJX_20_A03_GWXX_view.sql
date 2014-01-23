@@ -23,6 +23,7 @@ SELECT a.[ID]--编号
       ,a.[experience]--工作经验
       ,a.[GWSHZT]--岗位审核状态
       ,a.[Status]--岗位当前状态
+      ,a.[SFZD]--是否置顶
       ,c.SCHOOLID as c_QYGL_SCHOOLID--企业管理表 学校
       ,c.Name as c_QYGL_Name--企业管理表 企业名称
       ,c.UserName as c_QYGL_UserName--企业管理表 用户名

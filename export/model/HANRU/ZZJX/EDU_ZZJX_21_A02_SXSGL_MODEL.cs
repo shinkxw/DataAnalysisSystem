@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_21_A02_SXSGL()
         {
             Resume = "";
+            SXXYS = "";
+            SXSXM = "";
         }
         public class EDU_ZZJX_21_A02_SXSGL_metadata
         {
@@ -42,6 +44,19 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "实习生状态")]
             public Int32 Status { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "实习协议书")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SXXYS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "实习生姓名")]
+            [StringLength(36)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SXSXM { get; set; }
 
 
         }

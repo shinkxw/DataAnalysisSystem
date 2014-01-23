@@ -31,8 +31,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学生")]
-            public Int32 StuID { get; set; }
+            [Display(Name = "实习生")]
+            public Int32 SXSID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

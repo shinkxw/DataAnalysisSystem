@@ -159,6 +159,11 @@ namespace HanRuEdu.LDAL
             public Int32 Status { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÊÇ·ñÖÃ¶¥")]
+            public Int32 SFZD { get; set; }
+
+
         }
     }
 }

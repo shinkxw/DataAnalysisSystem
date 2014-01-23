@@ -1,14 +1,13 @@
 
---实习鉴定表
-CREATE VIEW [dbo].[VIEW_EDU_ZZJX_22_A04_SXJD_DISP]
+--实习走访记录
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_22_A07_ZFJL_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[SXSID]--实习生ID
-      ,a.[XF]--学分
-      ,a.[SFHZ]--是否汇总
-      ,a.[JDRID]--鉴定人ID
-      ,a.[SXJDCL]--实习鉴定材料
+      ,a.[JSID]--教师ID
+      ,a.[ZFSJ]--走访时间
+      ,a.[ZFJL]--走访记录
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
@@ -85,9 +84,9 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
 
-FROM dbo.EDU_ZZJX_22_A04_SXJD AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZZJX_22_A07_ZFJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JDRID = d.ID /*鉴定人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JSID = d.ID /*教师ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN

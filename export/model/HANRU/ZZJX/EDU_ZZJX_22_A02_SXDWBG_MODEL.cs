@@ -23,8 +23,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = " 变更学生")]
-            public Int32 StuID { get; set; }
+            [Display(Name = "变更实习生")]
+            public Int32 SXSID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

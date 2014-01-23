@@ -509,6 +509,9 @@
   BZLBM          EDU_JY_ZXXBZLB                     DM
   GWZYM          EDU_JY_GWZY                        DM
   ZYRKXD         EDU_JY_RKXD                        DM
+<EDU_ZXJZ_01_A01_JZGKZ
+  JZGID          EDU_ZXJZ_01_01_JZGJBSJ             ID
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJZ_01_A02_JZGNLZS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
@@ -1164,14 +1167,14 @@
   StuID          EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZJX_21_A03_SXGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
   JobID          EDU_ZZJX_20_A03_GWXX               ID
 <EDU_ZZJX_22_A01_SXJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
 <EDU_ZZJX_22_A02_SXDWBG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
   OrgJobID       EDU_ZZJX_20_A03_GWXX               ID
   OrgComID       EDU_ZZJX_20_A01_QYGL               ID
   NowJobID       EDU_ZZJX_20_A03_GWXX               ID
@@ -1179,20 +1182,22 @@
 <EDU_ZZJX_22_A03_SXWZJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ComID          EDU_ZZJX_20_A01_QYGL               ID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
 <EDU_ZZJX_22_A04_SXJD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
   JDRID          EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_22_A05_SXTS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ComID          EDU_ZZJX_20_A01_QYGL               ID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
-<EDU_ZZJX_22_A06_SXJC
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+<EDU_ZZJX_22_A06_SXRZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  StuID          EDU_ZZXS_01_01_XSXX                ID
-  XNID           EDU_SYS_01_XN                      ID
-  XQID           EDU_ELE_01_XQ                      ID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+<EDU_ZZJX_22_A07_ZFJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+  JSID           EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_23_A01_DGSXYQLJLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_23_A02_DGSXYQLJ

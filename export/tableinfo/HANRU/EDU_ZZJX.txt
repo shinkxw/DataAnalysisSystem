@@ -375,6 +375,7 @@ EDU_ZZJX_20_A03_GWXX  岗位信息表
   experience    工作经验                nvarchar(200)  非主
   GWSHZT        岗位审核状态            int            非主
   Status        岗位当前状态            int            非主
+  SFZD          是否置顶                int            非主
 
 EDU_ZZJX_21_A01_SXBJGL  实习班级管理表
   ID            编号                    int            主键
@@ -391,20 +392,21 @@ EDU_ZZJX_21_A02_SXSGL  实习生管理表
   StuID         学生ID                  int            非主        学生信息数据表
   Resume        简历                    text           非主
   Status        实习生状态              int            非主
+  SXXYS         实习协议书              text           非主
+  SXSXM         实习生姓名              nvarchar(36)   非主
 
 EDU_ZZJX_21_A03_SXGW  实习岗位表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  StuID         学生ID                  int            非主        学生信息数据表
+  SXSID         实习生ID                int            非主        实习生管理表
   JobID         岗位ID                  int            非主        岗位信息表
   GSSHZT        公司审核状态            int            非主
   TypeID        录取类型                int            非主
-  Status        实习生状态              int            非主
 
 EDU_ZZJX_22_A01_SXJL  实习记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  StuID         学生ID                  int            非主        学生信息数据表
+  SXSID         实习生ID                int            非主        实习生管理表
   KSSJ          开始时间                datetime       非主
   JSSJ          结束时间                datetime       非主
   SXNR          实习内容                text           非主
@@ -422,7 +424,7 @@ EDU_ZZJX_22_A01_SXJL  实习记录表
 EDU_ZZJX_22_A02_SXDWBG  实习单位变更表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  StuID          变更学生ID             int            非主        学生信息数据表
+  SXSID         变更实习生ID            int            非主        实习生管理表
   OrgJobID      变更前岗位ID            int            非主        岗位信息表
   OrgComID      变更前企业ID            int            非主        企业管理表
   NowJobID      变更后岗位ID            int            非主        岗位信息表
@@ -432,7 +434,7 @@ EDU_ZZJX_22_A03_SXWZJL  实习违章纪录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   ComID         企业ID                  int            非主        企业管理表
-  StuID         学生ID                  int            非主        学生信息数据表
+  SXSID         实习生ID                int            非主        实习生管理表
   WzTime        违章时间                datetime       非主
   WGWZJL        违规违章记录            nvarchar(300)  非主
   JYJXJGJCS     经验教训及改进措施      nvarchar(300)  非主
@@ -440,32 +442,38 @@ EDU_ZZJX_22_A03_SXWZJL  实习违章纪录表
 EDU_ZZJX_22_A04_SXJD  实习鉴定表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  StuID         学生ID                  int            非主        学生信息数据表
+  SXSID         实习生ID                int            非主        实习生管理表
   XF            学分                    int            非主
   SFHZ          是否汇总                int            非主
   JDRID         鉴定人ID                int            非主        教职工基本数据子类表
+  SXJDCL        实习鉴定材料            text           非主
 
 EDU_ZZJX_22_A05_SXTS  实习投诉表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   ComID         企业ID                  int            非主        企业管理表
-  StuID         学生ID                  int            非主        学生信息数据表
+  SXSID         实习生ID                int            非主        实习生管理表
   TsTime        投诉时间                datetime       非主
   TsReason      投诉原因                text           非主
   TsResult      投诉结果                text           非主
   ComSuggest    投诉建议                text           非主
   TypeID        投诉类型                int            非主
 
-EDU_ZZJX_22_A06_SXJC  实习奖惩表
+EDU_ZZJX_22_A06_SXRZ  实习日志表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  StuID         学生ID                  int            非主        学生信息数据表
-  XNID          学年ID                  int            非主        学年表
-  XQID          学期ID                  int            非主        学期数据表
-  typeid        奖惩类型                int            非主
-  Apprail       处理结果                text           非主
-  Remark        备注                    text           非主
-  AppraierID    添加人ID                int            非主
+  SXSID         实习生ID                int            非主        实习生管理表
+  TJSJ          添加时间                datetime       非主
+  RZBT          日志标题                nvarchar(50)   非主
+  RZNR          日志内容                text           非主
+
+EDU_ZZJX_22_A07_ZFJL  实习走访记录
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  SXSID         实习生ID                int            非主        实习生管理表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  ZFSJ          走访时间                datetime       非主
+  ZFJL          走访记录                text           非主
 
 EDU_ZZJX_23_A01_DGSXYQLJLX  顶岗实习友情链接类型
   ID            编号                    int            主键
@@ -507,6 +515,14 @@ EDU_ZZJX_23_A04_DGSXMHWZ  顶岗实习门户文章
   SHR           审核人                  nvarchar(50)   非主
   SHSJ          审核时间                datetime       非主
   ZDYXJ         置顶优先级              int            非主
+
+EDU_ZZJX_23_A05_DGSXXZZL  顶岗实习下载资料
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主
+  BT            标题                    nvarchar(100)  非主
+  FBR           发布人                  nvarchar(50)   非主
+  FBSJ          发布时间                datetime       非主
+  NR            内容                    text           非主
 
 EDU_ZZJX_30_A01_CLASSROOM  教室表
   ID            编号                    int            主键

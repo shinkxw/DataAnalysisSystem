@@ -47,6 +47,23 @@
             <name="ZYRKXD" exp="主要任课学段" type="nvarchar(1)" null="F" p="F" remark="主要任课学段 编号：ZXJZ010120 值空间：JY/T1001RKXD任课学段代码 " />
         </field_area>
     </table>
+    <table name="EDU_ZXJZ_01_A01_JZGKZ" exp="教职工扩展表">
+        <field_area>
+            <name="JZGID" exp="教工基本信息ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="GL" exp="工龄" type="int" null="F" p="F" />
+            <name="JL" exp="教龄" type="int" null="F" p="F" />
+            <name="GJRZNX" exp="高级任职年限" type="int" null="F" p="F" />
+            <name="ZJRZNX" exp="中级任职年限" type="int" null="F" p="F" />
+            <name="CJRZNX" exp="初级任职年限" type="int" null="F" p="F" />
+            <name="RZNX" exp="任职年限" type="int" null="F" p="F" />
+            <name="SSDZB" exp="所属党支部" type="nvarchar(200)" null="F" p="F" />
+            <name="BYYX" exp="毕业院校" type="nvarchar(200)" null="F" p="F" />
+            <name="XXJL" exp="学习经历" type="text" null="F" p="F" />
+            <name="GZJL" exp="工作经历" type="text" null="F" p="F" />
+            <name="HJQK" exp="获奖情况" type="text" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZXJZ_01_A02_JZGNLZS" exp="教职工能力证书数据类表">
         <field_area>
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />

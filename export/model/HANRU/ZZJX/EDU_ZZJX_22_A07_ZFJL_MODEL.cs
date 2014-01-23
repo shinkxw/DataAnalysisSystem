@@ -4,13 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJX_21_A03_SXGW_metadata))]
-    public partial class EDU_ZZJX_21_A03_SXGW
+    [MetadataType(typeof(EDU_ZZJX_22_A07_ZFJL_metadata))]
+    public partial class EDU_ZZJX_22_A07_ZFJL
     {
-        public EDU_ZZJX_21_A03_SXGW()
+        public EDU_ZZJX_22_A07_ZFJL()
         {
+            ZFSJ = DateTime.Now;
+            ZFJL = "";
         }
-        public class EDU_ZZJX_21_A03_SXGW_metadata
+        public class EDU_ZZJX_22_A07_ZFJL_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -28,18 +30,19 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "岗位")]
-            public Int32 JobID { get; set; }
+            [Display(Name = "教师")]
+            public Int32 JSID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "公司审核状态")]
-            public Int32 GSSHZT { get; set; }
+            [Display(Name = "走访时间")]
+            public DateTime ZFSJ { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "录取类型")]
-            public Int32 TypeID { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "走访记录")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZFJL { get; set; }
 
 
         }
