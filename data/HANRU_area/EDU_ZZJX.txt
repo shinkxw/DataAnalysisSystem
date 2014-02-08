@@ -453,6 +453,7 @@
             <name="Status" exp="实习生状态" type="int" null="F" p="F" />
             <name="SXXYS" exp="实习协议书" type="text" null="F" p="F" />
             <name="SXSXM" exp="实习生姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_21_A03_SXGW" exp="实习岗位表">
@@ -592,6 +593,7 @@
             <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
             <name="ZY" exp="摘要" type="text" null="F" p="F" />
             <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="TP" exp="图片" type="nvarchar(300)" null="T" p="F" />
             <name="DJL" exp="点击量" type="int" null="F" p="F" />
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />

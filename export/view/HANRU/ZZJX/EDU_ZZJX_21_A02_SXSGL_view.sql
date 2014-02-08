@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[Status]--实习生状态
       ,a.[SXXYS]--实习协议书
       ,a.[SXSXM]--实习生姓名
+      ,a.[XQID]--学期ID
       ,c.SCHOOLID as c_SXBJGL_SCHOOLID--实习班级管理表 学校
       ,c.XNID as c_SXBJGL_XNID--实习班级管理表 学年ID
       ,c.XQID as c_SXBJGL_XQID--实习班级管理表 学期ID
@@ -65,10 +66,18 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
+      ,e.XNID as e_XQ_XNID--学期数据表 学年
+      ,e.XQM as e_XQ_XQM--学期数据表 学期码
+      ,[eb].MC as e_XQ_XQM_MC--学期代码表 名称
+      ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
+      ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZJX_21_A02_SXSGL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A01_SXBJGL AS c ON a.SZBID = c.ID /*实习班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.StuID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
@@ -82,5 +91,6 @@ FROM dbo.EDU_ZZJX_21_A02_SXSGL AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [eb] ON e.XQM = [eb].DM /*学期码*/
 GO

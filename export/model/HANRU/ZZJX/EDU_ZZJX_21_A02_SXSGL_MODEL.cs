@@ -59,6 +59,11 @@ namespace HanRuEdu.LDAL
             public String SXSXM { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Ñ§ÆÚ")]
+            public Int32 XQID { get; set; }
+
+
         }
     }
 }

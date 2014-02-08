@@ -1165,6 +1165,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SZBID          EDU_ZZJX_21_A01_SXBJGL             ID
   StuID          EDU_ZZXS_01_01_XSXX                ID
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZZJX_21_A03_SXGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SXSID          EDU_ZZJX_21_A02_SXSGL              ID

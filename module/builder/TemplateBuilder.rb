@@ -81,17 +81,7 @@ class TemplateBuilder
   end
   def make_controller_upd(table)
     str = "#{@tab.t}public void Upd#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
-    str << "{\n#{@tab.l}//ÉèÖÃÄ¬ÈÏÖµ\n"
-    table.each_field do |field|
-      if field.split_type[0] == "String"
-        str << "#{@tab.t}if (string.IsNullOrEmpty(#{table.lname_dc}.#{field.name})) #{table.lname_dc}.#{field.name} = \"\";//#{field.explanation}#{get_relation(field)}\n"
-      elsif field.type == 'datetime'
-        str << ''
-      else
-        str << "#{@tab.t}if (#{table.lname_dc}.#{field.name} == 0) #{table.lname_dc}.#{field.name} = 0;//#{field.explanation}#{get_relation(field)}\n"
-      end
-    end
-    str << "#{@tab.t}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
     str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n\n#{@tab.t}if (#{table.lname_dc}_model != null)\n#{@tab.t}"
     str << "{\n#{@tab.long}"
     table.each_field do |field|

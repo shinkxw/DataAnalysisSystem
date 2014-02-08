@@ -12,6 +12,7 @@ SELECT a.[ID]--编号
       ,a.[FBSJ]--发布时间
       ,a.[ZY]--摘要
       ,a.[NR]--内容
+      ,a.[TP]--图片
       ,a.[DJL]--点击量
       ,a.[SHZT]--审核状态
       ,a.[SHRID]--审核人ID

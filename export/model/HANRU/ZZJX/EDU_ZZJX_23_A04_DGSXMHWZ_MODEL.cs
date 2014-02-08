@@ -82,6 +82,12 @@ namespace HanRuEdu.LDAL
             public String NR { get; set; }
 
 
+            [Display(Name = "Í¼Æ¬")]
+            [StringLength(300)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TP { get; set; }
+
+
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "µã»÷Á¿")]
             public Int32 DJL { get; set; }

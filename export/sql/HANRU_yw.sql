@@ -12962,6 +12962,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A02_SXSGL](
 	[Status]  int  NOT NULL,--实习生状态
 	[SXXYS]  text  NOT NULL,--实习协议书
 	[SXSXM]  nvarchar(36)  NOT NULL,--实习生姓名
+	[XQID]  int  NOT NULL,--学期ID
 CONSTRAINT [PK_EDU_ZZJX_21_A02_SXSGL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -13208,6 +13209,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_23_A04_DGSXMHWZ](
 	[FBSJ]  datetime  NOT NULL,--发布时间
 	[ZY]  text  NOT NULL,--摘要
 	[NR]  text  NOT NULL,--内容
+	[TP]  nvarchar(300)  NULL,--图片
 	[DJL]  int  NOT NULL,--点击量
 	[SHZT]  int  NOT NULL,--审核状态
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
@@ -14414,6 +14416,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习协议书' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'SXSXM'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'XQID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习岗位表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'ID'
@@ -14619,6 +14623,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'摘要' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_23_A04_DGSXMHWZ', @level2type=N'COLUMN',@level2name=N'ZY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_23_A04_DGSXMHWZ', @level2type=N'COLUMN',@level2name=N'NR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_23_A04_DGSXMHWZ', @level2type=N'COLUMN',@level2name=N'TP'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'点击量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_23_A04_DGSXMHWZ', @level2type=N'COLUMN',@level2name=N'DJL'
 GO
