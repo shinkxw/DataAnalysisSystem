@@ -6,8 +6,6 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[ComID]--企业ID
       ,a.[JobName]--岗位名称
-      ,a.[PubTime]--招聘开始时间
-      ,a.[EndTime]--招聘结束时间
       ,a.[WorkType]--工作形式
       ,a.[Sex]--性别要求
       ,a.[monthlypay]--岗位薪酬

@@ -310,6 +310,21 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   TMID           EDU_OAXT_32_A02_DCWJTM             ID
   WJID           EDU_OAXT_32_A01_DCWJ               ID
+<EDU_OAXT_33_A01_GWJCXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_33_A02_GZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_33_A03_FW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GWID           EDU_OAXT_33_A01_GWJCXX             ID
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
+  GZID           EDU_OAXT_33_A02_GZ                 ID
+  FSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_33_A04_SW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GWID           EDU_OAXT_33_A01_GWJCXX             ID
+  XFRID          EDU_ELE_01_USER                    LOGINNAME
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP

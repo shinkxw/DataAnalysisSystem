@@ -819,4 +819,60 @@
             <name="VoteUsersXM" exp="投票人姓名" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_33_A01_GWJCXX" exp="公文基础信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="HTWZ" exp="红头文字" type="nvarchar(100)" null="F" p="F" />
+            <name="GWBT" exp="公文标题" type="nvarchar(100)" null="F" p="F" />
+            <name="SJ" exp="时间" type="datetime" null="F" p="F" />
+            <name="ZW" exp="正文" type="text" null="F" p="F" />
+            <name="BH" exp="编号" type="nvarchar(30)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_33_A02_GZ" exp="公章信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="QZTPLJ" exp="签章图片路径" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_33_A03_FW" exp="发文表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="GWID" exp="公文ID" type="int" null="F" p="F" />
+            <name="FZ" exp="附注" type="nvarchar(300)" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="DXTZZT" exp="短信通知状态" type="int" null="F" p="F" />
+            <name="SHPZ" exp="审核批注" type="nvarchar(50)" null="F" p="F" />
+            <name="GZID" exp="公章ID" type="int" null="F" p="F" />
+            <name="ZYCD" exp="重要程度" type="int" null="F" p="F" />
+            <name="SFHF" exp="是否需要回复" type="int" null="F" p="F" />
+            <name="FSDW" exp="发送单位或科室" type="nvarchar(50)" null="F" p="F" />
+            <name="FSZLY" exp="发送者留言" type="nvarchar(50)" null="F" p="F" />
+            <name="FSRID" exp="发送人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BSZT" exp="报审状态" type="int" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="FSZT" exp="发送状态" type="int" null="F" p="F" />
+            <name="BJZT" exp="办结状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_33_A04_SW" exp="收文表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="GWID" exp="公文ID" type="int" null="F" p="F" />
+            <name="XFRID" exp="下发人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="JSRID" exp="接受人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XFSJ" exp="下发时间" type="datetime" null="F" p="F" />
+            <name="QSZT" exp="签收状态" type="int" null="F" p="F" />
+            <name="DXTZZT" exp="短信通知状态" type="int" null="F" p="F" />
+            <name="HFZT" exp="回复状态" type="int" null="F" p="F" />
+            <name="HFXX" exp="回复信息" type="nvarchar(100)" null="F" p="F" />
+            <name="HFFJ" exp="回复附件" type="text" null="F" p="F" />
+            <name="CLZT" exp="处理状态" type="int" null="F" p="F" />
+            <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

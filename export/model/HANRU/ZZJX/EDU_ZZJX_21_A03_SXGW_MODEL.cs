@@ -33,11 +33,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "公司审核状态")]
-            public Int32 GSSHZT { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "录取类型")]
             public Int32 TypeID { get; set; }
 

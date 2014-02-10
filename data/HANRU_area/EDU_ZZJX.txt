@@ -413,8 +413,6 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="ComID" exp="企业ID" type="int" null="F" p="F" />
             <name="JobName" exp="岗位名称" type="nvarchar(50)" null="F" p="F" />
-            <name="PubTime" exp="招聘开始时间" type="datetime" null="F" p="F" />
-            <name="EndTime" exp="招聘结束时间" type="datetime" null="F" p="F" />
             <name="WorkType" exp="工作形式" type="nvarchar(100)" null="F" p="F" />
             <name="Sex" exp="性别要求" type="nvarchar(100)" null="F" p="F" />
             <name="monthlypay" exp="岗位薪酬" type="nvarchar(100)" null="F" p="F" />
@@ -462,7 +460,6 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
             <name="JobID" exp="岗位ID" type="int" null="F" p="F" />
-            <name="GSSHZT" exp="公司审核状态" type="int" null="F" p="F" />
             <name="TypeID" exp="录取类型" type="int" null="F" p="F" />
         </field_area>
     </table>

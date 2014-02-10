@@ -6,7 +6,6 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[SXSID]--实习生ID
       ,a.[JobID]--岗位ID
-      ,a.[GSSHZT]--公司审核状态
       ,a.[TypeID]--录取类型
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
@@ -19,8 +18,6 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_GWXX_SCHOOLID--岗位信息表 学校
       ,d.ComID as d_GWXX_ComID--岗位信息表 企业ID
       ,d.JobName as d_GWXX_JobName--岗位信息表 岗位名称
-      ,d.PubTime as d_GWXX_PubTime--岗位信息表 招聘开始时间
-      ,d.EndTime as d_GWXX_EndTime--岗位信息表 招聘结束时间
       ,d.WorkType as d_GWXX_WorkType--岗位信息表 工作形式
       ,d.Sex as d_GWXX_Sex--岗位信息表 性别要求
       ,d.monthlypay as d_GWXX_monthlypay--岗位信息表 岗位薪酬

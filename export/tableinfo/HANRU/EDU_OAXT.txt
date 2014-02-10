@@ -707,3 +707,51 @@ EDU_OAXT_32_A03_DCWJTMXX  问卷题目选项表
   VoteUsers     投票人                  text           非主
   VoteUsersXM   投票人姓名              text           非主
 
+EDU_OAXT_33_A01_GWJCXX  公文基础信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  HTWZ          红头文字                nvarchar(100)  非主
+  GWBT          公文标题                nvarchar(100)  非主
+  SJ            时间                    datetime       非主
+  ZW            正文                    text           非主
+  BH            编号                    nvarchar(30)   非主
+
+EDU_OAXT_33_A02_GZ  公章信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  QZTPLJ        签章图片路径            text           非主
+
+EDU_OAXT_33_A03_FW  发文表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  GWID          公文ID                  int            非主        公文基础信息表
+  FZ            附注                    nvarchar(300)  非主
+  SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
+  DXTZZT        短信通知状态            int            非主
+  SHPZ          审核批注                nvarchar(50)   非主
+  GZID          公章ID                  int            非主        公章信息表
+  ZYCD          重要程度                int            非主
+  SFHF          是否需要回复            int            非主
+  FSDW          发送单位或科室          nvarchar(50)   非主
+  FSZLY         发送者留言              nvarchar(50)   非主
+  FSRID         发送人ID                nvarchar(20)   非主        应用系统用户表
+  BSZT          报审状态                int            非主
+  SHZT          审核状态                int            非主
+  FSZT          发送状态                int            非主
+  BJZT          办结状态                int            非主
+
+EDU_OAXT_33_A04_SW  收文表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  GWID          公文ID                  int            非主        公文基础信息表
+  XFRID         下发人ID                nvarchar(20)   非主        应用系统用户表
+  JSRID         接受人ID                nvarchar(20)   非主        应用系统用户表
+  XFSJ          下发时间                datetime       非主
+  QSZT          签收状态                int            非主
+  DXTZZT        短信通知状态            int            非主
+  HFZT          回复状态                int            非主
+  HFXX          回复信息                nvarchar(100)  非主
+  HFFJ          回复附件                text           非主
+  CLZT          处理状态                int            非主
+  SCZT          删除状态                int            非主
+

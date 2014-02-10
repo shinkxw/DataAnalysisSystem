@@ -10,8 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_ZZJX_20_A03_GWXX()
         {
             JobName = "";
-            PubTime = DateTime.Now;
-            EndTime = DateTime.Now;
             WorkType = "";
             Sex = "";
             monthlypay = "";
@@ -48,16 +46,6 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String JobName { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "招聘开始时间")]
-            public DateTime PubTime { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "招聘结束时间")]
-            public DateTime EndTime { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

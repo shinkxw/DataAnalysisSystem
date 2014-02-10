@@ -358,8 +358,6 @@ EDU_ZZJX_20_A03_GWXX  岗位信息表
   SCHOOLID      学校                    int            主键        学校配置表
   ComID         企业ID                  int            非主        企业管理表
   JobName       岗位名称                nvarchar(50)   非主
-  PubTime       招聘开始时间            datetime       非主
-  EndTime       招聘结束时间            datetime       非主
   WorkType      工作形式                nvarchar(100)  非主
   Sex           性别要求                nvarchar(100)  非主
   monthlypay    岗位薪酬                nvarchar(100)  非主
@@ -401,7 +399,6 @@ EDU_ZZJX_21_A03_SXGW  实习岗位表
   SCHOOLID      学校                    int            主键        学校配置表
   SXSID         实习生ID                int            非主        实习生管理表
   JobID         岗位ID                  int            非主        岗位信息表
-  GSSHZT        公司审核状态            int            非主
   TypeID        录取类型                int            非主
 
 EDU_ZZJX_22_A01_SXJL  实习记录表

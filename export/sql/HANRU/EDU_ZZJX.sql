@@ -960,8 +960,6 @@ CREATE TABLE [dbo].[EDU_ZZJX_20_A03_GWXX](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[ComID]  int  NOT NULL,--企业ID
 	[JobName]  nvarchar(50)  NOT NULL,--岗位名称
-	[PubTime]  datetime  NOT NULL,--招聘开始时间
-	[EndTime]  datetime  NOT NULL,--招聘结束时间
 	[WorkType]  nvarchar(100)  NOT NULL,--工作形式
 	[Sex]  nvarchar(100)  NOT NULL,--性别要求
 	[monthlypay]  nvarchar(100)  NOT NULL,--岗位薪酬
@@ -1036,7 +1034,6 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A03_SXGW](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[SXSID]  int  NOT NULL,--实习生ID
 	[JobID]  int  NOT NULL,--岗位ID
-	[GSSHZT]  int  NOT NULL,--公司审核状态
 	[TypeID]  int  NOT NULL,--录取类型
 CONSTRAINT [PK_EDU_ZZJX_21_A03_SXGW] PRIMARY KEY CLUSTERED
 (
@@ -2404,10 +2401,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'企业ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'JobName'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'招聘开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'PubTime'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'招聘结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'EndTime'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'工作形式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'WorkType'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'性别要求' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'Sex'
@@ -2483,8 +2476,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'SXSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'JobID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'GSSHZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录取类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'TypeID'
 GO

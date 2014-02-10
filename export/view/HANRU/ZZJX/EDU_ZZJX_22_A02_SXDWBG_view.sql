@@ -20,8 +20,6 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_GWXX_SCHOOLID--岗位信息表 学校
       ,d.ComID as d_GWXX_ComID--岗位信息表 企业ID
       ,d.JobName as d_GWXX_JobName--岗位信息表 岗位名称
-      ,d.PubTime as d_GWXX_PubTime--岗位信息表 招聘开始时间
-      ,d.EndTime as d_GWXX_EndTime--岗位信息表 招聘结束时间
       ,d.WorkType as d_GWXX_WorkType--岗位信息表 工作形式
       ,d.Sex as d_GWXX_Sex--岗位信息表 性别要求
       ,d.monthlypay as d_GWXX_monthlypay--岗位信息表 岗位薪酬
@@ -67,8 +65,6 @@ SELECT a.[ID]--编号
       ,f.SCHOOLID as f_GWXX_SCHOOLID--岗位信息表 学校
       ,f.ComID as f_GWXX_ComID--岗位信息表 企业ID
       ,f.JobName as f_GWXX_JobName--岗位信息表 岗位名称
-      ,f.PubTime as f_GWXX_PubTime--岗位信息表 招聘开始时间
-      ,f.EndTime as f_GWXX_EndTime--岗位信息表 招聘结束时间
       ,f.WorkType as f_GWXX_WorkType--岗位信息表 工作形式
       ,f.Sex as f_GWXX_Sex--岗位信息表 性别要求
       ,f.monthlypay as f_GWXX_monthlypay--岗位信息表 岗位薪酬
