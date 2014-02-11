@@ -3443,12 +3443,12 @@ CREATE TABLE [dbo].[EDU_OAXT_33_A03_FW](
 	[FZ]  nvarchar(300)  NOT NULL,--附注
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
 	[DXTZZT]  int  NOT NULL,--短信通知状态
-	[SHPZ]  nvarchar(50)  NOT NULL,--审核批注
+	[SHPZ]  nvarchar(500)  NOT NULL,--审核批注
 	[GZID]  int  NOT NULL,--公章ID
 	[ZYCD]  int  NOT NULL,--重要程度
 	[SFHF]  int  NOT NULL,--是否需要回复
 	[FSDW]  nvarchar(50)  NOT NULL,--发送单位或科室
-	[FSZLY]  nvarchar(50)  NOT NULL,--发送者留言
+	[FSZLY]  nvarchar(500)  NOT NULL,--发送者留言
 	[FSRID]  nvarchar(20)  NOT NULL,--发送人ID
 	[BSZT]  int  NOT NULL,--报审状态
 	[SHZT]  int  NOT NULL,--审核状态
@@ -3476,7 +3476,7 @@ CREATE TABLE [dbo].[EDU_OAXT_33_A04_SW](
 	[QSZT]  int  NOT NULL,--签收状态
 	[DXTZZT]  int  NOT NULL,--短信通知状态
 	[HFZT]  int  NOT NULL,--回复状态
-	[HFXX]  nvarchar(100)  NOT NULL,--回复信息
+	[HFXX]  nvarchar(500)  NOT NULL,--回复信息
 	[HFFJ]  text  NOT NULL,--回复附件
 	[CLZT]  int  NOT NULL,--处理状态
 	[SCZT]  int  NOT NULL,--删除状态

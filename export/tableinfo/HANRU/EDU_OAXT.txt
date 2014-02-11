@@ -728,12 +728,12 @@ EDU_OAXT_33_A03_FW  发文表
   FZ            附注                    nvarchar(300)  非主
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
   DXTZZT        短信通知状态            int            非主
-  SHPZ          审核批注                nvarchar(50)   非主
+  SHPZ          审核批注                nvarchar(500)  非主
   GZID          公章ID                  int            非主        公章信息表
   ZYCD          重要程度                int            非主
   SFHF          是否需要回复            int            非主
   FSDW          发送单位或科室          nvarchar(50)   非主
-  FSZLY         发送者留言              nvarchar(50)   非主
+  FSZLY         发送者留言              nvarchar(500)  非主
   FSRID         发送人ID                nvarchar(20)   非主        应用系统用户表
   BSZT          报审状态                int            非主
   SHZT          审核状态                int            非主
@@ -750,7 +750,7 @@ EDU_OAXT_33_A04_SW  收文表
   QSZT          签收状态                int            非主
   DXTZZT        短信通知状态            int            非主
   HFZT          回复状态                int            非主
-  HFXX          回复信息                nvarchar(100)  非主
+  HFXX          回复信息                nvarchar(500)  非主
   HFFJ          回复附件                text           非主
   CLZT          处理状态                int            非主
   SCZT          删除状态                int            非主

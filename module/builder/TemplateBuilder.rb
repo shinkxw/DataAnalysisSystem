@@ -61,15 +61,10 @@ class TemplateBuilder
   end
   def make_controller_index_jsonstr(table)
     str = %({\n#{@tab.l}public string index_jsonstr(string searchkey = "", string sort = "", int page = LDALConstant.DefPage, int rows = LDALConstant.DefPageRows, string order = "desc")\n#{@tab.t})
-    str << "{\n#{@tab.l}List<#{table.view_name}> model = #{table.db_name}.#{table.view_name}.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID).ToList();\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
-    str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey)).ToList();\n"
-    str << "#{@tab.s}}\n\n#{@tab.t}if (!String.IsNullOrEmpty(sort))\n#{@tab.t}"
-    str << "{\n#{@tab.l}if (order.Equals(\"desc\"))\n#{@tab.t}"
-    str << "{\n#{@tab.l}model = model.OrderBy(e => GetPropertyValue(e, sort)).ToList();\n"
-    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << "{\n#{@tab.l}model = model.OrderByDescending(e => GetPropertyValue(e, sort)).ToList();\n"
-    str << "#{@tab.s}}\n"
-    str << %(#{@tab.s}}\n#{@tab.t}return \"{\\"total\\":" + model.Count + ",\\"rows\\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";\n)
+    str << "{\n#{@tab.l}IQueryable<#{table.view_name}> model = #{table.db_name}.#{table.view_name}.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}if (!String.IsNullOrEmpty(searchkey))\n#{@tab.t}"
+    str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey));\n"
+    str << "#{@tab.s}}\n#{@tab.t}model = DataSorting(model, sort, order);\n#{@tab.t}"
+    str << %(return \"{\\"total\\":" + model.Count() + ",\\"rows\\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";\n)
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_add(table)
@@ -282,11 +277,11 @@ class TemplateBuilder
     index_str = "@model HanRuEdu.LDAL.#{table.name}\n"
     index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:auto;height:500px"\n)
     index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index_jsonstr\")',\n"
-    index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:true\" >\n"
+    index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:false\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}sortable="true">@Html.LabelFor(m => m.#{field.name}))
+      index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}#{'sortable="true"' if field.type != 'text'}>@Html.LabelFor(m => m.#{field.name}))
       index_str << "</th><!--#{field.explanation}-->\n"
     end
     path_pre_str = "#{@directory_name}/#{table.lname_dc}"

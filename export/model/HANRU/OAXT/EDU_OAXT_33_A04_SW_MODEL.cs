@@ -68,7 +68,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "回复信息")]
-            [StringLength(100)]
+            [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String HFXX { get; set; }
 

@@ -845,12 +845,12 @@
             <name="FZ" exp="附注" type="nvarchar(300)" null="F" p="F" />
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
             <name="DXTZZT" exp="短信通知状态" type="int" null="F" p="F" />
-            <name="SHPZ" exp="审核批注" type="nvarchar(50)" null="F" p="F" />
+            <name="SHPZ" exp="审核批注" type="nvarchar(500)" null="F" p="F" />
             <name="GZID" exp="公章ID" type="int" null="F" p="F" />
             <name="ZYCD" exp="重要程度" type="int" null="F" p="F" />
             <name="SFHF" exp="是否需要回复" type="int" null="F" p="F" />
             <name="FSDW" exp="发送单位或科室" type="nvarchar(50)" null="F" p="F" />
-            <name="FSZLY" exp="发送者留言" type="nvarchar(50)" null="F" p="F" />
+            <name="FSZLY" exp="发送者留言" type="nvarchar(500)" null="F" p="F" />
             <name="FSRID" exp="发送人ID" type="nvarchar(20)" null="F" p="F" />
             <name="BSZT" exp="报审状态" type="int" null="F" p="F" />
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
@@ -869,7 +869,7 @@
             <name="QSZT" exp="签收状态" type="int" null="F" p="F" />
             <name="DXTZZT" exp="短信通知状态" type="int" null="F" p="F" />
             <name="HFZT" exp="回复状态" type="int" null="F" p="F" />
-            <name="HFXX" exp="回复信息" type="nvarchar(100)" null="F" p="F" />
+            <name="HFXX" exp="回复信息" type="nvarchar(500)" null="F" p="F" />
             <name="HFFJ" exp="回复附件" type="text" null="F" p="F" />
             <name="CLZT" exp="处理状态" type="int" null="F" p="F" />
             <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
