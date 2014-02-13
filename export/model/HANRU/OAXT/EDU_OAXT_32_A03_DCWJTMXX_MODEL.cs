@@ -10,9 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_32_A03_DCWJTMXX()
         {
             SelectItem = "";
-            SelectContent = "";
-            VoteUsers = "";
-            VoteUsersXM = "";
         }
         public class EDU_OAXT_32_A03_DCWJTMXX_metadata
         {
@@ -43,28 +40,9 @@ namespace HanRuEdu.LDAL
             public String SelectItem { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "选项内容")]
-            [StringLength(500)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SelectContent { get; set; }
-
-
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "票数")]
-            public Int32 Votes { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "投票人")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String VoteUsers { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "投票人姓名")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String VoteUsersXM { get; set; }
+            [Display(Name = "选项分值")]
+            public Int32 XXFZ { get; set; }
 
 
         }

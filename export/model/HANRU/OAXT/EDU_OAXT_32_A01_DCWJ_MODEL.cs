@@ -11,7 +11,6 @@ namespace HanRuEdu.LDAL
         {
             Title = "";
             Users = "";
-            DoneUsers = "";
             StartTime = DateTime.Now;
             EndTime = DateTime.Now;
         }
@@ -34,21 +33,10 @@ namespace HanRuEdu.LDAL
             public String Title { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "调查对象类型")]
-            public Int32 Type { get; set; }
-
-
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "参选人员")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String Users { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "已参选人员")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DoneUsers { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

@@ -789,9 +789,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="Title" exp="问卷名称" type="nvarchar(300)" null="F" p="F" />
-            <name="Type" exp="调查对象类型" type="int" null="F" p="F" remark="（平台用户、ip地址）" />
             <name="Users" exp="参选人员" type="text" null="F" p="F" />
-            <name="DoneUsers" exp="已参选人员" type="text" null="F" p="F" />
             <name="StartTime" exp="开始时间" type="datetime" null="F" p="F" />
             <name="EndTime" exp="结束时间" type="datetime" null="F" p="F" />
             <name="IsStart" exp="是否开启" type="int" null="F" p="F" />
@@ -804,6 +802,7 @@
             <name="WJID" exp="所属问卷" type="int" null="F" p="F" />
             <name="TypeID" exp="题目类型" type="int" null="F" p="F" />
             <name="Title" exp="题目" type="nvarchar(300)" null="F" p="F" />
+            <name="SSDL" exp="所属大类" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_32_A03_DCWJTMXX" exp="问卷题目选项表">
@@ -813,10 +812,19 @@
             <name="TMID" exp="所属题目" type="int" null="F" p="F" />
             <name="WJID" exp="所属问卷" type="int" null="F" p="F" />
             <name="SelectItem" exp="选项" type="nvarchar(100)" null="F" p="F" />
-            <name="SelectContent" exp="选项内容" type="nvarchar(500)" null="F" p="F" />
-            <name="Votes" exp="票数" type="int" null="F" p="F" />
-            <name="VoteUsers" exp="投票人" type="text" null="F" p="F" />
-            <name="VoteUsersXM" exp="投票人姓名" type="text" null="F" p="F" />
+            <name="XXFZ" exp="选项分值" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_32_A04_DCWJJL" exp="问卷结果记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="WJID" exp="所属问卷ID" type="int" null="F" p="F" />
+            <name="TMID" exp="所属题目ID" type="int" null="F" p="F" />
+            <name="XXID" exp="选项ID" type="int" null="F" p="F" />
+            <name="XXFZ" exp="选项分值" type="int" null="F" p="F" />
+            <name="TJZT" exp="提交状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_33_A01_GWJCXX" exp="公文基础信息表">

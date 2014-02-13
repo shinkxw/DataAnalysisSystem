@@ -682,9 +682,7 @@ EDU_OAXT_32_A01_DCWJ  调查问卷数据表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   Title         问卷名称                nvarchar(300)  非主
-  Type          调查对象类型            int            非主
   Users         参选人员                text           非主
-  DoneUsers     已参选人员              text           非主
   StartTime     开始时间                datetime       非主
   EndTime       结束时间                datetime       非主
   IsStart       是否开启                int            非主
@@ -695,6 +693,7 @@ EDU_OAXT_32_A02_DCWJTM  调查问卷题目表
   WJID          所属问卷                int            非主        调查问卷数据表
   TypeID        题目类型                int            非主
   Title         题目                    nvarchar(300)  非主
+  SSDL          所属大类                nvarchar(100)  非主
 
 EDU_OAXT_32_A03_DCWJTMXX  问卷题目选项表
   ID            编号                    int            主键
@@ -702,10 +701,17 @@ EDU_OAXT_32_A03_DCWJTMXX  问卷题目选项表
   TMID          所属题目                int            非主        调查问卷题目表
   WJID          所属问卷                int            非主        调查问卷数据表
   SelectItem    选项                    nvarchar(100)  非主
-  SelectContent 选项内容                nvarchar(500)  非主
-  Votes         票数                    int            非主
-  VoteUsers     投票人                  text           非主
-  VoteUsersXM   投票人姓名              text           非主
+  XXFZ          选项分值                int            非主
+
+EDU_OAXT_32_A04_DCWJJL  问卷结果记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  WJID          所属问卷ID              int            非主        调查问卷数据表
+  TMID          所属题目ID              int            非主        调查问卷题目表
+  XXID          选项ID                  int            非主        问卷题目选项表
+  XXFZ          选项分值                int            非主
+  TJZT          提交状态                int            非主
 
 EDU_OAXT_33_A01_GWJCXX  公文基础信息表
   ID            编号                    int            主键

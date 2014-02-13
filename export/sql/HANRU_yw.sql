@@ -2066,6 +2066,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_32_A03_DCWJ
    drop table EDU_OAXT_32_A03_DCWJTMXX
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_32_A04_DCWJJL')
+            and   type = 'U')
+   drop table EDU_OAXT_32_A04_DCWJJL
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_33_A01_GWJCXX')
             and   type = 'U')
    drop table EDU_OAXT_33_A01_GWJCXX
@@ -3342,9 +3347,7 @@ CREATE TABLE [dbo].[EDU_OAXT_32_A01_DCWJ](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[Title]  nvarchar(300)  NOT NULL,--问卷名称
-	[Type]  int  NOT NULL,--调查对象类型
 	[Users]  text  NOT NULL,--参选人员
-	[DoneUsers]  text  NOT NULL,--已参选人员
 	[StartTime]  datetime  NOT NULL,--开始时间
 	[EndTime]  datetime  NOT NULL,--结束时间
 	[IsStart]  int  NOT NULL,--是否开启
@@ -3366,6 +3369,7 @@ CREATE TABLE [dbo].[EDU_OAXT_32_A02_DCWJTM](
 	[WJID]  int  NOT NULL,--所属问卷
 	[TypeID]  int  NOT NULL,--题目类型
 	[Title]  nvarchar(300)  NOT NULL,--题目
+	[SSDL]  nvarchar(100)  NOT NULL,--所属大类
 CONSTRAINT [PK_EDU_OAXT_32_A02_DCWJTM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3384,11 +3388,29 @@ CREATE TABLE [dbo].[EDU_OAXT_32_A03_DCWJTMXX](
 	[TMID]  int  NOT NULL,--所属题目
 	[WJID]  int  NOT NULL,--所属问卷
 	[SelectItem]  nvarchar(100)  NOT NULL,--选项
-	[SelectContent]  nvarchar(500)  NOT NULL,--选项内容
-	[Votes]  int  NOT NULL,--票数
-	[VoteUsers]  text  NOT NULL,--投票人
-	[VoteUsersXM]  text  NOT NULL,--投票人姓名
+	[XXFZ]  int  NOT NULL,--选项分值
 CONSTRAINT [PK_EDU_OAXT_32_A03_DCWJTMXX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--问卷结果记录表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_32_A04_DCWJJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_32_A04_DCWJJL](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[WJID]  int  NOT NULL,--所属问卷ID
+	[TMID]  int  NOT NULL,--所属题目ID
+	[XXID]  int  NOT NULL,--选项ID
+	[XXFZ]  int  NOT NULL,--选项分值
+	[TJZT]  int  NOT NULL,--提交状态
+CONSTRAINT [PK_EDU_OAXT_32_A04_DCWJJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
@@ -4754,11 +4776,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'问卷名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A01_DCWJ', @level2type=N'COLUMN',@level2name=N'Title'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调查对象类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A01_DCWJ', @level2type=N'COLUMN',@level2name=N'Type'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参选人员' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A01_DCWJ', @level2type=N'COLUMN',@level2name=N'Users'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'已参选人员' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A01_DCWJ', @level2type=N'COLUMN',@level2name=N'DoneUsers'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A01_DCWJ', @level2type=N'COLUMN',@level2name=N'StartTime'
 GO
@@ -4778,6 +4796,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'题目类型' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'题目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A02_DCWJTM', @level2type=N'COLUMN',@level2name=N'Title'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属大类' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A02_DCWJTM', @level2type=N'COLUMN',@level2name=N'SSDL'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'问卷题目选项表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'ID'
@@ -4790,13 +4810,25 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属问卷' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'SelectItem'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'SelectContent'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'XXFZ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'票数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'Votes'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'问卷结果记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'投票人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'VoteUsers'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'ID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'投票人姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A03_DCWJTMXX', @level2type=N'COLUMN',@level2name=N'VoteUsersXM'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属问卷ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'WJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属题目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'TMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'XXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'XXFZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'提交状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A04_DCWJJL', @level2type=N'COLUMN',@level2name=N'TJZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公文基础信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_33_A01_GWJCXX'
 GO

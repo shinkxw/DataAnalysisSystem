@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_32_A02_DCWJTM()
         {
             Title = "";
+            SSDL = "";
         }
         public class EDU_OAXT_32_A02_DCWJTM_metadata
         {
@@ -38,6 +39,13 @@ namespace HanRuEdu.LDAL
             [StringLength(300)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String Title { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "所属大类")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SSDL { get; set; }
 
 
         }
