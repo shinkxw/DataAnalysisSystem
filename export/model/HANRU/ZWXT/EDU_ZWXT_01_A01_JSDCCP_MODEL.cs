@@ -11,7 +11,6 @@ namespace HanRuEdu.LDAL
         {
             MC = "";
             ZL = "";
-            TP = "";
             JS = "";
         }
         public class EDU_ZWXT_01_A01_JSDCCP_metadata
@@ -46,7 +45,6 @@ namespace HanRuEdu.LDAL
             public String ZL { get; set; }
 
 
-            [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
             [Display(Name = "Í¼Æ¬")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String TP { get; set; }

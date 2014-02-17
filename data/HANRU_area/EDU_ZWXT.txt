@@ -7,7 +7,7 @@
             <name="MC" exp="名称" type="nvarchar(50)" null="F" p="F" />
             <name="JG" exp="价格" type="decimal(5, 2)" null="F" p="F" />
             <name="ZL" exp="主料" type="nvarchar(100)" null="F" p="F" />
-            <name="TP" exp="图片" type="text" null="F" p="F" />
+            <name="TP" exp="图片" type="text" null="T" p="F" />
             <name="JS" exp="介绍" type="text" null="F" p="F" />
             <name="GYSL" exp="供应数量" type="int" null="F" p="F" />
             <name="SFKQ" exp="是否开启" type="int" null="F" p="F" />

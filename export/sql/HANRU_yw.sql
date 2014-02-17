@@ -5966,7 +5966,7 @@ CREATE TABLE [dbo].[EDU_ZWXT_01_A01_JSDCCP](
 	[MC]  nvarchar(50)  NOT NULL,--名称
 	[JG]  decimal(5, 2)  NOT NULL,--价格
 	[ZL]  nvarchar(100)  NOT NULL,--主料
-	[TP]  text  NOT NULL,--图片
+	[TP]  text  NULL,--图片
 	[JS]  text  NOT NULL,--介绍
 	[GYSL]  int  NOT NULL,--供应数量
 	[SFKQ]  int  NOT NULL,--是否开启
