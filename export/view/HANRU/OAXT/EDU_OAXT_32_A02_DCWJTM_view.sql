@@ -14,6 +14,7 @@ SELECT a.[ID]--编号
       ,c.StartTime as c_DCWJ_StartTime--调查问卷数据表 开始时间
       ,c.EndTime as c_DCWJ_EndTime--调查问卷数据表 结束时间
       ,c.IsStart as c_DCWJ_IsStart--调查问卷数据表 是否开启
+      ,c.JJ as c_DCWJ_JJ--调查问卷数据表 简介
 
 FROM dbo.EDU_OAXT_32_A02_DCWJTM AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_32_A01_DCWJ AS c ON a.WJID = c.ID /*所属问卷*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/

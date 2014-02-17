@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,d.StartTime as d_DCWJ_StartTime--调查问卷数据表 开始时间
       ,d.EndTime as d_DCWJ_EndTime--调查问卷数据表 结束时间
       ,d.IsStart as d_DCWJ_IsStart--调查问卷数据表 是否开启
+      ,d.JJ as d_DCWJ_JJ--调查问卷数据表 简介
       ,e.SCHOOLID as e_DCWJTM_SCHOOLID--调查问卷题目表 学校
       ,e.WJID as e_DCWJTM_WJID--调查问卷题目表 所属问卷
       ,e.TypeID as e_DCWJTM_TypeID--调查问卷题目表 题目类型

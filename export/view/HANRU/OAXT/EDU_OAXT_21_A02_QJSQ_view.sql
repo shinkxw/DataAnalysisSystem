@@ -34,6 +34,8 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_QJLX_SCHOOLID--请假类型表 学校
       ,d.LXMC as d_QJLX_LXMC--请假类型表 类型名称
       ,d.BZ as d_QJLX_BZ--请假类型表 备注
+      ,d.JSDW as d_QJLX_JSDW--请假类型表 计时单位
+      ,d.ZCSJ as d_QJLX_ZCSJ--请假类型表 最长时间
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码

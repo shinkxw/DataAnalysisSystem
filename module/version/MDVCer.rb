@@ -24,7 +24,7 @@ class MDVCer
   def build_update_log
     log = ''
     @version_arr.each{|ver| log << ver.build_log}
-    FileWriter.new(@log_path).write_str(log)
+    FileWriter.new(@log_path,'w','UTF-8').write_str(log)
   end
   #生成新的版本对象
   def build_new_version

@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             LXMC = "";
             BZ = "";
+            JSDW = "";
         }
         public class EDU_OAXT_21_A01_QJLX_metadata
         {
@@ -35,6 +36,19 @@ namespace HanRuEdu.LDAL
             [Display(Name = "备注")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "计时单位")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSDW { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "最长时间")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal ZCSJ { get; set; }
 
 
         }

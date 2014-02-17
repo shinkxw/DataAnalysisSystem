@@ -70,6 +70,12 @@ namespace HanRuEdu.LDAL
             public String Remark { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÊıÁ¿")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal SumCount { get; set; }
+
+
         }
     }
 }

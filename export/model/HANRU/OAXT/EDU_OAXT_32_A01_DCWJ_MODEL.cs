@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             Users = "";
             StartTime = DateTime.Now;
             EndTime = DateTime.Now;
+            JJ = "";
         }
         public class EDU_OAXT_32_A01_DCWJ_metadata
         {
@@ -52,6 +53,12 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "是否开启")]
             public Int32 IsStart { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "简介")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JJ { get; set; }
 
 
         }

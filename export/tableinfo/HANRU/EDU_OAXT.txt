@@ -254,6 +254,7 @@ EDU_OAXT_15_A03_ZCKC  资产库存表
   Merchant      供应商                  nvarchar(200)  非主
   Vender        厂家                    nvarchar(200)  非主
   Remark        备注                    nvarchar(100)  非主
+  AllCount      资产总量                decimal(8, 2)  非主
 
 EDU_OAXT_15_A04_ZCRK  资产入库表
   ID            编号                    int            主键
@@ -292,6 +293,7 @@ EDU_OAXT_15_A06_ZCBG  资产变更表
   Option        操作                    nvarchar(200)  非主
   RegistTime    登记时间                datetime       非主
   Remark        备注                    nvarchar(100)  非主
+  SumCount      数量                    decimal(8, 2)  非主
 
 EDU_OAXT_15_A07_BXLX  报修类型表
   ID            编号                    int            主键
@@ -319,6 +321,9 @@ EDU_OAXT_15_A08_BXGL  报修管理表
   Status        状态                    int            非主
   Remark        备注                    nvarchar(300)  非主
   SumCount      数量                    decimal(8, 2)  非主
+  GZTP          故障图片                text           非主
+  WCZT          完成状态                int            非主
+  SCZT          删除状态                int            非主
 
 EDU_OAXT_15_A09_WXJH  维修计划表
   ID            编号                    int            主键
@@ -354,6 +359,13 @@ EDU_OAXT_15_A12_ZCPDMX  资产盘点明细表
   PUserID       盘点人ID                nvarchar(20)   非主        应用系统用户表
   Storesum      库存数                  decimal(8, 2)  非主
   RealSum       实存数                  decimal(8, 2)  非主
+
+EDU_OAXT_15_A13_WXJL  维修记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  WPID          物品ID                  int            非主        报修管理表
+  WXZT          维修状态                int            非主
+  BZ            备注                    text           非主
 
 EDU_OAXT_20_A01_LCMBLX  流程模板类型表
   ID            编号                    int            主键
@@ -425,6 +437,8 @@ EDU_OAXT_21_A01_QJLX  请假类型表
   SCHOOLID      学校                    int            主键        学校配置表
   LXMC          类型名称                nvarchar(50)   非主
   BZ            备注                    text           非主
+  JSDW          计时单位                nvarchar(50)   非主
+  ZCSJ          最长时间                decimal(8, 2)  非主
 
 EDU_OAXT_21_A02_QJSQ  请假申请表
   ID            编号                    int            主键
@@ -686,6 +700,7 @@ EDU_OAXT_32_A01_DCWJ  调查问卷数据表
   StartTime     开始时间                datetime       非主
   EndTime       结束时间                datetime       非主
   IsStart       是否开启                int            非主
+  JJ            简介                    text           非主
 
 EDU_OAXT_32_A02_DCWJTM  调查问卷题目表
   ID            编号                    int            主键

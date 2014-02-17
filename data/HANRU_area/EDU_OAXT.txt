@@ -297,6 +297,7 @@
             <name="Merchant" exp="供应商" type="nvarchar(200)" null="F" p="F" />
             <name="Vender" exp="厂家" type="nvarchar(200)" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+            <name="AllCount" exp="资产总量" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A04_ZCRK" exp="资产入库表">
@@ -341,6 +342,7 @@
             <name="Option" exp="操作" type="nvarchar(200)" null="F" p="F" />
             <name="RegistTime" exp="登记时间" type="datetime" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+            <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A07_BXLX" exp="报修类型表">
@@ -372,6 +374,9 @@
             <name="Status" exp="状态" type="int" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(300)" null="F" p="F" />
             <name="SumCount" exp="数量" type="decimal(8, 2)" null="F" p="F" />
+            <name="GZTP" exp="故障图片" type="text" null="F" p="F" />
+            <name="WCZT" exp="完成状态" type="int" null="F" p="F" />
+            <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A09_WXJH" exp="维修计划表">
@@ -415,6 +420,15 @@
             <name="PUserID" exp="盘点人ID" type="nvarchar(20)" null="F" p="F" />
             <name="Storesum" exp="库存数" type="decimal(8, 2)" null="F" p="F" />
             <name="RealSum" exp="实存数" type="decimal(8, 2)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A13_WXJL" exp="维修记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="WPID" exp="物品ID" type="int" null="F" p="F" />
+            <name="WXZT" exp="维修状态" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_20_A01_LCMBLX" exp="流程模板类型表">
@@ -500,6 +514,8 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="LXMC" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="JSDW" exp="计时单位" type="nvarchar(50)" null="F" p="F" />
+            <name="ZCSJ" exp="最长时间" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_21_A02_QJSQ" exp="请假申请表">
@@ -793,6 +809,7 @@
             <name="StartTime" exp="开始时间" type="datetime" null="F" p="F" />
             <name="EndTime" exp="结束时间" type="datetime" null="F" p="F" />
             <name="IsStart" exp="是否开启" type="int" null="F" p="F" />
+            <name="JJ" exp="简介" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_32_A02_DCWJTM" exp="调查问卷题目表">

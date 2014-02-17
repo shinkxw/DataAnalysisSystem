@@ -90,6 +90,12 @@ namespace HanRuEdu.LDAL
             public String Remark { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "资产总量")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal AllCount { get; set; }
+
+
         }
     }
 }

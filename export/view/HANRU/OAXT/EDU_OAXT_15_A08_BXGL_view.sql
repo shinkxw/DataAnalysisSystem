@@ -21,6 +21,9 @@ SELECT a.[ID]--编号
       ,a.[Status]--状态
       ,a.[Remark]--备注
       ,a.[SumCount]--数量
+      ,a.[GZTP]--故障图片
+      ,a.[WCZT]--完成状态
+      ,a.[SCZT]--删除状态
       ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
       ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
       ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID
@@ -32,6 +35,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,d.SCHOOLID as d_BXLX_SCHOOLID--报修类型表 学校
       ,d.TypeName as d_BXLX_TypeName--报修类型表 类型名称
       ,d.Remark as d_BXLX_Remark--报修类型表 备注

@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,d.SCHOOLID as d_ZCPD_SCHOOLID--资产盘点表 学校
       ,d.Title as d_ZCPD_Title--资产盘点表 盘点名称
       ,d.PanDate as d_ZCPD_PanDate--资产盘点表 盘点日期

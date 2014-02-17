@@ -234,6 +234,9 @@
   AID            EDU_OAXT_15_A03_ZCKC               ID
   PID            EDU_OAXT_15_A11_ZCPD               ID
   PUserID        EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_15_A13_WXJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WPID           EDU_OAXT_15_A08_BXGL               ID
 <EDU_OAXT_20_A02_LCBDSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_20_A03_LCMB
@@ -403,6 +406,12 @@
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
 <EDU_ZJ_ZJZY
   ZYMLLB         EDU_ZJ_ZYML                        DM
+<EDU_ZWXT_01_A01_JSDCCP
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZWXT_01_A02_JSDCJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  CPID           EDU_ZWXT_01_A01_JSDCCP             ID
+  DCRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXDY_04_A01_ZZGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

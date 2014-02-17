@@ -21,6 +21,7 @@ namespace HanRuEdu.LDAL
             Evaluate = "";
             StartDate = DateTime.Now;
             Remark = "";
+            GZTP = "";
         }
         public class EDU_OAXT_15_A08_BXGL_metadata
         {
@@ -139,6 +140,22 @@ namespace HanRuEdu.LDAL
             [Display(Name = "数量")]
             [Range(typeof(decimal), "0", "99999999")]
             public decimal SumCount { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "故障图片")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GZTP { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "完成状态")]
+            public Int32 WCZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "删除状态")]
+            public Int32 SCZT { get; set; }
 
 
         }

@@ -219,6 +219,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A12
             and   type = 'V')
    drop view VIEW_EDU_OAXT_15_A12_ZCPDMX_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_15_A13_WXJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_15_A13_WXJL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A03_LCMB_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_20_A03_LCMB_DISP
@@ -362,6 +366,10 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZJ_ZJZY_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZWXT_01_A02_JSDCJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZWXT_01_A02_JSDCJL_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXDY_04_A01_ZZGW_DISP')
             and   type = 'V')
@@ -3308,6 +3316,7 @@ SELECT a.[ID]--编号
       ,a.[Merchant]--供应商
       ,a.[Vender]--厂家
       ,a.[Remark]--备注
+      ,a.[AllCount]--资产总量
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
       ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
@@ -3381,6 +3390,7 @@ SELECT a.[ID]--编号
       ,e.Merchant as e_ZCKC_Merchant--资产库存表 供应商
       ,e.Vender as e_ZCKC_Vender--资产库存表 厂家
       ,e.Remark as e_ZCKC_Remark--资产库存表 备注
+      ,e.AllCount as e_ZCKC_AllCount--资产库存表 资产总量
 
 FROM dbo.EDU_OAXT_15_A05_ZCJH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A01_ZCML AS c ON a.TypeID = c.ID /*资产目录表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3400,6 +3410,7 @@ SELECT a.[ID]--编号
       ,a.[Option]--操作
       ,a.[RegistTime]--登记时间
       ,a.[Remark]--备注
+      ,a.[SumCount]--数量
       ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
       ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
       ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID
@@ -3411,6 +3422,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
 
 FROM dbo.EDU_OAXT_15_A06_ZCBG AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -3438,6 +3450,9 @@ SELECT a.[ID]--编号
       ,a.[Status]--状态
       ,a.[Remark]--备注
       ,a.[SumCount]--数量
+      ,a.[GZTP]--故障图片
+      ,a.[WCZT]--完成状态
+      ,a.[SCZT]--删除状态
       ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
       ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
       ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID
@@ -3449,6 +3464,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,d.SCHOOLID as d_BXLX_SCHOOLID--报修类型表 学校
       ,d.TypeName as d_BXLX_TypeName--报修类型表 类型名称
       ,d.Remark as d_BXLX_Remark--报修类型表 备注
@@ -3477,6 +3493,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
 
 FROM dbo.EDU_OAXT_15_A09_WXJH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -3504,6 +3521,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -3548,6 +3566,7 @@ SELECT a.[ID]--编号
       ,c.Merchant as c_ZCKC_Merchant--资产库存表 供应商
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
+      ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,d.SCHOOLID as d_ZCPD_SCHOOLID--资产盘点表 学校
       ,d.Title as d_ZCPD_Title--资产盘点表 盘点名称
       ,d.PanDate as d_ZCPD_PanDate--资产盘点表 盘点日期
@@ -3576,6 +3595,40 @@ FROM dbo.EDU_OAXT_15_A12_ZCPDMX AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A11_ZCPD AS d ON a.PID = d.ID /*盘点表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.PUserID = e.LOGINNAME /*盘点人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
+GO
+
+--维修记录表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A13_WXJL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[WPID]--物品ID
+      ,a.[WXZT]--维修状态
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_BXGL_SCHOOLID--报修管理表 学校
+      ,c.AID as c_BXGL_AID--报修管理表 库存表ID
+      ,c.TypeID as c_BXGL_TypeID--报修管理表 报修类型ID
+      ,c.Title as c_BXGL_Title--报修管理表 报修主题
+      ,c.Telephone as c_BXGL_Telephone--报修管理表 联系电话
+      ,c.Repairplace as c_BXGL_Repairplace--报修管理表 报修地点
+      ,c.Repaircontent as c_BXGL_Repaircontent--报修管理表 报修内容
+      ,c.Repairpeople as c_BXGL_Repairpeople--报修管理表 维修人
+      ,c.RepairDate as c_BXGL_RepairDate--报修管理表 维修时间
+      ,c.ReadrID as c_BXGL_ReadrID--报修管理表 阅读情况
+      ,c.Readr as c_BXGL_Readr--报修管理表 阅读情况
+      ,c.Applicant as c_BXGL_Applicant--报修管理表 申请人
+      ,c.Approver as c_BXGL_Approver--报修管理表 审批人
+      ,c.Evaluate as c_BXGL_Evaluate--报修管理表 评价
+      ,c.StartDate as c_BXGL_StartDate--报修管理表 开始时间
+      ,c.Status as c_BXGL_Status--报修管理表 状态
+      ,c.Remark as c_BXGL_Remark--报修管理表 备注
+      ,c.SumCount as c_BXGL_SumCount--报修管理表 数量
+      ,c.GZTP as c_BXGL_GZTP--报修管理表 故障图片
+      ,c.WCZT as c_BXGL_WCZT--报修管理表 完成状态
+      ,c.SCZT as c_BXGL_SCZT--报修管理表 删除状态
+
+FROM dbo.EDU_OAXT_15_A13_WXJL AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_15_A08_BXGL AS c ON a.WPID = c.ID /*物品ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --流程模板表
@@ -3855,6 +3908,8 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_QJLX_SCHOOLID--请假类型表 学校
       ,d.LXMC as d_QJLX_LXMC--请假类型表 类型名称
       ,d.BZ as d_QJLX_BZ--请假类型表 备注
+      ,d.JSDW as d_QJLX_JSDW--请假类型表 计时单位
+      ,d.ZCSJ as d_QJLX_ZCSJ--请假类型表 最长时间
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -4256,6 +4311,7 @@ SELECT a.[ID]--编号
       ,c.StartTime as c_DCWJ_StartTime--调查问卷数据表 开始时间
       ,c.EndTime as c_DCWJ_EndTime--调查问卷数据表 结束时间
       ,c.IsStart as c_DCWJ_IsStart--调查问卷数据表 是否开启
+      ,c.JJ as c_DCWJ_JJ--调查问卷数据表 简介
 
 FROM dbo.EDU_OAXT_32_A02_DCWJTM AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_32_A01_DCWJ AS c ON a.WJID = c.ID /*所属问卷*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -4281,6 +4337,7 @@ SELECT a.[ID]--编号
       ,d.StartTime as d_DCWJ_StartTime--调查问卷数据表 开始时间
       ,d.EndTime as d_DCWJ_EndTime--调查问卷数据表 结束时间
       ,d.IsStart as d_DCWJ_IsStart--调查问卷数据表 是否开启
+      ,d.JJ as d_DCWJ_JJ--调查问卷数据表 简介
 
 FROM dbo.EDU_OAXT_32_A03_DCWJTMXX AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_32_A02_DCWJTM AS c ON a.TMID = c.ID /*所属题目*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -4321,6 +4378,7 @@ SELECT a.[ID]--编号
       ,d.StartTime as d_DCWJ_StartTime--调查问卷数据表 开始时间
       ,d.EndTime as d_DCWJ_EndTime--调查问卷数据表 结束时间
       ,d.IsStart as d_DCWJ_IsStart--调查问卷数据表 是否开启
+      ,d.JJ as d_DCWJ_JJ--调查问卷数据表 简介
       ,e.SCHOOLID as e_DCWJTM_SCHOOLID--调查问卷题目表 学校
       ,e.WJID as e_DCWJTM_WJID--调查问卷题目表 所属问卷
       ,e.TypeID as e_DCWJTM_TypeID--调查问卷题目表 题目类型
@@ -5079,6 +5137,46 @@ SELECT a.[DM]--代码
 
 FROM dbo.EDU_ZJ_ZJZY AS a LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS b ON a.ZYMLLB = b.DM /*专业目录类别*/
+GO
+
+--教师订餐记录表
+CREATE VIEW [dbo].[VIEW_EDU_ZWXT_01_A02_JSDCJL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[CPID]--菜品ID
+      ,a.[DCSJ]--订餐时间
+      ,a.[DCRID]--订餐人ID
+      ,a.[SDSL]--所订数量
+      ,c.SCHOOLID as c_JSDCCP_SCHOOLID--教师订餐菜品表 学校
+      ,c.MC as c_JSDCCP_MC--教师订餐菜品表 名称
+      ,c.JG as c_JSDCCP_JG--教师订餐菜品表 价格
+      ,c.ZL as c_JSDCCP_ZL--教师订餐菜品表 主料
+      ,c.TP as c_JSDCCP_TP--教师订餐菜品表 图片
+      ,c.JS as c_JSDCCP_JS--教师订餐菜品表 介绍
+      ,c.GYSL as c_JSDCCP_GYSL--教师订餐菜品表 供应数量
+      ,c.SFKQ as c_JSDCCP_SFKQ--教师订餐菜品表 是否开启
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZWXT_01_A02_JSDCJL AS a LEFT OUTER JOIN
+      dbo.EDU_ZWXT_01_A01_JSDCCP AS c ON a.CPID = c.ID /*菜品ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.DCRID = d.LOGINNAME /*订餐人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --值周岗位数据表
