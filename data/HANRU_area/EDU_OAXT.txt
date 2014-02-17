@@ -367,8 +367,8 @@
             <name="RepairDate" exp="维修时间" type="datetime" null="F" p="F" />
             <name="ReadrID" exp="阅读情况" type="nvarchar(200)" null="F" p="F" />
             <name="Readr" exp="阅读情况" type="nvarchar(200)" null="F" p="F" />
-            <name="Applicant" exp="申请人" type="nvarchar(50)" null="F" p="F" />
-            <name="Approver" exp="审批人" type="nvarchar(50)" null="T" p="F" />
+            <name="Applicant" exp="申请人" type="nvarchar(20)" null="F" p="F" />
+            <name="Approver" exp="审批人" type="nvarchar(20)" null="T" p="F" />
             <name="Evaluate" exp="评价" type="nvarchar(200)" null="F" p="F" />
             <name="StartDate" exp="开始时间" type="datetime" null="F" p="F" />
             <name="Status" exp="状态" type="int" null="F" p="F" />

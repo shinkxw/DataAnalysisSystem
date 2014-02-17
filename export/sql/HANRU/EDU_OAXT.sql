@@ -897,8 +897,8 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A08_BXGL](
 	[RepairDate]  datetime  NOT NULL,--维修时间
 	[ReadrID]  nvarchar(200)  NOT NULL,--阅读情况
 	[Readr]  nvarchar(200)  NOT NULL,--阅读情况
-	[Applicant]  nvarchar(50)  NOT NULL,--申请人
-	[Approver]  nvarchar(50)  NULL,--审批人
+	[Applicant]  nvarchar(20)  NOT NULL,--申请人
+	[Approver]  nvarchar(20)  NULL,--审批人
 	[Evaluate]  nvarchar(200)  NOT NULL,--评价
 	[StartDate]  datetime  NOT NULL,--开始时间
 	[Status]  int  NOT NULL,--状态

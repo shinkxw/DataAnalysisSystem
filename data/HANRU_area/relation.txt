@@ -220,6 +220,8 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   AID            EDU_OAXT_15_A03_ZCKC               ID
   TypeID         EDU_OAXT_15_A07_BXLX               ID
+  Applicant      EDU_ELE_01_USER                    LOGINNAME
+  Approver       EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_15_A09_WXJH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   AID            EDU_OAXT_15_A03_ZCKC               ID

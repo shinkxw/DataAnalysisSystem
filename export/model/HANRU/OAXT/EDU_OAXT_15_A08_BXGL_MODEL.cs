@@ -101,13 +101,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "申请人")]
-            [StringLength(50)]
+            [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String Applicant { get; set; }
 
 
             [Display(Name = "审批人")]
-            [StringLength(50)]
+            [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String Approver { get; set; }
 

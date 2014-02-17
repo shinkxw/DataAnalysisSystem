@@ -314,8 +314,8 @@ EDU_OAXT_15_A08_BXGL  报修管理表
   RepairDate    维修时间                datetime       非主
   ReadrID       阅读情况                nvarchar(200)  非主
   Readr         阅读情况                nvarchar(200)  非主
-  Applicant     申请人                  nvarchar(50)   非主
-  Approver      审批人                  nvarchar(50)   非主
+  Applicant     申请人                  nvarchar(20)   非主        应用系统用户表
+  Approver      审批人                  nvarchar(20)   非主        应用系统用户表
   Evaluate      评价                    nvarchar(200)  非主
   StartDate     开始时间                datetime       非主
   Status        状态                    int            非主
