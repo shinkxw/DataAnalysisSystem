@@ -71,22 +71,20 @@ class TemplateBuilder
     str = "#{@tab.t}public void Add#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}"
     str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
-    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}Upd#{table.lname.capitalize}(#{table.lname_dc});\n"
+    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}\n#{@tab.t}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}"
+    str << "#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_upd(table)
     str = "#{@tab.t}public void Upd#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
-    str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n\n#{@tab.t}if (#{table.lname_dc}_model != null)\n#{@tab.t}"
-    str << "{\n#{@tab.long}"
+    str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}//if (#{table.lname_dc}_model == null) throw new Exception(\"记录不存在\");\n"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
       str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{get_relation(field)}\n"
     end
-    str << "#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
-    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}//throw new Exception(\"记录不存在\");\n"
-    str << "#{@tab.s}}\n#{@tab.t}#{table.db_name}.SaveChanges();\n"
+    str << "#{@tab.t}\n#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
+    str << "#{@tab.t}#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_InitViewBag(table)
