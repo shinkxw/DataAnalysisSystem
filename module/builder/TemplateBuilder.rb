@@ -71,7 +71,12 @@ class TemplateBuilder
     str = "#{@tab.t}public void Add#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}"
     str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
-    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n#{@tab.t}\n#{@tab.t}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}"
+    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n"
+    table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
+      str << "#{@tab.t}//#{table.lname_dc}.#{field.name} = ;//#{field.explanation}#{get_relation(field)}\n"
+    end
+    str << "#{@tab.t}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}"
     str << "#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n\n"
   end
