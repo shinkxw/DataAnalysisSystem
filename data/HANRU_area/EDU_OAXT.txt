@@ -900,4 +900,24 @@
             <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_34_A01_WYLCJL" exp="文印流程记录">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="WYBT" exp="文印标题" type="nvarchar(50)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(300)" null="F" p="F" />
+            <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SHBZ" exp="审核备注" type="nvarchar(300)" null="F" p="F" />
+            <name="SHLBSFXS" exp="审核列表是否显示" type="int" null="F" p="F" />
+            <name="DYZT" exp="打印状态" type="int" null="F" p="F" />
+            <name="DYSJ" exp="打印时间" type="datetime" null="F" p="F" />
+            <name="DYBZ" exp="打印备注" type="nvarchar(300)" null="F" p="F" />
+            <name="DYLBSFXS" exp="打印列表是否显示" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

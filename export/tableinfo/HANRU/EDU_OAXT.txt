@@ -776,3 +776,21 @@ EDU_OAXT_33_A04_SW  收文表
   CLZT          处理状态                int            非主
   SCZT          删除状态                int            非主
 
+EDU_OAXT_34_A01_WYLCJL  文印流程记录
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  WYBT          文印标题                nvarchar(50)   非主
+  NR            内容                    text           非主
+  BZ            备注                    nvarchar(300)  非主
+  SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
+  SHSJ          审核时间                datetime       非主
+  SHBZ          审核备注                nvarchar(300)  非主
+  SHLBSFXS      审核列表是否显示        int            非主
+  DYZT          打印状态                int            非主
+  DYSJ          打印时间                datetime       非主
+  DYBZ          打印备注                nvarchar(300)  非主
+  DYLBSFXS      打印列表是否显示        int            非主
+

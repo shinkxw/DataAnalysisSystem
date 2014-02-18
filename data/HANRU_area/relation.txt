@@ -336,6 +336,10 @@
   GWID           EDU_OAXT_33_A01_GWJCXX             ID
   XFRID          EDU_ELE_01_USER                    LOGINNAME
   JSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_34_A01_WYLCJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP
