@@ -837,6 +837,7 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A05_ZCJH](
 	[Unit]  nvarchar(10)  NOT NULL,--单位
 	[Borrower]  nvarchar(200)  NOT NULL,--借用方
 	[Remark]  nvarchar(100)  NOT NULL,--备注
+	[Registdate]  datetime  NOT NULL,--登记时间
 CONSTRAINT [PK_EDU_OAXT_15_A05_ZCJH] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -951,6 +952,7 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A10_ZCBF](
 	[Remark]  nvarchar(100)  NOT NULL,--备注
 	[RegsterID]  nvarchar(20)  NOT NULL,--登记人ID
 	[Statu]  int  NOT NULL,--状态
+	[Registdate]  datetime  NOT NULL,--登记时间
 CONSTRAINT [PK_EDU_OAXT_15_A10_ZCBF] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -991,6 +993,10 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A12_ZCPDMX](
 	[PUserID]  nvarchar(20)  NOT NULL,--盘点人ID
 	[Storesum]  decimal(8, 2)  NOT NULL,--库存数
 	[RealSum]  decimal(8, 2)  NOT NULL,--实存数
+	[Name]  nvarchar(200)  NOT NULL,--资产名称
+	[AllCount]  decimal(8, 2)  NOT NULL,--资产总量
+	[Remark]  text  NOT NULL,--备注
+	[BorrowCount]  decimal(8, 2)  NOT NULL,--借用数量
 CONSTRAINT [PK_EDU_OAXT_15_A12_ZCPDMX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2310,6 +2316,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'借用方' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A05_ZCJH', @level2type=N'COLUMN',@level2name=N'Remark'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A05_ZCJH', @level2type=N'COLUMN',@level2name=N'Registdate'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产变更表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A06_ZCBG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A06_ZCBG', @level2type=N'COLUMN',@level2name=N'ID'
@@ -2418,6 +2426,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记人ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A10_ZCBF', @level2type=N'COLUMN',@level2name=N'Statu'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A10_ZCBF', @level2type=N'COLUMN',@level2name=N'Registdate'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产盘点表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A11_ZCPD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A11_ZCPD', @level2type=N'COLUMN',@level2name=N'ID'
@@ -2449,6 +2459,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'库存数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A12_ZCPDMX', @level2type=N'COLUMN',@level2name=N'Storesum'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实存数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A12_ZCPDMX', @level2type=N'COLUMN',@level2name=N'RealSum'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A12_ZCPDMX', @level2type=N'COLUMN',@level2name=N'Name'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产总量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A12_ZCPDMX', @level2type=N'COLUMN',@level2name=N'AllCount'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A12_ZCPDMX', @level2type=N'COLUMN',@level2name=N'Remark'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'借用数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A12_ZCPDMX', @level2type=N'COLUMN',@level2name=N'BorrowCount'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'维修记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A13_WXJL'
 GO

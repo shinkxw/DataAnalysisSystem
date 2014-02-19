@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[RegsterID]--登记人ID
       ,a.[Statu]--状态
+      ,a.[Registdate]--登记时间
       ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
       ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
       ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID

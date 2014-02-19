@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             Reporter = "";
             Remark = "";
             RegsterID = "";
+            Registdate = DateTime.Now;
         }
         public class EDU_OAXT_15_A10_ZCBF_metadata
         {
@@ -60,6 +61,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "状态")]
             public Int32 Statu { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "登记时间")]
+            public DateTime Registdate { get; set; }
 
 
         }

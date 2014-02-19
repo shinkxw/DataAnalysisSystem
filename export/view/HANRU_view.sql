@@ -3376,6 +3376,7 @@ SELECT a.[ID]--编号
       ,a.[Unit]--单位
       ,a.[Borrower]--借用方
       ,a.[Remark]--备注
+      ,a.[Registdate]--登记时间
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
       ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
@@ -3550,6 +3551,7 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[RegsterID]--登记人ID
       ,a.[Statu]--状态
+      ,a.[Registdate]--登记时间
       ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
       ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
       ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID
@@ -3595,6 +3597,10 @@ SELECT a.[ID]--编号
       ,a.[PUserID]--盘点人ID
       ,a.[Storesum]--库存数
       ,a.[RealSum]--实存数
+      ,a.[Name]--资产名称
+      ,a.[AllCount]--资产总量
+      ,a.[Remark]--备注
+      ,a.[BorrowCount]--借用数量
       ,c.SCHOOLID as c_ZCKC_SCHOOLID--资产库存表 学校
       ,c.TypeID as c_ZCKC_TypeID--资产库存表 资产目录表ID
       ,c.ClassID as c_ZCKC_ClassID--资产库存表 资产大类表ID

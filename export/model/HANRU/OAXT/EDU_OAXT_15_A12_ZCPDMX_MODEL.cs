@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_15_A12_ZCPDMX()
         {
             PUserID = "";
+            Name = "";
+            Remark = "";
         }
         public class EDU_OAXT_15_A12_ZCPDMX_metadata
         {
@@ -50,6 +52,31 @@ namespace HanRuEdu.LDAL
             [Display(Name = "实存数")]
             [Range(typeof(decimal), "0", "99999999")]
             public decimal RealSum { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "资产名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String Name { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "资产总量")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal AllCount { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "备注")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String Remark { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "借用数量")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal BorrowCount { get; set; }
 
 
         }

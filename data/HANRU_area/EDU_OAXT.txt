@@ -329,6 +329,7 @@
             <name="Unit" exp="单位" type="nvarchar(10)" null="F" p="F" />
             <name="Borrower" exp="借用方" type="nvarchar(200)" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
+            <name="Registdate" exp="登记时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A06_ZCBG" exp="资产变更表">
@@ -398,6 +399,7 @@
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
             <name="RegsterID" exp="登记人ID" type="nvarchar(20)" null="F" p="F" />
             <name="Statu" exp="状态" type="int" null="F" p="F" />
+            <name="Registdate" exp="登记时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A11_ZCPD" exp="资产盘点表">
@@ -420,6 +422,10 @@
             <name="PUserID" exp="盘点人ID" type="nvarchar(20)" null="F" p="F" />
             <name="Storesum" exp="库存数" type="decimal(8, 2)" null="F" p="F" />
             <name="RealSum" exp="实存数" type="decimal(8, 2)" null="F" p="F" />
+            <name="Name" exp="资产名称" type="nvarchar(200)" null="F" p="F" />
+            <name="AllCount" exp="资产总量" type="decimal(8, 2)" null="F" p="F" />
+            <name="Remark" exp="备注" type="text" null="F" p="F" />
+            <name="BorrowCount" exp="借用数量" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A13_WXJL" exp="维修记录表">

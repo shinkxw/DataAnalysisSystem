@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             Unit = "";
             Borrower = "";
             Remark = "";
+            Registdate = DateTime.Now;
         }
         public class EDU_OAXT_15_A05_ZCJH_metadata
         {
@@ -65,6 +66,11 @@ namespace HanRuEdu.LDAL
             [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String Remark { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "登记时间")]
+            public DateTime Registdate { get; set; }
 
 
         }
