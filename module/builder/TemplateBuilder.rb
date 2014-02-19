@@ -53,8 +53,8 @@ class TemplateBuilder
     str << make_controller_create(table)
     str << make_controller_edit(table)
     str << make_controller_details(table)
-    str << make_controller_delete(table,false)
-    str << make_controller_delete(table,true)
+    str << make_controller_delete(table)
+    str << make_controller_multi_delete(table)
     str << make_controller_importdata(table)
     str << make_controller_get_max_ID(table) unless table.has_identity?
     str << "#{@tab.s}}\n}"
@@ -144,13 +144,11 @@ class TemplateBuilder
     str << "#{table.view_name} view = #{table.db_name}.#{table.view_name}.Single(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}"
     str << "return View(view);\n#{@tab.s}}\n\n"
   end
-  def make_controller_delete(table,is_multi)
-    str = "#{@tab.t}#{'/*' unless is_multi}public String Delete(#{is_multi ? 'String' : 'int'} id#{'Lst' if is_multi})\n#{@tab.t}"
+  def make_controller_delete(table)
+    str = "#{@tab.t}/*public String Delete(int id)\n#{@tab.t}"
     str << "{\n#{@tab.l}try\n#{@tab.t}"
-    str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n#{@tab.t}foreach (int id in idlst)\n#{@tab.t}" if is_multi
     str << "{\n#{@tab.l}#{table.name} #{table.lname_dc} = #{table.db_name}.#{table.name}.SingleOrDefault(e => e.#{table.get_first_field_name} == id && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n"
     str << "#{@tab.t}#{table.db_name}.#{table.name}.Remove(#{table.lname_dc});\n#{@tab.t}#{table.db_name}.SaveChanges();\n"
-    str << "#{@tab.s}}\n" if is_multi
     str << "#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
     str << "#{@tab.s}}\n"
     str << "#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
@@ -158,7 +156,21 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + e.Message;\n"
     str << "#{@tab.s}}\n"
-    str << "#{@tab.s}}#{'*/' unless is_multi}\n\n"
+    str << "#{@tab.s}}*/\n\n"
+  end
+  def make_controller_multi_delete(table)
+    str = "#{@tab.t}public String Delete(String idLst)\n#{@tab.t}"
+    str << "{\n#{@tab.l}try\n#{@tab.t}"
+    str << "{\n#{@tab.l}int[] idlst = Utils.Utils.GetSafeIdsArr(idLst, LDALConstant.DefSpear);\n"
+    str << "#{@tab.t}foreach (var item in #{table.db_name}.#{table.name}.Where(e => e.SCHOOLID == CurUser.ele01Usr.SCHOOLID\n#{@tab.t + @tab.tab}&& idlst.Contains(e.ID)))\n#{@tab.t}"
+    str << "{\n#{@tab.l}#{table.db_name}.#{table.name}.Remove(item);\n"
+    str << "#{@tab.s}}\n#{@tab.t}#{table.db_name}.SaveChanges();\n#{@tab.t}return \"É¾³ý³É¹¦£¡\";\n"
+    str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
+    str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + dbEx.Message;\n"
+    str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
+    str << "{\n#{@tab.l}return \"É¾³ý³ö´í£¡\" + e.Message;\n"
+    str << "#{@tab.s}}\n"
+    str << "#{@tab.s}}\n\n"
   end
   def make_controller_importdata(table)
     str = "#{@tab.t}public ActionResult ImportData()\n#{@tab.t}"
