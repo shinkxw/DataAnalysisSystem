@@ -84,6 +84,8 @@ SELECT a.[ID]--编号
       ,e.ZXJLX as e_ZXJSJ_ZXJLX--助学金数据子类表 助学金类型
       ,[eb].MC as e_ZXJSJ_ZXJLX_MC--助学金分类代码 名称
       ,e.BZ as e_ZXJSJ_BZ--助学金数据子类表 备注
+      ,e.SFKQ as e_ZXJSJ_SFKQ--助学金数据子类表 是否开启
+      ,e.MXQKHJRS as e_ZXJSJ_MXQKHJRS--助学金数据子类表 每学期可获奖人数
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

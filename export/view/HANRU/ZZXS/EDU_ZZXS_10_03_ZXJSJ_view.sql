@@ -9,6 +9,8 @@ SELECT a.[ID]--编号
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[ZXJLX]--助学金类型
       ,a.[BZ]--备注
+      ,a.[SFKQ]--是否开启
+      ,a.[MXQKHJRS]--每学期可获奖人数
       ,c.MC as c_ZXJFL_MC--助学金分类代码 名称
 
 FROM dbo.EDU_ZZXS_10_03_ZXJSJ AS a LEFT OUTER JOIN

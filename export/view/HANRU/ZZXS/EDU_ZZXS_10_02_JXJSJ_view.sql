@@ -12,6 +12,8 @@ SELECT a.[ID]--编号
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[JXJLYM]--奖学金来源码
       ,a.[BZ]--备注
+      ,a.[SFKQ]--是否开启
+      ,a.[MXQKHJRS]--每学期可获奖人数
       ,c.MC as c_JXJLX_MC--奖学金类型代码表 名称
       ,d.MC as d_JLZZZJLY_MC--奖励资助资金来源代码表 名称
 

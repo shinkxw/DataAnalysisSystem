@@ -21609,6 +21609,8 @@ SELECT a.[ID]--编号
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[JXJLYM]--奖学金来源码
       ,a.[BZ]--备注
+      ,a.[SFKQ]--是否开启
+      ,a.[MXQKHJRS]--每学期可获奖人数
       ,c.MC as c_JXJLX_MC--奖学金类型代码表 名称
       ,d.MC as d_JLZZZJLY_MC--奖励资助资金来源代码表 名称
 
@@ -21627,6 +21629,8 @@ SELECT a.[ID]--编号
       ,a.[ZZDWHGR]--资助单位或个人
       ,a.[ZXJLX]--助学金类型
       ,a.[BZ]--备注
+      ,a.[SFKQ]--是否开启
+      ,a.[MXQKHJRS]--每学期可获奖人数
       ,c.MC as c_ZXJFL_MC--助学金分类代码 名称
 
 FROM dbo.EDU_ZZXS_10_03_ZXJSJ AS a LEFT OUTER JOIN
@@ -21718,6 +21722,8 @@ SELECT a.[ID]--编号
       ,e.JXJLYM as e_JXJSJ_JXJLYM--奖学金数据子类表 奖学金来源码
       ,[ec].MC as e_JXJSJ_JXJLYM_MC--奖励资助资金来源代码表 名称
       ,e.BZ as e_JXJSJ_BZ--奖学金数据子类表 备注
+      ,e.SFKQ as e_JXJSJ_SFKQ--奖学金数据子类表 是否开启
+      ,e.MXQKHJRS as e_JXJSJ_MXQKHJRS--奖学金数据子类表 每学期可获奖人数
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -22003,6 +22009,8 @@ SELECT a.[ID]--编号
       ,e.ZXJLX as e_ZXJSJ_ZXJLX--助学金数据子类表 助学金类型
       ,[eb].MC as e_ZXJSJ_ZXJLX_MC--助学金分类代码 名称
       ,e.BZ as e_ZXJSJ_BZ--助学金数据子类表 备注
+      ,e.SFKQ as e_ZXJSJ_SFKQ--助学金数据子类表 是否开启
+      ,e.MXQKHJRS as e_ZXJSJ_MXQKHJRS--助学金数据子类表 每学期可获奖人数
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

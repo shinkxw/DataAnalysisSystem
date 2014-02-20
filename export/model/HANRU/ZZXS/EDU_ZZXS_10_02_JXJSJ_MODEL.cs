@@ -79,6 +79,16 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否开启")]
+            public Int32 SFKQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "每学期可获奖人数")]
+            public Int32 MXQKHJRS { get; set; }
+
+
         }
     }
 }

@@ -84,6 +84,8 @@ SELECT a.[ID]--编号
       ,e.JXJLYM as e_JXJSJ_JXJLYM--奖学金数据子类表 奖学金来源码
       ,[ec].MC as e_JXJSJ_JXJLYM_MC--奖励资助资金来源代码表 名称
       ,e.BZ as e_JXJSJ_BZ--奖学金数据子类表 备注
+      ,e.SFKQ as e_JXJSJ_SFKQ--奖学金数据子类表 是否开启
+      ,e.MXQKHJRS as e_JXJSJ_MXQKHJRS--奖学金数据子类表 每学期可获奖人数
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

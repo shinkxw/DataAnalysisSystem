@@ -196,6 +196,8 @@ EDU_ZZXS_10_02_JXJSJ  奖学金数据子类表
   ZZDWHGR       资助单位或个人          nvarchar(60)   非主
   JXJLYM        奖学金来源码            nvarchar(1)    非主        奖励资助资金来源代码表
   BZ            备注                    text           非主
+  SFKQ          是否开启                int            非主
+  MXQKHJRS      每学期可获奖人数        int            非主
 
 EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   ID            编号                    int            主键
@@ -205,6 +207,8 @@ EDU_ZZXS_10_03_ZXJSJ  助学金数据子类表
   ZZDWHGR       资助单位或个人          nvarchar(60)   非主
   ZXJLX         助学金类型              nvarchar(1)    非主        助学金分类代码
   BZ            备注                    text           非主
+  SFKQ          是否开启                int            非主
+  MXQKHJRS      每学期可获奖人数        int            非主
 
 EDU_ZZXS_10_A12_XSHJXJ  学生获奖学金表
   ID            编号                    int            主键
