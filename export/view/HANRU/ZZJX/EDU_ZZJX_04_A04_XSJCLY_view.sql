@@ -143,6 +143,7 @@ SELECT a.[ID]--编号
       ,i.JSTXH as i_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,i.DZXX as i_XSXX_DZXX--学生信息数据表 电子信箱
       ,i.ZP as i_XSXX_ZP--学生信息数据表 照片(路径)
+      ,i.RXXQID as i_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZJX_04_A04_XSJCLY AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

@@ -35,6 +35,8 @@ SELECT a.[ID]--编号
       ,d.TYPE as d_APP_TYPE--应用表 应用类别
       ,d.DLCSLB as d_APP_DLCSLB--应用表 登录参数列表
       ,d.MNDLJS as d_APP_MNDLJS--应用表 模拟登录JS
+      ,d.SYDX as d_APP_SYDX--应用表 使用对象
+      ,d.KJDX as d_APP_KJDX--应用表 可见对象
 
 FROM dbo.EDU_ELE_01_APPUSER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

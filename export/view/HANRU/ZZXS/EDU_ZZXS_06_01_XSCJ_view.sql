@@ -77,6 +77,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
       ,d.KCMC as d_KC_KCMC--课程数据子类表 课程名称
       ,d.KCYWM as d_KC_KCYWM--课程数据子类表 课程英文名

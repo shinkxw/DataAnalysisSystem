@@ -32,6 +32,7 @@ SELECT a.[ID]--编号
       ,a.[JSTXH]--即时通讯号
       ,a.[DZXX]--电子信箱
       ,a.[ZP]--照片(路径)
+      ,a.[RXXQID]--入学学期ID
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MC as e_XX_MC--血型代码表 名称
@@ -53,6 +54,13 @@ SELECT a.[ID]--编号
       ,p.GJDQMCJC as p_SJGGHDQMC_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
       ,p.EZMDM as p_SJGGHDQMC_EZMDM--世界各国和地区名称代码 二字母代码
       ,p.SZMDM as p_SJGGHDQMC_SZMDM--世界各国和地区名称代码 三字母代码
+      ,q.SCHOOLID as q_XQ_SCHOOLID--学期数据表 学校名
+      ,q.XNID as q_XQ_XNID--学期数据表 学年
+      ,q.XQM as q_XQ_XQM--学期数据表 学期码
+      ,[qb].MC as q_XQ_XQM_MC--学期代码表 名称
+      ,q.XQMC as q_XQ_XQMC--学期数据表 学期名称
+      ,q.XQKSRQ as q_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,q.XQJSRQ as q_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS c ON a.SFZJLXM = c.DM /*身份证件类型码*/ LEFT OUTER JOIN
@@ -68,5 +76,7 @@ FROM dbo.EDU_ZZXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS m ON a.HKSZDXZQHM = m.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS n ON a.HKLBM = n.DM /*户口类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS o ON a.SFSLDRK = o.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS p ON a.GJDQM = p.DM /*国籍/地区*/
+      dbo.EDU_GB_SJGGHDQMC AS p ON a.GJDQM = p.DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS q ON a.RXXQID = q.ID /*入学学期ID*/ AND a.SCHOOLID = q.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [qb] ON q.XQM = [qb].DM /*学期码*/
 GO

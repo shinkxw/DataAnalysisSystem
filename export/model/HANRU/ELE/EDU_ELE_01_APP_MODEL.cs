@@ -82,6 +82,18 @@ namespace HanRuEdu.LDAL
             public String MNDLJS { get; set; }
 
 
+            [Display(Name = "使用对象")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SYDX { get; set; }
+
+
+            [Display(Name = "可见对象")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KJDX { get; set; }
+
+
         }
     }
 }

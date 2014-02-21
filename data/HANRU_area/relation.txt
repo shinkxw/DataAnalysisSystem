@@ -1382,6 +1382,7 @@
   HKLBM          EDU_GB_HKLB                        DM
   SFSLDRK        EDU_JY_SFBZ                        DM
   GJDQM          EDU_GB_SJGGHDQMC                   DM
+  RXXQID         EDU_ELE_01_XQ                      ID
 <EDU_ZZXS_01_A01_XSXX
   XSXXID         EDU_ZZXS_01_01_XSXX                ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

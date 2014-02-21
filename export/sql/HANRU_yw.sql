@@ -175,6 +175,8 @@ CREATE TABLE [dbo].[EDU_ELE_01_APP](
 	[TYPE]  int  NOT NULL,--应用类别
 	[DLCSLB]  text  NOT NULL,--登录参数列表
 	[MNDLJS]  text  NOT NULL,--模拟登录JS
+	[SYDX]  nvarchar(500)  NULL,--使用对象
+	[KJDX]  nvarchar(500)  NULL,--可见对象
 CONSTRAINT [PK_EDU_ELE_01_APP] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -716,6 +718,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登录参数列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'DLCSLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模拟登录JS' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'MNDLJS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'使用对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'SYDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可见对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'KJDX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL'
 GO
@@ -10012,9 +10018,7 @@ CREATE TABLE [dbo].[EDU_ZZFC_08_A02_YHZSJL](
 	[YHXM]  nvarchar(128)  NULL,--用户姓名
 	[RZRLX]  int  NOT NULL,--入住人类型
 	[RZSJ]  datetime  NOT NULL,--入住时间
-	[SHZT]  int  NOT NULL,--审核状态
-	[SHSJ]  datetime  NOT NULL,--审核时间
-	[SHR]  nvarchar(128)  NOT NULL,--审核人
+	[SFTS]  int  NOT NULL,--是否退宿
 CONSTRAINT [PK_EDU_ZZFC_08_A02_YHZSJL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -10373,11 +10377,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入住人类型' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入住时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'RZSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SHZT'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SHSJ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SHR'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否退宿' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SFTS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'住委会成员表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A03_ZWHCY'
 GO
@@ -15746,6 +15746,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_01_01_XSXX](
 	[JSTXH]  nvarchar(40)  NULL,--即时通讯号
 	[DZXX]  nvarchar(40)  NULL,--电子信箱
 	[ZP]  nvarchar(100)  NULL,--照片(路径)
+	[RXXQID]  int  NOT NULL,--入学学期ID
 CONSTRAINT [PK_EDU_ZZXS_01_01_XSXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -16767,6 +16768,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电子信箱' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'DZXX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'照片(路径)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'ZP'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入学学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'RXXQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生扩展数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_A01_XSXX'
 GO

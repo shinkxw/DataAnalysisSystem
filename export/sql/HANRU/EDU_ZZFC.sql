@@ -197,9 +197,7 @@ CREATE TABLE [dbo].[EDU_ZZFC_08_A02_YHZSJL](
 	[YHXM]  nvarchar(128)  NULL,--用户姓名
 	[RZRLX]  int  NOT NULL,--入住人类型
 	[RZSJ]  datetime  NOT NULL,--入住时间
-	[SHZT]  int  NOT NULL,--审核状态
-	[SHSJ]  datetime  NOT NULL,--审核时间
-	[SHR]  nvarchar(128)  NOT NULL,--审核人
+	[SFTS]  int  NOT NULL,--是否退宿
 CONSTRAINT [PK_EDU_ZZFC_08_A02_YHZSJL] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -558,11 +556,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入住人类型' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入住时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'RZSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SHZT'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SHSJ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SHR'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否退宿' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A02_YHZSJL', @level2type=N'COLUMN',@level2name=N'SFTS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'住委会成员表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZFC_08_A03_ZWHCY'
 GO

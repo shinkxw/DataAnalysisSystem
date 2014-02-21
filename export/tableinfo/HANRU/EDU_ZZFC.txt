@@ -105,9 +105,7 @@ EDU_ZZFC_08_A02_YHZSJL  用户住宿记录表
   YHXM          用户姓名                nvarchar(128)  非主
   RZRLX         入住人类型              int            非主
   RZSJ          入住时间                datetime       非主
-  SHZT          审核状态                int            非主
-  SHSJ          审核时间                datetime       非主
-  SHR           审核人                  nvarchar(128)  非主
+  SFTS          是否退宿                int            非主
 
 EDU_ZZFC_08_A03_ZWHCY  住委会成员表
   SCHOOLID      学校ID                  int            主键        学校配置表

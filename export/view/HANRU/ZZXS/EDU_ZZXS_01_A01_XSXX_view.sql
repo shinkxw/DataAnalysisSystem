@@ -70,6 +70,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别

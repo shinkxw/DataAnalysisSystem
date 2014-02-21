@@ -56,6 +56,7 @@ SELECT a.[XSXXID]--考生ID
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZZS_03_01_KSKMCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*考生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

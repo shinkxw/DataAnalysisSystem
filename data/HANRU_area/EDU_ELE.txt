@@ -35,6 +35,8 @@
             <name="TYPE" exp="应用类别" type="int" null="F" p="F" />
             <name="DLCSLB" exp="登录参数列表" type="text" null="F" p="F" />
             <name="MNDLJS" exp="模拟登录JS" type="text" null="F" p="F" />
+            <name="SYDX" exp="使用对象" type="nvarchar(500)" null="T" p="F" />
+            <name="KJDX" exp="可见对象" type="nvarchar(500)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_SCHOOL" exp="学校配置表">

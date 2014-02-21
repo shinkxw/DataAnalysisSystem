@@ -66,6 +66,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_WJLX_SCHOOLID--违纪类型表 学校
       ,d.WJLXMC as d_WJLX_WJLXMC--违纪类型表 违纪类型名称
       ,d.WJNRFW as d_WJLX_WJNRFW--违纪类型表 违纪内容范围

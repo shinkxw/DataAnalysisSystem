@@ -30,6 +30,8 @@ EDU_ELE_01_APP  应用表
   TYPE          应用类别                int            非主
   DLCSLB        登录参数列表            text           非主
   MNDLJS        模拟登录JS              text           非主
+  SYDX          使用对象                nvarchar(500)  非主
+  KJDX          可见对象                nvarchar(500)  非主
 
 EDU_ELE_01_SCHOOL  学校配置表
   SCHOOLID      学校ID                  int            主键        学校配置表

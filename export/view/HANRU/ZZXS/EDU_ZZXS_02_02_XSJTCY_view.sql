@@ -62,6 +62,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_JTGX_MC--家庭关系代码 名称
       ,e.MC as e_ZYFL_MC--职业分类与代码 名称
       ,f.MC as f_ZZMM_MC--政治面貌代码 名称

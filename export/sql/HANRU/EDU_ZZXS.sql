@@ -243,6 +243,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_01_01_XSXX](
 	[JSTXH]  nvarchar(40)  NULL,--即时通讯号
 	[DZXX]  nvarchar(40)  NULL,--电子信箱
 	[ZP]  nvarchar(100)  NULL,--照片(路径)
+	[RXXQID]  int  NOT NULL,--入学学期ID
 CONSTRAINT [PK_EDU_ZZXS_01_01_XSXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1264,6 +1265,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电子信箱' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'DZXX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'照片(路径)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'ZP'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入学学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'RXXQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生扩展数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_A01_XSXX'
 GO

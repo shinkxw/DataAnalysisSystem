@@ -11,9 +11,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[YHXM]--用户姓名
       ,a.[RZRLX]--入住人类型
       ,a.[RZSJ]--入住时间
-      ,a.[SHZT]--审核状态
-      ,a.[SHSJ]--审核时间
-      ,a.[SHR]--审核人
+      ,a.[SFTS]--是否退宿
       ,c.SCHOOLID as c_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,c.JZWH as c_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,c.JZWMC as c_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称

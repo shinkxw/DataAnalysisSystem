@@ -73,6 +73,7 @@ SELECT a.[ID]--学籍异动表编号
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名

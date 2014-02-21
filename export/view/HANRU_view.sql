@@ -1199,6 +1199,8 @@ SELECT a.[LOGINNAME]--用户名
       ,c.TYPE as c_APP_TYPE--应用表 应用类别
       ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,c.SYDX as c_APP_SYDX--应用表 使用对象
+      ,c.KJDX as c_APP_KJDX--应用表 可见对象
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
@@ -1289,6 +1291,8 @@ SELECT a.[ID]--编号
       ,d.TYPE as d_APP_TYPE--应用表 应用类别
       ,d.DLCSLB as d_APP_DLCSLB--应用表 登录参数列表
       ,d.MNDLJS as d_APP_MNDLJS--应用表 模拟登录JS
+      ,d.SYDX as d_APP_SYDX--应用表 使用对象
+      ,d.KJDX as d_APP_KJDX--应用表 可见对象
 
 FROM dbo.EDU_ELE_01_APPUSER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -1333,6 +1337,8 @@ SELECT a.[ID]--分组ID
       ,c.TYPE as c_APP_TYPE--应用表 应用类别
       ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,c.SYDX as c_APP_SYDX--应用表 使用对象
+      ,c.KJDX as c_APP_KJDX--应用表 可见对象
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -1553,6 +1559,8 @@ SELECT a.[ID]--编号
       ,c.TYPE as c_APP_TYPE--应用表 应用类别
       ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,c.SYDX as c_APP_SYDX--应用表 使用对象
+      ,c.KJDX as c_APP_KJDX--应用表 可见对象
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -1597,6 +1605,8 @@ SELECT a.[ID]--编号
       ,c.TYPE as c_APP_TYPE--应用表 应用类别
       ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,c.SYDX as c_APP_SYDX--应用表 使用对象
+      ,c.KJDX as c_APP_KJDX--应用表 可见对象
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -10629,9 +10639,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[YHXM]--用户姓名
       ,a.[RZRLX]--入住人类型
       ,a.[RZSJ]--入住时间
-      ,a.[SHZT]--审核状态
-      ,a.[SHSJ]--审核时间
-      ,a.[SHR]--审核人
+      ,a.[SFTS]--是否退宿
       ,c.SCHOOLID as c_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,c.JZWH as c_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,c.JZWMC as c_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
@@ -15591,6 +15599,7 @@ SELECT a.[ID]--编号
       ,i.JSTXH as i_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,i.DZXX as i_XSXX_DZXX--学生信息数据表 电子信箱
       ,i.ZP as i_XSXX_ZP--学生信息数据表 照片(路径)
+      ,i.RXXQID as i_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZJX_04_A04_XSJCLY AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -16068,6 +16077,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XN_SCHOOLID--学年表 学校名
       ,d.XN as d_XN_XN--学年表 学年
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
@@ -17234,6 +17244,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
@@ -18361,6 +18372,7 @@ SELECT a.[ID]--编号
       ,h.JSTXH as h_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,h.DZXX as h_XSXX_DZXX--学生信息数据表 电子信箱
       ,h.ZP as h_XSXX_ZP--学生信息数据表 照片(路径)
+      ,h.RXXQID as h_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,i.SCHOOLID as i_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,i.ZYDM as i_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[ib].ZYMLLB as i_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -18703,6 +18715,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -19048,6 +19061,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZJX_36_A02_JXBG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_36_A01_JXJH AS c ON a.JXJHID = c.ID /*见习计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -19137,6 +19151,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -19339,6 +19354,7 @@ SELECT a.[ID]--编号
       ,e.JSTXH as e_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,e.DZXX as e_XSXX_DZXX--学生信息数据表 电子信箱
       ,e.ZP as e_XSXX_ZP--学生信息数据表 照片(路径)
+      ,e.RXXQID as e_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -19978,6 +19994,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_ZZJXB_SCHOOLID--中职教学班表 学校名
       ,e.ZZXQID as e_ZZJXB_ZZXQID--中职教学班表 校区ID
       ,e.XQID as e_ZZJXB_XQID--中职教学班表 学期ID
@@ -20073,6 +20090,7 @@ SELECT a.[ID]--编号
       ,a.[JSTXH]--即时通讯号
       ,a.[DZXX]--电子信箱
       ,a.[ZP]--照片(路径)
+      ,a.[RXXQID]--入学学期ID
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MC as e_XX_MC--血型代码表 名称
@@ -20094,6 +20112,13 @@ SELECT a.[ID]--编号
       ,p.GJDQMCJC as p_SJGGHDQMC_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
       ,p.EZMDM as p_SJGGHDQMC_EZMDM--世界各国和地区名称代码 二字母代码
       ,p.SZMDM as p_SJGGHDQMC_SZMDM--世界各国和地区名称代码 三字母代码
+      ,q.SCHOOLID as q_XQ_SCHOOLID--学期数据表 学校名
+      ,q.XNID as q_XQ_XNID--学期数据表 学年
+      ,q.XQM as q_XQ_XQM--学期数据表 学期码
+      ,[qb].MC as q_XQ_XQM_MC--学期代码表 名称
+      ,q.XQMC as q_XQ_XQMC--学期数据表 学期名称
+      ,q.XQKSRQ as q_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,q.XQJSRQ as q_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS c ON a.SFZJLXM = c.DM /*身份证件类型码*/ LEFT OUTER JOIN
@@ -20109,7 +20134,9 @@ FROM dbo.EDU_ZZXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS m ON a.HKSZDXZQHM = m.DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS n ON a.HKLBM = n.DM /*户口类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS o ON a.SFSLDRK = o.DM /*是否是流动人口*/ LEFT OUTER JOIN
-      dbo.EDU_GB_SJGGHDQMC AS p ON a.GJDQM = p.DM /*国籍/地区*/
+      dbo.EDU_GB_SJGGHDQMC AS p ON a.GJDQM = p.DM /*国籍/地区*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS q ON a.RXXQID = q.ID /*入学学期ID*/ AND a.SCHOOLID = q.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [qb] ON q.XQM = [qb].DM /*学期码*/
 GO
 
 --学生扩展数据表
@@ -20183,6 +20210,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -20311,6 +20339,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZXS_02_01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -20396,6 +20425,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_JTGX_MC--家庭关系代码 名称
 
 FROM dbo.EDU_ZZXS_02_A01_XSLXR AS a LEFT OUTER JOIN
@@ -20480,6 +20510,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_JTGX_MC--家庭关系代码 名称
       ,e.MC as e_ZYFL_MC--职业分类与代码 名称
       ,f.MC as f_ZZMM_MC--政治面貌代码 名称
@@ -20570,6 +20601,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_JTLB_MC--家庭类别代码表 名称
       ,e.MC as e_KNYY_MC--困难原因代码表 名称
       ,f.MC as f_KNCD_MC--困难程度代码表 名称
@@ -20678,6 +20710,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
       ,d.KCMC as d_KC_KCMC--课程数据子类表 课程名称
       ,d.KCYWM as d_KC_KCYWM--课程数据子类表 课程英文名
@@ -21163,6 +21196,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -21304,6 +21338,7 @@ SELECT a.[ID]--学籍异动表编号
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -21562,6 +21597,7 @@ SELECT a.[XSXXID]--学生ID
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -21711,6 +21747,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_JXJSJ_SCHOOLID--奖学金数据子类表 学校ID
       ,e.JXJMC as e_JXJSJ_JXJMC--奖学金数据子类表 奖学金名称
       ,e.JXJBH as e_JXJSJ_JXJBH--奖学金数据子类表 奖学金编号
@@ -22002,6 +22039,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_ZXJSJ_SCHOOLID--助学金数据子类表 学校ID
       ,e.ZXJE as e_ZXJSJ_ZXJE--助学金数据子类表 助学金额
       ,e.ZXJMC as e_ZXJSJ_ZXJMC--助学金数据子类表 助学金名称
@@ -22284,6 +22322,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.MC as e_JYPXJG_MC--教育培训结果代码 名称
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -22568,6 +22607,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,e.ZYXXID as e_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,e.ZZNJID as e_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -23145,6 +23185,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -23419,6 +23460,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -23707,6 +23749,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -23882,6 +23925,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_TYXX_SCHOOLID--团员信息扩展表 学校
       ,e.BJID as e_TYXX_BJID--团员信息扩展表 班级ID
       ,e.XSXXID as e_TYXX_XSXXID--团员信息扩展表 学生ID
@@ -23975,6 +24019,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -24152,6 +24197,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -24400,6 +24446,7 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
+      ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.SCHOOLID as d_WJLX_SCHOOLID--违纪类型表 学校
       ,d.WJLXMC as d_WJLX_WJLXMC--违纪类型表 违纪类型名称
       ,d.WJNRFW as d_WJLX_WJNRFW--违纪类型表 违纪内容范围
@@ -24720,6 +24767,7 @@ SELECT a.[ID]--编号
       ,e.JSTXH as e_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,e.DZXX as e_XSXX_DZXX--学生信息数据表 电子信箱
       ,e.ZP as e_XSXX_ZP--学生信息数据表 照片(路径)
+      ,e.RXXQID as e_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -25032,6 +25080,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_XQ_SCHOOLID--学期数据表 学校名
       ,e.XNID as e_XQ_XNID--学期数据表 学年
       ,e.XQM as e_XQ_XQM--学期数据表 学期码
@@ -25352,6 +25401,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MC as e_YZMCEZM_MC--语种名称代码2字母代码 名称
       ,f.MC as f_KSFS_MC--考试方式代码表 名称
@@ -25472,6 +25522,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,d.MC as d_FJFLB_MC--附加分类别代码表 名称
 
 FROM dbo.EDU_ZZZS_02_01_RXCJ AS a LEFT OUTER JOIN
@@ -25550,6 +25601,7 @@ SELECT a.[XSXXID]--考生ID
       ,b.JSTXH as b_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
+      ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZZS_03_01_KSKMCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*考生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

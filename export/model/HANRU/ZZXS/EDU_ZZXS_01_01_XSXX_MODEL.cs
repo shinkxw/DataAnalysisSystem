@@ -219,6 +219,11 @@ namespace HanRuEdu.LDAL
             public String ZP { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "入学学期")]
+            public Int32 RXXQID { get; set; }
+
+
         }
     }
 }

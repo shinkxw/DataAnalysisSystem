@@ -29,6 +29,7 @@ EDU_ZZXS_01_01_XSXX  学生信息数据表
   JSTXH         即时通讯号              nvarchar(40)   非主
   DZXX          电子信箱                nvarchar(40)   非主
   ZP            照片(路径)              nvarchar(100)  非主
+  RXXQID        入学学期ID              int            非主        学期数据表
 
 EDU_ZZXS_01_A01_XSXX  学生扩展数据表
   XSXXID        学生信息数据表          int            主键        学生信息数据表

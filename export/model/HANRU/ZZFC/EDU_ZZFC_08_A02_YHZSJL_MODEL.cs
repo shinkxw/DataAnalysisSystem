@@ -10,8 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_ZZFC_08_A02_YHZSJL()
         {
             RZSJ = DateTime.Now;
-            SHSJ = DateTime.Now;
-            SHR = "";
         }
         public class EDU_ZZFC_08_A02_YHZSJL_metadata
         {
@@ -62,20 +60,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "审核状态")]
-            public Int32 SHZT { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "审核时间")]
-            public DateTime SHSJ { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "审核人")]
-            [StringLength(128)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SHR { get; set; }
+            [Display(Name = "是否退宿")]
+            public Int32 SFTS { get; set; }
 
 
         }

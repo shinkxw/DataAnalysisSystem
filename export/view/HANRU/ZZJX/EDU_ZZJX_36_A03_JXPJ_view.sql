@@ -68,6 +68,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名

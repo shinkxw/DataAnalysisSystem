@@ -77,6 +77,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,e.SCHOOLID as e_ZXJSJ_SCHOOLID--助学金数据子类表 学校ID
       ,e.ZXJE as e_ZXJSJ_ZXJE--助学金数据子类表 助学金额
       ,e.ZXJMC as e_ZXJSJ_ZXJMC--助学金数据子类表 助学金名称

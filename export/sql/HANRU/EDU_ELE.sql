@@ -175,6 +175,8 @@ CREATE TABLE [dbo].[EDU_ELE_01_APP](
 	[TYPE]  int  NOT NULL,--应用类别
 	[DLCSLB]  text  NOT NULL,--登录参数列表
 	[MNDLJS]  text  NOT NULL,--模拟登录JS
+	[SYDX]  nvarchar(500)  NULL,--使用对象
+	[KJDX]  nvarchar(500)  NULL,--可见对象
 CONSTRAINT [PK_EDU_ELE_01_APP] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -716,6 +718,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登录参数列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'DLCSLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模拟登录JS' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'MNDLJS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'使用对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'SYDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可见对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP', @level2type=N'COLUMN',@level2name=N'KJDX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_SCHOOL'
 GO

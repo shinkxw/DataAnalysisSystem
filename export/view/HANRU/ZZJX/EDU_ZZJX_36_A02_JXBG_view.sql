@@ -68,6 +68,7 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
 
 FROM dbo.EDU_ZZJX_36_A02_JXBG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_36_A01_JXJH AS c ON a.JXJHID = c.ID /*见习计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
