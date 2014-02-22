@@ -2,8 +2,8 @@
 --建筑物基本数据类表
 CREATE VIEW [dbo].[VIEW_EDU_ZZFC_02_01_JZWJBSJ_DISP]
 AS
-SELECT a.[SCHOOLID]--学校名
-      ,a.[ID]--建筑物ID
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
       ,a.[JZWH]--建筑物号
       ,a.[JZWMC]--建筑物名称
       ,a.[SYZKM]--使用状况码

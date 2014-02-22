@@ -817,8 +817,9 @@
   SSLID          EDU_ZZFC_02_01_JZWJBSJ             ID
   SSID           EDU_ZZFC_08_01_XSSS                ID
   SFRZ           EDU_JY_SFBZ                        DM
-<EDU_ZZFC_08_A02_YHZSJL
+<EDU_ZZFC_08_A02_XSZSJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSID           EDU_ZZXS_01_01_XSXX                ID
   SSLID          EDU_ZZFC_02_01_JZWJBSJ             ID
   SSID           EDU_ZZFC_08_01_XSSS                ID
   CWID           EDU_ZZFC_08_A01_SSCW               ID

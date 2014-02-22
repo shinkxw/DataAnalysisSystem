@@ -2,8 +2,8 @@
 --宿舍床位表
 CREATE VIEW [dbo].[VIEW_EDU_ZZFC_08_A01_SSCW_DISP]
 AS
-SELECT a.[SCHOOLID]--学校ID
-      ,a.[ID]--床位ID
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
       ,a.[SSLID]--宿舍楼ID
       ,a.[SSID]--宿舍ID
       ,a.[CWM]--床位名

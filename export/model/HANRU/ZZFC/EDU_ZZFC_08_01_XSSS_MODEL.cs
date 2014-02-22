@@ -18,13 +18,13 @@ namespace HanRuEdu.LDAL
         public class EDU_ZZFC_08_01_XSSS_metadata
         {
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "学校名")]
-            public Int32 SCHOOLID { get; set; }
+            [Display(Name = "编号")]
+            public Int32 ID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "宿舍")]
-            public Int32 ID { get; set; }
+            [Display(Name = "学校名")]
+            public Int32 SCHOOLID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

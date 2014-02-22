@@ -2,8 +2,8 @@
 --学生宿舍数据类表
 CREATE VIEW [dbo].[VIEW_EDU_ZZFC_08_01_XSSS_DISP]
 AS
-SELECT a.[SCHOOLID]--学校名
-      ,a.[ID]--宿舍ID
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
       ,a.[SSLID]--宿舍楼ID
       ,a.[SSLBM]--宿舍楼编号
       ,a.[FJBM]--房间编号

@@ -2,8 +2,8 @@
 <namespace name="EDU_ZZFC" provider="reallocate_namespace">
     <table name="EDU_ZZFC_02_01_JZWJBSJ" exp="建筑物基本数据类表">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
-            <name="ID" exp="建筑物ID" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="JZWH" exp="建筑物号" type="nvarchar(6)" null="F" p="F" remark="学校自编" />
             <name="JZWMC" exp="建筑物名称" type="nvarchar(30)" null="F" p="F" remark="指建筑物的汉字名称" />
             <name="SYZKM" exp="使用状况码" type="nvarchar(1)" null="F" p="F" remark="引用自JCBX020204 SYZKM 使用状况码" />
@@ -73,8 +73,8 @@
     </table>
     <table name="EDU_ZZFC_08_01_XSSS" exp="学生宿舍数据类表">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
-            <name="ID" exp="宿舍ID" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
             <name="SSLBM" exp="宿舍楼编号" type="nvarchar(6)" null="F" p="F" remark="宿舍楼编号 编号：ZZFC080001 引用自JCBX020201 JZWH 建筑物号 C 6 M NULL 学校自编 NULL" />
             <name="FJBM" exp="房间编号" type="nvarchar(10)" null="F" p="F" remark="房间编号 编号：ZZFC080002 " />
@@ -94,8 +94,8 @@
     </table>
     <table name="EDU_ZZFC_08_A01_SSCW" exp="宿舍床位表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="ID" exp="床位ID" type="int" null="F" p="T" />
             <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
             <name="SSID" exp="宿舍ID" type="int" null="F" p="F" />
             <name="CWM" exp="床位名" type="nvarchar(128)" null="F" p="F" />
@@ -103,16 +103,19 @@
             <name="SFRZ" exp="是否入住" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZFC_08_A02_YHZSJL" exp="用户住宿记录表">
+    <table name="EDU_ZZFC_08_A02_XSZSJL" exp="学生住宿记录表">
         <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="ID" exp="住宿记录ID" type="int" null="F" p="T" />
-            <name="YHID" exp="用户ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
             <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
             <name="SSID" exp="宿舍ID" type="int" null="F" p="F" />
             <name="CWID" exp="床位ID" type="int" null="F" p="F" />
-            <name="YHXM" exp="用户姓名" type="nvarchar(128)" null="T" p="F" />
-            <name="RZRLX" exp="入住人类型" type="int" null="F" p="F" />
+            <name="ZYXMC" exp="专业系名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ZYMC" exp="专业名称" type="nvarchar(50)" null="F" p="F" />
+            <name="NJMC" exp="年级名称" type="nvarchar(10)" null="F" p="F" />
+            <name="BJMC" exp="班级名称" type="nvarchar(50)" null="F" p="F" />
+            <name="XSXM" exp="学生姓名" type="nvarchar(36)" null="F" p="F" />
             <name="RZSJ" exp="入住时间" type="datetime" null="F" p="F" />
             <name="SFTS" exp="是否退宿" type="int" null="F" p="F" />
         </field_area>
