@@ -16379,6 +16379,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_15_A01_RYCH](
 	[CHMC]  nvarchar(30)  NOT NULL,--称号名称
 	[SYDW]  nvarchar(50)  NOT NULL,--授予单位
 	[BZ]  text  NOT NULL,--备注
+	[SFKQ]  int  NOT NULL,--是否开启
 CONSTRAINT [PK_EDU_ZZXS_15_A01_RYCH] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -16422,6 +16423,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_16_A01_PKSLX](
 	[LXMC]  nvarchar(30)  NOT NULL,--类型名称
 	[NR]  text  NOT NULL,--内容
 	[BZ]  text  NOT NULL,--备注
+	[SFKQ]  int  NOT NULL,--是否开启
 CONSTRAINT [PK_EDU_ZZXS_16_A01_PKSLX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -17404,6 +17406,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'授予单位' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_15_A01_RYCH', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否开启' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_15_A01_RYCH', @level2type=N'COLUMN',@level2name=N'SFKQ'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生荣誉称号表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_15_A02_RYCHSQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_15_A02_RYCHSQ', @level2type=N'COLUMN',@level2name=N'ID'
@@ -17441,6 +17445,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_16_A01_PKSLX', @level2type=N'COLUMN',@level2name=N'NR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_16_A01_PKSLX', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否开启' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_16_A01_PKSLX', @level2type=N'COLUMN',@level2name=N'SFKQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'贫困生信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_16_A02_PKSXX'
 GO

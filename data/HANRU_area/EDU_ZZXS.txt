@@ -423,6 +423,7 @@
             <name="CHMC" exp="称号名称" type="nvarchar(30)" null="F" p="F" />
             <name="SYDW" exp="授予单位" type="nvarchar(50)" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SFKQ" exp="是否开启" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_15_A02_RYCHSQ" exp="学生荣誉称号表">
@@ -448,6 +449,7 @@
             <name="LXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
             <name="NR" exp="内容" type="text" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SFKQ" exp="是否开启" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_16_A02_PKSXX" exp="贫困生信息表">

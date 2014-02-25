@@ -45,6 +45,11 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÊÇ·ñ¿ªÆô")]
+            public Int32 SFKQ { get; set; }
+
+
         }
     }
 }

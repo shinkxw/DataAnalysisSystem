@@ -76,6 +76,7 @@ SELECT a.[ID]--编号
       ,e.CHMC as e_RYCH_CHMC--荣誉称号数据表 称号名称
       ,e.SYDW as e_RYCH_SYDW--荣誉称号数据表 授予单位
       ,e.BZ as e_RYCH_BZ--荣誉称号数据表 备注
+      ,e.SFKQ as e_RYCH_SFKQ--荣誉称号数据表 是否开启
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

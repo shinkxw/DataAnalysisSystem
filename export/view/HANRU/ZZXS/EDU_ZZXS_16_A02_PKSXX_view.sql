@@ -76,6 +76,7 @@ SELECT a.[ID]--编号
       ,e.LXMC as e_PKSLX_LXMC--贫困生类型表 类型名称
       ,e.NR as e_PKSLX_NR--贫困生类型表 内容
       ,e.BZ as e_PKSLX_BZ--贫困生类型表 备注
+      ,e.SFKQ as e_PKSLX_SFKQ--贫困生类型表 是否开启
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
