@@ -12961,6 +12961,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_03_03_JXJHKCQD](
 	[SJKS]  int  NOT NULL,--实践课时
 	[XF]  decimal(4, 1)  NOT NULL,--学分
 	[XFRDHGX]  decimal(5, 1)  NOT NULL,--学分认定合格线
+	[JXDG]  text  NULL,--教学大纲
 CONSTRAINT [PK_EDU_ZZJX_03_03_JXJHKCQD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -14395,6 +14396,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_03_03_JXJHKCQD', @level2type=N'COLUMN',@level2name=N'XF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分认定合格线' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_03_03_JXJHKCQD', @level2type=N'COLUMN',@level2name=N'XFRDHGX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学大纲' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_03_03_JXJHKCQD', @level2type=N'COLUMN',@level2name=N'JXDG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教材基本信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_04_01_JCJBXX'
 GO

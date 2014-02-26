@@ -14600,6 +14600,7 @@ SELECT a.[ID]--编号
       ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,f.XFRDHGX as f_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,f.JXDG as f_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,g.MC as g_SFBZ_MC--是否标志代码表 名称
       ,h.SCHOOLID as h_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,h.ZYDM as h_ZYXX_ZYDM--专业基本信息数据表 专业代码
@@ -14981,6 +14982,7 @@ SELECT a.[ID]--编号
       ,a.[SJKS]--实践课时
       ,a.[XF]--学分
       ,a.[XFRDHGX]--学分认定合格线
+      ,a.[JXDG]--教学大纲
       ,c.SCHOOLID as c_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
       ,c.JHBH as c_ZTJXJH_JHBH--总体教学计划数据子类表 计划编号
       ,c.JHNJ as c_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级
@@ -18096,6 +18098,7 @@ SELECT a.[ID]--编号
       ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,f.XFRDHGX as f_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,f.JXDG as f_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[gb].ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -18391,6 +18394,7 @@ SELECT a.[ID]--编号
       ,g.SJKS as g_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,g.XF as g_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,g.XFRDHGX as g_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,g.JXDG as g_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,h.SCHOOLID as h_XSXX_SCHOOLID--学生信息数据表 学校名
       ,h.XH as h_XSXX_XH--学生信息数据表 学号
       ,h.XM as h_XSXX_XM--学生信息数据表 姓名
@@ -18684,6 +18688,7 @@ SELECT a.[ID]--编号
       ,k.SJKS as k_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,k.XF as k_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,k.XFRDHGX as k_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,k.JXDG as k_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
 
 FROM dbo.EDU_ZZJX_33_A01_YJAP AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS c ON a.ZYKCPKJGID = c.ID /*专业课程排考结果ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -18848,6 +18853,7 @@ SELECT a.[ID]--编号
       ,h.SJKS as h_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,h.XF as h_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,h.XFRDHGX as h_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,h.JXDG as h_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
 
 FROM dbo.EDU_ZZJX_34_A01_XSKCXF AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.StudentID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -19751,6 +19757,7 @@ SELECT a.[ID]--编号
       ,i.SJKS as i_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,i.XF as i_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,i.XFRDHGX as i_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,i.JXDG as i_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,j.SCHOOLID as j_KC_SCHOOLID--课程数据子类表 学校ID
       ,j.KCMC as j_KC_KCMC--课程数据子类表 课程名称
       ,j.KCYWM as j_KC_KCYWM--课程数据子类表 课程英文名
@@ -19928,6 +19935,7 @@ SELECT a.[ID]--编号
       ,h.SJKS as h_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,h.XF as h_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,h.XFRDHGX as h_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,h.JXDG as h_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,i.SCHOOLID as i_KC_SCHOOLID--课程数据子类表 学校ID
       ,i.KCMC as i_KC_KCMC--课程数据子类表 课程名称
       ,i.KCYWM as i_KC_KCYWM--课程数据子类表 课程英文名
@@ -20100,6 +20108,7 @@ SELECT a.[ID]--编号
       ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,f.XFRDHGX as f_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,f.JXDG as f_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
 
 FROM dbo.EDU_ZZJX_38_A03_XKJG AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -20962,6 +20971,7 @@ SELECT a.[ID]--编号
       ,i.SJKS as i_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,i.XF as i_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,i.XFRDHGX as i_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,i.JXDG as i_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,j.SCHOOLID as j_XSCJLX_SCHOOLID--学生成绩类型表 学校ID
       ,j.LXMC as j_XSCJLX_LXMC--学生成绩类型表 类型名称
       ,j.QZ as j_XSCJLX_QZ--学生成绩类型表 权重
@@ -21194,6 +21204,7 @@ SELECT a.[ID]--编号
       ,c.SJKS as c_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,c.XF as c_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,c.XFRDHGX as c_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,c.JXDG as c_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
 
 FROM dbo.EDU_ZZXS_06_02_XSCJLX AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS c ON a.KCQDID = c.ID /*课程清单ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

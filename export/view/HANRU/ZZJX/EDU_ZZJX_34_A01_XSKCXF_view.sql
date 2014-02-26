@@ -125,6 +125,7 @@ SELECT a.[ID]--编号
       ,h.SJKS as h_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,h.XF as h_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,h.XFRDHGX as h_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,h.JXDG as h_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
 
 FROM dbo.EDU_ZZJX_34_A01_XSKCXF AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.StudentID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

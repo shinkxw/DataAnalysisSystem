@@ -53,7 +53,7 @@ class TemplateBuilder
     str << make_controller_create(table)
     str << make_controller_edit(table)
     str << make_controller_details(table)
-    str << make_controller_delete(table)
+    #str << make_controller_delete(table)
     str << make_controller_multi_delete(table)
     str << make_controller_importdata(table)
     str << make_controller_get_max_ID(table) unless table.has_identity?
@@ -236,14 +236,20 @@ class TemplateBuilder
         end
       end
       str << "#{@tab.s}}\n#{@tab.t}"
-      str << %(//else { flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
+      str << %(else { flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
     end
     str << "CheckList.Add(model);\n"
     str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
     str << %({\n#{@tab.l}msg += "<span  >数据正确性检测通过！</span><br>";\n#{@tab.t})
     str << "foreach (var item in CheckList)\n#{@tab.t}{\n#{@tab.l}"
     table.each_field do |field|
-      str << "//item.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
+      if field.name == "ID"
+        str << "item.ID = GetMax_#{table.lname}_ID();//#{field.explanation}\n#{@tab.t}"
+      elsif field.name == "SCHOOLID"
+        str << "item.SCHOOLID = CurUser.ele01Usr.SCHOOLID;//#{field.explanation}\n#{@tab.t}"
+      else
+        str << "//item.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}\n#{@tab.t}"
+      end
     end
     str << "#{table.db_name}.#{table.name}.Add(item);\n#{@tab.t}#{table.db_name}.SaveChanges();\n#{@tab.t}sucss++;\n"
     str << %(#{@tab.s}}\n#{@tab.t}msg += "<span >成功导入" + sucss + "条记录！</span><br>";\n)

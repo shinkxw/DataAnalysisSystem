@@ -94,6 +94,7 @@ SELECT a.[ID]--编号
       ,h.SJKS as h_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,h.XF as h_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,h.XFRDHGX as h_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,h.JXDG as h_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,i.SCHOOLID as i_KC_SCHOOLID--课程数据子类表 学校ID
       ,i.KCMC as i_KC_KCMC--课程数据子类表 课程名称
       ,i.KCYWM as i_KC_KCYWM--课程数据子类表 课程英文名

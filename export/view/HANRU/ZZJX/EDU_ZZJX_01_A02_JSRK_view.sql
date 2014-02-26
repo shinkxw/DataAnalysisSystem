@@ -127,6 +127,7 @@ SELECT a.[ID]--编号
       ,f.SJKS as f_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,f.XF as f_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,f.XFRDHGX as f_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,f.JXDG as f_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,g.MC as g_SFBZ_MC--是否标志代码表 名称
       ,h.SCHOOLID as h_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,h.ZYDM as h_ZYXX_ZYDM--专业基本信息数据表 专业代码

@@ -27,6 +27,7 @@ SELECT a.[ID]--编号
       ,c.SJKS as c_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,c.XF as c_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,c.XFRDHGX as c_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,c.JXDG as c_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
 
 FROM dbo.EDU_ZZXS_06_02_XSCJLX AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_03_03_JXJHKCQD AS c ON a.KCQDID = c.ID /*课程清单ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

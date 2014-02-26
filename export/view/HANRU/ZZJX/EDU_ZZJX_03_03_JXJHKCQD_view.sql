@@ -19,6 +19,7 @@ SELECT a.[ID]--编号
       ,a.[SJKS]--实践课时
       ,a.[XF]--学分
       ,a.[XFRDHGX]--学分认定合格线
+      ,a.[JXDG]--教学大纲
       ,c.SCHOOLID as c_ZTJXJH_SCHOOLID--总体教学计划数据子类表 学校ID
       ,c.JHBH as c_ZTJXJH_JHBH--总体教学计划数据子类表 计划编号
       ,c.JHNJ as c_ZTJXJH_JHNJ--总体教学计划数据子类表 计划年级

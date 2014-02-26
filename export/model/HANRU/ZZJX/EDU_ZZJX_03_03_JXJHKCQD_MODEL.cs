@@ -117,6 +117,11 @@ namespace HanRuEdu.LDAL
             public decimal XFRDHGX { get; set; }
 
 
+            [Display(Name = "½ÌÑ§´ó¸Ù")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JXDG { get; set; }
+
+
         }
     }
 }

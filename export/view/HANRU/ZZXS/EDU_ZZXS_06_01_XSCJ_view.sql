@@ -260,6 +260,7 @@ SELECT a.[ID]--编号
       ,i.SJKS as i_JXJHKCQD_SJKS--教学计划课程清单数据子类表 实践课时
       ,i.XF as i_JXJHKCQD_XF--教学计划课程清单数据子类表 学分
       ,i.XFRDHGX as i_JXJHKCQD_XFRDHGX--教学计划课程清单数据子类表 学分认定合格线
+      ,i.JXDG as i_JXJHKCQD_JXDG--教学计划课程清单数据子类表 教学大纲
       ,j.SCHOOLID as j_XSCJLX_SCHOOLID--学生成绩类型表 学校ID
       ,j.LXMC as j_XSCJLX_LXMC--学生成绩类型表 类型名称
       ,j.QZ as j_XSCJLX_QZ--学生成绩类型表 权重
