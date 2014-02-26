@@ -19559,6 +19559,7 @@ SELECT a.[ID]--编号
       ,a.[RS]--人数
       ,a.[T1NAME]--主任老师姓名
       ,a.[T2NAME]--辅助老师姓名
+      ,a.[SKFS]--授课方式
       ,c.SCHOOLID as c_ZZXQSJ_SCHOOLID--校区数据表 学校名
       ,c.XQDM as c_ZZXQSJ_XQDM--校区数据表 校区代码
       ,c.XQMC as c_ZZXQSJ_XQMC--校区数据表 校区名称
@@ -19915,6 +19916,7 @@ SELECT a.[ID]--编号
       ,g.RS as g_ZZJXB_RS--中职教学班表 人数
       ,g.T1NAME as g_ZZJXB_T1NAME--中职教学班表 主任老师姓名
       ,g.T2NAME as g_ZZJXB_T2NAME--中职教学班表 辅助老师姓名
+      ,g.SKFS as g_ZZJXB_SKFS--中职教学班表 授课方式
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
@@ -20014,6 +20016,7 @@ SELECT a.[ID]--编号
       ,a.[XSXXID]--学生ID
       ,a.[JXBID]--教学班级ID
       ,a.[KCQDID]--课程清单ID
+      ,a.[ZT]--状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -20088,6 +20091,7 @@ SELECT a.[ID]--编号
       ,e.RS as e_ZZJXB_RS--中职教学班表 人数
       ,e.T1NAME as e_ZZJXB_T1NAME--中职教学班表 主任老师姓名
       ,e.T2NAME as e_ZZJXB_T2NAME--中职教学班表 辅助老师姓名
+      ,e.SKFS as e_ZZJXB_SKFS--中职教学班表 授课方式
       ,f.SCHOOLID as f_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,f.JXJHID as f_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,f.KCH as f_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

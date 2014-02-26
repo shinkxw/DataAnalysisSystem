@@ -1678,6 +1678,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_38_A01_ZZJXB](
 	[RS]  int  NOT NULL,--人数
 	[T1NAME]  nvarchar(36)  NOT NULL,--主任老师姓名
 	[T2NAME]  nvarchar(36)  NOT NULL,--辅助老师姓名
+	[SKFS]  int  NOT NULL,--授课方式
 CONSTRAINT [PK_EDU_ZZJX_38_A01_ZZJXB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1724,6 +1725,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_38_A03_XKJG](
 	[XSXXID]  int  NOT NULL,--学生ID
 	[JXBID]  int  NOT NULL,--教学班级ID
 	[KCQDID]  int  NOT NULL,--课程清单ID
+	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZZJX_38_A03_XKJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3052,6 +3054,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'主任老师姓名' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'辅助老师姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A01_ZZJXB', @level2type=N'COLUMN',@level2name=N'T2NAME'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'授课方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A01_ZZJXB', @level2type=N'COLUMN',@level2name=N'SKFS'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'中职排课结果记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A02_ZZPKJGJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A02_ZZPKJGJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -3095,4 +3099,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A03_XKJG', @level2type=N'COLUMN',@level2name=N'JXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程清单ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A03_XKJG', @level2type=N'COLUMN',@level2name=N'KCQDID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_38_A03_XKJG', @level2type=N'COLUMN',@level2name=N'ZT'
 GO

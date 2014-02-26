@@ -837,6 +837,7 @@
             <name="RS" exp="人数" type="int" null="F" p="F" />
             <name="T1NAME" exp="主任老师姓名" type="nvarchar(36)" null="F" p="F" />
             <name="T2NAME" exp="辅助老师姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="SKFS" exp="授课方式" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_38_A02_ZZPKJGJL" exp="中职排课结果记录表">
@@ -865,6 +866,7 @@
             <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
             <name="JXBID" exp="教学班级ID" type="int" null="F" p="F" />
             <name="KCQDID" exp="课程清单ID" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

@@ -116,6 +116,11 @@ namespace HanRuEdu.LDAL
             public String T2NAME { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÊÚ¿Î·½Ê½")]
+            public Int32 SKFS { get; set; }
+
+
         }
     }
 }

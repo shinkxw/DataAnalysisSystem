@@ -19,6 +19,7 @@ SELECT a.[ID]--编号
       ,a.[RS]--人数
       ,a.[T1NAME]--主任老师姓名
       ,a.[T2NAME]--辅助老师姓名
+      ,a.[SKFS]--授课方式
       ,c.SCHOOLID as c_ZZXQSJ_SCHOOLID--校区数据表 学校名
       ,c.XQDM as c_ZZXQSJ_XQDM--校区数据表 校区代码
       ,c.XQMC as c_ZZXQSJ_XQMC--校区数据表 校区名称

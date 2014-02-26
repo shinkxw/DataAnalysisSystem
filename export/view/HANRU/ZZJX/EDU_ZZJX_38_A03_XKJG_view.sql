@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[XSXXID]--学生ID
       ,a.[JXBID]--教学班级ID
       ,a.[KCQDID]--课程清单ID
+      ,a.[ZT]--状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -82,6 +83,7 @@ SELECT a.[ID]--编号
       ,e.RS as e_ZZJXB_RS--中职教学班表 人数
       ,e.T1NAME as e_ZZJXB_T1NAME--中职教学班表 主任老师姓名
       ,e.T2NAME as e_ZZJXB_T2NAME--中职教学班表 辅助老师姓名
+      ,e.SKFS as e_ZZJXB_SKFS--中职教学班表 授课方式
       ,f.SCHOOLID as f_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,f.JXJHID as f_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,f.KCH as f_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

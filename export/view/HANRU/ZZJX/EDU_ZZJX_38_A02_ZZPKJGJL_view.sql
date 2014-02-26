@@ -74,6 +74,7 @@ SELECT a.[ID]--编号
       ,g.RS as g_ZZJXB_RS--中职教学班表 人数
       ,g.T1NAME as g_ZZJXB_T1NAME--中职教学班表 主任老师姓名
       ,g.T2NAME as g_ZZJXB_T2NAME--中职教学班表 辅助老师姓名
+      ,g.SKFS as g_ZZJXB_SKFS--中职教学班表 授课方式
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

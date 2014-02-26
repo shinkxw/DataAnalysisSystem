@@ -42,6 +42,11 @@ namespace HanRuEdu.LDAL
             public Int32 KCQDID { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "×´Ì¬")]
+            public Int32 ZT { get; set; }
+
+
         }
     }
 }
