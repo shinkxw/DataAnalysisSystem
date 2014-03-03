@@ -298,6 +298,7 @@
             <name="Vender" exp="厂家" type="nvarchar(200)" null="F" p="F" />
             <name="Remark" exp="备注" type="nvarchar(100)" null="F" p="F" />
             <name="AllCount" exp="资产总量" type="decimal(8, 2)" null="F" p="F" />
+            <name="RKL" exp="入库量" type="decimal(8, 2)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_15_A04_ZCRK" exp="资产入库表">

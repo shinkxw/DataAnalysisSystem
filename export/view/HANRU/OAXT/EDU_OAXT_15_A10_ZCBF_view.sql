@@ -23,6 +23,7 @@ SELECT a.[ID]--编号
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
+      ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码

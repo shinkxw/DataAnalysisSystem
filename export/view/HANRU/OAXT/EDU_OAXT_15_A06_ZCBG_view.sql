@@ -24,6 +24,7 @@ SELECT a.[ID]--编号
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
+      ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
 
 FROM dbo.EDU_OAXT_15_A06_ZCBG AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/

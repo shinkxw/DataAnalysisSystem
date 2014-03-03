@@ -96,6 +96,12 @@ namespace HanRuEdu.LDAL
             public decimal AllCount { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Èë¿âÁ¿")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal RKL { get; set; }
+
+
         }
     }
 }

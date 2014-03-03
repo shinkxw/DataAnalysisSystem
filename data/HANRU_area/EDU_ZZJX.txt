@@ -194,22 +194,7 @@
             <name="SFRK" exp="是否入库" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_04_A03_JSJCLY" exp="教师教材领用表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
-            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
-            <name="KCID" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
-            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
-            <name="LYSL" exp="领用数量" type="int" null="F" p="F" />
-            <name="LYJSID" exp="领用教师ID" type="int" null="F" p="F" />
-            <name="LYSJ" exp="领用时间" type="datetime" null="F" p="F" />
-            <name="JSR" exp="经手人" type="nvarchar(36)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_04_A04_XSJCLY" exp="学生教材领用表">
+    <table name="EDU_ZZJX_04_A03_JCLYJL" exp="教材领用记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
@@ -217,12 +202,11 @@
             <name="ZYXXID" exp="专业ID" type="int" null="F" p="F" />
             <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
             <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
-            <name="KCID" exp="课程ID" type="nvarchar(6)" null="F" p="F" />
-            <name="JCID" exp="教材ID" type="int" null="T" p="F" />
+            <name="JCID" exp="教材ID" type="int" null="F" p="F" />
             <name="LYSL" exp="领用数量" type="int" null="F" p="F" />
-            <name="LYXSID" exp="领用学生ID" type="int" null="F" p="F" />
+            <name="LYR" exp="领用人" type="nvarchar(36)" null="F" p="F" />
             <name="LYSJ" exp="领用时间" type="datetime" null="F" p="F" />
-            <name="JSR" exp="经手人" type="nvarchar(36)" null="F" p="F" />
+            <name="JSRID" exp="经手人ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_04_A05_JCFK" exp="教材反馈表">

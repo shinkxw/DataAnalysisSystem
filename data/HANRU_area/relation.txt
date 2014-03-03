@@ -1107,23 +1107,14 @@
   SQRID          EDU_ZZJG_01_01_JZGJBSJ             ID
   SHRID          EDU_ZZJG_01_01_JZGJBSJ             ID
   SFRK           EDU_JY_SFBZ                        DM
-<EDU_ZZJX_04_A03_JSJCLY
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  XQID           EDU_ELE_01_XQ                      ID
-  ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
-  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
-  KCID           EDU_ZZJX_01_02_KC                  KCH
-  JCID           EDU_ZZJX_04_01_JCJBXX              ID
-  LYJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
-<EDU_ZZJX_04_A04_XSJCLY
+<EDU_ZZJX_04_A03_JCLYJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
   ZYXXID         EDU_ZZJX_01_01_ZYXX                ZYBH
   NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
   BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
-  KCID           EDU_ZZJX_01_02_KC                  KCH
   JCID           EDU_ZZJX_04_01_JCJBXX              ID
-  LYXSID         EDU_ZZXS_01_01_XSXX                ID
+  JSRID          EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_04_A05_JCFK
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

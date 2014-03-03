@@ -36,6 +36,7 @@ SELECT a.[ID]--编号
       ,c.Vender as c_ZCKC_Vender--资产库存表 厂家
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
+      ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
       ,d.SCHOOLID as d_BXLX_SCHOOLID--报修类型表 学校
       ,d.TypeName as d_BXLX_TypeName--报修类型表 类型名称
       ,d.Remark as d_BXLX_Remark--报修类型表 备注

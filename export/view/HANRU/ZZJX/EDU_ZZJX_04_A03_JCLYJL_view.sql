@@ -1,18 +1,18 @@
 
---教师教材领用表
-CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_A03_JSJCLY_DISP]
+--教材领用记录表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_04_A03_JCLYJL_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XQID]--学期ID
       ,a.[ZYXXID]--专业ID
       ,a.[NJID]--年级ID
-      ,a.[KCID]--课程ID
+      ,a.[BJID]--班级ID
       ,a.[JCID]--教材ID
       ,a.[LYSL]--领用数量
-      ,a.[LYJSID]--领用教师ID
+      ,a.[LYR]--领用人
       ,a.[LYSJ]--领用时间
-      ,a.[JSR]--经手人
+      ,a.[JSRID]--经手人ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -41,23 +41,21 @@ SELECT a.[ID]--编号
       ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
       ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
-      ,f.SCHOOLID as f_KC_SCHOOLID--课程数据子类表 学校ID
-      ,f.KCMC as f_KC_KCMC--课程数据子类表 课程名称
-      ,f.KCYWM as f_KC_KCYWM--课程数据子类表 课程英文名
-      ,f.KCBM as f_KC_KCBM--课程数据子类表 课程别名
-      ,f.KCJS as f_KC_KCJS--课程数据子类表 课程介绍
-      ,f.XF as f_KC_XF--课程数据子类表 学分
-      ,f.ZXS as f_KC_ZXS--课程数据子类表 总学时
-      ,f.LLXS as f_KC_LLXS--课程数据子类表 理论学时
-      ,f.SJXS as f_KC_SJXS--课程数据子类表 实践学时
-      ,f.QTXS as f_KC_QTXS--课程数据子类表 其他学时
-      ,f.CKSM as f_KC_CKSM--课程数据子类表 参考书目
-      ,f.KKDW as f_KC_KKDW--课程数据子类表 开课单位
-      ,f.KSXS as f_KC_KSXS--课程数据子类表 考试形式
-      ,[fb].MC as f_KC_KSXS_MC--考试形式代码表 名称
-      ,f.SKFSM as f_KC_SKFSM--课程数据子类表 授课方式码
-      ,[fc].MC as f_KC_SKFSM_MC--授课方式代码表 名称
-      ,f.KCFY as f_KC_KCFY--课程数据子类表 课程费用
+      ,f.SCHOOLID as f_ZZBJ_SCHOOLID--学校班级数据表 学校名
+      ,f.ZYXXID as f_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
+      ,f.ZZNJID as f_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
+      ,f.XZBMC as f_ZZBJ_XZBMC--学校班级数据表 行政班名称
+      ,f.JBNY as f_ZZBJ_JBNY--学校班级数据表 建班年月
+      ,f.BZRGH as f_ZZBJ_BZRGH--学校班级数据表 班主任工号
+      ,f.JSBH as f_ZZBJ_JSBH--学校班级数据表 教室编号
+      ,f.NANSRS as f_ZZBJ_NANSRS--学校班级数据表 男生人数
+      ,f.NVSRS as f_ZZBJ_NVSRS--学校班级数据表 女生人数
+      ,f.ZRS as f_ZZBJ_ZRS--学校班级数据表 总人数
+      ,f.BZXH as f_ZZBJ_BZXH--学校班级数据表 班长学号
+      ,f.JXJH as f_ZZBJ_JXJH--学校班级数据表 教学计划
+      ,f.JGH as f_ZZBJ_JGH--学校班级数据表 机构号
+      ,f.XQDM as f_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,f.BZRID as f_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,g.SCHOOLID as g_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,g.JCDM as g_JCJBXX_JCDM--教材基本信息表 教材代码
       ,g.JCMC as g_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -146,19 +144,17 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
 
-FROM dbo.EDU_ZZJX_04_A03_JSJCLY AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZZJX_04_A03_JCLYJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS d ON a.ZYXXID = d.ZYBH /*专业ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS e ON a.NJID = e.NJDM /*年级ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_01_02_KC AS f ON a.KCID = f.KCH /*课程ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_02_ZZBJ AS f ON a.BJID = f.XZBDM /*班级ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_04_01_JCJBXX AS g ON a.JCID = g.ID /*教材ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.LYJSID = h.ID /*领用教师ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS h ON a.JSRID = h.ID /*经手人ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [eb] ON e.NJZT = [eb].DM /*年级状态*/ LEFT OUTER JOIN
-      dbo.EDU_JY_KSXS AS [fb] ON f.KSXS = [fb].DM /*考试形式*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SKFS AS [fc] ON f.SKFSM = [fc].DM /*授课方式码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [gb] ON g.SFYLXC = [gb].DM /*是否有练习册*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [gc] ON g.SFYJCJF = [gc].DM /*是否有教参教辅*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [hb] ON h.SFZJLXM = [hb].DM /*身份证件类型码*/ LEFT OUTER JOIN

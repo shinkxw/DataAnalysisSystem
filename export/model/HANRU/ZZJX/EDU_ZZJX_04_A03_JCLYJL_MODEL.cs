@@ -4,18 +4,17 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJX_04_A04_XSJCLY_metadata))]
-    public partial class EDU_ZZJX_04_A04_XSJCLY
+    [MetadataType(typeof(EDU_ZZJX_04_A03_JCLYJL_metadata))]
+    public partial class EDU_ZZJX_04_A03_JCLYJL
     {
-        public EDU_ZZJX_04_A04_XSJCLY()
+        public EDU_ZZJX_04_A03_JCLYJL()
         {
             NJID = "";
             BJID = "";
-            KCID = "";
+            LYR = "";
             LYSJ = DateTime.Now;
-            JSR = "";
         }
-        public class EDU_ZZJX_04_A04_XSJCLY_metadata
+        public class EDU_ZZJX_04_A03_JCLYJL_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -51,13 +50,7 @@ namespace HanRuEdu.LDAL
             public String BJID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "课程")]
-            [StringLength(6)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KCID { get; set; }
-
-
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "教材")]
             public Int32 JCID { get; set; }
 
@@ -67,9 +60,11 @@ namespace HanRuEdu.LDAL
             public Int32 LYSL { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "领用学生")]
-            public Int32 LYXSID { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "领用人")]
+            [StringLength(36)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String LYR { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -77,11 +72,9 @@ namespace HanRuEdu.LDAL
             public DateTime LYSJ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "经手人")]
-            [StringLength(36)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JSR { get; set; }
+            public Int32 JSRID { get; set; }
 
 
         }
