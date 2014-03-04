@@ -279,6 +279,7 @@
             <name="TKHJC" exp="调课后节次" type="int" null="F" p="F" />
             <name="ZT" exp="当前状态" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_10_A01_LWSJ" exp="论文数据表">
