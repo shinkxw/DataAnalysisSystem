@@ -17,7 +17,7 @@ class DafAnalyzer
     table = nil
     state = "file"#当前状态(file,namespace,table,field,data)
     line = @arr_reader.now
-    if line =~ /^<\?/#检测DAF数据等
+    if line[/^<\?/]#检测DAF数据等
       #version = line_analyze(line)["version"]#获得DAF版本
       line = get_valid_line(@arr_reader)
     end
@@ -31,7 +31,7 @@ class DafAnalyzer
           state = "namespace"
         elsif hash[:line_prefix] != nil
           @log.push("DafAnalyzer: 标签有误" + line)
-        elsif line =~ /[^\s]+/#不为空
+        elsif line[/[^\s]+/]#不为空
           @log.push("DafAnalyzer: 该行有误" + line)
         end 
       when "namespace"
@@ -44,7 +44,7 @@ class DafAnalyzer
           state = "file"
         elsif hash[:line_prefix] != nil
           @log.push("DafAnalyzer: 标签有误" + line)
-        elsif line =~ /[^\s]+/#不为空
+        elsif line[/[^\s]+/]#不为空
           @log.push("DafAnalyzer: 该行有误" + line)
         end 
       when "table"
@@ -57,13 +57,13 @@ class DafAnalyzer
           state = "namespace"
         elsif hash[:line_prefix] != nil
           @log.push("DafAnalyzer: 标签有误" + line)
-        elsif line =~ /[^\s]+/#不为空
+        elsif line[/[^\s]+/]#不为空
           @log.push("DafAnalyzer: 该行有误" + line)
         end 
       when "field"
         if hash[:line_prefix] == "/field_area"
           state = "table"
-        elsif hash[:line_prefix] == nil && line =~ /[^\s]+/#添加字段
+        elsif hash[:line_prefix] == nil && line[/[^\s]+/]#添加字段
           exp = hash[:explanation] ? hash[:explanation] : hash[:exp]
           table.add_field(MDField.new(table,hash[:name],hash[:type],hash[:null],hash[:p],exp,hash[:remark],hash[:identity],hash[:default]))
         else
@@ -72,7 +72,7 @@ class DafAnalyzer
       when "data"
         if hash[:line_prefix] == "/data_area"
           state = "table"
-        elsif hash[:line_prefix] == nil && line =~ /[^\s]+/#添加数据
+        elsif hash[:line_prefix] == nil && line[/[^\s]+/]#添加数据
           hash.delete(:line_prefix) 
           table.add_data(MDData.new(hash))
         else
@@ -89,10 +89,9 @@ class DafAnalyzer
   R3 = /([^\s]+?)="([^"]*?)"( |\?|$)/
   def line_analyze(line)
     result = {}
-    line =~ R1#获得前缀
-    result[:line_prefix] = $1
+    result[:line_prefix] = line[R1, 1]#获得前缀
     line.scan(R2) do |str|#获得键值对
-      if str =~ R3#分割键值对
+      if str[R3]#分割键值对
         result[$1.intern] = $2
       else
         @log.push("DafAnalyzer: 键值对有误 #{str}")

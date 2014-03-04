@@ -61,8 +61,7 @@ class MDField
   #根据类型计算默认值
   def defv
     return @default if has_default?#如果字段存在存在默认值，则返回默认值
-    @type =~ /([^(]+?)(?:\((.+?)\)|$)/
-    case $1
+    case @type[/([^(]+?)(?:\((.+?)\)|$)/, 1]
     when 'int','decimal','money','float' then return '0'
     when 'nchar','nvarchar','text','datetime' then return "''"
     else 
@@ -73,8 +72,7 @@ class MDField
   #返回处理后的类型
   def split_type
     result = ['UN']
-    @type =~ /([^(]+?)(?:\((.+?)\)|$)/
-    type = $1
+    type = @type[/([^(]+?)(?:\((.+?)\)|$)/, 1]
     value = $2
     case type
     when 'int';result = ['int']
@@ -84,11 +82,11 @@ class MDField
     when 'nchar','nvarchar';result = ['String',value]
     when 'float';result = ['float']
     when 'decimal'
-      if value =~ /(.+?),(.+?)/
+      if value[/(.+?),(.+?)/]
         zw = $1.to_i
         xw = $2.to_i
         result = ['decimal','0',(calnum(zw)-(1.0/calnum(xw))).to_i.to_s]
-      elsif value =~ /[^,]+/
+      elsif value[/[^,]+/]
         result = ['decimal','0',(calnum(value.to_i)-1).to_i.to_s]
       else
         puts "MDField: type wrong: #{@type}"
@@ -99,10 +97,7 @@ class MDField
     result
   end
   #获得数据库类型
-  def db_type
-    @type =~ /([^(]+?)(?:\((.+?)\)|$)/
-    $1
-  end
+  def db_type;@type[/([^(]+?)(?:\((.+?)\)|$)/, 1] end
   #判断字段数据是否有效
   def is_valid?
     puts "MDField: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == 'T' && @p == 'F'
