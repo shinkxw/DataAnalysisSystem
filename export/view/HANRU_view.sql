@@ -779,6 +779,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_20_A08
             and   type = 'V')
    drop view VIEW_EDU_ZZJG_20_A08_XSPJTJJL_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJG_21_A01_BMXSL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJG_21_A01_BMXSL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_01_01_ZYXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_01_01_ZYXX_DISP
@@ -14352,6 +14356,37 @@ FROM dbo.EDU_ZZJG_20_A08_XSPJTJJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_20_A06_XSPJKPBJ AS b ON a.KPBJID = b.ID /*考评班级ID*/
 GO
 
+--部门行事历表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJG_21_A01_BMXSL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[BMBH]--部门编号
+      ,a.[SJ]--时间
+      ,a.[ZYGZ]--主要工作
+      ,a.[BZ]--备注
+      ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
+      ,c.JGMC as c_XNJG_JGMC--校内机构数据类表 机构名称
+      ,c.JGYWMC as c_XNJG_JGYWMC--校内机构数据类表 机构英文名称
+      ,c.JGJC as c_XNJG_JGJC--校内机构数据类表 机构简称
+      ,c.JGJP as c_XNJG_JGJP--校内机构数据类表 机构简拼
+      ,c.JGDZ as c_XNJG_JGDZ--校内机构数据类表 机构地址
+      ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
+      ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
+      ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
+      ,[cb].MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
+      ,[cc].MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
+      ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
+      ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
+
+FROM dbo.EDU_ZZJG_21_A01_BMXSL AS a LEFT OUTER JOIN
+      dbo.EDU_ZZXX_03_01_XNJG AS c ON a.BMBH = c.JGH /*部门编号*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cb] ON c.JGYXBS = [cb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFST = [cc].DM /*是否实体*/
+GO
+
 --专业基本信息数据表
 CREATE VIEW [dbo].[VIEW_EDU_ZZJX_01_01_ZYXX_DISP]
 AS
@@ -20564,6 +20599,7 @@ SELECT a.[ID]--编号
       ,a.[BJID]--班级ID
       ,a.[SHZT]--审核状态
       ,a.[SHRID]--审核人ID
+      ,a.[KSID]--考试ID
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名
@@ -20906,6 +20942,13 @@ SELECT a.[ID]--编号
       ,n.DZXX as n_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,n.WLDZ as n_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,n.JSTXH as n_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,o.SCHOOLID as o_EXAM_SCHOOLID--考试表 学校
+      ,o.Name as o_EXAM_Name--考试表 考试名称
+      ,o.CJKSKMLM as o_EXAM_CJKSKMLM--考试表 参加考试科目列表
+      ,o.StartDate as o_EXAM_StartDate--考试表 开始日期
+      ,o.EndDate as o_EXAM_EndDate--考试表 截止日期
+      ,o.XqID as o_EXAM_XqID--考试表 学期ID
+      ,o.DffsID as o_EXAM_DffsID--考试表 登分方式
 
 FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -20920,6 +20963,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS l ON a.NJID = l.NJDM /*年级ID*/ AND a.SCHOOLID = l.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS m ON a.BJID = m.XZBDM /*班级ID*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS n ON a.SHRID = n.ID /*审核人ID*/ AND a.SCHOOLID = n.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_32_A01_EXAM AS o ON a.KSID = o.ID /*考试ID*/ AND a.SCHOOLID = o.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN

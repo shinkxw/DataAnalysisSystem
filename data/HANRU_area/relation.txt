@@ -1040,6 +1040,11 @@
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJG_20_A08_XSPJTJJL
   KPBJID         EDU_ZZJG_20_A06_XSPJKPBJ           ID
+<EDU_ZZJG_21_A01_BMXSL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BMBH           EDU_ZZXX_03_01_XNJG                JGH
+<EDU_ZZJG_21_A02_ZXSL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_01_01_ZYXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYDM           EDU_ZJ_ZJZY                        DM
@@ -1422,6 +1427,7 @@
   NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
   BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
   SHRID          EDU_ZZJG_01_01_JZGJBSJ             ID
+  KSID           EDU_ZZJX_32_A01_EXAM               ID
 <EDU_ZZXS_06_02_XSCJLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KCQDID         EDU_ZZJX_03_03_JXJHKCQD            ID

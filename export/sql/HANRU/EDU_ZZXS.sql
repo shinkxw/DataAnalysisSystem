@@ -409,6 +409,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_06_01_XSCJ](
 	[BJID]  nvarchar(10)  NOT NULL,--∞‡º∂ID
 	[SHZT]  int  NOT NULL,--…Û∫À◊¥Ã¨
 	[SHRID]  int  NOT NULL,--…Û∫À»ÀID
+	[KSID]  int  NOT NULL,--øº ‘ID
 CONSTRAINT [PK_EDU_ZZXS_06_01_XSCJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1459,6 +1460,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'…Û∫À◊¥Ã¨' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'SHZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'…Û∫À»ÀID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'SHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'øº ‘ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_01_XSCJ', @level2type=N'COLUMN',@level2name=N'KSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ß…˙≥…º®¿‡–Õ±Ì' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_06_02_XSCJLX'
 GO

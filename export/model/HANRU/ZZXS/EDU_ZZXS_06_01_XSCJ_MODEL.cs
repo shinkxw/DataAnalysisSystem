@@ -158,6 +158,11 @@ namespace HanRuEdu.LDAL
             public Int32 SHRID { get; set; }
 
 
+            [Required(ErrorMessage = "±ÿÃÓ")]
+            [Display(Name = "øº ‘")]
+            public Int32 KSID { get; set; }
+
+
         }
     }
 }

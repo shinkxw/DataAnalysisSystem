@@ -27,6 +27,7 @@ SELECT a.[ID]--编号
       ,a.[BJID]--班级ID
       ,a.[SHZT]--审核状态
       ,a.[SHRID]--审核人ID
+      ,a.[KSID]--考试ID
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名
@@ -369,6 +370,13 @@ SELECT a.[ID]--编号
       ,n.DZXX as n_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,n.WLDZ as n_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,n.JSTXH as n_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,o.SCHOOLID as o_EXAM_SCHOOLID--考试表 学校
+      ,o.Name as o_EXAM_Name--考试表 考试名称
+      ,o.CJKSKMLM as o_EXAM_CJKSKMLM--考试表 参加考试科目列表
+      ,o.StartDate as o_EXAM_StartDate--考试表 开始日期
+      ,o.EndDate as o_EXAM_EndDate--考试表 截止日期
+      ,o.XqID as o_EXAM_XqID--考试表 学期ID
+      ,o.DffsID as o_EXAM_DffsID--考试表 登分方式
 
 FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -383,6 +391,7 @@ FROM dbo.EDU_ZZXS_06_01_XSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_01_ZZNJ AS l ON a.NJID = l.NJDM /*年级ID*/ AND a.SCHOOLID = l.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS m ON a.BJID = m.XZBDM /*班级ID*/ AND a.SCHOOLID = m.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS n ON a.SHRID = n.ID /*审核人ID*/ AND a.SCHOOLID = n.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_32_A01_EXAM AS o ON a.KSID = o.ID /*考试ID*/ AND a.SCHOOLID = o.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS [cd] ON c.XXM = [cd].DM /*血型码*/ LEFT OUTER JOIN

@@ -131,6 +131,7 @@ EDU_ZZXS_06_01_XSCJ  学生成绩数据类表
   BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
   SHZT          审核状态                int            非主
   SHRID         审核人ID                int            非主        教职工基本数据子类表
+  KSID          考试ID                  int            非主        考试表
 
 EDU_ZZXS_06_02_XSCJLX  学生成绩类型表
   ID            编号                    int            主键

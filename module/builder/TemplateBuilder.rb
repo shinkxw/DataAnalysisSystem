@@ -243,7 +243,7 @@ class TemplateBuilder
     str << %({\n#{@tab.l}msg += "<span  >数据正确性检测通过！</span><br>";\n#{@tab.t})
     str << "foreach (var item in CheckList)\n#{@tab.t}{\n#{@tab.l}"
     table.each_field do |field|
-      if field.name == "ID"
+      if field.name == "ID" && !table.has_identity?
         str << "item.ID = GetMax_#{table.lname}_ID();//#{field.explanation}\n#{@tab.t}"
       elsif field.name == "SCHOOLID"
         str << "item.SCHOOLID = CurUser.ele01Usr.SCHOOLID;//#{field.explanation}\n#{@tab.t}"
