@@ -275,6 +275,8 @@ CREATE TABLE [dbo].[EDU_ZZXS_01_A01_XSXX](
 	[XSLX]  nvarchar(5)  NOT NULL,--学生类型
 	[SFZS]  nvarchar(1)  NOT NULL,--是否住宿
 	[XSBMSJ]  nvarchar(8)  NULL,--学生报名时间
+	[ZZNJID]  nvarchar(4)  NOT NULL,--年级ID
+	[ZZBJID]  nvarchar(10)  NOT NULL,--班级ID
 CONSTRAINT [PK_EDU_ZZXS_01_A01_XSXX] PRIMARY KEY CLUSTERED
 (
 	[XSXXID] ASC,
@@ -1308,6 +1310,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否住宿' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_A01_XSXX', @level2type=N'COLUMN',@level2name=N'SFZS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生报名时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_A01_XSXX', @level2type=N'COLUMN',@level2name=N'XSBMSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_A01_XSXX', @level2type=N'COLUMN',@level2name=N'ZZNJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_01_A01_XSXX', @level2type=N'COLUMN',@level2name=N'ZZBJID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生家庭信息数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_02_01_XSJTXX'
 GO

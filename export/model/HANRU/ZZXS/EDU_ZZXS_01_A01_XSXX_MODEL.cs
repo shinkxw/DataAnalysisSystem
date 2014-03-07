@@ -12,6 +12,8 @@ namespace HanRuEdu.LDAL
             BYLX = "";
             XSLX = "";
             SFZS = "";
+            ZZNJID = "";
+            ZZBJID = "";
         }
         public class EDU_ZZXS_01_A01_XSXX_metadata
         {
@@ -116,6 +118,20 @@ namespace HanRuEdu.LDAL
             [StringLength(8)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XSBMSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级")]
+            [StringLength(4)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZZNJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZZBJID { get; set; }
 
 
         }

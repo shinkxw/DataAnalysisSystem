@@ -50,6 +50,8 @@ EDU_ZZXS_01_A01_XSXX  学生扩展数据表
   XSLX          学生类型                nvarchar(5)    非主        学生类别代码表
   SFZS          是否住宿                nvarchar(1)    非主        是否标志代码表
   XSBMSJ        学生报名时间            nvarchar(8)    非主
+  ZZNJID        年级ID                  nvarchar(4)    非主        学校年级数据表
+  ZZBJID        班级ID                  nvarchar(10)   非主        学校班级数据表
 
 EDU_ZZXS_02_01_XSJTXX  学生家庭信息数据表
   XSXXID        学生信息数据表          int            主键        学生信息数据表

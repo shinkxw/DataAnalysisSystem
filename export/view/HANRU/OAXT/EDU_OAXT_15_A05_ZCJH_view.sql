@@ -13,11 +13,11 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[Registdate]--登记时间
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
-      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
       ,c.Remark as c_ZCML_Remark--资产目录表 备注
       ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
-      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Name as d_ZCDL_Name--资产大类表 校产类型
       ,d.Remark as d_ZCDL_Remark--资产大类表 备注
       ,e.SCHOOLID as e_ZCKC_SCHOOLID--资产库存表 学校
       ,e.TypeID as e_ZCKC_TypeID--资产库存表 资产目录表ID

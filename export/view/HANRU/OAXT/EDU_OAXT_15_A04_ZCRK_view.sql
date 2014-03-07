@@ -17,11 +17,11 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[Status]--审核状态
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
-      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
       ,c.Remark as c_ZCML_Remark--资产目录表 备注
       ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
-      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Name as d_ZCDL_Name--资产大类表 校产类型
       ,d.Remark as d_ZCDL_Remark--资产大类表 备注
 
 FROM dbo.EDU_OAXT_15_A04_ZCRK AS a LEFT OUTER JOIN

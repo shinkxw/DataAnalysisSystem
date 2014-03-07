@@ -3303,11 +3303,11 @@ CREATE VIEW [dbo].[VIEW_EDU_OAXT_15_A01_ZCML_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[Name]--资产目录名称
+      ,a.[Name]--校产目录
       ,a.[Superid]--父目录ID
       ,a.[Remark]--备注
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
-      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
       ,c.Remark as c_ZCML_Remark--资产目录表 备注
 
@@ -3333,11 +3333,11 @@ SELECT a.[ID]--编号
       ,a.[AllCount]--资产总量
       ,a.[RKL]--入库量
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
-      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
       ,c.Remark as c_ZCML_Remark--资产目录表 备注
       ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
-      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Name as d_ZCDL_Name--资产大类表 校产类型
       ,d.Remark as d_ZCDL_Remark--资产大类表 备注
 
 FROM dbo.EDU_OAXT_15_A03_ZCKC AS a LEFT OUTER JOIN
@@ -3363,11 +3363,11 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[Status]--审核状态
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
-      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
       ,c.Remark as c_ZCML_Remark--资产目录表 备注
       ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
-      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Name as d_ZCDL_Name--资产大类表 校产类型
       ,d.Remark as d_ZCDL_Remark--资产大类表 备注
 
 FROM dbo.EDU_OAXT_15_A04_ZCRK AS a LEFT OUTER JOIN
@@ -3389,11 +3389,11 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[Registdate]--登记时间
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
-      ,c.Name as c_ZCML_Name--资产目录表 资产目录名称
+      ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
       ,c.Remark as c_ZCML_Remark--资产目录表 备注
       ,d.SCHOOLID as d_ZCDL_SCHOOLID--资产大类表 学校
-      ,d.Name as d_ZCDL_Name--资产大类表 资产大类名称
+      ,d.Name as d_ZCDL_Name--资产大类表 校产类型
       ,d.Remark as d_ZCDL_Remark--资产大类表 备注
       ,e.SCHOOLID as e_ZCKC_SCHOOLID--资产库存表 学校
       ,e.TypeID as e_ZCKC_TypeID--资产库存表 资产目录表ID
@@ -20099,6 +20099,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,a.[XSLX]--学生类型
       ,a.[SFZS]--是否住宿
       ,a.[XSBMSJ]--学生报名时间
+      ,a.[ZZNJID]--年级ID
+      ,a.[ZZBJID]--班级ID
       ,b.SCHOOLID as b_XSXX_SCHOOLID--学生信息数据表 学校名
       ,b.XH as b_XSXX_XH--学生信息数据表 学号
       ,b.XM as b_XSXX_XM--学生信息数据表 姓名
@@ -20182,6 +20184,26 @@ SELECT a.[XSXXID]--学生信息数据表
       ,k.MC as k_XSLB_MC--学生类别代码表 名称
       ,k.SM as k_XSLB_SM--学生类别代码表 说明
       ,l.MC as l_SFBZ_MC--是否标志代码表 名称
+      ,m.SCHOOLID as m_ZZNJ_SCHOOLID--学校年级数据表 学校名
+      ,m.NJMC as m_ZZNJ_NJMC--学校年级数据表 年级名称
+      ,m.SSNF as m_ZZNJ_SSNF--学校年级数据表 所属年份
+      ,m.NJZT as m_ZZNJ_NJZT--学校年级数据表 年级状态
+      ,[mb].MC as m_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,n.SCHOOLID as n_ZZBJ_SCHOOLID--学校班级数据表 学校名
+      ,n.ZYXXID as n_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
+      ,n.ZZNJID as n_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
+      ,n.XZBMC as n_ZZBJ_XZBMC--学校班级数据表 行政班名称
+      ,n.JBNY as n_ZZBJ_JBNY--学校班级数据表 建班年月
+      ,n.BZRGH as n_ZZBJ_BZRGH--学校班级数据表 班主任工号
+      ,n.JSBH as n_ZZBJ_JSBH--学校班级数据表 教室编号
+      ,n.NANSRS as n_ZZBJ_NANSRS--学校班级数据表 男生人数
+      ,n.NVSRS as n_ZZBJ_NVSRS--学校班级数据表 女生人数
+      ,n.ZRS as n_ZZBJ_ZRS--学校班级数据表 总人数
+      ,n.BZXH as n_ZZBJ_BZXH--学校班级数据表 班长学号
+      ,n.JXJH as n_ZZBJ_JXJH--学校班级数据表 教学计划
+      ,n.JGH as n_ZZBJ_JGH--学校班级数据表 机构号
+      ,n.XQDM as n_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,n.BZRID as n_ZZBJ_BZRID--学校班级数据表 班主任ID
 
 FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -20194,6 +20216,8 @@ FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZJ_BYSLX AS j ON a.BYLX = j.DM /*毕业生类型*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS k ON a.XSLX = k.DM /*学生类型*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS l ON a.SFZS = l.DM /*是否住宿*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_01_ZZNJ AS m ON a.ZZNJID = m.NJDM /*年级ID*/ AND a.SCHOOLID = m.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_02_ZZBJ AS n ON a.ZZBJID = n.XZBDM /*班级ID*/ AND a.SCHOOLID = n.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [bb] ON b.SFZJLXM = [bb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [bc] ON b.XBM = [bc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS [bd] ON b.XXM = [bd].DM /*血型码*/ LEFT OUTER JOIN
@@ -20210,7 +20234,8 @@ FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_SJGGHDQMC AS [bo] ON b.GJDQM = [bo].DM /*国籍/地区*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS [db] ON d.ZYDM = [db].DM /*专业代码*/ AND d.SSZYML = [db].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS [dc] ON d.SSZYML = [dc].DM /*所属专业目录*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS [fb] ON f.XQM = [fb].DM /*学期码*/
+      dbo.EDU_JY_XQ AS [fb] ON f.XQM = [fb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [mb] ON m.NJZT = [mb].DM /*年级状态*/
 GO
 
 --学生家庭信息数据表
