@@ -1,6 +1,6 @@
 
 --成绩划档方式
-CREATE VIEW [dbo].[VIEW_EDU_CFXT_01_A05_ZYWJPL_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_CFXT_01_A05_CJHDFS_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -16,6 +16,6 @@ SELECT a.[ID]--编号
       ,c.CFWZ as c_KS_CFWZ--考试信息 查分网址
       ,c.CFZT as c_KS_CFZT--考试信息 查分状态
 
-FROM dbo.EDU_CFXT_01_A05_ZYWJPL AS a LEFT OUTER JOIN
+FROM dbo.EDU_CFXT_01_A05_CJHDFS AS a LEFT OUTER JOIN
       dbo.EDU_CFXT_01_A02_KS AS c ON a.KSID = c.ID /*考试ID*/
 GO

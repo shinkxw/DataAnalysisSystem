@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_CFXT_01_A05_ZYWJPL_metadata))]
-    public partial class EDU_CFXT_01_A05_ZYWJPL
+    [MetadataType(typeof(EDU_CFXT_01_A05_CJHDFS_metadata))]
+    public partial class EDU_CFXT_01_A05_CJHDFS
     {
-        public EDU_CFXT_01_A05_ZYWJPL()
+        public EDU_CFXT_01_A05_CJHDFS()
         {
             JG = "";
         }
-        public class EDU_CFXT_01_A05_ZYWJPL_metadata
+        public class EDU_CFXT_01_A05_CJHDFS_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

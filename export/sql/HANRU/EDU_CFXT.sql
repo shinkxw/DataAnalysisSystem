@@ -20,9 +20,9 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_CFXT_01_A04_KSCJ
    drop table EDU_CFXT_01_A04_KSCJ
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_CFXT_01_A05_ZYWJPL')
+if exists (select 1 from  sysobjects where  id = object_id('EDU_CFXT_01_A05_CJHDFS')
             and   type = 'U')
-   drop table EDU_CFXT_01_A05_ZYWJPL
+   drop table EDU_CFXT_01_A05_CJHDFS
 go
 --科目信息
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_CFXT_01_A01_KM]') AND type in (N'U'))
@@ -98,9 +98,9 @@ END
 GO
 
 --成绩划档方式
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_CFXT_01_A05_ZYWJPL]') AND type in (N'U'))
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_CFXT_01_A05_CJHDFS]') AND type in (N'U'))
 BEGIN
-CREATE TABLE [dbo].[EDU_CFXT_01_A05_ZYWJPL](
+CREATE TABLE [dbo].[EDU_CFXT_01_A05_CJHDFS](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[KSID]  int  NOT NULL,--考试ID
@@ -108,7 +108,7 @@ CREATE TABLE [dbo].[EDU_CFXT_01_A05_ZYWJPL](
 	[PLRID]  int  NOT NULL,--划档最大值
 	[PLSJ]  int  NOT NULL,--划档最小值
 	[JG]  nvarchar(50)  NOT NULL,--结果
-CONSTRAINT [PK_EDU_CFXT_01_A05_ZYWJPL] PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_EDU_CFXT_01_A05_CJHDFS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -175,19 +175,19 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参考学生ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A04_KSCJ', @level2type=N'COLUMN',@level2name=N'CJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩划档方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩划档方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'ID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'ID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'KSID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考试ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'KSID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划档类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'PL'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划档类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'PL'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划档最大值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'PLRID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划档最大值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'PLRID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划档最小值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'PLSJ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划档最小值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'PLSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_ZYWJPL', @level2type=N'COLUMN',@level2name=N'JG'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_CFXT_01_A05_CJHDFS', @level2type=N'COLUMN',@level2name=N'JG'
 GO

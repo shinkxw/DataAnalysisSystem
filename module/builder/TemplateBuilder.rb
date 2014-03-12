@@ -46,8 +46,6 @@ class TemplateBuilder
     str << "namespace HanRuEdu.#{@app_name}.Controllers.#{@app_name}\n"
     str << "{\n#{@tab.l}public class #{table.name.split("_")[-1]}Controller : #{@app_name}Controller\n#{@tab.t}"
     str << make_controller_index_jsonstr(table)
-    str << make_controller_add(table)
-    str << make_controller_upd(table)
     str << make_controller_InitViewBag(table)
     str << make_controller_index(table)
     str << make_controller_create(table)
@@ -65,31 +63,6 @@ class TemplateBuilder
     str << "{\n#{@tab.l}//model = model.Where(e => e.#{table.get_first_field_name}.Contains(searchkey));\n"
     str << "#{@tab.s}}\n#{@tab.t}model = DataSorting(model, sort, order);\n#{@tab.t}"
     str << %(return \"{\\"total\\":" + model.Count() + ",\\"rows\\":" + HanRuEdu.Utils.JsonHelp.JsonSerialize(model.Skip(page * rows - rows).Take(rows).ToList()) + "}";\n)
-    str << "#{@tab.s}}\n\n"
-  end
-  def make_controller_add(table)
-    str = "#{@tab.t}public void Add#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
-    str << "{\n#{@tab.l}"
-    str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
-    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n"
-    table.each_field do |field|
-      next if %w(ID SCHOOLID).include? field.name
-      str << "#{@tab.t}//#{table.lname_dc}.#{field.name} = ;//#{field.explanation}#{get_relation(field)}\n"
-    end
-    str << "#{@tab.t}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}"
-    str << "#{table.db_name}.SaveChanges();\n"
-    str << "#{@tab.s}}\n\n"
-  end
-  def make_controller_upd(table)
-    str = "#{@tab.t}public void Upd#{table.lname.capitalize}(#{table.name} #{table.lname_dc})\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
-    str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}//if (#{table.lname_dc}_model == null) throw new Exception(\"记录不存在\");\n"
-    table.each_field do |field|
-      next if %w(ID SCHOOLID).include? field.name
-      str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{get_relation(field)}\n"
-    end
-    str << "#{@tab.t}\n#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
-    str << "#{@tab.t}#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.s}}\n\n"
   end
   def make_controller_InitViewBag(table)
@@ -111,7 +84,16 @@ class TemplateBuilder
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}//if (#{table.lname_dc} == "") throw new Exception(\"不能为空！\");\n#{@tab.t}"
     str << "if (ModelState.IsValid)\n#{@tab.t}"
-    str << "{\n#{@tab.l}Add#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
+    str << "{\n#{@tab.l}"
+    str << "#{@tab.t}#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
+    str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n"
+    table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
+      str << "#{@tab.t}//#{table.lname_dc}.#{field.name} = ;//#{field.explanation}#{get_relation(field)}\n"
+    end
+    str << "#{@tab.t}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}"
+    str << "#{table.db_name}.SaveChanges();\n"
+    str << "#{@tab.t}return RedirectToAction(\"Index\");\n"
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
     str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
@@ -129,7 +111,15 @@ class TemplateBuilder
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}//if (#{table.lname_dc} == "") throw new Exception(\"不能为空！\");\n#{@tab.t}"
     str << "if (ModelState.IsValid)\n#{@tab.t}"
-    str << "{\n#{@tab.l}Upd#{table.lname.capitalize}(#{table.lname_dc});\n#{@tab.t}return RedirectToAction(\"Index\");\n"
+    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}\n"
+    str << "#{@tab.t}    && e.SCHOOLID == CurUser.ele01Usr.SCHOOLID);\n#{@tab.t}//if (#{table.lname_dc}_model == null) throw new Exception(\"记录不存在\");\n"
+    table.each_field do |field|
+      next if %w(ID SCHOOLID).include? field.name
+      str << "#{@tab.t}#{table.lname_dc}_model.#{field.name} = #{table.lname_dc}.#{field.name};//#{field.explanation}#{get_relation(field)}\n"
+    end
+    str << "#{@tab.t}\n#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
+    str << "#{@tab.t}#{table.db_name}.SaveChanges();\n"
+    str << "#{@tab.t}return RedirectToAction(\"Index\");\n"
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
     str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
