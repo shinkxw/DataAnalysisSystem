@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,a.[TJSJ]--添加时间
       ,a.[TJJSID]--添加教师ID
+      ,a.[BJMC]--班级名称
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名

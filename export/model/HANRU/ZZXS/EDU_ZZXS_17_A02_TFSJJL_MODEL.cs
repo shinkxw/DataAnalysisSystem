@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_17_A02_TFSJJL()
         {
             TJSJ = DateTime.Now;
+            BJMC = "";
         }
         public class EDU_ZZXS_17_A02_TFSJJL_metadata
         {
@@ -46,6 +47,13 @@ namespace HanRuEdu.LDAL
 
             [Display(Name = "添加时间")]
             public DateTime TJSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJMC { get; set; }
 
 
         }

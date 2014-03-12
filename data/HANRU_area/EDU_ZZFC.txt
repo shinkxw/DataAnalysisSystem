@@ -1,0 +1,200 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_ZZFC" provider="reallocate_namespace">
+    <table name="EDU_ZZFC_02_01_JZWJBSJ" exp="建筑物基本数据类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="JZWH" exp="建筑物号" type="nvarchar(6)" null="F" p="F" remark="学校自编" />
+            <name="JZWMC" exp="建筑物名称" type="nvarchar(30)" null="F" p="F" remark="指建筑物的汉字名称" />
+            <name="SYZKM" exp="使用状况码" type="nvarchar(1)" null="F" p="F" remark="引用自JCBX020204 SYZKM 使用状况码" />
+            <name="FWCQ" exp="房屋产权" type="nvarchar(1)" null="F" p="F" remark="引用自JCBX020203 FWCQM 房屋产权码" />
+            <name="XQH" exp="校区号" type="nvarchar(2)" null="T" p="F" remark="学校自编" />
+            <name="JZWFLM" exp="建筑物分类码" type="nvarchar(1)" null="F" p="F" />
+            <name="JZWJGM" exp="建筑物结构码" type="nvarchar(1)" null="F" p="F" />
+            <name="JZWCS" exp="建筑物层数" type="decimal(2, 0)" null="F" p="F" remark="单位：层 NULL" />
+            <name="JCNY" exp="建成年月" type="nvarchar(6)" null="T" p="F" remark="格式：YYYYMM，如：200604表示2006年4月 NULL" />
+            <name="JZWTZZE" exp="建筑物投资总额" type="money" null="T" p="F" remark="单位：元" />
+            <name="JFLYM" exp="经费来源码" type="nvarchar(1)" null="T" p="F" remark="引用自JCBX020210 JFLYM 经费来源码" />
+            <name="ZJZMJ" exp="总建筑面积" type="decimal(10, 2)" null="F" p="F" remark="单位：平方米 NULL" />
+            <name="ZSYMJ" exp="总使用面积" type="decimal(10, 2)" null="F" p="F" remark="单位：平方米 NULL" />
+            <name="KZSFLDM" exp="抗震设防烈度码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001KZSFLD抗震设防烈度代码 " />
+            <name="KZSFBZM" exp="抗震设防标准码" type="nvarchar(1)" null="F" p="F" remark="引用自JCBX020214 KZSFBZM 抗震设防标准码" />
+            <name="JZWDZ" exp="建筑物地址" type="nvarchar(180)" null="F" p="F" remark="指包括省（自治区、直辖市）/地（市、州）/县（区、旗）/乡（镇）/街（村）/门牌号的详细地址" />
+            <name="JZWZKM" exp="建筑物状况码" type="nvarchar(2)" null="F" p="F" remark="引用自JCBX020216 JZWZKM 建筑物状况码" />
+            <name="JZWTP" exp="建筑物图片" type="nvarchar(200)" null="T" p="F" remark="指建筑物的照片" />
+            <name="JZWPMT" exp="建筑物平面图" type="nvarchar(200)" null="T" p="F" remark="指建筑物的建筑平面图" />
+            <name="XXDWCCM" exp="学校单位层次码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001XXDWCC学校单位层次代码 " />
+            <name="JZWWZZK" exp="建筑物位置状况" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 解释/举例：1校内0校外 " />
+            <name="GHSPWH" exp="规划审批文号" type="nvarchar(24)" null="F" p="F" />
+            <name="ZHFZNL" exp="综合防灾能力" type="nvarchar(60)" null="T" p="F" />
+            <name="GHSYNX" exp="规划使用年限" type="decimal(3, 0)" null="T" p="F" />
+            <name="SFYYJBXCS" exp="是否有预警避险措施" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="SFKYYYJBNCS" exp="是否可用于应急避难场所" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="CQZH" exp="产权证号" type="nvarchar(20)" null="F" p="F" />
+            <name="JZWYTM" exp="建筑物用途码" type="nvarchar(2)" null="T" p="F" remark="值空间：JY/T1001JZWYT建筑物用途代码 " />
+            <name="JZWZGD" exp="建筑物总高度" type="decimal(3, 0)" null="T" p="F" remark="解释/举例：单位：米 " />
+            <name="WFJDBM" exp="危房鉴定部门" type="nvarchar(60)" null="T" p="F" remark="引用自JCTB010302 DWMC 单位名称 C 60 NULL NULL NULL NULL" />
+            <name="WFJDWH" exp="危房鉴定文号" type="nvarchar(20)" null="T" p="F" />
+            <name="WFJDRQ" exp="危房鉴定日期" type="nvarchar(8)" null="T" p="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="GNFSM" exp="供暖方式码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001GNFS供暖方式代码 " />
+            <name="JZWJCXSM" exp="建筑物基础形式码" type="nvarchar(2)" null="T" p="F" remark="值空间：JY/T1001JZWJCXS建筑物基础形式代码 " />
+            <name="JZWPMXSM" exp="建筑物平面形式码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001JZWPMXS建筑物平面形式代码 " />
+            <name="JZWLBXSM" exp="建筑物楼板形式码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001JZWLBXS建筑物楼板形式代码 " />
+            <name="SFYGZZ" exp="是否有构造柱" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="QL" exp="圈梁" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="ZJAQGZWCRQ" exp="最近安全改造完成日期" type="nvarchar(8)" null="T" p="F" remark="格式：YYYYMMDD，如：20060412表示2006年4月12日 NULL" />
+            <name="ZJAQGZHYJSYNX" exp="最近安全改造后预计使用年限" type="decimal(2, 0)" null="T" p="F" remark="单位：年 " />
+            <name="ZXLXM" exp="专项类型" type="nvarchar(1)" null="T" p="F" remark="解释/举例：1中央专项项目0非中央专项项目 " />
+            <name="ZYZXTZBZMCM" exp="中央专项投资补助名称码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001ZYZXTZBZMC中央专项投资补助名称代码 " />
+            <name="WWJZDJM" exp="文物建筑等级码" type="nvarchar(1)" null="T" p="F" remark="值空间：JY/T1001WWJZDJ文物建筑等级代码 " />
+            <name="JXJFZYF" exp="教学及辅助用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：该数据项为教室、实验室、图书室、微机室、语音室、体育活动室及其他教辅用房的总和，单位：平方米 " />
+            <name="QZJS" exp="其中教室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZSYS" exp="其中实验室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZTSS" exp="其中图书室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZWJS" exp="其中微机室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZYYS" exp="其中语音室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZTYHDS" exp="其中体育活动室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZQTJFYF" exp="其中其他教辅用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="SHYF" exp="生活用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：该数据项为学生宿舍、食堂、厕所、锅炉房（开水房）、浴室、教工宿舍及其他生活用房的总和，单位：平方米 " />
+            <name="QZXSSS" exp="其中学生宿舍" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZST" exp="其中食堂" type="decimal(8, 0)" null="F" p="F" remark="单位：平方米 " />
+            <name="QZCS" exp="其中厕所" type="decimal(8, 0)" null="F" p="F" remark="单位：平方米 " />
+            <name="QZGLF" exp="其中锅炉房(开水房)" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZYS" exp="其中浴室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZJGSS" exp="其中教工宿舍" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZQTSHYF" exp="其中其他生活用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="XZBGYF" exp="行政办公用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：该数据项为教职工办公室、卫生保健室及其他行政办公用房的总和，单位：平方米 " />
+            <name="QZJSBGS" exp="其中教职工办公室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZWSBJS" exp="其中卫生保健室" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QZQTXZBGYF" exp="其中其他行政办公用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：单位：平方米 " />
+            <name="QTYF" exp="其他用房" type="decimal(8, 0)" null="F" p="F" remark="解释/举例：非教学及辅助用房、生活用房、行政办公用房的用房总和，单位：平方米 " />
+            <name="GLY" exp="管理员" type="nvarchar(20)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_08_01_XSSS" exp="学生宿舍数据类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
+            <name="SSLBM" exp="宿舍楼编号" type="nvarchar(6)" null="F" p="F" remark="宿舍楼编号 编号：ZZFC080001 引用自JCBX020201 JZWH 建筑物号 C 6 M NULL 学校自编 NULL" />
+            <name="FJBM" exp="房间编号" type="nvarchar(10)" null="F" p="F" remark="房间编号 编号：ZZFC080002 " />
+            <name="RZXB" exp="入住性别" type="nvarchar(1)" null="F" p="F" remark="入住性别 编号：ZZFC080003 值空间：GB/T2261.1 解释/举例：1男性2女性 " />
+            <name="SFKY" exp="是否可用" type="nvarchar(1)" null="F" p="F" remark="是否可用 编号：ZZFC080004 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1可用0不可用 " />
+            <name="KZRS" exp="可住人数" type="decimal(2, 0)" null="F" p="F" remark="可住人数 编号：ZZFC080005 " />
+            <name="WLDK" exp="网络端口" type="nvarchar(20)" null="T" p="F" remark="网络端口 编号：ZZFC080006 " />
+            <name="AZDSJ" exp="安装电视机" type="nvarchar(1)" null="T" p="F" remark="安装电视机 编号：ZZFC080007 值空间：JY/T1001SFBZ是否标志代码 解释/举例：1已安装0未安装 " />
+            <name="DHDK" exp="电话端口" type="nvarchar(20)" null="T" p="F" remark="电话端口 编号：ZZFC080008 " />
+            <name="DHHM" exp="电话号码" type="nvarchar(20)" null="T" p="F" remark="电话号码 编号：ZZFC080009 " />
+            <name="SBDS" exp="水表底数" type="decimal(10, 0)" null="T" p="F" remark="水表底数 编号：ZZFC080010 " />
+            <name="DBDS" exp="电表底数" type="decimal(10, 0)" null="T" p="F" remark="电表底数 编号：ZZFC080011 " />
+            <name="SSBZ" exp="宿舍备注" type="text" null="T" p="F" remark="宿舍备注 编号：ZZFC080012 " />
+            <name="SZLZ" exp="所在楼层" type="int" null="F" p="F" />
+            <name="SSM" exp="宿舍名" type="nvarchar(128)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_08_A01_SSCW" exp="宿舍床位表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
+            <name="SSID" exp="宿舍ID" type="int" null="F" p="F" />
+            <name="CWM" exp="床位名" type="nvarchar(128)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="SFRZ" exp="是否入住" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_08_A02_XSZSJL" exp="学生住宿记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
+            <name="SSID" exp="宿舍ID" type="int" null="F" p="F" />
+            <name="CWID" exp="床位ID" type="int" null="F" p="F" />
+            <name="ZYXMC" exp="专业系名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ZYMC" exp="专业名称" type="nvarchar(50)" null="F" p="F" />
+            <name="NJMC" exp="年级名称" type="nvarchar(10)" null="F" p="F" />
+            <name="BJMC" exp="班级名称" type="nvarchar(50)" null="F" p="F" />
+            <name="XSXM" exp="学生姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="RZSJ" exp="入住时间" type="datetime" null="F" p="F" />
+            <name="SFTS" exp="是否退宿" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_08_A03_ZWHCY" exp="住委会成员表">
+        <field_area>
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="ID" exp="成员ID" type="int" null="F" p="T" />
+            <name="YHID" exp="用户ID" type="int" null="F" p="F" />
+            <name="YHLX" exp="用户类型" type="int" null="F" p="F" />
+            <name="CYXM" exp="成员姓名" type="nvarchar(128)" null="T" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="ZWMC" exp="职位名称" type="nvarchar(128)" null="F" p="F" />
+            <name="GZNR" exp="工作内容" type="nvarchar(500)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A01_SSKHXM" exp="宿舍考核项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LX" exp="类型" type="int" null="F" p="F" />
+            <name="XMMC" exp="项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SFYXPB" exp="是否影响评比" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A02_SSKHJG" exp="宿舍考核结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="QSID" exp="寝室ID" type="int" null="F" p="F" />
+            <name="KHXMID" exp="考核项目ID" type="int" null="F" p="F" />
+            <name="KHSJ" exp="考核时间" type="datetime" null="F" p="F" />
+            <name="KHFZ" exp="考核分值" type="decimal(4, 1)" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A03_BZRXQ" exp="班主任下寝室表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="XQSJ" exp="下寝时间" type="datetime" null="F" p="F" />
+            <name="XQCS" exp="下寝次数" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A04_YDKHPB" exp="月度考核评比表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YF" exp="月份" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="QSID" exp="寝室ID" type="int" null="F" p="F" />
+            <name="PBJG" exp="评比结果" type="nvarchar(10)" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A05_PBXXB" exp="评比选项表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XXMC" exp="选项名称" type="nvarchar(50)" null="F" p="F" />
+            <name="XXLX" exp="选项类型" type="int" null="F" p="F" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZFC_10_A06_YDKHDD" exp="月度考核等第表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YF" exp="月份" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="DD" exp="等第" type="nvarchar(10)" null="F" p="F" />
+            <name="PBFZ" exp="评比分值" type="int" null="F" p="F" />
+            <name="TJJSID" exp="添加教师ID" type="int" null="F" p="F" />
+            <name="SSLID" exp="宿舍楼ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+</namespace>

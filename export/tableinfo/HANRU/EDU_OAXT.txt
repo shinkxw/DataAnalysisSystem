@@ -262,7 +262,7 @@ EDU_OAXT_15_A04_ZCRK  资产入库表
   SCHOOLID      学校                    int            主键        学校配置表
   TypeID        资产目录表ID            int            非主        资产目录表
   ClassID       资产大类表ID            int            非主        资产大类表
-  Name          资产名称                nvarchar(200)  非主
+  Name          校产名称                nvarchar(200)  非主
   Info          资产规格                nvarchar(200)  非主
   Productdate   出厂时间                datetime       非主
   Price         单价                    decimal(10, 2) 非主

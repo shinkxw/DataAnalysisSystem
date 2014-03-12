@@ -6,7 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[TypeID]--资产目录表ID
       ,a.[ClassID]--资产大类表ID
-      ,a.[Name]--资产名称
+      ,a.[Name]--校产名称
       ,a.[Info]--资产规格
       ,a.[Productdate]--出厂时间
       ,a.[Price]--单价

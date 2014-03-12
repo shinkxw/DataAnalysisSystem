@@ -806,7 +806,7 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A04_ZCRK](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[TypeID]  int  NOT NULL,--资产目录表ID
 	[ClassID]  int  NOT NULL,--资产大类表ID
-	[Name]  nvarchar(200)  NOT NULL,--资产名称
+	[Name]  nvarchar(200)  NOT NULL,--校产名称
 	[Info]  nvarchar(200)  NOT NULL,--资产规格
 	[Productdate]  datetime  NOT NULL,--出厂时间
 	[Price]  decimal(10, 2)  NOT NULL,--单价
@@ -2279,7 +2279,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产目录表ID' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产大类表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A04_ZCRK', @level2type=N'COLUMN',@level2name=N'ClassID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A04_ZCRK', @level2type=N'COLUMN',@level2name=N'Name'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校产名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A04_ZCRK', @level2type=N'COLUMN',@level2name=N'Name'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产规格' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A04_ZCRK', @level2type=N'COLUMN',@level2name=N'Info'
 GO

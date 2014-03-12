@@ -53,6 +53,11 @@ namespace HanRuEdu.LDAL
             public Int32 TJRID { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉçÍÅ")]
+            public Int32 STID { get; set; }
+
+
         }
     }
 }

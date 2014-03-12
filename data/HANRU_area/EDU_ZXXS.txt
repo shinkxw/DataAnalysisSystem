@@ -1,0 +1,138 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_ZXXS" provider="reallocate_namespace">
+    <table name="EDU_ZXXS_01_01_XSXX" exp="学生基本数据子类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XH" exp="学号" type="nvarchar(20)" null="F" p="F" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" />
+            <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="T" p="F" />
+            <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" remark="GB/T2261.1" />
+            <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" remark="如：20060412表示2006年4月12日" />
+            <name="CSDM" exp="出生地码" type="nvarchar(6)" null="F" p="F" remark="GB/T2260" />
+            <name="JG" exp="籍贯" type="nvarchar(20)" null="T" p="F" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="T" p="F" remark="GB/T3304 取用2位数字代码，如：01汉族，02蒙古族" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="F" p="F" remark="GB/T2659 采用三字母代码，如：CHN中国，USA美国" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="T" p="F" remark="JY/T1001SFZJLX身份证件类型代码" />
+            <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="T" p="F" />
+            <name="HYZKM" exp="婚姻状况码" type="nvarchar(2)" null="T" p="F" remark="中小学不用填写" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" remark="可采用简称，如：01中共党员，04民革会员 NULL" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="F" p="F" remark="采用1位数字代码 NULL" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" />
+            <name="ZP" exp="照片" type="nvarchar(200)" null="T" p="F" />
+            <name="SFZJYXQ" exp="身份证件有效期" type="nvarchar(17)" null="T" p="F" remark="格式：YYYYMMDD-YYYYMMDD" />
+            <name="DSZYBZ" exp="独生子女标志" type="nvarchar(1)" null="T" p="F" remark="解释/举例：1是独生子女0不是独生子女" />
+            <name="RXNY" exp="入学年月" type="nvarchar(6)" null="F" p="F" />
+            <name="NJ" exp="年级" type="nvarchar(10)" null="F" p="F" />
+            <name="BH" exp="班号" type="nvarchar(10)" null="F" p="F" />
+            <name="XSLBM" exp="学生类别码" type="nvarchar(5)" null="F" p="F" remark="值空间：JY/T1001XSLB学生类别代码 " />
+            <name="XZZ" exp="现住址" type="nvarchar(180)" null="T" p="F" remark="解释/举例：指本人的常住地址" />
+            <name="HKSZD" exp="户口所在地" type="nvarchar(180)" null="T" p="F" remark="解释/举例：指户口所在地址" />
+            <name="HKXZM" exp="户口性质码" type="nvarchar(1)" null="T" p="F" remark="值空间：GA324.1 解释/举例：指公安户籍部门确认的农业户口或非农业户口 " />
+            <name="SFLDRK" exp="是否流动人口" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="TC" exp="特长" type="text" null="T" p="F" remark="特长 编号：ZXXS010108 解释/举例：指某一方面特殊的能力或技能 " />
+            <name="LXDH" exp="联系电话" type="nvarchar(30)" null="T" p="F" remark="本人的联系电话号码" />
+            <name="TXDZ" exp="通信地址" type="nvarchar(180)" null="T" p="F" />
+            <name="YZBM" exp="邮政编码" type="nvarchar(6)" null="T" p="F" />
+            <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" remark="学生在互联网上的电子邮件信箱地址" />
+            <name="ZYDZ" exp="主页地址" type="nvarchar(60)" null="T" p="F" remark="学生在互联网上的个人主页地址" />
+            <name="XJH" exp="学籍号" type="nvarchar(30)" null="T" p="F" remark="全国唯一的学籍号" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_01_06_XSJTCY" exp="学生家庭成员数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="F" />
+            <name="GXM" exp="关系码" type="nvarchar(2)" null="F" p="F" remark="值空间：GB/T4761 解释/举例：采用两位代码 " />
+            <name="CYXM" exp="成员姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="CSNY" exp="出生年月" type="nvarchar(6)" null="T" p="F" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="T" p="F" remark="引用自JCTB020109 MZM 取用2位数字代码" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" remark="GB/T2659 采用三字母代码" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" remark="GB/T2261.3 采用1位数字代码" />
+            <name="CYGZDW" exp="成员工作单位" type="nvarchar(60)" null="T" p="F" />
+            <name="CYM" exp="从业码" type="nvarchar(2)" null="T" p="F" remark="GB/T2261.4" />
+            <name="ZYJSZWM" exp="专业技术职务码" type="nvarchar(3)" null="T" p="F" remark="值空间：GB/T8561 " />
+            <name="ZWJBM" exp="职务级别码" type="nvarchar(3)" null="T" p="F" remark="值空间：GB/T12407" />
+            <name="DH" exp="电话" type="nvarchar(30)" null="T" p="F" />
+            <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" />
+            <name="SFJHR" exp="是否监护人" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="T" p="F" remark="值空间：GB/T2261.1" />
+            <name="XLM" exp="学历码" type="nvarchar(2)" null="F" p="F" remark="值空间：参见GB/T4658" />
+            <name="LXDZ" exp="联系地址" type="nvarchar(180)" null="T" p="F" />
+            <name="SJHM" exp="手机号码" type="nvarchar(30)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_02_A01_XSJTXX" exp="学生家庭信息数据表">
+        <field_area>
+            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="JTZZ" exp="家庭住址" type="nvarchar(180)" null="F" p="F" />
+            <name="JTYZBM" exp="家庭邮政编码" type="nvarchar(6)" null="F" p="F" />
+            <name="JTDH" exp="家庭电话" type="nvarchar(30)" null="T" p="F" />
+            <name="JTLXR" exp="家庭联系人" type="nvarchar(36)" null="F" p="F" />
+            <name="JTDZXX" exp="家庭电子信箱" type="nvarchar(40)" null="T" p="F" />
+            <name="JTRK" exp="家庭人口" type="int" null="T" p="F" />
+            <name="JTZYSRLY" exp="家庭主要收入来源" type="nvarchar(180)" null="T" p="F" />
+            <name="JTYSRJE" exp="家庭月收入金额" type="money" null="T" p="F" />
+            <name="JTNSRJE" exp="家庭年收入金额" type="money" null="T" p="F" />
+            <name="LJZJHCZ" exp="离家最近火车站" type="nvarchar(30)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_02_06_ZXKSCJ" exp="在校考试成绩数据子类表">
+        <field_area>
+            <name="ID" exp="考试成绩表" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XN" exp="学年（度）" type="nvarchar(9)" null="F" p="F" remark="格式：YYYY-YYYY，如：2001-2002 NULL" />
+            <name="XQM" exp="学期码" type="nvarchar(1)" null="F" p="F" remark="JY/T1001XQ学期代码 NULL NULL" />
+            <name="KSRQ" exp="考试日期" type="nvarchar(8)" null="F" p="F" />
+            <name="KCH" exp="课程号" type="nvarchar(10)" null="F" p="F" />
+            <name="RKJSID" exp="任课教师ID" type="int" null="F" p="F" />
+            <name="CJLRRID" exp="成绩录入人ID" type="int" null="F" p="F" />
+            <name="KSFSM" exp="考试方式码" type="nvarchar(1)" null="T" p="F" />
+            <name="KSXZM" exp="考试性质码" type="nvarchar(2)" null="T" p="F" />
+            <name="KSXSM" exp="考试形式码" type="nvarchar(1)" null="T" p="F" />
+            <name="FSLKSCJ" exp="分数类考试成绩" type="decimal(5, 1)" null="T" p="F" />
+            <name="DJLKSCJ" exp="等级类考试成绩" type="nvarchar(1)" null="T" p="F" />
+            <name="KCCJ" exp="课程成绩" type="decimal(5, 1)" null="T" p="F" />
+            <name="KCDJCJM" exp="课程等级成绩码" type="nvarchar(1)" null="T" p="F" />
+            <name="RKJSGH" exp="任课教师工号" type="nvarchar(20)" null="T" p="F" />
+            <name="CJLRRH" exp="成绩录入人号" type="nvarchar(20)" null="T" p="F" />
+            <name="CJLRRQ" exp="成绩录入日期" type="nvarchar(8)" null="T" p="F" remark="格式：YYYYMMDD" />
+            <name="CJLRSJ" exp="成绩录入时间" type="nvarchar(6)" null="T" p="F" remark="格式：hhmmss" />
+            <name="XQID" exp="学期" type="int" null="F" p="F" />
+            <name="XNID" exp="学年" type="int" null="F" p="F" />
+            <name="NJID" exp="年级" type="nvarchar(10)" null="F" p="F" />
+            <name="BJID" exp="班级" type="nvarchar(10)" null="F" p="F" />
+            <name="SSKSID" exp="所属考试ID" type="int" null="F" p="F" />
+            <name="SSKSKMID" exp="所属考试科目ID" type="int" null="F" p="F" />
+            <name="SJID" exp="试卷ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_07_A02_XJYD" exp="学籍异动数据子类表">
+        <field_area>
+            <name="ID" exp="学籍异动表编号" type="int" null="F" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="YDLBM" exp="异动类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="YDRQ" exp="异动日期" type="nvarchar(8)" null="F" p="F" />
+            <name="YDYYM" exp="异动原因码" type="nvarchar(2)" null="F" p="F" />
+            <name="SPRQ" exp="审批日期" type="nvarchar(8)" null="T" p="F" />
+            <name="SPWH" exp="审批文号" type="nvarchar(24)" null="T" p="F" />
+            <name="JBRID" exp="经办人ID" type="int" null="T" p="F" />
+            <name="JBRGH" exp="经办人工号" type="nvarchar(20)" null="T" p="F" />
+            <name="YDLYXXM" exp="异动来源学校码" type="nvarchar(10)" null="T" p="F" />
+            <name="YDQXXXM" exp="异动去向学校码" type="nvarchar(10)" null="T" p="F" />
+            <name="YDSM" exp="异动说明" type="text" null="T" p="F" />
+            <name="YBH" exp="原班号" type="nvarchar(10)" null="F" p="F" />
+            <name="YNJ" exp="原年级" type="nvarchar(10)" null="F" p="F" />
+            <name="XBH" exp="现班号" type="nvarchar(10)" null="F" p="F" />
+            <name="XNJ" exp="现年级" type="nvarchar(10)" null="F" p="F" />
+        </field_area>
+    </table>
+</namespace>

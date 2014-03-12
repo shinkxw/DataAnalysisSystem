@@ -40,7 +40,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "资产名称")]
+            [Display(Name = "校产名称")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String Name { get; set; }

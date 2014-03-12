@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             HBNR = "";
             BZ = "";
             TJSJ = DateTime.Now;
+            BJMC = "";
         }
         public class EDU_ZZXS_17_A04_TYSXHB_metadata
         {
@@ -54,6 +55,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "添加教师")]
             public Int32 TJJSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJMC { get; set; }
 
 
         }

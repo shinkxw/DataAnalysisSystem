@@ -3352,7 +3352,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[TypeID]--资产目录表ID
       ,a.[ClassID]--资产大类表ID
-      ,a.[Name]--资产名称
+      ,a.[Name]--校产名称
       ,a.[Info]--资产规格
       ,a.[Productdate]--出厂时间
       ,a.[Price]--单价
@@ -22808,6 +22808,7 @@ SELECT a.[ID]--编号
       ,a.[FS]--分数
       ,a.[TJSJ]--添加时间
       ,a.[TJRID]--添加人ID
+      ,a.[STID]--社团ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -22901,12 +22902,27 @@ SELECT a.[ID]--编号
       ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,g.SCHOOLID as g_STJBSJ_SCHOOLID--社团基本数据子类表 学校
+      ,g.STMC as g_STJBSJ_STMC--社团基本数据子类表 社团名称
+      ,g.STBH as g_STJBSJ_STBH--社团基本数据子类表 社团编号
+      ,g.CLRQ as g_STJBSJ_CLRQ--社团基本数据子类表 成立日期
+      ,g.CLMD as g_STJBSJ_CLMD--社团基本数据子类表 成立目的
+      ,g.CSR as g_STJBSJ_CSR--社团基本数据子类表 创始人
+      ,g.PZBM as g_STJBSJ_PZBM--社团基本数据子类表 批准部门
+      ,g.STXZ as g_STJBSJ_STXZ--社团基本数据子类表 社团性质
+      ,g.ZYHDXS as g_STJBSJ_ZYHDXS--社团基本数据子类表 主要活动形式
+      ,g.RS as g_STJBSJ_RS--社团基本数据子类表 人数
+      ,g.DQFZR as g_STJBSJ_DQFZR--社团基本数据子类表 当前负责人
+      ,g.FZRDH as g_STJBSJ_FZRDH--社团基本数据子类表 负责人电话
+      ,g.ZDLS as g_STJBSJ_ZDLS--社团基本数据子类表 指导老师
+      ,g.ZDLSDH as g_STJBSJ_ZDLSDH--社团基本数据子类表 指导老师电话
 
 FROM dbo.EDU_ZZXS_12_A04_XSSTCJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_12_A02_STCY AS d ON a.STCYID = d.ID /*社团成员表ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_12_A03_STCJLX AS e ON a.CJLXID = e.ID /*成绩类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.TJRID = f.ID /*添加人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_12_A01_STJBSJ AS g ON a.STID = g.ID /*社团ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [db] ON d.DQZT = [db].DM /*当前状态*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [fb] ON f.SFZJLXM = [fb].DM /*身份证件类型码*/ LEFT OUTER JOIN
@@ -23845,6 +23861,7 @@ SELECT a.[ID]--编号
       ,a.[TYXXID]--团员信息表ID
       ,a.[SJJE]--收缴金额
       ,a.[TJSJ]--添加时间
+      ,a.[BJMC]--班级名称
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -23946,6 +23963,7 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,a.[TJSJ]--添加时间
       ,a.[TJJSID]--添加教师ID
+      ,a.[BJMC]--班级名称
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名
@@ -24124,6 +24142,7 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,a.[TJSJ]--添加时间
       ,a.[TJJSID]--添加教师ID
+      ,a.[BJMC]--班级名称
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名
