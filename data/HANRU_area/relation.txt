@@ -1,3 +1,18 @@
+<EDU_CFXT_01_A01_KM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_CFXT_01_A02_KS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_CFXT_01_A03_CKXS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KSID           EDU_CFXT_01_A02_KS                 ID
+<EDU_CFXT_01_A04_KSCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KSID           EDU_CFXT_01_A02_KS                 ID
+  KMID           EDU_CFXT_01_A01_KM                 ID
+  CKXSID         EDU_CFXT_01_A03_CKXS               ID
+<EDU_CFXT_01_A05_ZYWJPL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KSID           EDU_CFXT_01_A02_KS                 ID
 <EDU_ELE_01_USER
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
