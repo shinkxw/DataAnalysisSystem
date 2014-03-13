@@ -190,6 +190,7 @@
             <name="BTZRID" exp="被通知人ID" type="nvarchar(20)" null="F" p="F" />
             <name="YDRQ" exp="阅读日期" type="datetime" null="F" p="F" />
             <name="SFYD" exp="是否已阅读" type="nvarchar(1)" null="F" p="F" />
+            <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_10_A03_GG" exp="公告数据表">
@@ -646,6 +647,14 @@
             <name="HYJYNR" exp="会议纪要内容" type="text" null="F" p="F" />
             <name="JLRID" exp="记录人" type="nvarchar(20)" null="F" p="F" />
             <name="JLSJ" exp="记录时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_22_A05_HYBZLX" exp="会议备注类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="MC" exp="名称" type="nvarchar(100)" null="F" p="F" />
+            <name="LX" exp="类型" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_23_A01_GWSQ" exp="公文申请表">

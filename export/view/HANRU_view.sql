@@ -1231,7 +1231,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_CFXT_01_A04_KSCJ AS a LEFT OUTER JOIN
       dbo.EDU_CFXT_01_A02_KS AS c ON a.KSID = c.ID /*考试ID*/ LEFT OUTER JOIN
       dbo.EDU_CFXT_01_A01_KM AS d ON a.KMID = d.ID /*科目ID*/ LEFT OUTER JOIN
-      dbo.EDU_CFXT_01_A03_CKXS AS e ON a.CKXSID = e.ID /*参考学生ID*/
+      dbo.EDU_CFXT_01_A03_CKXS AS e ON a.CKXSID = e.ID /*参考学生ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
 GO
 
 --成绩划档方式
@@ -3131,6 +3131,7 @@ SELECT a.[ID]--通知阅读记录ID
       ,a.[BTZRID]--被通知人ID
       ,a.[YDRQ]--阅读日期
       ,a.[SFYD]--是否已阅读
+      ,a.[SCZT]--删除状态
       ,c.SCHOOLID as c_TZ_SCHOOLID--通知数据表 学校ID
       ,c.FSRID as c_TZ_FSRID--通知数据表 发送人ID
       ,c.FSRLB as c_TZ_FSRLB--通知数据表 发送人类别

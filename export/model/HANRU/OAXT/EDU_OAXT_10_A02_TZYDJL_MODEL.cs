@@ -49,6 +49,11 @@ namespace HanRuEdu.LDAL
             public String SFYD { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "É¾³ý×´Ì¬")]
+            public Int32 SCZT { get; set; }
+
+
         }
     }
 }

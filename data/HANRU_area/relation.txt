@@ -301,6 +301,8 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   HYID           EDU_OAXT_22_A02_HYSQ               ID
   JLRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_22_A05_HYBZLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_23_A01_GWSQ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LCSLID         EDU_OAXT_20_A05_LCSL               ID

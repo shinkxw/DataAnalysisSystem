@@ -21,8 +21,8 @@
     </table>
     <table name="EDU_CFXT_01_A03_CKXS" exp="参考学生信息">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="KSID" exp="考试ID" type="int" null="F" p="F" />
             <name="XM" exp="姓名" type="nvarchar(20)" null="F" p="F" />
             <name="ZKZH" exp="准考证号" type="nvarchar(50)" null="F" p="F" />

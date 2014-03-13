@@ -14,8 +14,8 @@ EDU_CFXT_01_A02_KS  考试信息
   CFZT          查分状态                int            非主
 
 EDU_CFXT_01_A03_CKXS  参考学生信息
-  ID            编号                    int            自增主键
-  SCHOOLID      学校                    int            非主        学校配置表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
   KSID          考试ID                  int            非主        考试信息
   XM            姓名                    nvarchar(20)   非主
   ZKZH          准考证号                nvarchar(50)   非主

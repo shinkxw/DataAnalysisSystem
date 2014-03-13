@@ -63,7 +63,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_CFXT_01_A03_CKXS]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_CFXT_01_A03_CKXS](
-	[ID]  int  identity,--编号
+	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[KSID]  int  NOT NULL,--考试ID
 	[XM]  nvarchar(20)  NOT NULL,--姓名
@@ -73,7 +73,8 @@ CREATE TABLE [dbo].[EDU_CFXT_01_A03_CKXS](
 	[JG]  nvarchar(50)  NOT NULL,--结果
 CONSTRAINT [PK_EDU_CFXT_01_A03_CKXS] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
