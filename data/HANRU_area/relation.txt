@@ -480,6 +480,47 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
   ZCID           EDU_ZXDY_04_A06_ZZZC               ID
+<EDU_ZXFC_02_01_JZWJBSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SYZKM          EDU_JY_SYZK                        DM
+  FWCQ           EDU_JY_CQ                          DM
+  JZWFLM         EDU_JY_JZWFL                       DM
+  JZWJGM         EDU_JY_JZWJG                       DM
+  JFLYM          EDU_JY_JFLY                        DM
+  KZSFLDM        EDU_JY_KZSFLD                      DM
+  KZSFBZM        EDU_JY_KZSFBZ                      DM
+  JZWZKM         EDU_JY_JZWZK                       DM
+  XXDWCCM        EDU_JY_XXDWCC                      DM
+  SFYYJBXCS      EDU_JY_SFBZ                        DM
+  SFKYYYJBNCS    EDU_JY_SFBZ                        DM
+  JZWYTM         EDU_JY_JZWYT                       DM
+  GNFSM          EDU_JY_GNFS                        DM
+  JZWJCXSM       EDU_JY_JZWJCXS                     DM
+  JZWPMXSM       EDU_JY_JZWPMXS                     DM
+  JZWLBXSM       EDU_JY_JZWLBXS                     DM
+  SFYGZZ         EDU_JY_SFBZ                        DM
+  QL             EDU_JY_SFBZ                        DM
+  ZYZXTZBZMCM    EDU_JY_ZYZXTZBZMC                  DM
+  WWJZDJM        EDU_JY_WWJZDJ                      DM
+<EDU_ZXFC_08_01_XSSS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SSLID          EDU_ZXFC_02_01_JZWJBSJ             ID
+  RZXB           EDU_GB_RDXB                        DM
+  SFKY           EDU_JY_SFBZ                        DM
+  AZDSJ          EDU_JY_SFBZ                        DM
+<EDU_ZXFC_08_A01_SSCW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SSLID          EDU_ZXFC_02_01_JZWJBSJ             ID
+  SSID           EDU_ZXFC_08_01_XSSS                ID
+  SFRZ           EDU_JY_SFBZ                        DM
+<EDU_ZXFC_08_A02_XSZSJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+  SSLID          EDU_ZXFC_02_01_JZWJBSJ             ID
+  SSID           EDU_ZXFC_08_01_XSSS                ID
+  CWID           EDU_ZXFC_08_A01_SSCW               ID
+<EDU_ZXFC_08_A03_ZWHCY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJX_01_01_KC
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KCM            EDU_JY_ZXXKC                       DM
