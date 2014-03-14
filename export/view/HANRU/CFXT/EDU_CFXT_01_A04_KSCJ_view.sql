@@ -14,6 +14,9 @@ SELECT a.[ID]--编号
       ,c.KSKMMCLB as c_KS_KSKMMCLB--考试信息 考试科目名称列表
       ,c.CFWZ as c_KS_CFWZ--考试信息 查分网址
       ,c.CFZT as c_KS_CFZT--考试信息 查分状态
+      ,c.HDX as c_KS_HDX--考试信息 划档线
+      ,c.HDXSJG as c_KS_HDXSJG--考试信息 划档线上结果
+      ,c.HDXXJG as c_KS_HDXXJG--考试信息 划档线下结果
       ,d.SCHOOLID as d_KM_SCHOOLID--科目信息 学校
       ,d.KMMC as d_KM_KMMC--科目信息 科目名称
       ,d.KMZF as d_KM_KMZF--科目信息 科目总分
@@ -23,7 +26,6 @@ SELECT a.[ID]--编号
       ,e.ZKZH as e_CKXS_ZKZH--参考学生信息 准考证号
       ,e.JZDH as e_CKXS_JZDH--参考学生信息 家长电话
       ,e.ZCJ as e_CKXS_ZCJ--参考学生信息 总成绩
-      ,e.JG as e_CKXS_JG--参考学生信息 结果
 
 FROM dbo.EDU_CFXT_01_A04_KSCJ AS a LEFT OUTER JOIN
       dbo.EDU_CFXT_01_A02_KS AS c ON a.KSID = c.ID /*考试ID*/ LEFT OUTER JOIN

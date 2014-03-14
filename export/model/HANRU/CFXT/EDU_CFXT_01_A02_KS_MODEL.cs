@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             KSKMIDLB = "";
             KSKMMCLB = "";
             CFWZ = "";
+            HDXSJG = "";
+            HDXXJG = "";
         }
         public class EDU_CFXT_01_A02_KS_metadata
         {
@@ -55,6 +57,25 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "查分状态")]
             public Int32 CFZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "划档线")]
+            public Int32 HDX { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "划档线上结果")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String HDXSJG { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "划档线下结果")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String HDXXJG { get; set; }
 
 
         }

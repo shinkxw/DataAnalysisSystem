@@ -12,6 +12,9 @@ EDU_CFXT_01_A02_KS  考试信息
   KSKMMCLB      考试科目名称列表        text           非主
   CFWZ          查分网址                nvarchar(500)  非主
   CFZT          查分状态                int            非主
+  HDX           划档线                  int            非主
+  HDXSJG        划档线上结果            nvarchar(50)   非主
+  HDXXJG        划档线下结果            nvarchar(50)   非主
 
 EDU_CFXT_01_A03_CKXS  参考学生信息
   ID            编号                    int            主键
@@ -21,7 +24,6 @@ EDU_CFXT_01_A03_CKXS  参考学生信息
   ZKZH          准考证号                nvarchar(50)   非主
   JZDH          家长电话                nvarchar(20)   非主
   ZCJ           总成绩                  decimal(5, 1)  非主
-  JG            结果                    nvarchar(50)   非主
 
 EDU_CFXT_01_A04_KSCJ  考试成绩
   ID            编号                    int            自增主键
@@ -30,13 +32,4 @@ EDU_CFXT_01_A04_KSCJ  考试成绩
   KMID          科目ID                  int            非主        科目信息
   CKXSID        参考学生ID              int            非主        参考学生信息
   CJ            成绩                    decimal(5, 1)  非主
-
-EDU_CFXT_01_A05_CJHDFS  成绩划档方式
-  ID            编号                    int            自增主键
-  SCHOOLID      学校                    int            非主        学校配置表
-  KSID          考试ID                  int            非主        考试信息
-  PL            划档类型                int            非主
-  PLRID         划档最大值              int            非主
-  PLSJ          划档最小值              int            非主
-  JG            结果                    nvarchar(50)   非主
 

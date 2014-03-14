@@ -17,6 +17,9 @@
             <name="KSKMMCLB" exp="考试科目名称列表" type="text" null="F" p="F" />
             <name="CFWZ" exp="查分网址" type="nvarchar(500)" null="F" p="F" />
             <name="CFZT" exp="查分状态" type="int" null="F" p="F" />
+            <name="HDX" exp="划档线" type="int" null="F" p="F" />
+            <name="HDXSJG" exp="划档线上结果" type="nvarchar(50)" null="F" p="F" />
+            <name="HDXXJG" exp="划档线下结果" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_CFXT_01_A03_CKXS" exp="参考学生信息">
@@ -28,7 +31,6 @@
             <name="ZKZH" exp="准考证号" type="nvarchar(50)" null="F" p="F" />
             <name="JZDH" exp="家长电话" type="nvarchar(20)" null="F" p="F" />
             <name="ZCJ" exp="总成绩" type="decimal(5, 1)" null="F" p="F" />
-            <name="JG" exp="结果" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_CFXT_01_A04_KSCJ" exp="考试成绩">
@@ -39,17 +41,6 @@
             <name="KMID" exp="科目ID" type="int" null="F" p="F" />
             <name="CKXSID" exp="参考学生ID" type="int" null="F" p="F" />
             <name="CJ" exp="成绩" type="decimal(5, 1)" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_CFXT_01_A05_CJHDFS" exp="成绩划档方式">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="KSID" exp="考试ID" type="int" null="F" p="F" />
-            <name="PL" exp="划档类型" type="int" null="F" p="F" />
-            <name="PLRID" exp="划档最大值" type="int" null="F" p="F" />
-            <name="PLSJ" exp="划档最小值" type="int" null="F" p="F" />
-            <name="JG" exp="结果" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

@@ -12,7 +12,6 @@ namespace HanRuEdu.LDAL
             XM = "";
             ZKZH = "";
             JZDH = "";
-            JG = "";
         }
         public class EDU_CFXT_01_A03_CKXS_metadata
         {
@@ -56,13 +55,6 @@ namespace HanRuEdu.LDAL
             [Display(Name = "总成绩")]
             [Range(typeof(decimal), "0", "99999")]
             public decimal ZCJ { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "结果")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JG { get; set; }
 
 
         }
