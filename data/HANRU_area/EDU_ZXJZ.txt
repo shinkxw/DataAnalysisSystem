@@ -319,4 +319,24 @@
             <name="TJSJ" exp="提交时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJZ_21_A01_BMXSL" exp="部门行事历表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="BMBH" exp="部门编号" type="nvarchar(10)" null="F" p="F" />
+            <name="SJ" exp="时间" type="datetime" null="F" p="F" />
+            <name="ZYGZ" exp="主要工作" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJZ_21_A02_ZXSL" exp="总行事历表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="ZRBM" exp="责任部门" type="nvarchar(100)" null="F" p="F" />
+            <name="SJ" exp="时间" type="datetime" null="F" p="F" />
+            <name="ZYGZ" exp="主要工作" type="text" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             KCID = "";
             BZ = "";
+            SQSJ = DateTime.Now;
         }
         public class EDU_ZXJX_09_A01_TKSQSJ_metadata
         {
@@ -100,6 +101,11 @@ namespace HanRuEdu.LDAL
             [Display(Name = "备注")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "申请时间")]
+            public DateTime SQSJ { get; set; }
 
 
         }

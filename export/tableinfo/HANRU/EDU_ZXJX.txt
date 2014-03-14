@@ -16,6 +16,72 @@ EDU_ZXJX_01_01_KC  课程数据类
   CDXZ          场地限制                int            非主
   SFZK          是否主课                nvarchar(1)    非主        是否标志代码表
 
+EDU_ZXJX_04_01_JCJBXX  教材基本信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JCDM          教材代码                nvarchar(13)   非主
+  JCMC          教材名称                nvarchar(60)   非主
+  CBH           出版号                  nvarchar(30)   非主
+  DYZZ          第一作者                nvarchar(30)   非主
+  QTZZ          其他作者                nvarchar(90)   非主
+  BC            版次                    nvarchar(30)   非主
+  YC            印次                    nvarchar(2)    非主
+  JG            价格                    decimal(8, 2)  非主
+  CBS           出版社                  nvarchar(180)  非主
+  CBRQ          出版日期                nvarchar(8)    非主
+  SFYLXC        是否有练习册            nvarchar(1)    非主        是否标志代码表
+  SFYJCJF       是否有教参教辅          nvarchar(1)    非主        是否标志代码表
+  NRJJ          内容简介                text           非主
+  DQZT          当前状态                int            非主
+  ZDKC          最低库存                int            非主
+  DQKC          当前库存                int            非主
+
+EDU_ZXJX_04_02_JCXYXX  教材选用信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(10)   非主        年级数据类表
+  KCID          课程ID                  nvarchar(10)   非主        课程数据类
+  JCID          教材ID                  int            非主        教材基本信息表
+  XYSL          选用数量                int            非主
+  SQRID         申请人ID                int            非主        教职工基本数据子类表
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHRID         审核人ID                int            非主        教职工基本数据子类表
+  SHSJ          审核时间                datetime       非主
+  SFRK          是否入库                nvarchar(1)    非主        是否标志代码表
+
+EDU_ZXJX_04_A03_JCLYJL  教材领用记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(10)   非主        年级数据类表
+  BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+  JCID          教材ID                  int            非主        教材基本信息表
+  LYSL          领用数量                int            非主
+  LYR           领用人                  nvarchar(36)   非主
+  LYSJ          领用时间                datetime       非主
+  JSRID         经手人ID                int            非主        教职工基本数据子类表
+
+EDU_ZXJX_04_A05_JCFK  教材反馈表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  JCID          教材ID                  int            非主        教材基本信息表
+  FKXX          反馈信息                text           非主
+  FKSJ          反馈时间                datetime       非主
+  FKJSID        反馈教师ID              int            非主        教职工基本数据子类表
+
+EDU_ZXJX_04_A06_JCBF  教材报废表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  JCID          教材ID                  int            非主        教材基本信息表
+  BFSL          报废数量                int            非主
+  BFYY          报废原因                text           非主
+  BFSJ          报废时间                datetime       非主
+  JSRID         经手人ID                int            非主        教职工基本数据子类表
+
 EDU_ZXJX_05_A01_KS  考试数据表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
@@ -111,6 +177,7 @@ EDU_ZXJX_09_A01_TKSQSJ  调课申请数据表
   TKHJC         调课后节次              int            非主        节次
   ZT            当前状态                int            非主
   BZ            备注                    text           非主
+  SQSJ          申请时间                datetime       非主
 
 EDU_ZXJX_10_A01_JSGCXPJJL  教师过程性评价记录表
   ID            编号                    int            主键
@@ -141,4 +208,81 @@ EDU_ZXJX_10_A03_JSMZSKS  教师每周上课数表
   JSRKID        教师任课ID              int            非主        任课数据子类表
   KCH           课程号                  nvarchar(10)   非主        课程数据类
   SKJS          上课节数                int            非主
+
+EDU_ZXJX_11_A01_LWSJ  论文数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XNID          学年ID                  int            非主        学年表
+  XQID          学期ID                  int            非主        学期数据表
+  LWMC          论文名称                nvarchar(100)  非主
+  LWZY          论文摘要                nvarchar(100)  非主
+  LWNR          论文内容                text           非主
+  SCJSID        上传教师ID              int            非主        教职工基本数据子类表
+  SCSJ          上传时间                datetime       非主
+
+EDU_ZXJX_11_A02_KYHDSJ  科研活动数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XNID          学年ID                  int            非主        学年表
+  XQID          学期ID                  int            非主        学期数据表
+  HDMC          活动名称                nvarchar(50)   非主
+  HDNR          活动内容                text           非主
+  SFFB          是否发布                nvarchar(1)    非主        是否标志代码表
+  SCJSID        上传教师ID              int            非主        教职工基本数据子类表
+  SCSJ          上传时间                datetime       非主
+
+EDU_ZXJX_11_A03_CPXXSJ  参评信息数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XNID          学年ID                  int            非主        学年表
+  XQID          学期ID                  int            非主        学期数据表
+  XXMC          信息名称                nvarchar(50)   非主
+  XXNR          信息内容                text           非主
+  SFFB          是否发布                nvarchar(1)    非主        是否标志代码表
+  SCJSID        上传教师ID              int            非主        教职工基本数据子类表
+  SCSJ          上传时间                datetime       非主
+
+EDU_ZXJX_11_A04_KTSJ  课题数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XNID          学年ID                  int            非主        学年表
+  XQID          学期ID                  int            非主        学期数据表
+  KTMC          课题名称                nvarchar(50)   非主
+  KTZT          课题主题                nvarchar(200)  非主
+  KTNR          课题内容                text           非主
+  SQJSID        申请教师ID              int            非主        教职工基本数据子类表
+  SQSJ          申请时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHJSID        审核教师ID              int            非主        教职工基本数据子类表
+  SHSJ          审核时间                datetime       非主
+  JXZT          节项状态                int            非主
+  JXSJ          节项时间                datetime       非主
+
+EDU_ZXJX_11_A05_KTJDSJ  课题阶段数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KTID          课题ID                  int            非主        课题数据表
+  JDMC          阶段名称                nvarchar(50)   非主
+  JDGZNR        阶段工作内容            text           非主
+  SCSJ          上传时间                datetime       非主
+
+EDU_ZXJX_35_A01_TKXZ  听课小组
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XZMC          小组名称                nvarchar(100)  非主
+  XZCY          小组成员                text           非主
+  XZCYMC        小组成员名称            text           非主
+
+EDU_ZXJX_35_A02_GKKSQ  公开课申请
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KCMC          课程名称                nvarchar(100)  非主
+  SKSJ          上课时间                datetime       非主
+  SKDD          上课地点                nvarchar(100)  非主
+  KCJJ          课程简介                text           非主
+  TKXZID        听课小组ID              int            非主        听课小组
+  SHZT          审核状态                int            非主
+  SFGS          是否公示                int            非主
+  SQRID         申请人ID                int            非主        教职工基本数据子类表
+  SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
 
