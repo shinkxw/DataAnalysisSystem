@@ -41,6 +41,7 @@ SELECT a.[ID]--编号
       ,a.[DZXX]--电子信箱
       ,a.[ZYDZ]--主页地址
       ,a.[XJH]--学籍号
+      ,a.[XSDQZTM]--学生当前状态码
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -84,6 +85,8 @@ SELECT a.[ID]--编号
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称
       ,s.MC as s_SFBZ_MC--是否标志代码表 名称
+      ,t.MC as t_XSDQZT_MC--学生当前状态代码表 名称
+      ,t.SM as t_XSDQZT_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
@@ -103,6 +106,7 @@ FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS q ON a.XSLBM = q.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS r ON a.HKXZM = r.DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFLDRK = s.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS t ON a.XSDQZTM = t.DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [pb] ON p.BJLXM = [pb].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [pc] ON p.SFSSMZSYJXB = [pc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS [pd] ON p.SYJXMSM = [pd].DM /*双语教学模式码*/

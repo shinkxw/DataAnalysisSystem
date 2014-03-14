@@ -9094,6 +9094,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_01_01_XSXX](
 	[DZXX]  nvarchar(40)  NULL,--电子信箱
 	[ZYDZ]  nvarchar(60)  NULL,--主页地址
 	[XJH]  nvarchar(30)  NULL,--学籍号
+	[XSDQZTM]  nvarchar(2)  NOT NULL,--学生当前状态码
 CONSTRAINT [PK_EDU_ZXXS_01_01_XSXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -9311,6 +9312,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'主页地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'ZYDZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学籍号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'XJH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生当前状态码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_01_XSXX', @level2type=N'COLUMN',@level2name=N'XSDQZTM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生家庭成员数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_01_06_XSJTCY'
 GO

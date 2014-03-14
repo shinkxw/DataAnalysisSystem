@@ -80,6 +80,9 @@ SELECT a.[ID]--学籍异动表编号
       ,b.DZXX as b_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,b.ZYDZ as b_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,b.XJH as b_XSXX_XJH--学生基本数据子类表 学籍号
+      ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -212,6 +215,7 @@ FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [bn] ON b.XSLBM = [bn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [bo] ON b.HKXZM = [bo].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [bq] ON b.XSDQZTM = [bq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [fb] ON f.XBM = [fb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [fc] ON f.CSDM = [fc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN

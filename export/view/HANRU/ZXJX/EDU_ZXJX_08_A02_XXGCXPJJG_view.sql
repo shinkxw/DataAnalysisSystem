@@ -81,6 +81,9 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,e.ZYDZ as e_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,e.XJH as e_XSXX_XJH--学生基本数据子类表 学籍号
+      ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
       ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
       ,f.KCM as f_KC_KCM--课程数据类 课程码
@@ -122,6 +125,7 @@ FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [en] ON e.XSLBM = [en].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [eo] ON e.HKXZM = [eo].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [ep] ON e.SFLDRK = [ep].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [eq] ON e.XSDQZTM = [eq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXKC AS [fb] ON f.KCM = [fb].DM /*课程码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXKCDJ AS [fc] ON f.KCDJM = [fc].DM /*课程等级码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS [fd] ON f.SKFSM = [fd].DM /*授课方式码*/ LEFT OUTER JOIN

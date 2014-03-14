@@ -718,6 +718,7 @@
   XSLBM          EDU_JY_XSLB                        DM
   HKXZM          EDU_GB_HKLB                        DM
   SFLDRK         EDU_JY_SFBZ                        DM
+  XSDQZTM        EDU_JY_XSDQZT                      DM
 <EDU_ZXXS_01_06_XSJTCY
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSXXID         EDU_ZXXS_01_01_XSXX                ID

@@ -6264,6 +6264,9 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.SCHOOLID as d_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,d.JZWH as d_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,d.JZWMC as d_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
@@ -6401,6 +6404,7 @@ FROM dbo.EDU_ZXFC_08_A02_XSZSJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SYZK AS [db] ON d.SYZKM = [db].DM /*使用状况码*/ LEFT OUTER JOIN
       dbo.EDU_JY_CQ AS [dc] ON d.FWCQ = [dc].DM /*房屋产权*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZWFL AS [dd] ON d.JZWFLM = [dd].DM /*建筑物分类码*/ LEFT OUTER JOIN
@@ -6699,6 +6703,9 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,e.ZYDZ as e_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,e.XJH as e_XSXX_XJH--学生基本数据子类表 学籍号
+      ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,f.SCHOOLID as f_XN_SCHOOLID--学年表 学校名
       ,f.XN as f_XN_XN--学年表 学年
       ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
@@ -6779,6 +6786,7 @@ FROM dbo.EDU_ZXJX_06_A01_MPJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [en] ON e.XSLBM = [en].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [eo] ON e.HKXZM = [eo].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [ep] ON e.SFLDRK = [ep].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [eq] ON e.XSDQZTM = [eq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [gb] ON g.XQM = [gb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [ib] ON i.BJLXM = [ib].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [ic] ON i.SFSSMZSYJXB = [ic].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
@@ -6867,6 +6875,9 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,e.ZYDZ as e_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,e.XJH as e_XSXX_XJH--学生基本数据子类表 学籍号
+      ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
       ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
       ,f.KCM as f_KC_KCM--课程数据类 课程码
@@ -6908,6 +6919,7 @@ FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [en] ON e.XSLBM = [en].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [eo] ON e.HKXZM = [eo].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [ep] ON e.SFLDRK = [ep].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [eq] ON e.XSDQZTM = [eq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXKC AS [fb] ON f.KCM = [fb].DM /*课程码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXKCDJ AS [fc] ON f.KCDJM = [fc].DM /*课程等级码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS [fd] ON f.SKFSM = [fd].DM /*授课方式码*/ LEFT OUTER JOIN
@@ -9265,6 +9277,9 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.SCHOOLID as d_BJ_SCHOOLID--班级数据类表 学校名
       ,d.NJ as d_BJ_NJ--班级数据类表 年级号
       ,d.BJ as d_BJ_BJ--班级数据类表 班级名称
@@ -9302,6 +9317,7 @@ FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [db] ON d.BJLXM = [db].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [dc] ON d.SFSSMZSYJXB = [dc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS [dd] ON d.SYJXMSM = [dd].DM /*双语教学模式码*/
@@ -9349,6 +9365,7 @@ SELECT a.[ID]--编号
       ,a.[DZXX]--电子信箱
       ,a.[ZYDZ]--主页地址
       ,a.[XJH]--学籍号
+      ,a.[XSDQZTM]--学生当前状态码
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -9392,6 +9409,8 @@ SELECT a.[ID]--编号
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称
       ,s.MC as s_SFBZ_MC--是否标志代码表 名称
+      ,t.MC as t_XSDQZT_MC--学生当前状态代码表 名称
+      ,t.SM as t_XSDQZT_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
@@ -9411,6 +9430,7 @@ FROM dbo.EDU_ZXXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS q ON a.XSLBM = q.DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS r ON a.HKXZM = r.DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS s ON a.SFLDRK = s.DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS t ON a.XSDQZTM = t.DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [pb] ON p.BJLXM = [pb].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [pc] ON p.SFSSMZSYJXB = [pc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS [pd] ON p.SYJXMSM = [pd].DM /*双语教学模式码*/
@@ -9500,6 +9520,9 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.MC as d_JTGX_MC--家庭关系代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
       ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
@@ -9542,7 +9565,8 @@ FROM dbo.EDU_ZXXS_01_06_XSJTCY AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cm] ON c.DSZYBZ = [cm].DM /*独生子女标志*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/
+      dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/
 GO
 
 --学生家庭信息数据表
@@ -9621,6 +9645,9 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.DZXX as b_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,b.ZYDZ as b_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,b.XJH as b_XSXX_XJH--学生基本数据子类表 学籍号
+      ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -9638,7 +9665,8 @@ FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [bm] ON b.DSZYBZ = [bm].DM /*独生子女标志*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [bn] ON b.XSLBM = [bn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [bo] ON b.HKXZM = [bo].DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/
+      dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [bq] ON b.XSDQZTM = [bq].DM /*学生当前状态码*/
 GO
 
 --在校考试成绩数据子类表
@@ -9732,6 +9760,9 @@ SELECT a.[ID]--考试成绩表
       ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.MC as d_XQ_MC--学期代码表 名称
       ,e.SCHOOLID as e_KC_SCHOOLID--课程数据类 学校名
       ,e.KCMC as e_KC_KCMC--课程数据类 课程名称
@@ -9964,6 +9995,7 @@ FROM dbo.EDU_ZXXS_02_06_ZXKSCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXKC AS [eb] ON e.KCM = [eb].DM /*课程码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXKCDJ AS [ec] ON e.KCDJM = [ec].DM /*课程等级码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SKFS AS [ed] ON e.SKFSM = [ed].DM /*授课方式码*/ LEFT OUTER JOIN
@@ -10087,6 +10119,9 @@ SELECT a.[ID]--学籍异动表编号
       ,b.DZXX as b_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,b.ZYDZ as b_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,b.XJH as b_XSXX_XJH--学生基本数据子类表 学籍号
+      ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -10219,6 +10254,7 @@ FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [bn] ON b.XSLBM = [bn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [bo] ON b.HKXZM = [bo].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [bq] ON b.XSDQZTM = [bq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [fb] ON f.XBM = [fb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [fc] ON f.CSDM = [fc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [fd] ON f.MZM = [fd].DM /*民族码*/ LEFT OUTER JOIN

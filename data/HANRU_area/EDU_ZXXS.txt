@@ -41,6 +41,7 @@
             <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" p="F" remark="学生在互联网上的电子邮件信箱地址" />
             <name="ZYDZ" exp="主页地址" type="nvarchar(60)" null="T" p="F" remark="学生在互联网上的个人主页地址" />
             <name="XJH" exp="学籍号" type="nvarchar(30)" null="T" p="F" remark="全国唯一的学籍号" />
+            <name="XSDQZTM" exp="学生当前状态码" type="nvarchar(2)" null="F" p="F" default="'01'" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_01_06_XSJTCY" exp="学生家庭成员数据表">

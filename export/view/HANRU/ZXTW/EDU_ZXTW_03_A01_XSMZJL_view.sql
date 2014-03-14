@@ -72,6 +72,9 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.SCHOOLID as d_BJ_SCHOOLID--班级数据类表 学校名
       ,d.NJ as d_BJ_NJ--班级数据类表 年级号
       ,d.BJ as d_BJ_BJ--班级数据类表 班级名称
@@ -109,6 +112,7 @@ FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [db] ON d.BJLXM = [db].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [dc] ON d.SFSSMZSYJXB = [dc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS [dd] ON d.SYJXMSM = [dd].DM /*双语教学模式码*/

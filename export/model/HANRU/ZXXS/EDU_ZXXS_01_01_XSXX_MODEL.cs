@@ -22,6 +22,7 @@ namespace HanRuEdu.LDAL
             BH = "";
             XSLBM = "";
             SFLDRK = "";
+            XSDQZTM = "";
         }
         public class EDU_ZXXS_01_01_XSXX_metadata
         {
@@ -267,6 +268,13 @@ namespace HanRuEdu.LDAL
             [StringLength(30)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XJH { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "学生当前状态码")]
+            [StringLength(2)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XSDQZTM { get; set; }
 
 
         }

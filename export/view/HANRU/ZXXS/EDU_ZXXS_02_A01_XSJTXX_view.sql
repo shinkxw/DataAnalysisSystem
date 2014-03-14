@@ -75,6 +75,9 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.DZXX as b_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,b.ZYDZ as b_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,b.XJH as b_XSXX_XJH--学生基本数据子类表 学籍号
+      ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -92,5 +95,6 @@ FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [bm] ON b.DSZYBZ = [bm].DM /*独生子女标志*/ LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [bn] ON b.XSLBM = [bn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [bo] ON b.HKXZM = [bo].DM /*户口性质码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/
+      dbo.EDU_JY_SFBZ AS [bp] ON b.SFLDRK = [bp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [bq] ON b.XSDQZTM = [bq].DM /*学生当前状态码*/
 GO

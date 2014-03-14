@@ -74,6 +74,9 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生基本数据子类表 电子信箱
       ,c.ZYDZ as c_XSXX_ZYDZ--学生基本数据子类表 主页地址
       ,c.XJH as c_XSXX_XJH--学生基本数据子类表 学籍号
+      ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
       ,d.SCHOOLID as d_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,d.JZWH as d_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,d.JZWMC as d_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
@@ -211,6 +214,7 @@ FROM dbo.EDU_ZXFC_08_A02_XSZSJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSLB AS [cn] ON c.XSLBM = [cn].DM /*学生类别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [co] ON c.HKXZM = [co].DM /*户口性质码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cp] ON c.SFLDRK = [cp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SYZK AS [db] ON d.SYZKM = [db].DM /*使用状况码*/ LEFT OUTER JOIN
       dbo.EDU_JY_CQ AS [dc] ON d.FWCQ = [dc].DM /*房屋产权*/ LEFT OUTER JOIN
       dbo.EDU_JY_JZWFL AS [dd] ON d.JZWFLM = [dd].DM /*建筑物分类码*/ LEFT OUTER JOIN
