@@ -23,14 +23,10 @@ class ViewBuilder
   end
   #生成view脚本
   def build(area)
-    @area = area
-    @view_str = ""
-    @table_arr = []
+    @area, @view_str, @table_arr = area, "", []
     find_relation_table
     delete_view if @need_delete
-    @table_arr.each do |table|
-      add_table_view(table)
-    end
+    @table_arr.each{|table| add_table_view(table)}
     MDDoc.new("view","#{@area.name}_view",@view_str,"sql")
   end
   #生成view脚本哈希表
@@ -139,10 +135,7 @@ class ViewBuilder
         if that_table_pk.relation == nil
           @log.push("ViewBuilder: 表#{that_table.name}的主键#{that_table_pk.name}并未关联其他表")
         else
-          this_field = nil
-          field_arr.each do |field|
-            this_field = field if field.relation == that_table_pk.relation
-          end
+          this_field = field_arr.find{|field| field.relation == that_table_pk.relation}
           if this_field == nil
             @log.push("ViewBuilder: 并未在表#{this_table.name}中找到与表#{that_table.name}的主键#{that_table_pk.name}关联同一张表的字段")
           else
@@ -171,10 +164,6 @@ class ViewBuilder
   end
   #根据关联字段获得所关联的表
   def get_relation_table_arr(relation_field_arr)
-    table_arr = []
-    relation_field_arr.each do |relation_field|
-      table_arr.push(relation_field.table)
-    end
-    table_arr
+    relation_field_arr.collect{|relation_field| relation_field.table}
   end
 end
