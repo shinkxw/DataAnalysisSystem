@@ -1,0 +1,104 @@
+EDU_ZYFZ_01_A01_XK  学科表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XKMC          学科名称                nvarchar(50)   非主
+
+EDU_ZYFZ_01_A02_NJ  年级表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  NJMC          年级名称                nvarchar(50)   非主
+
+EDU_ZYFZ_01_A03_RYJB  荣誉级别表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  RYJBMC        荣誉级别名称            nvarchar(50)   非主
+
+EDU_ZYFZ_01_A04_GZMB  工作模板表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  MBMC          模板名称                nvarchar(50)   非主
+  MBNR          模板内容                text           非主
+
+EDU_ZYFZ_02_A01_LMLB  栏目类别表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  LMLBMC        栏目类别名称            nvarchar(50)   非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZYFZ_02_A02_GZNRLM  工作内容栏目表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  LMMC          栏目名称                nvarchar(20)   非主
+  LMLBID        栏目类别ID              int            非主        栏目类别表
+  SYMBID        使用模板ID              int            非主        工作模板表
+  PLFS          排列方式                int            非主
+  PLSX          排列顺序                int            非主
+  NMLLLM        匿名浏览栏目            int            非主
+
+EDU_ZYFZ_02_A03_XQLM  学期栏目表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  LMIDLB        栏目ID列表              text           非主
+  LMMCLB        栏目名称列表            text           非主
+
+EDU_ZYFZ_02_A04_GZNR  工作内容表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  BT            标题                    nvarchar(50)   非主
+  GJC           关键词                  nvarchar(50)   非主
+  SSLMID        所属栏目ID              int            非主        工作内容栏目表
+  SSXKID        所属学科ID              int            非主        学科表
+  SSNJID        所属年级ID              int            非主        年级表
+  SFGK          是否公开                nvarchar(1)    非主        是否标志代码表
+  NR            内容                    text           非主
+  FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
+  FBSJ          发布时间                datetime       非主
+  LLL           浏览量                  int            非主
+
+EDU_ZYFZ_02_A05_GZNRPL  工作内容评论表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  GZNRID        工作内容ID              int            非主        工作内容表
+  PLNR          评论内容                text           非主
+  PLR           评论人                  nvarchar(30)   非主
+  PLSJ          评论时间                datetime       非主
+
+EDU_ZYFZ_02_A06_GRRY  个人荣誉表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  RYMC          荣誉名称                nvarchar(50)   非主
+  RYJBID        荣誉级别ID              int            非主        荣誉级别表
+  SSXNID        所属学年ID              int            非主        学年表
+  SJDW          授奖单位                nvarchar(50)   非主
+  SJSJ          授奖时间                datetime       非主
+  SFGK          是否公开                nvarchar(1)    非主        是否标志代码表
+  HJRID         获奖人ID                nvarchar(20)   非主        应用系统用户表
+  NR            内容                    text           非主
+  BZ            备注                    nvarchar(500)  非主
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZYFZ_03_A01_YQLJLX  友情链接类型表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  LXMC          类型名称                nvarchar(50)   非主
+  XSFS          显示方式                int            非主
+
+EDU_ZYFZ_03_A02_YQLJ  友情链接表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  LJLXID        链接类型ID              int            非主        友情链接类型表
+  LJMC          链接名称                nvarchar(50)   非主
+  LJTP          链接图片                text           非主
+  LJDZ          链接地址                text           非主
+
+EDU_ZYFZ_03_A03_GGXX  公告信息表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  BT            标题                    nvarchar(50)   非主
+  FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
+  FBSJ          发布时间                datetime       非主
+  NR            内容                    text           非主
+  DJL           点击量                  int            非主
+  SFZD          是否置顶                nvarchar(1)    非主        是否标志代码表
+

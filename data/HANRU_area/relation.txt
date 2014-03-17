@@ -855,6 +855,48 @@
 <EDU_ZXXX_04_A01_JGGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JGH            EDU_ZXXX_04_01_JG                  JGH
+<EDU_ZYFZ_01_A01_XK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_01_A02_NJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_01_A03_RYJB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_01_A04_GZMB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_02_A01_LMLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_02_A02_GZNRLM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LMLBID         EDU_ZYFZ_02_A01_LMLB               ID
+  SYMBID         EDU_ZYFZ_01_A04_GZMB               ID
+<EDU_ZYFZ_02_A03_XQLM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+<EDU_ZYFZ_02_A04_GZNR
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SSLMID         EDU_ZYFZ_02_A02_GZNRLM             ID
+  SSXKID         EDU_ZYFZ_01_A01_XK                 ID
+  SSNJID         EDU_ZYFZ_01_A02_NJ                 ID
+  SFGK           EDU_JY_SFBZ                        DM
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYFZ_02_A05_GZNRPL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GZNRID         EDU_ZYFZ_02_A04_GZNR               ID
+<EDU_ZYFZ_02_A06_GRRY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  RYJBID         EDU_ZYFZ_01_A03_RYJB               ID
+  SSXNID         EDU_SYS_01_XN                      ID
+  SFGK           EDU_JY_SFBZ                        DM
+  HJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYFZ_03_A01_YQLJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_03_A02_YQLJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LJLXID         EDU_ZYFZ_03_A01_YQLJLX             ID
+<EDU_ZYFZ_03_A03_GGXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+  SFZD           EDU_JY_SFBZ                        DM
 <EDU_ZYZX_01_A01_ZYML
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FMLID          EDU_ZYZX_01_A01_ZYML               ID
