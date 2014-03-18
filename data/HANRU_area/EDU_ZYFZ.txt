@@ -72,6 +72,7 @@
             <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
             <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
             <name="LLL" exp="浏览量" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A05_GZNRPL" exp="工作内容评论表">

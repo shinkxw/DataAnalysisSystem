@@ -1191,7 +1191,7 @@ CREATE TABLE [dbo].[EDU_OAXT_21_A02_QJSQ](
 	[QJYY]  nvarchar(300)  NOT NULL,--请假原因
 	[KSSJ]  datetime  NOT NULL,--开始时间
 	[JSSJ]  datetime  NOT NULL,--结束时间
-	[QJTS]  decimal(5, 2)  NOT NULL,--请假天数
+	[QJTS]  decimal(18, 2)  NOT NULL,--请假天数
 	[SQSJ]  datetime  NOT NULL,--申请时间
 	[SQZT]  int  NOT NULL,--申请状态
 	[SQRID]  nvarchar(20)  NOT NULL,--申请人ID

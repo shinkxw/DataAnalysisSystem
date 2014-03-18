@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,c.FBRID as c_GZNR_FBRID--工作内容表 发布人ID
       ,c.FBSJ as c_GZNR_FBSJ--工作内容表 发布时间
       ,c.LLL as c_GZNR_LLL--工作内容表 浏览量
+      ,c.XQID as c_GZNR_XQID--工作内容表 学期ID
 
 FROM dbo.EDU_ZYFZ_02_A05_GZNRPL AS a LEFT OUTER JOIN
       dbo.EDU_ZYFZ_02_A04_GZNR AS c ON a.GZNRID = c.ID /*工作内容ID*/ LEFT OUTER JOIN

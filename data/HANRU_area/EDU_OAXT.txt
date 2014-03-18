@@ -535,7 +535,7 @@
             <name="QJYY" exp="请假原因" type="nvarchar(300)" null="F" p="F" />
             <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
-            <name="QJTS" exp="请假天数" type="decimal(5, 2)" null="F" p="F" />
+            <name="QJTS" exp="请假天数" type="decimal(18, 2)" null="F" p="F" />
             <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
             <name="SQZT" exp="申请状态" type="int" null="F" p="F" />
             <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />

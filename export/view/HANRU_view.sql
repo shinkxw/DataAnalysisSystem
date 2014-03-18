@@ -12018,6 +12018,7 @@ SELECT a.[ID]--编号
       ,a.[FBRID]--发布人ID
       ,a.[FBSJ]--发布时间
       ,a.[LLL]--浏览量
+      ,a.[XQID]--学期ID
       ,c.SCHOOLID as c_GZNRLM_SCHOOLID--工作内容栏目表 学校
       ,c.LMMC as c_GZNRLM_LMMC--工作内容栏目表 栏目名称
       ,c.LMLBID as c_GZNRLM_LMLBID--工作内容栏目表 栏目类别ID
@@ -12047,13 +12048,22 @@ SELECT a.[ID]--编号
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
       ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
+      ,h.SCHOOLID as h_XQ_SCHOOLID--学期数据表 学校名
+      ,h.XNID as h_XQ_XNID--学期数据表 学年
+      ,h.XQM as h_XQ_XQM--学期数据表 学期码
+      ,[hb].MC as h_XQ_XQM_MC--学期代码表 名称
+      ,h.XQMC as h_XQ_XQMC--学期数据表 学期名称
+      ,h.XQKSRQ as h_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,h.XQJSRQ as h_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZYFZ_02_A04_GZNR AS a LEFT OUTER JOIN
       dbo.EDU_ZYFZ_02_A02_GZNRLM AS c ON a.SSLMID = c.ID /*所属栏目ID*/ LEFT OUTER JOIN
       dbo.EDU_ZYFZ_01_A01_XK AS d ON a.SSXKID = d.ID /*所属学科ID*/ LEFT OUTER JOIN
       dbo.EDU_ZYFZ_01_A02_NJ AS e ON a.SSNJID = e.ID /*所属年级ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFGK = f.DM /*是否公开*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS g ON a.FBRID = g.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
+      dbo.EDU_ELE_01_USER AS g ON a.FBRID = g.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS h ON a.XQID = h.ID /*学期ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [hb] ON h.XQM = [hb].DM /*学期码*/
 GO
 
 --工作内容评论表
@@ -12077,6 +12087,7 @@ SELECT a.[ID]--编号
       ,c.FBRID as c_GZNR_FBRID--工作内容表 发布人ID
       ,c.FBSJ as c_GZNR_FBSJ--工作内容表 发布时间
       ,c.LLL as c_GZNR_LLL--工作内容表 浏览量
+      ,c.XQID as c_GZNR_XQID--工作内容表 学期ID
 
 FROM dbo.EDU_ZYFZ_02_A05_GZNRPL AS a LEFT OUTER JOIN
       dbo.EDU_ZYFZ_02_A04_GZNR AS c ON a.GZNRID = c.ID /*工作内容ID*/ LEFT OUTER JOIN

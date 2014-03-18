@@ -456,7 +456,7 @@ EDU_OAXT_21_A02_QJSQ  请假申请表
   QJYY          请假原因                nvarchar(300)  非主
   KSSJ          开始时间                datetime       非主
   JSSJ          结束时间                datetime       非主
-  QJTS          请假天数                decimal(5, 2)  非主
+  QJTS          请假天数                decimal(18, 2) 非主
   SQSJ          申请时间                datetime       非主
   SQZT          申请状态                int            非主
   SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表

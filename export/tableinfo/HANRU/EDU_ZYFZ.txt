@@ -55,6 +55,7 @@ EDU_ZYFZ_02_A04_GZNR  工作内容表
   FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
   FBSJ          发布时间                datetime       非主
   LLL           浏览量                  int            非主
+  XQID          学期ID                  int            非主        学期数据表
 
 EDU_ZYFZ_02_A05_GZNRPL  工作内容评论表
   ID            编号                    int            自增主键

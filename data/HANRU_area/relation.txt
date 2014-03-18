@@ -879,6 +879,7 @@
   SSNJID         EDU_ZYFZ_01_A02_NJ                 ID
   SFGK           EDU_JY_SFBZ                        DM
   FBRID          EDU_ELE_01_USER                    LOGINNAME
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZYFZ_02_A05_GZNRPL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GZNRID         EDU_ZYFZ_02_A04_GZNR               ID
