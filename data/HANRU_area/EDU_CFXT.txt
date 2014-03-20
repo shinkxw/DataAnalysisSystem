@@ -18,8 +18,8 @@
             <name="CFWZ" exp="查分网址" type="nvarchar(500)" null="F" p="F" />
             <name="CFZT" exp="查分状态" type="int" null="F" p="F" />
             <name="HDX" exp="划档线" type="int" null="F" p="F" />
-            <name="HDXSJG" exp="划档线上结果" type="nvarchar(50)" null="F" p="F" />
-            <name="HDXXJG" exp="划档线下结果" type="nvarchar(50)" null="F" p="F" />
+            <name="HDXSJG" exp="划档线上结果" type="nvarchar(500)" null="F" p="F" />
+            <name="HDXXJG" exp="划档线下结果" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_CFXT_01_A03_CKXS" exp="参考学生信息">

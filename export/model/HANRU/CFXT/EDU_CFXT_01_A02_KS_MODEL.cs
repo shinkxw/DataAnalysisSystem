@@ -66,14 +66,14 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "划档线上结果")]
-            [StringLength(50)]
+            [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String HDXSJG { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "划档线下结果")]
-            [StringLength(50)]
+            [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String HDXXJG { get; set; }
 

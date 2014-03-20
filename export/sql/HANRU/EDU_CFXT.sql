@@ -47,8 +47,8 @@ CREATE TABLE [dbo].[EDU_CFXT_01_A02_KS](
 	[CFWZ]  nvarchar(500)  NOT NULL,--查分网址
 	[CFZT]  int  NOT NULL,--查分状态
 	[HDX]  int  NOT NULL,--划档线
-	[HDXSJG]  nvarchar(50)  NOT NULL,--划档线上结果
-	[HDXXJG]  nvarchar(50)  NOT NULL,--划档线下结果
+	[HDXSJG]  nvarchar(500)  NOT NULL,--划档线上结果
+	[HDXXJG]  nvarchar(500)  NOT NULL,--划档线下结果
 CONSTRAINT [PK_EDU_CFXT_01_A02_KS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
