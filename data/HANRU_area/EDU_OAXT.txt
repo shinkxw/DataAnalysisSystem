@@ -936,4 +936,40 @@
             <name="DYLBSFXS" exp="打印列表是否显示" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_35_A01_RW" exp="任务表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="RWBT" exp="任务标题" type="nvarchar(100)" null="F" p="F" />
+            <name="JSYHIDLB" exp="接收用户ID列表" type="text" null="F" p="F" />
+            <name="JSYHXMLB" exp="接收用户姓名列表" type="text" null="F" p="F" />
+            <name="JZRQ" exp="截止日期" type="datetime" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FBRXM" exp="发布人姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="FBBMMC" exp="发布部门名称" type="nvarchar(60)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+            <name="RWZT" exp="任务状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_35_A02_RWJSR" exp="任务接收人表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="RWID" exp="任务ID" type="int" null="F" p="F" />
+            <name="JSRID" exp="接收人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="YDZT" exp="阅读状态" type="int" null="F" p="F" />
+            <name="WCZT" exp="完成状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_35_A03_HFJL" exp="回复记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="RWID" exp="任务ID" type="int" null="F" p="F" />
+            <name="HFRID" exp="回复人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="HFNR" exp="回复内容" type="text" null="F" p="F" />
+            <name="HSSJ" exp="回复时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

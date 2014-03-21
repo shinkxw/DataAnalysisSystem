@@ -4,7 +4,7 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#脚本加载器
 
-$t_app_name,$t_dir_name,$t_range = 'JSZYFZXT','zyfz',02..02
+$t_app_name,$t_dir_name,$t_range = 'OAXT','gzrw',35..35
 #AreaManager.set_conn(DBConnector.new('D:\待迁移数据库\交通数据库.mdb',db_type: 'ac'))
 AreaManager.set_conn(DBConnector.new('192.168.0.8,1444'))#192.168.0.8,1444
 AreaManager.load_area_and_db('HANRU','HanruEdu') do |work_area,db|#HanruEdu

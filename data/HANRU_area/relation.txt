@@ -354,6 +354,17 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SQRID          EDU_ELE_01_USER                    LOGINNAME
   SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_35_A01_RW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_35_A02_RWJSR
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  RWID           EDU_OAXT_35_A01_RW                 ID
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_35_A03_HFJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  RWID           EDU_OAXT_35_A01_RW                 ID
+  HFRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP
