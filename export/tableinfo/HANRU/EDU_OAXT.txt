@@ -829,6 +829,7 @@ EDU_OAXT_35_A02_RWJSR  任务接收人表
   JSRID         接收人ID                nvarchar(20)   非主        应用系统用户表
   YDZT          阅读状态                int            非主
   WCZT          完成状态                int            非主
+  SCZT          删除状态                int            非主
 
 EDU_OAXT_35_A03_HFJL  回复记录表
   ID            编号                    int            主键

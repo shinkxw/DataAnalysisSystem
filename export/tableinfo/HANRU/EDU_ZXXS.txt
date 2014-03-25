@@ -124,3 +124,29 @@ EDU_ZXXS_07_A02_XJYD  学籍异动数据子类表
   XBH           现班号                  nvarchar(10)   非主        班级数据类表
   XNJ           现年级                  nvarchar(10)   非主        年级数据类表
 
+EDU_ZXXS_50_A01_QQYY  缺勤原因表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MC            名称                    nvarchar(100)  非主
+
+EDU_ZXXS_50_A02_BJSBJL  班级上报记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+  ZT            状态                    int            非主
+  RQ            日期                    datetime       非主
+
+EDU_ZXXS_50_A03_XSSBJL  学生上报记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+  XSXXID        学生ID                  int            非主        学生基本数据子类表
+  QQYYID        缺勤原因ID              int            非主        缺勤原因表
+  QQSJ          缺勤时间                nvarchar(20)   非主
+  JTQK          具体情况                nvarchar(500)  非主
+  TW            体温                    nvarchar(10)   非主
+  SFJY          是否就医                nvarchar(1)    非主        是否标志代码表
+  SFTZJZ        是否通知家长            nvarchar(1)    非主        是否标志代码表
+  JZLXFS        家长联系方式            nvarchar(20)   非主
+  RQ            日期                    datetime       非主
+

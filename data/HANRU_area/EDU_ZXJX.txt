@@ -148,6 +148,8 @@
             <name="SSKSID" exp="配置名称" type="nvarchar(20)" null="F" p="F" />
             <name="FXLX" exp="分析类型" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="nvarchar(60)" null="F" p="F" />
+            <name="NJQ" exp="年级前" type="int" null="F" p="F" />
+            <name="NJH" exp="年级后" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_07_A02_CJFXPZXM" exp="成绩分析配置项目表">

@@ -12,7 +12,6 @@ namespace HanRuEdu.LDAL
             RYMC = "";
             SJDW = "";
             SJSJ = DateTime.Now;
-            SFGK = "";
             HJRID = "";
             NR = "";
             BZ = "";
@@ -60,13 +59,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "是否公开")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SFGK { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "获奖人")]
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
@@ -89,6 +81,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "添加时间")]
             public DateTime TJSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "审核状态")]
+            public Int32 SHZT { get; set; }
 
 
         }

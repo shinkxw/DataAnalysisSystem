@@ -14,15 +14,13 @@ SELECT a.[ID]--编号
       ,c.SSLMID as c_GZNR_SSLMID--工作内容表 所属栏目ID
       ,c.SSXKID as c_GZNR_SSXKID--工作内容表 所属学科ID
       ,c.SSNJID as c_GZNR_SSNJID--工作内容表 所属年级ID
-      ,c.SFGK as c_GZNR_SFGK--工作内容表 是否公开
-      ,[cb].MC as c_GZNR_SFGK_MC--是否标志代码表 名称
       ,c.NR as c_GZNR_NR--工作内容表 内容
       ,c.FBRID as c_GZNR_FBRID--工作内容表 发布人ID
       ,c.FBSJ as c_GZNR_FBSJ--工作内容表 发布时间
       ,c.LLL as c_GZNR_LLL--工作内容表 浏览量
       ,c.XQID as c_GZNR_XQID--工作内容表 学期ID
+      ,c.SHZT as c_GZNR_SHZT--工作内容表 审核状态
 
 FROM dbo.EDU_ZYFZ_02_A05_GZNRPL AS a LEFT OUTER JOIN
-      dbo.EDU_ZYFZ_02_A04_GZNR AS c ON a.GZNRID = c.ID /*工作内容ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [cb] ON c.SFGK = [cb].DM /*是否公开*/
+      dbo.EDU_ZYFZ_02_A04_GZNR AS c ON a.GZNRID = c.ID /*工作内容ID*/
 GO

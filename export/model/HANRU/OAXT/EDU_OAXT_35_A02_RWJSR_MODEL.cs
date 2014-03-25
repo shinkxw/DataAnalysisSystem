@@ -45,6 +45,11 @@ namespace HanRuEdu.LDAL
             public Int32 WCZT { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "É¾³ý×´Ì¬")]
+            public Int32 SCZT { get; set; }
+
+
         }
     }
 }

@@ -960,6 +960,7 @@
             <name="JSRID" exp="接收人ID" type="nvarchar(20)" null="F" p="F" />
             <name="YDZT" exp="阅读状态" type="int" null="F" p="F" />
             <name="WCZT" exp="完成状态" type="int" null="F" p="F" />
+            <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_35_A03_HFJL" exp="回复记录表">

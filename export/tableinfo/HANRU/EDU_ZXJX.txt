@@ -127,6 +127,8 @@ EDU_ZXJX_07_A01_CJFXPZ  成绩分析配置表
   SSKSID        配置名称                nvarchar(20)   非主
   FXLX          分析类型                int            非主
   BZ            备注                    nvarchar(60)   非主
+  NJQ           年级前                  int            非主
+  NJH           年级后                  int            非主
 
 EDU_ZXJX_07_A02_CJFXPZXM  成绩分析配置项目表
   ID            编号                    int            自增主键

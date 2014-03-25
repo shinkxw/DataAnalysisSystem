@@ -67,12 +67,12 @@
             <name="SSLMID" exp="所属栏目ID" type="int" null="F" p="F" />
             <name="SSXKID" exp="所属学科ID" type="int" null="F" p="F" />
             <name="SSNJID" exp="所属年级ID" type="int" null="F" p="F" />
-            <name="SFGK" exp="是否公开" type="nvarchar(1)" null="F" p="F" />
             <name="NR" exp="内容" type="text" null="F" p="F" />
             <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
             <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
             <name="LLL" exp="浏览量" type="int" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A05_GZNRPL" exp="工作内容评论表">
@@ -94,41 +94,11 @@
             <name="SSXNID" exp="所属学年ID" type="int" null="F" p="F" />
             <name="SJDW" exp="授奖单位" type="nvarchar(50)" null="F" p="F" />
             <name="SJSJ" exp="授奖时间" type="datetime" null="F" p="F" />
-            <name="SFGK" exp="是否公开" type="nvarchar(1)" null="F" p="F" />
             <name="HJRID" exp="获奖人ID" type="nvarchar(20)" null="F" p="F" />
             <name="NR" exp="内容" type="text" null="F" p="F" />
             <name="BZ" exp="备注" type="nvarchar(500)" null="F" p="F" />
             <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZYFZ_03_A01_YQLJLX" exp="友情链接类型表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="LXMC" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
-            <name="XSFS" exp="显示方式" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZYFZ_03_A02_YQLJ" exp="友情链接表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="LJLXID" exp="链接类型ID" type="int" null="F" p="F" />
-            <name="LJMC" exp="链接名称" type="nvarchar(50)" null="F" p="F" />
-            <name="LJTP" exp="链接图片" type="text" null="F" p="F" />
-            <name="LJDZ" exp="链接地址" type="text" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZYFZ_03_A03_GGXX" exp="公告信息表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="BT" exp="标题" type="nvarchar(50)" null="F" p="F" />
-            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
-            <name="NR" exp="内容" type="text" null="F" p="F" />
-            <name="DJL" exp="点击量" type="int" null="F" p="F" />
-            <name="SFZD" exp="是否置顶" type="nvarchar(1)" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

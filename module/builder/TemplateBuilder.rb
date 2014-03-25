@@ -285,7 +285,7 @@ class TemplateBuilder
   end
   def make_index(table)
     index_str = "@model HanRuEdu.LDAL.#{table.name}\n"
-    index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:auto;height:500px"\n)
+    index_str << %(<table id="dg" title="  " class="easyui-datagrid" style="width:auto;height:520px"\n)
     index_str << "            data-options=\"singleSelect:false,collapsible:true,  url:'@Url.Content(\"~/#{@directory_name}/#{table.lname_dc}/index_jsonstr\")',\n"
     index_str << "            toolbar:'#toolbar', remoteSort:true,pagination:true, rownumbers:true, fitColumns:true,multiSort:false\" >\n"
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
@@ -350,7 +350,7 @@ class TemplateBuilder
     str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/#{table.lname_dc}.xls")">模板下载</a><br />\n)
     str << %(            <span style="color: red">导入小贴士：<br />\n)
     str << "                1.本导入只支持XML格式的文件。<br />\n"
-    str << "                2.选择EXCEL的【文件另存为。。。】菜单，在保持类型处选择“XML表格”类型，可保存为XML格式文件。<br />\n"
+    str << "                2.选择EXCEL的【文件另存为。。。】菜单，在保存类型处选择“XML表格”类型，可保存为XML格式文件。<br />\n"
     str << "                3.建议用户直接在导入模板上填充要导入的数据，即可上传导入。<br />\n"
     str << "            </span>\n"
     str << "        </p>\n"

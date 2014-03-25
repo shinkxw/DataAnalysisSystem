@@ -43,6 +43,16 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "年级前")]
+            public Int32 NJQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "年级后")]
+            public Int32 NJH { get; set; }
+
+
         }
     }
 }

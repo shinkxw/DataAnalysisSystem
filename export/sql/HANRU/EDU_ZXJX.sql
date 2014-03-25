@@ -354,6 +354,8 @@ CREATE TABLE [dbo].[EDU_ZXJX_07_A01_CJFXPZ](
 	[SSKSID]  nvarchar(20)  NOT NULL,--配置名称
 	[FXLX]  int  NOT NULL,--分析类型
 	[BZ]  nvarchar(60)  NOT NULL,--备注
+	[NJQ]  int  NOT NULL,--年级前
+	[NJH]  int  NOT NULL,--年级后
 CONSTRAINT [PK_EDU_ZXJX_07_A01_CJFXPZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -924,6 +926,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分析类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_07_A01_CJFXPZ', @level2type=N'COLUMN',@level2name=N'FXLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_07_A01_CJFXPZ', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级前' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_07_A01_CJFXPZ', @level2type=N'COLUMN',@level2name=N'NJQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级后' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_07_A01_CJFXPZ', @level2type=N'COLUMN',@level2name=N'NJH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩分析配置项目表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_07_A02_CJFXPZXM'
 GO

@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[JSRID]--接收人ID
       ,a.[YDZT]--阅读状态
       ,a.[WCZT]--完成状态
+      ,a.[SCZT]--删除状态
       ,c.SCHOOLID as c_RW_SCHOOLID--任务表 学校ID
       ,c.RWBT as c_RW_RWBT--任务表 任务标题
       ,c.JSYHIDLB as c_RW_JSYHIDLB--任务表 接收用户ID列表

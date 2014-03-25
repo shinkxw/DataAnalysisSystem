@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZYFZ_03_A01_YQLJLX_metadata))]
-    public partial class EDU_ZYFZ_03_A01_YQLJLX
+    [MetadataType(typeof(EDU_ZXXS_50_A01_QQYY_metadata))]
+    public partial class EDU_ZXXS_50_A01_QQYY
     {
-        public EDU_ZYFZ_03_A01_YQLJLX()
+        public EDU_ZXXS_50_A01_QQYY()
         {
-            LXMC = "";
+            MC = "";
         }
-        public class EDU_ZYFZ_03_A01_YQLJLX_metadata
+        public class EDU_ZXXS_50_A01_QQYY_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -24,15 +24,10 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "类型名称")]
-            [StringLength(50)]
+            [Display(Name = "名称")]
+            [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LXMC { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "显示方式")]
-            public Int32 XSFS { get; set; }
+            public String MC { get; set; }
 
 
         }

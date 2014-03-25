@@ -11,7 +11,6 @@ namespace HanRuEdu.LDAL
         {
             BT = "";
             GJC = "";
-            SFGK = "";
             NR = "";
             FBRID = "";
             FBSJ = DateTime.Now;
@@ -58,13 +57,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "是否公开")]
-            [StringLength(1)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SFGK { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "内容")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String NR { get; set; }
@@ -90,6 +82,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学期")]
             public Int32 XQID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "审核状态")]
+            public Int32 SHZT { get; set; }
 
 
         }

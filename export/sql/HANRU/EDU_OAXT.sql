@@ -1865,6 +1865,7 @@ CREATE TABLE [dbo].[EDU_OAXT_35_A02_RWJSR](
 	[JSRID]  nvarchar(20)  NOT NULL,--½ÓÊÕÈËID
 	[YDZT]  int  NOT NULL,--ÔÄ¶Á×´Ì¬
 	[WCZT]  int  NOT NULL,--Íê³É×´Ì¬
+	[SCZT]  int  NOT NULL,--É¾³ý×´Ì¬
 CONSTRAINT [PK_EDU_OAXT_35_A02_RWJSR] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3427,6 +3428,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ÔÄ¶Á×´Ì¬' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'YDZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Íê³É×´Ì¬' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'WCZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'É¾³ý×´Ì¬' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'SCZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'»Ø¸´¼ÇÂ¼±í' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A03_HFJL'
 GO
