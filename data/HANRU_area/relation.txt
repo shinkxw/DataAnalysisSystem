@@ -852,6 +852,7 @@
   QQYYID         EDU_ZXXS_50_A01_QQYY               ID
   SFJY           EDU_JY_SFBZ                        DM
   SFTZJZ         EDU_JY_SFBZ                        DM
+  SBJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
 <EDU_ZXXX_01_01_ZXXX
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXBXLXM        EDU_JY_BXLX                        DM

@@ -90,6 +90,11 @@ namespace HanRuEdu.LDAL
             public DateTime RQ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "上报教师")]
+            public Int32 SBJSID { get; set; }
+
+
         }
     }
 }

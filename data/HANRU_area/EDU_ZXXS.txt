@@ -138,24 +138,25 @@
     </table>
     <table name="EDU_ZXXS_50_A01_QQYY" exp="缺勤原因表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="MC" exp="名称" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_50_A02_BJSBJL" exp="班级上报记录表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
             <name="RQ" exp="日期" type="datetime" null="F" p="F" />
+            <name="QQRS" exp="缺勤人数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_50_A03_XSSBJL" exp="学生上报记录表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
             <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
             <name="QQYYID" exp="缺勤原因ID" type="int" null="F" p="F" />
@@ -166,6 +167,7 @@
             <name="SFTZJZ" exp="是否通知家长" type="nvarchar(1)" null="F" p="F" />
             <name="JZLXFS" exp="家长联系方式" type="nvarchar(20)" null="T" p="F" />
             <name="RQ" exp="日期" type="datetime" null="F" p="F" />
+            <name="SBJSID" exp="上报教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

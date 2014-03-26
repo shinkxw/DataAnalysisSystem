@@ -224,13 +224,12 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXXS_50_A01_QQYY]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZXXS_50_A01_QQYY](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[MC]  nvarchar(100)  NOT NULL,--名称
 CONSTRAINT [PK_EDU_ZXXS_50_A01_QQYY] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -240,15 +239,15 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXXS_50_A02_BJSBJL]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZXXS_50_A02_BJSBJL](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[BJID]  nvarchar(10)  NOT NULL,--班级ID
 	[ZT]  int  NOT NULL,--状态
 	[RQ]  datetime  NOT NULL,--日期
+	[QQRS]  int  NOT NULL,--缺勤人数
 CONSTRAINT [PK_EDU_ZXXS_50_A02_BJSBJL] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -258,7 +257,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXXS_50_A03_XSSBJL]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZXXS_50_A03_XSSBJL](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[BJID]  nvarchar(10)  NOT NULL,--班级ID
 	[XSXXID]  int  NOT NULL,--学生ID
@@ -270,10 +269,10 @@ CREATE TABLE [dbo].[EDU_ZXXS_50_A03_XSSBJL](
 	[SFTZJZ]  nvarchar(1)  NOT NULL,--是否通知家长
 	[JZLXFS]  nvarchar(20)  NULL,--家长联系方式
 	[RQ]  datetime  NOT NULL,--日期
+	[SBJSID]  int  NOT NULL,--上报教师ID
 CONSTRAINT [PK_EDU_ZXXS_50_A03_XSSBJL] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -542,6 +541,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A02_BJSBJL', @level2type=N'COLUMN',@level2name=N'RQ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'缺勤人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A02_BJSBJL', @level2type=N'COLUMN',@level2name=N'QQRS'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生上报记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -567,4 +568,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'家长联系方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'JZLXFS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'RQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上报教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'SBJSID'
 GO

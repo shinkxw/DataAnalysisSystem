@@ -41,6 +41,11 @@ namespace HanRuEdu.LDAL
             public DateTime RQ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "È±ÇÚÈËÊı")]
+            public Int32 QQRS { get; set; }
+
+
         }
     }
 }

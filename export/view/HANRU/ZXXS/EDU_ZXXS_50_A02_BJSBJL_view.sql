@@ -7,6 +7,7 @@ SELECT a.[ID]--编号
       ,a.[BJID]--班级ID
       ,a.[ZT]--状态
       ,a.[RQ]--日期
+      ,a.[QQRS]--缺勤人数
       ,c.SCHOOLID as c_BJ_SCHOOLID--班级数据类表 学校名
       ,c.NJ as c_BJ_NJ--班级数据类表 年级号
       ,c.BJ as c_BJ_BJ--班级数据类表 班级名称
