@@ -83,8 +83,8 @@ class TemplateBuilder
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Create(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}//if (#{table.lname_dc} == "") throw new Exception(\"²»ÄÜÎª¿Õ£¡\");\n#{@tab.t}"
-    str << "if (ModelState.IsValid)\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
+    str << "if (ModelState.IsValid)\n#{@tab.t}{\n#{@tab.l}"
+    str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
     str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
