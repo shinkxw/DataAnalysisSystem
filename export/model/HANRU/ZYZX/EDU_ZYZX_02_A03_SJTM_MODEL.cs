@@ -50,13 +50,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "难度系数")]
-            [Range(typeof(decimal), "0", "999999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal NDXS { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "分值")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal FZ { get; set; }
 
 

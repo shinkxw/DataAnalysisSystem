@@ -58,7 +58,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "成绩总分")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal CJZF { get; set; }
 
 

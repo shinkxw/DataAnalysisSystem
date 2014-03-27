@@ -110,13 +110,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "总建筑面积")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "99999999")]
             public decimal ZJZMJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "总使用面积")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "99999999")]
             public decimal ZSYMJ { get; set; }
 
 

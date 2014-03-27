@@ -60,13 +60,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "单价")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "99999999")]
             public decimal Price { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "数量")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal SumCount { get; set; }
 
 

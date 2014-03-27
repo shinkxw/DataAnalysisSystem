@@ -66,7 +66,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "Ñ§ÖÆ")]
-            [Range(typeof(decimal), "0", "999")]
+            [Range(typeof(decimal), "0", "99")]
             public decimal XZ { get; set; }
 
 

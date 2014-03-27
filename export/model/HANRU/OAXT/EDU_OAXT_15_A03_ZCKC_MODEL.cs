@@ -59,13 +59,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "单价")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "99999999")]
             public decimal Price { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "数量")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal SumCount { get; set; }
 
 
@@ -92,13 +92,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "资产总量")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal AllCount { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "入库量")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal RKL { get; set; }
 
 

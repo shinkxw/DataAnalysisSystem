@@ -90,7 +90,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "分数类考试成绩")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal FSLKSCJ { get; set; }
 
 
@@ -101,7 +101,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "课程成绩")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal KCCJ { get; set; }
 
 

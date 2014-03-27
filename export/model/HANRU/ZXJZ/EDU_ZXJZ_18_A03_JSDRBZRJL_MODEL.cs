@@ -37,7 +37,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "担任时间")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal DRSJ { get; set; }
 
 

@@ -4,17 +4,17 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_OAXT_15_A10_ZCBF_metadata))]
-    public partial class EDU_OAXT_15_A10_ZCBF
+    [MetadataType(typeof(EDU_ZXXS_51_A03_BJKHCJ_metadata))]
+    public partial class EDU_ZXXS_51_A03_BJKHCJ
     {
-        public EDU_OAXT_15_A10_ZCBF()
+        public EDU_ZXXS_51_A03_BJKHCJ()
         {
-            Reporter = "";
-            Remark = "";
-            RegsterID = "";
-            Registdate = DateTime.Now;
+            NJID = "";
+            BJID = "";
+            DJRID = "";
+            DJSJ = DateTime.Now;
         }
-        public class EDU_OAXT_15_A10_ZCBF_metadata
+        public class EDU_ZXXS_51_A03_BJKHCJ_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -27,45 +27,45 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "库存表")]
-            public Int32 AID { get; set; }
+            [Display(Name = "所属大类")]
+            public Int32 SSDLID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "数量")]
-            [Range(typeof(decimal), "0", "999999")]
-            public decimal Sum { get; set; }
+            [Display(Name = "所属大类项目")]
+            public Int32 SSDLXMID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "申报人")]
-            [StringLength(100)]
+            [Display(Name = "年级")]
+            [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String Reporter { get; set; }
+            public String NJID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "备注")]
-            [StringLength(100)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String Remark { get; set; }
+            public String BJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "分值")]
+            [Range(typeof(decimal), "0", "999")]
+            public decimal FZ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "登记人")]
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String RegsterID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "状态")]
-            public Int32 Statu { get; set; }
+            public String DJRID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "登记时间")]
-            public DateTime Registdate { get; set; }
+            public DateTime DJSJ { get; set; }
 
 
         }

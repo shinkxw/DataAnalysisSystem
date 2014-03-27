@@ -63,7 +63,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ÿÃÓ")]
             [Display(Name = "∑—”√")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "99999")]
             public decimal FY { get; set; }
 
 

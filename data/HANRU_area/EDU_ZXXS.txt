@@ -170,4 +170,51 @@
             <name="SBJSID" exp="上报教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_51_A01_KHDL" exp="考核大类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="MC" exp="名称" type="nvarchar(100)" null="F" p="F" />
+            <name="KHDX" exp="考核对象" type="int" null="F" p="F" />
+            <name="DJFS" exp="登记方式" type="int" null="F" p="F" />
+            <name="KDJYHIDLB" exp="可登记用户ID列表" type="text" null="F" p="F" />
+            <name="KDJYHXMLB" exp="可登记用户姓名列表" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A02_KHDLXM" exp="考核大类项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SSDLID" exp="所属大类ID" type="int" null="F" p="F" />
+            <name="DLXMMC" exp="大类项目名称" type="nvarchar(10)" null="F" p="F" />
+            <name="FZLX" exp="分值类型" type="int" null="F" p="F" />
+            <name="XMZGF" exp="项目最高分" type="decimal(5, 2)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A03_BJKHCJ" exp="班级考核成绩表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SSDLID" exp="所属大类ID" type="int" null="F" p="F" />
+            <name="SSDLXMID" exp="所属大类项目ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" null="F" p="F" />
+            <name="DJRID" exp="登记人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A04_SSKHCJ" exp="宿舍考核成绩表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SSDLID" exp="所属大类ID" type="int" null="F" p="F" />
+            <name="SSDLXMID" exp="所属大类项目ID" type="int" null="F" p="F" />
+            <name="GYID" exp="宿舍楼ID" type="int" null="F" p="F" />
+            <name="SSID" exp="宿舍ID" type="int" null="F" p="F" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" null="F" p="F" />
+            <name="DJRID" exp="登记人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

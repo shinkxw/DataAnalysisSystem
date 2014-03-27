@@ -82,10 +82,10 @@ class MDField
     when 'nchar','nvarchar';result = ['String',value]
     when 'float';result = ['float']
     when 'decimal'
-      if value[/(.+?),(.+?)/]
+      if value[/(.+?), *(.+?)/]
         zw = $1.to_i
         xw = $2.to_i
-        result = ['decimal','0',(calnum(zw)-(1.0/calnum(xw))).to_i.to_s]
+        result = ['decimal','0',(calnum(zw - xw)-1).to_i.to_s]
       elsif value[/[^,]+/]
         result = ['decimal','0',(calnum(value.to_i)-1).to_i.to_s]
       else

@@ -30,7 +30,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "·ÖÊý")]
-            [Range(typeof(decimal), "0", "1000000000000000000")]
+            [Range(typeof(decimal), "0", "99999999999999999")]
             public decimal FS { get; set; }
 
 

@@ -41,7 +41,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "ÒÑ½É½ð¶î")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "9999999")]
             public decimal YJJE { get; set; }
 
 

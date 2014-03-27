@@ -45,13 +45,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "考核分")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "99999")]
             public decimal KHF { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "成绩")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "99999")]
             public decimal FLM { get; set; }
 
 

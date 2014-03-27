@@ -39,7 +39,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "³É¼¨")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal CJ { get; set; }
 
 

@@ -54,7 +54,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学分")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "9")]
             public decimal XF { get; set; }
 
 
@@ -66,13 +66,13 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "平时成绩")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal PSCJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "成绩")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal CJ { get; set; }
 
 
@@ -110,12 +110,12 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "期中成绩")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal QZCJ { get; set; }
 
 
             [Display(Name = "期末成绩")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal QMCJ { get; set; }
 
 

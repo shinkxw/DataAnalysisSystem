@@ -34,7 +34,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "¼Û¸ñ")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal JG { get; set; }
 
 

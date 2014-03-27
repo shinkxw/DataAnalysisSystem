@@ -60,7 +60,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "获得学分")]
-            [Range(typeof(decimal), "0", "9999")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal XF { get; set; }
 
 

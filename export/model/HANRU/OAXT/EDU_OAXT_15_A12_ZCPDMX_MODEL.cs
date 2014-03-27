@@ -44,13 +44,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "库存数")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal Storesum { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "实存数")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal RealSum { get; set; }
 
 
@@ -63,7 +63,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "资产总量")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal AllCount { get; set; }
 
 
@@ -75,7 +75,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "借用数量")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal BorrowCount { get; set; }
 
 

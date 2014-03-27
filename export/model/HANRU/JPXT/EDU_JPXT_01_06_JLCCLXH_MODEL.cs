@@ -41,7 +41,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "ÏûºÄ½ð¶î")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal XHQK { get; set; }
 
 

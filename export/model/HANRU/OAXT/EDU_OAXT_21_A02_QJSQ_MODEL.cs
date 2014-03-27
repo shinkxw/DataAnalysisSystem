@@ -59,7 +59,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "Çë¼ÙÌìÊı")]
-            [Range(typeof(decimal), "0", "1000000000000000000")]
+            [Range(typeof(decimal), "0", "9999999999999999")]
             public decimal QJTS { get; set; }
 
 

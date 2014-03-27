@@ -40,13 +40,13 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "考核最高分")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "99999")]
             public decimal ZGF { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "权重")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "99999")]
             public decimal QZ { get; set; }
 
 

@@ -63,7 +63,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "  ”√—ß÷∆")]
-            [Range(typeof(decimal), "0", "999")]
+            [Range(typeof(decimal), "0", "99")]
             public decimal SYXZ { get; set; }
 
 

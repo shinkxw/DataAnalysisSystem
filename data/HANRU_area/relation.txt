@@ -853,6 +853,25 @@
   SFJY           EDU_JY_SFBZ                        DM
   SFTZJZ         EDU_JY_SFBZ                        DM
   SBJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
+<EDU_ZXXS_51_A01_KHDL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXS_51_A02_KHDLXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SSDLID         EDU_ZXXS_51_A01_KHDL               ID
+<EDU_ZXXS_51_A03_BJKHCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SSDLID         EDU_ZXXS_51_A01_KHDL               ID
+  SSDLXMID       EDU_ZXXS_51_A02_KHDLXM             ID
+  NJID           EDU_ZXXX_02_01_NJ                  NJ
+  BJID           EDU_ZXXX_03_01_BJ                  BH
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZXXS_51_A04_SSKHCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SSDLID         EDU_ZXXS_51_A01_KHDL               ID
+  SSDLXMID       EDU_ZXXS_51_A02_KHDLXM             ID
+  GYID           EDU_ZXFC_02_01_JZWJBSJ             ID
+  SSID           EDU_ZXFC_08_01_XSSS                ID
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXXX_01_01_ZXXX
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXBXLXM        EDU_JY_BXLX                        DM

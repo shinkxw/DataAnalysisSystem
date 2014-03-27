@@ -163,12 +163,12 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "身高")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal SG { get; set; }
 
 
             [Display(Name = "考生视力")]
-            [Range(typeof(decimal), "0", "999")]
+            [Range(typeof(decimal), "0", "99")]
             public decimal KSSL { get; set; }
 
 

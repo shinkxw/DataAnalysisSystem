@@ -73,7 +73,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "¼Û¸ñ")]
-            [Range(typeof(decimal), "0", "99999999")]
+            [Range(typeof(decimal), "0", "999999")]
             public decimal JG { get; set; }
 
 

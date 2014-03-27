@@ -86,22 +86,22 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "校区面积")]
-            [Range(typeof(decimal), "0", "100000000000000000000")]
+            [Range(typeof(decimal), "0", "99999999999999999999")]
             public decimal XQMJ { get; set; }
 
 
             [Display(Name = "校区建筑面积")]
-            [Range(typeof(decimal), "0", "100000000000000000000")]
+            [Range(typeof(decimal), "0", "99999999999999999999")]
             public decimal XQJZMJ { get; set; }
 
 
             [Display(Name = "校区教学科研仪器设备总值")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "99999999")]
             public decimal XQJXKYSBZZ { get; set; }
 
 
             [Display(Name = "校区固定资产总值")]
-            [Range(typeof(decimal), "0", "9999999999")]
+            [Range(typeof(decimal), "0", "99999999")]
             public decimal XQGDZCZZ { get; set; }
 
 

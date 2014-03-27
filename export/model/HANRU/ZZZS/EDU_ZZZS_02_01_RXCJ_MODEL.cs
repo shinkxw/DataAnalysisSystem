@@ -23,17 +23,17 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "入学总分")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal RXZF { get; set; }
 
 
             [Display(Name = "中考总分")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal GKZF { get; set; }
 
 
             [Display(Name = "附加分")]
-            [Range(typeof(decimal), "0", "99999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal FJF { get; set; }
 
 

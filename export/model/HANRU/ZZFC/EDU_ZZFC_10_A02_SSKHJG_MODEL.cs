@@ -48,7 +48,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ÿÃÓ")]
             [Display(Name = "øº∫À∑÷÷µ")]
-            [Range(typeof(decimal), "0", "9999")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal KHFZ { get; set; }
 
 

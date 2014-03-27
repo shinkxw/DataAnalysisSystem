@@ -218,7 +218,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "小学学制")]
-            [Range(typeof(decimal), "0", "999")]
+            [Range(typeof(decimal), "0", "99")]
             public decimal XXXZ { get; set; }
 
 
@@ -230,7 +230,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "初中学制")]
-            [Range(typeof(decimal), "0", "999")]
+            [Range(typeof(decimal), "0", "99")]
             public decimal CZXZ { get; set; }
 
 
@@ -242,7 +242,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "高中学制")]
-            [Range(typeof(decimal), "0", "999")]
+            [Range(typeof(decimal), "0", "99")]
             public decimal GZXZ { get; set; }
 
 

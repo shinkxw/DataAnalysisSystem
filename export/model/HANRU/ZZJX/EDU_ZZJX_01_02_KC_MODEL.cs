@@ -55,7 +55,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "Ñ§·Ö")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "9")]
             public decimal XF { get; set; }
 
 

@@ -33,7 +33,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学分要求")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "9")]
             public decimal XFYQ { get; set; }
 
 

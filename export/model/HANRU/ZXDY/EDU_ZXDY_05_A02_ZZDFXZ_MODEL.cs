@@ -37,7 +37,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "细则分值")]
-            [Range(typeof(decimal), "0", "999999")]
+            [Range(typeof(decimal), "0", "9999")]
             public decimal XZFZ { get; set; }
 
 
