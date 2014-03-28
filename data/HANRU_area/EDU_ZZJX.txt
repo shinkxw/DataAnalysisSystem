@@ -293,6 +293,7 @@
             <name="LWNR" exp="论文内容" type="text" null="F" p="F" />
             <name="SCJSID" exp="上传教师ID" type="int" null="F" p="F" />
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+            <name="LWLXID" exp="论文类型ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_10_A02_KYHDSJ" exp="科研活动数据表">
@@ -347,6 +348,13 @@
             <name="JDMC" exp="阶段名称" type="nvarchar(50)" null="F" p="F" />
             <name="JDGZNR" exp="阶段工作内容" type="text" null="F" p="F" />
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_10_A06_LWLX" exp="论文类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="LXMC" exp="类型名称" type="nvarchar(100)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_20_A01_QYGL" exp="企业管理表">

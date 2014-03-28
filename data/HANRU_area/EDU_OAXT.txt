@@ -516,6 +516,13 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_20_A07_LCMBLXPZ" exp="流程模板类型配置表">
+        <field_area>
+            <name="LCMBLXID" exp="流程模板类型ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="BSYLC" exp="不使用流程" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_21_A01_QJLX" exp="请假类型表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -914,6 +921,13 @@
             <name="HFFJ" exp="回复附件" type="text" null="F" p="F" />
             <name="CLZT" exp="处理状态" type="int" null="F" p="F" />
             <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_33_A05_HTWZ" exp="红头文字表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="HTWZ" exp="红头文字" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_34_A01_WYLCJL" exp="文印流程记录">

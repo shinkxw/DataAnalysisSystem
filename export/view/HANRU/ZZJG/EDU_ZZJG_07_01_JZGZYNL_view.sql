@@ -11,6 +11,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[ZSBZ]--证书备注
       ,a.[SFSZYZGZS]--是否是职业资格证书
       ,a.[JJ]--简介
+      ,a.[ZSDJID]--证书等级ID
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -80,10 +81,13 @@ SELECT a.[SCHOOLID]--学校名
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
+      ,e.SCHOOLID as e_ZSDJ_SCHOOLID--证书等级表 学校
+      ,e.DJMC as e_ZSDJ_DJMC--证书等级表 等级名称
 
 FROM dbo.EDU_ZZJG_07_01_JZGZYNL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS d ON a.SFSZYZGZS = d.DM /*是否是职业资格证书*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_A04_ZSDJ AS e ON a.ZSDJID = e.ID /*证书等级ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN

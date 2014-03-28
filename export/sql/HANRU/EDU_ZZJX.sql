@@ -115,6 +115,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_10_A05_KTJD
    drop table EDU_ZZJX_10_A05_KTJDSJ
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_10_A06_LWLX')
+            and   type = 'U')
+   drop table EDU_ZZJX_10_A06_LWLX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_20_A01_QYGL')
             and   type = 'U')
    drop table EDU_ZZJX_20_A01_QYGL
@@ -763,6 +768,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_10_A01_LWSJ](
 	[LWNR]  text  NOT NULL,--论文内容
 	[SCJSID]  int  NOT NULL,--上传教师ID
 	[SCSJ]  datetime  NOT NULL,--上传时间
+	[LWLXID]  int  NOT NULL,--论文类型ID
 CONSTRAINT [PK_EDU_ZZJX_10_A01_LWSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -857,6 +863,21 @@ CONSTRAINT [PK_EDU_ZZJX_10_A05_KTJDSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--论文类型表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_10_A06_LWLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_10_A06_LWLX](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[LXMC]  nvarchar(100)  NULL,--类型名称
+CONSTRAINT [PK_EDU_ZZJX_10_A06_LWLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -2183,6 +2204,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传教师ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A01_LWSJ', @level2type=N'COLUMN',@level2name=N'SCSJ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'论文类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A01_LWSJ', @level2type=N'COLUMN',@level2name=N'LWLXID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'科研活动数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A02_KYHDSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A02_KYHDSJ', @level2type=N'COLUMN',@level2name=N'ID'
@@ -2266,6 +2289,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'阶段工作内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A05_KTJDSJ', @level2type=N'COLUMN',@level2name=N'JDGZNR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A05_KTJDSJ', @level2type=N'COLUMN',@level2name=N'SCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'论文类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A06_LWLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A06_LWLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A06_LWLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A06_LWLX', @level2type=N'COLUMN',@level2name=N'LXMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'企业管理表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A01_QYGL'
 GO

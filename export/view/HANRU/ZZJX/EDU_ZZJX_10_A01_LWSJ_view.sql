@@ -11,6 +11,7 @@ SELECT a.[ID]--编号
       ,a.[LWNR]--论文内容
       ,a.[SCJSID]--上传教师ID
       ,a.[SCSJ]--上传时间
+      ,a.[LWLXID]--论文类型ID
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
@@ -88,11 +89,14 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,f.SCHOOLID as f_LWLX_SCHOOLID--论文类型表 学校
+      ,f.LXMC as f_LWLX_LXMC--论文类型表 类型名称
 
 FROM dbo.EDU_ZZJX_10_A01_LWSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.SCJSID = e.ID /*上传教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_10_A06_LWLX AS f ON a.LWLXID = f.ID /*论文类型ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN

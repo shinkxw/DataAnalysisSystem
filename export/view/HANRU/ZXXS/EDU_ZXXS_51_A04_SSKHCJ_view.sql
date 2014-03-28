@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[SSDLXMID]--所属大类项目ID
       ,a.[GYID]--宿舍楼ID
       ,a.[SSID]--宿舍ID
+      ,a.[KHSJ]--考核时间
       ,a.[FZ]--分值
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间

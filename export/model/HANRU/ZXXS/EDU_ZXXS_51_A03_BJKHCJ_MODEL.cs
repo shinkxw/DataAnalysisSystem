@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             NJID = "";
             BJID = "";
+            KHSJ = DateTime.Now;
             DJRID = "";
             DJSJ = DateTime.Now;
         }
@@ -48,6 +49,11 @@ namespace HanRuEdu.LDAL
             [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "考核时间")]
+            public DateTime KHSJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

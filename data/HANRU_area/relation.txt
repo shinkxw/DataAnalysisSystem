@@ -277,6 +277,9 @@
   LCMBLXID       EDU_OAXT_20_A01_LCMBLX             ID
   SQRID          EDU_ELE_01_USER                    LOGINNAME
   SPRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_20_A07_LCMBLXPZ
+  LCMBLXID       EDU_OAXT_20_A01_LCMBLX             ID
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_21_A01_QJLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_21_A02_QJSQ
@@ -350,6 +353,8 @@
   GWID           EDU_OAXT_33_A01_GWJCXX             ID
   XFRID          EDU_ELE_01_USER                    LOGINNAME
   JSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_33_A05_HTWZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_34_A01_WYLCJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SQRID          EDU_ELE_01_USER                    LOGINNAME
@@ -1080,6 +1085,11 @@
 <EDU_ZZJG_01_A03_GRXXBJKG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFKQ           EDU_JY_SFBZ                        DM
+  JBXXKG         EDU_JY_SFBZ                        DM
+  KZXXKG         EDU_JY_SFBZ                        DM
+  QTXXKG         EDU_JY_SFBZ                        DM
+<EDU_ZZJG_01_A04_ZSDJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_02_02_XNGWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GWID           EDU_ZZXX_03_A01_JGGW               ID
@@ -1095,6 +1105,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
   SFSZYZGZS      EDU_JY_SFBZ                        DM
+  ZSDJID         EDU_ZZJG_01_A04_ZSDJ               ID
 <EDU_ZZJG_11_A02_KPXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KPFSID         EDU_ZZJG_11_A03_KPFS               ID
@@ -1359,6 +1370,7 @@
   XNID           EDU_SYS_01_XN                      ID
   XQID           EDU_ELE_01_XQ                      ID
   SCJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  LWLXID         EDU_ZZJX_10_A06_LWLX               ID
 <EDU_ZZJX_10_A02_KYHDSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID
@@ -1380,6 +1392,8 @@
 <EDU_ZZJX_10_A05_KTJDSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KTID           EDU_ZZJX_10_A04_KTSJ               ID
+<EDU_ZZJX_10_A06_LWLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_20_A01_QYGL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_20_A02_XQHD

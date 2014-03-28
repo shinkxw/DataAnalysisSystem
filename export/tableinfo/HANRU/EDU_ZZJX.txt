@@ -254,6 +254,7 @@ EDU_ZZJX_10_A01_LWSJ  论文数据表
   LWNR          论文内容                text           非主
   SCJSID        上传教师ID              int            非主        教职工基本数据子类表
   SCSJ          上传时间                datetime       非主
+  LWLXID        论文类型ID              int            非主        论文类型表
 
 EDU_ZZJX_10_A02_KYHDSJ  科研活动数据表
   ID            编号                    int            主键
@@ -300,6 +301,11 @@ EDU_ZZJX_10_A05_KTJDSJ  课题阶段数据表
   JDMC          阶段名称                nvarchar(50)   非主
   JDGZNR        阶段工作内容            text           非主
   SCSJ          上传时间                datetime       非主
+
+EDU_ZZJX_10_A06_LWLX  论文类型表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  LXMC          类型名称                nvarchar(100)  非主
 
 EDU_ZZJX_20_A01_QYGL  企业管理表
   ID            编号                    int            主键

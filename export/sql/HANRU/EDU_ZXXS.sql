@@ -346,6 +346,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_51_A03_BJKHCJ](
 	[SSDLXMID]  int  NOT NULL,--所属大类项目ID
 	[NJID]  nvarchar(10)  NOT NULL,--年级ID
 	[BJID]  nvarchar(10)  NOT NULL,--班级ID
+	[KHSJ]  datetime  NOT NULL,--考核时间
 	[FZ]  decimal(5, 2)  NOT NULL,--分值
 	[DJRID]  nvarchar(20)  NOT NULL,--登记人ID
 	[DJSJ]  datetime  NOT NULL,--登记时间
@@ -367,6 +368,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_51_A04_SSKHCJ](
 	[SSDLXMID]  int  NOT NULL,--所属大类项目ID
 	[GYID]  int  NOT NULL,--宿舍楼ID
 	[SSID]  int  NOT NULL,--宿舍ID
+	[KHSJ]  datetime  NOT NULL,--考核时间
 	[FZ]  decimal(5, 2)  NOT NULL,--分值
 	[DJRID]  nvarchar(20)  NOT NULL,--登记人ID
 	[DJSJ]  datetime  NOT NULL,--登记时间
@@ -715,6 +717,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A03_BJKHCJ', @level2type=N'COLUMN',@level2name=N'BJID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A03_BJKHCJ', @level2type=N'COLUMN',@level2name=N'KHSJ'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A03_BJKHCJ', @level2type=N'COLUMN',@level2name=N'FZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A03_BJKHCJ', @level2type=N'COLUMN',@level2name=N'DJRID'
@@ -734,6 +738,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'宿舍楼ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'GYID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'宿舍ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'SSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'KHSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'FZ'
 GO

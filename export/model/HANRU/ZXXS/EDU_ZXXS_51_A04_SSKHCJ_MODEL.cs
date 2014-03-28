@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXXS_51_A04_SSKHCJ()
         {
+            KHSJ = DateTime.Now;
             DJRID = "";
             DJSJ = DateTime.Now;
         }
@@ -42,6 +43,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "宿舍")]
             public Int32 SSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "考核时间")]
+            public DateTime KHSJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

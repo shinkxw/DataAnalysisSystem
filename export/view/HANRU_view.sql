@@ -247,6 +247,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A06
             and   type = 'V')
    drop view VIEW_EDU_OAXT_20_A06_LCSHJL_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_20_A07_LCMBLXPZ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_20_A07_LCMBLXPZ_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_21_A02_QJSQ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_21_A02_QJSQ_DISP
@@ -4117,6 +4121,19 @@ FROM dbo.EDU_OAXT_20_A06_LCSHJL AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A01_LCMBLX AS e ON a.LCMBLXID = e.ID /*流程模板类型ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.SQRID = f.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS g ON a.SPRID = g.LOGINNAME /*审批人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/
+GO
+
+--流程模板类型配置表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_20_A07_LCMBLXPZ_DISP]
+AS
+SELECT a.[LCMBLXID]--流程模板类型ID
+      ,a.[SCHOOLID]--学校
+      ,a.[BSYLC]--不使用流程
+      ,b.LXMC as b_LCMBLX_LXMC--流程模板类型表 类型名称
+      ,b.BZ as b_LCMBLX_BZ--流程模板类型表 备注
+
+FROM dbo.EDU_OAXT_20_A07_LCMBLXPZ AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_20_A01_LCMBLX AS b ON a.LCMBLXID = b.ID /*流程模板类型ID*/
 GO
 
 --请假申请表
@@ -12164,6 +12181,7 @@ SELECT a.[ID]--编号
       ,a.[SSDLXMID]--所属大类项目ID
       ,a.[NJID]--年级ID
       ,a.[BJID]--班级ID
+      ,a.[KHSJ]--考核时间
       ,a.[FZ]--分值
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间
@@ -12236,6 +12254,7 @@ SELECT a.[ID]--编号
       ,a.[SSDLXMID]--所属大类项目ID
       ,a.[GYID]--宿舍楼ID
       ,a.[SSID]--宿舍ID
+      ,a.[KHSJ]--考核时间
       ,a.[FZ]--分值
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间
@@ -14895,10 +14914,19 @@ SELECT a.[SCHOOLID]--学校
       ,a.[SCSJ]--开始时间
       ,a.[HDSJ]--结束时间
       ,a.[SFKQ]--是否开启
+      ,a.[JBXXKG]--基本信息开关
+      ,a.[KZXXKG]--扩展信息开关
+      ,a.[QTXXKG]--其他信息开关
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
+      ,d.MC as d_SFBZ_MC--是否标志代码表 名称
+      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
+      ,f.MC as f_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJG_01_A03_GRXXBJKG AS a LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS c ON a.SFKQ = c.DM /*是否开启*/
+      dbo.EDU_JY_SFBZ AS c ON a.SFKQ = c.DM /*是否开启*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS d ON a.JBXXKG = d.DM /*基本信息开关*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.KZXXKG = e.DM /*扩展信息开关*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS f ON a.QTXXKG = f.DM /*其他信息开关*/
 GO
 
 --校内岗位数据子类表
@@ -15156,6 +15184,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[ZSBZ]--证书备注
       ,a.[SFSZYZGZS]--是否是职业资格证书
       ,a.[JJ]--简介
+      ,a.[ZSDJID]--证书等级ID
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -15225,10 +15254,13 @@ SELECT a.[SCHOOLID]--学校名
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
+      ,e.SCHOOLID as e_ZSDJ_SCHOOLID--证书等级表 学校
+      ,e.DJMC as e_ZSDJ_DJMC--证书等级表 等级名称
 
 FROM dbo.EDU_ZZJG_07_01_JZGZYNL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS d ON a.SFSZYZGZS = d.DM /*是否是职业资格证书*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_A04_ZSDJ AS e ON a.ZSDJID = e.ID /*证书等级ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
@@ -19388,6 +19420,7 @@ SELECT a.[ID]--编号
       ,a.[LWNR]--论文内容
       ,a.[SCJSID]--上传教师ID
       ,a.[SCSJ]--上传时间
+      ,a.[LWLXID]--论文类型ID
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
@@ -19465,11 +19498,14 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,f.SCHOOLID as f_LWLX_SCHOOLID--论文类型表 学校
+      ,f.LXMC as f_LWLX_LXMC--论文类型表 类型名称
 
 FROM dbo.EDU_ZZJX_10_A01_LWSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.SCJSID = e.ID /*上传教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_10_A06_LWLX AS f ON a.LWLXID = f.ID /*论文类型ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN

@@ -66,6 +66,11 @@ namespace HanRuEdu.LDAL
             public DateTime SCSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "论文类型")]
+            public Int32 LWLXID { get; set; }
+
+
         }
     }
 }

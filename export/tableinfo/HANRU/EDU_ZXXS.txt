@@ -176,6 +176,7 @@ EDU_ZXXS_51_A03_BJKHCJ  班级考核成绩表
   SSDLXMID      所属大类项目ID          int            非主        考核大类项目表
   NJID          年级ID                  nvarchar(10)   非主        年级数据类表
   BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+  KHSJ          考核时间                datetime       非主
   FZ            分值                    decimal(5, 2)  非主
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主
@@ -187,6 +188,7 @@ EDU_ZXXS_51_A04_SSKHCJ  宿舍考核成绩表
   SSDLXMID      所属大类项目ID          int            非主        考核大类项目表
   GYID          宿舍楼ID                int            非主        建筑物基本数据类表
   SSID          宿舍ID                  int            非主        学生宿舍数据类表
+  KHSJ          考核时间                datetime       非主
   FZ            分值                    decimal(5, 2)  非主
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主

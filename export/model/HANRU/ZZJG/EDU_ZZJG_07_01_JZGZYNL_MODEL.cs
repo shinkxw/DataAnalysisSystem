@@ -68,6 +68,11 @@ namespace HanRuEdu.LDAL
             public String JJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "证书等级")]
+            public Int32 ZSDJID { get; set; }
+
+
         }
     }
 }
