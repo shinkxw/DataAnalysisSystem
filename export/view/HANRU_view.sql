@@ -12252,7 +12252,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[SSDLID]--所属大类ID
       ,a.[SSDLXMID]--所属大类项目ID
-      ,a.[GYID]--宿舍楼ID
+      ,a.[GYID]--公寓ID
       ,a.[SSID]--宿舍ID
       ,a.[KHSJ]--考核时间
       ,a.[FZ]--分值
@@ -12399,7 +12399,7 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZXXS_51_A04_SSKHCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_51_A01_KHDL AS c ON a.SSDLID = c.ID /*所属大类ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_51_A02_KHDLXM AS d ON a.SSDLXMID = d.ID /*所属大类项目ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZXFC_02_01_JZWJBSJ AS e ON a.GYID = e.ID /*宿舍楼ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXFC_02_01_JZWJBSJ AS e ON a.GYID = e.ID /*公寓ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXFC_08_01_XSSS AS f ON a.SSID = f.ID /*宿舍ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS g ON a.DJRID = g.LOGINNAME /*登记人ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SYZK AS [eb] ON e.SYZKM = [eb].DM /*使用状况码*/ LEFT OUTER JOIN

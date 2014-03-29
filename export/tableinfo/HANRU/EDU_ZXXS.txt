@@ -186,7 +186,7 @@ EDU_ZXXS_51_A04_SSKHCJ  宿舍考核成绩表
   SCHOOLID      学校                    int            非主        学校配置表
   SSDLID        所属大类ID              int            非主        考核大类表
   SSDLXMID      所属大类项目ID          int            非主        考核大类项目表
-  GYID          宿舍楼ID                int            非主        建筑物基本数据类表
+  GYID          公寓ID                  int            非主        建筑物基本数据类表
   SSID          宿舍ID                  int            非主        学生宿舍数据类表
   KHSJ          考核时间                datetime       非主
   FZ            分值                    decimal(5, 2)  非主

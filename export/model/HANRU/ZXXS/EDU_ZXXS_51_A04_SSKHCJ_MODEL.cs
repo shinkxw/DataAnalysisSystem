@@ -36,7 +36,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "±ØÌî")]
-            [Display(Name = "ËŞÉáÂ¥")]
+            [Display(Name = "¹«Ô¢")]
             public Int32 GYID { get; set; }
 
 

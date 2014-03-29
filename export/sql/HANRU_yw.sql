@@ -10265,7 +10265,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_51_A04_SSKHCJ](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[SSDLID]  int  NOT NULL,--所属大类ID
 	[SSDLXMID]  int  NOT NULL,--所属大类项目ID
-	[GYID]  int  NOT NULL,--宿舍楼ID
+	[GYID]  int  NOT NULL,--公寓ID
 	[SSID]  int  NOT NULL,--宿舍ID
 	[KHSJ]  datetime  NOT NULL,--考核时间
 	[FZ]  decimal(5, 2)  NOT NULL,--分值
@@ -10634,7 +10634,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属大类ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属大类项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'SSDLXMID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'宿舍楼ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'GYID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公寓ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'GYID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'宿舍ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A04_SSKHCJ', @level2type=N'COLUMN',@level2name=N'SSID'
 GO

@@ -211,7 +211,7 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="SSDLID" exp="所属大类ID" type="int" null="F" p="F" />
             <name="SSDLXMID" exp="所属大类项目ID" type="int" null="F" p="F" />
-            <name="GYID" exp="宿舍楼ID" type="int" null="F" p="F" />
+            <name="GYID" exp="公寓ID" type="int" null="F" p="F" />
             <name="SSID" exp="宿舍ID" type="int" null="F" p="F" />
             <name="KHSJ" exp="考核时间" type="datetime" null="F" p="F" />
             <name="FZ" exp="分值" type="decimal(5, 2)" null="F" p="F" />
