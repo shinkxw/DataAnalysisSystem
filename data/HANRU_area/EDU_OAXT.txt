@@ -205,6 +205,14 @@
             <name="ZT" exp="公告状态" type="int" null="F" p="F" remark="正常、已过期" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_10_A04_TZMB" exp="通知模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="MBMC" exp="模板名称" type="nvarchar(50)" null="F" p="F" />
+            <name="MBNR" exp="模板内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_11_A01_YJ" exp="邮件数据表">
         <field_area>
             <name="ID" exp="邮件ID" type="int" null="F" p="T" />
@@ -437,6 +445,14 @@
             <name="WPID" exp="物品ID" type="int" null="F" p="F" />
             <name="WXZT" exp="维修状态" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_15_A14_BXGZXX" exp="报修故障信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="BXLXID" exp="报修类型ID" type="int" null="F" p="F" />
+            <name="GZXX" exp="故障信息" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_20_A01_LCMBLX" exp="流程模板类型表">
@@ -806,6 +822,50 @@
             <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_26_A01_SYSSJ" exp="实验室数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="MC" exp="名称" type="nvarchar(50)" null="F" p="F" />
+            <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
+            <name="FZR" exp="负责人" type="nvarchar(36)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_26_A02_SYSQC" exp="实验室器材表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="QCMC" exp="器材名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_26_A03_SYSSQ" exp="实验室申请表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SYSID" exp="实验室ID" type="int" null="F" p="F" />
+            <name="LCSLID" exp="流程实例ID" type="int" null="F" p="F" />
+            <name="SYQC" exp="实验器材" type="text" null="F" p="F" />
+            <name="SYMC" exp="实验名称" type="nvarchar(200)" null="F" p="F" />
+            <name="KM" exp="科目" type="nvarchar(50)" null="F" p="F" />
+            <name="BJ" exp="班级" type="nvarchar(50)" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SQZT" exp="申请状态" type="int" null="F" p="F" />
+            <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_26_A04_SYSSQXGJL" exp="实验室申请修改记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SQID" exp="实验室申请表ID" type="int" null="F" p="F" />
+            <name="XGYHID" exp="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" exp="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="XGSJ" exp="修改时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_30_A01_DSJ" exp="大事记表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -985,6 +1045,26 @@
             <name="HFRID" exp="回复人ID" type="nvarchar(20)" null="F" p="F" />
             <name="HFNR" exp="回复内容" type="text" null="F" p="F" />
             <name="HSSJ" exp="回复时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_36_A01_BJGZLB" exp="班级工作类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="GZLBMC" exp="工作类别名称" type="nvarchar(100)" null="F" p="F" />
+            <name="DJRYIDLB" exp="登记人员ID列表" type="text" null="F" p="F" />
+            <name="DJRYXMLB" exp="登记人员姓名列表" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_36_A02_BJGZJC" exp="班级工作检查表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="GZLBID" exp="工作类别ID" type="int" null="F" p="F" />
+            <name="BJ" exp="班级" type="nvarchar(50)" null="F" p="F" />
+            <name="RQ" exp="日期" type="datetime" null="F" p="F" />
+            <name="JG" exp="结果" type="int" null="F" p="F" />
+            <name="BJMC" exp="班级名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

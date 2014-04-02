@@ -295,6 +295,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_01_A01_JZGKZ](
 	[GZJY]  text  NOT NULL,--工作经验
 	[LDJN]  text  NOT NULL,--劳动技能
 	[XXJL]  text  NOT NULL,--学习经历
+	[WJGLSJ]  int  NOT NULL,--未记工龄时间
 CONSTRAINT [PK_EDU_ZZJG_01_A01_JZGKZ] PRIMARY KEY CLUSTERED
 (
 	[JZGJBSJID] ASC,
@@ -1292,6 +1293,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'劳动技能' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_A01_JZGKZ', @level2type=N'COLUMN',@level2name=N'LDJN'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学习经历' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_A01_JZGKZ', @level2type=N'COLUMN',@level2name=N'XXJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'未记工龄时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_A01_JZGKZ', @level2type=N'COLUMN',@level2name=N'WJGLSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工能力证书表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_A02_JZGNLZS'
 GO

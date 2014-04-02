@@ -55,6 +55,7 @@
             <name="GZJY" exp="工作经验" type="text" null="F" p="F" />
             <name="LDJN" exp="劳动技能" type="text" null="F" p="F" />
             <name="XXJL" exp="学习经历" type="text" null="F" p="F" />
+            <name="WJGLSJ" exp="未记工龄时间" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A02_JZGNLZS" exp="教职工能力证书表">

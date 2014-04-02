@@ -175,6 +175,12 @@ EDU_OAXT_10_A03_GG  公告数据表
   NR            公告内容                text           非主
   ZT            公告状态                int            非主
 
+EDU_OAXT_10_A04_TZMB  通知模板表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  MBMC          模板名称                nvarchar(50)   非主
+  MBNR          模板内容                text           非主
+
 EDU_OAXT_11_A01_YJ  邮件数据表
   ID            邮件ID                  int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -374,6 +380,12 @@ EDU_OAXT_15_A13_WXJL  维修记录表
   WPID          物品ID                  int            非主        报修管理表
   WXZT          维修状态                int            非主
   BZ            备注                    text           非主
+
+EDU_OAXT_15_A14_BXGZXX  报修故障信息表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  BXLXID        报修类型ID              int            非主        报修类型表
+  GZXX          故障信息                nvarchar(500)  非主
 
 EDU_OAXT_20_A01_LCMBLX  流程模板类型表
   ID            编号                    int            主键
@@ -698,6 +710,42 @@ EDU_OAXT_25_A02_CGSQXGJL  采购申请修改记录表
   DQBZSHZT      当前步骤审核状态        int            非主
   SQRBMID       申请人部门ID            int            非主
 
+EDU_OAXT_26_A01_SYSSJ  实验室数据表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  MC            名称                    nvarchar(50)   非主
+  DD            地点                    nvarchar(200)  非主
+  FZR           负责人                  nvarchar(36)   非主
+
+EDU_OAXT_26_A02_SYSQC  实验室器材表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  QCMC          器材名称                nvarchar(50)   非主
+
+EDU_OAXT_26_A03_SYSSQ  实验室申请表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SYSID         实验室ID                int            非主        实验室数据表
+  LCSLID        流程实例ID              int            非主        流程实例表
+  SYQC          实验器材                text           非主
+  SYMC          实验名称                nvarchar(200)  非主
+  KM            科目                    nvarchar(50)   非主
+  BJ            班级                    nvarchar(50)   非主
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  SQSJ          申请时间                datetime       非主
+  SQZT          申请状态                int            非主
+  SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表
+  BZ            备注                    text           非主
+
+EDU_OAXT_26_A04_SYSSQXGJL  实验室申请修改记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主
+  SQID          实验室申请表ID          int            非主
+  XGYHID        修改用户ID              nvarchar(20)   非主
+  XGYHXM        修改用户姓名            nvarchar(36)   非主
+  XGSJ          修改时间                datetime       非主
+
 EDU_OAXT_30_A01_DSJ  大事记表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
@@ -848,4 +896,20 @@ EDU_OAXT_35_A03_HFJL  回复记录表
   HFRID         回复人ID                nvarchar(20)   非主        应用系统用户表
   HFNR          回复内容                text           非主
   HSSJ          回复时间                datetime       非主
+
+EDU_OAXT_36_A01_BJGZLB  班级工作类别表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  GZLBMC        工作类别名称            nvarchar(100)  非主
+  DJRYIDLB      登记人员ID列表          text           非主
+  DJRYXMLB      登记人员姓名列表        text           非主
+
+EDU_OAXT_36_A02_BJGZJC  班级工作检查表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  GZLBID        工作类别ID              int            非主        班级工作类别表
+  BJ            班级                    nvarchar(50)   非主
+  RQ            日期                    datetime       非主
+  JG            结果                    int            非主
+  BJMC          班级名称                nvarchar(50)   非主
 

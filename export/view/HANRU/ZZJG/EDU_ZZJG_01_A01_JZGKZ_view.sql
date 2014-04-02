@@ -9,6 +9,7 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,a.[GZJY]--工作经验
       ,a.[LDJN]--劳动技能
       ,a.[XXJL]--学习经历
+      ,a.[WJGLSJ]--未记工龄时间
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名

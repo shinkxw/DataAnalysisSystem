@@ -53,6 +53,11 @@ namespace HanRuEdu.LDAL
             public String XXJL { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "未记工龄时间")]
+            public Int32 WJGLSJ { get; set; }
+
+
         }
     }
 }

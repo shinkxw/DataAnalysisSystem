@@ -50,6 +50,7 @@ EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   GZJY          工作经验                text           非主
   LDJN          劳动技能                text           非主
   XXJL          学习经历                text           非主
+  WJGLSJ        未记工龄时间            int            非主
 
 EDU_ZZJG_01_A02_JZGNLZS  教职工能力证书表
   JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表

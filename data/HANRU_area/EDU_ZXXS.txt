@@ -219,4 +219,67 @@
             <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_51_A11_KHHZ" exp="考核汇总表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="MC" exp="名称" type="nvarchar(50)" null="F" p="F" />
+            <name="HZFS" exp="汇总方式" type="int" null="F" p="F" />
+            <name="KHDX" exp="考核对象" type="int" null="F" p="F" />
+            <name="YXDLIDLB" exp="优先大类ID列表" type="text" null="F" p="F" />
+            <name="YXDLMCLB" exp="优先大类名称列表" type="text" null="F" p="F" />
+            <name="YXPXFS" exp="优先排序方式" type="int" null="F" p="F" />
+            <name="CXDLIDLB" exp="次先大类ID列表" type="text" null="F" p="F" />
+            <name="CXDLMCLB" exp="次先大类名称列表" type="text" null="F" p="F" />
+            <name="CXPXFS" exp="次先排序方式" type="int" null="F" p="F" />
+            <name="DDPXFS" exp="等第评选方式" type="int" null="F" p="F" />
+            <name="SFXSWDD" exp="是否显示无等第" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A12_BJHZXSCS" exp="班级汇总显示参数表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KHHZID" exp="考核汇总ID" type="int" null="F" p="F" />
+            <name="NJ" exp="年级" type="int" null="F" p="F" />
+            <name="BJ" exp="班级" type="int" null="F" p="F" />
+            <name="BZR" exp="班主任" type="int" null="F" p="F" />
+            <name="FZ" exp="分值" type="int" null="F" p="F" />
+            <name="DD" exp="等第" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A13_SSHZXSCS" exp="宿舍汇总显示参数表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KHHZID" exp="考核汇总ID" type="int" null="F" p="F" />
+            <name="GY" exp="公寓" type="int" null="F" p="F" />
+            <name="LC" exp="楼层" type="int" null="F" p="F" />
+            <name="SS" exp="宿舍" type="int" null="F" p="F" />
+            <name="BJ" exp="班级" type="int" null="F" p="F" />
+            <name="FZ" exp="分值" type="int" null="F" p="F" />
+            <name="DD" exp="等第" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A14_KHHZDLPZ" exp="考核汇总大类配置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KHHZID" exp="考核汇总ID" type="int" null="F" p="F" />
+            <name="DLID" exp="大类ID" type="int" null="F" p="F" />
+            <name="ZSL" exp="折算率" type="int" null="F" p="F" />
+            <name="XYXMIDLB" exp="选用项目ID列表" type="text" null="F" p="F" />
+            <name="XSXX" exp="显示信息" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_51_A15_KHHZDW" exp="考核汇总档位表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KHHZID" exp="考核汇总ID" type="int" null="F" p="F" />
+            <name="DWMC" exp="档位名称" type="nvarchar(20)" null="F" p="F" />
+            <name="HFSX" exp="划分上限" type="int" null="F" p="F" />
+            <name="HFXX" exp="划分下限" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

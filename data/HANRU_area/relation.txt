@@ -188,6 +188,8 @@
 <EDU_OAXT_10_A03_GG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_10_A04_TZMB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_11_A01_YJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   YYZID          EDU_ELE_01_USER                    LOGINNAME
@@ -251,6 +253,9 @@
 <EDU_OAXT_15_A13_WXJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WPID           EDU_OAXT_15_A08_BXGL               ID
+<EDU_OAXT_15_A14_BXGZXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BXLXID         EDU_OAXT_15_A07_BXLX               ID
 <EDU_OAXT_20_A02_LCBDSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_20_A03_LCMB
@@ -318,6 +323,15 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LCSLID         EDU_OAXT_20_A05_LCSL               ID
   SQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_26_A01_SYSSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_26_A02_SYSQC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_26_A03_SYSSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SYSID          EDU_OAXT_26_A01_SYSSJ              ID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_30_A01_DSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_31_A01_GRTXL
@@ -370,6 +384,11 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   RWID           EDU_OAXT_35_A01_RW                 ID
   HFRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_36_A01_BJGZLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_36_A02_BJGZJC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GZLBID         EDU_OAXT_36_A01_BJGZLB             ID
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP
@@ -877,6 +896,22 @@
   GYID           EDU_ZXFC_02_01_JZWJBSJ             ID
   SSID           EDU_ZXFC_08_01_XSSS                ID
   DJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZXXS_51_A11_KHHZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SFXSWDD        EDU_JY_SFBZ                        DM
+<EDU_ZXXS_51_A12_BJHZXSCS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KHHZID         EDU_ZXXS_51_A11_KHHZ               ID
+<EDU_ZXXS_51_A13_SSHZXSCS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KHHZID         EDU_ZXXS_51_A11_KHHZ               ID
+<EDU_ZXXS_51_A14_KHHZDLPZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KHHZID         EDU_ZXXS_51_A11_KHHZ               ID
+  DLID           EDU_ZXXS_51_A01_KHDL               ID
+<EDU_ZXXS_51_A15_KHHZDW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KHHZID         EDU_ZXXS_51_A11_KHHZ               ID
 <EDU_ZXXX_01_01_ZXXX
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXBXLXM        EDU_JY_BXLX                        DM

@@ -193,3 +193,56 @@ EDU_ZXXS_51_A04_SSKHCJ  宿舍考核成绩表
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主
 
+EDU_ZXXS_51_A11_KHHZ  考核汇总表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MC            名称                    nvarchar(50)   非主
+  HZFS          汇总方式                int            非主
+  KHDX          考核对象                int            非主
+  YXDLIDLB      优先大类ID列表          text           非主
+  YXDLMCLB      优先大类名称列表        text           非主
+  YXPXFS        优先排序方式            int            非主
+  CXDLIDLB      次先大类ID列表          text           非主
+  CXDLMCLB      次先大类名称列表        text           非主
+  CXPXFS        次先排序方式            int            非主
+  DDPXFS        等第评选方式            int            非主
+  SFXSWDD       是否显示无等第          nvarchar(1)    非主        是否标志代码表
+
+EDU_ZXXS_51_A12_BJHZXSCS  班级汇总显示参数表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  KHHZID        考核汇总ID              int            非主        考核汇总表
+  NJ            年级                    int            非主
+  BJ            班级                    int            非主
+  BZR           班主任                  int            非主
+  FZ            分值                    int            非主
+  DD            等第                    int            非主
+
+EDU_ZXXS_51_A13_SSHZXSCS  宿舍汇总显示参数表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  KHHZID        考核汇总ID              int            非主        考核汇总表
+  GY            公寓                    int            非主
+  LC            楼层                    int            非主
+  SS            宿舍                    int            非主
+  BJ            班级                    int            非主
+  FZ            分值                    int            非主
+  DD            等第                    int            非主
+
+EDU_ZXXS_51_A14_KHHZDLPZ  考核汇总大类配置表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  KHHZID        考核汇总ID              int            非主        考核汇总表
+  DLID          大类ID                  int            非主        考核大类表
+  ZSL           折算率                  int            非主
+  XYXMIDLB      选用项目ID列表          text           非主
+  XSXX          显示信息                text           非主
+
+EDU_ZXXS_51_A15_KHHZDW  考核汇总档位表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  KHHZID        考核汇总ID              int            非主        考核汇总表
+  DWMC          档位名称                nvarchar(20)   非主
+  HFSX          划分上限                int            非主
+  HFXX          划分下限                int            非主
+
