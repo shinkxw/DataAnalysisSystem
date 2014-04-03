@@ -288,3 +288,56 @@ EDU_ZXJX_35_A02_GKKSQ  公开课申请
   SQRID         申请人ID                int            非主        教职工基本数据子类表
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
 
+EDU_ZXJX_50_A01_XXKCLB  选修课程类别表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  LBMC          类别名称                nvarchar(100)  非主
+  JJ            简介                    text           非主
+
+EDU_ZXJX_50_A02_KKSJ  开课时间表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SKSJ          上课时间                nvarchar(50)   非主
+  SDIDLB        时段ID列表              text           非主
+  SDMCLB        时段名称列表            text           非主
+
+EDU_ZXJX_50_A03_JXBSJ  教学班数据表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XXKCLBID      选修课程类别ID          int            非主        选修课程类别表
+  KCMC          课程名称                nvarchar(50)   非主
+  KCJS          课程介绍                text           非主
+  JXJH          教学计划                text           非主
+  ZKS           总课时                  int            非主
+  XF            学分                    decimal(5, 1)  非主
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(10)   非主        年级数据类表
+  DQZT          当前状态                int            非主
+  KKJSID        开课教师ID              int            非主        教职工基本数据子类表
+  SKSJID        上课时间ID              int            非主        开课时间表
+  SKDD          上课地点                nvarchar(100)  非主
+  BJKRNRS       班级可容纳人数          int            非主
+  ZDKBRS        最低开班人数            int            非主
+
+EDU_ZXJX_50_A04_XSXKJL  学生选课记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  JXBID         教学班ID                int            非主        教学班数据表
+
+EDU_ZXJX_50_A05_XSXXKCJ  学生选修课成绩表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  JXBID         教学班ID                int            非主        教学班数据表
+  CJ            成绩                    decimal(5, 2)  非主
+
+EDU_ZXJX_50_A06_KTDMB  课堂点名表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  JXBID         教学班ID                int            非主        教学班数据表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  ZT            状态                    int            非主
+  SJ            时间                    datetime       非主
+  BZ            备注                    nvarchar(100)  非主
+

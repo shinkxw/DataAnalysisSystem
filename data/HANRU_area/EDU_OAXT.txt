@@ -680,6 +680,14 @@
             <name="LX" exp="类型" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_22_A06_HYJYMB" exp="会议纪要模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="MBMC" exp="模板名称" type="nvarchar(50)" null="F" p="F" />
+            <name="MBNR" exp="模板内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_23_A01_GWSQ" exp="公文申请表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
