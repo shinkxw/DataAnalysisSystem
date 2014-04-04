@@ -19,6 +19,10 @@ SELECT a.[ID]--编号
       ,c.DFKSSJ as c_KS_DFKSSJ--考试数据表 登分开始时间
       ,c.DFJSSJ as c_KS_DFJSSJ--考试数据表 登分结束时间
       ,c.DFKS as c_KS_DFKS--考试数据表 登分方式
+      ,c.SFYXCX as c_KS_SFYXCX--考试数据表 是否允许查询
+      ,[cb].MC as c_KS_SFYXCX_MC--是否标志代码表 名称
+      ,c.SFXYPK as c_KS_SFXYPK--考试数据表 是否需要排考
+      ,[cc].MC as c_KS_SFXYPK_MC--是否标志代码表 名称
       ,d.SCHOOLID as d_RKSJ_SCHOOLID--任课数据子类表 学校名
       ,d.JZGJBSJID as d_RKSJ_JZGJBSJID--任课数据子类表 教职工基本数据子类表
       ,d.RKKCH as d_RKSJ_RKKCH--任课数据子类表 任课课程号
@@ -41,6 +45,8 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ZXJX_05_A02_KSKM AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.SSKSID = c.ID /*所属考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_07_02_RKSJ AS d ON a.JSRKID = d.ID /*教师任课编号*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFYXCX = [cb].DM /*是否允许查询*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFXYPK = [cc].DM /*是否需要排考*/ LEFT OUTER JOIN
       dbo.EDU_JY_RKXD AS [db] ON d.RKXDM = [db].DM /*任课学段码*/ LEFT OUTER JOIN
       dbo.EDU_JY_RKJS AS [dc] ON d.RKJSM = [dc].DM /*任课角色码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [dd] ON d.SFLT = [dd].DM /*是否连堂*/

@@ -12,6 +12,8 @@ SELECT a.[ID]--编号
       ,a.[DFKSSJ]--登分开始时间
       ,a.[DFJSSJ]--登分结束时间
       ,a.[DFKS]--登分方式
+      ,a.[SFYXCX]--是否允许查询
+      ,a.[SFXYPK]--是否需要排考
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
@@ -21,9 +23,13 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
+      ,f.MC as f_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_05_A01_KS AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS e ON a.SFYXCX = e.DM /*是否允许查询*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS f ON a.SFXYPK = f.DM /*是否需要排考*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
 GO

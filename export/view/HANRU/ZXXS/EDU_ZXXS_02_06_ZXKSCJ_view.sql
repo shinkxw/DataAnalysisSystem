@@ -287,6 +287,10 @@ SELECT a.[ID]--考试成绩表
       ,o.DFKSSJ as o_KS_DFKSSJ--考试数据表 登分开始时间
       ,o.DFJSSJ as o_KS_DFJSSJ--考试数据表 登分结束时间
       ,o.DFKS as o_KS_DFKS--考试数据表 登分方式
+      ,o.SFYXCX as o_KS_SFYXCX--考试数据表 是否允许查询
+      ,[ob].MC as o_KS_SFYXCX_MC--是否标志代码表 名称
+      ,o.SFXYPK as o_KS_SFXYPK--考试数据表 是否需要排考
+      ,[oc].MC as o_KS_SFXYPK_MC--是否标志代码表 名称
       ,p.SCHOOLID as p_KSKM_SCHOOLID--考试科目数据表 学校名
       ,p.SSKSID as p_KSKM_SSKSID--考试科目数据表 所属考试ID
       ,p.JSRKID as p_KSKM_JSRKID--考试科目数据表 教师任课编号
@@ -365,5 +369,7 @@ FROM dbo.EDU_ZXXS_02_06_ZXKSCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [kb] ON k.XQM = [kb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [nb] ON n.BJLXM = [nb].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [nc] ON n.SFSSMZSYJXB = [nc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SSMZSYJXMS AS [nd] ON n.SYJXMSM = [nd].DM /*双语教学模式码*/
+      dbo.EDU_JY_SSMZSYJXMS AS [nd] ON n.SYJXMSM = [nd].DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [ob] ON o.SFYXCX = [ob].DM /*是否允许查询*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [oc] ON o.SFXYPK = [oc].DM /*是否需要排考*/
 GO

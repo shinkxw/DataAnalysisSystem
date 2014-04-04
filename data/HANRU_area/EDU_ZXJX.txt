@@ -108,6 +108,8 @@
             <name="DFKSSJ" exp="登分开始时间" type="datetime" null="F" p="F" />
             <name="DFJSSJ" exp="登分结束时间" type="datetime" null="F" p="F" />
             <name="DFKS" exp="登分方式" type="int" null="F" p="F" />
+            <name="SFYXCX" exp="是否允许查询" type="nvarchar(1)" null="F" p="F" />
+            <name="SFXYPK" exp="是否需要排考" type="nvarchar(1)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_05_A02_KSKM" exp="考试科目数据表">
@@ -403,6 +405,56 @@
             <name="ZT" exp="状态" type="int" null="F" p="F" />
             <name="SJ" exp="时间" type="datetime" null="F" p="F" />
             <name="BZ" exp="备注" type="nvarchar(100)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_52_A01_KSSJ" exp="考试时间表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KSID" exp="考试ID" type="int" null="F" p="F" />
+            <name="KSRQ" exp="考试日期" type="datetime" null="F" p="F" />
+            <name="KSSJ" exp="考试时间" type="nvarchar(50)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="CCMC" exp="场次名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_52_A02_KSSJAP" exp="考试时间安排表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KSID" exp="考试ID" type="int" null="F" p="F" />
+            <name="KSSJID" exp="考试时间ID" type="int" null="F" p="F" />
+            <name="KCID" exp="课程ID" type="nvarchar(10)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_52_A03_KSDD" exp="考试地点表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KCMC" exp="考场名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ZDRNRS" exp="最大容纳人数" type="int" null="F" p="F" />
+            <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_52_A04_CKXS" exp="参考学生表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KSID" exp="考试ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="KCID" exp="考场ID" type="int" null="F" p="F" />
+            <name="ZKZH" exp="准考证号" type="nvarchar(50)" null="F" p="F" />
+            <name="ZWH" exp="座位号" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_52_A05_JKAP" exp="监考安排表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="KSID" exp="考试ID" type="int" null="F" p="F" />
+            <name="CCID" exp="场次ID" type="int" null="F" p="F" />
+            <name="JGID" exp="教工ID" type="int" null="F" p="F" />
+            <name="KCID" exp="考场ID" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

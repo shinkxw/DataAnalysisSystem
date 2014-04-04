@@ -14,6 +14,8 @@ namespace HanRuEdu.LDAL
             KSJSSJ = DateTime.Now;
             DFKSSJ = DateTime.Now;
             DFJSSJ = DateTime.Now;
+            SFYXCX = "";
+            SFXYPK = "";
         }
         public class EDU_ZXJX_05_A01_KS_metadata
         {
@@ -67,6 +69,20 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "登分方式")]
             public Int32 DFKS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "是否允许查询")]
+            [StringLength(1)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SFYXCX { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "是否需要排考")]
+            [StringLength(1)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SFXYPK { get; set; }
 
 
         }
