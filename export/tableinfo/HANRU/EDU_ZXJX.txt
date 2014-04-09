@@ -379,7 +379,7 @@ EDU_ZXJX_52_A05_JKAP  监考安排表
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主        学校配置表
   KSID          考试ID                  int            非主        考试数据表
-  CCID          场次ID                  int            非主        考试时间安排表
+  CCID          场次ID                  int            非主        考试时间表
   JGID          教工ID                  int            非主        教职工基本数据子类表
   KCID          考场ID                  int            非主        考试地点表
 

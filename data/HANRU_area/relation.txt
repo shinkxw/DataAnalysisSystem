@@ -725,7 +725,7 @@
 <EDU_ZXJX_52_A05_JKAP
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KSID           EDU_ZXJX_05_A01_KS                 ID
-  CCID           EDU_ZXJX_52_A02_KSSJAP             ID
+  CCID           EDU_ZXJX_52_A01_KSSJ               ID
   JGID           EDU_ZXJZ_01_01_JZGJBSJ             ID
   KCID           EDU_ZXJX_52_A03_KSDD               ID
 <EDU_ZXJZ_01_01_JZGJBSJ

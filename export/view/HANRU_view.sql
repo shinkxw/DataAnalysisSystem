@@ -9836,10 +9836,12 @@ SELECT a.[ID]--编号
       ,[cb].MC as c_KS_SFYXCX_MC--是否标志代码表 名称
       ,c.SFXYPK as c_KS_SFXYPK--考试数据表 是否需要排考
       ,[cc].MC as c_KS_SFXYPK_MC--是否标志代码表 名称
-      ,d.SCHOOLID as d_KSSJAP_SCHOOLID--考试时间安排表 学校
-      ,d.KSID as d_KSSJAP_KSID--考试时间安排表 考试ID
-      ,d.KSSJID as d_KSSJAP_KSSJID--考试时间安排表 考试时间ID
-      ,d.KCID as d_KSSJAP_KCID--考试时间安排表 课程ID
+      ,d.SCHOOLID as d_KSSJ_SCHOOLID--考试时间表 学校
+      ,d.KSID as d_KSSJ_KSID--考试时间表 考试ID
+      ,d.KSRQ as d_KSSJ_KSRQ--考试时间表 考试日期
+      ,d.KSSJ as d_KSSJ_KSSJ--考试时间表 考试时间
+      ,d.BZ as d_KSSJ_BZ--考试时间表 备注
+      ,d.CCMC as d_KSSJ_CCMC--考试时间表 场次名称
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -9912,7 +9914,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZXJX_52_A05_JKAP AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.KSID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_52_A02_KSSJAP AS d ON a.CCID = d.ID /*场次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_52_A01_KSSJ AS d ON a.CCID = d.ID /*场次ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS e ON a.JGID = e.ID /*教工ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_52_A03_KSDD AS f ON a.KCID = f.ID /*考场ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cb] ON c.SFYXCX = [cb].DM /*是否允许查询*/ LEFT OUTER JOIN
