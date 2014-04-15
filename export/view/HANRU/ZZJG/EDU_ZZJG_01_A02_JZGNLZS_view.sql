@@ -11,6 +11,7 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,a.[JSZGZ]--教师资格证
       ,a.[JSJHGZ]--计算机合格证
       ,a.[JNZS]--技能证书
+      ,a.[ZGXL]--最高学历
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名

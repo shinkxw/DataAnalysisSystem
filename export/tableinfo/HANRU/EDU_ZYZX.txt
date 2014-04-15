@@ -155,3 +155,25 @@ EDU_ZYZX_03_A01_KCK  课程库表
   KCDM          课程代码                nvarchar(20)   非主
   KCMC          课程名称                nvarchar(50)   非主
 
+EDU_ZYZX_04_A01_ZLWJML  资料文件目录
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  MLMC          目录名称                nvarchar(50)   非主
+  FMLID         父目录ID                int            非主        资料文件目录
+  PLSX          排列顺序                int            非主
+
+EDU_ZYZX_04_A02_ZLWJMLQX  资料文件目录权限
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  ZYMLID        资源目录ID              int            非主        资料文件目录
+  GNBH          功能编号                int            非主
+
+EDU_ZYZX_04_A03_ZLWJ  资料文件
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  ZYMLID        资源目录ID              int            非主        资料文件目录
+  BT            标题                    nvarchar(50)   非主
+  SCSJ          上传时间                datetime       非主
+  SCNR          上传内容                text           非主
+

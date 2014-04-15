@@ -2076,6 +2076,9 @@ CREATE TABLE [dbo].[EDU_OAXT_35_A02_RWJSR](
 	[YDZT]  int  NOT NULL,--ÔÄ¶Á×´Ì¬
 	[WCZT]  int  NOT NULL,--Íê³É×´Ì¬
 	[SCZT]  int  NOT NULL,--É¾³ý×´Ì¬
+	[TJZT]  int  NOT NULL,--Ìá½»×´Ì¬
+	[FJ]  text  NOT NULL,--¸½¼þ
+	[BZ]  text  NOT NULL,--±¸×¢
 CONSTRAINT [PK_EDU_OAXT_35_A02_RWJSR] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3786,6 +3789,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Íê³É×´Ì¬' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'WCZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'É¾³ý×´Ì¬' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'SCZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ìá½»×´Ì¬' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'TJZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'¸½¼þ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'FJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'±¸×¢' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A02_RWJSR', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'»Ø¸´¼ÇÂ¼±í' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_35_A03_HFJL'
 GO

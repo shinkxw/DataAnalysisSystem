@@ -64,6 +64,12 @@ namespace HanRuEdu.LDAL
             public String JNZS { get; set; }
 
 
+            [Display(Name = "最高学历")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXL { get; set; }
+
+
         }
     }
 }

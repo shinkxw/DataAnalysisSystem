@@ -10,6 +10,8 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_35_A02_RWJSR()
         {
             JSRID = "";
+            FJ = "";
+            BZ = "";
         }
         public class EDU_OAXT_35_A02_RWJSR_metadata
         {
@@ -48,6 +50,23 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "删除状态")]
             public Int32 SCZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "提交状态")]
+            public Int32 TJZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "附件")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "备注")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZ { get; set; }
 
 
         }

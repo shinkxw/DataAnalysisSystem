@@ -1043,6 +1043,9 @@
             <name="YDZT" exp="ÔÄ¶Á×´Ì¬" type="int" null="F" p="F" />
             <name="WCZT" exp="Íê³É×´Ì¬" type="int" null="F" p="F" />
             <name="SCZT" exp="É¾³ý×´Ì¬" type="int" null="F" p="F" />
+            <name="TJZT" exp="Ìá½»×´Ì¬" type="int" null="F" p="F" />
+            <name="FJ" exp="¸½¼þ" type="text" null="F" p="F" />
+            <name="BZ" exp="±¸×¢" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_35_A03_HFJL" exp="»Ø¸´¼ÇÂ¼±í">

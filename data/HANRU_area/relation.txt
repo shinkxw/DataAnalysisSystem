@@ -1071,6 +1071,16 @@
   SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYZX_03_A01_KCK
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYZX_04_A01_ZLWJML
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FMLID          EDU_ZYZX_04_A01_ZLWJML             ID
+<EDU_ZYZX_04_A02_ZLWJMLQX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  ZYMLID         EDU_ZYZX_04_A01_ZLWJML             ID
+<EDU_ZYZX_04_A03_ZLWJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ZYMLID         EDU_ZYZX_04_A01_ZLWJML             ID
 <EDU_ZZFC_02_01_JZWJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SYZKM          EDU_JY_SYZK                        DM

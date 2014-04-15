@@ -51,6 +51,23 @@ EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   LDJN          劳动技能                text           非主
   XXJL          学习经历                text           非主
   WJGLSJ        未记工龄时间            int            非主
+  RDSJ          入党（团）时间            nvarchar(200)  非主
+  JRBDWSJ       进入本单位时间          nvarchar(200)  非主
+  XZZW          行政职务                nvarchar(200)  非主
+  ZYJSZG        专业技术资格            nvarchar(200)  非主
+  ZYJSZGHDSJ    专业技术资格取得时间    nvarchar(200)  非主
+  XL            学历                    nvarchar(200)  非主
+  BYYXXJZY      毕业院校系及专业        nvarchar(200)  非主
+  BYSJ          毕业时间                nvarchar(200)  非主
+  XW            学位                    nvarchar(200)  非主
+  ZZJYXL        在职教育学历            nvarchar(200)  非主
+  ZZJYBYYXXJZY  在职教育毕业院校系及专业nvarchar(200)  非主
+  ZZJYXW        在职教育学位            nvarchar(200)  非主
+  ZZJYBYSJ      在职教育毕业时间        nvarchar(200)  非主
+  PTHDJ         普通话等级              nvarchar(200)  非主
+  JSZGZZL       教师资格证种类          nvarchar(200)  非主
+  XPYGW         现聘用岗位              nvarchar(200)  非主
+  GWDJ          岗位等级                nvarchar(200)  非主
 
 EDU_ZZJG_01_A02_JZGNLZS  教职工能力证书表
   JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表
@@ -62,6 +79,7 @@ EDU_ZZJG_01_A02_JZGNLZS  教职工能力证书表
   JSZGZ         教师资格证              nvarchar(100)  非主
   JSJHGZ        计算机合格证            nvarchar(100)  非主
   JNZS          技能证书                nvarchar(100)  非主
+  ZGXL          最高学历                nvarchar(100)  非主
 
 EDU_ZZJG_01_A03_GRXXBJKG  个人信息编辑开关表
   SCHOOLID      学校                    int            主键        学校配置表

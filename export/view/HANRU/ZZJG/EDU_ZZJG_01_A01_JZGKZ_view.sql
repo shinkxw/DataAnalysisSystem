@@ -10,6 +10,23 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,a.[LDJN]--劳动技能
       ,a.[XXJL]--学习经历
       ,a.[WJGLSJ]--未记工龄时间
+      ,a.[RDSJ]--入党（团）时间
+      ,a.[JRBDWSJ]--进入本单位时间
+      ,a.[XZZW]--行政职务
+      ,a.[ZYJSZG]--专业技术资格
+      ,a.[ZYJSZGHDSJ]--专业技术资格取得时间
+      ,a.[XL]--学历
+      ,a.[BYYXXJZY]--毕业院校系及专业
+      ,a.[BYSJ]--毕业时间
+      ,a.[XW]--学位
+      ,a.[ZZJYXL]--在职教育学历
+      ,a.[ZZJYBYYXXJZY]--在职教育毕业院校系及专业
+      ,a.[ZZJYXW]--在职教育学位
+      ,a.[ZZJYBYSJ]--在职教育毕业时间
+      ,a.[PTHDJ]--普通话等级
+      ,a.[JSZGZZL]--教师资格证种类
+      ,a.[XPYGW]--现聘用岗位
+      ,a.[GWDJ]--岗位等级
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名

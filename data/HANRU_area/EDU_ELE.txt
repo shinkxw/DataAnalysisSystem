@@ -133,7 +133,7 @@
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" />
             <name="APPID" exp="应用ID" type="int" null="F" p="F" />
             <name="RZLX" exp="日志类型" type="int" null="F" p="F" />
-            <name="YHID" exp="操作用户" type="nvarchar(20)" null="F" p="F" remark="EDU_ELE_01_USER" />
+            <name="YHID" exp="操作用户" type="nvarchar(20)" null="F" p="F" />
             <name="CZSJ" exp="操作时间" type="datetime" null="F" p="F" />
             <name="CZYY" exp="操作应用" type="nvarchar(30)" null="F" p="F" />
             <name="CZLX" exp="操作类型" type="nvarchar(10)" null="F" p="F" />

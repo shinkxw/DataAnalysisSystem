@@ -56,6 +56,23 @@
             <name="LDJN" exp="劳动技能" type="text" null="F" p="F" />
             <name="XXJL" exp="学习经历" type="text" null="F" p="F" />
             <name="WJGLSJ" exp="未记工龄时间" type="int" null="F" p="F" />
+            <name="RDSJ" exp="入党（团）时间" type="nvarchar(200)" null="F" p="F" />
+            <name="JRBDWSJ" exp="进入本单位时间" type="nvarchar(200)" null="F" p="F" />
+            <name="XZZW" exp="行政职务" type="nvarchar(200)" null="F" p="F" />
+            <name="ZYJSZG" exp="专业技术资格" type="nvarchar(200)" null="F" p="F" />
+            <name="ZYJSZGHDSJ" exp="专业技术资格取得时间" type="nvarchar(200)" null="F" p="F" />
+            <name="XL" exp="学历" type="nvarchar(200)" null="F" p="F" />
+            <name="BYYXXJZY" exp="毕业院校系及专业" type="nvarchar(200)" null="F" p="F" />
+            <name="BYSJ" exp="毕业时间" type="nvarchar(200)" null="F" p="F" />
+            <name="XW" exp="学位" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYXL" exp="在职教育学历" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYBYYXXJZY" exp="在职教育毕业院校系及专业" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYXW" exp="在职教育学位" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYBYSJ" exp="在职教育毕业时间" type="nvarchar(200)" null="F" p="F" />
+            <name="PTHDJ" exp="普通话等级" type="nvarchar(200)" null="F" p="F" />
+            <name="JSZGZZL" exp="教师资格证种类" type="nvarchar(200)" null="F" p="F" />
+            <name="XPYGW" exp="现聘用岗位" type="nvarchar(200)" null="F" p="F" />
+            <name="GWDJ" exp="岗位等级" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A02_JZGNLZS" exp="教职工能力证书表">
@@ -69,6 +86,7 @@
             <name="JSZGZ" exp="教师资格证" type="nvarchar(100)" null="T" p="F" />
             <name="JSJHGZ" exp="计算机合格证" type="nvarchar(100)" null="T" p="F" />
             <name="JNZS" exp="技能证书" type="nvarchar(100)" null="T" p="F" />
+            <name="ZGXL" exp="最高学历" type="nvarchar(100)" null="T" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A03_GRXXBJKG" exp="个人信息编辑开关表">
