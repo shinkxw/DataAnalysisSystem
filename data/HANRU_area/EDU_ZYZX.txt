@@ -212,7 +212,11 @@
             <name="ZYMLID" exp="资源目录ID" type="int" null="F" p="F" />
             <name="BT" exp="标题" type="nvarchar(50)" null="F" p="F" />
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
-            <name="SCNR" exp="上传内容" type="text" null="F" p="F" />
+            <name="JJ" exp="简介" type="nvarchar(200)" null="F" p="F" />
+            <name="WJM" exp="文件名" type="text" null="F" p="F" />
+            <name="SCYHID" exp="上传用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="ZLWJDX" exp="资料文件大小" type="nvarchar(300)" null="F" p="F" />
+            <name="ZLWJDXKB" exp="资料文件大小(KB)" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

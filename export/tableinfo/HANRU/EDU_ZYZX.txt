@@ -175,5 +175,9 @@ EDU_ZYZX_04_A03_ZLWJ  资料文件
   ZYMLID        资源目录ID              int            非主        资料文件目录
   BT            标题                    nvarchar(50)   非主
   SCSJ          上传时间                datetime       非主
-  SCNR          上传内容                text           非主
+  JJ            简介                    nvarchar(200)  非主
+  WJM           文件名                  text           非主
+  SCYHID        上传用户ID              nvarchar(20)   非主        应用系统用户表
+  ZLWJDX        资料文件大小            nvarchar(300)  非主
+  ZLWJDXKB      资料文件大小(KB)        int            非主
 

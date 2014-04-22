@@ -43,6 +43,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_03_APPL
             and   type = 'V')
    drop view VIEW_EDU_ELE_03_APPLL_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_03_YHSYJL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ELE_03_YHSYJL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_05_XL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_05_XL_DISP
@@ -1737,6 +1741,62 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ELE_03_APPLL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*操作用户*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--用户使用记录表
+CREATE VIEW [dbo].[VIEW_EDU_ELE_03_YHSYJL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[APPID]--应用ID
+      ,a.[MODULEID]--功能ID
+      ,a.[YHID]--用户ID
+      ,a.[GNMC]--功能名称
+      ,a.[LJ]--链接
+      ,a.[SYSJ]--使用时间
+      ,a.[XHHMS]--消耗毫秒数
+      ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
+      ,c.NAME as c_APP_NAME--应用表 应用名称
+      ,c.URL as c_APP_URL--应用表 网址
+      ,c.AUTHIP as c_APP_AUTHIP--应用表 限用IP
+      ,c.SM as c_APP_SM--应用表 说明
+      ,c.DLFS as c_APP_DLFS--应用表 登录方式
+      ,c.STATUS as c_APP_STATUS--应用表 应用状态
+      ,c.TYPE as c_APP_TYPE--应用表 应用类别
+      ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
+      ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
+      ,c.SYDX as c_APP_SYDX--应用表 使用对象
+      ,c.KJDX as c_APP_KJDX--应用表 可见对象
+      ,d.APPID as d_MODULE_APPID--导航表 
+      ,d.NAME as d_MODULE_NAME--导航表 
+      ,d.Depth as d_MODULE_Depth--导航表 
+      ,d.PID as d_MODULE_PID--导航表 
+      ,d.MenuDisp as d_MODULE_MenuDisp--导航表 
+      ,d.MenuUserType as d_MODULE_MenuUserType--导航表 
+      ,d.Link as d_MODULE_Link--导航表 
+      ,d.OrderIndex as d_MODULE_OrderIndex--导航表 
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,e.PWD as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ELE_03_YHSYJL AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_MODULE AS d ON a.MODULEID = d.ID /*功能ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.YHID = e.LOGINNAME /*用户ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
 GO
 
 --校历表
@@ -3595,6 +3655,13 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[AllCount]--资产总量
       ,a.[RKL]--入库量
+      ,a.[RQ]--日期
+      ,a.[DW]--单位
+      ,a.[ZJ]--总价
+      ,a.[SYBM]--使用部门
+      ,a.[CFDW]--存放单位
+      ,a.[FZR]--负责人
+      ,a.[CZFS]--处置方式
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
       ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
@@ -3625,6 +3692,13 @@ SELECT a.[ID]--编号
       ,a.[Registdate]--登记时间
       ,a.[Remark]--备注
       ,a.[Status]--审核状态
+      ,a.[RQ]--日期
+      ,a.[DW]--单位
+      ,a.[ZJ]--总价
+      ,a.[SYBM]--使用部门
+      ,a.[CFDW]--存放单位
+      ,a.[FZR]--负责人
+      ,a.[CZFS]--处置方式
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
       ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID
@@ -3671,6 +3745,13 @@ SELECT a.[ID]--编号
       ,e.Remark as e_ZCKC_Remark--资产库存表 备注
       ,e.AllCount as e_ZCKC_AllCount--资产库存表 资产总量
       ,e.RKL as e_ZCKC_RKL--资产库存表 入库量
+      ,e.RQ as e_ZCKC_RQ--资产库存表 日期
+      ,e.DW as e_ZCKC_DW--资产库存表 单位
+      ,e.ZJ as e_ZCKC_ZJ--资产库存表 总价
+      ,e.SYBM as e_ZCKC_SYBM--资产库存表 使用部门
+      ,e.CFDW as e_ZCKC_CFDW--资产库存表 存放单位
+      ,e.FZR as e_ZCKC_FZR--资产库存表 负责人
+      ,e.CZFS as e_ZCKC_CZFS--资产库存表 处置方式
 
 FROM dbo.EDU_OAXT_15_A05_ZCJH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A01_ZCML AS c ON a.TypeID = c.ID /*资产目录表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -3704,6 +3785,13 @@ SELECT a.[ID]--编号
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
+      ,c.RQ as c_ZCKC_RQ--资产库存表 日期
+      ,c.DW as c_ZCKC_DW--资产库存表 单位
+      ,c.ZJ as c_ZCKC_ZJ--资产库存表 总价
+      ,c.SYBM as c_ZCKC_SYBM--资产库存表 使用部门
+      ,c.CFDW as c_ZCKC_CFDW--资产库存表 存放单位
+      ,c.FZR as c_ZCKC_FZR--资产库存表 负责人
+      ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
 
 FROM dbo.EDU_OAXT_15_A06_ZCBG AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -3747,6 +3835,13 @@ SELECT a.[ID]--编号
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
+      ,c.RQ as c_ZCKC_RQ--资产库存表 日期
+      ,c.DW as c_ZCKC_DW--资产库存表 单位
+      ,c.ZJ as c_ZCKC_ZJ--资产库存表 总价
+      ,c.SYBM as c_ZCKC_SYBM--资产库存表 使用部门
+      ,c.CFDW as c_ZCKC_CFDW--资产库存表 存放单位
+      ,c.FZR as c_ZCKC_FZR--资产库存表 负责人
+      ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
       ,d.SCHOOLID as d_BXLX_SCHOOLID--报修类型表 学校
       ,d.TypeName as d_BXLX_TypeName--报修类型表 类型名称
       ,d.Remark as d_BXLX_Remark--报修类型表 备注
@@ -3813,6 +3908,13 @@ SELECT a.[ID]--编号
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
+      ,c.RQ as c_ZCKC_RQ--资产库存表 日期
+      ,c.DW as c_ZCKC_DW--资产库存表 单位
+      ,c.ZJ as c_ZCKC_ZJ--资产库存表 总价
+      ,c.SYBM as c_ZCKC_SYBM--资产库存表 使用部门
+      ,c.CFDW as c_ZCKC_CFDW--资产库存表 存放单位
+      ,c.FZR as c_ZCKC_FZR--资产库存表 负责人
+      ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
 
 FROM dbo.EDU_OAXT_15_A09_WXJH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -3843,6 +3945,13 @@ SELECT a.[ID]--编号
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
+      ,c.RQ as c_ZCKC_RQ--资产库存表 日期
+      ,c.DW as c_ZCKC_DW--资产库存表 单位
+      ,c.ZJ as c_ZCKC_ZJ--资产库存表 总价
+      ,c.SYBM as c_ZCKC_SYBM--资产库存表 使用部门
+      ,c.CFDW as c_ZCKC_CFDW--资产库存表 存放单位
+      ,c.FZR as c_ZCKC_FZR--资产库存表 负责人
+      ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -3893,6 +4002,13 @@ SELECT a.[ID]--编号
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
+      ,c.RQ as c_ZCKC_RQ--资产库存表 日期
+      ,c.DW as c_ZCKC_DW--资产库存表 单位
+      ,c.ZJ as c_ZCKC_ZJ--资产库存表 总价
+      ,c.SYBM as c_ZCKC_SYBM--资产库存表 使用部门
+      ,c.CFDW as c_ZCKC_CFDW--资产库存表 存放单位
+      ,c.FZR as c_ZCKC_FZR--资产库存表 负责人
+      ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
       ,d.SCHOOLID as d_ZCPD_SCHOOLID--资产盘点表 学校
       ,d.Title as d_ZCPD_Title--资产盘点表 盘点名称
       ,d.PanDate as d_ZCPD_PanDate--资产盘点表 盘点日期
@@ -10057,6 +10173,7 @@ SELECT a.[JZGID]--教工基本信息ID
       ,a.[XXJL]--学习经历
       ,a.[GZJL]--工作经历
       ,a.[HJQK]--获奖情况
+      ,a.[ZC]--职称
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -14492,14 +14609,36 @@ SELECT a.[ID]--编号
       ,a.[ZYMLID]--资源目录ID
       ,a.[BT]--标题
       ,a.[SCSJ]--上传时间
-      ,a.[SCNR]--上传内容
+      ,a.[JJ]--简介
+      ,a.[WJM]--文件名
+      ,a.[SCYHID]--上传用户ID
+      ,a.[ZLWJDX]--资料文件大小
+      ,a.[ZLWJDXKB]--资料文件大小(KB)
       ,c.SCHOOLID as c_ZLWJML_SCHOOLID--资料文件目录 学校
       ,c.MLMC as c_ZLWJML_MLMC--资料文件目录 目录名称
       ,c.FMLID as c_ZLWJML_FMLID--资料文件目录 父目录ID
       ,c.PLSX as c_ZLWJML_PLSX--资料文件目录 排列顺序
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZYZX_04_A03_ZLWJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.ZYMLID = c.ID /*资源目录ID*/
+      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.ZYMLID = c.ID /*资源目录ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SCYHID = d.LOGINNAME /*上传用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --建筑物基本数据类表

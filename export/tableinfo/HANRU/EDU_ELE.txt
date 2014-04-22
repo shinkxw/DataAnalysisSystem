@@ -126,14 +126,16 @@ EDU_ELE_03_APPLL  应用履历表
   CZBM          操作表名                nvarchar(100)  非主
   CZXX          操作信息                text           非主
 
-EDU_ELE_03_GNFW  功能访问表
+EDU_ELE_03_YHSYJL  用户使用记录表
   ID            编号                    int            自增主键
-  SCHOOLID      学校                    int            非主
-  APPID         应用ID                  int            非主
-  MODULEID      功能ID                  int            非主
-  NAME          功能名称                nvarchar(20)   非主
-  LINK          地址                    nvarchar(100)  非主
-  FWL           访问量                  int            非主
+  SCHOOLID      学校                    int            非主        学校配置表
+  APPID         应用ID                  int            非主        应用表
+  MODULEID      功能ID                  int            非主        导航表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  GNMC          功能名称                nvarchar(50)   非主
+  LJ            链接                    nvarchar(100)  非主
+  SYSJ          使用时间                datetime       非主
+  XHHMS         消耗毫秒数              int            非主
 
 EDU_ELE_03_XNJS  性能监视表
   ID            编号                    int            自增主键
@@ -143,14 +145,6 @@ EDU_ELE_03_XNJS  性能监视表
   CPDQSD        磁盘读取速度            float          非主
   CPXRSD        磁盘写入速度            float          非主
   ZXRS          在线人数                int            非主
-
-EDU_ELE_03_XHSJJL  消耗时间记录表
-  ID            编号                    int            自增主键
-  APPID         应用ID                  int            非主
-  NAME          功能名称                nvarchar(20)   非主
-  LINK          地址                    nvarchar(100)  非主
-  MAXTIME       最高消耗时间            int            非主
-  JLCS          记录次数                int            非主
 
 EDU_ELE_04_PKJGJL  排课结果记录表
   ID            编号                    int            主键

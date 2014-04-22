@@ -32,6 +32,13 @@ SELECT a.[ID]--编号
       ,e.Remark as e_ZCKC_Remark--资产库存表 备注
       ,e.AllCount as e_ZCKC_AllCount--资产库存表 资产总量
       ,e.RKL as e_ZCKC_RKL--资产库存表 入库量
+      ,e.RQ as e_ZCKC_RQ--资产库存表 日期
+      ,e.DW as e_ZCKC_DW--资产库存表 单位
+      ,e.ZJ as e_ZCKC_ZJ--资产库存表 总价
+      ,e.SYBM as e_ZCKC_SYBM--资产库存表 使用部门
+      ,e.CFDW as e_ZCKC_CFDW--资产库存表 存放单位
+      ,e.FZR as e_ZCKC_FZR--资产库存表 负责人
+      ,e.CZFS as e_ZCKC_CZFS--资产库存表 处置方式
 
 FROM dbo.EDU_OAXT_15_A05_ZCJH AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A01_ZCML AS c ON a.TypeID = c.ID /*资产目录表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

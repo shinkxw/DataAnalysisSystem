@@ -37,6 +37,13 @@ SELECT a.[ID]--编号
       ,c.Remark as c_ZCKC_Remark--资产库存表 备注
       ,c.AllCount as c_ZCKC_AllCount--资产库存表 资产总量
       ,c.RKL as c_ZCKC_RKL--资产库存表 入库量
+      ,c.RQ as c_ZCKC_RQ--资产库存表 日期
+      ,c.DW as c_ZCKC_DW--资产库存表 单位
+      ,c.ZJ as c_ZCKC_ZJ--资产库存表 总价
+      ,c.SYBM as c_ZCKC_SYBM--资产库存表 使用部门
+      ,c.CFDW as c_ZCKC_CFDW--资产库存表 存放单位
+      ,c.FZR as c_ZCKC_FZR--资产库存表 负责人
+      ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
       ,d.SCHOOLID as d_BXLX_SCHOOLID--报修类型表 学校
       ,d.TypeName as d_BXLX_TypeName--报修类型表 类型名称
       ,d.Remark as d_BXLX_Remark--报修类型表 备注

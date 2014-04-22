@@ -15,6 +15,12 @@ namespace HanRuEdu.LDAL
             Merchant = "";
             Vender = "";
             Remark = "";
+            RQ = DateTime.Now;
+            DW = "";
+            SYBM = "";
+            CFDW = "";
+            FZR = "";
+            CZFS = "";
         }
         public class EDU_OAXT_15_A03_ZCKC_metadata
         {
@@ -100,6 +106,52 @@ namespace HanRuEdu.LDAL
             [Display(Name = "入库量")]
             [Range(typeof(decimal), "0", "999999")]
             public decimal RKL { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "日期")]
+            public DateTime RQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "单位")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DW { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "总价")]
+            [Range(typeof(decimal), "0", "99999999")]
+            public decimal ZJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "使用部门")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SYBM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "存放单位")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CFDW { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "负责人")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FZR { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "处置方式")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CZFS { get; set; }
 
 
         }

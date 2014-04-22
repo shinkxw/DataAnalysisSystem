@@ -11,7 +11,10 @@ namespace HanRuEdu.LDAL
         {
             BT = "";
             SCSJ = DateTime.Now;
-            SCNR = "";
+            JJ = "";
+            WJM = "";
+            SCYHID = "";
+            ZLWJDX = "";
         }
         public class EDU_ZYZX_04_A03_ZLWJ_metadata
         {
@@ -43,9 +46,35 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "上传内容")]
+            [Display(Name = "简介")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SCNR { get; set; }
+            public String JJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "文件名")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String WJM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "上传用户")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SCYHID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "资料文件大小")]
+            [StringLength(300)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZLWJDX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "资料文件大小(KB)")]
+            public Int32 ZLWJDXKB { get; set; }
 
 
         }

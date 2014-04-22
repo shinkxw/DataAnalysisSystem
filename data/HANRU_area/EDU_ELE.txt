@@ -152,15 +152,17 @@
             <name="CZXX" exp="操作信息" type="text" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ELE_03_GNFW" exp="功能访问表">
+    <table name="EDU_ELE_03_YHSYJL" exp="用户使用记录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="APPID" exp="应用ID" type="int" null="F" p="F" />
             <name="MODULEID" exp="功能ID" type="int" null="F" p="F" />
-            <name="NAME" exp="功能名称" type="nvarchar(20)" null="F" p="F" />
-            <name="LINK" exp="地址" type="nvarchar(100)" null="F" p="F" />
-            <name="FWL" exp="访问量" type="int" null="F" p="F" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="GNMC" exp="功能名称" type="nvarchar(50)" null="F" p="F" />
+            <name="LJ" exp="链接" type="nvarchar(100)" null="F" p="F" />
+            <name="SYSJ" exp="使用时间" type="datetime" null="F" p="F" />
+            <name="XHHMS" exp="消耗毫秒数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_03_XNJS" exp="性能监视表">
@@ -172,16 +174,6 @@
             <name="CPDQSD" exp="磁盘读取速度" type="float" null="F" p="F" />
             <name="CPXRSD" exp="磁盘写入速度" type="float" null="F" p="F" />
             <name="ZXRS" exp="在线人数" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ELE_03_XHSJJL" exp="消耗时间记录表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="APPID" exp="应用ID" type="int" null="F" p="F" />
-            <name="NAME" exp="功能名称" type="nvarchar(20)" null="F" p="F" />
-            <name="LINK" exp="地址" type="nvarchar(100)" null="F" p="F" />
-            <name="MAXTIME" exp="最高消耗时间" type="int" null="F" p="F" />
-            <name="JLCS" exp="记录次数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_04_PKJGJL" exp="排课结果记录表">

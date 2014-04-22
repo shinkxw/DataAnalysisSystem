@@ -452,7 +452,11 @@ CREATE TABLE [dbo].[EDU_ZYZX_04_A03_ZLWJ](
 	[ZYMLID]  int  NOT NULL,--资源目录ID
 	[BT]  nvarchar(50)  NOT NULL,--标题
 	[SCSJ]  datetime  NOT NULL,--上传时间
-	[SCNR]  text  NOT NULL,--上传内容
+	[JJ]  nvarchar(200)  NOT NULL,--简介
+	[WJM]  text  NOT NULL,--文件名
+	[SCYHID]  nvarchar(20)  NOT NULL,--上传用户ID
+	[ZLWJDX]  nvarchar(300)  NOT NULL,--资料文件大小
+	[ZLWJDXKB]  int  NOT NULL,--资料文件大小(KB)
 CONSTRAINT [PK_EDU_ZYZX_04_A03_ZLWJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -782,5 +786,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标题' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'SCSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'SCNR'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'JJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'WJM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上传用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'SCYHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资料文件大小' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'ZLWJDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资料文件大小(KB)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_04_A03_ZLWJ', @level2type=N'COLUMN',@level2name=N'ZLWJDXKB'
 GO

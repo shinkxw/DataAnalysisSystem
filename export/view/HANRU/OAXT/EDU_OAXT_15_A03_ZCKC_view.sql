@@ -16,6 +16,13 @@ SELECT a.[ID]--编号
       ,a.[Remark]--备注
       ,a.[AllCount]--资产总量
       ,a.[RKL]--入库量
+      ,a.[RQ]--日期
+      ,a.[DW]--单位
+      ,a.[ZJ]--总价
+      ,a.[SYBM]--使用部门
+      ,a.[CFDW]--存放单位
+      ,a.[FZR]--负责人
+      ,a.[CZFS]--处置方式
       ,c.SCHOOLID as c_ZCML_SCHOOLID--资产目录表 学校
       ,c.Name as c_ZCML_Name--资产目录表 校产目录
       ,c.Superid as c_ZCML_Superid--资产目录表 父目录ID

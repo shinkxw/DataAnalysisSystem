@@ -4,15 +4,17 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ELE_03_GNFW_metadata))]
-    public partial class EDU_ELE_03_GNFW
+    [MetadataType(typeof(EDU_ELE_03_YHSYJL_metadata))]
+    public partial class EDU_ELE_03_YHSYJL
     {
-        public EDU_ELE_03_GNFW()
+        public EDU_ELE_03_YHSYJL()
         {
-            NAME = "";
-            LINK = "";
+            YHID = "";
+            GNMC = "";
+            LJ = "";
+            SYSJ = DateTime.Now;
         }
-        public class EDU_ELE_03_GNFW_metadata
+        public class EDU_ELE_03_YHSYJL_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -35,22 +37,34 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "功能名称")]
+            [Display(Name = "用户")]
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String NAME { get; set; }
+            public String YHID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "地址")]
+            [Display(Name = "功能名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GNMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "链接")]
             [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LINK { get; set; }
+            public String LJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "访问量")]
-            public Int32 FWL { get; set; }
+            [Display(Name = "使用时间")]
+            public DateTime SYSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "消耗毫秒数")]
+            public Int32 XHHMS { get; set; }
 
 
         }
