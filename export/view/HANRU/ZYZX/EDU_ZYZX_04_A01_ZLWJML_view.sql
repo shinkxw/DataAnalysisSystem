@@ -13,5 +13,5 @@ SELECT a.[ID]--编号
       ,c.PLSX as c_ZLWJML_PLSX--资料文件目录 排列顺序
 
 FROM dbo.EDU_ZYZX_04_A01_ZLWJML AS a LEFT OUTER JOIN
-      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.FMLID = c.ID /*父目录ID*/
+      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO

@@ -189,8 +189,8 @@
     </table>
     <table name="EDU_ZYZX_04_A01_ZLWJML" exp="资料文件目录">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="MLMC" exp="目录名称" type="nvarchar(50)" null="F" p="F" />
             <name="FMLID" exp="父目录ID" type="int" null="F" p="F" />
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />

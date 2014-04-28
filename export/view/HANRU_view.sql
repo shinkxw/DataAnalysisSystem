@@ -14563,7 +14563,7 @@ SELECT a.[ID]--编号
       ,c.PLSX as c_ZLWJML_PLSX--资料文件目录 排列顺序
 
 FROM dbo.EDU_ZYZX_04_A01_ZLWJML AS a LEFT OUTER JOIN
-      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.FMLID = c.ID /*父目录ID*/
+      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --资料文件目录权限
@@ -14598,7 +14598,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZYZX_04_A02_ZLWJMLQX AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZYZX_04_A01_ZLWJML AS d ON a.ZYMLID = d.ID /*资源目录ID*/
+      dbo.EDU_ZYZX_04_A01_ZLWJML AS d ON a.ZYMLID = d.ID /*资源目录ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --资料文件
@@ -14637,7 +14637,7 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZYZX_04_A03_ZLWJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.ZYMLID = c.ID /*资源目录ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZYZX_04_A01_ZLWJML AS c ON a.ZYMLID = c.ID /*资源目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.SCYHID = d.LOGINNAME /*上传用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 

@@ -12735,14 +12735,15 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_04_A01_ZLWJML]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZYZX_04_A01_ZLWJML](
-	[ID]  int  identity,--±àºÅ
+	[ID]  int  NOT NULL,--±àºÅ
 	[SCHOOLID]  int  NOT NULL,--Ñ§Ð£
 	[MLMC]  nvarchar(50)  NOT NULL,--Ä¿Â¼Ãû³Æ
 	[FMLID]  int  NOT NULL,--¸¸Ä¿Â¼ID
 	[PLSX]  int  NOT NULL,--ÅÅÁÐË³Ðò
 CONSTRAINT [PK_EDU_ZYZX_04_A01_ZLWJML] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
