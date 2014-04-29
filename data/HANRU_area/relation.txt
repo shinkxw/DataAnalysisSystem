@@ -474,6 +474,13 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CPID           EDU_ZWXT_01_A01_JSDCCP             ID
   DCRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZWXT_02_A01_KDGS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SFSY           EDU_JY_SFBZ                        DM
+<EDU_ZWXT_02_A02_BGQK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SJRID          EDU_ELE_01_USER                    LOGINNAME
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXDY_04_A01_ZZGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

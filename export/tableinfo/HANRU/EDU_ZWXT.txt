@@ -17,3 +17,24 @@ EDU_ZWXT_01_A02_JSDCJL  教师订餐记录表
   DCRID         订餐人ID                nvarchar(20)   非主        应用系统用户表
   SDSL          所订数量                int            非主
 
+EDU_ZWXT_02_A01_KDGS  快递公司表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  KDGSMC        快递公司名称            nvarchar(50)   非主
+  LXRXM         联系人姓名              nvarchar(36)   非主
+  LXDH          联系电话                nvarchar(20)   非主
+  LXDZ          联系地址                nvarchar(300)  非主
+  SFSY          是否使用                nvarchar(1)    非主        是否标志代码表
+  PLSX          排列顺序                int            非主
+
+EDU_ZWXT_02_A02_BGQK  包裹情况表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  KDGSMC        快递公司名称            nvarchar(50)   非主
+  KDDH          快递单号                nvarchar(50)   非主
+  SJRID         收件人ID                nvarchar(20)   非主        应用系统用户表
+  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+  QSZT          签收状态                int            非主
+  QSSJ          签收时间                datetime       非主
+
