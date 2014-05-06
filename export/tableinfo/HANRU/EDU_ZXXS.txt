@@ -246,3 +246,30 @@ EDU_ZXXS_51_A15_KHHZDW  考核汇总档位表
   HFSX          划分上限                int            非主
   HFXX          划分下限                int            非主
 
+EDU_ZXXS_52_A01_PXXM  评选项目表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  PXXMMC        评选项目名称            nvarchar(50)   非主
+  JJ            简介                    nvarchar(500)  非主
+
+EDU_ZXXS_52_A02_PXMC  评选名称表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  MC            名称                    nvarchar(20)   非主
+  PXXMIDLB      评选项目ID列表          text           非主
+  PXXMMCLB      评选项目名称列表        text           非主
+  PXXSIDLB      评选学生ID列表          text           非主
+  PXXSXMLB      评选学生姓名列表        text           非主
+  YQTX          友情提醒                nvarchar(1000) 非主
+  ZT            状态                    int            非主
+  NR            内容                    text           非主
+
+EDU_ZXXS_52_A03_XSZL  学生资料表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  PXMCID        评选名称ID              int            非主        评选名称表
+  PXXMID        评选项目ID              int            非主        评选项目表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  NR            内容                    text           非主
+  SCSJ          上传时间                datetime       非主
+

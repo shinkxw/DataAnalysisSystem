@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             SCSJ = DateTime.Now;
             HDSJ = DateTime.Now;
             SFKQ = "";
+            SFXYSH = "";
         }
         public class EDU_ZXJZ_01_A03_GRXXBJKG_metadata
         {
@@ -35,6 +36,13 @@ namespace HanRuEdu.LDAL
             [StringLength(1)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SFKQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "是否需要审核")]
+            [StringLength(1)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SFXYSH { get; set; }
 
 
         }

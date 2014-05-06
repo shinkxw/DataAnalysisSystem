@@ -282,4 +282,37 @@
             <name="HFXX" exp="划分下限" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_52_A01_PXXM" exp="评选项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="PXXMMC" exp="评选项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JJ" exp="简介" type="nvarchar(500)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_52_A02_PXMC" exp="评选名称表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="MC" exp="名称" type="nvarchar(20)" null="F" p="F" />
+            <name="PXXMIDLB" exp="评选项目ID列表" type="text" null="F" p="F" />
+            <name="PXXMMCLB" exp="评选项目名称列表" type="text" null="F" p="F" />
+            <name="PXXSIDLB" exp="评选学生ID列表" type="text" null="F" p="F" />
+            <name="PXXSXMLB" exp="评选学生姓名列表" type="text" null="F" p="F" />
+            <name="YQTX" exp="友情提醒" type="nvarchar(1000)" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_52_A03_XSZL" exp="学生资料表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="PXMCID" exp="评选名称ID" type="int" null="F" p="F" />
+            <name="PXXMID" exp="评选项目ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

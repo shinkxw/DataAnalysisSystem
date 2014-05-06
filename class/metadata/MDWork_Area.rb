@@ -19,17 +19,16 @@ class MDWork_Area
   #输出所有
   def export_all(need_commit = true)
     @vc = MDVCer.new(self)
-    fs_root = 'D:\技术部\代码\Trunk\DB\SQL'
-    fs_config = {'@sql'=>"#{fs_root}/BASE",'@view'=>"#{fs_root}/VIEW",
-                 '@tableinfo'=>"#{fs_root}/表信息",
-                 'HANRU_bz'=>fs_root,'HANRU_yw'=>fs_root,'HANRU_view'=>fs_root}
+    fs_config = {'@sql'=>"#{$fs_root}/BASE",'@view'=>"#{$fs_root}/VIEW",
+                 '@tableinfo'=>"#{$fs_root}/表信息",
+                 'HANRU_bz'=>$fs_root,'HANRU_yw'=>$fs_root,'HANRU_view'=>$fs_root}
     MDDoc.set_fsc(fs_config)
     export_sql;export_sql(false)
     export_view;export_view(false)
     export_model;export_template
     export_tableinfo;
     MDDoc.set_fsc(nil)
-    SVN.commit('D:\技术部\代码\Trunk\DB\SQL') if need_commit
+    SVN.commit($fs_root) if need_commit
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area

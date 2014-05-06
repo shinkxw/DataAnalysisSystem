@@ -768,6 +768,32 @@
 <EDU_ZXJZ_01_A03_GRXXBJKG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFKQ           EDU_JY_SFBZ                        DM
+  SFXYSH         EDU_JY_SFBZ                        DM
+<EDU_ZXJZ_01_A04_JZGJBSJSH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XBM            EDU_GB_RDXB                        DM
+  CSDM           EDU_GB_ZHRMGHGXZQH                 DM
+  MZM            EDU_GB_ZGGMZMCDLMZMPXF             DM
+  GJDQM          EDU_GB_SJGGHDQMC                   DM
+  SFZJLXM        EDU_JY_SFZJLX                      DM
+  HYZKM          EDU_GB_HYZZ                        DM
+  GATQWM         EDU_JY_GATQW                       DM
+  ZZMMM          EDU_GB_ZZMM                        DM
+  JKZKM          EDU_GB_JKZKYWSZ                    DM
+  XYZJM          EDU_GB_ZJXY                        DM
+  XXM            EDU_JY_XX                          DM
+  HKXZM          EDU_GB_HKLB                        DM
+  XLM            EDU_GB_XL                          DM
+  BZLBM          EDU_JY_ZXXBZLB                     DM
+  GWZYM          EDU_JY_GWZY                        DM
+  ZYRKXD         EDU_JY_RKXD                        DM
+<EDU_ZXJZ_01_A05_JZGKZSH
+  JZGID          EDU_ZXJZ_01_01_JZGJBSJ             ID
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXJZ_01_A06_JZGNLZSSH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JZGJBSJID      EDU_ZXJZ_01_01_JZGJBSJ             ID
+  SFSZYZGZS      EDU_JY_SFBZ                        DM
 <EDU_ZXJZ_02_A01_XNGWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GWID           EDU_ZXXX_04_A01_JGGW               ID
@@ -972,6 +998,15 @@
 <EDU_ZXXS_51_A15_KHHZDW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KHHZID         EDU_ZXXS_51_A11_KHHZ               ID
+<EDU_ZXXS_52_A01_PXXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXS_52_A02_PXMC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXS_52_A03_XSZL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  PXMCID         EDU_ZXXS_52_A02_PXMC               ID
+  PXXMID         EDU_ZXXS_52_A01_PXXM               ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
 <EDU_ZXXX_01_01_ZXXX
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXBXLXM        EDU_JY_BXLX                        DM
