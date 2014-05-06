@@ -4,19 +4,14 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_02_A01_XNGWSJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校名
-      ,a.[GWID]--岗位表ID
-      ,a.[JZGJBSJID]--教职工基本数据子类表
-      ,a.[GWQSNY]--岗位起始年月
-      ,a.[GWJSNY]--岗位结束年月
-      ,a.[SFZG]--是否在岗
-      ,a.[ZWMC]--职务名称
       ,a.[JGH]--机构号
-      ,a.[XQID]--学期ID
-      ,c.SCHOOLID as c_JGGW_SCHOOLID--机构岗位表 学校ID
-      ,c.JGH as c_JGGW_JGH--机构岗位表 机构号
-      ,c.GWBH as c_JGGW_GWBH--机构岗位表 岗位编号
-      ,c.GWMC as c_JGGW_GWMC--机构岗位表 岗位名称
-      ,c.GWSM as c_JGGW_GWSM--机构岗位表 岗位说明
+      ,a.[JZGJBSJID]--教职工ID
+      ,a.[ZWMC]--职务名称
+      ,c.SCHOOLID as c_JG_SCHOOLID--机构数据类表 学校名
+      ,c.LSJGH as c_JG_LSJGH--机构数据类表 隶属机构号
+      ,c.JGMC as c_JG_JGMC--机构数据类表 机构名称
+      ,c.JGJC as c_JG_JGJC--机构数据类表 机构简称
+      ,c.FZRGH as c_JG_FZRGH--机构数据类表 负责人工号
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,d.XM as d_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -82,26 +77,10 @@ SELECT a.[ID]--编号
       ,[dp].MC as d_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[dq].MC as d_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
-      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
-      ,f.SCHOOLID as f_JG_SCHOOLID--机构数据类表 学校名
-      ,f.LSJGH as f_JG_LSJGH--机构数据类表 隶属机构号
-      ,f.JGMC as f_JG_JGMC--机构数据类表 机构名称
-      ,f.JGJC as f_JG_JGJC--机构数据类表 机构简称
-      ,f.FZRGH as f_JG_FZRGH--机构数据类表 负责人工号
-      ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
-      ,g.XNID as g_XQ_XNID--学期数据表 学年
-      ,g.XQM as g_XQ_XQM--学期数据表 学期码
-      ,[gb].MC as g_XQ_XQM_MC--学期代码表 名称
-      ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
-      ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZXJZ_02_A01_XNGWSJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXXX_04_A01_JGGW AS c ON a.GWID = c.ID /*岗位表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXX_04_01_JG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS g ON a.XQID = g.ID /*学期ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
@@ -117,6 +96,5 @@ FROM dbo.EDU_ZXJZ_02_A01_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_XL AS [dn] ON d.XLM = [dn].DM /*学历码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBZLB AS [do] ON d.BZLBM = [do].DM /*编制类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWZY AS [dp] ON d.GWZYM = [dp].DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS [dq] ON d.ZYRKXD = [dq].DM /*主要任课学段*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS [gb] ON g.XQM = [gb].DM /*学期码*/
+      dbo.EDU_JY_RKXD AS [dq] ON d.ZYRKXD = [dq].DM /*主要任课学段*/
 GO

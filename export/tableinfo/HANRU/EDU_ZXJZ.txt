@@ -152,14 +152,18 @@ EDU_ZXJZ_01_A06_JZGNLZSSH  教职工能力证书数据类表(审核)
 EDU_ZXJZ_02_A01_XNGWSJ  校内岗位数据子类表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
-  GWID          岗位表ID                int            非主        机构岗位表
-  JZGJBSJID     教职工基本数据子类表    int            非主        教职工基本数据子类表
-  GWQSNY        岗位起始年月            nvarchar(6)    非主
-  GWJSNY        岗位结束年月            nvarchar(6)    非主
-  SFZG          是否在岗                nvarchar(1)    非主        是否标志代码表
-  ZWMC          职务名称                nvarchar(10)   非主
   JGH           机构号                  nvarchar(10)   非主        机构数据类表
-  XQID          学期ID                  int            非主        学期数据表
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  ZWMC          职务名称                nvarchar(20)   非主
+
+EDU_ZXJZ_02_A02_RGJL  任岗记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  JGMC          机构名称                nvarchar(60)   非主
+  JZGJBSJID     教职工ID                int            非主        教职工基本数据子类表
+  ZWMC          职务名称                nvarchar(20)   非主
+  GWQSNY        岗位起始年月            nvarchar(20)   非主
+  GWJSNY        岗位结束年月            nvarchar(20)   非主
 
 EDU_ZXJZ_07_02_RKSJ  任课数据子类表
   ID            编号                    int            主键
