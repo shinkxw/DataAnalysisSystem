@@ -373,6 +373,7 @@ CREATE TABLE [dbo].[EDU_ZXJZ_01_A06_JZGNLZSSH](
 	[ZSBZ]  text  NULL,--证书备注
 	[SFSZYZGZS]  nvarchar(1)  NOT NULL,--是否是职业资格证书
 	[JJ]  text  NULL,--简介
+	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZXJZ_01_A06_JZGNLZSSH] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -1139,6 +1140,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否是职业资格证书' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A06_JZGNLZSSH', @level2type=N'COLUMN',@level2name=N'SFSZYZGZS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A06_JZGNLZSSH', @level2type=N'COLUMN',@level2name=N'JJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A06_JZGNLZSSH', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校内岗位数据子类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_02_A01_XNGWSJ'
 GO

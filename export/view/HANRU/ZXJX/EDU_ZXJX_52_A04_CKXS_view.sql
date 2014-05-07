@@ -90,6 +90,7 @@ SELECT a.[ID]--编号
       ,e.KCMC as e_KSDD_KCMC--考试地点表 考场名称
       ,e.ZDRNRS as e_KSDD_ZDRNRS--考试地点表 最大容纳人数
       ,e.DD as e_KSDD_DD--考试地点表 地点
+      ,e.ZLRS as e_KSDD_ZLRS--考试地点表 纵列人数
 
 FROM dbo.EDU_ZXJX_52_A04_CKXS AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.KSID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

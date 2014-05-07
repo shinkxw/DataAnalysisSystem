@@ -43,6 +43,11 @@ namespace HanRuEdu.LDAL
             public String DD { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "纵列人数")]
+            public Int32 ZLRS { get; set; }
+
+
         }
     }
 }

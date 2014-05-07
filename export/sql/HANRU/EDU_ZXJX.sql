@@ -901,6 +901,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_52_A03_KSDD](
 	[KCMC]  nvarchar(50)  NOT NULL,--考场名称
 	[ZDRNRS]  int  NOT NULL,--最大容纳人数
 	[DD]  nvarchar(200)  NOT NULL,--地点
+	[ZLRS]  int  NOT NULL,--纵列人数
 CONSTRAINT [PK_EDU_ZXJX_52_A03_KSDD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -1614,6 +1615,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最大容纳人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_52_A03_KSDD', @level2type=N'COLUMN',@level2name=N'ZDRNRS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'地点' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_52_A03_KSDD', @level2type=N'COLUMN',@level2name=N'DD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'纵列人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_52_A03_KSDD', @level2type=N'COLUMN',@level2name=N'ZLRS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参考学生表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_52_A04_CKXS'
 GO

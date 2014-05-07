@@ -10013,6 +10013,7 @@ SELECT a.[ID]--编号
       ,e.KCMC as e_KSDD_KCMC--考试地点表 考场名称
       ,e.ZDRNRS as e_KSDD_ZDRNRS--考试地点表 最大容纳人数
       ,e.DD as e_KSDD_DD--考试地点表 地点
+      ,e.ZLRS as e_KSDD_ZLRS--考试地点表 纵列人数
 
 FROM dbo.EDU_ZXJX_52_A04_CKXS AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.KSID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -10135,6 +10136,7 @@ SELECT a.[ID]--编号
       ,f.KCMC as f_KSDD_KCMC--考试地点表 考场名称
       ,f.ZDRNRS as f_KSDD_ZDRNRS--考试地点表 最大容纳人数
       ,f.DD as f_KSDD_DD--考试地点表 地点
+      ,f.ZLRS as f_KSDD_ZLRS--考试地点表 纵列人数
 
 FROM dbo.EDU_ZXJX_52_A05_JKAP AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.KSID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -10673,6 +10675,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[ZSBZ]--证书备注
       ,a.[SFSZYZGZS]--是否是职业资格证书
       ,a.[JJ]--简介
+      ,a.[ZT]--状态
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名

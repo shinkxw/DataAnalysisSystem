@@ -11,6 +11,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[ZSBZ]--证书备注
       ,a.[SFSZYZGZS]--是否是职业资格证书
       ,a.[JJ]--简介
+      ,a.[ZT]--状态
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名

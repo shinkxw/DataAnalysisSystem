@@ -365,6 +365,7 @@ EDU_ZXJX_52_A03_KSDD  考试地点表
   KCMC          考场名称                nvarchar(50)   非主
   ZDRNRS        最大容纳人数            int            非主
   DD            地点                    nvarchar(200)  非主
+  ZLRS          纵列人数                int            非主
 
 EDU_ZXJX_52_A04_CKXS  参考学生表
   ID            编号                    int            自增主键

@@ -434,6 +434,7 @@
             <name="KCMC" exp="考场名称" type="nvarchar(50)" null="F" p="F" />
             <name="ZDRNRS" exp="最大容纳人数" type="int" null="F" p="F" />
             <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
+            <name="ZLRS" exp="纵列人数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_52_A04_CKXS" exp="参考学生表">
