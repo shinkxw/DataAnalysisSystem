@@ -15,6 +15,7 @@ EDU_ZXJX_01_01_KC  课程数据类
   CKSM          参考书目                text           非主
   CDXZ          场地限制                int            非主
   SFZK          是否主课                nvarchar(1)    非主        是否标志代码表
+  PLSX          排列顺序                int            非主
 
 EDU_ZXJX_04_01_JCJBXX  教材基本信息表
   ID            编号                    int            主键

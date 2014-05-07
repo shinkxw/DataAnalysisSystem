@@ -104,6 +104,7 @@ SELECT a.[ID]--编号
       ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
       ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
       ,[fe].MC as f_KC_SFZK_MC--是否标志代码表 名称
+      ,f.PLSX as f_KC_PLSX--课程数据类 排列顺序
 
 FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_08_A01_XXGCXPJPZ AS c ON a.PZID = c.ID /*评价配置ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

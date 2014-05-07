@@ -7071,6 +7071,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[CKSM]--参考书目
       ,a.[CDXZ]--场地限制
       ,a.[SFZK]--是否主课
+      ,a.[PLSX]--排列顺序
       ,c.MC as c_ZXXKC_MC--中小学课程代码表 名称
       ,c.SYXX as c_ZXXKC_SYXX--中小学课程代码表 适用学校
       ,d.MC as d_ZXXKCDJ_MC--中小学课程等级代码表 名称
@@ -7158,6 +7159,7 @@ SELECT a.[ID]--编号
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
       ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,e.PLSX as e_KC_PLSX--课程数据类 排列顺序
       ,f.SCHOOLID as f_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,f.JCDM as f_JCJBXX_JCDM--教材基本信息表 教材代码
       ,f.JCMC as f_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -7959,6 +7961,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,d.PLSX as d_KC_PLSX--课程数据类 排列顺序
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,e.XH as e_XSXX_XH--学生基本数据子类表 学号
       ,e.XM as e_XSXX_XM--学生基本数据子类表 姓名
@@ -8215,6 +8218,7 @@ SELECT a.[ID]--编号
       ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
       ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
       ,[fe].MC as f_KC_SFZK_MC--是否标志代码表 名称
+      ,f.PLSX as f_KC_PLSX--课程数据类 排列顺序
 
 FROM dbo.EDU_ZXJX_08_A02_XXGCXPJJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_08_A01_XXGCXPJPZ AS c ON a.PZID = c.ID /*评价配置ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -8349,6 +8353,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,d.PLSX as d_KC_PLSX--课程数据类 排列顺序
       ,e.MC as e_TKLX_MC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
       ,f.XLID as f_XLZ_XLID--校历周表 校历ID
@@ -8666,6 +8671,7 @@ SELECT a.[ID]--编号
       ,f.CDXZ as f_KC_CDXZ--课程数据类 场地限制
       ,f.SFZK as f_KC_SFZK--课程数据类 是否主课
       ,[fe].MC as f_KC_SFZK_MC--是否标志代码表 名称
+      ,f.PLSX as f_KC_PLSX--课程数据类 排列顺序
 
 FROM dbo.EDU_ZXJX_10_A03_JSMZSKS AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -9909,6 +9915,7 @@ SELECT a.[ID]--编号
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
       ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,e.PLSX as e_KC_PLSX--课程数据类 排列顺序
 
 FROM dbo.EDU_ZXJX_52_A02_KSSJAP AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.KSID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -11064,6 +11071,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,d.PLSX as d_KC_PLSX--课程数据类 排列顺序
       ,e.MC as e_RKXD_MC--任课学段代码表 名称
       ,f.MC as f_RKJS_MC--任课角色代码表 名称
       ,g.SCHOOLID as g_BJ_SCHOOLID--班级数据类表 学校名
@@ -12958,6 +12966,7 @@ SELECT a.[ID]--考试成绩表
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
       ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,e.PLSX as e_KC_PLSX--课程数据类 排列顺序
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

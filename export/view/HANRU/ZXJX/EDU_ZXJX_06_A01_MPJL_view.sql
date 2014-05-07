@@ -102,6 +102,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,d.PLSX as d_KC_PLSX--课程数据类 排列顺序
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,e.XH as e_XSXX_XH--学生基本数据子类表 学号
       ,e.XM as e_XSXX_XM--学生基本数据子类表 姓名

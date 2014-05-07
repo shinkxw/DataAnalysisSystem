@@ -103,6 +103,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,d.PLSX as d_KC_PLSX--课程数据类 排列顺序
       ,e.MC as e_RKXD_MC--任课学段代码表 名称
       ,f.MC as f_RKJS_MC--任课角色代码表 名称
       ,g.SCHOOLID as g_BJ_SCHOOLID--班级数据类表 学校名

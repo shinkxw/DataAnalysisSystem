@@ -8039,6 +8039,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_01_01_KC](
 	[CKSM]  text  NULL,--参考书目
 	[CDXZ]  int  NULL,--场地限制
 	[SFZK]  nvarchar(1)  NULL,--是否主课
+	[PLSX]  int  NOT NULL,--排列顺序
 CONSTRAINT [PK_EDU_ZXJX_01_01_KC] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -8821,6 +8822,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'场地限制' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_01_01_KC', @level2type=N'COLUMN',@level2name=N'CDXZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否主课' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_01_01_KC', @level2type=N'COLUMN',@level2name=N'SFZK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_01_01_KC', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教材基本信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_04_01_JCJBXX'
 GO

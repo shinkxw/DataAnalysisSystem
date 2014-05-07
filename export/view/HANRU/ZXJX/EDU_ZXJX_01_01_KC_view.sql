@@ -18,6 +18,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[CKSM]--参考书目
       ,a.[CDXZ]--场地限制
       ,a.[SFZK]--是否主课
+      ,a.[PLSX]--排列顺序
       ,c.MC as c_ZXXKC_MC--中小学课程代码表 名称
       ,c.SYXX as c_ZXXKC_SYXX--中小学课程代码表 适用学校
       ,d.MC as d_ZXXKCDJ_MC--中小学课程等级代码表 名称

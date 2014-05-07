@@ -44,6 +44,7 @@ SELECT a.[ID]--编号
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
       ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,e.PLSX as e_KC_PLSX--课程数据类 排列顺序
       ,f.SCHOOLID as f_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,f.JCDM as f_JCJBXX_JCDM--教材基本信息表 教材代码
       ,f.JCMC as f_JCJBXX_JCMC--教材基本信息表 教材名称

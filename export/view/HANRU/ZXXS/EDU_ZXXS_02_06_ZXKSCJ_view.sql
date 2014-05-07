@@ -114,6 +114,7 @@ SELECT a.[ID]--考试成绩表
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
       ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,e.PLSX as e_KC_PLSX--课程数据类 排列顺序
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

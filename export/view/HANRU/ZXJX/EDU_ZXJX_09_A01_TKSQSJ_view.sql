@@ -105,6 +105,7 @@ SELECT a.[ID]--编号
       ,d.CDXZ as d_KC_CDXZ--课程数据类 场地限制
       ,d.SFZK as d_KC_SFZK--课程数据类 是否主课
       ,[de].MC as d_KC_SFZK_MC--是否标志代码表 名称
+      ,d.PLSX as d_KC_PLSX--课程数据类 排列顺序
       ,e.MC as e_TKLX_MC--调课类型代码 类型名称
       ,f.SCHOOLID as f_XLZ_SCHOOLID--校历周表 学校ID
       ,f.XLID as f_XLZ_XLID--校历周表 校历ID

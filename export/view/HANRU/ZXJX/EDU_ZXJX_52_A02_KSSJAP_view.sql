@@ -46,6 +46,7 @@ SELECT a.[ID]--编号
       ,e.CDXZ as e_KC_CDXZ--课程数据类 场地限制
       ,e.SFZK as e_KC_SFZK--课程数据类 是否主课
       ,[ee].MC as e_KC_SFZK_MC--是否标志代码表 名称
+      ,e.PLSX as e_KC_PLSX--课程数据类 排列顺序
 
 FROM dbo.EDU_ZXJX_52_A02_KSSJAP AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_05_A01_KS AS c ON a.KSID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

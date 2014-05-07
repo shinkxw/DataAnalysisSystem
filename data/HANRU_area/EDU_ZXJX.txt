@@ -2,22 +2,23 @@
 <namespace name="EDU_ZXJX" provider="reallocate_namespace">
     <table name="EDU_ZXJX_01_01_KC" exp="课程数据类">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
-            <name="KCH" exp="课程号" type="nvarchar(10)" null="F" p="T" remark="学校自编" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="KCH" exp="课程号" type="nvarchar(10)" null="F" p="T" />
             <name="KCMC" exp="课程名称" type="nvarchar(60)" null="T" p="F" />
-            <name="KCM" exp="课程码" type="nvarchar(2)" null="F" p="F" remark="值空间：JY/T1001ZXXKC中小学课程代码 " />
-            <name="KCDJM" exp="课程等级码" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001ZXXKCDJ中小学课程等级代码 " />
+            <name="KCM" exp="课程码" type="nvarchar(2)" null="F" p="F" />
+            <name="KCDJM" exp="课程等级码" type="nvarchar(1)" null="F" p="F" />
             <name="KCBM" exp="课程别名" type="nvarchar(60)" null="F" p="F" />
-            <name="KCJJ" exp="课程简介" type="text" null="T" p="F" remark="解释/举例：课程学习的主要内容 " />
-            <name="KCYQ" exp="课程要求" type="text" null="T" p="F" remark="解释/举例：对课程的教学要求 " />
-            <name="ZXS" exp="总学时" type="decimal(3, 0)" null="T" p="F" remark="解释/举例：单位：学时 " />
-            <name="ZHXS" exp="周学时" type="decimal(2, 0)" null="T" p="F" remark="解释/举例：每周安排的学时数，单位：学时 " />
-            <name="ZXXS" exp="自学学时" type="decimal(3, 0)" null="T" p="F" remark="解释/举例：单位：学时 " />
-            <name="SKFSM" exp="授课方式码" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SKFS授课方式代码 " />
-            <name="JCBM" exp="教材编码" type="text" null="T" p="F" remark="解释/举例：课程使用的教材 " />
-            <name="CKSM" exp="参考书目" type="text" null="T" p="F" remark=" 解释/举例：课程使用的参考书目 " />
+            <name="KCJJ" exp="课程简介" type="text" null="T" p="F" />
+            <name="KCYQ" exp="课程要求" type="text" null="T" p="F" />
+            <name="ZXS" exp="总学时" type="decimal(3, 0)" null="T" p="F" />
+            <name="ZHXS" exp="周学时" type="decimal(2, 0)" null="T" p="F" />
+            <name="ZXXS" exp="自学学时" type="decimal(3, 0)" null="T" p="F" />
+            <name="SKFSM" exp="授课方式码" type="nvarchar(1)" null="F" p="F" />
+            <name="JCBM" exp="教材编码" type="text" null="T" p="F" />
+            <name="CKSM" exp="参考书目" type="text" null="T" p="F" />
             <name="CDXZ" exp="场地限制" type="int" null="T" p="F" />
             <name="SFZK" exp="是否主课" type="nvarchar(1)" null="T" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_04_01_JCJBXX" exp="教材基本信息表">
