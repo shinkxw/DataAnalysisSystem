@@ -38,3 +38,28 @@ EDU_ZWXT_02_A02_BGQK  包裹情况表
   QSZT          签收状态                int            非主
   QSSJ          签收时间                datetime       非主
 
+EDU_ZWXT_03_A01_DCPZ  点菜配置表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  NR            内容                    text           非主
+
+EDU_ZWXT_03_A02_CPGL  菜品管理表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  SJ            时间                    datetime       非主
+  CPMC          菜品名称                nvarchar(50)   非主
+  CPLX          菜品类型                nvarchar(50)   非主
+  ZL            主料                    nvarchar(50)   非主
+  CKJ           参考价                  nvarchar(50)   非主
+  JS            介绍                    nvarchar(300)  非主
+
+EDU_ZWXT_03_A03_JSDC  教师点菜表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  DCSJ          点菜时间                datetime       非主
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  CPID          菜品ID                  int            非主        菜品管理表
+  JG            价格                    nvarchar(50)   非主
+  DGSL          订购数量                int            非主
+  ZT            状态                    int            非主
+

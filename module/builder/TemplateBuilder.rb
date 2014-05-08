@@ -168,7 +168,7 @@ class TemplateBuilder
     str << "return View(model);\n"
     str << "#{@tab.s}}\n\n"
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult ImportData(#{table.name} #{table.lname_dc})\n#{@tab.t}"
-    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}int sucss = 0;\n#{@tab.t}string msg = \"\";\n#{@tab.t}try\n#{@tab.t}"
+    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}int sucss = 0; int rowid = 0;\n#{@tab.t}string msg = \"\";\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}HttpPostedFileBase file = Request.Files[\"xmlfile\"];\n#{@tab.t}if (file == null || file.ContentLength == 0)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(string.Format(\"请使用不为空的xml电子文档\"));\n#{@tab.t}return View();\n"
     str << "#{@tab.s}}\n#{@tab.t}string filename = Request.Files[\"xmlfile\"].FileName;\n#{@tab.t}"
@@ -182,7 +182,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.t}string savePath = path + name;\n#{@tab.t}Request.Files[0].SaveAs(savePath);\n#{@tab.t}"
     str << "List<Hashtable> lst = XmlHelper.xmlhelper.get_column_data(savePath, 2, \"\");\n\n#{@tab.t}"
     str << %(msg += "<span >数据正确性检测。。。。。。</span><br>";\n#{@tab.t})
-    str << "bool flag = true; int rowid = 0;\n#{@tab.t}"
+    str << "bool flag = true;\n#{@tab.t}"
     str << "List<#{table.name}> CheckList = new List<#{table.name}>();\n#{@tab.t}"
     str << "foreach (Hashtable ht in lst)\n#{@tab.t}"
     str << "{\n#{@tab.l}rowid++;\n#{@tab.t}#{table.name} model = new #{table.name}();\n#{@tab.t}"

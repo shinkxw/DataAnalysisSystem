@@ -6796,6 +6796,21 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZWXT_02_A02_BGQK
             and   type = 'U')
    drop table EDU_ZWXT_02_A02_BGQK
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZWXT_03_A01_DCPZ')
+            and   type = 'U')
+   drop table EDU_ZWXT_03_A01_DCPZ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZWXT_03_A02_CPGL')
+            and   type = 'U')
+   drop table EDU_ZWXT_03_A02_CPGL
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZWXT_03_A03_JSDC')
+            and   type = 'U')
+   drop table EDU_ZWXT_03_A03_JSDC
+go
 --教师订餐菜品表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZWXT_01_A01_JSDCCP]') AND type in (N'U'))
 BEGIN
@@ -6878,6 +6893,63 @@ CONSTRAINT [PK_EDU_ZWXT_02_A02_BGQK] PRIMARY KEY CLUSTERED
 END
 GO
 
+--点菜配置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZWXT_03_A01_DCPZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZWXT_03_A01_DCPZ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[NR]  text  NOT NULL,--内容
+CONSTRAINT [PK_EDU_ZWXT_03_A01_DCPZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--菜品管理表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZWXT_03_A02_CPGL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZWXT_03_A02_CPGL](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[SJ]  datetime  NOT NULL,--时间
+	[CPMC]  nvarchar(50)  NOT NULL,--菜品名称
+	[CPLX]  nvarchar(50)  NOT NULL,--菜品类型
+	[ZL]  nvarchar(50)  NOT NULL,--主料
+	[CKJ]  nvarchar(50)  NOT NULL,--参考价
+	[JS]  nvarchar(300)  NOT NULL,--介绍
+CONSTRAINT [PK_EDU_ZWXT_03_A02_CPGL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--教师点菜表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZWXT_03_A03_JSDC]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZWXT_03_A03_JSDC](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[DCSJ]  datetime  NOT NULL,--点菜时间
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[CPID]  int  NOT NULL,--菜品ID
+	[JG]  nvarchar(50)  NOT NULL,--价格
+	[DGSL]  int  NOT NULL,--订购数量
+	[ZT]  int  NOT NULL,--状态
+CONSTRAINT [PK_EDU_ZWXT_03_A03_JSDC] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师订餐菜品表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_01_A01_JSDCCP'
 GO
@@ -6950,6 +7022,50 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'签收状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_02_A02_BGQK', @level2type=N'COLUMN',@level2name=N'QSZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'签收时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_02_A02_BGQK', @level2type=N'COLUMN',@level2name=N'QSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'点菜配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A01_DCPZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A01_DCPZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A01_DCPZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A01_DCPZ', @level2type=N'COLUMN',@level2name=N'NR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'菜品管理表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'SJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'菜品名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'CPMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'菜品类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'CPLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'主料' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'ZL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参考价' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'CKJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'介绍' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A02_CPGL', @level2type=N'COLUMN',@level2name=N'JS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师点菜表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'点菜时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'DCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'菜品ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'CPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'价格' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'JG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'订购数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'DGSL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_03_A03_JSDC', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
 --空间名：EDU_ZXDY  生成器：SqlBuilder0.1
 
