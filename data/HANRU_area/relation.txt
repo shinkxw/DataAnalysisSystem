@@ -1238,11 +1238,11 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJG_02_02_XNGWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  GWID           EDU_ZZXX_03_A01_JGGW               ID
-  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
-  SFZG           EDU_JY_SFBZ                        DM
   JGH            EDU_ZZXX_03_01_XNJG                JGH
-  XQID           EDU_ELE_01_XQ                      ID
+  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJG_02_A02_RGJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJG_04_A01_JBDJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JZGJBSJID      EDU_ZZJG_01_01_JZGJBSJ             ID
@@ -1978,9 +1978,6 @@
   LSSJJGH        EDU_ZZXX_03_01_XNJG                JGH
   JGYXBS         EDU_JY_SFBZ                        DM
   SFST           EDU_JY_SFBZ                        DM
-<EDU_ZZXX_03_A01_JGGW
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  JGH            EDU_ZZXX_03_01_XNJG                JGH
 <EDU_ZZXX_10_A01_XYAQSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FBRID          EDU_ELE_01_USER                    LOGINNAME

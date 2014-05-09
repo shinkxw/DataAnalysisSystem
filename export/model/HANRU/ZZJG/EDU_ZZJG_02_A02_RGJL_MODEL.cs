@@ -4,15 +4,17 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJG_02_02_XNGWSJ_metadata))]
-    public partial class EDU_ZZJG_02_02_XNGWSJ
+    [MetadataType(typeof(EDU_ZZJG_02_A02_RGJL_metadata))]
+    public partial class EDU_ZZJG_02_A02_RGJL
     {
-        public EDU_ZZJG_02_02_XNGWSJ()
+        public EDU_ZZJG_02_A02_RGJL()
         {
-            JGH = "";
+            JGMC = "";
             ZWMC = "";
+            GWQSNY = "";
+            GWJSNY = "";
         }
-        public class EDU_ZZJG_02_02_XNGWSJ_metadata
+        public class EDU_ZZJG_02_A02_RGJL_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -25,10 +27,10 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "机构号")]
-            [StringLength(6)]
+            [Display(Name = "机构名称")]
+            [StringLength(60)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JGH { get; set; }
+            public String JGMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -38,9 +40,23 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "职务名称")]
-            [StringLength(10)]
+            [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZWMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "岗位起始年月")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GWQSNY { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "岗位结束年月")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GWJSNY { get; set; }
 
 
         }

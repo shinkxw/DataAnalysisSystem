@@ -62,16 +62,6 @@
             <name="FZRH" exp="负责人号" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
-    <table name="EDU_ZZXX_03_A01_JGGW" exp="机构岗位表">
-        <field_area>
-            <name="ID" exp="岗位表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="F" />
-            <name="GWBH" exp="岗位编号" type="nvarchar(50)" null="F" p="F" />
-            <name="GWMC" exp="岗位名称" type="nvarchar(50)" null="T" p="F" />
-            <name="GWSM" exp="岗位说明" type="text" null="F" p="F" />
-        </field_area>
-    </table>
     <table name="EDU_ZZXX_10_A01_XYAQSJ" exp="校园安全数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />

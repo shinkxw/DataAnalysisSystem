@@ -15,11 +15,6 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZXX_03_01_XNJG'
    drop table EDU_ZZXX_03_01_XNJG
 go
 
-if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZXX_03_A01_JGGW')
-            and   type = 'U')
-   drop table EDU_ZZXX_03_A01_JGGW
-go
-
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZXX_10_A01_XYAQSJ')
             and   type = 'U')
    drop table EDU_ZZXX_10_A01_XYAQSJ
@@ -106,25 +101,6 @@ CREATE TABLE [dbo].[EDU_ZZXX_03_01_XNJG](
 CONSTRAINT [PK_EDU_ZZXX_03_01_XNJG] PRIMARY KEY CLUSTERED
 (
 	[JGH] ASC,
-	[SCHOOLID] ASC
-)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-GO
-
---机构岗位表
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZXX_03_A01_JGGW]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[EDU_ZZXX_03_A01_JGGW](
-	[ID]  int  NOT NULL,--岗位表ID
-	[SCHOOLID]  int  NOT NULL,--学校ID
-	[JGH]  nvarchar(6)  NOT NULL,--机构号
-	[GWBH]  nvarchar(50)  NOT NULL,--岗位编号
-	[GWMC]  nvarchar(50)  NULL,--岗位名称
-	[GWSM]  text  NOT NULL,--岗位说明
-CONSTRAINT [PK_EDU_ZZXX_03_A01_JGGW] PRIMARY KEY CLUSTERED
-(
-	[ID] ASC,
 	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -258,20 +234,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'机构邮政编码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_01_XNJG', @level2type=N'COLUMN',@level2name=N'JGYZBM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'负责人号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_01_XNJG', @level2type=N'COLUMN',@level2name=N'FZRH'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'机构岗位表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW', @level2type=N'COLUMN',@level2name=N'ID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'机构号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW', @level2type=N'COLUMN',@level2name=N'JGH'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW', @level2type=N'COLUMN',@level2name=N'GWBH'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW', @level2type=N'COLUMN',@level2name=N'GWMC'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位说明' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_03_A01_JGGW', @level2type=N'COLUMN',@level2name=N'GWSM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校园安全数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXX_10_A01_XYAQSJ'
 GO

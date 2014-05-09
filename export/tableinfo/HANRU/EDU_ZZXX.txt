@@ -54,14 +54,6 @@ EDU_ZZXX_03_01_XNJG  校内机构数据类表
   JGYZBM        机构邮政编码            nvarchar(6)    非主
   FZRH          负责人号                nvarchar(20)   非主
 
-EDU_ZZXX_03_A01_JGGW  机构岗位表
-  ID            岗位表ID                int            主键
-  SCHOOLID      学校ID                  int            主键        学校配置表
-  JGH           机构号                  nvarchar(6)    非主        校内机构数据类表
-  GWBH          岗位编号                nvarchar(50)   非主
-  GWMC          岗位名称                nvarchar(50)   非主
-  GWSM          岗位说明                text           非主
-
 EDU_ZZXX_10_A01_XYAQSJ  校园安全数据表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表

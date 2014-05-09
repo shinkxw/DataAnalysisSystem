@@ -4,19 +4,24 @@ CREATE VIEW [dbo].[VIEW_EDU_ZZJG_02_02_XNGWSJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校名
-      ,a.[GWID]--岗位表ID
-      ,a.[JZGJBSJID]--教职工基本数据子类表
-      ,a.[GWQSNY]--岗位起始年月
-      ,a.[GWJSNY]--岗位结束年月
-      ,a.[SFZG]--是否在岗
-      ,a.[ZWMC]--职务名称
       ,a.[JGH]--机构号
-      ,a.[XQID]--学期ID
-      ,c.SCHOOLID as c_JGGW_SCHOOLID--机构岗位表 学校ID
-      ,c.JGH as c_JGGW_JGH--机构岗位表 机构号
-      ,c.GWBH as c_JGGW_GWBH--机构岗位表 岗位编号
-      ,c.GWMC as c_JGGW_GWMC--机构岗位表 岗位名称
-      ,c.GWSM as c_JGGW_GWSM--机构岗位表 岗位说明
+      ,a.[JZGJBSJID]--教职工ID
+      ,a.[ZWMC]--职务名称
+      ,c.SCHOOLID as c_XNJG_SCHOOLID--校内机构数据类表 学校名
+      ,c.JGMC as c_XNJG_JGMC--校内机构数据类表 机构名称
+      ,c.JGYWMC as c_XNJG_JGYWMC--校内机构数据类表 机构英文名称
+      ,c.JGJC as c_XNJG_JGJC--校内机构数据类表 机构简称
+      ,c.JGJP as c_XNJG_JGJP--校内机构数据类表 机构简拼
+      ,c.JGDZ as c_XNJG_JGDZ--校内机构数据类表 机构地址
+      ,c.LSSJJGH as c_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
+      ,c.LSXQH as c_XNJG_LSXQH--校内机构数据类表 隶属校区号
+      ,c.JGYXBS as c_XNJG_JGYXBS--校内机构数据类表 机构有效标识
+      ,[cb].MC as c_XNJG_JGYXBS_MC--是否标志代码表 名称
+      ,c.SFST as c_XNJG_SFST--校内机构数据类表 是否实体
+      ,[cc].MC as c_XNJG_SFST_MC--是否标志代码表 名称
+      ,c.JLNY as c_XNJG_JLNY--校内机构数据类表 建立年月
+      ,c.JGYZBM as c_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
+      ,c.FZRH as c_XNJG_FZRH--校内机构数据类表 负责人号
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,d.XM as d_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -85,36 +90,12 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
-      ,e.MC as e_SFBZ_MC--是否标志代码表 名称
-      ,f.SCHOOLID as f_XNJG_SCHOOLID--校内机构数据类表 学校名
-      ,f.JGMC as f_XNJG_JGMC--校内机构数据类表 机构名称
-      ,f.JGYWMC as f_XNJG_JGYWMC--校内机构数据类表 机构英文名称
-      ,f.JGJC as f_XNJG_JGJC--校内机构数据类表 机构简称
-      ,f.JGJP as f_XNJG_JGJP--校内机构数据类表 机构简拼
-      ,f.JGDZ as f_XNJG_JGDZ--校内机构数据类表 机构地址
-      ,f.LSSJJGH as f_XNJG_LSSJJGH--校内机构数据类表 隶属上级机构号
-      ,f.LSXQH as f_XNJG_LSXQH--校内机构数据类表 隶属校区号
-      ,f.JGYXBS as f_XNJG_JGYXBS--校内机构数据类表 机构有效标识
-      ,[fb].MC as f_XNJG_JGYXBS_MC--是否标志代码表 名称
-      ,f.SFST as f_XNJG_SFST--校内机构数据类表 是否实体
-      ,[fc].MC as f_XNJG_SFST_MC--是否标志代码表 名称
-      ,f.JLNY as f_XNJG_JLNY--校内机构数据类表 建立年月
-      ,f.JGYZBM as f_XNJG_JGYZBM--校内机构数据类表 机构邮政编码
-      ,f.FZRH as f_XNJG_FZRH--校内机构数据类表 负责人号
-      ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
-      ,g.XNID as g_XQ_XNID--学期数据表 学年
-      ,g.XQM as g_XQ_XQM--学期数据表 学期码
-      ,[gb].MC as g_XQ_XQM_MC--学期代码表 名称
-      ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
-      ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZZXX_03_A01_JGGW AS c ON a.GWID = c.ID /*岗位表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工基本数据子类表*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS e ON a.SFZG = e.DM /*是否在岗*/ LEFT OUTER JOIN
-      dbo.EDU_ZZXX_03_01_XNJG AS f ON a.JGH = f.JGH /*机构号*/ AND a.SCHOOLID = f.SCHOOLID /*学校名*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS g ON a.XQID = g.ID /*学期ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXX_03_01_XNJG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JZGJBSJID = d.ID /*教职工ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cb] ON c.JGYXBS = [cb].DM /*机构有效标识*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFST = [cc].DM /*是否实体*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
@@ -133,8 +114,5 @@ FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_GWLB AS [dq] ON d.GWLBM = [dq].DM /*岗位类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [dr] ON d.SFJZJS = [dr].DM /*是否兼职教师*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [ds] ON d.SFSSXJS = [ds].DM /*是否双师型教师*/ LEFT OUTER JOIN
-      dbo.EDU_JY_JZGDQZT AS [dt] ON d.DQZTM = [dt].DM /*当前状态码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [fb] ON f.JGYXBS = [fb].DM /*机构有效标识*/ LEFT OUTER JOIN
-      dbo.EDU_JY_SFBZ AS [fc] ON f.SFST = [fc].DM /*是否实体*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS [gb] ON g.XQM = [gb].DM /*学期码*/
+      dbo.EDU_JY_JZGDQZT AS [dt] ON d.DQZTM = [dt].DM /*当前状态码*/
 GO
