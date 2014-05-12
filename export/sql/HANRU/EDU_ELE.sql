@@ -124,6 +124,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_08_RYCONFIG'
             and   type = 'U')
    drop table EDU_ELE_08_RYCONFIG
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_09_JKXX')
+            and   type = 'U')
+   drop table EDU_ELE_09_JKXX
+go
 --应用系统用户表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_USER]') AND type in (N'U'))
 BEGIN
@@ -635,6 +640,28 @@ CONSTRAINT [PK_EDU_ELE_08_RYCONFIG] PRIMARY KEY CLUSTERED
 END
 GO
 
+--接口信息表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_09_JKXX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_09_JKXX](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[JKLB]  nvarchar(30)  NOT NULL,--接口类别
+	[JKSM]  nvarchar(50)  NOT NULL,--接口说明
+	[CRCS]  nvarchar(50)  NOT NULL,--传入参数
+	[TZWZ]  text  NOT NULL,--跳转网址
+	[KQZT]  int  NOT NULL,--开启状态
+	[FWCS]  int  NOT NULL,--访问次数
+	[TJSJ]  datetime  NOT NULL,--添加时间
+	[TJYH]  nvarchar(20)  NOT NULL,--添加用户
+CONSTRAINT [PK_EDU_ELE_09_JKXX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用系统用户表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER'
 GO
@@ -1067,4 +1094,26 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'APPID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_08_RYCONFIG', @level2type=N'COLUMN',@level2name=N'RY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接口信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接口类别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'JKLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接口说明' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'JKSM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'传入参数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'CRCS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'跳转网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'TZWZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开启状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'KQZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'访问次数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'FWCS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加用户' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_09_JKXX', @level2type=N'COLUMN',@level2name=N'TJYH'
 GO

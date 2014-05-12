@@ -16,6 +16,9 @@ SELECT a.[JZGID]--教工基本信息ID
       ,a.[GZJL]--工作经历
       ,a.[HJQK]--获奖情况
       ,a.[ZC]--职称
+      ,a.[GJRZQDSJ]--高级任职取得时间
+      ,a.[ZJRZQDSJ]--中级任职取得时间
+      ,a.[CJRZQDSJ]--初级任职取得时间
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名

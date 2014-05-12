@@ -63,6 +63,9 @@
             <name="GZJL" exp="工作经历" type="text" null="F" p="F" />
             <name="HJQK" exp="获奖情况" type="text" null="F" p="F" />
             <name="ZC" exp="职称" type="nvarchar(200)" null="F" p="F" />
+            <name="GJRZQDSJ" exp="高级任职取得时间" type="nvarchar(20)" null="F" p="F" />
+            <name="ZJRZQDSJ" exp="中级任职取得时间" type="nvarchar(20)" null="F" p="F" />
+            <name="CJRZQDSJ" exp="初级任职取得时间" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_01_A02_JZGNLZS" exp="教职工能力证书数据类表">
@@ -150,6 +153,9 @@
             <name="GZJL" exp="工作经历" type="text" null="F" p="F" />
             <name="HJQK" exp="获奖情况" type="text" null="F" p="F" />
             <name="ZC" exp="职称" type="nvarchar(200)" null="F" p="F" />
+            <name="GJRZQDSJ" exp="高级任职取得时间" type="nvarchar(20)" null="F" p="F" />
+            <name="ZJRZQDSJ" exp="中级任职取得时间" type="nvarchar(20)" null="F" p="F" />
+            <name="CJRZQDSJ" exp="初级任职取得时间" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_01_A06_JZGNLZSSH" exp="教职工能力证书数据类表(审核)">

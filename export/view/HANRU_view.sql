@@ -67,6 +67,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_07_RYBD
             and   type = 'V')
    drop view VIEW_EDU_ELE_07_RYBD_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_09_JKXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ELE_09_JKXX_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_01_01_JLCSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_JPXT_01_01_JLCSJ_DISP
@@ -1978,6 +1982,41 @@ SELECT a.[ID]--编号
 FROM dbo.EDU_ELE_07_RYBD AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.YHID = d.LOGINNAME /*用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/
+GO
+
+--接口信息表
+CREATE VIEW [dbo].[VIEW_EDU_ELE_09_JKXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JKLB]--接口类别
+      ,a.[JKSM]--接口说明
+      ,a.[CRCS]--传入参数
+      ,a.[TZWZ]--跳转网址
+      ,a.[KQZT]--开启状态
+      ,a.[FWCS]--访问次数
+      ,a.[TJSJ]--添加时间
+      ,a.[TJYH]--添加用户
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ELE_09_JKXX AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.TJYH = c.LOGINNAME /*添加用户*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
 --教练车数据表
@@ -10321,6 +10360,9 @@ SELECT a.[JZGID]--教工基本信息ID
       ,a.[GZJL]--工作经历
       ,a.[HJQK]--获奖情况
       ,a.[ZC]--职称
+      ,a.[GJRZQDSJ]--高级任职取得时间
+      ,a.[ZJRZQDSJ]--中级任职取得时间
+      ,a.[CJRZQDSJ]--初级任职取得时间
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -10629,6 +10671,9 @@ SELECT a.[JZGID]--教工基本信息ID
       ,a.[GZJL]--工作经历
       ,a.[HJQK]--获奖情况
       ,a.[ZC]--职称
+      ,a.[GJRZQDSJ]--高级任职取得时间
+      ,a.[ZJRZQDSJ]--中级任职取得时间
+      ,a.[CJRZQDSJ]--初级任职取得时间
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名

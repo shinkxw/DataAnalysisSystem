@@ -73,6 +73,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
   YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_09_JKXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TJYH           EDU_ELE_01_USER                    LOGINNAME
 <EDU_JPXT_01_01_JLCSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CLXHID         EDU_JPXT_05_01_CLXH                ID

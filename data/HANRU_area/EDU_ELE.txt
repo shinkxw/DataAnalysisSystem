@@ -291,4 +291,18 @@
             <name="RY" exp="荣誉" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ELE_09_JKXX" exp="接口信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="JKLB" exp="接口类别" type="nvarchar(30)" null="F" p="F" />
+            <name="JKSM" exp="接口说明" type="nvarchar(50)" null="F" p="F" />
+            <name="CRCS" exp="传入参数" type="nvarchar(50)" null="F" p="F" />
+            <name="TZWZ" exp="跳转网址" type="text" null="F" p="F" />
+            <name="KQZT" exp="开启状态" type="int" null="F" p="F" />
+            <name="FWCS" exp="访问次数" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="TJYH" exp="添加用户" type="nvarchar(20)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

@@ -239,3 +239,15 @@ EDU_ELE_08_RYCONFIG  荣誉配置表
   APPID         应用ID                  int            非主
   RY            荣誉                    int            非主
 
+EDU_ELE_09_JKXX  接口信息表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  JKLB          接口类别                nvarchar(30)   非主
+  JKSM          接口说明                nvarchar(50)   非主
+  CRCS          传入参数                nvarchar(50)   非主
+  TZWZ          跳转网址                text           非主
+  KQZT          开启状态                int            非主
+  FWCS          访问次数                int            非主
+  TJSJ          添加时间                datetime       非主
+  TJYH          添加用户                nvarchar(20)   非主        应用系统用户表
+

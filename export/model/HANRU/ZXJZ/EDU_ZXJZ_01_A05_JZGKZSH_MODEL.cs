@@ -15,6 +15,9 @@ namespace HanRuEdu.LDAL
             GZJL = "";
             HJQK = "";
             ZC = "";
+            GJRZQDSJ = "";
+            ZJRZQDSJ = "";
+            CJRZQDSJ = "";
         }
         public class EDU_ZXJZ_01_A05_JZGKZSH_metadata
         {
@@ -95,6 +98,27 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "高级任职取得时间")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GJRZQDSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "中级任职取得时间")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZJRZQDSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "初级任职取得时间")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CJRZQDSJ { get; set; }
 
 
         }
