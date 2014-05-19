@@ -185,6 +185,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_22_A07_ZFJL
    drop table EDU_ZZJX_22_A07_ZFJL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_22_A08_SXSJL')
+            and   type = 'U')
+   drop table EDU_ZZJX_22_A08_SXSJL
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_22_A09_JLTD')
+            and   type = 'U')
+   drop table EDU_ZZJX_22_A09_JLTD
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_23_A01_DGSXYQLJLX')
             and   type = 'U')
    drop table EDU_ZZJX_23_A01_DGSXYQLJLX
@@ -1005,7 +1015,6 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A02_SXSGL](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[SZBID]  int  NOT NULL,--实习班ID
 	[StuID]  int  NOT NULL,--学生ID
-	[Resume]  text  NOT NULL,--简历
 	[Status]  int  NOT NULL,--实习生状态
 	[SXXYS]  text  NOT NULL,--实习协议书
 	[SXSXM]  nvarchar(36)  NOT NULL,--实习生姓名
@@ -1181,6 +1190,44 @@ CONSTRAINT [PK_EDU_ZZJX_22_A07_ZFJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--实习生简历表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_22_A08_SXSJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_22_A08_SXSJL](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[SXSID]  int  NOT NULL,--实习生ID
+	[JLMC]  nvarchar(50)  NOT NULL,--简历名称
+	[JLNR]  text  NOT NULL,--简历内容
+CONSTRAINT [PK_EDU_ZZJX_22_A08_SXSJL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--简历投递表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_22_A09_JLTD]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_22_A09_JLTD](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[SXSID]  int  NOT NULL,--实习生ID
+	[ComID]  int  NOT NULL,--企业ID
+	[GWID]  int  NOT NULL,--岗位ID
+	[JLNR]  text  NOT NULL,--简历内容
+	[TDSJ]  datetime  NOT NULL,--投递时间
+	[SFCK]  int  NOT NULL,--是否查看
+	[FKNR]  text  NOT NULL,--反馈内容
+CONSTRAINT [PK_EDU_ZZJX_22_A09_JLTD] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -2440,8 +2487,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习班ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'StuID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简历' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'Resume'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'Status'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习协议书' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'SXXYS'
@@ -2591,6 +2636,38 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'走访时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A07_ZFJL', @level2type=N'COLUMN',@level2name=N'ZFSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'走访记录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A07_ZFJL', @level2type=N'COLUMN',@level2name=N'ZFJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生简历表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A08_SXSJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A08_SXSJL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A08_SXSJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A08_SXSJL', @level2type=N'COLUMN',@level2name=N'SXSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简历名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A08_SXSJL', @level2type=N'COLUMN',@level2name=N'JLMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简历内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A08_SXSJL', @level2type=N'COLUMN',@level2name=N'JLNR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简历投递表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'SXSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'企业ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'ComID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'GWID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简历内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'JLNR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'投递时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'TDSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否查看' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'SFCK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'反馈内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A09_JLTD', @level2type=N'COLUMN',@level2name=N'FKNR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'顶岗实习友情链接类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_23_A01_DGSXYQLJLX'
 GO

@@ -441,7 +441,6 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="SZBID" exp="实习班ID" type="int" null="F" p="F" />
             <name="StuID" exp="学生ID" type="int" null="F" p="F" />
-            <name="Resume" exp="简历" type="text" null="F" p="F" />
             <name="Status" exp="实习生状态" type="int" null="F" p="F" />
             <name="SXXYS" exp="实习协议书" type="text" null="F" p="F" />
             <name="SXSXM" exp="实习生姓名" type="nvarchar(36)" null="F" p="F" />
@@ -541,6 +540,28 @@
             <name="JSID" exp="教师ID" type="int" null="F" p="F" />
             <name="ZFSJ" exp="走访时间" type="datetime" null="F" p="F" />
             <name="ZFJL" exp="走访记录" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_22_A08_SXSJL" exp="实习生简历表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
+            <name="JLMC" exp="简历名称" type="nvarchar(50)" null="F" p="F" />
+            <name="JLNR" exp="简历内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_22_A09_JLTD" exp="简历投递表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
+            <name="ComID" exp="企业ID" type="int" null="F" p="F" />
+            <name="GWID" exp="岗位ID" type="int" null="F" p="F" />
+            <name="JLNR" exp="简历内容" type="text" null="F" p="F" />
+            <name="TDSJ" exp="投递时间" type="datetime" null="F" p="F" />
+            <name="SFCK" exp="是否查看" type="int" null="F" p="F" />
+            <name="FKNR" exp="反馈内容" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_23_A01_DGSXYQLJLX" exp="顶岗实习友情链接类型">

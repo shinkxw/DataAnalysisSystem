@@ -6,7 +6,6 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[SZBID]--实习班ID
       ,a.[StuID]--学生ID
-      ,a.[Resume]--简历
       ,a.[Status]--实习生状态
       ,a.[SXXYS]--实习协议书
       ,a.[SXSXM]--实习生姓名

@@ -22,7 +22,7 @@ class DBEntity
     begin; db = new(conn,db_name);yield db;ensure;db.close;end if conn && block_given?
   end
   #初始化
-  def initialize(conn,db_name);@conn,@db_name,@data = conn,db_name,nil end
+  def initialize(conn,db_name);@conn,@db_name = conn,db_name end
   #重置连接
   def reset_conn
     close_conn

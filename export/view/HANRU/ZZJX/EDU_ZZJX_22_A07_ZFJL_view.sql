@@ -11,7 +11,6 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Resume as c_SXSGL_Resume--实习生管理表 简历
       ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
       ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名

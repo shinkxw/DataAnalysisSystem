@@ -382,7 +382,6 @@ EDU_ZZJX_21_A02_SXSGL  实习生管理表
   SCHOOLID      学校                    int            主键        学校配置表
   SZBID         实习班ID                int            非主        实习班级管理表
   StuID         学生ID                  int            非主        学生信息数据表
-  Resume        简历                    text           非主
   Status        实习生状态              int            非主
   SXXYS         实习协议书              text           非主
   SXSXM         实习生姓名              nvarchar(36)   非主
@@ -466,6 +465,24 @@ EDU_ZZJX_22_A07_ZFJL  实习走访记录
   JSID          教师ID                  int            非主        教职工基本数据子类表
   ZFSJ          走访时间                datetime       非主
   ZFJL          走访记录                text           非主
+
+EDU_ZZJX_22_A08_SXSJL  实习生简历表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SXSID         实习生ID                int            非主        实习生管理表
+  JLMC          简历名称                nvarchar(50)   非主
+  JLNR          简历内容                text           非主
+
+EDU_ZZJX_22_A09_JLTD  简历投递表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SXSID         实习生ID                int            非主        实习生管理表
+  ComID         企业ID                  int            非主        企业管理表
+  GWID          岗位ID                  int            非主        岗位信息表
+  JLNR          简历内容                text           非主
+  TDSJ          投递时间                datetime       非主
+  SFCK          是否查看                int            非主
+  FKNR          反馈内容                text           非主
 
 EDU_ZZJX_23_A01_DGSXYQLJLX  顶岗实习友情链接类型
   ID            编号                    int            主键

@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_21_A02_SXSGL()
         {
-            Resume = "";
             SXXYS = "";
             SXSXM = "";
         }
@@ -33,12 +32,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学生")]
             public Int32 StuID { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "简历")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String Resume { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
