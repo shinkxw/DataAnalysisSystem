@@ -9,6 +9,11 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_21_A03_SXGW()
         {
+            TGLY = "";
+            SQSJ = DateTime.Now;
+            SQSHSJ = DateTime.Now;
+            SQTGSJ = DateTime.Now;
+            TGSHSJ = DateTime.Now;
         }
         public class EDU_ZZJX_21_A03_SXGW_metadata
         {
@@ -35,6 +40,47 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "录取类型")]
             public Int32 TypeID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "班主任审核状态")]
+            public Int32 BZRSHZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "企业审核状态")]
+            public Int32 QYSHZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "退岗理由")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TGLY { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "状态")]
+            public Int32 ZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "申请时间")]
+            public DateTime SQSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "申请审核时间")]
+            public DateTime SQSHSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "申请退岗时间")]
+            public DateTime SQTGSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "退岗审核时间")]
+            public DateTime TGSHSJ { get; set; }
 
 
         }

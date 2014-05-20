@@ -6,8 +6,8 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[SZBID]--实习班ID
       ,a.[StuID]--学生ID
-      ,a.[Status]--实习生状态
-      ,a.[SXXYS]--实习协议书
+      ,a.[ZT]--实习生状态
+      ,a.[SFSJSXXYS]--是否上交实习协议书
       ,a.[SXSXM]--实习生姓名
       ,a.[XQID]--学期ID
       ,c.SCHOOLID as c_SXBJGL_SCHOOLID--实习班级管理表 学校

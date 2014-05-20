@@ -38,8 +38,8 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_SXSGL_SCHOOLID--实习生管理表 学校
       ,d.SZBID as d_SXSGL_SZBID--实习生管理表 实习班ID
       ,d.StuID as d_SXSGL_StuID--实习生管理表 学生ID
-      ,d.Status as d_SXSGL_Status--实习生管理表 实习生状态
-      ,d.SXXYS as d_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,d.ZT as d_SXSGL_ZT--实习生管理表 实习生状态
+      ,d.SFSJSXXYS as d_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,d.SXSXM as d_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,d.XQID as d_SXSGL_XQID--实习生管理表 学期ID
 

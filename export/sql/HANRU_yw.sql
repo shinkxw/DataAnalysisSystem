@@ -17579,8 +17579,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A02_SXSGL](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[SZBID]  int  NOT NULL,--实习班ID
 	[StuID]  int  NOT NULL,--学生ID
-	[Status]  int  NOT NULL,--实习生状态
-	[SXXYS]  text  NOT NULL,--实习协议书
+	[ZT]  int  NOT NULL,--实习生状态
+	[SFSJSXXYS]  int  NOT NULL,--是否上交实习协议书
 	[SXSXM]  nvarchar(36)  NOT NULL,--实习生姓名
 	[XQID]  int  NOT NULL,--学期ID
 CONSTRAINT [PK_EDU_ZZJX_21_A02_SXSGL] PRIMARY KEY CLUSTERED
@@ -17601,6 +17601,14 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A03_SXGW](
 	[SXSID]  int  NOT NULL,--实习生ID
 	[JobID]  int  NOT NULL,--岗位ID
 	[TypeID]  int  NOT NULL,--录取类型
+	[BZRSHZT]  int  NOT NULL,--班主任审核状态
+	[QYSHZT]  int  NOT NULL,--企业审核状态
+	[TGLY]  text  NOT NULL,--退岗理由
+	[ZT]  int  NOT NULL,--状态
+	[SQSJ]  datetime  NOT NULL,--申请时间
+	[SQSHSJ]  datetime  NOT NULL,--申请审核时间
+	[SQTGSJ]  datetime  NOT NULL,--申请退岗时间
+	[TGSHSJ]  datetime  NOT NULL,--退岗审核时间
 CONSTRAINT [PK_EDU_ZZJX_21_A03_SXGW] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -19051,9 +19059,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习班ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'StuID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'Status'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习协议书' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'SXXYS'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否上交实习协议书' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'SFSJSXXYS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'SXSXM'
 GO
@@ -19070,6 +19078,22 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'JobID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录取类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'TypeID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班主任审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'BZRSHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'企业审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'QYSHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'退岗理由' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'TGLY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'ZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'SQSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'SQSHSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请退岗时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'SQTGSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'退岗审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW', @level2type=N'COLUMN',@level2name=N'TGSHSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A01_SXJL'
 GO

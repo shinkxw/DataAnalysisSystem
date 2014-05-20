@@ -382,8 +382,8 @@ EDU_ZZJX_21_A02_SXSGL  实习生管理表
   SCHOOLID      学校                    int            主键        学校配置表
   SZBID         实习班ID                int            非主        实习班级管理表
   StuID         学生ID                  int            非主        学生信息数据表
-  Status        实习生状态              int            非主
-  SXXYS         实习协议书              text           非主
+  ZT            实习生状态              int            非主
+  SFSJSXXYS     是否上交实习协议书      int            非主
   SXSXM         实习生姓名              nvarchar(36)   非主
   XQID          学期ID                  int            非主        学期数据表
 
@@ -393,6 +393,14 @@ EDU_ZZJX_21_A03_SXGW  实习岗位表
   SXSID         实习生ID                int            非主        实习生管理表
   JobID         岗位ID                  int            非主        岗位信息表
   TypeID        录取类型                int            非主
+  BZRSHZT       班主任审核状态          int            非主
+  QYSHZT        企业审核状态            int            非主
+  TGLY          退岗理由                text           非主
+  ZT            状态                    int            非主
+  SQSJ          申请时间                datetime       非主
+  SQSHSJ        申请审核时间            datetime       非主
+  SQTGSJ        申请退岗时间            datetime       非主
+  TGSHSJ        退岗审核时间            datetime       非主
 
 EDU_ZZJX_22_A01_SXJL  实习记录表
   ID            编号                    int            主键

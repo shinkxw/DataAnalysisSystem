@@ -441,8 +441,8 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="SZBID" exp="实习班ID" type="int" null="F" p="F" />
             <name="StuID" exp="学生ID" type="int" null="F" p="F" />
-            <name="Status" exp="实习生状态" type="int" null="F" p="F" />
-            <name="SXXYS" exp="实习协议书" type="text" null="F" p="F" />
+            <name="ZT" exp="实习生状态" type="int" null="F" p="F" />
+            <name="SFSJSXXYS" exp="是否上交实习协议书" type="int" null="F" p="F" />
             <name="SXSXM" exp="实习生姓名" type="nvarchar(36)" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
         </field_area>
@@ -454,6 +454,14 @@
             <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
             <name="JobID" exp="岗位ID" type="int" null="F" p="F" />
             <name="TypeID" exp="录取类型" type="int" null="F" p="F" />
+            <name="BZRSHZT" exp="班主任审核状态" type="int" null="F" p="F" />
+            <name="QYSHZT" exp="企业审核状态" type="int" null="F" p="F" />
+            <name="TGLY" exp="退岗理由" type="text" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SQSHSJ" exp="申请审核时间" type="datetime" null="F" p="F" />
+            <name="SQTGSJ" exp="申请退岗时间" type="datetime" null="F" p="F" />
+            <name="TGSHSJ" exp="退岗审核时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_22_A01_SXJL" exp="实习记录表">

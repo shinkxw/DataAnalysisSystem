@@ -22306,8 +22306,8 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[SZBID]--实习班ID
       ,a.[StuID]--学生ID
-      ,a.[Status]--实习生状态
-      ,a.[SXXYS]--实习协议书
+      ,a.[ZT]--实习生状态
+      ,a.[SFSJSXXYS]--是否上交实习协议书
       ,a.[SXSXM]--实习生姓名
       ,a.[XQID]--学期ID
       ,c.SCHOOLID as c_SXBJGL_SCHOOLID--实习班级管理表 学校
@@ -22403,11 +22403,19 @@ SELECT a.[ID]--编号
       ,a.[SXSID]--实习生ID
       ,a.[JobID]--岗位ID
       ,a.[TypeID]--录取类型
+      ,a.[BZRSHZT]--班主任审核状态
+      ,a.[QYSHZT]--企业审核状态
+      ,a.[TGLY]--退岗理由
+      ,a.[ZT]--状态
+      ,a.[SQSJ]--申请时间
+      ,a.[SQSHSJ]--申请审核时间
+      ,a.[SQTGSJ]--申请退岗时间
+      ,a.[TGSHSJ]--退岗审核时间
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,d.SCHOOLID as d_GWXX_SCHOOLID--岗位信息表 学校
@@ -22457,8 +22465,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
 
@@ -22479,8 +22487,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,d.SCHOOLID as d_GWXX_SCHOOLID--岗位信息表 学校
@@ -22621,8 +22629,8 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_SXSGL_SCHOOLID--实习生管理表 学校
       ,d.SZBID as d_SXSGL_SZBID--实习生管理表 实习班ID
       ,d.StuID as d_SXSGL_StuID--实习生管理表 学生ID
-      ,d.Status as d_SXSGL_Status--实习生管理表 实习生状态
-      ,d.SXXYS as d_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,d.ZT as d_SXSGL_ZT--实习生管理表 实习生状态
+      ,d.SFSJSXXYS as d_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,d.SXSXM as d_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,d.XQID as d_SXSGL_XQID--实习生管理表 学期ID
 
@@ -22644,8 +22652,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -22782,8 +22790,8 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_SXSGL_SCHOOLID--实习生管理表 学校
       ,d.SZBID as d_SXSGL_SZBID--实习生管理表 实习班ID
       ,d.StuID as d_SXSGL_StuID--实习生管理表 学生ID
-      ,d.Status as d_SXSGL_Status--实习生管理表 实习生状态
-      ,d.SXXYS as d_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,d.ZT as d_SXSGL_ZT--实习生管理表 实习生状态
+      ,d.SFSJSXXYS as d_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,d.SXSXM as d_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,d.XQID as d_SXSGL_XQID--实习生管理表 学期ID
 
@@ -22804,8 +22812,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
 
@@ -22825,8 +22833,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -22933,8 +22941,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
 
@@ -22957,8 +22965,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_SXSGL_SCHOOLID--实习生管理表 学校
       ,c.SZBID as c_SXSGL_SZBID--实习生管理表 实习班ID
       ,c.StuID as c_SXSGL_StuID--实习生管理表 学生ID
-      ,c.Status as c_SXSGL_Status--实习生管理表 实习生状态
-      ,c.SXXYS as c_SXSGL_SXXYS--实习生管理表 实习协议书
+      ,c.ZT as c_SXSGL_ZT--实习生管理表 实习生状态
+      ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,d.SCHOOLID as d_QYGL_SCHOOLID--企业管理表 学校
