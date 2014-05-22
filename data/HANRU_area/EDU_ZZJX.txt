@@ -423,6 +423,7 @@
             <name="GWSHZT" exp="岗位审核状态" type="int" null="F" p="F" />
             <name="Status" exp="岗位当前状态" type="int" null="F" p="F" />
             <name="SFZD" exp="是否置顶" type="int" null="F" p="F" />
+            <name="QYMC" exp="企业名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_21_A01_SXBJGL" exp="实习班级管理表">
@@ -445,6 +446,7 @@
             <name="SFSJSXXYS" exp="是否上交实习协议书" type="int" null="F" p="F" />
             <name="SXSXM" exp="实习生姓名" type="nvarchar(36)" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DQSXGWID" exp="当前实习岗位ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_21_A03_SXGW" exp="实习岗位表">
@@ -482,17 +484,6 @@
             <name="ZDJSPY" exp="指导教师评语" type="text" null="F" p="F" />
             <name="ZDJSPDSJ" exp="指导教师评定时间" type="datetime" null="F" p="F" />
             <name="JSPD" exp="教师评定" type="int" null="F" p="F" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_22_A02_SXDWBG" exp="实习单位变更表">
-        <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="SXSID" exp="变更实习生ID" type="int" null="F" p="F" />
-            <name="OrgJobID" exp="变更前岗位ID" type="int" null="F" p="F" />
-            <name="OrgComID" exp="变更前企业ID" type="int" null="F" p="F" />
-            <name="NowJobID" exp="变更后岗位ID" type="int" null="F" p="F" />
-            <name="NowComID" exp="变更后企业ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_22_A03_SXWZJL" exp="实习违章纪录表">

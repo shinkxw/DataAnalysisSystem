@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[SFSJSXXYS]--是否上交实习协议书
       ,a.[SXSXM]--实习生姓名
       ,a.[XQID]--学期ID
+      ,a.[DQSXGWID]--当前实习岗位ID
       ,c.SCHOOLID as c_SXBJGL_SCHOOLID--实习班级管理表 学校
       ,c.XNID as c_SXBJGL_XNID--实习班级管理表 学年ID
       ,c.XQID as c_SXBJGL_XQID--实习班级管理表 学期ID
@@ -73,11 +74,24 @@ SELECT a.[ID]--编号
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,f.SCHOOLID as f_SXGW_SCHOOLID--实习岗位表 学校
+      ,f.SXSID as f_SXGW_SXSID--实习岗位表 实习生ID
+      ,f.JobID as f_SXGW_JobID--实习岗位表 岗位ID
+      ,f.TypeID as f_SXGW_TypeID--实习岗位表 录取类型
+      ,f.BZRSHZT as f_SXGW_BZRSHZT--实习岗位表 班主任审核状态
+      ,f.QYSHZT as f_SXGW_QYSHZT--实习岗位表 企业审核状态
+      ,f.TGLY as f_SXGW_TGLY--实习岗位表 退岗理由
+      ,f.ZT as f_SXGW_ZT--实习岗位表 状态
+      ,f.SQSJ as f_SXGW_SQSJ--实习岗位表 申请时间
+      ,f.SQSHSJ as f_SXGW_SQSHSJ--实习岗位表 申请审核时间
+      ,f.SQTGSJ as f_SXGW_SQTGSJ--实习岗位表 申请退岗时间
+      ,f.TGSHSJ as f_SXGW_TGSHSJ--实习岗位表 退岗审核时间
 
 FROM dbo.EDU_ZZJX_21_A02_SXSGL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A01_SXBJGL AS c ON a.SZBID = c.ID /*实习班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS d ON a.StuID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS e ON a.XQID = e.ID /*学期ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_21_A03_SXGW AS f ON a.DQSXGWID = f.ID /*当前实习岗位ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN

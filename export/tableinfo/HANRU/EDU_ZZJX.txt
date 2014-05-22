@@ -368,6 +368,7 @@ EDU_ZZJX_20_A03_GWXX  岗位信息表
   GWSHZT        岗位审核状态            int            非主
   Status        岗位当前状态            int            非主
   SFZD          是否置顶                int            非主
+  QYMC          企业名称                nvarchar(50)   非主
 
 EDU_ZZJX_21_A01_SXBJGL  实习班级管理表
   ID            编号                    int            主键
@@ -386,6 +387,7 @@ EDU_ZZJX_21_A02_SXSGL  实习生管理表
   SFSJSXXYS     是否上交实习协议书      int            非主
   SXSXM         实习生姓名              nvarchar(36)   非主
   XQID          学期ID                  int            非主        学期数据表
+  DQSXGWID      当前实习岗位ID          int            非主        实习岗位表
 
 EDU_ZZJX_21_A03_SXGW  实习岗位表
   ID            编号                    int            主键
@@ -419,15 +421,6 @@ EDU_ZZJX_22_A01_SXJL  实习记录表
   ZDJSPY        指导教师评语            text           非主
   ZDJSPDSJ      指导教师评定时间        datetime       非主
   JSPD          教师评定                int            非主
-
-EDU_ZZJX_22_A02_SXDWBG  实习单位变更表
-  ID            编号                    int            主键
-  SCHOOLID      学校                    int            主键        学校配置表
-  SXSID         变更实习生ID            int            非主        实习生管理表
-  OrgJobID      变更前岗位ID            int            非主        岗位信息表
-  OrgComID      变更前企业ID            int            非主        企业管理表
-  NowJobID      变更后岗位ID            int            非主        岗位信息表
-  NowComID      变更后企业ID            int            非主        企业管理表
 
 EDU_ZZJX_22_A03_SXWZJL  实习违章纪录表
   ID            编号                    int            主键

@@ -1561,6 +1561,7 @@
   SZBID          EDU_ZZJX_21_A01_SXBJGL             ID
   StuID          EDU_ZZXS_01_01_XSXX                ID
   XQID           EDU_ELE_01_XQ                      ID
+  DQSXGWID       EDU_ZZJX_21_A03_SXGW               ID
 <EDU_ZZJX_21_A03_SXGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SXSID          EDU_ZZJX_21_A02_SXSGL              ID
@@ -1568,13 +1569,6 @@
 <EDU_ZZJX_22_A01_SXJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SXSID          EDU_ZZJX_21_A02_SXSGL              ID
-<EDU_ZZJX_22_A02_SXDWBG
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
-  OrgJobID       EDU_ZZJX_20_A03_GWXX               ID
-  OrgComID       EDU_ZZJX_20_A01_QYGL               ID
-  NowJobID       EDU_ZZJX_20_A03_GWXX               ID
-  NowComID       EDU_ZZJX_20_A01_QYGL               ID
 <EDU_ZZJX_22_A03_SXWZJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ComID          EDU_ZZJX_20_A01_QYGL               ID

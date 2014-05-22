@@ -55,6 +55,11 @@ namespace HanRuEdu.LDAL
             public Int32 XQID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "当前实习岗位")]
+            public Int32 DQSXGWID { get; set; }
+
+
         }
     }
 }

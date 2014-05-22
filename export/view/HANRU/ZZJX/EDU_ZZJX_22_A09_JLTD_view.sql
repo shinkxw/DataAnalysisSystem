@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.SFSJSXXYS as c_SXSGL_SFSJSXXYS--实习生管理表 是否上交实习协议书
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
+      ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
       ,d.SCHOOLID as d_QYGL_SCHOOLID--企业管理表 学校
       ,d.Name as d_QYGL_Name--企业管理表 企业名称
       ,d.UserName as d_QYGL_UserName--企业管理表 用户名
@@ -63,6 +64,7 @@ SELECT a.[ID]--编号
       ,e.GWSHZT as e_GWXX_GWSHZT--岗位信息表 岗位审核状态
       ,e.Status as e_GWXX_Status--岗位信息表 岗位当前状态
       ,e.SFZD as e_GWXX_SFZD--岗位信息表 是否置顶
+      ,e.QYMC as e_GWXX_QYMC--岗位信息表 企业名称
 
 FROM dbo.EDU_ZZJX_22_A09_JLTD AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

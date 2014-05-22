@@ -23,6 +23,7 @@ namespace HanRuEdu.LDAL
             Major = "";
             Base = "";
             experience = "";
+            QYMC = "";
         }
         public class EDU_ZZJX_20_A03_GWXX_metadata
         {
@@ -150,6 +151,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "是否置顶")]
             public Int32 SFZD { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "企业名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String QYMC { get; set; }
 
 
         }
