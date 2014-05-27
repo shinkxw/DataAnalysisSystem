@@ -19,6 +19,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
       ,d.SCHOOLID as d_QYGL_SCHOOLID--企业管理表 学校
       ,d.Name as d_QYGL_Name--企业管理表 企业名称
       ,d.UserName as d_QYGL_UserName--企业管理表 用户名

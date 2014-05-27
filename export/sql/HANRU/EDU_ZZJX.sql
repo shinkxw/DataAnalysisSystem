@@ -1016,6 +1016,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A02_SXSGL](
 	[SXSXM]  nvarchar(36)  NOT NULL,--实习生姓名
 	[XQID]  int  NOT NULL,--学期ID
 	[DQSXGWID]  int  NOT NULL,--当前实习岗位ID
+	[ZGCS]  int  NOT NULL,--转岗次数
 CONSTRAINT [PK_EDU_ZZJX_21_A02_SXSGL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2483,6 +2484,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前实习岗位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'DQSXGWID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'转岗次数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'ZGCS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习岗位表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW'
 GO

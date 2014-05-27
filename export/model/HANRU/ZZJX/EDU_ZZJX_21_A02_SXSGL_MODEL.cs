@@ -60,6 +60,11 @@ namespace HanRuEdu.LDAL
             public Int32 DQSXGWID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "转岗次数")]
+            public Int32 ZGCS { get; set; }
+
+
         }
     }
 }

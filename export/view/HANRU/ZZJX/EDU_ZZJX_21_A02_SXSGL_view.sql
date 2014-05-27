@@ -11,6 +11,7 @@ SELECT a.[ID]--编号
       ,a.[SXSXM]--实习生姓名
       ,a.[XQID]--学期ID
       ,a.[DQSXGWID]--当前实习岗位ID
+      ,a.[ZGCS]--转岗次数
       ,c.SCHOOLID as c_SXBJGL_SCHOOLID--实习班级管理表 学校
       ,c.XNID as c_SXBJGL_XNID--实习班级管理表 学年ID
       ,c.XQID as c_SXBJGL_XQID--实习班级管理表 学期ID

@@ -6,6 +6,7 @@ EDU_ZYZX_01_A01_ZYML  资源目录
   PLSX          排列顺序                int            非主
   SFSYZS        是否首页展示            int            非主
   SFQY          是否启用                int            非主
+  URL           网址                    nvarchar(500)  非主
 
 EDU_ZYZX_01_A03_WJLX  文件类型
   ID            编号                    int            主键

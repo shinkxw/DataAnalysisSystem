@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZYZX_01_A01_ZYML()
         {
             MLMC = "";
+            URL = "";
         }
         public class EDU_ZYZX_01_A01_ZYML_metadata
         {
@@ -48,6 +49,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "是否启用")]
             public Int32 SFQY { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "网址")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String URL { get; set; }
 
 
         }

@@ -15,6 +15,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
 
 FROM dbo.EDU_ZZJX_22_A08_SXSJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/

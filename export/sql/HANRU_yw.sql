@@ -13073,6 +13073,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_01_A01_ZYML](
 	[PLSX]  int  NOT NULL,--排列顺序
 	[SFSYZS]  int  NOT NULL,--是否首页展示
 	[SFQY]  int  NOT NULL,--是否启用
+	[URL]  nvarchar(500)  NOT NULL,--网址
 CONSTRAINT [PK_EDU_ZYZX_01_A01_ZYML] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -13455,6 +13456,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否首页展示' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFSYZS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否启用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFQY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'URL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX'
 GO
@@ -17580,6 +17583,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_21_A02_SXSGL](
 	[SXSXM]  nvarchar(36)  NOT NULL,--实习生姓名
 	[XQID]  int  NOT NULL,--学期ID
 	[DQSXGWID]  int  NOT NULL,--当前实习岗位ID
+	[ZGCS]  int  NOT NULL,--转岗次数
 CONSTRAINT [PK_EDU_ZZJX_21_A02_SXSGL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -19047,6 +19051,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前实习岗位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'DQSXGWID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'转岗次数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A02_SXSGL', @level2type=N'COLUMN',@level2name=N'ZGCS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习岗位表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A03_SXGW'
 GO

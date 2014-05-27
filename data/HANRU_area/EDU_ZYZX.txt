@@ -9,6 +9,7 @@
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
             <name="SFSYZS" exp="是否首页展示" type="int" null="F" p="F" />
             <name="SFQY" exp="是否启用" type="int" null="F" p="F" />
+            <name="URL" exp="网址" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_01_A03_WJLX" exp="文件类型">

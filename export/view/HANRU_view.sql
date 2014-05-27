@@ -14724,12 +14724,14 @@ SELECT a.[ID]--编号
       ,a.[PLSX]--排列顺序
       ,a.[SFSYZS]--是否首页展示
       ,a.[SFQY]--是否启用
+      ,a.[URL]--网址
       ,c.SCHOOLID as c_ZYML_SCHOOLID--资源目录 学校
       ,c.MLMC as c_ZYML_MLMC--资源目录 目录名称
       ,c.FMLID as c_ZYML_FMLID--资源目录 父目录ID
       ,c.PLSX as c_ZYML_PLSX--资源目录 排列顺序
       ,c.SFSYZS as c_ZYML_SFSYZS--资源目录 是否首页展示
       ,c.SFQY as c_ZYML_SFQY--资源目录 是否启用
+      ,c.URL as c_ZYML_URL--资源目录 网址
 
 FROM dbo.EDU_ZYZX_01_A01_ZYML AS a LEFT OUTER JOIN
       dbo.EDU_ZYZX_01_A01_ZYML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -14771,6 +14773,7 @@ SELECT a.[ID]--编号
       ,c.PLSX as c_ZYML_PLSX--资源目录 排列顺序
       ,c.SFSYZS as c_ZYML_SFSYZS--资源目录 是否首页展示
       ,c.SFQY as c_ZYML_SFQY--资源目录 是否启用
+      ,c.URL as c_ZYML_URL--资源目录 网址
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -22308,6 +22311,7 @@ SELECT a.[ID]--编号
       ,a.[SXSXM]--实习生姓名
       ,a.[XQID]--学期ID
       ,a.[DQSXGWID]--当前实习岗位ID
+      ,a.[ZGCS]--转岗次数
       ,c.SCHOOLID as c_SXBJGL_SCHOOLID--实习班级管理表 学校
       ,c.XNID as c_SXBJGL_XNID--实习班级管理表 学年ID
       ,c.XQID as c_SXBJGL_XQID--实习班级管理表 学期ID
@@ -22430,6 +22434,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
       ,d.SCHOOLID as d_GWXX_SCHOOLID--岗位信息表 学校
       ,d.ComID as d_GWXX_ComID--岗位信息表 企业ID
       ,d.JobName as d_GWXX_JobName--岗位信息表 岗位名称
@@ -22483,6 +22488,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
 
 FROM dbo.EDU_ZZJX_22_A01_SXJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -22532,6 +22538,7 @@ SELECT a.[ID]--编号
       ,d.SXSXM as d_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,d.XQID as d_SXSGL_XQID--实习生管理表 学期ID
       ,d.DQSXGWID as d_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,d.ZGCS as d_SXSGL_ZGCS--实习生管理表 转岗次数
 
 FROM dbo.EDU_ZZJX_22_A03_SXWZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A01_QYGL AS c ON a.ComID = c.ID /*企业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22556,6 +22563,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,d.XM as d_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -22695,6 +22703,7 @@ SELECT a.[ID]--编号
       ,d.SXSXM as d_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,d.XQID as d_SXSGL_XQID--实习生管理表 学期ID
       ,d.DQSXGWID as d_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,d.ZGCS as d_SXSGL_ZGCS--实习生管理表 转岗次数
 
 FROM dbo.EDU_ZZJX_22_A05_SXTS AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_20_A01_QYGL AS c ON a.ComID = c.ID /*企业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22718,6 +22727,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
 
 FROM dbo.EDU_ZZJX_22_A06_SXRZ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -22740,6 +22750,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,d.XM as d_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -22849,6 +22860,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
 
 FROM dbo.EDU_ZZJX_22_A08_SXSJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -22874,6 +22886,7 @@ SELECT a.[ID]--编号
       ,c.SXSXM as c_SXSGL_SXSXM--实习生管理表 实习生姓名
       ,c.XQID as c_SXSGL_XQID--实习生管理表 学期ID
       ,c.DQSXGWID as c_SXSGL_DQSXGWID--实习生管理表 当前实习岗位ID
+      ,c.ZGCS as c_SXSGL_ZGCS--实习生管理表 转岗次数
       ,d.SCHOOLID as d_QYGL_SCHOOLID--企业管理表 学校
       ,d.Name as d_QYGL_Name--企业管理表 企业名称
       ,d.UserName as d_QYGL_UserName--企业管理表 用户名

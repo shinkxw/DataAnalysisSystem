@@ -447,6 +447,7 @@
             <name="SXSXM" exp="实习生姓名" type="nvarchar(36)" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
             <name="DQSXGWID" exp="当前实习岗位ID" type="int" null="F" p="F" />
+            <name="ZGCS" exp="转岗次数" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_21_A03_SXGW" exp="实习岗位表">
