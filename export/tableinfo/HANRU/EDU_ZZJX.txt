@@ -486,6 +486,39 @@ EDU_ZZJX_22_A09_JLTD  简历投递表
   SFCK          是否查看                int            非主
   FKNR          反馈内容                text           非主
 
+EDU_ZZJX_22_A10_SXYB  实习月报表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SXSID         实习生ID                int            非主        实习生管理表
+  GWXXID        岗位信息ID              int            非主        岗位信息表
+  GZXJ          工作小结                text           非主
+  TJSJ          添加时间                datetime       非主
+  ZDSFXM        指导师傅姓名            nvarchar(50)   非主
+  ZDSFPY        指导师傅评语            nvarchar(500)  非主
+  SFDH          师傅电话                nvarchar(20)   非主
+  SFPD          师傅评定                int            非主
+  ZDSFPDSJ      指导师傅评定时间        datetime       非主
+
+EDU_ZZJX_22_A11_SXMYKQJL  实习每月考勤记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SXSID         实习生ID                int            非主        实习生管理表
+  SJ            时间                    datetime       非主
+  SJGR          实际工日                decimal(4, 1)  非主
+  SJTS          事假天数                decimal(4, 1)  非主
+  KGTS          旷工天数                decimal(4, 1)  非主
+  BJTS          病假天数                decimal(4, 1)  非主
+  GXTS          公休天数                decimal(4, 1)  非主
+  CDTS          迟到天数                decimal(4, 1)  非主
+  ZTTS          早退天数                decimal(4, 1)  非主
+
+EDU_ZZJX_22_A12_YDHZJL  月度汇总记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  SXBID         实习班ID                int            非主        实习班级管理表
+  HZNR          汇总内容                text           非主
+  TJSJ          添加时间                datetime       非主
+
 EDU_ZZJX_23_A01_DGSXYQLJLX  顶岗实习友情链接类型
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表

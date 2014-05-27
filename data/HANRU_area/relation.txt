@@ -1596,6 +1596,16 @@
   SXSID          EDU_ZZJX_21_A02_SXSGL              ID
   ComID          EDU_ZZJX_20_A01_QYGL               ID
   GWID           EDU_ZZJX_20_A03_GWXX               ID
+<EDU_ZZJX_22_A10_SXYB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+  GWXXID         EDU_ZZJX_20_A03_GWXX               ID
+<EDU_ZZJX_22_A11_SXMYKQJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+<EDU_ZZJX_22_A12_YDHZJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SXBID          EDU_ZZJX_21_A01_SXBJGL             ID
 <EDU_ZZJX_23_A01_DGSXYQLJLX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_23_A02_DGSXYQLJ
