@@ -503,6 +503,7 @@ EDU_ZZJX_22_A11_SXMYKQJL  实习每月考勤记录表
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主        学校配置表
   SXSID         实习生ID                int            非主        实习生管理表
+  QYID          企业ID                  int            非主        企业管理表
   SJ            时间                    datetime       非主
   SJGR          实际工日                decimal(4, 1)  非主
   SJTS          事假天数                decimal(4, 1)  非主

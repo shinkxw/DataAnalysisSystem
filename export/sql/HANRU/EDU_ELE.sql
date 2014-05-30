@@ -30,6 +30,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_CONFIG')
    drop table EDU_ELE_01_CONFIG
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_HASH')
+            and   type = 'U')
+   drop table EDU_ELE_01_HASH
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_APPUSER')
             and   type = 'U')
    drop table EDU_ELE_01_APPUSER
@@ -264,6 +269,22 @@ CONSTRAINT [PK_EDU_ELE_01_CONFIG] PRIMARY KEY CLUSTERED
 	[ID] ASC,
 	[SCHOOLID] ASC,
 	[APPID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--系统哈希表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_HASH]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_01_HASH](
+	[KEY]  nvarchar(200)  NOT NULL,--键
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[VALUE]  text  NOT NULL,--值
+CONSTRAINT [PK_EDU_ELE_01_HASH] PRIMARY KEY CLUSTERED
+(
+	[KEY] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -798,6 +819,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'APPID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'配置值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'VALUE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'系统哈希表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_HASH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'键' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_HASH', @level2type=N'COLUMN',@level2name=N'KEY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_HASH', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_HASH', @level2type=N'COLUMN',@level2name=N'VALUE'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第三方应用用户表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APPUSER'
 GO

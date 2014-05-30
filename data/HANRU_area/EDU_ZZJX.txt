@@ -584,6 +584,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
+            <name="QYID" exp="企业ID" type="int" null="F" p="F" />
             <name="SJ" exp="时间" type="datetime" null="F" p="F" />
             <name="SJGR" exp="实际工日" type="decimal(4, 1)" null="F" p="F" />
             <name="SJTS" exp="事假天数" type="decimal(4, 1)" null="F" p="F" />

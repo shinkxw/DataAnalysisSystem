@@ -1264,6 +1264,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_22_A11_SXMYKQJL](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[SXSID]  int  NOT NULL,--实习生ID
+	[QYID]  int  NOT NULL,--企业ID
 	[SJ]  datetime  NOT NULL,--时间
 	[SJGR]  decimal(4, 1)  NOT NULL,--实际工日
 	[SJTS]  decimal(4, 1)  NOT NULL,--事假天数
@@ -2770,6 +2771,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A11_SXMYKQJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A11_SXMYKQJL', @level2type=N'COLUMN',@level2name=N'SXSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'企业ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A11_SXMYKQJL', @level2type=N'COLUMN',@level2name=N'QYID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_22_A11_SXMYKQJL', @level2type=N'COLUMN',@level2name=N'SJ'
 GO

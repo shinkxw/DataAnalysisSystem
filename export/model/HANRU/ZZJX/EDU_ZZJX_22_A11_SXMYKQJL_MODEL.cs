@@ -29,6 +29,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "企业")]
+            public Int32 QYID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "时间")]
             public DateTime SJ { get; set; }
 

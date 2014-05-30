@@ -1603,6 +1603,7 @@
 <EDU_ZZJX_22_A11_SXMYKQJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SXSID          EDU_ZZJX_21_A02_SXSGL              ID
+  QYID           EDU_ZZJX_20_A01_QYGL               ID
 <EDU_ZZJX_22_A12_YDHZJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SXBID          EDU_ZZJX_21_A01_SXBJGL             ID
