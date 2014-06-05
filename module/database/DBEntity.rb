@@ -19,7 +19,7 @@ class DBEntity
   def self.open(db_name = nil,connector = nil)
     set_connector(connector) if connector
     conn = get_conn(db_name)
-    begin; db = new(conn,db_name);yield db;ensure;db.close;end if conn && block_given?
+    begin; db = new(conn,db_name);yield db;ensure;db.close if db;end if conn && block_given?
   end
   #≥ı ºªØ
   def initialize(conn,db_name);@conn,@db_name = conn,db_name end
