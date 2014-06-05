@@ -604,6 +604,28 @@
             <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_22_A13_YDPDZDPZ" exp="月度评定项目配置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="ZDMC" exp="项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SFSY" exp="是否使用" type="int" null="F" p="F" />
+            <name="BZRNFTX" exp="班主任能否填写" type="int" null="F" p="F" />
+            <name="SXCNFTX" exp="实训处能否填写" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_22_A14_YDPDJL" exp="月度评定记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SXSID" exp="实习生ID" type="int" null="F" p="F" />
+            <name="ZDPZID" exp="字段配置ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="JG" exp="结果" type="text" null="F" p="F" />
+            <name="PDJSID" exp="评定教师ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_23_A01_DGSXYQLJLX" exp="顶岗实习友情链接类型">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
