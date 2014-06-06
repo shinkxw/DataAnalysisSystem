@@ -70,7 +70,13 @@ class DBEntity
     end
   end
   #获取指定表的数据
-  def get_table_data(table_name);query(Sql.get_tdata(table_name)) end
+  def get_table_data(table_name, sql = nil)
+    data_hash = query(sql ? sql : Sql.get_tdata(table_name))
+    field_name_arr = data_hash.keys
+    data_arr = field_name_arr.map{|field_name| data_hash[field_name]}.transpose
+    data_hash_arr = data_arr.map{|data| Hash[*field_name_arr.zip(data).flatten]}
+    data_hash_arr.each_index {|index| data_hash_arr[index]['i'] = index}
+  end
   #判断表中是否有数据
   def has_data?(tn);query(Sql.get_tdata_num(tn))[''][0] > 0 end
   #删除所有视图
