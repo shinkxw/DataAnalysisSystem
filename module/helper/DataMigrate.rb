@@ -10,29 +10,34 @@ class DataMigrate
       Hash[*key_arr.zip(val_arr).flatten]
     end
   end
-  #生成插入数据脚本
-  def self.insert_data(table_name, data_hash_arr, mb = 50)
-    field_names = data_hash_arr[0].keys
-    prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
-    istr = ""
-    str_arr = []
-    data_hash_arr.each do |data_hash|
-      data_arr = field_names.map do |field_name|
-        data = data_hash[field_name]
-        data =~ /^CAST\(/ ? data : "'#{data}'"
-      end
-      istr << "#{prefix_str}#{data_arr.join(", ")})\n"
-      if istr.bytesize > mb.MB
-        str_arr << istr
-        istr = ""
+  #输出文本
+  def self.export_text(text_type, data_hash_arr, par = nil, mb = 20)
+    text_arr = []
+    text = ""
+    p "不支持名为#{text_type}的文本类型" unless (self.respond_to?(text_type))
+    self.send(text_type, data_hash_arr, par) do |t|
+      text << t
+      if text.bytesize > mb.MB
+        text_arr << text
+        text = ""
       end
     end
-    str_arr << istr
-    str_arr.each_index do |i|
-      path = Dir.pwd << "/QY/#{table_name}_#{i + 1}.sql"
-      FileWriter.new(path).write_str(str_arr[i])
+    text_arr << text
+    text_arr.each_index do |i|
+      path = Dir.pwd << "/QY/#{par}_#{i + 1}.sql"
+      FileWriter.new(path).write_str(text_arr[i])
     end
   end
+  #生成插入数据脚本
+  def self.insert_data(data_hash_arr, table_name)
+    field_names = data_hash_arr[0].keys
+    prefix_str = "INSERT INTO [#{table_name}]([#{field_names.join("] ,[")}]) VALUES("
+    data_hash_arr.each do |data_hash|
+      yield("#{prefix_str}#{field_names.map{|fn| to_sql(data_hash[fn])}.join(", ")})\n")
+    end
+  end
+  #数据sql化
+  def self.to_sql(data);data =~ /^CAST\(/ ? data : "'#{data}'" end
   ###以下为常用数据转换方法###
   #正文转换
   def self.content(str);str.gsub(/'/, "''") end

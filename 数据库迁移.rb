@@ -12,17 +12,17 @@ DBEntity.open('HanruEdu', connector) do |db|
              WEBID: proc{|d| 's'},
              TYPENAME: proc{|i| ''},
              LMID: proc{|d| 's'},
-             TITLE: proc{|d| 's'},
+             TITLE: proc{|d| d['topic']},
              PUBLISHERNAME: proc{|d| ''},
-             AUTHOR: proc{|d| ''},
-             AUTHORDEPART: proc{|d| ''},
-             PUBLISHDATE: proc{|d| 's'},
-             CONTENT: proc{|d, c| ''},
+             AUTHOR: proc{|d| d['author']},
+             AUTHORDEPART: proc{|d| d['pdep']},
+             PUBLISHDATE: proc{|d, c| c.datetime(d['pdate'])},
+             CONTENT: proc{|d, c| c.content(d['content'])},
              URL: proc{|d| 's'},
              IMAGEURL: proc{|d| 's'},
              ATTACHMENTNAME: proc{|d| 's'},
              ATTACHMENT: proc{|d| 's'},
-             CHICKNUB: proc{|d| 's'},
+             CHICKNUB: proc{|d| d['hits']},
              AUDITSTATU: proc{|d| '1'},
              AUDITOR: proc{|d| 's'},
              AUDITORNAME: proc{|d| ''},
@@ -38,6 +38,6 @@ DBEntity.open('HanruEdu', connector) do |db|
            }
   data_hash_arr = db.get_table_data('main')
   out_hash_arr = DataMigrate.convert_data(data_hash_arr, config)
-  DataMigrate.insert_data('EDU_WZXT_MHXT_WZWZ', out_hash_arr)
+  DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_WZXT_MHXT_WZWZ')
 
 end
