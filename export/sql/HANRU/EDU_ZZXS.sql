@@ -1118,6 +1118,9 @@ CREATE TABLE [dbo].[EDU_ZZXS_18_A04_XSCFXX](
 	[SHSJ]  datetime  NOT NULL,--审核时间
 	[SHJSID]  int  NOT NULL,--审核教师ID
 	[BZ]  text  NOT NULL,--备注
+	[FSSJ]  datetime  NOT NULL,--发生时间
+	[JCSJ]  datetime  NOT NULL,--解除时间
+	[JCJSID]  int  NOT NULL,--解除教师ID
 CONSTRAINT [PK_EDU_ZZXS_18_A04_XSCFXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2138,6 +2141,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A04_XSCFXX', @level2type=N'COLUMN',@level2name=N'SHJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A04_XSCFXX', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发生时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A04_XSCFXX', @level2type=N'COLUMN',@level2name=N'FSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'解除时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A04_XSCFXX', @level2type=N'COLUMN',@level2name=N'JCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'解除教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A04_XSCFXX', @level2type=N'COLUMN',@level2name=N'JCJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'解除处分申请表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_18_A05_JCCFSQ'
 GO

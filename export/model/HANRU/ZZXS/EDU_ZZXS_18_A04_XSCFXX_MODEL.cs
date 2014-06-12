@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             SBSJ = DateTime.Now;
             SHSJ = DateTime.Now;
             BZ = "";
+            FSSJ = DateTime.Now;
+            JCSJ = DateTime.Now;
         }
         public class EDU_ZZXS_18_A04_XSCFXX_metadata
         {
@@ -86,6 +88,21 @@ namespace HanRuEdu.LDAL
             [Display(Name = "备注")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "发生时间")]
+            public DateTime FSSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "解除时间")]
+            public DateTime JCSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "解除教师")]
+            public Int32 JCJSID { get; set; }
 
 
         }

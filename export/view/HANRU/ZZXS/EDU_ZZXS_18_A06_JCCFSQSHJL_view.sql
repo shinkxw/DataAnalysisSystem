@@ -24,6 +24,9 @@ SELECT a.[ID]--编号
       ,c.SHSJ as c_XSCFXX_SHSJ--学生处分信息表 审核时间
       ,c.SHJSID as c_XSCFXX_SHJSID--学生处分信息表 审核教师ID
       ,c.BZ as c_XSCFXX_BZ--学生处分信息表 备注
+      ,c.FSSJ as c_XSCFXX_FSSJ--学生处分信息表 发生时间
+      ,c.JCSJ as c_XSCFXX_JCSJ--学生处分信息表 解除时间
+      ,c.JCJSID as c_XSCFXX_JCJSID--学生处分信息表 解除教师ID
       ,d.SCHOOLID as d_JCCFSQ_SCHOOLID--解除处分申请表 学校
       ,d.XSCFXXID as d_JCCFSQ_XSCFXXID--解除处分申请表 学生处分信息ID
       ,d.JCYY as d_JCCFSQ_JCYY--解除处分申请表 解除原因

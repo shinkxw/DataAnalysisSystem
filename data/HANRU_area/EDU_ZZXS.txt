@@ -575,6 +575,9 @@
             <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
             <name="SHJSID" exp="审核教师ID" type="int" null="F" p="F" />
             <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="FSSJ" exp="发生时间" type="datetime" null="F" p="F" />
+            <name="JCSJ" exp="解除时间" type="datetime" null="F" p="F" />
+            <name="JCJSID" exp="解除教师ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_18_A05_JCCFSQ" exp="解除处分申请表">

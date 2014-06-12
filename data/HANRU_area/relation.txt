@@ -1966,6 +1966,7 @@
   SBJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
   ZZCFLXID       EDU_ZZXS_18_A02_CFLX               ID
   SHJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  JCJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXS_18_A05_JCCFSQ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSCFXXID       EDU_ZZXS_18_A04_XSCFXX             ID
