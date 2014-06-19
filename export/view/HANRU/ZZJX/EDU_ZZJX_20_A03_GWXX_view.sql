@@ -23,6 +23,7 @@ SELECT a.[ID]--编号
       ,a.[Status]--岗位当前状态
       ,a.[SFZD]--是否置顶
       ,a.[QYMC]--企业名称
+      ,a.[FBSJ]--发布时间
       ,c.SCHOOLID as c_QYGL_SCHOOLID--企业管理表 学校
       ,c.Name as c_QYGL_Name--企业管理表 企业名称
       ,c.UserName as c_QYGL_UserName--企业管理表 用户名

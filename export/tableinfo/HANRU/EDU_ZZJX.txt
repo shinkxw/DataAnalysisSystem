@@ -369,6 +369,7 @@ EDU_ZZJX_20_A03_GWXX  岗位信息表
   Status        岗位当前状态            int            非主
   SFZD          是否置顶                int            非主
   QYMC          企业名称                nvarchar(50)   非主
+  FBSJ          发布时间                datetime       非主
 
 EDU_ZZJX_21_A01_SXBJGL  实习班级管理表
   ID            编号                    int            主键

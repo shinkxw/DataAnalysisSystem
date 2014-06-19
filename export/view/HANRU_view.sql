@@ -22171,6 +22171,7 @@ SELECT a.[ID]--编号
       ,a.[Status]--岗位当前状态
       ,a.[SFZD]--是否置顶
       ,a.[QYMC]--企业名称
+      ,a.[FBSJ]--发布时间
       ,c.SCHOOLID as c_QYGL_SCHOOLID--企业管理表 学校
       ,c.Name as c_QYGL_Name--企业管理表 企业名称
       ,c.UserName as c_QYGL_UserName--企业管理表 用户名
@@ -22471,6 +22472,7 @@ SELECT a.[ID]--编号
       ,d.Status as d_GWXX_Status--岗位信息表 岗位当前状态
       ,d.SFZD as d_GWXX_SFZD--岗位信息表 是否置顶
       ,d.QYMC as d_GWXX_QYMC--岗位信息表 企业名称
+      ,d.FBSJ as d_GWXX_FBSJ--岗位信息表 发布时间
 
 FROM dbo.EDU_ZZJX_21_A03_SXGW AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22949,6 +22951,7 @@ SELECT a.[ID]--编号
       ,e.Status as e_GWXX_Status--岗位信息表 岗位当前状态
       ,e.SFZD as e_GWXX_SFZD--岗位信息表 是否置顶
       ,e.QYMC as e_GWXX_QYMC--岗位信息表 企业名称
+      ,e.FBSJ as e_GWXX_FBSJ--岗位信息表 发布时间
 
 FROM dbo.EDU_ZZJX_22_A09_JLTD AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22999,6 +23002,7 @@ SELECT a.[ID]--编号
       ,d.Status as d_GWXX_Status--岗位信息表 岗位当前状态
       ,d.SFZD as d_GWXX_SFZD--岗位信息表 是否置顶
       ,d.QYMC as d_GWXX_QYMC--岗位信息表 企业名称
+      ,d.FBSJ as d_GWXX_FBSJ--岗位信息表 发布时间
 
 FROM dbo.EDU_ZZJX_22_A10_SXYB AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

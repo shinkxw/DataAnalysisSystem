@@ -424,6 +424,7 @@
             <name="Status" exp="岗位当前状态" type="int" null="F" p="F" />
             <name="SFZD" exp="是否置顶" type="int" null="F" p="F" />
             <name="QYMC" exp="企业名称" type="nvarchar(50)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_21_A01_SXBJGL" exp="实习班级管理表">

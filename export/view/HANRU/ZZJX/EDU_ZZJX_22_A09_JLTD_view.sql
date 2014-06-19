@@ -66,6 +66,7 @@ SELECT a.[ID]--编号
       ,e.Status as e_GWXX_Status--岗位信息表 岗位当前状态
       ,e.SFZD as e_GWXX_SFZD--岗位信息表 是否置顶
       ,e.QYMC as e_GWXX_QYMC--岗位信息表 企业名称
+      ,e.FBSJ as e_GWXX_FBSJ--岗位信息表 发布时间
 
 FROM dbo.EDU_ZZJX_22_A09_JLTD AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_21_A02_SXSGL AS c ON a.SXSID = c.ID /*实习生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

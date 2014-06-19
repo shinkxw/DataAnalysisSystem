@@ -24,6 +24,7 @@ namespace HanRuEdu.LDAL
             Base = "";
             experience = "";
             QYMC = "";
+            FBSJ = DateTime.Now;
         }
         public class EDU_ZZJX_20_A03_GWXX_metadata
         {
@@ -158,6 +159,11 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String QYMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "发布时间")]
+            public DateTime FBSJ { get; set; }
 
 
         }

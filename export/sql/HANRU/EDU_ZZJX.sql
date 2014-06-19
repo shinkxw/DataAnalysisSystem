@@ -1000,6 +1000,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_20_A03_GWXX](
 	[Status]  int  NOT NULL,--岗位当前状态
 	[SFZD]  int  NOT NULL,--是否置顶
 	[QYMC]  nvarchar(50)  NOT NULL,--企业名称
+	[FBSJ]  datetime  NOT NULL,--发布时间
 CONSTRAINT [PK_EDU_ZZJX_20_A03_GWXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2578,6 +2579,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否置顶' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'SFZD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'企业名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'QYMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_20_A03_GWXX', @level2type=N'COLUMN',@level2name=N'FBSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实习班级管理表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_21_A01_SXBJGL'
 GO

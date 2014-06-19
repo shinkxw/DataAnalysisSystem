@@ -610,6 +610,24 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_18_A07_BGMB" exp="布告模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="MBMC" exp="模板名称" type="nvarchar(50)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_18_A08_BG" exp="布告表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="BT" exp="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="FBR" exp="发布人" type="nvarchar(100)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZXS_19_A01_BWSJ" exp="班委数据表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
