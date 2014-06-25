@@ -1,0 +1,17 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="IM" provider="reallocate_namespace">
+    <table name="IM_Msg" exp="IM消息">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="UserForm" exp="发出用户" type="nvarchar(50)" null="T" p="F" />
+            <name="UserTo" exp="发往用户" type="nvarchar(50)" null="F" p="F" />
+            <name="Title" exp="标题" type="nvarchar(500)" null="F" p="F" />
+            <name="Contents" exp="内容" type="text" null="T" p="F" />
+            <name="MsgType" exp="消息类型" type="int" null="F" p="F" />
+            <name="AddTime" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="SendTime" exp="送出时间" type="datetime" null="F" p="F" />
+            <name="Statu" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+</namespace>

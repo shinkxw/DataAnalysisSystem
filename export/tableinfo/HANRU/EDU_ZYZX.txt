@@ -8,6 +8,12 @@ EDU_ZYZX_01_A01_ZYML  资源目录
   SFQY          是否启用                int            非主
   URL           网址                    nvarchar(500)  非主
 
+EDU_ZYZX_01_A02_ZYMLSHQX  资源目录审核权限表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  MLIDLB        目录ID列表              text           非主
+
 EDU_ZYZX_01_A03_WJLX  文件类型
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表

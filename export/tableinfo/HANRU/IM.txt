@@ -1,0 +1,12 @@
+IM_Msg  IM消息
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主
+  UserForm      发出用户                nvarchar(50)   非主
+  UserTo        发往用户                nvarchar(50)   非主
+  Title         标题                    nvarchar(500)  非主
+  Contents      内容                    text           非主
+  MsgType       消息类型                int            非主
+  AddTime       添加时间                datetime       非主
+  SendTime      送出时间                datetime       非主
+  Statu         状态                    int            非主
+

@@ -5,6 +5,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A01_ZYML
    drop table EDU_ZYZX_01_A01_ZYML
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A02_ZYMLSHQX')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A02_ZYMLSHQX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A03_WJLX')
             and   type = 'U')
    drop table EDU_ZYZX_01_A03_WJLX
@@ -105,6 +110,22 @@ CONSTRAINT [PK_EDU_ZYZX_01_A01_ZYML] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资源目录审核权限表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A02_ZYMLSHQX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A02_ZYMLSHQX](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[MLIDLB]  text  NULL,--目录ID列表
+CONSTRAINT [PK_EDU_ZYZX_01_A02_ZYMLSHQX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -485,6 +506,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否启用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFQY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'URL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源目录审核权限表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'MLIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX'
 GO

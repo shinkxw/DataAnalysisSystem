@@ -13007,6 +13007,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A01_ZYML
    drop table EDU_ZYZX_01_A01_ZYML
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A02_ZYMLSHQX')
+            and   type = 'U')
+   drop table EDU_ZYZX_01_A02_ZYMLSHQX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYZX_01_A03_WJLX')
             and   type = 'U')
    drop table EDU_ZYZX_01_A03_WJLX
@@ -13107,6 +13112,22 @@ CONSTRAINT [PK_EDU_ZYZX_01_A01_ZYML] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资源目录审核权限表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYZX_01_A02_ZYMLSHQX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYZX_01_A02_ZYMLSHQX](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[MLIDLB]  text  NULL,--目录ID列表
+CONSTRAINT [PK_EDU_ZYZX_01_A02_ZYMLSHQX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -13487,6 +13508,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否启用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFQY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'URL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源目录审核权限表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX', @level2type=N'COLUMN',@level2name=N'MLIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A03_WJLX'
 GO
@@ -22721,4 +22752,55 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'科目码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_03_01_KSKMCJ', @level2type=N'COLUMN',@level2name=N'KMM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'中考分数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZZS_03_01_KSKMCJ', @level2type=N'COLUMN',@level2name=N'ZKFS'
+GO
+--空间名：IM  生成器：SqlBuilder0.1
+
+if exists (select 1 from  sysobjects where  id = object_id('IM_Msg')
+            and   type = 'U')
+   drop table IM_Msg
+go
+--IM消息
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[IM_Msg]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[IM_Msg](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[UserForm]  nvarchar(50)  NULL,--发出用户
+	[UserTo]  nvarchar(50)  NOT NULL,--发往用户
+	[Title]  nvarchar(500)  NOT NULL,--标题
+	[Contents]  text  NULL,--内容
+	[MsgType]  int  NOT NULL,--消息类型
+	[AddTime]  datetime  NOT NULL,--添加时间
+	[SendTime]  datetime  NOT NULL,--送出时间
+	[Statu]  int  NOT NULL,--状态
+CONSTRAINT [PK_IM_Msg] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--以下为添加注释语句
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'IM消息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发出用户' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'UserForm'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发往用户' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'UserTo'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'Title'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'Contents'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'消息类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'MsgType'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'AddTime'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送出时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'SendTime'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'Statu'
 GO
