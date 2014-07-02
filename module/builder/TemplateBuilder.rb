@@ -181,7 +181,7 @@ class TemplateBuilder
     str << "{\n#{@tab.l}System.IO.Directory.CreateDirectory(path);\n"
     str << "#{@tab.s}}\n#{@tab.t}string savePath = path + name;\n#{@tab.t}Request.Files[0].SaveAs(savePath);\n#{@tab.t}"
     str << "List<Hashtable> lst = XmlHelper.xmlhelper.get_column_data(savePath, 2, \"\");\n\n#{@tab.t}"
-    str << %(msg += "<span >数据正确性检测。。。。。。</span><br>";\n#{@tab.t})
+    str << %(msg += "<span>数据正确性检测。。。。。。</span><br>";\n#{@tab.t})
     str << "bool flag = true;\n#{@tab.t}"
     str << "List<#{table.name}> CheckList = new List<#{table.name}>();\n#{@tab.t}"
     str << "foreach (Hashtable ht in lst)\n#{@tab.t}"
@@ -206,30 +206,30 @@ class TemplateBuilder
         when 'String';str << "//if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
         else @log << "TemplateBuilder: refield type wrong: #{field.split_type[0]}"
         end
-        str << %(//{ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：未找到该#{field.display_name}！</span><br>"; }\n)
+        str << %(//{ flag = false; msg += "<span style=\\"color:red;\\">第" + rowid + "行 ：未找到该#{field.display_name}！</span><br>"; }\n)
       else
         field_type = field.split_type[0]
         case field_type
         when 'int','decimal','float'
           str << "#{field_type} value = 0;\n#{@tab.t}if (#{field_type}.TryParse(ht[\"#{field.display_name}\"].ToString(), out value))\n#{@tab.t}"
           str << "{ model.#{field.name} = value; }\n#{@tab.t}"
-          str << %(else { flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}有误！</span><br>"; }\n)
+          str << %(else { flag = false; msg += "<span style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}有误！</span><br>"; }\n)
         when 'DateTime'
           str << "String value = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
           str << "if (value != \"\") { model.#{field.name} = Convert.ToDateTime(value); }"
         when 'String'
           str << "model.#{field.name} = ht[\"#{field.display_name}\"].ToString().Trim();\n#{@tab.t}"
           str << "if (string.IsNullOrEmpty(model.#{field.name}))\n#{@tab.t}"
-          str << %({ flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n)
+          str << %({ flag = false; msg += "<span style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n)
         else @log << "TemplateBuilder: type wrong: #{field.split_type[0]}"
         end
       end
       str << "#{@tab.s}}\n#{@tab.t}"
-      str << %(else { flag = false; msg += "<span  style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
+      str << %(else { flag = false; msg += "<span style=\\"color:red;\\">第" + rowid + "行 ：#{field.display_name}不能为空！</span><br>"; }\n\n#{@tab.t})
     end
     str << "CheckList.Add(model);\n"
     str << "#{@tab.s}}\n#{@tab.t}if (flag)\n#{@tab.t}"
-    str << %({\n#{@tab.l}msg += "<span  >数据正确性检测通过！</span><br>";\n#{@tab.t})
+    str << %({\n#{@tab.l}msg += "<span>数据正确性检测通过！</span><br>";\n#{@tab.t})
     str << "foreach (var item in CheckList)\n#{@tab.t}{\n#{@tab.l}"
     table.each_field do |field|
       if field.name == "ID" && !table.has_identity?
@@ -243,7 +243,7 @@ class TemplateBuilder
     str << "#{table.db_name}.#{table.name}.Add(item);\n#{@tab.t}sucss++;\n"
     str << %(#{@tab.s}}\n#{@tab.t}#{table.db_name}.SaveChanges();\n#{@tab.t}msg += "<span >成功导入" + sucss + "条记录！</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << %({\n#{@tab.l}msg += "<span  style=\\"color:red;\\">请先修改数据再上传。。。。。。</span><br>";\n)
+    str << %({\n#{@tab.l}msg += "<span style=\\"color:red;\\">请先修改数据再上传。。。。。。</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.s}}\n#{@tab.t}"
     str << "catch (DbEntityValidationException e)\n#{@tab.t}"
     str << "{\n#{@tab.l}string msgstr = \"\";\n#{@tab.t}"
@@ -251,9 +251,9 @@ class TemplateBuilder
     str << "{\n#{@tab.l}foreach (var m in em.ValidationErrors)\n#{@tab.t}"
     str << %({\n#{@tab.l}msgstr += m.ErrorMessage + ";";\n)
     str << "#{@tab.s}}\n#{@tab.s}}\n#{@tab.t}"
-    str << %(msg += "<span  style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + msgstr + "</span><br>";\n)
+    str << %(msg += "<span style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + msgstr + "</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
-    str << %({\n#{@tab.l}msg += "<span  style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + GetExceptionErrMsg(e) + "</span><br>";\n#{@tab.t})
+    str << %({\n#{@tab.l}msg += "<span style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + GetExceptionErrMsg(e) + "</span><br>";\n#{@tab.t})
     str << "#{@tab.s}}\n#{@tab.t}ViewBag.msg = msg;\n#{@tab.t}"
     str << "return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n"

@@ -2,6 +2,7 @@
 # encoding: GBK
 #数据库实体，可执行查询操作，并附带常用指令集
 class DBEntityForQuery < DBEntity
+  include Enumerable
   #初始化
   def initialize(conn,db_name)
     super(conn,db_name)
@@ -9,10 +10,9 @@ class DBEntityForQuery < DBEntity
   end
   #初始化数据库表信息
   def db_init
-    @table_hash = {}
-    get_table_name_arr.each do |table_name|
-      @table_hash[table_name.to_sym] = table_name
-    end
+    table_arr = get_table_name_arr.map{|tname| [tname.to_sym, DBTableForQuery.new(tname, self)]}
+    view_arr = get_view_name_arr.map{|vname| [vname.to_sym, DBTableForQuery.new(vname, self)]}
+    @table_hash = Hash[*(table_arr + view_arr).flatten]
   end
   #返回表对象
   def method_missing(method_symbol, *pars)
@@ -20,4 +20,5 @@ class DBEntityForQuery < DBEntity
     return table if table
     super
   end
+  def each;@table_hash.each_value{|table| yield(table)} end
 end
