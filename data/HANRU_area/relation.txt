@@ -1407,6 +1407,32 @@
   BMBH           EDU_ZZXX_03_01_XNJG                JGH
 <EDU_ZZJG_21_A02_ZXSL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_22_A01_PHZYCPMC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_22_A02_PHZYCPDFFS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_22_A03_PHZYCPDFXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DFFSID         EDU_ZZJG_22_A02_PHZYCPDFFS         ID
+<EDU_ZZJG_22_A04_PHZYCPTM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DFFSID         EDU_ZZJG_22_A02_PHZYCPDFFS         ID
+  CPMCID         EDU_ZZJG_22_A01_PHZYCPMC           ID
+<EDU_ZZJG_22_A05_PHZYKPJS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  JSID           EDU_ZZJG_01_01_JZGJBSJ             ID
+<EDU_ZZJG_22_A06_PHZYKPJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  CPMCID         EDU_ZZJG_22_A01_PHZYCPMC           ID
+  PJJSID         EDU_ZZJG_22_A05_PHZYKPJS           ID
+  BPJSID         EDU_ZZJG_22_A05_PHZYKPJS           ID
+  TMID           EDU_ZZJG_22_A04_PHZYCPTM           ID
+<EDU_ZZJG_22_A07_PHZYCPTJJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  PJJSID         EDU_ZZJG_22_A05_PHZYKPJS           ID
 <EDU_ZZJX_01_01_ZYXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYDM           EDU_ZJ_ZJZY                        DM

@@ -485,3 +485,63 @@ EDU_ZZJG_21_A02_ZXSL  总行事历表
   ZYGZ          主要工作                text           非主
   BZ            备注                    text           非主
 
+EDU_ZZJG_22_A01_PHZYCPMC  平湖职业测评名称表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KPMC          测评名称                nvarchar(50)   非主
+  BZ            备注                    text           非主
+
+EDU_ZZJG_22_A02_PHZYCPDFFS  平湖职业测评打分方式表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  DFFSMC        打分方式名称            nvarchar(50)   非主
+  ZT            状态                    int            非主
+
+EDU_ZZJG_22_A03_PHZYCPDFXM  平湖职业测评打分项目表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  DFFSID        打分方式ID              int            非主        平湖职业测评打分方式表
+  DFXMMC        打分项目名称            nvarchar(50)   非主
+  FZ            分值                    int            非主
+
+EDU_ZZJG_22_A04_PHZYCPTM  平湖职业测评题目表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  DFFSID        打分方式ID              int            非主        平湖职业测评打分方式表
+  CPMCID        测评名称ID              int            非主        平湖职业测评名称表
+  CPXM          测评项目                nvarchar(50)   非主
+  CPZB          测评指标                nvarchar(300)  非主
+  ZT            状态                    int            非主
+
+EDU_ZZJG_22_A05_PHZYKPJS  平湖职业考评教师表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  XSZW          显示职务                nvarchar(50)   非主
+  TJZW          统计职务                nvarchar(50)   非主
+  JXB           教学部                  nvarchar(50)   非主
+  JYZ           教研组                  nvarchar(50)   非主
+  XM            姓名                    nvarchar(50)   非主
+  SFKPQX        是否可评全校            int            非主
+  SFBQXP        是否被全校评            int            非主
+  SFJRBMHP      是否计入部门互评        int            非主
+  SFBBQXP       是否不被全校评          int            非主
+
+EDU_ZZJG_22_A06_PHZYKPJG  平湖职业考评结果表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  CPMCID        测评名称ID              int            非主        平湖职业测评名称表
+  PJJSID        评价教师ID              int            非主        平湖职业考评教师表
+  BPJSID        被评教师ID              int            非主        平湖职业考评教师表
+  TMID          题目ID                  int            非主        平湖职业测评题目表
+  FZ            分值                    int            非主
+
+EDU_ZZJG_22_A07_PHZYCPTJJL  平湖职业测评提交记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  PJJSID        评价教师ID              int            非主        平湖职业考评教师表
+  TJSJ          提交时间                datetime       非主
+

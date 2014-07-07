@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
-require 'win32ole'
 #数据库实体，可执行查询操作，并附带常用指令集
 class DBTableForQuery
   attr_reader :name#表名

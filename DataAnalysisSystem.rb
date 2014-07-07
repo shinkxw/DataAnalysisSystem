@@ -4,7 +4,7 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#脚本加载器
 
-$t_app_name,$t_dir_name,$t_range,$fs_root = 'XQHZ','dgsx',21..21,'E:\代码\DB\SQL'
+$t_app_name,$t_dir_name,$t_range,$fs_root = 'RSXT','phzycp',22..22,'E:\代码\DB\SQL'
 AreaManager.set_conn(DBConnector.new('192.168.0.8'))#192.168.0.8
 AreaManager.load_area_and_db('HANRU','HanruEdu') do |work_area,db|#HanruEdu
   #work_area.export_tableinfo
