@@ -42,7 +42,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "资源标题")]
-            [StringLength(50)]
+            [StringLength(300)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZYBT { get; set; }
 

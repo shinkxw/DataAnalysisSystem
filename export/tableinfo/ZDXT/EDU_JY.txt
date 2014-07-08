@@ -1,0 +1,1041 @@
+EDU_JY_ZYZXTZBZMC  中央专项投资补助名称代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(12)   非主
+
+EDU_JY_ZXXXSLY  中小学学生来源代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_ZXXSYSLB  中小学实验室类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_ZXXSYLB  中小学实验类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_ZXXKCDJ  中小学课程等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_ZXXKC  中小学课程代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
+  SYXX          适用学校                nvarchar(10)   非主
+
+EDU_JY_ZXXBZLB  中小学编制类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_ZXXBJLX  中小学班级类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(13)   非主
+
+EDU_JY_ZWLB  职务类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_ZTLX  载体类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_ZTBXS  招投标形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_ZSDX  招生对象代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_ZPHLB  招聘会类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+  SM            说明                    nvarchar(10)   非主
+
+EDU_JY_ZLPZXS  专利批准形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_ZLLX  专利类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_ZLFLZT  专利法律状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_ZJLB  专家类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(17)   非主
+
+EDU_JY_ZDZYXXZYML  中等职业学校专业目录
+  DM            代码                    nvarchar(6)    主键
+  MC            名称                    nvarchar(13)   非主
+
+EDU_JY_ZDYT  占地用途代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_ZCZK  注册状况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_YZBLXW  严重不良行为代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(18)   非主
+
+EDU_JY_YTZT  议题状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_YSLZFLKM  预算类总分类科目代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_YQXZ  仪器现状代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_YQSYFX  仪器使用方向代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_YJSZXJHLB  研究生专项计划类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+  SYFW          适用范围                nvarchar(11)   非主
+
+EDU_JY_YJSRXFS  研究生入学方式代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_YJSLQTJLB  研究生录取调剂类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+  SM            说明                    nvarchar(37)   非主
+
+EDU_JY_YEBJLX  幼儿班级类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_YBLB  阅办类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+  SM            说明                    nvarchar(60)   非主
+
+EDU_JY_XZDWLX  协作单位类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_XZ  学制代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+  SYXX          适用学校                nvarchar(2)    非主
+
+EDU_JY_XXXZ  学校性质代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_XXWWYHJL  校学位委员会结论代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_XXJYJGJBZ  学校（教育机构）举办者代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(16)   非主
+  SM            说明                    nvarchar(47)   非主
+
+EDU_JY_XXDWCC  学校单位层次代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_XXBG  学校变更代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_XXBB  学校办别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_XX  血型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+  JC            简称                    nchar(3)       非主
+
+EDU_JY_XWLB  学位类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_XTXYY  休退学原因代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+  SYXX          教育统计适用学校        nvarchar(11)   非主
+
+EDU_JY_XSTZDB  学生体质达标代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_XSTTJB  学术团体级别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_XSSFTZFS  学生收费调整方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+  SM            说明                    nvarchar(8)    非主
+
+EDU_JY_XSNL  学生年龄代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SYXX          教育统计适用学校        nvarchar(22)   非主
+
+EDU_JY_XSLY  学生来源代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(20)   非主
+
+EDU_JY_XSLB  学生类别代码表
+  DM            代码                    nvarchar(5)    主键
+  MC            名称                    nvarchar(14)   非主
+  SM            说明                    nvarchar(10)   非主
+
+EDU_JY_XSJLLX  学术交流类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(15)   非主
+
+EDU_JY_XSHYDJ  学术会议等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(15)   非主
+
+EDU_JY_XSHJLB  学生获奖类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_XSDQZT  学生当前状态代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SM            说明                    nvarchar(19)   非主
+
+EDU_JY_XSBD  学生变动代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_XQ  学期代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_XMZXZT  项目执行状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_XMLY  项目来源代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
+
+EDU_JY_XMLX  项目类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_XMJFLY  项目经费来源代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(16)   非主
+
+EDU_JY_XKMLKJ  学科门类（科技）代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_XJYDYY  学籍异动原因代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(13)   非主
+
+EDU_JY_XJYDLB  学籍异动类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_XFNHDJ  消防耐火等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_WYHRZ  委员会任职代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_WWJZDJ  文物建筑等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_WJZJZLX  外籍专家证类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_WJZJLHQD  外籍专家来华渠道代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_WJLB  违纪类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(13)   非主
+
+EDU_JY_WJFL  文件分类代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
+  SM            说明                    nvarchar(132)  非主
+
+EDU_JY_WCXS  完成形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_TSQKZT  图书期刊状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_TSJYXXJD  特殊教育学习阶段代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_TJXMLB  体检项目类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
+  SM            说明                    nvarchar(6)    非主
+
+EDU_JY_SZLB  三助类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_SZDQJJSX  所在地区经济属性代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_SZDCXLX  所在地城乡类型代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_SYZLB  实验者类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_SYZK  使用状况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_SYYQ  实验要求代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_SYSPGJG  实验室评估结果代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_SYSLB  实验室类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(12)   非主
+
+EDU_JY_SYSFY  实验室费用代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_SYQLB  授予权类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_SYLB  实验类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(16)   非主
+
+EDU_JY_SSMZSYJXMS  少数民族双语教学模式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+  SM            说明                    nvarchar(38)   非主
+
+EDU_JY_SRFLX  受让方类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_SKFS  授课方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_SJGZMC  世界各洲名称代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_SJDWZZ  设计单位资质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_SHSJLX  社会实践类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(14)   非主
+  SM            说明                    nvarchar(18)   非主
+
+EDU_JY_SHSJDJ  社会实践等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_SHJJXY  社会经济效益代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(14)   非主
+
+EDU_JY_SHDWXZ  社会单位性质代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_SGTZSCZZ  施工图纸审查资质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_SGDWZZDJ  施工单位资质等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_SFZJLX  身份证件类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_SFXSLB  师范学生类别代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(15)   非主
+
+EDU_JY_SFBZ  是否标志代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_SCMS  色彩模式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_RXNL  入学年龄代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+  SYXX          适用学校                nvarchar(2)    非主
+
+EDU_JY_RXFS  入学方式代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
+  SYXX          适用学校                nvarchar(16)   非主
+
+EDU_JY_RKZK  任课状况代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_RKXD  任课学段代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_RKKCLB  任课课程类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_RKJS  任课角色代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_QKWB  缺考舞弊代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_QGLB  勤工类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_QGJGYXZYML  全国技工院校专业目录
+  DM            代码                    nvarchar(7)    主键
+  MC            名称                    nvarchar(26)   非主
+
+EDU_JY_QDFS  取得方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_PYXZ  聘用性质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_PYFS  培养方式代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SM            说明                    nvarchar(149)  非主
+
+EDU_JY_PYCC  培养层次代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_PXZYSSCY  培训专业所属产业代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_PXZSLXY  培训证书类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_PXJXSX  培训进修时限代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_PTHSPDJ  普通话水平等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_PRQK  聘任情况代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_NJ  年级代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SYJYLX        教育统计适用教育类型    nvarchar(34)   非主
+
+EDU_JY_LZLB  论著类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_LXLZYY  离校离职原因代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
+  SM            说明                    nvarchar(6)    非主
+
+EDU_JY_LWBGXS  论文报告形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_LQLB  录取类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_LHLXSZDGZLB  来华留学生重点关注类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_LHLXSSFLB  来华留学生收费类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_LHLXSJFLY  来华留学生经费来源代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_LGYY  离岗原因代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_LFFWLB  来访访问类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_LFDBTCYSF  来访代表团成员身份代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_KZSFLD  抗震设防烈度代码
+  DM            代码                    nvarchar(1)    主键
+  JC            简称                    nchar(4)       非主
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_KZSFBZ  抗震设防标准代码
+  DM            代码                    nvarchar(1)    主键
+  JC            简称                    nchar(2)       非主
+  MC            名称                    nvarchar(5)    非主
+  SM            说明                    nvarchar(157)  非主
+
+EDU_JY_KWZD  刊物装订代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_KWJB  刊物级别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(14)   非主
+
+EDU_JY_KSXZ  考试性质代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+  SM            说明                    nvarchar(36)   非主
+
+EDU_JY_KSXS  考试形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_KSFS  考试方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+  SM            说明                    nvarchar(36)   非主
+
+EDU_JY_KNYY  困难原因代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_KNCD  困难程度代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(4)    非主
+  SM            说明                    nvarchar(68)   非主
+
+EDU_JY_KMLB  科目类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_KMJC  科目级次代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_KCXZ  课程性质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_KCSX  课程属性代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+  SM            说明                    nvarchar(48)   非主
+
+EDU_JY_KCLX  课程类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_KCLB  课程类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_KCJB  课程级别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_JZWZK  建筑物状况代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(4)    非主
+  SM            说明                    nvarchar(54)   非主
+
+EDU_JY_JZWYT  建筑物用途代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_JZWPMXS  建筑物平面形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_JZWLBXS  建筑物楼板形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_JZWJG  建筑物结构代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JZWJDNR  建筑物鉴定内容代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_JZWJCXS  建筑物基础形式代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_JZWFL  建筑物分类代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JZWAQPCJL  建筑物安全排查结论代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_JZGLY  教职工来源代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_JZGLB  教职工类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(19)   非主
+  SM            说明                    nvarchar(28)   非主
+
+EDU_JY_JZGDQZT  教职工当前状态代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JZFX  记账方向代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_JYZT  纪要状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_JYLSFS  就业落实方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+  SM            说明                    nvarchar(34)   非主
+
+EDU_JY_JXYFXZ  教学用房性质代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_JXLX  教学类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_JXJLX  奖学金类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(13)   非主
+
+EDU_JY_JTLB  家庭类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_JSZYQK  教室占用情况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JSNL  教师年龄代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SYXX          教育统计适用学校        nvarchar(28)   非主
+
+EDU_JY_JSLX  教室类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_JSLDLB  教师流动类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(21)   非主
+
+EDU_JY_JSJB  竞赛级别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_JSHJLB  教师获奖类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JSBD  教师变动代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(9)    非主
+  SYXX          教育统计适用学校        nvarchar(21)   非主
+
+EDU_JY_JS  角色代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_JNXFZK  缴纳学费状况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JLZZZJLY  奖励资助资金来源代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(13)   非主
+
+EDU_JY_JLFS  奖励方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JLDWZZ  监理单位资质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_JLDJ  奖励等级代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JKRLB  监考人类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_JJCD  紧急程度代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_JHWCQK  计划完成情况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_JGZNLX  机构职能类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_JFLY  经费来源代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_JFKM  经费科目代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_JDJL  鉴定结论代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_JDFS  就读方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_JB  级别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(17)   非主
+
+EDU_JY_HZXS  合作形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_HYJBXS  会议举办形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_HYGZLB  行业工种类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_HSKCJ  汉语水平考试成绩代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(17)   非主
+
+EDU_JY_HKQCZK  户口迁出状况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_HJLX  获奖类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_HDXLFS  获得学历方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(8)    非主
+  SM            说明                    nvarchar(19)   非主
+
+EDU_JY_HDLX  活动类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_HDFS  获得方式代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_GZNX  工作年限代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_GZGZZYML  普通高等学校高职高专教育指导性专业目录（试行）
+  DM            代码                    nvarchar(6)    主键
+  MC            名称                    nvarchar(14)   非主
+
+EDU_JY_GZGWXZ  工作岗位性质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_GXJZGLY  高校教职工来源代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_GXBYQX  高校毕业去向代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SM            说明                    nvarchar(118)  非主
+
+EDU_JY_GWZY  岗位职业代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(11)   非主
+
+EDU_JY_GWZT  公文状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_GWLB  岗位类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_GWFZFS  公文封装方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_GSQK  供水情况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_GNFS  供暖方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_GLJB  管理级别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+  SM            说明                    nvarchar(34)   非主
+
+EDU_JY_GKKM  高考科目代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_GKFS  公开方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_GJWXZDWLX  国（境）外协作单位类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_GDLX  攻读类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(15)   非主
+
+EDU_JY_GATQW  港澳台侨外代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(6)    非主
+  SM            说明                    nvarchar(21)   非主
+
+EDU_JY_FYWTLB  反映问题类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_FWYFPGG  服务业发票规格代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(1)    非主
+
+EDU_JY_FWLX  房屋类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_FWCQ  房屋产权代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_FSFS  发送方式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_FLFX  分流方向代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+  SM            说明                    nvarchar(46)   非主
+
+EDU_JY_FLBJ  分录标记代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_FJYT  房间用途代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(9)    非主
+  SYXX          教育统计适用学校        nvarchar(31)   非主
+
+EDU_JY_FJSYZT  房间使用状态代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_FJFLB  附加分类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_FDYNL  辅导员年龄代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_DZWJLX  电子文件类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_DWLB  单位类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+  SM            说明                    nvarchar(41)   非主
+
+EDU_JY_DWBB  单位办别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_DSLB  导师类别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(9)    非主
+  SM            说明                    nvarchar(30)   非主
+
+EDU_JY_DKDWZZ  地勘单位资质代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+
+EDU_JY_DAYWXW  档案业务行为代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
+  SM            说明                    nvarchar(8)    非主
+
+EDU_JY_DAWJZHLX  档案文件组合类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_DAGXLX  档案关系类型代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_DAGX  档案关系代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_DAGB  档案稿本代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(3)    非主
+
+EDU_JY_DABGQX  档案保管期限代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(2)    非主
+  ZMDM          字母代码                nchar(1)       非主
+  SM            说明                    nvarchar(15)   非主
+
+EDU_JY_YWDABGQX  一位档案保管期限代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(2)    非主
+  ZMDM          字母代码                nchar(1)       非主
+  SM            说明                    nvarchar(15)   非主
+
+EDU_JY_CWPL  财务票类代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_CSQK  厕所情况代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_CQSHJZHXSTTZWYY  辞去社会兼职或学术团体职务原因代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_CQ  产权代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(10)   非主
+
+EDU_JY_CJRLX  残疾人类型代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_CGMD  出国目的代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(20)   非主
+
+EDU_JY_CGLX  成果类型代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(10)   非主
+  SM            说明                    nvarchar(57)   非主
+
+EDU_JY_CGHJLB  成果获奖类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(8)    非主
+
+EDU_JY_CFMC  处分名称代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+
+EDU_JY_CBSJB  出版社级别代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(9)    非主
+
+EDU_JY_BZYD  编制异动代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(7)    非主
+
+EDU_JY_BZLB  编制类别代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(5)    非主
+
+EDU_JY_BYQX  毕业去向代码表
+  DM            代码                    nvarchar(2)    主键
+  MC            名称                    nvarchar(12)   非主
+
+EDU_JY_BXLX  办学类型代码表
+  DM            代码                    nvarchar(3)    主键
+  MC            名称                    nvarchar(16)   非主
+  SM            说明                    nvarchar(16)   非主
+
+EDU_JY_BE  班额代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(6)    非主
+
+EDU_JY_AQJXXS  安全教学形式代码表
+  DM            代码                    nvarchar(1)    主键
+  MC            名称                    nvarchar(4)    非主
+

@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_01_A06_ZYWJ](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[ZYMLID]  int  NOT NULL,--资源目录
-	[ZYBT]  nvarchar(50)  NOT NULL,--资源标题
+	[ZYBT]  nvarchar(300)  NOT NULL,--资源标题
 	[SYDX]  nvarchar(30)  NOT NULL,--适用对象
 	[GJZ]  nvarchar(50)  NOT NULL,--关键字
 	[JJ]  nvarchar(200)  NOT NULL,--简介

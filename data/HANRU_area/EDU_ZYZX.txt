@@ -32,7 +32,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="ZYMLID" exp="资源目录" type="int" null="F" p="F" />
-            <name="ZYBT" exp="资源标题" type="nvarchar(50)" null="F" p="F" />
+            <name="ZYBT" exp="资源标题" type="nvarchar(300)" null="F" p="F" />
             <name="SYDX" exp="适用对象" type="nvarchar(30)" null="F" p="F" />
             <name="GJZ" exp="关键字" type="nvarchar(50)" null="F" p="F" />
             <name="JJ" exp="简介" type="nvarchar(200)" null="F" p="F" />

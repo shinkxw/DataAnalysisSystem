@@ -23,7 +23,7 @@ EDU_ZYZX_01_A06_ZYWJ  资源文件
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   ZYMLID        资源目录                int            非主        资源目录
-  ZYBT          资源标题                nvarchar(50)   非主
+  ZYBT          资源标题                nvarchar(300)  非主
   SYDX          适用对象                nvarchar(30)   非主
   GJZ           关键字                  nvarchar(50)   非主
   JJ            简介                    nvarchar(200)  非主

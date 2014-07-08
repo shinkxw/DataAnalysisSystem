@@ -1,0 +1,343 @@
+<EDU_ELE_01_USER
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+<EDU_ELE_01_APP
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_01_SCHOOL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+<EDU_ELE_01_XQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQM            EDU_JY_XQ                          DM
+<EDU_ELE_01_APPUSER
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  APPID          EDU_ELE_01_APP                     ID
+<EDU_ELE_01_APPDLCS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPUSERID      EDU_ELE_01_APPUSER                 ID
+<EDU_ELE_02_YHFZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  SJFZID         EDU_ELE_02_YHFZ                    ID
+<EDU_ELE_02_YHKJDH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  MODULEID       EDU_SYS_01_MODULE                  ID
+  LoginName      EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_03_APPRZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_03_APPLL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_03_YHSYJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  MODULEID       EDU_SYS_01_MODULE                  ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_05_XL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+<EDU_ELE_05_XLZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XLID           EDU_ELE_05_XL                      ID
+<EDU_ELE_05_WEEKDAY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_05_SD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_05_JC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SDID           EDU_ELE_05_SD                      ID
+<EDU_ELE_06_CDSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_07_JFBD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_07_RYBD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_09_JKXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TJYH           EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_01_01_WJJBSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  MJM            EDU_GB_WXBMZJ                      DM
+  JJCDM          EDU_JY_JJCD                        DM
+  WJFLM          EDU_JY_WJFL                        DM
+<EDU_OAXT_02_01_SWCL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  QSRID          EDU_ELE_01_USER                    LOGINNAME
+  CFRID          EDU_ELE_01_USER                    LOGINNAME
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_02_02_WJYB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  YBRID          EDU_ELE_01_USER                    LOGINNAME
+  YBLBM          EDU_JY_YBLB                        DM
+<EDU_OAXT_03_01_FWCL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  NGRID          EDU_ELE_01_USER                    LOGINNAME
+  QFRID          EDU_ELE_01_USER                    LOGINNAME
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
+  DZRID          EDU_ELE_01_USER                    LOGINNAME
+  JDRID          EDU_ELE_01_USER                    LOGINNAME
+  FSFSM          EDU_JY_FSFS                        DM
+  FZFSM          EDU_JY_GWFZFS                      DM
+<EDU_OAXT_03_02_HG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  HGRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_03_03_HQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  HQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_03_04_CP
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  PFRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_04_01_WJQT
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  JBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_05_01_WJXH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  XHSPRID        EDU_ELE_01_USER                    LOGINNAME
+  JBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_06_01_WJJQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_01_01_WJJBSJ              ID
+  JYSPRID        EDU_ELE_01_USER                    LOGINNAME
+  JYJBRID        EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_08_01_DADJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BGQXM          EDU_JY_YWDABGQX                    DM
+  MJM            EDU_GB_WXBMZJ                      DM
+  DAFLM          EDU_GB_LWGDXXDASTFL                DM
+<EDU_OAXT_10_A01_TZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_10_A02_TZYDJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TZID           EDU_OAXT_10_A01_TZ                 ID
+  BTZRID         EDU_ELE_01_USER                    LOGINNAME
+  SFYD           EDU_JY_SFBZ                        DM
+<EDU_OAXT_10_A03_GG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_10_A04_TZMB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_11_A01_YJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YYZID          EDU_ELE_01_USER                    LOGINNAME
+  FSRID          EDU_ELE_01_USER                    LOGINNAME
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
+  SFYD           EDU_JY_SFBZ                        DM
+<EDU_OAXT_12_A01_SJFB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_13_A01_DWSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SJDWID         EDU_OAXT_13_A01_DWSJ               ID
+  DWFZRID        EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_14_A01_GRRCXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  SFTS           EDU_JY_SFBZ                        DM
+<EDU_OAXT_15_A01_ZCML
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  Superid        EDU_OAXT_15_A01_ZCML               ID
+<EDU_OAXT_15_A02_ZCDL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_15_A03_ZCKC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TypeID         EDU_OAXT_15_A01_ZCML               ID
+  ClassID        EDU_OAXT_15_A02_ZCDL               ID
+<EDU_OAXT_15_A04_ZCRK
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TypeID         EDU_OAXT_15_A01_ZCML               ID
+  ClassID        EDU_OAXT_15_A02_ZCDL               ID
+<EDU_OAXT_15_A05_ZCJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TypeID         EDU_OAXT_15_A01_ZCML               ID
+  ClassID        EDU_OAXT_15_A02_ZCDL               ID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+<EDU_OAXT_15_A06_ZCBG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+<EDU_OAXT_15_A07_BXLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_15_A08_BXGL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+  TypeID         EDU_OAXT_15_A07_BXLX               ID
+  Applicant      EDU_ELE_01_USER                    LOGINNAME
+  Approver       EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_15_A09_WXJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+<EDU_OAXT_15_A10_ZCBF
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+  RegsterID      EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_15_A11_ZCPD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_15_A12_ZCPDMX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  AID            EDU_OAXT_15_A03_ZCKC               ID
+  PID            EDU_OAXT_15_A11_ZCPD               ID
+  PUserID        EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_15_A13_WXJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WPID           EDU_OAXT_15_A08_BXGL               ID
+<EDU_OAXT_15_A14_BXGZXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BXLXID         EDU_OAXT_15_A07_BXLX               ID
+<EDU_OAXT_20_A02_LCBDSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_20_A03_LCMB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  MBLXID         EDU_OAXT_20_A01_LCMBLX             ID
+  BDID           EDU_OAXT_20_A02_LCBDSJ             ID
+  QSBZID         EDU_OAXT_20_A04_LCBZ               ID
+  JSBZID         EDU_OAXT_20_A04_LCBZ               ID
+<EDU_OAXT_20_A04_LCBZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCMBID         EDU_OAXT_20_A03_LCMB               ID
+  SYBZID         EDU_OAXT_20_A04_LCBZ               ID
+  XYBZID         EDU_OAXT_20_A04_LCBZ               ID
+<EDU_OAXT_20_A05_LCSL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCMBID         EDU_OAXT_20_A03_LCMB               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SPRID          EDU_ELE_01_USER                    LOGINNAME
+  DQBZID         EDU_OAXT_20_A04_LCBZ               ID
+<EDU_OAXT_20_A06_LCSHJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  BZID           EDU_OAXT_20_A04_LCBZ               ID
+  LCMBLXID       EDU_OAXT_20_A01_LCMBLX             ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SPRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_20_A07_LCMBLXPZ
+  LCMBLXID       EDU_OAXT_20_A01_LCMBLX             ID
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_21_A01_QJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_21_A02_QJSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  QJLXID         EDU_OAXT_21_A01_QJLX               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  XJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_22_A01_HYSSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_22_A02_HYSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  ZCRID          EDU_ELE_01_USER                    LOGINNAME
+  JLRID          EDU_ELE_01_USER                    LOGINNAME
+  HYDDID         EDU_OAXT_22_A01_HYSSJ              ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_22_A04_HYJY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  HYID           EDU_OAXT_22_A02_HYSQ               ID
+  JLRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_22_A05_HYBZLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_22_A06_HYJYMB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_23_A01_GWSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_24_A01_YCSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SQCLID         EDU_OAXT_24_A03_CLSJ               ID
+<EDU_OAXT_24_A03_CLSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_25_A01_CGSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_26_A01_SYSSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_26_A02_SYSQC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_26_A03_SYSSQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SYSID          EDU_OAXT_26_A01_SYSSJ              ID
+  LCSLID         EDU_OAXT_20_A05_LCSL               ID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_30_A01_DSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_31_A01_GRTXL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GRID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_32_A01_DCWJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_32_A02_DCWJTM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WJID           EDU_OAXT_32_A01_DCWJ               ID
+<EDU_OAXT_32_A03_DCWJTMXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TMID           EDU_OAXT_32_A02_DCWJTM             ID
+  WJID           EDU_OAXT_32_A01_DCWJ               ID
+<EDU_OAXT_32_A04_DCWJJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  WJID           EDU_OAXT_32_A01_DCWJ               ID
+  TMID           EDU_OAXT_32_A02_DCWJTM             ID
+  XXID           EDU_OAXT_32_A03_DCWJTMXX           ID
+<EDU_OAXT_33_A01_GWJCXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_33_A02_GZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_33_A03_FW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GWID           EDU_OAXT_33_A01_GWJCXX             ID
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
+  GZID           EDU_OAXT_33_A02_GZ                 ID
+  FSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_33_A04_SW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GWID           EDU_OAXT_33_A01_GWJCXX             ID
+  XFRID          EDU_ELE_01_USER                    LOGINNAME
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_33_A05_HTWZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_34_A01_WYLCJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SQRID          EDU_ELE_01_USER                    LOGINNAME
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_35_A01_RW
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_35_A02_RWJSR
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  RWID           EDU_OAXT_35_A01_RW                 ID
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_35_A03_HFJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  RWID           EDU_OAXT_35_A01_RW                 ID
+  HFRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_36_A01_BJGZLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_36_A02_BJGZJC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GZLBID         EDU_OAXT_36_A01_BJGZLB             ID
+<EDU_SYS_01_XN
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZDGL_03_SBXH
+  SBLXID         EDU_ZDGL_01_SBLX                   ID
+  SCCJID         EDU_ZDGL_02_SCCJ                   ID
+<EDU_ZDGL_04_SXDW
+  QHM            EDU_GB_ZHRMGHGXZQH                 DM
