@@ -1,6 +1,7 @@
 <EDU_ELE_01_USER
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
+  BMID           EDU_ZDGL_06_BM                     ID
 <EDU_ELE_01_APP
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_01_SCHOOL

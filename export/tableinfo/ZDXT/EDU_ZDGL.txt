@@ -14,11 +14,13 @@ EDU_ZDGL_03_SBXH  设备型号配置表
   SCCJID        生产厂家ID              int            非主        生产厂家信息表
   XHMC          型号名称                nvarchar(50)   非主
   WLMS          物料描述                nvarchar(500)  非主
+  XHMCPY        型号名称拼音            nvarchar(500)  非主
 
 EDU_ZDGL_04_SXDW  送修单位信息表
   ID            编号                    int            主键
   QHM           区划码                  nvarchar(6)    非主        中华人民共和国行政区划代码
   DWMC          单位名称                nvarchar(50)   非主
+  DWMCPY        单位名称拼音            nvarchar(500)  非主
 
 EDU_ZDGL_05_BXHT  保修合同表
   ID            编号                    int            主键
@@ -28,6 +30,6 @@ EDU_ZDGL_05_BXHT  保修合同表
 EDU_ZDGL_06_BM  部门信息表
   ID            编号                    int            主键
   BMMC          部门名称                nvarchar(20)   非主
-  BMYHLB        部门用户列表            text           非主
   SXDWLB        送修单位列表            text           非主
+  SXDWMCLB      送修单位名称列表        text           非主
 

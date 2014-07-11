@@ -31,6 +31,7 @@ SELECT a.[ID]--编号
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,c.BMID as c_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_35_A01_RW AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/

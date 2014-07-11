@@ -30,6 +30,7 @@ SELECT a.[ID]--单位ID
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_13_A01_DWSJ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_13_A01_DWSJ AS c ON a.SJDWID = c.ID /*上级单位ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

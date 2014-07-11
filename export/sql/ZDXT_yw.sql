@@ -156,6 +156,7 @@ CREATE TABLE [dbo].[EDU_ELE_01_USER](
 	[YHCJSJ]  datetime  NOT NULL,--用户创建时间
 	[YHRY]  int  NOT NULL,--用户荣誉
 	[YHJF]  int  NOT NULL,--用户积分
+	[BMID]  int  NOT NULL,--部门ID
 CONSTRAINT [PK_EDU_ELE_01_USER] PRIMARY KEY CLUSTERED
 (
 	[LOGINNAME] ASC,
@@ -721,6 +722,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHRY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户积分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHJF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'部门ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'BMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP'
 GO
@@ -5098,6 +5101,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_03_SBXH](
 	[SCCJID]  int  NOT NULL,--生产厂家ID
 	[XHMC]  nvarchar(50)  NOT NULL,--型号名称
 	[WLMS]  nvarchar(500)  NOT NULL,--物料描述
+	[XHMCPY]  nvarchar(500)  NOT NULL,--型号名称拼音
 CONSTRAINT [PK_EDU_ZDGL_03_SBXH] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -5113,6 +5117,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_04_SXDW](
 	[ID]  int  NOT NULL,--编号
 	[QHM]  nvarchar(6)  NOT NULL,--区划码
 	[DWMC]  nvarchar(50)  NOT NULL,--单位名称
+	[DWMCPY]  nvarchar(500)  NOT NULL,--单位名称拼音
 CONSTRAINT [PK_EDU_ZDGL_04_SXDW] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -5142,8 +5147,8 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZDGL_06_BM](
 	[ID]  int  NOT NULL,--编号
 	[BMMC]  nvarchar(20)  NOT NULL,--部门名称
-	[BMYHLB]  text  NOT NULL,--部门用户列表
 	[SXDWLB]  text  NOT NULL,--送修单位列表
+	[SXDWMCLB]  text  NOT NULL,--送修单位名称列表
 CONSTRAINT [PK_EDU_ZDGL_06_BM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -5181,6 +5186,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'型号名称' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'物料描述' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_03_SBXH', @level2type=N'COLUMN',@level2name=N'WLMS'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'型号名称拼音' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_03_SBXH', @level2type=N'COLUMN',@level2name=N'XHMCPY'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'ID'
@@ -5188,6 +5195,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'区划码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'QHM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'单位名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'DWMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'单位名称拼音' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'DWMCPY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'保修合同表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_05_BXHT'
 GO
@@ -5203,7 +5212,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'部门名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_BM', @level2type=N'COLUMN',@level2name=N'BMMC'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'部门用户列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_BM', @level2type=N'COLUMN',@level2name=N'BMYHLB'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_BM', @level2type=N'COLUMN',@level2name=N'SXDWLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_BM', @level2type=N'COLUMN',@level2name=N'SXDWMCLB'
 GO

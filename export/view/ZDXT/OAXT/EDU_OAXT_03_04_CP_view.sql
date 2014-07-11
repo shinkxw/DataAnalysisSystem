@@ -45,6 +45,7 @@ SELECT a.[SCHOOLID]--学校名
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_03_04_CP AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_01_01_WJJBSJ AS c ON a.WJID = c.ID /*文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

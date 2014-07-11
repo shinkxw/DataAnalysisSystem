@@ -35,6 +35,7 @@ SELECT a.[ID]--编号
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,c.BMID as c_USER_BMID--应用系统用户表 部门ID
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -52,6 +53,7 @@ SELECT a.[ID]--编号
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_34_A01_WYLCJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS c ON a.SQRID = c.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

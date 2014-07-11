@@ -40,6 +40,7 @@ SELECT a.[ID]--编号
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_35_A02_RWJSR AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_35_A01_RW AS c ON a.RWID = c.ID /*任务ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

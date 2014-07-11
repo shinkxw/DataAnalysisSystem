@@ -39,6 +39,7 @@ SELECT a.[ID]--通知阅读记录ID
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_OAXT_10_A02_TZYDJL AS a LEFT OUTER JOIN

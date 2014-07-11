@@ -53,6 +53,7 @@ SELECT a.[ID]--编号
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
+      ,e.BMID as e_USER_BMID--应用系统用户表 部门ID
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -70,6 +71,7 @@ SELECT a.[ID]--编号
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
       ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+      ,f.BMID as f_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_21_A02_QJSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

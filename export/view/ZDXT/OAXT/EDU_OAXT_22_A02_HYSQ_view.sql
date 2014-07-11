@@ -51,6 +51,7 @@ SELECT a.[ID]--编号
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -68,6 +69,7 @@ SELECT a.[ID]--编号
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
+      ,e.BMID as e_USER_BMID--应用系统用户表 部门ID
       ,f.SCHOOLID as f_HYSSJ_SCHOOLID--会议室数据表 学校
       ,f.FJMC as f_HYSSJ_FJMC--会议室数据表 房间名称
       ,f.FJDZ as f_HYSSJ_FJDZ--会议室数据表 房间地址
@@ -90,6 +92,7 @@ SELECT a.[ID]--编号
       ,g.YHCJSJ as g_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,g.YHRY as g_USER_YHRY--应用系统用户表 用户荣誉
       ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
+      ,g.BMID as g_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_22_A02_HYSQ AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_20_A05_LCSL AS c ON a.LCSLID = c.ID /*流程实例ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

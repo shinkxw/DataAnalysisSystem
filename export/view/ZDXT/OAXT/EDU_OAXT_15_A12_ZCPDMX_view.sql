@@ -56,6 +56,7 @@ SELECT a.[ID]--编号
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
+      ,e.BMID as e_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_15_A12_ZCPDMX AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_15_A03_ZCKC AS c ON a.AID = c.ID /*库存表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

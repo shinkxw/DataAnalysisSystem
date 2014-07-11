@@ -38,6 +38,7 @@ SELECT a.[ID]--分组ID
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.SCHOOLID as e_YHFZ_SCHOOLID--用户分组表 学校ID
       ,e.APPID as e_YHFZ_APPID--用户分组表 应用ID
       ,e.YHID as e_YHFZ_YHID--用户分组表 用户ID

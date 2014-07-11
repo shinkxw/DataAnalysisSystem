@@ -42,6 +42,7 @@ SELECT a.[ID]--编号
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.SCHOOLID as e_GZ_SCHOOLID--公章信息表 学校
       ,e.QZTPLJ as e_GZ_QZTPLJ--公章信息表 签章图片路径
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
@@ -61,6 +62,7 @@ SELECT a.[ID]--编号
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
       ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+      ,f.BMID as f_USER_BMID--应用系统用户表 部门ID
 
 FROM dbo.EDU_OAXT_33_A03_FW AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_33_A01_GWJCXX AS c ON a.GWID = c.ID /*公文ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

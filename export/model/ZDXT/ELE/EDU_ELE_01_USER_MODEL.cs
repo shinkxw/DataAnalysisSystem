@@ -128,6 +128,11 @@ namespace HanRuEdu.LDAL
             public Int32 YHJF { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "²¿ÃÅ")]
+            public Int32 BMID { get; set; }
+
+
         }
     }
 }

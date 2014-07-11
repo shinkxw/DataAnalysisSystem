@@ -48,6 +48,7 @@ SELECT a.[SCHOOLID]--学校名
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.MC as e_YBLB_MC--阅办类别代码表 名称
       ,e.SM as e_YBLB_SM--阅办类别代码表 说明
 

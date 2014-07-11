@@ -7,6 +7,7 @@ SELECT a.[ID]--编号
       ,a.[SCCJID]--生产厂家ID
       ,a.[XHMC]--型号名称
       ,a.[WLMS]--物料描述
+      ,a.[XHMCPY]--型号名称拼音
       ,b.LXMC as b_SBLX_LXMC--设备类型配置表 类型名称
       ,b.ZT as b_SBLX_ZT--设备类型配置表 状态
       ,c.CJMC as c_SCCJ_CJMC--生产厂家信息表 厂家名称

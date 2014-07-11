@@ -156,6 +156,7 @@ CREATE TABLE [dbo].[EDU_ELE_01_USER](
 	[YHCJSJ]  datetime  NOT NULL,--用户创建时间
 	[YHRY]  int  NOT NULL,--用户荣誉
 	[YHJF]  int  NOT NULL,--用户积分
+	[BMID]  int  NOT NULL,--部门ID
 CONSTRAINT [PK_EDU_ELE_01_USER] PRIMARY KEY CLUSTERED
 (
 	[LOGINNAME] ASC,
@@ -721,6 +722,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHRY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户积分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHJF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'部门ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'BMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP'
 GO

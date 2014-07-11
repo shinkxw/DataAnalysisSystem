@@ -45,6 +45,7 @@ SELECT a.[ID]--编号
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.SCHOOLID as e_CLSJ_SCHOOLID--车辆数据表 学校
       ,e.CLMC as e_CLSJ_CLMC--车辆数据表 车辆名称
       ,e.CLPP as e_CLSJ_CLPP--车辆数据表 车辆品牌

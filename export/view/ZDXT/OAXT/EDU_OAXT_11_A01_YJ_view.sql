@@ -34,6 +34,7 @@ SELECT a.[ID]--邮件ID
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,c.BMID as c_USER_BMID--应用系统用户表 部门ID
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
@@ -51,6 +52,7 @@ SELECT a.[ID]--邮件ID
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码
@@ -68,6 +70,7 @@ SELECT a.[ID]--邮件ID
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
+      ,e.BMID as e_USER_BMID--应用系统用户表 部门ID
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_OAXT_11_A01_YJ AS a LEFT OUTER JOIN

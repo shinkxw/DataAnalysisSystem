@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             QHM = "";
             DWMC = "";
+            DWMCPY = "";
         }
         public class EDU_ZDGL_04_SXDW_metadata
         {
@@ -31,6 +32,13 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String DWMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "单位名称拼音")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DWMCPY { get; set; }
 
 
         }

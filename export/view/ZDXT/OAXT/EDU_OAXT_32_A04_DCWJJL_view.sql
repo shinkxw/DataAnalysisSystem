@@ -27,6 +27,7 @@ SELECT a.[ID]--编号
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,c.BMID as c_USER_BMID--应用系统用户表 部门ID
       ,d.SCHOOLID as d_DCWJ_SCHOOLID--调查问卷数据表 学校
       ,d.Title as d_DCWJ_Title--调查问卷数据表 问卷名称
       ,d.Users as d_DCWJ_Users--调查问卷数据表 参选人员
