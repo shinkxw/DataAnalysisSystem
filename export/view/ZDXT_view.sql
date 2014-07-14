@@ -19,14 +19,6 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_01_APPD
             and   type = 'V')
    drop view VIEW_EDU_ELE_01_APPDLCS_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_02_YHFZ_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ELE_02_YHFZ_DISP
-GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_02_YHKJDH_DISP')
-            and   type = 'V')
-   drop view VIEW_EDU_ELE_02_YHKJDH_DISP
-GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ELE_03_APPRZ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ELE_03_APPRZ_DISP
@@ -429,101 +421,6 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ELE_01_APPDLCS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APPUSER AS c ON a.APPUSERID = c.ID /*应用用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
-GO
-
---用户分组表
-CREATE VIEW [dbo].[VIEW_EDU_ELE_02_YHFZ_DISP]
-AS
-SELECT a.[ID]--分组ID
-      ,a.[SCHOOLID]--学校ID
-      ,a.[APPID]--应用ID
-      ,a.[YHID]--用户ID
-      ,a.[SJFZID]--上级分组ID
-      ,a.[FZMC]--分组名称
-      ,a.[FZYHID]--分组用户ID列表
-      ,c.SCHOOLID as c_APP_SCHOOLID--应用表 学校ID
-      ,c.NAME as c_APP_NAME--应用表 应用名称
-      ,c.URL as c_APP_URL--应用表 网址
-      ,c.AUTHIP as c_APP_AUTHIP--应用表 限用IP
-      ,c.SM as c_APP_SM--应用表 说明
-      ,c.DLFS as c_APP_DLFS--应用表 登录方式
-      ,c.STATUS as c_APP_STATUS--应用表 应用状态
-      ,c.TYPE as c_APP_TYPE--应用表 应用类别
-      ,c.DLCSLB as c_APP_DLCSLB--应用表 登录参数列表
-      ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
-      ,c.SYDX as c_APP_SYDX--应用表 使用对象
-      ,c.KJDX as c_APP_KJDX--应用表 可见对象
-      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
-      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
-      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
-      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
-      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
-      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,d.XM as d_USER_XM--应用系统用户表 姓名
-      ,d.XB as d_USER_XB--应用系统用户表 性别
-      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
-      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
-      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
-      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
-      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
-      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
-      ,e.SCHOOLID as e_YHFZ_SCHOOLID--用户分组表 学校ID
-      ,e.APPID as e_YHFZ_APPID--用户分组表 应用ID
-      ,e.YHID as e_YHFZ_YHID--用户分组表 用户ID
-      ,e.SJFZID as e_YHFZ_SJFZID--用户分组表 上级分组ID
-      ,e.FZMC as e_YHFZ_FZMC--用户分组表 分组名称
-      ,e.FZYHID as e_YHFZ_FZYHID--用户分组表 分组用户ID列表
-
-FROM dbo.EDU_ELE_02_YHFZ AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.YHID = d.LOGINNAME /*用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_02_YHFZ AS e ON a.SJFZID = e.ID /*上级分组ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ AND a.APPID = e.APPID /*应用ID*/
-GO
-
---用户快捷导航表
-CREATE VIEW [dbo].[VIEW_EDU_ELE_02_YHKJDH_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SCHOOLID]--学校ID
-      ,a.[MODULEID]--MODULE表ID
-      ,a.[LoginName]--用户名
-      ,a.[OrderID]--序号
-      ,a.[NAME]--显示名称
-      ,a.[LINK]--链接
-      ,c.APPID as c_MODULE_APPID--导航表 
-      ,c.NAME as c_MODULE_NAME--导航表 
-      ,c.Depth as c_MODULE_Depth--导航表 
-      ,c.PID as c_MODULE_PID--导航表 
-      ,c.MenuDisp as c_MODULE_MenuDisp--导航表 
-      ,c.MenuUserType as c_MODULE_MenuUserType--导航表 
-      ,c.Link as c_MODULE_Link--导航表 
-      ,c.OrderIndex as c_MODULE_OrderIndex--导航表 
-      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
-      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
-      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
-      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
-      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
-      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,d.XM as d_USER_XM--应用系统用户表 姓名
-      ,d.XB as d_USER_XB--应用系统用户表 性别
-      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
-      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
-      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
-      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
-      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
-      ,d.BMID as d_USER_BMID--应用系统用户表 部门ID
-
-FROM dbo.EDU_ELE_02_YHKJDH AS a LEFT OUTER JOIN
-      dbo.EDU_SYS_01_MODULE AS c ON a.MODULEID = c.ID /*MODULE表ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.LoginName = d.LOGINNAME /*用户名*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO
 
 --应用日志表
