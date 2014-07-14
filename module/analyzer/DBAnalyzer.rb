@@ -3,6 +3,7 @@
 #数据库数据解析器
 class DBAnalyzer
   attr_reader :area#分析结果
+  @@field_key_arr = %w(COLUMN_NAME DATA_TYPE IS_NULLABLE CHARACTER_MAXIMUM_LENGTH NUMERIC_PRECISION NUMERIC_SCALE)
   #初始化
   def initialize(host = '(local)', username = 'sa', password = '123456', log = [])
     @host = host
@@ -42,9 +43,7 @@ class DBAnalyzer
   end
   #分析指定表的字段并添加
   def analyze_field(table,db)
-    key_arr = ['COLUMN_NAME','DATA_TYPE','IS_NULLABLE','CHARACTER_MAXIMUM_LENGTH']
-    key_arr += ['NUMERIC_PRECISION','NUMERIC_SCALE']
-    result_hash = db.get_table_fields_info(table.name,key_arr)
+    result_hash = db.get_table_fields_info(table.name,@@field_key_arr)
     exp_hash = db.get_table_field_exp(table.name)
     pk_arr = db.get_table_pk_arr(table.name)
     idpk = db.get_table_idpk(table.name)
