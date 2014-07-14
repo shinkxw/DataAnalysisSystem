@@ -1,7 +1,7 @@
 EDU_ZYZX_01_A01_ZYML  资源目录
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  MLMC          目录名称                nvarchar(50)   非主
+  MLMC          目录名称                nvarchar(300)  非主
   FMLID         父目录ID                int            非主        资源目录
   PLSX          排列顺序                int            非主
   SFSYZS        是否首页展示            int            非主

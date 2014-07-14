@@ -26,7 +26,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
             [Display(Name = "Ä¿Â¼Ãû³Æ")]
-            [StringLength(50)]
+            [StringLength(300)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String MLMC { get; set; }
 

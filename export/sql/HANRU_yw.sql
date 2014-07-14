@@ -13102,7 +13102,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZYZX_01_A01_ZYML](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[MLMC]  nvarchar(50)  NOT NULL,--目录名称
+	[MLMC]  nvarchar(300)  NOT NULL,--目录名称
 	[FMLID]  int  NOT NULL,--父目录ID
 	[PLSX]  int  NOT NULL,--排列顺序
 	[SFSYZS]  int  NOT NULL,--是否首页展示
