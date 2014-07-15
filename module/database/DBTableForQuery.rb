@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
-#数据库实体，可执行查询操作，并附带常用指令集
+#数据库表查询实体
 class DBTableForQuery
   include Enumerable
   attr_reader :name#表名
@@ -17,16 +17,6 @@ class DBTableForQuery
   end
   #获得表的视图
   def view;@db.send("VIEW_#{@name}_DISP"); end
-  
-  #获取指定表的数据
-  def get_data(table_name, sql = nil)
-    data_hash = query(sql ? sql : Sql.get_tdata(table_name))
-    field_name_arr = data_hash.keys
-    data_arr = field_name_arr.map{|field_name| data_hash[field_name]}.transpose
-    data_hash_arr = data_arr.map{|data| Hash[*field_name_arr.zip(data).flatten]}
-    data_hash_arr.each_index {|index| data_hash_arr[index]['i'] = index}
-  end
-  
   #遍历字段
   def each_field
     get_field_from_db if @field_hash.empty?
@@ -35,7 +25,7 @@ class DBTableForQuery
   #从数据库加载表字段
   def get_field_from_db;DBAnalyzer.new.analyze_field(self, @db) end
   #增加字段
-  def add_field(field);@field_hash[field.name.to_sym] = field end
+  def add_field(field);@field_hash[field.name.upcase] = field end
   #遍历数据
   def each
     get_data_from_db if @data_arr == nil
@@ -43,13 +33,17 @@ class DBTableForQuery
   end
   #从数据库加载表数据
   def get_data_from_db
-    data_arr = @db.get_table_data(@name)
-    data_arr.each{|data_hash| @data_arr << MDData.new(data_hash)}
+    data_hash = @db.query(Sql.get_tdata(@name))
+    field_name_arr = data_hash.keys
+    data_arr = field_name_arr.map{|field_name| data_hash[field_name]}.transpose
+    data_hash_arr = data_arr.map{|data| Hash[*field_name_arr.zip(data).flatten]}
+    
+    data_hash_arr.each{|data_hash| @data_arr << DBDataForQuery.new(data_hash)}
   end
   #返回字段对象
   def method_missing(method_symbol, *pars)
     get_field_from_db if @field_hash.empty?
-    field = @field_hash[method_symbol]
+    field = @field_hash[method_symbol.to_s.upcase]
     return field if field
     super
   end
