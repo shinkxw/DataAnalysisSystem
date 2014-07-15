@@ -33,12 +33,11 @@ class DBTableForQuery
   end
   #从数据库加载表数据
   def get_data_from_db
+    get_field_from_db if @field_hash.empty?
+    field_arr = @field_hash.values
     data_hash = @db.query(Sql.get_tdata(@name))
-    field_name_arr = data_hash.keys
-    data_arr = field_name_arr.map{|field_name| data_hash[field_name]}.transpose
-    data_hash_arr = data_arr.map{|data| Hash[*field_name_arr.zip(data).flatten]}
-    
-    data_hash_arr.each{|data_hash| @data_arr << DBDataForQuery.new(data_hash)}
+    data_arr = field_arr.map{|field| data_hash[field.name]}.transpose
+    data_arr.each{|value_arr| @data_arr << DBDataForQuery.new(field_arr, value_arr)}
   end
   #返回字段对象
   def method_missing(method_symbol, *pars)
