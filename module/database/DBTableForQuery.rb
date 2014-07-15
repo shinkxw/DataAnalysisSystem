@@ -33,9 +33,11 @@ class DBTableForQuery
   end
   #从数据库加载表数据
   def get_data_from_db
+    @data_arr = []
     get_field_from_db if @field_hash.empty?
     field_arr = @field_hash.values
     data_hash = @db.query(Sql.get_tdata(@name))
+    return if data_hash.empty?
     data_arr = field_arr.map{|field| data_hash[field.name]}.transpose
     data_arr.each{|value_arr| @data_arr << DBDataForQuery.new(field_arr, value_arr)}
   end

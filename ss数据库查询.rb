@@ -6,5 +6,5 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 DBEntityForQuery.open('HanruEdu', DBConnector.new('192.168.0.8')) do |db|
   #p db.select{|table| table.name.length > 36}
-  p db.EDU_ZZJX_01_A01_KCPJ.SCHOOLID
+  p db.EDU_ZZJG_01_01_JZGJBSJ.find{|d| d.schoolid == 1 && d.gh == '2'}
 end
