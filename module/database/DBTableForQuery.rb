@@ -33,9 +33,9 @@ class DBTableForQuery
     @field_hash.each_value{|field| yield(field)}
   end
   #从数据库加载表字段
-  def get_field_from_db;DBAnalyzer.new.analyze_field(self, @db)end
+  def get_field_from_db;DBAnalyzer.new.analyze_field(self, @db) end
   #增加字段
-  def add_field(field);@field_hash[field.name] = field end
+  def add_field(field);@field_hash[field.name.to_sym] = field end
   #遍历数据
   def each
     get_data_from_db if @data_arr == nil
@@ -48,6 +48,7 @@ class DBTableForQuery
   end
   #返回字段对象
   def method_missing(method_symbol, *pars)
+    get_field_from_db if @field_hash.empty?
     field = @field_hash[method_symbol]
     return field if field
     super

@@ -10,9 +10,10 @@ class DBEntityForQuery < DBEntity
   end
   #初始化数据库表信息
   def db_init
-    table_arr = get_table_name_arr.map{|tname| [tname.to_sym, DBTableForQuery.new(tname, self)]}
-    view_arr = get_view_name_arr.map{|vname| [vname.to_sym, DBTableForQuery.new(vname, self)]}
-    @table_hash = Hash[*(table_arr + view_arr).flatten]
+    @table_hash = {}
+    table_arr = get_table_name_arr.map{|tname| DBTableForQuery.new(tname, self)}
+    view_arr = get_view_name_arr.map{|vname| DBTableForQuery.new(vname, self)}
+    (table_arr + view_arr).each{|table| @table_hash[table.name.to_sym] = table}
   end
   #返回表对象
   def method_missing(method_symbol, *pars)
