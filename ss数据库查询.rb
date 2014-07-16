@@ -6,5 +6,24 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 
 DBEntityForQuery.open('HanruEdu', DBConnector.new('192.168.0.8')) do |db|
   #p db.select{|table| table.name.length > 36}
-  p db.EDU_ZZJG_01_01_JZGJBSJ.find{|d| d.schoolid == 1 && d.gh == '2'}
+  #p db.EDU_ZZJG_01_01_JZGJBSJ.find{|d| d.schoolid == 1 && d.gh == '2'}
+  school_hash = db.EDU_ZYZX_01_A01_ZYML.group_by{|d| d.SCHOOLID}
+  school_hash.each do |schoolid, school_arr|
+    fml_hash = school_arr.group_by{|d| d.FMLID}
+    fml_arr = []
+    lsml_arr = [DBDataForQuery.new([:ID,:FMLIDLB],[0,':0:'])]
+    until lsml_arr.empty?
+      fml_arr = lsml_arr
+      lsml_arr = []
+      fml_arr.each do |fml|
+        ml_arr = fml_hash[fml.ID]
+        next unless ml_arr
+        ml_arr.each do |ml|
+          ml.FMLIDLB = fml.FMLIDLB + ml.ID.to_s + ':'
+          lsml_arr << ml
+          p ml.FMLIDLB
+        end
+      end
+    end
+  end
 end
