@@ -106,6 +106,7 @@ CREATE TABLE [dbo].[EDU_ZYZX_01_A01_ZYML](
 	[SFSYZS]  int  NOT NULL,--是否首页展示
 	[SFQY]  int  NOT NULL,--是否启用
 	[URL]  nvarchar(500)  NOT NULL,--网址
+	[FMLIDLB]  nvarchar(500)  NOT NULL,--父目录ID列表
 CONSTRAINT [PK_EDU_ZYZX_01_A01_ZYML] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -506,6 +507,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否启用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'SFQY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'URL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'父目录ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A01_ZYML', @level2type=N'COLUMN',@level2name=N'FMLIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资源目录审核权限表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYZX_01_A02_ZYMLSHQX'
 GO

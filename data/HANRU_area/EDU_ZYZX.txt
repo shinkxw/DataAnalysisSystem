@@ -10,6 +10,7 @@
             <name="SFSYZS" exp="是否首页展示" type="int" null="F" p="F" />
             <name="SFQY" exp="是否启用" type="int" null="F" p="F" />
             <name="URL" exp="网址" type="nvarchar(500)" null="F" p="F" />
+            <name="FMLIDLB" exp="父目录ID列表" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYZX_01_A02_ZYMLSHQX" exp="资源目录审核权限表">

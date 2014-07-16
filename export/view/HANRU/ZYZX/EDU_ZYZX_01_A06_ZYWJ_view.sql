@@ -36,6 +36,7 @@ SELECT a.[ID]--编号
       ,c.SFSYZS as c_ZYML_SFSYZS--资源目录 是否首页展示
       ,c.SFQY as c_ZYML_SFQY--资源目录 是否启用
       ,c.URL as c_ZYML_URL--资源目录 网址
+      ,c.FMLIDLB as c_ZYML_FMLIDLB--资源目录 父目录ID列表
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码
