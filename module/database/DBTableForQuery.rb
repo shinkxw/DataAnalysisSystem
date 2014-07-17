@@ -17,6 +17,11 @@ class DBTableForQuery
   end
   #获得表的视图
   def view;@db.send("VIEW_#{@name}_DISP"); end
+  #获得所有字段信息
+  def fields
+    get_field_from_db if @field_hash.empty?
+    @field_hash.values
+  end
   #遍历字段
   def each_field
     get_field_from_db if @field_hash.empty?

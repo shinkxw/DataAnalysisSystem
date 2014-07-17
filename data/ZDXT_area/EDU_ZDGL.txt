@@ -47,4 +47,59 @@
             <name="SXDWMCLB" exp="送修单位名称列表" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZDGL_07_BXSB" exp="报修设备表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SBXHID" exp="设备型号ID" type="int" null="F" p="F" />
+            <name="SXDWID" exp="送修单位ID" type="int" null="F" p="F" />
+            <name="SNM" exp="S/N码" type="nvarchar(100)" null="F" p="F" />
+            <name="SCRQ" exp="生产日期" type="nvarchar(20)" null="F" p="F" />
+            <name="SCCJ" exp="生产厂家" type="nvarchar(100)" null="F" p="F" />
+            <name="BXZT" exp="保修状态" type="int" null="F" p="F" />
+            <name="BXHTID" exp="保修合同ID" type="int" null="F" p="F" />
+            <name="SBZT" exp="设备状态" type="int" null="F" p="F" />
+            <name="WXZT" exp="维修状态" type="int" null="F" p="F" />
+            <name="RKSJ" exp="入库时间" type="datetime" null="F" p="F" />
+            <name="RKCZYHID" exp="入库操作用户" type="nvarchar(20)" null="F" p="F" />
+            <name="FXM" exp="返修码" type="nvarchar(100)" null="F" p="F" />
+            <name="FXSJ" exp="返修时间" type="datetime" null="F" p="F" />
+            <name="FXDJYHID" exp="返修登记用户" type="nvarchar(20)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_08_SXDXX" exp="送修单信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SXDH" exp="送修单号" type="nvarchar(50)" null="F" p="F" />
+            <name="CJYHID" exp="创建用户" type="nvarchar(20)" null="F" p="F" />
+            <name="CJSJ" exp="创建时间" type="datetime" null="F" p="F" />
+            <name="SXSJ" exp="送修时间" type="datetime" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="ZT" exp="状态" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_09_SXSB" exp="送修设备表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SXDID" exp="送修单ID" type="int" null="F" p="F" />
+            <name="BXSBID" exp="报修设备ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_10_FXDXX" exp="返修单信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="FXDH" exp="返修单号" type="nvarchar(50)" null="F" p="F" />
+            <name="CJYHID" exp="创建用户" type="nvarchar(20)" null="F" p="F" />
+            <name="CJSJ" exp="创建时间" type="datetime" null="F" p="F" />
+            <name="FXSJ" exp="返修时间" type="datetime" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="ZT" exp="状态" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_11_FXSB" exp="返修设备表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="FXDID" exp="返修单ID" type="int" null="F" p="F" />
+            <name="BXSBID" exp="报修设备ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

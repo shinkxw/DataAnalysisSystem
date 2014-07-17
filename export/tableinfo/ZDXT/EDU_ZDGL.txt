@@ -33,3 +33,48 @@ EDU_ZDGL_06_BM  部门信息表
   SXDWLB        送修单位列表            text           非主
   SXDWMCLB      送修单位名称列表        text           非主
 
+EDU_ZDGL_07_BXSB  报修设备表
+  ID            编号                    int            主键
+  SBXHID        设备型号ID              int            非主        设备型号配置表
+  SXDWID        送修单位ID              int            非主        送修单位信息表
+  SNM           S/N码                   nvarchar(100)  非主
+  SCRQ          生产日期                nvarchar(20)   非主
+  SCCJ          生产厂家                nvarchar(100)  非主
+  BXZT          保修状态                int            非主
+  BXHTID        保修合同ID              int            非主        保修合同表
+  SBZT          设备状态                int            非主
+  WXZT          维修状态                int            非主
+  RKSJ          入库时间                datetime       非主
+  RKCZYHID      入库操作用户            nvarchar(20)   非主        应用系统用户表
+  FXM           返修码                  nvarchar(100)  非主
+  FXSJ          返修时间                datetime       非主
+  FXDJYHID      返修登记用户            nvarchar(20)   非主        应用系统用户表
+
+EDU_ZDGL_08_SXDXX  送修单信息表
+  ID            编号                    int            主键
+  SXDH          送修单号                nvarchar(50)   非主
+  CJYHID        创建用户                nvarchar(20)   非主        应用系统用户表
+  CJSJ          创建时间                datetime       非主
+  SXSJ          送修时间                datetime       非主
+  SHSJ          审核时间                datetime       非主
+  ZT            状态                    text           非主
+
+EDU_ZDGL_09_SXSB  送修设备表
+  ID            编号                    int            自增主键
+  SXDID         送修单ID                int            非主        送修单信息表
+  BXSBID        报修设备ID              int            非主        报修设备表
+
+EDU_ZDGL_10_FXDXX  返修单信息表
+  ID            编号                    int            主键
+  FXDH          返修单号                nvarchar(50)   非主
+  CJYHID        创建用户                nvarchar(20)   非主        应用系统用户表
+  CJSJ          创建时间                datetime       非主
+  FXSJ          返修时间                datetime       非主
+  SHSJ          审核时间                datetime       非主
+  ZT            状态                    text           非主
+
+EDU_ZDGL_11_FXSB  返修设备表
+  ID            编号                    int            自增主键
+  FXDID         返修单ID                int            非主        返修单信息表
+  BXSBID        报修设备ID              int            非主        报修设备表
+

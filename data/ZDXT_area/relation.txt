@@ -333,3 +333,19 @@
   SCCJID         EDU_ZDGL_02_SCCJ                   ID
 <EDU_ZDGL_04_SXDW
   QHM            EDU_GB_ZHRMGHGXZQH                 DM
+<EDU_ZDGL_07_BXSB
+  SBXHID         EDU_ZDGL_03_SBXH                   ID
+  SXDWID         EDU_ZDGL_04_SXDW                   ID
+  BXHTID         EDU_ZDGL_05_BXHT                   ID
+  RKCZYHID       EDU_ELE_01_USER                    LOGINNAME
+  FXDJYHID       EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZDGL_08_SXDXX
+  CJYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZDGL_09_SXSB
+  SXDID          EDU_ZDGL_08_SXDXX                  ID
+  BXSBID         EDU_ZDGL_07_BXSB                   ID
+<EDU_ZDGL_10_FXDXX
+  CJYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZDGL_11_FXSB
+  FXDID          EDU_ZDGL_10_FXDXX                  ID
+  BXSBID         EDU_ZDGL_07_BXSB                   ID
