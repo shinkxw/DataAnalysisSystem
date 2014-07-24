@@ -232,6 +232,14 @@
             <name="YJLX" exp="邮件类型" type="int" null="F" p="F" remark="1收件箱2草稿箱3已发送4已删除" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_11_A02_YJFSXZRS" exp="邮件发送限制人数表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FSRSSX" exp="发送人数上限" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_12_A01_SJFB" exp="数据发布类表">
         <field_area>
             <name="ID" exp="数据发布ID" type="int" null="F" p="T" identity="T" />
@@ -896,6 +904,17 @@
             <name="NR" exp="内容" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_30_A02_DSJXX" exp="大事记信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="BT" exp="标题" type="nvarchar(200)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_31_A01_GRTXL" exp="个人通讯录表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
@@ -1090,6 +1109,18 @@
             <name="RQ" exp="日期" type="datetime" null="F" p="F" />
             <name="JG" exp="结果" type="int" null="F" p="F" />
             <name="BJMC" exp="班级名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_37_A01_CYWDXX" exp="常用文档信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="BT" exp="标题" type="nvarchar(200)" null="F" p="F" />
+            <name="FBRXM" exp="发布人姓名" type="nvarchar(50)" null="F" p="F" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="LLRC" exp="浏览人次" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

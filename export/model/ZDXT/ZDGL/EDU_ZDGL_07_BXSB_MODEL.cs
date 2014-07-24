@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZDGL_07_BXSB()
         {
             SNM = "";
-            SCRQ = "";
+            SCRQ = DateTime.Now;
             SCCJ = "";
             RKSJ = DateTime.Now;
             RKCZYHID = "";
@@ -42,11 +42,9 @@ namespace HanRuEdu.LDAL
             public String SNM { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "生产日期")]
-            [StringLength(20)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SCRQ { get; set; }
+            public DateTime SCRQ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

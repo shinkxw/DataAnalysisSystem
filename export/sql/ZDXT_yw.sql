@@ -5107,7 +5107,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_07_BXSB](
 	[SBXHID]  int  NOT NULL,--设备型号ID
 	[SXDWID]  int  NOT NULL,--送修单位ID
 	[SNM]  nvarchar(100)  NOT NULL,--S/N码
-	[SCRQ]  nvarchar(20)  NOT NULL,--生产日期
+	[SCRQ]  datetime  NOT NULL,--生产日期
 	[SCCJ]  nvarchar(100)  NOT NULL,--生产厂家
 	[BXZT]  int  NOT NULL,--保修状态
 	[BXHTID]  int  NOT NULL,--保修合同ID

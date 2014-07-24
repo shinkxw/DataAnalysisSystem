@@ -38,7 +38,7 @@ EDU_ZDGL_07_BXSB  报修设备表
   SBXHID        设备型号ID              int            非主        设备型号配置表
   SXDWID        送修单位ID              int            非主        送修单位信息表
   SNM           S/N码                   nvarchar(100)  非主
-  SCRQ          生产日期                nvarchar(20)   非主
+  SCRQ          生产日期                datetime       非主
   SCCJ          生产厂家                nvarchar(100)  非主
   BXZT          保修状态                int            非主
   BXHTID        保修合同ID              int            非主        保修合同表

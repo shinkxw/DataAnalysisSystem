@@ -187,6 +187,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_11_A01
             and   type = 'V')
    drop view VIEW_EDU_OAXT_11_A01_YJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_11_A02_YJFSXZRS_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_11_A02_YJFSXZRS_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_12_A01_SJFB_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_12_A01_SJFB_DISP
@@ -291,6 +295,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_26_A03
             and   type = 'V')
    drop view VIEW_EDU_OAXT_26_A03_SYSSQ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_30_A02_DSJXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_30_A02_DSJXX_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_31_A01_GRTXL_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_31_A01_GRTXL_DISP
@@ -334,6 +342,10 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_36_A02_BJGZJC_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_36_A02_BJGZJC_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_37_A01_CYWDXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_OAXT_37_A01_CYWDXX_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_VIP_DISP')
             and   type = 'V')
@@ -1887,18 +1899,9 @@ SELECT a.[ID]--编号
       ,a.[XQID]--学期ID
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
-      ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
-      ,d.XNID as d_XQ_XNID--学期数据表 学年
-      ,d.XQM as d_XQ_XQM--学期数据表 学期码
-      ,[db].MC as d_XQ_XQM_MC--学期代码表 名称
-      ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
-      ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ELE_05_XL AS a LEFT OUTER JOIN
-      dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/
+      dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
 --校历周表
@@ -3627,6 +3630,35 @@ FROM dbo.EDU_OAXT_11_A01_YJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFYD = f.DM /*是否已阅读*/
 GO
 
+--邮件发送限制人数表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_11_A02_YJFSXZRS_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[YHID]--用户ID
+      ,a.[FSRSSX]--发送人数上限
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_OAXT_11_A02_YJFSXZRS AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.YHID = c.LOGINNAME /*用户ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
 --数据发布类表
 CREATE VIEW [dbo].[VIEW_EDU_OAXT_12_A01_SJFB_DISP]
 AS
@@ -4905,6 +4937,38 @@ FROM dbo.EDU_OAXT_26_A03_SYSSQ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.SQRID = e.LOGINNAME /*申请人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
 GO
 
+--大事记信息表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_30_A02_DSJXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[BT]--标题
+      ,a.[NR]--内容
+      ,a.[FBRID]--发布人ID
+      ,a.[TJSJ]--添加时间
+      ,a.[SHZT]--审核状态
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_OAXT_30_A02_DSJXX AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
 --个人通讯录表
 CREATE VIEW [dbo].[VIEW_EDU_OAXT_31_A01_GRTXL_DISP]
 AS
@@ -5372,6 +5436,39 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_OAXT_36_A02_BJGZJC AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_36_A01_BJGZLB AS c ON a.GZLBID = c.ID /*工作类别ID*/
+GO
+
+--常用文档信息表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_37_A01_CYWDXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[BT]--标题
+      ,a.[FBRXM]--发布人姓名
+      ,a.[FBRID]--发布人ID
+      ,a.[FBSJ]--发布时间
+      ,a.[NR]--内容
+      ,a.[LLRC]--浏览人次
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_OAXT_37_A01_CYWDXX AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
 --网站会员

@@ -52,7 +52,6 @@
 <EDU_ELE_05_XL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID
-  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ELE_05_XLZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XLID           EDU_ELE_05_XL                      ID
@@ -204,6 +203,9 @@
   FSRID          EDU_ELE_01_USER                    LOGINNAME
   JSRID          EDU_ELE_01_USER                    LOGINNAME
   SFYD           EDU_JY_SFBZ                        DM
+<EDU_OAXT_11_A02_YJFSXZRS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_12_A01_SJFB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
@@ -344,6 +346,9 @@
   SQRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_30_A01_DSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_30_A02_DSJXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_31_A01_GRTXL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GRID           EDU_ELE_01_USER                    LOGINNAME
@@ -399,6 +404,9 @@
 <EDU_OAXT_36_A02_BJGZJC
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   GZLBID         EDU_OAXT_36_A01_BJGZLB             ID
+<EDU_OAXT_37_A01_CYWDXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP
