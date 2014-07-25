@@ -7,7 +7,7 @@ SELECT a.[ID]--编号
       ,a.[CJYHID]--创建用户
       ,a.[CJSJ]--创建时间
       ,a.[FXSJ]--返修时间
-      ,a.[SHSJ]--审核时间
+      ,a.[QRSJ]--确认时间
       ,a.[ZT]--状态
       ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
       ,b.APPID as b_USER_APPID--应用系统用户表 应用ID

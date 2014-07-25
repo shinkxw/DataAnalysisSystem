@@ -13,8 +13,7 @@ namespace HanRuEdu.LDAL
             CJYHID = "";
             CJSJ = DateTime.Now;
             SXSJ = DateTime.Now;
-            SHSJ = DateTime.Now;
-            ZT = "";
+            QRSJ = DateTime.Now;
         }
         public class EDU_ZDGL_08_SXDXX_metadata
         {
@@ -48,14 +47,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "审核时间")]
-            public DateTime SHSJ { get; set; }
+            [Display(Name = "确认时间")]
+            public DateTime QRSJ { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "状态")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String ZT { get; set; }
+            public Int32 ZT { get; set; }
 
 
         }

@@ -3501,9 +3501,12 @@ AS
 SELECT a.[ID]--编号
       ,a.[SBXHID]--设备型号ID
       ,a.[SXDWID]--送修单位ID
+      ,a.[SXDWMC]--送修单位名称
       ,a.[SNM]--S/N码
       ,a.[SCRQ]--生产日期
-      ,a.[SCCJ]--生产厂家
+      ,a.[SBLXMC]--设备类型名称
+      ,a.[SCCJMC]--生产厂家名称
+      ,a.[SBXHMC]--设备型号名称
       ,a.[BXZT]--保修状态
       ,a.[BXHTID]--保修合同ID
       ,a.[SBZT]--设备状态
@@ -3578,7 +3581,7 @@ SELECT a.[ID]--编号
       ,a.[CJYHID]--创建用户
       ,a.[CJSJ]--创建时间
       ,a.[SXSJ]--送修时间
-      ,a.[SHSJ]--审核时间
+      ,a.[QRSJ]--确认时间
       ,a.[ZT]--状态
       ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
       ,b.APPID as b_USER_APPID--应用系统用户表 应用ID
@@ -3613,13 +3616,16 @@ SELECT a.[ID]--编号
       ,b.CJYHID as b_SXDXX_CJYHID--送修单信息表 创建用户
       ,b.CJSJ as b_SXDXX_CJSJ--送修单信息表 创建时间
       ,b.SXSJ as b_SXDXX_SXSJ--送修单信息表 送修时间
-      ,b.SHSJ as b_SXDXX_SHSJ--送修单信息表 审核时间
+      ,b.QRSJ as b_SXDXX_QRSJ--送修单信息表 确认时间
       ,b.ZT as b_SXDXX_ZT--送修单信息表 状态
       ,c.SBXHID as c_BXSB_SBXHID--报修设备表 设备型号ID
       ,c.SXDWID as c_BXSB_SXDWID--报修设备表 送修单位ID
+      ,c.SXDWMC as c_BXSB_SXDWMC--报修设备表 送修单位名称
       ,c.SNM as c_BXSB_SNM--报修设备表 S/N码
       ,c.SCRQ as c_BXSB_SCRQ--报修设备表 生产日期
-      ,c.SCCJ as c_BXSB_SCCJ--报修设备表 生产厂家
+      ,c.SBLXMC as c_BXSB_SBLXMC--报修设备表 设备类型名称
+      ,c.SCCJMC as c_BXSB_SCCJMC--报修设备表 生产厂家名称
+      ,c.SBXHMC as c_BXSB_SBXHMC--报修设备表 设备型号名称
       ,c.BXZT as c_BXSB_BXZT--报修设备表 保修状态
       ,c.BXHTID as c_BXSB_BXHTID--报修设备表 保修合同ID
       ,c.SBZT as c_BXSB_SBZT--报修设备表 设备状态
@@ -3643,7 +3649,7 @@ SELECT a.[ID]--编号
       ,a.[CJYHID]--创建用户
       ,a.[CJSJ]--创建时间
       ,a.[FXSJ]--返修时间
-      ,a.[SHSJ]--审核时间
+      ,a.[QRSJ]--确认时间
       ,a.[ZT]--状态
       ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
       ,b.APPID as b_USER_APPID--应用系统用户表 应用ID
@@ -3678,13 +3684,16 @@ SELECT a.[ID]--编号
       ,b.CJYHID as b_FXDXX_CJYHID--返修单信息表 创建用户
       ,b.CJSJ as b_FXDXX_CJSJ--返修单信息表 创建时间
       ,b.FXSJ as b_FXDXX_FXSJ--返修单信息表 返修时间
-      ,b.SHSJ as b_FXDXX_SHSJ--返修单信息表 审核时间
+      ,b.QRSJ as b_FXDXX_QRSJ--返修单信息表 确认时间
       ,b.ZT as b_FXDXX_ZT--返修单信息表 状态
       ,c.SBXHID as c_BXSB_SBXHID--报修设备表 设备型号ID
       ,c.SXDWID as c_BXSB_SXDWID--报修设备表 送修单位ID
+      ,c.SXDWMC as c_BXSB_SXDWMC--报修设备表 送修单位名称
       ,c.SNM as c_BXSB_SNM--报修设备表 S/N码
       ,c.SCRQ as c_BXSB_SCRQ--报修设备表 生产日期
-      ,c.SCCJ as c_BXSB_SCCJ--报修设备表 生产厂家
+      ,c.SBLXMC as c_BXSB_SBLXMC--报修设备表 设备类型名称
+      ,c.SCCJMC as c_BXSB_SCCJMC--报修设备表 生产厂家名称
+      ,c.SBXHMC as c_BXSB_SBXHMC--报修设备表 设备型号名称
       ,c.BXZT as c_BXSB_BXZT--报修设备表 保修状态
       ,c.BXHTID as c_BXSB_BXHTID--报修设备表 保修合同ID
       ,c.SBZT as c_BXSB_SBZT--报修设备表 设备状态

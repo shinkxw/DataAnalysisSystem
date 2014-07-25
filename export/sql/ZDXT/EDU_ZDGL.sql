@@ -156,9 +156,12 @@ CREATE TABLE [dbo].[EDU_ZDGL_07_BXSB](
 	[ID]  int  NOT NULL,--编号
 	[SBXHID]  int  NOT NULL,--设备型号ID
 	[SXDWID]  int  NOT NULL,--送修单位ID
+	[SXDWMC]  nvarchar(50)  NOT NULL,--送修单位名称
 	[SNM]  nvarchar(100)  NOT NULL,--S/N码
 	[SCRQ]  datetime  NOT NULL,--生产日期
-	[SCCJ]  nvarchar(100)  NOT NULL,--生产厂家
+	[SBLXMC]  nvarchar(50)  NOT NULL,--设备类型名称
+	[SCCJMC]  nvarchar(50)  NOT NULL,--生产厂家名称
+	[SBXHMC]  nvarchar(50)  NOT NULL,--设备型号名称
 	[BXZT]  int  NOT NULL,--保修状态
 	[BXHTID]  int  NOT NULL,--保修合同ID
 	[SBZT]  int  NOT NULL,--设备状态
@@ -185,8 +188,8 @@ CREATE TABLE [dbo].[EDU_ZDGL_08_SXDXX](
 	[CJYHID]  nvarchar(20)  NOT NULL,--创建用户
 	[CJSJ]  datetime  NOT NULL,--创建时间
 	[SXSJ]  datetime  NOT NULL,--送修时间
-	[SHSJ]  datetime  NOT NULL,--审核时间
-	[ZT]  text  NOT NULL,--状态
+	[QRSJ]  datetime  NOT NULL,--确认时间
+	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZDGL_08_SXDXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -219,8 +222,8 @@ CREATE TABLE [dbo].[EDU_ZDGL_10_FXDXX](
 	[CJYHID]  nvarchar(20)  NOT NULL,--创建用户
 	[CJSJ]  datetime  NOT NULL,--创建时间
 	[FXSJ]  datetime  NOT NULL,--返修时间
-	[SHSJ]  datetime  NOT NULL,--审核时间
-	[ZT]  text  NOT NULL,--状态
+	[QRSJ]  datetime  NOT NULL,--确认时间
+	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZDGL_10_FXDXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -311,11 +314,17 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'设备型号ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SXDWID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SXDWMC'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'S/N码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SNM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'生产日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SCRQ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'生产厂家' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SCCJ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'设备类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SBLXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'生产厂家名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SCCJMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'设备型号名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'SBXHMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'保修状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'BXZT'
 GO
@@ -347,7 +356,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'创建时间' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_08_SXDXX', @level2type=N'COLUMN',@level2name=N'SXSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_08_SXDXX', @level2type=N'COLUMN',@level2name=N'SHSJ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'确认时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_08_SXDXX', @level2type=N'COLUMN',@level2name=N'QRSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_08_SXDXX', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
@@ -371,7 +380,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'创建时间' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'返修时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_10_FXDXX', @level2type=N'COLUMN',@level2name=N'FXSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_10_FXDXX', @level2type=N'COLUMN',@level2name=N'SHSJ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'确认时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_10_FXDXX', @level2type=N'COLUMN',@level2name=N'QRSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_10_FXDXX', @level2type=N'COLUMN',@level2name=N'ZT'
 GO

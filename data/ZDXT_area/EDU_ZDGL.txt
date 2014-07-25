@@ -52,9 +52,12 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SBXHID" exp="设备型号ID" type="int" null="F" p="F" />
             <name="SXDWID" exp="送修单位ID" type="int" null="F" p="F" />
+            <name="SXDWMC" exp="送修单位名称" type="nvarchar(50)" null="F" p="F" />
             <name="SNM" exp="S/N码" type="nvarchar(100)" null="F" p="F" />
             <name="SCRQ" exp="生产日期" type="datetime" null="F" p="F" />
-            <name="SCCJ" exp="生产厂家" type="nvarchar(100)" null="F" p="F" />
+            <name="SBLXMC" exp="设备类型名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SCCJMC" exp="生产厂家名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SBXHMC" exp="设备型号名称" type="nvarchar(50)" null="F" p="F" />
             <name="BXZT" exp="保修状态" type="int" null="F" p="F" />
             <name="BXHTID" exp="保修合同ID" type="int" null="F" p="F" />
             <name="SBZT" exp="设备状态" type="int" null="F" p="F" />
@@ -73,8 +76,8 @@
             <name="CJYHID" exp="创建用户" type="nvarchar(20)" null="F" p="F" />
             <name="CJSJ" exp="创建时间" type="datetime" null="F" p="F" />
             <name="SXSJ" exp="送修时间" type="datetime" null="F" p="F" />
-            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
-            <name="ZT" exp="状态" type="text" null="F" p="F" />
+            <name="QRSJ" exp="确认时间" type="datetime" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_09_SXSB" exp="送修设备表">
@@ -91,8 +94,8 @@
             <name="CJYHID" exp="创建用户" type="nvarchar(20)" null="F" p="F" />
             <name="CJSJ" exp="创建时间" type="datetime" null="F" p="F" />
             <name="FXSJ" exp="返修时间" type="datetime" null="F" p="F" />
-            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
-            <name="ZT" exp="状态" type="text" null="F" p="F" />
+            <name="QRSJ" exp="确认时间" type="datetime" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_11_FXSB" exp="返修设备表">

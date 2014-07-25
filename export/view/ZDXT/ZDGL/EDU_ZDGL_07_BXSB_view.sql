@@ -5,9 +5,12 @@ AS
 SELECT a.[ID]--编号
       ,a.[SBXHID]--设备型号ID
       ,a.[SXDWID]--送修单位ID
+      ,a.[SXDWMC]--送修单位名称
       ,a.[SNM]--S/N码
       ,a.[SCRQ]--生产日期
-      ,a.[SCCJ]--生产厂家
+      ,a.[SBLXMC]--设备类型名称
+      ,a.[SCCJMC]--生产厂家名称
+      ,a.[SBXHMC]--设备型号名称
       ,a.[BXZT]--保修状态
       ,a.[BXHTID]--保修合同ID
       ,a.[SBZT]--设备状态

@@ -9,9 +9,12 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZDGL_07_BXSB()
         {
+            SXDWMC = "";
             SNM = "";
             SCRQ = DateTime.Now;
-            SCCJ = "";
+            SBLXMC = "";
+            SCCJMC = "";
+            SBXHMC = "";
             RKSJ = DateTime.Now;
             RKCZYHID = "";
             FXM = "";
@@ -36,6 +39,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "送修单位名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SXDWMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "S/N码")]
             [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
@@ -48,10 +58,24 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "生产厂家")]
-            [StringLength(100)]
+            [Display(Name = "设备类型名称")]
+            [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SCCJ { get; set; }
+            public String SBLXMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "生产厂家名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SCCJMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "设备型号名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SBXHMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
