@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_OAXT_31_A03_XGRTXL()
         {
-            GRID = "";
             NR = "";
         }
         public class EDU_OAXT_31_A03_XGRTXL_metadata
@@ -24,11 +23,9 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "个人")]
-            [StringLength(20)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String GRID { get; set; }
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "通讯录")]
+            public Int32 TXLID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

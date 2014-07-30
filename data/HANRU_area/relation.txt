@@ -356,7 +356,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_OAXT_31_A03_XGRTXL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  GRID           EDU_ELE_01_USER                    LOGINNAME
+  TXLID          EDU_OAXT_31_A01_GRTXL              ID
   ZDPZID         EDU_OAXT_31_A02_GRTXLZDPZ          ID
 <EDU_OAXT_32_A01_DCWJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

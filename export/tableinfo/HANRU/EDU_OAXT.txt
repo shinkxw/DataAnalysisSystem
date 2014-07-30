@@ -802,7 +802,7 @@ EDU_OAXT_31_A02_GRTXLZDPZ  个人通讯录字段配置表
 EDU_OAXT_31_A03_XGRTXL  新个人通讯录表
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主        学校配置表
-  GRID          个人ID                  nvarchar(20)   非主        应用系统用户表
+  TXLID         通讯录ID                int            非主        个人通讯录表
   ZDPZID        字段配置表ID            int            非主        个人通讯录字段配置表
   NR            内容                    nvarchar(200)  非主
 

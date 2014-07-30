@@ -1920,7 +1920,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_OAXT_31_A03_XGRTXL](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[GRID]  nvarchar(20)  NOT NULL,--个人ID
+	[TXLID]  int  NOT NULL,--通讯录ID
 	[ZDPZID]  int  NOT NULL,--字段配置表ID
 	[NR]  nvarchar(200)  NOT NULL,--内容
 CONSTRAINT [PK_EDU_OAXT_31_A03_XGRTXL] PRIMARY KEY CLUSTERED
@@ -3749,7 +3749,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'GRID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'通讯录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'TXLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段配置表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'ZDPZID'
 GO
