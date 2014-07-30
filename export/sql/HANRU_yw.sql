@@ -2324,6 +2324,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_31_A01_GRTX
    drop table EDU_OAXT_31_A01_GRTXL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_31_A02_GRTXLZDPZ')
+            and   type = 'U')
+   drop table EDU_OAXT_31_A02_GRTXLZDPZ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_31_A03_XGRTXL')
+            and   type = 'U')
+   drop table EDU_OAXT_31_A03_XGRTXL
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_32_A01_DCWJ')
             and   type = 'U')
    drop table EDU_OAXT_32_A01_DCWJ
@@ -3887,6 +3897,39 @@ CONSTRAINT [PK_EDU_OAXT_31_A01_GRTXL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--个人通讯录字段配置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_31_A02_GRTXLZDPZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_31_A02_GRTXLZDPZ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[ZDMC]  nvarchar(200)  NOT NULL,--字段名称
+CONSTRAINT [PK_EDU_OAXT_31_A02_GRTXLZDPZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--新个人通讯录表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_31_A03_XGRTXL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_31_A03_XGRTXL](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[GRID]  nvarchar(20)  NOT NULL,--个人ID
+	[ZDPZID]  int  NOT NULL,--字段配置表ID
+	[NR]  nvarchar(200)  NOT NULL,--内容
+CONSTRAINT [PK_EDU_OAXT_31_A03_XGRTXL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -5695,6 +5738,26 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'联系人姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A01_GRTXL', @level2type=N'COLUMN',@level2name=N'LXRXM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'联系人电话' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A01_GRTXL', @level2type=N'COLUMN',@level2name=N'LXRDH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人通讯录字段配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A02_GRTXLZDPZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A02_GRTXLZDPZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A02_GRTXLZDPZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A02_GRTXLZDPZ', @level2type=N'COLUMN',@level2name=N'ZDMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新个人通讯录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'GRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段配置表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'ZDPZID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A03_XGRTXL', @level2type=N'COLUMN',@level2name=N'NR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调查问卷数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_32_A01_DCWJ'
 GO
