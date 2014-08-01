@@ -26,8 +26,8 @@ SELECT a.[ID]--编号
       ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
       ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
       ,c.FXM as c_BXSB_FXM--报修设备表 返修码
-      ,c.FXSJ as c_BXSB_FXSJ--报修设备表 返修时间
-      ,c.FXDJYHID as c_BXSB_FXDJYHID--报修设备表 返修登记用户
+      ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
+      ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
 
 FROM dbo.EDU_ZDGL_09_SXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_08_SXDXX AS b ON a.SXDID = b.ID /*送修单ID*/ LEFT OUTER JOIN

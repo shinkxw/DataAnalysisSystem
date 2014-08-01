@@ -11,6 +11,8 @@ SELECT a.[ID]--编号
       ,b.FXSJ as b_FXDXX_FXSJ--返修单信息表 返修时间
       ,b.QRSJ as b_FXDXX_QRSJ--返修单信息表 确认时间
       ,b.ZT as b_FXDXX_ZT--返修单信息表 状态
+      ,b.SHDW as b_FXDXX_SHDW--返修单信息表 收货单位
+      ,b.KDDH as b_FXDXX_KDDH--返修单信息表 快递单号
       ,c.SBXHID as c_BXSB_SBXHID--报修设备表 设备型号ID
       ,c.SXDWID as c_BXSB_SXDWID--报修设备表 送修单位ID
       ,c.SXDWMC as c_BXSB_SXDWMC--报修设备表 送修单位名称
@@ -26,8 +28,8 @@ SELECT a.[ID]--编号
       ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
       ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
       ,c.FXM as c_BXSB_FXM--报修设备表 返修码
-      ,c.FXSJ as c_BXSB_FXSJ--报修设备表 返修时间
-      ,c.FXDJYHID as c_BXSB_FXDJYHID--报修设备表 返修登记用户
+      ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
+      ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
 
 FROM dbo.EDU_ZDGL_11_FXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_10_FXDXX AS b ON a.FXDID = b.ID /*返修单ID*/ LEFT OUTER JOIN

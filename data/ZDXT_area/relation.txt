@@ -338,7 +338,7 @@
   SXDWID         EDU_ZDGL_04_SXDW                   ID
   BXHTID         EDU_ZDGL_05_BXHT                   ID
   RKCZYHID       EDU_ELE_01_USER                    LOGINNAME
-  FXDJYHID       EDU_ELE_01_USER                    LOGINNAME
+  WXJSDJYHID     EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZDGL_08_SXDXX
   CJYHID         EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZDGL_09_SXSB

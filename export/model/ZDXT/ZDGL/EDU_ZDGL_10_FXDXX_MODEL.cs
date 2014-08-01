@@ -14,6 +14,8 @@ namespace HanRuEdu.LDAL
             CJSJ = DateTime.Now;
             FXSJ = DateTime.Now;
             QRSJ = DateTime.Now;
+            SHDW = "";
+            KDDH = "";
         }
         public class EDU_ZDGL_10_FXDXX_metadata
         {
@@ -54,6 +56,20 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "状态")]
             public Int32 ZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "收货单位")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SHDW { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "快递单号")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KDDH { get; set; }
 
 
         }

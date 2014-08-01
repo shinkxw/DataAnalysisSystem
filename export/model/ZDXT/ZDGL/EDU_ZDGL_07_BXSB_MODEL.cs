@@ -18,8 +18,8 @@ namespace HanRuEdu.LDAL
             RKSJ = DateTime.Now;
             RKCZYHID = "";
             FXM = "";
-            FXSJ = DateTime.Now;
-            FXDJYHID = "";
+            WXJSSJ = DateTime.Now;
+            WXJSDJYHID = "";
         }
         public class EDU_ZDGL_07_BXSB_metadata
         {
@@ -118,15 +118,15 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "返修时间")]
-            public DateTime FXSJ { get; set; }
+            [Display(Name = "维修结束时间")]
+            public DateTime WXJSSJ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "返修登记用户")]
+            [Display(Name = "维修结束登记用户")]
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FXDJYHID { get; set; }
+            public String WXJSDJYHID { get; set; }
 
 
         }

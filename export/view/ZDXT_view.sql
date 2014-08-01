@@ -3514,8 +3514,8 @@ SELECT a.[ID]--编号
       ,a.[RKSJ]--入库时间
       ,a.[RKCZYHID]--入库操作用户
       ,a.[FXM]--返修码
-      ,a.[FXSJ]--返修时间
-      ,a.[FXDJYHID]--返修登记用户
+      ,a.[WXJSSJ]--维修结束时间
+      ,a.[WXJSDJYHID]--维修结束登记用户
       ,b.SBLXID as b_SBXH_SBLXID--设备型号配置表 设备类型ID
       ,b.SCCJID as b_SBXH_SCCJID--设备型号配置表 生产厂家ID
       ,b.XHMC as b_SBXH_XHMC--设备型号配置表 型号名称
@@ -3569,7 +3569,7 @@ FROM dbo.EDU_ZDGL_07_BXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_04_SXDW AS c ON a.SXDWID = c.ID /*送修单位ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_05_BXHT AS d ON a.BXHTID = d.ID /*保修合同ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.RKCZYHID = e.LOGINNAME /*入库操作用户*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS f ON a.FXDJYHID = f.LOGINNAME /*返修登记用户*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.WXJSDJYHID = f.LOGINNAME /*维修结束登记用户*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cb] ON c.QHM = [cb].DM /*区划码*/
 GO
 
@@ -3633,8 +3633,8 @@ SELECT a.[ID]--编号
       ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
       ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
       ,c.FXM as c_BXSB_FXM--报修设备表 返修码
-      ,c.FXSJ as c_BXSB_FXSJ--报修设备表 返修时间
-      ,c.FXDJYHID as c_BXSB_FXDJYHID--报修设备表 返修登记用户
+      ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
+      ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
 
 FROM dbo.EDU_ZDGL_09_SXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_08_SXDXX AS b ON a.SXDID = b.ID /*送修单ID*/ LEFT OUTER JOIN
@@ -3651,6 +3651,8 @@ SELECT a.[ID]--编号
       ,a.[FXSJ]--返修时间
       ,a.[QRSJ]--确认时间
       ,a.[ZT]--状态
+      ,a.[SHDW]--收货单位
+      ,a.[KDDH]--快递单号
       ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
       ,b.APPID as b_USER_APPID--应用系统用户表 应用ID
       ,b.PWD as b_USER_PWD--应用系统用户表 密码
@@ -3686,6 +3688,8 @@ SELECT a.[ID]--编号
       ,b.FXSJ as b_FXDXX_FXSJ--返修单信息表 返修时间
       ,b.QRSJ as b_FXDXX_QRSJ--返修单信息表 确认时间
       ,b.ZT as b_FXDXX_ZT--返修单信息表 状态
+      ,b.SHDW as b_FXDXX_SHDW--返修单信息表 收货单位
+      ,b.KDDH as b_FXDXX_KDDH--返修单信息表 快递单号
       ,c.SBXHID as c_BXSB_SBXHID--报修设备表 设备型号ID
       ,c.SXDWID as c_BXSB_SXDWID--报修设备表 送修单位ID
       ,c.SXDWMC as c_BXSB_SXDWMC--报修设备表 送修单位名称
@@ -3701,8 +3705,8 @@ SELECT a.[ID]--编号
       ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
       ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
       ,c.FXM as c_BXSB_FXM--报修设备表 返修码
-      ,c.FXSJ as c_BXSB_FXSJ--报修设备表 返修时间
-      ,c.FXDJYHID as c_BXSB_FXDJYHID--报修设备表 返修登记用户
+      ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
+      ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
 
 FROM dbo.EDU_ZDGL_11_FXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_10_FXDXX AS b ON a.FXDID = b.ID /*返修单ID*/ LEFT OUTER JOIN

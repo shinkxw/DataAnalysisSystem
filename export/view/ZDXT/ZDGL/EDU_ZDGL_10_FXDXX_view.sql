@@ -9,6 +9,8 @@ SELECT a.[ID]--编号
       ,a.[FXSJ]--返修时间
       ,a.[QRSJ]--确认时间
       ,a.[ZT]--状态
+      ,a.[SHDW]--收货单位
+      ,a.[KDDH]--快递单号
       ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
       ,b.APPID as b_USER_APPID--应用系统用户表 应用ID
       ,b.PWD as b_USER_PWD--应用系统用户表 密码

@@ -18,8 +18,8 @@ SELECT a.[ID]--编号
       ,a.[RKSJ]--入库时间
       ,a.[RKCZYHID]--入库操作用户
       ,a.[FXM]--返修码
-      ,a.[FXSJ]--返修时间
-      ,a.[FXDJYHID]--返修登记用户
+      ,a.[WXJSSJ]--维修结束时间
+      ,a.[WXJSDJYHID]--维修结束登记用户
       ,b.SBLXID as b_SBXH_SBLXID--设备型号配置表 设备类型ID
       ,b.SCCJID as b_SBXH_SCCJID--设备型号配置表 生产厂家ID
       ,b.XHMC as b_SBXH_XHMC--设备型号配置表 型号名称
@@ -73,6 +73,6 @@ FROM dbo.EDU_ZDGL_07_BXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_04_SXDW AS c ON a.SXDWID = c.ID /*送修单位ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_05_BXHT AS d ON a.BXHTID = d.ID /*保修合同ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.RKCZYHID = e.LOGINNAME /*入库操作用户*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS f ON a.FXDJYHID = f.LOGINNAME /*返修登记用户*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.WXJSDJYHID = f.LOGINNAME /*维修结束登记用户*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cb] ON c.QHM = [cb].DM /*区划码*/
 GO

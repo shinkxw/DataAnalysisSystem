@@ -65,8 +65,8 @@
             <name="RKSJ" exp="入库时间" type="datetime" null="F" p="F" />
             <name="RKCZYHID" exp="入库操作用户" type="nvarchar(20)" null="F" p="F" />
             <name="FXM" exp="返修码" type="nvarchar(100)" null="F" p="F" />
-            <name="FXSJ" exp="返修时间" type="datetime" null="F" p="F" />
-            <name="FXDJYHID" exp="返修登记用户" type="nvarchar(20)" null="F" p="F" />
+            <name="WXJSSJ" exp="维修结束时间" type="datetime" null="F" p="F" />
+            <name="WXJSDJYHID" exp="维修结束登记用户" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_08_SXDXX" exp="送修单信息表">
@@ -96,6 +96,8 @@
             <name="FXSJ" exp="返修时间" type="datetime" null="F" p="F" />
             <name="QRSJ" exp="确认时间" type="datetime" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="SHDW" exp="收货单位" type="nvarchar(200)" null="F" p="F" />
+            <name="KDDH" exp="快递单号" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_11_FXSB" exp="返修设备表">

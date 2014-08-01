@@ -12,5 +12,5 @@ AreaManager.load_area_and_db('ZDXT','DBTerminal') do |work_area,db|#HanruEdu
   #work_area.export_all#ÉÏ´«
   #work_area.export_all(false)
   #DBUpdater.new(work_area.area,db).update_db
-  work_area.export_template
+  #work_area.export_template
 end
