@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZDGL_04_SXDW()
         {
             QHM = "";
+            SSSJQHM = "";
             DWMC = "";
             DWMCPY = "";
         }
@@ -25,6 +26,13 @@ namespace HanRuEdu.LDAL
             [StringLength(6)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String QHM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "所属市级区划码")]
+            [StringLength(4)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SSSJQHM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

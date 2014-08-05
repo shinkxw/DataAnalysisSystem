@@ -108,6 +108,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZDGL_04_SXDW](
 	[ID]  int  NOT NULL,--编号
 	[QHM]  nvarchar(6)  NOT NULL,--区划码
+	[SSSJQHM]  nvarchar(4)  NOT NULL,--所属市级区划码
 	[DWMC]  nvarchar(50)  NOT NULL,--单位名称
 	[DWMCPY]  nvarchar(500)  NOT NULL,--单位名称拼音
 CONSTRAINT [PK_EDU_ZDGL_04_SXDW] PRIMARY KEY CLUSTERED
@@ -285,6 +286,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'区划码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'QHM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属市级区划码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'SSSJQHM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'单位名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_04_SXDW', @level2type=N'COLUMN',@level2name=N'DWMC'
 GO

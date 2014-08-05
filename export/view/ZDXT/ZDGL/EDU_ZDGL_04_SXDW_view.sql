@@ -4,6 +4,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZDGL_04_SXDW_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[QHM]--区划码
+      ,a.[SSSJQHM]--所属市级区划码
       ,a.[DWMC]--单位名称
       ,a.[DWMCPY]--单位名称拼音
       ,b.MC as b_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
