@@ -24,6 +24,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "评教")]
+            public Int32 PJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "学生")]
             public Int32 XSID { get; set; }
 

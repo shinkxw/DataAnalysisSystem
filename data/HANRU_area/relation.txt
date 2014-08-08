@@ -52,6 +52,7 @@
 <EDU_ELE_05_XL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ELE_05_XLZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XLID           EDU_ELE_05_XL                      ID
@@ -1824,11 +1825,13 @@
   PFFSID         EDU_ZZJX_50_A12_PJPFFS             ID
 <EDU_ZZJX_50_A15_PJJG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  PJID           EDU_ZZJX_50_A11_XKXSPJ             ID
   JXBID          EDU_ZZJX_50_A03_JXBSJ              ID
   XSID           EDU_ZZXS_01_01_XSXX                ID
   TMID           EDU_ZZJX_50_A14_PJTM               ID
 <EDU_ZZJX_50_A16_PJTJJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  PJID           EDU_ZZJX_50_A11_XKXSPJ             ID
   XSID           EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

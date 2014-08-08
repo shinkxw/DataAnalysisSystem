@@ -175,7 +175,7 @@ EDU_ELE_05_XL  校历表
   STARTDAY      开始日期                datetime       非主
   ENDDAY        结束日期                datetime       非主
   XNID          学年ID                  int            非主        学年表
-  XQID          学期ID                  int            非主
+  XQID          学期ID                  int            非主        学期数据表
 
 EDU_ELE_05_XLZ  校历周表
   ID            编号                    int            主键
