@@ -332,7 +332,7 @@
   SBLXID         EDU_ZDGL_01_SBLX                   ID
   SCCJID         EDU_ZDGL_02_SCCJ                   ID
 <EDU_ZDGL_04_SXDW
-  QHM            EDU_GB_ZHRMGHGXZQH                 DM
+  QHM            EDU_ELE_10_XZQH                    DM
 <EDU_ZDGL_07_BXSB
   SBXHID         EDU_ZDGL_03_SBXH                   ID
   SXDWID         EDU_ZDGL_04_SXDW                   ID

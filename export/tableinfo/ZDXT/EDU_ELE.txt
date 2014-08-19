@@ -239,3 +239,8 @@ EDU_ELE_09_JKXX  接口信息表
   TJSJ          添加时间                datetime       非主
   TJYH          添加用户                nvarchar(20)   非主        应用系统用户表
 
+EDU_ELE_10_XZQH  行政区划表
+  DM            代码                    nvarchar(6)    主键
+  MC            名称                    nvarchar(15)   非主
+  QH            区号                    nvarchar(4)    非主
+

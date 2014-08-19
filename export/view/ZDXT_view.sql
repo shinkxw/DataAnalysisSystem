@@ -3493,10 +3493,11 @@ SELECT a.[ID]--编号
       ,a.[SSSJQHM]--所属市级区划码
       ,a.[DWMC]--单位名称
       ,a.[DWMCPY]--单位名称拼音
-      ,b.MC as b_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
+      ,b.MC as b_XZQH_MC--行政区划表 名称
+      ,b.QH as b_XZQH_QH--行政区划表 区号
 
 FROM dbo.EDU_ZDGL_04_SXDW AS a LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS b ON a.QHM = b.DM /*区划码*/
+      dbo.EDU_ELE_10_XZQH AS b ON a.QHM = b.DM /*区划码*/
 GO
 
 --报修设备表
@@ -3527,7 +3528,6 @@ SELECT a.[ID]--编号
       ,b.XHMCPY as b_SBXH_XHMCPY--设备型号配置表 型号名称拼音
       ,b.WLBH as b_SBXH_WLBH--设备型号配置表 物料编号
       ,c.QHM as c_SXDW_QHM--送修单位信息表 区划码
-      ,[cb].MC as c_SXDW_QHM_MC--中华人民共和国行政区划代码 名称
       ,c.SSSJQHM as c_SXDW_SSSJQHM--送修单位信息表 所属市级区划码
       ,c.DWMC as c_SXDW_DWMC--送修单位信息表 单位名称
       ,c.DWMCPY as c_SXDW_DWMCPY--送修单位信息表 单位名称拼音
@@ -3576,8 +3576,7 @@ FROM dbo.EDU_ZDGL_07_BXSB AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_04_SXDW AS c ON a.SXDWID = c.ID /*送修单位ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_05_BXHT AS d ON a.BXHTID = d.ID /*保修合同ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.RKCZYHID = e.LOGINNAME /*入库操作用户*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS f ON a.WXJSDJYHID = f.LOGINNAME /*维修结束登记用户*/ LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS [cb] ON c.QHM = [cb].DM /*区划码*/
+      dbo.EDU_ELE_01_USER AS f ON a.WXJSDJYHID = f.LOGINNAME /*维修结束登记用户*/
 GO
 
 --送修单信息表

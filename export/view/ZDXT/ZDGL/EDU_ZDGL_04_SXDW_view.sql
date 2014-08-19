@@ -7,8 +7,9 @@ SELECT a.[ID]--编号
       ,a.[SSSJQHM]--所属市级区划码
       ,a.[DWMC]--单位名称
       ,a.[DWMCPY]--单位名称拼音
-      ,b.MC as b_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
+      ,b.MC as b_XZQH_MC--行政区划表 名称
+      ,b.QH as b_XZQH_QH--行政区划表 区号
 
 FROM dbo.EDU_ZDGL_04_SXDW AS a LEFT OUTER JOIN
-      dbo.EDU_GB_ZHRMGHGXZQH AS b ON a.QHM = b.DM /*区划码*/
+      dbo.EDU_ELE_10_XZQH AS b ON a.QHM = b.DM /*区划码*/
 GO
