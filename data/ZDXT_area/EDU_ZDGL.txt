@@ -22,6 +22,7 @@
             <name="XHMC" exp="型号名称" type="nvarchar(50)" null="F" p="F" />
             <name="WLMS" exp="物料描述" type="nvarchar(500)" null="F" p="F" />
             <name="XHMCPY" exp="型号名称拼音" type="nvarchar(500)" null="F" p="F" />
+            <name="WLBH" exp="物料编号" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_04_SXDW" exp="送修单位信息表">
@@ -38,6 +39,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="HTMC" exp="合同名称" type="nvarchar(50)" null="F" p="F" />
             <name="WXSX" exp="维修时限" type="int" null="F" p="F" />
+            <name="BXSC" exp="保修时长" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_06_BM" exp="部门信息表">
@@ -46,6 +48,8 @@
             <name="BMMC" exp="部门名称" type="nvarchar(20)" null="F" p="F" />
             <name="SXDWLB" exp="送修单位列表" type="text" null="F" p="F" />
             <name="SXDWMCLB" exp="送修单位名称列表" type="text" null="F" p="F" />
+            <name="DZ" exp="地址" type="nvarchar(200)" null="F" p="F" />
+            <name="LXDH" exp="联系电话" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_07_BXSB" exp="报修设备表">

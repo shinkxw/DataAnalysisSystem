@@ -25,6 +25,7 @@ SELECT a.[ID]--编号
       ,b.XHMC as b_SBXH_XHMC--设备型号配置表 型号名称
       ,b.WLMS as b_SBXH_WLMS--设备型号配置表 物料描述
       ,b.XHMCPY as b_SBXH_XHMCPY--设备型号配置表 型号名称拼音
+      ,b.WLBH as b_SBXH_WLBH--设备型号配置表 物料编号
       ,c.QHM as c_SXDW_QHM--送修单位信息表 区划码
       ,[cb].MC as c_SXDW_QHM_MC--中华人民共和国行政区划代码 名称
       ,c.SSSJQHM as c_SXDW_SSSJQHM--送修单位信息表 所属市级区划码
@@ -32,6 +33,7 @@ SELECT a.[ID]--编号
       ,c.DWMCPY as c_SXDW_DWMCPY--送修单位信息表 单位名称拼音
       ,d.HTMC as d_BXHT_HTMC--保修合同表 合同名称
       ,d.WXSX as d_BXHT_WXSX--保修合同表 维修时限
+      ,d.BXSC as d_BXHT_BXSC--保修合同表 保修时长
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码

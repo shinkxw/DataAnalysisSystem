@@ -325,6 +325,8 @@ SELECT a.[LOGINNAME]--用户名
       ,d.BMMC as d_BM_BMMC--部门信息表 部门名称
       ,d.SXDWLB as d_BM_SXDWLB--部门信息表 送修单位列表
       ,d.SXDWMCLB as d_BM_SXDWMCLB--部门信息表 送修单位名称列表
+      ,d.DZ as d_BM_DZ--部门信息表 地址
+      ,d.LXDH as d_BM_LXDH--部门信息表 联系电话
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -3472,6 +3474,7 @@ SELECT a.[ID]--编号
       ,a.[XHMC]--型号名称
       ,a.[WLMS]--物料描述
       ,a.[XHMCPY]--型号名称拼音
+      ,a.[WLBH]--物料编号
       ,b.LXMC as b_SBLX_LXMC--设备类型配置表 类型名称
       ,b.ZT as b_SBLX_ZT--设备类型配置表 状态
       ,c.CJMC as c_SCCJ_CJMC--生产厂家信息表 厂家名称
@@ -3522,6 +3525,7 @@ SELECT a.[ID]--编号
       ,b.XHMC as b_SBXH_XHMC--设备型号配置表 型号名称
       ,b.WLMS as b_SBXH_WLMS--设备型号配置表 物料描述
       ,b.XHMCPY as b_SBXH_XHMCPY--设备型号配置表 型号名称拼音
+      ,b.WLBH as b_SBXH_WLBH--设备型号配置表 物料编号
       ,c.QHM as c_SXDW_QHM--送修单位信息表 区划码
       ,[cb].MC as c_SXDW_QHM_MC--中华人民共和国行政区划代码 名称
       ,c.SSSJQHM as c_SXDW_SSSJQHM--送修单位信息表 所属市级区划码
@@ -3529,6 +3533,7 @@ SELECT a.[ID]--编号
       ,c.DWMCPY as c_SXDW_DWMCPY--送修单位信息表 单位名称拼音
       ,d.HTMC as d_BXHT_HTMC--保修合同表 合同名称
       ,d.WXSX as d_BXHT_WXSX--保修合同表 维修时限
+      ,d.BXSC as d_BXHT_BXSC--保修合同表 保修时长
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码

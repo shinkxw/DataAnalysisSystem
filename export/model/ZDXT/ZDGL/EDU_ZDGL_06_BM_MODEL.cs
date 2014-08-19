@@ -12,6 +12,8 @@ namespace HanRuEdu.LDAL
             BMMC = "";
             SXDWLB = "";
             SXDWMCLB = "";
+            DZ = "";
+            LXDH = "";
         }
         public class EDU_ZDGL_06_BM_metadata
         {
@@ -37,6 +39,20 @@ namespace HanRuEdu.LDAL
             [Display(Name = "送修单位名称列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SXDWMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "地址")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "联系电话")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String LXDH { get; set; }
 
 
         }

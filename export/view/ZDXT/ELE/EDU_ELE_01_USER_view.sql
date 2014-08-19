@@ -36,6 +36,8 @@ SELECT a.[LOGINNAME]--用户名
       ,d.BMMC as d_BM_BMMC--部门信息表 部门名称
       ,d.SXDWLB as d_BM_SXDWLB--部门信息表 送修单位列表
       ,d.SXDWMCLB as d_BM_SXDWMCLB--部门信息表 送修单位名称列表
+      ,d.DZ as d_BM_DZ--部门信息表 地址
+      ,d.LXDH as d_BM_LXDH--部门信息表 联系电话
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

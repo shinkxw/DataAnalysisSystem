@@ -15,6 +15,7 @@ EDU_ZDGL_03_SBXH  设备型号配置表
   XHMC          型号名称                nvarchar(50)   非主
   WLMS          物料描述                nvarchar(500)  非主
   XHMCPY        型号名称拼音            nvarchar(500)  非主
+  WLBH          物料编号                nvarchar(200)  非主
 
 EDU_ZDGL_04_SXDW  送修单位信息表
   ID            编号                    int            主键
@@ -27,12 +28,15 @@ EDU_ZDGL_05_BXHT  保修合同表
   ID            编号                    int            主键
   HTMC          合同名称                nvarchar(50)   非主
   WXSX          维修时限                int            非主
+  BXSC          保修时长                int            非主
 
 EDU_ZDGL_06_BM  部门信息表
   ID            编号                    int            主键
   BMMC          部门名称                nvarchar(20)   非主
   SXDWLB        送修单位列表            text           非主
   SXDWMCLB      送修单位名称列表        text           非主
+  DZ            地址                    nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(50)   非主
 
 EDU_ZDGL_07_BXSB  报修设备表
   ID            编号                    int            主键

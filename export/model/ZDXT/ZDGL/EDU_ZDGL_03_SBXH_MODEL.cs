@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             XHMC = "";
             WLMS = "";
             XHMCPY = "";
+            WLBH = "";
         }
         public class EDU_ZDGL_03_SBXH_metadata
         {
@@ -49,6 +50,13 @@ namespace HanRuEdu.LDAL
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XHMCPY { get; set; }
+
+
+            [Required(ErrorMessage = "±ÿÃÓ",AllowEmptyStrings = true)]
+            [Display(Name = "ŒÔ¡œ±‡∫≈")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String WLBH { get; set; }
 
 
         }

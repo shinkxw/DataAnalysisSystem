@@ -30,6 +30,11 @@ namespace HanRuEdu.LDAL
             public Int32 WXSX { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "保修时长")]
+            public Int32 BXSC { get; set; }
+
+
         }
     }
 }
