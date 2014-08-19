@@ -973,3 +973,56 @@ EDU_OAXT_37_A01_CYWDXX  常用文档信息表
   NR            内容                    text           非主
   LLRC          浏览人次                int            非主
 
+EDU_OAXT_38_A01_XWBSWZLB  新闻报送文章类别
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  LBMC          类别名称                nvarchar(200)  非主
+
+EDU_OAXT_38_A02_XWBSSQ  新闻报送申请
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  LCSLID        流程实例ID              int            非主        流程实例表
+  SQSJ          申请时间                datetime       非主
+  SQRID         申请人ID                nvarchar(20)   非主        应用系统用户表
+  SQZT          申请状态                int            非主
+  BZ            备注                    text           非主
+  BSR           报送人                  nvarchar(100)  非主
+  SSBM          所属部门                nvarchar(100)  非主
+  WZBT          文章标题                nvarchar(300)  非主
+  NR            内容                    text           非主
+  WZLBID        文章类别ID              int            非主        新闻报送文章类别
+  ZS            字数                    nvarchar(100)  非主
+  SFLY          是否录用                nvarchar(1)    非主        是否标志代码表
+  LYMT          录用媒体                nvarchar(300)  非主
+  JLJE          奖励金额（元）            nvarchar(100)  非主
+  FBSJ          发布时间                datetime       非主
+
+EDU_OAXT_38_A03_XWBSSHJL  新闻报送审核记录
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主
+  SQID          申请ID                  int            非主
+  XGYHID        修改用户ID              nvarchar(20)   非主
+  XGYHXM        修改用户姓名            nvarchar(36)   非主
+  SQSJ          申请时间                datetime       非主
+  SQRID         申请人ID                nvarchar(20)   非主
+  LCSLID        流程实例ID              int            非主
+  LCSLZT        流程实例状态            int            非主
+  LCMBID        流程模板ID              int            非主
+  LCMBMC        流程模板名称            nvarchar(200)  非主
+  DQBZID        当前步骤ID              int            非主
+  DQBZMC        当前步骤名称            nvarchar(200)  非主
+  DQBZSHZT      当前步骤审核状态        int            非主
+  SQRBMID       申请人部门ID            int            非主
+  SQZT          申请状态                int            非主
+  BZ            备注                    text           非主
+  BSR           报送人                  nvarchar(100)  非主
+  SSBM          所属部门                nvarchar(100)  非主
+  WZBT          文章标题                nvarchar(300)  非主
+  NR            内容                    text           非主
+  WZLBID        文章类别ID              int            非主
+  ZS            字数                    nvarchar(100)  非主
+  SFLY          是否录用                nvarchar(1)    非主
+  LYMT          录用媒体                nvarchar(300)  非主
+  JLJE          奖励金额（元）            nvarchar(100)  非主
+  FBSJ          发布时间                datetime       非主
+

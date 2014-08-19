@@ -2413,6 +2413,21 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_37_A01_CYWD
             and   type = 'U')
    drop table EDU_OAXT_37_A01_CYWDXX
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_38_A01_XWBSWZLB')
+            and   type = 'U')
+   drop table EDU_OAXT_38_A01_XWBSWZLB
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_38_A02_XWBSSQ')
+            and   type = 'U')
+   drop table EDU_OAXT_38_A02_XWBSSQ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_38_A03_XWBSSHJL')
+            and   type = 'U')
+   drop table EDU_OAXT_38_A03_XWBSSHJL
+go
 --文件基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_01_01_WJJBSJ]') AND type in (N'U'))
 BEGIN
@@ -4274,6 +4289,91 @@ CONSTRAINT [PK_EDU_OAXT_37_A01_CYWDXX] PRIMARY KEY CLUSTERED
 END
 GO
 
+--新闻报送文章类别
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_38_A01_XWBSWZLB]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_38_A01_XWBSWZLB](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[LBMC]  nvarchar(200)  NOT NULL,--类别名称
+CONSTRAINT [PK_EDU_OAXT_38_A01_XWBSWZLB] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--新闻报送申请
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_38_A02_XWBSSQ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_38_A02_XWBSSQ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[LCSLID]  int  NOT NULL,--流程实例ID
+	[SQSJ]  datetime  NOT NULL,--申请时间
+	[SQRID]  nvarchar(20)  NOT NULL,--申请人ID
+	[SQZT]  int  NOT NULL,--申请状态
+	[BZ]  text  NOT NULL,--备注
+	[BSR]  nvarchar(100)  NOT NULL,--报送人
+	[SSBM]  nvarchar(100)  NOT NULL,--所属部门
+	[WZBT]  nvarchar(300)  NOT NULL,--文章标题
+	[NR]  text  NOT NULL,--内容
+	[WZLBID]  int  NOT NULL,--文章类别ID
+	[ZS]  nvarchar(100)  NOT NULL,--字数
+	[SFLY]  nvarchar(1)  NOT NULL,--是否录用
+	[LYMT]  nvarchar(300)  NOT NULL,--录用媒体
+	[JLJE]  nvarchar(100)  NOT NULL,--奖励金额（元）
+	[FBSJ]  datetime  NOT NULL,--发布时间
+CONSTRAINT [PK_EDU_OAXT_38_A02_XWBSSQ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--新闻报送审核记录
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_38_A03_XWBSSHJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_38_A03_XWBSSHJL](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[SQID]  int  NOT NULL,--申请ID
+	[XGYHID]  nvarchar(20)  NOT NULL,--修改用户ID
+	[XGYHXM]  nvarchar(36)  NOT NULL,--修改用户姓名
+	[SQSJ]  datetime  NOT NULL,--申请时间
+	[SQRID]  nvarchar(20)  NOT NULL,--申请人ID
+	[LCSLID]  int  NOT NULL,--流程实例ID
+	[LCSLZT]  int  NULL,--流程实例状态
+	[LCMBID]  int  NOT NULL,--流程模板ID
+	[LCMBMC]  nvarchar(200)  NOT NULL,--流程模板名称
+	[DQBZID]  int  NULL,--当前步骤ID
+	[DQBZMC]  nvarchar(200)  NOT NULL,--当前步骤名称
+	[DQBZSHZT]  int  NULL,--当前步骤审核状态
+	[SQRBMID]  int  NULL,--申请人部门ID
+	[SQZT]  int  NOT NULL,--申请状态
+	[BZ]  text  NOT NULL,--备注
+	[BSR]  nvarchar(100)  NOT NULL,--报送人
+	[SSBM]  nvarchar(100)  NOT NULL,--所属部门
+	[WZBT]  nvarchar(300)  NOT NULL,--文章标题
+	[NR]  text  NOT NULL,--内容
+	[WZLBID]  int  NOT NULL,--文章类别ID
+	[ZS]  nvarchar(100)  NOT NULL,--字数
+	[SFLY]  nvarchar(1)  NOT NULL,--是否录用
+	[LYMT]  nvarchar(300)  NOT NULL,--录用媒体
+	[JLJE]  nvarchar(100)  NOT NULL,--奖励金额（元）
+	[FBSJ]  datetime  NOT NULL,--发布时间
+CONSTRAINT [PK_EDU_OAXT_38_A03_XWBSSHJL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件基本数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_01_01_WJJBSJ'
 GO
@@ -6060,6 +6160,106 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A01_CYWDXX', @level2type=N'COLUMN',@level2name=N'NR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览人次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A01_CYWDXX', @level2type=N'COLUMN',@level2name=N'LLRC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻报送文章类别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A01_XWBSWZLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A01_XWBSWZLB', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A01_XWBSWZLB', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类别名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A01_XWBSWZLB', @level2type=N'COLUMN',@level2name=N'LBMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻报送申请' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流程实例ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'LCSLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'SQSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'SQRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'SQZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报送人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'BSR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属部门' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'SSBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文章标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'WZBT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'NR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文章类别ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'WZLBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'ZS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否录用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'SFLY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录用媒体' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'LYMT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'奖励金额（元）' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'JLJE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A02_XWBSSQ', @level2type=N'COLUMN',@level2name=N'FBSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻报送审核记录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SQID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'XGYHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'修改用户姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'XGYHXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SQSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SQRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流程实例ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'LCSLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流程实例状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'LCSLZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流程模板ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'LCMBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流程模板名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'LCMBMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前步骤ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'DQBZID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前步骤名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'DQBZMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前步骤审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'DQBZSHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请人部门ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SQRBMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SQZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报送人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'BSR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属部门' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SSBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文章标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'WZBT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'NR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文章类别ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'WZLBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'ZS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否录用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'SFLY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'录用媒体' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'LYMT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'奖励金额（元）' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'JLJE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A03_XWBSSHJL', @level2type=N'COLUMN',@level2name=N'FBSJ'
 GO
 --空间名：EDU_WZXT  生成器：SqlBuilder0.1
 

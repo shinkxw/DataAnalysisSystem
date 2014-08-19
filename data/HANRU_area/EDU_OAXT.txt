@@ -1139,4 +1139,63 @@
             <name="LLRC" exp="浏览人次" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_38_A01_XWBSWZLB" exp="新闻报送文章类别">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_38_A02_XWBSSQ" exp="新闻报送申请">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="LCSLID" exp="流程实例ID" type="int" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SQZT" exp="申请状态" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="BSR" exp="报送人" type="nvarchar(100)" null="F" p="F" />
+            <name="SSBM" exp="所属部门" type="nvarchar(100)" null="F" p="F" />
+            <name="WZBT" exp="文章标题" type="nvarchar(300)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="WZLBID" exp="文章类别ID" type="int" null="F" p="F" />
+            <name="ZS" exp="字数" type="nvarchar(100)" null="F" p="F" />
+            <name="SFLY" exp="是否录用" type="nvarchar(1)" null="F" p="F" />
+            <name="LYMT" exp="录用媒体" type="nvarchar(300)" null="F" p="F" />
+            <name="JLJE" exp="奖励金额（元）" type="nvarchar(100)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_38_A03_XWBSSHJL" exp="新闻报送审核记录">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="SQID" exp="申请ID" type="int" null="F" p="F" />
+            <name="XGYHID" exp="修改用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XGYHXM" exp="修改用户姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="SQSJ" exp="申请时间" type="datetime" null="F" p="F" />
+            <name="SQRID" exp="申请人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="LCSLID" exp="流程实例ID" type="int" null="F" p="F" />
+            <name="LCSLZT" exp="流程实例状态" type="int" null="T" p="F" />
+            <name="LCMBID" exp="流程模板ID" type="int" null="F" p="F" />
+            <name="LCMBMC" exp="流程模板名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZID" exp="当前步骤ID" type="int" null="T" p="F" />
+            <name="DQBZMC" exp="当前步骤名称" type="nvarchar(200)" null="F" p="F" />
+            <name="DQBZSHZT" exp="当前步骤审核状态" type="int" null="T" p="F" />
+            <name="SQRBMID" exp="申请人部门ID" type="int" null="T" p="F" />
+            <name="SQZT" exp="申请状态" type="int" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="BSR" exp="报送人" type="nvarchar(100)" null="F" p="F" />
+            <name="SSBM" exp="所属部门" type="nvarchar(100)" null="F" p="F" />
+            <name="WZBT" exp="文章标题" type="nvarchar(300)" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="WZLBID" exp="文章类别ID" type="int" null="F" p="F" />
+            <name="ZS" exp="字数" type="nvarchar(100)" null="F" p="F" />
+            <name="SFLY" exp="是否录用" type="nvarchar(1)" null="F" p="F" />
+            <name="LYMT" exp="录用媒体" type="nvarchar(300)" null="F" p="F" />
+            <name="JLJE" exp="奖励金额（元）" type="nvarchar(100)" null="F" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
