@@ -1198,4 +1198,43 @@
             <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_39_A01_GWLB" exp="公文类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_39_A02_SWB" exp="收文表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LBID" exp="类别ID" type="int" null="F" p="F" />
+            <name="LWDW" exp="来文单位" type="nvarchar(50)" null="F" p="F" />
+            <name="LWRQ" exp="来文日期" type="datetime" null="F" p="F" />
+            <name="LWWH" exp="来文文号" type="nvarchar(50)" null="F" p="F" />
+            <name="WJBT" exp="文件标题" type="nvarchar(50)" null="F" p="F" />
+            <name="WJNR" exp="文件内容" type="text" null="F" p="F" />
+            <name="PSYJ" exp="批示意见" type="nvarchar(200)" null="F" p="F" />
+            <name="SFSH" exp="是否收回" type="nvarchar(1)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_39_A03_GWLZ" exp="公文流转表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="SWBID" exp="收文表ID" type="int" null="F" p="F" />
+            <name="XFRID" exp="下发人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="JSRID" exp="接收人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="XFWDLX" exp="下发文档类型" type="int" null="F" p="F" />
+            <name="XFSJ" exp="下发时间" type="datetime" null="F" p="F" />
+            <name="QSZT" exp="签收状态" type="int" null="F" p="F" />
+            <name="QSSJ" exp="签收时间" type="datetime" null="F" p="F" />
+            <name="DXTZZT" exp="短信通知状态" type="int" null="F" p="F" />
+            <name="CLZT" exp="处理状态" type="int" null="F" p="F" />
+            <name="CLJG" exp="处理结果" type="nvarchar(500)" null="F" p="F" />
+            <name="FJ" exp="附件" type="text" null="F" p="F" />
+            <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

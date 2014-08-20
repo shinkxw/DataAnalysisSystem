@@ -422,6 +422,16 @@
   SQRID          EDU_ELE_01_USER                    LOGINNAME
   WZLBID         EDU_OAXT_38_A01_XWBSWZLB           ID
   SFLY           EDU_JY_SFBZ                        DM
+<EDU_OAXT_39_A01_GWLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_39_A02_SWB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LBID           EDU_OAXT_39_A01_GWLB               ID
+  SFSH           EDU_JY_SFBZ                        DM
+<EDU_OAXT_39_A03_GWLZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XFRID          EDU_ELE_01_USER                    LOGINNAME
+  JSRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_WZXT_VIP
