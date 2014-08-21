@@ -174,6 +174,8 @@ CREATE TABLE [dbo].[EDU_ZDGL_07_BXSB](
 	[RKSJ]  datetime  NOT NULL,--入库时间
 	[RKCZYHID]  nvarchar(20)  NOT NULL,--入库操作用户
 	[FXM]  nvarchar(100)  NOT NULL,--返修码
+	[FXXX]  nvarchar(100)  NOT NULL,--返修信息
+	[FXXH]  int  NOT NULL,--返修序号
 	[WXJSSJ]  datetime  NOT NULL,--维修结束时间
 	[WXJSDJYHID]  nvarchar(20)  NOT NULL,--维修结束登记用户
 CONSTRAINT [PK_EDU_ZDGL_07_BXSB] PRIMARY KEY CLUSTERED
@@ -356,6 +358,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'入库操作用户' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'RKCZYHID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'返修码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'FXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'返修信息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'FXXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'返修序号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'FXXH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'维修结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_07_BXSB', @level2type=N'COLUMN',@level2name=N'WXJSSJ'
 GO

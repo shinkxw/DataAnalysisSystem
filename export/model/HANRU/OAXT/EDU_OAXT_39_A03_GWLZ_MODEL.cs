@@ -48,11 +48,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "下发文档类型")]
-            public Int32 XFWDLX { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "下发时间")]
             public DateTime XFSJ { get; set; }
 
@@ -93,6 +88,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "删除状态")]
             public Int32 SCZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "收回状态")]
+            public Int32 SHZT { get; set; }
 
 
         }

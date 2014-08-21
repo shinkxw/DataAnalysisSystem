@@ -70,6 +70,8 @@
             <name="RKSJ" exp="入库时间" type="datetime" null="F" p="F" />
             <name="RKCZYHID" exp="入库操作用户" type="nvarchar(20)" null="F" p="F" />
             <name="FXM" exp="返修码" type="nvarchar(100)" null="F" p="F" />
+            <name="FXXX" exp="返修信息" type="nvarchar(100)" null="F" p="F" />
+            <name="FXXH" exp="返修序号" type="int" null="F" p="F" />
             <name="WXJSSJ" exp="维修结束时间" type="datetime" null="F" p="F" />
             <name="WXJSDJYHID" exp="维修结束登记用户" type="nvarchar(20)" null="F" p="F" />
         </field_area>

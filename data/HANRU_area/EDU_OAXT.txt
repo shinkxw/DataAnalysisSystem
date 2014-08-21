@@ -1217,6 +1217,7 @@
             <name="WJNR" exp="文件内容" type="text" null="F" p="F" />
             <name="PSYJ" exp="批示意见" type="nvarchar(200)" null="F" p="F" />
             <name="SFSH" exp="是否收回" type="nvarchar(1)" null="F" p="F" />
+            <name="XFWDLX" exp="下发文档类型" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_39_A03_GWLZ" exp="公文流转表">
@@ -1226,7 +1227,6 @@
             <name="SWBID" exp="收文表ID" type="int" null="F" p="F" />
             <name="XFRID" exp="下发人ID" type="nvarchar(20)" null="F" p="F" />
             <name="JSRID" exp="接收人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="XFWDLX" exp="下发文档类型" type="int" null="F" p="F" />
             <name="XFSJ" exp="下发时间" type="datetime" null="F" p="F" />
             <name="QSZT" exp="签收状态" type="int" null="F" p="F" />
             <name="QSSJ" exp="签收时间" type="datetime" null="F" p="F" />
@@ -1235,6 +1235,7 @@
             <name="CLJG" exp="处理结果" type="nvarchar(500)" null="F" p="F" />
             <name="FJ" exp="附件" type="text" null="F" p="F" />
             <name="SCZT" exp="删除状态" type="int" null="F" p="F" />
+            <name="SHZT" exp="收回状态" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

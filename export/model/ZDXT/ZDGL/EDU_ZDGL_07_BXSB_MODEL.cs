@@ -18,6 +18,7 @@ namespace HanRuEdu.LDAL
             RKSJ = DateTime.Now;
             RKCZYHID = "";
             FXM = "";
+            FXXX = "";
             WXJSSJ = DateTime.Now;
             WXJSDJYHID = "";
         }
@@ -115,6 +116,18 @@ namespace HanRuEdu.LDAL
             [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String FXM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "返修信息")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FXXX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "返修序号")]
+            public Int32 FXXH { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

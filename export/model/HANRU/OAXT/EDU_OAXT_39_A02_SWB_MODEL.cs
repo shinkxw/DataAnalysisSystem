@@ -80,6 +80,11 @@ namespace HanRuEdu.LDAL
             public String SFSH { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "下发文档类型")]
+            public Int32 XFWDLX { get; set; }
+
+
         }
     }
 }

@@ -55,6 +55,8 @@ EDU_ZDGL_07_BXSB  报修设备表
   RKSJ          入库时间                datetime       非主
   RKCZYHID      入库操作用户            nvarchar(20)   非主        应用系统用户表
   FXM           返修码                  nvarchar(100)  非主
+  FXXX          返修信息                nvarchar(100)  非主
+  FXXH          返修序号                int            非主
   WXJSSJ        维修结束时间            datetime       非主
   WXJSDJYHID    维修结束登记用户        nvarchar(20)   非主        应用系统用户表
 

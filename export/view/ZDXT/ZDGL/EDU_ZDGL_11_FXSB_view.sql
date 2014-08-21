@@ -28,6 +28,8 @@ SELECT a.[ID]--编号
       ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
       ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
       ,c.FXM as c_BXSB_FXM--报修设备表 返修码
+      ,c.FXXX as c_BXSB_FXXX--报修设备表 返修信息
+      ,c.FXXH as c_BXSB_FXXH--报修设备表 返修序号
       ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
       ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
 

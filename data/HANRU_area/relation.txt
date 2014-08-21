@@ -430,6 +430,7 @@
   SFSH           EDU_JY_SFBZ                        DM
 <EDU_OAXT_39_A03_GWLZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SWBID          EDU_OAXT_39_A02_SWB                ID
   XFRID          EDU_ELE_01_USER                    LOGINNAME
   JSRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN

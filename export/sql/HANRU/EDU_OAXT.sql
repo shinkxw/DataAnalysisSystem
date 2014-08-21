@@ -2415,6 +2415,7 @@ CREATE TABLE [dbo].[EDU_OAXT_39_A02_SWB](
 	[WJNR]  text  NOT NULL,--文件内容
 	[PSYJ]  nvarchar(200)  NOT NULL,--批示意见
 	[SFSH]  nvarchar(1)  NOT NULL,--是否收回
+	[XFWDLX]  int  NOT NULL,--下发文档类型
 CONSTRAINT [PK_EDU_OAXT_39_A02_SWB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2433,7 +2434,6 @@ CREATE TABLE [dbo].[EDU_OAXT_39_A03_GWLZ](
 	[SWBID]  int  NOT NULL,--收文表ID
 	[XFRID]  nvarchar(20)  NOT NULL,--下发人ID
 	[JSRID]  nvarchar(20)  NOT NULL,--接收人ID
-	[XFWDLX]  int  NOT NULL,--下发文档类型
 	[XFSJ]  datetime  NOT NULL,--下发时间
 	[QSZT]  int  NOT NULL,--签收状态
 	[QSSJ]  datetime  NOT NULL,--签收时间
@@ -2442,6 +2442,7 @@ CREATE TABLE [dbo].[EDU_OAXT_39_A03_GWLZ](
 	[CLJG]  nvarchar(500)  NOT NULL,--处理结果
 	[FJ]  text  NOT NULL,--附件
 	[SCZT]  int  NOT NULL,--删除状态
+	[SHZT]  int  NOT NULL,--收回状态
 CONSTRAINT [PK_EDU_OAXT_39_A03_GWLZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -4368,6 +4369,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'批示意见' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否收回' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A02_SWB', @level2type=N'COLUMN',@level2name=N'SFSH'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下发文档类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A02_SWB', @level2type=N'COLUMN',@level2name=N'XFWDLX'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公文流转表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'ID'
@@ -4379,8 +4382,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下发人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'XFRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接收人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'JSRID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下发文档类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'XFWDLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下发时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'XFSJ'
 GO
@@ -4397,4 +4398,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附件' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'FJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'删除状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'SCZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收回状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'SHZT'
 GO

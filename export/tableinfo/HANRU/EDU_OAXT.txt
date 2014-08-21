@@ -1042,14 +1042,14 @@ EDU_OAXT_39_A02_SWB  收文表
   WJNR          文件内容                text           非主
   PSYJ          批示意见                nvarchar(200)  非主
   SFSH          是否收回                nvarchar(1)    非主        是否标志代码表
+  XFWDLX        下发文档类型            int            非主
 
 EDU_OAXT_39_A03_GWLZ  公文流转表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  SWBID         收文表ID                int            非主
+  SWBID         收文表ID                int            非主        收文表
   XFRID         下发人ID                nvarchar(20)   非主        应用系统用户表
   JSRID         接收人ID                nvarchar(20)   非主        应用系统用户表
-  XFWDLX        下发文档类型            int            非主
   XFSJ          下发时间                datetime       非主
   QSZT          签收状态                int            非主
   QSSJ          签收时间                datetime       非主
@@ -1058,4 +1058,5 @@ EDU_OAXT_39_A03_GWLZ  公文流转表
   CLJG          处理结果                nvarchar(500)  非主
   FJ            附件                    text           非主
   SCZT          删除状态                int            非主
+  SHZT          收回状态                int            非主
 

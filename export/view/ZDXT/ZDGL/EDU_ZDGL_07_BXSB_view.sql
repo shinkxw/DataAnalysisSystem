@@ -18,6 +18,8 @@ SELECT a.[ID]--编号
       ,a.[RKSJ]--入库时间
       ,a.[RKCZYHID]--入库操作用户
       ,a.[FXM]--返修码
+      ,a.[FXXX]--返修信息
+      ,a.[FXXH]--返修序号
       ,a.[WXJSSJ]--维修结束时间
       ,a.[WXJSDJYHID]--维修结束登记用户
       ,b.SBLXID as b_SBXH_SBLXID--设备型号配置表 设备类型ID
