@@ -349,3 +349,10 @@
 <EDU_ZDGL_11_FXSB
   FXDID          EDU_ZDGL_10_FXDXX                  ID
   BXSBID         EDU_ZDGL_07_BXSB                   ID
+<EDU_ZDGL_22_SXD
+  SXDWID         EDU_ZDGL_04_SXDW                   ID
+  TJYH           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZDGL_23_SXDSJ
+  SXDID          EDU_ZDGL_22_SXD                    ID
+  SBXHID         EDU_ZDGL_03_SBXH                   ID
+  SXDXMID        EDU_ZDGL_21_SXDXM                  ID

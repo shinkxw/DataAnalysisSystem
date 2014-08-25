@@ -114,4 +114,38 @@
             <name="BXSBID" exp="报修设备ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZDGL_21_SXDXM" exp="送修单项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SSLB" exp="所属类别" type="int" null="F" p="F" />
+            <name="XMMC" exp="项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="SFXS" exp="是否显示" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_22_SXD" exp="送修单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SXDWID" exp="送修单位ID" type="int" null="F" p="F" />
+            <name="SXDMC" exp="送修单名称" type="nvarchar(100)" null="F" p="F" />
+            <name="SXDH" exp="送修单号" type="nvarchar(100)" null="F" p="F" />
+            <name="SXRQ" exp="送修日期" type="datetime" null="F" p="F" />
+            <name="GSXX" exp="公司信息" type="nvarchar(200)" null="F" p="F" />
+            <name="LXRXX" exp="联系人信息" type="nvarchar(200)" null="F" p="F" />
+            <name="LXDHXX" exp="联系电话信息" type="nvarchar(200)" null="F" p="F" />
+            <name="DZXX" exp="地址信息" type="nvarchar(200)" null="F" p="F" />
+            <name="QZXX" exp="签字信息" type="nvarchar(200)" null="F" p="F" />
+            <name="TJYH" exp="添加用户" type="nvarchar(20)" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_23_SXDSJ" exp="送修单数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SXDID" exp="送修单ID" type="int" null="F" p="F" />
+            <name="SBXHID" exp="设备型号ID" type="int" null="F" p="F" />
+            <name="SXDXMID" exp="送修单项目ID" type="int" null="F" p="F" />
+            <name="SL" exp="数量" type="int" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
