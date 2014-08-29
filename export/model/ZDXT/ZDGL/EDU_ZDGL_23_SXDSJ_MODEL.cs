@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZDGL_23_SXDSJ()
         {
+            WB = "";
         }
         public class EDU_ZDGL_23_SXDSJ_metadata
         {
@@ -35,6 +36,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "数量")]
             public Int32 SL { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "文本")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String WB { get; set; }
 
 
         }

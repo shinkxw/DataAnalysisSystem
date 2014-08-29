@@ -321,6 +321,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_23_SXDSJ](
 	[SBXHID]  int  NOT NULL,--设备型号ID
 	[SXDXMID]  int  NOT NULL,--送修单项目ID
 	[SL]  int  NOT NULL,--数量
+	[WB]  nvarchar(200)  NOT NULL,--文本
 CONSTRAINT [PK_EDU_ZDGL_23_SXDSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -541,4 +542,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_23_SXDSJ', @level2type=N'COLUMN',@level2name=N'SXDXMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_23_SXDSJ', @level2type=N'COLUMN',@level2name=N'SL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文本' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_23_SXDSJ', @level2type=N'COLUMN',@level2name=N'WB'
 GO

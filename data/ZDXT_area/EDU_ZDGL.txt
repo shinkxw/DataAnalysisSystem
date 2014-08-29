@@ -146,6 +146,7 @@
             <name="SBXHID" exp="设备型号ID" type="int" null="F" p="F" />
             <name="SXDXMID" exp="送修单项目ID" type="int" null="F" p="F" />
             <name="SL" exp="数量" type="int" null="F" p="F" />
+            <name="WB" exp="文本" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

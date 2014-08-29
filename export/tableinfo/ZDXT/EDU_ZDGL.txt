@@ -117,4 +117,5 @@ EDU_ZDGL_23_SXDSJ  送修单数据表
   SBXHID        设备型号ID              int            非主        设备型号配置表
   SXDXMID       送修单项目ID            int            非主        送修单项目表
   SL            数量                    int            非主
+  WB            文本                    nvarchar(200)  非主
 

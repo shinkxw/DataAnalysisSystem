@@ -7,6 +7,7 @@ SELECT a.[ID]--编号
       ,a.[SBXHID]--设备型号ID
       ,a.[SXDXMID]--送修单项目ID
       ,a.[SL]--数量
+      ,a.[WB]--文本
       ,b.SXDWID as b_SXD_SXDWID--送修单表 送修单位ID
       ,b.SXDMC as b_SXD_SXDMC--送修单表 送修单名称
       ,b.SXDH as b_SXD_SXDH--送修单表 送修单号
