@@ -1490,6 +1490,7 @@
   PJJSID         EDU_ZZJG_23_A05_PHZYDCJS           ID
   BPJSID         EDU_ZZJG_23_A05_PHZYDCJS           ID
   TMID           EDU_ZZJG_23_A04_PHZYDCTM           ID
+  XXID           EDU_ZZJG_23_A03_PHZYDCDFXM         ID
 <EDU_ZZJG_23_A07_PHZYDCTJJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

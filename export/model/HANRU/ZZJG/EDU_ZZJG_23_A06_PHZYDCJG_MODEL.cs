@@ -52,6 +52,11 @@ namespace HanRuEdu.LDAL
             public Int32 FZ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Ñ¡Ïî")]
+            public Int32 XXID { get; set; }
+
+
         }
     }
 }

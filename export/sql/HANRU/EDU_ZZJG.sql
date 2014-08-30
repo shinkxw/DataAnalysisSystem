@@ -1535,6 +1535,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_23_A06_PHZYDCJG](
 	[BPJSID]  int  NOT NULL,--被评教师ID
 	[TMID]  int  NOT NULL,--题目ID
 	[FZ]  int  NOT NULL,--分值
+	[XXID]  int  NOT NULL,--选项ID
 CONSTRAINT [PK_EDU_ZZJG_23_A06_PHZYDCJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -2637,6 +2638,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'题目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A06_PHZYDCJG', @level2type=N'COLUMN',@level2name=N'TMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A06_PHZYDCJG', @level2type=N'COLUMN',@level2name=N'FZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选项ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A06_PHZYDCJG', @level2type=N'COLUMN',@level2name=N'XXID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'平湖职业调查提交记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A07_PHZYDCTJJL'
 GO

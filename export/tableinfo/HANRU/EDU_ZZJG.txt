@@ -595,6 +595,7 @@ EDU_ZZJG_23_A06_PHZYDCJG  平湖职业调查结果表
   BPJSID        被评教师ID              int            非主        平湖职业调查教师表
   TMID          题目ID                  int            非主        平湖职业调查题目表
   FZ            分值                    int            非主
+  XXID          选项ID                  int            非主        平湖职业调查打分项目表
 
 EDU_ZZJG_23_A07_PHZYDCTJJL  平湖职业调查提交记录表
   ID            编号                    int            自增主键

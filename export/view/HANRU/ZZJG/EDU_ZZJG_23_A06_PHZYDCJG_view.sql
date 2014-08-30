@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[BPJSID]--被评教师ID
       ,a.[TMID]--题目ID
       ,a.[FZ]--分值
+      ,a.[XXID]--选项ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -45,6 +46,10 @@ SELECT a.[ID]--编号
       ,g.DCXM as g_PHZYDCTM_DCXM--平湖职业调查题目表 调查项目
       ,g.DCZB as g_PHZYDCTM_DCZB--平湖职业调查题目表 调查指标
       ,g.ZT as g_PHZYDCTM_ZT--平湖职业调查题目表 状态
+      ,h.SCHOOLID as h_PHZYDCDFXM_SCHOOLID--平湖职业调查打分项目表 学校
+      ,h.DFFSID as h_PHZYDCDFXM_DFFSID--平湖职业调查打分项目表 打分方式ID
+      ,h.DFXMMC as h_PHZYDCDFXM_DFXMMC--平湖职业调查打分项目表 打分项目名称
+      ,h.FZ as h_PHZYDCDFXM_FZ--平湖职业调查打分项目表 分值
 
 FROM dbo.EDU_ZZJG_23_A06_PHZYDCJG AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -52,5 +57,6 @@ FROM dbo.EDU_ZZJG_23_A06_PHZYDCJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_23_A05_PHZYDCJS AS e ON a.PJJSID = e.ID /*评价教师ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_23_A05_PHZYDCJS AS f ON a.BPJSID = f.ID /*被评教师ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_23_A04_PHZYDCTM AS g ON a.TMID = g.ID /*题目ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_23_A03_PHZYDCDFXM AS h ON a.XXID = h.ID /*选项ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
 GO

@@ -716,6 +716,7 @@
             <name="BPJSID" exp="被评教师ID" type="int" null="F" p="F" />
             <name="TMID" exp="题目ID" type="int" null="F" p="F" />
             <name="FZ" exp="分值" type="int" null="F" p="F" />
+            <name="XXID" exp="选项ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_23_A07_PHZYDCTJJL" exp="平湖职业调查提交记录表">
