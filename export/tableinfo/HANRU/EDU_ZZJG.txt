@@ -585,6 +585,7 @@ EDU_ZZJG_23_A05_PHZYDCJS  平湖职业调查教师表
   SFJRBMHP      是否被教学部评          int            非主
   SFKPQX        是否可评全校            int            非主
   SFBQXP        是否被全校评            int            非主
+  JXBID         教学部ID                int            非主        平湖职业调查教学部表
 
 EDU_ZZJG_23_A06_PHZYDCJG  平湖职业调查结果表
   ID            编号                    int            自增主键
@@ -604,4 +605,11 @@ EDU_ZZJG_23_A07_PHZYDCTJJL  平湖职业调查提交记录表
   DCMCID        调查名称ID              int            非主        平湖职业调查名称表
   PJJSID        评价教师ID              int            非主        平湖职业调查教师表
   TJSJ          提交时间                datetime       非主
+
+EDU_ZZJG_23_A08_PHZYDCJXB  平湖职业调查教学部表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  DCMCID        调查名称ID              int            非主        平湖职业调查名称表
+  JXBMC         教学部名称              nvarchar(100)  非主
+  MESX          名额上限                int            非主
 

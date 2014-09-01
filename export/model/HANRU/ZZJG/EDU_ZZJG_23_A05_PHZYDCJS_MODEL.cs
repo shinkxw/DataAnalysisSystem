@@ -68,6 +68,11 @@ namespace HanRuEdu.LDAL
             public Int32 SFBQXP { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教学部")]
+            public Int32 JXBID { get; set; }
+
+
         }
     }
 }

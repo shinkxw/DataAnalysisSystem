@@ -12,6 +12,7 @@ SELECT a.[ID]--编号
       ,a.[SFJRBMHP]--是否被教学部评
       ,a.[SFKPQX]--是否可评全校
       ,a.[SFBQXP]--是否被全校评
+      ,a.[JXBID]--教学部ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -91,11 +92,16 @@ SELECT a.[ID]--编号
       ,e.DCMC as e_PHZYDCMC_DCMC--平湖职业调查名称表 调查名称
       ,e.BZ as e_PHZYDCMC_BZ--平湖职业调查名称表 备注
       ,e.ZT as e_PHZYDCMC_ZT--平湖职业调查名称表 状态
+      ,f.SCHOOLID as f_PHZYDCJXB_SCHOOLID--平湖职业调查教学部表 学校
+      ,f.DCMCID as f_PHZYDCJXB_DCMCID--平湖职业调查教学部表 调查名称ID
+      ,f.JXBMC as f_PHZYDCJXB_JXBMC--平湖职业调查教学部表 教学部名称
+      ,f.MESX as f_PHZYDCJXB_MESX--平湖职业调查教学部表 名额上限
 
 FROM dbo.EDU_ZZJG_23_A05_PHZYDCJS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS d ON a.JSID = d.ID /*教师ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_23_A01_PHZYDCMC AS e ON a.DCMCID = e.ID /*调查名称ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_23_A08_PHZYDCJXB AS f ON a.JXBID = f.ID /*教学部ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN

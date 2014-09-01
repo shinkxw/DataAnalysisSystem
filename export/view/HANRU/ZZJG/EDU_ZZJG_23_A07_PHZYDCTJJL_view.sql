@@ -28,6 +28,7 @@ SELECT a.[ID]--编号
       ,e.SFJRBMHP as e_PHZYDCJS_SFJRBMHP--平湖职业调查教师表 是否被教学部评
       ,e.SFKPQX as e_PHZYDCJS_SFKPQX--平湖职业调查教师表 是否可评全校
       ,e.SFBQXP as e_PHZYDCJS_SFBQXP--平湖职业调查教师表 是否被全校评
+      ,e.JXBID as e_PHZYDCJS_JXBID--平湖职业调查教师表 教学部ID
 
 FROM dbo.EDU_ZZJG_23_A07_PHZYDCTJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

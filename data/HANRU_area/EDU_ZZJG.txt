@@ -704,6 +704,7 @@
             <name="SFJRBMHP" exp="是否被教学部评" type="int" null="F" p="F" />
             <name="SFKPQX" exp="是否可评全校" type="int" null="F" p="F" />
             <name="SFBQXP" exp="是否被全校评" type="int" null="F" p="F" />
+            <name="JXBID" exp="教学部ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_23_A06_PHZYDCJG" exp="平湖职业调查结果表">
@@ -727,6 +728,15 @@
             <name="DCMCID" exp="调查名称ID" type="int" null="F" p="F" />
             <name="PJJSID" exp="评价教师ID" type="int" null="F" p="F" />
             <name="TJSJ" exp="提交时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_23_A08_PHZYDCJXB" exp="平湖职业调查教学部表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="DCMCID" exp="调查名称ID" type="int" null="F" p="F" />
+            <name="JXBMC" exp="教学部名称" type="nvarchar(100)" null="F" p="F" />
+            <name="MESX" exp="名额上限" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

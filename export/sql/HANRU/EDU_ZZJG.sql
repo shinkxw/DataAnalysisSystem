@@ -304,6 +304,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_23_A07_PHZY
             and   type = 'U')
    drop table EDU_ZZJG_23_A07_PHZYDCTJJL
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_23_A08_PHZYDCJXB')
+            and   type = 'U')
+   drop table EDU_ZZJG_23_A08_PHZYDCJXB
+go
 --教职工基本数据子类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_01_01_JZGJBSJ]') AND type in (N'U'))
 BEGIN
@@ -1515,6 +1520,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_23_A05_PHZYDCJS](
 	[SFJRBMHP]  int  NOT NULL,--是否被教学部评
 	[SFKPQX]  int  NOT NULL,--是否可评全校
 	[SFBQXP]  int  NOT NULL,--是否被全校评
+	[JXBID]  int  NOT NULL,--教学部ID
 CONSTRAINT [PK_EDU_ZZJG_23_A05_PHZYDCJS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -1557,6 +1563,24 @@ CREATE TABLE [dbo].[EDU_ZZJG_23_A07_PHZYDCTJJL](
 CONSTRAINT [PK_EDU_ZZJG_23_A07_PHZYDCTJJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--平湖职业调查教学部表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_23_A08_PHZYDCJXB]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJG_23_A08_PHZYDCJXB](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[DCMCID]  int  NOT NULL,--调查名称ID
+	[JXBMC]  nvarchar(100)  NOT NULL,--教学部名称
+	[MESX]  int  NOT NULL,--名额上限
+CONSTRAINT [PK_EDU_ZZJG_23_A08_PHZYDCJXB] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -2621,6 +2645,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否可评全校' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否被全校评' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A05_PHZYDCJS', @level2type=N'COLUMN',@level2name=N'SFBQXP'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学部ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A05_PHZYDCJS', @level2type=N'COLUMN',@level2name=N'JXBID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'平湖职业调查结果表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A06_PHZYDCJG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A06_PHZYDCJG', @level2type=N'COLUMN',@level2name=N'ID'
@@ -2654,4 +2680,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A07_PHZYDCTJJL', @level2type=N'COLUMN',@level2name=N'PJJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'提交时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A07_PHZYDCTJJL', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'平湖职业调查教学部表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A08_PHZYDCJXB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A08_PHZYDCJXB', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A08_PHZYDCJXB', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调查名称ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A08_PHZYDCJXB', @level2type=N'COLUMN',@level2name=N'DCMCID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学部名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A08_PHZYDCJXB', @level2type=N'COLUMN',@level2name=N'JXBMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名额上限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A08_PHZYDCJXB', @level2type=N'COLUMN',@level2name=N'MESX'
 GO
