@@ -149,4 +149,44 @@
             <name="WB" exp="文本" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZDGL_31_FXD" exp="返修单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="FXDH" exp="返修单号" type="nvarchar(100)" null="F" p="F" />
+            <name="PDBM" exp="派单部门" type="nvarchar(100)" null="F" p="F" />
+            <name="PDY" exp="派单员" type="nvarchar(50)" null="F" p="F" />
+            <name="PDSJ" exp="派单时间" type="nvarchar(50)" null="F" p="F" />
+            <name="SHDW" exp="收货单位" type="nvarchar(50)" null="F" p="F" />
+            <name="LXR" exp="联系人" type="nvarchar(50)" null="F" p="F" />
+            <name="LXDH" exp="联系电话" type="nvarchar(100)" null="F" p="F" />
+            <name="WGSX" exp="完工时限" type="nvarchar(50)" null="F" p="F" />
+            <name="DZ" exp="地址" type="nvarchar(100)" null="F" p="F" />
+            <name="ZJTS" exp="总计台数" type="nvarchar(100)" null="F" p="F" />
+            <name="ZJJS" exp="总计件数" type="nvarchar(100)" null="F" p="F" />
+            <name="SLBM" exp="受理部门" type="nvarchar(100)" null="F" p="F" />
+            <name="SDY" exp="受单员" type="nvarchar(100)" null="F" p="F" />
+            <name="QSY" exp="签收员" type="nvarchar(100)" null="F" p="F" />
+            <name="QSSJ" exp="签收时间" type="nvarchar(100)" null="F" p="F" />
+            <name="FWQK" exp="服务情况" type="nvarchar(100)" null="F" p="F" />
+            <name="FWGCS" exp="服务工程师" type="nvarchar(100)" null="F" p="F" />
+            <name="WGSJ" exp="完工时间" type="nvarchar(100)" null="F" p="F" />
+            <name="YSQK" exp="验收情况" type="nvarchar(100)" null="F" p="F" />
+            <name="YSRY" exp="验收人员" type="nvarchar(100)" null="F" p="F" />
+            <name="YSSJ" exp="验收时间" type="nvarchar(100)" null="F" p="F" />
+            <name="TJYH" exp="添加用户" type="nvarchar(20)" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_32_FXDSJ" exp="返修单数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="FXDID" exp="返修单ID" type="int" null="F" p="F" />
+            <name="WLMC" exp="物料名称" type="nvarchar(200)" null="F" p="F" />
+            <name="PZ" exp="配置" type="nvarchar(200)" null="F" p="F" />
+            <name="DW" exp="单位" type="nvarchar(200)" null="F" p="F" />
+            <name="SL" exp="数量" type="nvarchar(200)" null="F" p="F" />
+            <name="RWSM" exp="任务说明" type="nvarchar(200)" null="F" p="F" />
+            <name="CLJG" exp="处理结果" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

@@ -119,3 +119,39 @@ EDU_ZDGL_23_SXDSJ  送修单数据表
   SL            数量                    int            非主
   WB            文本                    nvarchar(200)  非主
 
+EDU_ZDGL_31_FXD  返修单表
+  ID            编号                    int            主键
+  FXDH          返修单号                nvarchar(100)  非主
+  PDBM          派单部门                nvarchar(100)  非主
+  PDY           派单员                  nvarchar(50)   非主
+  PDSJ          派单时间                nvarchar(50)   非主
+  SHDW          收货单位                nvarchar(50)   非主
+  LXR           联系人                  nvarchar(50)   非主
+  LXDH          联系电话                nvarchar(100)  非主
+  WGSX          完工时限                nvarchar(50)   非主
+  DZ            地址                    nvarchar(100)  非主
+  ZJTS          总计台数                nvarchar(100)  非主
+  ZJJS          总计件数                nvarchar(100)  非主
+  SLBM          受理部门                nvarchar(100)  非主
+  SDY           受单员                  nvarchar(100)  非主
+  QSY           签收员                  nvarchar(100)  非主
+  QSSJ          签收时间                nvarchar(100)  非主
+  FWQK          服务情况                nvarchar(100)  非主
+  FWGCS         服务工程师              nvarchar(100)  非主
+  WGSJ          完工时间                nvarchar(100)  非主
+  YSQK          验收情况                nvarchar(100)  非主
+  YSRY          验收人员                nvarchar(100)  非主
+  YSSJ          验收时间                nvarchar(100)  非主
+  TJYH          添加用户                nvarchar(20)   非主
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZDGL_32_FXDSJ  返修单数据表
+  ID            编号                    int            自增主键
+  FXDID         返修单ID                int            非主        返修单表
+  WLMC          物料名称                nvarchar(200)  非主
+  PZ            配置                    nvarchar(200)  非主
+  DW            单位                    nvarchar(200)  非主
+  SL            数量                    nvarchar(200)  非主
+  RWSM          任务说明                nvarchar(200)  非主
+  CLJG          处理结果                nvarchar(200)  非主
+

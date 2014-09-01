@@ -356,3 +356,5 @@
   SXDID          EDU_ZDGL_22_SXD                    ID
   SBXHID         EDU_ZDGL_03_SBXH                   ID
   SXDXMID        EDU_ZDGL_21_SXDXM                  ID
+<EDU_ZDGL_32_FXDSJ
+  FXDID          EDU_ZDGL_31_FXD                    ID
