@@ -180,6 +180,7 @@ SELECT a.[ID]--考试成绩表
       ,[fp].MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,f.JZGLXID as f_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -245,6 +246,7 @@ SELECT a.[ID]--考试成绩表
       ,[gp].MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[gq].MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,g.JZGLXID as g_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,h.MC as h_KSFS_MC--考试方式代码表 名称
       ,h.SM as h_KSFS_SM--考试方式代码表 说明
       ,i.MC as i_KSXZ_MC--考试性质代码表 名称
@@ -261,6 +263,7 @@ SELECT a.[ID]--考试成绩表
       ,l.XN as l_XN_XN--学年表 学年
       ,m.SCHOOLID as m_NJ_SCHOOLID--年级数据类表 学校名
       ,m.NJMC as m_NJ_NJMC--年级数据类表 年级名称
+      ,m.ZT as m_NJ_ZT--年级数据类表 状态
       ,n.SCHOOLID as n_BJ_SCHOOLID--班级数据类表 学校名
       ,n.NJ as n_BJ_NJ--班级数据类表 年级号
       ,n.BJ as n_BJ_BJ--班级数据类表 班级名称
@@ -279,6 +282,7 @@ SELECT a.[ID]--考试成绩表
       ,[nd].MC as n_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[nd].SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,n.BZRID as n_BJ_BZRID--班级数据类表 班主任ID
+      ,n.ZT as n_BJ_ZT--班级数据类表 状态
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期

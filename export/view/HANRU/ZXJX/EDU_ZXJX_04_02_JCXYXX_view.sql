@@ -24,6 +24,7 @@ SELECT a.[ID]--编号
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
       ,d.SCHOOLID as d_NJ_SCHOOLID--年级数据类表 学校名
       ,d.NJMC as d_NJ_NJMC--年级数据类表 年级名称
+      ,d.ZT as d_NJ_ZT--年级数据类表 状态
       ,e.SCHOOLID as e_KC_SCHOOLID--课程数据类 学校名
       ,e.KCMC as e_KC_KCMC--课程数据类 课程名称
       ,e.KCM as e_KC_KCM--课程数据类 课程码
@@ -129,6 +130,7 @@ SELECT a.[ID]--编号
       ,[gp].MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[gq].MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,g.JZGLXID as g_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,h.XM as h_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -194,6 +196,7 @@ SELECT a.[ID]--编号
       ,[hp].MC as h_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,h.ZYRKXD as h_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[hq].MC as h_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,h.JZGLXID as h_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,i.MC as i_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_04_02_JCXYXX AS a LEFT OUTER JOIN

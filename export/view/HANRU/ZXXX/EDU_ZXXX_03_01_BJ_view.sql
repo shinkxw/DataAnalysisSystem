@@ -17,8 +17,10 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[SFSSMZSYJXB]--是否少数民族双语教学班
       ,a.[SYJXMSM]--双语教学模式码
       ,a.[BZRID]--班主任ID
+      ,a.[ZT]--状态
       ,c.SCHOOLID as c_NJ_SCHOOLID--年级数据类表 学校名
       ,c.NJMC as c_NJ_NJMC--年级数据类表 年级名称
+      ,c.ZT as c_NJ_ZT--年级数据类表 状态
       ,d.MC as d_ZXXBJLX_MC--中小学班级类型代码表 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.MC as f_SSMZSYJXMS_MC--少数民族双语教学模式代码表 名称
@@ -88,6 +90,7 @@ SELECT a.[SCHOOLID]--学校名
       ,[gp].MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[gq].MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,g.JZGLXID as g_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

@@ -77,6 +77,7 @@ SELECT a.[SCHOOLID]--学校名
       ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJZ_01_A06_JZGNLZSSH AS a LEFT OUTER JOIN

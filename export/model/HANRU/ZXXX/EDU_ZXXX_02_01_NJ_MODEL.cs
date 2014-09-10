@@ -33,6 +33,11 @@ namespace HanRuEdu.LDAL
             public String NJMC { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "×´Ì¬")]
+            public Int32 ZT { get; set; }
+
+
         }
     }
 }

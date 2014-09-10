@@ -82,6 +82,7 @@ SELECT a.[ID]--编号
       ,[dp].MC as d_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[dq].MC as d_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,d.JZGLXID as d_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,e.PWD as e_USER_PWD--应用系统用户表 密码

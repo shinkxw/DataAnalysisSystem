@@ -4,14 +4,13 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJZ_12_A01_XCLX_metadata))]
-    public partial class EDU_ZXJZ_12_A01_XCLX
+    [MetadataType(typeof(EDU_ZXJZ_01_A07_JZGLX_metadata))]
+    public partial class EDU_ZXJZ_01_A07_JZGLX
     {
-        public EDU_ZXJZ_12_A01_XCLX()
+        public EDU_ZXJZ_01_A07_JZGLX()
         {
-            XCLXMC = "";
         }
-        public class EDU_ZXJZ_12_A01_XCLX_metadata
+        public class EDU_ZXJZ_01_A07_JZGLX_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -23,16 +22,10 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "类型名称")]
-            [StringLength(30)]
+            [StringLength(60)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String XCLXMC { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "教职工类型")]
-            public Int32 JZGLXID { get; set; }
+            public String LXMC { get; set; }
 
 
         }

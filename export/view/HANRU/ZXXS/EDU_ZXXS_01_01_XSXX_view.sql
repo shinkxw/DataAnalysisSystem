@@ -63,6 +63,7 @@ SELECT a.[ID]--编号
       ,n.MC as n_SFBZ_MC--是否标志代码表 名称
       ,o.SCHOOLID as o_NJ_SCHOOLID--年级数据类表 学校名
       ,o.NJMC as o_NJ_NJMC--年级数据类表 年级名称
+      ,o.ZT as o_NJ_ZT--年级数据类表 状态
       ,p.SCHOOLID as p_BJ_SCHOOLID--班级数据类表 学校名
       ,p.NJ as p_BJ_NJ--班级数据类表 年级号
       ,p.BJ as p_BJ_BJ--班级数据类表 班级名称
@@ -81,6 +82,7 @@ SELECT a.[ID]--编号
       ,[pd].MC as p_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[pd].SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,p.BZRID as p_BJ_BZRID--班级数据类表 班主任ID
+      ,p.ZT as p_BJ_ZT--班级数据类表 状态
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称

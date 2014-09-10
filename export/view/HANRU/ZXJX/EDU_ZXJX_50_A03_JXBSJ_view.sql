@@ -30,6 +30,7 @@ SELECT a.[ID]--编号
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级数据类表 学校名
       ,e.NJMC as e_NJ_NJMC--年级数据类表 年级名称
+      ,e.ZT as e_NJ_ZT--年级数据类表 状态
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -95,6 +96,7 @@ SELECT a.[ID]--编号
       ,[fp].MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,f.JZGLXID as f_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,g.SCHOOLID as g_KKSJ_SCHOOLID--开课时间表 学校
       ,g.SKSJ as g_KKSJ_SKSJ--开课时间表 上课时间
       ,g.SDIDLB as g_KKSJ_SDIDLB--开课时间表 时段ID列表

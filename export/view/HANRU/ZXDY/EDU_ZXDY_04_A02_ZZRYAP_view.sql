@@ -42,6 +42,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,[ed].MC as e_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
+      ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码

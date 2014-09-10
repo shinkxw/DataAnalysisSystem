@@ -296,6 +296,11 @@ namespace HanRuEdu.LDAL
             public String ZYRKXD { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教职工类型")]
+            public Int32 JZGLXID { get; set; }
+
+
         }
     }
 }

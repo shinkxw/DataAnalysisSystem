@@ -150,6 +150,7 @@ SELECT a.[ID]--学籍异动表编号
       ,[fp].MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,f.JZGLXID as f_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,g.SCHOOLID as g_BJ_SCHOOLID--班级数据类表 学校名
       ,g.NJ as g_BJ_NJ--班级数据类表 年级号
       ,g.BJ as g_BJ_BJ--班级数据类表 班级名称
@@ -168,8 +169,10 @@ SELECT a.[ID]--学籍异动表编号
       ,[gd].MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
+      ,g.ZT as g_BJ_ZT--班级数据类表 状态
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
+      ,h.ZT as h_NJ_ZT--年级数据类表 状态
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
       ,i.NJ as i_BJ_NJ--班级数据类表 年级号
       ,i.BJ as i_BJ_BJ--班级数据类表 班级名称
@@ -188,8 +191,10 @@ SELECT a.[ID]--学籍异动表编号
       ,[id].MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
+      ,i.ZT as i_BJ_ZT--班级数据类表 状态
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
+      ,j.ZT as j_NJ_ZT--年级数据类表 状态
 
 FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

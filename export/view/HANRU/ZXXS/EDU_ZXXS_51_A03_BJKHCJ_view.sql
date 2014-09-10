@@ -25,6 +25,7 @@ SELECT a.[ID]--编号
       ,d.XMZGF as d_KHDLXM_XMZGF--考核大类项目表 项目最高分
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级数据类表 学校名
       ,e.NJMC as e_NJ_NJMC--年级数据类表 年级名称
+      ,e.ZT as e_NJ_ZT--年级数据类表 状态
       ,f.SCHOOLID as f_BJ_SCHOOLID--班级数据类表 学校名
       ,f.NJ as f_BJ_NJ--班级数据类表 年级号
       ,f.BJ as f_BJ_BJ--班级数据类表 班级名称
@@ -43,6 +44,7 @@ SELECT a.[ID]--编号
       ,[fd].MC as f_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[fd].SM as f_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,f.BZRID as f_BJ_BZRID--班级数据类表 班主任ID
+      ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码

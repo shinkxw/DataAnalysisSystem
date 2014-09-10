@@ -90,6 +90,7 @@ SELECT a.[ID]--编号
       ,[ep].MC as e_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,e.ZYRKXD as e_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[eq].MC as e_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,e.JZGLXID as e_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXJZ_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_20_A03_XSPJTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

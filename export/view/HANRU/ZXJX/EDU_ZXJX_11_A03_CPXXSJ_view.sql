@@ -86,6 +86,7 @@ SELECT a.[ID]--编号
       ,[fp].MC as f_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,f.JZGLXID as f_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXJX_11_A03_CPXXSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

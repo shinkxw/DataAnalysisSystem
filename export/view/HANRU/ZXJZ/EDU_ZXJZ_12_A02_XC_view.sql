@@ -76,8 +76,10 @@ SELECT a.[ID]--编号
       ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
+      ,d.JZGLXID as d_XCLX_JZGLXID--薪酬类型表 教职工类型ID
       ,e.SCHOOLID as e_XCMYFFPC_SCHOOLID--薪酬每月发放批次表 学校
       ,e.PCMC as e_XCMYFFPC_PCMC--薪酬每月发放批次表 批次名称
 

@@ -83,6 +83,7 @@ SELECT a.[ID]--编号
       ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
@@ -124,9 +125,11 @@ SELECT a.[ID]--编号
       ,[gd].MC as g_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
+      ,g.ZT as g_BJ_ZT--班级数据类表 状态
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
       ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称
+      ,i.ZT as i_NJ_ZT--年级数据类表 状态
       ,j.SCHOOLID as j_XQ_SCHOOLID--学期数据表 学校名
       ,j.XNID as j_XQ_XNID--学期数据表 学年
       ,j.XQM as j_XQ_XQM--学期数据表 学期码

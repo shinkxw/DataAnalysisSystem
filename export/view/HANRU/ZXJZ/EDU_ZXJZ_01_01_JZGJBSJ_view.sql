@@ -45,6 +45,7 @@ SELECT a.[ID]--编号
       ,a.[TC]--特长
       ,a.[GWZYM]--岗位职业码
       ,a.[ZYRKXD]--主要任课学段
+      ,a.[JZGLXID]--教职工类型ID
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -68,6 +69,8 @@ SELECT a.[ID]--编号
       ,p.MC as p_ZXXBZLB_MC--中小学编制类别代码表 名称
       ,q.MC as q_GWZY_MC--岗位职业代码表 名称
       ,r.MC as r_RKXD_MC--任课学段代码表 名称
+      ,s.SCHOOLID as s_JZGLX_SCHOOLID--教职工类型表 学校
+      ,s.LXMC as s_JZGLX_LXMC--教职工类型表 类型名称
 
 FROM dbo.EDU_ZXJZ_01_01_JZGJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS c ON a.XBM = c.DM /*性别码*/ LEFT OUTER JOIN
@@ -85,5 +88,6 @@ FROM dbo.EDU_ZXJZ_01_01_JZGJBSJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_XL AS o ON a.XLM = o.DM /*学历码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBZLB AS p ON a.BZLBM = p.DM /*编制类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWZY AS q ON a.GWZYM = q.DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS r ON a.ZYRKXD = r.DM /*主要任课学段*/
+      dbo.EDU_JY_RKXD AS r ON a.ZYRKXD = r.DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_A07_JZGLX AS s ON a.JZGLXID = s.ID /*教职工类型ID*/ AND a.SCHOOLID = s.SCHOOLID /*学校名*/
 GO

@@ -89,6 +89,7 @@ SELECT a.[ID]--编号
       ,[ep].MC as e_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,e.ZYRKXD as e_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[eq].MC as e_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,e.JZGLXID as e_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,f.SCHOOLID as f_JSGCXPJXM_SCHOOLID--教师过程性评价考核项目表 学校ID
       ,f.XMMC as f_JSGCXPJXM_XMMC--教师过程性评价考核项目表 项目名称
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位

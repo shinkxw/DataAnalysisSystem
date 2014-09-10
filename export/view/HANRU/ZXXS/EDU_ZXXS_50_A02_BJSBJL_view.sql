@@ -26,6 +26,7 @@ SELECT a.[ID]--编号
       ,[cd].MC as c_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
+      ,c.ZT as c_BJ_ZT--班级数据类表 状态
 
 FROM dbo.EDU_ZXXS_50_A02_BJSBJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

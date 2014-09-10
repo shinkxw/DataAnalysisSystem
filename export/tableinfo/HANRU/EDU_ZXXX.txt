@@ -39,6 +39,7 @@ EDU_ZXXX_02_01_NJ  年级数据类表
   SCHOOLID      学校名                  int            主键        学校配置表
   NJ            年级号                  nvarchar(10)   主键
   NJMC          年级名称                nvarchar(30)   非主
+  ZT            状态                    int            非主
 
 EDU_ZXXX_03_01_BJ  班级数据类表
   SCHOOLID      学校名                  int            主键        学校配置表
@@ -56,6 +57,7 @@ EDU_ZXXX_03_01_BJ  班级数据类表
   SFSSMZSYJXB   是否少数民族双语教学班  nvarchar(1)    非主        是否标志代码表
   SYJXMSM       双语教学模式码          nvarchar(1)    非主        少数民族双语教学模式代码表
   BZRID         班主任ID                int            非主        教职工基本数据子类表
+  ZT            状态                    int            非主
 
 EDU_ZXXX_04_01_JG  机构数据类表
   SCHOOLID      学校名                  int            主键        学校配置表

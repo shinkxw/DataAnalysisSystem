@@ -41,15 +41,16 @@
     </table>
     <table name="EDU_ZXXX_02_01_NJ" exp="年级数据类表">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="NJ" exp="年级号" type="nvarchar(10)" null="F" p="T" />
             <name="NJMC" exp="年级名称" type="nvarchar(30)" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_03_01_BJ" exp="班级数据类表">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
-            <name="BH" exp="班号" type="nvarchar(10)" null="F" p="T" remark="学校自编" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="BH" exp="班号" type="nvarchar(10)" null="F" p="T" />
             <name="NJ" exp="年级号" type="nvarchar(10)" null="F" p="F" />
             <name="BJ" exp="班级名称" type="nvarchar(20)" null="T" p="F" />
             <name="JBNY" exp="建班年月" type="nvarchar(6)" null="T" p="F" remark="如：200604表示2006年4月" />
@@ -57,17 +58,18 @@
             <name="BZXH" exp="班长学号" type="nvarchar(20)" null="T" p="F" />
             <name="BJRYCH" exp="班级荣誉称号" type="nvarchar(40)" null="T" p="F" remark="解释/举例：班级获得的荣誉称号 " />
             <name="XZ" exp="学制" type="decimal(3, 1)" null="T" p="F" remark="解释/举例：接受学历教育在校学习完成学业规定的年限" />
-            <name="BJLXM" exp="班级类型码" type="nvarchar(2)" null="T" p="F" remark="值空间：JY/T1001ZXXBJLX中小学班级类型代码 " />
+            <name="BJLXM" exp="班级类型码" type="nvarchar(2)" null="T" p="F" />
             <name="WLLX" exp="文理类型" type="nvarchar(2)" null="T" p="F" remark="解释/举例：文理类型:高中阶段文理科分班 " />
             <name="BYRQ" exp="毕业日期" type="nvarchar(8)" null="T" p="F" remark="如：20060412表示2006年4月12日" />
-            <name="SFSSMZSYJXB" exp="是否少数民族双语教学班" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SFBZ是否标志代码 " />
-            <name="SYJXMSM" exp="双语教学模式码" type="nvarchar(1)" null="F" p="F" remark="值空间：JY/T1001SSMZSYJXMS少数民族双语教学模式代码 " />
+            <name="SFSSMZSYJXB" exp="是否少数民族双语教学班" type="nvarchar(1)" null="F" p="F" />
+            <name="SYJXMSM" exp="双语教学模式码" type="nvarchar(1)" null="F" p="F" />
             <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_04_01_JG" exp="机构数据类表">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="学校ID" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
             <name="JGH" exp="机构号" type="nvarchar(10)" null="F" p="T" remark="解释/举例：指教研室、研究室及党政各机构的代码，学校自编 " />
             <name="LSJGH" exp="隶属机构号" type="nvarchar(10)" null="F" p="F" />
             <name="JGMC" exp="机构名称" type="nvarchar(60)" null="F" p="F" />

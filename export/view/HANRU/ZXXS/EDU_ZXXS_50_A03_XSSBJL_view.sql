@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,[cd].MC as c_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
+      ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -166,6 +167,7 @@ SELECT a.[ID]--编号
       ,[hp].MC as h_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,h.ZYRKXD as h_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[hq].MC as h_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,h.JZGLXID as h_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXXS_50_A03_XSSBJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

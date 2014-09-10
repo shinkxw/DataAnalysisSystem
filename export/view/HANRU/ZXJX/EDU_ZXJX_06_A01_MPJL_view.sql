@@ -82,6 +82,7 @@ SELECT a.[ID]--编号
       ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
@@ -178,6 +179,7 @@ SELECT a.[ID]--编号
       ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
+      ,h.ZT as h_NJ_ZT--年级数据类表 状态
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
       ,i.NJ as i_BJ_NJ--班级数据类表 年级号
       ,i.BJ as i_BJ_BJ--班级数据类表 班级名称
@@ -196,6 +198,7 @@ SELECT a.[ID]--编号
       ,[id].MC as i_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
       ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
+      ,i.ZT as i_BJ_ZT--班级数据类表 状态
       ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
       ,j.XLID as j_XLZ_XLID--校历周表 校历ID
       ,j.NAME as j_XLZ_NAME--校历周表 校历周名称

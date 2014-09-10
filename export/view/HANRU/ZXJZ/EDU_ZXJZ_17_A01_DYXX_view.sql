@@ -77,6 +77,7 @@ SELECT a.[ID]--编号
       ,[cp].MC as c_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,d.XM as d_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -142,6 +143,7 @@ SELECT a.[ID]--编号
       ,[dp].MC as d_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[dq].MC as d_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,d.JZGLXID as d_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXJZ_17_A01_DYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教工基本信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

@@ -84,6 +84,7 @@ SELECT a.[ID]--编号
       ,[dp].MC as d_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,d.ZYRKXD as d_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[dq].MC as d_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,d.JZGLXID as d_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,e.SCHOOLID as e_DZBSJ_SCHOOLID--党支部数据表 学校
       ,e.DZBMC as e_DZBSJ_DZBMC--党支部数据表 党支部名称
       ,e.SS as e_DZBSJ_SS--党支部数据表 所属
@@ -158,6 +159,7 @@ SELECT a.[ID]--编号
       ,[gp].MC as g_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
       ,g.ZYRKXD as g_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[gq].MC as g_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,g.JZGLXID as g_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXJZ_17_A05_DZBCYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_17_A01_DYXX AS c ON a.DYXXID = c.ID /*党员信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
