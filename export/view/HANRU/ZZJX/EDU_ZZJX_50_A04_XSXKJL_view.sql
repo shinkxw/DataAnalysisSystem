@@ -65,7 +65,8 @@ SELECT a.[ID]--编号
       ,d.ZKS as d_JXBSJ_ZKS--教学班数据表 总课时
       ,d.XF as d_JXBSJ_XF--教学班数据表 学分
       ,d.XQID as d_JXBSJ_XQID--教学班数据表 学期ID
-      ,d.NJID as d_JXBSJ_NJID--教学班数据表 年级ID
+      ,d.NJID as d_JXBSJ_NJID--教学班数据表 年级ID列表
+      ,d.NJMCLB as d_JXBSJ_NJMCLB--教学班数据表 年级名称列表
       ,d.DQZT as d_JXBSJ_DQZT--教学班数据表 当前状态
       ,d.KKJSID as d_JXBSJ_KKJSID--教学班数据表 开课教师ID
       ,d.SKSJID as d_JXBSJ_SKSJID--教学班数据表 上课时间ID

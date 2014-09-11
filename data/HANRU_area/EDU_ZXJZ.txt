@@ -45,7 +45,7 @@
             <name="TC" exp="特长" type="text" null="T" p="F" />
             <name="GWZYM" exp="岗位职业码" type="nvarchar(2)" null="F" p="F" />
             <name="ZYRKXD" exp="主要任课学段" type="nvarchar(1)" null="F" p="F" />
-            <name="JZGLXID" exp="教职工类型ID" type="int" null="F" p="F" />
+            <name="JZGLXID" exp="教职工类型ID" type="int" null="F" p="F" default="1" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_01_A01_JZGKZ" exp="教职工扩展表">
@@ -225,7 +225,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="XCLXMC" exp="类型名称" type="nvarchar(30)" null="F" p="F" />
-            <name="JZGLXID" exp="教职工类型ID" type="int" null="F" p="F" />
+            <name="JZGLXID" exp="教职工类型ID" type="int" null="F" p="F" default="1" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_12_A02_XC" exp="薪酬表">

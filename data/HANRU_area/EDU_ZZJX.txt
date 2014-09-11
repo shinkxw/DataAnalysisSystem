@@ -974,7 +974,8 @@
             <name="ZKS" exp="总课时" type="int" null="F" p="F" />
             <name="XF" exp="学分" type="decimal(5, 1)" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="NJID" exp="年级ID" type="nvarchar(4)" null="F" p="F" />
+            <name="NJID" exp="年级ID列表" type="nvarchar(200)" null="F" p="F" />
+            <name="NJMCLB" exp="年级名称列表" type="nvarchar(200)" null="F" p="F" />
             <name="DQZT" exp="当前状态" type="int" null="F" p="F" />
             <name="KKJSID" exp="开课教师ID" type="int" null="F" p="F" />
             <name="SKSJID" exp="上课时间ID" type="int" null="F" p="F" />

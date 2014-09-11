@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             KCJS = "";
             JXJH = "";
             NJID = "";
+            NJMCLB = "";
             SKDD = "";
         }
         public class EDU_ZZJX_50_A03_JXBSJ_metadata
@@ -68,10 +69,17 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "年级")]
-            [StringLength(4)]
+            [Display(Name = "年级ID列表")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String NJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级名称列表")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJMCLB { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

@@ -19814,7 +19814,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A03_JXBSJ](
 	[ZKS]  int  NOT NULL,--总课时
 	[XF]  decimal(5, 1)  NOT NULL,--学分
 	[XQID]  int  NOT NULL,--学期ID
-	[NJID]  nvarchar(4)  NOT NULL,--年级ID
+	[NJID]  nvarchar(200)  NOT NULL,--年级ID列表
+	[NJMCLB]  nvarchar(200)  NOT NULL,--年级名称列表
 	[DQZT]  int  NOT NULL,--当前状态
 	[KKJSID]  int  NOT NULL,--开课教师ID
 	[SKSJID]  int  NOT NULL,--上课时间ID
@@ -21514,7 +21515,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'NJID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'NJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'NJMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'DQZT'
 GO

@@ -831,7 +831,8 @@ EDU_ZZJX_50_A03_JXBSJ  教学班数据表
   ZKS           总课时                  int            非主
   XF            学分                    decimal(5, 1)  非主
   XQID          学期ID                  int            非主        学期数据表
-  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  NJID          年级ID列表              nvarchar(200)  非主
+  NJMCLB        年级名称列表            nvarchar(200)  非主
   DQZT          当前状态                int            非主
   KKJSID        开课教师ID              int            非主        教职工基本数据子类表
   SKSJID        上课时间ID              int            非主        开课时间表

@@ -1860,7 +1860,6 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XXKCLBID       EDU_ZZJX_50_A01_XXKCLB             ID
   XQID           EDU_ELE_01_XQ                      ID
-  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
   KKJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
   SKSJID         EDU_ZZJX_50_A02_KKSJ               ID
 <EDU_ZZJX_50_A04_XSXKJL
