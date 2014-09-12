@@ -1218,6 +1218,7 @@
             <name="PSYJ" exp="批示意见" type="nvarchar(200)" null="F" p="F" />
             <name="SFSH" exp="是否收回" type="nvarchar(1)" null="F" p="F" />
             <name="XFWDLX" exp="下发文档类型" type="int" null="F" p="F" />
+            <name="SBWH" exp="收编文号" type="nvarchar(20)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_OAXT_39_A03_GWLZ" exp="公文流转表">

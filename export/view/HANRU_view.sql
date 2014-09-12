@@ -5655,6 +5655,7 @@ SELECT a.[ID]--编号
       ,a.[PSYJ]--批示意见
       ,a.[SFSH]--是否收回
       ,a.[XFWDLX]--下发文档类型
+      ,a.[SBWH]--收编文号
       ,c.SCHOOLID as c_GWLB_SCHOOLID--公文类别表 学校ID
       ,c.LBMC as c_GWLB_LBMC--公文类别表 类别名称
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
@@ -5692,6 +5693,7 @@ SELECT a.[ID]--编号
       ,c.SFSH as c_SWB_SFSH--收文表 是否收回
       ,[cb].MC as c_SWB_SFSH_MC--是否标志代码表 名称
       ,c.XFWDLX as c_SWB_XFWDLX--收文表 下发文档类型
+      ,c.SBWH as c_SWB_SBWH--收文表 收编文号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,d.PWD as d_USER_PWD--应用系统用户表 密码

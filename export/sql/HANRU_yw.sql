@@ -4420,6 +4420,7 @@ CREATE TABLE [dbo].[EDU_OAXT_39_A02_SWB](
 	[PSYJ]  nvarchar(200)  NOT NULL,--批示意见
 	[SFSH]  nvarchar(1)  NOT NULL,--是否收回
 	[XFWDLX]  int  NOT NULL,--下发文档类型
+	[SBWH]  nvarchar(20)  NOT NULL,--收编文号
 CONSTRAINT [PK_EDU_OAXT_39_A02_SWB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -6374,6 +6375,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否收回' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A02_SWB', @level2type=N'COLUMN',@level2name=N'SFSH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下发文档类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A02_SWB', @level2type=N'COLUMN',@level2name=N'XFWDLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收编文号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A02_SWB', @level2type=N'COLUMN',@level2name=N'SBWH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公文流转表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ'
 GO

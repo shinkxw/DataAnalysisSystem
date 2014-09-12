@@ -13,6 +13,7 @@ SELECT a.[ID]--编号
       ,a.[PSYJ]--批示意见
       ,a.[SFSH]--是否收回
       ,a.[XFWDLX]--下发文档类型
+      ,a.[SBWH]--收编文号
       ,c.SCHOOLID as c_GWLB_SCHOOLID--公文类别表 学校ID
       ,c.LBMC as c_GWLB_LBMC--公文类别表 类别名称
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称

@@ -16,6 +16,7 @@ namespace HanRuEdu.LDAL
             WJNR = "";
             PSYJ = "";
             SFSH = "";
+            SBWH = "";
         }
         public class EDU_OAXT_39_A02_SWB_metadata
         {
@@ -83,6 +84,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "下发文档类型")]
             public Int32 XFWDLX { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "收编文号")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SBWH { get; set; }
 
 
         }
