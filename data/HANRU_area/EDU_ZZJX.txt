@@ -1012,6 +1012,14 @@
             <name="BZ" exp="备注" type="nvarchar(100)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_50_A07_ECXKXS" exp="二次选课学生表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_50_A11_XKXSPJ" exp="选课学生评教表">
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
