@@ -11,6 +11,7 @@ SELECT a.[ID]--编号
       ,a.[WLBH]--物料编号
       ,b.LXMC as b_SBLX_LXMC--设备类型配置表 类型名称
       ,b.ZT as b_SBLX_ZT--设备类型配置表 状态
+      ,b.LXJC as b_SBLX_LXJC--设备类型配置表 类型简称
       ,c.CJMC as c_SCCJ_CJMC--生产厂家信息表 厂家名称
       ,c.ZT as c_SCCJ_ZT--生产厂家信息表 状态
 

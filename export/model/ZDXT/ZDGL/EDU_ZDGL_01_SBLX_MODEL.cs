@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZDGL_01_SBLX()
         {
             LXMC = "";
+            LXJC = "";
         }
         public class EDU_ZDGL_01_SBLX_metadata
         {
@@ -28,6 +29,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "状态")]
             public Int32 ZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "类型简称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String LXJC { get; set; }
 
 
         }

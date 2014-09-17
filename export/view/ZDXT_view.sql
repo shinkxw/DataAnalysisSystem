@@ -339,6 +339,8 @@ SELECT a.[LOGINNAME]--用户名
       ,d.SXDWMCLB as d_BM_SXDWMCLB--部门信息表 送修单位名称列表
       ,d.DZ as d_BM_DZ--部门信息表 地址
       ,d.LXDH as d_BM_LXDH--部门信息表 联系电话
+      ,d.GSMC as d_BM_GSMC--部门信息表 公司名称
+      ,d.LXR as d_BM_LXR--部门信息表 联系人
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -3489,6 +3491,7 @@ SELECT a.[ID]--编号
       ,a.[WLBH]--物料编号
       ,b.LXMC as b_SBLX_LXMC--设备类型配置表 类型名称
       ,b.ZT as b_SBLX_ZT--设备类型配置表 状态
+      ,b.LXJC as b_SBLX_LXJC--设备类型配置表 类型简称
       ,c.CJMC as c_SCCJ_CJMC--生产厂家信息表 厂家名称
       ,c.ZT as c_SCCJ_ZT--生产厂家信息表 状态
 

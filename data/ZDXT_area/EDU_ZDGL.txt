@@ -5,6 +5,7 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="LXMC" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="LXJC" exp="类型简称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_02_SCCJ" exp="生产厂家信息表">
@@ -49,7 +50,9 @@
             <name="SXDWLB" exp="送修单位列表" type="text" null="F" p="F" />
             <name="SXDWMCLB" exp="送修单位名称列表" type="text" null="F" p="F" />
             <name="DZ" exp="地址" type="nvarchar(200)" null="F" p="F" />
-            <name="LXDH" exp="联系电话" type="nvarchar(50)" null="F" p="F" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" null="F" p="F" />
+            <name="GSMC" exp="公司名称" type="nvarchar(200)" null="F" p="F" />
+            <name="LXR" exp="联系人" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_07_BXSB" exp="报修设备表">
