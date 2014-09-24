@@ -125,6 +125,7 @@ EDU_ZXJZ_01_A04_JZGJBSJSH  教职工基本数据子类表(审核)
   TC            特长                    text           非主
   GWZYM         岗位职业码              nvarchar(2)    非主        岗位职业代码表
   ZYRKXD        主要任课学段            nvarchar(1)    非主        任课学段代码表
+  JZGLXID       教职工类型ID            int            非主        教职工类型表
 
 EDU_ZXJZ_01_A05_JZGKZSH  教职工扩展表(审核)
   JZGID         教工基本信息ID          int            主键        教职工基本数据子类表

@@ -833,6 +833,7 @@
   BZLBM          EDU_JY_ZXXBZLB                     DM
   GWZYM          EDU_JY_GWZY                        DM
   ZYRKXD         EDU_JY_RKXD                        DM
+  JZGLXID        EDU_ZXJZ_01_A07_JZGLX              ID
 <EDU_ZXJZ_01_A05_JZGKZSH
   JZGID          EDU_ZXJZ_01_01_JZGJBSJ             ID
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

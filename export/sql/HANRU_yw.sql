@@ -10544,6 +10544,7 @@ CREATE TABLE [dbo].[EDU_ZXJZ_01_A04_JZGJBSJSH](
 	[TC]  text  NULL,--特长
 	[GWZYM]  nvarchar(2)  NOT NULL,--岗位职业码
 	[ZYRKXD]  nvarchar(1)  NOT NULL,--主要任课学段
+	[JZGLXID]  int  NOT NULL,--教职工类型ID
 CONSTRAINT [PK_EDU_ZXJZ_01_A04_JZGJBSJSH] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -11338,6 +11339,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'岗位职业码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'GWZYM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'主要任课学段' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZYRKXD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'JZGLXID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工扩展表(审核)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A05_JZGKZSH'
 GO
