@@ -3829,6 +3829,7 @@ SELECT a.[ID]--编号
       ,a.[PZ]--配置
       ,a.[DW]--单位
       ,a.[SL]--数量
+      ,a.[FY]--费用
       ,a.[RWSM]--任务说明
       ,a.[CLJG]--处理结果
       ,b.FXDH as b_FXD_FXDH--返修单表 返修单号

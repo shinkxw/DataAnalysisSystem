@@ -188,6 +188,7 @@
             <name="PZ" exp="配置" type="nvarchar(200)" null="F" p="F" />
             <name="DW" exp="单位" type="nvarchar(200)" null="F" p="F" />
             <name="SL" exp="数量" type="nvarchar(200)" null="F" p="F" />
+            <name="FY" exp="费用" type="nvarchar(200)" null="F" p="F" />
             <name="RWSM" exp="任务说明" type="nvarchar(200)" null="F" p="F" />
             <name="CLJG" exp="处理结果" type="nvarchar(200)" null="F" p="F" />
         </field_area>

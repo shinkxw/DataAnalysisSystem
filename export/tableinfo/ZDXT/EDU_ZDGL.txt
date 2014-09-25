@@ -155,6 +155,7 @@ EDU_ZDGL_32_FXDSJ  返修单数据表
   PZ            配置                    nvarchar(200)  非主
   DW            单位                    nvarchar(200)  非主
   SL            数量                    nvarchar(200)  非主
+  FY            费用                    nvarchar(200)  非主
   RWSM          任务说明                nvarchar(200)  非主
   CLJG          处理结果                nvarchar(200)  非主
 

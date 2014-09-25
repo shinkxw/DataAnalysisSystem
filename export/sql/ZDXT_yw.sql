@@ -5367,6 +5367,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_32_FXDSJ](
 	[PZ]  nvarchar(200)  NOT NULL,--配置
 	[DW]  nvarchar(200)  NOT NULL,--单位
 	[SL]  nvarchar(200)  NOT NULL,--数量
+	[FY]  nvarchar(200)  NOT NULL,--费用
 	[RWSM]  nvarchar(200)  NOT NULL,--任务说明
 	[CLJG]  nvarchar(200)  NOT NULL,--处理结果
 CONSTRAINT [PK_EDU_ZDGL_32_FXDSJ] PRIMARY KEY CLUSTERED
@@ -5661,6 +5662,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'单位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_32_FXDSJ', @level2type=N'COLUMN',@level2name=N'DW'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_32_FXDSJ', @level2type=N'COLUMN',@level2name=N'SL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'费用' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_32_FXDSJ', @level2type=N'COLUMN',@level2name=N'FY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'任务说明' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_32_FXDSJ', @level2type=N'COLUMN',@level2name=N'RWSM'
 GO

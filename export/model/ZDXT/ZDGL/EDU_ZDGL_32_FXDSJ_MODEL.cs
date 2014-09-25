@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             PZ = "";
             DW = "";
             SL = "";
+            FY = "";
             RWSM = "";
             CLJG = "";
         }
@@ -54,6 +55,13 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SL { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "费用")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FY { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
