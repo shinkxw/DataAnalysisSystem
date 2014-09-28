@@ -327,4 +327,83 @@
             <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_55_A01_CZDAGN" exp="成长档案功能表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="GNMC" exp="功能名称" type="nvarchar(50)" null="F" p="F" />
+            <name="WZ" exp="网址" type="nvarchar(200)" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_55_A02_CZDAGNQX" exp="成长档案功能权限表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="GNID" exp="功能ID" type="int" null="F" p="F" />
+            <name="YHLX" exp="用户类型" type="int" null="F" p="F" />
+            <name="QXMC" exp="权限名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_55_A03_CZDADFFS" exp="成长档案打分方式表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="GNID" exp="功能ID" type="int" null="F" p="F" />
+            <name="DFFSMC" exp="打分方式名称" type="nvarchar(50)" null="F" p="F" />
+            <name="DFXMLX" exp="打分项目类型" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_55_A04_CZDADFXX" exp="成长档案打分选项表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="DFFSID" exp="打分方式ID" type="int" null="F" p="F" />
+            <name="XXNR" exp="选项内容" type="nvarchar(50)" null="F" p="F" />
+            <name="TPLJ" exp="图片路径" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A01_XSXQDS" exp="学生学期打算表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A11_JXLXMRJL" exp="家校联系每日记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+            <name="BZRTXJL" exp="班主任填写记录" type="text" null="F" p="F" />
+            <name="JTTXJL" exp="家庭填写记录" type="text" null="F" p="F" />
+            <name="BZRGXZT" exp="班主任更新状态" type="int" null="F" p="F" />
+            <name="JTGXZT" exp="家庭更新状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A12_JXLXPJXM" exp="家校联系评价项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="PJXMMC" exp="评价项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A13_JXLXXSPJ" exp="家校联系学生评价表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="BPXSID" exp="被评学生ID" type="int" null="F" p="F" />
+            <name="PJXSID" exp="评价学生ID" type="int" null="F" p="F" />
+            <name="PJXMID" exp="评价项目ID" type="int" null="F" p="F" />
+            <name="DFXXID" exp="打分选项ID" type="int" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

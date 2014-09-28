@@ -1064,6 +1064,32 @@
   PXMCID         EDU_ZXXS_52_A02_PXMC               ID
   PXXMID         EDU_ZXXS_52_A01_PXXM               ID
   XSID           EDU_ZXXS_01_01_XSXX                ID
+<EDU_ZXXS_55_A01_CZDAGN
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXS_55_A02_CZDAGNQX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GNID           EDU_ZXXS_55_A01_CZDAGN             ID
+<EDU_ZXXS_55_A03_CZDADFFS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  GNID           EDU_ZXXS_55_A01_CZDAGN             ID
+<EDU_ZXXS_55_A04_CZDADFXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DFFSID         EDU_ZXXS_55_A03_CZDADFFS           ID
+<EDU_ZXXS_56_A01_XSXQDS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+<EDU_ZXXS_56_A11_JXLXMRJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+<EDU_ZXXS_56_A12_JXLXPJXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXS_56_A13_JXLXXSPJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BPXSID         EDU_ZXXS_01_01_XSXX                ID
+  PJXSID         EDU_ZXXS_01_01_XSXX                ID
+  PJXMID         EDU_ZXXS_56_A12_JXLXPJXM           ID
+  DFXXID         EDU_ZXXS_55_A04_CZDADFXX           ID
 <EDU_ZXXX_01_01_ZXXX
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXBXLXM        EDU_JY_BXLX                        DM

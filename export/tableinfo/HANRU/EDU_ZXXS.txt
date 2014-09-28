@@ -283,3 +283,66 @@ EDU_ZXXS_52_A03_XSZL  学生资料表
   NR            内容                    text           非主
   SCSJ          上传时间                datetime       非主
 
+EDU_ZXXS_55_A01_CZDAGN  成长档案功能表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  GNMC          功能名称                nvarchar(50)   非主
+  WZ            网址                    nvarchar(200)  非主
+  PLSX          排列顺序                int            非主
+  ZT            状态                    int            非主
+
+EDU_ZXXS_55_A02_CZDAGNQX  成长档案功能权限表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  GNID          功能ID                  int            非主        成长档案功能表
+  YHLX          用户类型                int            非主
+  QXMC          权限名称                nvarchar(50)   非主
+  ZT            状态                    int            非主
+
+EDU_ZXXS_55_A03_CZDADFFS  成长档案打分方式表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  GNID          功能ID                  int            非主        成长档案功能表
+  DFFSMC        打分方式名称            nvarchar(50)   非主
+  DFXMLX        打分项目类型            int            非主
+  ZT            状态                    int            非主
+
+EDU_ZXXS_55_A04_CZDADFXX  成长档案打分选项表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  DFFSID        打分方式ID              int            非主        成长档案打分方式表
+  XXNR          选项内容                nvarchar(50)   非主
+  TPLJ          图片路径                nvarchar(200)  非主
+
+EDU_ZXXS_56_A01_XSXQDS  学生学期打算表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  NR            内容                    text           非主
+
+EDU_ZXXS_56_A11_JXLXMRJL  家校联系每日记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  DJSJ          登记时间                datetime       非主
+  BZRTXJL       班主任填写记录          text           非主
+  JTTXJL        家庭填写记录            text           非主
+  BZRGXZT       班主任更新状态          int            非主
+  JTGXZT        家庭更新状态            int            非主
+
+EDU_ZXXS_56_A12_JXLXPJXM  家校联系评价项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  PJXMMC        评价项目名称            nvarchar(50)   非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZXXS_56_A13_JXLXXSPJ  家校联系学生评价表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  BPXSID        被评学生ID              int            非主        学生基本数据子类表
+  PJXSID        评价学生ID              int            非主        学生基本数据子类表
+  PJXMID        评价项目ID              int            非主        家校联系评价项目表
+  DFXXID        打分选项ID              int            非主        成长档案打分选项表
+  DJSJ          登记时间                datetime       非主
+
