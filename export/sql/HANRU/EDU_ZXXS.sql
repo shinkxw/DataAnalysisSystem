@@ -653,7 +653,10 @@ CREATE TABLE [dbo].[EDU_ZXXS_55_A01_CZDAGN](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[GNMC]  nvarchar(50)  NOT NULL,--功能名称
-	[WZ]  nvarchar(200)  NOT NULL,--网址
+	[XSCKWZ]  nvarchar(200)  NOT NULL,--学生查看网址
+	[XSBJWZ]  nvarchar(200)  NOT NULL,--学生编辑网址
+	[JSCKWZ]  nvarchar(200)  NOT NULL,--教师查看网址
+	[BZRBJWZ]  nvarchar(200)  NOT NULL,--班主任编辑网址
 	[PLSX]  int  NOT NULL,--排列顺序
 	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZXXS_55_A01_CZDAGN] PRIMARY KEY CLUSTERED
@@ -1331,7 +1334,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'GNMC'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'WZ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生查看网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'XSCKWZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生编辑网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'XSBJWZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师查看网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'JSCKWZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班主任编辑网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'BZRBJWZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO

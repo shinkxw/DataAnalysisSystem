@@ -332,7 +332,10 @@
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
             <name="GNMC" exp="功能名称" type="nvarchar(50)" null="F" p="F" />
-            <name="WZ" exp="网址" type="nvarchar(200)" null="F" p="F" />
+            <name="XSCKWZ" exp="学生查看网址" type="nvarchar(200)" null="F" p="F" />
+            <name="XSBJWZ" exp="学生编辑网址" type="nvarchar(200)" null="F" p="F" />
+            <name="JSCKWZ" exp="教师查看网址" type="nvarchar(200)" null="F" p="F" />
+            <name="BZRBJWZ" exp="班主任编辑网址" type="nvarchar(200)" null="F" p="F" />
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>

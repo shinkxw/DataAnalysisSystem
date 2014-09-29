@@ -287,7 +287,10 @@ EDU_ZXXS_55_A01_CZDAGN  成长档案功能表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   GNMC          功能名称                nvarchar(50)   非主
-  WZ            网址                    nvarchar(200)  非主
+  XSCKWZ        学生查看网址            nvarchar(200)  非主
+  XSBJWZ        学生编辑网址            nvarchar(200)  非主
+  JSCKWZ        教师查看网址            nvarchar(200)  非主
+  BZRBJWZ       班主任编辑网址          nvarchar(200)  非主
   PLSX          排列顺序                int            非主
   ZT            状态                    int            非主
 

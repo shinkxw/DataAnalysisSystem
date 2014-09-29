@@ -10,7 +10,10 @@ namespace HanRuEdu.LDAL
         public EDU_ZXXS_55_A01_CZDAGN()
         {
             GNMC = "";
-            WZ = "";
+            XSCKWZ = "";
+            XSBJWZ = "";
+            JSCKWZ = "";
+            BZRBJWZ = "";
         }
         public class EDU_ZXXS_55_A01_CZDAGN_metadata
         {
@@ -32,10 +35,31 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "网址")]
+            [Display(Name = "学生查看网址")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String WZ { get; set; }
+            public String XSCKWZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "学生编辑网址")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XSBJWZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "教师查看网址")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSCKWZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班主任编辑网址")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZRBJWZ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

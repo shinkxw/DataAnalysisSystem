@@ -15035,7 +15035,10 @@ SELECT a.[ID]--编号
       ,a.[ZT]--状态
       ,c.SCHOOLID as c_CZDAGN_SCHOOLID--成长档案功能表 学校
       ,c.GNMC as c_CZDAGN_GNMC--成长档案功能表 功能名称
-      ,c.WZ as c_CZDAGN_WZ--成长档案功能表 网址
+      ,c.XSCKWZ as c_CZDAGN_XSCKWZ--成长档案功能表 学生查看网址
+      ,c.XSBJWZ as c_CZDAGN_XSBJWZ--成长档案功能表 学生编辑网址
+      ,c.JSCKWZ as c_CZDAGN_JSCKWZ--成长档案功能表 教师查看网址
+      ,c.BZRBJWZ as c_CZDAGN_BZRBJWZ--成长档案功能表 班主任编辑网址
       ,c.PLSX as c_CZDAGN_PLSX--成长档案功能表 排列顺序
       ,c.ZT as c_CZDAGN_ZT--成长档案功能表 状态
 
@@ -15054,7 +15057,10 @@ SELECT a.[ID]--编号
       ,a.[ZT]--状态
       ,c.SCHOOLID as c_CZDAGN_SCHOOLID--成长档案功能表 学校
       ,c.GNMC as c_CZDAGN_GNMC--成长档案功能表 功能名称
-      ,c.WZ as c_CZDAGN_WZ--成长档案功能表 网址
+      ,c.XSCKWZ as c_CZDAGN_XSCKWZ--成长档案功能表 学生查看网址
+      ,c.XSBJWZ as c_CZDAGN_XSBJWZ--成长档案功能表 学生编辑网址
+      ,c.JSCKWZ as c_CZDAGN_JSCKWZ--成长档案功能表 教师查看网址
+      ,c.BZRBJWZ as c_CZDAGN_BZRBJWZ--成长档案功能表 班主任编辑网址
       ,c.PLSX as c_CZDAGN_PLSX--成长档案功能表 排列顺序
       ,c.ZT as c_CZDAGN_ZT--成长档案功能表 状态
 
