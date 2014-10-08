@@ -307,7 +307,7 @@ class TemplateBuilder
     index_str << %(@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)\n)
   end
   def make_table_info(table,title)
-    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @Html.Partial("SingleZTree")\n)
+    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @*@Html.Partial("SingleZTree")*@\n)
     info_str << %(    <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
     info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
