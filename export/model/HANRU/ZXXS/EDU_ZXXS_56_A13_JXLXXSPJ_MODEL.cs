@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXXS_56_A13_JXLXXSPJ()
         {
+            DFNR = "";
             DJSJ = DateTime.Now;
         }
         public class EDU_ZXXS_56_A13_JXLXXSPJ_metadata
@@ -39,8 +40,15 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "打分选项")]
-            public Int32 DFXXID { get; set; }
+            [Display(Name = "打分类型")]
+            public Int32 DFLX { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "打分内容")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DFNR { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

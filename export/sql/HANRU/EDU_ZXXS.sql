@@ -787,7 +787,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_56_A13_JXLXXSPJ](
 	[BPXSID]  int  NOT NULL,--被评学生ID
 	[PJXSID]  int  NOT NULL,--评价学生ID
 	[PJXMID]  int  NOT NULL,--评价项目ID
-	[DFXXID]  int  NOT NULL,--打分选项ID
+	[DFLX]  int  NOT NULL,--打分类型
+	[DFNR]  nvarchar(200)  NOT NULL,--打分内容
 	[DJSJ]  datetime  NOT NULL,--登记时间
 CONSTRAINT [PK_EDU_ZXXS_56_A13_JXLXXSPJ] PRIMARY KEY CLUSTERED
 (
@@ -1438,7 +1439,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价学生ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A13_JXLXXSPJ', @level2type=N'COLUMN',@level2name=N'PJXMID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分选项ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A13_JXLXXSPJ', @level2type=N'COLUMN',@level2name=N'DFXXID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A13_JXLXXSPJ', @level2type=N'COLUMN',@level2name=N'DFLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A13_JXLXXSPJ', @level2type=N'COLUMN',@level2name=N'DFNR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A13_JXLXXSPJ', @level2type=N'COLUMN',@level2name=N'DJSJ'
 GO

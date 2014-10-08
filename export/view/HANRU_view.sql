@@ -15292,7 +15292,8 @@ SELECT a.[ID]--编号
       ,a.[BPXSID]--被评学生ID
       ,a.[PJXSID]--评价学生ID
       ,a.[PJXMID]--评价项目ID
-      ,a.[DFXXID]--打分选项ID
+      ,a.[DFLX]--打分类型
+      ,a.[DFNR]--打分内容
       ,a.[DJSJ]--登记时间
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,c.XH as c_XSXX_XH--学生基本数据子类表 学号
@@ -15425,16 +15426,11 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_JXLXPJXM_SCHOOLID--家校联系评价项目表 学校
       ,e.PJXMMC as e_JXLXPJXM_PJXMMC--家校联系评价项目表 评价项目名称
       ,e.PLSX as e_JXLXPJXM_PLSX--家校联系评价项目表 排列顺序
-      ,f.SCHOOLID as f_CZDADFXX_SCHOOLID--成长档案打分选项表 学校
-      ,f.DFFSID as f_CZDADFXX_DFFSID--成长档案打分选项表 打分方式ID
-      ,f.XXNR as f_CZDADFXX_XXNR--成长档案打分选项表 选项内容
-      ,f.TPLJ as f_CZDADFXX_TPLJ--成长档案打分选项表 图片路径
 
 FROM dbo.EDU_ZXXS_56_A13_JXLXXSPJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.BPXSID = c.ID /*被评学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.PJXSID = d.ID /*评价学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_56_A12_JXLXPJXM AS e ON a.PJXMID = e.ID /*评价项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXS_55_A04_CZDADFXX AS f ON a.DFXXID = f.ID /*打分选项ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN

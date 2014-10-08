@@ -346,6 +346,7 @@ EDU_ZXXS_56_A13_JXLXXSPJ  家校联系学生评价表
   BPXSID        被评学生ID              int            非主        学生基本数据子类表
   PJXSID        评价学生ID              int            非主        学生基本数据子类表
   PJXMID        评价项目ID              int            非主        家校联系评价项目表
-  DFXXID        打分选项ID              int            非主        成长档案打分选项表
+  DFLX          打分类型                int            非主
+  DFNR          打分内容                nvarchar(200)  非主
   DJSJ          登记时间                datetime       非主
 

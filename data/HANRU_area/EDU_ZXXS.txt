@@ -405,7 +405,8 @@
             <name="BPXSID" exp="被评学生ID" type="int" null="F" p="F" />
             <name="PJXSID" exp="评价学生ID" type="int" null="F" p="F" />
             <name="PJXMID" exp="评价项目ID" type="int" null="F" p="F" />
-            <name="DFXXID" exp="打分选项ID" type="int" null="F" p="F" />
+            <name="DFLX" exp="打分类型" type="int" null="F" p="F" />
+            <name="DFNR" exp="打分内容" type="nvarchar(200)" null="F" p="F" />
             <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
