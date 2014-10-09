@@ -336,6 +336,8 @@
             <name="XSBJWZ" exp="学生编辑网址" type="nvarchar(200)" null="F" p="F" />
             <name="JSCKWZ" exp="教师查看网址" type="nvarchar(200)" null="F" p="F" />
             <name="BZRBJWZ" exp="班主任编辑网址" type="nvarchar(200)" null="F" p="F" />
+            <name="SFXYDF" exp="是否需要打分" type="int" null="F" p="F" />
+            <name="DFFSID" exp="打分方式ID" type="int" null="F" p="F" />
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
@@ -354,7 +356,6 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="GNID" exp="功能ID" type="int" null="F" p="F" />
             <name="DFFSMC" exp="打分方式名称" type="nvarchar(50)" null="F" p="F" />
             <name="DFXMLX" exp="打分项目类型" type="int" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />

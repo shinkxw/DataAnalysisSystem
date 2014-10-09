@@ -23,11 +23,6 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "功能")]
-            public Int32 GNID { get; set; }
-
-
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "打分方式名称")]
             [StringLength(50)]

@@ -14,6 +14,8 @@ SELECT a.[ID]--编号
       ,c.XSBJWZ as c_CZDAGN_XSBJWZ--成长档案功能表 学生编辑网址
       ,c.JSCKWZ as c_CZDAGN_JSCKWZ--成长档案功能表 教师查看网址
       ,c.BZRBJWZ as c_CZDAGN_BZRBJWZ--成长档案功能表 班主任编辑网址
+      ,c.SFXYDF as c_CZDAGN_SFXYDF--成长档案功能表 是否需要打分
+      ,c.DFFSID as c_CZDAGN_DFFSID--成长档案功能表 打分方式ID
       ,c.PLSX as c_CZDAGN_PLSX--成长档案功能表 排列顺序
       ,c.ZT as c_CZDAGN_ZT--成长档案功能表 状态
 

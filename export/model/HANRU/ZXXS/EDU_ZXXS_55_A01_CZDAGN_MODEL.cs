@@ -63,6 +63,16 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否需要打分")]
+            public Int32 SFXYDF { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "打分方式")]
+            public Int32 DFFSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "排列顺序")]
             public Int32 PLSX { get; set; }
 

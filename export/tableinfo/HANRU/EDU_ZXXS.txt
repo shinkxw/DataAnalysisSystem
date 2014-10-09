@@ -291,6 +291,8 @@ EDU_ZXXS_55_A01_CZDAGN  成长档案功能表
   XSBJWZ        学生编辑网址            nvarchar(200)  非主
   JSCKWZ        教师查看网址            nvarchar(200)  非主
   BZRBJWZ       班主任编辑网址          nvarchar(200)  非主
+  SFXYDF        是否需要打分            int            非主
+  DFFSID        打分方式ID              int            非主        成长档案打分方式表
   PLSX          排列顺序                int            非主
   ZT            状态                    int            非主
 
@@ -305,7 +307,6 @@ EDU_ZXXS_55_A02_CZDAGNQX  成长档案功能权限表
 EDU_ZXXS_55_A03_CZDADFFS  成长档案打分方式表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  GNID          功能ID                  int            非主        成长档案功能表
   DFFSMC        打分方式名称            nvarchar(50)   非主
   DFXMLX        打分项目类型            int            非主
   ZT            状态                    int            非主

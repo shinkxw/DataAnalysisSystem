@@ -657,6 +657,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_55_A01_CZDAGN](
 	[XSBJWZ]  nvarchar(200)  NOT NULL,--学生编辑网址
 	[JSCKWZ]  nvarchar(200)  NOT NULL,--教师查看网址
 	[BZRBJWZ]  nvarchar(200)  NOT NULL,--班主任编辑网址
+	[SFXYDF]  int  NOT NULL,--是否需要打分
+	[DFFSID]  int  NOT NULL,--打分方式ID
 	[PLSX]  int  NOT NULL,--排列顺序
 	[ZT]  int  NOT NULL,--状态
 CONSTRAINT [PK_EDU_ZXXS_55_A01_CZDAGN] PRIMARY KEY CLUSTERED
@@ -693,7 +695,6 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXXS_55_A03_CZDADFFS](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[GNID]  int  NOT NULL,--功能ID
 	[DFFSMC]  nvarchar(50)  NOT NULL,--打分方式名称
 	[DFXMLX]  int  NOT NULL,--打分项目类型
 	[ZT]  int  NOT NULL,--状态
@@ -1343,6 +1344,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师查看网址' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班主任编辑网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'BZRBJWZ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否需要打分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'SFXYDF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'DFFSID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A01_CZDAGN', @level2type=N'COLUMN',@level2name=N'ZT'
@@ -1366,8 +1371,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A03_CZDADFFS', @level2type=N'COLUMN',@level2name=N'ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A03_CZDADFFS', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A03_CZDADFFS', @level2type=N'COLUMN',@level2name=N'GNID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_55_A03_CZDADFFS', @level2type=N'COLUMN',@level2name=N'DFFSMC'
 GO
