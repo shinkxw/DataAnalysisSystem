@@ -22,6 +22,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID
   XQM            EDU_JY_XQ                          DM
+<EDU_ELE_01_YHGLPZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
 <EDU_ELE_01_APPUSER
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   YHID           EDU_ELE_01_USER                    LOGINNAME

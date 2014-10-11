@@ -67,10 +67,17 @@ EDU_ELE_01_ROLE  应用系统角色表
   ModIDLst      角色能访问的模块列表    text           非主
 
 EDU_ELE_01_CONFIG  应用系统配置表
-  ID            配置ID                  int            主键
+  ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键
   APPID         应用ID                  int            主键
   VALUE         配置值                  nvarchar(200)  非主
+
+EDU_ELE_01_YHGLPZ  用户管理配置表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  LBIDLB        类别ID列表              nvarchar(200)  非主
+  LBMCLB        类别名称列表            nvarchar(200)  非主
 
 EDU_ELE_01_HASH  系统哈希表
   KEY           键                      nvarchar(200)  主键

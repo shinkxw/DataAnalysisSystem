@@ -80,10 +80,19 @@
     </table>
     <table name="EDU_ELE_01_CONFIG" exp="应用系统配置表">
         <field_area>
-            <name="ID" exp="配置ID" type="int" null="F" p="T" />
+            <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="APPID" exp="应用ID" type="int" null="F" p="T" />
             <name="VALUE" exp="配置值" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_01_YHGLPZ" exp="用户管理配置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="LBIDLB" exp="类别ID列表" type="nvarchar(200)" null="F" p="F" />
+            <name="LBMCLB" exp="类别名称列表" type="nvarchar(200)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_HASH" exp="系统哈希表">

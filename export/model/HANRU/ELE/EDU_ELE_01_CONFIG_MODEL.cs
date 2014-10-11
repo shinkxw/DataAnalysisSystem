@@ -14,7 +14,7 @@ namespace HanRuEdu.LDAL
         public class EDU_ELE_01_CONFIG_metadata
         {
             [Required(ErrorMessage = "±ÿÃÓ")]
-            [Display(Name = "≈‰÷√")]
+            [Display(Name = "±‡∫≈")]
             public Int32 ID { get; set; }
 
 

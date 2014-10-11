@@ -30,6 +30,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_CONFIG')
    drop table EDU_ELE_01_CONFIG
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_YHGLPZ')
+            and   type = 'U')
+   drop table EDU_ELE_01_YHGLPZ
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_HASH')
             and   type = 'U')
    drop table EDU_ELE_01_HASH
@@ -260,7 +265,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_CONFIG]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ELE_01_CONFIG](
-	[ID]  int  NOT NULL,--配置ID
+	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[APPID]  int  NOT NULL,--应用ID
 	[VALUE]  nvarchar(200)  NOT NULL,--配置值
@@ -269,6 +274,23 @@ CONSTRAINT [PK_EDU_ELE_01_CONFIG] PRIMARY KEY CLUSTERED
 	[ID] ASC,
 	[SCHOOLID] ASC,
 	[APPID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--用户管理配置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_YHGLPZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_01_YHGLPZ](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[LBIDLB]  nvarchar(200)  NOT NULL,--类别ID列表
+	[LBMCLB]  nvarchar(200)  NOT NULL,--类别名称列表
+CONSTRAINT [PK_EDU_ELE_01_YHGLPZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -812,13 +834,25 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'角色能访问的模
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用系统配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'配置ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'ID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'APPID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'配置值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_CONFIG', @level2type=N'COLUMN',@level2name=N'VALUE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户管理配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_YHGLPZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_YHGLPZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_YHGLPZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_YHGLPZ', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类别ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_YHGLPZ', @level2type=N'COLUMN',@level2name=N'LBIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类别名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_YHGLPZ', @level2type=N'COLUMN',@level2name=N'LBMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'系统哈希表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_HASH'
 GO
