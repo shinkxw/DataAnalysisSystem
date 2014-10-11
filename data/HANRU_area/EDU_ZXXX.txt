@@ -45,6 +45,7 @@
             <name="NJ" exp="年级号" type="nvarchar(10)" null="F" p="T" />
             <name="NJMC" exp="年级名称" type="nvarchar(30)" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" default="100" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_03_01_BJ" exp="班级数据类表">
@@ -65,6 +66,7 @@
             <name="SYJXMSM" exp="双语教学模式码" type="nvarchar(1)" null="F" p="F" />
             <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" default="100" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_04_01_JG" exp="机构数据类表">

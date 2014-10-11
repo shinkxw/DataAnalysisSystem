@@ -264,6 +264,7 @@ SELECT a.[ID]--考试成绩表
       ,m.SCHOOLID as m_NJ_SCHOOLID--年级数据类表 学校名
       ,m.NJMC as m_NJ_NJMC--年级数据类表 年级名称
       ,m.ZT as m_NJ_ZT--年级数据类表 状态
+      ,m.PLSX as m_NJ_PLSX--年级数据类表 排列顺序
       ,n.SCHOOLID as n_BJ_SCHOOLID--班级数据类表 学校名
       ,n.NJ as n_BJ_NJ--班级数据类表 年级号
       ,n.BJ as n_BJ_BJ--班级数据类表 班级名称
@@ -283,6 +284,7 @@ SELECT a.[ID]--考试成绩表
       ,[nd].SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,n.BZRID as n_BJ_BZRID--班级数据类表 班主任ID
       ,n.ZT as n_BJ_ZT--班级数据类表 状态
+      ,n.PLSX as n_BJ_PLSX--班级数据类表 排列顺序
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期

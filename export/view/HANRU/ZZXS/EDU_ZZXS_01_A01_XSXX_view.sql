@@ -110,6 +110,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,m.SSNF as m_ZZNJ_SSNF--学校年级数据表 所属年份
       ,m.NJZT as m_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[mb].MC as m_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,m.PLSX as m_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,n.SCHOOLID as n_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,n.ZYXXID as n_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,n.ZZNJID as n_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -125,6 +126,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,n.JGH as n_ZZBJ_JGH--学校班级数据表 机构号
       ,n.XQDM as n_ZZBJ_XQDM--学校班级数据表 校区代码
       ,n.BZRID as n_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,n.PLSX as n_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

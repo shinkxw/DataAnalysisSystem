@@ -91,6 +91,7 @@ SELECT a.[ID]--编号
       ,g.SSNF as g_ZZNJ_SSNF--学校年级数据表 所属年份
       ,g.NJZT as g_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[gb].MC as g_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,g.PLSX as g_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,h.SCHOOLID as h_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,h.ZYXXID as h_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,h.ZZNJID as h_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -106,6 +107,7 @@ SELECT a.[ID]--编号
       ,h.JGH as h_ZZBJ_JGH--学校班级数据表 机构号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZXS_19_A02_BWCY AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_19_A01_BWSJ AS c ON a.BWID = c.ID /*班委ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

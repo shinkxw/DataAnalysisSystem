@@ -126,10 +126,12 @@ SELECT a.[ID]--编号
       ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
+      ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
       ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称
       ,i.ZT as i_NJ_ZT--年级数据类表 状态
+      ,i.PLSX as i_NJ_PLSX--年级数据类表 排列顺序
       ,j.SCHOOLID as j_XQ_SCHOOLID--学期数据表 学校名
       ,j.XNID as j_XQ_XNID--学期数据表 学年
       ,j.XQM as j_XQ_XQM--学期数据表 学期码

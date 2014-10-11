@@ -180,6 +180,7 @@ SELECT a.[ID]--编号
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态
+      ,h.PLSX as h_NJ_PLSX--年级数据类表 排列顺序
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
       ,i.NJ as i_BJ_NJ--班级数据类表 年级号
       ,i.BJ as i_BJ_BJ--班级数据类表 班级名称
@@ -199,6 +200,7 @@ SELECT a.[ID]--编号
       ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
+      ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
       ,j.XLID as j_XLZ_XLID--校历周表 校历ID
       ,j.NAME as j_XLZ_NAME--校历周表 校历周名称

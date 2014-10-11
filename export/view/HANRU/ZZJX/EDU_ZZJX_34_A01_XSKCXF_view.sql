@@ -90,6 +90,7 @@ SELECT a.[ID]--编号
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.SCHOOLID as g_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,g.ZYXXID as g_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,g.ZZNJID as g_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -105,6 +106,7 @@ SELECT a.[ID]--编号
       ,g.JGH as g_ZZBJ_JGH--学校班级数据表 机构号
       ,g.XQDM as g_ZZBJ_XQDM--学校班级数据表 校区代码
       ,g.BZRID as g_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

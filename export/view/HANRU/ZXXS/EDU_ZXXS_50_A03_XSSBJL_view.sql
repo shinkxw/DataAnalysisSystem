@@ -34,6 +34,7 @@ SELECT a.[ID]--编号
       ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
+      ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名

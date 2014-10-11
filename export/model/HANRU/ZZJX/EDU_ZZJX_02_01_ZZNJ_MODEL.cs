@@ -49,6 +49,11 @@ namespace HanRuEdu.LDAL
             public String NJZT { get; set; }
 
 
+            [Required(ErrorMessage = "±ÿÃÓ")]
+            [Display(Name = "≈≈¡–À≥–Ú")]
+            public Int32 PLSX { get; set; }
+
+
         }
     }
 }

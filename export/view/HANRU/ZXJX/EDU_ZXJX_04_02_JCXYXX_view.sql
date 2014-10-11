@@ -25,6 +25,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_NJ_SCHOOLID--年级数据类表 学校名
       ,d.NJMC as d_NJ_NJMC--年级数据类表 年级名称
       ,d.ZT as d_NJ_ZT--年级数据类表 状态
+      ,d.PLSX as d_NJ_PLSX--年级数据类表 排列顺序
       ,e.SCHOOLID as e_KC_SCHOOLID--课程数据类 学校名
       ,e.KCMC as e_KC_KCMC--课程数据类 课程名称
       ,e.KCM as e_KC_KCM--课程数据类 课程码

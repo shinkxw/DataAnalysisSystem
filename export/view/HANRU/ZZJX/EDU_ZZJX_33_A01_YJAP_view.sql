@@ -132,6 +132,7 @@ SELECT a.[ID]--编号
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
       ,i.NJZT as i_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[ib].MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,i.PLSX as i_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,j.SCHOOLID as j_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,j.ZYXXID as j_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,j.ZZNJID as j_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -147,6 +148,7 @@ SELECT a.[ID]--编号
       ,j.JGH as j_ZZBJ_JGH--学校班级数据表 机构号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
       ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,k.SCHOOLID as k_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,k.JXJHID as k_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,k.KCH as k_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

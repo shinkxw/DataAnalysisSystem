@@ -18,6 +18,7 @@ SELECT a.[XZBDM]--行政班代码
       ,a.[JGH]--机构号
       ,a.[XQDM]--校区代码
       ,a.[BZRID]--班主任ID
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -39,6 +40,7 @@ SELECT a.[XZBDM]--行政班代码
       ,d.SSNF as d_ZZNJ_SSNF--学校年级数据表 所属年份
       ,d.NJZT as d_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[db].MC as d_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,d.PLSX as d_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,e.SCHOOLID as e_XNJG_SCHOOLID--校内机构数据类表 学校名
       ,e.JGMC as e_XNJG_JGMC--校内机构数据类表 机构名称
       ,e.JGYWMC as e_XNJG_JGYWMC--校内机构数据类表 机构英文名称

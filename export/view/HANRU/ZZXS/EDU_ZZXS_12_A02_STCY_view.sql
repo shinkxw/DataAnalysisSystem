@@ -98,6 +98,7 @@ SELECT a.[ID]--编号
       ,e.JGH as e_ZZBJ_JGH--学校班级数据表 机构号
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
       ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号

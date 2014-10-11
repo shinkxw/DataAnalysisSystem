@@ -18,9 +18,11 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[SYJXMSM]--双语教学模式码
       ,a.[BZRID]--班主任ID
       ,a.[ZT]--状态
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_NJ_SCHOOLID--年级数据类表 学校名
       ,c.NJMC as c_NJ_NJMC--年级数据类表 年级名称
       ,c.ZT as c_NJ_ZT--年级数据类表 状态
+      ,c.PLSX as c_NJ_PLSX--年级数据类表 排列顺序
       ,d.MC as d_ZXXBJLX_MC--中小学班级类型代码表 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.MC as f_SSMZSYJXMS_MC--少数民族双语教学模式代码表 名称

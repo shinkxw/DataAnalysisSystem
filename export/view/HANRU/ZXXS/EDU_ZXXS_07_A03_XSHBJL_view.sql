@@ -100,6 +100,7 @@ SELECT a.[ID]--编号
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
+      ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_BJ_SCHOOLID--班级数据类表 学校名
       ,f.NJ as f_BJ_NJ--班级数据类表 年级号
       ,f.BJ as f_BJ_BJ--班级数据类表 班级名称
@@ -119,6 +120,7 @@ SELECT a.[ID]--编号
       ,[fd].SM as f_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,f.BZRID as f_BJ_BZRID--班级数据类表 班主任ID
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
+      ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码

@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,c.SSNF as c_ZZNJ_SSNF--学校年级数据表 所属年份
       ,c.NJZT as c_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[cb].MC as c_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,c.PLSX as c_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别

@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,d.JGH as d_ZZBJ_JGH--学校班级数据表 机构号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名

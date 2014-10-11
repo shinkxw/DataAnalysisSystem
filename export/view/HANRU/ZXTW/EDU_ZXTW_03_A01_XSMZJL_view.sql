@@ -94,6 +94,7 @@ SELECT a.[ID]--编号
       ,[dd].SM as d_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,d.BZRID as d_BJ_BZRID--班级数据类表 班主任ID
       ,d.ZT as d_BJ_ZT--班级数据类表 状态
+      ,d.PLSX as d_BJ_PLSX--班级数据类表 排列顺序
 
 FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

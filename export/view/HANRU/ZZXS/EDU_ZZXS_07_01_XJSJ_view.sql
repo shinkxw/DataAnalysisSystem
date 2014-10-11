@@ -94,11 +94,13 @@ SELECT a.[XSXXID]--学生信息数据表
       ,e.JGH as e_ZZBJ_JGH--学校班级数据表 机构号
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
       ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.MC as g_XSLB_MC--学生类别代码表 名称
       ,g.SM as g_XSLB_SM--学生类别代码表 说明
       ,h.MC as h_XSDQZT_MC--学生当前状态代码表 名称

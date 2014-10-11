@@ -58,6 +58,7 @@ SELECT a.[ID]--编号
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.SCHOOLID as g_ZZJXB_SCHOOLID--中职教学班表 学校名
       ,g.ZZXQID as g_ZZJXB_ZZXQID--中职教学班表 校区ID
       ,g.XQID as g_ZZJXB_XQID--中职教学班表 学期ID
@@ -132,6 +133,7 @@ SELECT a.[ID]--编号
       ,k.JGH as k_ZZBJ_JGH--学校班级数据表 机构号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,l.SCHOOLID as l_WEEKDAY_SCHOOLID--星期 学校名
       ,l.MC as l_WEEKDAY_MC--星期 名称
       ,m.SCHOOLID as m_SD_SCHOOLID--时段 学校名

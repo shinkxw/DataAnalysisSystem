@@ -31,6 +31,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级数据类表 学校名
       ,e.NJMC as e_NJ_NJMC--年级数据类表 年级名称
       ,e.ZT as e_NJ_ZT--年级数据类表 状态
+      ,e.PLSX as e_NJ_PLSX--年级数据类表 排列顺序
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名

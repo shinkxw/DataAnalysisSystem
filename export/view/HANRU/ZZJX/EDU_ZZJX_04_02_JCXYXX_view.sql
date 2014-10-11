@@ -44,6 +44,7 @@ SELECT a.[ID]--编号
       ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
       ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,e.PLSX as e_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据子类表 学校ID
       ,f.KCMC as f_KC_KCMC--课程数据子类表 课程名称
       ,f.KCYWM as f_KC_KCYWM--课程数据子类表 课程英文名

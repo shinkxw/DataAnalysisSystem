@@ -25,6 +25,7 @@ SELECT a.[ID]--编号
       ,c.JGH as c_ZZBJ_JGH--学校班级数据表 机构号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,d.SCHOOLID as d_XSKHBSJ_SCHOOLID--学生考核表数据表 学校
       ,d.KHBMC as d_XSKHBSJ_KHBMC--学生考核表数据表 考核表名称
       ,d.KHBJDMLB as d_XSKHBSJ_KHBJDMLB--学生考核表数据表 考核班级代码列表

@@ -112,6 +112,11 @@ namespace HanRuEdu.LDAL
             public Int32 ZT { get; set; }
 
 
+            [Required(ErrorMessage = "±ÿÃÓ")]
+            [Display(Name = "≈≈¡–À≥–Ú")]
+            public Int32 PLSX { get; set; }
+
+
         }
     }
 }

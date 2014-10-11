@@ -6621,6 +6621,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
+      ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,f.PWD as f_USER_PWD--应用系统用户表 密码
@@ -6865,6 +6866,7 @@ SELECT a.[ID]--值周打分单表ID
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
+      ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--值周打分细则表 学校ID
       ,f.SSDLID as f_ZZDFXZ_SSDLID--值周打分细则表 所属大类ID
       ,f.XZNR as f_ZZDFXZ_XZNR--值周打分细则表 细则内容
@@ -7694,6 +7696,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_NJ_SCHOOLID--年级数据类表 学校名
       ,d.NJMC as d_NJ_NJMC--年级数据类表 年级名称
       ,d.ZT as d_NJ_ZT--年级数据类表 状态
+      ,d.PLSX as d_NJ_PLSX--年级数据类表 排列顺序
       ,e.SCHOOLID as e_KC_SCHOOLID--课程数据类 学校名
       ,e.KCMC as e_KC_KCMC--课程数据类 课程名称
       ,e.KCM as e_KC_KCM--课程数据类 课程码
@@ -7940,6 +7943,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_NJ_SCHOOLID--年级数据类表 学校名
       ,d.NJMC as d_NJ_NJMC--年级数据类表 年级名称
       ,d.ZT as d_NJ_ZT--年级数据类表 状态
+      ,d.PLSX as d_NJ_PLSX--年级数据类表 排列顺序
       ,e.SCHOOLID as e_BJ_SCHOOLID--班级数据类表 学校名
       ,e.NJ as e_BJ_NJ--班级数据类表 年级号
       ,e.BJ as e_BJ_BJ--班级数据类表 班级名称
@@ -7959,6 +7963,7 @@ SELECT a.[ID]--编号
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
+      ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,f.JCDM as f_JCJBXX_JCDM--教材基本信息表 教材代码
       ,f.JCMC as f_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -8601,6 +8606,7 @@ SELECT a.[ID]--编号
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态
+      ,h.PLSX as h_NJ_PLSX--年级数据类表 排列顺序
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
       ,i.NJ as i_BJ_NJ--班级数据类表 年级号
       ,i.BJ as i_BJ_BJ--班级数据类表 班级名称
@@ -8620,6 +8626,7 @@ SELECT a.[ID]--编号
       ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
+      ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
       ,j.XLID as j_XLZ_XLID--校历周表 校历ID
       ,j.NAME as j_XLZ_NAME--校历周表 校历周名称
@@ -9990,6 +9997,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级数据类表 学校名
       ,e.NJMC as e_NJ_NJMC--年级数据类表 年级名称
       ,e.ZT as e_NJ_ZT--年级数据类表 状态
+      ,e.PLSX as e_NJ_PLSX--年级数据类表 排列顺序
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -11691,10 +11699,12 @@ SELECT a.[ID]--编号
       ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
+      ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
       ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称
       ,i.ZT as i_NJ_ZT--年级数据类表 状态
+      ,i.PLSX as i_NJ_PLSX--年级数据类表 排列顺序
       ,j.SCHOOLID as j_XQ_SCHOOLID--学期数据表 学校名
       ,j.XNID as j_XQ_XNID--学期数据表 学年
       ,j.XQM as j_XQ_XQM--学期数据表 学期码
@@ -13107,6 +13117,7 @@ SELECT a.[ID]--编号
       ,[dd].SM as d_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,d.BZRID as d_BJ_BZRID--班级数据类表 班主任ID
       ,d.ZT as d_BJ_ZT--班级数据类表 状态
+      ,d.PLSX as d_BJ_PLSX--班级数据类表 排列顺序
 
 FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -13197,6 +13208,7 @@ SELECT a.[ID]--编号
       ,o.SCHOOLID as o_NJ_SCHOOLID--年级数据类表 学校名
       ,o.NJMC as o_NJ_NJMC--年级数据类表 年级名称
       ,o.ZT as o_NJ_ZT--年级数据类表 状态
+      ,o.PLSX as o_NJ_PLSX--年级数据类表 排列顺序
       ,p.SCHOOLID as p_BJ_SCHOOLID--班级数据类表 学校名
       ,p.NJ as p_BJ_NJ--班级数据类表 年级号
       ,p.BJ as p_BJ_BJ--班级数据类表 班级名称
@@ -13216,6 +13228,7 @@ SELECT a.[ID]--编号
       ,[pd].SM as p_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,p.BZRID as p_BJ_BZRID--班级数据类表 班主任ID
       ,p.ZT as p_BJ_ZT--班级数据类表 状态
+      ,p.PLSX as p_BJ_PLSX--班级数据类表 排列顺序
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称
@@ -13745,6 +13758,7 @@ SELECT a.[ID]--考试成绩表
       ,m.SCHOOLID as m_NJ_SCHOOLID--年级数据类表 学校名
       ,m.NJMC as m_NJ_NJMC--年级数据类表 年级名称
       ,m.ZT as m_NJ_ZT--年级数据类表 状态
+      ,m.PLSX as m_NJ_PLSX--年级数据类表 排列顺序
       ,n.SCHOOLID as n_BJ_SCHOOLID--班级数据类表 学校名
       ,n.NJ as n_BJ_NJ--班级数据类表 年级号
       ,n.BJ as n_BJ_BJ--班级数据类表 班级名称
@@ -13764,6 +13778,7 @@ SELECT a.[ID]--考试成绩表
       ,[nd].SM as n_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,n.BZRID as n_BJ_BZRID--班级数据类表 班主任ID
       ,n.ZT as n_BJ_ZT--班级数据类表 状态
+      ,n.PLSX as n_BJ_PLSX--班级数据类表 排列顺序
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期
@@ -14031,9 +14046,11 @@ SELECT a.[ID]--学籍异动表编号
       ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
+      ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态
+      ,h.PLSX as h_NJ_PLSX--年级数据类表 排列顺序
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
       ,i.NJ as i_BJ_NJ--班级数据类表 年级号
       ,i.BJ as i_BJ_BJ--班级数据类表 班级名称
@@ -14053,9 +14070,11 @@ SELECT a.[ID]--学籍异动表编号
       ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
+      ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
       ,j.ZT as j_NJ_ZT--年级数据类表 状态
+      ,j.PLSX as j_NJ_PLSX--年级数据类表 排列顺序
 
 FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -14207,6 +14226,7 @@ SELECT a.[ID]--编号
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
+      ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_BJ_SCHOOLID--班级数据类表 学校名
       ,f.NJ as f_BJ_NJ--班级数据类表 年级号
       ,f.BJ as f_BJ_BJ--班级数据类表 班级名称
@@ -14226,6 +14246,7 @@ SELECT a.[ID]--编号
       ,[fd].SM as f_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,f.BZRID as f_BJ_BZRID--班级数据类表 班主任ID
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
+      ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -14303,6 +14324,7 @@ SELECT a.[ID]--编号
       ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
+      ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
 
 FROM dbo.EDU_ZXXS_50_A02_BJSBJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -14346,6 +14368,7 @@ SELECT a.[ID]--编号
       ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
+      ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -14572,6 +14595,7 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级数据类表 学校名
       ,e.NJMC as e_NJ_NJMC--年级数据类表 年级名称
       ,e.ZT as e_NJ_ZT--年级数据类表 状态
+      ,e.PLSX as e_NJ_PLSX--年级数据类表 排列顺序
       ,f.SCHOOLID as f_BJ_SCHOOLID--班级数据类表 学校名
       ,f.NJ as f_BJ_NJ--班级数据类表 年级号
       ,f.BJ as f_BJ_BJ--班级数据类表 班级名称
@@ -14591,6 +14615,7 @@ SELECT a.[ID]--编号
       ,[fd].SM as f_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,f.BZRID as f_BJ_BZRID--班级数据类表 班主任ID
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
+      ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,g.PWD as g_USER_PWD--应用系统用户表 密码
@@ -15587,9 +15612,11 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[SYJXMSM]--双语教学模式码
       ,a.[BZRID]--班主任ID
       ,a.[ZT]--状态
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_NJ_SCHOOLID--年级数据类表 学校名
       ,c.NJMC as c_NJ_NJMC--年级数据类表 年级名称
       ,c.ZT as c_NJ_ZT--年级数据类表 状态
+      ,c.PLSX as c_NJ_PLSX--年级数据类表 排列顺序
       ,d.MC as d_ZXXBJLX_MC--中小学班级类型代码表 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
       ,f.MC as f_SSMZSYJXMS_MC--少数民族双语教学模式代码表 名称
@@ -17162,6 +17189,7 @@ SELECT a.[ID]--编号
       ,c.JGH as c_ZZBJ_JGH--学校班级数据表 机构号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,d.SCHOOLID as d_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,d.SSLID as d_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
@@ -17375,6 +17403,7 @@ SELECT a.[ID]--编号
       ,d.JGH as d_ZZBJ_JGH--学校班级数据表 机构号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZFC_10_A03_BZRXQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.BZRID = c.ID /*班主任ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -17433,6 +17462,7 @@ SELECT a.[ID]--编号
       ,d.JGH as d_ZZBJ_JGH--学校班级数据表 机构号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,e.SCHOOLID as e_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,e.SSLID as e_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,e.SSLBM as e_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
@@ -17585,6 +17615,7 @@ SELECT a.[ID]--编号
       ,d.JGH as d_ZZBJ_JGH--学校班级数据表 机构号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -21579,6 +21610,7 @@ SELECT a.[ID]--编号
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
       ,i.NJZT as i_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[ib].MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,i.PLSX as i_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,j.SCHOOLID as j_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,j.ZYXXID as j_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,j.ZZNJID as j_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -21594,6 +21626,7 @@ SELECT a.[ID]--编号
       ,j.JGH as j_ZZBJ_JGH--学校班级数据表 机构号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
       ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -21642,6 +21675,7 @@ SELECT a.[NJDM]--年级代码
       ,a.[NJMC]--年级名称
       ,a.[SSNF]--所属年份
       ,a.[NJZT]--年级状态
+      ,a.[PLSX]--排列顺序
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_02_01_ZZNJ AS a LEFT OUTER JOIN
@@ -21667,6 +21701,7 @@ SELECT a.[XZBDM]--行政班代码
       ,a.[JGH]--机构号
       ,a.[XQDM]--校区代码
       ,a.[BZRID]--班主任ID
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -21688,6 +21723,7 @@ SELECT a.[XZBDM]--行政班代码
       ,d.SSNF as d_ZZNJ_SSNF--学校年级数据表 所属年份
       ,d.NJZT as d_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[db].MC as d_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,d.PLSX as d_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,e.SCHOOLID as e_XNJG_SCHOOLID--校内机构数据类表 学校名
       ,e.JGMC as e_XNJG_JGMC--校内机构数据类表 机构名称
       ,e.JGYWMC as e_XNJG_JGYWMC--校内机构数据类表 机构英文名称
@@ -21824,6 +21860,7 @@ SELECT a.[ID]--编号
       ,c.SSNF as c_ZZNJ_SSNF--学校年级数据表 所属年份
       ,c.NJZT as c_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[cb].MC as c_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,c.PLSX as c_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -22068,6 +22105,7 @@ SELECT a.[ID]--编号
       ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
       ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,e.PLSX as e_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据子类表 学校ID
       ,f.KCMC as f_KC_KCMC--课程数据子类表 课程名称
       ,f.KCYWM as f_KC_KCYWM--课程数据子类表 课程英文名
@@ -22341,6 +22379,7 @@ SELECT a.[ID]--编号
       ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
       ,e.NJZT as e_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[eb].MC as e_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,e.PLSX as e_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,f.SCHOOLID as f_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,f.ZYXXID as f_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,f.ZZNJID as f_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -22356,6 +22395,7 @@ SELECT a.[ID]--编号
       ,f.JGH as f_ZZBJ_JGH--学校班级数据表 机构号
       ,f.XQDM as f_ZZBJ_XQDM--学校班级数据表 校区代码
       ,f.BZRID as f_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,f.PLSX as f_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,g.SCHOOLID as g_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,g.JCDM as g_JCJBXX_JCDM--教材基本信息表 教材代码
       ,g.JCMC as g_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -25155,6 +25195,7 @@ SELECT a.[ID]--编号
       ,h.SSNF as h_ZZNJ_SSNF--学校年级数据表 所属年份
       ,h.NJZT as h_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[hb].MC as h_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,h.PLSX as h_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,i.SCHOOLID as i_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,i.ZYXXID as i_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,i.ZZNJID as i_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -25170,6 +25211,7 @@ SELECT a.[ID]--编号
       ,i.JGH as i_ZZBJ_JGH--学校班级数据表 机构号
       ,i.XQDM as i_ZZBJ_XQDM--学校班级数据表 校区代码
       ,i.BZRID as i_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,i.PLSX as i_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,j.SCHOOLID as j_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,j.GH as j_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,j.XM as j_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -25502,6 +25544,7 @@ SELECT a.[ID]--编号
       ,j.SSNF as j_ZZNJ_SSNF--学校年级数据表 所属年份
       ,j.NJZT as j_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[jb].MC as j_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,j.PLSX as j_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,k.ZZNJID as k_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -25517,6 +25560,7 @@ SELECT a.[ID]--编号
       ,k.JGH as k_ZZBJ_JGH--学校班级数据表 机构号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,l.SCHOOLID as l_KSSDLX_SCHOOLID--考试时段类型表 学校
       ,l.TypeName as l_KSSDLX_TypeName--考试时段类型表 类型名
       ,l.StartTime as l_KSSDLX_StartTime--考试时段类型表 开始时间
@@ -25688,6 +25732,7 @@ SELECT a.[ID]--编号
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
       ,i.NJZT as i_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[ib].MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,i.PLSX as i_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,j.SCHOOLID as j_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,j.ZYXXID as j_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,j.ZZNJID as j_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -25703,6 +25748,7 @@ SELECT a.[ID]--编号
       ,j.JGH as j_ZZBJ_JGH--学校班级数据表 机构号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
       ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,k.SCHOOLID as k_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,k.JXJHID as k_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,k.KCH as k_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
@@ -25853,6 +25899,7 @@ SELECT a.[ID]--编号
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.SCHOOLID as g_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,g.ZYXXID as g_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,g.ZZNJID as g_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -25868,6 +25915,7 @@ SELECT a.[ID]--编号
       ,g.JGH as g_ZZBJ_JGH--学校班级数据表 机构号
       ,g.XQDM as g_ZZBJ_XQDM--学校班级数据表 校区代码
       ,g.BZRID as g_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
@@ -26637,6 +26685,7 @@ SELECT a.[ID]--编号
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -26935,6 +26984,7 @@ SELECT a.[ID]--编号
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.SCHOOLID as g_ZZJXB_SCHOOLID--中职教学班表 学校名
       ,g.ZZXQID as g_ZZJXB_ZZXQID--中职教学班表 校区ID
       ,g.XQID as g_ZZJXB_XQID--中职教学班表 学期ID
@@ -27009,6 +27059,7 @@ SELECT a.[ID]--编号
       ,k.JGH as k_ZZBJ_JGH--学校班级数据表 机构号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,l.SCHOOLID as l_WEEKDAY_SCHOOLID--星期 学校名
       ,l.MC as l_WEEKDAY_MC--星期 名称
       ,m.SCHOOLID as m_SD_SCHOOLID--时段 学校名
@@ -28096,6 +28147,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,m.SSNF as m_ZZNJ_SSNF--学校年级数据表 所属年份
       ,m.NJZT as m_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[mb].MC as m_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,m.PLSX as m_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,n.SCHOOLID as n_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,n.ZYXXID as n_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,n.ZZNJID as n_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -28111,6 +28163,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,n.JGH as n_ZZBJ_JGH--学校班级数据表 机构号
       ,n.XQDM as n_ZZBJ_XQDM--学校班级数据表 校区代码
       ,n.BZRID as n_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,n.PLSX as n_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -28791,6 +28844,7 @@ SELECT a.[ID]--编号
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份
       ,l.NJZT as l_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[lb].MC as l_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,l.PLSX as l_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,m.SCHOOLID as m_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,m.ZYXXID as m_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,m.ZZNJID as m_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -28806,6 +28860,7 @@ SELECT a.[ID]--编号
       ,m.JGH as m_ZZBJ_JGH--学校班级数据表 机构号
       ,m.XQDM as m_ZZBJ_XQDM--学校班级数据表 校区代码
       ,m.BZRID as m_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,m.PLSX as m_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,n.SCHOOLID as n_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,n.GH as n_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,n.XM as n_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -29110,11 +29165,13 @@ SELECT a.[XSXXID]--学生信息数据表
       ,e.JGH as e_ZZBJ_JGH--学校班级数据表 机构号
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
       ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.MC as g_XSLB_MC--学生类别代码表 名称
       ,g.SM as g_XSLB_SM--学生类别代码表 说明
       ,h.MC as h_XSDQZT_MC--学生当前状态代码表 名称
@@ -29322,11 +29379,13 @@ SELECT a.[ID]--学籍异动表编号
       ,h.JGH as h_ZZBJ_JGH--学校班级数据表 机构号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
       ,i.NJZT as i_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[ib].MC as i_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,i.PLSX as i_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,j.SCHOOLID as j_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,j.ZYDM as j_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[jb].ZYMLLB as j_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -29358,11 +29417,13 @@ SELECT a.[ID]--学籍异动表编号
       ,k.JGH as k_ZZBJ_JGH--学校班级数据表 机构号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,l.SCHOOLID as l_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份
       ,l.NJZT as l_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[lb].MC as l_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,l.PLSX as l_ZZNJ_PLSX--学校年级数据表 排列顺序
 
 FROM dbo.EDU_ZZXS_07_02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -30505,6 +30566,7 @@ SELECT a.[ID]--编号
       ,e.JGH as e_ZZBJ_JGH--学校班级数据表 机构号
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
       ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -30879,6 +30941,7 @@ SELECT a.[ID]--编号
       ,c.JGH as c_ZZBJ_JGH--学校班级数据表 机构号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,d.SCHOOLID as d_XSKHBSJ_SCHOOLID--学生考核表数据表 学校
       ,d.KHBMC as d_XSKHBSJ_KHBMC--学生考核表数据表 考核表名称
       ,d.KHBJDMLB as d_XSKHBSJ_KHBJDMLB--学生考核表数据表 考核班级代码列表
@@ -31599,6 +31662,7 @@ SELECT a.[ID]--编号
       ,c.JGH as c_ZZBJ_JGH--学校班级数据表 机构号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -33109,6 +33173,7 @@ SELECT a.[ID]--编号
       ,g.SSNF as g_ZZNJ_SSNF--学校年级数据表 所属年份
       ,g.NJZT as g_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[gb].MC as g_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,g.PLSX as g_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,h.SCHOOLID as h_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,h.ZYXXID as h_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,h.ZZNJID as h_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -33124,6 +33189,7 @@ SELECT a.[ID]--编号
       ,h.JGH as h_ZZBJ_JGH--学校班级数据表 机构号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZXS_19_A02_BWCY AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_19_A01_BWSJ AS c ON a.BWID = c.ID /*班委ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

@@ -62,6 +62,7 @@ SELECT a.[ID]--编号
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
       ,f.NJZT as f_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[fb].MC as f_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,f.PLSX as f_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名

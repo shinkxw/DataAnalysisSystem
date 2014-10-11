@@ -22,6 +22,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_NJ_SCHOOLID--年级数据类表 学校名
       ,d.NJMC as d_NJ_NJMC--年级数据类表 年级名称
       ,d.ZT as d_NJ_ZT--年级数据类表 状态
+      ,d.PLSX as d_NJ_PLSX--年级数据类表 排列顺序
       ,e.SCHOOLID as e_BJ_SCHOOLID--班级数据类表 学校名
       ,e.NJ as e_BJ_NJ--班级数据类表 年级号
       ,e.BJ as e_BJ_BJ--班级数据类表 班级名称
@@ -41,6 +42,7 @@ SELECT a.[ID]--编号
       ,[ed].SM as e_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
+      ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,f.JCDM as f_JCJBXX_JCDM--教材基本信息表 教材代码
       ,f.JCMC as f_JCJBXX_JCMC--教材基本信息表 教材名称

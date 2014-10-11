@@ -138,6 +138,7 @@ SELECT a.[ID]--编号
       ,j.SSNF as j_ZZNJ_SSNF--学校年级数据表 所属年份
       ,j.NJZT as j_ZZNJ_NJZT--学校年级数据表 年级状态
       ,[jb].MC as j_ZZNJ_NJZT_MC--是否标志代码表 名称
+      ,j.PLSX as j_ZZNJ_PLSX--学校年级数据表 排列顺序
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,k.ZZNJID as k_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -153,6 +154,7 @@ SELECT a.[ID]--编号
       ,k.JGH as k_ZZBJ_JGH--学校班级数据表 机构号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,l.SCHOOLID as l_KSSDLX_SCHOOLID--考试时段类型表 学校
       ,l.TypeName as l_KSSDLX_TypeName--考试时段类型表 类型名
       ,l.StartTime as l_KSSDLX_StartTime--考试时段类型表 开始时间

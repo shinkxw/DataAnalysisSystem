@@ -73,6 +73,7 @@
             <name="NJMC" exp="年级名称" type="nvarchar(10)" null="F" p="F" />
             <name="SSNF" exp="所属年份" type="nvarchar(4)" null="F" p="F" />
             <name="NJZT" exp="年级状态" type="nvarchar(1)" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" default="100" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_02_02_ZZBJ" exp="学校班级数据表">
@@ -93,6 +94,7 @@
             <name="JGH" exp="机构号" type="nvarchar(6)" null="F" p="F" />
             <name="XQDM" exp="校区代码" type="nvarchar(2)" null="F" p="F" />
             <name="BZRID" exp="班主任ID" type="int" null="T" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" default="100" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_03_01_ZTJXJH" exp="总体教学计划数据子类表">

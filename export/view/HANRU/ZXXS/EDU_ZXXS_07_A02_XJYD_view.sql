@@ -170,9 +170,11 @@ SELECT a.[ID]--学籍异动表编号
       ,[gd].SM as g_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
+      ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态
+      ,h.PLSX as h_NJ_PLSX--年级数据类表 排列顺序
       ,i.SCHOOLID as i_BJ_SCHOOLID--班级数据类表 学校名
       ,i.NJ as i_BJ_NJ--班级数据类表 年级号
       ,i.BJ as i_BJ_BJ--班级数据类表 班级名称
@@ -192,9 +194,11 @@ SELECT a.[ID]--学籍异动表编号
       ,[id].SM as i_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
+      ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
       ,j.ZT as j_NJ_ZT--年级数据类表 状态
+      ,j.PLSX as j_NJ_PLSX--年级数据类表 排列顺序
 
 FROM dbo.EDU_ZXXS_07_A02_XJYD AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

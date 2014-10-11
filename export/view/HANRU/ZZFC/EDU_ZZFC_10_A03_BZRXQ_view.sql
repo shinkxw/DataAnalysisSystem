@@ -91,6 +91,7 @@ SELECT a.[ID]--编号
       ,d.JGH as d_ZZBJ_JGH--学校班级数据表 机构号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
 
 FROM dbo.EDU_ZZFC_10_A03_BZRXQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.BZRID = c.ID /*班主任ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
