@@ -108,6 +108,28 @@ EDU_WZXT_MHXT_WZWZ  网站文章
   SFZD          是否置顶                int            非主
   ZDYXJ         置顶优先级              int            非主
 
+EDU_WZXT_MHXT_XZYX  校长邮箱
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  WEBID         网站ID                  int            非主        网站配置
+  LXMC          类型名称                nvarchar(20)   非主
+  XM            姓名                    nvarchar(36)   非主
+  XB            性别                    nvarchar(1)    非主
+  EMAIL         Email地址               nvarchar(100)  非主
+  LXDH          联系电话                nvarchar(100)  非主
+  LXDZ          联系地址                nvarchar(100)  非主
+  JTDZ          家庭地址                nvarchar(100)  非主
+  YZBM          邮政编码                nvarchar(100)  非主
+  BT            标题                    nvarchar(100)  非主
+  ZW            正文                    text           非主
+  FJRIP         发件人IP                nvarchar(20)   非主
+  FJSJ          发件时间                datetime       非主
+  HFZT          回复状态                int            非主
+  HFYHID        回复用户ID              nvarchar(20)   非主        应用系统用户表
+  HFSJ          回复时间                datetime       非主
+  HFNR          回复内容                text           非主
+  SFZYXS        是否主页显示            int            非主
+
 EDU_WZXT_MHXT_WZPJ  文章评价表
   ID            评价ID                  int            主键
   SCHOOLID      学校ID                  int            非主        学校配置表

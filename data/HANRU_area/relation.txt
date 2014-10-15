@@ -475,6 +475,10 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
   LMID           EDU_WZXT_MHXT_WZLM                 ID
+<EDU_WZXT_MHXT_XZYX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
+  HFYHID         EDU_ELE_01_USER                    LOGINNAME
 <EDU_WZXT_MHXT_WZPJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID

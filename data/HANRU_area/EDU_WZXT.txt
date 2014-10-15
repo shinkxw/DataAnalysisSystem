@@ -130,6 +130,30 @@
             <name="ZDYXJ" exp="置顶优先级" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_WZXT_MHXT_XZYX" exp="校长邮箱">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
+            <name="WEBID" exp="网站ID" type="int" null="F" p="F" />
+            <name="LXMC" exp="类型名称" type="nvarchar(20)" null="T" p="F" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="XB" exp="性别" type="nvarchar(1)" null="F" p="F" />
+            <name="EMAIL" exp="Email地址" type="nvarchar(100)" null="F" p="F" />
+            <name="LXDH" exp="联系电话" type="nvarchar(100)" null="F" p="F" />
+            <name="LXDZ" exp="联系地址" type="nvarchar(100)" null="F" p="F" />
+            <name="JTDZ" exp="家庭地址" type="nvarchar(100)" null="F" p="F" />
+            <name="YZBM" exp="邮政编码" type="nvarchar(100)" null="F" p="F" />
+            <name="BT" exp="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="ZW" exp="正文" type="text" null="F" p="F" />
+            <name="FJRIP" exp="发件人IP" type="nvarchar(20)" null="F" p="F" />
+            <name="FJSJ" exp="发件时间" type="datetime" null="F" p="F" />
+            <name="HFZT" exp="回复状态" type="int" null="F" p="F" />
+            <name="HFYHID" exp="回复用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="HFSJ" exp="回复时间" type="datetime" null="F" p="F" />
+            <name="HFNR" exp="回复内容" type="text" null="F" p="F" />
+            <name="SFZYXS" exp="是否主页显示" type="int" null="F" p="F" />
+        </field_area>
+    </table>
     <table name="EDU_WZXT_MHXT_WZPJ" exp="文章评价表">
         <field_area>
             <name="ID" exp="评价ID" type="int" null="F" p="T" />
