@@ -44,7 +44,7 @@ class DataMigrate
   #正文转换,附带替换标签
   def self.content_change(str)
     str = str.gsub(/'/, "''")
-    str = str.gsub(/HrSchoolFiles/, "WZXT/HrSchoolFiles")
+    #str = str.gsub(/HrSchoolFiles/, "WZXT/HrSchoolFiles")
     #str = str.gsub(/\[InstallDir_ChannelDir\]\{\$UploadDir\}/) {|s| '../../../upfile/' }
     str
   end
