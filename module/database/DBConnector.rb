@@ -23,24 +23,24 @@ class DBConnector
   end
   #获得连接字符串
   def get_connect_string(db_name = nil)
-    provider = case @db_type
-               when 'ss' then 'sqloledb'
-               when 'ac' then 'Microsoft.Jet.OLEDB.4.0'
-               end
-    connect_string = "Provider=#{provider};"
-    connect_string << "Data Source=#{@host};"
-    connect_string << "Initial Catalog=#{db_name};" if db_name && is_ss?
-    connect_string << "User ID=#{@username};" if is_remote? && is_ss?
-    connect_string << "password=#{@password};" if is_remote? && is_ss?
-    connect_string << "Persist Security Info=True;" if is_remote? && is_ss?
-    connect_string << "Network Library=dbmssocn;" if is_remote? && is_ss?
-    connect_string << "Integrated Security=SSPI;" if is_local? && is_ss?
+    case @db_type
+    when 'ss' then get_ss_connect_string(db_name)
+    when 'ac' then get_ac_connect_string()
+    end
+  end
+  #获得sql server连接字符串
+  def get_ss_connect_string(db_name = nil)
+    connect_string = "Provider=sqloledb;Data Source=#{@host};"
+    connect_string << "Initial Catalog=#{db_name};" if db_name
+    connect_string << "User ID=#{@username};password=#{@password};" if is_remote?
+    connect_string << "Persist Security Info=True;Network Library=dbmssocn;" if is_remote?
+    connect_string << "Integrated Security=SSPI;" if is_local?
     connect_string
   end
+  #获得access连接字符串
+  def get_ac_connect_string(); "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=#{@host};" end
   #根据host判断是否本地
   def is_local?;@host =~ /^\(local\)/ end
   #根据host判断是否远程
   def is_remote?;!(@host =~ /^\(local\)/) end
-  #根据db_type判断是否sql server数据库
-  def is_ss?;@db_type == 'ss' end
 end
