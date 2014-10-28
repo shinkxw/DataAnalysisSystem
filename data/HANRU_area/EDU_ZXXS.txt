@@ -411,4 +411,97 @@
             <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_56_A21_XSWHSZPJXM" exp="学生文化素质评价项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KCMC" exp="课程名称" type="nvarchar(50)" null="F" p="F" />
+            <name="PJXM" exp="评价项目" type="nvarchar(50)" null="F" p="F" />
+            <name="CJDFFSID" exp="成绩打分方式ID" type="int" null="F" p="F" />
+            <name="PJDFFSID" exp="评价打分方式ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A22_XSWHSZPJJG" exp="学生文化素质评价结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="BPXSID" exp="被评学生ID" type="int" null="F" p="F" />
+            <name="PJXMID" exp="评价项目ID" type="int" null="F" p="F" />
+            <name="PJLX" exp="评价类型" type="int" null="F" p="F" remark="成绩/评价" />
+            <name="DFLX" exp="打分类型" type="int" null="F" p="F" />
+            <name="DFNR" exp="打分内容" type="nvarchar(200)" null="F" p="F" />
+            <name="DJYHID" exp="登记用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A31_XSZHSZPJXM" exp="学生综合素质评价项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XMMC" exp="项目名称" type="nvarchar(50)" null="F" p="F" />
+            <name="YS" exp="要素" type="nvarchar(50)" null="F" p="F" />
+            <name="GJBX" exp="关键表现" type="nvarchar(200)" null="F" p="F" />
+            <name="ZWPDDFFSID" exp="自我评定打分方式ID" type="int" null="F" p="F" />
+            <name="XZPDDFFSID" exp="小组评定打分方式ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A32_XSZHSZPJJG" exp="学生综合素质评价结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="BPXSID" exp="被评学生ID" type="int" null="F" p="F" />
+            <name="PJXMID" exp="评价项目ID" type="int" null="F" p="F" />
+            <name="PJLX" exp="评价类型" type="int" null="F" p="F" remark="自我评定/小组评定" />
+            <name="DFLX" exp="打分类型" type="int" null="F" p="F" />
+            <name="DFNR" exp="打分内容" type="nvarchar(200)" null="F" p="F" />
+            <name="DJYHID" exp="登记用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_56_A41_JKJCJL" exp="健康检查记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="TJRQ" exp="体检日期" type="datetime" null="F" p="F" />
+            <name="ZLYSL" exp="左裸眼视力" type="decimal(2, 1)" null="F" p="F" />
+            <name="ZJZSL" exp="左矫正视力" type="decimal(2, 1)" null="F" p="F" />
+            <name="ZJZDS" exp="左矫正度数" type="int" null="F" p="F" />
+            <name="YLYSL" exp="右裸眼视力" type="decimal(2, 1)" null="F" p="F" />
+            <name="YJZSL" exp="右矫正视力" type="decimal(2, 1)" null="F" p="F" />
+            <name="YJZDS" exp="右矫正度数" type="int" null="F" p="F" />
+            <name="TLZ" exp="听力左" type="nvarchar(30)" null="F" p="F" />
+            <name="TLY" exp="听力右" type="nvarchar(30)" null="F" p="F" />
+            <name="FYJYYZK" exp="发育及营养状况" type="nvarchar(30)" null="F" p="F" />
+            <name="SG" exp="身高" type="decimal(5, 2)" null="F" p="F" />
+            <name="TZ" exp="体重" type="decimal(5, 2)" null="F" p="F" />
+            <name="FHL" exp="肺活量" type="decimal(7, 2)" null="F" p="F" />
+            <name="XY" exp="血压" type="decimal(7, 2)" null="F" p="F" />
+            <name="MB" exp="脉搏" type="int" null="F" p="F" />
+            <name="SY" exp="沙眼" type="nvarchar(30)" null="F" p="F" />
+            <name="SJ" exp="色觉" type="nvarchar(30)" null="F" p="F" />
+            <name="BB" exp="鼻病" type="nvarchar(30)" null="F" p="F" />
+            <name="KQ" exp="口腔" type="nvarchar(30)" null="F" p="F" />
+            <name="XZF" exp="心脏、肺" type="nvarchar(30)" null="F" p="F" />
+            <name="GPCW" exp="肝脾、胃肠" type="nvarchar(30)" null="F" p="F" />
+            <name="JZSZ" exp="脊柱、四肢" type="nvarchar(30)" null="F" p="F" />
+            <name="PZ" exp="平足" type="nvarchar(30)" null="F" p="F" />
+            <name="PF" exp="皮肤" type="nvarchar(30)" null="F" p="F" />
+            <name="CLB" exp="传染病" type="nvarchar(30)" null="F" p="F" />
+            <name="XT" exp="胸透" type="nvarchar(30)" null="F" p="F" />
+            <name="JWBS" exp="既往病史" type="nvarchar(300)" null="F" p="F" />
+            <name="XYQM" exp="校医签名" type="nvarchar(30)" null="F" p="F" />
+            <name="JZQM" exp="家长签名" type="nvarchar(30)" null="F" p="F" />
+            <name="DJYHID" exp="登记用户ID" type="nvarchar(20)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

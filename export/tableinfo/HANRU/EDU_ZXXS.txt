@@ -351,3 +351,86 @@ EDU_ZXXS_56_A13_JXLXXSPJ  家校联系学生评价表
   DFNR          打分内容                nvarchar(200)  非主
   DJSJ          登记时间                datetime       非主
 
+EDU_ZXXS_56_A21_XSWHSZPJXM  学生文化素质评价项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KCMC          课程名称                nvarchar(50)   非主
+  PJXM          评价项目                nvarchar(50)   非主
+  CJDFFSID      成绩打分方式ID          int            非主        成长档案打分方式表
+  PJDFFSID      评价打分方式ID          int            非主        成长档案打分方式表
+  PLSX          排列顺序                int            非主
+  ZT            状态                    int            非主
+
+EDU_ZXXS_56_A22_XSWHSZPJJG  学生文化素质评价结果表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  BPXSID        被评学生ID              int            非主        学生基本数据子类表
+  PJXMID        评价项目ID              int            非主        学生文化素质评价项目表
+  PJLX          评价类型                int            非主
+  DFLX          打分类型                int            非主
+  DFNR          打分内容                nvarchar(200)  非主
+  DJYHID        登记用户ID              nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+
+EDU_ZXXS_56_A31_XSZHSZPJXM  学生综合素质评价项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XMMC          项目名称                nvarchar(50)   非主
+  YS            要素                    nvarchar(50)   非主
+  GJBX          关键表现                nvarchar(200)  非主
+  ZWPDDFFSID    自我评定打分方式ID      int            非主        成长档案打分方式表
+  XZPDDFFSID    小组评定打分方式ID      int            非主        成长档案打分方式表
+  PLSX          排列顺序                int            非主
+  ZT            状态                    int            非主
+
+EDU_ZXXS_56_A32_XSZHSZPJJG  学生综合素质评价结果表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  BPXSID        被评学生ID              int            非主        学生基本数据子类表
+  PJXMID        评价项目ID              int            非主        学生综合素质评价项目表
+  PJLX          评价类型                int            非主
+  DFLX          打分类型                int            非主
+  DFNR          打分内容                nvarchar(200)  非主
+  DJYHID        登记用户ID              nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+
+EDU_ZXXS_56_A41_JKJCJL  健康检查记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  NJID          年级ID                  nvarchar(10)   非主        年级数据类表
+  BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+  TJRQ          体检日期                datetime       非主
+  ZLYSL         左裸眼视力              decimal(2, 1)  非主
+  ZJZSL         左矫正视力              decimal(2, 1)  非主
+  ZJZDS         左矫正度数              int            非主
+  YLYSL         右裸眼视力              decimal(2, 1)  非主
+  YJZSL         右矫正视力              decimal(2, 1)  非主
+  YJZDS         右矫正度数              int            非主
+  TLZ           听力左                  nvarchar(30)   非主
+  TLY           听力右                  nvarchar(30)   非主
+  FYJYYZK       发育及营养状况          nvarchar(30)   非主
+  SG            身高                    decimal(5, 2)  非主
+  TZ            体重                    decimal(5, 2)  非主
+  FHL           肺活量                  decimal(7, 2)  非主
+  XY            血压                    decimal(7, 2)  非主
+  MB            脉搏                    int            非主
+  SY            沙眼                    nvarchar(30)   非主
+  SJ            色觉                    nvarchar(30)   非主
+  BB            鼻病                    nvarchar(30)   非主
+  KQ            口腔                    nvarchar(30)   非主
+  XZF           心脏、肺                 nvarchar(30)   非主
+  GPCW          肝脾、胃肠               nvarchar(30)   非主
+  JZSZ          脊柱、四肢               nvarchar(30)   非主
+  PZ            平足                    nvarchar(30)   非主
+  PF            皮肤                    nvarchar(30)   非主
+  CLB           传染病                  nvarchar(30)   非主
+  XT            胸透                    nvarchar(30)   非主
+  JWBS          既往病史                nvarchar(300)  非主
+  XYQM          校医签名                nvarchar(30)   非主
+  JZQM          家长签名                nvarchar(30)   非主
+  DJYHID        登记用户ID              nvarchar(20)   非主        应用系统用户表
+
