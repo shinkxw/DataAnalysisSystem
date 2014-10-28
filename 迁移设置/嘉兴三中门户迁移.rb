@@ -26,7 +26,7 @@ def ew_change(str)
   str
 end
 
-connector = DBConnector.new('E:\经手项目\嘉兴三中迁移\data.mdb', db_type: 'ac')#, db_type: 'ac'
+connector = DBConnector.new('E:\经手项目\迁移\嘉兴三中迁移\data.mdb', db_type: 'ac')#, db_type: 'ac'
 DBEntity.open('HanruEdu', connector) do |db|
   
   config1 = { ID: proc{|d| d['ArticleID']},#
