@@ -433,4 +433,5 @@ EDU_ZXXS_56_A41_JKJCJL  健康检查记录表
   XYQM          校医签名                nvarchar(30)   非主
   JZQM          家长签名                nvarchar(30)   非主
   DJYHID        登记用户ID              nvarchar(20)   非主        应用系统用户表
+  BZ            备注                    text           非主
 

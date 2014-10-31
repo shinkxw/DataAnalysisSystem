@@ -12901,6 +12901,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_56_A41_JKJCJL](
 	[XYQM]  nvarchar(30)  NOT NULL,--校医签名
 	[JZQM]  nvarchar(30)  NOT NULL,--家长签名
 	[DJYHID]  nvarchar(20)  NOT NULL,--登记用户ID
+	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_ZXXS_56_A41_JKJCJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -13713,6 +13714,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'家长签名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A41_JKJCJL', @level2type=N'COLUMN',@level2name=N'JZQM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A41_JKJCJL', @level2type=N'COLUMN',@level2name=N'DJYHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_56_A41_JKJCJL', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 --空间名：EDU_ZXXX  生成器：SqlBuilder0.1
 

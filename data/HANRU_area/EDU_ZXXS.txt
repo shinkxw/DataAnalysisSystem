@@ -502,6 +502,7 @@
             <name="XYQM" exp="校医签名" type="nvarchar(30)" null="F" p="F" />
             <name="JZQM" exp="家长签名" type="nvarchar(30)" null="F" p="F" />
             <name="DJYHID" exp="登记用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

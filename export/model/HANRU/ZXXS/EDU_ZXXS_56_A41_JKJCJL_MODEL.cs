@@ -30,6 +30,7 @@ namespace HanRuEdu.LDAL
             XYQM = "";
             JZQM = "";
             DJYHID = "";
+            BZ = "";
         }
         public class EDU_ZXXS_56_A41_JKJCJL_metadata
         {
@@ -259,6 +260,12 @@ namespace HanRuEdu.LDAL
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String DJYHID { get; set; }
+
+
+            [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
+            [Display(Name = "±¸×¢")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZ { get; set; }
 
 
         }
