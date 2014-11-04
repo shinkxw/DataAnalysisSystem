@@ -75,7 +75,7 @@ class ManageAreaInterface < BaseInterface
     num = 1
     puts "   现有工作区：           "
     AreaManager.get_all_area_name.each do |name|
-      puts "   #{name.ljust(16)}#{num.to_s} "
+      puts "   #{name.ljust(16)}#{num} "
       @area_hash[num.to_s] = name
       num += 1
     end

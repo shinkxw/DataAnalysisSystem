@@ -3,18 +3,6 @@
 #目录管理器
 require "fileutils"
 class DirManager
-  #返回指定目录下的所有文件路径
-  def self.get_all_file_path(folder_Path)
-    
-  end
-  #返回指定目录中的所有文件路径
-  def self.get_file_path(folder_Path)
-    
-  end
-  #返回指定目录下的所有目录路径
-  def self.get_all_dir_path(folder_Path)
-    
-  end
   #返回指定目录中的所有目录路径
   def self.get_dir_path(folder_Path)
     result = []

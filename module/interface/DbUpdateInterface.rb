@@ -148,7 +148,7 @@ class DbUpdateInterface < BaseInterface
     num = 1
     puts "   现有工作区：           "
     AreaManager.get_all_area_name.each do |name|
-      puts "   #{name.ljust(18)}#{num.to_s}"
+      puts "   #{name.ljust(18)}#{num}"
       @area_hash[num.to_s] = name
       num += 1
     end
@@ -160,7 +160,7 @@ class DbUpdateInterface < BaseInterface
     DBEntity.open() do |db|
       num = 1
       db.get_db_name.each do |db_name|
-        puts "   #{db_name.fill_cn(28,'-')}#{num.to_s}"
+        puts "   #{db_name.fill_cn(28,'-')}#{num}"
         @db_hash[num.to_s] = db_name
         num += 1
       end

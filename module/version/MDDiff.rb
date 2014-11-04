@@ -121,7 +121,7 @@ class MDDiff
       when 'MDField'
         get_pro_diff(o1,o2).each do |dp|
           log << "表<#{o1.table.gname}>中字段<#{o1.gname}>的属性#{dp}"
-          log << "由#{o1.send(dp).to_s}改为#{o2.send(dp).to_s}\n"
+          log << "由#{o1.send(dp)}改为#{o2.send(dp)}\n"
         end
       end
     end

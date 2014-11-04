@@ -26,7 +26,7 @@ class MDDoc
       path = "#{@@export_path}/#{@type}/#{@name}.#{@file_type}"
       str_out(path)
     else
-      puts "MDDoc: 无法输出的文档类别：#{@data.class.to_s}"
+      puts "MDDoc: 无法输出的文档类别：#{@data.class}"
     end
     sy_doc if @@fs_config
 	path if path 
