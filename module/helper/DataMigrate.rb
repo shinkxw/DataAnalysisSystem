@@ -52,6 +52,8 @@ class DataMigrate
   def self.datetime(t)
     t ? "CAST('#{t.year}-#{t.month}-#{t.day} #{t.hour}:#{t.min}:#{t.sec}' AS DateTime)" : ''
   end
+  #将int转换为时间字符串
+  def self.int_to_datetime(i);datetime(Time.at(i)) end
   #datetime转换为6位字符串
   def self.time_to_6(time);time.to_s.split(" ")[0].delete("-")[0,5] end
   #datetime转换为8位字符串
