@@ -11,9 +11,7 @@ class Indent
   end
   #输出缩进字符串
   def t
-    indent_str = ""
-    @indent_num.times{indent_str += @tab}
-    indent_str
+    @tab * @indent_num
   end
   #增一缩进次数再输出字符串
   def l
