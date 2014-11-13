@@ -24,6 +24,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXFC_08_A03_ZWHC
             and   type = 'U')
    drop table EDU_ZXFC_08_A03_ZWHCY
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXFC_09_A01_XYAQYHPCFK')
+            and   type = 'U')
+   drop table EDU_ZXFC_09_A01_XYAQYHPCFK
+go
 --建筑物基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXFC_02_01_JZWJBSJ]') AND type in (N'U'))
 BEGIN
@@ -194,6 +199,32 @@ CONSTRAINT [PK_EDU_ZXFC_08_A03_ZWHCY] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
 	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--校园安全隐患排查反馈表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXFC_09_A01_XYAQYHPCFK]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZXFC_09_A01_XYAQYHPCFK](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[JCSJ]  nvarchar(50)  NOT NULL,--检查时间
+	[JCFW]  nvarchar(50)  NOT NULL,--检查范围
+	[JCBM]  nvarchar(50)  NOT NULL,--检查部门（人员）
+	[ZDJCXM]  nvarchar(50)  NOT NULL,--重点检查项目
+	[JCQKJL]  text  NOT NULL,--检查情况记录
+	[PCYHQK]  text  NOT NULL,--排查隐患情况
+	[ZGJY]  nvarchar(500)  NOT NULL,--整改建议
+	[XXFZRCLYJ]  nvarchar(200)  NOT NULL,--学校负责人处理意见
+	[CLJG]  nvarchar(200)  NOT NULL,--处理结果
+	[CLBMFZR]  nvarchar(50)  NOT NULL,--处理部门负责人（签字）
+	[SJ]  nvarchar(50)  NOT NULL,--时间
+CONSTRAINT [PK_EDU_ZXFC_09_A01_XYAQYHPCFK] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -429,4 +460,32 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'职位名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_08_A03_ZWHCY', @level2type=N'COLUMN',@level2name=N'ZWMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'工作内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_08_A03_ZWHCY', @level2type=N'COLUMN',@level2name=N'GZNR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校园安全隐患排查反馈表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'检查时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'JCSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'检查范围' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'JCFW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'检查部门（人员）' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'JCBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'重点检查项目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'ZDJCXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'检查情况记录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'JCQKJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排查隐患情况' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'PCYHQK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'整改建议' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'ZGJY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校负责人处理意见' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'XXFZRCLYJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'处理结果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'CLJG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'处理部门负责人（签字）' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'CLBMFZR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXFC_09_A01_XYAQYHPCFK', @level2type=N'COLUMN',@level2name=N'SJ'
 GO

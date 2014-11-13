@@ -130,4 +130,21 @@
             <name="GZNR" exp="工作内容" type="nvarchar(500)" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXFC_09_A01_XYAQYHPCFK" exp="校园安全隐患排查反馈表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JCSJ" exp="检查时间" type="nvarchar(50)" null="F" p="F" />
+            <name="JCFW" exp="检查范围" type="nvarchar(50)" null="F" p="F" />
+            <name="JCBM" exp="检查部门（人员）" type="nvarchar(50)" null="F" p="F" />
+            <name="ZDJCXM" exp="重点检查项目" type="nvarchar(50)" null="F" p="F" />
+            <name="JCQKJL" exp="检查情况记录" type="text" null="F" p="F" />
+            <name="PCYHQK" exp="排查隐患情况" type="text" null="F" p="F" />
+            <name="ZGJY" exp="整改建议" type="nvarchar(500)" null="F" p="F" />
+            <name="XXFZRCLYJ" exp="学校负责人处理意见" type="nvarchar(200)" null="F" p="F" />
+            <name="CLJG" exp="处理结果" type="nvarchar(200)" null="F" p="F" />
+            <name="CLBMFZR" exp="处理部门负责人（签字）" type="nvarchar(50)" null="F" p="F" />
+            <name="SJ" exp="时间" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

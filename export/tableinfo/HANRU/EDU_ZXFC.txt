@@ -118,3 +118,18 @@ EDU_ZXFC_08_A03_ZWHCY  住委会成员表
   ZWMC          职位名称                nvarchar(128)  非主
   GZNR          工作内容                nvarchar(500)  非主
 
+EDU_ZXFC_09_A01_XYAQYHPCFK  校园安全隐患排查反馈表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JCSJ          检查时间                nvarchar(50)   非主
+  JCFW          检查范围                nvarchar(50)   非主
+  JCBM          检查部门（人员）          nvarchar(50)   非主
+  ZDJCXM        重点检查项目            nvarchar(50)   非主
+  JCQKJL        检查情况记录            text           非主
+  PCYHQK        排查隐患情况            text           非主
+  ZGJY          整改建议                nvarchar(500)  非主
+  XXFZRCLYJ     学校负责人处理意见      nvarchar(200)  非主
+  CLJG          处理结果                nvarchar(200)  非主
+  CLBMFZR       处理部门负责人（签字）    nvarchar(50)   非主
+  SJ            时间                    nvarchar(50)   非主
+

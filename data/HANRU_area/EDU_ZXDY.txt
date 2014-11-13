@@ -123,4 +123,61 @@
             <name="JHNR" exp="讲话内容" type="text" null="T" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXDY_07_A01_DYHDKC" exp="德育活动课程表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="BJ" exp="班级" type="nvarchar(10)" null="F" p="F" />
+            <name="HDSJ" exp="活动时间" type="nvarchar(50)" null="F" p="F" />
+            <name="HDZT" exp="活动主题" type="nvarchar(100)" null="F" p="F" />
+            <name="DYHDGCJL" exp="德育活动过程记录" type="text" null="F" p="F" />
+            <name="HDGCTPZS" exp="活动过程图片展示" type="text" null="F" p="F" />
+            <name="DYHDHJ" exp="德育活动后记" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXDY_07_A11_XSZZGLJG" exp="学生自主管理机构表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JGMC" exp="机构名称" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXDY_07_A12_XSZZGLXZ" exp="学生自主管理小组表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="GLJGID" exp="管理机构ID" type="int" null="F" p="F" />
+            <name="ZZ" exp="组长" type="nvarchar(50)" null="F" p="F" />
+            <name="ZY" exp="组员" type="nvarchar(200)" null="F" p="F" />
+            <name="XZKH" exp="小组口号(目标)" type="nvarchar(200)" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXDY_07_A21_BJXSHDQKJL" exp="班级学生活动情况记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="HDBJ" exp="活动班级" type="nvarchar(10)" null="F" p="F" />
+            <name="SJ" exp="时间" type="nvarchar(50)" null="F" p="F" />
+            <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
+            <name="CYRS" exp="参与人数" type="nvarchar(50)" null="F" p="F" />
+            <name="HDXS" exp="活动形式" type="nvarchar(200)" null="F" p="F" />
+            <name="HDZT" exp="活动主题" type="nvarchar(200)" null="F" p="F" />
+            <name="HDGCJL" exp="活动过程记录（包含图片）" type="text" null="F" p="F" />
+            <name="HDHJ" exp="活动后记（班主任点评）" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXDY_07_A31_XXDXHD" exp="学校大型活动表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="HDZT" exp="活动主题" type="nvarchar(100)" null="F" p="F" />
+            <name="HDZZBM" exp="活动组织部门" type="nvarchar(200)" null="F" p="F" />
+            <name="XMFZR" exp="项目负责人" type="nvarchar(200)" null="F" p="F" />
+            <name="SJ" exp="时间" type="nvarchar(50)" null="F" p="F" />
+            <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
+            <name="HDGCJL" exp="活动过程记录（含图片）" type="text" null="F" p="F" />
+            <name="HDHJ" exp="活动后记" type="text" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

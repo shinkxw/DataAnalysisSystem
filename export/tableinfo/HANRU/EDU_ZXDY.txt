@@ -97,3 +97,50 @@ EDU_ZXDY_06_A02_GQXJH  国旗下讲话表
   JHZT          讲话主题                text           非主
   JHNR          讲话内容                text           非主
 
+EDU_ZXDY_07_A01_DYHDKC  德育活动课程表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  BJ            班级                    nvarchar(10)   非主        班级数据类表
+  HDSJ          活动时间                nvarchar(50)   非主
+  HDZT          活动主题                nvarchar(100)  非主
+  DYHDGCJL      德育活动过程记录        text           非主
+  HDGCTPZS      活动过程图片展示        text           非主
+  DYHDHJ        德育活动后记            text           非主
+
+EDU_ZXDY_07_A11_XSZZGLJG  学生自主管理机构表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JGMC          机构名称                nvarchar(200)  非主
+
+EDU_ZXDY_07_A12_XSZZGLXZ  学生自主管理小组表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  GLJGID        管理机构ID              int            非主        学生自主管理机构表
+  ZZ            组长                    nvarchar(50)   非主
+  ZY            组员                    nvarchar(200)  非主
+  XZKH          小组口号(目标)          nvarchar(200)  非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZXDY_07_A21_BJXSHDQKJL  班级学生活动情况记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  HDBJ          活动班级                nvarchar(10)   非主        班级数据类表
+  SJ            时间                    nvarchar(50)   非主
+  DD            地点                    nvarchar(200)  非主
+  CYRS          参与人数                nvarchar(50)   非主
+  HDXS          活动形式                nvarchar(200)  非主
+  HDZT          活动主题                nvarchar(200)  非主
+  HDGCJL        活动过程记录（包含图片）  text           非主
+  HDHJ          活动后记（班主任点评）    text           非主
+
+EDU_ZXDY_07_A31_XXDXHD  学校大型活动表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  HDZT          活动主题                nvarchar(100)  非主
+  HDZZBM        活动组织部门            nvarchar(200)  非主
+  XMFZR         项目负责人              nvarchar(200)  非主
+  SJ            时间                    nvarchar(50)   非主
+  DD            地点                    nvarchar(200)  非主
+  HDGCJL        活动过程记录（含图片）    text           非主
+  HDHJ          活动后记                text           非主
+
