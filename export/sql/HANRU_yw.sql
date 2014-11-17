@@ -2208,6 +2208,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_15_A14_BXGZ
    drop table EDU_OAXT_15_A14_BXGZXX
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_15_A15_ZCMLQX')
+            and   type = 'U')
+   drop table EDU_OAXT_15_A15_ZCMLQX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_20_A01_LCMBLX')
             and   type = 'U')
    drop table EDU_OAXT_20_A01_LCMBLX
@@ -3249,6 +3254,23 @@ CREATE TABLE [dbo].[EDU_OAXT_15_A14_BXGZXX](
 	[BXLXID]  int  NOT NULL,--报修类型ID
 	[GZXX]  nvarchar(500)  NOT NULL,--故障信息
 CONSTRAINT [PK_EDU_OAXT_15_A14_BXGZXX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--资产目录权限表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_15_A15_ZCMLQX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_15_A15_ZCMLQX](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[YHID]  nvarchar(20)  NOT NULL,--用户ID
+	[MLIDLB]  text  NULL,--目录ID列表
+	[MLMCLB]  text  NULL,--目录名称列表
+CONSTRAINT [PK_EDU_OAXT_15_A15_ZCMLQX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -5241,6 +5263,18 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报修类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A14_BXGZXX', @level2type=N'COLUMN',@level2name=N'BXLXID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'故障信息' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A14_BXGZXX', @level2type=N'COLUMN',@level2name=N'GZXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'资产目录权限表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A15_ZCMLQX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A15_ZCMLQX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A15_ZCMLQX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A15_ZCMLQX', @level2type=N'COLUMN',@level2name=N'YHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A15_ZCMLQX', @level2type=N'COLUMN',@level2name=N'MLIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_15_A15_ZCMLQX', @level2type=N'COLUMN',@level2name=N'MLMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流程模板类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_20_A01_LCMBLX'
 GO

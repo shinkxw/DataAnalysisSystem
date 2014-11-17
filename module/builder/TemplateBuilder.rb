@@ -347,7 +347,7 @@ class TemplateBuilder
     str << %(            <a href="@Url.Content("~/#{@directory_name}/#{table.lname_dc}/index")" class="easyui-linkbutton" iconCls="icon-back" >返回列表</a>\n)
     str << "        </p>\n        <hr />\n"
     str << "        <p>\n"
-    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/#{table.lname_dc}.xls")">模板下载</a><br />\n)
+    str << %(            <a href="@Url.Content("~/Content/NowDownload/Excels/#{table.explanation}.xls")">模板下载</a><br />\n)
     str << %(            <span style="color: red">导入小贴士：<br />\n)
     str << "                1.本导入只支持XML格式的文件。若用Excel 2010打开模板，请先右键点击模板->属性->解除锁定，即可解决【文件已损坏】问题。<br />\n"
     str << "                2.选择EXCEL的【文件另存为。。。】菜单，在保存类型处选择“XML表格”类型，可保存为XML格式文件。<br />\n"

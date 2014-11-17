@@ -407,6 +407,13 @@ EDU_OAXT_15_A14_BXGZXX  报修故障信息表
   BXLXID        报修类型ID              int            非主        报修类型表
   GZXX          故障信息                nvarchar(500)  非主
 
+EDU_OAXT_15_A15_ZCMLQX  资产目录权限表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  MLIDLB        目录ID列表              text           非主
+  MLMCLB        目录名称列表            text           非主
+
 EDU_OAXT_20_A01_LCMBLX  流程模板类型表
   ID            编号                    int            主键
   LXMC          类型名称                nvarchar(100)  非主
