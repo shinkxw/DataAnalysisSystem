@@ -9,7 +9,7 @@ class MDVCer
     @area,@work_copy = work_area.area,nil
     @ver_path = "#{$root}/version/#{@area.name}_area/"
     @work_copy_path = @ver_path + 'WorkCopy.'
-    @log_path = "#{$root}/#{@area.name}更新日志.txt"
+    @log_path = "#{$root}/更新日志/#{@area.name}更新日志.txt"
     load_work_copy
     load_area_vision
     @version_arr.sort_by! {|v| v.update_date}.reverse!
