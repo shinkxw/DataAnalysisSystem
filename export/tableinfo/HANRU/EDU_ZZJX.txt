@@ -706,6 +706,10 @@ EDU_ZZJX_35_A02_GKKSQ  公开课申请
   SFGS          是否公示                int            非主
   SQRID         申请人ID                int            非主        教职工基本数据子类表
   SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
+  RJXK          任教学科                nvarchar(20)   非主
+  XQ            星期                    nvarchar(20)   非主
+  JC            节次                    nvarchar(20)   非主
+  KCBJ          开课班级                nvarchar(30)   非主
 
 EDU_ZZJX_36_A01_JXJH  见习计划表
   ID            编号                    int            主键

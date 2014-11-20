@@ -13,6 +13,10 @@ SELECT a.[ID]--编号
       ,a.[SFGS]--是否公示
       ,a.[SQRID]--申请人ID
       ,a.[SHRID]--审核人ID
+      ,a.[RJXK]--任教学科
+      ,a.[XQ]--星期
+      ,a.[JC]--节次
+      ,a.[KCBJ]--开课班级
       ,c.SCHOOLID as c_TKXZ_SCHOOLID--听课小组 学校
       ,c.XZMC as c_TKXZ_XZMC--听课小组 小组名称
       ,c.XZCY as c_TKXZ_XZCY--听课小组 小组成员

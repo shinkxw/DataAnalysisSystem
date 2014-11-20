@@ -825,6 +825,10 @@
             <name="SFGS" exp="是否公示" type="int" null="F" p="F" />
             <name="SQRID" exp="申请人ID" type="int" null="F" p="F" />
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="RJXK" exp="任教学科" type="nvarchar(20)" null="F" p="F" />
+            <name="XQ" exp="星期" type="nvarchar(20)" null="F" p="F" />
+            <name="JC" exp="节次" type="nvarchar(20)" null="F" p="F" />
+            <name="KCBJ" exp="开课班级" type="nvarchar(30)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_36_A01_JXJH" exp="见习计划表">

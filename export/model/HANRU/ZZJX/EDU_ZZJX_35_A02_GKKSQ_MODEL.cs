@@ -14,6 +14,10 @@ namespace HanRuEdu.LDAL
             SKDD = "";
             KCJJ = "";
             SHRID = "";
+            RJXK = "";
+            XQ = "";
+            JC = "";
+            KCBJ = "";
         }
         public class EDU_ZZJX_35_A02_GKKSQ_metadata
         {
@@ -77,6 +81,34 @@ namespace HanRuEdu.LDAL
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SHRID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "任教学科")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String RJXK { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "星期")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "节次")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "开课班级")]
+            [StringLength(30)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCBJ { get; set; }
 
 
         }

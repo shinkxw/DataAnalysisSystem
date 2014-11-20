@@ -20625,6 +20625,10 @@ CREATE TABLE [dbo].[EDU_ZZJX_35_A02_GKKSQ](
 	[SFGS]  int  NOT NULL,--是否公示
 	[SQRID]  int  NOT NULL,--申请人ID
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
+	[RJXK]  nvarchar(20)  NOT NULL,--任教学科
+	[XQ]  nvarchar(20)  NOT NULL,--星期
+	[JC]  nvarchar(20)  NOT NULL,--节次
+	[KCBJ]  nvarchar(30)  NOT NULL,--开课班级
 CONSTRAINT [PK_EDU_ZZJX_35_A02_GKKSQ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -22372,6 +22376,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_35_A02_GKKSQ', @level2type=N'COLUMN',@level2name=N'SQRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_35_A02_GKKSQ', @level2type=N'COLUMN',@level2name=N'SHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'任教学科' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_35_A02_GKKSQ', @level2type=N'COLUMN',@level2name=N'RJXK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'星期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_35_A02_GKKSQ', @level2type=N'COLUMN',@level2name=N'XQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'节次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_35_A02_GKKSQ', @level2type=N'COLUMN',@level2name=N'JC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开课班级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_35_A02_GKKSQ', @level2type=N'COLUMN',@level2name=N'KCBJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'见习计划表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_36_A01_JXJH'
 GO
