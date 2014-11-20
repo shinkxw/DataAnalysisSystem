@@ -1,0 +1,58 @@
+<EDU_ELE_01_USER
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+<EDU_ELE_01_APP
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_01_SCHOOL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+<EDU_ELE_01_XQ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+<EDU_ELE_01_APPUSER
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  APPID          EDU_ELE_01_APP                     ID
+<EDU_ELE_01_APPDLCS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPUSERID      EDU_ELE_01_APPUSER                 ID
+<EDU_ELE_03_APPRZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_03_APPLL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_03_YHSYJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  MODULEID       EDU_SYS_01_MODULE                  ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_05_XL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+  XQID           EDU_ELE_01_XQ                      ID
+<EDU_ELE_05_XLZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XLID           EDU_ELE_05_XL                      ID
+<EDU_ELE_05_WEEKDAY
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_05_SD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_05_JC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SDID           EDU_ELE_05_SD                      ID
+<EDU_ELE_06_CDSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_07_JFBD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_07_RYBD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  APPID          EDU_ELE_01_APP                     ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_09_JKXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  TJYH           EDU_ELE_01_USER                    LOGINNAME
+<EDU_SYS_01_XN
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
