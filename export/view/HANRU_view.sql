@@ -371,6 +371,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_39_A03
             and   type = 'V')
    drop view VIEW_EDU_OAXT_39_A03_GWLZ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_SYS_01_MICROMODULE_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_SYS_01_MICROMODULE_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_VIP_DISP')
             and   type = 'V')
    drop view VIEW_EDU_WZXT_VIP_DISP
@@ -5866,6 +5870,29 @@ FROM dbo.EDU_OAXT_39_A03_GWLZ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS d ON a.XFRID = d.LOGINNAME /*下发人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS e ON a.JSRID = e.LOGINNAME /*接收人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cb] ON c.SFSH = [cb].DM /*是否收回*/
+GO
+
+--微导航表
+CREATE VIEW [dbo].[VIEW_EDU_SYS_01_MICROMODULE_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[MODULEID]--模块ID
+      ,a.[NAME]--名称
+      ,a.[URL]--网址
+      ,a.[PICTYPE]--图片类型
+      ,a.[PIC1]--图片一
+      ,a.[PIC2]--图片二
+      ,b.APPID as b_MODULE_APPID--导航表 
+      ,b.NAME as b_MODULE_NAME--导航表 
+      ,b.Depth as b_MODULE_Depth--导航表 
+      ,b.PID as b_MODULE_PID--导航表 
+      ,b.MenuDisp as b_MODULE_MenuDisp--导航表 
+      ,b.MenuUserType as b_MODULE_MenuUserType--导航表 
+      ,b.Link as b_MODULE_Link--导航表 
+      ,b.OrderIndex as b_MODULE_OrderIndex--导航表 
+
+FROM dbo.EDU_SYS_01_MICROMODULE AS a LEFT OUTER JOIN
+      dbo.EDU_SYS_01_MODULE AS b ON a.MODULEID = b.ID /*模块ID*/
 GO
 
 --网站会员

@@ -18,3 +18,12 @@ EDU_SYS_01_MODULE  导航表
   Link                                  nvarchar(100)  非主
   OrderIndex                            int            非主
 
+EDU_SYS_01_MICROMODULE  微导航表
+  ID            编号                    int            主键
+  MODULEID      模块ID                  int            非主        导航表
+  NAME          名称                    nvarchar(20)   非主
+  URL           网址                    nvarchar(300)  非主
+  PICTYPE       图片类型                int            非主
+  PIC1          图片一                  nvarchar(300)  非主
+  PIC2          图片二                  nvarchar(300)  非主
+

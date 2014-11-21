@@ -160,8 +160,8 @@
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SSPZID" exp="所属配置ID" type="int" null="F" p="F" />
             <name="DCMC" exp="名称" type="nvarchar(20)" null="F" p="F" />
-            <name="SX" exp="上限" type="int" null="F" p="F" />
-            <name="XX" exp="下限" type="int" null="F" p="F" />
+            <name="SX" exp="上限" type="decimal(6, 2)" null="F" p="F" />
+            <name="XX" exp="下限" type="decimal(6, 2)" null="F" p="F" />
             <name="PZQZ" exp="P值权重" type="int" null="F" p="F" />
         </field_area>
     </table>

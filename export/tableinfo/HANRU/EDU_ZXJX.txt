@@ -137,8 +137,8 @@ EDU_ZXJX_07_A02_CJFXPZXM  成绩分析配置项目表
   ID            编号                    int            自增主键
   SSPZID        所属配置ID              int            非主
   DCMC          名称                    nvarchar(20)   非主
-  SX            上限                    int            非主
-  XX            下限                    int            非主
+  SX            上限                    decimal(6, 2)  非主
+  XX            下限                    decimal(6, 2)  非主
   PZQZ          P值权重                 int            非主
 
 EDU_ZXJX_08_A01_XXGCXPJPZ  学生学习过程性评价配置表

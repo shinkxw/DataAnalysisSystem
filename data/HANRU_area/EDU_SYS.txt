@@ -36,4 +36,15 @@
             <name="OrderIndex" exp="" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_SYS_01_MICROMODULE" exp="Î¢µ¼º½±í">
+        <field_area>
+            <name="ID" exp="±àºÅ" type="int" null="F" p="T" />
+            <name="MODULEID" exp="Ä£¿éID" type="int" null="F" p="F" />
+            <name="NAME" exp="Ãû³Æ" type="nvarchar(20)" null="F" p="F" />
+            <name="URL" exp="ÍøÖ·" type="nvarchar(300)" null="F" p="F" />
+            <name="PICTYPE" exp="Í¼Æ¬ÀàÐÍ" type="int" null="F" p="F" />
+            <name="PIC1" exp="Í¼Æ¬Ò»" type="nvarchar(300)" null="F" p="F" />
+            <name="PIC2" exp="Í¼Æ¬¶þ" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

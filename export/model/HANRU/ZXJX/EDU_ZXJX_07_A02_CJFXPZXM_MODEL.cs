@@ -32,12 +32,14 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "上限")]
-            public Int32 SX { get; set; }
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal SX { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "下限")]
-            public Int32 XX { get; set; }
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal XX { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

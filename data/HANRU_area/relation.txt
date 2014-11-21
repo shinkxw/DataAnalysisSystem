@@ -441,6 +441,8 @@
   JSRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_SYS_01_MICROMODULE
+  MODULEID       EDU_SYS_01_MODULE                  ID
 <EDU_WZXT_VIP
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID

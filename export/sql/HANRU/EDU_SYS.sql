@@ -14,6 +14,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_SYS_01_MODULE')
             and   type = 'U')
    drop table EDU_SYS_01_MODULE
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_SYS_01_MICROMODULE')
+            and   type = 'U')
+   drop table EDU_SYS_01_MICROMODULE
+go
 --全局配置表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_SYS_01_CONFIG]') AND type in (N'U'))
 BEGIN
@@ -76,6 +81,26 @@ END
 GO
 
 
+--微导航表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_SYS_01_MICROMODULE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_SYS_01_MICROMODULE](
+	[ID]  int  NOT NULL,--编号
+	[MODULEID]  int  NOT NULL,--模块ID
+	[NAME]  nvarchar(20)  NOT NULL,--名称
+	[URL]  nvarchar(300)  NOT NULL,--网址
+	[PICTYPE]  int  NOT NULL,--图片类型
+	[PIC1]  nvarchar(300)  NOT NULL,--图片一
+	[PIC2]  nvarchar(300)  NOT NULL,--图片二
+CONSTRAINT [PK_EDU_SYS_01_MICROMODULE] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'全局配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_CONFIG'
 GO
@@ -92,4 +117,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学年' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_XN', @level2type=N'COLUMN',@level2name=N'XN'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导航表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MODULE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'微导航表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模块ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'MODULEID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'URL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'PICTYPE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片一' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'PIC1'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片二' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'PIC2'
 GO

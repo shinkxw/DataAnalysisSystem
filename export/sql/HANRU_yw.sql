@@ -9404,8 +9404,8 @@ CREATE TABLE [dbo].[EDU_ZXJX_07_A02_CJFXPZXM](
 	[ID]  int  identity,--编号
 	[SSPZID]  int  NOT NULL,--所属配置ID
 	[DCMC]  nvarchar(20)  NOT NULL,--名称
-	[SX]  int  NOT NULL,--上限
-	[XX]  int  NOT NULL,--下限
+	[SX]  decimal(6, 2)  NOT NULL,--上限
+	[XX]  decimal(6, 2)  NOT NULL,--下限
 	[PZQZ]  int  NOT NULL,--P值权重
 CONSTRAINT [PK_EDU_ZXJX_07_A02_CJFXPZXM] PRIMARY KEY CLUSTERED
 (
