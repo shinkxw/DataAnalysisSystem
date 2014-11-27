@@ -11,7 +11,7 @@ class DataMigrate
     end
   end
   #输出文本
-  def self.export_text(text_type, data_hash_arr, par = nil, mb = 20)
+  def self.export_text(text_type, data_hash_arr, par = nil, mb = 20, suffix = 'sql')
     text_arr = []
     text = ""
     p "不支持名为#{text_type}的文本类型" unless (self.respond_to?(text_type))
@@ -24,7 +24,7 @@ class DataMigrate
     end
     text_arr << text
     text_arr.each_index do |i|
-      path = Dir.pwd << "/QY/#{par}_#{i + 1}.sql"
+      path = Dir.pwd << "/QY/#{par}_#{i + 1}.#{suffix}"
       FileWriter.new(path).write_str(text_arr[i])
     end
   end
@@ -58,4 +58,14 @@ class DataMigrate
   def self.time_to_6(time);time.to_s.split(" ")[0].delete("-")[0,5] end
   #datetime转换为8位字符串
   def self.time_to_8(time);time.to_s.split(" ")[0].delete("-") end
+  ###以下为常用数据分析方法
+  def self.show_data_tree(data_arr, pid, idfield, pidfield, namefield)
+    result = ''
+    data_arr.select{|h| h[pidfield] == pid}.each{|p| find_c(p, data_arr, result, idfield, pidfield, namefield)}
+    result
+  end
+  def self.find_c(f, arr, text, idf, pf, nf, depth = 0, tab = '  ')
+    text << "#{tab * depth}#{f[nf].fill_cn(24)}    #{f[idf]}\n"
+    arr.select{|d| d[pf] == f[idf]}.each{|c| find_c(c, arr, text, idf, pf, nf, depth + 1)}
+  end
 end

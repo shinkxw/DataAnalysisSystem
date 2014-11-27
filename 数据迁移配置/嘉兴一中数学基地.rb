@@ -1,6 +1,27 @@
 #!/usr/bin/env ruby -w
 # encoding: GBK
 
+#~ connector = DBConnector.new('localhost', db_type: 'mysql', username: 'root')#, db_type: 'ac'
+#~ DBEntity.open('jxyz', connector) do |db|
+  #~ #out_hash_arr = DataMigrate.convert_data(db.get_table_data('lfj_members'), $yh_config)
+  #~ #DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_ELE_01_USER')
+  
+  #~ adata_hash_arr = db.get_table_data('lfj_artic')
+  #~ rdata_hash_arr = db.get_table_data('lfj_reply')
+  #~ ddata_hash_arr = db.get_table_data('lfj_download')
+  #~ rdata_hash = rdata_hash_arr.select{|rd| rd['r_rid'] == 0}.group_by{|rd| rd['r_aid']}
+  #~ ddata_hash = ddata_hash_arr.group_by{|rd| rd['d_aid']}
+  #~ data_hash_arr = adata_hash_arr.map do |adata|
+    #~ rdata_arr = rdata_hash[adata['id']]
+    #~ rdata = rdata_arr ? rdata_arr.min{|rd| rd['r_id']} : nil
+    #~ ddata_arr = ddata_hash[adata['id']]
+    #~ Qypz.get_data_hash(adata, rdata, ddata_arr)
+  #~ end
+  #~ out_hash_arr = DataMigrate.convert_data(data_hash_arr, $wz_config)
+  #~ out_hash_arr.delete_if {|hash| hash[:LMID] == '-1'}
+  #~ DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_WZXT_MHXT_WZWZ', 10)
+#~ end
+
 class Qypz
   ary = [18 , '1118', 19 , '1127', 21 , '1128', 86 , '1123', 88 , '1146', 96 , '1146', 97 , '1146', 98 , '1146', 99 , '1146', 108, '1146', 87 , '1147', 
          93 , '1147', 107, '1147', 109, '1147', 94110, '1147', 111, '1147', 89 , '1147', 100, '1147', 101, '1147', 102, '1147', 90 , '1147', 103, '1147', 
