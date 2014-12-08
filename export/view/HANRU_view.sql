@@ -455,6 +455,26 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_WZXT_ZDJZ_S
             and   type = 'V')
    drop view VIEW_EDU_WZXT_ZDJZ_SYBK_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_XYDT_01_A01_SPML_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_XYDT_01_A01_SPML_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_XYDT_01_A06_SPWJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_XYDT_01_A06_SPWJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_XYDT_01_A08_SPWJPL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_XYDT_01_A08_SPWJPL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_XYDT_01_A10_TZGG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_XYDT_01_A10_TZGG_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_XYDT_01_A12_YQLJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_XYDT_01_A12_YQLJ_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZJ_ZJZY_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZJ_ZJZY_DISP
@@ -6544,6 +6564,241 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_WZXT_ZDJZ_SYBK AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+GO
+
+--视频目录
+CREATE VIEW [dbo].[VIEW_EDU_XYDT_01_A01_SPML_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[MLMC]--目录名称
+      ,a.[FMLID]--父目录ID
+      ,a.[PLSX]--排列顺序
+      ,a.[SFSYZS]--是否首页展示
+      ,a.[SFQY]--是否启用
+      ,a.[URL]--网址
+      ,a.[FMLIDLB]--父目录ID列表
+      ,c.SCHOOLID as c_SPML_SCHOOLID--视频目录 学校
+      ,c.MLMC as c_SPML_MLMC--视频目录 目录名称
+      ,c.FMLID as c_SPML_FMLID--视频目录 父目录ID
+      ,c.PLSX as c_SPML_PLSX--视频目录 排列顺序
+      ,c.SFSYZS as c_SPML_SFSYZS--视频目录 是否首页展示
+      ,c.SFQY as c_SPML_SFQY--视频目录 是否启用
+      ,c.URL as c_SPML_URL--视频目录 网址
+      ,c.FMLIDLB as c_SPML_FMLIDLB--视频目录 父目录ID列表
+
+FROM dbo.EDU_XYDT_01_A01_SPML AS a LEFT OUTER JOIN
+      dbo.EDU_XYDT_01_A01_SPML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--视频文件
+CREATE VIEW [dbo].[VIEW_EDU_XYDT_01_A06_SPWJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[SPMLID]--视频目录ID
+      ,a.[ZYBT]--视频标题
+      ,a.[GJZ]--关键字
+      ,a.[SYXZ]--使用限制
+      ,a.[LY]--来源
+      ,a.[WBSPLJ]--外部视频链接
+      ,a.[YYZID]--拥有者ID
+      ,a.[SPMC]--视频名称
+      ,a.[SPDX]--视频大小
+      ,a.[SPLJ]--视频路径
+      ,a.[SPLXID]--视频类型ID
+      ,a.[SPPJ]--视频评级
+      ,a.[SLT]--缩略图
+      ,a.[SCSJ]--上传时间
+      ,a.[LLRC]--浏览人次
+      ,a.[XZRC]--下载人次
+      ,a.[PLRC]--评论人次
+      ,a.[PFRC]--评分人次
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHSJ]--审核时间
+      ,a.[ZYDXKB]--资源大小(KB)
+      ,c.SCHOOLID as c_SPML_SCHOOLID--视频目录 学校
+      ,c.MLMC as c_SPML_MLMC--视频目录 目录名称
+      ,c.FMLID as c_SPML_FMLID--视频目录 父目录ID
+      ,c.PLSX as c_SPML_PLSX--视频目录 排列顺序
+      ,c.SFSYZS as c_SPML_SFSYZS--视频目录 是否首页展示
+      ,c.SFQY as c_SPML_SFQY--视频目录 是否启用
+      ,c.URL as c_SPML_URL--视频目录 网址
+      ,c.FMLIDLB as c_SPML_FMLIDLB--视频目录 父目录ID列表
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,e.SCHOOLID as e_SPLX_SCHOOLID--视频类型 学校
+      ,e.LXMC as e_SPLX_LXMC--视频类型 类型名称
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,f.PWD as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_XYDT_01_A06_SPWJ AS a LEFT OUTER JOIN
+      dbo.EDU_XYDT_01_A01_SPML AS c ON a.SPMLID = c.ID /*视频目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.YYZID = d.LOGINNAME /*拥有者ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_XYDT_01_A03_SPLX AS e ON a.SPLXID = e.ID /*视频类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.SHRID = f.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/
+GO
+
+--视频文件评论
+CREATE VIEW [dbo].[VIEW_EDU_XYDT_01_A08_SPWJPL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[SPWJID]--视频文件ID
+      ,a.[PL]--评论
+      ,a.[PLRID]--评论人ID
+      ,a.[PLSJ]--评论时间
+      ,c.SCHOOLID as c_SPWJ_SCHOOLID--视频文件 学校
+      ,c.SPMLID as c_SPWJ_SPMLID--视频文件 视频目录ID
+      ,c.ZYBT as c_SPWJ_ZYBT--视频文件 视频标题
+      ,c.GJZ as c_SPWJ_GJZ--视频文件 关键字
+      ,c.SYXZ as c_SPWJ_SYXZ--视频文件 使用限制
+      ,c.LY as c_SPWJ_LY--视频文件 来源
+      ,c.WBSPLJ as c_SPWJ_WBSPLJ--视频文件 外部视频链接
+      ,c.YYZID as c_SPWJ_YYZID--视频文件 拥有者ID
+      ,c.SPMC as c_SPWJ_SPMC--视频文件 视频名称
+      ,c.SPDX as c_SPWJ_SPDX--视频文件 视频大小
+      ,c.SPLJ as c_SPWJ_SPLJ--视频文件 视频路径
+      ,c.SPLXID as c_SPWJ_SPLXID--视频文件 视频类型ID
+      ,c.SPPJ as c_SPWJ_SPPJ--视频文件 视频评级
+      ,c.SLT as c_SPWJ_SLT--视频文件 缩略图
+      ,c.SCSJ as c_SPWJ_SCSJ--视频文件 上传时间
+      ,c.LLRC as c_SPWJ_LLRC--视频文件 浏览人次
+      ,c.XZRC as c_SPWJ_XZRC--视频文件 下载人次
+      ,c.PLRC as c_SPWJ_PLRC--视频文件 评论人次
+      ,c.PFRC as c_SPWJ_PFRC--视频文件 评分人次
+      ,c.SHZT as c_SPWJ_SHZT--视频文件 审核状态
+      ,c.SHRID as c_SPWJ_SHRID--视频文件 审核人ID
+      ,c.SHSJ as c_SPWJ_SHSJ--视频文件 审核时间
+      ,c.ZYDXKB as c_SPWJ_ZYDXKB--视频文件 资源大小(KB)
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_XYDT_01_A08_SPWJPL AS a LEFT OUTER JOIN
+      dbo.EDU_XYDT_01_A06_SPWJ AS c ON a.SPWJID = c.ID /*视频文件ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.PLRID = d.LOGINNAME /*评论人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
+--通知公告
+CREATE VIEW [dbo].[VIEW_EDU_XYDT_01_A10_TZGG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[TITLE]--标题
+      ,a.[FBRID]--发布人ID
+      ,a.[FBRXM]--发布人姓名
+      ,a.[FBBM]--发布部门
+      ,a.[FBSJ]--发布时间
+      ,a.[NR]--内容
+      ,a.[TPDZ]--图片地址
+      ,a.[DJL]--点击量
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHRXM]--审核人姓名
+      ,a.[SHSJ]--审核时间
+      ,a.[SFXS]--是否显示
+      ,a.[SFZD]--是否置顶
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,c.PWD as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,d.PWD as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_XYDT_01_A10_TZGG AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SHRID = d.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/
+GO
+
+--友情链接
+CREATE VIEW [dbo].[VIEW_EDU_XYDT_01_A12_YQLJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[YQLJLXID]--友情链接类型ID
+      ,a.[TITLE]--标题
+      ,a.[IMAGEURL]--图片
+      ,a.[URL]--链接
+      ,c.SCHOOLID as c_YQLJLX_SCHOOLID--友情链接类型 学校名
+      ,c.NAME as c_YQLJLX_NAME--友情链接类型 类型名
+      ,c.SHOWSTYLE as c_YQLJLX_SHOWSTYLE--友情链接类型 显示方式
+
+FROM dbo.EDU_XYDT_01_A12_YQLJ AS a LEFT OUTER JOIN
+      dbo.EDU_XYDT_01_A11_YQLJLX AS c ON a.YQLJLXID = c.ID /*友情链接类型ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
 GO
 
 --自建专业代码

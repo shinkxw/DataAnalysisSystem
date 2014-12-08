@@ -1,0 +1,99 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_XYDT" provider="reallocate_namespace">
+    <table name="EDU_XYDT_01_A01_SPML" exp="视频目录">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="MLMC" exp="目录名称" type="nvarchar(300)" null="F" p="F" />
+            <name="FMLID" exp="父目录ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="SFSYZS" exp="是否首页展示" type="int" null="F" p="F" />
+            <name="SFQY" exp="是否启用" type="int" null="F" p="F" />
+            <name="URL" exp="网址" type="nvarchar(500)" null="F" p="F" />
+            <name="FMLIDLB" exp="父目录ID列表" type="nvarchar(500)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_XYDT_01_A03_SPLX" exp="视频类型">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_XYDT_01_A06_SPWJ" exp="视频文件">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="SPMLID" exp="视频目录ID" type="int" null="F" p="F" />
+            <name="ZYBT" exp="视频标题" type="nvarchar(300)" null="F" p="F" />
+            <name="GJZ" exp="关键字" type="nvarchar(50)" null="F" p="F" />
+            <name="SYXZ" exp="使用限制" type="int" null="F" p="F" remark="积分" />
+            <name="LY" exp="来源" type="nvarchar(20)" null="F" p="F" />
+            <name="WBSPLJ" exp="外部视频链接" type="nvarchar(200)" null="F" p="F" />
+            <name="YYZID" exp="拥有者ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SPMC" exp="视频名称" type="nvarchar(300)" null="F" p="F" />
+            <name="SPDX" exp="视频大小" type="nvarchar(300)" null="F" p="F" />
+            <name="SPLJ" exp="视频路径" type="nvarchar(300)" null="F" p="F" />
+            <name="SPLXID" exp="视频类型ID" type="int" null="F" p="F" />
+            <name="SPPJ" exp="视频评级" type="int" null="F" p="F" />
+            <name="SLT" exp="缩略图" type="nvarchar(300)" null="F" p="F" />
+            <name="SCSJ" exp="上传时间" type="datetime" null="F" p="F" />
+            <name="LLRC" exp="浏览人次" type="int" null="F" p="F" />
+            <name="XZRC" exp="下载人次" type="int" null="F" p="F" />
+            <name="PLRC" exp="评论人次" type="int" null="F" p="F" />
+            <name="PFRC" exp="评分人次" type="int" null="F" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="ZYDXKB" exp="资源大小(KB)" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_XYDT_01_A08_SPWJPL" exp="视频文件评论">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="SPWJID" exp="视频文件ID" type="int" null="F" p="F" />
+            <name="PL" exp="评论" type="nvarchar(200)" null="F" p="F" />
+            <name="PLRID" exp="评论人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="PLSJ" exp="评论时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_XYDT_01_A10_TZGG" exp="通知公告">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="TITLE" exp="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FBRXM" exp="发布人姓名" type="nvarchar(50)" null="F" p="F" />
+            <name="FBBM" exp="发布部门" type="nvarchar(50)" null="T" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="T" p="F" />
+            <name="TPDZ" exp="图片地址" type="nvarchar(300)" null="T" p="F" />
+            <name="DJL" exp="点击量" type="int" null="T" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="T" p="F" />
+            <name="SHRXM" exp="审核人姓名" type="nvarchar(50)" null="T" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SFXS" exp="是否显示" type="int" null="F" p="F" />
+            <name="SFZD" exp="是否置顶" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_XYDT_01_A11_YQLJLX" exp="友情链接类型">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="NAME" exp="类型名" type="nvarchar(50)" null="F" p="F" />
+            <name="SHOWSTYLE" exp="显示方式" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_XYDT_01_A12_YQLJ" exp="友情链接">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="YQLJLXID" exp="友情链接类型ID" type="int" null="F" p="T" />
+            <name="TITLE" exp="标题" type="nvarchar(50)" null="F" p="F" />
+            <name="IMAGEURL" exp="图片" type="nvarchar(500)" null="T" p="F" />
+            <name="URL" exp="链接" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+</namespace>
