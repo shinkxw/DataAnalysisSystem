@@ -11,9 +11,9 @@ class DBEntityForQuery < DBEntity
   #初始化数据库表信息
   def db_init
     @table_hash = {}
-    table_arr = get_table_name_arr.map{|tname| DBTableForQuery.new(tname, self)}
-    view_arr = get_view_name_arr.map{|vname| DBTableForQuery.new(vname, self)}
-    (table_arr + view_arr).each{|table| @table_hash[table.name.upcase] = table}
+    @table_arr = get_table_name_arr.map{|tname| DBTableForQuery.new(tname, self)}
+    @view_arr = get_view_name_arr.map{|vname| DBTableForQuery.new(vname, self)}
+    (@table_arr + @view_arr).each{|table| @table_hash[table.name.upcase] = table}
   end
   #返回表对象
   def method_missing(method_symbol, *pars)
@@ -21,5 +21,5 @@ class DBEntityForQuery < DBEntity
     return table if table
     super
   end
-  def each;@table_hash.each_value{|table| yield(table)} end
+  def each;@table_arr.each{|table| yield(table)} end
 end

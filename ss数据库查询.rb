@@ -7,7 +7,10 @@ require 'ScriptLoader'#½Å±¾¼ÓÔØÆ÷
 DBEntityForQuery.open('HanruEdu', DBConnector.new('192.168.0.8')) do |db|
   #p db.select{|table| table.name.length > 36}
   #p db.EDU_ZZJG_01_01_JZGJBSJ.find{|d| d.schoolid == 1 && d.gh == '2'}
-  #p db.select{|table| table.fields.all?{|field| field.name != "SCHOOLID"}}
+  
+  db.select{|t| t.fields.any?{|f| f.name.upcase == "SCHOOLID"}}.sort_by {|t| t.name}.each do |table|
+    puts "DELETE FROM [HANRUEDU].[dbo].[#{table.name}] WHERE SCHOOLID=@SCHOOLID"
+  end
   
   #~ school_hash = db.EDU_ZYZX_01_A01_ZYML.group_by{|d| d.SCHOOLID}
   #~ school_hash.each do |schoolid, school_arr|
@@ -27,5 +30,4 @@ DBEntityForQuery.open('HanruEdu', DBConnector.new('192.168.0.8')) do |db|
       #~ end
     #~ end
   #~ end
-  
 end
