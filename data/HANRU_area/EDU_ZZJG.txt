@@ -98,6 +98,7 @@
             <name="JBXXKG" exp="基本信息开关" type="nvarchar(1)" null="F" p="F" />
             <name="KZXXKG" exp="扩展信息开关" type="nvarchar(1)" null="F" p="F" />
             <name="QTXXKG" exp="其他信息开关" type="nvarchar(1)" null="F" p="F" />
+            <name="SFXYSH" exp="是否需要审核" type="nvarchar(1)" null="F" p="F" default="'0'" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A04_ZSDJ" exp="证书等级表">
@@ -105,6 +106,110 @@
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="DJMC" exp="等级名称" type="nvarchar(100)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_01_A05_JZGJBSJSH" exp="教职工基本数据子类表(审核)">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="GH" exp="工号" type="nvarchar(20)" null="T" p="F" />
+            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
+            <name="YWXM" exp="英文姓名" type="nvarchar(60)" null="T" p="F" />
+            <name="XMPY" exp="姓名拼音" type="nvarchar(60)" null="F" p="F" />
+            <name="CYM" exp="曾用名" type="nvarchar(36)" null="T" p="F" />
+            <name="SFZJLXM" exp="身份证件类型码" type="nvarchar(1)" null="F" p="F" />
+            <name="SFZJH" exp="身份证件号" type="nvarchar(20)" null="F" p="F" />
+            <name="CSRQ" exp="出生日期" type="nvarchar(8)" null="F" p="F" />
+            <name="XBM" exp="性别码" type="nvarchar(1)" null="F" p="F" />
+            <name="MZM" exp="民族码" type="nvarchar(2)" null="F" p="F" />
+            <name="XXM" exp="血型码" type="nvarchar(1)" null="T" p="F" />
+            <name="JKZKM" exp="健康状况码" type="nvarchar(1)" null="T" p="F" />
+            <name="HYZTM" exp="婚姻状态码" type="nvarchar(2)" null="F" p="F" />
+            <name="ZZMMM" exp="政治面貌码" type="nvarchar(2)" null="F" p="F" />
+            <name="GATQWM" exp="港澳台侨外码" type="nvarchar(2)" null="T" p="F" />
+            <name="JG" exp="籍贯" type="nvarchar(20)" null="F" p="F" />
+            <name="GJDQM" exp="国籍/地区码" type="nvarchar(3)" null="T" p="F" />
+            <name="CSDXZQHM" exp="出生地行政区划码" type="nvarchar(6)" null="F" p="F" />
+            <name="XYZJM" exp="信仰宗教码" type="nvarchar(2)" null="T" p="F" />
+            <name="JZGHKSZDXZQHM" exp="教职工户口所在地行政区划码" type="nvarchar(6)" null="F" p="F" />
+            <name="HKLBM" exp="户口类别码" type="nvarchar(1)" null="F" p="F" />
+            <name="DQZZ" exp="当前住址" type="nvarchar(180)" null="F" p="F" />
+            <name="DQZZYZBM" exp="当前住址邮政编码" type="nvarchar(6)" null="F" p="F" />
+            <name="CJGZNY" exp="参加工作年月" type="nvarchar(6)" null="F" p="F" />
+            <name="CJNY" exp="从教年月" type="nvarchar(6)" null="F" p="F" />
+            <name="LXNY" exp="来校年月" type="nvarchar(6)" null="F" p="F" />
+            <name="BZLBM" exp="编制类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="JZGLBM" exp="教职工类别码" type="nvarchar(2)" null="F" p="F" />
+            <name="GWLBM" exp="岗位类别码" type="nvarchar(1)" null="F" p="F" />
+            <name="SFJZJS" exp="是否兼职教师" type="nvarchar(1)" null="F" p="F" />
+            <name="SFSSXJS" exp="是否双师型教师" type="nvarchar(1)" null="F" p="F" />
+            <name="ZP" exp="照片(路径)" type="nvarchar(100)" null="T" p="F" />
+            <name="DQZTM" exp="当前状态码" type="nvarchar(2)" null="F" p="F" />
+            <name="YDDH" exp="移动电话" type="nvarchar(30)" null="F" p="F" />
+            <name="GDDH" exp="固定电话" type="nvarchar(30)" null="T" p="F" />
+            <name="TXDZYZBM" exp="通信地址邮政编码" type="nvarchar(6)" null="T" p="F" />
+            <name="TXDZ" exp="通信地址" type="nvarchar(180)" null="T" p="F" />
+            <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="F" p="F" />
+            <name="WLDZ" exp="网络地址" type="nvarchar(60)" null="T" p="F" />
+            <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_01_A06_JZGKZSH" exp="教职工扩展表(审核)">
+        <field_area>
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JL" exp="教龄" type="int" null="F" p="F" />
+            <name="GL" exp="工龄" type="int" null="F" p="F" />
+            <name="GZJY" exp="工作经验" type="text" null="F" p="F" />
+            <name="LDJN" exp="劳动技能" type="text" null="F" p="F" />
+            <name="XXJL" exp="学习经历" type="text" null="F" p="F" />
+            <name="WJGLSJ" exp="未记工龄时间" type="int" null="F" p="F" />
+            <name="RDSJ" exp="入党（团）时间" type="nvarchar(200)" null="F" p="F" />
+            <name="JRBDWSJ" exp="进入本单位时间" type="nvarchar(200)" null="F" p="F" />
+            <name="XZZW" exp="行政职务" type="nvarchar(200)" null="F" p="F" />
+            <name="ZYJSZG" exp="专业技术资格" type="nvarchar(200)" null="F" p="F" />
+            <name="ZYJSZGHDSJ" exp="专业技术资格取得时间" type="nvarchar(200)" null="F" p="F" />
+            <name="XL" exp="学历" type="nvarchar(200)" null="F" p="F" />
+            <name="BYYXXJZY" exp="毕业院校系及专业" type="nvarchar(200)" null="F" p="F" />
+            <name="BYSJ" exp="毕业时间" type="nvarchar(200)" null="F" p="F" />
+            <name="XW" exp="学位" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYXL" exp="在职教育学历" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYBYYXXJZY" exp="在职教育毕业院校系及专业" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYXW" exp="在职教育学位" type="nvarchar(200)" null="F" p="F" />
+            <name="ZZJYBYSJ" exp="在职教育毕业时间" type="nvarchar(200)" null="F" p="F" />
+            <name="PTHDJ" exp="普通话等级" type="nvarchar(200)" null="F" p="F" />
+            <name="JSZGZZL" exp="教师资格证种类" type="nvarchar(200)" null="F" p="F" />
+            <name="XPYGW" exp="现聘用岗位" type="nvarchar(200)" null="F" p="F" />
+            <name="GWDJ" exp="岗位等级" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_01_A07_JZGNLZSSH" exp="教职工能力证书数据类表(审核)">
+        <field_area>
+            <name="JZGJBSJID" exp="教工基本信息ID" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="BYZS" exp="毕业证书" type="nvarchar(100)" null="T" p="F" />
+            <name="XWZS" exp="学位证书" type="nvarchar(100)" null="T" p="F" />
+            <name="ZCZS" exp="职称证书" type="nvarchar(100)" null="T" p="F" />
+            <name="PTHZS" exp="普通话证书" type="nvarchar(100)" null="T" p="F" />
+            <name="JSZGZ" exp="教师资格证" type="nvarchar(100)" null="T" p="F" />
+            <name="JSJHGZ" exp="计算机合格证" type="nvarchar(100)" null="T" p="F" />
+            <name="JNZS" exp="技能证书" type="nvarchar(100)" null="T" p="F" />
+            <name="ZGXL" exp="最高学历" type="nvarchar(100)" null="T" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_01_A08_JZGZYNLSH" exp="教职工专业能力表(审核)">
+        <field_area>
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="JZGJBSJID" exp="教职工ID" type="int" null="F" p="T" />
+            <name="ZSMC" exp="证书名称" type="nvarchar(40)" null="F" p="T" />
+            <name="ZSBH" exp="证书编号" type="nvarchar(20)" null="T" p="F" />
+            <name="ZSBFDW" exp="证书颁发单位" type="nvarchar(60)" null="T" p="F" />
+            <name="ZSBFRQ" exp="证书颁发日期" type="nvarchar(8)" null="F" p="F" />
+            <name="ZSBZ" exp="证书备注" type="text" null="T" p="F" />
+            <name="SFSZYZGZS" exp="是否是职业资格证书" type="nvarchar(1)" null="F" p="F" />
+            <name="JJ" exp="简介" type="text" null="T" p="F" />
+            <name="ZSDJID" exp="证书等级ID" type="int" null="F" p="F" />
+            <name="ZT" exp="状态" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_02_02_XNGWSJ" exp="校内岗位数据子类表">

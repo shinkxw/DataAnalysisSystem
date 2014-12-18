@@ -89,11 +89,108 @@ EDU_ZZJG_01_A03_GRXXBJKG  个人信息编辑开关表
   JBXXKG        基本信息开关            nvarchar(1)    非主        是否标志代码表
   KZXXKG        扩展信息开关            nvarchar(1)    非主        是否标志代码表
   QTXXKG        其他信息开关            nvarchar(1)    非主        是否标志代码表
+  SFXYSH        是否需要审核            nvarchar(1)    非主
 
 EDU_ZZJG_01_A04_ZSDJ  证书等级表
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主        学校配置表
   DJMC          等级名称                nvarchar(100)  非主
+
+EDU_ZZJG_01_A05_JZGJBSJSH  教职工基本数据子类表(审核)
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  GH            工号                    nvarchar(20)   非主
+  XM            姓名                    nvarchar(36)   非主
+  YWXM          英文姓名                nvarchar(60)   非主
+  XMPY          姓名拼音                nvarchar(60)   非主
+  CYM           曾用名                  nvarchar(36)   非主
+  SFZJLXM       身份证件类型码          nvarchar(1)    非主        身份证件类型代码表
+  SFZJH         身份证件号              nvarchar(20)   非主
+  CSRQ          出生日期                nvarchar(8)    非主
+  XBM           性别码                  nvarchar(1)    非主        人的性别代码
+  MZM           民族码                  nvarchar(2)    非主        中国各民族名称的罗马字母拼写法和代码
+  XXM           血型码                  nvarchar(1)    非主        血型代码表
+  JKZKM         健康状况码              nvarchar(1)    非主        健康状况1位数字代码
+  HYZTM         婚姻状态码              nvarchar(2)    非主        婚姻状况代码
+  ZZMMM         政治面貌码              nvarchar(2)    非主        政治面貌代码
+  GATQWM        港澳台侨外码            nvarchar(2)    非主        港澳台侨外代码表
+  JG            籍贯                    nvarchar(20)   非主
+  GJDQM         国籍/地区码             nvarchar(3)    非主        世界各国和地区名称代码
+  CSDXZQHM      出生地行政区划码        nvarchar(6)    非主        中华人民共和国行政区划代码
+  XYZJM         信仰宗教码              nvarchar(2)    非主        宗教信仰代码
+  JZGHKSZDXZQHM 教职工户口所在地行政区划码nvarchar(6)    非主        中华人民共和国行政区划代码
+  HKLBM         户口类别码              nvarchar(1)    非主        户口类别代码
+  DQZZ          当前住址                nvarchar(180)  非主
+  DQZZYZBM      当前住址邮政编码        nvarchar(6)    非主
+  CJGZNY        参加工作年月            nvarchar(6)    非主
+  CJNY          从教年月                nvarchar(6)    非主
+  LXNY          来校年月                nvarchar(6)    非主
+  BZLBM         编制类别码              nvarchar(2)    非主        编制类别代码表
+  JZGLBM        教职工类别码            nvarchar(2)    非主        教职工类别代码表
+  GWLBM         岗位类别码              nvarchar(1)    非主        岗位类别代码表
+  SFJZJS        是否兼职教师            nvarchar(1)    非主        是否标志代码表
+  SFSSXJS       是否双师型教师          nvarchar(1)    非主        是否标志代码表
+  ZP            照片(路径)              nvarchar(100)  非主
+  DQZTM         当前状态码              nvarchar(2)    非主        教职工当前状态代码表
+  YDDH          移动电话                nvarchar(30)   非主
+  GDDH          固定电话                nvarchar(30)   非主
+  TXDZYZBM      通信地址邮政编码        nvarchar(6)    非主
+  TXDZ          通信地址                nvarchar(180)  非主
+  DZXX          电子信箱                nvarchar(40)   非主
+  WLDZ          网络地址                nvarchar(60)   非主
+  JSTXH         即时通讯号              nvarchar(40)   非主
+
+EDU_ZZJG_01_A06_JZGKZSH  教职工扩展表(审核)
+  JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JL            教龄                    int            非主
+  GL            工龄                    int            非主
+  GZJY          工作经验                text           非主
+  LDJN          劳动技能                text           非主
+  XXJL          学习经历                text           非主
+  WJGLSJ        未记工龄时间            int            非主
+  RDSJ          入党（团）时间            nvarchar(200)  非主
+  JRBDWSJ       进入本单位时间          nvarchar(200)  非主
+  XZZW          行政职务                nvarchar(200)  非主
+  ZYJSZG        专业技术资格            nvarchar(200)  非主
+  ZYJSZGHDSJ    专业技术资格取得时间    nvarchar(200)  非主
+  XL            学历                    nvarchar(200)  非主
+  BYYXXJZY      毕业院校系及专业        nvarchar(200)  非主
+  BYSJ          毕业时间                nvarchar(200)  非主
+  XW            学位                    nvarchar(200)  非主
+  ZZJYXL        在职教育学历            nvarchar(200)  非主
+  ZZJYBYYXXJZY  在职教育毕业院校系及专业nvarchar(200)  非主
+  ZZJYXW        在职教育学位            nvarchar(200)  非主
+  ZZJYBYSJ      在职教育毕业时间        nvarchar(200)  非主
+  PTHDJ         普通话等级              nvarchar(200)  非主
+  JSZGZZL       教师资格证种类          nvarchar(200)  非主
+  XPYGW         现聘用岗位              nvarchar(200)  非主
+  GWDJ          岗位等级                nvarchar(200)  非主
+
+EDU_ZZJG_01_A07_JZGNLZSSH  教职工能力证书数据类表(审核)
+  JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  BYZS          毕业证书                nvarchar(100)  非主
+  XWZS          学位证书                nvarchar(100)  非主
+  ZCZS          职称证书                nvarchar(100)  非主
+  PTHZS         普通话证书              nvarchar(100)  非主
+  JSZGZ         教师资格证              nvarchar(100)  非主
+  JSJHGZ        计算机合格证            nvarchar(100)  非主
+  JNZS          技能证书                nvarchar(100)  非主
+  ZGXL          最高学历                nvarchar(100)  非主
+
+EDU_ZZJG_01_A08_JZGZYNLSH  教职工专业能力表(审核)
+  SCHOOLID      学校名                  int            主键        学校配置表
+  JZGJBSJID     教职工ID                int            主键        教职工基本数据子类表
+  ZSMC          证书名称                nvarchar(40)   主键
+  ZSBH          证书编号                nvarchar(20)   非主
+  ZSBFDW        证书颁发单位            nvarchar(60)   非主
+  ZSBFRQ        证书颁发日期            nvarchar(8)    非主
+  ZSBZ          证书备注                text           非主
+  SFSZYZGZS     是否是职业资格证书      nvarchar(1)    非主        是否标志代码表
+  JJ            简介                    text           非主
+  ZSDJID        证书等级ID              int            非主        证书等级表
+  ZT            状态                    int            非主
 
 EDU_ZZJG_02_02_XNGWSJ  校内岗位数据子类表
   ID            编号                    int            主键

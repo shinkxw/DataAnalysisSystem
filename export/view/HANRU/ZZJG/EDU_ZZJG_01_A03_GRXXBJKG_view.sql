@@ -9,6 +9,7 @@ SELECT a.[SCHOOLID]--学校
       ,a.[JBXXKG]--基本信息开关
       ,a.[KZXXKG]--扩展信息开关
       ,a.[QTXXKG]--其他信息开关
+      ,a.[SFXYSH]--是否需要审核
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
