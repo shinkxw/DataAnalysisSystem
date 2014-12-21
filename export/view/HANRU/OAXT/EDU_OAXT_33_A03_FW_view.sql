@@ -27,6 +27,7 @@ SELECT a.[ID]--编号
       ,c.BH as c_GWJCXX_BH--公文基础信息表 编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,'' as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -45,6 +46,7 @@ SELECT a.[ID]--编号
       ,e.QZTPLJ as e_GZ_QZTPLJ--公章信息表 签章图片路径
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,'' as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID

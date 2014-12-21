@@ -72,11 +72,14 @@ class ViewBuilder
         relation_table = relationed_field.table
         i2 = 0
         relation_table.field_area.each do |field|
-          next if field.cover == "T"
           if relationed_field.name != field.name
-            select_str << "      ,#{@@Short_name[index]}.#{field.name} as "
-            select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}"
-            select_str << "_#{field.name}--#{relation_table.explanation} #{field.explanation}\n"
+            if field.cover == "F"
+              select_str << "      ,#{@@Short_name[index]}.#{field.name} as "
+            else
+              select_str << "      ,'' as "
+            end
+            select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}_#{field.name}"
+            select_str << "--#{relation_table.explanation} #{field.explanation}\n"
             #字段是否关联标准
             if field.relation != nil && field.relation.table.name =~ /^EDU_(GB|JY|ZZ|ZJ)_/
               bz_table = field.relation.table

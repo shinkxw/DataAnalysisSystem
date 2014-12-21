@@ -49,6 +49,7 @@ SELECT a.[ID]--编号
       ,d.Remark as d_BXLX_Remark--报修类型表 备注
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,'' as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -65,6 +66,7 @@ SELECT a.[ID]--编号
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,'' as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID

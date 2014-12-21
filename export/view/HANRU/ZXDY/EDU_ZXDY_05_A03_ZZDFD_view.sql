@@ -53,6 +53,7 @@ SELECT a.[ID]--值周打分单表ID
       ,f.XZFZ as f_ZZDFXZ_XZFZ--值周打分细则表 细则分值
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
+      ,'' as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
