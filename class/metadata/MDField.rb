@@ -12,8 +12,9 @@ class MDField
   attr_accessor :explanation#字段说明
   attr_accessor :remark#字段备注
   attr_accessor :default#字段默认值
+  attr_accessor :cover#是否在视图中出现
   #初始化
-  def initialize(table,name,type,null,p,explanation,remark,identity = "F",default = nil)
+  def initialize(table,name,type,null,p,explanation,remark,identity = "F",default = nil,cover = "F")
     @table = table
     @name = name
     @type = format(type)
@@ -24,6 +25,7 @@ class MDField
     @identity = (identity == nil ? "F" : pro_input(identity))
     @default = default
     @relation = nil
+    @cover = (cover == nil ? "F" : pro_input(cover))
   end
   #在有说明时返回说明，否则返回名字
   def gname;has_exp? ? @explanation : @name end

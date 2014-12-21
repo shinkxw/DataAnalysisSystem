@@ -17,7 +17,6 @@ SELECT a.[ID]--特别值周教师表ID
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID

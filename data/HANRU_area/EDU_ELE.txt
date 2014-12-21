@@ -5,7 +5,7 @@
             <name="LOGINNAME" exp="用户名" type="nvarchar(20)" null="F" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
             <name="APPID" exp="应用ID" type="int" null="F" p="F" />
-            <name="PWD" exp="密码" type="nvarchar(100)" null="F" p="F" />
+            <name="PWD" exp="密码" type="nvarchar(100)" null="F" p="F" cover="T" />
             <name="STATUS" exp="用户状态" type="int" null="F" p="F" />
             <name="USERTYPE" exp="用户类别" type="int" null="F" p="F" remark="（教师，学生等）" />
             <name="USERID" exp="用户ID" type="int" null="F" p="F" remark="对应教师表或学生表等ID" />

@@ -36,7 +36,6 @@ SELECT a.[ID]--编号
       ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -53,7 +52,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -75,7 +73,6 @@ SELECT a.[ID]--编号
       ,f.BZ as f_HYSSJ_BZ--会议室数据表 备注
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID

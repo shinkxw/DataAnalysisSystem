@@ -72,6 +72,7 @@ class ViewBuilder
         relation_table = relationed_field.table
         i2 = 0
         relation_table.field_area.each do |field|
+          next if field.cover == "T"
           if relationed_field.name != field.name
             select_str << "      ,#{@@Short_name[index]}.#{field.name} as "
             select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}"

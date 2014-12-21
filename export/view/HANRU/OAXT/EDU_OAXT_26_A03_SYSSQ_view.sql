@@ -35,7 +35,6 @@ SELECT a.[ID]--编号
       ,d.LXMC as d_LCSL_LXMC--流程实例表 类型名称
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID

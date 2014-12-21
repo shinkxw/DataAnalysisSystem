@@ -21,7 +21,6 @@ SELECT a.[ID]--编号
       ,c.KCMC as c_KCK_KCMC--课程库表 课程名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -38,7 +37,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID

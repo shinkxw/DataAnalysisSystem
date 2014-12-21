@@ -91,6 +91,7 @@ class DafBuilder
     @daf_str << "identity=\"#{field.identity}\" " if field.identity == 'T'
     @daf_str << "remark=\"#{field.remark}\" " if field.has_remark?
     @daf_str << "default=\"#{field.default}\" " if field.default
+    @daf_str << "cover=\"#{field.cover}\" " if field.cover == 'T'
     @daf_str << "/>\n"
   end
   #生成数据域的daf字符串

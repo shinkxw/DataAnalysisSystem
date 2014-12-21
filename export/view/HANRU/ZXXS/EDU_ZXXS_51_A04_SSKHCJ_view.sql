@@ -134,7 +134,6 @@ SELECT a.[ID]--编号
       ,f.SSM as f_XSSS_SSM--学生宿舍数据类表 宿舍名
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID

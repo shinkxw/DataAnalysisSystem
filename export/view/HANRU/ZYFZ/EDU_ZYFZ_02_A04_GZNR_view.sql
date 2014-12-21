@@ -29,7 +29,6 @@ SELECT a.[ID]--编号
       ,e.NJMC as e_NJ_NJMC--年级表 年级名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID

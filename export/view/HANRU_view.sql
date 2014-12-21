@@ -1815,7 +1815,6 @@ SELECT a.[ID]--编号
       ,a.[LBMCLB]--类别名称列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -1846,7 +1845,6 @@ SELECT a.[ID]--编号
       ,a.[YHZT]--用户状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -1921,7 +1919,6 @@ SELECT a.[ID]--分组ID
       ,c.KJDX as c_APP_KJDX--应用表 可见对象
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -1969,7 +1966,6 @@ SELECT a.[ID]--编号
       ,c.OrderIndex as c_MODULE_OrderIndex--导航表 
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -2004,7 +2000,6 @@ SELECT a.[ID]--编号
       ,a.[CZJTXX]--操作具体信息
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -2037,7 +2032,6 @@ SELECT a.[ID]--编号
       ,a.[CZXX]--操作信息
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -2091,7 +2085,6 @@ SELECT a.[ID]--编号
       ,d.OrderIndex as d_MODULE_OrderIndex--导航表 
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -2199,7 +2192,6 @@ SELECT a.[ID]--编号
       ,c.KJDX as c_APP_KJDX--应用表 可见对象
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -2245,7 +2237,6 @@ SELECT a.[ID]--编号
       ,c.KJDX as c_APP_KJDX--应用表 可见对象
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -2281,7 +2272,6 @@ SELECT a.[ID]--编号
       ,a.[TJYH]--添加用户
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -2998,7 +2988,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3015,7 +3004,6 @@ SELECT a.[SCHOOLID]--学校名
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -3032,7 +3020,6 @@ SELECT a.[SCHOOLID]--学校名
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -3092,7 +3079,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3164,7 +3150,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3181,7 +3166,6 @@ SELECT a.[SCHOOLID]--学校名
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -3198,7 +3182,6 @@ SELECT a.[SCHOOLID]--学校名
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -3215,7 +3198,6 @@ SELECT a.[SCHOOLID]--学校名
       ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -3232,7 +3214,6 @@ SELECT a.[SCHOOLID]--学校名
       ,g.YHJF as g_USER_YHJF--应用系统用户表 用户积分
       ,h.SCHOOLID as h_USER_SCHOOLID--应用系统用户表 学校ID
       ,h.APPID as h_USER_APPID--应用系统用户表 应用ID
-      ,h.PWD as h_USER_PWD--应用系统用户表 密码
       ,h.STATUS as h_USER_STATUS--应用系统用户表 用户状态
       ,h.USERTYPE as h_USER_USERTYPE--应用系统用户表 用户类别
       ,h.USERID as h_USER_USERID--应用系统用户表 用户ID
@@ -3295,7 +3276,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3350,7 +3330,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3405,7 +3384,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3460,7 +3438,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3516,7 +3493,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3533,7 +3509,6 @@ SELECT a.[SCHOOLID]--学校名
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -3591,7 +3566,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.CSDW as c_WJJBSJ_CSDW--文件基本数据类表 抄送单位
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3608,7 +3582,6 @@ SELECT a.[SCHOOLID]--学校名
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -3686,7 +3659,6 @@ SELECT a.[ID]--通知ID
       ,a.[FSZT]--发送状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -3731,7 +3703,6 @@ SELECT a.[ID]--通知阅读记录ID
       ,c.FSZT as c_TZ_FSZT--通知数据表 发送状态
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3767,7 +3738,6 @@ SELECT a.[ID]--公告ID
       ,a.[ZT]--公告状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -3807,7 +3777,6 @@ SELECT a.[ID]--邮件ID
       ,a.[YJLX]--邮件类型
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -3824,7 +3793,6 @@ SELECT a.[ID]--邮件ID
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3841,7 +3809,6 @@ SELECT a.[ID]--邮件ID
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -3874,7 +3841,6 @@ SELECT a.[ID]--编号
       ,a.[FSRSSX]--发送人数上限
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -3942,7 +3908,6 @@ SELECT a.[ID]--单位ID
       ,c.DWCYIDLB as c_DWSJ_DWCYIDLB--单位数据表 单位成员ID列表
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -3977,7 +3942,6 @@ SELECT a.[ID]--编号
       ,a.[ZT]--状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -4225,7 +4189,6 @@ SELECT a.[ID]--编号
       ,d.Remark as d_BXLX_Remark--报修类型表 备注
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -4242,7 +4205,6 @@ SELECT a.[ID]--编号
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -4332,7 +4294,6 @@ SELECT a.[ID]--编号
       ,c.CZFS as c_ZCKC_CZFS--资产库存表 处置方式
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -4395,7 +4356,6 @@ SELECT a.[ID]--编号
       ,d.Statu as d_ZCPD_Statu--资产盘点表 状态
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -4476,7 +4436,6 @@ SELECT a.[ID]--编号
       ,a.[MLMCLB]--目录名称列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -4609,7 +4568,6 @@ SELECT a.[ID]--编号
       ,c.BZ as c_LCMB_BZ--流程模板表 备注
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -4626,7 +4584,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -4697,7 +4654,6 @@ SELECT a.[ID]--编号
       ,e.BZ as e_LCMBLX_BZ--流程模板类型表 备注
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -4714,7 +4670,6 @@ SELECT a.[ID]--编号
       ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -4790,7 +4745,6 @@ SELECT a.[ID]--编号
       ,d.ZCSJ as d_QJLX_ZCSJ--请假类型表 最长时间
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -4807,7 +4761,6 @@ SELECT a.[ID]--编号
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -4867,7 +4820,6 @@ SELECT a.[ID]--编号
       ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -4884,7 +4836,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -4906,7 +4857,6 @@ SELECT a.[ID]--编号
       ,f.BZ as f_HYSSJ_BZ--会议室数据表 备注
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -4959,7 +4909,6 @@ SELECT a.[ID]--编号
       ,c.FJ as c_HYSQ_FJ--会议申请表 附件
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5014,7 +4963,6 @@ SELECT a.[ID]--编号
       ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5066,7 +5014,6 @@ SELECT a.[ID]--编号
       ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5123,7 +5070,6 @@ SELECT a.[ID]--编号
       ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5180,7 +5126,6 @@ SELECT a.[ID]--编号
       ,d.LXMC as d_LCSL_LXMC--流程实例表 类型名称
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -5214,7 +5159,6 @@ SELECT a.[ID]--编号
       ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -5244,7 +5188,6 @@ SELECT a.[ID]--编号
       ,a.[LXRDH]--联系人电话
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -5345,7 +5288,6 @@ SELECT a.[ID]--编号
       ,a.[TJZT]--提交状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -5413,7 +5355,6 @@ SELECT a.[ID]--编号
       ,c.BH as c_GWJCXX_BH--公文基础信息表 编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5432,7 +5373,6 @@ SELECT a.[ID]--编号
       ,e.QZTPLJ as e_GZ_QZTPLJ--公章信息表 签章图片路径
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -5479,7 +5419,6 @@ SELECT a.[ID]--编号
       ,c.BH as c_GWJCXX_BH--公文基础信息表 编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5496,7 +5435,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -5539,7 +5477,6 @@ SELECT a.[ID]--编号
       ,a.[DYLBSFXS]--打印列表是否显示
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -5556,7 +5493,6 @@ SELECT a.[ID]--编号
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5594,7 +5530,6 @@ SELECT a.[ID]--编号
       ,a.[RWZT]--任务状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -5640,7 +5575,6 @@ SELECT a.[ID]--编号
       ,c.RWZT as c_RW_RWZT--任务表 任务状态
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5683,7 +5617,6 @@ SELECT a.[ID]--编号
       ,c.RWZT as c_RW_RWZT--任务表 任务状态
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5736,7 +5669,6 @@ SELECT a.[ID]--编号
       ,a.[LLRC]--浏览人次
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -5791,7 +5723,6 @@ SELECT a.[ID]--编号
       ,c.LXMC as c_LCSL_LXMC--流程实例表 类型名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5872,7 +5803,6 @@ SELECT a.[ID]--编号
       ,c.SBWH as c_SWB_SBWH--收文表 收编文号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -5889,7 +5819,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -6277,7 +6206,6 @@ SELECT a.[ID]--编号
       ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6539,7 +6467,6 @@ SELECT a.[ID]--权限ID
       ,c.YW as c_WZPZ_YW--网站配置 页尾
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6648,7 +6575,6 @@ SELECT a.[ID]--编号
       ,c.FMLIDLB as c_SPML_FMLIDLB--视频目录 父目录ID列表
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6667,7 +6593,6 @@ SELECT a.[ID]--编号
       ,e.LXMC as e_SPLX_LXMC--视频类型 类型名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -6724,7 +6649,6 @@ SELECT a.[ID]--编号
       ,c.ZYDXKB as c_SPWJ_ZYDXKB--视频文件 资源大小(KB)
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6766,7 +6690,6 @@ SELECT a.[ID]--编号
       ,a.[SFZD]--是否置顶
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -6783,7 +6706,6 @@ SELECT a.[ID]--编号
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6852,7 +6774,6 @@ SELECT a.[ID]--编号
       ,c.SFKQ as c_JSDCCP_SFKQ--教师订餐菜品表 是否开启
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6904,7 +6825,6 @@ SELECT a.[ID]--编号
       ,a.[QSSJ]--签收时间
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -6921,7 +6841,6 @@ SELECT a.[ID]--编号
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -6955,7 +6874,6 @@ SELECT a.[ID]--编号
       ,a.[ZT]--状态
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -7050,7 +6968,6 @@ SELECT a.[ID]--值周人员安排表ID
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -7104,7 +7021,6 @@ SELECT a.[ID]--值周岗位分配表ID
       ,e.GWGZNR as e_ZZGW_GWGZNR--值周岗位数据表 岗位工作内容
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -7146,7 +7062,6 @@ SELECT a.[ID]--特别值周教师表ID
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -7299,7 +7214,6 @@ SELECT a.[ID]--值周打分单表ID
       ,f.XZFZ as f_ZZDFXZ_XZFZ--值周打分细则表 细则分值
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -10450,7 +10364,6 @@ SELECT a.[ID]--编号
       ,d.JZGLXID as d_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -14772,7 +14685,6 @@ SELECT a.[ID]--编号
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -15141,7 +15053,6 @@ SELECT a.[ID]--编号
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -15303,7 +15214,6 @@ SELECT a.[ID]--编号
       ,f.SSM as f_XSSS_SSM--学生宿舍数据类表 宿舍名
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -16167,7 +16077,6 @@ SELECT a.[ID]--编号
       ,e.ZT as e_XSWHSZPJXM_ZT--学生文化素质评价项目表 状态
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -16327,7 +16236,6 @@ SELECT a.[ID]--编号
       ,e.ZT as e_XSZHSZPJXM_ZT--学生综合素质评价项目表 状态
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -16504,7 +16412,6 @@ SELECT a.[ID]--编号
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -16846,7 +16753,6 @@ SELECT a.[ID]--编号
       ,e.NJMC as e_NJ_NJMC--年级表 年级名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -16925,7 +16831,6 @@ SELECT a.[ID]--编号
       ,d.XN as d_XN_XN--学年表 学年
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -16981,7 +16886,6 @@ SELECT a.[ID]--编号
       ,a.[MLIDLB]--目录ID列表
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -17041,7 +16945,6 @@ SELECT a.[ID]--编号
       ,c.FMLIDLB as c_ZYML_FMLIDLB--资源目录 父目录ID列表
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -17060,7 +16963,6 @@ SELECT a.[ID]--编号
       ,e.LXMC as e_WJLX_LXMC--文件类型 类型名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -17119,7 +17021,6 @@ SELECT a.[ID]--编号
       ,c.ZYDXKB as c_ZYWJ_ZYDXKB--资源文件 资源大小(KB)
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -17177,7 +17078,6 @@ SELECT a.[ID]--编号
       ,c.ZYDXKB as c_ZYWJ_ZYDXKB--资源文件 资源大小(KB)
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -17235,7 +17135,6 @@ SELECT a.[ID]--编号
       ,c.ZYDXKB as c_ZYWJ_ZYDXKB--资源文件 资源大小(KB)
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -17277,7 +17176,6 @@ SELECT a.[ID]--编号
       ,a.[SFZD]--是否置顶
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -17294,7 +17192,6 @@ SELECT a.[ID]--编号
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -17373,7 +17270,6 @@ SELECT a.[ID]--编号
       ,e.LXMC as e_SJLX_LXMC--试题类型表 类型名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
       ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
       ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
       ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
@@ -17390,7 +17286,6 @@ SELECT a.[ID]--编号
       ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
-      ,g.PWD as g_USER_PWD--应用系统用户表 密码
       ,g.STATUS as g_USER_STATUS--应用系统用户表 用户状态
       ,g.USERTYPE as g_USER_USERTYPE--应用系统用户表 用户类别
       ,g.USERID as g_USER_USERID--应用系统用户表 用户ID
@@ -17436,7 +17331,6 @@ SELECT a.[ID]--编号
       ,c.KCMC as c_KCK_KCMC--课程库表 课程名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -17453,7 +17347,6 @@ SELECT a.[ID]--编号
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -17502,7 +17395,6 @@ SELECT a.[ID]--编号
       ,a.[GNBH]--功能编号
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -17546,7 +17438,6 @@ SELECT a.[ID]--编号
       ,c.PLSX as c_ZLWJML_PLSX--资料文件目录 排列顺序
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -22868,7 +22759,6 @@ SELECT a.[SCHOOLID]--学校ID
       ,a.[HF]--回复
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
@@ -26497,7 +26387,6 @@ SELECT a.[ID]--编号
       ,c.PLSX as c_DGSXMHLM_PLSX--顶岗实习门户栏目 排列顺序
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
-      ,d.PWD as d_USER_PWD--应用系统用户表 密码
       ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
       ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
       ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
@@ -27534,7 +27423,6 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
       ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
       ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
       ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
@@ -34814,7 +34702,6 @@ SELECT a.[ID]--编号
       ,a.[SFXS]--是否显示
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
       ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
       ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
       ,c.USERID as c_USER_USERID--应用系统用户表 用户ID

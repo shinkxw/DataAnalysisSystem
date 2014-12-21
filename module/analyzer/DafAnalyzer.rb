@@ -65,7 +65,7 @@ class DafAnalyzer
           state = "table"
         elsif hash[:line_prefix] == nil && line[/[^\s]+/]#Ìí¼Ó×Ö¶Î
           exp = hash[:explanation] ? hash[:explanation] : hash[:exp]
-          table.add_field(MDField.new(table,hash[:name],hash[:type],hash[:null],hash[:p],exp,hash[:remark],hash[:identity],hash[:default]))
+          table.add_field(MDField.new(table,hash[:name],hash[:type],hash[:null],hash[:p],exp,hash[:remark],hash[:identity],hash[:default],hash[:cover]))
         else
           @log.push("DafAnalyzer: ±êÇ©ÓÐÎó" + line)
         end
