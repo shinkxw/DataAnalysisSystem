@@ -10,9 +10,11 @@ SELECT a.[ID]--编号
       ,a.[PLFS]--排列方式
       ,a.[PLSX]--排列顺序
       ,a.[NMLLLM]--匿名浏览栏目
+      ,a.[LMLX]--栏目类型
       ,c.SCHOOLID as c_LMLB_SCHOOLID--栏目类别表 学校
       ,c.LMLBMC as c_LMLB_LMLBMC--栏目类别表 栏目类别名称
       ,c.PLSX as c_LMLB_PLSX--栏目类别表 排列顺序
+      ,c.FLBID as c_LMLB_FLBID--栏目类别表 父类别ID
       ,d.SCHOOLID as d_GZMB_SCHOOLID--工作模板表 学校
       ,d.MBMC as d_GZMB_MBMC--工作模板表 模板名称
       ,d.MBNR as d_GZMB_MBNR--工作模板表 模板内容

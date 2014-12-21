@@ -22,6 +22,7 @@ SELECT a.[ID]--编号
       ,c.PLFS as c_GZNRLM_PLFS--工作内容栏目表 排列方式
       ,c.PLSX as c_GZNRLM_PLSX--工作内容栏目表 排列顺序
       ,c.NMLLLM as c_GZNRLM_NMLLLM--工作内容栏目表 匿名浏览栏目
+      ,c.LMLX as c_GZNRLM_LMLX--工作内容栏目表 栏目类型
       ,d.SCHOOLID as d_XK_SCHOOLID--学科表 学校
       ,d.XKMC as d_XK_XKMC--学科表 学科名称
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级表 学校

@@ -55,6 +55,11 @@ namespace HanRuEdu.LDAL
             public Int32 NMLLLM { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "栏目类型")]
+            public Int32 LMLX { get; set; }
+
+
         }
     }
 }

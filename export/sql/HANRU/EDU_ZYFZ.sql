@@ -118,6 +118,7 @@ CREATE TABLE [dbo].[EDU_ZYFZ_02_A01_LMLB](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[LMLBMC]  nvarchar(50)  NOT NULL,--栏目类别名称
 	[PLSX]  int  NOT NULL,--排列顺序
+	[FLBID]  int  NOT NULL,--父类别ID
 CONSTRAINT [PK_EDU_ZYFZ_02_A01_LMLB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -138,6 +139,7 @@ CREATE TABLE [dbo].[EDU_ZYFZ_02_A02_GZNRLM](
 	[PLFS]  int  NOT NULL,--排列方式
 	[PLSX]  int  NOT NULL,--排列顺序
 	[NMLLLM]  int  NOT NULL,--匿名浏览栏目
+	[LMLX]  int  NOT NULL,--栏目类型
 CONSTRAINT [PK_EDU_ZYFZ_02_A02_GZNRLM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -275,6 +277,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目类别名称' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A01_LMLB', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'父类别ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A01_LMLB', @level2type=N'COLUMN',@level2name=N'FLBID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'工作内容栏目表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A02_GZNRLM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A02_GZNRLM', @level2type=N'COLUMN',@level2name=N'ID'
@@ -292,6 +296,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A02_GZNRLM', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'匿名浏览栏目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A02_GZNRLM', @level2type=N'COLUMN',@level2name=N'NMLLLM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A02_GZNRLM', @level2type=N'COLUMN',@level2name=N'LMLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期栏目表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A03_XQLM'
 GO

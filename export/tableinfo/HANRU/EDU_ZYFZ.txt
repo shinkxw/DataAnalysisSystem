@@ -24,6 +24,7 @@ EDU_ZYFZ_02_A01_LMLB  栏目类别表
   SCHOOLID      学校                    int            非主        学校配置表
   LMLBMC        栏目类别名称            nvarchar(50)   非主
   PLSX          排列顺序                int            非主
+  FLBID         父类别ID                int            非主        栏目类别表
 
 EDU_ZYFZ_02_A02_GZNRLM  工作内容栏目表
   ID            编号                    int            自增主键
@@ -34,6 +35,7 @@ EDU_ZYFZ_02_A02_GZNRLM  工作内容栏目表
   PLFS          排列方式                int            非主
   PLSX          排列顺序                int            非主
   NMLLLM        匿名浏览栏目            int            非主
+  LMLX          栏目类型                int            非主
 
 EDU_ZYFZ_02_A03_XQLM  学期栏目表
   ID            编号                    int            自增主键

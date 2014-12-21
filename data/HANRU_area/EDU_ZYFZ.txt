@@ -35,6 +35,7 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="LMLBMC" exp="栏目类别名称" type="nvarchar(50)" null="F" p="F" />
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="FLBID" exp="父类别ID" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A02_GZNRLM" exp="工作内容栏目表">
@@ -47,6 +48,7 @@
             <name="PLFS" exp="排列方式" type="int" null="F" p="F" />
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
             <name="NMLLLM" exp="匿名浏览栏目" type="int" null="F" p="F" />
+            <name="LMLX" exp="栏目类型" type="int" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A03_XQLM" exp="学期栏目表">

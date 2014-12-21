@@ -35,6 +35,11 @@ namespace HanRuEdu.LDAL
             public Int32 PLSX { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "¸¸Àà±ğ")]
+            public Int32 FLBID { get; set; }
+
+
         }
     }
 }
