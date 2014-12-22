@@ -73,10 +73,10 @@ class ViewBuilder
         i2 = 0
         relation_table.field_area.each do |field|
           if relationed_field.name != field.name
-            if field.cover == "F"
-              select_str << "      ,#{@@Short_name[index]}.#{field.name} as "
+            if field.cover
+              select_str << "      ,#{field.cover} as "
             else
-              select_str << "      ,'' as "
+              select_str << "      ,#{@@Short_name[index]}.#{field.name} as "
             end
             select_str << "#{@@Short_name[index]}_#{relation_table.name.split(/_/)[-1]}_#{field.name}"
             select_str << "--#{relation_table.explanation} #{field.explanation}\n"
