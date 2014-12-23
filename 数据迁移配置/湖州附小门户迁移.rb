@@ -25,19 +25,15 @@ class Qypz
   
   def self.ew_change(str)
     str = str.gsub(/'/, "''")
-    str = str.gsub(/\[InstallDir_ChannelDir\]\{\$UploadDir\}/, "/WZXT/Content/eWebeditor/uploadfile")
-    str = str.gsub(/http:\/\/10.10.11.3:8888\/JxszWeb\/\{\$UploadDir\}/, "/WZXT/Content/eWebeditor/uploadfile")
-    str = str.gsub(/\/JxszWeb\/UploadFiles/, "/WZXT/Content/eWebeditor/uploadfile")
-    str = str.gsub(/\[InstallDir_ChannelDir\]ShowArticle\.asp\?ArticleID=/, "/WZXT/Sites/jxszmh/NewsDetails?did=")
-    str = str.gsub(/http:\/\/www.jxsz.com\/JxszWeb\/ShowArticle\.asp\?ArticleID=/, "/WZXT/Sites/jxszmh/NewsDetails?did=")
-    str = str.gsub(/\/JxszWeb\/ShowArticle\.asp\?ArticleID=/, "/WZXT/Sites/jxszmh/NewsDetails?did=")
+    str = str.gsub(/\/kindeditor\/attached\/image\//, "/WZXT/Content/eWebeditor/uploadfile/qy/")
+    str = str.gsub(/\/kindeditor\/asp.net\/..\/attached\/image\//, "/WZXT/Content/eWebeditor/uploadfile/qy/")
     str
   end
 end
 
 $wz_config = { ID: proc{|d| d['ArticleID'].to_i},
-          SCHOOLID: proc{|d| '1'},#101
-          WEBID: proc{|d| '12363'},
+          SCHOOLID: proc{|d| '572001'},#101
+          WEBID: proc{|d| '1'},
           TYPENAME: proc{|d| ''},
           LMID: proc{|d| Qypz.get_lmid(d['TypeID'])},
           TITLE: proc{|d| d['Title']},
@@ -47,7 +43,7 @@ $wz_config = { ID: proc{|d| d['ArticleID'].to_i},
           PUBLISHDATE: proc{|d, c| c.str_to_datetime(d['InputTime'])},
           CONTENT: proc{|d| Qypz.ew_change(d['Detail'])},
           URL: proc{|d| ''},
-          IMAGEURL: proc{|d| d['ImgID']},#
+          IMAGEURL: proc{|d| ''},#
           ATTACHMENTNAME: proc{|d| ''},
           ATTACHMENT: proc{|d| ''},
           CHICKNUB: proc{|d| d['ReadTimes']},
