@@ -14772,7 +14772,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZYFZ_02_A02_GZNRLM](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[LMMC]  nvarchar(20)  NOT NULL,--栏目名称
+	[LMMC]  nvarchar(200)  NOT NULL,--栏目名称
 	[LMLBID]  int  NOT NULL,--栏目类别ID
 	[SYMBID]  int  NOT NULL,--使用模板ID
 	[PLFS]  int  NOT NULL,--排列方式
