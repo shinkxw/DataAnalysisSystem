@@ -103,4 +103,14 @@
             <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZYFZ_02_A07_XQGRLM" exp="学期个人栏目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
+            <name="LMIDLB" exp="栏目ID列表" type="text" null="F" p="F" />
+            <name="LMMCLB" exp="栏目名称列表" type="text" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

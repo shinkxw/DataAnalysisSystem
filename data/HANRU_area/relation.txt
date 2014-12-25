@@ -1223,6 +1223,10 @@
   RYJBID         EDU_ZYFZ_01_A03_RYJB               ID
   SSXNID         EDU_SYS_01_XN                      ID
   HJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZYFZ_02_A07_XQGRLM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYZX_01_A01_ZYML
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FMLID          EDU_ZYZX_01_A01_ZYML               ID
@@ -1648,6 +1652,13 @@
 <EDU_ZZJG_23_A08_PHZYDCJXB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   DCMCID         EDU_ZZJG_23_A01_PHZYDCMC           ID
+<EDU_ZZJG_24_A01_KQSJD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_24_A02_XZIPD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJG_24_A03_KQJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JGID           EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_01_01_ZYXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYDM           EDU_ZJ_ZJZY                        DM

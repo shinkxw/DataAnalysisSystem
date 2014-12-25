@@ -81,3 +81,11 @@ EDU_ZYFZ_02_A06_GRRY  个人荣誉表
   TJSJ          添加时间                datetime       非主
   SHZT          审核状态                int            非主
 
+EDU_ZYFZ_02_A07_XQGRLM  学期个人栏目表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
+  LMIDLB        栏目ID列表              text           非主
+  LMMCLB        栏目名称列表            text           非主
+
