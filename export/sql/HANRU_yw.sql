@@ -18343,10 +18343,11 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZJG_24_A01_KQSJD](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[KQDX]  text  NOT NULL,--考勤对象
+	[SJDMC]  nvarchar(30)  NOT NULL,--时间段名称
 	[KQR]  int  NOT NULL,--考勤日
 	[KSSJ]  datetime  NOT NULL,--开始时间
 	[JSSJ]  datetime  NOT NULL,--结束时间
+	[KQDX]  text  NOT NULL,--考勤对象
 CONSTRAINT [PK_EDU_ZZJG_24_A01_KQSJD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -19687,13 +19688,15 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考勤对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'KQDX'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'时间段名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'SJDMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考勤日' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'KQR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'KSSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'JSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考勤对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A01_KQSJD', @level2type=N'COLUMN',@level2name=N'KQDX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'限制IP段表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A02_XZIPD'
 GO

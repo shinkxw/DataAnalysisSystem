@@ -848,10 +848,11 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="KQDX" exp="考勤对象" type="text" null="F" p="F" />
+            <name="SJDMC" exp="时间段名称" type="nvarchar(30)" null="F" p="F" />
             <name="KQR" exp="考勤日" type="int" null="F" p="F" />
             <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
             <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="KQDX" exp="考勤对象" type="text" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_24_A02_XZIPD" exp="限制IP段表">

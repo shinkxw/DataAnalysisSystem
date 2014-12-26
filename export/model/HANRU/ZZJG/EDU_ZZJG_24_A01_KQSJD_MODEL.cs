@@ -9,9 +9,10 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_24_A01_KQSJD()
         {
-            KQDX = "";
+            SJDMC = "";
             KSSJ = DateTime.Now;
             JSSJ = DateTime.Now;
+            KQDX = "";
         }
         public class EDU_ZZJG_24_A01_KQSJD_metadata
         {
@@ -26,9 +27,10 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "考勤对象")]
+            [Display(Name = "时间段名称")]
+            [StringLength(30)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KQDX { get; set; }
+            public String SJDMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -44,6 +46,12 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "结束时间")]
             public DateTime JSSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "考勤对象")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KQDX { get; set; }
 
 
         }

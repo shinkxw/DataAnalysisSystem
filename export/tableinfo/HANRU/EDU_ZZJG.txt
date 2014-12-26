@@ -713,10 +713,11 @@ EDU_ZZJG_23_A08_PHZYDCJXB  平湖职业调查教学部表
 EDU_ZZJG_24_A01_KQSJD  考勤时间段表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  KQDX          考勤对象                text           非主
+  SJDMC         时间段名称              nvarchar(30)   非主
   KQR           考勤日                  int            非主
   KSSJ          开始时间                datetime       非主
   JSSJ          结束时间                datetime       非主
+  KQDX          考勤对象                text           非主
 
 EDU_ZZJG_24_A02_XZIPD  限制IP段表
   ID            编号                    int            自增主键
