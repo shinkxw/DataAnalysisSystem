@@ -1081,4 +1081,14 @@
             <name="TJSJ" exp="提交时间" type="datetime" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_50_A17_PJXSPJ" exp="评教学生评价表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="PJID" exp="评教ID" type="int" null="F" p="F" />
+            <name="JXBID" exp="教学班ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="PJNR" exp="评价内容" type="text" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>

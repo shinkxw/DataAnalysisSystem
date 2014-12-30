@@ -2047,6 +2047,11 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   PJID           EDU_ZZJX_50_A11_XKXSPJ             ID
   XSID           EDU_ZZXS_01_01_XSXX                ID
+<EDU_ZZJX_50_A17_PJXSPJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  PJID           EDU_ZZJX_50_A11_XKXSPJ             ID
+  JXBID          EDU_ZZJX_50_A03_JXBSJ              ID
+  XSID           EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM
