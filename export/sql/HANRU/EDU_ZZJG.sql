@@ -1789,8 +1789,8 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZZJG_24_A02_XZIPD](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[KQDX]  nvarchar(40)  NOT NULL,--起始IP
-	[KQR]  nvarchar(40)  NOT NULL,--结束IP
+	[QSIP]  nvarchar(40)  NOT NULL,--起始IP
+	[JSIP]  nvarchar(40)  NOT NULL,--结束IP
 CONSTRAINT [PK_EDU_ZZJG_24_A02_XZIPD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -3130,9 +3130,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A02_XZIPD', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'起始IP' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A02_XZIPD', @level2type=N'COLUMN',@level2name=N'KQDX'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'起始IP' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A02_XZIPD', @level2type=N'COLUMN',@level2name=N'QSIP'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束IP' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A02_XZIPD', @level2type=N'COLUMN',@level2name=N'KQR'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束IP' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A02_XZIPD', @level2type=N'COLUMN',@level2name=N'JSIP'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考勤记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_24_A03_KQJL'
 GO

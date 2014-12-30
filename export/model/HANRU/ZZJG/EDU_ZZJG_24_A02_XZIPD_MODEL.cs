@@ -9,8 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_24_A02_XZIPD()
         {
-            KQDX = "";
-            KQR = "";
+            QSIP = "";
+            JSIP = "";
         }
         public class EDU_ZZJG_24_A02_XZIPD_metadata
         {
@@ -28,14 +28,14 @@ namespace HanRuEdu.LDAL
             [Display(Name = "起始IP")]
             [StringLength(40)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KQDX { get; set; }
+            public String QSIP { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "结束IP")]
             [StringLength(40)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KQR { get; set; }
+            public String JSIP { get; set; }
 
 
         }

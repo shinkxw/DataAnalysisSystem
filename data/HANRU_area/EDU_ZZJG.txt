@@ -859,8 +859,8 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="KQDX" exp="起始IP" type="nvarchar(40)" null="F" p="F" />
-            <name="KQR" exp="结束IP" type="nvarchar(40)" null="F" p="F" />
+            <name="QSIP" exp="起始IP" type="nvarchar(40)" null="F" p="F" />
+            <name="JSIP" exp="结束IP" type="nvarchar(40)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_24_A03_KQJL" exp="考勤记录表">
