@@ -43,6 +43,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否需要文本评教")]
+            public Int32 SFXYWBPJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "状态")]
             public Int32 ZT { get; set; }
 

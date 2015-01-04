@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.KPMC as c_XSPJKP_KPMC--学生评教考评表 考评名称
       ,c.KSSJ as c_XSPJKP_KSSJ--学生评教考评表 开始时间
       ,c.JSSJ as c_XSPJKP_JSSJ--学生评教考评表 结束时间
+      ,c.SFXYWBPJ as c_XSPJKP_SFXYWBPJ--学生评教考评表 是否需要文本评教
       ,c.ZT as c_XSPJKP_ZT--学生评教考评表 状态
 
 FROM dbo.EDU_ZXJZ_20_A06_XSPJKPBJ AS a LEFT OUTER JOIN

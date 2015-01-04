@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,c.KPMC as c_XSPJKP_KPMC--学生评教考评表 考评名称
       ,c.KSSJ as c_XSPJKP_KSSJ--学生评教考评表 开始时间
       ,c.JSSJ as c_XSPJKP_JSSJ--学生评教考评表 结束时间
+      ,c.SFXYWBPJ as c_XSPJKP_SFXYWBPJ--学生评教考评表 是否需要文本评教
       ,c.ZT as c_XSPJKP_ZT--学生评教考评表 状态
       ,d.SCHOOLID as d_XSPJTM_SCHOOLID--学生评教题目表 学校
       ,d.DFFSID as d_XSPJTM_DFFSID--学生评教题目表 打分方式ID
