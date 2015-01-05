@@ -15,14 +15,14 @@ SELECT a.[ID]--编号
       ,a.[LLL]--浏览量
       ,a.[XQID]--学期ID
       ,a.[SHZT]--审核状态
-      ,c.SCHOOLID as c_GZNRLM_SCHOOLID--工作内容栏目表 学校
-      ,c.LMMC as c_GZNRLM_LMMC--工作内容栏目表 栏目名称
-      ,c.LMLBID as c_GZNRLM_LMLBID--工作内容栏目表 栏目类别ID
-      ,c.SYMBID as c_GZNRLM_SYMBID--工作内容栏目表 使用模板ID
-      ,c.PLFS as c_GZNRLM_PLFS--工作内容栏目表 排列方式
-      ,c.PLSX as c_GZNRLM_PLSX--工作内容栏目表 排列顺序
-      ,c.NMLLLM as c_GZNRLM_NMLLLM--工作内容栏目表 匿名浏览栏目
-      ,c.LMLX as c_GZNRLM_LMLX--工作内容栏目表 栏目类型
+      ,c.SCHOOLID as c_XQGRLM_SCHOOLID--学期个人栏目表 学校
+      ,c.XQID as c_XQGRLM_XQID--学期个人栏目表 学期ID
+      ,c.YHID as c_XQGRLM_YHID--学期个人栏目表 用户ID
+      ,c.LMLBID as c_XQGRLM_LMLBID--学期个人栏目表 栏目类别ID
+      ,c.LMMC as c_XQGRLM_LMMC--学期个人栏目表 栏目名称
+      ,c.JSZP as c_XQGRLM_JSZP--学期个人栏目表 教师自评
+      ,c.XXPD as c_XQGRLM_XXPD--学期个人栏目表 学校评定
+      ,c.LMLX as c_XQGRLM_LMLX--学期个人栏目表 栏目类型
       ,d.SCHOOLID as d_XK_SCHOOLID--学科表 学校
       ,d.XKMC as d_XK_XKMC--学科表 学科名称
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级表 学校
@@ -53,7 +53,7 @@ SELECT a.[ID]--编号
       ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
 
 FROM dbo.EDU_ZYFZ_02_A04_GZNR AS a LEFT OUTER JOIN
-      dbo.EDU_ZYFZ_02_A02_GZNRLM AS c ON a.SSLMID = c.ID /*所属栏目ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZYFZ_02_A07_XQGRLM AS c ON a.SSLMID = c.ID /*所属栏目ID*/ LEFT OUTER JOIN
       dbo.EDU_ZYFZ_01_A01_XK AS d ON a.SSXKID = d.ID /*所属学科ID*/ LEFT OUTER JOIN
       dbo.EDU_ZYFZ_01_A02_NJ AS e ON a.SSNJID = e.ID /*所属年级ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_USER AS f ON a.FBRID = f.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN

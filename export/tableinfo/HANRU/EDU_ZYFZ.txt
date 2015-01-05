@@ -49,7 +49,7 @@ EDU_ZYFZ_02_A04_GZNR  工作内容表
   SCHOOLID      学校                    int            非主        学校配置表
   BT            标题                    nvarchar(50)   非主
   GJC           关键词                  nvarchar(50)   非主
-  SSLMID        所属栏目ID              int            非主        工作内容栏目表
+  SSLMID        所属栏目ID              int            非主        学期个人栏目表
   SSXKID        所属学科ID              int            非主        学科表
   SSNJID        所属年级ID              int            非主        年级表
   NR            内容                    text           非主
@@ -86,6 +86,9 @@ EDU_ZYFZ_02_A07_XQGRLM  学期个人栏目表
   SCHOOLID      学校                    int            非主        学校配置表
   XQID          学期ID                  int            非主        学期数据表
   YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
-  LMIDLB        栏目ID列表              text           非主
-  LMMCLB        栏目名称列表            text           非主
+  LMLBID        栏目类别ID              int            非主        栏目类别表
+  LMMC          栏目名称                nvarchar(200)  非主
+  JSZP          教师自评                nvarchar(500)  非主
+  XXPD          学校评定                nvarchar(500)  非主
+  LMLX          栏目类型                int            非主
 

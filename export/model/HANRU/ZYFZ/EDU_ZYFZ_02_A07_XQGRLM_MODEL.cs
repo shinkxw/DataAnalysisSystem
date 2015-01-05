@@ -10,8 +10,9 @@ namespace HanRuEdu.LDAL
         public EDU_ZYFZ_02_A07_XQGRLM()
         {
             YHID = "";
-            LMIDLB = "";
-            LMMCLB = "";
+            LMMC = "";
+            JSZP = "";
+            XXPD = "";
         }
         public class EDU_ZYFZ_02_A07_XQGRLM_metadata
         {
@@ -37,16 +38,35 @@ namespace HanRuEdu.LDAL
             public String YHID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "栏目ID列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LMIDLB { get; set; }
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "栏目类别")]
+            public Int32 LMLBID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "栏目名称列表")]
+            [Display(Name = "栏目名称")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LMMCLB { get; set; }
+            public String LMMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "教师自评")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSZP { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "学校评定")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XXPD { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "栏目类型")]
+            public Int32 LMLX { get; set; }
 
 
         }

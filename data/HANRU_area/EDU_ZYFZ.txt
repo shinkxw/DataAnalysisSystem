@@ -109,8 +109,11 @@
             <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
             <name="XQID" exp="学期ID" type="int" null="F" p="F" />
             <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
-            <name="LMIDLB" exp="栏目ID列表" type="text" null="F" p="F" />
-            <name="LMMCLB" exp="栏目名称列表" type="text" null="F" p="F" />
+            <name="LMLBID" exp="栏目类别ID" type="int" null="F" p="F" />
+            <name="LMMC" exp="栏目名称" type="nvarchar(200)" null="F" p="F" />
+            <name="JSZP" exp="教师自评" type="nvarchar(500)" null="F" p="F" />
+            <name="XXPD" exp="学校评定" type="nvarchar(500)" null="F" p="F" />
+            <name="LMLX" exp="栏目类型" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

@@ -1214,7 +1214,7 @@
   XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZYFZ_02_A04_GZNR
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  SSLMID         EDU_ZYFZ_02_A02_GZNRLM             ID
+  SSLMID         EDU_ZYFZ_02_A07_XQGRLM             ID
   SSXKID         EDU_ZYFZ_01_A01_XK                 ID
   SSNJID         EDU_ZYFZ_01_A02_NJ                 ID
   FBRID          EDU_ELE_01_USER                    LOGINNAME
@@ -1231,6 +1231,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
   YHID           EDU_ELE_01_USER                    LOGINNAME
+  LMLBID         EDU_ZYFZ_02_A01_LMLB               ID
 <EDU_ZYZX_01_A01_ZYML
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FMLID          EDU_ZYZX_01_A01_ZYML               ID
