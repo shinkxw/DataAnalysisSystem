@@ -60,6 +60,12 @@ EDU_ZXXX_03_01_BJ  班级数据类表
   BZRID         班主任ID                int            非主        教职工基本数据子类表
   ZT            状态                    int            非主
   PLSX          排列顺序                int            非主
+  BJLBID        班级类别ID              int            非主        班级类别表
+
+EDU_ZXXX_03_A01_BJLB  班级类别表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  LBMC          类别名称                nvarchar(50)   非主
 
 EDU_ZXXX_04_01_JG  机构数据类表
   SCHOOLID      学校名                  int            主键        学校配置表

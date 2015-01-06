@@ -32,6 +32,7 @@ SELECT a.[ID]--编号
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
+      ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
 
 FROM dbo.EDU_ZXDY_07_A21_BJXSHDQKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.HDBJ = c.BH /*活动班级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

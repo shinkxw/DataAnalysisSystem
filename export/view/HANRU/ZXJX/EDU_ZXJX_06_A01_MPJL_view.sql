@@ -201,6 +201,7 @@ SELECT a.[ID]--编号
       ,i.BZRID as i_BJ_BZRID--班级数据类表 班主任ID
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
       ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
+      ,i.BJLBID as i_BJ_BJLBID--班级数据类表 班级类别ID
       ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
       ,j.XLID as j_XLZ_XLID--校历周表 校历ID
       ,j.NAME as j_XLZ_NAME--校历周表 校历周名称

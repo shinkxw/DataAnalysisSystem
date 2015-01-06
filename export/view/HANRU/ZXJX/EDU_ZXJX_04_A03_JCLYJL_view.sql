@@ -43,6 +43,7 @@ SELECT a.[ID]--编号
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
+      ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
       ,f.SCHOOLID as f_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,f.JCDM as f_JCJBXX_JCDM--教材基本信息表 教材代码
       ,f.JCMC as f_JCJBXX_JCMC--教材基本信息表 教材名称

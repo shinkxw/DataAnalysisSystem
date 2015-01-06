@@ -35,6 +35,7 @@ SELECT a.[ID]--编号
       ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
+      ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名

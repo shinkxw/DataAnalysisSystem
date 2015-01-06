@@ -127,6 +127,7 @@ SELECT a.[ID]--编号
       ,g.BZRID as g_BJ_BZRID--班级数据类表 班主任ID
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
       ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
+      ,g.BJLBID as g_BJ_BJLBID--班级数据类表 班级类别ID
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
       ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称

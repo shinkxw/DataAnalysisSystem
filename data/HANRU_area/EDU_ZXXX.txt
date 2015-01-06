@@ -67,6 +67,14 @@
             <name="BZRID" exp="班主任ID" type="int" null="F" p="F" />
             <name="ZT" exp="状态" type="int" null="F" p="F" />
             <name="PLSX" exp="排列顺序" type="int" null="F" p="F" default="100" />
+            <name="BJLBID" exp="班级类别ID" type="int" null="F" p="F" default="1" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_03_A01_BJLB" exp="班级类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(50)" null="F" p="F" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_04_01_JG" exp="机构数据类表">

@@ -1191,6 +1191,9 @@
   SFSSMZSYJXB    EDU_JY_SFBZ                        DM
   SYJXMSM        EDU_JY_SSMZSYJXMS                  DM
   BZRID          EDU_ZXJZ_01_01_JZGJBSJ             ID
+  BJLBID         EDU_ZXXX_03_A01_BJLB               ID
+<EDU_ZXXX_03_A01_BJLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXXX_04_01_JG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LSJGH          EDU_ZXXX_04_01_JG                  JGH

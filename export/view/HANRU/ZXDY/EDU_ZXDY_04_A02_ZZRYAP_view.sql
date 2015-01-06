@@ -44,6 +44,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,e.BZRID as e_BJ_BZRID--班级数据类表 班主任ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
+      ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,'' as f_USER_PWD--应用系统用户表 密码
