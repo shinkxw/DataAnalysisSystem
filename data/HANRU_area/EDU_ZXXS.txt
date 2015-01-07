@@ -505,4 +505,165 @@
             <name="BZ" exp="备注" type="text" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_57_A01_DSZGN" exp="导师制功能表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="GNMC" exp="功能名称" type="nvarchar(100)" null="F" p="F" />
+            <name="LJ" exp="链接" type="nvarchar(200)" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A02_DSZJS" exp="导师制角色表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="JSMC" exp="角色名称" type="nvarchar(100)" null="F" p="F" />
+            <name="GNIDLB" exp="功能ID列表" type="text" null="F" p="F" />
+            <name="GNMCLB" exp="功能名称列表" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A03_DSZDS" exp="导师制导师表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="JSID" exp="教师ID" type="int" null="F" p="F" />
+            <name="JUESEID" exp="角色ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A04_DSZDSXSJD" exp="导师制导师学生结对表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A11_DSZHD" exp="导师制活动表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="HDMC" exp="活动名称" type="nvarchar(100)" null="F" p="F" />
+            <name="HDNR" exp="活动内容" type="text" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A12_DSZXSHDBXJL" exp="导师制学生活动表现记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="HDID" exp="活动ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="JTBX" exp="具体表现" type="text" null="F" p="F" />
+            <name="PJNR" exp="评价内容" type="nvarchar(200)" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A14_DSZXSZWDR" exp="导师制学生职务担任表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="ZWMC" exp="职务名称" type="nvarchar(200)" null="F" p="F" />
+            <name="KSSJ" exp="开始时间" type="datetime" null="F" p="F" />
+            <name="JSSJ" exp="结束时间" type="datetime" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A15_DSZXSJCJL" exp="导师制学生奖惩记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="JCLX" exp="奖惩类型" type="nvarchar(200)" null="F" p="F" />
+            <name="JCNR" exp="奖惩内容" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A16_DSZXSQJJL" exp="导师制学生请假记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="QJLX" exp="请假类型" type="nvarchar(200)" null="F" p="F" />
+            <name="QJNR" exp="请假内容" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A17_DSZXSXQXJ" exp="导师制学生学期小结表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="DSID" exp="导师ID" type="int" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="DD" exp="等第" type="int" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+            <name="BZ" exp="备注" type="nvarchar(200)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A21_DSZXSZWGH" exp="导师制学生自我规划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="RSMB" exp="人生目标" type="text" null="F" p="F" />
+            <name="WLSNDW" exp="未来十年的我" type="text" null="F" p="F" />
+            <name="WGXQDZY" exp="我感兴趣的职业" type="text" null="F" p="F" />
+            <name="WXWDCS" exp="我向往的城市" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A22_DSZXSXQGHZJ" exp="导师制学生学期规划总结表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="XYSPCSMB" exp="学业水平测试目标" type="text" null="F" p="F" />
+            <name="ZJTSKJZY" exp="自己提升空间怎样" type="text" null="F" p="F" />
+            <name="BXQDNLMB" exp="本学期的努力目标" type="text" null="F" p="F" />
+            <name="XQHJXX" exp="学期获奖信息" type="text" null="F" p="F" />
+            <name="YXZSDXYWHHD" exp="印象最深的校园文化活动" type="text" null="F" p="F" />
+            <name="HGBXQ" exp="回顾本学期" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A23_DSZXSXQMYGH" exp="导师制学生学期每月规划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="YF" exp="月份" type="int" null="F" p="F" />
+            <name="XSID" exp="学生ID" type="int" null="F" p="F" />
+            <name="BYMB" exp="本月目标" type="text" null="F" p="F" />
+            <name="BYXXSH" exp="本月学习收获" type="text" null="F" p="F" />
+            <name="XYHDSH" exp="校园活动收获" type="text" null="F" p="F" />
+            <name="ZLNXYYYDS" exp="做了哪些有意义的事" type="text" null="F" p="F" />
+            <name="DLNXS" exp="读了哪些书" type="text" null="F" p="F" />
+            <name="GDDS" exp="感动的事" type="text" null="F" p="F" />
+            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
