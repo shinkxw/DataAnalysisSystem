@@ -69,6 +69,16 @@ namespace HanRuEdu.LDAL
             public Int32 LMLX { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "使用模板")]
+            public Int32 SYMBID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "排列顺序")]
+            public Int32 PLSX { get; set; }
+
+
         }
     }
 }

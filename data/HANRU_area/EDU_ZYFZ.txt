@@ -114,6 +114,8 @@
             <name="JSZP" exp="教师自评" type="nvarchar(500)" null="F" p="F" />
             <name="XXPD" exp="学校评定" type="nvarchar(500)" null="F" p="F" />
             <name="LMLX" exp="栏目类型" type="int" null="F" p="F" />
+            <name="SYMBID" exp="使用模板ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
         </field_area>
     </table>
 </namespace>

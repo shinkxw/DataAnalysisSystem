@@ -250,6 +250,8 @@ CREATE TABLE [dbo].[EDU_ZYFZ_02_A07_XQGRLM](
 	[JSZP]  nvarchar(500)  NOT NULL,--教师自评
 	[XXPD]  nvarchar(500)  NOT NULL,--学校评定
 	[LMLX]  int  NOT NULL,--栏目类型
+	[SYMBID]  int  NOT NULL,--使用模板ID
+	[PLSX]  int  NOT NULL,--排列顺序
 CONSTRAINT [PK_EDU_ZYFZ_02_A07_XQGRLM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -424,4 +426,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校评定' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A07_XQGRLM', @level2type=N'COLUMN',@level2name=N'XXPD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A07_XQGRLM', @level2type=N'COLUMN',@level2name=N'LMLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'使用模板ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A07_XQGRLM', @level2type=N'COLUMN',@level2name=N'SYMBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A07_XQGRLM', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO

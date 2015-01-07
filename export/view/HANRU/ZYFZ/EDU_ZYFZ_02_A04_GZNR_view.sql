@@ -23,6 +23,8 @@ SELECT a.[ID]--编号
       ,c.JSZP as c_XQGRLM_JSZP--学期个人栏目表 教师自评
       ,c.XXPD as c_XQGRLM_XXPD--学期个人栏目表 学校评定
       ,c.LMLX as c_XQGRLM_LMLX--学期个人栏目表 栏目类型
+      ,c.SYMBID as c_XQGRLM_SYMBID--学期个人栏目表 使用模板ID
+      ,c.PLSX as c_XQGRLM_PLSX--学期个人栏目表 排列顺序
       ,d.SCHOOLID as d_XK_SCHOOLID--学科表 学校
       ,d.XKMC as d_XK_XKMC--学科表 学科名称
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级表 学校

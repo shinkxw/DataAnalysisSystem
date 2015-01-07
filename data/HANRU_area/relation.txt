@@ -1235,6 +1235,7 @@
   XQID           EDU_ELE_01_XQ                      ID
   YHID           EDU_ELE_01_USER                    LOGINNAME
   LMLBID         EDU_ZYFZ_02_A01_LMLB               ID
+  SYMBID         EDU_ZYFZ_01_A04_GZMB               ID
 <EDU_ZYZX_01_A01_ZYML
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FMLID          EDU_ZYZX_01_A01_ZYML               ID

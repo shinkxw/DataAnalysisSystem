@@ -91,4 +91,6 @@ EDU_ZYFZ_02_A07_XQGRLM  学期个人栏目表
   JSZP          教师自评                nvarchar(500)  非主
   XXPD          学校评定                nvarchar(500)  非主
   LMLX          栏目类型                int            非主
+  SYMBID        使用模板ID              int            非主        工作模板表
+  PLSX          排列顺序                int            非主
 
