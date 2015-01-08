@@ -836,6 +836,18 @@
   CCID           EDU_ZXJX_52_A01_KSSJ               ID
   JGID           EDU_ZXJZ_01_01_JZGJBSJ             ID
   KCID           EDU_ZXJX_52_A03_KSDD               ID
+<EDU_ZXJX_53_A01_XFZKC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXJX_53_A11_XFZXQJXJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  NJID           EDU_ZXXX_02_01_NJ                  NJ
+  BJLBID         EDU_ZXXX_03_A01_BJLB               ID
+  BJID           EDU_ZXXX_03_01_BJ                  BH
+<EDU_ZXJX_53_A12_XFZBXKCQD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JXJHID         EDU_ZXJX_53_A11_XFZXQJXJH          ID
+  KCID           EDU_ZXJX_53_A01_XFZKC              ID
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM

@@ -385,3 +385,29 @@ EDU_ZXJX_52_A05_JKAP  监考安排表
   JGID          教工ID                  int            非主        教职工基本数据子类表
   KCID          考场ID                  int            非主        考试地点表
 
+EDU_ZXJX_53_A01_XFZKC  学分制课程表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  KCH           课程号                  nvarchar(10)   非主
+  KCLB          课程类别                nvarchar(60)   非主
+  SSKM          所属科目                nvarchar(60)   非主
+  KCMC          课程名称                nvarchar(60)   非主
+  SFBX          是否必修                int            非主
+  SFSY          是否使用                int            非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZXJX_53_A11_XFZXQJXJH  学分制学期教学计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(10)   非主        年级数据类表
+  BJLBID        班级类别ID              int            非主        班级类别表
+  BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+
+EDU_ZXJX_53_A12_XFZBXKCQD  学分制必修课程清单表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JXJHID        教学计划ID              int            非主        学分制学期教学计划表
+  KCID          课程ID                  int            非主        学分制课程表
+  XS            学分                    decimal(3, 1)  非主
+

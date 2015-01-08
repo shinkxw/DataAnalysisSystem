@@ -459,4 +459,36 @@
             <name="KCID" exp="考场ID" type="int" null="F" p="F" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_53_A01_XFZKC" exp="学分制课程表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="KCH" exp="课程号" type="nvarchar(10)" null="F" p="F" />
+            <name="KCLB" exp="课程类别" type="nvarchar(60)" null="T" p="F" />
+            <name="SSKM" exp="所属科目" type="nvarchar(60)" null="T" p="F" />
+            <name="KCMC" exp="课程名称" type="nvarchar(60)" null="T" p="F" />
+            <name="SFBX" exp="是否必修" type="int" null="T" p="F" />
+            <name="SFSY" exp="是否使用" type="int" null="T" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A11_XFZXQJXJH" exp="学分制学期教学计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
+            <name="NJID" exp="年级ID" type="nvarchar(10)" null="F" p="F" />
+            <name="BJLBID" exp="班级类别ID" type="int" null="F" p="F" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A12_XFZBXKCQD" exp="学分制必修课程清单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
+            <name="JXJHID" exp="教学计划ID" type="int" null="F" p="F" />
+            <name="KCID" exp="课程ID" type="int" null="F" p="F" />
+            <name="XS" exp="学分" type="decimal(3, 1)" null="F" p="F" />
+        </field_area>
+    </table>
 </namespace>
