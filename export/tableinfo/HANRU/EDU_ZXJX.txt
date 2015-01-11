@@ -409,5 +409,5 @@ EDU_ZXJX_53_A12_XFZBXKCQD  学分制必修课程清单表
   SCHOOLID      学校ID                  int            主键        学校配置表
   JXJHID        教学计划ID              int            非主        学分制学期教学计划表
   KCID          课程ID                  int            非主        学分制课程表
-  XS            学分                    decimal(3, 1)  非主
+  XF            学分                    decimal(3, 1)  非主
 

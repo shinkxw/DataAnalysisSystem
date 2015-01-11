@@ -99,7 +99,7 @@ EDU_ZYZX_01_A11_YQLJLX  友情链接类型
 EDU_ZYZX_01_A12_YQLJ  友情链接
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表
-  YQLJLXID      友情链接类型ID          int            主键        友情链接类型
+  YQLJLXID      友情链接类型ID          int            非主        友情链接类型
   TITLE         标题                    nvarchar(50)   非主
   IMAGEURL      图片                    nvarchar(500)  非主
   URL           链接                    nvarchar(300)  非主

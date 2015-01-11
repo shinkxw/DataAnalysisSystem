@@ -1012,7 +1012,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_53_A12_XFZBXKCQD](
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[JXJHID]  int  NOT NULL,--教学计划ID
 	[KCID]  int  NOT NULL,--课程ID
-	[XS]  decimal(3, 1)  NOT NULL,--学分
+	[XF]  decimal(3, 1)  NOT NULL,--学分
 CONSTRAINT [PK_EDU_ZXJX_53_A12_XFZBXKCQD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1769,5 +1769,5 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学计划ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A12_XFZBXKCQD', @level2type=N'COLUMN',@level2name=N'KCID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A12_XFZBXKCQD', @level2type=N'COLUMN',@level2name=N'XS'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A12_XFZBXKCQD', @level2type=N'COLUMN',@level2name=N'XF'
 GO

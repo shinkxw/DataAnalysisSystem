@@ -131,6 +131,22 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_JPXT_04_01_
             and   type = 'V')
    drop view VIEW_EDU_JPXT_04_01_KMKS_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_KTGL_01_A01_KTML_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_KTGL_01_A01_KTML_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_KTGL_01_A10_TZGG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_KTGL_01_A10_TZGG_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_KTGL_01_A12_YQLJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_KTGL_01_A12_YQLJ_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_KTGL_05_A01_KTNR_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_KTGL_05_A01_KTNR_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_01_01_WJJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_OAXT_01_01_WJJBSJ_DISP
@@ -3001,6 +3017,144 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_JPXT_04_01_KMKS AS a LEFT OUTER JOIN
       dbo.EDU_ZZ_JKKM AS c ON a.KMDM = c.DM /*科目代码*/
+GO
+
+--课题目录
+CREATE VIEW [dbo].[VIEW_EDU_KTGL_01_A01_KTML_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[MLMC]--目录名称
+      ,a.[FMLID]--父目录ID
+      ,a.[PLSX]--排列顺序
+      ,a.[SFSYZS]--是否首页展示
+      ,a.[SFQY]--是否启用
+      ,a.[URL]--网址
+      ,c.SCHOOLID as c_KTML_SCHOOLID--课题目录 学校
+      ,c.MLMC as c_KTML_MLMC--课题目录 目录名称
+      ,c.FMLID as c_KTML_FMLID--课题目录 父目录ID
+      ,c.PLSX as c_KTML_PLSX--课题目录 排列顺序
+      ,c.SFSYZS as c_KTML_SFSYZS--课题目录 是否首页展示
+      ,c.SFQY as c_KTML_SFQY--课题目录 是否启用
+      ,c.URL as c_KTML_URL--课题目录 网址
+
+FROM dbo.EDU_KTGL_01_A01_KTML AS a LEFT OUTER JOIN
+      dbo.EDU_KTGL_01_A01_KTML AS c ON a.FMLID = c.ID /*父目录ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--通知公告
+CREATE VIEW [dbo].[VIEW_EDU_KTGL_01_A10_TZGG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[TITLE]--标题
+      ,a.[FBRID]--发布人ID
+      ,a.[FBRXM]--发布人姓名
+      ,a.[FBBM]--发布部门
+      ,a.[FBSJ]--发布时间
+      ,a.[NR]--内容
+      ,a.[TPDZ]--图片地址
+      ,a.[DJL]--点击量
+      ,a.[SHZT]--审核状态
+      ,a.[SHRID]--审核人ID
+      ,a.[SHRXM]--审核人姓名
+      ,a.[SHSJ]--审核时间
+      ,a.[SFXS]--是否显示
+      ,a.[SFZD]--是否置顶
+      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
+      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
+      ,'' as c_USER_PWD--应用系统用户表 密码
+      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
+      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
+      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
+      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,c.XM as c_USER_XM--应用系统用户表 姓名
+      ,c.XB as c_USER_XB--应用系统用户表 性别
+      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
+      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
+      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
+      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
+      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,'' as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_KTGL_01_A10_TZGG AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.SHRID = d.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校名*/
+GO
+
+--友情链接
+CREATE VIEW [dbo].[VIEW_EDU_KTGL_01_A12_YQLJ_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校名
+      ,a.[YQLJLXID]--友情链接类型ID
+      ,a.[TITLE]--标题
+      ,a.[IMAGEURL]--图片
+      ,a.[URL]--链接
+      ,c.SCHOOLID as c_YQLJLX_SCHOOLID--友情链接类型 学校名
+      ,c.NAME as c_YQLJLX_NAME--友情链接类型 类型名
+      ,c.SHOWSTYLE as c_YQLJLX_SHOWSTYLE--友情链接类型 显示方式
+
+FROM dbo.EDU_KTGL_01_A12_YQLJ AS a LEFT OUTER JOIN
+      dbo.EDU_KTGL_01_A11_YQLJLX AS c ON a.YQLJLXID = c.ID /*友情链接类型ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/
+GO
+
+--课题内容
+CREATE VIEW [dbo].[VIEW_EDU_KTGL_05_A01_KTNR_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[KTJBID]--课题级别ID
+      ,a.[KTMC]--课题名称
+      ,a.[KTFZRID]--课题负责人
+      ,a.[KTFZRQQ]--课题负责人QQ
+      ,a.[KTFZRDH]--课题负责人电话
+      ,a.[CYRYMD]--参与人员名单
+      ,a.[YJFA]--研究方案
+      ,a.[YJCG]--研究成果
+      ,a.[JTBG]--结题报告
+      ,c.SCHOOLID as c_KTJB_SCHOOLID--课题级别 学校
+      ,c.JBMC as c_KTJB_JBMC--课题级别 级别名称
+      ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
+      ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
+      ,'' as d_USER_PWD--应用系统用户表 密码
+      ,d.STATUS as d_USER_STATUS--应用系统用户表 用户状态
+      ,d.USERTYPE as d_USER_USERTYPE--应用系统用户表 用户类别
+      ,d.USERID as d_USER_USERID--应用系统用户表 用户ID
+      ,d.ROLEIDLst as d_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,d.XM as d_USER_XM--应用系统用户表 姓名
+      ,d.XB as d_USER_XB--应用系统用户表 性别
+      ,d.QQ as d_USER_QQ--应用系统用户表 QQ
+      ,d.DZYJ as d_USER_DZYJ--应用系统用户表 电子邮件
+      ,d.LXDH as d_USER_LXDH--应用系统用户表 联系电话
+      ,d.ZJDLSJ as d_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,d.DLCGCS as d_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
+      ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_KTGL_05_A01_KTNR AS a LEFT OUTER JOIN
+      dbo.EDU_KTGL_01_A03_KTJB AS c ON a.KTJBID = c.ID /*课题级别ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS d ON a.KTFZRID = d.LOGINNAME /*课题负责人*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
 GO
 
 --文件基本数据类表
@@ -11418,7 +11572,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[JXJHID]--教学计划ID
       ,a.[KCID]--课程ID
-      ,a.[XS]--学分
+      ,a.[XF]--学分
       ,c.SCHOOLID as c_XFZXQJXJH_SCHOOLID--学分制学期教学计划表 学校ID
       ,c.XQID as c_XFZXQJXJH_XQID--学分制学期教学计划表 学期ID
       ,c.NJID as c_XFZXQJXJH_NJID--学分制学期教学计划表 年级ID

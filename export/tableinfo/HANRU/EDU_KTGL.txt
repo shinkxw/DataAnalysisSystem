@@ -1,0 +1,60 @@
+EDU_KTGL_01_A01_KTML  课题目录
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MLMC          目录名称                nvarchar(300)  非主
+  FMLID         父目录ID                int            非主        课题目录
+  PLSX          排列顺序                int            非主
+  SFSYZS        是否首页展示            int            非主
+  SFQY          是否启用                int            非主
+  URL           网址                    nvarchar(500)  非主
+
+EDU_KTGL_01_A03_KTJB  课题级别
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JBMC          级别名称                nvarchar(50)   非主
+
+EDU_KTGL_01_A10_TZGG  通知公告
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  TITLE         标题                    nvarchar(100)  非主
+  FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
+  FBRXM         发布人姓名              nvarchar(50)   非主
+  FBBM          发布部门                nvarchar(50)   非主
+  FBSJ          发布时间                datetime       非主
+  NR            内容                    text           非主
+  TPDZ          图片地址                nvarchar(300)  非主
+  DJL           点击量                  int            非主
+  SHZT          审核状态                int            非主
+  SHRID         审核人ID                nvarchar(20)   非主        应用系统用户表
+  SHRXM         审核人姓名              nvarchar(50)   非主
+  SHSJ          审核时间                datetime       非主
+  SFXS          是否显示                int            非主
+  SFZD          是否置顶                int            非主
+
+EDU_KTGL_01_A11_YQLJLX  友情链接类型
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  NAME          类型名                  nvarchar(50)   非主
+  SHOWSTYLE     显示方式                int            非主
+
+EDU_KTGL_01_A12_YQLJ  友情链接
+  ID            编号                    int            主键
+  SCHOOLID      学校名                  int            主键        学校配置表
+  YQLJLXID      友情链接类型ID          int            非主        友情链接类型
+  TITLE         标题                    nvarchar(50)   非主
+  IMAGEURL      图片                    nvarchar(500)  非主
+  URL           链接                    nvarchar(300)  非主
+
+EDU_KTGL_05_A01_KTNR  课题内容
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KTJBID        课题级别ID              int            非主        课题级别
+  KTMC          课题名称                nvarchar(100)  非主
+  KTFZRID       课题负责人              nvarchar(20)   非主        应用系统用户表
+  KTFZRQQ       课题负责人QQ            nvarchar(20)   非主
+  KTFZRDH       课题负责人电话          nvarchar(20)   非主
+  CYRYMD        参与人员名单            text           非主
+  YJFA          研究方案                text           非主
+  YJCG          研究成果                text           非主
+  JTBG          结题报告                text           非主
+

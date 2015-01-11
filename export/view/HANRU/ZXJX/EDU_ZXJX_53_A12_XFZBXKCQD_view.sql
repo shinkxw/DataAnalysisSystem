@@ -6,7 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[JXJHID]--教学计划ID
       ,a.[KCID]--课程ID
-      ,a.[XS]--学分
+      ,a.[XF]--学分
       ,c.SCHOOLID as c_XFZXQJXJH_SCHOOLID--学分制学期教学计划表 学校ID
       ,c.XQID as c_XFZXQJXJH_XQID--学分制学期教学计划表 学期ID
       ,c.NJID as c_XFZXQJXJH_NJID--学分制学期教学计划表 年级ID

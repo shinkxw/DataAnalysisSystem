@@ -120,7 +120,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" null="F" p="T" />
             <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="YQLJLXID" exp="友情链接类型ID" type="int" null="F" p="T" />
+            <name="YQLJLXID" exp="友情链接类型ID" type="int" null="F" p="F" />
             <name="TITLE" exp="标题" type="nvarchar(50)" null="F" p="F" />
             <name="IMAGEURL" exp="图片" type="nvarchar(500)" null="T" p="F" />
             <name="URL" exp="链接" type="nvarchar(300)" null="F" p="F" />

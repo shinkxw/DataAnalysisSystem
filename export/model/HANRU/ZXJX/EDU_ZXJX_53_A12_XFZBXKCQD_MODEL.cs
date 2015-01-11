@@ -35,7 +35,7 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "Ñ§·Ö")]
             [Range(typeof(decimal), "0", "99")]
-            public decimal XS { get; set; }
+            public decimal XF { get; set; }
 
 
         }

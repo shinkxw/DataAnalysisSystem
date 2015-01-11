@@ -131,6 +131,24 @@
   KMDM           EDU_ZZ_JKKM                        DM
 <EDU_JPXT_05_01_CLXH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_KTGL_01_A01_KTML
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FMLID          EDU_KTGL_01_A01_KTML               ID
+<EDU_KTGL_01_A03_KTJB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_KTGL_01_A10_TZGG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FBRID          EDU_ELE_01_USER                    LOGINNAME
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_KTGL_01_A11_YQLJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_KTGL_01_A12_YQLJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YQLJLXID       EDU_KTGL_01_A11_YQLJLX             ID
+<EDU_KTGL_05_A01_KTNR
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KTJBID         EDU_KTGL_01_A03_KTJB               ID
+  KTFZRID        EDU_ELE_01_USER                    LOGINNAME
 <EDU_OAXT_01_01_WJJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   MJM            EDU_GB_WXBMZJ                      DM

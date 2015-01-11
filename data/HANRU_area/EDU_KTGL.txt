@@ -1,0 +1,75 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_KTGL" provider="reallocate_namespace">
+    <table name="EDU_KTGL_01_A01_KTML" exp="课题目录">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="MLMC" exp="目录名称" type="nvarchar(300)" null="F" p="F" />
+            <name="FMLID" exp="父目录ID" type="int" null="F" p="F" />
+            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="SFSYZS" exp="是否首页展示" type="int" null="F" p="F" />
+            <name="SFQY" exp="是否启用" type="int" null="F" p="F" />
+            <name="URL" exp="网址" type="nvarchar(500)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_KTGL_01_A03_KTJB" exp="课题级别">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="JBMC" exp="级别名称" type="nvarchar(50)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_KTGL_01_A10_TZGG" exp="通知公告">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="TITLE" exp="标题" type="nvarchar(100)" null="F" p="F" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
+            <name="FBRXM" exp="发布人姓名" type="nvarchar(50)" null="F" p="F" />
+            <name="FBBM" exp="发布部门" type="nvarchar(50)" null="T" p="F" />
+            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
+            <name="NR" exp="内容" type="text" null="T" p="F" />
+            <name="TPDZ" exp="图片地址" type="nvarchar(300)" null="T" p="F" />
+            <name="DJL" exp="点击量" type="int" null="T" p="F" />
+            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" null="T" p="F" />
+            <name="SHRXM" exp="审核人姓名" type="nvarchar(50)" null="T" p="F" />
+            <name="SHSJ" exp="审核时间" type="datetime" null="F" p="F" />
+            <name="SFXS" exp="是否显示" type="int" null="F" p="F" />
+            <name="SFZD" exp="是否置顶" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_KTGL_01_A11_YQLJLX" exp="友情链接类型">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="NAME" exp="类型名" type="nvarchar(50)" null="F" p="F" />
+            <name="SHOWSTYLE" exp="显示方式" type="int" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_KTGL_01_A12_YQLJ" exp="友情链接">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
+            <name="YQLJLXID" exp="友情链接类型ID" type="int" null="F" p="F" />
+            <name="TITLE" exp="标题" type="nvarchar(50)" null="F" p="F" />
+            <name="IMAGEURL" exp="图片" type="nvarchar(500)" null="T" p="F" />
+            <name="URL" exp="链接" type="nvarchar(300)" null="F" p="F" />
+        </field_area>
+    </table>
+    <table name="EDU_KTGL_05_A01_KTNR" exp="课题内容">
+        <field_area>
+            <name="ID" exp="编号" type="int" null="F" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
+            <name="KTJBID" exp="课题级别ID" type="int" null="F" p="F" />
+            <name="KTMC" exp="课题名称" type="nvarchar(100)" null="F" p="F" />
+            <name="KTFZRID" exp="课题负责人" type="nvarchar(20)" null="F" p="F" />
+            <name="KTFZRQQ" exp="课题负责人QQ" type="nvarchar(20)" null="F" p="F" />
+            <name="KTFZRDH" exp="课题负责人电话" type="nvarchar(20)" null="F" p="F" />
+            <name="CYRYMD" exp="参与人员名单" type="text" null="F" p="F" />
+            <name="YJFA" exp="研究方案" type="text" null="F" p="F" />
+            <name="YJCG" exp="研究成果" type="text" null="F" p="F" />
+            <name="JTBG" exp="结题报告" type="text" null="F" p="F" />
+        </field_area>
+    </table>
+</namespace>
