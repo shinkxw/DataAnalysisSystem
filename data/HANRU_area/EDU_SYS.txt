@@ -2,8 +2,8 @@
 <namespace name="EDU_SYS" provider="reallocate_namespace">
     <table name="EDU_SYS_01_CONFIG" exp="全局配置表">
         <field_area>
-            <name="ID" exp="配置ID" type="int" null="F" p="T" />
-            <name="VALUE" exp="配置值" type="nvarchar(200)" null="F" p="F" />
+            <name="ID" exp="配置ID" type="int" p="T" />
+            <name="VALUE" exp="配置值" type="nvarchar(200)" />
         </field_area>
         <data_area>
             <ID="1001" VALUE="http://115.236.101.41/yxtlogin/index.jsp" />
@@ -20,33 +20,33 @@
     </table>
     <table name="EDU_SYS_01_XN" exp="学年表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="XN" exp="学年" type="nvarchar(9)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="XN" exp="学年" type="nvarchar(9)" />
         </field_area>
     </table>
     <table name="EDU_SYS_01_MODULE" exp="导航表">
         <field_area>
-            <name="ID" exp="" type="int" null="F" p="T" />
-            <name="APPID" exp="" type="int" null="F" p="F" />
-            <name="NAME" exp="" type="nvarchar(20)" null="F" p="F" />
-            <name="Depth" exp="" type="int" null="F" p="F" />
-            <name="PID" exp="" type="int" null="F" p="F" />
-            <name="MenuDisp" exp="" type="int" null="F" p="F" />
-            <name="MenuUserType" exp="" type="int" null="F" p="F" />
-            <name="Link" exp="" type="nvarchar(100)" null="F" p="F" />
-            <name="OrderIndex" exp="" type="int" null="F" p="F" />
+            <name="ID" exp="" type="int" p="T" />
+            <name="APPID" exp="" type="int" />
+            <name="NAME" exp="" type="nvarchar(20)" />
+            <name="Depth" exp="" type="int" />
+            <name="PID" exp="" type="int" />
+            <name="MenuDisp" exp="" type="int" />
+            <name="MenuUserType" exp="" type="int" />
+            <name="Link" exp="" type="nvarchar(100)" />
+            <name="OrderIndex" exp="" type="int" />
         </field_area>
     </table>
     <table name="EDU_SYS_01_MICROMODULE" exp="微导航表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="MODULEID" exp="模块ID" type="int" null="F" p="F" />
-            <name="NAME" exp="名称" type="nvarchar(20)" null="F" p="F" />
-            <name="URL" exp="网址" type="nvarchar(300)" null="F" p="F" />
-            <name="PICTYPE" exp="图片类型" type="int" null="F" p="F" />
-            <name="PIC1" exp="图片一" type="nvarchar(300)" null="F" p="F" />
-            <name="PIC2" exp="图片二" type="nvarchar(300)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="MODULEID" exp="模块ID" type="int" />
+            <name="NAME" exp="名称" type="nvarchar(20)" />
+            <name="URL" exp="网址" type="nvarchar(300)" />
+            <name="PICTYPE" exp="图片类型" type="int" />
+            <name="PIC1" exp="图片一" type="nvarchar(300)" />
+            <name="PIC2" exp="图片二" type="nvarchar(300)" />
         </field_area>
     </table>
 </namespace>

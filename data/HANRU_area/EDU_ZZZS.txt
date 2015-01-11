@@ -2,59 +2,59 @@
 <namespace name="EDU_ZZZS" provider="reallocate_namespace">
     <table name="EDU_ZZZS_01_01_ZSXX" exp="考生数据表">
         <field_area>
-            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="ZKZH" exp="准考证号" type="nvarchar(15)" null="F" p="F" />
-            <name="KSH" exp="考生号" type="nvarchar(20)" null="F" p="F" />
-            <name="KQXZQHM" exp="考区行政区划码" type="nvarchar(6)" null="T" p="F" remark="EDU_GB_ZHRMGHGXZQH" />
-            <name="RXNY" exp="入学年月" type="nvarchar(6)" null="F" p="F" />
-            <name="YSWGYZM" exp="应试外国语种码" type="nvarchar(2)" null="F" p="F" remark="EDU_GB_YZMCEZM" />
-            <name="BKZYM1" exp="报考专业码1" type="nvarchar(6)" null="T" p="F" />
-            <name="BKZYM2" exp="报考专业码2" type="nvarchar(6)" null="T" p="F" />
-            <name="BKZYM3" exp="报考专业码3" type="nvarchar(6)" null="T" p="F" />
-            <name="BKZYM4" exp="报考专业码4" type="nvarchar(6)" null="T" p="F" />
-            <name="BKZYM5" exp="报考专业码5" type="nvarchar(6)" null="T" p="F" />
-            <name="BKZYM6" exp="报考专业码6" type="nvarchar(6)" null="T" p="F" />
-            <name="KSFSM" exp="考试方式码" type="nvarchar(1)" null="F" p="F" remark="EDU_JY_KSFS" />
-            <name="BYZX" exp="毕业中学" type="nvarchar(50)" null="F" p="F" />
-            <name="BYZXYZBM" exp="毕业中学邮政编码" type="nvarchar(6)" null="F" p="F" />
-            <name="KSTC" exp="考生特长" type="nvarchar(100)" null="T" p="F" />
-            <name="JLYCC" exp="奖励与惩处" type="nvarchar(200)" null="T" p="F" />
-            <name="JSHJ" exp="竞赛获奖" type="nvarchar(200)" null="T" p="F" />
-            <name="SHGZ" exp="社会工作" type="nvarchar(200)" null="T" p="F" />
-            <name="TJJL" exp="体检结论" type="nvarchar(20)" null="T" p="F" />
-            <name="JZBS" exp="家族病史" type="nvarchar(20)" null="T" p="F" />
-            <name="KSJWBS" exp="考生既往病史" type="nvarchar(200)" null="T" p="F" />
-            <name="SG" exp="身高" type="decimal(5, 1)" null="T" p="F" />
-            <name="KSSL" exp="考生视力" type="decimal(3, 1)" null="T" p="F" />
+            <name="XSXXID" exp="学生信息数据表" type="int" p="T" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="ZKZH" exp="准考证号" type="nvarchar(15)" />
+            <name="KSH" exp="考生号" type="nvarchar(20)" />
+            <name="KQXZQHM" exp="考区行政区划码" type="nvarchar(6)" null="T" remark="EDU_GB_ZHRMGHGXZQH" />
+            <name="RXNY" exp="入学年月" type="nvarchar(6)" />
+            <name="YSWGYZM" exp="应试外国语种码" type="nvarchar(2)" remark="EDU_GB_YZMCEZM" />
+            <name="BKZYM1" exp="报考专业码1" type="nvarchar(6)" null="T" />
+            <name="BKZYM2" exp="报考专业码2" type="nvarchar(6)" null="T" />
+            <name="BKZYM3" exp="报考专业码3" type="nvarchar(6)" null="T" />
+            <name="BKZYM4" exp="报考专业码4" type="nvarchar(6)" null="T" />
+            <name="BKZYM5" exp="报考专业码5" type="nvarchar(6)" null="T" />
+            <name="BKZYM6" exp="报考专业码6" type="nvarchar(6)" null="T" />
+            <name="KSFSM" exp="考试方式码" type="nvarchar(1)" remark="EDU_JY_KSFS" />
+            <name="BYZX" exp="毕业中学" type="nvarchar(50)" />
+            <name="BYZXYZBM" exp="毕业中学邮政编码" type="nvarchar(6)" />
+            <name="KSTC" exp="考生特长" type="nvarchar(100)" null="T" />
+            <name="JLYCC" exp="奖励与惩处" type="nvarchar(200)" null="T" />
+            <name="JSHJ" exp="竞赛获奖" type="nvarchar(200)" null="T" />
+            <name="SHGZ" exp="社会工作" type="nvarchar(200)" null="T" />
+            <name="TJJL" exp="体检结论" type="nvarchar(20)" null="T" />
+            <name="JZBS" exp="家族病史" type="nvarchar(20)" null="T" />
+            <name="KSJWBS" exp="考生既往病史" type="nvarchar(200)" null="T" />
+            <name="SG" exp="身高" type="decimal(5, 1)" null="T" />
+            <name="KSSL" exp="考生视力" type="decimal(3, 1)" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZZZS_01_A01_ZSJH" exp="招生计划数据表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="F" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="ZYXXID" exp="专业基本信息" type="int" null="F" p="F" remark="EDU_ZZJX_01_01_ZYXX" />
-            <name="XNID" exp="学年" type="int" null="F" p="F" remark="EDU_SYS_01_XN" />
-            <name="ZSJHRS" exp="招生计划" type="int" null="F" p="F" />
-            <name="BZ" exp="备注" type="text" null="T" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校名" type="int" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="ZYXXID" exp="专业基本信息" type="int" remark="EDU_ZZJX_01_01_ZYXX" />
+            <name="XNID" exp="学年" type="int" remark="EDU_SYS_01_XN" />
+            <name="ZSJHRS" exp="招生计划" type="int" />
+            <name="BZ" exp="备注" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZZZS_02_01_RXCJ" exp="入学成绩数据表">
         <field_area>
-            <name="XSXXID" exp="学生信息数据表" type="int" null="F" p="T" remark="EDU_ZZXS_01_01_XSXX" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
-            <name="RXZF" exp="入学总分" type="decimal(5, 1)" null="T" p="F" />
-            <name="GKZF" exp="中考总分" type="decimal(5, 1)" null="T" p="F" />
-            <name="FJF" exp="附加分" type="decimal(5, 1)" null="T" p="F" />
-            <name="FJFLBM" exp="附加分类别码" type="nvarchar(1)" null="T" p="F" remark="EDU_JY_FJFLB" />
+            <name="XSXXID" exp="学生信息数据表" type="int" p="T" remark="EDU_ZZXS_01_01_XSXX" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" remark="EDU_ZZXX_01_01_ZZXX" />
+            <name="RXZF" exp="入学总分" type="decimal(5, 1)" null="T" />
+            <name="GKZF" exp="中考总分" type="decimal(5, 1)" null="T" />
+            <name="FJF" exp="附加分" type="decimal(5, 1)" null="T" />
+            <name="FJFLBM" exp="附加分类别码" type="nvarchar(1)" null="T" remark="EDU_JY_FJFLB" />
         </field_area>
     </table>
     <table name="EDU_ZZZS_03_01_KSKMCJ" exp="考生科目成绩数据类表">
         <field_area>
-            <name="XSXXID" exp="考生ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="KMM" exp="科目码" type="nvarchar(2)" null="F" p="T" />
-            <name="ZKFS" exp="中考分数" type="decimal(5, 1)" null="F" p="F" />
+            <name="XSXXID" exp="考生ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="KMM" exp="科目码" type="nvarchar(2)" p="T" />
+            <name="ZKFS" exp="中考分数" type="decimal(5, 1)" />
         </field_area>
     </table>
 </namespace>

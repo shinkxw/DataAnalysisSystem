@@ -18,8 +18,8 @@ class MDField
     @table = table
     @name = name
     @type = format(type)
-    @null = pro_input(null)
-    @p = pro_input(p)
+    @null = (null == nil ? "F" : pro_input(null))
+    @p = (p == nil ? "F" : pro_input(p))
     @explanation = explanation
     @remark = remark
     @identity = (identity == nil ? "F" : pro_input(identity))

@@ -2,81 +2,81 @@
 <namespace name="EDU_ZWXT" provider="reallocate_namespace">
     <table name="EDU_ZWXT_01_A01_JSDCCP" exp="教师订餐菜品表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="MC" exp="名称" type="nvarchar(50)" null="F" p="F" />
-            <name="JG" exp="价格" type="decimal(5, 2)" null="F" p="F" />
-            <name="ZL" exp="主料" type="nvarchar(100)" null="F" p="F" />
-            <name="TP" exp="图片" type="text" null="T" p="F" />
-            <name="JS" exp="介绍" type="text" null="F" p="F" />
-            <name="GYSL" exp="供应数量" type="int" null="F" p="F" />
-            <name="SFKQ" exp="是否开启" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="MC" exp="名称" type="nvarchar(50)" />
+            <name="JG" exp="价格" type="decimal(5, 2)" />
+            <name="ZL" exp="主料" type="nvarchar(100)" />
+            <name="TP" exp="图片" type="text" null="T" />
+            <name="JS" exp="介绍" type="text" />
+            <name="GYSL" exp="供应数量" type="int" />
+            <name="SFKQ" exp="是否开启" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_01_A02_JSDCJL" exp="教师订餐记录表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="T" />
-            <name="CPID" exp="菜品ID" type="int" null="F" p="F" />
-            <name="DCSJ" exp="订餐时间" type="datetime" null="F" p="F" />
-            <name="DCRID" exp="订餐人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="SDSL" exp="所订数量" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="CPID" exp="菜品ID" type="int" />
+            <name="DCSJ" exp="订餐时间" type="datetime" />
+            <name="DCRID" exp="订餐人ID" type="nvarchar(20)" />
+            <name="SDSL" exp="所订数量" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_02_A01_KDGS" exp="快递公司表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="KDGSMC" exp="快递公司名称" type="nvarchar(50)" null="F" p="F" />
-            <name="LXRXM" exp="联系人姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="LXDH" exp="联系电话" type="nvarchar(20)" null="F" p="F" />
-            <name="LXDZ" exp="联系地址" type="nvarchar(300)" null="F" p="F" />
-            <name="SFSY" exp="是否使用" type="nvarchar(1)" null="F" p="F" />
-            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="KDGSMC" exp="快递公司名称" type="nvarchar(50)" />
+            <name="LXRXM" exp="联系人姓名" type="nvarchar(36)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(20)" />
+            <name="LXDZ" exp="联系地址" type="nvarchar(300)" />
+            <name="SFSY" exp="是否使用" type="nvarchar(1)" />
+            <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_02_A02_BGQK" exp="包裹情况表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="KDGSMC" exp="快递公司名称" type="nvarchar(50)" null="F" p="F" />
-            <name="KDDH" exp="快递单号" type="nvarchar(50)" null="F" p="F" />
-            <name="SJRID" exp="收件人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="DJRID" exp="登记人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="DJSJ" exp="登记时间" type="datetime" null="F" p="F" />
-            <name="QSZT" exp="签收状态" type="int" null="F" p="F" />
-            <name="QSSJ" exp="签收时间" type="datetime" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="KDGSMC" exp="快递公司名称" type="nvarchar(50)" />
+            <name="KDDH" exp="快递单号" type="nvarchar(50)" />
+            <name="SJRID" exp="收件人ID" type="nvarchar(20)" />
+            <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
+            <name="DJSJ" exp="登记时间" type="datetime" />
+            <name="QSZT" exp="签收状态" type="int" />
+            <name="QSSJ" exp="签收时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_03_A01_DCPZ" exp="点菜配置表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="NR" exp="内容" type="text" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="NR" exp="内容" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_03_A02_CPGL" exp="菜品管理表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="SJ" exp="时间" type="datetime" null="F" p="F" />
-            <name="CPMC" exp="菜品名称" type="nvarchar(50)" null="F" p="F" />
-            <name="CPLX" exp="菜品类型" type="nvarchar(50)" null="F" p="F" />
-            <name="ZL" exp="主料" type="nvarchar(50)" null="F" p="F" />
-            <name="CKJ" exp="参考价" type="nvarchar(50)" null="F" p="F" />
-            <name="JS" exp="介绍" type="nvarchar(300)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="SJ" exp="时间" type="datetime" />
+            <name="CPMC" exp="菜品名称" type="nvarchar(50)" />
+            <name="CPLX" exp="菜品类型" type="nvarchar(50)" />
+            <name="ZL" exp="主料" type="nvarchar(50)" />
+            <name="CKJ" exp="参考价" type="nvarchar(50)" />
+            <name="JS" exp="介绍" type="nvarchar(300)" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_03_A03_JSDC" exp="教师点菜表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="DCSJ" exp="点菜时间" type="datetime" null="F" p="F" />
-            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
-            <name="CPID" exp="菜品ID" type="int" null="F" p="F" />
-            <name="JG" exp="价格" type="nvarchar(50)" null="F" p="F" />
-            <name="DGSL" exp="订购数量" type="int" null="F" p="F" />
-            <name="ZT" exp="状态" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="DCSJ" exp="点菜时间" type="datetime" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" />
+            <name="CPID" exp="菜品ID" type="int" />
+            <name="JG" exp="价格" type="nvarchar(50)" />
+            <name="DGSL" exp="订购数量" type="int" />
+            <name="ZT" exp="状态" type="int" />
         </field_area>
     </table>
 </namespace>

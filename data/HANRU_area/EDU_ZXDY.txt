@@ -2,182 +2,182 @@
 <namespace name="EDU_ZXDY" provider="reallocate_namespace">
     <table name="EDU_ZXDY_04_A01_ZZGW" exp="值周岗位数据表">
         <field_area>
-            <name="ID" exp="值周岗位表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="GWGZNR" exp="岗位工作内容" type="nvarchar(200)" null="F" p="F" />
+            <name="ID" exp="值周岗位表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="GWGZNR" exp="岗位工作内容" type="nvarchar(200)" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A02_ZZRYAP" exp="值周人员安排表">
         <field_area>
-            <name="ID" exp="值周人员安排表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZCID" exp="周次ID" type="int" null="F" p="F" />
-            <name="KSRQ" exp="开始日期" type="datetime" null="T" p="F" />
-            <name="JSRQ" exp="结束日期" type="datetime" null="T" p="F" />
-            <name="ZZBJ" exp="值周班级班号" type="nvarchar(10)" null="F" p="F" />
-            <name="ZZID" exp="组长ID" type="nvarchar(20)" null="F" p="F" />
-            <name="ZYIDLB" exp="组员ID列表" type="text" null="F" p="F" />
-            <name="ZYMCLB" exp="组员名称列表" type="text" null="F" p="F" />
+            <name="ID" exp="值周人员安排表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="KSRQ" exp="开始日期" type="datetime" null="T" />
+            <name="JSRQ" exp="结束日期" type="datetime" null="T" />
+            <name="ZZBJ" exp="值周班级班号" type="nvarchar(10)" />
+            <name="ZZID" exp="组长ID" type="nvarchar(20)" />
+            <name="ZYIDLB" exp="组员ID列表" type="text" />
+            <name="ZYMCLB" exp="组员名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A03_ZZGWFP" exp="值周岗位分配表">
         <field_area>
-            <name="ID" exp="值周岗位分配表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZCID" exp="周次ID" type="int" null="F" p="F" />
-            <name="GZR" exp="工作日" type="int" null="T" p="F" />
-            <name="GWID" exp="岗位ID" type="int" null="T" p="F" />
-            <name="JSID" exp="教师ID" type="nvarchar(20)" null="F" p="F" />
+            <name="ID" exp="值周岗位分配表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="GZR" exp="工作日" type="int" null="T" />
+            <name="GWID" exp="岗位ID" type="int" null="T" />
+            <name="JSID" exp="教师ID" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A04_GWFPMB" exp="岗位分配模板表">
         <field_area>
-            <name="ID" exp="岗位分配模板表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="MBMC" exp="模板名称" type="nvarchar(20)" null="F" p="F" />
+            <name="ID" exp="岗位分配模板表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="MBMC" exp="模板名称" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A05_TBZZJS" exp="特别值周教师表">
         <field_area>
-            <name="ID" exp="特别值周教师表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="JSLX" exp="教师类型" type="nvarchar(20)" null="F" p="F" remark="单日或学期" />
-            <name="JSID" exp="教师ID" type="nvarchar(20)" null="F" p="F" />
-            <name="YXRQ" exp="有效日期" type="datetime" null="T" p="F" />
+            <name="ID" exp="特别值周教师表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="JSLX" exp="教师类型" type="nvarchar(20)" remark="单日或学期" />
+            <name="JSID" exp="教师ID" type="nvarchar(20)" />
+            <name="YXRQ" exp="有效日期" type="datetime" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A06_ZZZC" exp="值周周次表">
         <field_area>
-            <name="ID" exp="周次表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZCM" exp="周次名" type="nvarchar(20)" null="F" p="F" />
-            <name="XQKSRQ" exp="开始日期" type="datetime" null="T" p="F" />
-            <name="XQJSRQ" exp="结束日期" type="datetime" null="T" p="F" />
+            <name="ID" exp="周次表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCM" exp="周次名" type="nvarchar(20)" />
+            <name="XQKSRQ" exp="开始日期" type="datetime" null="T" />
+            <name="XQJSRQ" exp="结束日期" type="datetime" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_04_A07_MBFPNR" exp="模板分配内容表">
         <field_area>
-            <name="ID" exp="模板内容表ID" type="int" null="F" p="T" />
-            <name="MBID" exp="模板表ID" type="int" null="F" p="F" />
-            <name="GZR" exp="工作日" type="int" null="T" p="F" />
-            <name="GWID" exp="岗位ID" type="int" null="T" p="F" />
-            <name="DYRYH" exp="对应人员号" type="int" null="F" p="F" />
+            <name="ID" exp="模板内容表ID" type="int" p="T" />
+            <name="MBID" exp="模板表ID" type="int" />
+            <name="GZR" exp="工作日" type="int" null="T" />
+            <name="GWID" exp="岗位ID" type="int" null="T" />
+            <name="DYRYH" exp="对应人员号" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A01_ZZDFDL" exp="值周打分大类表">
         <field_area>
-            <name="ID" exp="值周打分大类表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="DLMC" exp="大类名称" type="nvarchar(20)" null="F" p="F" />
+            <name="ID" exp="值周打分大类表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="DLMC" exp="大类名称" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A02_ZZDFXZ" exp="值周打分细则表">
         <field_area>
-            <name="ID" exp="值周打分细则表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="SSDLID" exp="所属大类ID" type="int" null="F" p="F" />
-            <name="XZNR" exp="细则内容" type="nvarchar(200)" null="F" p="F" />
-            <name="XZFZ" exp="细则分值" type="decimal(6, 2)" null="F" p="F" />
+            <name="ID" exp="值周打分细则表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="SSDLID" exp="所属大类ID" type="int" />
+            <name="XZNR" exp="细则内容" type="nvarchar(200)" />
+            <name="XZFZ" exp="细则分值" type="decimal(6, 2)" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_05_A03_ZZDFD" exp="值周打分单表">
         <field_area>
-            <name="ID" exp="值周打分单表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZCID" exp="周次ID" type="int" null="F" p="F" />
-            <name="BJ" exp="班级" type="nvarchar(10)" null="T" p="F" />
-            <name="XSIDLB" exp="学生ID列表" type="text" null="T" p="F" />
-            <name="XSMCLB" exp="学生名称列表" type="text" null="T" p="F" />
-            <name="SSXZID" exp="所属细则" type="int" null="F" p="F" />
-            <name="DFFZ" exp="打分分值" type="decimal(6, 2)" null="F" p="F" />
-            <name="FSSJ" exp="发生时间" type="datetime" null="F" p="F" />
-            <name="DFSJ" exp="打分时间" type="datetime" null="F" p="F" />
-            <name="DFJSID" exp="打分教师ID" type="nvarchar(20)" null="F" p="F" />
-            <name="BZ" exp="备注" type="text" null="F" p="F" />
+            <name="ID" exp="值周打分单表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="BJ" exp="班级" type="nvarchar(10)" null="T" />
+            <name="XSIDLB" exp="学生ID列表" type="text" null="T" />
+            <name="XSMCLB" exp="学生名称列表" type="text" null="T" />
+            <name="SSXZID" exp="所属细则" type="int" />
+            <name="DFFZ" exp="打分分值" type="decimal(6, 2)" />
+            <name="FSSJ" exp="发生时间" type="datetime" />
+            <name="DFSJ" exp="打分时间" type="datetime" />
+            <name="DFJSID" exp="打分教师ID" type="nvarchar(20)" />
+            <name="BZ" exp="备注" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_06_A01_ZZXJ" exp="值周小结表">
         <field_area>
-            <name="ID" exp="值周小结表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZCID" exp="周次ID" type="int" null="F" p="F" />
-            <name="SZDS" exp="上周大事" type="text" null="T" p="F" />
-            <name="ZZJCQKFK" exp="值周检查情况反馈" type="text" null="T" p="F" />
+            <name="ID" exp="值周小结表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="SZDS" exp="上周大事" type="text" null="T" />
+            <name="ZZJCQKFK" exp="值周检查情况反馈" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_06_A02_GQXJH" exp="国旗下讲话表">
         <field_area>
-            <name="ID" exp="国旗下讲话表ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="ZCID" exp="周次ID" type="int" null="F" p="F" />
-            <name="JHZT" exp="讲话主题" type="text" null="T" p="F" />
-            <name="JHNR" exp="讲话内容" type="text" null="T" p="F" />
+            <name="ID" exp="国旗下讲话表ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="JHZT" exp="讲话主题" type="text" null="T" />
+            <name="JHNR" exp="讲话内容" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_07_A01_DYHDKC" exp="德育活动课程表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="BJ" exp="班级" type="nvarchar(10)" null="F" p="F" />
-            <name="HDSJ" exp="活动时间" type="nvarchar(50)" null="F" p="F" />
-            <name="HDZT" exp="活动主题" type="nvarchar(100)" null="F" p="F" />
-            <name="DYHDGCJL" exp="德育活动过程记录" type="text" null="F" p="F" />
-            <name="HDGCTPZS" exp="活动过程图片展示" type="text" null="F" p="F" />
-            <name="DYHDHJ" exp="德育活动后记" type="text" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="BJ" exp="班级" type="nvarchar(10)" />
+            <name="HDSJ" exp="活动时间" type="nvarchar(50)" />
+            <name="HDZT" exp="活动主题" type="nvarchar(100)" />
+            <name="DYHDGCJL" exp="德育活动过程记录" type="text" />
+            <name="HDGCTPZS" exp="活动过程图片展示" type="text" />
+            <name="DYHDHJ" exp="德育活动后记" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_07_A11_XSZZGLJG" exp="学生自主管理机构表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="JGMC" exp="机构名称" type="nvarchar(200)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="JGMC" exp="机构名称" type="nvarchar(200)" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_07_A12_XSZZGLXZ" exp="学生自主管理小组表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="GLJGID" exp="管理机构ID" type="int" null="F" p="F" />
-            <name="ZZ" exp="组长" type="nvarchar(50)" null="F" p="F" />
-            <name="ZY" exp="组员" type="nvarchar(200)" null="F" p="F" />
-            <name="XZKH" exp="小组口号(目标)" type="nvarchar(200)" null="F" p="F" />
-            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="GLJGID" exp="管理机构ID" type="int" />
+            <name="ZZ" exp="组长" type="nvarchar(50)" />
+            <name="ZY" exp="组员" type="nvarchar(200)" />
+            <name="XZKH" exp="小组口号(目标)" type="nvarchar(200)" />
+            <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_07_A21_BJXSHDQKJL" exp="班级学生活动情况记录表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="HDBJ" exp="活动班级" type="nvarchar(10)" null="F" p="F" />
-            <name="SJ" exp="时间" type="nvarchar(50)" null="F" p="F" />
-            <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
-            <name="CYRS" exp="参与人数" type="nvarchar(50)" null="F" p="F" />
-            <name="HDXS" exp="活动形式" type="nvarchar(200)" null="F" p="F" />
-            <name="HDZT" exp="活动主题" type="nvarchar(200)" null="F" p="F" />
-            <name="HDGCJL" exp="活动过程记录（包含图片）" type="text" null="F" p="F" />
-            <name="HDHJ" exp="活动后记（班主任点评）" type="text" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="HDBJ" exp="活动班级" type="nvarchar(10)" />
+            <name="SJ" exp="时间" type="nvarchar(50)" />
+            <name="DD" exp="地点" type="nvarchar(200)" />
+            <name="CYRS" exp="参与人数" type="nvarchar(50)" />
+            <name="HDXS" exp="活动形式" type="nvarchar(200)" />
+            <name="HDZT" exp="活动主题" type="nvarchar(200)" />
+            <name="HDGCJL" exp="活动过程记录（包含图片）" type="text" />
+            <name="HDHJ" exp="活动后记（班主任点评）" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXDY_07_A31_XXDXHD" exp="学校大型活动表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="HDZT" exp="活动主题" type="nvarchar(100)" null="F" p="F" />
-            <name="HDZZBM" exp="活动组织部门" type="nvarchar(200)" null="F" p="F" />
-            <name="XMFZR" exp="项目负责人" type="nvarchar(200)" null="F" p="F" />
-            <name="SJ" exp="时间" type="nvarchar(50)" null="F" p="F" />
-            <name="DD" exp="地点" type="nvarchar(200)" null="F" p="F" />
-            <name="HDGCJL" exp="活动过程记录（含图片）" type="text" null="F" p="F" />
-            <name="HDHJ" exp="活动后记" type="text" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="HDZT" exp="活动主题" type="nvarchar(100)" />
+            <name="HDZZBM" exp="活动组织部门" type="nvarchar(200)" />
+            <name="XMFZR" exp="项目负责人" type="nvarchar(200)" />
+            <name="SJ" exp="时间" type="nvarchar(50)" />
+            <name="DD" exp="地点" type="nvarchar(200)" />
+            <name="HDGCJL" exp="活动过程记录（含图片）" type="text" />
+            <name="HDHJ" exp="活动后记" type="text" />
         </field_area>
     </table>
 </namespace>

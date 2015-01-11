@@ -2,15 +2,15 @@
 <namespace name="EDU_ZXTW" provider="reallocate_namespace">
     <table name="EDU_ZXTW_03_A01_XSMZJL" exp="学生门诊记录">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="XSXXID" exp="学生ID" type="int" null="F" p="F" />
-            <name="BJID" exp="班级" type="nvarchar(10)" null="F" p="F" />
-            <name="JZKSSJ" exp="就诊开始时间" type="datetime" null="F" p="F" />
-            <name="JZJSSJ" exp="就诊结束时间" type="datetime" null="F" p="F" />
-            <name="JZYY" exp="就诊原因" type="text" null="F" p="F" />
-            <name="ZDJG" exp="诊断结果" type="text" null="F" p="F" />
-            <name="FY" exp="费用" type="decimal(8, 3)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="XSXXID" exp="学生ID" type="int" />
+            <name="BJID" exp="班级" type="nvarchar(10)" />
+            <name="JZKSSJ" exp="就诊开始时间" type="datetime" />
+            <name="JZJSSJ" exp="就诊结束时间" type="datetime" />
+            <name="JZYY" exp="就诊原因" type="text" />
+            <name="ZDJG" exp="诊断结果" type="text" />
+            <name="FY" exp="费用" type="decimal(8, 3)" />
         </field_area>
     </table>
 </namespace>

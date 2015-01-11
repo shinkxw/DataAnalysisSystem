@@ -2,120 +2,120 @@
 <namespace name="EDU_ZYFZ" provider="reallocate_namespace">
     <table name="EDU_ZYFZ_01_A01_XK" exp="学科表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="XKMC" exp="学科名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XKMC" exp="学科名称" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_01_A02_NJ" exp="年级表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="NJMC" exp="年级名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="NJMC" exp="年级名称" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_01_A03_RYJB" exp="荣誉级别表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="RYJBMC" exp="荣誉级别名称" type="nvarchar(50)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="RYJBMC" exp="荣誉级别名称" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_01_A04_GZMB" exp="工作模板表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="MBMC" exp="模板名称" type="nvarchar(50)" null="F" p="F" />
-            <name="MBNR" exp="模板内容" type="text" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="MBMC" exp="模板名称" type="nvarchar(50)" />
+            <name="MBNR" exp="模板内容" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A01_LMLB" exp="栏目类别表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="LMLBMC" exp="栏目类别名称" type="nvarchar(50)" null="F" p="F" />
-            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
-            <name="FLBID" exp="父类别ID" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="LMLBMC" exp="栏目类别名称" type="nvarchar(50)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+            <name="FLBID" exp="父类别ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A02_GZNRLM" exp="工作内容栏目表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="LMMC" exp="栏目名称" type="nvarchar(200)" null="F" p="F" />
-            <name="LMLBID" exp="栏目类别ID" type="int" null="F" p="F" />
-            <name="SYMBID" exp="使用模板ID" type="int" null="F" p="F" />
-            <name="PLFS" exp="排列方式" type="int" null="F" p="F" />
-            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
-            <name="NMLLLM" exp="匿名浏览栏目" type="int" null="F" p="F" />
-            <name="LMLX" exp="栏目类型" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="LMMC" exp="栏目名称" type="nvarchar(200)" />
+            <name="LMLBID" exp="栏目类别ID" type="int" />
+            <name="SYMBID" exp="使用模板ID" type="int" />
+            <name="PLFS" exp="排列方式" type="int" />
+            <name="PLSX" exp="排列顺序" type="int" />
+            <name="NMLLLM" exp="匿名浏览栏目" type="int" />
+            <name="LMLX" exp="栏目类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A03_XQLM" exp="学期栏目表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="LMIDLB" exp="栏目ID列表" type="text" null="F" p="F" />
-            <name="LMMCLB" exp="栏目名称列表" type="text" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="LMIDLB" exp="栏目ID列表" type="text" />
+            <name="LMMCLB" exp="栏目名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A04_GZNR" exp="工作内容表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="BT" exp="标题" type="nvarchar(50)" null="F" p="F" />
-            <name="GJC" exp="关键词" type="nvarchar(50)" null="F" p="F" />
-            <name="SSLMID" exp="所属栏目ID" type="int" null="F" p="F" />
-            <name="SSXKID" exp="所属学科ID" type="int" null="F" p="F" />
-            <name="SSNJID" exp="所属年级ID" type="int" null="F" p="F" />
-            <name="NR" exp="内容" type="text" null="F" p="F" />
-            <name="FBRID" exp="发布人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="FBSJ" exp="发布时间" type="datetime" null="F" p="F" />
-            <name="LLL" exp="浏览量" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="BT" exp="标题" type="nvarchar(50)" />
+            <name="GJC" exp="关键词" type="nvarchar(50)" />
+            <name="SSLMID" exp="所属栏目ID" type="int" />
+            <name="SSXKID" exp="所属学科ID" type="int" />
+            <name="SSNJID" exp="所属年级ID" type="int" />
+            <name="NR" exp="内容" type="text" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="LLL" exp="浏览量" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A05_GZNRPL" exp="工作内容评论表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="GZNRID" exp="工作内容ID" type="int" null="F" p="F" />
-            <name="PLNR" exp="评论内容" type="text" null="F" p="F" />
-            <name="PLR" exp="评论人" type="nvarchar(30)" null="F" p="F" />
-            <name="PLSJ" exp="评论时间" type="datetime" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="GZNRID" exp="工作内容ID" type="int" />
+            <name="PLNR" exp="评论内容" type="text" />
+            <name="PLR" exp="评论人" type="nvarchar(30)" />
+            <name="PLSJ" exp="评论时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A06_GRRY" exp="个人荣誉表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="RYMC" exp="荣誉名称" type="nvarchar(50)" null="F" p="F" />
-            <name="RYJBID" exp="荣誉级别ID" type="int" null="F" p="F" />
-            <name="SSXNID" exp="所属学年ID" type="int" null="F" p="F" />
-            <name="SJDW" exp="授奖单位" type="nvarchar(50)" null="F" p="F" />
-            <name="SJSJ" exp="授奖时间" type="datetime" null="F" p="F" />
-            <name="HJRID" exp="获奖人ID" type="nvarchar(20)" null="F" p="F" />
-            <name="NR" exp="内容" type="text" null="F" p="F" />
-            <name="BZ" exp="备注" type="nvarchar(500)" null="F" p="F" />
-            <name="TJSJ" exp="添加时间" type="datetime" null="F" p="F" />
-            <name="SHZT" exp="审核状态" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="RYMC" exp="荣誉名称" type="nvarchar(50)" />
+            <name="RYJBID" exp="荣誉级别ID" type="int" />
+            <name="SSXNID" exp="所属学年ID" type="int" />
+            <name="SJDW" exp="授奖单位" type="nvarchar(50)" />
+            <name="SJSJ" exp="授奖时间" type="datetime" />
+            <name="HJRID" exp="获奖人ID" type="nvarchar(20)" />
+            <name="NR" exp="内容" type="text" />
+            <name="BZ" exp="备注" type="nvarchar(500)" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZYFZ_02_A07_XQGRLM" exp="学期个人栏目表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校" type="int" null="F" p="F" />
-            <name="XQID" exp="学期ID" type="int" null="F" p="F" />
-            <name="YHID" exp="用户ID" type="nvarchar(20)" null="F" p="F" />
-            <name="LMLBID" exp="栏目类别ID" type="int" null="F" p="F" />
-            <name="LMMC" exp="栏目名称" type="nvarchar(200)" null="F" p="F" />
-            <name="JSZP" exp="教师自评" type="nvarchar(500)" null="F" p="F" />
-            <name="XXPD" exp="学校评定" type="nvarchar(500)" null="F" p="F" />
-            <name="LMLX" exp="栏目类型" type="int" null="F" p="F" />
-            <name="SYMBID" exp="使用模板ID" type="int" null="F" p="F" />
-            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" />
+            <name="LMLBID" exp="栏目类别ID" type="int" />
+            <name="LMMC" exp="栏目名称" type="nvarchar(200)" />
+            <name="JSZP" exp="教师自评" type="nvarchar(500)" />
+            <name="XXPD" exp="学校评定" type="nvarchar(500)" />
+            <name="LMLX" exp="栏目类型" type="int" />
+            <name="SYMBID" exp="使用模板ID" type="int" />
+            <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
 </namespace>

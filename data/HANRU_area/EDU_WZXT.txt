@@ -2,287 +2,287 @@
 <namespace name="EDU_WZXT" provider="reallocate_namespace">
     <table name="EDU_WZXT_VIP" exp="网站会员">
         <field_area>
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="LOGINNAME" exp="用户名" type="nvarchar(50)" null="F" p="T" />
-            <name="LOGINPWD" exp="密码" type="nvarchar(64)" null="F" p="F" />
-            <name="REALNAME" exp="姓名" type="nvarchar(50)" null="F" p="F" />
-            <name="EMAIL" exp="电子邮箱" type="nvarchar(50)" null="F" p="F" />
-            <name="MOBILE" exp="联系电话" type="nvarchar(20)" null="F" p="F" />
-            <name="QQ" exp="QQ号码" type="nvarchar(20)" null="T" p="F" />
-            <name="AUDITSTATU" exp="审核状态" type="int" null="F" p="F" />
-            <name="AUDITOR" exp="审核人ID" type="nvarchar(50)" null="T" p="F" />
-            <name="AUDITORNAME" exp="审核人" type="nvarchar(50)" null="T" p="F" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="LOGINNAME" exp="用户名" type="nvarchar(50)" p="T" />
+            <name="LOGINPWD" exp="密码" type="nvarchar(64)" />
+            <name="REALNAME" exp="姓名" type="nvarchar(50)" />
+            <name="EMAIL" exp="电子邮箱" type="nvarchar(50)" />
+            <name="MOBILE" exp="联系电话" type="nvarchar(20)" />
+            <name="QQ" exp="QQ号码" type="nvarchar(20)" null="T" />
+            <name="AUDITSTATU" exp="审核状态" type="int" />
+            <name="AUDITOR" exp="审核人ID" type="nvarchar(50)" null="T" />
+            <name="AUDITORNAME" exp="审核人" type="nvarchar(50)" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_TPXT_TPYS" exp="投票样式库">
         <field_area>
-            <name="ID" exp="样式ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="NAME" exp="样式名" type="nvarchar(50)" null="F" p="F" />
-            <name="SHOWIMG" exp="效果图" type="nvarchar(500)" null="T" p="F" />
+            <name="ID" exp="样式ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="NAME" exp="样式名" type="nvarchar(50)" />
+            <name="SHOWIMG" exp="效果图" type="nvarchar(500)" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_TPXT_TPXX" exp="投票题目选项">
         <field_area>
-            <name="ID" exp="投票题目选项ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="TPID" exp="投票" type="int" null="F" p="F" />
-            <name="TMID" exp="投票题目" type="int" null="F" p="F" />
-            <name="TITLE" exp="标题" type="nvarchar(500)" null="T" p="F" />
-            <name="SUMTP" exp="已选人数" type="int" null="F" p="F" />
+            <name="ID" exp="投票题目选项ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="TPID" exp="投票" type="int" />
+            <name="TMID" exp="投票题目" type="int" />
+            <name="TITLE" exp="标题" type="nvarchar(500)" null="T" />
+            <name="SUMTP" exp="已选人数" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_TPXT_TPTM" exp="投票题目">
         <field_area>
-            <name="ID" exp="投票题目ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="TPID" exp="投票" type="int" null="F" p="F" />
-            <name="TYPEID" exp="投票形式" type="int" null="F" p="F" remark="（单选，多选）" />
-            <name="TITLE" exp="标题" type="nvarchar(500)" null="T" p="F" />
-            <name="CONTENT" exp="内容" type="text" null="T" p="F" />
+            <name="ID" exp="投票题目ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="TPID" exp="投票" type="int" />
+            <name="TYPEID" exp="投票形式" type="int" remark="（单选，多选）" />
+            <name="TITLE" exp="标题" type="nvarchar(500)" null="T" />
+            <name="CONTENT" exp="内容" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_TPXT_TPSZ" exp="投票设置">
         <field_area>
-            <name="ID" exp="投票设置ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="TITLE" exp="标题" type="nvarchar(500)" null="T" p="F" />
-            <name="CONTENT" exp="内容" type="text" null="T" p="F" />
-            <name="SHOWSTYLEID" exp="显示方式" type="int" null="T" p="F" />
-            <name="CSSID" exp="显示样式" type="int" null="F" p="F" />
-            <name="LOGINNAMELIST" exp="投票人" type="text" null="T" p="F" />
-            <name="STARTSTATU" exp="是否开启" type="int" null="F" p="F" />
+            <name="ID" exp="投票设置ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="TITLE" exp="标题" type="nvarchar(500)" null="T" />
+            <name="CONTENT" exp="内容" type="text" null="T" />
+            <name="SHOWSTYLEID" exp="显示方式" type="int" null="T" />
+            <name="CSSID" exp="显示样式" type="int" />
+            <name="LOGINNAMELIST" exp="投票人" type="text" null="T" />
+            <name="STARTSTATU" exp="是否开启" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_TPXT_TPJL" exp="投票记录">
         <field_area>
-            <name="ID" exp="投票记录ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="TPID" exp="投票" type="int" null="F" p="F" />
-            <name="TPIP" exp="投票人" type="nvarchar(128)" null="F" p="F" />
-            <name="TPTIME" exp="投票时间" type="datetime" null="F" p="F" />
+            <name="ID" exp="投票记录ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="TPID" exp="投票" type="int" />
+            <name="TPIP" exp="投票人" type="nvarchar(128)" />
+            <name="TPTIME" exp="投票时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_YQLJLX" exp="友情链接类型">
         <field_area>
-            <name="ID" exp="友情链接类型ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="NAME" exp="类型名" type="nvarchar(50)" null="F" p="F" />
-            <name="SHOWSTYLE" exp="显示方式" type="int" null="F" p="F" />
+            <name="ID" exp="友情链接类型ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="NAME" exp="类型名" type="nvarchar(50)" />
+            <name="SHOWSTYLE" exp="显示方式" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_YQLJ" exp="友情链接">
         <field_area>
-            <name="ID" exp="友情链接ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="TITLE" exp="标题" type="nvarchar(50)" null="F" p="F" />
-            <name="TYPEID" exp="类型" type="int" null="F" p="F" />
-            <name="IMAGEURL" exp="图片" type="nvarchar(500)" null="T" p="F" />
-            <name="URL" exp="链接" type="nvarchar(300)" null="F" p="F" />
+            <name="ID" exp="友情链接ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="TITLE" exp="标题" type="nvarchar(50)" />
+            <name="TYPEID" exp="类型" type="int" />
+            <name="IMAGEURL" exp="图片" type="nvarchar(500)" null="T" />
+            <name="URL" exp="链接" type="nvarchar(300)" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZYS" exp="样式库">
         <field_area>
-            <name="ID" exp="样式库ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="NAME" exp="样式名" type="nvarchar(50)" null="F" p="F" />
-            <name="SHOWIMG" exp="效果图" type="nvarchar(500)" null="T" p="F" />
+            <name="ID" exp="样式库ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="NAME" exp="样式名" type="nvarchar(50)" />
+            <name="SHOWIMG" exp="效果图" type="nvarchar(500)" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZWZ" exp="网站文章">
         <field_area>
-            <name="ID" exp="网站文章ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="TYPENAME" exp="类型名称" type="nvarchar(20)" null="T" p="F" />
-            <name="LMID" exp="栏目" type="int" null="F" p="F" />
-            <name="TITLE" exp="标题" type="nvarchar(100)" null="F" p="F" />
-            <name="PUBLISHERNAME" exp="发布人" type="nvarchar(50)" null="F" p="F" />
-            <name="AUTHOR" exp="作者" type="nvarchar(50)" null="F" p="F" />
-            <name="AUTHORDEPART" exp="作者部门" type="nvarchar(50)" null="T" p="F" />
-            <name="PUBLISHDATE" exp="发布时间" type="datetime" null="F" p="F" />
-            <name="CONTENT" exp="内容" type="text" null="T" p="F" />
-            <name="URL" exp="链接" type="nvarchar(300)" null="T" p="F" />
-            <name="IMAGEURL" exp="图片" type="nvarchar(300)" null="T" p="F" />
-            <name="ATTACHMENTNAME" exp="附件名" type="nvarchar(100)" null="T" p="F" />
-            <name="ATTACHMENT" exp="附件" type="nvarchar(300)" null="T" p="F" />
-            <name="CHICKNUB" exp="点击量" type="int" null="T" p="F" />
-            <name="AUDITSTATU" exp="审核状态" type="int" null="F" p="F" />
-            <name="AUDITOR" exp="审核人ID" type="nvarchar(50)" null="T" p="F" />
-            <name="AUDITORNAME" exp="审核人" type="nvarchar(50)" null="T" p="F" />
-            <name="AUDITTIME" exp="审核时间" type="datetime" null="F" p="F" />
-            <name="REMARK" exp="备注" type="nvarchar(300)" null="T" p="F" />
-            <name="SUMMARY" exp="摘要" type="text" null="T" p="F" />
-            <name="DISPLAYTYPE" exp="内外网" type="int" null="F" p="F" />
-            <name="OPENFLAG" exp="开启状态" type="int" null="F" p="F" />
-            <name="LLQX" exp="浏览权限" type="nvarchar(50)" null="T" p="F" />
-            <name="INDEXSHOW" exp="能否显示在主页上" type="int" null="F" p="F" />
-            <name="SFZD" exp="是否置顶" type="int" null="F" p="F" />
-            <name="ZDYXJ" exp="置顶优先级" type="int" null="F" p="F" />
+            <name="ID" exp="网站文章ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="TYPENAME" exp="类型名称" type="nvarchar(20)" null="T" />
+            <name="LMID" exp="栏目" type="int" />
+            <name="TITLE" exp="标题" type="nvarchar(100)" />
+            <name="PUBLISHERNAME" exp="发布人" type="nvarchar(50)" />
+            <name="AUTHOR" exp="作者" type="nvarchar(50)" />
+            <name="AUTHORDEPART" exp="作者部门" type="nvarchar(50)" null="T" />
+            <name="PUBLISHDATE" exp="发布时间" type="datetime" />
+            <name="CONTENT" exp="内容" type="text" null="T" />
+            <name="URL" exp="链接" type="nvarchar(300)" null="T" />
+            <name="IMAGEURL" exp="图片" type="nvarchar(300)" null="T" />
+            <name="ATTACHMENTNAME" exp="附件名" type="nvarchar(100)" null="T" />
+            <name="ATTACHMENT" exp="附件" type="nvarchar(300)" null="T" />
+            <name="CHICKNUB" exp="点击量" type="int" null="T" />
+            <name="AUDITSTATU" exp="审核状态" type="int" />
+            <name="AUDITOR" exp="审核人ID" type="nvarchar(50)" null="T" />
+            <name="AUDITORNAME" exp="审核人" type="nvarchar(50)" null="T" />
+            <name="AUDITTIME" exp="审核时间" type="datetime" />
+            <name="REMARK" exp="备注" type="nvarchar(300)" null="T" />
+            <name="SUMMARY" exp="摘要" type="text" null="T" />
+            <name="DISPLAYTYPE" exp="内外网" type="int" />
+            <name="OPENFLAG" exp="开启状态" type="int" />
+            <name="LLQX" exp="浏览权限" type="nvarchar(50)" null="T" />
+            <name="INDEXSHOW" exp="能否显示在主页上" type="int" />
+            <name="SFZD" exp="是否置顶" type="int" />
+            <name="ZDYXJ" exp="置顶优先级" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_XZYX" exp="校长邮箱">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" identity="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="F" />
-            <name="LXMC" exp="类型名称" type="nvarchar(20)" null="T" p="F" />
-            <name="XM" exp="姓名" type="nvarchar(36)" null="F" p="F" />
-            <name="XB" exp="性别" type="nvarchar(1)" null="F" p="F" />
-            <name="EMAIL" exp="Email地址" type="nvarchar(100)" null="F" p="F" />
-            <name="LXDH" exp="联系电话" type="nvarchar(100)" null="F" p="F" />
-            <name="LXDZ" exp="联系地址" type="nvarchar(100)" null="F" p="F" />
-            <name="JTDZ" exp="家庭地址" type="nvarchar(100)" null="F" p="F" />
-            <name="YZBM" exp="邮政编码" type="nvarchar(100)" null="F" p="F" />
-            <name="BT" exp="标题" type="nvarchar(100)" null="F" p="F" />
-            <name="ZW" exp="正文" type="text" null="F" p="F" />
-            <name="FJRIP" exp="发件人IP" type="nvarchar(20)" null="F" p="F" />
-            <name="FJSJ" exp="发件时间" type="datetime" null="F" p="F" />
-            <name="HFZT" exp="回复状态" type="int" null="F" p="F" />
-            <name="HFYHID" exp="回复用户ID" type="nvarchar(20)" null="F" p="F" />
-            <name="HFSJ" exp="回复时间" type="datetime" null="F" p="F" />
-            <name="HFNR" exp="回复内容" type="text" null="F" p="F" />
-            <name="SFZYXS" exp="是否主页显示" type="int" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="WEBID" exp="网站ID" type="int" />
+            <name="LXMC" exp="类型名称" type="nvarchar(20)" null="T" />
+            <name="XM" exp="姓名" type="nvarchar(36)" />
+            <name="XB" exp="性别" type="nvarchar(1)" />
+            <name="EMAIL" exp="Email地址" type="nvarchar(100)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(100)" />
+            <name="LXDZ" exp="联系地址" type="nvarchar(100)" />
+            <name="JTDZ" exp="家庭地址" type="nvarchar(100)" />
+            <name="YZBM" exp="邮政编码" type="nvarchar(100)" />
+            <name="BT" exp="标题" type="nvarchar(100)" />
+            <name="ZW" exp="正文" type="text" />
+            <name="FJRIP" exp="发件人IP" type="nvarchar(20)" />
+            <name="FJSJ" exp="发件时间" type="datetime" />
+            <name="HFZT" exp="回复状态" type="int" />
+            <name="HFYHID" exp="回复用户ID" type="nvarchar(20)" />
+            <name="HFSJ" exp="回复时间" type="datetime" />
+            <name="HFNR" exp="回复内容" type="text" />
+            <name="SFZYXS" exp="是否主页显示" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZPJ" exp="文章评价表">
         <field_area>
-            <name="ID" exp="评价ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="F" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="F" />
-            <name="WZID" exp="网站文章ID" type="int" null="F" p="F" />
-            <name="PJR" exp="评价人" type="nvarchar(50)" null="F" p="F" />
-            <name="YJDZ" exp="邮件地址" type="nvarchar(40)" null="F" p="F" />
-            <name="PJSJ" exp="评价时间" type="datetime" null="F" p="F" />
-            <name="PJNR" exp="评价内容" type="text" null="F" p="F" />
-            <name="PJZT" exp="评价状态" type="int" null="F" p="F" />
-            <name="SHR" exp="审核人" type="nvarchar(50)" null="T" p="F" />
-            <name="HF" exp="回复" type="text" null="F" p="F" />
+            <name="ID" exp="评价ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="WEBID" exp="网站ID" type="int" />
+            <name="WZID" exp="网站文章ID" type="int" />
+            <name="PJR" exp="评价人" type="nvarchar(50)" />
+            <name="YJDZ" exp="邮件地址" type="nvarchar(40)" />
+            <name="PJSJ" exp="评价时间" type="datetime" />
+            <name="PJNR" exp="评价内容" type="text" />
+            <name="PJZT" exp="评价状态" type="int" />
+            <name="SHR" exp="审核人" type="nvarchar(50)" null="T" />
+            <name="HF" exp="回复" type="text" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZPZ" exp="网站配置">
         <field_area>
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBNAME" exp="网站名" type="nvarchar(500)" null="F" p="F" />
-            <name="STATUID" exp="是否开启" type="int" null="F" p="F" remark="(默认不开启0)" />
-            <name="WEBURL" exp="网址" type="nvarchar(500)" null="F" p="F" />
-            <name="CSSID" exp="网站样式" type="int" null="F" p="F" />
-            <name="URL" exp="完整网址" type="nvarchar(500)" null="F" p="F" />
-            <name="YS" exp="页首" type="text" null="T" p="F" />
-            <name="YW" exp="页尾" type="text" null="T" p="F" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBNAME" exp="网站名" type="nvarchar(500)" />
+            <name="STATUID" exp="是否开启" type="int" remark="(默认不开启0)" />
+            <name="WEBURL" exp="网址" type="nvarchar(500)" />
+            <name="CSSID" exp="网站样式" type="int" />
+            <name="URL" exp="完整网址" type="nvarchar(500)" />
+            <name="YS" exp="页首" type="text" null="T" />
+            <name="YW" exp="页尾" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_NWIP" exp="内网IP配置">
         <field_area>
-            <name="ID" exp="内网IP配置ID" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="IP" exp="IP地址" type="nvarchar(40)" null="F" p="F" />
+            <name="ID" exp="内网IP配置ID" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="IP" exp="IP地址" type="nvarchar(40)" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZLM" exp="网站栏目（导航）">
         <field_area>
-            <name="ID" exp="网站栏目（导航）ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="LMSHOWSTYLE" exp="栏目使用类型" type="int" null="F" p="F" remark="（使用内容列表，还是图片加栏目链接）" />
-            <name="NAME" exp="栏目名称" type="nvarchar(50)" null="F" p="F" />
-            <name="URL" exp="栏目链接" type="nvarchar(300)" null="T" p="F" />
-            <name="IMAGEURL" exp="图片链接" type="nvarchar(300)" null="T" p="F" />
-            <name="DEPTH" exp="层级" type="int" null="F" p="F" />
-            <name="PID" exp="父目录" type="int" null="F" p="F" />
-            <name="LISTSHOWSTYLE" exp="列表显示型式" type="int" null="T" p="F" />
-            <name="ORDERTYPE" exp="排序方式" type="int" null="F" p="F" remark="（按时间方式：添加顺序、访问量）" />
-            <name="SHOWNUMBER" exp="显示个数" type="int" null="F" p="F" />
-            <name="OPENFLAG" exp="开启状态" type="int" null="F" p="F" remark="（0外，1内网）" />
-            <name="LLQX" exp="浏览权限" type="nvarchar(50)" null="T" p="F" />
-            <name="PLSX" exp="排列顺序" type="int" null="F" p="F" />
+            <name="ID" exp="网站栏目（导航）ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="LMSHOWSTYLE" exp="栏目使用类型" type="int" remark="（使用内容列表，还是图片加栏目链接）" />
+            <name="NAME" exp="栏目名称" type="nvarchar(50)" />
+            <name="URL" exp="栏目链接" type="nvarchar(300)" null="T" />
+            <name="IMAGEURL" exp="图片链接" type="nvarchar(300)" null="T" />
+            <name="DEPTH" exp="层级" type="int" />
+            <name="PID" exp="父目录" type="int" />
+            <name="LISTSHOWSTYLE" exp="列表显示型式" type="int" null="T" />
+            <name="ORDERTYPE" exp="排序方式" type="int" remark="（按时间方式：添加顺序、访问量）" />
+            <name="SHOWNUMBER" exp="显示个数" type="int" />
+            <name="OPENFLAG" exp="开启状态" type="int" remark="（0外，1内网）" />
+            <name="LLQX" exp="浏览权限" type="nvarchar(50)" null="T" />
+            <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_WZGG" exp="网站广告">
         <field_area>
-            <name="ID" exp="网站广告ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="SHOWTYPE" exp="显示型式" type="int" null="F" p="F" remark="（页内、浮动、弹窗、挂角）" />
-            <name="ADCONTENT" exp="广告内容" type="text" null="T" p="F" />
-            <name="GGLJ" exp="广告链接" type="nvarchar(150)" null="T" p="F" />
-            <name="SHOWSTATU" exp="是否显示" type="int" null="F" p="F" />
+            <name="ID" exp="网站广告ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="SHOWTYPE" exp="显示型式" type="int" remark="（页内、浮动、弹窗、挂角）" />
+            <name="ADCONTENT" exp="广告内容" type="text" null="T" />
+            <name="GGLJ" exp="广告链接" type="nvarchar(150)" null="T" />
+            <name="SHOWSTATU" exp="是否显示" type="int" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_FWLL" exp="访问履历">
         <field_area>
-            <name="ID" exp="访问履历ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="ACCESSIP" exp="访问IP" type="nvarchar(150)" null="F" p="F" />
-            <name="ACCESSURL" exp="访问链接" type="nvarchar(500)" null="F" p="F" />
-            <name="ACCESSTIME" exp="访问时间" type="datetime" null="F" p="F" />
+            <name="ID" exp="访问履历ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="ACCESSIP" exp="访问IP" type="nvarchar(150)" />
+            <name="ACCESSURL" exp="访问链接" type="nvarchar(500)" />
+            <name="ACCESSTIME" exp="访问时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_FBQX" exp="发布权限">
         <field_area>
-            <name="ID" exp="发布权限ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校名" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="LOGINNAME" exp="用户名" type="nvarchar(50)" null="F" p="F" />
-            <name="LMLIST" exp="栏目" type="text" null="F" p="F" />
-            <name="LMNAMELIST" exp="栏目文字" type="text" null="T" p="F" />
+            <name="ID" exp="发布权限ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校名" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="LOGINNAME" exp="用户名" type="nvarchar(50)" />
+            <name="LMLIST" exp="栏目" type="text" />
+            <name="LMNAMELIST" exp="栏目文字" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_JSXX" exp="角色信息表">
         <field_area>
-            <name="ID" exp="角色ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="JSMC" exp="角色名称" type="nvarchar(20)" null="F" p="F" />
-            <name="JSLX" exp="角色类型" type="int" null="F" p="F" />
-            <name="LMIDLB" exp="栏目ID列表" type="text" null="F" p="F" />
-            <name="LMMCLB" exp="栏目名称列表" type="text" null="T" p="F" />
+            <name="ID" exp="角色ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="JSMC" exp="角色名称" type="nvarchar(20)" />
+            <name="JSLX" exp="角色类型" type="int" />
+            <name="LMIDLB" exp="栏目ID列表" type="text" />
+            <name="LMMCLB" exp="栏目名称列表" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_YHQX" exp="用户权限表">
         <field_area>
-            <name="ID" exp="权限ID" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="LOGINNAME" exp="用户名" type="nvarchar(20)" null="F" p="F" />
-            <name="LX" exp="类型" type="int" null="F" p="F" />
-            <name="JSIDLST" exp="角色ID列表" type="text" null="F" p="F" />
-            <name="JSNAMELST" exp="角色名称列表" type="text" null="F" p="F" />
+            <name="ID" exp="权限ID" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="LOGINNAME" exp="用户名" type="nvarchar(20)" />
+            <name="LX" exp="类型" type="int" />
+            <name="JSIDLST" exp="角色ID列表" type="text" />
+            <name="JSNAMELST" exp="角色名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_WZXT_ZDJZ_WZMB" exp="网站模板表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="MBMC" exp="模板名称" type="nvarchar(300)" null="F" p="F" />
-            <name="WJJMC" exp="文件夹名称" type="nvarchar(300)" null="F" p="F" />
-            <name="WZLX" exp="网站类型" type="nvarchar(300)" null="F" p="F" />
-            <name="TP" exp="图片" type="nvarchar(300)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="MBMC" exp="模板名称" type="nvarchar(300)" />
+            <name="WJJMC" exp="文件夹名称" type="nvarchar(300)" />
+            <name="WZLX" exp="网站类型" type="nvarchar(300)" />
+            <name="TP" exp="图片" type="nvarchar(300)" />
         </field_area>
     </table>
     <table name="EDU_WZXT_ZDJZ_SYBK" exp="首页板块表">
         <field_area>
-            <name="ID" exp="编号" type="int" null="F" p="T" />
-            <name="SCHOOLID" exp="学校ID" type="int" null="F" p="T" />
-            <name="WEBID" exp="网站ID" type="int" null="F" p="T" />
-            <name="BKMC" exp="板块名称" type="nvarchar(300)" null="F" p="F" />
-            <name="XSFS" exp="显示方式" type="nvarchar(200)" null="F" p="F" />
-            <name="XWLYK" exp="新闻来源库" type="int" null="F" p="F" />
-            <name="XWLMID" exp="新闻栏目ID" type="text" null="F" p="F" />
-            <name="XWXSSL" exp="新闻显示数量" type="int" null="F" p="F" />
-            <name="PXFS" exp="排序方式" type="int" null="F" p="F" />
-            <name="BKLJ" exp="板块链接" type="nvarchar(500)" null="F" p="F" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="WEBID" exp="网站ID" type="int" p="T" />
+            <name="BKMC" exp="板块名称" type="nvarchar(300)" />
+            <name="XSFS" exp="显示方式" type="nvarchar(200)" />
+            <name="XWLYK" exp="新闻来源库" type="int" />
+            <name="XWLMID" exp="新闻栏目ID" type="text" />
+            <name="XWXSSL" exp="新闻显示数量" type="int" />
+            <name="PXFS" exp="排序方式" type="int" />
+            <name="BKLJ" exp="板块链接" type="nvarchar(500)" />
         </field_area>
     </table>
 </namespace>

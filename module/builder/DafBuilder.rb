@@ -86,8 +86,8 @@ class DafBuilder
     @daf_str << "#{@tab}#{@tab}#{@tab}<name=\"#{field.name}\" "
     @daf_str << "exp=\"#{field.explanation}\" "
     @daf_str << "type=\"#{field.type}\" "
-    @daf_str << "null=\"#{field.null}\" "
-    @daf_str << "p=\"#{field.p}\" "
+    @daf_str << "null=\"#{field.null}\" " if field.null == 'T'
+    @daf_str << "p=\"#{field.p}\" " if field.p == 'T'
     @daf_str << "identity=\"#{field.identity}\" " if field.identity == 'T'
     @daf_str << "remark=\"#{field.remark}\" " if field.has_remark?
     @daf_str << "default=\"#{field.default}\" " if field.default
