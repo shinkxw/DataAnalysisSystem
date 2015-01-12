@@ -87,6 +87,16 @@ namespace HanRuEdu.LDAL
             public String JTBG { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "Ä¿Â¼")]
+            public Int32 MLID { get; set; }
+
+
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉóºË×´Ì¬")]
+            public Int32 SHZT { get; set; }
+
+
         }
     }
 }

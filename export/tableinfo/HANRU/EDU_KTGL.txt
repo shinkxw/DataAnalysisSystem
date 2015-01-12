@@ -57,4 +57,6 @@ EDU_KTGL_05_A01_KTNR  课题内容
   YJFA          研究方案                text           非主
   YJCG          研究成果                text           非主
   JTBG          结题报告                text           非主
+  MLID          目录ID                  int            非主        课题目录
+  SHZT          审核状态                int            非主
 

@@ -3132,6 +3132,8 @@ SELECT a.[ID]--编号
       ,a.[YJFA]--研究方案
       ,a.[YJCG]--研究成果
       ,a.[JTBG]--结题报告
+      ,a.[MLID]--目录ID
+      ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_KTJB_SCHOOLID--课题级别 学校
       ,c.JBMC as c_KTJB_JBMC--课题级别 级别名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
@@ -3151,10 +3153,18 @@ SELECT a.[ID]--编号
       ,d.YHCJSJ as d_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,d.YHRY as d_USER_YHRY--应用系统用户表 用户荣誉
       ,d.YHJF as d_USER_YHJF--应用系统用户表 用户积分
+      ,e.SCHOOLID as e_KTML_SCHOOLID--课题目录 学校
+      ,e.MLMC as e_KTML_MLMC--课题目录 目录名称
+      ,e.FMLID as e_KTML_FMLID--课题目录 父目录ID
+      ,e.PLSX as e_KTML_PLSX--课题目录 排列顺序
+      ,e.SFSYZS as e_KTML_SFSYZS--课题目录 是否首页展示
+      ,e.SFQY as e_KTML_SFQY--课题目录 是否启用
+      ,e.URL as e_KTML_URL--课题目录 网址
 
 FROM dbo.EDU_KTGL_05_A01_KTNR AS a LEFT OUTER JOIN
       dbo.EDU_KTGL_01_A03_KTJB AS c ON a.KTJBID = c.ID /*课题级别ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.KTFZRID = d.LOGINNAME /*课题负责人*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+      dbo.EDU_ELE_01_USER AS d ON a.KTFZRID = d.LOGINNAME /*课题负责人*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_KTGL_01_A01_KTML AS e ON a.MLID = e.ID /*目录ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/
 GO
 
 --文件基本数据类表

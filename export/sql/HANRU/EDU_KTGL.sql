@@ -146,6 +146,8 @@ CREATE TABLE [dbo].[EDU_KTGL_05_A01_KTNR](
 	[YJFA]  text  NOT NULL,--研究方案
 	[YJCG]  text  NOT NULL,--研究成果
 	[JTBG]  text  NOT NULL,--结题报告
+	[MLID]  int  NOT NULL,--目录ID
+	[SHZT]  int  NOT NULL,--审核状态
 CONSTRAINT [PK_EDU_KTGL_05_A01_KTNR] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -263,4 +265,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'研究成果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'YJCG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结题报告' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'JTBG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'MLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'SHZT'
 GO

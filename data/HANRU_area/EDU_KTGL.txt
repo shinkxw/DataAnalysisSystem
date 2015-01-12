@@ -70,6 +70,8 @@
             <name="YJFA" exp="研究方案" type="text" />
             <name="YJCG" exp="研究成果" type="text" />
             <name="JTBG" exp="结题报告" type="text" />
+            <name="MLID" exp="目录ID" type="int" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
 </namespace>

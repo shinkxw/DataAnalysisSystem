@@ -149,6 +149,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KTJBID         EDU_KTGL_01_A03_KTJB               ID
   KTFZRID        EDU_ELE_01_USER                    LOGINNAME
+  MLID           EDU_KTGL_01_A01_KTML               ID
 <EDU_OAXT_01_01_WJJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   MJM            EDU_GB_WXBMZJ                      DM
