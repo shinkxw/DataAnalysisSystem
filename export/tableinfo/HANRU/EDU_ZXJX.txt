@@ -396,6 +396,13 @@ EDU_ZXJX_53_A01_XFZKC  学分制课程表
   SFSY          是否使用                int            非主
   PLSX          排列顺序                int            非主
 
+EDU_ZXJX_53_A02_XFZKKSJ  学分制开课时间表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  SJMC          时间名称                nvarchar(50)   非主
+  SDIDLB        时段ID列表              text           非主
+  SDMCLB        时段名称列表            text           非主
+
 EDU_ZXJX_53_A11_XFZXQJXJH  学分制学期教学计划表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -410,4 +417,25 @@ EDU_ZXJX_53_A12_XFZBXKCQD  学分制必修课程清单表
   JXJHID        教学计划ID              int            非主        学分制学期教学计划表
   KCID          课程ID                  int            非主        学分制课程表
   XF            学分                    decimal(3, 1)  非主
+
+EDU_ZXJX_53_A21_BXKJXBSJ  必修课教学班数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZRKJSID       主任课教师ID            int            非主        教职工基本数据子类表
+  FRKJSID       辅任课教师ID            int            非主        教职工基本数据子类表
+  KCID          课程ID                  int            非主        学分制课程表
+  KKSJID        开课时间ID              int            非主        学分制开课时间表
+  SKDD          上课地点                nvarchar(200)  非主
+  ZKS           总课时                  int            非主
+  BJKRNRS       班级可容纳人数          int            非主
+  ZDKBRS        最低开班人数            int            非主
+  ZT            状态                    int            非主
+  BZ            备注                    text           非主
+
+EDU_ZXJX_53_A22_XSBXKXKJL  学生必修课选课记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  BXKJXBID      必修课教学班ID          int            非主        必修课教学班数据表
 

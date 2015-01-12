@@ -472,6 +472,15 @@
             <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_53_A02_XFZKKSJ" exp="学分制开课时间表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="SJMC" exp="时间名称" type="nvarchar(50)" />
+            <name="SDIDLB" exp="时段ID列表" type="text" />
+            <name="SDMCLB" exp="时段名称列表" type="text" />
+        </field_area>
+    </table>
     <table name="EDU_ZXJX_53_A11_XFZXQJXJH" exp="学分制学期教学计划表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
@@ -489,6 +498,31 @@
             <name="JXJHID" exp="教学计划ID" type="int" />
             <name="KCID" exp="课程ID" type="int" />
             <name="XF" exp="学分" type="decimal(3, 1)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A21_BXKJXBSJ" exp="必修课教学班数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZRKJSID" exp="主任课教师ID" type="int" />
+            <name="FRKJSID" exp="辅任课教师ID" type="int" />
+            <name="KCID" exp="课程ID" type="int" />
+            <name="KKSJID" exp="开课时间ID" type="int" />
+            <name="SKDD" exp="上课地点" type="nvarchar(200)" />
+            <name="ZKS" exp="总课时" type="int" />
+            <name="BJKRNRS" exp="班级可容纳人数" type="int" />
+            <name="ZDKBRS" exp="最低开班人数" type="int" />
+            <name="ZT" exp="状态" type="int" />
+            <name="BZ" exp="备注" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A22_XSBXKXKJL" exp="学生必修课选课记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
         </field_area>
     </table>
 </namespace>
