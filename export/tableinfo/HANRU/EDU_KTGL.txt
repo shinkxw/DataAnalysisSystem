@@ -60,3 +60,9 @@ EDU_KTGL_05_A01_KTNR  课题内容
   MLID          目录ID                  int            非主        课题目录
   SHZT          审核状态                int            非主
 
+EDU_KTGL_06_A01_XZZQ  下载专区
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  BT            标题                    nvarchar(200)  非主
+  NR            内容                    text           非主
+

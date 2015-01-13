@@ -74,4 +74,12 @@
             <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
+    <table name="EDU_KTGL_06_A01_XZZQ" exp="下载专区">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
 </namespace>

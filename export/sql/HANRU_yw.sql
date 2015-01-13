@@ -2067,6 +2067,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_KTGL_05_A01_KTNR
             and   type = 'U')
    drop table EDU_KTGL_05_A01_KTNR
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_KTGL_06_A01_XZZQ')
+            and   type = 'U')
+   drop table EDU_KTGL_06_A01_XZZQ
+go
 --课题目录
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_KTGL_01_A01_KTML]') AND type in (N'U'))
 BEGIN
@@ -2195,6 +2200,22 @@ CONSTRAINT [PK_EDU_KTGL_05_A01_KTNR] PRIMARY KEY CLUSTERED
 END
 GO
 
+--下载专区
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_KTGL_06_A01_XZZQ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_KTGL_06_A01_XZZQ](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[BT]  nvarchar(200)  NOT NULL,--标题
+	[NR]  text  NOT NULL,--内容
+CONSTRAINT [PK_EDU_KTGL_06_A01_XZZQ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课题目录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_01_A01_KTML'
 GO
@@ -2307,6 +2328,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'目录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'MLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下载专区' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ', @level2type=N'COLUMN',@level2name=N'BT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ', @level2type=N'COLUMN',@level2name=N'NR'
 GO
 --空间名：EDU_OAXT  生成器：SqlBuilder0.1
 
