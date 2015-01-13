@@ -12,6 +12,8 @@ SELECT a.[ID]--编号
       ,a.[XQHJXX]--学期获奖信息
       ,a.[YXZSDXYWHHD]--印象最深的校园文化活动
       ,a.[HGBXQ]--回顾本学期
+      ,a.[DSJY]--导师寄语
+      ,a.[SJJH]--暑假计划
       ,a.[TJSJ]--添加时间
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年

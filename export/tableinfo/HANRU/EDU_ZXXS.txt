@@ -554,6 +554,8 @@ EDU_ZXXS_57_A22_DSZXSXQGHZJ  导师制学生学期规划总结表
   XQHJXX        学期获奖信息            text           非主
   YXZSDXYWHHD   印象最深的校园文化活动  text           非主
   HGBXQ         回顾本学期              text           非主
+  DSJY          导师寄语                text           非主
+  SJJH          暑假计划                text           非主
   TJSJ          添加时间                datetime       非主
 
 EDU_ZXXS_57_A23_DSZXSXQMYGH  导师制学生学期每月规划表

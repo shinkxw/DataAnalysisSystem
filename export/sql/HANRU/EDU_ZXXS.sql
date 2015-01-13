@@ -1263,6 +1263,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A22_DSZXSXQGHZJ](
 	[XQHJXX]  text  NOT NULL,--学期获奖信息
 	[YXZSDXYWHHD]  text  NOT NULL,--印象最深的校园文化活动
 	[HGBXQ]  text  NOT NULL,--回顾本学期
+	[DSJY]  text  NOT NULL,--导师寄语
+	[SJJH]  text  NOT NULL,--暑假计划
 	[TJSJ]  datetime  NOT NULL,--添加时间
 CONSTRAINT [PK_EDU_ZXXS_57_A22_DSZXSXQGHZJ] PRIMARY KEY CLUSTERED
 (
@@ -2318,6 +2320,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'印象最深的校园文化活动' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A22_DSZXSXQGHZJ', @level2type=N'COLUMN',@level2name=N'YXZSDXYWHHD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'回顾本学期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A22_DSZXSXQGHZJ', @level2type=N'COLUMN',@level2name=N'HGBXQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师寄语' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A22_DSZXSXQGHZJ', @level2type=N'COLUMN',@level2name=N'DSJY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'暑假计划' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A22_DSZXSXQGHZJ', @level2type=N'COLUMN',@level2name=N'SJJH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A22_DSZXSXQGHZJ', @level2type=N'COLUMN',@level2name=N'TJSJ'
 GO

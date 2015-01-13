@@ -15,6 +15,8 @@ namespace HanRuEdu.LDAL
             XQHJXX = "";
             YXZSDXYWHHD = "";
             HGBXQ = "";
+            DSJY = "";
+            SJJH = "";
             TJSJ = DateTime.Now;
         }
         public class EDU_ZXXS_57_A22_DSZXSXQGHZJ_metadata
@@ -73,6 +75,18 @@ namespace HanRuEdu.LDAL
             [Display(Name = "回顾本学期")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String HGBXQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "导师寄语")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DSJY { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "暑假计划")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SJJH { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

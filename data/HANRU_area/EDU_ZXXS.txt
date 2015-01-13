@@ -647,6 +647,8 @@
             <name="XQHJXX" exp="学期获奖信息" type="text" />
             <name="YXZSDXYWHHD" exp="印象最深的校园文化活动" type="text" />
             <name="HGBXQ" exp="回顾本学期" type="text" />
+            <name="DSJY" exp="导师寄语" type="text" />
+            <name="SJJH" exp="暑假计划" type="text" />
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
