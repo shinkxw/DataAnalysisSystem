@@ -82,4 +82,13 @@
             <name="NR" exp="内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_KTGL_07_A01_FWLL" exp="访问履历">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="FWIP" exp="访问IP" type="nvarchar(50)" />
+            <name="FWLJ" exp="访问链接" type="nvarchar(500)" />
+            <name="FWSJ" exp="访问时间" type="datetime" />
+        </field_area>
+    </table>
 </namespace>

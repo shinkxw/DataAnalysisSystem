@@ -525,4 +525,12 @@
             <name="BXKJXBID" exp="必修课教学班ID" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_53_A23_BXKECXKXS" exp="必修课二次选课学生表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+        </field_area>
+    </table>
 </namespace>

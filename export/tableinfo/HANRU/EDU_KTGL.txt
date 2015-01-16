@@ -66,3 +66,10 @@ EDU_KTGL_06_A01_XZZQ  下载专区
   BT            标题                    nvarchar(200)  非主
   NR            内容                    text           非主
 
+EDU_KTGL_07_A01_FWLL  访问履历
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  FWIP          访问IP                  nvarchar(50)   非主
+  FWLJ          访问链接                nvarchar(500)  非主
+  FWSJ          访问时间                datetime       非主
+

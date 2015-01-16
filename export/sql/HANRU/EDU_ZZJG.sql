@@ -245,6 +245,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_20_A08_XSPJ
    drop table EDU_ZZJG_20_A08_XSPJTJJL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_20_A09_XSPJTJJG')
+            and   type = 'U')
+   drop table EDU_ZZJG_20_A09_XSPJTJJG
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJG_21_A01_BMXSL')
             and   type = 'U')
    drop table EDU_ZZJG_21_A01_BMXSL
@@ -1437,6 +1442,30 @@ CREATE TABLE [dbo].[EDU_ZZJG_20_A08_XSPJTJJL](
 	[IP]  nvarchar(50)  NOT NULL,--IP地址
 	[TJSJ]  datetime  NOT NULL,--提交时间
 CONSTRAINT [PK_EDU_ZZJG_20_A08_XSPJTJJL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--学生评教统计结果表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJG_20_A09_XSPJTJJG]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJG_20_A09_XSPJTJJG](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[KPID]  int  NOT NULL,--考评ID
+	[JZGJBSJID]  int  NOT NULL,--教职工ID
+	[PJBJ]  nvarchar(50)  NOT NULL,--评教班级
+	[JXB]  nvarchar(50)  NOT NULL,--教学部
+	[JYZ]  nvarchar(50)  NOT NULL,--教研组
+	[PJXM]  nvarchar(50)  NOT NULL,--评教项目
+	[GRDXPJ]  nvarchar(50)  NOT NULL,--个人单项平均
+	[BJDXPJ]  nvarchar(50)  NOT NULL,--班级单项平均
+	[GRBJPJ]  nvarchar(50)  NOT NULL,--个人班级平均
+	[BJPJ]  nvarchar(50)  NOT NULL,--班级平均
+CONSTRAINT [PK_EDU_ZZJG_20_A09_XSPJTJJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -2853,6 +2882,32 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'IP地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A08_XSPJTJJL', @level2type=N'COLUMN',@level2name=N'IP'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'提交时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A08_XSPJTJJL', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生评教统计结果表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考评ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'KPID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'JZGJBSJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教班级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'PJBJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学部' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'JXB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教研组' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'JYZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教项目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'PJXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人单项平均' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'GRDXPJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级单项平均' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'BJDXPJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人班级平均' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'GRBJPJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级平均' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_20_A09_XSPJTJJG', @level2type=N'COLUMN',@level2name=N'BJPJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'部门行事历表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_21_A01_BMXSL'
 GO

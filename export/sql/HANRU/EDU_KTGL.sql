@@ -34,6 +34,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_KTGL_06_A01_XZZQ
             and   type = 'U')
    drop table EDU_KTGL_06_A01_XZZQ
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_KTGL_07_A01_FWLL')
+            and   type = 'U')
+   drop table EDU_KTGL_07_A01_FWLL
+go
 --课题目录
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_KTGL_01_A01_KTML]') AND type in (N'U'))
 BEGIN
@@ -178,6 +183,23 @@ CONSTRAINT [PK_EDU_KTGL_06_A01_XZZQ] PRIMARY KEY CLUSTERED
 END
 GO
 
+--访问履历
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_KTGL_07_A01_FWLL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_KTGL_07_A01_FWLL](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[FWIP]  nvarchar(50)  NOT NULL,--访问IP
+	[FWLJ]  nvarchar(500)  NOT NULL,--访问链接
+	[FWSJ]  datetime  NOT NULL,--访问时间
+CONSTRAINT [PK_EDU_KTGL_07_A01_FWLL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课题目录' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_01_A01_KTML'
 GO
@@ -300,4 +322,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标题' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ', @level2type=N'COLUMN',@level2name=N'BT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ', @level2type=N'COLUMN',@level2name=N'NR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'访问履历' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_07_A01_FWLL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_07_A01_FWLL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_07_A01_FWLL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'访问IP' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_07_A01_FWLL', @level2type=N'COLUMN',@level2name=N'FWIP'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'访问链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_07_A01_FWLL', @level2type=N'COLUMN',@level2name=N'FWLJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'访问时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_07_A01_FWLL', @level2type=N'COLUMN',@level2name=N'FWSJ'
 GO

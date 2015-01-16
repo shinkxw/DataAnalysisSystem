@@ -666,6 +666,22 @@
             <name="TJSJ" exp="提交时间" type="datetime" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_20_A09_XSPJTJJG" exp="学生评教统计结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="KPID" exp="考评ID" type="int" />
+            <name="JZGJBSJID" exp="教职工ID" type="int" />
+            <name="PJBJ" exp="评教班级" type="nvarchar(50)" />
+            <name="JXB" exp="教学部" type="nvarchar(50)" />
+            <name="JYZ" exp="教研组" type="nvarchar(50)" />
+            <name="PJXM" exp="评教项目" type="nvarchar(50)" />
+            <name="GRDXPJ" exp="个人单项平均" type="nvarchar(50)" />
+            <name="BJDXPJ" exp="班级单项平均" type="nvarchar(50)" />
+            <name="GRBJPJ" exp="个人班级平均" type="nvarchar(50)" />
+            <name="BJPJ" exp="班级平均" type="nvarchar(50)" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJG_21_A01_BMXSL" exp="部门行事历表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
