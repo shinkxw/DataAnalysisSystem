@@ -533,4 +533,42 @@
             <name="XSID" exp="学生ID" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_53_A24_BXKKTJLXM" exp="必修课课堂记录项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XMMC" exp="项目名称" type="nvarchar(200)" />
+            <name="SRLX" exp="输入类型" type="int" />
+            <name="MRZ" exp="默认值" type="nvarchar(200)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A25_BXKKTJLJG" exp="必修课课堂记录结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XKJLID" exp="选课记录ID" type="int" />
+            <name="XMID" exp="项目ID" type="int" />
+            <name="JG" exp="结果" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A26_BXKZYJLXM" exp="必修课作业记录项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XMMC" exp="项目名称" type="nvarchar(200)" />
+            <name="SRLX" exp="输入类型" type="int" />
+            <name="MRZ" exp="默认值" type="nvarchar(200)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A27_BXKZYJLJG" exp="必修课作业记录结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XKJLID" exp="选课记录ID" type="int" />
+            <name="XMID" exp="项目ID" type="int" />
+            <name="JG" exp="结果" type="nvarchar(200)" />
+        </field_area>
+    </table>
 </namespace>

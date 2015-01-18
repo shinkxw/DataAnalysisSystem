@@ -888,6 +888,18 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
   XSID           EDU_ZXXS_01_01_XSXX                ID
+<EDU_ZXJX_53_A24_BXKKTJLXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXJX_53_A25_BXKKTJLJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XKJLID         EDU_ZXJX_53_A22_XSBXKXKJL          ID
+  XMID           EDU_ZXJX_53_A24_BXKKTJLXM          ID
+<EDU_ZXJX_53_A26_BXKZYJLXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXJX_53_A27_BXKZYJLJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XKJLID         EDU_ZXJX_53_A22_XSBXKXKJL          ID
+  XMID           EDU_ZXJX_53_A26_BXKZYJLXM          ID
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM
