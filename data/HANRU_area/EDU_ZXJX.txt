@@ -533,7 +533,16 @@
             <name="XSID" exp="学生ID" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A24_BXKKTJLXM" exp="必修课课堂记录项目表">
+    <table name="EDU_ZXJX_53_A24_BXKKTNR" exp="必修课课堂内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="KTNR" exp="课堂内容" type="text" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A25_BXKKTJLXM" exp="必修课课堂记录项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -543,16 +552,26 @@
             <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A25_BXKKTJLJG" exp="必修课课堂记录结果表">
+    <table name="EDU_ZXJX_53_A26_BXKKTJLJG" exp="必修课课堂记录结果表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
-            <name="XKJLID" exp="选课记录ID" type="int" />
+            <name="KTNRID" exp="课堂内容ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
             <name="XMID" exp="项目ID" type="int" />
             <name="JG" exp="结果" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A26_BXKZYJLXM" exp="必修课作业记录项目表">
+    <table name="EDU_ZXJX_53_A27_BXKZYNR" exp="必修课作业内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="ZYNR" exp="作业内容" type="text" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A28_BXKZYJLXM" exp="必修课作业记录项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -562,11 +581,12 @@
             <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A27_BXKZYJLJG" exp="必修课作业记录结果表">
+    <table name="EDU_ZXJX_53_A29_BXKZYJLJG" exp="必修课作业记录结果表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
-            <name="XKJLID" exp="选课记录ID" type="int" />
+            <name="ZYNRID" exp="作业内容ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
             <name="XMID" exp="项目ID" type="int" />
             <name="JG" exp="结果" type="nvarchar(200)" />
         </field_area>
