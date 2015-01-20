@@ -32,6 +32,8 @@ SELECT a.[ID]--编号
       ,e.SFKPQX as e_PHZYDCJS_SFKPQX--平湖职业调查教师表 是否可评全校
       ,e.SFBQXP as e_PHZYDCJS_SFBQXP--平湖职业调查教师表 是否被全校评
       ,e.JXBID as e_PHZYDCJS_JXBID--平湖职业调查教师表 教学部ID
+      ,e.TMIDLB as e_PHZYDCJS_TMIDLB--平湖职业调查教师表 题目ID列表
+      ,e.TMMCLB as e_PHZYDCJS_TMMCLB--平湖职业调查教师表 题目名称列表
       ,f.SCHOOLID as f_PHZYDCJS_SCHOOLID--平湖职业调查教师表 学校
       ,f.XQID as f_PHZYDCJS_XQID--平湖职业调查教师表 学期ID
       ,f.JSID as f_PHZYDCJS_JSID--平湖职业调查教师表 教师ID
@@ -42,6 +44,8 @@ SELECT a.[ID]--编号
       ,f.SFKPQX as f_PHZYDCJS_SFKPQX--平湖职业调查教师表 是否可评全校
       ,f.SFBQXP as f_PHZYDCJS_SFBQXP--平湖职业调查教师表 是否被全校评
       ,f.JXBID as f_PHZYDCJS_JXBID--平湖职业调查教师表 教学部ID
+      ,f.TMIDLB as f_PHZYDCJS_TMIDLB--平湖职业调查教师表 题目ID列表
+      ,f.TMMCLB as f_PHZYDCJS_TMMCLB--平湖职业调查教师表 题目名称列表
       ,g.SCHOOLID as g_PHZYDCTM_SCHOOLID--平湖职业调查题目表 学校
       ,g.DFFSID as g_PHZYDCTM_DFFSID--平湖职业调查题目表 打分方式ID
       ,g.DCMCID as g_PHZYDCTM_DCMCID--平湖职业调查题目表 调查名称ID

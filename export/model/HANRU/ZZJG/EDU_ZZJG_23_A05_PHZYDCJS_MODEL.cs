@@ -11,6 +11,8 @@ namespace HanRuEdu.LDAL
         {
             JXB = "";
             XM = "";
+            TMIDLB = "";
+            TMMCLB = "";
         }
         public class EDU_ZZJG_23_A05_PHZYDCJS_metadata
         {
@@ -71,6 +73,18 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "教学部")]
             public Int32 JXBID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "题目ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TMIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "题目名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TMMCLB { get; set; }
 
 
         }

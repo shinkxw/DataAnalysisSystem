@@ -826,6 +826,8 @@
             <name="SFKPQX" exp="是否可评全校" type="int" />
             <name="SFBQXP" exp="是否被全校评" type="int" />
             <name="JXBID" exp="教学部ID" type="int" />
+            <name="TMIDLB" exp="题目ID列表" type="text" />
+            <name="TMMCLB" exp="题目名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_23_A06_PHZYDCJG" exp="平湖职业调查结果表">

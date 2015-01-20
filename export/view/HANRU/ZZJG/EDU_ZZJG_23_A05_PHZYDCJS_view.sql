@@ -13,6 +13,8 @@ SELECT a.[ID]--编号
       ,a.[SFKPQX]--是否可评全校
       ,a.[SFBQXP]--是否被全校评
       ,a.[JXBID]--教学部ID
+      ,a.[TMIDLB]--题目ID列表
+      ,a.[TMMCLB]--题目名称列表
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

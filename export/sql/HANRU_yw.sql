@@ -19807,6 +19807,8 @@ CREATE TABLE [dbo].[EDU_ZZJG_23_A05_PHZYDCJS](
 	[SFKPQX]  int  NOT NULL,--是否可评全校
 	[SFBQXP]  int  NOT NULL,--是否被全校评
 	[JXBID]  int  NOT NULL,--教学部ID
+	[TMIDLB]  text  NOT NULL,--题目ID列表
+	[TMMCLB]  text  NOT NULL,--题目名称列表
 CONSTRAINT [PK_EDU_ZZJG_23_A05_PHZYDCJS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -21196,6 +21198,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否被全校评' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A05_PHZYDCJS', @level2type=N'COLUMN',@level2name=N'SFBQXP'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学部ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A05_PHZYDCJS', @level2type=N'COLUMN',@level2name=N'JXBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'题目ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A05_PHZYDCJS', @level2type=N'COLUMN',@level2name=N'TMIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'题目名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A05_PHZYDCJS', @level2type=N'COLUMN',@level2name=N'TMMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'平湖职业调查结果表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_23_A06_PHZYDCJG'
 GO

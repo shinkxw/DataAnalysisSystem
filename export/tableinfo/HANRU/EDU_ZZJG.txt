@@ -697,6 +697,8 @@ EDU_ZZJG_23_A05_PHZYDCJS  平湖职业调查教师表
   SFKPQX        是否可评全校            int            非主
   SFBQXP        是否被全校评            int            非主
   JXBID         教学部ID                int            非主        平湖职业调查教学部表
+  TMIDLB        题目ID列表              text           非主
+  TMMCLB        题目名称列表            text           非主
 
 EDU_ZZJG_23_A06_PHZYDCJG  平湖职业调查结果表
   ID            编号                    int            自增主键
