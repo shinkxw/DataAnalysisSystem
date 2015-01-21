@@ -8,7 +8,7 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[DSID]--导师ID
       ,a.[NR]--内容
-      ,a.[DD]--等第
+      ,a.[DDID]--等第ID
       ,a.[TJSJ]--添加时间
       ,a.[BZ]--备注
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -87,11 +87,15 @@ SELECT a.[ID]--编号
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
+      ,f.SCHOOLID as f_DSZXSDD_SCHOOLID--导师制学生等第表 学校
+      ,f.BZ as f_DSZXSDD_BZ--导师制学生等第表 等第名称
+      ,f.XQID as f_DSZXSDD_XQID--导师制学生等第表 排列顺序
 
 FROM dbo.EDU_ZXXS_57_A17_DSZXSXQXJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_57_A03_DSZDS AS e ON a.DSID = e.ID /*导师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A18_DSZXSDD AS f ON a.DDID = f.ID /*等第ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN

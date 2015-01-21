@@ -48,7 +48,7 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "等第")]
-            public Int32 DD { get; set; }
+            public Int32 DDID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
