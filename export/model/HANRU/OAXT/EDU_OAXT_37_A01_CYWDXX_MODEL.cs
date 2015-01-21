@@ -64,6 +64,11 @@ namespace HanRuEdu.LDAL
             public Int32 LLRC { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "文档类型")]
+            public Int32 WDLXID { get; set; }
+
+
         }
     }
 }

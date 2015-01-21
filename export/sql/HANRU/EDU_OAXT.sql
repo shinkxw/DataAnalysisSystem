@@ -415,6 +415,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_37_A01_CYWD
    drop table EDU_OAXT_37_A01_CYWDXX
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_37_A02_CYWDLX')
+            and   type = 'U')
+   drop table EDU_OAXT_37_A02_CYWDLX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_38_A01_XWBSWZLB')
             and   type = 'U')
    drop table EDU_OAXT_38_A01_XWBSWZLB
@@ -443,6 +448,11 @@ go
 if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_39_A03_GWLZ')
             and   type = 'U')
    drop table EDU_OAXT_39_A03_GWLZ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_39_A04_GWBHSZ')
+            and   type = 'U')
+   drop table EDU_OAXT_39_A04_GWBHSZ
 go
 --文件基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_01_01_WJJBSJ]') AND type in (N'U'))
@@ -2314,9 +2324,28 @@ CREATE TABLE [dbo].[EDU_OAXT_37_A01_CYWDXX](
 	[FBSJ]  datetime  NOT NULL,--发布时间
 	[NR]  text  NOT NULL,--内容
 	[LLRC]  int  NOT NULL,--浏览人次
+	[WDLXID]  int  NOT NULL,--文档类型ID
 CONSTRAINT [PK_EDU_OAXT_37_A01_CYWDXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--常用文档类型表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_37_A02_CYWDLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_37_A02_CYWDLX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[LXMC]  nvarchar(200)  NOT NULL,--类型名称
+	[PLSX]  int  NOT NULL,--排列顺序
+	[BZ]  text  NOT NULL,--备注
+CONSTRAINT [PK_EDU_OAXT_37_A02_CYWDLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -2470,6 +2499,23 @@ CONSTRAINT [PK_EDU_OAXT_39_A03_GWLZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--公文编号设置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_39_A04_GWBHSZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_39_A04_GWBHSZ](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[BHQZ]  nvarchar(200)  NOT NULL,--编号前缀
+	[BHHZ]  nvarchar(200)  NOT NULL,--编号后缀
+	[DQLSH]  int  NOT NULL,--当前流水号
+CONSTRAINT [PK_EDU_OAXT_39_A04_GWBHSZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -4274,6 +4320,20 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'浏览人次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A01_CYWDXX', @level2type=N'COLUMN',@level2name=N'LLRC'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文档类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A01_CYWDXX', @level2type=N'COLUMN',@level2name=N'WDLXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'常用文档类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A02_CYWDLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A02_CYWDLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A02_CYWDLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A02_CYWDLX', @level2type=N'COLUMN',@level2name=N'LXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A02_CYWDLX', @level2type=N'COLUMN',@level2name=N'PLSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_37_A02_CYWDLX', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新闻报送文章类别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A01_XWBSWZLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_38_A01_XWBSWZLB', @level2type=N'COLUMN',@level2name=N'ID'
@@ -4437,4 +4497,16 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'删除状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'SCZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收回状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A03_GWLZ', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公文编号设置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A04_GWBHSZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A04_GWBHSZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A04_GWBHSZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号前缀' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A04_GWBHSZ', @level2type=N'COLUMN',@level2name=N'BHQZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号后缀' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A04_GWBHSZ', @level2type=N'COLUMN',@level2name=N'BHHZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前流水号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_39_A04_GWBHSZ', @level2type=N'COLUMN',@level2name=N'DQLSH'
 GO

@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[FBSJ]--发布时间
       ,a.[NR]--内容
       ,a.[LLRC]--浏览人次
+      ,a.[WDLXID]--文档类型ID
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
       ,'' as c_USER_PWD--应用系统用户表 密码
@@ -27,7 +28,12 @@ SELECT a.[ID]--编号
       ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
       ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
+      ,d.SCHOOLID as d_CYWDLX_SCHOOLID--常用文档类型表 学校ID
+      ,d.LXMC as d_CYWDLX_LXMC--常用文档类型表 类型名称
+      ,d.PLSX as d_CYWDLX_PLSX--常用文档类型表 排列顺序
+      ,d.BZ as d_CYWDLX_BZ--常用文档类型表 备注
 
 FROM dbo.EDU_OAXT_37_A01_CYWDXX AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+      dbo.EDU_ELE_01_USER AS c ON a.FBRID = c.LOGINNAME /*发布人ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_37_A02_CYWDLX AS d ON a.WDLXID = d.ID /*文档类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
 GO

@@ -1146,6 +1146,16 @@
             <name="FBSJ" exp="发布时间" type="datetime" />
             <name="NR" exp="内容" type="text" />
             <name="LLRC" exp="浏览人次" type="int" />
+            <name="WDLXID" exp="文档类型ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_37_A02_CYWDLX" exp="常用文档类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(200)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+            <name="BZ" exp="备注" type="text" />
         </field_area>
     </table>
     <table name="EDU_OAXT_38_A01_XWBSWZLB" exp="新闻报送文章类别">
@@ -1246,6 +1256,15 @@
             <name="FJ" exp="附件" type="text" />
             <name="SCZT" exp="删除状态" type="int" />
             <name="SHZT" exp="收回状态" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_39_A04_GWBHSZ" exp="公文编号设置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="BHQZ" exp="编号前缀" type="nvarchar(200)" />
+            <name="BHHZ" exp="编号后缀" type="nvarchar(200)" />
+            <name="DQLSH" exp="当前流水号" type="int" />
         </field_area>
     </table>
 </namespace>
