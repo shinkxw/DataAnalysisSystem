@@ -913,6 +913,17 @@
   ZYNRID         EDU_ZXJX_53_A27_BXKZYNR            ID
   XSID           EDU_ZXXS_01_01_XSXX                ID
   XMID           EDU_ZXJX_53_A28_BXKZYJLXM          ID
+<EDU_ZXJX_53_A41_BXKDYCS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BXKJXBID       EDU_ZXJX_53_A21_BXKJXBSJ           ID
+<EDU_ZXJX_53_A42_BXKDYCSCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DYCSID         EDU_ZXJX_53_A41_BXKDYCS            ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+<EDU_ZXJX_53_A46_BXKXXTKCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BXKJXBID       EDU_ZXJX_53_A21_BXKJXBSJ           ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM
