@@ -31778,6 +31778,7 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[JXBID]--教学班ID
       ,a.[CJ]--成绩
+      ,a.[WBPJ]--文本评价
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生信息数据表 学校名
       ,c.XH as c_XSXX_XH--学生信息数据表 学号
       ,c.XM as c_XSXX_XM--学生信息数据表 姓名

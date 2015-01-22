@@ -23549,6 +23549,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A05_XSXXKCJ](
 	[XSID]  int  NOT NULL,--学生ID
 	[JXBID]  int  NOT NULL,--教学班ID
 	[CJ]  decimal(5, 2)  NOT NULL,--成绩
+	[WBPJ]  nvarchar(50)  NOT NULL,--文本评价
 CONSTRAINT [PK_EDU_ZZJX_50_A05_XSXXKCJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -25292,6 +25293,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A05_XSXXKCJ', @level2type=N'COLUMN',@level2name=N'JXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A05_XSXXKCJ', @level2type=N'COLUMN',@level2name=N'CJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文本评价' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A05_XSXXKCJ', @level2type=N'COLUMN',@level2name=N'WBPJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课堂点名表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A06_KTDMB'
 GO

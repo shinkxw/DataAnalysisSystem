@@ -1005,6 +1005,7 @@
             <name="XSID" exp="学生ID" type="int" />
             <name="JXBID" exp="教学班ID" type="int" />
             <name="CJ" exp="成绩" type="decimal(5, 2)" />
+            <name="WBPJ" exp="文本评价" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A06_KTDMB" exp="课堂点名表">
