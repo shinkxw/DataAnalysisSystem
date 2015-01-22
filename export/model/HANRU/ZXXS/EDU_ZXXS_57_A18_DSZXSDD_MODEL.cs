@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXXS_57_A18_DSZXSDD()
         {
-            BZ = "";
+            DDMC = "";
         }
         public class EDU_ZXXS_57_A18_DSZXSDD_metadata
         {
@@ -27,12 +27,12 @@ namespace HanRuEdu.LDAL
             [Display(Name = "等第名称")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String BZ { get; set; }
+            public String DDMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "排列顺序")]
-            public Int32 XQID { get; set; }
+            public Int32 PLSX { get; set; }
 
 
         }

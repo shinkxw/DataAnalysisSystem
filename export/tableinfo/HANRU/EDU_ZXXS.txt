@@ -536,8 +536,8 @@ EDU_ZXXS_57_A17_DSZXSXQXJ  导师制学生学期小结表
 EDU_ZXXS_57_A18_DSZXSDD  导师制学生等第表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  BZ            等第名称                nvarchar(200)  非主
-  XQID          排列顺序                int            非主
+  DDMC          等第名称                nvarchar(200)  非主
+  PLSX          排列顺序                int            非主
 
 EDU_ZXXS_57_A21_DSZXSZWGH  导师制学生自我规划表
   ID            编号                    int            自增主键

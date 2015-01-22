@@ -1240,8 +1240,8 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXXS_57_A18_DSZXSDD](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[BZ]  nvarchar(200)  NOT NULL,--等第名称
-	[XQID]  int  NOT NULL,--排列顺序
+	[DDMC]  nvarchar(200)  NOT NULL,--等第名称
+	[PLSX]  int  NOT NULL,--排列顺序
 CONSTRAINT [PK_EDU_ZXXS_57_A18_DSZXSDD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2309,9 +2309,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A18_DSZXSDD', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'等第名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A18_DSZXSDD', @level2type=N'COLUMN',@level2name=N'BZ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'等第名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A18_DSZXSDD', @level2type=N'COLUMN',@level2name=N'DDMC'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A18_DSZXSDD', @level2type=N'COLUMN',@level2name=N'XQID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A18_DSZXSDD', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制学生自我规划表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A21_DSZXSZWGH'
 GO

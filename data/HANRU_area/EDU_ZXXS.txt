@@ -627,8 +627,8 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="BZ" exp="等第名称" type="nvarchar(200)" />
-            <name="XQID" exp="排列顺序" type="int" />
+            <name="DDMC" exp="等第名称" type="nvarchar(200)" />
+            <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A21_DSZXSZWGH" exp="导师制学生自我规划表">

@@ -18769,8 +18769,8 @@ SELECT a.[ID]--编号
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
       ,f.SCHOOLID as f_DSZXSDD_SCHOOLID--导师制学生等第表 学校
-      ,f.BZ as f_DSZXSDD_BZ--导师制学生等第表 等第名称
-      ,f.XQID as f_DSZXSDD_XQID--导师制学生等第表 排列顺序
+      ,f.DDMC as f_DSZXSDD_DDMC--导师制学生等第表 等第名称
+      ,f.PLSX as f_DSZXSDD_PLSX--导师制学生等第表 排列顺序
 
 FROM dbo.EDU_ZXXS_57_A17_DSZXSXQXJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
