@@ -1092,4 +1092,24 @@
             <name="PJNR" exp="评价内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_51_A01_YXKKC" exp="预选课课程表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="KCMC" exp="课程名称" type="nvarchar(50)" />
+            <name="KKJSID" exp="开课教师ID" type="int" />
+            <name="NJID" exp="年级ID列表" type="nvarchar(200)" />
+            <name="NJMCLB" exp="年级名称列表" type="nvarchar(200)" />
+            <name="KCJS" exp="课程介绍" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_51_A02_XSYXKJL" exp="学生预选课记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="KCID" exp="课程ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="XKSJ" exp="选课时间" type="datetime" />
+        </field_area>
+    </table>
 </namespace>

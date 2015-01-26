@@ -926,3 +926,19 @@ EDU_ZZJX_50_A17_PJXSPJ  评教学生评价表
   XSID          学生ID                  int            非主        学生信息数据表
   PJNR          评价内容                text           非主
 
+EDU_ZZJX_51_A01_YXKKC  预选课课程表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KCMC          课程名称                nvarchar(50)   非主
+  KKJSID        开课教师ID              int            非主        教职工基本数据子类表
+  NJID          年级ID列表              nvarchar(200)  非主
+  NJMCLB        年级名称列表            nvarchar(200)  非主
+  KCJS          课程介绍                text           非主
+
+EDU_ZZJX_51_A02_XSYXKJL  学生预选课记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  KCID          课程ID                  int            非主        预选课课程表
+  XSID          学生ID                  int            非主        学生信息数据表
+  XKSJ          选课时间                datetime       非主
+

@@ -544,6 +544,17 @@
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_57_A05_DSZXSMB" exp="导师制显示模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="MBLX" exp="模板类型" type="int" />
+            <name="NRLX" exp="内容类型" type="int" />
+            <name="MC" exp="名称" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZXXS_57_A11_DSZHD" exp="导师制活动表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />

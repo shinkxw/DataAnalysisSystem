@@ -466,6 +466,15 @@ EDU_ZXXS_57_A04_DSZDSXSJD  导师制导师学生结对表
   XSID          学生ID                  int            非主        学生基本数据子类表
   TJSJ          添加时间                datetime       非主
 
+EDU_ZXXS_57_A05_DSZXSMB  导师制显示模板表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MBLX          模板类型                int            非主
+  NRLX          内容类型                int            非主
+  MC            名称                    nvarchar(200)  非主
+  NR            内容                    text           非主
+  PLSX          排列顺序                int            非主
+
 EDU_ZXXS_57_A11_DSZHD  导师制活动表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
