@@ -578,3 +578,35 @@ EDU_ZXXS_57_A23_DSZXSXQMYGH  导师制学生学期每月规划表
   GDDS          感动的事                text           非主
   TJSJ          添加时间                datetime       非主
 
+EDU_ZXXS_57_A31_DSZXSXXLM  导师制学生信息栏目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  FLMID         父栏目ID                int            非主        导师制学生信息栏目表
+  LMMC          栏目名称                nvarchar(200)  非主
+  LMLX          栏目类型                int            非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZXXS_57_A32_DSZXSGRXX  导师制学生个人信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  LMID          栏目ID                  int            非主        导师制学生信息栏目表
+  NR            内容                    text           非主
+
+EDU_ZXXS_57_A33_DSZXSXQXX  导师制学生学期信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  XQID          学期ID                  int            非主        学期数据表
+  LMID          栏目ID                  int            非主        导师制学生信息栏目表
+  NR            内容                    text           非主
+
+EDU_ZXXS_57_A34_DSZXSMYXX  导师制学生每月信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  XQID          学期ID                  int            非主        学期数据表
+  YF            月份                    int            非主
+  LMID          栏目ID                  int            非主        导师制学生信息栏目表
+  NR            内容                    text           非主
+
