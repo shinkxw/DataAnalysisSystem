@@ -66,6 +66,11 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉóºË×´Ì¬")]
+            public Int32 SHZT { get; set; }
+
+
         }
     }
 }

@@ -63,6 +63,11 @@ namespace HanRuEdu.LDAL
             public DateTime TJSJ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉóºË×´Ì¬")]
+            public Int32 SHZT { get; set; }
+
+
         }
     }
 }

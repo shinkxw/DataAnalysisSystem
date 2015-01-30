@@ -52,6 +52,16 @@ namespace HanRuEdu.LDAL
             public Int32 PLSX { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "月份")]
+            public Int32 YF { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "位置")]
+            public Int32 WZ { get; set; }
+
+
         }
     }
 }

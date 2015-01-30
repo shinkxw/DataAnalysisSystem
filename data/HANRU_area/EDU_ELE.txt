@@ -22,6 +22,21 @@
             <name="YHJF" exp="用户积分" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ELE_01_ZCYH" exp="注册用户表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="LOGINNAME" exp="用户名" type="nvarchar(20)" />
+            <name="PWD" exp="密码" type="nvarchar(100)" cover="''" />
+            <name="XM" exp="姓名" type="nvarchar(36)" />
+            <name="XB" exp="性别" type="nvarchar(10)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(30)" />
+            <name="DZYX" exp="电子邮箱" type="nvarchar(100)" />
+            <name="QQ" exp="QQ" type="nvarchar(10)" />
+            <name="SHZT" exp="审核状态" type="int" />
+            <name="ZCSJ" exp="注册时间" type="datetime" />
+        </field_area>
+    </table>
     <table name="EDU_ELE_01_APP" exp="应用表">
         <field_area>
             <name="ID" exp="应用ID" type="int" p="T" />

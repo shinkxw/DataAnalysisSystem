@@ -18,6 +18,19 @@ EDU_ELE_01_USER  应用系统用户表
   YHRY          用户荣誉                int            非主
   YHJF          用户积分                int            非主
 
+EDU_ELE_01_ZCYH  注册用户表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  LOGINNAME     用户名                  nvarchar(20)   非主
+  PWD           密码                    nvarchar(100)  非主
+  XM            姓名                    nvarchar(36)   非主
+  XB            性别                    nvarchar(10)   非主
+  LXDH          联系电话                nvarchar(30)   非主
+  DZYX          电子邮箱                nvarchar(100)  非主
+  QQ            QQ                      nvarchar(10)   非主
+  SHZT          审核状态                int            非主
+  ZCSJ          注册时间                datetime       非主
+
 EDU_ELE_01_APP  应用表
   ID            应用ID                  int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表

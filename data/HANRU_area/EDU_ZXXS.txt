@@ -553,6 +553,8 @@
             <name="MC" exp="名称" type="nvarchar(200)" />
             <name="NR" exp="内容" type="text" />
             <name="PLSX" exp="排列顺序" type="int" />
+            <name="YF" exp="月份" type="int" />
+            <name="WZ" exp="位置" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A11_DSZHD" exp="导师制活动表">
@@ -579,6 +581,7 @@
             <name="JTBX" exp="具体表现" type="text" />
             <name="PJNR" exp="评价内容" type="nvarchar(200)" />
             <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A14_DSZXSZWDR" exp="导师制学生职务担任表">
@@ -593,6 +596,7 @@
             <name="JSSJ" exp="结束时间" type="datetime" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A15_DSZXSJCJL" exp="导师制学生奖惩记录表">
@@ -606,6 +610,7 @@
             <name="JCNR" exp="奖惩内容" type="text" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A16_DSZXSQJJL" exp="导师制学生请假记录表">
@@ -619,6 +624,7 @@
             <name="QJNR" exp="请假内容" type="text" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A17_DSZXSXQXJ" exp="导师制学生学期小结表">
@@ -632,6 +638,7 @@
             <name="DDID" exp="等第ID" type="int" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="SHZT" exp="审核状态" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A18_DSZXSDD" exp="导师制学生等第表">

@@ -5,6 +5,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_USER')
    drop table EDU_ELE_01_USER
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_ZCYH')
+            and   type = 'U')
+   drop table EDU_ELE_01_ZCYH
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_APP')
             and   type = 'U')
    drop table EDU_ELE_01_APP
@@ -165,6 +170,29 @@ CONSTRAINT [PK_EDU_ELE_01_USER] PRIMARY KEY CLUSTERED
 (
 	[LOGINNAME] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--注册用户表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_ZCYH]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_01_ZCYH](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[LOGINNAME]  nvarchar(20)  NOT NULL,--用户名
+	[PWD]  nvarchar(100)  NOT NULL,--密码
+	[XM]  nvarchar(36)  NOT NULL,--姓名
+	[XB]  nvarchar(10)  NOT NULL,--性别
+	[LXDH]  nvarchar(30)  NOT NULL,--联系电话
+	[DZYX]  nvarchar(100)  NOT NULL,--电子邮箱
+	[QQ]  nvarchar(10)  NOT NULL,--QQ
+	[SHZT]  int  NOT NULL,--审核状态
+	[ZCSJ]  datetime  NOT NULL,--注册时间
+CONSTRAINT [PK_EDU_ELE_01_ZCYH] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -743,6 +771,30 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户荣誉' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHRY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户积分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_USER', @level2type=N'COLUMN',@level2name=N'YHJF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'注册用户表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'LOGINNAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'密码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'PWD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'XM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'性别' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'XB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'联系电话' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'LXDH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电子邮箱' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'DZYX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'QQ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'QQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'注册时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ZCYH', @level2type=N'COLUMN',@level2name=N'ZCSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APP'
 GO

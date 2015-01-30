@@ -18258,6 +18258,7 @@ SELECT a.[ID]--编号
       ,a.[JTBX]--具体表现
       ,a.[PJNR]--评价内容
       ,a.[TJSJ]--添加时间
+      ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -18380,6 +18381,7 @@ SELECT a.[ID]--编号
       ,a.[JSSJ]--结束时间
       ,a.[TJSJ]--添加时间
       ,a.[BZ]--备注
+      ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -18492,6 +18494,7 @@ SELECT a.[ID]--编号
       ,a.[JCNR]--奖惩内容
       ,a.[TJSJ]--添加时间
       ,a.[BZ]--备注
+      ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -18604,6 +18607,7 @@ SELECT a.[ID]--编号
       ,a.[QJNR]--请假内容
       ,a.[TJSJ]--添加时间
       ,a.[BZ]--备注
+      ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -18716,6 +18720,7 @@ SELECT a.[ID]--编号
       ,a.[DDID]--等第ID
       ,a.[TJSJ]--添加时间
       ,a.[BZ]--备注
+      ,a.[SHZT]--审核状态
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

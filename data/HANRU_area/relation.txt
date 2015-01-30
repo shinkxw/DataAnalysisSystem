@@ -13,6 +13,8 @@
 <EDU_ELE_01_USER
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
+<EDU_ELE_01_ZCYH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_01_APP
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_01_SCHOOL
