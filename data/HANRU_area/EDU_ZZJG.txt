@@ -862,6 +862,16 @@
             <name="MESX" exp="名额上限" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_23_A09_PHZYDCJXBTMSX" exp="平湖职业调查教学部题目上限表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="DCMCID" exp="调查名称ID" type="int" />
+            <name="JXBID" exp="教学部ID" type="int" />
+            <name="TMID" exp="题目ID" type="int" />
+            <name="MESX" exp="名额上限" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJG_24_A01_KQSJD" exp="考勤时间段表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
