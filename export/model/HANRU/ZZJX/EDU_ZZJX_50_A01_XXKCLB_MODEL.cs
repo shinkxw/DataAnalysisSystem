@@ -37,6 +37,16 @@ namespace HanRuEdu.LDAL
             public String JJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "最高同时选课数量")]
+            public Int32 ZGTSXKSL { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否允许同名课程多选")]
+            public Int32 SFYXTMKCDX { get; set; }
+
+
         }
     }
 }

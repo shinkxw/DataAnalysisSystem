@@ -819,6 +819,8 @@ EDU_ZZJX_50_A01_XXKCLB  选修课程类别表
   SCHOOLID      学校                    int            非主        学校配置表
   LBMC          类别名称                nvarchar(100)  非主
   JJ            简介                    text           非主
+  ZGTSXKSL      最高同时选课数量        int            非主
+  SFYXTMKCDX    是否允许同名课程多选    int            非主
 
 EDU_ZZJX_50_A02_KKSJ  开课时间表
   ID            编号                    int            自增主键

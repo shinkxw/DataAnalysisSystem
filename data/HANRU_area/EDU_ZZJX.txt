@@ -958,6 +958,8 @@
             <name="SCHOOLID" exp="学校" type="int" />
             <name="LBMC" exp="类别名称" type="nvarchar(100)" />
             <name="JJ" exp="简介" type="text" />
+            <name="ZGTSXKSL" exp="最高同时选课数量" type="int" default="100" />
+            <name="SFYXTMKCDX" exp="是否允许同名课程多选" type="int" default="1" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A02_KKSJ" exp="开课时间表">

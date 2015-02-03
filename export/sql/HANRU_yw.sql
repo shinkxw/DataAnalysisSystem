@@ -23784,6 +23784,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A01_XXKCLB](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[LBMC]  nvarchar(100)  NOT NULL,--类别名称
 	[JJ]  text  NOT NULL,--简介
+	[ZGTSXKSL]  int  NOT NULL,--最高同时选课数量
+	[SFYXTMKCDX]  int  NOT NULL,--是否允许同名课程多选
 CONSTRAINT [PK_EDU_ZZJX_50_A01_XXKCLB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -25574,6 +25576,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类别名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A01_XXKCLB', @level2type=N'COLUMN',@level2name=N'LBMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'简介' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A01_XXKCLB', @level2type=N'COLUMN',@level2name=N'JJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高同时选课数量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A01_XXKCLB', @level2type=N'COLUMN',@level2name=N'ZGTSXKSL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否允许同名课程多选' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A01_XXKCLB', @level2type=N'COLUMN',@level2name=N'SFYXTMKCDX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开课时间表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A02_KKSJ'
 GO

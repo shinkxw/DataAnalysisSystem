@@ -31969,6 +31969,8 @@ SELECT a.[ID]--编号
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介
+      ,c.ZGTSXKSL as c_XXKCLB_ZGTSXKSL--选修课程类别表 最高同时选课数量
+      ,c.SFYXTMKCDX as c_XXKCLB_SFYXTMKCDX--选修课程类别表 是否允许同名课程多选
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
