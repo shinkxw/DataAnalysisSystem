@@ -29,6 +29,8 @@ SELECT a.[ID]--编号
       ,d.SKDD as d_JXBSJ_SKDD--教学班数据表 上课地点
       ,d.BJKRNRS as d_JXBSJ_BJKRNRS--教学班数据表 班级可容纳人数
       ,d.ZDKBRS as d_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
+      ,d.BJIDLB as d_JXBSJ_BJIDLB--教学班数据表 班级ID列表
+      ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名

@@ -2023,14 +2023,16 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A03_JXBSJ](
 	[ZKS]  int  NOT NULL,--总课时
 	[XF]  decimal(5, 1)  NOT NULL,--学分
 	[XQID]  int  NOT NULL,--学期ID
-	[NJID]  nvarchar(200)  NOT NULL,--年级ID列表
-	[NJMCLB]  nvarchar(200)  NOT NULL,--年级名称列表
+	[NJID]  text  NOT NULL,--年级ID列表
+	[NJMCLB]  text  NOT NULL,--年级名称列表
 	[DQZT]  int  NOT NULL,--当前状态
 	[KKJSID]  int  NOT NULL,--开课教师ID
 	[SKSJID]  int  NOT NULL,--上课时间ID
 	[SKDD]  nvarchar(100)  NOT NULL,--上课地点
 	[BJKRNRS]  int  NOT NULL,--班级可容纳人数
 	[ZDKBRS]  int  NOT NULL,--最低开班人数
+	[BJIDLB]  text  NOT NULL,--班级ID列表
+	[BJMCLB]  text  NOT NULL,--班级名称列表
 CONSTRAINT [PK_EDU_ZZJX_50_A03_JXBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -3827,6 +3829,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级可容纳人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'BJKRNRS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最低开班人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'ZDKBRS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'BJIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'BJMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生选课记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A04_XSXKJL'
 GO

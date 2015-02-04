@@ -31966,6 +31966,8 @@ SELECT a.[ID]--编号
       ,a.[SKDD]--上课地点
       ,a.[BJKRNRS]--班级可容纳人数
       ,a.[ZDKBRS]--最低开班人数
+      ,a.[BJIDLB]--班级ID列表
+      ,a.[BJMCLB]--班级名称列表
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介
@@ -32152,6 +32154,8 @@ SELECT a.[ID]--编号
       ,d.SKDD as d_JXBSJ_SKDD--教学班数据表 上课地点
       ,d.BJKRNRS as d_JXBSJ_BJKRNRS--教学班数据表 班级可容纳人数
       ,d.ZDKBRS as d_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
+      ,d.BJIDLB as d_JXBSJ_BJIDLB--教学班数据表 班级ID列表
+      ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -32248,6 +32252,8 @@ SELECT a.[ID]--编号
       ,d.SKDD as d_JXBSJ_SKDD--教学班数据表 上课地点
       ,d.BJKRNRS as d_JXBSJ_BJKRNRS--教学班数据表 班级可容纳人数
       ,d.ZDKBRS as d_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
+      ,d.BJIDLB as d_JXBSJ_BJIDLB--教学班数据表 班级ID列表
+      ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
 
 FROM dbo.EDU_ZZJX_50_A05_XSXXKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -32294,6 +32300,8 @@ SELECT a.[ID]--编号
       ,c.SKDD as c_JXBSJ_SKDD--教学班数据表 上课地点
       ,c.BJKRNRS as c_JXBSJ_BJKRNRS--教学班数据表 班级可容纳人数
       ,c.ZDKBRS as c_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
+      ,c.BJIDLB as c_JXBSJ_BJIDLB--教学班数据表 班级ID列表
+      ,c.BJMCLB as c_JXBSJ_BJMCLB--教学班数据表 班级名称列表
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -32517,6 +32525,8 @@ SELECT a.[ID]--编号
       ,d.SKDD as d_JXBSJ_SKDD--教学班数据表 上课地点
       ,d.BJKRNRS as d_JXBSJ_BJKRNRS--教学班数据表 班级可容纳人数
       ,d.ZDKBRS as d_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
+      ,d.BJIDLB as d_JXBSJ_BJIDLB--教学班数据表 班级ID列表
+      ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
@@ -32707,6 +32717,8 @@ SELECT a.[ID]--编号
       ,d.SKDD as d_JXBSJ_SKDD--教学班数据表 上课地点
       ,d.BJKRNRS as d_JXBSJ_BJKRNRS--教学班数据表 班级可容纳人数
       ,d.ZDKBRS as d_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
+      ,d.BJIDLB as d_JXBSJ_BJIDLB--教学班数据表 班级ID列表
+      ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名

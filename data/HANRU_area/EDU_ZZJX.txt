@@ -982,14 +982,16 @@
             <name="ZKS" exp="总课时" type="int" />
             <name="XF" exp="学分" type="decimal(5, 1)" />
             <name="XQID" exp="学期ID" type="int" />
-            <name="NJID" exp="年级ID列表" type="nvarchar(200)" />
-            <name="NJMCLB" exp="年级名称列表" type="nvarchar(200)" />
+            <name="NJID" exp="年级ID列表" type="text" />
+            <name="NJMCLB" exp="年级名称列表" type="text" />
             <name="DQZT" exp="当前状态" type="int" />
             <name="KKJSID" exp="开课教师ID" type="int" />
             <name="SKSJID" exp="上课时间ID" type="int" />
             <name="SKDD" exp="上课地点" type="nvarchar(100)" />
             <name="BJKRNRS" exp="班级可容纳人数" type="int" />
             <name="ZDKBRS" exp="最低开班人数" type="int" />
+            <name="BJIDLB" exp="班级ID列表" type="text" />
+            <name="BJMCLB" exp="班级名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A04_XSXKJL" exp="学生选课记录表">

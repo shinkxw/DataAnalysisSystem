@@ -15,6 +15,8 @@ namespace HanRuEdu.LDAL
             NJID = "";
             NJMCLB = "";
             SKDD = "";
+            BJIDLB = "";
+            BJMCLB = "";
         }
         public class EDU_ZZJX_50_A03_JXBSJ_metadata
         {
@@ -70,14 +72,12 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "年级ID列表")]
-            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String NJID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "年级名称列表")]
-            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String NJMCLB { get; set; }
 
@@ -112,6 +112,18 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "最低开班人数")]
             public Int32 ZDKBRS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJMCLB { get; set; }
 
 
         }
