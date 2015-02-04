@@ -100,10 +100,11 @@ class Sql
   end
   #转移表数据
   def self.transfer_data(otn,nt)
+    fields_name = nt.get_field_name_arr.join('] ,[')
     sql = ''
     sql << "SET IDENTITY_INSERT [dbo].[#{nt.name}] ON\n" if nt.has_identity?#存在自增字段
-    sql << "INSERT INTO [#{nt.name}]([#{nt.get_field_name_arr.join('] ,[')}]) "
-    sql << "SELECT * from #{otn}\n"
+    sql << "INSERT INTO [#{nt.name}]([#{fields_name}]) "
+    sql << "SELECT [#{fields_name}] from #{otn}\n"
     sql << "SET IDENTITY_INSERT [dbo].[#{nt.name}] OFF\n" if nt.has_identity?#存在自增字段
     sql
   end
