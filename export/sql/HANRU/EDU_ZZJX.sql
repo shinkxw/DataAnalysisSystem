@@ -410,6 +410,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_50_A17_PJXS
    drop table EDU_ZZJX_50_A17_PJXSPJ
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_50_A21_XKJGFXPZ')
+            and   type = 'U')
+   drop table EDU_ZZJX_50_A21_XKJGFXPZ
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_51_A01_YXKKC')
             and   type = 'U')
    drop table EDU_ZZJX_51_A01_YXKKC
@@ -2234,6 +2239,25 @@ CONSTRAINT [PK_EDU_ZZJX_50_A17_PJXSPJ] PRIMARY KEY CLUSTERED
 END
 GO
 
+--选课结果分析配置表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_50_A21_XKJGFXPZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_50_A21_XKJGFXPZ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[XQ]  int  NOT NULL,--星期
+	[SFBXXK]  int  NOT NULL,--是否必须选课
+	[XKSLSX]  int  NOT NULL,--选课数量上限
+	[XKSLXX]  int  NOT NULL,--选课数量下限
+CONSTRAINT [PK_EDU_ZZJX_50_A21_XKJGFXPZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --预选课课程表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_51_A01_YXKKC]') AND type in (N'U'))
 BEGIN
@@ -3971,6 +3995,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A17_PJXSPJ', @level2type=N'COLUMN',@level2name=N'XSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A17_PJXSPJ', @level2type=N'COLUMN',@level2name=N'PJNR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课结果分析配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'星期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'XQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否必须选课' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'SFBXXK'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课数量上限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'XKSLSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课数量下限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'XKSLXX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'预选课课程表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A01_YXKKC'
 GO

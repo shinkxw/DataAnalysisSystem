@@ -1096,6 +1096,16 @@
             <name="PJNR" exp="评价内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_50_A21_XKJGFXPZ" exp="选课结果分析配置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQ" exp="星期" type="int" />
+            <name="SFBXXK" exp="是否必须选课" type="int" />
+            <name="XKSLSX" exp="选课数量上限" type="int" />
+            <name="XKSLXX" exp="选课数量下限" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_51_A01_YXKKC" exp="预选课课程表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />

@@ -930,6 +930,14 @@ EDU_ZZJX_50_A17_PJXSPJ  评教学生评价表
   XSID          学生ID                  int            非主        学生信息数据表
   PJNR          评价内容                text           非主
 
+EDU_ZZJX_50_A21_XKJGFXPZ  选课结果分析配置表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQ            星期                    int            非主
+  SFBXXK        是否必须选课            int            非主
+  XKSLSX        选课数量上限            int            非主
+  XKSLXX        选课数量下限            int            非主
+
 EDU_ZZJX_51_A01_YXKKC  预选课课程表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
