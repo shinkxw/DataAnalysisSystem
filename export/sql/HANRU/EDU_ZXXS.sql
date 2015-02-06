@@ -1382,6 +1382,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A31_DSZXSXXLM](
 	[LMMC]  nvarchar(200)  NOT NULL,--栏目名称
 	[LMLX]  int  NOT NULL,--栏目类型
 	[PLSX]  int  NOT NULL,--排列顺序
+	[SFXYBJ]  int  NOT NULL,--是否需要编辑
+	[MBNR]  text  NOT NULL,--模板内容
 CONSTRAINT [PK_EDU_ZXXS_57_A31_DSZXSXXLM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2556,6 +2558,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A31_DSZXSXXLM', @level2type=N'COLUMN',@level2name=N'LMLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A31_DSZXSXXLM', @level2type=N'COLUMN',@level2name=N'PLSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否需要编辑' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A31_DSZXSXXLM', @level2type=N'COLUMN',@level2name=N'SFXYBJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模板内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A31_DSZXSXXLM', @level2type=N'COLUMN',@level2name=N'MBNR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制学生个人信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A32_DSZXSGRXX'
 GO

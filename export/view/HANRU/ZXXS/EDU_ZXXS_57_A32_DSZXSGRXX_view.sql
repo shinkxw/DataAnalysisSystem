@@ -76,6 +76,8 @@ SELECT a.[ID]--编号
       ,d.LMMC as d_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
       ,d.LMLX as d_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
       ,d.PLSX as d_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
+      ,d.SFXYBJ as d_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
+      ,d.MBNR as d_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
 
 FROM dbo.EDU_ZXXS_57_A32_DSZXSGRXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

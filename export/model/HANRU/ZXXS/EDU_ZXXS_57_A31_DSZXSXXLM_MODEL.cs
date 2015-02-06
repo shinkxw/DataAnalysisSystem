@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZXXS_57_A31_DSZXSXXLM()
         {
             LMMC = "";
+            MBNR = "";
         }
         public class EDU_ZXXS_57_A31_DSZXSXXLM_metadata
         {
@@ -43,6 +44,17 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "排列顺序")]
             public Int32 PLSX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否需要编辑")]
+            public Int32 SFXYBJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "模板内容")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String MBNR { get; set; }
 
 
         }

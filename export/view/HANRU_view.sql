@@ -19153,11 +19153,15 @@ SELECT a.[ID]--编号
       ,a.[LMMC]--栏目名称
       ,a.[LMLX]--栏目类型
       ,a.[PLSX]--排列顺序
+      ,a.[SFXYBJ]--是否需要编辑
+      ,a.[MBNR]--模板内容
       ,c.SCHOOLID as c_DSZXSXXLM_SCHOOLID--导师制学生信息栏目表 学校
       ,c.FLMID as c_DSZXSXXLM_FLMID--导师制学生信息栏目表 父栏目ID
       ,c.LMMC as c_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
       ,c.LMLX as c_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
       ,c.PLSX as c_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
+      ,c.SFXYBJ as c_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
+      ,c.MBNR as c_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
 
 FROM dbo.EDU_ZXXS_57_A31_DSZXSXXLM AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_57_A31_DSZXSXXLM AS c ON a.FLMID = c.ID /*父栏目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
@@ -19240,6 +19244,8 @@ SELECT a.[ID]--编号
       ,d.LMMC as d_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
       ,d.LMLX as d_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
       ,d.PLSX as d_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
+      ,d.SFXYBJ as d_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
+      ,d.MBNR as d_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
 
 FROM dbo.EDU_ZXXS_57_A32_DSZXSGRXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -19347,6 +19353,8 @@ SELECT a.[ID]--编号
       ,e.LMMC as e_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
       ,e.LMLX as e_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
       ,e.PLSX as e_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
+      ,e.SFXYBJ as e_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
+      ,e.MBNR as e_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
 
 FROM dbo.EDU_ZXXS_57_A33_DSZXSXQXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -19457,6 +19465,8 @@ SELECT a.[ID]--编号
       ,e.LMMC as e_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
       ,e.LMLX as e_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
       ,e.PLSX as e_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
+      ,e.SFXYBJ as e_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
+      ,e.MBNR as e_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
 
 FROM dbo.EDU_ZXXS_57_A34_DSZXSMYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

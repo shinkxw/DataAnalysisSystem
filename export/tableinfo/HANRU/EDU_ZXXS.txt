@@ -601,6 +601,8 @@ EDU_ZXXS_57_A31_DSZXSXXLM  导师制学生信息栏目表
   LMMC          栏目名称                nvarchar(200)  非主
   LMLX          栏目类型                int            非主
   PLSX          排列顺序                int            非主
+  SFXYBJ        是否需要编辑            int            非主
+  MBNR          模板内容                text           非主
 
 EDU_ZXXS_57_A32_DSZXSGRXX  导师制学生个人信息表
   ID            编号                    int            主键

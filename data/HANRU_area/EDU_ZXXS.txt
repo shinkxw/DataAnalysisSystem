@@ -702,6 +702,8 @@
             <name="LMMC" exp="栏目名称" type="nvarchar(200)" />
             <name="LMLX" exp="栏目类型" type="int" />
             <name="PLSX" exp="排列顺序" type="int" />
+            <name="SFXYBJ" exp="是否需要编辑" type="int" />
+            <name="MBNR" exp="模板内容" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A32_DSZXSGRXX" exp="导师制学生个人信息表">
