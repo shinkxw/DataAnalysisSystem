@@ -1,1 +1,2 @@
 ocra
+ocra --no-autoload --add-all-core --windows app.rb Ruby21\lib\tcltk
