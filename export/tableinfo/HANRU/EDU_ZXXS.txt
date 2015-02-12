@@ -1,640 +1,640 @@
-EDU_ZXXS_01_01_XSXX  Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XH            Ñ§ºÅ                    nvarchar(20)   ·ÇÖ÷
-  XM            ÐÕÃû                    nvarchar(36)   ·ÇÖ÷
-  YWXM          Ó¢ÎÄÐÕÃû                nvarchar(60)   ·ÇÖ÷
-  XMPY          ÐÕÃûÆ´Òô                nvarchar(60)   ·ÇÖ÷
-  CYM           ÔøÓÃÃû                  nvarchar(36)   ·ÇÖ÷
-  XBM           ÐÔ±ðÂë                  nvarchar(1)    ·ÇÖ÷        ÈËµÄÐÔ±ð´úÂë
-  CSRQ          ³öÉúÈÕÆÚ                nvarchar(8)    ·ÇÖ÷
-  CSDM          ³öÉúµØÂë                nvarchar(6)    ·ÇÖ÷        ÖÐ»ªÈËÃñ¹²ºÍ¹úÐÐÕþÇø»®´úÂë
-  JG            ¼®¹á                    nvarchar(20)   ·ÇÖ÷
-  MZM           Ãñ×åÂë                  nvarchar(2)    ·ÇÖ÷        ÖÐ¹ú¸÷Ãñ×åÃû³ÆµÄÂÞÂí×ÖÄ¸Æ´Ð´·¨ºÍ´úÂë
-  GJDQM         ¹ú¼®/µØÇøÂë             nvarchar(3)    ·ÇÖ÷        ÊÀ½ç¸÷¹úºÍµØÇøÃû³Æ´úÂë
-  SFZJLXM       Éí·ÝÖ¤¼þÀàÐÍÂë          nvarchar(1)    ·ÇÖ÷        Éí·ÝÖ¤¼þÀàÐÍ´úÂë±í
-  SFZJH         Éí·ÝÖ¤¼þºÅ              nvarchar(20)   ·ÇÖ÷
-  HYZKM         »éÒö×´¿öÂë              nvarchar(2)    ·ÇÖ÷        »éÒö×´¿ö´úÂë
-  GATQWM        ¸Û°ÄÌ¨ÇÈÍâÂë            nvarchar(2)    ·ÇÖ÷        ¸Û°ÄÌ¨ÇÈÍâ´úÂë±í
-  ZZMMM         ÕþÖÎÃæÃ²Âë              nvarchar(2)    ·ÇÖ÷        ÕþÖÎÃæÃ²´úÂë
-  JKZKM         ½¡¿µ×´¿öÂë              nvarchar(1)    ·ÇÖ÷        ½¡¿µ×´¿ö1Î»Êý×Ö´úÂë
-  XYZJM         ÐÅÑö×Ú½ÌÂë              nvarchar(2)    ·ÇÖ÷        ×Ú½ÌÐÅÑö´úÂë
-  XXM           ÑªÐÍÂë                  nvarchar(1)    ·ÇÖ÷        ÑªÐÍ´úÂë±í
-  ZP            ÕÕÆ¬                    nvarchar(200)  ·ÇÖ÷
-  SFZJYXQ       Éí·ÝÖ¤¼þÓÐÐ§ÆÚ          nvarchar(17)   ·ÇÖ÷
-  DSZYBZ        ¶ÀÉú×ÓÅ®±êÖ¾            nvarchar(1)    ·ÇÖ÷        ÊÇ·ñ±êÖ¾´úÂë±í
-  RXNY          ÈëÑ§ÄêÔÂ                nvarchar(6)    ·ÇÖ÷
-  NJ            Äê¼¶                    nvarchar(10)   ·ÇÖ÷        Äê¼¶Êý¾ÝÀà±í
-  BH            °àºÅ                    nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  XSLBM         Ñ§ÉúÀà±ðÂë              nvarchar(5)    ·ÇÖ÷        Ñ§ÉúÀà±ð´úÂë±í
-  XZZ           ÏÖ×¡Ö·                  nvarchar(180)  ·ÇÖ÷
-  HKSZD         »§¿ÚËùÔÚµØ              nvarchar(180)  ·ÇÖ÷
-  HKXZM         »§¿ÚÐÔÖÊÂë              nvarchar(1)    ·ÇÖ÷        »§¿ÚÀà±ð´úÂë
-  SFLDRK        ÊÇ·ñÁ÷¶¯ÈË¿Ú            nvarchar(1)    ·ÇÖ÷        ÊÇ·ñ±êÖ¾´úÂë±í
-  TC            ÌØ³¤                    text           ·ÇÖ÷
-  LXDH          ÁªÏµµç»°                nvarchar(30)   ·ÇÖ÷
-  TXDZ          Í¨ÐÅµØÖ·                nvarchar(180)  ·ÇÖ÷
-  YZBM          ÓÊÕþ±àÂë                nvarchar(6)    ·ÇÖ÷
-  DZXX          µç×ÓÐÅÏä                nvarchar(40)   ·ÇÖ÷
-  ZYDZ          Ö÷Ò³µØÖ·                nvarchar(60)   ·ÇÖ÷
-  XJH           Ñ§¼®ºÅ                  nvarchar(30)   ·ÇÖ÷
-  XSDQZTM       Ñ§Éúµ±Ç°×´Ì¬Âë          nvarchar(2)    ·ÇÖ÷        Ñ§Éúµ±Ç°×´Ì¬´úÂë±í
+EDU_ZXXS_01_01_XSXX  å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XH            å­¦å·                    nvarchar(20)   éžä¸»
+  XM            å§“å                    nvarchar(36)   éžä¸»
+  YWXM          è‹±æ–‡å§“å                nvarchar(60)   éžä¸»
+  XMPY          å§“åæ‹¼éŸ³                nvarchar(60)   éžä¸»
+  CYM           æ›¾ç”¨å                  nvarchar(36)   éžä¸»
+  XBM           æ€§åˆ«ç                   nvarchar(1)    éžä¸»        äººçš„æ€§åˆ«ä»£ç 
+  CSRQ          å‡ºç”Ÿæ—¥æœŸ                nvarchar(8)    éžä¸»
+  CSDM          å‡ºç”Ÿåœ°ç                 nvarchar(6)    éžä¸»        ä¸­åŽäººæ°‘å…±å’Œå›½è¡Œæ”¿åŒºåˆ’ä»£ç 
+  JG            ç±è´¯                    nvarchar(20)   éžä¸»
+  MZM           æ°‘æ—ç                   nvarchar(2)    éžä¸»        ä¸­å›½å„æ°‘æ—åç§°çš„ç½—é©¬å­—æ¯æ‹¼å†™æ³•å’Œä»£ç 
+  GJDQM         å›½ç±/åœ°åŒºç              nvarchar(3)    éžä¸»        ä¸–ç•Œå„å›½å’Œåœ°åŒºåç§°ä»£ç 
+  SFZJLXM       èº«ä»½è¯ä»¶ç±»åž‹ç           nvarchar(1)    éžä¸»        èº«ä»½è¯ä»¶ç±»åž‹ä»£ç è¡¨
+  SFZJH         èº«ä»½è¯ä»¶å·              nvarchar(20)   éžä¸»
+  HYZKM         å©šå§»çŠ¶å†µç               nvarchar(2)    éžä¸»        å©šå§»çŠ¶å†µä»£ç 
+  GATQWM        æ¸¯æ¾³å°ä¾¨å¤–ç             nvarchar(2)    éžä¸»        æ¸¯æ¾³å°ä¾¨å¤–ä»£ç è¡¨
+  ZZMMM         æ”¿æ²»é¢è²Œç               nvarchar(2)    éžä¸»        æ”¿æ²»é¢è²Œä»£ç 
+  JKZKM         å¥åº·çŠ¶å†µç               nvarchar(1)    éžä¸»        å¥åº·çŠ¶å†µ1ä½æ•°å­—ä»£ç 
+  XYZJM         ä¿¡ä»°å®—æ•™ç               nvarchar(2)    éžä¸»        å®—æ•™ä¿¡ä»°ä»£ç 
+  XXM           è¡€åž‹ç                   nvarchar(1)    éžä¸»        è¡€åž‹ä»£ç è¡¨
+  ZP            ç…§ç‰‡                    nvarchar(200)  éžä¸»
+  SFZJYXQ       èº«ä»½è¯ä»¶æœ‰æ•ˆæœŸ          nvarchar(17)   éžä¸»
+  DSZYBZ        ç‹¬ç”Ÿå­å¥³æ ‡å¿—            nvarchar(1)    éžä¸»        æ˜¯å¦æ ‡å¿—ä»£ç è¡¨
+  RXNY          å…¥å­¦å¹´æœˆ                nvarchar(6)    éžä¸»
+  NJ            å¹´çº§                    nvarchar(10)   éžä¸»        å¹´çº§æ•°æ®ç±»è¡¨
+  BH            ç­å·                    nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  XSLBM         å­¦ç”Ÿç±»åˆ«ç               nvarchar(5)    éžä¸»        å­¦ç”Ÿç±»åˆ«ä»£ç è¡¨
+  XZZ           çŽ°ä½å€                  nvarchar(180)  éžä¸»
+  HKSZD         æˆ·å£æ‰€åœ¨åœ°              nvarchar(180)  éžä¸»
+  HKXZM         æˆ·å£æ€§è´¨ç               nvarchar(1)    éžä¸»        æˆ·å£ç±»åˆ«ä»£ç 
+  SFLDRK        æ˜¯å¦æµåŠ¨äººå£            nvarchar(1)    éžä¸»        æ˜¯å¦æ ‡å¿—ä»£ç è¡¨
+  TC            ç‰¹é•¿                    text           éžä¸»
+  LXDH          è”ç³»ç”µè¯                nvarchar(30)   éžä¸»
+  TXDZ          é€šä¿¡åœ°å€                nvarchar(180)  éžä¸»
+  YZBM          é‚®æ”¿ç¼–ç                 nvarchar(6)    éžä¸»
+  DZXX          ç”µå­ä¿¡ç®±                nvarchar(40)   éžä¸»
+  ZYDZ          ä¸»é¡µåœ°å€                nvarchar(60)   éžä¸»
+  XJH           å­¦ç±å·                  nvarchar(30)   éžä¸»
+  XSDQZTM       å­¦ç”Ÿå½“å‰çŠ¶æ€ç           nvarchar(2)    éžä¸»        å­¦ç”Ÿå½“å‰çŠ¶æ€ä»£ç è¡¨
 
-EDU_ZXXS_01_06_XSJTCY  Ñ§Éú¼ÒÍ¥³ÉÔ±Êý¾Ý±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XSXXID        Ñ§ÉúÐÅÏ¢Êý¾Ý±í          int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  GXM           ¹ØÏµÂë                  nvarchar(2)    ·ÇÖ÷        ¼ÒÍ¥¹ØÏµ´úÂë
-  CYXM          ³ÉÔ±ÐÕÃû                nvarchar(36)   ·ÇÖ÷
-  CSNY          ³öÉúÄêÔÂ                nvarchar(6)    ·ÇÖ÷
-  MZM           Ãñ×åÂë                  nvarchar(2)    ·ÇÖ÷        ÖÐ¹ú¸÷Ãñ×åÃû³ÆµÄÂÞÂí×ÖÄ¸Æ´Ð´·¨ºÍ´úÂë
-  GJDQM         ¹ú¼®/µØÇøÂë             nvarchar(3)    ·ÇÖ÷        ÊÀ½ç¸÷¹úºÍµØÇøÃû³Æ´úÂë
-  JKZKM         ½¡¿µ×´¿öÂë              nvarchar(1)    ·ÇÖ÷        ½¡¿µ×´¿ö1Î»Êý×Ö´úÂë
-  CYGZDW        ³ÉÔ±¹¤×÷µ¥Î»            nvarchar(60)   ·ÇÖ÷
-  CYM           ´ÓÒµÂë                  nvarchar(2)    ·ÇÖ÷        ´ÓÒµ×´¿ö£¨¸öÈËÉí·Ý£©´úÂë
-  ZYJSZWM       ×¨Òµ¼¼ÊõÖ°ÎñÂë          nvarchar(3)    ·ÇÖ÷        ×¨Òµ¼¼ÊõÖ°Îñ´úÂë
-  ZWJBM         Ö°Îñ¼¶±ðÂë              nvarchar(3)    ·ÇÖ÷        Ö°Îñ¼¶±ð´úÂë
-  DH            µç»°                    nvarchar(30)   ·ÇÖ÷
-  DZXX          µç×ÓÐÅÏä                nvarchar(40)   ·ÇÖ÷
-  SFJHR         ÊÇ·ñ¼à»¤ÈË              nvarchar(1)    ·ÇÖ÷        ÊÇ·ñ±êÖ¾´úÂë±í
-  XBM           ÐÔ±ðÂë                  nvarchar(1)    ·ÇÖ÷        ÈËµÄÐÔ±ð´úÂë
-  XLM           Ñ§ÀúÂë                  nvarchar(2)    ·ÇÖ÷        Ñ§Àú´úÂë
-  LXDZ          ÁªÏµµØÖ·                nvarchar(180)  ·ÇÖ÷
-  SJHM          ÊÖ»úºÅÂë                nvarchar(30)   ·ÇÖ÷
+EDU_ZXXS_01_06_XSJTCY  å­¦ç”Ÿå®¶åº­æˆå‘˜æ•°æ®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XSXXID        å­¦ç”Ÿä¿¡æ¯æ•°æ®è¡¨          int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  GXM           å…³ç³»ç                   nvarchar(2)    éžä¸»        å®¶åº­å…³ç³»ä»£ç 
+  CYXM          æˆå‘˜å§“å                nvarchar(36)   éžä¸»
+  CSNY          å‡ºç”Ÿå¹´æœˆ                nvarchar(6)    éžä¸»
+  MZM           æ°‘æ—ç                   nvarchar(2)    éžä¸»        ä¸­å›½å„æ°‘æ—åç§°çš„ç½—é©¬å­—æ¯æ‹¼å†™æ³•å’Œä»£ç 
+  GJDQM         å›½ç±/åœ°åŒºç              nvarchar(3)    éžä¸»        ä¸–ç•Œå„å›½å’Œåœ°åŒºåç§°ä»£ç 
+  JKZKM         å¥åº·çŠ¶å†µç               nvarchar(1)    éžä¸»        å¥åº·çŠ¶å†µ1ä½æ•°å­—ä»£ç 
+  CYGZDW        æˆå‘˜å·¥ä½œå•ä½            nvarchar(60)   éžä¸»
+  CYM           ä»Žä¸šç                   nvarchar(2)    éžä¸»        ä»Žä¸šçŠ¶å†µï¼ˆä¸ªäººèº«ä»½ï¼‰ä»£ç 
+  ZYJSZWM       ä¸“ä¸šæŠ€æœ¯èŒåŠ¡ç           nvarchar(3)    éžä¸»        ä¸“ä¸šæŠ€æœ¯èŒåŠ¡ä»£ç 
+  ZWJBM         èŒåŠ¡çº§åˆ«ç               nvarchar(3)    éžä¸»        èŒåŠ¡çº§åˆ«ä»£ç 
+  DH            ç”µè¯                    nvarchar(30)   éžä¸»
+  DZXX          ç”µå­ä¿¡ç®±                nvarchar(40)   éžä¸»
+  SFJHR         æ˜¯å¦ç›‘æŠ¤äºº              nvarchar(1)    éžä¸»        æ˜¯å¦æ ‡å¿—ä»£ç è¡¨
+  XBM           æ€§åˆ«ç                   nvarchar(1)    éžä¸»        äººçš„æ€§åˆ«ä»£ç 
+  XLM           å­¦åŽ†ç                   nvarchar(2)    éžä¸»        å­¦åŽ†ä»£ç 
+  LXDZ          è”ç³»åœ°å€                nvarchar(180)  éžä¸»
+  SJHM          æ‰‹æœºå·ç                 nvarchar(30)   éžä¸»
 
-EDU_ZXXS_02_A01_XSJTXX  Ñ§Éú¼ÒÍ¥ÐÅÏ¢Êý¾Ý±í
-  XSXXID        Ñ§ÉúÐÅÏ¢Êý¾Ý±í          int            Ö÷¼ü        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  JTZZ          ¼ÒÍ¥×¡Ö·                nvarchar(180)  ·ÇÖ÷
-  JTYZBM        ¼ÒÍ¥ÓÊÕþ±àÂë            nvarchar(6)    ·ÇÖ÷
-  JTDH          ¼ÒÍ¥µç»°                nvarchar(30)   ·ÇÖ÷
-  JTLXR         ¼ÒÍ¥ÁªÏµÈË              nvarchar(36)   ·ÇÖ÷
-  JTDZXX        ¼ÒÍ¥µç×ÓÐÅÏä            nvarchar(40)   ·ÇÖ÷
-  JTRK          ¼ÒÍ¥ÈË¿Ú                int            ·ÇÖ÷
-  JTZYSRLY      ¼ÒÍ¥Ö÷ÒªÊÕÈëÀ´Ô´        nvarchar(180)  ·ÇÖ÷
-  JTYSRJE       ¼ÒÍ¥ÔÂÊÕÈë½ð¶î          money          ·ÇÖ÷
-  JTNSRJE       ¼ÒÍ¥ÄêÊÕÈë½ð¶î          money          ·ÇÖ÷
-  LJZJHCZ       Àë¼Ò×î½ü»ð³µÕ¾          nvarchar(30)   ·ÇÖ÷
+EDU_ZXXS_02_A01_XSJTXX  å­¦ç”Ÿå®¶åº­ä¿¡æ¯æ•°æ®è¡¨
+  XSXXID        å­¦ç”Ÿä¿¡æ¯æ•°æ®è¡¨          int            ä¸»é”®        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  JTZZ          å®¶åº­ä½å€                nvarchar(180)  éžä¸»
+  JTYZBM        å®¶åº­é‚®æ”¿ç¼–ç             nvarchar(6)    éžä¸»
+  JTDH          å®¶åº­ç”µè¯                nvarchar(30)   éžä¸»
+  JTLXR         å®¶åº­è”ç³»äºº              nvarchar(36)   éžä¸»
+  JTDZXX        å®¶åº­ç”µå­ä¿¡ç®±            nvarchar(40)   éžä¸»
+  JTRK          å®¶åº­äººå£                int            éžä¸»
+  JTZYSRLY      å®¶åº­ä¸»è¦æ”¶å…¥æ¥æº        nvarchar(180)  éžä¸»
+  JTYSRJE       å®¶åº­æœˆæ”¶å…¥é‡‘é¢          money          éžä¸»
+  JTNSRJE       å®¶åº­å¹´æ”¶å…¥é‡‘é¢          money          éžä¸»
+  LJZJHCZ       ç¦»å®¶æœ€è¿‘ç«è½¦ç«™          nvarchar(30)   éžä¸»
 
-EDU_ZXXS_02_06_ZXKSCJ  ÔÚÐ£¿¼ÊÔ³É¼¨Êý¾Ý×ÓÀà±í
-  ID            ¿¼ÊÔ³É¼¨±í              int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XSXXID        Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  XN            Ñ§Äê£¨¶È£©                nvarchar(9)    ·ÇÖ÷
-  XQM           Ñ§ÆÚÂë                  nvarchar(1)    ·ÇÖ÷        Ñ§ÆÚ´úÂë±í
-  KSRQ          ¿¼ÊÔÈÕÆÚ                nvarchar(8)    ·ÇÖ÷
-  KCH           ¿Î³ÌºÅ                  nvarchar(10)   ·ÇÖ÷        ¿Î³ÌÊý¾ÝÀà
-  RKJSID        ÈÎ¿Î½ÌÊ¦ID              int            ·ÇÖ÷        ½ÌÖ°¹¤»ù±¾Êý¾Ý×ÓÀà±í
-  CJLRRID       ³É¼¨Â¼ÈëÈËID            int            ·ÇÖ÷        ½ÌÖ°¹¤»ù±¾Êý¾Ý×ÓÀà±í
-  KSFSM         ¿¼ÊÔ·½Ê½Âë              nvarchar(1)    ·ÇÖ÷        ¿¼ÊÔ·½Ê½´úÂë±í
-  KSXZM         ¿¼ÊÔÐÔÖÊÂë              nvarchar(2)    ·ÇÖ÷        ¿¼ÊÔÐÔÖÊ´úÂë±í
-  KSXSM         ¿¼ÊÔÐÎÊ½Âë              nvarchar(1)    ·ÇÖ÷        ¿¼ÊÔÐÎÊ½´úÂë±í
-  FSLKSCJ       ·ÖÊýÀà¿¼ÊÔ³É¼¨          decimal(5, 1)  ·ÇÖ÷
-  DJLKSCJ       µÈ¼¶Àà¿¼ÊÔ³É¼¨          nvarchar(1)    ·ÇÖ÷
-  KCCJ          ¿Î³Ì³É¼¨                decimal(5, 1)  ·ÇÖ÷
-  KCDJCJM       ¿Î³ÌµÈ¼¶³É¼¨Âë          nvarchar(1)    ·ÇÖ÷
-  RKJSGH        ÈÎ¿Î½ÌÊ¦¹¤ºÅ            nvarchar(20)   ·ÇÖ÷
-  CJLRRH        ³É¼¨Â¼ÈëÈËºÅ            nvarchar(20)   ·ÇÖ÷
-  CJLRRQ        ³É¼¨Â¼ÈëÈÕÆÚ            nvarchar(8)    ·ÇÖ÷
-  CJLRSJ        ³É¼¨Â¼ÈëÊ±¼ä            nvarchar(6)    ·ÇÖ÷
-  XQID          Ñ§ÆÚ                    int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XNID          Ñ§Äê                    int            ·ÇÖ÷        Ñ§Äê±í
-  NJID          Äê¼¶                    nvarchar(10)   ·ÇÖ÷        Äê¼¶Êý¾ÝÀà±í
-  BJID          °à¼¶                    nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  SSKSID        ËùÊô¿¼ÊÔID              int            ·ÇÖ÷        ¿¼ÊÔÊý¾Ý±í
-  SSKSKMID      ËùÊô¿¼ÊÔ¿ÆÄ¿ID          int            ·ÇÖ÷        ¿¼ÊÔ¿ÆÄ¿Êý¾Ý±í
-  SJID          ÊÔ¾íID                  int            ·ÇÖ÷
+EDU_ZXXS_02_06_ZXKSCJ  åœ¨æ ¡è€ƒè¯•æˆç»©æ•°æ®å­ç±»è¡¨
+  ID            è€ƒè¯•æˆç»©è¡¨              int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XSXXID        å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  XN            å­¦å¹´ï¼ˆåº¦ï¼‰                nvarchar(9)    éžä¸»
+  XQM           å­¦æœŸç                   nvarchar(1)    éžä¸»        å­¦æœŸä»£ç è¡¨
+  KSRQ          è€ƒè¯•æ—¥æœŸ                nvarchar(8)    éžä¸»
+  KCH           è¯¾ç¨‹å·                  nvarchar(10)   éžä¸»        è¯¾ç¨‹æ•°æ®ç±»
+  RKJSID        ä»»è¯¾æ•™å¸ˆID              int            éžä¸»        æ•™èŒå·¥åŸºæœ¬æ•°æ®å­ç±»è¡¨
+  CJLRRID       æˆç»©å½•å…¥äººID            int            éžä¸»        æ•™èŒå·¥åŸºæœ¬æ•°æ®å­ç±»è¡¨
+  KSFSM         è€ƒè¯•æ–¹å¼ç               nvarchar(1)    éžä¸»        è€ƒè¯•æ–¹å¼ä»£ç è¡¨
+  KSXZM         è€ƒè¯•æ€§è´¨ç               nvarchar(2)    éžä¸»        è€ƒè¯•æ€§è´¨ä»£ç è¡¨
+  KSXSM         è€ƒè¯•å½¢å¼ç               nvarchar(1)    éžä¸»        è€ƒè¯•å½¢å¼ä»£ç è¡¨
+  FSLKSCJ       åˆ†æ•°ç±»è€ƒè¯•æˆç»©          decimal(5, 1)  éžä¸»
+  DJLKSCJ       ç­‰çº§ç±»è€ƒè¯•æˆç»©          nvarchar(1)    éžä¸»
+  KCCJ          è¯¾ç¨‹æˆç»©                decimal(5, 1)  éžä¸»
+  KCDJCJM       è¯¾ç¨‹ç­‰çº§æˆç»©ç           nvarchar(1)    éžä¸»
+  RKJSGH        ä»»è¯¾æ•™å¸ˆå·¥å·            nvarchar(20)   éžä¸»
+  CJLRRH        æˆç»©å½•å…¥äººå·            nvarchar(20)   éžä¸»
+  CJLRRQ        æˆç»©å½•å…¥æ—¥æœŸ            nvarchar(8)    éžä¸»
+  CJLRSJ        æˆç»©å½•å…¥æ—¶é—´            nvarchar(6)    éžä¸»
+  XQID          å­¦æœŸ                    int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XNID          å­¦å¹´                    int            éžä¸»        å­¦å¹´è¡¨
+  NJID          å¹´çº§                    nvarchar(10)   éžä¸»        å¹´çº§æ•°æ®ç±»è¡¨
+  BJID          ç­çº§                    nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  SSKSID        æ‰€å±žè€ƒè¯•ID              int            éžä¸»        è€ƒè¯•æ•°æ®è¡¨
+  SSKSKMID      æ‰€å±žè€ƒè¯•ç§‘ç›®ID          int            éžä¸»        è€ƒè¯•ç§‘ç›®æ•°æ®è¡¨
+  SJID          è¯•å·ID                  int            éžä¸»
 
-EDU_ZXXS_07_A02_XJYD  Ñ§¼®Òì¶¯Êý¾Ý×ÓÀà±í
-  ID            Ñ§¼®Òì¶¯±í±àºÅ          int            Ö÷¼ü
-  XSXXID        Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  YDLBM         Òì¶¯Àà±ðÂë              nvarchar(2)    ·ÇÖ÷        Ñ§¼®Òì¶¯Àà±ð´úÂë±í
-  YDRQ          Òì¶¯ÈÕÆÚ                nvarchar(8)    ·ÇÖ÷
-  YDYYM         Òì¶¯Ô­ÒòÂë              nvarchar(2)    ·ÇÖ÷        Ñ§¼®Òì¶¯Ô­Òò´úÂë±í
-  SPRQ          ÉóÅúÈÕÆÚ                nvarchar(8)    ·ÇÖ÷
-  SPWH          ÉóÅúÎÄºÅ                nvarchar(24)   ·ÇÖ÷
-  JBRID         ¾­°ìÈËID                int            ·ÇÖ÷        ½ÌÖ°¹¤»ù±¾Êý¾Ý×ÓÀà±í
-  JBRGH         ¾­°ìÈË¹¤ºÅ              nvarchar(20)   ·ÇÖ÷
-  YDLYXXM       Òì¶¯À´Ô´Ñ§Ð£Âë          nvarchar(10)   ·ÇÖ÷
-  YDQXXXM       Òì¶¯È¥ÏòÑ§Ð£Âë          nvarchar(10)   ·ÇÖ÷
-  YDSM          Òì¶¯ËµÃ÷                text           ·ÇÖ÷
-  YBH           Ô­°àºÅ                  nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  YNJ           Ô­Äê¼¶                  nvarchar(10)   ·ÇÖ÷        Äê¼¶Êý¾ÝÀà±í
-  XBH           ÏÖ°àºÅ                  nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  XNJ           ÏÖÄê¼¶                  nvarchar(10)   ·ÇÖ÷        Äê¼¶Êý¾ÝÀà±í
+EDU_ZXXS_07_A02_XJYD  å­¦ç±å¼‚åŠ¨æ•°æ®å­ç±»è¡¨
+  ID            å­¦ç±å¼‚åŠ¨è¡¨ç¼–å·          int            ä¸»é”®
+  XSXXID        å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  YDLBM         å¼‚åŠ¨ç±»åˆ«ç               nvarchar(2)    éžä¸»        å­¦ç±å¼‚åŠ¨ç±»åˆ«ä»£ç è¡¨
+  YDRQ          å¼‚åŠ¨æ—¥æœŸ                nvarchar(8)    éžä¸»
+  YDYYM         å¼‚åŠ¨åŽŸå› ç               nvarchar(2)    éžä¸»        å­¦ç±å¼‚åŠ¨åŽŸå› ä»£ç è¡¨
+  SPRQ          å®¡æ‰¹æ—¥æœŸ                nvarchar(8)    éžä¸»
+  SPWH          å®¡æ‰¹æ–‡å·                nvarchar(24)   éžä¸»
+  JBRID         ç»åŠžäººID                int            éžä¸»        æ•™èŒå·¥åŸºæœ¬æ•°æ®å­ç±»è¡¨
+  JBRGH         ç»åŠžäººå·¥å·              nvarchar(20)   éžä¸»
+  YDLYXXM       å¼‚åŠ¨æ¥æºå­¦æ ¡ç           nvarchar(10)   éžä¸»
+  YDQXXXM       å¼‚åŠ¨åŽ»å‘å­¦æ ¡ç           nvarchar(10)   éžä¸»
+  YDSM          å¼‚åŠ¨è¯´æ˜Ž                text           éžä¸»
+  YBH           åŽŸç­å·                  nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  YNJ           åŽŸå¹´çº§                  nvarchar(10)   éžä¸»        å¹´çº§æ•°æ®ç±»è¡¨
+  XBH           çŽ°ç­å·                  nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  XNJ           çŽ°å¹´çº§                  nvarchar(10)   éžä¸»        å¹´çº§æ•°æ®ç±»è¡¨
 
-EDU_ZXXS_07_A03_XSHBJL  Ñ§Éú»»°à¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XSXXID        Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  YBJID         Ô­°à¼¶ID                nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  XBJID         ÏÖ°à¼¶ID                nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  CZRY          ²Ù×÷ÈËÔ±                nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  HBSJ          »»°àÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_07_A03_XSHBJL  å­¦ç”Ÿæ¢ç­è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XSXXID        å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  YBJID         åŽŸç­çº§ID                nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  XBJID         çŽ°ç­çº§ID                nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  CZRY          æ“ä½œäººå‘˜                nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  HBSJ          æ¢ç­æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_50_A01_QQYY  È±ÇÚÔ­Òò±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  MC            Ãû³Æ                    nvarchar(100)  ·ÇÖ÷
+EDU_ZXXS_50_A01_QQYY  ç¼ºå‹¤åŽŸå› è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  MC            åç§°                    nvarchar(100)  éžä¸»
 
-EDU_ZXXS_50_A02_BJSBJL  °à¼¶ÉÏ±¨¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  BJID          °à¼¶ID                  nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
-  RQ            ÈÕÆÚ                    datetime       ·ÇÖ÷
-  QQRS          È±ÇÚÈËÊý                int            ·ÇÖ÷
+EDU_ZXXS_50_A02_BJSBJL  ç­çº§ä¸ŠæŠ¥è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  BJID          ç­çº§ID                  nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  ZT            çŠ¶æ€                    int            éžä¸»
+  RQ            æ—¥æœŸ                    datetime       éžä¸»
+  QQRS          ç¼ºå‹¤äººæ•°                int            éžä¸»
 
-EDU_ZXXS_50_A03_XSSBJL  Ñ§ÉúÉÏ±¨¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  BJID          °à¼¶ID                  nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  XSXXID        Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  QQYYID        È±ÇÚÔ­ÒòID              int            ·ÇÖ÷        È±ÇÚÔ­Òò±í
-  QQSJ          È±ÇÚÊ±¼ä                nvarchar(20)   ·ÇÖ÷
-  JTQK          ¾ßÌåÇé¿ö                nvarchar(500)  ·ÇÖ÷
-  TW            ÌåÎÂ                    nvarchar(10)   ·ÇÖ÷
-  SFJY          ÊÇ·ñ¾ÍÒ½                nvarchar(1)    ·ÇÖ÷        ÊÇ·ñ±êÖ¾´úÂë±í
-  SFTZJZ        ÊÇ·ñÍ¨Öª¼Ò³¤            nvarchar(1)    ·ÇÖ÷        ÊÇ·ñ±êÖ¾´úÂë±í
-  JZLXFS        ¼Ò³¤ÁªÏµ·½Ê½            nvarchar(20)   ·ÇÖ÷
-  RQ            ÈÕÆÚ                    datetime       ·ÇÖ÷
-  SBJSID        ÉÏ±¨½ÌÊ¦ID              int            ·ÇÖ÷        ½ÌÖ°¹¤»ù±¾Êý¾Ý×ÓÀà±í
+EDU_ZXXS_50_A03_XSSBJL  å­¦ç”Ÿä¸ŠæŠ¥è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  BJID          ç­çº§ID                  nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  XSXXID        å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  QQYYID        ç¼ºå‹¤åŽŸå› ID              int            éžä¸»        ç¼ºå‹¤åŽŸå› è¡¨
+  QQSJ          ç¼ºå‹¤æ—¶é—´                nvarchar(20)   éžä¸»
+  JTQK          å…·ä½“æƒ…å†µ                nvarchar(500)  éžä¸»
+  TW            ä½“æ¸©                    nvarchar(10)   éžä¸»
+  SFJY          æ˜¯å¦å°±åŒ»                nvarchar(1)    éžä¸»        æ˜¯å¦æ ‡å¿—ä»£ç è¡¨
+  SFTZJZ        æ˜¯å¦é€šçŸ¥å®¶é•¿            nvarchar(1)    éžä¸»        æ˜¯å¦æ ‡å¿—ä»£ç è¡¨
+  JZLXFS        å®¶é•¿è”ç³»æ–¹å¼            nvarchar(20)   éžä¸»
+  RQ            æ—¥æœŸ                    datetime       éžä¸»
+  SBJSID        ä¸ŠæŠ¥æ•™å¸ˆID              int            éžä¸»        æ•™èŒå·¥åŸºæœ¬æ•°æ®å­ç±»è¡¨
 
-EDU_ZXXS_51_A01_KHDL  ¿¼ºË´óÀà±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  MC            Ãû³Æ                    nvarchar(100)  ·ÇÖ÷
-  KHDX          ¿¼ºË¶ÔÏó                int            ·ÇÖ÷
-  DJFS          µÇ¼Ç·½Ê½                int            ·ÇÖ÷
-  KDJYHIDLB     ¿ÉµÇ¼ÇÓÃ»§IDÁÐ±í        text           ·ÇÖ÷
-  KDJYHXMLB     ¿ÉµÇ¼ÇÓÃ»§ÐÕÃûÁÐ±í      text           ·ÇÖ÷
+EDU_ZXXS_51_A01_KHDL  è€ƒæ ¸å¤§ç±»è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  MC            åç§°                    nvarchar(100)  éžä¸»
+  KHDX          è€ƒæ ¸å¯¹è±¡                int            éžä¸»
+  DJFS          ç™»è®°æ–¹å¼                int            éžä¸»
+  KDJYHIDLB     å¯ç™»è®°ç”¨æˆ·IDåˆ—è¡¨        text           éžä¸»
+  KDJYHXMLB     å¯ç™»è®°ç”¨æˆ·å§“ååˆ—è¡¨      text           éžä¸»
 
-EDU_ZXXS_51_A02_KHDLXM  ¿¼ºË´óÀàÏîÄ¿±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  SSDLID        ËùÊô´óÀàID              int            ·ÇÖ÷        ¿¼ºË´óÀà±í
-  DLXMMC        ´óÀàÏîÄ¿Ãû³Æ            nvarchar(10)   ·ÇÖ÷
-  FZLX          ·ÖÖµÀàÐÍ                int            ·ÇÖ÷
-  XMZGF         ÏîÄ¿×î¸ß·Ö              decimal(5, 2)  ·ÇÖ÷
+EDU_ZXXS_51_A02_KHDLXM  è€ƒæ ¸å¤§ç±»é¡¹ç›®è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  SSDLID        æ‰€å±žå¤§ç±»ID              int            éžä¸»        è€ƒæ ¸å¤§ç±»è¡¨
+  DLXMMC        å¤§ç±»é¡¹ç›®åç§°            nvarchar(10)   éžä¸»
+  FZLX          åˆ†å€¼ç±»åž‹                int            éžä¸»
+  XMZGF         é¡¹ç›®æœ€é«˜åˆ†              decimal(5, 2)  éžä¸»
 
-EDU_ZXXS_51_A03_BJKHCJ  °à¼¶¿¼ºË³É¼¨±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  SSDLID        ËùÊô´óÀàID              int            ·ÇÖ÷        ¿¼ºË´óÀà±í
-  SSDLXMID      ËùÊô´óÀàÏîÄ¿ID          int            ·ÇÖ÷        ¿¼ºË´óÀàÏîÄ¿±í
-  NJID          Äê¼¶ID                  nvarchar(10)   ·ÇÖ÷        Äê¼¶Êý¾ÝÀà±í
-  BJID          °à¼¶ID                  nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  KHSJ          ¿¼ºËÊ±¼ä                datetime       ·ÇÖ÷
-  FZ            ·ÖÖµ                    decimal(5, 2)  ·ÇÖ÷
-  DJRID         µÇ¼ÇÈËID                nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  DJSJ          µÇ¼ÇÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_51_A03_BJKHCJ  ç­çº§è€ƒæ ¸æˆç»©è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  SSDLID        æ‰€å±žå¤§ç±»ID              int            éžä¸»        è€ƒæ ¸å¤§ç±»è¡¨
+  SSDLXMID      æ‰€å±žå¤§ç±»é¡¹ç›®ID          int            éžä¸»        è€ƒæ ¸å¤§ç±»é¡¹ç›®è¡¨
+  NJID          å¹´çº§ID                  nvarchar(10)   éžä¸»        å¹´çº§æ•°æ®ç±»è¡¨
+  BJID          ç­çº§ID                  nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  KHSJ          è€ƒæ ¸æ—¶é—´                datetime       éžä¸»
+  FZ            åˆ†å€¼                    decimal(5, 2)  éžä¸»
+  DJRID         ç™»è®°äººID                nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  DJSJ          ç™»è®°æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_51_A04_SSKHCJ  ËÞÉá¿¼ºË³É¼¨±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  SSDLID        ËùÊô´óÀàID              int            ·ÇÖ÷        ¿¼ºË´óÀà±í
-  SSDLXMID      ËùÊô´óÀàÏîÄ¿ID          int            ·ÇÖ÷        ¿¼ºË´óÀàÏîÄ¿±í
-  GYID          ¹«Ô¢ID                  int            ·ÇÖ÷        ½¨ÖþÎï»ù±¾Êý¾ÝÀà±í
-  SSID          ËÞÉáID                  int            ·ÇÖ÷        Ñ§ÉúËÞÉáÊý¾ÝÀà±í
-  KHSJ          ¿¼ºËÊ±¼ä                datetime       ·ÇÖ÷
-  FZ            ·ÖÖµ                    decimal(5, 2)  ·ÇÖ÷
-  DJRID         µÇ¼ÇÈËID                nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  DJSJ          µÇ¼ÇÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_51_A04_SSKHCJ  å®¿èˆè€ƒæ ¸æˆç»©è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  SSDLID        æ‰€å±žå¤§ç±»ID              int            éžä¸»        è€ƒæ ¸å¤§ç±»è¡¨
+  SSDLXMID      æ‰€å±žå¤§ç±»é¡¹ç›®ID          int            éžä¸»        è€ƒæ ¸å¤§ç±»é¡¹ç›®è¡¨
+  GYID          å…¬å¯“ID                  int            éžä¸»        å»ºç­‘ç‰©åŸºæœ¬æ•°æ®ç±»è¡¨
+  SSID          å®¿èˆID                  int            éžä¸»        å­¦ç”Ÿå®¿èˆæ•°æ®ç±»è¡¨
+  KHSJ          è€ƒæ ¸æ—¶é—´                datetime       éžä¸»
+  FZ            åˆ†å€¼                    decimal(5, 2)  éžä¸»
+  DJRID         ç™»è®°äººID                nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  DJSJ          ç™»è®°æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_51_A11_KHHZ  ¿¼ºË»ã×Ü±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  MC            Ãû³Æ                    nvarchar(50)   ·ÇÖ÷
-  HZFS          »ã×Ü·½Ê½                int            ·ÇÖ÷
-  KHDX          ¿¼ºË¶ÔÏó                int            ·ÇÖ÷
-  YXDLIDLB      ÓÅÏÈ´óÀàIDÁÐ±í          text           ·ÇÖ÷
-  YXDLMCLB      ÓÅÏÈ´óÀàÃû³ÆÁÐ±í        text           ·ÇÖ÷
-  YXPXFS        ÓÅÏÈÅÅÐò·½Ê½            int            ·ÇÖ÷
-  CXDLIDLB      ´ÎÏÈ´óÀàIDÁÐ±í          text           ·ÇÖ÷
-  CXDLMCLB      ´ÎÏÈ´óÀàÃû³ÆÁÐ±í        text           ·ÇÖ÷
-  CXPXFS        ´ÎÏÈÅÅÐò·½Ê½            int            ·ÇÖ÷
-  DDPXFS        µÈµÚÆÀÑ¡·½Ê½            int            ·ÇÖ÷
-  SFXSWDD       ÊÇ·ñÏÔÊ¾ÎÞµÈµÚ          nvarchar(1)    ·ÇÖ÷        ÊÇ·ñ±êÖ¾´úÂë±í
+EDU_ZXXS_51_A11_KHHZ  è€ƒæ ¸æ±‡æ€»è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  MC            åç§°                    nvarchar(50)   éžä¸»
+  HZFS          æ±‡æ€»æ–¹å¼                int            éžä¸»
+  KHDX          è€ƒæ ¸å¯¹è±¡                int            éžä¸»
+  YXDLIDLB      ä¼˜å…ˆå¤§ç±»IDåˆ—è¡¨          text           éžä¸»
+  YXDLMCLB      ä¼˜å…ˆå¤§ç±»åç§°åˆ—è¡¨        text           éžä¸»
+  YXPXFS        ä¼˜å…ˆæŽ’åºæ–¹å¼            int            éžä¸»
+  CXDLIDLB      æ¬¡å…ˆå¤§ç±»IDåˆ—è¡¨          text           éžä¸»
+  CXDLMCLB      æ¬¡å…ˆå¤§ç±»åç§°åˆ—è¡¨        text           éžä¸»
+  CXPXFS        æ¬¡å…ˆæŽ’åºæ–¹å¼            int            éžä¸»
+  DDPXFS        ç­‰ç¬¬è¯„é€‰æ–¹å¼            int            éžä¸»
+  SFXSWDD       æ˜¯å¦æ˜¾ç¤ºæ— ç­‰ç¬¬          nvarchar(1)    éžä¸»        æ˜¯å¦æ ‡å¿—ä»£ç è¡¨
 
-EDU_ZXXS_51_A12_BJHZXSCS  °à¼¶»ã×ÜÏÔÊ¾²ÎÊý±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KHHZID        ¿¼ºË»ã×ÜID              int            ·ÇÖ÷        ¿¼ºË»ã×Ü±í
-  NJ            Äê¼¶                    int            ·ÇÖ÷
-  BJ            °à¼¶                    int            ·ÇÖ÷
-  BZR           °àÖ÷ÈÎ                  int            ·ÇÖ÷
-  FZ            ·ÖÖµ                    int            ·ÇÖ÷
-  DD            µÈµÚ                    int            ·ÇÖ÷
+EDU_ZXXS_51_A12_BJHZXSCS  ç­çº§æ±‡æ€»æ˜¾ç¤ºå‚æ•°è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KHHZID        è€ƒæ ¸æ±‡æ€»ID              int            éžä¸»        è€ƒæ ¸æ±‡æ€»è¡¨
+  NJ            å¹´çº§                    int            éžä¸»
+  BJ            ç­çº§                    int            éžä¸»
+  BZR           ç­ä¸»ä»»                  int            éžä¸»
+  FZ            åˆ†å€¼                    int            éžä¸»
+  DD            ç­‰ç¬¬                    int            éžä¸»
 
-EDU_ZXXS_51_A13_SSHZXSCS  ËÞÉá»ã×ÜÏÔÊ¾²ÎÊý±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KHHZID        ¿¼ºË»ã×ÜID              int            ·ÇÖ÷        ¿¼ºË»ã×Ü±í
-  GY            ¹«Ô¢                    int            ·ÇÖ÷
-  LC            Â¥²ã                    int            ·ÇÖ÷
-  SS            ËÞÉá                    int            ·ÇÖ÷
-  BJ            °à¼¶                    int            ·ÇÖ÷
-  FZ            ·ÖÖµ                    int            ·ÇÖ÷
-  DD            µÈµÚ                    int            ·ÇÖ÷
+EDU_ZXXS_51_A13_SSHZXSCS  å®¿èˆæ±‡æ€»æ˜¾ç¤ºå‚æ•°è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KHHZID        è€ƒæ ¸æ±‡æ€»ID              int            éžä¸»        è€ƒæ ¸æ±‡æ€»è¡¨
+  GY            å…¬å¯“                    int            éžä¸»
+  LC            æ¥¼å±‚                    int            éžä¸»
+  SS            å®¿èˆ                    int            éžä¸»
+  BJ            ç­çº§                    int            éžä¸»
+  FZ            åˆ†å€¼                    int            éžä¸»
+  DD            ç­‰ç¬¬                    int            éžä¸»
 
-EDU_ZXXS_51_A14_KHHZDLPZ  ¿¼ºË»ã×Ü´óÀàÅäÖÃ±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KHHZID        ¿¼ºË»ã×ÜID              int            ·ÇÖ÷        ¿¼ºË»ã×Ü±í
-  DLID          ´óÀàID                  int            ·ÇÖ÷        ¿¼ºË´óÀà±í
-  ZSL           ÕÛËãÂÊ                  int            ·ÇÖ÷
-  XYXMIDLB      Ñ¡ÓÃÏîÄ¿IDÁÐ±í          text           ·ÇÖ÷
-  XSXX          ÏÔÊ¾ÐÅÏ¢                text           ·ÇÖ÷
+EDU_ZXXS_51_A14_KHHZDLPZ  è€ƒæ ¸æ±‡æ€»å¤§ç±»é…ç½®è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KHHZID        è€ƒæ ¸æ±‡æ€»ID              int            éžä¸»        è€ƒæ ¸æ±‡æ€»è¡¨
+  DLID          å¤§ç±»ID                  int            éžä¸»        è€ƒæ ¸å¤§ç±»è¡¨
+  ZSL           æŠ˜ç®—çŽ‡                  int            éžä¸»
+  XYXMIDLB      é€‰ç”¨é¡¹ç›®IDåˆ—è¡¨          text           éžä¸»
+  XSXX          æ˜¾ç¤ºä¿¡æ¯                text           éžä¸»
 
-EDU_ZXXS_51_A15_KHHZDW  ¿¼ºË»ã×ÜµµÎ»±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KHHZID        ¿¼ºË»ã×ÜID              int            ·ÇÖ÷        ¿¼ºË»ã×Ü±í
-  DWMC          µµÎ»Ãû³Æ                nvarchar(20)   ·ÇÖ÷
-  HFSX          »®·ÖÉÏÏÞ                int            ·ÇÖ÷
-  HFXX          »®·ÖÏÂÏÞ                int            ·ÇÖ÷
+EDU_ZXXS_51_A15_KHHZDW  è€ƒæ ¸æ±‡æ€»æ¡£ä½è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KHHZID        è€ƒæ ¸æ±‡æ€»ID              int            éžä¸»        è€ƒæ ¸æ±‡æ€»è¡¨
+  DWMC          æ¡£ä½åç§°                nvarchar(20)   éžä¸»
+  HFSX          åˆ’åˆ†ä¸Šé™                int            éžä¸»
+  HFXX          åˆ’åˆ†ä¸‹é™                int            éžä¸»
 
-EDU_ZXXS_52_A01_PXXM  ÆÀÑ¡ÏîÄ¿±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  PXXMMC        ÆÀÑ¡ÏîÄ¿Ãû³Æ            nvarchar(50)   ·ÇÖ÷
-  JJ            ¼ò½é                    nvarchar(500)  ·ÇÖ÷
+EDU_ZXXS_52_A01_PXXM  è¯„é€‰é¡¹ç›®è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  PXXMMC        è¯„é€‰é¡¹ç›®åç§°            nvarchar(50)   éžä¸»
+  JJ            ç®€ä»‹                    nvarchar(500)  éžä¸»
 
-EDU_ZXXS_52_A02_PXMC  ÆÀÑ¡Ãû³Æ±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  MC            Ãû³Æ                    nvarchar(20)   ·ÇÖ÷
-  PXXMIDLB      ÆÀÑ¡ÏîÄ¿IDÁÐ±í          text           ·ÇÖ÷
-  PXXMMCLB      ÆÀÑ¡ÏîÄ¿Ãû³ÆÁÐ±í        text           ·ÇÖ÷
-  PXXSIDLB      ÆÀÑ¡Ñ§ÉúIDÁÐ±í          text           ·ÇÖ÷
-  PXXSXMLB      ÆÀÑ¡Ñ§ÉúÐÕÃûÁÐ±í        text           ·ÇÖ÷
-  YQTX          ÓÑÇéÌáÐÑ                nvarchar(1000) ·ÇÖ÷
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
+EDU_ZXXS_52_A02_PXMC  è¯„é€‰åç§°è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  MC            åç§°                    nvarchar(20)   éžä¸»
+  PXXMIDLB      è¯„é€‰é¡¹ç›®IDåˆ—è¡¨          text           éžä¸»
+  PXXMMCLB      è¯„é€‰é¡¹ç›®åç§°åˆ—è¡¨        text           éžä¸»
+  PXXSIDLB      è¯„é€‰å­¦ç”ŸIDåˆ—è¡¨          text           éžä¸»
+  PXXSXMLB      è¯„é€‰å­¦ç”Ÿå§“ååˆ—è¡¨        text           éžä¸»
+  YQTX          å‹æƒ…æé†’                nvarchar(1000) éžä¸»
+  ZT            çŠ¶æ€                    int            éžä¸»
+  NR            å†…å®¹                    text           éžä¸»
 
-EDU_ZXXS_52_A03_XSZL  Ñ§Éú×ÊÁÏ±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  PXMCID        ÆÀÑ¡Ãû³ÆID              int            ·ÇÖ÷        ÆÀÑ¡Ãû³Æ±í
-  PXXMID        ÆÀÑ¡ÏîÄ¿ID              int            ·ÇÖ÷        ÆÀÑ¡ÏîÄ¿±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
-  SCSJ          ÉÏ´«Ê±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_52_A03_XSZL  å­¦ç”Ÿèµ„æ–™è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  PXMCID        è¯„é€‰åç§°ID              int            éžä¸»        è¯„é€‰åç§°è¡¨
+  PXXMID        è¯„é€‰é¡¹ç›®ID              int            éžä¸»        è¯„é€‰é¡¹ç›®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  NR            å†…å®¹                    text           éžä¸»
+  SCSJ          ä¸Šä¼ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_55_A01_CZDAGN  ³É³¤µµ°¸¹¦ÄÜ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  GNMC          ¹¦ÄÜÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  XSCKWZ        Ñ§Éú²é¿´ÍøÖ·            nvarchar(200)  ·ÇÖ÷
-  XSBJWZ        Ñ§Éú±à¼­ÍøÖ·            nvarchar(200)  ·ÇÖ÷
-  JSCKWZ        ½ÌÊ¦²é¿´ÍøÖ·            nvarchar(200)  ·ÇÖ÷
-  BZRBJWZ       °àÖ÷ÈÎ±à¼­ÍøÖ·          nvarchar(200)  ·ÇÖ÷
-  SFXYDF        ÊÇ·ñÐèÒª´ò·Ö            int            ·ÇÖ÷
-  DFFSID        ´ò·Ö·½Ê½ID              int            ·ÇÖ÷        ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
+EDU_ZXXS_55_A01_CZDAGN  æˆé•¿æ¡£æ¡ˆåŠŸèƒ½è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  GNMC          åŠŸèƒ½åç§°                nvarchar(50)   éžä¸»
+  XSCKWZ        å­¦ç”ŸæŸ¥çœ‹ç½‘å€            nvarchar(200)  éžä¸»
+  XSBJWZ        å­¦ç”Ÿç¼–è¾‘ç½‘å€            nvarchar(200)  éžä¸»
+  JSCKWZ        æ•™å¸ˆæŸ¥çœ‹ç½‘å€            nvarchar(200)  éžä¸»
+  BZRBJWZ       ç­ä¸»ä»»ç¼–è¾‘ç½‘å€          nvarchar(200)  éžä¸»
+  SFXYDF        æ˜¯å¦éœ€è¦æ‰“åˆ†            int            éžä¸»
+  DFFSID        æ‰“åˆ†æ–¹å¼ID              int            éžä¸»        æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
+  ZT            çŠ¶æ€                    int            éžä¸»
 
-EDU_ZXXS_55_A02_CZDAGNQX  ³É³¤µµ°¸¹¦ÄÜÈ¨ÏÞ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  GNID          ¹¦ÄÜID                  int            ·ÇÖ÷        ³É³¤µµ°¸¹¦ÄÜ±í
-  YHLX          ÓÃ»§ÀàÐÍ                int            ·ÇÖ÷
-  QXMC          È¨ÏÞÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
+EDU_ZXXS_55_A02_CZDAGNQX  æˆé•¿æ¡£æ¡ˆåŠŸèƒ½æƒé™è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  GNID          åŠŸèƒ½ID                  int            éžä¸»        æˆé•¿æ¡£æ¡ˆåŠŸèƒ½è¡¨
+  YHLX          ç”¨æˆ·ç±»åž‹                int            éžä¸»
+  QXMC          æƒé™åç§°                nvarchar(50)   éžä¸»
+  ZT            çŠ¶æ€                    int            éžä¸»
 
-EDU_ZXXS_55_A03_CZDADFFS  ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  DFFSMC        ´ò·Ö·½Ê½Ãû³Æ            nvarchar(50)   ·ÇÖ÷
-  DFXMLX        ´ò·ÖÏîÄ¿ÀàÐÍ            int            ·ÇÖ÷
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
+EDU_ZXXS_55_A03_CZDADFFS  æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  DFFSMC        æ‰“åˆ†æ–¹å¼åç§°            nvarchar(50)   éžä¸»
+  DFXMLX        æ‰“åˆ†é¡¹ç›®ç±»åž‹            int            éžä¸»
+  ZT            çŠ¶æ€                    int            éžä¸»
 
-EDU_ZXXS_55_A04_CZDADFXX  ³É³¤µµ°¸´ò·ÖÑ¡Ïî±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  DFFSID        ´ò·Ö·½Ê½ID              int            ·ÇÖ÷        ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  XXNR          Ñ¡ÏîÄÚÈÝ                nvarchar(50)   ·ÇÖ÷
-  TPLJ          Í¼Æ¬Â·¾¶                nvarchar(200)  ·ÇÖ÷
+EDU_ZXXS_55_A04_CZDADFXX  æˆé•¿æ¡£æ¡ˆæ‰“åˆ†é€‰é¡¹è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  DFFSID        æ‰“åˆ†æ–¹å¼ID              int            éžä¸»        æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  XXNR          é€‰é¡¹å†…å®¹                nvarchar(50)   éžä¸»
+  TPLJ          å›¾ç‰‡è·¯å¾„                nvarchar(200)  éžä¸»
 
-EDU_ZXXS_56_A01_XSXQDS  Ñ§ÉúÑ§ÆÚ´òËã±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
+EDU_ZXXS_56_A01_XSXQDS  å­¦ç”Ÿå­¦æœŸæ‰“ç®—è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  NR            å†…å®¹                    text           éžä¸»
 
-EDU_ZXXS_56_A11_JXLXMRJL  ¼ÒÐ£ÁªÏµÃ¿ÈÕ¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  DJSJ          µÇ¼ÇÊ±¼ä                datetime       ·ÇÖ÷
-  BZRTXJL       °àÖ÷ÈÎÌîÐ´¼ÇÂ¼          text           ·ÇÖ÷
-  JTTXJL        ¼ÒÍ¥ÌîÐ´¼ÇÂ¼            text           ·ÇÖ÷
-  BZRGXZT       °àÖ÷ÈÎ¸üÐÂ×´Ì¬          int            ·ÇÖ÷
-  JTGXZT        ¼ÒÍ¥¸üÐÂ×´Ì¬            int            ·ÇÖ÷
+EDU_ZXXS_56_A11_JXLXMRJL  å®¶æ ¡è”ç³»æ¯æ—¥è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  DJSJ          ç™»è®°æ—¶é—´                datetime       éžä¸»
+  BZRTXJL       ç­ä¸»ä»»å¡«å†™è®°å½•          text           éžä¸»
+  JTTXJL        å®¶åº­å¡«å†™è®°å½•            text           éžä¸»
+  BZRGXZT       ç­ä¸»ä»»æ›´æ–°çŠ¶æ€          int            éžä¸»
+  JTGXZT        å®¶åº­æ›´æ–°çŠ¶æ€            int            éžä¸»
 
-EDU_ZXXS_56_A12_JXLXPJXM  ¼ÒÐ£ÁªÏµÆÀ¼ÛÏîÄ¿±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  PJXMMC        ÆÀ¼ÛÏîÄ¿Ãû³Æ            nvarchar(50)   ·ÇÖ÷
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
+EDU_ZXXS_56_A12_JXLXPJXM  å®¶æ ¡è”ç³»è¯„ä»·é¡¹ç›®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  PJXMMC        è¯„ä»·é¡¹ç›®åç§°            nvarchar(50)   éžä¸»
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
 
-EDU_ZXXS_56_A13_JXLXXSPJ  ¼ÒÐ£ÁªÏµÑ§ÉúÆÀ¼Û±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  BPXSID        ±»ÆÀÑ§ÉúID              int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  PJXSID        ÆÀ¼ÛÑ§ÉúID              int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  PJXMID        ÆÀ¼ÛÏîÄ¿ID              int            ·ÇÖ÷        ¼ÒÐ£ÁªÏµÆÀ¼ÛÏîÄ¿±í
-  DFLX          ´ò·ÖÀàÐÍ                int            ·ÇÖ÷
-  DFNR          ´ò·ÖÄÚÈÝ                nvarchar(200)  ·ÇÖ÷
-  DJSJ          µÇ¼ÇÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_56_A13_JXLXXSPJ  å®¶æ ¡è”ç³»å­¦ç”Ÿè¯„ä»·è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  BPXSID        è¢«è¯„å­¦ç”ŸID              int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  PJXSID        è¯„ä»·å­¦ç”ŸID              int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  PJXMID        è¯„ä»·é¡¹ç›®ID              int            éžä¸»        å®¶æ ¡è”ç³»è¯„ä»·é¡¹ç›®è¡¨
+  DFLX          æ‰“åˆ†ç±»åž‹                int            éžä¸»
+  DFNR          æ‰“åˆ†å†…å®¹                nvarchar(200)  éžä¸»
+  DJSJ          ç™»è®°æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_56_A21_XSWHSZPJXM  Ñ§ÉúÎÄ»¯ËØÖÊÆÀ¼ÛÏîÄ¿±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  KCMC          ¿Î³ÌÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  PJXM          ÆÀ¼ÛÏîÄ¿                nvarchar(50)   ·ÇÖ÷
-  CJDFFSID      ³É¼¨´ò·Ö·½Ê½ID          int            ·ÇÖ÷        ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  PJDFFSID      ÆÀ¼Û´ò·Ö·½Ê½ID          int            ·ÇÖ÷        ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
+EDU_ZXXS_56_A21_XSWHSZPJXM  å­¦ç”Ÿæ–‡åŒ–ç´ è´¨è¯„ä»·é¡¹ç›®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  KCMC          è¯¾ç¨‹åç§°                nvarchar(50)   éžä¸»
+  PJXM          è¯„ä»·é¡¹ç›®                nvarchar(50)   éžä¸»
+  CJDFFSID      æˆç»©æ‰“åˆ†æ–¹å¼ID          int            éžä¸»        æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  PJDFFSID      è¯„ä»·æ‰“åˆ†æ–¹å¼ID          int            éžä¸»        æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
+  ZT            çŠ¶æ€                    int            éžä¸»
 
-EDU_ZXXS_56_A22_XSWHSZPJJG  Ñ§ÉúÎÄ»¯ËØÖÊÆÀ¼Û½á¹û±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  BPXSID        ±»ÆÀÑ§ÉúID              int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  PJXMID        ÆÀ¼ÛÏîÄ¿ID              int            ·ÇÖ÷        Ñ§ÉúÎÄ»¯ËØÖÊÆÀ¼ÛÏîÄ¿±í
-  PJLX          ÆÀ¼ÛÀàÐÍ                int            ·ÇÖ÷
-  DFLX          ´ò·ÖÀàÐÍ                int            ·ÇÖ÷
-  DFNR          ´ò·ÖÄÚÈÝ                nvarchar(200)  ·ÇÖ÷
-  DJYHID        µÇ¼ÇÓÃ»§ID              nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  DJSJ          µÇ¼ÇÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_56_A22_XSWHSZPJJG  å­¦ç”Ÿæ–‡åŒ–ç´ è´¨è¯„ä»·ç»“æžœè¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  BPXSID        è¢«è¯„å­¦ç”ŸID              int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  PJXMID        è¯„ä»·é¡¹ç›®ID              int            éžä¸»        å­¦ç”Ÿæ–‡åŒ–ç´ è´¨è¯„ä»·é¡¹ç›®è¡¨
+  PJLX          è¯„ä»·ç±»åž‹                int            éžä¸»
+  DFLX          æ‰“åˆ†ç±»åž‹                int            éžä¸»
+  DFNR          æ‰“åˆ†å†…å®¹                nvarchar(200)  éžä¸»
+  DJYHID        ç™»è®°ç”¨æˆ·ID              nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  DJSJ          ç™»è®°æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_56_A31_XSZHSZPJXM  Ñ§Éú×ÛºÏËØÖÊÆÀ¼ÛÏîÄ¿±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XMMC          ÏîÄ¿Ãû³Æ                nvarchar(50)   ·ÇÖ÷
-  YS            ÒªËØ                    nvarchar(50)   ·ÇÖ÷
-  GJBX          ¹Ø¼ü±íÏÖ                nvarchar(200)  ·ÇÖ÷
-  ZWPDDFFSID    ×ÔÎÒÆÀ¶¨´ò·Ö·½Ê½ID      int            ·ÇÖ÷        ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  XZPDDFFSID    Ð¡×éÆÀ¶¨´ò·Ö·½Ê½ID      int            ·ÇÖ÷        ³É³¤µµ°¸´ò·Ö·½Ê½±í
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
-  ZT            ×´Ì¬                    int            ·ÇÖ÷
+EDU_ZXXS_56_A31_XSZHSZPJXM  å­¦ç”Ÿç»¼åˆç´ è´¨è¯„ä»·é¡¹ç›®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XMMC          é¡¹ç›®åç§°                nvarchar(50)   éžä¸»
+  YS            è¦ç´                     nvarchar(50)   éžä¸»
+  GJBX          å…³é”®è¡¨çŽ°                nvarchar(200)  éžä¸»
+  ZWPDDFFSID    è‡ªæˆ‘è¯„å®šæ‰“åˆ†æ–¹å¼ID      int            éžä¸»        æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  XZPDDFFSID    å°ç»„è¯„å®šæ‰“åˆ†æ–¹å¼ID      int            éžä¸»        æˆé•¿æ¡£æ¡ˆæ‰“åˆ†æ–¹å¼è¡¨
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
+  ZT            çŠ¶æ€                    int            éžä¸»
 
-EDU_ZXXS_56_A32_XSZHSZPJJG  Ñ§Éú×ÛºÏËØÖÊÆÀ¼Û½á¹û±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  BPXSID        ±»ÆÀÑ§ÉúID              int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  PJXMID        ÆÀ¼ÛÏîÄ¿ID              int            ·ÇÖ÷        Ñ§Éú×ÛºÏËØÖÊÆÀ¼ÛÏîÄ¿±í
-  PJLX          ÆÀ¼ÛÀàÐÍ                int            ·ÇÖ÷
-  DFLX          ´ò·ÖÀàÐÍ                int            ·ÇÖ÷
-  DFNR          ´ò·ÖÄÚÈÝ                nvarchar(200)  ·ÇÖ÷
-  DJYHID        µÇ¼ÇÓÃ»§ID              nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  DJSJ          µÇ¼ÇÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_56_A32_XSZHSZPJJG  å­¦ç”Ÿç»¼åˆç´ è´¨è¯„ä»·ç»“æžœè¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  BPXSID        è¢«è¯„å­¦ç”ŸID              int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  PJXMID        è¯„ä»·é¡¹ç›®ID              int            éžä¸»        å­¦ç”Ÿç»¼åˆç´ è´¨è¯„ä»·é¡¹ç›®è¡¨
+  PJLX          è¯„ä»·ç±»åž‹                int            éžä¸»
+  DFLX          æ‰“åˆ†ç±»åž‹                int            éžä¸»
+  DFNR          æ‰“åˆ†å†…å®¹                nvarchar(200)  éžä¸»
+  DJYHID        ç™»è®°ç”¨æˆ·ID              nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  DJSJ          ç™»è®°æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_56_A41_JKJCJL  ½¡¿µ¼ì²é¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  NJID          Äê¼¶ID                  nvarchar(10)   ·ÇÖ÷        Äê¼¶Êý¾ÝÀà±í
-  BJID          °à¼¶ID                  nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  TJRQ          Ìå¼ìÈÕÆÚ                datetime       ·ÇÖ÷
-  ZLYSL         ×óÂãÑÛÊÓÁ¦              decimal(2, 1)  ·ÇÖ÷
-  ZJZSL         ×ó½ÃÕýÊÓÁ¦              decimal(2, 1)  ·ÇÖ÷
-  ZJZDS         ×ó½ÃÕý¶ÈÊý              int            ·ÇÖ÷
-  YLYSL         ÓÒÂãÑÛÊÓÁ¦              decimal(2, 1)  ·ÇÖ÷
-  YJZSL         ÓÒ½ÃÕýÊÓÁ¦              decimal(2, 1)  ·ÇÖ÷
-  YJZDS         ÓÒ½ÃÕý¶ÈÊý              int            ·ÇÖ÷
-  TLZ           ÌýÁ¦×ó                  nvarchar(30)   ·ÇÖ÷
-  TLY           ÌýÁ¦ÓÒ                  nvarchar(30)   ·ÇÖ÷
-  FYJYYZK       ·¢Óý¼°ÓªÑø×´¿ö          nvarchar(30)   ·ÇÖ÷
-  SG            Éí¸ß                    decimal(5, 2)  ·ÇÖ÷
-  TZ            ÌåÖØ                    decimal(5, 2)  ·ÇÖ÷
-  FHL           ·Î»îÁ¿                  decimal(7, 2)  ·ÇÖ÷
-  XY            ÑªÑ¹                    decimal(7, 2)  ·ÇÖ÷
-  MB            Âö²«                    int            ·ÇÖ÷
-  SY            É³ÑÛ                    nvarchar(30)   ·ÇÖ÷
-  SJ            É«¾õ                    nvarchar(30)   ·ÇÖ÷
-  BB            ±Ç²¡                    nvarchar(30)   ·ÇÖ÷
-  KQ            ¿ÚÇ»                    nvarchar(30)   ·ÇÖ÷
-  XZF           ÐÄÔà¡¢·Î                 nvarchar(30)   ·ÇÖ÷
-  GPCW          ¸ÎÆ¢¡¢Î¸³¦               nvarchar(30)   ·ÇÖ÷
-  JZSZ          ¼¹Öù¡¢ËÄÖ«               nvarchar(30)   ·ÇÖ÷
-  PZ            Æ½×ã                    nvarchar(30)   ·ÇÖ÷
-  PF            Æ¤·ô                    nvarchar(30)   ·ÇÖ÷
-  CLB           ´«È¾²¡                  nvarchar(30)   ·ÇÖ÷
-  XT            ÐØÍ¸                    nvarchar(30)   ·ÇÖ÷
-  JWBS          ¼ÈÍù²¡Ê·                nvarchar(300)  ·ÇÖ÷
-  XYQM          Ð£Ò½Ç©Ãû                nvarchar(30)   ·ÇÖ÷
-  JZQM          ¼Ò³¤Ç©Ãû                nvarchar(30)   ·ÇÖ÷
-  DJYHID        µÇ¼ÇÓÃ»§ID              nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  BZ            ±¸×¢                    text           ·ÇÖ÷
+EDU_ZXXS_56_A41_JKJCJL  å¥åº·æ£€æŸ¥è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  NJID          å¹´çº§ID                  nvarchar(10)   éžä¸»        å¹´çº§æ•°æ®ç±»è¡¨
+  BJID          ç­çº§ID                  nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  TJRQ          ä½“æ£€æ—¥æœŸ                datetime       éžä¸»
+  ZLYSL         å·¦è£¸çœ¼è§†åŠ›              decimal(2, 1)  éžä¸»
+  ZJZSL         å·¦çŸ«æ­£è§†åŠ›              decimal(2, 1)  éžä¸»
+  ZJZDS         å·¦çŸ«æ­£åº¦æ•°              int            éžä¸»
+  YLYSL         å³è£¸çœ¼è§†åŠ›              decimal(2, 1)  éžä¸»
+  YJZSL         å³çŸ«æ­£è§†åŠ›              decimal(2, 1)  éžä¸»
+  YJZDS         å³çŸ«æ­£åº¦æ•°              int            éžä¸»
+  TLZ           å¬åŠ›å·¦                  nvarchar(30)   éžä¸»
+  TLY           å¬åŠ›å³                  nvarchar(30)   éžä¸»
+  FYJYYZK       å‘è‚²åŠè¥å…»çŠ¶å†µ          nvarchar(30)   éžä¸»
+  SG            èº«é«˜                    decimal(5, 2)  éžä¸»
+  TZ            ä½“é‡                    decimal(5, 2)  éžä¸»
+  FHL           è‚ºæ´»é‡                  decimal(7, 2)  éžä¸»
+  XY            è¡€åŽ‹                    decimal(7, 2)  éžä¸»
+  MB            è„‰æ                    int            éžä¸»
+  SY            æ²™çœ¼                    nvarchar(30)   éžä¸»
+  SJ            è‰²è§‰                    nvarchar(30)   éžä¸»
+  BB            é¼»ç—…                    nvarchar(30)   éžä¸»
+  KQ            å£è…”                    nvarchar(30)   éžä¸»
+  XZF           å¿ƒè„ã€è‚º                 nvarchar(30)   éžä¸»
+  GPCW          è‚è„¾ã€èƒƒè‚                nvarchar(30)   éžä¸»
+  JZSZ          è„ŠæŸ±ã€å››è‚¢               nvarchar(30)   éžä¸»
+  PZ            å¹³è¶³                    nvarchar(30)   éžä¸»
+  PF            çš®è‚¤                    nvarchar(30)   éžä¸»
+  CLB           ä¼ æŸ“ç—…                  nvarchar(30)   éžä¸»
+  XT            èƒ¸é€                    nvarchar(30)   éžä¸»
+  JWBS          æ—¢å¾€ç—…å²                nvarchar(300)  éžä¸»
+  XYQM          æ ¡åŒ»ç­¾å                nvarchar(30)   éžä¸»
+  JZQM          å®¶é•¿ç­¾å                nvarchar(30)   éžä¸»
+  DJYHID        ç™»è®°ç”¨æˆ·ID              nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  BZ            å¤‡æ³¨                    text           éžä¸»
 
-EDU_ZXXS_57_A01_DSZGN  µ¼Ê¦ÖÆ¹¦ÄÜ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  GNMC          ¹¦ÄÜÃû³Æ                nvarchar(100)  ·ÇÖ÷
-  LJ            Á´½Ó                    nvarchar(200)  ·ÇÖ÷
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
+EDU_ZXXS_57_A01_DSZGN  å¯¼å¸ˆåˆ¶åŠŸèƒ½è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  GNMC          åŠŸèƒ½åç§°                nvarchar(100)  éžä¸»
+  LJ            é“¾æŽ¥                    nvarchar(200)  éžä¸»
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
 
-EDU_ZXXS_57_A02_DSZJS  µ¼Ê¦ÖÆ½ÇÉ«±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  JSMC          ½ÇÉ«Ãû³Æ                nvarchar(100)  ·ÇÖ÷
-  GNIDLB        ¹¦ÄÜIDÁÐ±í              text           ·ÇÖ÷
-  GNMCLB        ¹¦ÄÜÃû³ÆÁÐ±í            text           ·ÇÖ÷
+EDU_ZXXS_57_A02_DSZJS  å¯¼å¸ˆåˆ¶è§’è‰²è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  JSMC          è§’è‰²åç§°                nvarchar(100)  éžä¸»
+  GNIDLB        åŠŸèƒ½IDåˆ—è¡¨              text           éžä¸»
+  GNMCLB        åŠŸèƒ½åç§°åˆ—è¡¨            text           éžä¸»
 
-EDU_ZXXS_57_A03_DSZDS  µ¼Ê¦ÖÆµ¼Ê¦±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  JSID          ½ÌÊ¦ID                  int            ·ÇÖ÷        ½ÌÖ°¹¤»ù±¾Êý¾Ý×ÓÀà±í
-  JUESEID       ½ÇÉ«ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆ½ÇÉ«±í
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_57_A03_DSZDS  å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  JSID          æ•™å¸ˆID                  int            éžä¸»        æ•™èŒå·¥åŸºæœ¬æ•°æ®å­ç±»è¡¨
+  JUESEID       è§’è‰²ID                  int            éžä¸»        å¯¼å¸ˆåˆ¶è§’è‰²è¡¨
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_57_A04_DSZDSXSJD  µ¼Ê¦ÖÆµ¼Ê¦Ñ§Éú½á¶Ô±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_57_A04_DSZDSXSJD  å¯¼å¸ˆåˆ¶å¯¼å¸ˆå­¦ç”Ÿç»“å¯¹è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_57_A05_DSZXSMB  µ¼Ê¦ÖÆÏÔÊ¾Ä£°å±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  MBLX          Ä£°åÀàÐÍ                int            ·ÇÖ÷
-  NRLX          ÄÚÈÝÀàÐÍ                int            ·ÇÖ÷
-  MC            Ãû³Æ                    nvarchar(200)  ·ÇÖ÷
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
-  YF            ÔÂ·Ý                    int            ·ÇÖ÷
-  WZ            Î»ÖÃ                    int            ·ÇÖ÷
-  JSMBID        ½ÇÉ«Ä£°åID              int            ·ÇÖ÷        µ¼Ê¦ÖÆ½ÇÉ«Ä£°å±í
+EDU_ZXXS_57_A05_DSZXSMB  å¯¼å¸ˆåˆ¶æ˜¾ç¤ºæ¨¡æ¿è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  MBLX          æ¨¡æ¿ç±»åž‹                int            éžä¸»
+  NRLX          å†…å®¹ç±»åž‹                int            éžä¸»
+  MC            åç§°                    nvarchar(200)  éžä¸»
+  NR            å†…å®¹                    text           éžä¸»
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
+  YF            æœˆä»½                    int            éžä¸»
+  WZ            ä½ç½®                    int            éžä¸»
+  JSMBID        è§’è‰²æ¨¡æ¿ID              int            éžä¸»        å¯¼å¸ˆåˆ¶è§’è‰²æ¨¡æ¿è¡¨
 
-EDU_ZXXS_57_A06_DSZJSMB  µ¼Ê¦ÖÆ½ÇÉ«Ä£°å±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  JSID          ½ÇÉ«ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆ½ÇÉ«±í
-  MC            Ãû³Æ                    nvarchar(300)  ·ÇÖ÷
-  BJT           ±³¾°Í¼                  nvarchar(300)  ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_57_A06_DSZJSMB  å¯¼å¸ˆåˆ¶è§’è‰²æ¨¡æ¿è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  JSID          è§’è‰²ID                  int            éžä¸»        å¯¼å¸ˆåˆ¶è§’è‰²è¡¨
+  MC            åç§°                    nvarchar(300)  éžä¸»
+  BJT           èƒŒæ™¯å›¾                  nvarchar(300)  éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_57_A11_DSZHD  µ¼Ê¦ÖÆ»î¶¯±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  HDMC          »î¶¯Ãû³Æ                nvarchar(100)  ·ÇÖ÷
-  HDNR          »î¶¯ÄÚÈÝ                text           ·ÇÖ÷
-  KSSJ          ¿ªÊ¼Ê±¼ä                datetime       ·ÇÖ÷
-  JSSJ          ½áÊøÊ±¼ä                datetime       ·ÇÖ÷
-  BZ            ±¸×¢                    nvarchar(200)  ·ÇÖ÷
+EDU_ZXXS_57_A11_DSZHD  å¯¼å¸ˆåˆ¶æ´»åŠ¨è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  HDMC          æ´»åŠ¨åç§°                nvarchar(100)  éžä¸»
+  HDNR          æ´»åŠ¨å†…å®¹                text           éžä¸»
+  KSSJ          å¼€å§‹æ—¶é—´                datetime       éžä¸»
+  JSSJ          ç»“æŸæ—¶é—´                datetime       éžä¸»
+  BZ            å¤‡æ³¨                    nvarchar(200)  éžä¸»
 
-EDU_ZXXS_57_A12_DSZXSHDBXJL  µ¼Ê¦ÖÆÑ§Éú»î¶¯±íÏÖ¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  HDID          »î¶¯ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆ»î¶¯±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  JTBX          ¾ßÌå±íÏÖ                text           ·ÇÖ÷
-  PJNR          ÆÀ¼ÛÄÚÈÝ                nvarchar(200)  ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  SHZT          ÉóºË×´Ì¬                int            ·ÇÖ÷
+EDU_ZXXS_57_A12_DSZXSHDBXJL  å¯¼å¸ˆåˆ¶å­¦ç”Ÿæ´»åŠ¨è¡¨çŽ°è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  HDID          æ´»åŠ¨ID                  int            éžä¸»        å¯¼å¸ˆåˆ¶æ´»åŠ¨è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  JTBX          å…·ä½“è¡¨çŽ°                text           éžä¸»
+  PJNR          è¯„ä»·å†…å®¹                nvarchar(200)  éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
+  SHZT          å®¡æ ¸çŠ¶æ€                int            éžä¸»
 
-EDU_ZXXS_57_A14_DSZXSZWDR  µ¼Ê¦ÖÆÑ§ÉúÖ°Îñµ£ÈÎ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  ZWMC          Ö°ÎñÃû³Æ                nvarchar(200)  ·ÇÖ÷
-  KSSJ          ¿ªÊ¼Ê±¼ä                datetime       ·ÇÖ÷
-  JSSJ          ½áÊøÊ±¼ä                datetime       ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  BZ            ±¸×¢                    nvarchar(200)  ·ÇÖ÷
-  SHZT          ÉóºË×´Ì¬                int            ·ÇÖ÷
+EDU_ZXXS_57_A14_DSZXSZWDR  å¯¼å¸ˆåˆ¶å­¦ç”ŸèŒåŠ¡æ‹…ä»»è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  ZWMC          èŒåŠ¡åç§°                nvarchar(200)  éžä¸»
+  KSSJ          å¼€å§‹æ—¶é—´                datetime       éžä¸»
+  JSSJ          ç»“æŸæ—¶é—´                datetime       éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
+  BZ            å¤‡æ³¨                    nvarchar(200)  éžä¸»
+  SHZT          å®¡æ ¸çŠ¶æ€                int            éžä¸»
 
-EDU_ZXXS_57_A15_DSZXSJCJL  µ¼Ê¦ÖÆÑ§Éú½±³Í¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  JCLX          ½±³ÍÀàÐÍ                nvarchar(200)  ·ÇÖ÷
-  JCNR          ½±³ÍÄÚÈÝ                text           ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  BZ            ±¸×¢                    nvarchar(200)  ·ÇÖ÷
-  SHZT          ÉóºË×´Ì¬                int            ·ÇÖ÷
+EDU_ZXXS_57_A15_DSZXSJCJL  å¯¼å¸ˆåˆ¶å­¦ç”Ÿå¥–æƒ©è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  JCLX          å¥–æƒ©ç±»åž‹                nvarchar(200)  éžä¸»
+  JCNR          å¥–æƒ©å†…å®¹                text           éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
+  BZ            å¤‡æ³¨                    nvarchar(200)  éžä¸»
+  SHZT          å®¡æ ¸çŠ¶æ€                int            éžä¸»
 
-EDU_ZXXS_57_A16_DSZXSQJJL  µ¼Ê¦ÖÆÑ§ÉúÇë¼Ù¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  QJLX          Çë¼ÙÀàÐÍ                nvarchar(200)  ·ÇÖ÷
-  QJNR          Çë¼ÙÄÚÈÝ                text           ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  BZ            ±¸×¢                    nvarchar(200)  ·ÇÖ÷
-  SHZT          ÉóºË×´Ì¬                int            ·ÇÖ÷
+EDU_ZXXS_57_A16_DSZXSQJJL  å¯¼å¸ˆåˆ¶å­¦ç”Ÿè¯·å‡è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  QJLX          è¯·å‡ç±»åž‹                nvarchar(200)  éžä¸»
+  QJNR          è¯·å‡å†…å®¹                text           éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
+  BZ            å¤‡æ³¨                    nvarchar(200)  éžä¸»
+  SHZT          å®¡æ ¸çŠ¶æ€                int            éžä¸»
 
-EDU_ZXXS_57_A17_DSZXSXQXJ  µ¼Ê¦ÖÆÑ§ÉúÑ§ÆÚÐ¡½á±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  DSID          µ¼Ê¦ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆµ¼Ê¦±í
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
-  DDID          µÈµÚID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆÑ§ÉúµÈµÚ±í
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  BZ            ±¸×¢                    nvarchar(200)  ·ÇÖ÷
-  SHZT          ÉóºË×´Ì¬                int            ·ÇÖ÷
+EDU_ZXXS_57_A17_DSZXSXQXJ  å¯¼å¸ˆåˆ¶å­¦ç”Ÿå­¦æœŸå°ç»“è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  DSID          å¯¼å¸ˆID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å¯¼å¸ˆè¡¨
+  NR            å†…å®¹                    text           éžä¸»
+  DDID          ç­‰ç¬¬ID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å­¦ç”Ÿç­‰ç¬¬è¡¨
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
+  BZ            å¤‡æ³¨                    nvarchar(200)  éžä¸»
+  SHZT          å®¡æ ¸çŠ¶æ€                int            éžä¸»
 
-EDU_ZXXS_57_A18_DSZXSDD  µ¼Ê¦ÖÆÑ§ÉúµÈµÚ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  DDMC          µÈµÚÃû³Æ                nvarchar(200)  ·ÇÖ÷
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
+EDU_ZXXS_57_A18_DSZXSDD  å¯¼å¸ˆåˆ¶å­¦ç”Ÿç­‰ç¬¬è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  DDMC          ç­‰ç¬¬åç§°                nvarchar(200)  éžä¸»
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
 
-EDU_ZXXS_57_A21_DSZXSZWGH  µ¼Ê¦ÖÆÑ§Éú×ÔÎÒ¹æ»®±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  RSMB          ÈËÉúÄ¿±ê                text           ·ÇÖ÷
-  WLSNDW        Î´À´Ê®ÄêµÄÎÒ            text           ·ÇÖ÷
-  WGXQDZY       ÎÒ¸ÐÐËÈ¤µÄÖ°Òµ          text           ·ÇÖ÷
-  WXWDCS        ÎÒÏòÍùµÄ³ÇÊÐ            text           ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_57_A21_DSZXSZWGH  å¯¼å¸ˆåˆ¶å­¦ç”Ÿè‡ªæˆ‘è§„åˆ’è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  RSMB          äººç”Ÿç›®æ ‡                text           éžä¸»
+  WLSNDW        æœªæ¥åå¹´çš„æˆ‘            text           éžä¸»
+  WGXQDZY       æˆ‘æ„Ÿå…´è¶£çš„èŒä¸š          text           éžä¸»
+  WXWDCS        æˆ‘å‘å¾€çš„åŸŽå¸‚            text           éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_57_A22_DSZXSXQGHZJ  µ¼Ê¦ÖÆÑ§ÉúÑ§ÆÚ¹æ»®×Ü½á±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  XYSPCSMB      Ñ§ÒµË®Æ½²âÊÔÄ¿±ê        text           ·ÇÖ÷
-  ZJTSKJZY      ×Ô¼ºÌáÉý¿Õ¼äÔõÑù        text           ·ÇÖ÷
-  BXQDNLMB      ±¾Ñ§ÆÚµÄÅ¬Á¦Ä¿±ê        text           ·ÇÖ÷
-  XQHJXX        Ñ§ÆÚ»ñ½±ÐÅÏ¢            text           ·ÇÖ÷
-  YXZSDXYWHHD   Ó¡Ïó×îÉîµÄÐ£Ô°ÎÄ»¯»î¶¯  text           ·ÇÖ÷
-  HGBXQ         »Ø¹Ë±¾Ñ§ÆÚ              text           ·ÇÖ÷
-  DSJY          µ¼Ê¦¼ÄÓï                text           ·ÇÖ÷
-  SJJH          Êî¼Ù¼Æ»®                text           ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_57_A22_DSZXSXQGHZJ  å¯¼å¸ˆåˆ¶å­¦ç”Ÿå­¦æœŸè§„åˆ’æ€»ç»“è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  XYSPCSMB      å­¦ä¸šæ°´å¹³æµ‹è¯•ç›®æ ‡        text           éžä¸»
+  ZJTSKJZY      è‡ªå·±æå‡ç©ºé—´æ€Žæ ·        text           éžä¸»
+  BXQDNLMB      æœ¬å­¦æœŸçš„åŠªåŠ›ç›®æ ‡        text           éžä¸»
+  XQHJXX        å­¦æœŸèŽ·å¥–ä¿¡æ¯            text           éžä¸»
+  YXZSDXYWHHD   å°è±¡æœ€æ·±çš„æ ¡å›­æ–‡åŒ–æ´»åŠ¨  text           éžä¸»
+  HGBXQ         å›žé¡¾æœ¬å­¦æœŸ              text           éžä¸»
+  DSJY          å¯¼å¸ˆå¯„è¯­                text           éžä¸»
+  SJJH          æš‘å‡è®¡åˆ’                text           éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_57_A23_DSZXSXQMYGH  µ¼Ê¦ÖÆÑ§ÉúÑ§ÆÚÃ¿ÔÂ¹æ»®±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  YF            ÔÂ·Ý                    int            ·ÇÖ÷
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  BYMB          ±¾ÔÂÄ¿±ê                text           ·ÇÖ÷
-  BYXXSH        ±¾ÔÂÑ§Ï°ÊÕ»ñ            text           ·ÇÖ÷
-  XYHDSH        Ð£Ô°»î¶¯ÊÕ»ñ            text           ·ÇÖ÷
-  ZLNXYYYDS     ×öÁËÄÄÐ©ÓÐÒâÒåµÄÊÂ      text           ·ÇÖ÷
-  DLNXS         ¶ÁÁËÄÄÐ©Êé              text           ·ÇÖ÷
-  GDDS          ¸Ð¶¯µÄÊÂ                text           ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
+EDU_ZXXS_57_A23_DSZXSXQMYGH  å¯¼å¸ˆåˆ¶å­¦ç”Ÿå­¦æœŸæ¯æœˆè§„åˆ’è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  YF            æœˆä»½                    int            éžä¸»
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  BYMB          æœ¬æœˆç›®æ ‡                text           éžä¸»
+  BYXXSH        æœ¬æœˆå­¦ä¹ æ”¶èŽ·            text           éžä¸»
+  XYHDSH        æ ¡å›­æ´»åŠ¨æ”¶èŽ·            text           éžä¸»
+  ZLNXYYYDS     åšäº†å“ªäº›æœ‰æ„ä¹‰çš„äº‹      text           éžä¸»
+  DLNXS         è¯»äº†å“ªäº›ä¹¦              text           éžä¸»
+  GDDS          æ„ŸåŠ¨çš„äº‹                text           éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
 
-EDU_ZXXS_57_A31_DSZXSXXLM  µ¼Ê¦ÖÆÑ§ÉúÐÅÏ¢À¸Ä¿±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  FLMID         ¸¸À¸Ä¿ID                int            ·ÇÖ÷        µ¼Ê¦ÖÆÑ§ÉúÐÅÏ¢À¸Ä¿±í
-  LMMC          À¸Ä¿Ãû³Æ                nvarchar(200)  ·ÇÖ÷
-  LMLX          À¸Ä¿ÀàÐÍ                int            ·ÇÖ÷
-  PLSX          ÅÅÁÐË³Ðò                int            ·ÇÖ÷
-  SFXYBJ        ÊÇ·ñÐèÒª±à¼­            int            ·ÇÖ÷
-  MBNR          Ä£°åÄÚÈÝ                text           ·ÇÖ÷
+EDU_ZXXS_57_A31_DSZXSXXLM  å¯¼å¸ˆåˆ¶å­¦ç”Ÿä¿¡æ¯æ ç›®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  FLMID         çˆ¶æ ç›®ID                int            éžä¸»        å¯¼å¸ˆåˆ¶å­¦ç”Ÿä¿¡æ¯æ ç›®è¡¨
+  LMMC          æ ç›®åç§°                nvarchar(200)  éžä¸»
+  LMLX          æ ç›®ç±»åž‹                int            éžä¸»
+  PLSX          æŽ’åˆ—é¡ºåº                int            éžä¸»
+  SFXYBJ        æ˜¯å¦éœ€è¦ç¼–è¾‘            int            éžä¸»
+  MBNR          æ¨¡æ¿å†…å®¹                text           éžä¸»
 
-EDU_ZXXS_57_A32_DSZXSGRXX  µ¼Ê¦ÖÆÑ§Éú¸öÈËÐÅÏ¢±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  LMID          À¸Ä¿ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆÑ§ÉúÐÅÏ¢À¸Ä¿±í
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
+EDU_ZXXS_57_A32_DSZXSGRXX  å¯¼å¸ˆåˆ¶å­¦ç”Ÿä¸ªäººä¿¡æ¯è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  LMID          æ ç›®ID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å­¦ç”Ÿä¿¡æ¯æ ç›®è¡¨
+  NR            å†…å®¹                    text           éžä¸»
 
-EDU_ZXXS_57_A33_DSZXSXQXX  µ¼Ê¦ÖÆÑ§ÉúÑ§ÆÚÐÅÏ¢±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  XSMBID        ÏÔÊ¾Ä£°åID              int            ·ÇÖ÷        µ¼Ê¦ÖÆÏÔÊ¾Ä£°å±í
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
+EDU_ZXXS_57_A33_DSZXSXQXX  å¯¼å¸ˆåˆ¶å­¦ç”Ÿå­¦æœŸä¿¡æ¯è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  XSMBID        æ˜¾ç¤ºæ¨¡æ¿ID              int            éžä¸»        å¯¼å¸ˆåˆ¶æ˜¾ç¤ºæ¨¡æ¿è¡¨
+  NR            å†…å®¹                    text           éžä¸»
 
-EDU_ZXXS_57_A34_DSZXSMYXX  µ¼Ê¦ÖÆÑ§ÉúÃ¿ÔÂÐÅÏ¢±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XSID          Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  YF            ÔÂ·Ý                    int            ·ÇÖ÷
-  LMID          À¸Ä¿ID                  int            ·ÇÖ÷        µ¼Ê¦ÖÆÑ§ÉúÐÅÏ¢À¸Ä¿±í
-  NR            ÄÚÈÝ                    text           ·ÇÖ÷
+EDU_ZXXS_57_A34_DSZXSMYXX  å¯¼å¸ˆåˆ¶å­¦ç”Ÿæ¯æœˆä¿¡æ¯è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XSID          å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  YF            æœˆä»½                    int            éžä¸»
+  LMID          æ ç›®ID                  int            éžä¸»        å¯¼å¸ˆåˆ¶å­¦ç”Ÿä¿¡æ¯æ ç›®è¡¨
+  NR            å†…å®¹                    text           éžä¸»
 

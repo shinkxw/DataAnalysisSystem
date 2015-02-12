@@ -1,45 +1,45 @@
-EDU_ZZ_ZYZWLB  Ö÷ÒªÖ°ÎñÀà±ğ´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(6)    ·ÇÖ÷
+EDU_ZZ_ZYZWLB  ä¸»è¦èŒåŠ¡ç±»åˆ«ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(6)    éä¸»
 
-EDU_ZZ_ZXJFL  ÖúÑ§½ğ·ÖÀà´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(5)    ·ÇÖ÷
+EDU_ZZ_ZXJFL  åŠ©å­¦é‡‘åˆ†ç±»ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(5)    éä¸»
 
-EDU_ZZ_ZKKM  ÖĞ¿¼¿ÆÄ¿´úÂë
-  DM            ´úÂë                    nvarchar(2)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(2)    ·ÇÖ÷
+EDU_ZZ_ZKKM  ä¸­è€ƒç§‘ç›®ä»£ç 
+  DM            ä»£ç                     nvarchar(2)    ä¸»é”®
+  MC            åç§°                    nvarchar(2)    éä¸»
 
-EDU_ZZ_XKSH  Ñ§ÉúÑ¡¿ÎÉóºË×´Ì¬´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(5)    ·ÇÖ÷
+EDU_ZZ_XKSH  å­¦ç”Ÿé€‰è¯¾å®¡æ ¸çŠ¶æ€ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(5)    éä¸»
 
-EDU_ZZ_SXJDLB  ÊµÏ°»ùµØÀà±ğ´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(8)    ·ÇÖ÷
+EDU_ZZ_SXJDLB  å®ä¹ åŸºåœ°ç±»åˆ«ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(8)    éä¸»
 
-EDU_ZZ_SXJDJNSXSSL  ÊµÏ°»ùµØ½ÓÄÉÊµÏ°ÉúÊıÁ¿´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(7)    ·ÇÖ÷
+EDU_ZZ_SXJDJNSXSSL  å®ä¹ åŸºåœ°æ¥çº³å®ä¹ ç”Ÿæ•°é‡ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(7)    éä¸»
 
-EDU_ZZ_PGQK  ÆÀ¹ÀÇé¿ö´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(8)    ·ÇÖ÷
+EDU_ZZ_PGQK  è¯„ä¼°æƒ…å†µä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(8)    éä¸»
 
-EDU_ZZ_KCFL  ¿Î³Ì·ÖÀà´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(7)    ·ÇÖ÷
+EDU_ZZ_KCFL  è¯¾ç¨‹åˆ†ç±»ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(7)    éä¸»
 
-EDU_ZZ_JZJSGW  ¼æÖ°½ÌÊ¦¸ÚÎ»´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(4)    ·ÇÖ÷
+EDU_ZZ_JZJSGW  å…¼èŒæ•™å¸ˆå²—ä½ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(4)    éä¸»
 
-EDU_ZZ_HJXZ  »§¼®ĞÔÖÊ´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(2)    ·ÇÖ÷
+EDU_ZZ_HJXZ  æˆ·ç±æ€§è´¨ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(2)    éä¸»
 
-EDU_ZZ_JKKM  ¼İ¿¼¿ÆÄ¿´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            ¿ÆÄ¿Ãû³Æ                nvarchar(20)   ·ÇÖ÷
-  KSSX          ¿¼ÊÔË³Ğò                int            ·ÇÖ÷
+EDU_ZZ_JKKM  é©¾è€ƒç§‘ç›®ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            ç§‘ç›®åç§°                nvarchar(20)   éä¸»
+  KSSX          è€ƒè¯•é¡ºåº                int            éä¸»
 

@@ -1,12 +1,12 @@
-IM_Msg  IMÏûÏ¢
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ğ£                    int            ·ÇÖ÷
-  UserForm      ·¢³öÓÃ»§                nvarchar(50)   ·ÇÖ÷
-  UserTo        ·¢ÍùÓÃ»§                nvarchar(50)   ·ÇÖ÷
-  Title         ±êÌâ                    nvarchar(500)  ·ÇÖ÷
-  Contents      ÄÚÈİ                    text           ·ÇÖ÷
-  MsgType       ÏûÏ¢ÀàĞÍ                int            ·ÇÖ÷
-  AddTime       Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  SendTime      ËÍ³öÊ±¼ä                datetime       ·ÇÖ÷
-  Statu         ×´Ì¬                    int            ·ÇÖ÷
+IM_Msg  IMæ¶ˆæ¯
+  ID            ç¼–å·                    int            è‡ªå¢ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éä¸»
+  UserForm      å‘å‡ºç”¨æˆ·                nvarchar(50)   éä¸»
+  UserTo        å‘å¾€ç”¨æˆ·                nvarchar(50)   éä¸»
+  Title         æ ‡é¢˜                    nvarchar(500)  éä¸»
+  Contents      å†…å®¹                    text           éä¸»
+  MsgType       æ¶ˆæ¯ç±»å‹                int            éä¸»
+  AddTime       æ·»åŠ æ—¶é—´                datetime       éä¸»
+  SendTime      é€å‡ºæ—¶é—´                datetime       éä¸»
+  Statu         çŠ¶æ€                    int            éä¸»
 

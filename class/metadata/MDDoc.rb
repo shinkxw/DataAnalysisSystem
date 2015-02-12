@@ -7,11 +7,12 @@ class MDDoc
   #设置文档同步配置
   def self.set_fsc(fsc);@@fs_config = fsc end
   #初始化
-  def initialize(type,name,data,file_type = "txt")
+  def initialize(type,name,data,file_type = 'txt',encode = 'GBK')
     @type = type#文档格式
     @name = name#文档名
     @data = data#文档数据
     @file_type = file_type#文件格式
+    @encode = encode#编码格式
   end
   #获得文档的字符串形式
   def get_data_str;@data end
@@ -48,7 +49,7 @@ class MDDoc
     end
   end
   #将哈希形式文档输出至文件夹
-  def hash_out(path);FolderWriter.new(path,true).write_str_hash(@data) end
+  def hash_out(path);FolderWriter.new(path,true,'w',@encode).write_str_hash(@data) end
   #将字符串形式文档输出至文件夹
-  def str_out(path);FileWriter.new(path).write_str(@data) end
+  def str_out(path);FileWriter.new(path,'w',@encode).write_str(@data) end
 end

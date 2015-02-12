@@ -1,33 +1,33 @@
-EDU_ZJ_KPZT  ¿¼ÆÀÖ÷Ìå´úÂë
-  DM            ´úÂë                    int            Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(10)   ·ÇÖ÷
+EDU_ZJ_KPZT  è€ƒè¯„ä¸»ä½“ä»£ç 
+  DM            ä»£ç                     int            ä¸»é”®
+  MC            åç§°                    nvarchar(10)   éžä¸»
 
-EDU_ZJ_TKLX  µ÷¿ÎÀàÐÍ´úÂë
-  DM            ´úÂë                    int            Ö÷¼ü
-  MC            ÀàÐÍÃû³Æ                nvarchar(36)   ·ÇÖ÷
+EDU_ZJ_TKLX  è°ƒè¯¾ç±»åž‹ä»£ç 
+  DM            ä»£ç                     int            ä¸»é”®
+  MC            ç±»åž‹åç§°                nvarchar(36)   éžä¸»
 
-EDU_ZJ_ZYML  ×¨ÒµÄ¿Â¼´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(19)   ·ÇÖ÷
+EDU_ZJ_ZYML  ä¸“ä¸šç›®å½•ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(19)   éžä¸»
 
-EDU_ZJ_ZJZY  ×Ô½¨×¨Òµ´úÂë
-  DM            ´úÂë                    nvarchar(6)    Ö÷¼ü
-  ZYMLLB        ×¨ÒµÄ¿Â¼Àà±ð            nvarchar(1)    Ö÷¼ü        ×¨ÒµÄ¿Â¼´úÂë
-  MC            Ãû³Æ                    nvarchar(26)   ·ÇÖ÷
+EDU_ZJ_ZJZY  è‡ªå»ºä¸“ä¸šä»£ç 
+  DM            ä»£ç                     nvarchar(6)    ä¸»é”®
+  ZYMLLB        ä¸“ä¸šç›®å½•ç±»åˆ«            nvarchar(1)    ä¸»é”®        ä¸“ä¸šç›®å½•ä»£ç 
+  MC            åç§°                    nvarchar(26)   éžä¸»
 
-EDU_ZJ_YHLX  ÓÃ»§ÀàÐÍ´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(2)    ·ÇÖ÷
+EDU_ZJ_YHLX  ç”¨æˆ·ç±»åž‹ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(2)    éžä¸»
 
-EDU_ZJ_HJXZ  »§¼®ÐÔÖÊ´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(4)    ·ÇÖ÷
+EDU_ZJ_HJXZ  æˆ·ç±æ€§è´¨ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(4)    éžä¸»
 
-EDU_ZJ_BYSLX  ±ÏÒµÉúÀàÐÍ´úÂë
-  DM            ´úÂë                    nvarchar(1)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(6)    ·ÇÖ÷
+EDU_ZJ_BYSLX  æ¯•ä¸šç”Ÿç±»åž‹ä»£ç 
+  DM            ä»£ç                     nvarchar(1)    ä¸»é”®
+  MC            åç§°                    nvarchar(6)    éžä¸»
 
-EDU_ZJ_JBLX  ¼Ó°àÀàÐÍ´úÂë
-  DM            ´úÂë                    int            Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(6)    ·ÇÖ÷
+EDU_ZJ_JBLX  åŠ ç­ç±»åž‹ä»£ç 
+  DM            ä»£ç                     int            ä¸»é”®
+  MC            åç§°                    nvarchar(6)    éžä¸»
 

@@ -1,29 +1,29 @@
-EDU_SYS_01_CONFIG  È«¾ÖÅäÖÃ±í
-  ID            ÅäÖÃID                  int            Ö÷¼ü
-  VALUE         ÅäÖÃÖµ                  nvarchar(200)  ·ÇÖ÷
+EDU_SYS_01_CONFIG  å…¨å±€é…ç½®è¡¨
+  ID            é…ç½®ID                  int            ä¸»é”®
+  VALUE         é…ç½®å€¼                  nvarchar(200)  éä¸»
 
-EDU_SYS_01_XN  Ñ§Äê±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ğ£Ãû                  int            Ö÷¼ü        Ñ§Ğ£ÅäÖÃ±í
-  XN            Ñ§Äê                    nvarchar(9)    ·ÇÖ÷
+EDU_SYS_01_XN  å­¦å¹´è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XN            å­¦å¹´                    nvarchar(9)    éä¸»
 
-EDU_SYS_01_MODULE  µ¼º½±í
-  ID                                    int            Ö÷¼ü
-  APPID                                 int            ·ÇÖ÷
-  NAME                                  nvarchar(20)   ·ÇÖ÷
-  Depth                                 int            ·ÇÖ÷
-  PID                                   int            ·ÇÖ÷
-  MenuDisp                              int            ·ÇÖ÷
-  MenuUserType                          int            ·ÇÖ÷
-  Link                                  nvarchar(100)  ·ÇÖ÷
-  OrderIndex                            int            ·ÇÖ÷
+EDU_SYS_01_MODULE  å¯¼èˆªè¡¨
+  ID                                    int            ä¸»é”®
+  APPID                                 int            éä¸»
+  NAME                                  nvarchar(20)   éä¸»
+  Depth                                 int            éä¸»
+  PID                                   int            éä¸»
+  MenuDisp                              int            éä¸»
+  MenuUserType                          int            éä¸»
+  Link                                  nvarchar(100)  éä¸»
+  OrderIndex                            int            éä¸»
 
-EDU_SYS_01_MICROMODULE  Î¢µ¼º½±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  MODULEID      Ä£¿éID                  int            ·ÇÖ÷        µ¼º½±í
-  NAME          Ãû³Æ                    nvarchar(20)   ·ÇÖ÷
-  URL           ÍøÖ·                    nvarchar(300)  ·ÇÖ÷
-  PICTYPE       Í¼Æ¬ÀàĞÍ                int            ·ÇÖ÷
-  PIC1          Í¼Æ¬Ò»                  nvarchar(300)  ·ÇÖ÷
-  PIC2          Í¼Æ¬¶ş                  nvarchar(300)  ·ÇÖ÷
+EDU_SYS_01_MICROMODULE  å¾®å¯¼èˆªè¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  MODULEID      æ¨¡å—ID                  int            éä¸»        å¯¼èˆªè¡¨
+  NAME          åç§°                    nvarchar(20)   éä¸»
+  URL           ç½‘å€                    nvarchar(300)  éä¸»
+  PICTYPE       å›¾ç‰‡ç±»å‹                int            éä¸»
+  PIC1          å›¾ç‰‡ä¸€                  nvarchar(300)  éä¸»
+  PIC2          å›¾ç‰‡äºŒ                  nvarchar(300)  éä¸»
 

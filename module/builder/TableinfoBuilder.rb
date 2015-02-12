@@ -18,7 +18,7 @@ class TableinfoBuilder
   def build(area)
     @area = area
     build_to_hash
-    MDDoc.new('tableinfo',@area.name,@hash)
+    MDDoc.new('tableinfo',@area.name,@hash,'txt','UTF-8')
   end
   #生成哈希表形式的表信息
   def build_to_hash

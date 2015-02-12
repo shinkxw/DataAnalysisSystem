@@ -1,11 +1,11 @@
-EDU_ZXTW_03_A01_XSMZJL  Ñ§ÉúÃÅÕï¼ÇÂ¼
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XSXXID        Ñ§ÉúID                  int            ·ÇÖ÷        Ñ§Éú»ù±¾Êý¾Ý×ÓÀà±í
-  BJID          °à¼¶                    nvarchar(10)   ·ÇÖ÷        °à¼¶Êý¾ÝÀà±í
-  JZKSSJ        ¾ÍÕï¿ªÊ¼Ê±¼ä            datetime       ·ÇÖ÷
-  JZJSSJ        ¾ÍÕï½áÊøÊ±¼ä            datetime       ·ÇÖ÷
-  JZYY          ¾ÍÕïÔ­Òò                text           ·ÇÖ÷
-  ZDJG          Õï¶Ï½á¹û                text           ·ÇÖ÷
-  FY            ·ÑÓÃ                    decimal(8, 3)  ·ÇÖ÷
+EDU_ZXTW_03_A01_XSMZJL  å­¦ç”Ÿé—¨è¯Šè®°å½•
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XSXXID        å­¦ç”ŸID                  int            éžä¸»        å­¦ç”ŸåŸºæœ¬æ•°æ®å­ç±»è¡¨
+  BJID          ç­çº§                    nvarchar(10)   éžä¸»        ç­çº§æ•°æ®ç±»è¡¨
+  JZKSSJ        å°±è¯Šå¼€å§‹æ—¶é—´            datetime       éžä¸»
+  JZJSSJ        å°±è¯Šç»“æŸæ—¶é—´            datetime       éžä¸»
+  JZYY          å°±è¯ŠåŽŸå›                 text           éžä¸»
+  ZDJG          è¯Šæ–­ç»“æžœ                text           éžä¸»
+  FY            è´¹ç”¨                    decimal(8, 3)  éžä¸»
 

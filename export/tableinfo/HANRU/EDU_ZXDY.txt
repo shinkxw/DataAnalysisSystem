@@ -1,146 +1,146 @@
-EDU_ZXDY_04_A01_ZZGW  ֵ�ܸ�λ���ݱ�
-  ID            ֵ�ܸ�λ��ID            int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  GWGZNR        ��λ��������            nvarchar(200)  ����
+EDU_ZXDY_04_A01_ZZGW  值周岗位数据表
+  ID            值周岗位表ID            int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  GWGZNR        岗位工作内容            nvarchar(200)  非主
 
-EDU_ZXDY_04_A02_ZZRYAP  ֵ����Ա���ű�
-  ID            ֵ����Ա���ű�ID        int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  ZCID          �ܴ�ID                  int            ����        ֵ���ܴα�
-  KSRQ          ��ʼ����                datetime       ����
-  JSRQ          ��������                datetime       ����
-  ZZBJ          ֵ�ܰ༶���            nvarchar(10)   ����        �༶�������
-  ZZID          �鳤ID                  nvarchar(20)   ����        Ӧ��ϵͳ�û���
-  ZYIDLB        ��ԱID�б�              text           ����
-  ZYMCLB        ��Ա�����б�            text           ����
+EDU_ZXDY_04_A02_ZZRYAP  值周人员安排表
+  ID            值周人员安排表ID        int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        值周周次表
+  KSRQ          开始日期                datetime       非主
+  JSRQ          结束日期                datetime       非主
+  ZZBJ          值周班级班号            nvarchar(10)   非主        班级数据类表
+  ZZID          组长ID                  nvarchar(20)   非主        应用系统用户表
+  ZYIDLB        组员ID列表              text           非主
+  ZYMCLB        组员名称列表            text           非主
 
-EDU_ZXDY_04_A03_ZZGWFP  ֵ�ܸ�λ�����
-  ID            ֵ�ܸ�λ�����ID        int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  ZCID          �ܴ�ID                  int            ����        ֵ���ܴα�
-  GZR           ������                  int            ����
-  GWID          ��λID                  int            ����        ֵ�ܸ�λ���ݱ�
-  JSID          ��ʦID                  nvarchar(20)   ����        Ӧ��ϵͳ�û���
+EDU_ZXDY_04_A03_ZZGWFP  值周岗位分配表
+  ID            值周岗位分配表ID        int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        值周周次表
+  GZR           工作日                  int            非主
+  GWID          岗位ID                  int            非主        值周岗位数据表
+  JSID          教师ID                  nvarchar(20)   非主        应用系统用户表
 
-EDU_ZXDY_04_A04_GWFPMB  ��λ����ģ���
-  ID            ��λ����ģ���ID        int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  MBMC          ģ������                nvarchar(20)   ����
+EDU_ZXDY_04_A04_GWFPMB  岗位分配模板表
+  ID            岗位分配模板表ID        int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  MBMC          模板名称                nvarchar(20)   非主
 
-EDU_ZXDY_04_A05_TBZZJS  �ر�ֵ�ܽ�ʦ��
-  ID            �ر�ֵ�ܽ�ʦ��ID        int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  JSLX          ��ʦ����                nvarchar(20)   ����
-  JSID          ��ʦID                  nvarchar(20)   ����        Ӧ��ϵͳ�û���
-  YXRQ          ��Ч����                datetime       ����
+EDU_ZXDY_04_A05_TBZZJS  特别值周教师表
+  ID            特别值周教师表ID        int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  JSLX          教师类型                nvarchar(20)   非主
+  JSID          教师ID                  nvarchar(20)   非主        应用系统用户表
+  YXRQ          有效日期                datetime       非主
 
-EDU_ZXDY_04_A06_ZZZC  ֵ���ܴα�
-  ID            �ܴα�ID                int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  ZCM           �ܴ���                  nvarchar(20)   ����
-  XQKSRQ        ��ʼ����                datetime       ����
-  XQJSRQ        ��������                datetime       ����
+EDU_ZXDY_04_A06_ZZZC  值周周次表
+  ID            周次表ID                int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCM           周次名                  nvarchar(20)   非主
+  XQKSRQ        开始日期                datetime       非主
+  XQJSRQ        结束日期                datetime       非主
 
-EDU_ZXDY_04_A07_MBFPNR  ģ��������ݱ�
-  ID            ģ�����ݱ�ID            int            ����
-  MBID          ģ���ID                int            ����        ��λ����ģ���
-  GZR           ������                  int            ����
-  GWID          ��λID                  int            ����        ֵ�ܸ�λ���ݱ�
-  DYRYH         ��Ӧ��Ա��              int            ����
+EDU_ZXDY_04_A07_MBFPNR  模板分配内容表
+  ID            模板内容表ID            int            主键
+  MBID          模板表ID                int            非主        岗位分配模板表
+  GZR           工作日                  int            非主
+  GWID          岗位ID                  int            非主        值周岗位数据表
+  DYRYH         对应人员号              int            非主
 
-EDU_ZXDY_05_A01_ZZDFDL  ֵ�ܴ�ִ����
-  ID            ֵ�ܴ�ִ����ID        int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  DLMC          ��������                nvarchar(20)   ����
+EDU_ZXDY_05_A01_ZZDFDL  值周打分大类表
+  ID            值周打分大类表ID        int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  DLMC          大类名称                nvarchar(20)   非主
 
-EDU_ZXDY_05_A02_ZZDFXZ  ֵ�ܴ��ϸ���
-  ID            ֵ�ܴ��ϸ���ID        int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  SSDLID        ��������ID              int            ����        ֵ�ܴ�ִ����
-  XZNR          ϸ������                nvarchar(200)  ����
-  XZFZ          ϸ���ֵ                decimal(6, 2)  ����
+EDU_ZXDY_05_A02_ZZDFXZ  值周打分细则表
+  ID            值周打分细则表ID        int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  SSDLID        所属大类ID              int            非主        值周打分大类表
+  XZNR          细则内容                nvarchar(200)  非主
+  XZFZ          细则分值                decimal(6, 2)  非主
 
-EDU_ZXDY_05_A03_ZZDFD  ֵ�ܴ�ֵ���
-  ID            ֵ�ܴ�ֵ���ID          int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  ZCID          �ܴ�ID                  int            ����        ֵ���ܴα�
-  BJ            �༶                    nvarchar(10)   ����        �༶�������
-  XSIDLB        ѧ��ID�б�              text           ����
-  XSMCLB        ѧ�������б�            text           ����
-  SSXZID        ����ϸ��                int            ����        ֵ�ܴ��ϸ���
-  DFFZ          ��ַ�ֵ                decimal(6, 2)  ����
-  FSSJ          ����ʱ��                datetime       ����
-  DFSJ          ���ʱ��                datetime       ����
-  DFJSID        ��ֽ�ʦID              nvarchar(20)   ����        Ӧ��ϵͳ�û���
-  BZ            ��ע                    text           ����
+EDU_ZXDY_05_A03_ZZDFD  值周打分单表
+  ID            值周打分单表ID          int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        值周周次表
+  BJ            班级                    nvarchar(10)   非主        班级数据类表
+  XSIDLB        学生ID列表              text           非主
+  XSMCLB        学生名称列表            text           非主
+  SSXZID        所属细则                int            非主        值周打分细则表
+  DFFZ          打分分值                decimal(6, 2)  非主
+  FSSJ          发生时间                datetime       非主
+  DFSJ          打分时间                datetime       非主
+  DFJSID        打分教师ID              nvarchar(20)   非主        应用系统用户表
+  BZ            备注                    text           非主
 
-EDU_ZXDY_06_A01_ZZXJ  ֵ��С���
-  ID            ֵ��С���ID            int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  ZCID          �ܴ�ID                  int            ����        ֵ���ܴα�
-  SZDS          ���ܴ���                text           ����
-  ZZJCQKFK      ֵ�ܼ���������        text           ����
+EDU_ZXDY_06_A01_ZZXJ  值周小结表
+  ID            值周小结表ID            int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        值周周次表
+  SZDS          上周大事                text           非主
+  ZZJCQKFK      值周检查情况反馈        text           非主
 
-EDU_ZXDY_06_A02_GQXJH  �����½�����
-  ID            �����½�����ID          int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  XQID          ѧ��ID                  int            ����        ѧ�����ݱ�
-  ZCID          �ܴ�ID                  int            ����        ֵ���ܴα�
-  JHZT          ��������                text           ����
-  JHNR          ��������                text           ����
+EDU_ZXDY_06_A02_GQXJH  国旗下讲话表
+  ID            国旗下讲话表ID          int            主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        值周周次表
+  JHZT          讲话主题                text           非主
+  JHNR          讲话内容                text           非主
 
-EDU_ZXDY_07_A01_DYHDKC  ������γ̱�
-  ID            ���                    int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  BJ            �༶                    nvarchar(10)   ����        �༶�������
-  HDSJ          �ʱ��                nvarchar(50)   ����
-  HDZT          �����                nvarchar(100)  ����
-  DYHDGCJL      ��������̼�¼        text           ����
-  HDGCTPZS      �����ͼƬչʾ        text           ����
-  DYHDHJ        ��������            text           ����
+EDU_ZXDY_07_A01_DYHDKC  德育活动课程表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  BJ            班级                    nvarchar(10)   非主        班级数据类表
+  HDSJ          活动时间                nvarchar(50)   非主
+  HDZT          活动主题                nvarchar(100)  非主
+  DYHDGCJL      德育活动过程记录        text           非主
+  HDGCTPZS      活动过程图片展示        text           非主
+  DYHDHJ        德育活动后记            text           非主
 
-EDU_ZXDY_07_A11_XSZZGLJG  ѧ����������������
-  ID            ���                    int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  JGMC          ��������                nvarchar(200)  ����
+EDU_ZXDY_07_A11_XSZZGLJG  学生自主管理机构表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  JGMC          机构名称                nvarchar(200)  非主
 
-EDU_ZXDY_07_A12_XSZZGLXZ  ѧ����������С���
-  ID            ���                    int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  GLJGID        ��������ID              int            ����        ѧ����������������
-  ZZ            �鳤                    nvarchar(50)   ����
-  ZY            ��Ա                    nvarchar(200)  ����
-  XZKH          С��ں�(Ŀ��)          nvarchar(200)  ����
-  PLSX          ����˳��                int            ����
+EDU_ZXDY_07_A12_XSZZGLXZ  学生自主管理小组表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  GLJGID        管理机构ID              int            非主        学生自主管理机构表
+  ZZ            组长                    nvarchar(50)   非主
+  ZY            组员                    nvarchar(200)  非主
+  XZKH          小组口号(目标)          nvarchar(200)  非主
+  PLSX          排列顺序                int            非主
 
-EDU_ZXDY_07_A21_BJXSHDQKJL  �༶ѧ��������¼��
-  ID            ���                    int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  HDBJ          ��༶                nvarchar(10)   ����        �༶�������
-  SJ            ʱ��                    nvarchar(50)   ����
-  DD            �ص�                    nvarchar(200)  ����
-  CYRS          ��������                nvarchar(50)   ����
-  HDXS          ���ʽ                nvarchar(200)  ����
-  HDZT          �����                nvarchar(200)  ����
-  HDGCJL        ����̼�¼������ͼƬ��  text           ����
-  HDHJ          ���ǣ������ε�����    text           ����
+EDU_ZXDY_07_A21_BJXSHDQKJL  班级学生活动情况记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  HDBJ          活动班级                nvarchar(10)   非主        班级数据类表
+  SJ            时间                    nvarchar(50)   非主
+  DD            地点                    nvarchar(200)  非主
+  CYRS          参与人数                nvarchar(50)   非主
+  HDXS          活动形式                nvarchar(200)  非主
+  HDZT          活动主题                nvarchar(200)  非主
+  HDGCJL        活动过程记录（包含图片）  text           非主
+  HDHJ          活动后记（班主任点评）    text           非主
 
-EDU_ZXDY_07_A31_XXDXHD  ѧУ���ͻ��
-  ID            ���                    int            ����
-  SCHOOLID      ѧУID                  int            ����        ѧУ���ñ�
-  HDZT          �����                nvarchar(100)  ����
-  HDZZBM        ���֯����            nvarchar(200)  ����
-  XMFZR         ��Ŀ������              nvarchar(200)  ����
-  SJ            ʱ��                    nvarchar(50)   ����
-  DD            �ص�                    nvarchar(200)  ����
-  HDGCJL        ����̼�¼����ͼƬ��    text           ����
-  HDHJ          ����                text           ����
+EDU_ZXDY_07_A31_XXDXHD  学校大型活动表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  HDZT          活动主题                nvarchar(100)  非主
+  HDZZBM        活动组织部门            nvarchar(200)  非主
+  XMFZR         项目负责人              nvarchar(200)  非主
+  SJ            时间                    nvarchar(50)   非主
+  DD            地点                    nvarchar(200)  非主
+  HDGCJL        活动过程记录（含图片）    text           非主
+  HDHJ          活动后记                text           非主
 

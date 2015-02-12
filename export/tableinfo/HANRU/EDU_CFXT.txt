@@ -1,35 +1,35 @@
-EDU_CFXT_01_A01_KM  ¿ÆÄ¿ÐÅÏ¢
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KMMC          ¿ÆÄ¿Ãû³Æ                nvarchar(20)   ·ÇÖ÷
-  KMZF          ¿ÆÄ¿×Ü·Ö                decimal(5, 1)  ·ÇÖ÷
+EDU_CFXT_01_A01_KM  ç§‘ç›®ä¿¡æ¯
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KMMC          ç§‘ç›®åç§°                nvarchar(20)   éžä¸»
+  KMZF          ç§‘ç›®æ€»åˆ†                decimal(5, 1)  éžä¸»
 
-EDU_CFXT_01_A02_KS  ¿¼ÊÔÐÅÏ¢
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KSMC          ¿¼ÊÔÃû³Æ                nvarchar(20)   ·ÇÖ÷
-  KSKMIDLB      ¿¼ÊÔ¿ÆÄ¿IDÁÐ±í          text           ·ÇÖ÷
-  KSKMMCLB      ¿¼ÊÔ¿ÆÄ¿Ãû³ÆÁÐ±í        text           ·ÇÖ÷
-  CFWZ          ²é·ÖÍøÖ·                nvarchar(500)  ·ÇÖ÷
-  CFZT          ²é·Ö×´Ì¬                int            ·ÇÖ÷
-  HDX           »®µµÏß                  int            ·ÇÖ÷
-  HDXSJG        »®µµÏßÉÏ½á¹û            nvarchar(500)  ·ÇÖ÷
-  HDXXJG        »®µµÏßÏÂ½á¹û            nvarchar(500)  ·ÇÖ÷
+EDU_CFXT_01_A02_KS  è€ƒè¯•ä¿¡æ¯
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KSMC          è€ƒè¯•åç§°                nvarchar(20)   éžä¸»
+  KSKMIDLB      è€ƒè¯•ç§‘ç›®IDåˆ—è¡¨          text           éžä¸»
+  KSKMMCLB      è€ƒè¯•ç§‘ç›®åç§°åˆ—è¡¨        text           éžä¸»
+  CFWZ          æŸ¥åˆ†ç½‘å€                nvarchar(500)  éžä¸»
+  CFZT          æŸ¥åˆ†çŠ¶æ€                int            éžä¸»
+  HDX           åˆ’æ¡£çº¿                  int            éžä¸»
+  HDXSJG        åˆ’æ¡£çº¿ä¸Šç»“æžœ            nvarchar(500)  éžä¸»
+  HDXXJG        åˆ’æ¡£çº¿ä¸‹ç»“æžœ            nvarchar(500)  éžä¸»
 
-EDU_CFXT_01_A03_CKXS  ²Î¿¼Ñ§ÉúÐÅÏ¢
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  KSID          ¿¼ÊÔID                  int            ·ÇÖ÷        ¿¼ÊÔÐÅÏ¢
-  XM            ÐÕÃû                    nvarchar(20)   ·ÇÖ÷
-  ZKZH          ×¼¿¼Ö¤ºÅ                nvarchar(50)   ·ÇÖ÷
-  JZDH          ¼Ò³¤µç»°                nvarchar(20)   ·ÇÖ÷
-  ZCJ           ×Ü³É¼¨                  decimal(5, 1)  ·ÇÖ÷
+EDU_CFXT_01_A03_CKXS  å‚è€ƒå­¦ç”Ÿä¿¡æ¯
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  KSID          è€ƒè¯•ID                  int            éžä¸»        è€ƒè¯•ä¿¡æ¯
+  XM            å§“å                    nvarchar(20)   éžä¸»
+  ZKZH          å‡†è€ƒè¯å·                nvarchar(50)   éžä¸»
+  JZDH          å®¶é•¿ç”µè¯                nvarchar(20)   éžä¸»
+  ZCJ           æ€»æˆç»©                  decimal(5, 1)  éžä¸»
 
-EDU_CFXT_01_A04_KSCJ  ¿¼ÊÔ³É¼¨
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  KSID          ¿¼ÊÔID                  int            ·ÇÖ÷        ¿¼ÊÔÐÅÏ¢
-  KMID          ¿ÆÄ¿ID                  int            ·ÇÖ÷        ¿ÆÄ¿ÐÅÏ¢
-  CKXSID        ²Î¿¼Ñ§ÉúID              int            ·ÇÖ÷        ²Î¿¼Ñ§ÉúÐÅÏ¢
-  CJ            ³É¼¨                    decimal(5, 1)  ·ÇÖ÷
+EDU_CFXT_01_A04_KSCJ  è€ƒè¯•æˆç»©
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  KSID          è€ƒè¯•ID                  int            éžä¸»        è€ƒè¯•ä¿¡æ¯
+  KMID          ç§‘ç›®ID                  int            éžä¸»        ç§‘ç›®ä¿¡æ¯
+  CKXSID        å‚è€ƒå­¦ç”ŸID              int            éžä¸»        å‚è€ƒå­¦ç”Ÿä¿¡æ¯
+  CJ            æˆç»©                    decimal(5, 1)  éžä¸»
 
