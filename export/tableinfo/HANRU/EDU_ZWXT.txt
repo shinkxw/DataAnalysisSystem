@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZWXT_01_A01_JSDCCP  教师订餐菜品表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表

@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ELE_01_USER  应用系统用户表
   LOGINNAME     用户名                  nvarchar(20)   主键
   SCHOOLID      学校ID                  int            主键        学校配置表

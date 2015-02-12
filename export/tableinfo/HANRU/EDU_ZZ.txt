@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZZ_ZYZWLB  主要职务类别代码
   DM            代码                    nvarchar(1)    主键
   MC            名称                    nvarchar(6)    非主

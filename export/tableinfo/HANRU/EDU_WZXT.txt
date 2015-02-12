@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_WZXT_VIP  网站会员
   SCHOOLID      学校名                  int            主键        学校配置表
   WEBID         网站ID                  int            主键        网站配置

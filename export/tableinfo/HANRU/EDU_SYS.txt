@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_SYS_01_CONFIG  全局配置表
   ID            配置ID                  int            主键
   VALUE         配置值                  nvarchar(200)  非主

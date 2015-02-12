@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZJ_KPZT  考评主体代码
   DM            代码                    int            主键
   MC            名称                    nvarchar(10)   非主

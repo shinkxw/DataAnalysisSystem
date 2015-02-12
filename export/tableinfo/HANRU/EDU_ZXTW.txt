@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZXTW_03_A01_XSMZJL  学生门诊记录
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表

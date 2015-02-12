@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZXDY_04_A01_ZZGW  值周岗位数据表
   ID            值周岗位表ID            int            主键
   SCHOOLID      学校ID                  int            非主        学校配置表

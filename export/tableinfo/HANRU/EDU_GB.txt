@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_GB_ZZMMYCLB  政治面貌异常类别代码
   DM            代码                    nvarchar(2)    主键
   MC            名称                    nvarchar(8)    非主

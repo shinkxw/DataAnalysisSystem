@@ -1,3 +1,4 @@
+encoding: UTF-8
 IM_Msg  IM消息
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主

@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_OAXT_01_01_WJJBSJ  文件基本数据类表
   SCHOOLID      学校名                  int            主键        学校配置表
   ID            文件ID                  int            主键

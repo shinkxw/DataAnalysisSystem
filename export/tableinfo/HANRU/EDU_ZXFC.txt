@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZXFC_02_01_JZWJBSJ  建筑物基本数据类表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表

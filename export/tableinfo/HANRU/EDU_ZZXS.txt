@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZZXS_01_01_XSXX  学生信息数据表
   ID            编号                    int            主键
   SCHOOLID      学校名                  int            主键        学校配置表

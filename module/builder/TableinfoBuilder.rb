@@ -24,7 +24,7 @@ class TableinfoBuilder
   def build_to_hash
     @hash = {}
     @area.each do |name_space|
-      @info_str = ""
+      @info_str = "encoding: UTF-8\n"
       name_space.each do |table|
         @info_str << "#{table.name}  #{table.explanation}\n"
         table.field_area.each do |field|

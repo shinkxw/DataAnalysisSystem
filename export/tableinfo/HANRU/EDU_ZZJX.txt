@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_ZZJX_01_01_ZYXX  专业基本信息数据表
   ZYBH          专业编号                int            主键
   SCHOOLID      学校名                  int            主键        学校配置表

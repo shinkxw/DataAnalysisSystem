@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_JY_ZYZXTZBZMC  中央专项投资补助名称代码表
   DM            代码                    nvarchar(1)    主键
   MC            名称                    nvarchar(12)   非主

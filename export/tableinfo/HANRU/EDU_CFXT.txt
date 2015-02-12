@@ -1,3 +1,4 @@
+encoding: UTF-8
 EDU_CFXT_01_A01_KM  科目信息
   ID            编号                    int            自增主键
   SCHOOLID      学校                    int            非主        学校配置表
