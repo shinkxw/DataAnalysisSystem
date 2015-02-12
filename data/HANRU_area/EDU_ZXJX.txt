@@ -511,7 +511,7 @@
             <name="XF" exp="学分" type="decimal(3, 1)" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A21_BXKJXBSJ" exp="必修课教学班数据表">
+    <table name="EDU_ZXJX_53_A21_XFZJXBSJ" exp="学分制教学班数据表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -526,9 +526,13 @@
             <name="ZDKBRS" exp="最低开班人数" type="int" />
             <name="ZT" exp="状态" type="int" />
             <name="BZ" exp="备注" type="text" />
+            <name="KCMC" exp="课程名称" type="nvarchar(200)" />
+            <name="SKBJIDLB" exp="授课班级ID列表" type="text" />
+            <name="SKBJMCLB" exp="授课班级名称列表" type="text" />
+            <name="JXBLX" exp="教学班类型" type="int" remark="必修课1限选课2选修课3" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A22_XSBXKXKJL" exp="学生必修课选课记录表">
+    <table name="EDU_ZXJX_53_A22_XSXFZXKJL" exp="学生学分制选课记录表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -536,7 +540,7 @@
             <name="BXKJXBID" exp="必修课教学班ID" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A23_BXKECXKXS" exp="必修课二次选课学生表">
+    <table name="EDU_ZXJX_53_A23_XFZECXKXS" exp="学分制二次选课学生表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
@@ -544,7 +548,7 @@
             <name="XSID" exp="学生ID" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A24_BXKKTNR" exp="必修课课堂内容表">
+    <table name="EDU_ZXJX_53_A24_XFZKTNR" exp="学分制课堂内容表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -553,7 +557,7 @@
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A25_BXKKTJLXM" exp="必修课课堂记录项目表">
+    <table name="EDU_ZXJX_53_A25_XFZKTJLXM" exp="学分制课堂记录项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -563,7 +567,7 @@
             <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A26_BXKKTJLJG" exp="必修课课堂记录结果表">
+    <table name="EDU_ZXJX_53_A26_XFZKTJLJG" exp="学分制课堂记录结果表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
@@ -573,7 +577,7 @@
             <name="JG" exp="结果" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A27_BXKZYNR" exp="必修课作业内容表">
+    <table name="EDU_ZXJX_53_A27_XFZZYNR" exp="学分制作业内容表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -582,7 +586,7 @@
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A28_BXKZYJLXM" exp="必修课作业记录项目表">
+    <table name="EDU_ZXJX_53_A28_XFZZYJLXM" exp="学分制作业记录项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -592,7 +596,7 @@
             <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A29_BXKZYJLJG" exp="必修课作业记录结果表">
+    <table name="EDU_ZXJX_53_A29_XFZZYJLJG" exp="学分制作业记录结果表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
@@ -602,7 +606,7 @@
             <name="JG" exp="结果" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A41_BXKDYCS" exp="必修课单元测试表">
+    <table name="EDU_ZXJX_53_A41_XFZDYCS" exp="学分制单元测试表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -611,7 +615,7 @@
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
-    <table name="EDU_ZXJX_53_A42_BXKDYCSCJ" exp="必修课单元测试成绩表">
+    <table name="EDU_ZXJX_53_A42_XFZDYCSCJ" exp="学分制单元测试成绩表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
