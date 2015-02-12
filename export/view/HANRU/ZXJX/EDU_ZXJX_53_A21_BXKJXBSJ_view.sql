@@ -159,7 +159,6 @@ SELECT a.[ID]--编号
       ,f.KCLB as f_XFZKC_KCLB--学分制课程表 课程类别
       ,f.SSKM as f_XFZKC_SSKM--学分制课程表 所属科目
       ,f.KCMC as f_XFZKC_KCMC--学分制课程表 课程名称
-      ,f.SFBX as f_XFZKC_SFBX--学分制课程表 是否必修
       ,f.SFSY as f_XFZKC_SFSY--学分制课程表 是否使用
       ,f.PLSX as f_XFZKC_PLSX--学分制课程表 排列顺序
       ,g.SCHOOLID as g_XFZKKSJ_SCHOOLID--学分制开课时间表 学校

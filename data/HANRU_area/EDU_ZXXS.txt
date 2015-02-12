@@ -555,6 +555,18 @@
             <name="PLSX" exp="排列顺序" type="int" />
             <name="YF" exp="月份" type="int" />
             <name="WZ" exp="位置" type="int" />
+            <name="JSMBID" exp="角色模板ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_57_A06_DSZJSMB" exp="导师制角色模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="JSID" exp="角色ID" type="int" />
+            <name="MC" exp="名称" type="nvarchar(300)" />
+            <name="BJT" exp="背景图" type="nvarchar(300)" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A11_DSZHD" exp="导师制活动表">
@@ -721,7 +733,7 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="XSID" exp="学生ID" type="int" />
             <name="XQID" exp="学期ID" type="int" />
-            <name="LMID" exp="栏目ID" type="int" />
+            <name="XSMBID" exp="显示模板ID" type="int" />
             <name="NR" exp="内容" type="text" />
         </field_area>
     </table>

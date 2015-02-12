@@ -6,7 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XSID]--学生ID
       ,a.[XQID]--学期ID
-      ,a.[LMID]--栏目ID
+      ,a.[XSMBID]--显示模板ID
       ,a.[NR]--内容
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,c.XH as c_XSXX_XH--学生基本数据子类表 学号
@@ -79,18 +79,20 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
-      ,e.SCHOOLID as e_DSZXSXXLM_SCHOOLID--导师制学生信息栏目表 学校
-      ,e.FLMID as e_DSZXSXXLM_FLMID--导师制学生信息栏目表 父栏目ID
-      ,e.LMMC as e_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
-      ,e.LMLX as e_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
-      ,e.PLSX as e_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
-      ,e.SFXYBJ as e_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
-      ,e.MBNR as e_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
+      ,e.SCHOOLID as e_DSZXSMB_SCHOOLID--导师制显示模板表 学校
+      ,e.MBLX as e_DSZXSMB_MBLX--导师制显示模板表 模板类型
+      ,e.NRLX as e_DSZXSMB_NRLX--导师制显示模板表 内容类型
+      ,e.MC as e_DSZXSMB_MC--导师制显示模板表 名称
+      ,e.NR as e_DSZXSMB_NR--导师制显示模板表 内容
+      ,e.PLSX as e_DSZXSMB_PLSX--导师制显示模板表 排列顺序
+      ,e.YF as e_DSZXSMB_YF--导师制显示模板表 月份
+      ,e.WZ as e_DSZXSMB_WZ--导师制显示模板表 位置
+      ,e.JSMBID as e_DSZXSMB_JSMBID--导师制显示模板表 角色模板ID
 
 FROM dbo.EDU_ZXXS_57_A33_DSZXSXQXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXS_57_A31_DSZXSXXLM AS e ON a.LMID = e.ID /*栏目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A05_DSZXSMB AS e ON a.XSMBID = e.ID /*显示模板ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN

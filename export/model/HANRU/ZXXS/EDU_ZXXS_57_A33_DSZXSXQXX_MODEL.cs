@@ -34,8 +34,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "栏目")]
-            public Int32 LMID { get; set; }
+            [Display(Name = "显示模板")]
+            public Int32 XSMBID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

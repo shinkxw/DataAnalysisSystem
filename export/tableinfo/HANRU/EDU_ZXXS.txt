@@ -476,6 +476,16 @@ EDU_ZXXS_57_A05_DSZXSMB  导师制显示模板表
   PLSX          排列顺序                int            非主
   YF            月份                    int            非主
   WZ            位置                    int            非主
+  JSMBID        角色模板ID              int            非主        导师制角色模板表
+
+EDU_ZXXS_57_A06_DSZJSMB  导师制角色模板表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  JSID          角色ID                  int            非主        导师制角色表
+  MC            名称                    nvarchar(300)  非主
+  BJT           背景图                  nvarchar(300)  非主
+  TJSJ          添加时间                datetime       非主
 
 EDU_ZXXS_57_A11_DSZHD  导师制活动表
   ID            编号                    int            主键
@@ -616,7 +626,7 @@ EDU_ZXXS_57_A33_DSZXSXQXX  导师制学生学期信息表
   SCHOOLID      学校                    int            主键        学校配置表
   XSID          学生ID                  int            非主        学生基本数据子类表
   XQID          学期ID                  int            非主        学期数据表
-  LMID          栏目ID                  int            非主        导师制学生信息栏目表
+  XSMBID        显示模板ID              int            非主        导师制显示模板表
   NR            内容                    text           非主
 
 EDU_ZXXS_57_A34_DSZXSMYXX  导师制学生每月信息表

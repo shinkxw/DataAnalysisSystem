@@ -699,6 +699,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A12
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_53_A12_XFZBXKCQD_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A13_XFZXXKCQD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_53_A13_XFZXXKCQD_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A21_BXKJXBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_53_A21_BXKJXBSJ_DISP
@@ -974,6 +978,14 @@ GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_57_A04_DSZDSXSJD_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXXS_57_A04_DSZDSXSJD_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_57_A05_DSZXSMB_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXS_57_A05_DSZXSMB_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_57_A06_DSZJSMB_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXXS_57_A06_DSZJSMB_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXXS_57_A11_DSZHD_DISP')
             and   type = 'V')
@@ -11607,6 +11619,7 @@ SELECT a.[ID]--编号
       ,a.[NJID]--年级ID
       ,a.[BJLBID]--班级类别ID
       ,a.[BJID]--班级ID
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -11666,18 +11679,39 @@ SELECT a.[ID]--编号
       ,c.NJID as c_XFZXQJXJH_NJID--学分制学期教学计划表 年级ID
       ,c.BJLBID as c_XFZXQJXJH_BJLBID--学分制学期教学计划表 班级类别ID
       ,c.BJID as c_XFZXQJXJH_BJID--学分制学期教学计划表 班级ID
+      ,c.KCLX as c_XFZXQJXJH_KCLX--学分制学期教学计划表 课程类型
       ,d.SCHOOLID as d_XFZKC_SCHOOLID--学分制课程表 学校ID
       ,d.KCH as d_XFZKC_KCH--学分制课程表 课程号
       ,d.KCLB as d_XFZKC_KCLB--学分制课程表 课程类别
       ,d.SSKM as d_XFZKC_SSKM--学分制课程表 所属科目
       ,d.KCMC as d_XFZKC_KCMC--学分制课程表 课程名称
-      ,d.SFBX as d_XFZKC_SFBX--学分制课程表 是否必修
       ,d.SFSY as d_XFZKC_SFSY--学分制课程表 是否使用
       ,d.PLSX as d_XFZKC_PLSX--学分制课程表 排列顺序
 
 FROM dbo.EDU_ZXJX_53_A12_XFZBXKCQD AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_53_A11_XFZXQJXJH AS c ON a.JXJHID = c.ID /*教学计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_53_A01_XFZKC AS d ON a.KCID = d.ID /*课程ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/
+GO
+
+--学分制限选课程清单表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A13_XFZXXKCQD_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[JXJHID]--教学计划ID
+      ,a.[KCIDLB]--课程ID列表
+      ,a.[KCMCLB]--课程名称列表
+      ,a.[XXMS]--限选数量
+      ,a.[XF]--学分
+      ,c.SCHOOLID as c_XFZXQJXJH_SCHOOLID--学分制学期教学计划表 学校ID
+      ,c.XQID as c_XFZXQJXJH_XQID--学分制学期教学计划表 学期ID
+      ,c.NJID as c_XFZXQJXJH_NJID--学分制学期教学计划表 年级ID
+      ,c.BJLBID as c_XFZXQJXJH_BJLBID--学分制学期教学计划表 班级类别ID
+      ,c.BJID as c_XFZXQJXJH_BJID--学分制学期教学计划表 班级ID
+      ,c.KCLX as c_XFZXQJXJH_KCLX--学分制学期教学计划表 课程类型
+
+FROM dbo.EDU_ZXJX_53_A13_XFZXXKCQD AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A11_XFZXQJXJH AS c ON a.JXJHID = c.ID /*教学计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
 --必修课教学班数据表
@@ -11840,7 +11874,6 @@ SELECT a.[ID]--编号
       ,f.KCLB as f_XFZKC_KCLB--学分制课程表 课程类别
       ,f.SSKM as f_XFZKC_SSKM--学分制课程表 所属科目
       ,f.KCMC as f_XFZKC_KCMC--学分制课程表 课程名称
-      ,f.SFBX as f_XFZKC_SFBX--学分制课程表 是否必修
       ,f.SFSY as f_XFZKC_SFSY--学分制课程表 是否使用
       ,f.PLSX as f_XFZKC_PLSX--学分制课程表 排列顺序
       ,g.SCHOOLID as g_XFZKKSJ_SCHOOLID--学分制开课时间表 学校
@@ -18219,6 +18252,59 @@ FROM dbo.EDU_ZXXS_57_A04_DSZDSXSJD AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [eq] ON e.XSDQZTM = [eq].DM /*学生当前状态码*/
 GO
 
+--导师制显示模板表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_57_A05_DSZXSMB_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[MBLX]--模板类型
+      ,a.[NRLX]--内容类型
+      ,a.[MC]--名称
+      ,a.[NR]--内容
+      ,a.[PLSX]--排列顺序
+      ,a.[YF]--月份
+      ,a.[WZ]--位置
+      ,a.[JSMBID]--角色模板ID
+      ,c.SCHOOLID as c_DSZJSMB_SCHOOLID--导师制角色模板表 学校
+      ,c.XQID as c_DSZJSMB_XQID--导师制角色模板表 学期ID
+      ,c.JSID as c_DSZJSMB_JSID--导师制角色模板表 角色ID
+      ,c.MC as c_DSZJSMB_MC--导师制角色模板表 名称
+      ,c.BJT as c_DSZJSMB_BJT--导师制角色模板表 背景图
+      ,c.TJSJ as c_DSZJSMB_TJSJ--导师制角色模板表 添加时间
+
+FROM dbo.EDU_ZXXS_57_A05_DSZXSMB AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A06_DSZJSMB AS c ON a.JSMBID = c.ID /*角色模板ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
+--导师制角色模板表
+CREATE VIEW [dbo].[VIEW_EDU_ZXXS_57_A06_DSZJSMB_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[XQID]--学期ID
+      ,a.[JSID]--角色ID
+      ,a.[MC]--名称
+      ,a.[BJT]--背景图
+      ,a.[TJSJ]--添加时间
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.SCHOOLID as d_DSZJS_SCHOOLID--导师制角色表 学校
+      ,d.XQID as d_DSZJS_XQID--导师制角色表 学期ID
+      ,d.JSMC as d_DSZJS_JSMC--导师制角色表 角色名称
+      ,d.GNIDLB as d_DSZJS_GNIDLB--导师制角色表 功能ID列表
+      ,d.GNMCLB as d_DSZJS_GNMCLB--导师制角色表 功能名称列表
+
+FROM dbo.EDU_ZXXS_57_A06_DSZJSMB AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A02_DSZJS AS d ON a.JSID = d.ID /*角色ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
+GO
+
 --导师制活动表
 CREATE VIEW [dbo].[VIEW_EDU_ZXXS_57_A11_DSZHD_DISP]
 AS
@@ -19275,7 +19361,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XSID]--学生ID
       ,a.[XQID]--学期ID
-      ,a.[LMID]--栏目ID
+      ,a.[XSMBID]--显示模板ID
       ,a.[NR]--内容
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,c.XH as c_XSXX_XH--学生基本数据子类表 学号
@@ -19348,18 +19434,20 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
-      ,e.SCHOOLID as e_DSZXSXXLM_SCHOOLID--导师制学生信息栏目表 学校
-      ,e.FLMID as e_DSZXSXXLM_FLMID--导师制学生信息栏目表 父栏目ID
-      ,e.LMMC as e_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
-      ,e.LMLX as e_DSZXSXXLM_LMLX--导师制学生信息栏目表 栏目类型
-      ,e.PLSX as e_DSZXSXXLM_PLSX--导师制学生信息栏目表 排列顺序
-      ,e.SFXYBJ as e_DSZXSXXLM_SFXYBJ--导师制学生信息栏目表 是否需要编辑
-      ,e.MBNR as e_DSZXSXXLM_MBNR--导师制学生信息栏目表 模板内容
+      ,e.SCHOOLID as e_DSZXSMB_SCHOOLID--导师制显示模板表 学校
+      ,e.MBLX as e_DSZXSMB_MBLX--导师制显示模板表 模板类型
+      ,e.NRLX as e_DSZXSMB_NRLX--导师制显示模板表 内容类型
+      ,e.MC as e_DSZXSMB_MC--导师制显示模板表 名称
+      ,e.NR as e_DSZXSMB_NR--导师制显示模板表 内容
+      ,e.PLSX as e_DSZXSMB_PLSX--导师制显示模板表 排列顺序
+      ,e.YF as e_DSZXSMB_YF--导师制显示模板表 月份
+      ,e.WZ as e_DSZXSMB_WZ--导师制显示模板表 位置
+      ,e.JSMBID as e_DSZXSMB_JSMBID--导师制显示模板表 角色模板ID
 
 FROM dbo.EDU_ZXXS_57_A33_DSZXSXQXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXXS_57_A31_DSZXSXXLM AS e ON a.LMID = e.ID /*栏目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A05_DSZXSMB AS e ON a.XSMBID = e.ID /*显示模板ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN

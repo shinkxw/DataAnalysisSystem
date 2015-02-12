@@ -12,12 +12,12 @@ SELECT a.[ID]--编号
       ,c.NJID as c_XFZXQJXJH_NJID--学分制学期教学计划表 年级ID
       ,c.BJLBID as c_XFZXQJXJH_BJLBID--学分制学期教学计划表 班级类别ID
       ,c.BJID as c_XFZXQJXJH_BJID--学分制学期教学计划表 班级ID
+      ,c.KCLX as c_XFZXQJXJH_KCLX--学分制学期教学计划表 课程类型
       ,d.SCHOOLID as d_XFZKC_SCHOOLID--学分制课程表 学校ID
       ,d.KCH as d_XFZKC_KCH--学分制课程表 课程号
       ,d.KCLB as d_XFZKC_KCLB--学分制课程表 课程类别
       ,d.SSKM as d_XFZKC_SSKM--学分制课程表 所属科目
       ,d.KCMC as d_XFZKC_KCMC--学分制课程表 课程名称
-      ,d.SFBX as d_XFZKC_SFBX--学分制课程表 是否必修
       ,d.SFSY as d_XFZKC_SFSY--学分制课程表 是否使用
       ,d.PLSX as d_XFZKC_PLSX--学分制课程表 排列顺序
 

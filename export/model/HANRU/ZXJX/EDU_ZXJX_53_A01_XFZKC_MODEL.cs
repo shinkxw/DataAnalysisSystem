@@ -48,10 +48,6 @@ namespace HanRuEdu.LDAL
             public String KCMC { get; set; }
 
 
-            [Display(Name = "是否必修")]
-            public Int32 SFBX { get; set; }
-
-
             [Display(Name = "是否使用")]
             public Int32 SFSY { get; set; }
 

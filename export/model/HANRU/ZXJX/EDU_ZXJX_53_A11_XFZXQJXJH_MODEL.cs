@@ -48,6 +48,11 @@ namespace HanRuEdu.LDAL
             public String BJID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程类型")]
+            public Int32 KCLX { get; set; }
+
+
         }
     }
 }

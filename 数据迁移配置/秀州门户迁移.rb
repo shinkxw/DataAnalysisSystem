@@ -7,7 +7,6 @@ class Qypz
         193,'1331',200,'1332',180,'1333',184,'1334',188,'1335',209,'1336',204,'1337',226,'1303']
   @@hash = Hash[*ary]
   @@hash.default = '-1'
-  @@qz = '/WZXT/HrSchoolFiles/28/UpFiles/sxjd/'
           
   def self.get_lmid(news_cat_id); @@hash[news_cat_id] end
   def self.ew_change(str)

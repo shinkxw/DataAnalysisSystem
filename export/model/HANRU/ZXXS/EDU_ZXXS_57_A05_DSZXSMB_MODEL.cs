@@ -62,6 +62,11 @@ namespace HanRuEdu.LDAL
             public Int32 WZ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "½ÇÉ«Ä£°å")]
+            public Int32 JSMBID { get; set; }
+
+
         }
     }
 }

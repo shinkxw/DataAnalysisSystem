@@ -467,7 +467,6 @@
             <name="KCLB" exp="课程类别" type="nvarchar(60)" null="T" />
             <name="SSKM" exp="所属科目" type="nvarchar(60)" null="T" />
             <name="KCMC" exp="课程名称" type="nvarchar(60)" null="T" />
-            <name="SFBX" exp="是否必修" type="int" null="T" />
             <name="SFSY" exp="是否使用" type="int" null="T" />
             <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
@@ -489,6 +488,7 @@
             <name="NJID" exp="年级ID" type="nvarchar(10)" />
             <name="BJLBID" exp="班级类别ID" type="int" />
             <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="KCLX" exp="课程类型" type="int" remark="必修课1限选课2" default="1" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_53_A12_XFZBXKCQD" exp="学分制必修课程清单表">
@@ -497,6 +497,17 @@
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="JXJHID" exp="教学计划ID" type="int" />
             <name="KCID" exp="课程ID" type="int" />
+            <name="XF" exp="学分" type="decimal(3, 1)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_53_A13_XFZXXKCQD" exp="学分制限选课程清单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="JXJHID" exp="教学计划ID" type="int" />
+            <name="KCIDLB" exp="课程ID列表" type="int" />
+            <name="KCMCLB" exp="课程名称列表" type="int" />
+            <name="XXMS" exp="限选数量" type="int" />
             <name="XF" exp="学分" type="decimal(3, 1)" />
         </field_area>
     </table>
