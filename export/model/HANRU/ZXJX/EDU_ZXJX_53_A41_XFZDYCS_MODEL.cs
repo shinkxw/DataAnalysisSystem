@@ -4,15 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_53_A41_BXKDYCS_metadata))]
-    public partial class EDU_ZXJX_53_A41_BXKDYCS
+    [MetadataType(typeof(EDU_ZXJX_53_A41_XFZDYCS_metadata))]
+    public partial class EDU_ZXJX_53_A41_XFZDYCS
     {
-        public EDU_ZXJX_53_A41_BXKDYCS()
+        public EDU_ZXJX_53_A41_XFZDYCS()
         {
             CSMC = "";
             TJSJ = DateTime.Now;
         }
-        public class EDU_ZXJX_53_A41_BXKDYCS_metadata
+        public class EDU_ZXJX_53_A41_XFZDYCS_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

@@ -4,13 +4,13 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_53_A42_BXKDYCSCJ_metadata))]
-    public partial class EDU_ZXJX_53_A42_BXKDYCSCJ
+    [MetadataType(typeof(EDU_ZXJX_53_A23_XFZECXKXS_metadata))]
+    public partial class EDU_ZXJX_53_A23_XFZECXKXS
     {
-        public EDU_ZXJX_53_A42_BXKDYCSCJ()
+        public EDU_ZXJX_53_A23_XFZECXKXS()
         {
         }
-        public class EDU_ZXJX_53_A42_BXKDYCSCJ_metadata
+        public class EDU_ZXJX_53_A23_XFZECXKXS_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -23,19 +23,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "单元测试")]
-            public Int32 DYCSID { get; set; }
+            [Display(Name = "选课")]
+            public Int32 XKID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "学生")]
             public Int32 XSID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "成绩")]
-            [Range(typeof(decimal), "0", "9999")]
-            public decimal CJ { get; set; }
 
 
         }

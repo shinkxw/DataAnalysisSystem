@@ -1,3 +1,31 @@
+版本号：15年02月12日17时31分02秒
+日期：2015-02-12 17:31:02 +0800
+特征值：47331656625804
+上一个版本特征值：47192791812360
+删除了表: 必修课教学班数据表(EDU_ZXJX_53_A21_BXKJXBSJ)
+删除了表: 学生必修课选课记录表(EDU_ZXJX_53_A22_XSBXKXKJL)
+删除了表: 必修课二次选课学生表(EDU_ZXJX_53_A23_BXKECXKXS)
+删除了表: 必修课课堂内容表(EDU_ZXJX_53_A24_BXKKTNR)
+删除了表: 必修课课堂记录项目表(EDU_ZXJX_53_A25_BXKKTJLXM)
+删除了表: 必修课课堂记录结果表(EDU_ZXJX_53_A26_BXKKTJLJG)
+删除了表: 必修课作业内容表(EDU_ZXJX_53_A27_BXKZYNR)
+删除了表: 必修课作业记录项目表(EDU_ZXJX_53_A28_BXKZYJLXM)
+删除了表: 必修课作业记录结果表(EDU_ZXJX_53_A29_BXKZYJLJG)
+删除了表: 必修课单元测试表(EDU_ZXJX_53_A41_BXKDYCS)
+删除了表: 必修课单元测试成绩表(EDU_ZXJX_53_A42_BXKDYCSCJ)
+添加了表: 学分制选课表(EDU_ZXJX_53_A20_XFZXK)
+添加了表: 学分制教学班数据表(EDU_ZXJX_53_A21_XFZJXBSJ)
+添加了表: 学生学分制选课记录表(EDU_ZXJX_53_A22_XSXFZXKJL)
+添加了表: 学分制二次选课学生表(EDU_ZXJX_53_A23_XFZECXKXS)
+添加了表: 学分制课堂内容表(EDU_ZXJX_53_A24_XFZKTNR)
+添加了表: 学分制课堂记录项目表(EDU_ZXJX_53_A25_XFZKTJLXM)
+添加了表: 学分制课堂记录结果表(EDU_ZXJX_53_A26_XFZKTJLJG)
+添加了表: 学分制作业内容表(EDU_ZXJX_53_A27_XFZZYNR)
+添加了表: 学分制作业记录项目表(EDU_ZXJX_53_A28_XFZZYJLXM)
+添加了表: 学分制作业记录结果表(EDU_ZXJX_53_A29_XFZZYJLJG)
+添加了表: 学分制单元测试表(EDU_ZXJX_53_A41_XFZDYCS)
+添加了表: 学分制单元测试成绩表(EDU_ZXJX_53_A42_XFZDYCSCJ)
+
 版本号：15年02月12日09时10分51秒
 日期：2015-02-12 09:10:51 +0800
 特征值：47192791812360

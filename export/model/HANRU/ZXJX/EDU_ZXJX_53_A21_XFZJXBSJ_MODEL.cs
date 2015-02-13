@@ -4,15 +4,18 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_53_A21_BXKJXBSJ_metadata))]
-    public partial class EDU_ZXJX_53_A21_BXKJXBSJ
+    [MetadataType(typeof(EDU_ZXJX_53_A21_XFZJXBSJ_metadata))]
+    public partial class EDU_ZXJX_53_A21_XFZJXBSJ
     {
-        public EDU_ZXJX_53_A21_BXKJXBSJ()
+        public EDU_ZXJX_53_A21_XFZJXBSJ()
         {
             SKDD = "";
             BZ = "";
+            KCMC = "";
+            SKBJIDLB = "";
+            SKBJMCLB = "";
         }
-        public class EDU_ZXJX_53_A21_BXKJXBSJ_metadata
+        public class EDU_ZXJX_53_A21_XFZJXBSJ_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -80,6 +83,30 @@ namespace HanRuEdu.LDAL
             [Display(Name = "备注")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "课程名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "授课班级ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SKBJIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "授课班级名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SKBJMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "教学班类型")]
+            public Int32 JXBLX { get; set; }
 
 
         }

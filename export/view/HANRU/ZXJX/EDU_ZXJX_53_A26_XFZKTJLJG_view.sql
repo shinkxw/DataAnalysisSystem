@@ -1,6 +1,6 @@
 
---必修课课堂记录结果表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A26_BXKKTJLJG_DISP]
+--学分制课堂记录结果表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A26_XFZKTJLJG_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -8,10 +8,10 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[XMID]--项目ID
       ,a.[JG]--结果
-      ,c.SCHOOLID as c_BXKKTNR_SCHOOLID--必修课课堂内容表 学校
-      ,c.BXKJXBID as c_BXKKTNR_BXKJXBID--必修课课堂内容表 必修课教学班ID
-      ,c.KTNR as c_BXKKTNR_KTNR--必修课课堂内容表 课堂内容
-      ,c.TJSJ as c_BXKKTNR_TJSJ--必修课课堂内容表 添加时间
+      ,c.SCHOOLID as c_XFZKTNR_SCHOOLID--学分制课堂内容表 学校
+      ,c.BXKJXBID as c_XFZKTNR_BXKJXBID--学分制课堂内容表 必修课教学班ID
+      ,c.KTNR as c_XFZKTNR_KTNR--学分制课堂内容表 课堂内容
+      ,c.TJSJ as c_XFZKTNR_TJSJ--学分制课堂内容表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -76,16 +76,16 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
-      ,e.SCHOOLID as e_BXKKTJLXM_SCHOOLID--必修课课堂记录项目表 学校
-      ,e.XMMC as e_BXKKTJLXM_XMMC--必修课课堂记录项目表 项目名称
-      ,e.SRLX as e_BXKKTJLXM_SRLX--必修课课堂记录项目表 输入类型
-      ,e.MRZ as e_BXKKTJLXM_MRZ--必修课课堂记录项目表 默认值
-      ,e.PLSX as e_BXKKTJLXM_PLSX--必修课课堂记录项目表 排列顺序
+      ,e.SCHOOLID as e_XFZKTJLXM_SCHOOLID--学分制课堂记录项目表 学校
+      ,e.XMMC as e_XFZKTJLXM_XMMC--学分制课堂记录项目表 项目名称
+      ,e.SRLX as e_XFZKTJLXM_SRLX--学分制课堂记录项目表 输入类型
+      ,e.MRZ as e_XFZKTJLXM_MRZ--学分制课堂记录项目表 默认值
+      ,e.PLSX as e_XFZKTJLXM_PLSX--学分制课堂记录项目表 排列顺序
 
-FROM dbo.EDU_ZXJX_53_A26_BXKKTJLJG AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A24_BXKKTNR AS c ON a.KTNRID = c.ID /*课堂内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A26_XFZKTJLJG AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A24_XFZKTNR AS c ON a.KTNRID = c.ID /*课堂内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A25_BXKKTJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A25_XFZKTJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN

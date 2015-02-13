@@ -4,14 +4,14 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_53_A29_BXKZYJLJG_metadata))]
-    public partial class EDU_ZXJX_53_A29_BXKZYJLJG
+    [MetadataType(typeof(EDU_ZXJX_53_A26_XFZKTJLJG_metadata))]
+    public partial class EDU_ZXJX_53_A26_XFZKTJLJG
     {
-        public EDU_ZXJX_53_A29_BXKZYJLJG()
+        public EDU_ZXJX_53_A26_XFZKTJLJG()
         {
             JG = "";
         }
-        public class EDU_ZXJX_53_A29_BXKZYJLJG_metadata
+        public class EDU_ZXJX_53_A26_XFZKTJLJG_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -24,8 +24,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "作业内容")]
-            public Int32 ZYNRID { get; set; }
+            [Display(Name = "课堂内容")]
+            public Int32 KTNRID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

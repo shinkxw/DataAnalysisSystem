@@ -1,6 +1,6 @@
 
---必修课教学班数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A21_BXKJXBSJ_DISP]
+--学分制教学班数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A21_XFZJXBSJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -15,6 +15,10 @@ SELECT a.[ID]--编号
       ,a.[ZDKBRS]--最低开班人数
       ,a.[ZT]--状态
       ,a.[BZ]--备注
+      ,a.[KCMC]--课程名称
+      ,a.[SKBJIDLB]--授课班级ID列表
+      ,a.[SKBJMCLB]--授课班级名称列表
+      ,a.[JXBLX]--教学班类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -166,7 +170,7 @@ SELECT a.[ID]--编号
       ,g.SDIDLB as g_XFZKKSJ_SDIDLB--学分制开课时间表 时段ID列表
       ,g.SDMCLB as g_XFZKKSJ_SDMCLB--学分制开课时间表 时段名称列表
 
-FROM dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.ZRKJSID = d.ID /*主任课教师ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS e ON a.FRKJSID = e.ID /*辅任课教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN

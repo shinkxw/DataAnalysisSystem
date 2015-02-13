@@ -4,14 +4,13 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_53_A26_BXKKTJLJG_metadata))]
-    public partial class EDU_ZXJX_53_A26_BXKKTJLJG
+    [MetadataType(typeof(EDU_ZXJX_53_A42_XFZDYCSCJ_metadata))]
+    public partial class EDU_ZXJX_53_A42_XFZDYCSCJ
     {
-        public EDU_ZXJX_53_A26_BXKKTJLJG()
+        public EDU_ZXJX_53_A42_XFZDYCSCJ()
         {
-            JG = "";
         }
-        public class EDU_ZXJX_53_A26_BXKKTJLJG_metadata
+        public class EDU_ZXJX_53_A42_XFZDYCSCJ_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -24,8 +23,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "课堂内容")]
-            public Int32 KTNRID { get; set; }
+            [Display(Name = "单元测试")]
+            public Int32 DYCSID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -34,15 +33,9 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "项目")]
-            public Int32 XMID { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "结果")]
-            [StringLength(200)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JG { get; set; }
+            [Display(Name = "成绩")]
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal CJ { get; set; }
 
 
         }

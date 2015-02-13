@@ -1,17 +1,16 @@
 
---必修课作业记录结果表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A29_BXKZYJLJG_DISP]
+--学分制单元测试成绩表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A42_XFZDYCSCJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[ZYNRID]--作业内容ID
+      ,a.[DYCSID]--单元测试ID
       ,a.[XSID]--学生ID
-      ,a.[XMID]--项目ID
-      ,a.[JG]--结果
-      ,c.SCHOOLID as c_BXKZYNR_SCHOOLID--必修课作业内容表 学校
-      ,c.BXKJXBID as c_BXKZYNR_BXKJXBID--必修课作业内容表 必修课教学班ID
-      ,c.ZYNR as c_BXKZYNR_ZYNR--必修课作业内容表 作业内容
-      ,c.TJSJ as c_BXKZYNR_TJSJ--必修课作业内容表 添加时间
+      ,a.[CJ]--成绩
+      ,c.SCHOOLID as c_XFZDYCS_SCHOOLID--学分制单元测试表 学校
+      ,c.BXKJXBID as c_XFZDYCS_BXKJXBID--学分制单元测试表 必修课教学班ID
+      ,c.CSMC as c_XFZDYCS_CSMC--学分制单元测试表 测试名称
+      ,c.TJSJ as c_XFZDYCS_TJSJ--学分制单元测试表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -76,16 +75,10 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
-      ,e.SCHOOLID as e_BXKZYJLXM_SCHOOLID--必修课作业记录项目表 学校
-      ,e.XMMC as e_BXKZYJLXM_XMMC--必修课作业记录项目表 项目名称
-      ,e.SRLX as e_BXKZYJLXM_SRLX--必修课作业记录项目表 输入类型
-      ,e.MRZ as e_BXKZYJLXM_MRZ--必修课作业记录项目表 默认值
-      ,e.PLSX as e_BXKZYJLXM_PLSX--必修课作业记录项目表 排列顺序
 
-FROM dbo.EDU_ZXJX_53_A29_BXKZYJLJG AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A27_BXKZYNR AS c ON a.ZYNRID = c.ID /*作业内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A42_XFZDYCSCJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A41_XFZDYCS AS c ON a.DYCSID = c.ID /*单元测试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A28_BXKZYJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN

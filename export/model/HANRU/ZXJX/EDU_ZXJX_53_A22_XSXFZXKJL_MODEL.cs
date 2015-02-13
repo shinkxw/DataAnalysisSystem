@@ -4,13 +4,13 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZXJX_53_A22_XSBXKXKJL_metadata))]
-    public partial class EDU_ZXJX_53_A22_XSBXKXKJL
+    [MetadataType(typeof(EDU_ZXJX_53_A22_XSXFZXKJL_metadata))]
+    public partial class EDU_ZXJX_53_A22_XSXFZXKJL
     {
-        public EDU_ZXJX_53_A22_XSBXKXKJL()
+        public EDU_ZXJX_53_A22_XSXFZXKJL()
         {
         }
-        public class EDU_ZXJX_53_A22_XSBXKXKJL_metadata
+        public class EDU_ZXJX_53_A22_XSXFZXKJL_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

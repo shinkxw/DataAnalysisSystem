@@ -1,16 +1,24 @@
 
---必修课单元测试成绩表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A42_BXKDYCSCJ_DISP]
+--学分制二次选课学生表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A23_XFZECXKXS_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[DYCSID]--单元测试ID
+      ,a.[XKID]--选课ID
       ,a.[XSID]--学生ID
-      ,a.[CJ]--成绩
-      ,c.SCHOOLID as c_BXKDYCS_SCHOOLID--必修课单元测试表 学校
-      ,c.BXKJXBID as c_BXKDYCS_BXKJXBID--必修课单元测试表 必修课教学班ID
-      ,c.CSMC as c_BXKDYCS_CSMC--必修课单元测试表 测试名称
-      ,c.TJSJ as c_BXKDYCS_TJSJ--必修课单元测试表 添加时间
+      ,c.SCHOOLID as c_XFZXK_SCHOOLID--学分制选课表 学校
+      ,c.XQID as c_XFZXK_XQID--学分制选课表 学期ID
+      ,c.XKMC as c_XFZXK_XKMC--学分制选课表 选课名称
+      ,c.XKKSSJ as c_XFZXK_XKKSSJ--学分制选课表 选课开始时间
+      ,c.XKJSSJ as c_XFZXK_XKJSSJ--学分制选课表 选课结束时间
+      ,c.SFYXSYXSECXK as c_XFZXK_SFYXSYXSECXK--学分制选课表 是否允许所有学生二次选课
+      ,c.ECXKKSSJ as c_XFZXK_ECXKKSSJ--学分制选课表 二次选课开始时间
+      ,c.ECXKJSSJ as c_XFZXK_ECXKJSSJ--学分制选课表 二次选课结束时间
+      ,c.XKFFYLC as c_XFZXK_XKFFYLC--学分制选课表 选课方法与流程
+      ,c.KXKCLXIDLB as c_XFZXK_KXKCLXIDLB--学分制选课表 可选课程类型ID列表
+      ,c.XKBJIDLB as c_XFZXK_XKBJIDLB--学分制选课表 选课班级ID列表
+      ,c.XKBJMCLB as c_XFZXK_XKBJMCLB--学分制选课表 选课班级名称列表
+      ,c.XSZDXKMS as c_XFZXK_XSZDXKMS--学分制选课表 学生最多选课门数
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -76,8 +84,8 @@ SELECT a.[ID]--编号
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
-FROM dbo.EDU_ZXJX_53_A42_BXKDYCSCJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A41_BXKDYCS AS c ON a.DYCSID = c.ID /*单元测试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A23_XFZECXKXS AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A20_XFZXK AS c ON a.XKID = c.ID /*选课ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN

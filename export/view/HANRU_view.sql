@@ -703,41 +703,45 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A13
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_53_A13_XFZXXKCQD_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A21_BXKJXBSJ_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A20_XFZXK_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A21_BXKJXBSJ_DISP
+   drop view VIEW_EDU_ZXJX_53_A20_XFZXK_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A22_XSBXKXKJL_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A21_XFZJXBSJ_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A22_XSBXKXKJL_DISP
+   drop view VIEW_EDU_ZXJX_53_A21_XFZJXBSJ_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A23_BXKECXKXS_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A22_XSXFZXKJL_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A23_BXKECXKXS_DISP
+   drop view VIEW_EDU_ZXJX_53_A22_XSXFZXKJL_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A24_BXKKTNR_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A23_XFZECXKXS_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A24_BXKKTNR_DISP
+   drop view VIEW_EDU_ZXJX_53_A23_XFZECXKXS_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A26_BXKKTJLJG_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A24_XFZKTNR_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A26_BXKKTJLJG_DISP
+   drop view VIEW_EDU_ZXJX_53_A24_XFZKTNR_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A27_BXKZYNR_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A26_XFZKTJLJG_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A27_BXKZYNR_DISP
+   drop view VIEW_EDU_ZXJX_53_A26_XFZKTJLJG_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A29_BXKZYJLJG_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A27_XFZZYNR_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A29_BXKZYJLJG_DISP
+   drop view VIEW_EDU_ZXJX_53_A27_XFZZYNR_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A41_BXKDYCS_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A29_XFZZYJLJG_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A41_BXKDYCS_DISP
+   drop view VIEW_EDU_ZXJX_53_A29_XFZZYJLJG_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A42_BXKDYCSCJ_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A41_XFZDYCS_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZXJX_53_A42_BXKDYCSCJ_DISP
+   drop view VIEW_EDU_ZXJX_53_A41_XFZDYCS_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A42_XFZDYCSCJ_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_53_A42_XFZDYCSCJ_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A46_BXKXXTKCJ_DISP')
             and   type = 'V')
@@ -11714,8 +11718,38 @@ FROM dbo.EDU_ZXJX_53_A13_XFZXXKCQD AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_53_A11_XFZXQJXJH AS c ON a.JXJHID = c.ID /*教学计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
---必修课教学班数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A21_BXKJXBSJ_DISP]
+--学分制选课表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A20_XFZXK_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[XQID]--学期ID
+      ,a.[XKMC]--选课名称
+      ,a.[XKKSSJ]--选课开始时间
+      ,a.[XKJSSJ]--选课结束时间
+      ,a.[SFYXSYXSECXK]--是否允许所有学生二次选课
+      ,a.[ECXKKSSJ]--二次选课开始时间
+      ,a.[ECXKJSSJ]--二次选课结束时间
+      ,a.[XKFFYLC]--选课方法与流程
+      ,a.[KXKCLXIDLB]--可选课程类型ID列表
+      ,a.[XKBJIDLB]--选课班级ID列表
+      ,a.[XKBJMCLB]--选课班级名称列表
+      ,a.[XSZDXKMS]--学生最多选课门数
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+
+FROM dbo.EDU_ZXJX_53_A20_XFZXK AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
+GO
+
+--学分制教学班数据表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A21_XFZJXBSJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -11730,6 +11764,10 @@ SELECT a.[ID]--编号
       ,a.[ZDKBRS]--最低开班人数
       ,a.[ZT]--状态
       ,a.[BZ]--备注
+      ,a.[KCMC]--课程名称
+      ,a.[SKBJIDLB]--授课班级ID列表
+      ,a.[SKBJMCLB]--授课班级名称列表
+      ,a.[JXBLX]--教学班类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -11881,7 +11919,7 @@ SELECT a.[ID]--编号
       ,g.SDIDLB as g_XFZKKSJ_SDIDLB--学分制开课时间表 时段ID列表
       ,g.SDMCLB as g_XFZKKSJ_SDMCLB--学分制开课时间表 时段名称列表
 
-FROM dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS d ON a.ZRKJSID = d.ID /*主任课教师ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS e ON a.FRKJSID = e.ID /*辅任课教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -11922,8 +11960,8 @@ FROM dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_RKXD AS [eq] ON e.ZYRKXD = [eq].DM /*主要任课学段*/
 GO
 
---学生必修课选课记录表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A22_XSBXKXKJL_DISP]
+--学生学分制选课记录表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A22_XSXFZXKJL_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -11993,22 +12031,26 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
-      ,d.SCHOOLID as d_BXKJXBSJ_SCHOOLID--必修课教学班数据表 学校
-      ,d.XQID as d_BXKJXBSJ_XQID--必修课教学班数据表 学期ID
-      ,d.ZRKJSID as d_BXKJXBSJ_ZRKJSID--必修课教学班数据表 主任课教师ID
-      ,d.FRKJSID as d_BXKJXBSJ_FRKJSID--必修课教学班数据表 辅任课教师ID
-      ,d.KCID as d_BXKJXBSJ_KCID--必修课教学班数据表 课程ID
-      ,d.KKSJID as d_BXKJXBSJ_KKSJID--必修课教学班数据表 开课时间ID
-      ,d.SKDD as d_BXKJXBSJ_SKDD--必修课教学班数据表 上课地点
-      ,d.ZKS as d_BXKJXBSJ_ZKS--必修课教学班数据表 总课时
-      ,d.BJKRNRS as d_BXKJXBSJ_BJKRNRS--必修课教学班数据表 班级可容纳人数
-      ,d.ZDKBRS as d_BXKJXBSJ_ZDKBRS--必修课教学班数据表 最低开班人数
-      ,d.ZT as d_BXKJXBSJ_ZT--必修课教学班数据表 状态
-      ,d.BZ as d_BXKJXBSJ_BZ--必修课教学班数据表 备注
+      ,d.SCHOOLID as d_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
+      ,d.XQID as d_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
+      ,d.ZRKJSID as d_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID
+      ,d.FRKJSID as d_XFZJXBSJ_FRKJSID--学分制教学班数据表 辅任课教师ID
+      ,d.KCID as d_XFZJXBSJ_KCID--学分制教学班数据表 课程ID
+      ,d.KKSJID as d_XFZJXBSJ_KKSJID--学分制教学班数据表 开课时间ID
+      ,d.SKDD as d_XFZJXBSJ_SKDD--学分制教学班数据表 上课地点
+      ,d.ZKS as d_XFZJXBSJ_ZKS--学分制教学班数据表 总课时
+      ,d.BJKRNRS as d_XFZJXBSJ_BJKRNRS--学分制教学班数据表 班级可容纳人数
+      ,d.ZDKBRS as d_XFZJXBSJ_ZDKBRS--学分制教学班数据表 最低开班人数
+      ,d.ZT as d_XFZJXBSJ_ZT--学分制教学班数据表 状态
+      ,d.BZ as d_XFZJXBSJ_BZ--学分制教学班数据表 备注
+      ,d.KCMC as d_XFZJXBSJ_KCMC--学分制教学班数据表 课程名称
+      ,d.SKBJIDLB as d_XFZJXBSJ_SKBJIDLB--学分制教学班数据表 授课班级ID列表
+      ,d.SKBJMCLB as d_XFZJXBSJ_SKBJMCLB--学分制教学班数据表 授课班级名称列表
+      ,d.JXBLX as d_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
-FROM dbo.EDU_ZXJX_53_A22_XSBXKXKJL AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A22_XSXFZXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS d ON a.BXKJXBID = d.ID /*必修课教学班ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS d ON a.BXKJXBID = d.ID /*必修课教学班ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
@@ -12027,20 +12069,26 @@ FROM dbo.EDU_ZXJX_53_A22_XSBXKXKJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [cq] ON c.XSDQZTM = [cq].DM /*学生当前状态码*/
 GO
 
---必修课二次选课学生表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A23_BXKECXKXS_DISP]
+--学分制二次选课学生表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A23_XFZECXKXS_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[XQID]--学期ID
+      ,a.[XKID]--选课ID
       ,a.[XSID]--学生ID
-      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
-      ,c.XNID as c_XQ_XNID--学期数据表 学年
-      ,c.XQM as c_XQ_XQM--学期数据表 学期码
-      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
-      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
-      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
-      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.SCHOOLID as c_XFZXK_SCHOOLID--学分制选课表 学校
+      ,c.XQID as c_XFZXK_XQID--学分制选课表 学期ID
+      ,c.XKMC as c_XFZXK_XKMC--学分制选课表 选课名称
+      ,c.XKKSSJ as c_XFZXK_XKKSSJ--学分制选课表 选课开始时间
+      ,c.XKJSSJ as c_XFZXK_XKJSSJ--学分制选课表 选课结束时间
+      ,c.SFYXSYXSECXK as c_XFZXK_SFYXSYXSECXK--学分制选课表 是否允许所有学生二次选课
+      ,c.ECXKKSSJ as c_XFZXK_ECXKKSSJ--学分制选课表 二次选课开始时间
+      ,c.ECXKJSSJ as c_XFZXK_ECXKJSSJ--学分制选课表 二次选课结束时间
+      ,c.XKFFYLC as c_XFZXK_XKFFYLC--学分制选课表 选课方法与流程
+      ,c.KXKCLXIDLB as c_XFZXK_KXKCLXIDLB--学分制选课表 可选课程类型ID列表
+      ,c.XKBJIDLB as c_XFZXK_XKBJIDLB--学分制选课表 选课班级ID列表
+      ,c.XKBJMCLB as c_XFZXK_XKBJMCLB--学分制选课表 选课班级名称列表
+      ,c.XSZDXKMS as c_XFZXK_XSZDXKMS--学分制选课表 学生最多选课门数
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -12106,10 +12154,9 @@ SELECT a.[ID]--编号
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
-FROM dbo.EDU_ZXJX_53_A23_BXKECXKXS AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A23_XFZECXKXS AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A20_XFZXK AS c ON a.XKID = c.ID /*选课ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
@@ -12128,33 +12175,37 @@ FROM dbo.EDU_ZXJX_53_A23_BXKECXKXS AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
 GO
 
---必修课课堂内容表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A24_BXKKTNR_DISP]
+--学分制课堂内容表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A24_XFZKTNR_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[BXKJXBID]--必修课教学班ID
       ,a.[KTNR]--课堂内容
       ,a.[TJSJ]--添加时间
-      ,c.SCHOOLID as c_BXKJXBSJ_SCHOOLID--必修课教学班数据表 学校
-      ,c.XQID as c_BXKJXBSJ_XQID--必修课教学班数据表 学期ID
-      ,c.ZRKJSID as c_BXKJXBSJ_ZRKJSID--必修课教学班数据表 主任课教师ID
-      ,c.FRKJSID as c_BXKJXBSJ_FRKJSID--必修课教学班数据表 辅任课教师ID
-      ,c.KCID as c_BXKJXBSJ_KCID--必修课教学班数据表 课程ID
-      ,c.KKSJID as c_BXKJXBSJ_KKSJID--必修课教学班数据表 开课时间ID
-      ,c.SKDD as c_BXKJXBSJ_SKDD--必修课教学班数据表 上课地点
-      ,c.ZKS as c_BXKJXBSJ_ZKS--必修课教学班数据表 总课时
-      ,c.BJKRNRS as c_BXKJXBSJ_BJKRNRS--必修课教学班数据表 班级可容纳人数
-      ,c.ZDKBRS as c_BXKJXBSJ_ZDKBRS--必修课教学班数据表 最低开班人数
-      ,c.ZT as c_BXKJXBSJ_ZT--必修课教学班数据表 状态
-      ,c.BZ as c_BXKJXBSJ_BZ--必修课教学班数据表 备注
+      ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
+      ,c.XQID as c_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
+      ,c.ZRKJSID as c_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID
+      ,c.FRKJSID as c_XFZJXBSJ_FRKJSID--学分制教学班数据表 辅任课教师ID
+      ,c.KCID as c_XFZJXBSJ_KCID--学分制教学班数据表 课程ID
+      ,c.KKSJID as c_XFZJXBSJ_KKSJID--学分制教学班数据表 开课时间ID
+      ,c.SKDD as c_XFZJXBSJ_SKDD--学分制教学班数据表 上课地点
+      ,c.ZKS as c_XFZJXBSJ_ZKS--学分制教学班数据表 总课时
+      ,c.BJKRNRS as c_XFZJXBSJ_BJKRNRS--学分制教学班数据表 班级可容纳人数
+      ,c.ZDKBRS as c_XFZJXBSJ_ZDKBRS--学分制教学班数据表 最低开班人数
+      ,c.ZT as c_XFZJXBSJ_ZT--学分制教学班数据表 状态
+      ,c.BZ as c_XFZJXBSJ_BZ--学分制教学班数据表 备注
+      ,c.KCMC as c_XFZJXBSJ_KCMC--学分制教学班数据表 课程名称
+      ,c.SKBJIDLB as c_XFZJXBSJ_SKBJIDLB--学分制教学班数据表 授课班级ID列表
+      ,c.SKBJMCLB as c_XFZJXBSJ_SKBJMCLB--学分制教学班数据表 授课班级名称列表
+      ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
-FROM dbo.EDU_ZXJX_53_A24_BXKKTNR AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+FROM dbo.EDU_ZXJX_53_A24_XFZKTNR AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
---必修课课堂记录结果表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A26_BXKKTJLJG_DISP]
+--学分制课堂记录结果表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A26_XFZKTJLJG_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -12162,10 +12213,10 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[XMID]--项目ID
       ,a.[JG]--结果
-      ,c.SCHOOLID as c_BXKKTNR_SCHOOLID--必修课课堂内容表 学校
-      ,c.BXKJXBID as c_BXKKTNR_BXKJXBID--必修课课堂内容表 必修课教学班ID
-      ,c.KTNR as c_BXKKTNR_KTNR--必修课课堂内容表 课堂内容
-      ,c.TJSJ as c_BXKKTNR_TJSJ--必修课课堂内容表 添加时间
+      ,c.SCHOOLID as c_XFZKTNR_SCHOOLID--学分制课堂内容表 学校
+      ,c.BXKJXBID as c_XFZKTNR_BXKJXBID--学分制课堂内容表 必修课教学班ID
+      ,c.KTNR as c_XFZKTNR_KTNR--学分制课堂内容表 课堂内容
+      ,c.TJSJ as c_XFZKTNR_TJSJ--学分制课堂内容表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -12230,16 +12281,16 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
-      ,e.SCHOOLID as e_BXKKTJLXM_SCHOOLID--必修课课堂记录项目表 学校
-      ,e.XMMC as e_BXKKTJLXM_XMMC--必修课课堂记录项目表 项目名称
-      ,e.SRLX as e_BXKKTJLXM_SRLX--必修课课堂记录项目表 输入类型
-      ,e.MRZ as e_BXKKTJLXM_MRZ--必修课课堂记录项目表 默认值
-      ,e.PLSX as e_BXKKTJLXM_PLSX--必修课课堂记录项目表 排列顺序
+      ,e.SCHOOLID as e_XFZKTJLXM_SCHOOLID--学分制课堂记录项目表 学校
+      ,e.XMMC as e_XFZKTJLXM_XMMC--学分制课堂记录项目表 项目名称
+      ,e.SRLX as e_XFZKTJLXM_SRLX--学分制课堂记录项目表 输入类型
+      ,e.MRZ as e_XFZKTJLXM_MRZ--学分制课堂记录项目表 默认值
+      ,e.PLSX as e_XFZKTJLXM_PLSX--学分制课堂记录项目表 排列顺序
 
-FROM dbo.EDU_ZXJX_53_A26_BXKKTJLJG AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A24_BXKKTNR AS c ON a.KTNRID = c.ID /*课堂内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A26_XFZKTJLJG AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A24_XFZKTNR AS c ON a.KTNRID = c.ID /*课堂内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A25_BXKKTJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A25_XFZKTJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
@@ -12258,33 +12309,37 @@ FROM dbo.EDU_ZXJX_53_A26_BXKKTJLJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
 GO
 
---必修课作业内容表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A27_BXKZYNR_DISP]
+--学分制作业内容表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A27_XFZZYNR_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[BXKJXBID]--必修课教学班ID
       ,a.[ZYNR]--作业内容
       ,a.[TJSJ]--添加时间
-      ,c.SCHOOLID as c_BXKJXBSJ_SCHOOLID--必修课教学班数据表 学校
-      ,c.XQID as c_BXKJXBSJ_XQID--必修课教学班数据表 学期ID
-      ,c.ZRKJSID as c_BXKJXBSJ_ZRKJSID--必修课教学班数据表 主任课教师ID
-      ,c.FRKJSID as c_BXKJXBSJ_FRKJSID--必修课教学班数据表 辅任课教师ID
-      ,c.KCID as c_BXKJXBSJ_KCID--必修课教学班数据表 课程ID
-      ,c.KKSJID as c_BXKJXBSJ_KKSJID--必修课教学班数据表 开课时间ID
-      ,c.SKDD as c_BXKJXBSJ_SKDD--必修课教学班数据表 上课地点
-      ,c.ZKS as c_BXKJXBSJ_ZKS--必修课教学班数据表 总课时
-      ,c.BJKRNRS as c_BXKJXBSJ_BJKRNRS--必修课教学班数据表 班级可容纳人数
-      ,c.ZDKBRS as c_BXKJXBSJ_ZDKBRS--必修课教学班数据表 最低开班人数
-      ,c.ZT as c_BXKJXBSJ_ZT--必修课教学班数据表 状态
-      ,c.BZ as c_BXKJXBSJ_BZ--必修课教学班数据表 备注
+      ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
+      ,c.XQID as c_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
+      ,c.ZRKJSID as c_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID
+      ,c.FRKJSID as c_XFZJXBSJ_FRKJSID--学分制教学班数据表 辅任课教师ID
+      ,c.KCID as c_XFZJXBSJ_KCID--学分制教学班数据表 课程ID
+      ,c.KKSJID as c_XFZJXBSJ_KKSJID--学分制教学班数据表 开课时间ID
+      ,c.SKDD as c_XFZJXBSJ_SKDD--学分制教学班数据表 上课地点
+      ,c.ZKS as c_XFZJXBSJ_ZKS--学分制教学班数据表 总课时
+      ,c.BJKRNRS as c_XFZJXBSJ_BJKRNRS--学分制教学班数据表 班级可容纳人数
+      ,c.ZDKBRS as c_XFZJXBSJ_ZDKBRS--学分制教学班数据表 最低开班人数
+      ,c.ZT as c_XFZJXBSJ_ZT--学分制教学班数据表 状态
+      ,c.BZ as c_XFZJXBSJ_BZ--学分制教学班数据表 备注
+      ,c.KCMC as c_XFZJXBSJ_KCMC--学分制教学班数据表 课程名称
+      ,c.SKBJIDLB as c_XFZJXBSJ_SKBJIDLB--学分制教学班数据表 授课班级ID列表
+      ,c.SKBJMCLB as c_XFZJXBSJ_SKBJMCLB--学分制教学班数据表 授课班级名称列表
+      ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
-FROM dbo.EDU_ZXJX_53_A27_BXKZYNR AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+FROM dbo.EDU_ZXJX_53_A27_XFZZYNR AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
---必修课作业记录结果表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A29_BXKZYJLJG_DISP]
+--学分制作业记录结果表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A29_XFZZYJLJG_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
@@ -12292,10 +12347,10 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[XMID]--项目ID
       ,a.[JG]--结果
-      ,c.SCHOOLID as c_BXKZYNR_SCHOOLID--必修课作业内容表 学校
-      ,c.BXKJXBID as c_BXKZYNR_BXKJXBID--必修课作业内容表 必修课教学班ID
-      ,c.ZYNR as c_BXKZYNR_ZYNR--必修课作业内容表 作业内容
-      ,c.TJSJ as c_BXKZYNR_TJSJ--必修课作业内容表 添加时间
+      ,c.SCHOOLID as c_XFZZYNR_SCHOOLID--学分制作业内容表 学校
+      ,c.BXKJXBID as c_XFZZYNR_BXKJXBID--学分制作业内容表 必修课教学班ID
+      ,c.ZYNR as c_XFZZYNR_ZYNR--学分制作业内容表 作业内容
+      ,c.TJSJ as c_XFZZYNR_TJSJ--学分制作业内容表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -12360,16 +12415,16 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
-      ,e.SCHOOLID as e_BXKZYJLXM_SCHOOLID--必修课作业记录项目表 学校
-      ,e.XMMC as e_BXKZYJLXM_XMMC--必修课作业记录项目表 项目名称
-      ,e.SRLX as e_BXKZYJLXM_SRLX--必修课作业记录项目表 输入类型
-      ,e.MRZ as e_BXKZYJLXM_MRZ--必修课作业记录项目表 默认值
-      ,e.PLSX as e_BXKZYJLXM_PLSX--必修课作业记录项目表 排列顺序
+      ,e.SCHOOLID as e_XFZZYJLXM_SCHOOLID--学分制作业记录项目表 学校
+      ,e.XMMC as e_XFZZYJLXM_XMMC--学分制作业记录项目表 项目名称
+      ,e.SRLX as e_XFZZYJLXM_SRLX--学分制作业记录项目表 输入类型
+      ,e.MRZ as e_XFZZYJLXM_MRZ--学分制作业记录项目表 默认值
+      ,e.PLSX as e_XFZZYJLXM_PLSX--学分制作业记录项目表 排列顺序
 
-FROM dbo.EDU_ZXJX_53_A29_BXKZYJLJG AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A27_BXKZYNR AS c ON a.ZYNRID = c.ID /*作业内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A29_XFZZYJLJG AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A27_XFZZYNR AS c ON a.ZYNRID = c.ID /*作业内容ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A28_BXKZYJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A28_XFZZYJLXM AS e ON a.XMID = e.ID /*项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
@@ -12388,43 +12443,47 @@ FROM dbo.EDU_ZXJX_53_A29_BXKZYJLJG AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
 GO
 
---必修课单元测试表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A41_BXKDYCS_DISP]
+--学分制单元测试表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A41_XFZDYCS_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[BXKJXBID]--必修课教学班ID
       ,a.[CSMC]--测试名称
       ,a.[TJSJ]--添加时间
-      ,c.SCHOOLID as c_BXKJXBSJ_SCHOOLID--必修课教学班数据表 学校
-      ,c.XQID as c_BXKJXBSJ_XQID--必修课教学班数据表 学期ID
-      ,c.ZRKJSID as c_BXKJXBSJ_ZRKJSID--必修课教学班数据表 主任课教师ID
-      ,c.FRKJSID as c_BXKJXBSJ_FRKJSID--必修课教学班数据表 辅任课教师ID
-      ,c.KCID as c_BXKJXBSJ_KCID--必修课教学班数据表 课程ID
-      ,c.KKSJID as c_BXKJXBSJ_KKSJID--必修课教学班数据表 开课时间ID
-      ,c.SKDD as c_BXKJXBSJ_SKDD--必修课教学班数据表 上课地点
-      ,c.ZKS as c_BXKJXBSJ_ZKS--必修课教学班数据表 总课时
-      ,c.BJKRNRS as c_BXKJXBSJ_BJKRNRS--必修课教学班数据表 班级可容纳人数
-      ,c.ZDKBRS as c_BXKJXBSJ_ZDKBRS--必修课教学班数据表 最低开班人数
-      ,c.ZT as c_BXKJXBSJ_ZT--必修课教学班数据表 状态
-      ,c.BZ as c_BXKJXBSJ_BZ--必修课教学班数据表 备注
+      ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
+      ,c.XQID as c_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
+      ,c.ZRKJSID as c_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID
+      ,c.FRKJSID as c_XFZJXBSJ_FRKJSID--学分制教学班数据表 辅任课教师ID
+      ,c.KCID as c_XFZJXBSJ_KCID--学分制教学班数据表 课程ID
+      ,c.KKSJID as c_XFZJXBSJ_KKSJID--学分制教学班数据表 开课时间ID
+      ,c.SKDD as c_XFZJXBSJ_SKDD--学分制教学班数据表 上课地点
+      ,c.ZKS as c_XFZJXBSJ_ZKS--学分制教学班数据表 总课时
+      ,c.BJKRNRS as c_XFZJXBSJ_BJKRNRS--学分制教学班数据表 班级可容纳人数
+      ,c.ZDKBRS as c_XFZJXBSJ_ZDKBRS--学分制教学班数据表 最低开班人数
+      ,c.ZT as c_XFZJXBSJ_ZT--学分制教学班数据表 状态
+      ,c.BZ as c_XFZJXBSJ_BZ--学分制教学班数据表 备注
+      ,c.KCMC as c_XFZJXBSJ_KCMC--学分制教学班数据表 课程名称
+      ,c.SKBJIDLB as c_XFZJXBSJ_SKBJIDLB--学分制教学班数据表 授课班级ID列表
+      ,c.SKBJMCLB as c_XFZJXBSJ_SKBJMCLB--学分制教学班数据表 授课班级名称列表
+      ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
-FROM dbo.EDU_ZXJX_53_A41_BXKDYCS AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+FROM dbo.EDU_ZXJX_53_A41_XFZDYCS AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
---必修课单元测试成绩表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A42_BXKDYCSCJ_DISP]
+--学分制单元测试成绩表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A42_XFZDYCSCJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[DYCSID]--单元测试ID
       ,a.[XSID]--学生ID
       ,a.[CJ]--成绩
-      ,c.SCHOOLID as c_BXKDYCS_SCHOOLID--必修课单元测试表 学校
-      ,c.BXKJXBID as c_BXKDYCS_BXKJXBID--必修课单元测试表 必修课教学班ID
-      ,c.CSMC as c_BXKDYCS_CSMC--必修课单元测试表 测试名称
-      ,c.TJSJ as c_BXKDYCS_TJSJ--必修课单元测试表 添加时间
+      ,c.SCHOOLID as c_XFZDYCS_SCHOOLID--学分制单元测试表 学校
+      ,c.BXKJXBID as c_XFZDYCS_BXKJXBID--学分制单元测试表 必修课教学班ID
+      ,c.CSMC as c_XFZDYCS_CSMC--学分制单元测试表 测试名称
+      ,c.TJSJ as c_XFZDYCS_TJSJ--学分制单元测试表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -12490,8 +12549,8 @@ SELECT a.[ID]--编号
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
-FROM dbo.EDU_ZXJX_53_A42_BXKDYCSCJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A41_BXKDYCS AS c ON a.DYCSID = c.ID /*单元测试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_53_A42_XFZDYCSCJ AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A41_XFZDYCS AS c ON a.DYCSID = c.ID /*单元测试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
@@ -12520,18 +12579,22 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[TKLX]--统考类型
       ,a.[CJ]--成绩
-      ,c.SCHOOLID as c_BXKJXBSJ_SCHOOLID--必修课教学班数据表 学校
-      ,c.XQID as c_BXKJXBSJ_XQID--必修课教学班数据表 学期ID
-      ,c.ZRKJSID as c_BXKJXBSJ_ZRKJSID--必修课教学班数据表 主任课教师ID
-      ,c.FRKJSID as c_BXKJXBSJ_FRKJSID--必修课教学班数据表 辅任课教师ID
-      ,c.KCID as c_BXKJXBSJ_KCID--必修课教学班数据表 课程ID
-      ,c.KKSJID as c_BXKJXBSJ_KKSJID--必修课教学班数据表 开课时间ID
-      ,c.SKDD as c_BXKJXBSJ_SKDD--必修课教学班数据表 上课地点
-      ,c.ZKS as c_BXKJXBSJ_ZKS--必修课教学班数据表 总课时
-      ,c.BJKRNRS as c_BXKJXBSJ_BJKRNRS--必修课教学班数据表 班级可容纳人数
-      ,c.ZDKBRS as c_BXKJXBSJ_ZDKBRS--必修课教学班数据表 最低开班人数
-      ,c.ZT as c_BXKJXBSJ_ZT--必修课教学班数据表 状态
-      ,c.BZ as c_BXKJXBSJ_BZ--必修课教学班数据表 备注
+      ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
+      ,c.XQID as c_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
+      ,c.ZRKJSID as c_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID
+      ,c.FRKJSID as c_XFZJXBSJ_FRKJSID--学分制教学班数据表 辅任课教师ID
+      ,c.KCID as c_XFZJXBSJ_KCID--学分制教学班数据表 课程ID
+      ,c.KKSJID as c_XFZJXBSJ_KKSJID--学分制教学班数据表 开课时间ID
+      ,c.SKDD as c_XFZJXBSJ_SKDD--学分制教学班数据表 上课地点
+      ,c.ZKS as c_XFZJXBSJ_ZKS--学分制教学班数据表 总课时
+      ,c.BJKRNRS as c_XFZJXBSJ_BJKRNRS--学分制教学班数据表 班级可容纳人数
+      ,c.ZDKBRS as c_XFZJXBSJ_ZDKBRS--学分制教学班数据表 最低开班人数
+      ,c.ZT as c_XFZJXBSJ_ZT--学分制教学班数据表 状态
+      ,c.BZ as c_XFZJXBSJ_BZ--学分制教学班数据表 备注
+      ,c.KCMC as c_XFZJXBSJ_KCMC--学分制教学班数据表 课程名称
+      ,c.SKBJIDLB as c_XFZJXBSJ_SKBJIDLB--学分制教学班数据表 授课班级ID列表
+      ,c.SKBJMCLB as c_XFZJXBSJ_SKBJMCLB--学分制教学班数据表 授课班级名称列表
+      ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -12598,7 +12661,7 @@ SELECT a.[ID]--编号
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXJX_53_A46_BXKXXTKCJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_BXKJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
