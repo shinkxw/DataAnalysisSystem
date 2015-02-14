@@ -16,6 +16,7 @@ namespace HanRuEdu.LDAL
             ECXKJSSJ = DateTime.Now;
             XKFFYLC = "";
             KXKCLXIDLB = "";
+            KXKCLXMCLB = "";
             XKBJIDLB = "";
             XKBJMCLB = "";
         }
@@ -80,6 +81,13 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String KXKCLXIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "可选课程类型名称列表")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KXKCLXMCLB { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

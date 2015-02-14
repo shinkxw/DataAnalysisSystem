@@ -440,6 +440,7 @@ EDU_ZXJX_53_A20_XFZXK  学分制选课表
   ECXKJSSJ      二次选课结束时间        datetime       非主
   XKFFYLC       选课方法与流程          nvarchar(200)  非主
   KXKCLXIDLB    可选课程类型ID列表      nvarchar(200)  非主
+  KXKCLXMCLB    可选课程类型名称列表    nvarchar(200)  非主
   XKBJIDLB      选课班级ID列表          text           非主
   XKBJMCLB      选课班级名称列表        text           非主
   XSZDXKMS      学生最多选课门数        int            非主

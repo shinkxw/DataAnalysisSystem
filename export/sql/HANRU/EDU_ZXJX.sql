@@ -1150,6 +1150,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_53_A20_XFZXK](
 	[ECXKJSSJ]  datetime  NOT NULL,--二次选课结束时间
 	[XKFFYLC]  nvarchar(200)  NOT NULL,--选课方法与流程
 	[KXKCLXIDLB]  nvarchar(200)  NOT NULL,--可选课程类型ID列表
+	[KXKCLXMCLB]  nvarchar(200)  NOT NULL,--可选课程类型名称列表
 	[XKBJIDLB]  text  NOT NULL,--选课班级ID列表
 	[XKBJMCLB]  text  NOT NULL,--选课班级名称列表
 	[XSZDXKMS]  int  NOT NULL,--学生最多选课门数
@@ -2188,6 +2189,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课方法与流程' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'XKFFYLC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可选课程类型ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'KXKCLXIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可选课程类型名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'KXKCLXMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'XKBJIDLB'
 GO

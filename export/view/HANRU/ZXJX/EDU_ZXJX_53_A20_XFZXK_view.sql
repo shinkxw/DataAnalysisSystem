@@ -13,6 +13,7 @@ SELECT a.[ID]--编号
       ,a.[ECXKJSSJ]--二次选课结束时间
       ,a.[XKFFYLC]--选课方法与流程
       ,a.[KXKCLXIDLB]--可选课程类型ID列表
+      ,a.[KXKCLXMCLB]--可选课程类型名称列表
       ,a.[XKBJIDLB]--选课班级ID列表
       ,a.[XKBJMCLB]--选课班级名称列表
       ,a.[XSZDXKMS]--学生最多选课门数

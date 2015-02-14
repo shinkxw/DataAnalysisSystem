@@ -524,6 +524,7 @@
             <name="ECXKJSSJ" exp="二次选课结束时间" type="datetime" />
             <name="XKFFYLC" exp="选课方法与流程" type="nvarchar(200)" />
             <name="KXKCLXIDLB" exp="可选课程类型ID列表" type="nvarchar(200)" />
+            <name="KXKCLXMCLB" exp="可选课程类型名称列表" type="nvarchar(200)" />
             <name="XKBJIDLB" exp="选课班级ID列表" type="text" />
             <name="XKBJMCLB" exp="选课班级名称列表" type="text" />
             <name="XSZDXKMS" exp="学生最多选课门数" type="int" />
