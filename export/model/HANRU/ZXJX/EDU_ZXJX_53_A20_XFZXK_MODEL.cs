@@ -18,7 +18,6 @@ namespace HanRuEdu.LDAL
             KXKCLXIDLB = "";
             KXKCLXMCLB = "";
             XKBJIDLB = "";
-            XKBJMCLB = "";
         }
         public class EDU_ZXJX_53_A20_XFZXK_metadata
         {
@@ -94,12 +93,6 @@ namespace HanRuEdu.LDAL
             [Display(Name = "选课班级ID列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XKBJIDLB { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "选课班级名称列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String XKBJMCLB { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

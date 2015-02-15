@@ -18,7 +18,6 @@ SELECT a.[ID]--编号
       ,c.KXKCLXIDLB as c_XFZXK_KXKCLXIDLB--学分制选课表 可选课程类型ID列表
       ,c.KXKCLXMCLB as c_XFZXK_KXKCLXMCLB--学分制选课表 可选课程类型名称列表
       ,c.XKBJIDLB as c_XFZXK_XKBJIDLB--学分制选课表 选课班级ID列表
-      ,c.XKBJMCLB as c_XFZXK_XKBJMCLB--学分制选课表 选课班级名称列表
       ,c.XSZDXKMS as c_XFZXK_XSZDXKMS--学分制选课表 学生最多选课门数
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号

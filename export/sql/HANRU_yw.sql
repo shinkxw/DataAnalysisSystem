@@ -10934,7 +10934,6 @@ CREATE TABLE [dbo].[EDU_ZXJX_53_A20_XFZXK](
 	[KXKCLXIDLB]  nvarchar(200)  NOT NULL,--可选课程类型ID列表
 	[KXKCLXMCLB]  nvarchar(200)  NOT NULL,--可选课程类型名称列表
 	[XKBJIDLB]  text  NOT NULL,--选课班级ID列表
-	[XKBJMCLB]  text  NOT NULL,--选课班级名称列表
 	[XSZDXKMS]  int  NOT NULL,--学生最多选课门数
 CONSTRAINT [PK_EDU_ZXJX_53_A20_XFZXK] PRIMARY KEY CLUSTERED
 (
@@ -11975,8 +11974,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可选课程类型名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'KXKCLXMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'XKBJIDLB'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课班级名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'XKBJMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生最多选课门数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A20_XFZXK', @level2type=N'COLUMN',@level2name=N'XSZDXKMS'
 GO
