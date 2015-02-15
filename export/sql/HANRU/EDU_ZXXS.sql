@@ -1169,6 +1169,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A06_DSZJSMB](
 	[MC]  nvarchar(300)  NOT NULL,--名称
 	[BJT]  nvarchar(300)  NOT NULL,--背景图
 	[TJSJ]  datetime  NOT NULL,--添加时间
+	[SFSYTYMB]  int  NOT NULL,--是否使用通用模板
 CONSTRAINT [PK_EDU_ZXXS_57_A06_DSZJSMB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2374,6 +2375,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'背景图' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A06_DSZJSMB', @level2type=N'COLUMN',@level2name=N'BJT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A06_DSZJSMB', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否使用通用模板' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A06_DSZJSMB', @level2type=N'COLUMN',@level2name=N'SFSYTYMB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制活动表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A11_DSZHD'
 GO

@@ -487,6 +487,7 @@ EDU_ZXXS_57_A06_DSZJSMB  导师制角色模板表
   MC            名称                    nvarchar(300)  非主
   BJT           背景图                  nvarchar(300)  非主
   TJSJ          添加时间                datetime       非主
+  SFSYTYMB      是否使用通用模板        int            非主
 
 EDU_ZXXS_57_A11_DSZHD  导师制活动表
   ID            编号                    int            主键

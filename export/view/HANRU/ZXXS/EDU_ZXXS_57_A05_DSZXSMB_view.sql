@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.MC as c_DSZJSMB_MC--导师制角色模板表 名称
       ,c.BJT as c_DSZJSMB_BJT--导师制角色模板表 背景图
       ,c.TJSJ as c_DSZJSMB_TJSJ--导师制角色模板表 添加时间
+      ,c.SFSYTYMB as c_DSZJSMB_SFSYTYMB--导师制角色模板表 是否使用通用模板
 
 FROM dbo.EDU_ZXXS_57_A05_DSZXSMB AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_57_A06_DSZJSMB AS c ON a.JSMBID = c.ID /*角色模板ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/

@@ -54,6 +54,11 @@ namespace HanRuEdu.LDAL
             public DateTime TJSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否使用通用模板")]
+            public Int32 SFSYTYMB { get; set; }
+
+
         }
     }
 }

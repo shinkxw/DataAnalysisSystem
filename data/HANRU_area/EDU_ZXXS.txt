@@ -567,6 +567,7 @@
             <name="MC" exp="名称" type="nvarchar(300)" />
             <name="BJT" exp="背景图" type="nvarchar(300)" />
             <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="SFSYTYMB" exp="是否使用通用模板" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A11_DSZHD" exp="导师制活动表">
