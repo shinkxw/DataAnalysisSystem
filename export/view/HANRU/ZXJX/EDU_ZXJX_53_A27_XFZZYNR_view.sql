@@ -4,7 +4,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A27_XFZZYNR_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,a.[ZYNR]--作业内容
       ,a.[TJSJ]--添加时间
       ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
@@ -25,5 +25,5 @@ SELECT a.[ID]--编号
       ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
 FROM dbo.EDU_ZXJX_53_A27_XFZZYNR AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO

@@ -4,7 +4,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A46_BXKXXTKCJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,a.[XSID]--学生ID
       ,a.[TKLX]--统考类型
       ,a.[CJ]--成绩
@@ -90,7 +90,7 @@ SELECT a.[ID]--编号
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXJX_53_A46_BXKXXTKCJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN

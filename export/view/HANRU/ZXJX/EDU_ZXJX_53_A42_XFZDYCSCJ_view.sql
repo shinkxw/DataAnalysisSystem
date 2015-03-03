@@ -8,7 +8,7 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[CJ]--成绩
       ,c.SCHOOLID as c_XFZDYCS_SCHOOLID--学分制单元测试表 学校
-      ,c.BXKJXBID as c_XFZDYCS_BXKJXBID--学分制单元测试表 必修课教学班ID
+      ,c.XFZJXBID as c_XFZDYCS_XFZJXBID--学分制单元测试表 学分制教学班ID
       ,c.CSMC as c_XFZDYCS_CSMC--学分制单元测试表 测试名称
       ,c.TJSJ as c_XFZDYCS_TJSJ--学分制单元测试表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名

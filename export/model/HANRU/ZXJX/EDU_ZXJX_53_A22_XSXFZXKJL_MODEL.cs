@@ -28,8 +28,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "必修课教学班")]
-            public Int32 BXKJXBID { get; set; }
+            [Display(Name = "学分制教学班")]
+            public Int32 XFZJXBID { get; set; }
 
 
         }

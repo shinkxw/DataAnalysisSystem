@@ -9,7 +9,7 @@ SELECT a.[ID]--编号
       ,a.[XMID]--项目ID
       ,a.[JG]--结果
       ,c.SCHOOLID as c_XFZZYNR_SCHOOLID--学分制作业内容表 学校
-      ,c.BXKJXBID as c_XFZZYNR_BXKJXBID--学分制作业内容表 必修课教学班ID
+      ,c.XFZJXBID as c_XFZZYNR_XFZJXBID--学分制作业内容表 学分制教学班ID
       ,c.ZYNR as c_XFZZYNR_ZYNR--学分制作业内容表 作业内容
       ,c.TJSJ as c_XFZZYNR_TJSJ--学分制作业内容表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名

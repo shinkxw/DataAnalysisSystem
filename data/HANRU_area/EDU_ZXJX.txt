@@ -555,7 +555,7 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="XSID" exp="学生ID" type="int" />
-            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="XFZJXBID" exp="学分制教学班ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_53_A23_XFZECXKXS" exp="学分制二次选课学生表">
@@ -570,7 +570,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="XFZJXBID" exp="学分制教学班ID" type="int" />
             <name="KTNR" exp="课堂内容" type="text" />
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
@@ -599,7 +599,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="XFZJXBID" exp="学分制教学班ID" type="int" />
             <name="ZYNR" exp="作业内容" type="text" />
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
@@ -628,7 +628,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="XFZJXBID" exp="学分制教学班ID" type="int" />
             <name="CSMC" exp="测试名称" type="nvarchar(200)" />
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
@@ -646,7 +646,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
             <name="SCHOOLID" exp="学校" type="int" />
-            <name="BXKJXBID" exp="必修课教学班ID" type="int" />
+            <name="XFZJXBID" exp="学分制教学班ID" type="int" />
             <name="XSID" exp="学生ID" type="int" />
             <name="TKLX" exp="统考类型" type="int" />
             <name="CJ" exp="成绩" type="decimal(5, 1)" />

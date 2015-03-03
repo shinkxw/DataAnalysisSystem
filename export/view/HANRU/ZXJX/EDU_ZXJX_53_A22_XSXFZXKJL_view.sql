@@ -5,7 +5,7 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XSID]--学生ID
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,c.XH as c_XSXX_XH--学生基本数据子类表 学号
       ,c.XM as c_XSXX_XM--学生基本数据子类表 姓名
@@ -89,7 +89,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZXJX_53_A22_XSXFZXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS d ON a.BXKJXBID = d.ID /*必修课教学班ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS d ON a.XFZJXBID = d.ID /*学分制教学班ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN

@@ -11966,7 +11966,7 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XSID]--学生ID
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,c.SCHOOLID as c_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,c.XH as c_XSXX_XH--学生基本数据子类表 学号
       ,c.XM as c_XSXX_XM--学生基本数据子类表 姓名
@@ -12050,7 +12050,7 @@ SELECT a.[ID]--编号
 
 FROM dbo.EDU_ZXJX_53_A22_XSXFZXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS d ON a.BXKJXBID = d.ID /*必修课教学班ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS d ON a.XFZJXBID = d.ID /*学分制教学班ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
@@ -12180,7 +12180,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A24_XFZKTNR_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,a.[KTNR]--课堂内容
       ,a.[TJSJ]--添加时间
       ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
@@ -12201,7 +12201,7 @@ SELECT a.[ID]--编号
       ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
 FROM dbo.EDU_ZXJX_53_A24_XFZKTNR AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --学分制课堂记录结果表
@@ -12214,7 +12214,7 @@ SELECT a.[ID]--编号
       ,a.[XMID]--项目ID
       ,a.[JG]--结果
       ,c.SCHOOLID as c_XFZKTNR_SCHOOLID--学分制课堂内容表 学校
-      ,c.BXKJXBID as c_XFZKTNR_BXKJXBID--学分制课堂内容表 必修课教学班ID
+      ,c.XFZJXBID as c_XFZKTNR_XFZJXBID--学分制课堂内容表 学分制教学班ID
       ,c.KTNR as c_XFZKTNR_KTNR--学分制课堂内容表 课堂内容
       ,c.TJSJ as c_XFZKTNR_TJSJ--学分制课堂内容表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
@@ -12314,7 +12314,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A27_XFZZYNR_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,a.[ZYNR]--作业内容
       ,a.[TJSJ]--添加时间
       ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
@@ -12335,7 +12335,7 @@ SELECT a.[ID]--编号
       ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
 FROM dbo.EDU_ZXJX_53_A27_XFZZYNR AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --学分制作业记录结果表
@@ -12348,7 +12348,7 @@ SELECT a.[ID]--编号
       ,a.[XMID]--项目ID
       ,a.[JG]--结果
       ,c.SCHOOLID as c_XFZZYNR_SCHOOLID--学分制作业内容表 学校
-      ,c.BXKJXBID as c_XFZZYNR_BXKJXBID--学分制作业内容表 必修课教学班ID
+      ,c.XFZJXBID as c_XFZZYNR_XFZJXBID--学分制作业内容表 学分制教学班ID
       ,c.ZYNR as c_XFZZYNR_ZYNR--学分制作业内容表 作业内容
       ,c.TJSJ as c_XFZZYNR_TJSJ--学分制作业内容表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
@@ -12448,7 +12448,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A41_XFZDYCS_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,a.[CSMC]--测试名称
       ,a.[TJSJ]--添加时间
       ,c.SCHOOLID as c_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
@@ -12469,7 +12469,7 @@ SELECT a.[ID]--编号
       ,c.JXBLX as c_XFZJXBSJ_JXBLX--学分制教学班数据表 教学班类型
 
 FROM dbo.EDU_ZXJX_53_A41_XFZDYCS AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --学分制单元测试成绩表
@@ -12481,7 +12481,7 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[CJ]--成绩
       ,c.SCHOOLID as c_XFZDYCS_SCHOOLID--学分制单元测试表 学校
-      ,c.BXKJXBID as c_XFZDYCS_BXKJXBID--学分制单元测试表 必修课教学班ID
+      ,c.XFZJXBID as c_XFZDYCS_XFZJXBID--学分制单元测试表 学分制教学班ID
       ,c.CSMC as c_XFZDYCS_CSMC--学分制单元测试表 测试名称
       ,c.TJSJ as c_XFZDYCS_TJSJ--学分制单元测试表 添加时间
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
@@ -12575,7 +12575,7 @@ CREATE VIEW [dbo].[VIEW_EDU_ZXJX_53_A46_BXKXXTKCJ_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[BXKJXBID]--必修课教学班ID
+      ,a.[XFZJXBID]--学分制教学班ID
       ,a.[XSID]--学生ID
       ,a.[TKLX]--统考类型
       ,a.[CJ]--成绩
@@ -12661,7 +12661,7 @@ SELECT a.[ID]--编号
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
 
 FROM dbo.EDU_ZXJX_53_A46_BXKXXTKCJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.BXKJXBID = c.ID /*必修课教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN

@@ -1199,7 +1199,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_53_A22_XSXFZXKJL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[XSID]  int  NOT NULL,--学生ID
-	[BXKJXBID]  int  NOT NULL,--必修课教学班ID
+	[XFZJXBID]  int  NOT NULL,--学分制教学班ID
 CONSTRAINT [PK_EDU_ZXJX_53_A22_XSXFZXKJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1231,7 +1231,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXJX_53_A24_XFZKTNR](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[BXKJXBID]  int  NOT NULL,--必修课教学班ID
+	[XFZJXBID]  int  NOT NULL,--学分制教学班ID
 	[KTNR]  text  NOT NULL,--课堂内容
 	[TJSJ]  datetime  NOT NULL,--添加时间
 CONSTRAINT [PK_EDU_ZXJX_53_A24_XFZKTNR] PRIMARY KEY CLUSTERED
@@ -1286,7 +1286,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXJX_53_A27_XFZZYNR](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[BXKJXBID]  int  NOT NULL,--必修课教学班ID
+	[XFZJXBID]  int  NOT NULL,--学分制教学班ID
 	[ZYNR]  text  NOT NULL,--作业内容
 	[TJSJ]  datetime  NOT NULL,--添加时间
 CONSTRAINT [PK_EDU_ZXJX_53_A27_XFZZYNR] PRIMARY KEY CLUSTERED
@@ -1341,7 +1341,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXJX_53_A41_XFZDYCS](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[BXKJXBID]  int  NOT NULL,--必修课教学班ID
+	[XFZJXBID]  int  NOT NULL,--学分制教学班ID
 	[CSMC]  nvarchar(200)  NOT NULL,--测试名称
 	[TJSJ]  datetime  NOT NULL,--添加时间
 CONSTRAINT [PK_EDU_ZXJX_53_A41_XFZDYCS] PRIMARY KEY CLUSTERED
@@ -1376,7 +1376,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXJX_53_A46_BXKXXTKCJ](
 	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[BXKJXBID]  int  NOT NULL,--必修课教学班ID
+	[XFZJXBID]  int  NOT NULL,--学分制教学班ID
 	[XSID]  int  NOT NULL,--学生ID
 	[TKLX]  int  NOT NULL,--统考类型
 	[CJ]  decimal(5, 1)  NOT NULL,--成绩
@@ -2239,7 +2239,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A22_XSXFZXKJL', @level2type=N'COLUMN',@level2name=N'XSID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'必修课教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A22_XSXFZXKJL', @level2type=N'COLUMN',@level2name=N'BXKJXBID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分制教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A22_XSXFZXKJL', @level2type=N'COLUMN',@level2name=N'XFZJXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分制二次选课学生表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A23_XFZECXKXS'
 GO
@@ -2257,7 +2257,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A24_XFZKTNR', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'必修课教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A24_XFZKTNR', @level2type=N'COLUMN',@level2name=N'BXKJXBID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分制教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A24_XFZKTNR', @level2type=N'COLUMN',@level2name=N'XFZJXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课堂内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A24_XFZKTNR', @level2type=N'COLUMN',@level2name=N'KTNR'
 GO
@@ -2297,7 +2297,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A27_XFZZYNR', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'必修课教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A27_XFZZYNR', @level2type=N'COLUMN',@level2name=N'BXKJXBID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分制教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A27_XFZZYNR', @level2type=N'COLUMN',@level2name=N'XFZJXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'作业内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A27_XFZZYNR', @level2type=N'COLUMN',@level2name=N'ZYNR'
 GO
@@ -2337,7 +2337,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A41_XFZDYCS', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'必修课教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A41_XFZDYCS', @level2type=N'COLUMN',@level2name=N'BXKJXBID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分制教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A41_XFZDYCS', @level2type=N'COLUMN',@level2name=N'XFZJXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'测试名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A41_XFZDYCS', @level2type=N'COLUMN',@level2name=N'CSMC'
 GO
@@ -2361,7 +2361,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A46_BXKXXTKCJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'必修课教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A46_BXKXXTKCJ', @level2type=N'COLUMN',@level2name=N'BXKJXBID'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分制教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A46_BXKXXTKCJ', @level2type=N'COLUMN',@level2name=N'XFZJXBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_53_A46_BXKXXTKCJ', @level2type=N'COLUMN',@level2name=N'XSID'
 GO
