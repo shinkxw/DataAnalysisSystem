@@ -1267,4 +1267,15 @@
             <name="DQLSH" exp="当前流水号" type="int" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_40_A01_JCFKXX" exp="检查反馈信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="FBRID" exp="发布人ID" type="nvarchar(20)" />
+            <name="FBBM" exp="发布部门" type="nvarchar(100)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
 </namespace>
