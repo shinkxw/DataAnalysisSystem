@@ -13,15 +13,15 @@ DBEntity.open('school2', connector) do |db|
   #~ out_hash_arr.delete_if {|hash| hash[:LMID] == '-1'}
   #~ DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_WZXT_MHXT_WZWZ')#
   
-  #~ data_hash_arr = db.get_table_data('sho_cp_con')
-  #~ out_hash_arr = DataMigrate.convert_data(data_hash_arr, $cp_config)
-  #~ out_hash_arr.delete_if {|hash| hash[:LMID] == '-1'}
-  #~ DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_WZXT_MHXT_WZWZ')#
-  
-  data_hash_arr = db.get_table_data('sho_plus')
-  out_hash_arr = DataMigrate.convert_data(data_hash_arr, $plus_config)
+  data_hash_arr = db.get_table_data('sho_cp_con')
+  out_hash_arr = DataMigrate.convert_data(data_hash_arr, $cp_config)
   out_hash_arr.delete_if {|hash| hash[:LMID] == '-1'}
   DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_WZXT_MHXT_WZWZ')#
+  
+  #~ data_hash_arr = db.get_table_data('sho_plus')
+  #~ out_hash_arr = DataMigrate.convert_data(data_hash_arr, $plus_config)
+  #~ out_hash_arr.delete_if {|hash| hash[:LMID] == '-1'}
+  #~ DataMigrate.export_text('insert_data', out_hash_arr, 'EDU_WZXT_MHXT_WZWZ')#
   
 end
 #delete [EDU_WZXT_MHXT_WZWZ] where [SCHOOLID] = 27 and [WEBID] = 12365

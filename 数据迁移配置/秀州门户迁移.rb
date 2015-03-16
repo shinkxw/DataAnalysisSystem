@@ -35,6 +35,13 @@ class Qypz
     str = str.gsub(/http:\/\/www.jxxzzx.com\/pic/, "/WZXT/HrSchoolFiles/57230/pic")
     str
   end
+  def self.cp_change(str, imgurl)
+    if img(imgurl) != nil
+      imgstr = '<p align="center"><img alt="" src="' + img(imgurl) + '" border="0"></p>'
+      str += imgstr
+    end
+    ew_change(str)
+  end
   def self.img(str)
     if (str != "" && str != nil)
       str = '/WZXT/HrSchoolFiles/57230/jxxzzx/' + str
@@ -83,7 +90,7 @@ $cp_config = { ID: proc{|d| 30000 + d['id']},#
                AUTHOR: proc{|d| d['author']},#
                AUTHORDEPART: proc{|d| ''},#
                PUBLISHDATE: proc{|d, c| c.int_to_datetime(d['dtime'])},#
-               CONTENT: proc{|d| Qypz.ew_change(d['body'])},#
+               CONTENT: proc{|d| Qypz.cp_change(d['body'],d['src'])},#
                URL: proc{|d| ''},#
                IMAGEURL: proc{|d| Qypz.img(d['src'])},#
                ATTACHMENTNAME: proc{|d| ''},#
