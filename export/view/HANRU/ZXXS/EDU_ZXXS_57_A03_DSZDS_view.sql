@@ -86,6 +86,8 @@ SELECT a.[ID]--编号
       ,e.JSMC as e_DSZJS_JSMC--导师制角色表 角色名称
       ,e.GNIDLB as e_DSZJS_GNIDLB--导师制角色表 功能ID列表
       ,e.GNMCLB as e_DSZJS_GNMCLB--导师制角色表 功能名称列表
+      ,e.JSLX as e_DSZJS_JSLX--导师制角色表 角色类型
+      ,e.NJID as e_DSZJS_NJID--导师制角色表 年级ID
 
 FROM dbo.EDU_ZXXS_57_A03_DSZDS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

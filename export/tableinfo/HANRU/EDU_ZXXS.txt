@@ -450,6 +450,8 @@ EDU_ZXXS_57_A02_DSZJS  导师制角色表
   JSMC          角色名称                nvarchar(100)  非主
   GNIDLB        功能ID列表              text           非主
   GNMCLB        功能名称列表            text           非主
+  JSLX          角色类型                int            非主
+  NJID          年级ID                  nvarchar(10)   非主        年级数据类表
 
 EDU_ZXXS_57_A03_DSZDS  导师制导师表
   ID            编号                    int            主键

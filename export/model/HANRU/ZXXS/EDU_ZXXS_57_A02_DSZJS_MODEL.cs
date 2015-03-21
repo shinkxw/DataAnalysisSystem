@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             JSMC = "";
             GNIDLB = "";
             GNMCLB = "";
+            NJID = "";
         }
         public class EDU_ZXXS_57_A02_DSZJS_metadata
         {
@@ -47,6 +48,18 @@ namespace HanRuEdu.LDAL
             [Display(Name = "功能名称列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String GNMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "角色类型")]
+            public Int32 JSLX { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "年级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NJID { get; set; }
 
 
         }

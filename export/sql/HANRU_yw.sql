@@ -14947,6 +14947,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A02_DSZJS](
 	[JSMC]  nvarchar(100)  NOT NULL,--角色名称
 	[GNIDLB]  text  NOT NULL,--功能ID列表
 	[GNMCLB]  text  NOT NULL,--功能名称列表
+	[JSLX]  int  NOT NULL,--角色类型
+	[NJID]  nvarchar(10)  NOT NULL,--年级ID
 CONSTRAINT [PK_EDU_ZXXS_57_A02_DSZJS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -16168,6 +16170,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A02_DSZJS', @level2type=N'COLUMN',@level2name=N'GNIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'功能名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A02_DSZJS', @level2type=N'COLUMN',@level2name=N'GNMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'角色类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A02_DSZJS', @level2type=N'COLUMN',@level2name=N'JSLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A02_DSZJS', @level2type=N'COLUMN',@level2name=N'NJID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制导师表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A03_DSZDS'
 GO

@@ -22,6 +22,8 @@ SELECT a.[ID]--编号
       ,d.JSMC as d_DSZJS_JSMC--导师制角色表 角色名称
       ,d.GNIDLB as d_DSZJS_GNIDLB--导师制角色表 功能ID列表
       ,d.GNMCLB as d_DSZJS_GNMCLB--导师制角色表 功能名称列表
+      ,d.JSLX as d_DSZJS_JSLX--导师制角色表 角色类型
+      ,d.NJID as d_DSZJS_NJID--导师制角色表 年级ID
 
 FROM dbo.EDU_ZXXS_57_A06_DSZJSMB AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

@@ -522,6 +522,8 @@
             <name="JSMC" exp="角色名称" type="nvarchar(100)" />
             <name="GNIDLB" exp="功能ID列表" type="text" />
             <name="GNMCLB" exp="功能名称列表" type="text" />
+            <name="JSLX" exp="角色类型" type="int" />
+            <name="NJID" exp="年级ID" type="nvarchar(10)" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A03_DSZDS" exp="导师制导师表">

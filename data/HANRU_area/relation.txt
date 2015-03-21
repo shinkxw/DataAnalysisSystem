@@ -1275,6 +1275,7 @@
 <EDU_ZXXS_57_A02_DSZJS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
+  NJID           EDU_ZXXX_02_01_NJ                  NJ
 <EDU_ZXXS_57_A03_DSZDS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
