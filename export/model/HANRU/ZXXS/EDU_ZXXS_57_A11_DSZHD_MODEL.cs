@@ -14,6 +14,8 @@ namespace HanRuEdu.LDAL
             KSSJ = DateTime.Now;
             JSSJ = DateTime.Now;
             BZ = "";
+            XSIDLB = "";
+            XSXMLB = "";
         }
         public class EDU_ZXXS_57_A11_DSZHD_metadata
         {
@@ -65,6 +67,18 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "学生ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XSIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "学生姓名列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XSXMLB { get; set; }
 
 
         }

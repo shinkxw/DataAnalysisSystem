@@ -27,6 +27,8 @@ SELECT a.[ID]--编号
       ,d.KSSJ as d_DSZHD_KSSJ--导师制活动表 开始时间
       ,d.JSSJ as d_DSZHD_JSSJ--导师制活动表 结束时间
       ,d.BZ as d_DSZHD_BZ--导师制活动表 备注
+      ,d.XSIDLB as d_DSZHD_XSIDLB--导师制活动表 学生ID列表
+      ,d.XSXMLB as d_DSZHD_XSXMLB--导师制活动表 学生姓名列表
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,e.XH as e_XSXX_XH--学生基本数据子类表 学号
       ,e.XM as e_XSXX_XM--学生基本数据子类表 姓名

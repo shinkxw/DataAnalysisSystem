@@ -583,6 +583,8 @@
             <name="KSSJ" exp="开始时间" type="datetime" />
             <name="JSSJ" exp="结束时间" type="datetime" />
             <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="XSIDLB" exp="学生ID列表" type="text" />
+            <name="XSXMLB" exp="学生姓名列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A12_DSZXSHDBXJL" exp="导师制学生活动表现记录表">

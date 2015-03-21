@@ -15053,6 +15053,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A11_DSZHD](
 	[KSSJ]  datetime  NOT NULL,--开始时间
 	[JSSJ]  datetime  NOT NULL,--结束时间
 	[BZ]  nvarchar(200)  NOT NULL,--备注
+	[XSIDLB]  text  NOT NULL,--学生ID列表
+	[XSXMLB]  text  NOT NULL,--学生姓名列表
 CONSTRAINT [PK_EDU_ZXXS_57_A11_DSZHD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -16262,6 +16264,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A11_DSZHD', @level2type=N'COLUMN',@level2name=N'JSSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A11_DSZHD', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A11_DSZHD', @level2type=N'COLUMN',@level2name=N'XSIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生姓名列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A11_DSZHD', @level2type=N'COLUMN',@level2name=N'XSXMLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制学生活动表现记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A12_DSZXSHDBXJL'
 GO
