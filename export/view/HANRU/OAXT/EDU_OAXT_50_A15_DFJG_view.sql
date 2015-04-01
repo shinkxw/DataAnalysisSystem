@@ -1,0 +1,59 @@
+
+--打分结果表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_50_A15_DFJG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校ID
+      ,a.[XMID]--项目ID
+      ,a.[DFJDID]--打分节点ID
+      ,a.[DFXXID]--打分选项ID
+      ,a.[WBZ]--文本值
+      ,a.[FZ]--分值
+      ,a.[DFYHID]--打分用户ID
+      ,a.[DFSJ]--打分时间
+      ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
+      ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
+      ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
+      ,d.SCHOOLID as d_DFJD_SCHOOLID--打分节点表 学校ID
+      ,d.XMID as d_DFJD_XMID--打分节点表 项目ID
+      ,d.FJDID as d_DFJD_FJDID--打分节点表 父节点ID
+      ,d.SFDFX as d_DFJD_SFDFX--打分节点表 是否打分项
+      ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称
+      ,d.SFJCSJSZ as d_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
+      ,d.DFDXJDBMJH as d_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
+      ,d.DFJSGXIDLB as d_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
+      ,d.SHJSGXIDLB as d_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,d.DFFSID as d_DFJD_DFFSID--打分节点表 打分方式ID
+      ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
+      ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次
+      ,d.DFZB as d_DFJD_DFZB--打分节点表 打分指标
+      ,e.SCHOOLID as e_DFXX_SCHOOLID--打分选项表 学校ID
+      ,e.XMID as e_DFXX_XMID--打分选项表 项目ID
+      ,e.DFFSID as e_DFXX_DFFSID--打分选项表 打分方式ID
+      ,e.XXMC as e_DFXX_XXMC--打分选项表 选项名称
+      ,e.XXFZ as e_DFXX_XXFZ--打分选项表 选项分值
+      ,e.PLSX as e_DFXX_PLSX--打分选项表 排列顺序
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,'' as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_OAXT_50_A15_DFJG AS a LEFT OUTER JOIN
+      dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_50_A12_DFJD AS d ON a.DFJDID = d.ID /*打分节点ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.XMID = d.XMID /*项目ID*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_50_A14_DFXX AS e ON a.DFXXID = e.ID /*打分选项ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ AND a.XMID = e.XMID /*项目ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.DFYHID = f.LOGINNAME /*打分用户ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/
+GO

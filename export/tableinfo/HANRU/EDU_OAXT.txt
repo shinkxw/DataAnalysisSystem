@@ -1093,3 +1093,79 @@ EDU_OAXT_40_A01_JCFKXX  检查反馈信息表
   BT            标题                    nvarchar(200)  非主
   NR            内容                    text           非主
 
+EDU_OAXT_50_A01_DFXM  打分项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMMC          项目名称                nvarchar(50)   非主
+  APPID         所在应用ID              int            非主
+
+EDU_OAXT_50_A11_DFDL  打分大类表
+  ID            根节点ID                int            主键        打分节点表
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  SFXYSH        是否需要审核            int            非主
+  SHFS          审核方式                int            非主
+
+EDU_OAXT_50_A12_DFJD  打分节点表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  FJDID         父节点ID                int            非主        打分节点表
+  SFDFX         是否打分项              int            非主
+  JDMC          节点名称                nvarchar(50)   非主
+  SFJCSJSZ      是否继承上级设置        int            非主
+  DFDXJDBMJH    打分对象节点编码集合    text           非主
+  DFJSGXIDLB    打分角色关系ID列表      text           非主
+  SHJSGXIDLB    审核角色关系ID列表      text           非主
+  DFFSID        打分方式ID              int            非主        打分方式表
+  DFDXCJ        打分对象层级            int            非主
+  DFPC          打分频次                int            非主
+  DFZB          打分指标                text           非主
+
+EDU_OAXT_50_A13_DFFS  打分方式表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  DFLX          打分类型                int            非主
+  ZDZ           最大值                  int            非主
+  ZXZ           最小值                  int            非主
+  MRZ           默认值                  int            非主
+
+EDU_OAXT_50_A14_DFXX  打分选项表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  DFFSID        打分方式ID              int            非主        打分方式表
+  XXMC          选项名称                nvarchar(50)   非主
+  XXFZ          选项分值                int            非主
+  PLSX          排列顺序                int            非主
+
+EDU_OAXT_50_A15_DFJG  打分结果表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  DFJDID        打分节点ID              int            非主        打分节点表
+  DFXXID        打分选项ID              int            非主        打分选项表
+  WBZ           文本值                  nvarchar(50)   非主
+  FZ            分值                    int            非主
+  DFYHID        打分用户ID              nvarchar(20)   非主        应用系统用户表
+  DFSJ          打分时间                datetime       非主
+
+EDU_OAXT_50_A16_FJZD  附加字段表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  DFJDID        打分节点ID              int            非主        打分节点表
+  ZDMC          字段名称                nvarchar(50)   非主
+  MRZ           默认值                  nvarchar(500)  非主
+  PLSX          排列顺序                int            非主
+
+EDU_OAXT_50_A17_FJJL  附加记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  DFJDID        打分节点ID              int            非主        打分节点表
+  DFJGID        打分结果ID              int            非主        打分结果表
+  FJZDID        附加字段ID              int            非主        附加字段表
+  FJZ           附加值                  nvarchar(500)  非主
+

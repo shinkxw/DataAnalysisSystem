@@ -472,6 +472,40 @@
 <EDU_OAXT_40_A01_JCFKXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FBRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_50_A01_DFXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_OAXT_50_A11_DFDL
+  ID             EDU_OAXT_50_A12_DFJD               ID
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+<EDU_OAXT_50_A12_DFJD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+  FJDID          EDU_OAXT_50_A12_DFJD               ID
+  DFFSID         EDU_OAXT_50_A13_DFFS               ID
+<EDU_OAXT_50_A13_DFFS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+<EDU_OAXT_50_A14_DFXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+  DFFSID         EDU_OAXT_50_A13_DFFS               ID
+<EDU_OAXT_50_A15_DFJG
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+  DFJDID         EDU_OAXT_50_A12_DFJD               ID
+  DFXXID         EDU_OAXT_50_A14_DFXX               ID
+  DFYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_OAXT_50_A16_FJZD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+  DFJDID         EDU_OAXT_50_A12_DFJD               ID
+<EDU_OAXT_50_A17_FJJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+  DFJDID         EDU_OAXT_50_A12_DFJD               ID
+  DFJGID         EDU_OAXT_50_A15_DFJG               ID
+  FJZDID         EDU_OAXT_50_A16_FJZD               ID
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_SYS_01_MICROMODULE
