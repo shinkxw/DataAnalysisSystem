@@ -49,7 +49,8 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "分值")]
-            public Int32 FZ { get; set; }
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal FZ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

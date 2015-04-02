@@ -1128,9 +1128,9 @@ EDU_OAXT_50_A13_DFFS  打分方式表
   XMID          项目ID                  int            主键        打分项目表
   DFFSMC        打分方式名称            nvarchar(50)   非主
   DFLX          打分类型                int            非主
-  ZDZ           最大值                  int            非主
-  ZXZ           最小值                  int            非主
-  MRZ           默认值                  int            非主
+  ZDZ           最大值                  decimal(5, 1)  非主
+  ZXZ           最小值                  decimal(5, 1)  非主
+  MRZ           默认值                  decimal(5, 1)  非主
 
 EDU_OAXT_50_A14_DFXX  打分选项表
   ID            编号                    int            主键
@@ -1138,7 +1138,7 @@ EDU_OAXT_50_A14_DFXX  打分选项表
   XMID          项目ID                  int            主键        打分项目表
   DFFSID        打分方式ID              int            非主        打分方式表
   XXMC          选项名称                nvarchar(50)   非主
-  XXFZ          选项分值                int            非主
+  XXFZ          选项分值                decimal(5, 1)  非主
   PLSX          排列顺序                int            非主
 
 EDU_OAXT_50_A15_DFJG  打分结果表
@@ -1148,7 +1148,7 @@ EDU_OAXT_50_A15_DFJG  打分结果表
   DFJDID        打分节点ID              int            非主        打分节点表
   DFXXID        打分选项ID              int            非主        打分选项表
   WBZ           文本值                  nvarchar(50)   非主
-  FZ            分值                    int            非主
+  FZ            分值                    decimal(5, 1)  非主
   DFYHID        打分用户ID              nvarchar(20)   非主        应用系统用户表
   DFSJ          打分时间                datetime       非主
 

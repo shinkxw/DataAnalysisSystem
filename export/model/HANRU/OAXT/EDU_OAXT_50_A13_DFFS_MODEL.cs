@@ -42,17 +42,20 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "最大值")]
-            public Int32 ZDZ { get; set; }
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal ZDZ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "最小值")]
-            public Int32 ZXZ { get; set; }
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal ZXZ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "默认值")]
-            public Int32 MRZ { get; set; }
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal MRZ { get; set; }
 
 
         }

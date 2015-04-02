@@ -5091,9 +5091,9 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A13_DFFS](
 	[XMID]  int  NOT NULL,--项目ID
 	[DFFSMC]  nvarchar(50)  NOT NULL,--打分方式名称
 	[DFLX]  int  NOT NULL,--打分类型
-	[ZDZ]  int  NOT NULL,--最大值
-	[ZXZ]  int  NOT NULL,--最小值
-	[MRZ]  int  NOT NULL,--默认值
+	[ZDZ]  decimal(5, 1)  NOT NULL,--最大值
+	[ZXZ]  decimal(5, 1)  NOT NULL,--最小值
+	[MRZ]  decimal(5, 1)  NOT NULL,--默认值
 CONSTRAINT [PK_EDU_OAXT_50_A13_DFFS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5113,7 +5113,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A14_DFXX](
 	[XMID]  int  NOT NULL,--项目ID
 	[DFFSID]  int  NOT NULL,--打分方式ID
 	[XXMC]  nvarchar(50)  NOT NULL,--选项名称
-	[XXFZ]  int  NOT NULL,--选项分值
+	[XXFZ]  decimal(5, 1)  NOT NULL,--选项分值
 	[PLSX]  int  NOT NULL,--排列顺序
 CONSTRAINT [PK_EDU_OAXT_50_A14_DFXX] PRIMARY KEY CLUSTERED
 (
@@ -5135,7 +5135,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A15_DFJG](
 	[DFJDID]  int  NOT NULL,--打分节点ID
 	[DFXXID]  int  NOT NULL,--打分选项ID
 	[WBZ]  nvarchar(50)  NOT NULL,--文本值
-	[FZ]  int  NOT NULL,--分值
+	[FZ]  decimal(5, 1)  NOT NULL,--分值
 	[DFYHID]  nvarchar(20)  NOT NULL,--打分用户ID
 	[DFSJ]  datetime  NOT NULL,--打分时间
 CONSTRAINT [PK_EDU_OAXT_50_A15_DFJG] PRIMARY KEY CLUSTERED
