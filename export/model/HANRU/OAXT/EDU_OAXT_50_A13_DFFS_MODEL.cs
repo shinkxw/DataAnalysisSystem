@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_OAXT_50_A13_DFFS()
         {
+            DFFSMC = "";
         }
         public class EDU_OAXT_50_A13_DFFS_metadata
         {
@@ -25,6 +26,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "项目")]
             public Int32 XMID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "打分方式名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DFFSMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

@@ -6371,6 +6371,7 @@ SELECT a.[ID]--编号
       ,d.DFZB as d_DFJD_DFZB--打分节点表 打分指标
       ,e.SCHOOLID as e_DFFS_SCHOOLID--打分方式表 学校ID
       ,e.XMID as e_DFFS_XMID--打分方式表 项目ID
+      ,e.DFFSMC as e_DFFS_DFFSMC--打分方式表 打分方式名称
       ,e.DFLX as e_DFFS_DFLX--打分方式表 打分类型
       ,e.ZDZ as e_DFFS_ZDZ--打分方式表 最大值
       ,e.ZXZ as e_DFFS_ZXZ--打分方式表 最小值
@@ -6388,6 +6389,7 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XMID]--项目ID
+      ,a.[DFFSMC]--打分方式名称
       ,a.[DFLX]--打分类型
       ,a.[ZDZ]--最大值
       ,a.[ZXZ]--最小值
@@ -6415,6 +6417,7 @@ SELECT a.[ID]--编号
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
       ,d.SCHOOLID as d_DFFS_SCHOOLID--打分方式表 学校ID
       ,d.XMID as d_DFFS_XMID--打分方式表 项目ID
+      ,d.DFFSMC as d_DFFS_DFFSMC--打分方式表 打分方式名称
       ,d.DFLX as d_DFFS_DFLX--打分方式表 打分类型
       ,d.ZDZ as d_DFFS_ZDZ--打分方式表 最大值
       ,d.ZXZ as d_DFFS_ZXZ--打分方式表 最小值

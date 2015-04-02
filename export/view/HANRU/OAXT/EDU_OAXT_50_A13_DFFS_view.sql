@@ -5,6 +5,7 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XMID]--项目ID
+      ,a.[DFFSMC]--打分方式名称
       ,a.[DFLX]--打分类型
       ,a.[ZDZ]--最大值
       ,a.[ZXZ]--最小值

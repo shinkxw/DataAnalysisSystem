@@ -1126,6 +1126,7 @@ EDU_OAXT_50_A13_DFFS  打分方式表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
   XMID          项目ID                  int            主键        打分项目表
+  DFFSMC        打分方式名称            nvarchar(50)   非主
   DFLX          打分类型                int            非主
   ZDZ           最大值                  int            非主
   ZXZ           最小值                  int            非主

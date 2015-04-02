@@ -5083,6 +5083,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A13_DFFS](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[XMID]  int  NOT NULL,--项目ID
+	[DFFSMC]  nvarchar(50)  NOT NULL,--打分方式名称
 	[DFLX]  int  NOT NULL,--打分类型
 	[ZDZ]  int  NOT NULL,--最大值
 	[ZXZ]  int  NOT NULL,--最小值
@@ -7247,6 +7248,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A13_DFFS', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A13_DFFS', @level2type=N'COLUMN',@level2name=N'XMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A13_DFFS', @level2type=N'COLUMN',@level2name=N'DFFSMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A13_DFFS', @level2type=N'COLUMN',@level2name=N'DFLX'
 GO

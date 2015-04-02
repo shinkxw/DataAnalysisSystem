@@ -1318,6 +1318,7 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="DFFSMC" exp="打分方式名称" type="nvarchar(50)" />
             <name="DFLX" exp="打分类型" type="int" />
             <name="ZDZ" exp="最大值" type="int" />
             <name="ZXZ" exp="最小值" type="int" />

@@ -34,6 +34,7 @@ SELECT a.[ID]--编号
       ,d.DFZB as d_DFJD_DFZB--打分节点表 打分指标
       ,e.SCHOOLID as e_DFFS_SCHOOLID--打分方式表 学校ID
       ,e.XMID as e_DFFS_XMID--打分方式表 项目ID
+      ,e.DFFSMC as e_DFFS_DFFSMC--打分方式表 打分方式名称
       ,e.DFLX as e_DFFS_DFLX--打分方式表 打分类型
       ,e.ZDZ as e_DFFS_ZDZ--打分方式表 最大值
       ,e.ZXZ as e_DFFS_ZXZ--打分方式表 最小值

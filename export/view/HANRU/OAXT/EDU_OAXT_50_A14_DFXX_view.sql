@@ -14,6 +14,7 @@ SELECT a.[ID]--编号
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
       ,d.SCHOOLID as d_DFFS_SCHOOLID--打分方式表 学校ID
       ,d.XMID as d_DFFS_XMID--打分方式表 项目ID
+      ,d.DFFSMC as d_DFFS_DFFSMC--打分方式表 打分方式名称
       ,d.DFLX as d_DFFS_DFLX--打分方式表 打分类型
       ,d.ZDZ as d_DFFS_ZDZ--打分方式表 最大值
       ,d.ZXZ as d_DFFS_ZXZ--打分方式表 最小值
