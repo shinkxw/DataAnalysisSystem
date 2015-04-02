@@ -60,6 +60,8 @@ EDU_KTGL_05_A01_KTNR  课题内容
   JTBG          结题报告                text           非主
   MLID          目录ID                  int            非主        课题目录
   SHZT          审核状态                int            非主
+  LXSJ          立项时间                datetime       非主
+  JTSJ          结题时间                datetime       非主
 
 EDU_KTGL_06_A01_XZZQ  下载专区
   ID            编号                    int            自增主键

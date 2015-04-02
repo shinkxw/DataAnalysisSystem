@@ -17,6 +17,8 @@ namespace HanRuEdu.LDAL
             YJFA = "";
             YJCG = "";
             JTBG = "";
+            LXSJ = DateTime.Now;
+            JTSJ = DateTime.Now;
         }
         public class EDU_KTGL_05_A01_KTNR_metadata
         {
@@ -95,6 +97,16 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "审核状态")]
             public Int32 SHZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "立项时间")]
+            public DateTime LXSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "结题时间")]
+            public DateTime JTSJ { get; set; }
 
 
         }

@@ -72,6 +72,8 @@
             <name="JTBG" exp="结题报告" type="text" />
             <name="MLID" exp="目录ID" type="int" />
             <name="SHZT" exp="审核状态" type="int" />
+            <name="LXSJ" exp="立项时间" type="datetime" />
+            <name="JTSJ" exp="结题时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_KTGL_06_A01_XZZQ" exp="下载专区">

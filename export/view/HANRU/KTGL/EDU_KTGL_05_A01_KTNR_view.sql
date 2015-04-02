@@ -15,6 +15,8 @@ SELECT a.[ID]--编号
       ,a.[JTBG]--结题报告
       ,a.[MLID]--目录ID
       ,a.[SHZT]--审核状态
+      ,a.[LXSJ]--立项时间
+      ,a.[JTSJ]--结题时间
       ,c.SCHOOLID as c_KTJB_SCHOOLID--课题级别 学校
       ,c.JBMC as c_KTJB_JBMC--课题级别 级别名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
