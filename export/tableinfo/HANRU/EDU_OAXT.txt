@@ -1103,6 +1103,7 @@ EDU_OAXT_50_A11_DFDL  打分大类表
   ID            根节点ID                int            主键        打分节点表
   SCHOOLID      学校ID                  int            主键        学校配置表
   XMID          项目ID                  int            主键        打分项目表
+  DFDXZID       打分对象组ID            int            非主
   SFXYSH        是否需要审核            int            非主
   SHFS          审核方式                int            非主
 

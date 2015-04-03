@@ -28,6 +28,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "打分对象组")]
+            public Int32 DFDXZID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "是否需要审核")]
             public Int32 SFXYSH { get; set; }
 

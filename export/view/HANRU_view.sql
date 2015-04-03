@@ -6314,6 +6314,7 @@ AS
 SELECT a.[ID]--根节点ID
       ,a.[SCHOOLID]--学校ID
       ,a.[XMID]--项目ID
+      ,a.[DFDXZID]--打分对象组ID
       ,a.[SFXYSH]--是否需要审核
       ,a.[SHFS]--审核方式
       ,b.SCHOOLID as b_DFJD_SCHOOLID--打分节点表 学校ID
