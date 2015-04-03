@@ -1291,6 +1291,7 @@
             <name="ID" exp="根节点ID" type="int" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="DFDXZID" exp="打分对象组ID" type="int" />
             <name="SFXYSH" exp="是否需要审核" type="int" />
             <name="SHFS" exp="审核方式" type="int" />
         </field_area>
