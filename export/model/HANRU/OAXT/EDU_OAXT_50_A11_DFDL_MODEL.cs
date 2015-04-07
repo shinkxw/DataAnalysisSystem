@@ -13,7 +13,7 @@ namespace HanRuEdu.LDAL
         public class EDU_OAXT_50_A11_DFDL_metadata
         {
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "根节点")]
+            [Display(Name = "编号")]
             public Int32 ID { get; set; }
 
 
@@ -25,6 +25,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "项目")]
             public Int32 XMID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "根节点")]
+            public Int32 GJDID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -40,6 +45,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "审核方式")]
             public Int32 SHFS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否开启")]
+            public Int32 SFKQ { get; set; }
 
 
         }

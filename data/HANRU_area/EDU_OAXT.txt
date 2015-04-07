@@ -1288,12 +1288,14 @@
     </table>
     <table name="EDU_OAXT_50_A11_DFDL" exp="打分大类表">
         <field_area>
-            <name="ID" exp="根节点ID" type="int" p="T" />
+            <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="GJDID" exp="根节点ID" type="int" />
             <name="DFDXZID" exp="打分对象组ID" type="int" />
             <name="SFXYSH" exp="是否需要审核" type="int" />
             <name="SHFS" exp="审核方式" type="int" />
+            <name="SFKQ" exp="是否开启" type="int" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A12_DFJD" exp="打分节点表">
@@ -1301,6 +1303,7 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="DLID" exp="大类ID" type="int" />
             <name="FJDID" exp="父节点ID" type="int" />
             <name="SFDFX" exp="是否打分项" type="int" />
             <name="JDMC" exp="节点名称" type="nvarchar(50)" />

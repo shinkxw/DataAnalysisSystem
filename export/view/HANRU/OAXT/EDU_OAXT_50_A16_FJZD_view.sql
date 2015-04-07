@@ -14,6 +14,7 @@ SELECT a.[ID]--编号
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
       ,d.SCHOOLID as d_DFJD_SCHOOLID--打分节点表 学校ID
       ,d.XMID as d_DFJD_XMID--打分节点表 项目ID
+      ,d.DLID as d_DFJD_DLID--打分节点表 大类ID
       ,d.FJDID as d_DFJD_FJDID--打分节点表 父节点ID
       ,d.SFDFX as d_DFJD_SFDFX--打分节点表 是否打分项
       ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称

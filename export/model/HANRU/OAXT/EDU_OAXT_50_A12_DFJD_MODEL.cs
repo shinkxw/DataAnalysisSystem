@@ -33,6 +33,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "大类")]
+            public Int32 DLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "父节点")]
             public Int32 FJDID { get; set; }
 
