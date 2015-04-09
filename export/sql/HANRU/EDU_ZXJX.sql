@@ -1399,7 +1399,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZXJX_53_A51_XFZKKGL](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
-	[KCMC]  int  NOT NULL,--课程名称
+	[KCMC]  nvarchar(100)  NOT NULL,--课程名称
 	[KKR]  nvarchar(200)  NOT NULL,--开课人
 	[KCNR]  text  NOT NULL,--课程内容
 	[HJQK]  text  NOT NULL,--获奖情况

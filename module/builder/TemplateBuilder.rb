@@ -253,7 +253,7 @@ class TemplateBuilder
     str << "#{@tab.s}}\n#{@tab.s}}\n#{@tab.t}"
     str << %(msg += "<span style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + msgstr + "</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
-    str << %({\n#{@tab.l}msg += "<span style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + GetExceptionErrMsg(e) + "</span><br>";\n#{@tab.t})
+    str << %({\n#{@tab.l}msg += "<span style=\\"color:red;\\">第" + (sucss == 0 ? rowid + 1 : sucss) + "行，导入失败，原因：" + GetExceptionErrMsg(e) + "</span><br>";\n)
     str << "#{@tab.s}}\n#{@tab.t}ViewBag.msg = msg;\n#{@tab.t}"
     str << "return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n\n"

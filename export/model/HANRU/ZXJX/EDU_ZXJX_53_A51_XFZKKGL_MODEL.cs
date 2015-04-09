@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZXJX_53_A51_XFZKKGL()
         {
+            KCMC = "";
             KKR = "";
             KCNR = "";
             HJQK = "";
@@ -25,9 +26,11 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "课程名称")]
-            public Int32 KCMC { get; set; }
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

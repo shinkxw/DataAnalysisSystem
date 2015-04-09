@@ -656,7 +656,7 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="KCMC" exp="课程名称" type="int" />
+            <name="KCMC" exp="课程名称" type="nvarchar(100)" />
             <name="KKR" exp="开课人" type="nvarchar(200)" />
             <name="KCNR" exp="课程内容" type="text" />
             <name="HJQK" exp="获奖情况" type="text" />
