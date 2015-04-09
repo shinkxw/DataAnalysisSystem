@@ -543,3 +543,11 @@ EDU_ZXJX_53_A46_BXKXXTKCJ  必修课学校统考成绩表
   TKLX          统考类型                int            非主
   CJ            成绩                    decimal(5, 1)  非主
 
+EDU_ZXJX_53_A51_XFZKKGL  学分制开课管理表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KCMC          课程名称                int            非主
+  KKR           开课人                  nvarchar(200)  非主
+  KCNR          课程内容                text           非主
+  HJQK          获奖情况                text           非主
+

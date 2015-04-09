@@ -652,4 +652,14 @@
             <name="CJ" exp="成绩" type="decimal(5, 1)" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_53_A51_XFZKKGL" exp="学分制开课管理表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="KCMC" exp="课程名称" type="int" />
+            <name="KKR" exp="开课人" type="nvarchar(200)" />
+            <name="KCNR" exp="课程内容" type="text" />
+            <name="HJQK" exp="获奖情况" type="text" />
+        </field_area>
+    </table>
 </namespace>
