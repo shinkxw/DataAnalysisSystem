@@ -22,8 +22,8 @@ SELECT a.[ID]--编号
       ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称
       ,d.SFJCSJSZ as d_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
       ,d.DFDXJDBMJH as d_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
-      ,d.DFJSGXIDLB as d_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
-      ,d.SHJSGXIDLB as d_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,d.DFJSLBIDLB as d_DFJD_DFJSLBIDLB--打分节点表 打分角色类别ID列表
+      ,d.SHJSLBIDLB as d_DFJD_SHJSLBIDLB--打分节点表 审核角色类别ID列表
       ,d.DFFSID as d_DFJD_DFFSID--打分节点表 打分方式ID
       ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次

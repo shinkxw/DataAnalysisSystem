@@ -1119,8 +1119,8 @@ EDU_OAXT_50_A12_DFJD  打分节点表
   JDMC          节点名称                nvarchar(50)   非主
   SFJCSJSZ      是否继承上级设置        int            非主
   DFDXJDBMJH    打分对象节点编码集合    text           非主
-  DFJSGXIDLB    打分角色关系ID列表      text           非主
-  SHJSGXIDLB    审核角色关系ID列表      text           非主
+  DFJSLBIDLB    打分角色类别ID列表      text           非主
+  SHJSLBIDLB    审核角色类别ID列表      text           非主
   DFFSID        打分方式ID              int            非主        打分方式表
   DFDXCJ        打分对象层级            int            非主
   DFPC          打分频次                int            非主

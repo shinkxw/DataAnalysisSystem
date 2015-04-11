@@ -5070,8 +5070,8 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A12_DFJD](
 	[JDMC]  nvarchar(50)  NOT NULL,--节点名称
 	[SFJCSJSZ]  int  NOT NULL,--是否继承上级设置
 	[DFDXJDBMJH]  text  NOT NULL,--打分对象节点编码集合
-	[DFJSGXIDLB]  text  NOT NULL,--打分角色关系ID列表
-	[SHJSGXIDLB]  text  NOT NULL,--审核角色关系ID列表
+	[DFJSLBIDLB]  text  NOT NULL,--打分角色类别ID列表
+	[SHJSLBIDLB]  text  NOT NULL,--审核角色类别ID列表
 	[DFFSID]  int  NOT NULL,--打分方式ID
 	[DFDXCJ]  int  NOT NULL,--打分对象层级
 	[DFPC]  int  NOT NULL,--打分频次
@@ -7247,9 +7247,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否继承上级设
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分对象节点编码集合' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'DFDXJDBMJH'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分角色关系ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'DFJSGXIDLB'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分角色类别ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'DFJSLBIDLB'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核角色关系ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'SHJSGXIDLB'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核角色类别ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'SHJSLBIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'DFFSID'
 GO

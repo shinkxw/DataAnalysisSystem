@@ -1309,8 +1309,8 @@
             <name="JDMC" exp="节点名称" type="nvarchar(50)" />
             <name="SFJCSJSZ" exp="是否继承上级设置" type="int" />
             <name="DFDXJDBMJH" exp="打分对象节点编码集合" type="text" />
-            <name="DFJSGXIDLB" exp="打分角色关系ID列表" type="text" />
-            <name="SHJSGXIDLB" exp="审核角色关系ID列表" type="text" />
+            <name="DFJSLBIDLB" exp="打分角色类别ID列表" type="text" />
+            <name="SHJSLBIDLB" exp="审核角色类别ID列表" type="text" />
             <name="DFFSID" exp="打分方式ID" type="int" />
             <name="DFDXCJ" exp="打分对象层级" type="int" />
             <name="DFPC" exp="打分频次" type="int" />

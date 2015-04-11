@@ -6330,8 +6330,8 @@ SELECT a.[ID]--编号
       ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称
       ,d.SFJCSJSZ as d_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
       ,d.DFDXJDBMJH as d_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
-      ,d.DFJSGXIDLB as d_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
-      ,d.SHJSGXIDLB as d_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,d.DFJSLBIDLB as d_DFJD_DFJSLBIDLB--打分节点表 打分角色类别ID列表
+      ,d.SHJSLBIDLB as d_DFJD_SHJSLBIDLB--打分节点表 审核角色类别ID列表
       ,d.DFFSID as d_DFJD_DFFSID--打分节点表 打分方式ID
       ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次
@@ -6354,8 +6354,8 @@ SELECT a.[ID]--编号
       ,a.[JDMC]--节点名称
       ,a.[SFJCSJSZ]--是否继承上级设置
       ,a.[DFDXJDBMJH]--打分对象节点编码集合
-      ,a.[DFJSGXIDLB]--打分角色关系ID列表
-      ,a.[SHJSGXIDLB]--审核角色关系ID列表
+      ,a.[DFJSLBIDLB]--打分角色类别ID列表
+      ,a.[SHJSLBIDLB]--审核角色类别ID列表
       ,a.[DFFSID]--打分方式ID
       ,a.[DFDXCJ]--打分对象层级
       ,a.[DFPC]--打分频次
@@ -6378,8 +6378,8 @@ SELECT a.[ID]--编号
       ,e.JDMC as e_DFJD_JDMC--打分节点表 节点名称
       ,e.SFJCSJSZ as e_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
       ,e.DFDXJDBMJH as e_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
-      ,e.DFJSGXIDLB as e_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
-      ,e.SHJSGXIDLB as e_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,e.DFJSLBIDLB as e_DFJD_DFJSLBIDLB--打分节点表 打分角色类别ID列表
+      ,e.SHJSLBIDLB as e_DFJD_SHJSLBIDLB--打分节点表 审核角色类别ID列表
       ,e.DFFSID as e_DFJD_DFFSID--打分节点表 打分方式ID
       ,e.DFDXCJ as e_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,e.DFPC as e_DFJD_DFPC--打分节点表 打分频次
@@ -6467,8 +6467,8 @@ SELECT a.[ID]--编号
       ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称
       ,d.SFJCSJSZ as d_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
       ,d.DFDXJDBMJH as d_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
-      ,d.DFJSGXIDLB as d_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
-      ,d.SHJSGXIDLB as d_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,d.DFJSLBIDLB as d_DFJD_DFJSLBIDLB--打分节点表 打分角色类别ID列表
+      ,d.SHJSLBIDLB as d_DFJD_SHJSLBIDLB--打分节点表 审核角色类别ID列表
       ,d.DFFSID as d_DFJD_DFFSID--打分节点表 打分方式ID
       ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次
@@ -6525,8 +6525,8 @@ SELECT a.[ID]--编号
       ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称
       ,d.SFJCSJSZ as d_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
       ,d.DFDXJDBMJH as d_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
-      ,d.DFJSGXIDLB as d_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
-      ,d.SHJSGXIDLB as d_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,d.DFJSLBIDLB as d_DFJD_DFJSLBIDLB--打分节点表 打分角色类别ID列表
+      ,d.SHJSLBIDLB as d_DFJD_SHJSLBIDLB--打分节点表 审核角色类别ID列表
       ,d.DFFSID as d_DFJD_DFFSID--打分节点表 打分方式ID
       ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次
@@ -6558,8 +6558,8 @@ SELECT a.[ID]--编号
       ,d.JDMC as d_DFJD_JDMC--打分节点表 节点名称
       ,d.SFJCSJSZ as d_DFJD_SFJCSJSZ--打分节点表 是否继承上级设置
       ,d.DFDXJDBMJH as d_DFJD_DFDXJDBMJH--打分节点表 打分对象节点编码集合
-      ,d.DFJSGXIDLB as d_DFJD_DFJSGXIDLB--打分节点表 打分角色关系ID列表
-      ,d.SHJSGXIDLB as d_DFJD_SHJSGXIDLB--打分节点表 审核角色关系ID列表
+      ,d.DFJSLBIDLB as d_DFJD_DFJSLBIDLB--打分节点表 打分角色类别ID列表
+      ,d.SHJSLBIDLB as d_DFJD_SHJSLBIDLB--打分节点表 审核角色类别ID列表
       ,d.DFFSID as d_DFJD_DFFSID--打分节点表 打分方式ID
       ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次
