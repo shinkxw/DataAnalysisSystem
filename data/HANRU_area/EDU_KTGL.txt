@@ -74,6 +74,7 @@
             <name="SHZT" exp="审核状态" type="int" />
             <name="LXSJ" exp="立项时间" type="datetime" />
             <name="JTSJ" exp="结题时间" type="datetime" />
+            <name="QTGCZL" exp="其他过程资料" type="text" />
         </field_area>
     </table>
     <table name="EDU_KTGL_06_A01_XZZQ" exp="下载专区">

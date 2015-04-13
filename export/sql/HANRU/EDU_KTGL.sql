@@ -160,6 +160,7 @@ CREATE TABLE [dbo].[EDU_KTGL_05_A01_KTNR](
 	[SHZT]  int  NOT NULL,--审核状态
 	[LXSJ]  datetime  NOT NULL,--立项时间
 	[JTSJ]  datetime  NOT NULL,--结题时间
+	[QTGCZL]  text  NOT NULL,--其他过程资料
 CONSTRAINT [PK_EDU_KTGL_05_A01_KTNR] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -318,6 +319,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'立项时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'LXSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结题时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'JTSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'其他过程资料' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_05_A01_KTNR', @level2type=N'COLUMN',@level2name=N'QTGCZL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'下载专区' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_KTGL_06_A01_XZZQ'
 GO

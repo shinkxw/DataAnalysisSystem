@@ -19,6 +19,7 @@ namespace HanRuEdu.LDAL
             JTBG = "";
             LXSJ = DateTime.Now;
             JTSJ = DateTime.Now;
+            QTGCZL = "";
         }
         public class EDU_KTGL_05_A01_KTNR_metadata
         {
@@ -107,6 +108,12 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "结题时间")]
             public DateTime JTSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "其他过程资料")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String QTGCZL { get; set; }
 
 
         }
