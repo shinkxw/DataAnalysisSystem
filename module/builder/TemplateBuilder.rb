@@ -163,12 +163,11 @@ class TemplateBuilder
   end
   def make_controller_importdata(table)
     str = "#{@tab.t}public ActionResult ImportData()\n#{@tab.t}"
-    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}"
-    str << "#{table.name} model = new #{table.name}();\n#{@tab.t}"
+    str << "{\n#{@tab.l}#{table.name} model = new #{table.name}();\n#{@tab.t}"
     str << "return View(model);\n"
     str << "#{@tab.s}}\n\n"
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult ImportData(#{table.name} #{table.lname_dc})\n#{@tab.t}"
-    str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}int sucss = 0; int rowid = 0;\n#{@tab.t}string msg = \"\";\n#{@tab.t}try\n#{@tab.t}"
+    str << "{\n#{@tab.l}int sucss = 0; int rowid = 0;\n#{@tab.t}string msg = \"\";\n#{@tab.t}try\n#{@tab.t}"
     str << "{\n#{@tab.l}HttpPostedFileBase file = Request.Files[\"xmlfile\"];\n#{@tab.t}if (file == null || file.ContentLength == 0)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(string.Format(\"请使用不为空的xml电子文档\"));\n#{@tab.t}return View();\n"
     str << "#{@tab.s}}\n#{@tab.t}string filename = Request.Files[\"xmlfile\"].FileName;\n#{@tab.t}"
