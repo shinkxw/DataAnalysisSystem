@@ -14,6 +14,10 @@ namespace HanRuEdu.LDAL
             DFJSLBIDLB = "";
             SHJSLBIDLB = "";
             DFZB = "";
+            DFDXJDMCLB = "";
+            DFJSLBMCLB = "";
+            SHJSLBMCLB = "";
+            DFDXCJMC = "";
         }
         public class EDU_OAXT_50_A12_DFJD_metadata
         {
@@ -96,6 +100,31 @@ namespace HanRuEdu.LDAL
             [Display(Name = "打分指标")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String DFZB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "打分对象节点名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DFDXJDMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "打分角色类别名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DFJSLBMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "审核角色类别名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SHJSLBMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "打分对象层级名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DFDXCJMC { get; set; }
 
 
         }

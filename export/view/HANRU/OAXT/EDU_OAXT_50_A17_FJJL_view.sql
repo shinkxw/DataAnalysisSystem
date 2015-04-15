@@ -26,6 +26,10 @@ SELECT a.[ID]--编号
       ,d.DFDXCJ as d_DFJD_DFDXCJ--打分节点表 打分对象层级
       ,d.DFPC as d_DFJD_DFPC--打分节点表 打分频次
       ,d.DFZB as d_DFJD_DFZB--打分节点表 打分指标
+      ,d.DFDXJDMCLB as d_DFJD_DFDXJDMCLB--打分节点表 打分对象节点名称列表
+      ,d.DFJSLBMCLB as d_DFJD_DFJSLBMCLB--打分节点表 打分角色类别名称列表
+      ,d.SHJSLBMCLB as d_DFJD_SHJSLBMCLB--打分节点表 审核角色类别名称列表
+      ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,e.SCHOOLID as e_DFJG_SCHOOLID--打分结果表 学校ID
       ,e.XMID as e_DFJG_XMID--打分结果表 项目ID
       ,e.DFJDID as e_DFJG_DFJDID--打分结果表 打分节点ID
