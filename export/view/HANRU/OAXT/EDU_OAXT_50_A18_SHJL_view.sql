@@ -1,19 +1,16 @@
 
---打分结果表
-CREATE VIEW [dbo].[VIEW_EDU_OAXT_50_A15_DFJG_DISP]
+--审核记录表
+CREATE VIEW [dbo].[VIEW_EDU_OAXT_50_A18_SHJL_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XMID]--项目ID
-      ,a.[DFJDID]--打分节点ID
-      ,a.[BDFDX]--被打分对象
-      ,a.[DFXXID]--打分选项ID
-      ,a.[WBZ]--文本值
-      ,a.[FZ]--分值
-      ,a.[DFYHID]--打分用户ID
-      ,a.[DFSJ]--打分时间
-      ,a.[SHZT]--审核状态
-      ,a.[SHJLID]--审核记录ID
+      ,a.[SHJDID]--审核节点ID
+      ,a.[DFJGID]--打分结果ID
+      ,a.[SHJG]--审核结果
+      ,a.[SHYHID]--审核用户ID
+      ,a.[SHSJ]--审核时间
+      ,a.[BZ]--备注
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
@@ -35,12 +32,17 @@ SELECT a.[ID]--编号
       ,d.DFJSLBMCLB as d_DFJD_DFJSLBMCLB--打分节点表 打分角色类别名称列表
       ,d.SHJSLBMCLB as d_DFJD_SHJSLBMCLB--打分节点表 审核角色类别名称列表
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
-      ,e.SCHOOLID as e_DFXX_SCHOOLID--打分选项表 学校ID
-      ,e.XMID as e_DFXX_XMID--打分选项表 项目ID
-      ,e.DFFSID as e_DFXX_DFFSID--打分选项表 打分方式ID
-      ,e.XXMC as e_DFXX_XXMC--打分选项表 选项名称
-      ,e.XXFZ as e_DFXX_XXFZ--打分选项表 选项分值
-      ,e.PLSX as e_DFXX_PLSX--打分选项表 排列顺序
+      ,e.SCHOOLID as e_DFJG_SCHOOLID--打分结果表 学校ID
+      ,e.XMID as e_DFJG_XMID--打分结果表 项目ID
+      ,e.DFJDID as e_DFJG_DFJDID--打分结果表 打分节点ID
+      ,e.BDFDX as e_DFJG_BDFDX--打分结果表 被打分对象
+      ,e.DFXXID as e_DFJG_DFXXID--打分结果表 打分选项ID
+      ,e.WBZ as e_DFJG_WBZ--打分结果表 文本值
+      ,e.FZ as e_DFJG_FZ--打分结果表 分值
+      ,e.DFYHID as e_DFJG_DFYHID--打分结果表 打分用户ID
+      ,e.DFSJ as e_DFJG_DFSJ--打分结果表 打分时间
+      ,e.SHZT as e_DFJG_SHZT--打分结果表 审核状态
+      ,e.SHJLID as e_DFJG_SHJLID--打分结果表 审核记录ID
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,'' as f_USER_PWD--应用系统用户表 密码
@@ -58,19 +60,10 @@ SELECT a.[ID]--编号
       ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
       ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
-      ,g.SCHOOLID as g_SHJL_SCHOOLID--审核记录表 学校ID
-      ,g.XMID as g_SHJL_XMID--审核记录表 项目ID
-      ,g.SHJDID as g_SHJL_SHJDID--审核记录表 审核节点ID
-      ,g.DFJGID as g_SHJL_DFJGID--审核记录表 打分结果ID
-      ,g.SHJG as g_SHJL_SHJG--审核记录表 审核结果
-      ,g.SHYHID as g_SHJL_SHYHID--审核记录表 审核用户ID
-      ,g.SHSJ as g_SHJL_SHSJ--审核记录表 审核时间
-      ,g.BZ as g_SHJL_BZ--审核记录表 备注
 
-FROM dbo.EDU_OAXT_50_A15_DFJG AS a LEFT OUTER JOIN
+FROM dbo.EDU_OAXT_50_A18_SHJL AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_OAXT_50_A12_DFJD AS d ON a.DFJDID = d.ID /*打分节点ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.XMID = d.XMID /*项目ID*/ LEFT OUTER JOIN
-      dbo.EDU_OAXT_50_A14_DFXX AS e ON a.DFXXID = e.ID /*打分选项ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ AND a.XMID = e.XMID /*项目ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS f ON a.DFYHID = f.LOGINNAME /*打分用户ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_OAXT_50_A18_SHJL AS g ON a.SHJLID = g.ID /*审核记录ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校ID*/ AND a.XMID = g.XMID /*项目ID*/
+      dbo.EDU_OAXT_50_A12_DFJD AS d ON a.SHJDID = d.ID /*审核节点ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.XMID = d.XMID /*项目ID*/ LEFT OUTER JOIN
+      dbo.EDU_OAXT_50_A15_DFJG AS e ON a.DFJGID = e.ID /*打分结果ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ AND a.XMID = e.XMID /*项目ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.SHYHID = f.LOGINNAME /*审核用户ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/
 GO

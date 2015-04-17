@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_OAXT_50_A15_DFJG()
         {
+            BDFDX = "";
             WBZ = "";
             DFYHID = "";
             DFSJ = DateTime.Now;
@@ -33,6 +34,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "打分节点")]
             public Int32 DFJDID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "被打分对象")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BDFDX { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -63,6 +71,16 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "打分时间")]
             public DateTime DFSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "审核状态")]
+            public Int32 SHZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "审核记录")]
+            public Int32 SHJLID { get; set; }
 
 
         }
