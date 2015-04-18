@@ -5055,6 +5055,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A11_DFDL](
 	[SFXYSH]  int  NOT NULL,--是否需要审核
 	[SHFS]  int  NOT NULL,--审核方式
 	[SFKQ]  int  NOT NULL,--是否开启
+	[NFBDF]  int  NOT NULL,--能否补打分
 CONSTRAINT [PK_EDU_OAXT_50_A11_DFDL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5148,13 +5149,16 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A15_DFJG](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[XMID]  int  NOT NULL,--项目ID
+	[DFDLID]  int  NOT NULL,--打分大类ID
 	[DFJDID]  int  NOT NULL,--打分节点ID
+	[XQID]  int  NOT NULL,--学期ID
 	[BDFDX]  nvarchar(50)  NOT NULL,--被打分对象
 	[DFXXID]  int  NOT NULL,--打分选项ID
 	[WBZ]  nvarchar(50)  NOT NULL,--文本值
 	[FZ]  decimal(5, 1)  NOT NULL,--分值
+	[DFPCMC]  nvarchar(50)  NOT NULL,--打分批次名称
 	[DFYHID]  nvarchar(20)  NOT NULL,--打分用户ID
-	[DFSJ]  datetime  NOT NULL,--打分时间
+	[TJSJ]  datetime  NOT NULL,--添加时间
 	[SHZT]  int  NOT NULL,--审核状态
 	[SHJLID]  int  NOT NULL,--审核记录ID
 CONSTRAINT [PK_EDU_OAXT_50_A15_DFJG] PRIMARY KEY CLUSTERED
@@ -7265,6 +7269,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核方式' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否开启' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'SFKQ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'能否补打分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'NFBDF'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分节点表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'ID'
@@ -7347,7 +7353,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'XMID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分大类ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFDLID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分节点ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFJDID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被打分对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'BDFDX'
 GO
@@ -7357,9 +7367,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文本值' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'FZ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分批次名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFPCMC'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFYHID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFSJ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'TJSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'SHZT'
 GO

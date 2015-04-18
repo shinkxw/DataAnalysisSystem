@@ -5,13 +5,16 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XMID]--项目ID
+      ,a.[DFDLID]--打分大类ID
       ,a.[DFJDID]--打分节点ID
+      ,a.[XQID]--学期ID
       ,a.[BDFDX]--被打分对象
       ,a.[DFXXID]--打分选项ID
       ,a.[WBZ]--文本值
       ,a.[FZ]--分值
+      ,a.[DFPCMC]--打分批次名称
       ,a.[DFYHID]--打分用户ID
-      ,a.[DFSJ]--打分时间
+      ,a.[TJSJ]--添加时间
       ,a.[SHZT]--审核状态
       ,a.[SHJLID]--审核记录ID
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
