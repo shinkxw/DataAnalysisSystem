@@ -20351,6 +20351,7 @@ SELECT a.[ID]--编号
       ,a.[FZMC]--分组名称
       ,a.[KHRID]--考核人ID
       ,a.[BKHRIDLB]--被考核人ID列表
+      ,a.[BKHRMCLB]--被考核人名称列表
       ,a.[KHDJ]--考核等级
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID

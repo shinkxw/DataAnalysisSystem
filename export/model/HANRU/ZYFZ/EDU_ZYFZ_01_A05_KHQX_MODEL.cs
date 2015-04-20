@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             FZMC = "";
             KHRID = "";
             BKHRIDLB = "";
+            BKHRMCLB = "";
         }
         public class EDU_ZYFZ_01_A05_KHQX_metadata
         {
@@ -43,6 +44,12 @@ namespace HanRuEdu.LDAL
             [Display(Name = "被考核人ID列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BKHRIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "被考核人名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BKHRMCLB { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

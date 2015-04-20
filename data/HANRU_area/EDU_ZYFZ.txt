@@ -36,6 +36,7 @@
             <name="FZMC" exp="分组名称" type="nvarchar(80)" />
             <name="KHRID" exp="考核人ID" type="nvarchar(20)" />
             <name="BKHRIDLB" exp="被考核人ID列表" type="text" />
+            <name="BKHRMCLB" exp="被考核人名称列表" type="text" />
             <name="KHDJ" exp="考核等级" type="int" />
         </field_area>
     </table>

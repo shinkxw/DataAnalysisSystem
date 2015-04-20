@@ -26,6 +26,7 @@ EDU_ZYFZ_01_A05_KHQX  考核权限表
   FZMC          分组名称                nvarchar(80)   非主
   KHRID         考核人ID                nvarchar(20)   非主        应用系统用户表
   BKHRIDLB      被考核人ID列表          text           非主
+  BKHRMCLB      被考核人名称列表        text           非主
   KHDJ          考核等级                int            非主
 
 EDU_ZYFZ_02_A01_LMLB  栏目类别表

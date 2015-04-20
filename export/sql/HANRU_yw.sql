@@ -17449,6 +17449,7 @@ CREATE TABLE [dbo].[EDU_ZYFZ_01_A05_KHQX](
 	[FZMC]  nvarchar(80)  NOT NULL,--分组名称
 	[KHRID]  nvarchar(20)  NOT NULL,--考核人ID
 	[BKHRIDLB]  text  NOT NULL,--被考核人ID列表
+	[BKHRMCLB]  text  NOT NULL,--被考核人名称列表
 	[KHDJ]  int  NOT NULL,--考核等级
 CONSTRAINT [PK_EDU_ZYFZ_01_A05_KHQX] PRIMARY KEY CLUSTERED
 (
@@ -17650,6 +17651,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'KHRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被考核人ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'BKHRIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被考核人名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'BKHRMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核等级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'KHDJ'
 GO
