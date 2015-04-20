@@ -20,6 +20,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYFZ_01_A04_GZMB
    drop table EDU_ZYFZ_01_A04_GZMB
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYFZ_01_A05_KHQX')
+            and   type = 'U')
+   drop table EDU_ZYFZ_01_A05_KHQX
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZYFZ_02_A01_LMLB')
             and   type = 'U')
    drop table EDU_ZYFZ_02_A01_LMLB
@@ -110,6 +115,25 @@ CREATE TABLE [dbo].[EDU_ZYFZ_01_A04_GZMB](
 CONSTRAINT [PK_EDU_ZYFZ_01_A04_GZMB] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--考核权限表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZYFZ_01_A05_KHQX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZYFZ_01_A05_KHQX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[FZMC]  nvarchar(80)  NOT NULL,--分组名称
+	[KHRID]  nvarchar(20)  NOT NULL,--考核人ID
+	[BKHRIDLB]  text  NOT NULL,--被考核人ID列表
+	[KHDJ]  int  NOT NULL,--考核等级
+CONSTRAINT [PK_EDU_ZYFZ_01_A05_KHQX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -294,6 +318,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模板名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A04_GZMB', @level2type=N'COLUMN',@level2name=N'MBMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'模板内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A04_GZMB', @level2type=N'COLUMN',@level2name=N'MBNR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核权限表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分组名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'FZMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'KHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被考核人ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'BKHRIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核等级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_01_A05_KHQX', @level2type=N'COLUMN',@level2name=N'KHDJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'栏目类别表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZYFZ_02_A01_LMLB'
 GO

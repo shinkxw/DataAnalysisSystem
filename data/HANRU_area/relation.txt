@@ -1432,6 +1432,9 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZYFZ_01_A04_GZMB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZYFZ_01_A05_KHQX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  KHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYFZ_02_A01_LMLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FLBID          EDU_ZYFZ_02_A01_LMLB               ID

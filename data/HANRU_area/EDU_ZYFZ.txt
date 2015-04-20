@@ -29,6 +29,16 @@
             <name="MBNR" exp="模板内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_ZYFZ_01_A05_KHQX" exp="考核权限表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="FZMC" exp="分组名称" type="nvarchar(80)" />
+            <name="KHRID" exp="考核人ID" type="nvarchar(20)" />
+            <name="BKHRIDLB" exp="被考核人ID列表" type="text" />
+            <name="KHDJ" exp="考核等级" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZYFZ_02_A01_LMLB" exp="栏目类别表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
