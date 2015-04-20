@@ -5152,7 +5152,8 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A15_DFJG](
 	[DFDLID]  int  NOT NULL,--打分大类ID
 	[DFJDID]  int  NOT NULL,--打分节点ID
 	[XQID]  int  NOT NULL,--学期ID
-	[BDFDX]  nvarchar(50)  NOT NULL,--被打分对象
+	[BDFDXBM]  nvarchar(50)  NOT NULL,--被打分对象编码
+	[BDFDXMC]  nvarchar(50)  NOT NULL,--被打分对象名称
 	[DFXXID]  int  NOT NULL,--打分选项ID
 	[WBZ]  nvarchar(50)  NOT NULL,--文本值
 	[FZ]  decimal(5, 1)  NOT NULL,--分值
@@ -7359,7 +7360,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分节点ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'XQID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被打分对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'BDFDX'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被打分对象编码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'BDFDXBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被打分对象名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'BDFDXMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分选项ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFXXID'
 GO

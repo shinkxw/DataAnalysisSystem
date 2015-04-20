@@ -8,7 +8,8 @@ SELECT a.[ID]--编号
       ,a.[DFDLID]--打分大类ID
       ,a.[DFJDID]--打分节点ID
       ,a.[XQID]--学期ID
-      ,a.[BDFDX]--被打分对象
+      ,a.[BDFDXBM]--被打分对象编码
+      ,a.[BDFDXMC]--被打分对象名称
       ,a.[DFXXID]--打分选项ID
       ,a.[WBZ]--文本值
       ,a.[FZ]--分值

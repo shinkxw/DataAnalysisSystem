@@ -6472,7 +6472,8 @@ SELECT a.[ID]--编号
       ,a.[DFDLID]--打分大类ID
       ,a.[DFJDID]--打分节点ID
       ,a.[XQID]--学期ID
-      ,a.[BDFDX]--被打分对象
+      ,a.[BDFDXBM]--被打分对象编码
+      ,a.[BDFDXMC]--被打分对象名称
       ,a.[DFXXID]--打分选项ID
       ,a.[WBZ]--文本值
       ,a.[FZ]--分值
@@ -6615,7 +6616,8 @@ SELECT a.[ID]--编号
       ,e.DFDLID as e_DFJG_DFDLID--打分结果表 打分大类ID
       ,e.DFJDID as e_DFJG_DFJDID--打分结果表 打分节点ID
       ,e.XQID as e_DFJG_XQID--打分结果表 学期ID
-      ,e.BDFDX as e_DFJG_BDFDX--打分结果表 被打分对象
+      ,e.BDFDXBM as e_DFJG_BDFDXBM--打分结果表 被打分对象编码
+      ,e.BDFDXMC as e_DFJG_BDFDXMC--打分结果表 被打分对象名称
       ,e.DFXXID as e_DFJG_DFXXID--打分结果表 打分选项ID
       ,e.WBZ as e_DFJG_WBZ--打分结果表 文本值
       ,e.FZ as e_DFJG_FZ--打分结果表 分值
@@ -6676,7 +6678,8 @@ SELECT a.[ID]--编号
       ,e.DFDLID as e_DFJG_DFDLID--打分结果表 打分大类ID
       ,e.DFJDID as e_DFJG_DFJDID--打分结果表 打分节点ID
       ,e.XQID as e_DFJG_XQID--打分结果表 学期ID
-      ,e.BDFDX as e_DFJG_BDFDX--打分结果表 被打分对象
+      ,e.BDFDXBM as e_DFJG_BDFDXBM--打分结果表 被打分对象编码
+      ,e.BDFDXMC as e_DFJG_BDFDXMC--打分结果表 被打分对象名称
       ,e.DFXXID as e_DFJG_DFXXID--打分结果表 打分选项ID
       ,e.WBZ as e_DFJG_WBZ--打分结果表 文本值
       ,e.FZ as e_DFJG_FZ--打分结果表 分值

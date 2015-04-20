@@ -9,7 +9,8 @@ namespace HanRuEdu.LDAL
     {
         public EDU_OAXT_50_A15_DFJG()
         {
-            BDFDX = "";
+            BDFDXBM = "";
+            BDFDXMC = "";
             WBZ = "";
             DFPCMC = "";
             DFYHID = "";
@@ -48,10 +49,17 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "被打分对象")]
+            [Display(Name = "被打分对象编码")]
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String BDFDX { get; set; }
+            public String BDFDXBM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "被打分对象名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BDFDXMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

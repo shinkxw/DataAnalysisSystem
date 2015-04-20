@@ -1157,7 +1157,8 @@ EDU_OAXT_50_A15_DFJG  打分结果表
   DFDLID        打分大类ID              int            非主
   DFJDID        打分节点ID              int            非主        打分节点表
   XQID          学期ID                  int            非主
-  BDFDX         被打分对象              nvarchar(50)   非主
+  BDFDXBM       被打分对象编码          nvarchar(50)   非主
+  BDFDXMC       被打分对象名称          nvarchar(50)   非主
   DFXXID        打分选项ID              int            非主        打分选项表
   WBZ           文本值                  nvarchar(50)   非主
   FZ            分值                    decimal(5, 1)  非主

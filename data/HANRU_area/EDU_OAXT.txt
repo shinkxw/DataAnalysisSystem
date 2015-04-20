@@ -1353,7 +1353,8 @@
             <name="DFDLID" exp="打分大类ID" type="int" />
             <name="DFJDID" exp="打分节点ID" type="int" />
             <name="XQID" exp="学期ID" type="int" />
-            <name="BDFDX" exp="被打分对象" type="nvarchar(50)" />
+            <name="BDFDXBM" exp="被打分对象编码" type="nvarchar(50)" />
+            <name="BDFDXMC" exp="被打分对象名称" type="nvarchar(50)" />
             <name="DFXXID" exp="打分选项ID" type="int" />
             <name="WBZ" exp="文本值" type="nvarchar(50)" />
             <name="FZ" exp="分值" type="decimal(5, 1)" />
