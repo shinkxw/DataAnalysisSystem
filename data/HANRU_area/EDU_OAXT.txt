@@ -1352,13 +1352,13 @@
             <name="XMID" exp="项目ID" type="int" p="T" />
             <name="DFDLID" exp="打分大类ID" type="int" />
             <name="DFJDID" exp="打分节点ID" type="int" />
+            <name="DFPCID" exp="打分批次ID" type="int" />
             <name="XQID" exp="学期ID" type="int" />
             <name="BDFDXBM" exp="被打分对象编码" type="nvarchar(50)" />
             <name="BDFDXMC" exp="被打分对象名称" type="nvarchar(50)" />
             <name="DFXXID" exp="打分选项ID" type="int" />
             <name="WBZ" exp="文本值" type="nvarchar(50)" />
             <name="FZ" exp="分值" type="decimal(5, 1)" />
-            <name="DFPCMC" exp="打分批次名称" type="nvarchar(50)" />
             <name="DFYHID" exp="打分用户ID" type="nvarchar(20)" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="SHZT" exp="审核状态" type="int" />
@@ -1382,6 +1382,7 @@
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="XMID" exp="项目ID" type="int" p="T" />
             <name="DFJDID" exp="打分节点ID" type="int" />
+            <name="DFPCID" exp="打分批次ID" type="int" />
             <name="DFJGID" exp="打分结果ID" type="int" />
             <name="FJZDID" exp="附加字段ID" type="int" />
             <name="FJZ" exp="附加值" type="nvarchar(500)" />
@@ -1398,6 +1399,19 @@
             <name="SHYHID" exp="审核用户ID" type="nvarchar(20)" />
             <name="SHSJ" exp="审核时间" type="datetime" />
             <name="BZ" exp="备注" type="nvarchar(500)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_50_A19_DFPC" exp="打分批次表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="DFDLID" exp="打分大类ID" type="int" />
+            <name="DFJDID" exp="打分节点ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="DFPCMC" exp="打分批次名称" type="nvarchar(50)" />
+            <name="CKSJ" exp="参考时间" type="datetime" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
 </namespace>

@@ -12,7 +12,6 @@ namespace HanRuEdu.LDAL
             BDFDXBM = "";
             BDFDXMC = "";
             WBZ = "";
-            DFPCMC = "";
             DFYHID = "";
             TJSJ = DateTime.Now;
         }
@@ -41,6 +40,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "打分节点")]
             public Int32 DFJDID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "打分批次")]
+            public Int32 DFPCID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -78,13 +82,6 @@ namespace HanRuEdu.LDAL
             [Display(Name = "分值")]
             [Range(typeof(decimal), "0", "9999")]
             public decimal FZ { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "打分批次名称")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DFPCMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

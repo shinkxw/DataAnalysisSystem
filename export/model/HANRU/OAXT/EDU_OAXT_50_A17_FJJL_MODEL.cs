@@ -34,6 +34,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "打分批次")]
+            public Int32 DFPCID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "打分结果")]
             public Int32 DFJGID { get; set; }
 
