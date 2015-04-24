@@ -27924,7 +27924,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_20_A01_DSSJ](
 	[XQID]  int  NOT NULL,--学期ID
 	[JSID]  int  NOT NULL,--教师ID
 	[DSXM]  nvarchar(36)  NOT NULL,--导师姓名
-	[KCJS]  text  NOT NULL,--导师介绍
+	[DSJS]  text  NOT NULL,--导师介绍
 	[BJIDLB]  text  NOT NULL,--班级ID列表
 	[BJMCLB]  text  NOT NULL,--班级名称列表
 	[ZDKXZRS]  int  NOT NULL,--最多可选择人数
@@ -28997,7 +28997,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'DSXM'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师介绍' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'KCJS'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师介绍' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'DSJS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'BJIDLB'
 GO

@@ -561,10 +561,10 @@ EDU_ZZXS_19_A02_BWCY  班委成员表
 EDU_ZZXS_20_A01_DSSJ  导师数据表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  XQID          学期ID                  int            非主
-  JSID          教师ID                  int            非主
+  XQID          学期ID                  int            非主        学期数据表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
   DSXM          导师姓名                nvarchar(36)   非主
-  KCJS          导师介绍                text           非主
+  DSJS          导师介绍                text           非主
   BJIDLB        班级ID列表              text           非主
   BJMCLB        班级名称列表            text           非主
   ZDKXZRS       最多可选择人数          int            非主

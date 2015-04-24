@@ -10,7 +10,7 @@ SELECT a.[ID]--编号
       ,c.XQID as c_DSSJ_XQID--导师数据表 学期ID
       ,c.JSID as c_DSSJ_JSID--导师数据表 教师ID
       ,c.DSXM as c_DSSJ_DSXM--导师数据表 导师姓名
-      ,c.KCJS as c_DSSJ_KCJS--导师数据表 导师介绍
+      ,c.DSJS as c_DSSJ_DSJS--导师数据表 导师介绍
       ,c.BJIDLB as c_DSSJ_BJIDLB--导师数据表 班级ID列表
       ,c.BJMCLB as c_DSSJ_BJMCLB--导师数据表 班级名称列表
       ,c.ZDKXZRS as c_DSSJ_ZDKXZRS--导师数据表 最多可选择人数

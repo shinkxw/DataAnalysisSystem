@@ -10,7 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZZXS_20_A01_DSSJ()
         {
             DSXM = "";
-            KCJS = "";
+            DSJS = "";
             BJIDLB = "";
             BJMCLB = "";
         }
@@ -46,7 +46,7 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "导师介绍")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String KCJS { get; set; }
+            public String DSJS { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

@@ -2567,6 +2567,8 @@
   BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
 <EDU_ZZXS_20_A01_DSSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  JSID           EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXS_20_A02_XSXZDSJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   DSID           EDU_ZZXS_20_A01_DSSJ               ID

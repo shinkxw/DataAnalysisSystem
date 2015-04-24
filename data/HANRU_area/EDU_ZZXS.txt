@@ -654,7 +654,7 @@
             <name="XQID" exp="学期ID" type="int" />
             <name="JSID" exp="教师ID" type="int" />
             <name="DSXM" exp="导师姓名" type="nvarchar(36)" />
-            <name="KCJS" exp="导师介绍" type="text" />
+            <name="DSJS" exp="导师介绍" type="text" />
             <name="BJIDLB" exp="班级ID列表" type="text" />
             <name="BJMCLB" exp="班级名称列表" type="text" />
             <name="ZDKXZRS" exp="最多可选择人数" type="int" />
