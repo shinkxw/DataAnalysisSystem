@@ -141,6 +141,10 @@ SELECT a.[ID]--编号
       ,n.SCHOOLID as n_JC_SCHOOLID--节次 学校名
       ,n.SDID as n_JC_SDID--节次 所属时段ID
       ,n.MC as n_JC_MC--节次 名称
+      ,n.KSXS as n_JC_KSXS--节次 开始小时
+      ,n.KSFZ as n_JC_KSFZ--节次 开始分钟
+      ,n.JSXS as n_JC_JSXS--节次 结束小时
+      ,n.JSFZ as n_JC_JSFZ--节次 结束分钟
 
 FROM dbo.EDU_ZZJX_38_A02_ZZPKJGJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXX_02_01_ZZXQSJ AS c ON a.ZZXQID = c.ID /*校区ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

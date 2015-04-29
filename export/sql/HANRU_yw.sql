@@ -767,6 +767,10 @@ CREATE TABLE [dbo].[EDU_ELE_05_JC](
 	[SCHOOLID]  int  NOT NULL,--学校名
 	[SDID]  int  NOT NULL,--所属时段ID
 	[MC]  nvarchar(5)  NOT NULL,--名称
+	[KSXS]  int  NOT NULL,--开始小时
+	[KSFZ]  int  NOT NULL,--开始分钟
+	[JSXS]  int  NOT NULL,--结束小时
+	[JSFZ]  int  NOT NULL,--结束分钟
 CONSTRAINT [PK_EDU_ELE_05_JC] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1295,6 +1299,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'所属时段ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_JC', @level2type=N'COLUMN',@level2name=N'SDID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_JC', @level2type=N'COLUMN',@level2name=N'MC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开始小时' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_JC', @level2type=N'COLUMN',@level2name=N'KSXS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开始分钟' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_JC', @level2type=N'COLUMN',@level2name=N'KSFZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束小时' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_JC', @level2type=N'COLUMN',@level2name=N'JSXS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结束分钟' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_05_JC', @level2type=N'COLUMN',@level2name=N'JSFZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'场地数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_06_CDSJ'
 GO

@@ -127,6 +127,10 @@ SELECT a.[ID]--编号
       ,j.SCHOOLID as j_JC_SCHOOLID--节次 学校名
       ,j.SDID as j_JC_SDID--节次 所属时段ID
       ,j.MC as j_JC_MC--节次 名称
+      ,j.KSXS as j_JC_KSXS--节次 开始小时
+      ,j.KSFZ as j_JC_KSFZ--节次 开始分钟
+      ,j.JSXS as j_JC_JSXS--节次 结束小时
+      ,j.JSFZ as j_JC_JSFZ--节次 结束分钟
       ,k.SCHOOLID as k_XLZ_SCHOOLID--校历周表 学校ID
       ,k.XLID as k_XLZ_XLID--校历周表 校历ID
       ,k.NAME as k_XLZ_NAME--校历周表 校历周名称
@@ -146,6 +150,10 @@ SELECT a.[ID]--编号
       ,o.SCHOOLID as o_JC_SCHOOLID--节次 学校名
       ,o.SDID as o_JC_SDID--节次 所属时段ID
       ,o.MC as o_JC_MC--节次 名称
+      ,o.KSXS as o_JC_KSXS--节次 开始小时
+      ,o.KSFZ as o_JC_KSFZ--节次 开始分钟
+      ,o.JSXS as o_JC_JSXS--节次 结束小时
+      ,o.JSFZ as o_JC_JSFZ--节次 结束分钟
 
 FROM dbo.EDU_ZXJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

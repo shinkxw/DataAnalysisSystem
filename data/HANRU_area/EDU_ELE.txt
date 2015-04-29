@@ -268,6 +268,10 @@
             <name="SCHOOLID" exp="学校名" type="int" p="T" />
             <name="SDID" exp="所属时段ID" type="int" />
             <name="MC" exp="名称" type="nvarchar(5)" />
+            <name="KSXS" exp="开始小时" type="int" default="-1" />
+            <name="KSFZ" exp="开始分钟" type="int" default="-1" />
+            <name="JSXS" exp="结束小时" type="int" default="-1" />
+            <name="JSFZ" exp="结束分钟" type="int" default="-1" />
         </field_area>
     </table>
     <table name="EDU_ELE_06_CDSJ" exp="场地数据表">

@@ -6,6 +6,10 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校名
       ,a.[SDID]--所属时段ID
       ,a.[MC]--名称
+      ,a.[KSXS]--开始小时
+      ,a.[KSFZ]--开始分钟
+      ,a.[JSXS]--结束小时
+      ,a.[JSFZ]--结束分钟
       ,c.SCHOOLID as c_SD_SCHOOLID--时段 学校名
       ,c.MC as c_SD_MC--时段 名称
 

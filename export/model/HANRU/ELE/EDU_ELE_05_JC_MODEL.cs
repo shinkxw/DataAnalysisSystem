@@ -35,6 +35,26 @@ namespace HanRuEdu.LDAL
             public String MC { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "开始小时")]
+            public Int32 KSXS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "开始分钟")]
+            public Int32 KSFZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "结束小时")]
+            public Int32 JSXS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "结束分钟")]
+            public Int32 JSFZ { get; set; }
+
+
         }
     }
 }
