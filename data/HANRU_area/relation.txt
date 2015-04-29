@@ -54,6 +54,8 @@
   APPID          EDU_ELE_01_APP                     ID
   MODULEID       EDU_SYS_01_MODULE                  ID
   YHID           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_04_PKJGJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_05_XL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID
@@ -875,6 +877,20 @@
   TKXZID         EDU_ZXJX_35_A01_TKXZ               ID
   SQRID          EDU_ZXJZ_01_01_JZGJBSJ             ID
   SHRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZXJX_36_A01_JSQJXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  QJJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
+<EDU_ZXJX_36_A02_XPKLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JSQJXXID       EDU_ZXJX_36_A01_JSQJXX             ID
+  PKJGJLID       EDU_ELE_04_PKJGJL                  ID
+<EDU_ZXJX_36_A03_DKXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XDKJSID        EDU_ZXJZ_01_01_JZGJBSJ             ID
+  XDKSDID        EDU_ELE_05_SD                      ID
+  XDKJCID        EDU_ELE_05_JC                      ID
+  XDKKCID        EDU_ZXJX_01_01_KC                  KCH
+  DKJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
 <EDU_ZXJX_50_A01_XXKCLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJX_50_A02_KKSJ

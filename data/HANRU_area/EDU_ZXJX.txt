@@ -343,6 +343,38 @@
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_36_A01_JSQJXX" exp="教师请假信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="QJJSID" exp="请假教师ID" type="int" />
+            <name="QJKSSJ" exp="请假开始时间" type="datetime" />
+            <name="QJJSSJ" exp="请假结束时间" type="datetime" />
+            <name="CLZT" exp="处理状态" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_36_A02_XPKLB" exp="需排课列表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JSQJXXID" exp="教师请假信息表ID" type="int" />
+            <name="PKJGJLID" exp="排课结果记录表ID" type="int" />
+            <name="RQ" exp="日期" type="datetime" />
+            <name="CLZT" exp="处理状态" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_36_A03_DKXX" exp="代课信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XDKJSID" exp="需代课教师ID" type="int" />
+            <name="XDKRQ" exp="需代课日期" type="datetime" />
+            <name="XDKSDID" exp="需代课时段ID" type="int" />
+            <name="XDKJCID" exp="需代课节次ID" type="int" />
+            <name="XDKKCID" exp="需代课课程ID" type="nvarchar(10)" />
+            <name="DKJSID" exp="代课教师ID" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZXJX_50_A01_XXKCLB" exp="选修课程类别表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />
