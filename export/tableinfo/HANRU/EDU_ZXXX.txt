@@ -76,3 +76,46 @@ EDU_ZXXX_04_01_JG  机构数据类表
   JGJC          机构简称                nvarchar(10)   非主
   FZRGH         负责人工号              nvarchar(20)   非主
 
+EDU_ZXXX_10_A01_SCSZ  三餐设置表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MC            名称                    nvarchar(50)   非主
+  JG            价格                    decimal(8, 2)  非主
+
+EDU_ZXXX_10_A02_YCDJ  用餐登记表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  SCID          三餐ID                  int            非主        三餐设置表
+  RQ            日期                    datetime       非主
+  SFJC          是否就餐                nvarchar(1)    非主        是否标志代码表
+
+EDU_ZXXX_11_A01_RKJL  入库记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZCM           资产名                  nvarchar(50)   非主
+  SL            数量                    int            非主
+  DJ            单价                    decimal(8, 2)  非主
+  RKSJ          入库时间                datetime       非主
+
+EDU_ZXXX_11_A02_JSLYJL  教师领用记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  LYJSID        领用教师ID              int            非主        教职工基本数据子类表
+  ZCID          资产ID                  int            非主        入库记录表
+  LYSL          领用数量                int            非主
+  LYSJ          领用时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHYHID        审核用户ID              nvarchar(20)   非主        应用系统用户表
+
+EDU_ZXXX_11_A03_BJLYJL  班级领用记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  BJID          班级ID                  nvarchar(10)   非主        班级数据类表
+  ZCID          资产ID                  int            非主        入库记录表
+  LYR           领用人                  nvarchar(50)   非主
+  LYSL          领用数量                int            非主
+  LYSJ          领用时间                datetime       非主
+  SHZT          审核状态                int            非主
+  SHYHID        审核用户ID              nvarchar(20)   非主        应用系统用户表
+

@@ -1448,6 +1448,25 @@
 <EDU_ZXXX_04_01_JG
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LSJGH          EDU_ZXXX_04_01_JG                  JGH
+<EDU_ZXXX_10_A01_SCSZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXX_10_A02_YCDJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+  SCID           EDU_ZXXX_10_A01_SCSZ               ID
+  SFJC           EDU_JY_SFBZ                        DM
+<EDU_ZXXX_11_A01_RKJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXX_11_A02_JSLYJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LYJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
+  ZCID           EDU_ZXXX_11_A01_RKJL               ID
+  SHYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZXXX_11_A03_BJLYJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  BJID           EDU_ZXXX_03_01_BJ                  BH
+  ZCID           EDU_ZXXX_11_A01_RKJL               ID
+  SHYHID         EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZYFZ_01_A01_XK
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZYFZ_01_A02_NJ

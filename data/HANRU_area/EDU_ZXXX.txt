@@ -87,4 +87,57 @@
             <name="FZRGH" exp="负责人工号" type="nvarchar(20)" null="T" />
         </field_area>
     </table>
+    <table name="EDU_ZXXX_10_A01_SCSZ" exp="三餐设置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="MC" exp="名称" type="nvarchar(50)" />
+            <name="JG" exp="价格" type="decimal(8, 2)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_10_A02_YCDJ" exp="用餐登记表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="SCID" exp="三餐ID" type="int" />
+            <name="RQ" exp="日期" type="datetime" />
+            <name="SFJC" exp="是否就餐" type="nvarchar(1)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_11_A01_RKJL" exp="入库记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ZCM" exp="资产名" type="nvarchar(50)" />
+            <name="SL" exp="数量" type="int" />
+            <name="DJ" exp="单价" type="decimal(8, 2)" />
+            <name="RKSJ" exp="入库时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_11_A02_JSLYJL" exp="教师领用记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="LYJSID" exp="领用教师ID" type="int" />
+            <name="ZCID" exp="资产ID" type="int" />
+            <name="LYSL" exp="领用数量" type="int" />
+            <name="LYSJ" exp="领用时间" type="datetime" />
+            <name="SHZT" exp="审核状态" type="int" />
+            <name="SHYHID" exp="审核用户ID" type="nvarchar(20)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXX_11_A03_BJLYJL" exp="班级领用记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="ZCID" exp="资产ID" type="int" />
+            <name="LYR" exp="领用人" type="nvarchar(50)" />
+            <name="LYSL" exp="领用数量" type="int" />
+            <name="LYSJ" exp="领用时间" type="datetime" />
+            <name="SHZT" exp="审核状态" type="int" />
+            <name="SHYHID" exp="审核用户ID" type="nvarchar(20)" />
+        </field_area>
+    </table>
 </namespace>
