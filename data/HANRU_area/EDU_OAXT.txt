@@ -1278,6 +1278,96 @@
             <name="NR" exp="内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_41_A01_ZRGSLB" exp="值日公示类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A02_ZRGSNR" exp="值日公示内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBID" exp="类别ID" type="int" />
+            <name="FBYHID" exp="发布用户ID" type="nvarchar(20)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A11_NJZGSLB" exp="年级组公示类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A12_NJZGSNR" exp="年级组公示内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBID" exp="类别ID" type="int" />
+            <name="FBYHID" exp="发布用户ID" type="nvarchar(20)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A21_JYXXGSLB" exp="教研信息公示类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A22_JYXXGSNR" exp="教研信息公示内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBID" exp="类别ID" type="int" />
+            <name="FBYHID" exp="发布用户ID" type="nvarchar(20)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A31_MZLYGSLB" exp="每周礼仪公示类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A32_MZLYGSNR" exp="每周礼仪公示内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBID" exp="类别ID" type="int" />
+            <name="FBYHID" exp="发布用户ID" type="nvarchar(20)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A41_XXGGLB" exp="学校公告类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBMC" exp="类别名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A42_XXGGNR" exp="学校公告内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LBID" exp="类别ID" type="int" />
+            <name="FBYHID" exp="发布用户ID" type="nvarchar(20)" />
+            <name="FBSJ" exp="发布时间" type="datetime" />
+            <name="BT" exp="标题" type="nvarchar(200)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
     <table name="EDU_OAXT_50_A01_DFXM" exp="打分项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
