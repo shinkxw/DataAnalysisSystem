@@ -6,10 +6,10 @@
             <name="VALUE" exp="ÅäÖÃÖµ" type="nvarchar(200)" />
         </field_area>
         <data_area>
-            <ID="1001" VALUE="http://115.236.101.41/yxtlogin/index.jsp" />
+            <ID="1001" VALUE="http://www.114school.com/yxt/index.html" />
             <ID="1002" VALUE="http://sso.114school.com/cas/" />
             <ID="1003" VALUE="http://www2.114school.com/203S/api4LoginUser.do" />
-            <ID="1004" VALUE="http://115.236.101.57/MsgService/SiServer" />
+            <ID="1004" VALUE="http://122.229.30.151:8888/MsgService/SiServer" />
             <ID="1005" VALUE="0573" />
             <ID="1006" VALUE="83572000" />
             <ID="1007" VALUE="83572499" />
