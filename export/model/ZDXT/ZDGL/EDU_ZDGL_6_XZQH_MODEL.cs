@@ -4,17 +4,16 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_04_SXDW_metadata))]
-    public partial class EDU_ZDGL_04_SXDW
+    [MetadataType(typeof(EDU_ZDGL_6_XZQH_metadata))]
+    public partial class EDU_ZDGL_6_XZQH
     {
-        public EDU_ZDGL_04_SXDW()
+        public EDU_ZDGL_6_XZQH()
         {
             QHM = "";
-            SSSJQHM = "";
-            DWMC = "";
-            DWMCPY = "";
+            QHMC = "";
+            QH = "";
         }
-        public class EDU_ZDGL_04_SXDW_metadata
+        public class EDU_ZDGL_6_XZQH_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -23,30 +22,23 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "区划码")]
-            [StringLength(6)]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String QHM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "所属市级区划码")]
-            [StringLength(4)]
+            [Display(Name = "区划名称")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SSSJQHM { get; set; }
+            public String QHMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "单位名称")]
-            [StringLength(50)]
+            [Display(Name = "区号")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DWMC { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "单位名称拼音")]
-            [StringLength(500)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DWMCPY { get; set; }
+            public String QH { get; set; }
 
 
         }

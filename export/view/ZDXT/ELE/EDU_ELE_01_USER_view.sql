@@ -33,15 +33,7 @@ SELECT a.[LOGINNAME]--用户名
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
       ,c.SYDX as c_APP_SYDX--应用表 使用对象
       ,c.KJDX as c_APP_KJDX--应用表 可见对象
-      ,d.BMMC as d_BM_BMMC--部门信息表 部门名称
-      ,d.SXDWLB as d_BM_SXDWLB--部门信息表 送修单位列表
-      ,d.SXDWMCLB as d_BM_SXDWMCLB--部门信息表 送修单位名称列表
-      ,d.DZ as d_BM_DZ--部门信息表 地址
-      ,d.LXDH as d_BM_LXDH--部门信息表 联系电话
-      ,d.GSMC as d_BM_GSMC--部门信息表 公司名称
-      ,d.LXR as d_BM_LXR--部门信息表 联系人
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_06_BM AS d ON a.BMID = d.ID /*部门ID*/
+      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO

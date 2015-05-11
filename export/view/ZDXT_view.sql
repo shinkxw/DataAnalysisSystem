@@ -259,45 +259,53 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_36_A02
             and   type = 'V')
    drop view VIEW_EDU_OAXT_36_A02_BJGZJC_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_03_SBXH_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_5_SBXH_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_03_SBXH_DISP
+   drop view VIEW_EDU_ZDGL_5_SBXH_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_04_SXDW_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_8_KH_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_04_SXDW_DISP
+   drop view VIEW_EDU_ZDGL_8_KH_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_07_BXSB_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_11_FJPC_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_07_BXSB_DISP
+   drop view VIEW_EDU_ZDGL_11_FJPC_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_08_SXDXX_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_12_FJXX_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_08_SXDXX_DISP
+   drop view VIEW_EDU_ZDGL_12_FJXX_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_09_SXSB_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_13_FHPC_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_09_SXSB_DISP
+   drop view VIEW_EDU_ZDGL_13_FHPC_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_10_FXDXX_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_14_FHXX_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_10_FXDXX_DISP
+   drop view VIEW_EDU_ZDGL_14_FHXX_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_11_FXSB_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_16_JSD_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_11_FXSB_DISP
+   drop view VIEW_EDU_ZDGL_16_JSD_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_22_SXD_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_17_JSDXX_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_22_SXD_DISP
+   drop view VIEW_EDU_ZDGL_17_JSDXX_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_23_SXDSJ_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_18_JFD_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_23_SXDSJ_DISP
+   drop view VIEW_EDU_ZDGL_18_JFD_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_32_FXDSJ_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_19_JFDXX_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_32_FXDSJ_DISP
+   drop view VIEW_EDU_ZDGL_19_JFDXX_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_20_FHD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZDGL_20_FHD_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_21_FHDXX_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZDGL_21_FHDXX_DISP
 GO
 
 --应用系统用户表
@@ -334,17 +342,9 @@ SELECT a.[LOGINNAME]--用户名
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
       ,c.SYDX as c_APP_SYDX--应用表 使用对象
       ,c.KJDX as c_APP_KJDX--应用表 可见对象
-      ,d.BMMC as d_BM_BMMC--部门信息表 部门名称
-      ,d.SXDWLB as d_BM_SXDWLB--部门信息表 送修单位列表
-      ,d.SXDWMCLB as d_BM_SXDWMCLB--部门信息表 送修单位名称列表
-      ,d.DZ as d_BM_DZ--部门信息表 地址
-      ,d.LXDH as d_BM_LXDH--部门信息表 联系电话
-      ,d.GSMC as d_BM_GSMC--部门信息表 公司名称
-      ,d.LXR as d_BM_LXR--部门信息表 联系人
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_06_BM AS d ON a.BMID = d.ID /*部门ID*/
+      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
 GO
 
 --学校配置表
@@ -3479,383 +3479,309 @@ FROM dbo.EDU_OAXT_36_A02_BJGZJC AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_36_A01_BJGZLB AS c ON a.GZLBID = c.ID /*工作类别ID*/
 GO
 
---设备型号配置表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_03_SBXH_DISP]
+--设备型号表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_5_SBXH_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[SBLXID]--设备类型ID
+      ,a.[XX]--型号
+      ,a.[LXID]--类型ID
       ,a.[SCCJID]--生产厂家ID
-      ,a.[XHMC]--型号名称
-      ,a.[WLMS]--物料描述
-      ,a.[XHMCPY]--型号名称拼音
-      ,a.[WLBH]--物料编号
-      ,b.LXMC as b_SBLX_LXMC--设备类型配置表 类型名称
-      ,b.ZT as b_SBLX_ZT--设备类型配置表 状态
-      ,b.LXJC as b_SBLX_LXJC--设备类型配置表 类型简称
-      ,c.CJMC as c_SCCJ_CJMC--生产厂家信息表 厂家名称
-      ,c.ZT as c_SCCJ_ZT--生产厂家信息表 状态
+      ,a.[PY]--拼音
+      ,a.[MS]--描述
+      ,a.[JG]--价格
+      ,b.LXMC as b_SBXHLX_LXMC--设备型号类型表 类型名称
+      ,b.LXJC as b_SBXHLX_LXJC--设备型号类型表 类型简称
+      ,c.CJM as c_SCCJ_CJM--生产厂家表 厂家名
+      ,c.CJDZ as c_SCCJ_CJDZ--生产厂家表 厂家地址
+      ,c.LXR as c_SCCJ_LXR--生产厂家表 联系人
+      ,c.LXDH as c_SCCJ_LXDH--生产厂家表 联系电话
 
-FROM dbo.EDU_ZDGL_03_SBXH AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_01_SBLX AS b ON a.SBLXID = b.ID /*设备类型ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_02_SCCJ AS c ON a.SCCJID = c.ID /*生产厂家ID*/
+FROM dbo.EDU_ZDGL_5_SBXH AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_3_SBXHLX AS b ON a.LXID = b.ID /*类型ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_4_SCCJ AS c ON a.SCCJID = c.ID /*生产厂家ID*/
 GO
 
---送修单位信息表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_04_SXDW_DISP]
+--客户表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_8_KH_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[QHM]--区划码
-      ,a.[SSSJQHM]--所属市级区划码
+      ,a.[KHDM]--客户代码
+      ,a.[SZQYID]--所在区域ID
+      ,a.[SSGSID]--所属公司ID
       ,a.[DWMC]--单位名称
-      ,a.[DWMCPY]--单位名称拼音
-      ,b.MC as b_XZQH_MC--行政区划表 名称
+      ,a.[PY]--拼音
+      ,a.[KHDZ]--客户地址
+      ,a.[LXR]--联系人
+      ,a.[DH]--电话
+      ,b.QHM as b_XZQH_QHM--行政区划表 区划码
+      ,b.QHMC as b_XZQH_QHMC--行政区划表 区划名称
       ,b.QH as b_XZQH_QH--行政区划表 区号
+      ,c.GSDM as c_SSGS_GSDM--所属公司表 公司代码
+      ,c.GSM as c_SSGS_GSM--所属公司表 公司名
 
-FROM dbo.EDU_ZDGL_04_SXDW AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_10_XZQH AS b ON a.QHM = b.DM /*区划码*/
+FROM dbo.EDU_ZDGL_8_KH AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_6_XZQH AS b ON a.SZQYID = b.ID /*所在区域ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_7_SSGS AS c ON a.SSGSID = c.ID /*所属公司ID*/
 GO
 
---报修设备表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_07_BXSB_DISP]
+--分拣批次表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_11_FJPC_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[SBXHID]--设备型号ID
-      ,a.[SXDWID]--送修单位ID
-      ,a.[SXDWMC]--送修单位名称
-      ,a.[SNM]--S/N码
-      ,a.[SCRQ]--生产日期
-      ,a.[SBLXMC]--设备类型名称
-      ,a.[SCCJMC]--生产厂家名称
-      ,a.[SBXHMC]--设备型号名称
-      ,a.[BXZT]--保修状态
-      ,a.[BXHTID]--保修合同ID
-      ,a.[SBZT]--设备状态
-      ,a.[WXZT]--维修状态
-      ,a.[RKSJ]--入库时间
-      ,a.[RKCZYHID]--入库操作用户
-      ,a.[FXM]--返修码
-      ,a.[FXXX]--返修信息
-      ,a.[FXXH]--返修序号
-      ,a.[WXJSSJ]--维修结束时间
-      ,a.[WXJSDJYHID]--维修结束登记用户
-      ,b.SBLXID as b_SBXH_SBLXID--设备型号配置表 设备类型ID
-      ,b.SCCJID as b_SBXH_SCCJID--设备型号配置表 生产厂家ID
-      ,b.XHMC as b_SBXH_XHMC--设备型号配置表 型号名称
-      ,b.WLMS as b_SBXH_WLMS--设备型号配置表 物料描述
-      ,b.XHMCPY as b_SBXH_XHMCPY--设备型号配置表 型号名称拼音
-      ,b.WLBH as b_SBXH_WLBH--设备型号配置表 物料编号
-      ,c.QHM as c_SXDW_QHM--送修单位信息表 区划码
-      ,c.SSSJQHM as c_SXDW_SSSJQHM--送修单位信息表 所属市级区划码
-      ,c.DWMC as c_SXDW_DWMC--送修单位信息表 单位名称
-      ,c.DWMCPY as c_SXDW_DWMCPY--送修单位信息表 单位名称拼音
-      ,d.HTMC as d_BXHT_HTMC--保修合同表 合同名称
-      ,d.WXSX as d_BXHT_WXSX--保修合同表 维修时限
-      ,d.BXSC as d_BXHT_BXSC--保修合同表 保修时长
-      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
-      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
-      ,e.PWD as e_USER_PWD--应用系统用户表 密码
-      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
-      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
-      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
-      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,e.XM as e_USER_XM--应用系统用户表 姓名
-      ,e.XB as e_USER_XB--应用系统用户表 性别
-      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
-      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
-      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
-      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
-      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
-      ,e.BMID as e_USER_BMID--应用系统用户表 部门ID
-      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
-      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,f.PWD as f_USER_PWD--应用系统用户表 密码
-      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
-      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
-      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
-      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,f.XM as f_USER_XM--应用系统用户表 姓名
-      ,f.XB as f_USER_XB--应用系统用户表 性别
-      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
-      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
-      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
-      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
-      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
-      ,f.BMID as f_USER_BMID--应用系统用户表 部门ID
-
-FROM dbo.EDU_ZDGL_07_BXSB AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_03_SBXH AS b ON a.SBXHID = b.ID /*设备型号ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_04_SXDW AS c ON a.SXDWID = c.ID /*送修单位ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_05_BXHT AS d ON a.BXHTID = d.ID /*保修合同ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS e ON a.RKCZYHID = e.LOGINNAME /*入库操作用户*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS f ON a.WXJSDJYHID = f.LOGINNAME /*维修结束登记用户*/
-GO
-
---送修单信息表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_08_SXDXX_DISP]
-AS
-SELECT a.[ID]--编号
-      ,a.[SXDH]--送修单号
-      ,a.[CJYHID]--创建用户
-      ,a.[CJSJ]--创建时间
-      ,a.[SXSJ]--送修时间
+      ,a.[PCH]--批次号
+      ,a.[KHID]--客户ID
+      ,a.[JSRQ]--接受日期
+      ,a.[LRSJ]--录入时间
+      ,a.[FJWGSJ]--分拣完工时间
+      ,a.[FJFZR]--分拣负责人
+      ,a.[QRR]--确认人
+      ,a.[QRRLXDH]--确认人联系电话
       ,a.[QRSJ]--确认时间
-      ,a.[ZT]--状态
-      ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
-      ,b.APPID as b_USER_APPID--应用系统用户表 应用ID
-      ,b.PWD as b_USER_PWD--应用系统用户表 密码
-      ,b.STATUS as b_USER_STATUS--应用系统用户表 用户状态
-      ,b.USERTYPE as b_USER_USERTYPE--应用系统用户表 用户类别
-      ,b.USERID as b_USER_USERID--应用系统用户表 用户ID
-      ,b.ROLEIDLst as b_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,b.XM as b_USER_XM--应用系统用户表 姓名
-      ,b.XB as b_USER_XB--应用系统用户表 性别
-      ,b.QQ as b_USER_QQ--应用系统用户表 QQ
-      ,b.DZYJ as b_USER_DZYJ--应用系统用户表 电子邮件
-      ,b.LXDH as b_USER_LXDH--应用系统用户表 联系电话
-      ,b.ZJDLSJ as b_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,b.DLCGCS as b_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,b.YHCJSJ as b_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,b.YHRY as b_USER_YHRY--应用系统用户表 用户荣誉
-      ,b.YHJF as b_USER_YHJF--应用系统用户表 用户积分
-      ,b.BMID as b_USER_BMID--应用系统用户表 部门ID
+      ,a.[CSJG]--测试结果
+      ,b.KHDM as b_KH_KHDM--客户表 客户代码
+      ,b.SZQYID as b_KH_SZQYID--客户表 所在区域ID
+      ,b.SSGSID as b_KH_SSGSID--客户表 所属公司ID
+      ,b.DWMC as b_KH_DWMC--客户表 单位名称
+      ,b.PY as b_KH_PY--客户表 拼音
+      ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
+      ,b.LXR as b_KH_LXR--客户表 联系人
+      ,b.DH as b_KH_DH--客户表 电话
 
-FROM dbo.EDU_ZDGL_08_SXDXX AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS b ON a.CJYHID = b.LOGINNAME /*创建用户*/
+FROM dbo.EDU_ZDGL_11_FJPC AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_8_KH AS b ON a.KHID = b.ID /*客户ID*/
 GO
 
---送修设备表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_09_SXSB_DISP]
+--分拣详细表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_12_FJXX_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[SXDID]--送修单ID
-      ,a.[BXSBID]--报修设备ID
-      ,b.SXDH as b_SXDXX_SXDH--送修单信息表 送修单号
-      ,b.CJYHID as b_SXDXX_CJYHID--送修单信息表 创建用户
-      ,b.CJSJ as b_SXDXX_CJSJ--送修单信息表 创建时间
-      ,b.SXSJ as b_SXDXX_SXSJ--送修单信息表 送修时间
-      ,b.QRSJ as b_SXDXX_QRSJ--送修单信息表 确认时间
-      ,b.ZT as b_SXDXX_ZT--送修单信息表 状态
-      ,c.SBXHID as c_BXSB_SBXHID--报修设备表 设备型号ID
-      ,c.SXDWID as c_BXSB_SXDWID--报修设备表 送修单位ID
-      ,c.SXDWMC as c_BXSB_SXDWMC--报修设备表 送修单位名称
-      ,c.SNM as c_BXSB_SNM--报修设备表 S/N码
-      ,c.SCRQ as c_BXSB_SCRQ--报修设备表 生产日期
-      ,c.SBLXMC as c_BXSB_SBLXMC--报修设备表 设备类型名称
-      ,c.SCCJMC as c_BXSB_SCCJMC--报修设备表 生产厂家名称
-      ,c.SBXHMC as c_BXSB_SBXHMC--报修设备表 设备型号名称
-      ,c.BXZT as c_BXSB_BXZT--报修设备表 保修状态
-      ,c.BXHTID as c_BXSB_BXHTID--报修设备表 保修合同ID
-      ,c.SBZT as c_BXSB_SBZT--报修设备表 设备状态
-      ,c.WXZT as c_BXSB_WXZT--报修设备表 维修状态
-      ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
-      ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
-      ,c.FXM as c_BXSB_FXM--报修设备表 返修码
-      ,c.FXXX as c_BXSB_FXXX--报修设备表 返修信息
-      ,c.FXXH as c_BXSB_FXXH--报修设备表 返修序号
-      ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
-      ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
+      ,a.[PCH]--批次号
+      ,a.[XHID]--型号ID
+      ,a.[SRSL]--收入数量
+      ,a.[LPSL]--良品数量
+      ,a.[GZSL]--故障数量
+      ,a.[BFSL]--报废数量
+      ,a.[RWSHSL]--人为损坏数量
+      ,a.[QT]--其他
+      ,a.[HJ]--合计
+      ,a.[BZ]--备注
+      ,b.XX as b_SBXH_XX--设备型号表 型号
+      ,b.LXID as b_SBXH_LXID--设备型号表 类型ID
+      ,b.SCCJID as b_SBXH_SCCJID--设备型号表 生产厂家ID
+      ,b.PY as b_SBXH_PY--设备型号表 拼音
+      ,b.MS as b_SBXH_MS--设备型号表 描述
+      ,b.JG as b_SBXH_JG--设备型号表 价格
 
-FROM dbo.EDU_ZDGL_09_SXSB AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_08_SXDXX AS b ON a.SXDID = b.ID /*送修单ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_07_BXSB AS c ON a.BXSBID = c.ID /*报修设备ID*/
+FROM dbo.EDU_ZDGL_12_FJXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_5_SBXH AS b ON a.XHID = b.ID /*型号ID*/
 GO
 
---返修单信息表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_10_FXDXX_DISP]
+--发货批次表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_13_FHPC_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[FXDH]--返修单号
-      ,a.[CJYHID]--创建用户
-      ,a.[CJSJ]--创建时间
-      ,a.[FXSJ]--返修时间
-      ,a.[QRSJ]--确认时间
-      ,a.[ZT]--状态
-      ,a.[SHDW]--收货单位
-      ,a.[KDDH]--快递单号
-      ,b.SCHOOLID as b_USER_SCHOOLID--应用系统用户表 学校ID
-      ,b.APPID as b_USER_APPID--应用系统用户表 应用ID
-      ,b.PWD as b_USER_PWD--应用系统用户表 密码
-      ,b.STATUS as b_USER_STATUS--应用系统用户表 用户状态
-      ,b.USERTYPE as b_USER_USERTYPE--应用系统用户表 用户类别
-      ,b.USERID as b_USER_USERID--应用系统用户表 用户ID
-      ,b.ROLEIDLst as b_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,b.XM as b_USER_XM--应用系统用户表 姓名
-      ,b.XB as b_USER_XB--应用系统用户表 性别
-      ,b.QQ as b_USER_QQ--应用系统用户表 QQ
-      ,b.DZYJ as b_USER_DZYJ--应用系统用户表 电子邮件
-      ,b.LXDH as b_USER_LXDH--应用系统用户表 联系电话
-      ,b.ZJDLSJ as b_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,b.DLCGCS as b_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,b.YHCJSJ as b_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,b.YHRY as b_USER_YHRY--应用系统用户表 用户荣誉
-      ,b.YHJF as b_USER_YHJF--应用系统用户表 用户积分
-      ,b.BMID as b_USER_BMID--应用系统用户表 部门ID
+      ,a.[FHPCH]--发货批次号
+      ,a.[FHR]--发货人
+      ,a.[WLGSID]--物流公司ID
+      ,a.[ZXS]--总箱数
+      ,a.[FHSJ]--发货时间
+      ,b.GSDM as b_WLGS_GSDM--物流公司表 公司代码
+      ,b.GSM as b_WLGS_GSM--物流公司表 公司名
+      ,b.GSLXR as b_WLGS_GSLXR--物流公司表 公司联系人
+      ,b.LXDH as b_WLGS_LXDH--物流公司表 联系电话
 
-FROM dbo.EDU_ZDGL_10_FXDXX AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS b ON a.CJYHID = b.LOGINNAME /*创建用户*/
+FROM dbo.EDU_ZDGL_13_FHPC AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_15_WLGS AS b ON a.WLGSID = b.ID /*物流公司ID*/
 GO
 
---返修设备表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_11_FXSB_DISP]
+--发货详细表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_14_FHXX_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[FXDID]--返修单ID
-      ,a.[BXSBID]--报修设备ID
-      ,b.FXDH as b_FXDXX_FXDH--返修单信息表 返修单号
-      ,b.CJYHID as b_FXDXX_CJYHID--返修单信息表 创建用户
-      ,b.CJSJ as b_FXDXX_CJSJ--返修单信息表 创建时间
-      ,b.FXSJ as b_FXDXX_FXSJ--返修单信息表 返修时间
-      ,b.QRSJ as b_FXDXX_QRSJ--返修单信息表 确认时间
-      ,b.ZT as b_FXDXX_ZT--返修单信息表 状态
-      ,b.SHDW as b_FXDXX_SHDW--返修单信息表 收货单位
-      ,b.KDDH as b_FXDXX_KDDH--返修单信息表 快递单号
-      ,c.SBXHID as c_BXSB_SBXHID--报修设备表 设备型号ID
-      ,c.SXDWID as c_BXSB_SXDWID--报修设备表 送修单位ID
-      ,c.SXDWMC as c_BXSB_SXDWMC--报修设备表 送修单位名称
-      ,c.SNM as c_BXSB_SNM--报修设备表 S/N码
-      ,c.SCRQ as c_BXSB_SCRQ--报修设备表 生产日期
-      ,c.SBLXMC as c_BXSB_SBLXMC--报修设备表 设备类型名称
-      ,c.SCCJMC as c_BXSB_SCCJMC--报修设备表 生产厂家名称
-      ,c.SBXHMC as c_BXSB_SBXHMC--报修设备表 设备型号名称
-      ,c.BXZT as c_BXSB_BXZT--报修设备表 保修状态
-      ,c.BXHTID as c_BXSB_BXHTID--报修设备表 保修合同ID
-      ,c.SBZT as c_BXSB_SBZT--报修设备表 设备状态
-      ,c.WXZT as c_BXSB_WXZT--报修设备表 维修状态
-      ,c.RKSJ as c_BXSB_RKSJ--报修设备表 入库时间
-      ,c.RKCZYHID as c_BXSB_RKCZYHID--报修设备表 入库操作用户
-      ,c.FXM as c_BXSB_FXM--报修设备表 返修码
-      ,c.FXXX as c_BXSB_FXXX--报修设备表 返修信息
-      ,c.FXXH as c_BXSB_FXXH--报修设备表 返修序号
-      ,c.WXJSSJ as c_BXSB_WXJSSJ--报修设备表 维修结束时间
-      ,c.WXJSDJYHID as c_BXSB_WXJSDJYHID--报修设备表 维修结束登记用户
+      ,a.[FHPCID]--发货批次ID
+      ,a.[FJXXID]--分拣详细ID
+      ,a.[JCFW]--基础服务
+      ,a.[HK]--换壳
+      ,a.[WX]--维修
+      ,a.[XDY]--新电源
+      ,a.[JDY]--旧电源
+      ,a.[PJ]--配件
+      ,a.[TH]--退回
+      ,a.[QT]--其他
+      ,a.[WF]--未返
+      ,a.[FHRQ]--返回日期
+      ,b.FHPCH as b_FHPC_FHPCH--发货批次表 发货批次号
+      ,b.FHR as b_FHPC_FHR--发货批次表 发货人
+      ,b.WLGSID as b_FHPC_WLGSID--发货批次表 物流公司ID
+      ,b.ZXS as b_FHPC_ZXS--发货批次表 总箱数
+      ,b.FHSJ as b_FHPC_FHSJ--发货批次表 发货时间
+      ,c.PCH as c_FJXX_PCH--分拣详细表 批次号
+      ,c.XHID as c_FJXX_XHID--分拣详细表 型号ID
+      ,c.SRSL as c_FJXX_SRSL--分拣详细表 收入数量
+      ,c.LPSL as c_FJXX_LPSL--分拣详细表 良品数量
+      ,c.GZSL as c_FJXX_GZSL--分拣详细表 故障数量
+      ,c.BFSL as c_FJXX_BFSL--分拣详细表 报废数量
+      ,c.RWSHSL as c_FJXX_RWSHSL--分拣详细表 人为损坏数量
+      ,c.QT as c_FJXX_QT--分拣详细表 其他
+      ,c.HJ as c_FJXX_HJ--分拣详细表 合计
+      ,c.BZ as c_FJXX_BZ--分拣详细表 备注
 
-FROM dbo.EDU_ZDGL_11_FXSB AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_10_FXDXX AS b ON a.FXDID = b.ID /*返修单ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_07_BXSB AS c ON a.BXSBID = c.ID /*报修设备ID*/
+FROM dbo.EDU_ZDGL_14_FHXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_13_FHPC AS b ON a.FHPCID = b.ID /*发货批次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_12_FJXX AS c ON a.FJXXID = c.ID /*分拣详细ID*/
 GO
 
---送修单表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_22_SXD_DISP]
+--接收单表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_16_JSD_DISP]
 AS
 SELECT a.[ID]--编号
+      ,a.[JSDH]--接收单号
       ,a.[SXDWID]--送修单位ID
-      ,a.[SXDMC]--送修单名称
-      ,a.[SXDH]--送修单号
       ,a.[SXRQ]--送修日期
-      ,a.[GSXX]--公司信息
-      ,a.[LXRXX]--联系人信息
-      ,a.[LXDHXX]--联系电话信息
-      ,a.[DZXX]--地址信息
-      ,a.[QZXX]--签字信息
-      ,a.[TJYH]--添加用户
-      ,a.[TJSJ]--添加时间
-      ,b.QHM as b_SXDW_QHM--送修单位信息表 区划码
-      ,b.SSSJQHM as b_SXDW_SSSJQHM--送修单位信息表 所属市级区划码
-      ,b.DWMC as b_SXDW_DWMC--送修单位信息表 单位名称
-      ,b.DWMCPY as b_SXDW_DWMCPY--送修单位信息表 单位名称拼音
-      ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
-      ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
-      ,c.PWD as c_USER_PWD--应用系统用户表 密码
-      ,c.STATUS as c_USER_STATUS--应用系统用户表 用户状态
-      ,c.USERTYPE as c_USER_USERTYPE--应用系统用户表 用户类别
-      ,c.USERID as c_USER_USERID--应用系统用户表 用户ID
-      ,c.ROLEIDLst as c_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,c.XM as c_USER_XM--应用系统用户表 姓名
-      ,c.XB as c_USER_XB--应用系统用户表 性别
-      ,c.QQ as c_USER_QQ--应用系统用户表 QQ
-      ,c.DZYJ as c_USER_DZYJ--应用系统用户表 电子邮件
-      ,c.LXDH as c_USER_LXDH--应用系统用户表 联系电话
-      ,c.ZJDLSJ as c_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,c.DLCGCS as c_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,c.YHCJSJ as c_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,c.YHRY as c_USER_YHRY--应用系统用户表 用户荣誉
-      ,c.YHJF as c_USER_YHJF--应用系统用户表 用户积分
-      ,c.BMID as c_USER_BMID--应用系统用户表 部门ID
+      ,b.KHDM as b_KH_KHDM--客户表 客户代码
+      ,b.SZQYID as b_KH_SZQYID--客户表 所在区域ID
+      ,b.SSGSID as b_KH_SSGSID--客户表 所属公司ID
+      ,b.DWMC as b_KH_DWMC--客户表 单位名称
+      ,b.PY as b_KH_PY--客户表 拼音
+      ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
+      ,b.LXR as b_KH_LXR--客户表 联系人
+      ,b.DH as b_KH_DH--客户表 电话
 
-FROM dbo.EDU_ZDGL_22_SXD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_04_SXDW AS b ON a.SXDWID = b.ID /*送修单位ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS c ON a.TJYH = c.LOGINNAME /*添加用户*/
+FROM dbo.EDU_ZDGL_16_JSD AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_8_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/
 GO
 
---送修单数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_23_SXDSJ_DISP]
+--接收单详细表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_17_JSDXX_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[SXDID]--送修单ID
-      ,a.[SBXHID]--设备型号ID
-      ,a.[SXDXMID]--送修单项目ID
-      ,a.[SL]--数量
-      ,a.[WB]--文本
-      ,b.SXDWID as b_SXD_SXDWID--送修单表 送修单位ID
-      ,b.SXDMC as b_SXD_SXDMC--送修单表 送修单名称
-      ,b.SXDH as b_SXD_SXDH--送修单表 送修单号
-      ,b.SXRQ as b_SXD_SXRQ--送修单表 送修日期
-      ,b.GSXX as b_SXD_GSXX--送修单表 公司信息
-      ,b.LXRXX as b_SXD_LXRXX--送修单表 联系人信息
-      ,b.LXDHXX as b_SXD_LXDHXX--送修单表 联系电话信息
-      ,b.DZXX as b_SXD_DZXX--送修单表 地址信息
-      ,b.QZXX as b_SXD_QZXX--送修单表 签字信息
-      ,b.TJYH as b_SXD_TJYH--送修单表 添加用户
-      ,b.TJSJ as b_SXD_TJSJ--送修单表 添加时间
-      ,c.SBLXID as c_SBXH_SBLXID--设备型号配置表 设备类型ID
-      ,c.SCCJID as c_SBXH_SCCJID--设备型号配置表 生产厂家ID
-      ,c.XHMC as c_SBXH_XHMC--设备型号配置表 型号名称
-      ,c.WLMS as c_SBXH_WLMS--设备型号配置表 物料描述
-      ,c.XHMCPY as c_SBXH_XHMCPY--设备型号配置表 型号名称拼音
-      ,c.WLBH as c_SBXH_WLBH--设备型号配置表 物料编号
-      ,d.SSLB as d_SXDXM_SSLB--送修单项目表 所属类别
-      ,d.XMMC as d_SXDXM_XMMC--送修单项目表 项目名称
-      ,d.SFXS as d_SXDXM_SFXS--送修单项目表 是否显示
-      ,d.PLSX as d_SXDXM_PLSX--送修单项目表 排列顺序
+      ,a.[XHID]--型号ID
+      ,a.[XH]--序号
+      ,a.[SN]--SN号
+      ,a.[SFECFX]--是否二次返修
+      ,a.[SXDWID]--送修单位ID
+      ,a.[GZXXID]--故障信息ID
+      ,a.[WXXXID]--维修信息ID
+      ,a.[WXRID]--维修人ID
+      ,a.[WXRQ]--维修日期
+      ,b.XX as b_SBXH_XX--设备型号表 型号
+      ,b.LXID as b_SBXH_LXID--设备型号表 类型ID
+      ,b.SCCJID as b_SBXH_SCCJID--设备型号表 生产厂家ID
+      ,b.PY as b_SBXH_PY--设备型号表 拼音
+      ,b.MS as b_SBXH_MS--设备型号表 描述
+      ,b.JG as b_SBXH_JG--设备型号表 价格
+      ,c.MC as c_SFBZ_MC--是否标志代码表 名称
+      ,d.KHDM as d_KH_KHDM--客户表 客户代码
+      ,d.SZQYID as d_KH_SZQYID--客户表 所在区域ID
+      ,d.SSGSID as d_KH_SSGSID--客户表 所属公司ID
+      ,d.DWMC as d_KH_DWMC--客户表 单位名称
+      ,d.PY as d_KH_PY--客户表 拼音
+      ,d.KHDZ as d_KH_KHDZ--客户表 客户地址
+      ,d.LXR as d_KH_LXR--客户表 联系人
+      ,d.DH as d_KH_DH--客户表 电话
+      ,e.GZDM as e_GZDM_GZDM--故障代码表 故障代码
+      ,e.GZXX as e_GZDM_GZXX--故障代码表 故障现象
+      ,f.WXDM as f_WXDM_WXDM--维修代码表 维修代码
+      ,f.WXNR as f_WXDM_WXNR--维修代码表 维修内容
+      ,f.WXJG as f_WXDM_WXJG--维修代码表 维修结果
+      ,g.GH as g_WXR_GH--维修人表 工号
+      ,g.XM as g_WXR_XM--维修人表 姓名
+      ,g.LXDH as g_WXR_LXDH--维修人表 联系电话
 
-FROM dbo.EDU_ZDGL_23_SXDSJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_22_SXD AS b ON a.SXDID = b.ID /*送修单ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_03_SBXH AS c ON a.SBXHID = c.ID /*设备型号ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_21_SXDXM AS d ON a.SXDXMID = d.ID /*送修单项目ID*/
+FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_5_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS c ON a.SFECFX = c.DM /*是否二次返修*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_8_KH AS d ON a.SXDWID = d.ID /*送修单位ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_1_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_2_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/
 GO
 
---返修单数据表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_32_FXDSJ_DISP]
+--交付单表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_18_JFD_DISP]
 AS
 SELECT a.[ID]--编号
-      ,a.[FXDID]--返修单ID
-      ,a.[WLMC]--物料名称
-      ,a.[PZ]--配置
-      ,a.[DW]--单位
-      ,a.[SL]--数量
-      ,a.[FY]--费用
-      ,a.[RWSM]--任务说明
-      ,a.[CLJG]--处理结果
-      ,b.FXDH as b_FXD_FXDH--返修单表 返修单号
-      ,b.PDBM as b_FXD_PDBM--返修单表 派单部门
-      ,b.PDY as b_FXD_PDY--返修单表 派单员
-      ,b.PDSJ as b_FXD_PDSJ--返修单表 派单时间
-      ,b.SHDW as b_FXD_SHDW--返修单表 收货单位
-      ,b.LXR as b_FXD_LXR--返修单表 联系人
-      ,b.LXDH as b_FXD_LXDH--返修单表 联系电话
-      ,b.WGSX as b_FXD_WGSX--返修单表 完工时限
-      ,b.DZ as b_FXD_DZ--返修单表 地址
-      ,b.ZJTS as b_FXD_ZJTS--返修单表 总计台数
-      ,b.ZJJS as b_FXD_ZJJS--返修单表 总计件数
-      ,b.SLBM as b_FXD_SLBM--返修单表 受理部门
-      ,b.SDY as b_FXD_SDY--返修单表 受单员
-      ,b.QSY as b_FXD_QSY--返修单表 签收员
-      ,b.QSSJ as b_FXD_QSSJ--返修单表 签收时间
-      ,b.FWQK as b_FXD_FWQK--返修单表 服务情况
-      ,b.FWGCS as b_FXD_FWGCS--返修单表 服务工程师
-      ,b.WGSJ as b_FXD_WGSJ--返修单表 完工时间
-      ,b.YSQK as b_FXD_YSQK--返修单表 验收情况
-      ,b.YSRY as b_FXD_YSRY--返修单表 验收人员
-      ,b.YSSJ as b_FXD_YSSJ--返修单表 验收时间
-      ,b.TJYH as b_FXD_TJYH--返修单表 添加用户
-      ,b.TJSJ as b_FXD_TJSJ--返修单表 添加时间
+      ,a.[JFDH]--交付单号
+      ,a.[WXSID]--维修商ID
+      ,a.[JFRQ]--交付日期
+      ,b.WXSDM as b_WXS_WXSDM--维修商表 维修商代码
+      ,b.WXSMC as b_WXS_WXSMC--维修商表 维修商名称
+      ,b.LXR as b_WXS_LXR--维修商表 联系人
+      ,b.LXDM as b_WXS_LXDM--维修商表 联系代码
+      ,b.DZ as b_WXS_DZ--维修商表 地址
 
-FROM dbo.EDU_ZDGL_32_FXDSJ AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_31_FXD AS b ON a.FXDID = b.ID /*返修单ID*/
+FROM dbo.EDU_ZDGL_18_JFD AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_9_WXS AS b ON a.WXSID = b.ID /*维修商ID*/
+GO
+
+--交付单详细表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_19_JFDXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[JFDID]--交付单ID
+      ,a.[JSDXXID]--接收单详细ID
+      ,b.JFDH as b_JFD_JFDH--交付单表 交付单号
+      ,b.WXSID as b_JFD_WXSID--交付单表 维修商ID
+      ,b.JFRQ as b_JFD_JFRQ--交付单表 交付日期
+      ,c.XHID as c_JSDXX_XHID--接收单详细表 型号ID
+      ,c.XH as c_JSDXX_XH--接收单详细表 序号
+      ,c.SN as c_JSDXX_SN--接收单详细表 SN号
+      ,c.SFECFX as c_JSDXX_SFECFX--接收单详细表 是否二次返修
+      ,[cb].MC as c_JSDXX_SFECFX_MC--是否标志代码表 名称
+      ,c.SXDWID as c_JSDXX_SXDWID--接收单详细表 送修单位ID
+      ,c.GZXXID as c_JSDXX_GZXXID--接收单详细表 故障信息ID
+      ,c.WXXXID as c_JSDXX_WXXXID--接收单详细表 维修信息ID
+      ,c.WXRID as c_JSDXX_WXRID--接收单详细表 维修人ID
+      ,c.WXRQ as c_JSDXX_WXRQ--接收单详细表 维修日期
+
+FROM dbo.EDU_ZDGL_19_JFDXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_18_JFD AS b ON a.JFDID = b.ID /*交付单ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_17_JSDXX AS c ON a.JSDXXID = c.ID /*接收单详细ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFECFX = [cb].DM /*是否二次返修*/
+GO
+
+--返回单表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_20_FHD_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[FHDH]--返回单号
+      ,a.[FHRQ]--返回日期
+      ,a.[FHDWID]--返回单位ID
+      ,b.KHDM as b_KH_KHDM--客户表 客户代码
+      ,b.SZQYID as b_KH_SZQYID--客户表 所在区域ID
+      ,b.SSGSID as b_KH_SSGSID--客户表 所属公司ID
+      ,b.DWMC as b_KH_DWMC--客户表 单位名称
+      ,b.PY as b_KH_PY--客户表 拼音
+      ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
+      ,b.LXR as b_KH_LXR--客户表 联系人
+      ,b.DH as b_KH_DH--客户表 电话
+
+FROM dbo.EDU_ZDGL_20_FHD AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_8_KH AS b ON a.FHDWID = b.ID /*返回单位ID*/
+GO
+
+--返回单详细表
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_21_FHDXX_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[FHDID]--返回单ID
+      ,a.[JSDXXID]--接收单详细ID
+      ,b.FHDH as b_FHD_FHDH--返回单表 返回单号
+      ,b.FHRQ as b_FHD_FHRQ--返回单表 返回日期
+      ,b.FHDWID as b_FHD_FHDWID--返回单表 返回单位ID
+      ,c.XHID as c_JSDXX_XHID--接收单详细表 型号ID
+      ,c.XH as c_JSDXX_XH--接收单详细表 序号
+      ,c.SN as c_JSDXX_SN--接收单详细表 SN号
+      ,c.SFECFX as c_JSDXX_SFECFX--接收单详细表 是否二次返修
+      ,[cb].MC as c_JSDXX_SFECFX_MC--是否标志代码表 名称
+      ,c.SXDWID as c_JSDXX_SXDWID--接收单详细表 送修单位ID
+      ,c.GZXXID as c_JSDXX_GZXXID--接收单详细表 故障信息ID
+      ,c.WXXXID as c_JSDXX_WXXXID--接收单详细表 维修信息ID
+      ,c.WXRID as c_JSDXX_WXRID--接收单详细表 维修人ID
+      ,c.WXRQ as c_JSDXX_WXRQ--接收单详细表 维修日期
+
+FROM dbo.EDU_ZDGL_21_FHDXX AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_20_FHD AS b ON a.FHDID = b.ID /*返回单ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_17_JSDXX AS c ON a.JSDXXID = c.ID /*接收单详细ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cb] ON c.SFECFX = [cb].DM /*是否二次返修*/
 GO

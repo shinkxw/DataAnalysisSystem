@@ -4,20 +4,19 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_06_BM_metadata))]
-    public partial class EDU_ZDGL_06_BM
+    [MetadataType(typeof(EDU_ZDGL_8_KH_metadata))]
+    public partial class EDU_ZDGL_8_KH
     {
-        public EDU_ZDGL_06_BM()
+        public EDU_ZDGL_8_KH()
         {
-            BMMC = "";
-            SXDWLB = "";
-            SXDWMCLB = "";
-            DZ = "";
-            LXDH = "";
-            GSMC = "";
+            KHDM = "";
+            DWMC = "";
+            PY = "";
+            KHDZ = "";
             LXR = "";
+            DH = "";
         }
-        public class EDU_ZDGL_06_BM_metadata
+        public class EDU_ZDGL_8_KH_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -25,43 +24,41 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "部门名称")]
-            [StringLength(20)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String BMMC { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "送修单位列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SXDWLB { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "送修单位名称列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String SXDWMCLB { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "地址")]
+            [Display(Name = "客户代码")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DZ { get; set; }
+            public String KHDM { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "所在区域")]
+            public Int32 SZQYID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "所属公司")]
+            public Int32 SSGSID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "联系电话")]
+            [Display(Name = "单位名称")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LXDH { get; set; }
+            public String DWMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "公司名称")]
+            [Display(Name = "拼音")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String GSMC { get; set; }
+            public String PY { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "客户地址")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KHDZ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -69,6 +66,13 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String LXR { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "电话")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DH { get; set; }
 
 
         }

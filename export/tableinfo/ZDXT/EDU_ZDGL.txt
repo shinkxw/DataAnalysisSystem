@@ -1,162 +1,165 @@
 encoding: UTF-8
-EDU_ZDGL_01_SBLX  设备类型配置表
+EDU_ZDGL_1_GZDM  故障代码表
   ID            编号                    int            主键
-  LXMC          类型名称                nvarchar(50)   非主
-  ZT            状态                    int            非主
-  LXJC          类型简称                nvarchar(50)   非主
+  GZDM          故障代码                nvarchar(200)  非主
+  GZXX          故障现象                nvarchar(200)  非主
 
-EDU_ZDGL_02_SCCJ  生产厂家信息表
+EDU_ZDGL_2_WXDM  维修代码表
   ID            编号                    int            主键
-  CJMC          厂家名称                nvarchar(50)   非主
-  ZT            状态                    int            非主
+  WXDM          维修代码                nvarchar(200)  非主
+  WXNR          维修内容                nvarchar(500)  非主
+  WXJG          维修结果                nvarchar(500)  非主
 
-EDU_ZDGL_03_SBXH  设备型号配置表
+EDU_ZDGL_3_SBXHLX  设备型号类型表
   ID            编号                    int            主键
-  SBLXID        设备类型ID              int            非主        设备类型配置表
-  SCCJID        生产厂家ID              int            非主        生产厂家信息表
-  XHMC          型号名称                nvarchar(50)   非主
-  WLMS          物料描述                nvarchar(500)  非主
-  XHMCPY        型号名称拼音            nvarchar(500)  非主
-  WLBH          物料编号                nvarchar(200)  非主
+  LXMC          类型名称                nvarchar(200)  非主
+  LXJC          类型简称                nvarchar(200)  非主
 
-EDU_ZDGL_04_SXDW  送修单位信息表
+EDU_ZDGL_4_SCCJ  生产厂家表
   ID            编号                    int            主键
-  QHM           区划码                  nvarchar(6)    非主        行政区划表
-  SSSJQHM       所属市级区划码          nvarchar(4)    非主
-  DWMC          单位名称                nvarchar(50)   非主
-  DWMCPY        单位名称拼音            nvarchar(500)  非主
-
-EDU_ZDGL_05_BXHT  保修合同表
-  ID            编号                    int            主键
-  HTMC          合同名称                nvarchar(50)   非主
-  WXSX          维修时限                int            非主
-  BXSC          保修时长                int            非主
-
-EDU_ZDGL_06_BM  部门信息表
-  ID            编号                    int            主键
-  BMMC          部门名称                nvarchar(20)   非主
-  SXDWLB        送修单位列表            text           非主
-  SXDWMCLB      送修单位名称列表        text           非主
-  DZ            地址                    nvarchar(200)  非主
-  LXDH          联系电话                nvarchar(200)  非主
-  GSMC          公司名称                nvarchar(200)  非主
+  CJM           厂家名                  nvarchar(200)  非主
+  CJDZ          厂家地址                nvarchar(500)  非主
   LXR           联系人                  nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
 
-EDU_ZDGL_07_BXSB  报修设备表
+EDU_ZDGL_5_SBXH  设备型号表
   ID            编号                    int            主键
-  SBXHID        设备型号ID              int            非主        设备型号配置表
-  SXDWID        送修单位ID              int            非主        送修单位信息表
-  SXDWMC        送修单位名称            nvarchar(50)   非主
-  SNM           S/N码                   nvarchar(100)  非主
-  SCRQ          生产日期                datetime       非主
-  SBLXMC        设备类型名称            nvarchar(50)   非主
-  SCCJMC        生产厂家名称            nvarchar(50)   非主
-  SBXHMC        设备型号名称            nvarchar(50)   非主
-  BXZT          保修状态                int            非主
-  BXHTID        保修合同ID              int            非主        保修合同表
-  SBZT          设备状态                int            非主
-  WXZT          维修状态                int            非主
-  RKSJ          入库时间                datetime       非主
-  RKCZYHID      入库操作用户            nvarchar(20)   非主        应用系统用户表
-  FXM           返修码                  nvarchar(100)  非主
-  FXXX          返修信息                nvarchar(100)  非主
-  FXXH          返修序号                int            非主
-  WXJSSJ        维修结束时间            datetime       非主
-  WXJSDJYHID    维修结束登记用户        nvarchar(20)   非主        应用系统用户表
+  XX            型号                    nvarchar(200)  非主
+  LXID          类型ID                  int            非主        设备型号类型表
+  SCCJID        生产厂家ID              int            非主        生产厂家表
+  PY            拼音                    nvarchar(200)  非主
+  MS            描述                    nvarchar(200)  非主
+  JG            价格                    float          非主
 
-EDU_ZDGL_08_SXDXX  送修单信息表
+EDU_ZDGL_6_XZQH  行政区划表
   ID            编号                    int            主键
-  SXDH          送修单号                nvarchar(50)   非主
-  CJYHID        创建用户                nvarchar(20)   非主        应用系统用户表
-  CJSJ          创建时间                datetime       非主
-  SXSJ          送修时间                datetime       非主
+  QHM           区划码                  nvarchar(200)  非主
+  QHMC          区划名称                nvarchar(200)  非主
+  QH            区号                    nvarchar(200)  非主
+
+EDU_ZDGL_7_SSGS  所属公司表
+  ID            编号                    int            主键
+  GSDM          公司代码                nvarchar(200)  非主
+  GSM           公司名                  nvarchar(200)  非主
+
+EDU_ZDGL_8_KH  客户表
+  ID            编号                    int            主键
+  KHDM          客户代码                nvarchar(200)  非主
+  SZQYID        所在区域ID              int            非主        行政区划表
+  SSGSID        所属公司ID              int            非主        所属公司表
+  DWMC          单位名称                nvarchar(200)  非主
+  PY            拼音                    nvarchar(200)  非主
+  KHDZ          客户地址                nvarchar(200)  非主
+  LXR           联系人                  nvarchar(200)  非主
+  DH            电话                    nvarchar(200)  非主
+
+EDU_ZDGL_9_WXS  维修商表
+  ID            编号                    int            主键
+  WXSDM         维修商代码              nvarchar(200)  非主
+  WXSMC         维修商名称              nvarchar(200)  非主
+  LXR           联系人                  nvarchar(200)  非主
+  LXDM          联系代码                nvarchar(200)  非主
+  DZ            地址                    nvarchar(200)  非主
+
+EDU_ZDGL_10_WXR  维修人表
+  ID            编号                    int            主键
+  GH            工号                    nvarchar(200)  非主
+  XM            姓名                    nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
+
+EDU_ZDGL_11_FJPC  分拣批次表
+  ID            编号                    int            主键
+  PCH           批次号                  nvarchar(200)  非主
+  KHID          客户ID                  int            非主        客户表
+  JSRQ          接受日期                datetime       非主
+  LRSJ          录入时间                datetime       非主
+  FJWGSJ        分拣完工时间            datetime       非主
+  FJFZR         分拣负责人              nvarchar(200)  非主
+  QRR           确认人                  nvarchar(200)  非主
+  QRRLXDH       确认人联系电话          nvarchar(200)  非主
   QRSJ          确认时间                datetime       非主
-  ZT            状态                    int            非主
+  CSJG          测试结果                int            非主
 
-EDU_ZDGL_09_SXSB  送修设备表
-  ID            编号                    int            自增主键
-  SXDID         送修单ID                int            非主        送修单信息表
-  BXSBID        报修设备ID              int            非主        报修设备表
-
-EDU_ZDGL_10_FXDXX  返修单信息表
+EDU_ZDGL_12_FJXX  分拣详细表
   ID            编号                    int            主键
-  FXDH          返修单号                nvarchar(50)   非主
-  CJYHID        创建用户                nvarchar(20)   非主        应用系统用户表
-  CJSJ          创建时间                datetime       非主
-  FXSJ          返修时间                datetime       非主
-  QRSJ          确认时间                datetime       非主
-  ZT            状态                    int            非主
-  SHDW          收货单位                nvarchar(200)  非主
-  KDDH          快递单号                nvarchar(50)   非主
+  PCH           批次号                  nvarchar(200)  非主
+  XHID          型号ID                  int            非主        设备型号表
+  SRSL          收入数量                int            非主
+  LPSL          良品数量                int            非主
+  GZSL          故障数量                int            非主
+  BFSL          报废数量                int            非主
+  RWSHSL        人为损坏数量            int            非主
+  QT            其他                    int            非主
+  HJ            合计                    int            非主
+  BZ            备注                    nvarchar(500)  非主
 
-EDU_ZDGL_11_FXSB  返修设备表
-  ID            编号                    int            自增主键
-  FXDID         返修单ID                int            非主        返修单信息表
-  BXSBID        报修设备ID              int            非主        报修设备表
-
-EDU_ZDGL_21_SXDXM  送修单项目表
-  ID            编号                    int            自增主键
-  SSLB          所属类别                int            非主
-  XMMC          项目名称                nvarchar(50)   非主
-  SFXS          是否显示                int            非主
-  PLSX          排列顺序                int            非主
-
-EDU_ZDGL_22_SXD  送修单表
+EDU_ZDGL_13_FHPC  发货批次表
   ID            编号                    int            主键
-  SXDWID        送修单位ID              int            非主        送修单位信息表
-  SXDMC         送修单名称              nvarchar(100)  非主
-  SXDH          送修单号                nvarchar(100)  非主
+  FHPCH         发货批次号              nvarchar(200)  非主
+  FHR           发货人                  nvarchar(200)  非主
+  WLGSID        物流公司ID              int            非主        物流公司表
+  ZXS           总箱数                  int            非主
+  FHSJ          发货时间                datetime       非主
+
+EDU_ZDGL_14_FHXX  发货详细表
+  ID            编号                    int            主键
+  FHPCID        发货批次ID              int            非主        发货批次表
+  FJXXID        分拣详细ID              int            非主        分拣详细表
+  JCFW          基础服务                int            非主
+  HK            换壳                    int            非主
+  WX            维修                    int            非主
+  XDY           新电源                  int            非主
+  JDY           旧电源                  int            非主
+  PJ            配件                    int            非主
+  TH            退回                    int            非主
+  QT            其他                    int            非主
+  WF            未返                    int            非主
+  FHRQ          返回日期                datetime       非主
+
+EDU_ZDGL_15_WLGS  物流公司表
+  ID            编号                    int            主键
+  GSDM          公司代码                nvarchar(200)  非主
+  GSM           公司名                  nvarchar(200)  非主
+  GSLXR         公司联系人              nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
+
+EDU_ZDGL_16_JSD  接收单表
+  ID            编号                    int            主键
+  JSDH          接收单号                nvarchar(200)  非主
+  SXDWID        送修单位ID              int            非主        客户表
   SXRQ          送修日期                datetime       非主
-  GSXX          公司信息                nvarchar(200)  非主
-  LXRXX         联系人信息              nvarchar(200)  非主
-  LXDHXX        联系电话信息            nvarchar(200)  非主
-  DZXX          地址信息                nvarchar(200)  非主
-  QZXX          签字信息                nvarchar(200)  非主
-  TJYH          添加用户                nvarchar(20)   非主        应用系统用户表
-  TJSJ          添加时间                datetime       非主
 
-EDU_ZDGL_23_SXDSJ  送修单数据表
-  ID            编号                    int            自增主键
-  SXDID         送修单ID                int            非主        送修单表
-  SBXHID        设备型号ID              int            非主        设备型号配置表
-  SXDXMID       送修单项目ID            int            非主        送修单项目表
-  SL            数量                    int            非主
-  WB            文本                    nvarchar(200)  非主
-
-EDU_ZDGL_31_FXD  返修单表
+EDU_ZDGL_17_JSDXX  接收单详细表
   ID            编号                    int            主键
-  FXDH          返修单号                nvarchar(100)  非主
-  PDBM          派单部门                nvarchar(100)  非主
-  PDY           派单员                  nvarchar(50)   非主
-  PDSJ          派单时间                nvarchar(50)   非主
-  SHDW          收货单位                nvarchar(50)   非主
-  LXR           联系人                  nvarchar(50)   非主
-  LXDH          联系电话                nvarchar(100)  非主
-  WGSX          完工时限                nvarchar(50)   非主
-  DZ            地址                    nvarchar(100)  非主
-  ZJTS          总计台数                nvarchar(100)  非主
-  ZJJS          总计件数                nvarchar(100)  非主
-  SLBM          受理部门                nvarchar(100)  非主
-  SDY           受单员                  nvarchar(100)  非主
-  QSY           签收员                  nvarchar(100)  非主
-  QSSJ          签收时间                nvarchar(100)  非主
-  FWQK          服务情况                nvarchar(100)  非主
-  FWGCS         服务工程师              nvarchar(100)  非主
-  WGSJ          完工时间                nvarchar(100)  非主
-  YSQK          验收情况                nvarchar(100)  非主
-  YSRY          验收人员                nvarchar(100)  非主
-  YSSJ          验收时间                nvarchar(100)  非主
-  TJYH          添加用户                nvarchar(20)   非主
-  TJSJ          添加时间                datetime       非主
+  XHID          型号ID                  int            非主        设备型号表
+  XH            序号                    nvarchar(200)  非主
+  SN            SN号                    nvarchar(200)  非主
+  SFECFX        是否二次返修            nvarchar(1)    非主        是否标志代码表
+  SXDWID        送修单位ID              int            非主        客户表
+  GZXXID        故障信息ID              int            非主        故障代码表
+  WXXXID        维修信息ID              int            非主        维修代码表
+  WXRID         维修人ID                int            非主        维修人表
+  WXRQ          维修日期                datetime       非主
 
-EDU_ZDGL_32_FXDSJ  返修单数据表
-  ID            编号                    int            自增主键
-  FXDID         返修单ID                int            非主        返修单表
-  WLMC          物料名称                nvarchar(200)  非主
-  PZ            配置                    nvarchar(200)  非主
-  DW            单位                    nvarchar(200)  非主
-  SL            数量                    nvarchar(200)  非主
-  FY            费用                    nvarchar(200)  非主
-  RWSM          任务说明                nvarchar(200)  非主
-  CLJG          处理结果                nvarchar(200)  非主
+EDU_ZDGL_18_JFD  交付单表
+  ID            编号                    int            主键
+  JFDH          交付单号                nvarchar(200)  非主
+  WXSID         维修商ID                int            非主        维修商表
+  JFRQ          交付日期                datetime       非主
+
+EDU_ZDGL_19_JFDXX  交付单详细表
+  ID            编号                    int            主键
+  JFDID         交付单ID                int            非主        交付单表
+  JSDXXID       接收单详细ID            int            非主        接收单详细表
+
+EDU_ZDGL_20_FHD  返回单表
+  ID            编号                    int            主键
+  FHDH          返回单号                nvarchar(200)  非主
+  FHRQ          返回日期                datetime       非主
+  FHDWID        返回单位ID              int            非主        客户表
+
+EDU_ZDGL_21_FHDXX  返回单详细表
+  ID            编号                    int            主键
+  FHDID         返回单ID                int            非主        返回单表
+  JSDXXID       接收单详细ID            int            非主        接收单详细表
 

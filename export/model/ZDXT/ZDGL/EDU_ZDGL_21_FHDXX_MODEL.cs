@@ -4,13 +4,13 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_11_FXSB_metadata))]
-    public partial class EDU_ZDGL_11_FXSB
+    [MetadataType(typeof(EDU_ZDGL_21_FHDXX_metadata))]
+    public partial class EDU_ZDGL_21_FHDXX
     {
-        public EDU_ZDGL_11_FXSB()
+        public EDU_ZDGL_21_FHDXX()
         {
         }
-        public class EDU_ZDGL_11_FXSB_metadata
+        public class EDU_ZDGL_21_FHDXX_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -18,13 +18,13 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "返修单")]
-            public Int32 FXDID { get; set; }
+            [Display(Name = "返回单")]
+            public Int32 FHDID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "报修设备")]
-            public Int32 BXSBID { get; set; }
+            [Display(Name = "接收单详细")]
+            public Int32 JSDXXID { get; set; }
 
 
         }

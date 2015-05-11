@@ -18,7 +18,7 @@ EDU_ELE_01_USER  应用系统用户表
   YHCJSJ        用户创建时间            datetime       非主
   YHRY          用户荣誉                int            非主
   YHJF          用户积分                int            非主
-  BMID          部门ID                  int            非主        部门信息表
+  BMID          部门ID                  int            非主
 
 EDU_ELE_01_APP  应用表
   ID            应用ID                  int            主键

@@ -4,14 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_05_BXHT_metadata))]
-    public partial class EDU_ZDGL_05_BXHT
+    [MetadataType(typeof(EDU_ZDGL_20_FHD_metadata))]
+    public partial class EDU_ZDGL_20_FHD
     {
-        public EDU_ZDGL_05_BXHT()
+        public EDU_ZDGL_20_FHD()
         {
-            HTMC = "";
+            FHDH = "";
+            FHRQ = DateTime.Now;
         }
-        public class EDU_ZDGL_05_BXHT_metadata
+        public class EDU_ZDGL_20_FHD_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -19,20 +20,20 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "合同名称")]
-            [StringLength(50)]
+            [Display(Name = "返回单号")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String HTMC { get; set; }
+            public String FHDH { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "维修时限")]
-            public Int32 WXSX { get; set; }
+            [Display(Name = "返回日期")]
+            public DateTime FHRQ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "保修时长")]
-            public Int32 BXSC { get; set; }
+            [Display(Name = "返回单位")]
+            public Int32 FHDWID { get; set; }
 
 
         }

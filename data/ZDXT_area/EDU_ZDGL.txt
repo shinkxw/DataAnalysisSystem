@@ -1,196 +1,209 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZDGL" provider="reallocate_namespace">
-    <table name="EDU_ZDGL_01_SBLX" exp="设备类型配置表">
+    <table name="EDU_ZDGL_1_GZDM" exp="故障代码表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="LXMC" exp="类型名称" type="nvarchar(50)" />
-            <name="ZT" exp="状态" type="int" />
-            <name="LXJC" exp="类型简称" type="nvarchar(50)" />
+            <name="GZDM" exp="故障代码" type="nvarchar(200)" />
+            <name="GZXX" exp="故障现象" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_02_SCCJ" exp="生产厂家信息表">
+    <table name="EDU_ZDGL_2_WXDM" exp="维修代码表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="CJMC" exp="厂家名称" type="nvarchar(50)" />
-            <name="ZT" exp="状态" type="int" />
+            <name="WXDM" exp="维修代码" type="nvarchar(200)" />
+            <name="WXNR" exp="维修内容" type="nvarchar(500)" />
+            <name="WXJG" exp="维修结果" type="nvarchar(500)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_03_SBXH" exp="设备型号配置表">
+    <table name="EDU_ZDGL_3_SBXHLX" exp="设备型号类型表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="SBLXID" exp="设备类型ID" type="int" />
-            <name="SCCJID" exp="生产厂家ID" type="int" />
-            <name="XHMC" exp="型号名称" type="nvarchar(50)" />
-            <name="WLMS" exp="物料描述" type="nvarchar(500)" />
-            <name="XHMCPY" exp="型号名称拼音" type="nvarchar(500)" />
-            <name="WLBH" exp="物料编号" type="nvarchar(200)" />
+            <name="LXMC" exp="类型名称" type="nvarchar(200)" />
+            <name="LXJC" exp="类型简称" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_04_SXDW" exp="送修单位信息表">
+    <table name="EDU_ZDGL_4_SCCJ" exp="生产厂家表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="QHM" exp="区划码" type="nvarchar(6)" />
-            <name="SSSJQHM" exp="所属市级区划码" type="nvarchar(4)" />
-            <name="DWMC" exp="单位名称" type="nvarchar(50)" />
-            <name="DWMCPY" exp="单位名称拼音" type="nvarchar(500)" />
-        </field_area>
-    </table>
-    <table name="EDU_ZDGL_05_BXHT" exp="保修合同表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" />
-            <name="HTMC" exp="合同名称" type="nvarchar(50)" />
-            <name="WXSX" exp="维修时限" type="int" />
-            <name="BXSC" exp="保修时长" type="int" />
-        </field_area>
-    </table>
-    <table name="EDU_ZDGL_06_BM" exp="部门信息表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" />
-            <name="BMMC" exp="部门名称" type="nvarchar(20)" />
-            <name="SXDWLB" exp="送修单位列表" type="text" />
-            <name="SXDWMCLB" exp="送修单位名称列表" type="text" />
-            <name="DZ" exp="地址" type="nvarchar(200)" />
-            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
-            <name="GSMC" exp="公司名称" type="nvarchar(200)" />
+            <name="CJM" exp="厂家名" type="nvarchar(200)" />
+            <name="CJDZ" exp="厂家地址" type="nvarchar(500)" />
             <name="LXR" exp="联系人" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_07_BXSB" exp="报修设备表">
+    <table name="EDU_ZDGL_5_SBXH" exp="设备型号表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="SBXHID" exp="设备型号ID" type="int" />
-            <name="SXDWID" exp="送修单位ID" type="int" />
-            <name="SXDWMC" exp="送修单位名称" type="nvarchar(50)" />
-            <name="SNM" exp="S/N码" type="nvarchar(100)" />
-            <name="SCRQ" exp="生产日期" type="datetime" />
-            <name="SBLXMC" exp="设备类型名称" type="nvarchar(50)" />
-            <name="SCCJMC" exp="生产厂家名称" type="nvarchar(50)" />
-            <name="SBXHMC" exp="设备型号名称" type="nvarchar(50)" />
-            <name="BXZT" exp="保修状态" type="int" />
-            <name="BXHTID" exp="保修合同ID" type="int" />
-            <name="SBZT" exp="设备状态" type="int" />
-            <name="WXZT" exp="维修状态" type="int" />
-            <name="RKSJ" exp="入库时间" type="datetime" />
-            <name="RKCZYHID" exp="入库操作用户" type="nvarchar(20)" />
-            <name="FXM" exp="返修码" type="nvarchar(100)" />
-            <name="FXXX" exp="返修信息" type="nvarchar(100)" />
-            <name="FXXH" exp="返修序号" type="int" />
-            <name="WXJSSJ" exp="维修结束时间" type="datetime" />
-            <name="WXJSDJYHID" exp="维修结束登记用户" type="nvarchar(20)" />
+            <name="XX" exp="型号" type="nvarchar(200)" />
+            <name="LXID" exp="类型ID" type="int" />
+            <name="SCCJID" exp="生产厂家ID" type="int" />
+            <name="PY" exp="拼音" type="nvarchar(200)" />
+            <name="MS" exp="描述" type="nvarchar(200)" />
+            <name="JG" exp="价格" type="float" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_08_SXDXX" exp="送修单信息表">
+    <table name="EDU_ZDGL_6_XZQH" exp="行政区划表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="SXDH" exp="送修单号" type="nvarchar(50)" />
-            <name="CJYHID" exp="创建用户" type="nvarchar(20)" />
-            <name="CJSJ" exp="创建时间" type="datetime" />
-            <name="SXSJ" exp="送修时间" type="datetime" />
+            <name="QHM" exp="区划码" type="nvarchar(200)" />
+            <name="QHMC" exp="区划名称" type="nvarchar(200)" />
+            <name="QH" exp="区号" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_7_SSGS" exp="所属公司表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="GSDM" exp="公司代码" type="nvarchar(200)" />
+            <name="GSM" exp="公司名" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_8_KH" exp="客户表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="KHDM" exp="客户代码" type="nvarchar(200)" />
+            <name="SZQYID" exp="所在区域ID" type="int" />
+            <name="SSGSID" exp="所属公司ID" type="int" />
+            <name="DWMC" exp="单位名称" type="nvarchar(200)" />
+            <name="PY" exp="拼音" type="nvarchar(200)" />
+            <name="KHDZ" exp="客户地址" type="nvarchar(200)" />
+            <name="LXR" exp="联系人" type="nvarchar(200)" />
+            <name="DH" exp="电话" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_9_WXS" exp="维修商表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="WXSDM" exp="维修商代码" type="nvarchar(200)" />
+            <name="WXSMC" exp="维修商名称" type="nvarchar(200)" />
+            <name="LXR" exp="联系人" type="nvarchar(200)" />
+            <name="LXDM" exp="联系代码" type="nvarchar(200)" />
+            <name="DZ" exp="地址" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_10_WXR" exp="维修人表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="GH" exp="工号" type="nvarchar(200)" />
+            <name="XM" exp="姓名" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_11_FJPC" exp="分拣批次表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="PCH" exp="批次号" type="nvarchar(200)" />
+            <name="KHID" exp="客户ID" type="int" />
+            <name="JSRQ" exp="接受日期" type="datetime" />
+            <name="LRSJ" exp="录入时间" type="datetime" />
+            <name="FJWGSJ" exp="分拣完工时间" type="datetime" />
+            <name="FJFZR" exp="分拣负责人" type="nvarchar(200)" />
+            <name="QRR" exp="确认人" type="nvarchar(200)" />
+            <name="QRRLXDH" exp="确认人联系电话" type="nvarchar(200)" />
             <name="QRSJ" exp="确认时间" type="datetime" />
-            <name="ZT" exp="状态" type="int" />
+            <name="CSJG" exp="测试结果" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_09_SXSB" exp="送修设备表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" identity="T" />
-            <name="SXDID" exp="送修单ID" type="int" />
-            <name="BXSBID" exp="报修设备ID" type="int" />
-        </field_area>
-    </table>
-    <table name="EDU_ZDGL_10_FXDXX" exp="返修单信息表">
+    <table name="EDU_ZDGL_12_FJXX" exp="分拣详细表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="FXDH" exp="返修单号" type="nvarchar(50)" />
-            <name="CJYHID" exp="创建用户" type="nvarchar(20)" />
-            <name="CJSJ" exp="创建时间" type="datetime" />
-            <name="FXSJ" exp="返修时间" type="datetime" />
-            <name="QRSJ" exp="确认时间" type="datetime" />
-            <name="ZT" exp="状态" type="int" />
-            <name="SHDW" exp="收货单位" type="nvarchar(200)" />
-            <name="KDDH" exp="快递单号" type="nvarchar(50)" />
+            <name="PCH" exp="批次号" type="nvarchar(200)" />
+            <name="XHID" exp="型号ID" type="int" />
+            <name="SRSL" exp="收入数量" type="int" />
+            <name="LPSL" exp="良品数量" type="int" />
+            <name="GZSL" exp="故障数量" type="int" />
+            <name="BFSL" exp="报废数量" type="int" />
+            <name="RWSHSL" exp="人为损坏数量" type="int" />
+            <name="QT" exp="其他" type="int" />
+            <name="HJ" exp="合计" type="int" />
+            <name="BZ" exp="备注" type="nvarchar(500)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_11_FXSB" exp="返修设备表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" identity="T" />
-            <name="FXDID" exp="返修单ID" type="int" />
-            <name="BXSBID" exp="报修设备ID" type="int" />
-        </field_area>
-    </table>
-    <table name="EDU_ZDGL_21_SXDXM" exp="送修单项目表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" identity="T" />
-            <name="SSLB" exp="所属类别" type="int" />
-            <name="XMMC" exp="项目名称" type="nvarchar(50)" />
-            <name="SFXS" exp="是否显示" type="int" />
-            <name="PLSX" exp="排列顺序" type="int" />
-        </field_area>
-    </table>
-    <table name="EDU_ZDGL_22_SXD" exp="送修单表">
+    <table name="EDU_ZDGL_13_FHPC" exp="发货批次表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
+            <name="FHPCH" exp="发货批次号" type="nvarchar(200)" />
+            <name="FHR" exp="发货人" type="nvarchar(200)" />
+            <name="WLGSID" exp="物流公司ID" type="int" />
+            <name="ZXS" exp="总箱数" type="int" />
+            <name="FHSJ" exp="发货时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_14_FHXX" exp="发货详细表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="FHPCID" exp="发货批次ID" type="int" />
+            <name="FJXXID" exp="分拣详细ID" type="int" />
+            <name="JCFW" exp="基础服务" type="int" />
+            <name="HK" exp="换壳" type="int" />
+            <name="WX" exp="维修" type="int" />
+            <name="XDY" exp="新电源" type="int" />
+            <name="JDY" exp="旧电源" type="int" />
+            <name="PJ" exp="配件" type="int" />
+            <name="TH" exp="退回" type="int" />
+            <name="QT" exp="其他" type="int" />
+            <name="WF" exp="未返" type="int" />
+            <name="FHRQ" exp="返回日期" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_15_WLGS" exp="物流公司表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="GSDM" exp="公司代码" type="nvarchar(200)" />
+            <name="GSM" exp="公司名" type="nvarchar(200)" />
+            <name="GSLXR" exp="公司联系人" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_16_JSD" exp="接收单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="JSDH" exp="接收单号" type="nvarchar(200)" />
             <name="SXDWID" exp="送修单位ID" type="int" />
-            <name="SXDMC" exp="送修单名称" type="nvarchar(100)" />
-            <name="SXDH" exp="送修单号" type="nvarchar(100)" />
             <name="SXRQ" exp="送修日期" type="datetime" />
-            <name="GSXX" exp="公司信息" type="nvarchar(200)" />
-            <name="LXRXX" exp="联系人信息" type="nvarchar(200)" />
-            <name="LXDHXX" exp="联系电话信息" type="nvarchar(200)" />
-            <name="DZXX" exp="地址信息" type="nvarchar(200)" />
-            <name="QZXX" exp="签字信息" type="nvarchar(200)" />
-            <name="TJYH" exp="添加用户" type="nvarchar(20)" />
-            <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_23_SXDSJ" exp="送修单数据表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" identity="T" />
-            <name="SXDID" exp="送修单ID" type="int" />
-            <name="SBXHID" exp="设备型号ID" type="int" />
-            <name="SXDXMID" exp="送修单项目ID" type="int" />
-            <name="SL" exp="数量" type="int" />
-            <name="WB" exp="文本" type="nvarchar(200)" />
-        </field_area>
-    </table>
-    <table name="EDU_ZDGL_31_FXD" exp="返修单表">
+    <table name="EDU_ZDGL_17_JSDXX" exp="接收单详细表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="FXDH" exp="返修单号" type="nvarchar(100)" />
-            <name="PDBM" exp="派单部门" type="nvarchar(100)" />
-            <name="PDY" exp="派单员" type="nvarchar(50)" />
-            <name="PDSJ" exp="派单时间" type="nvarchar(50)" />
-            <name="SHDW" exp="收货单位" type="nvarchar(50)" />
-            <name="LXR" exp="联系人" type="nvarchar(50)" />
-            <name="LXDH" exp="联系电话" type="nvarchar(100)" />
-            <name="WGSX" exp="完工时限" type="nvarchar(50)" />
-            <name="DZ" exp="地址" type="nvarchar(100)" />
-            <name="ZJTS" exp="总计台数" type="nvarchar(100)" />
-            <name="ZJJS" exp="总计件数" type="nvarchar(100)" />
-            <name="SLBM" exp="受理部门" type="nvarchar(100)" />
-            <name="SDY" exp="受单员" type="nvarchar(100)" />
-            <name="QSY" exp="签收员" type="nvarchar(100)" />
-            <name="QSSJ" exp="签收时间" type="nvarchar(100)" />
-            <name="FWQK" exp="服务情况" type="nvarchar(100)" />
-            <name="FWGCS" exp="服务工程师" type="nvarchar(100)" />
-            <name="WGSJ" exp="完工时间" type="nvarchar(100)" />
-            <name="YSQK" exp="验收情况" type="nvarchar(100)" />
-            <name="YSRY" exp="验收人员" type="nvarchar(100)" />
-            <name="YSSJ" exp="验收时间" type="nvarchar(100)" />
-            <name="TJYH" exp="添加用户" type="nvarchar(20)" />
-            <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="XHID" exp="型号ID" type="int" />
+            <name="XH" exp="序号" type="nvarchar(200)" />
+            <name="SN" exp="SN号" type="nvarchar(200)" />
+            <name="SFECFX" exp="是否二次返修" type="nvarchar(1)" />
+            <name="SXDWID" exp="送修单位ID" type="int" />
+            <name="GZXXID" exp="故障信息ID" type="int" />
+            <name="WXXXID" exp="维修信息ID" type="int" />
+            <name="WXRID" exp="维修人ID" type="int" />
+            <name="WXRQ" exp="维修日期" type="datetime" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_32_FXDSJ" exp="返修单数据表">
+    <table name="EDU_ZDGL_18_JFD" exp="交付单表">
         <field_area>
-            <name="ID" exp="编号" type="int" p="T" identity="T" />
-            <name="FXDID" exp="返修单ID" type="int" />
-            <name="WLMC" exp="物料名称" type="nvarchar(200)" />
-            <name="PZ" exp="配置" type="nvarchar(200)" />
-            <name="DW" exp="单位" type="nvarchar(200)" />
-            <name="SL" exp="数量" type="nvarchar(200)" />
-            <name="FY" exp="费用" type="nvarchar(200)" />
-            <name="RWSM" exp="任务说明" type="nvarchar(200)" />
-            <name="CLJG" exp="处理结果" type="nvarchar(200)" />
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="JFDH" exp="交付单号" type="nvarchar(200)" />
+            <name="WXSID" exp="维修商ID" type="int" />
+            <name="JFRQ" exp="交付日期" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_19_JFDXX" exp="交付单详细表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="JFDID" exp="交付单ID" type="int" />
+            <name="JSDXXID" exp="接收单详细ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_20_FHD" exp="返回单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="FHDH" exp="返回单号" type="nvarchar(200)" />
+            <name="FHRQ" exp="返回日期" type="datetime" />
+            <name="FHDWID" exp="返回单位ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_21_FHDXX" exp="返回单详细表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="FHDID" exp="返回单ID" type="int" />
+            <name="JSDXXID" exp="接收单详细ID" type="int" />
         </field_area>
     </table>
 </namespace>
