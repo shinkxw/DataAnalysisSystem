@@ -1,246 +1,247 @@
-EDU_ELE_01_USER  Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  LOGINNAME     ÓÃ»§Ãû                  nvarchar(20)   Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷        Ó¦ÓÃ±í
-  PWD           ÃÜÂë                    nvarchar(100)  ·ÇÖ÷
-  STATUS        ÓÃ»§×´Ì¬                int            ·ÇÖ÷
-  USERTYPE      ÓÃ»§Àà±ð                int            ·ÇÖ÷
-  USERID        ÓÃ»§ID                  int            ·ÇÖ÷
-  ROLEIDLst     ÓÃ»§½ÇÉ«                nvarchar(200)  ·ÇÖ÷
-  XM            ÐÕÃû                    nvarchar(36)   ·ÇÖ÷
-  XB            ÐÔ±ð                    nvarchar(10)   ·ÇÖ÷
-  QQ            QQ                      nvarchar(10)   ·ÇÖ÷
-  DZYJ          µç×ÓÓÊ¼þ                nvarchar(100)  ·ÇÖ÷
-  LXDH          ÁªÏµµç»°                nvarchar(30)   ·ÇÖ÷
-  ZJDLSJ        ×î½üÒ»´ÎµÇÂ¼Ê±¼ä        datetime       ·ÇÖ÷
-  DLCGCS        µÇÂ¼³É¹¦´ÎÊý            int            ·ÇÖ÷
-  YHCJSJ        ÓÃ»§´´½¨Ê±¼ä            datetime       ·ÇÖ÷
-  YHRY          ÓÃ»§ÈÙÓþ                int            ·ÇÖ÷
-  YHJF          ÓÃ»§»ý·Ö                int            ·ÇÖ÷
-  BMID          ²¿ÃÅID                  int            ·ÇÖ÷        ²¿ÃÅÐÅÏ¢±í
+encoding: UTF-8
+EDU_ELE_01_USER  åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  LOGINNAME     ç”¨æˆ·å                  nvarchar(20)   ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»        åº”ç”¨è¡¨
+  PWD           å¯†ç                     nvarchar(100)  éžä¸»
+  STATUS        ç”¨æˆ·çŠ¶æ€                int            éžä¸»
+  USERTYPE      ç”¨æˆ·ç±»åˆ«                int            éžä¸»
+  USERID        ç”¨æˆ·ID                  int            éžä¸»
+  ROLEIDLst     ç”¨æˆ·è§’è‰²                nvarchar(200)  éžä¸»
+  XM            å§“å                    nvarchar(36)   éžä¸»
+  XB            æ€§åˆ«                    nvarchar(10)   éžä¸»
+  QQ            QQ                      nvarchar(10)   éžä¸»
+  DZYJ          ç”µå­é‚®ä»¶                nvarchar(100)  éžä¸»
+  LXDH          è”ç³»ç”µè¯                nvarchar(30)   éžä¸»
+  ZJDLSJ        æœ€è¿‘ä¸€æ¬¡ç™»å½•æ—¶é—´        datetime       éžä¸»
+  DLCGCS        ç™»å½•æˆåŠŸæ¬¡æ•°            int            éžä¸»
+  YHCJSJ        ç”¨æˆ·åˆ›å»ºæ—¶é—´            datetime       éžä¸»
+  YHRY          ç”¨æˆ·è£èª‰                int            éžä¸»
+  YHJF          ç”¨æˆ·ç§¯åˆ†                int            éžä¸»
+  BMID          éƒ¨é—¨ID                  int            éžä¸»        éƒ¨é—¨ä¿¡æ¯è¡¨
 
-EDU_ELE_01_APP  Ó¦ÓÃ±í
-  ID            Ó¦ÓÃID                  int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  NAME          Ó¦ÓÃÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  URL           ÍøÖ·                    nvarchar(200)  ·ÇÖ÷
-  AUTHIP        ÏÞÓÃIP                  nvarchar(200)  ·ÇÖ÷
-  SM            ËµÃ÷                    text           ·ÇÖ÷
-  DLFS          µÇÂ¼·½Ê½                int            ·ÇÖ÷
-  STATUS        Ó¦ÓÃ×´Ì¬                int            ·ÇÖ÷
-  TYPE          Ó¦ÓÃÀà±ð                int            ·ÇÖ÷
-  DLCSLB        µÇÂ¼²ÎÊýÁÐ±í            text           ·ÇÖ÷
-  MNDLJS        Ä£ÄâµÇÂ¼JS              text           ·ÇÖ÷
-  SYDX          Ê¹ÓÃ¶ÔÏó                nvarchar(500)  ·ÇÖ÷
-  KJDX          ¿É¼û¶ÔÏó                nvarchar(500)  ·ÇÖ÷
+EDU_ELE_01_APP  åº”ç”¨è¡¨
+  ID            åº”ç”¨ID                  int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  NAME          åº”ç”¨åç§°                nvarchar(50)   éžä¸»
+  URL           ç½‘å€                    nvarchar(200)  éžä¸»
+  AUTHIP        é™ç”¨IP                  nvarchar(200)  éžä¸»
+  SM            è¯´æ˜Ž                    text           éžä¸»
+  DLFS          ç™»å½•æ–¹å¼                int            éžä¸»
+  STATUS        åº”ç”¨çŠ¶æ€                int            éžä¸»
+  TYPE          åº”ç”¨ç±»åˆ«                int            éžä¸»
+  DLCSLB        ç™»å½•å‚æ•°åˆ—è¡¨            text           éžä¸»
+  MNDLJS        æ¨¡æ‹Ÿç™»å½•JS              text           éžä¸»
+  SYDX          ä½¿ç”¨å¯¹è±¡                nvarchar(500)  éžä¸»
+  KJDX          å¯è§å¯¹è±¡                nvarchar(500)  éžä¸»
 
-EDU_ELE_01_SCHOOL  Ñ§Ð£ÅäÖÃ±í
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  SCHOOLNAME    Ñ§Ð£Ãû³Æ                nvarchar(60)   ·ÇÖ÷
-  SCHOOLTYPE    Ñ§Ð£ÀàÐÍ                int            ·ÇÖ÷
-  XNID          Ñ§ÄêID                  int            ·ÇÖ÷
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
-  MatchURL      Æ¥Åäurl                 nvarchar(500)  ·ÇÖ÷
-  MenhuURL      ÃÅ»§url                 nvarchar(500)  ·ÇÖ÷
-  MenhuWebid    ÃÅ»§webid               int            ·ÇÖ÷
-  LogLevel      ÈÕÖ¾¼¶±ð                int            ·ÇÖ÷
-  ModuleIdList  È¨ÏÞÁÐ±í                text           ·ÇÖ÷
-  EnableStatus  ÆôÓÃ×´Ì¬                int            ·ÇÖ÷
-  CreateTime    ¿ª»§Ê±¼ä                datetime       ·ÇÖ÷
-  YXTID         ÒíÐ£Í¨ID                nvarchar(500)  ·ÇÖ÷
-  LOGO          Í¼±ê                    nvarchar(500)  ·ÇÖ÷
+EDU_ELE_01_SCHOOL  å­¦æ ¡é…ç½®è¡¨
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  SCHOOLNAME    å­¦æ ¡åç§°                nvarchar(60)   éžä¸»
+  SCHOOLTYPE    å­¦æ ¡ç±»åž‹                int            éžä¸»
+  XNID          å­¦å¹´ID                  int            éžä¸»
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
+  MatchURL      åŒ¹é…url                 nvarchar(500)  éžä¸»
+  MenhuURL      é—¨æˆ·url                 nvarchar(500)  éžä¸»
+  MenhuWebid    é—¨æˆ·webid               int            éžä¸»
+  LogLevel      æ—¥å¿—çº§åˆ«                int            éžä¸»
+  ModuleIdList  æƒé™åˆ—è¡¨                text           éžä¸»
+  EnableStatus  å¯ç”¨çŠ¶æ€                int            éžä¸»
+  CreateTime    å¼€æˆ·æ—¶é—´                datetime       éžä¸»
+  YXTID         ç¿¼æ ¡é€šID                nvarchar(500)  éžä¸»
+  LOGO          å›¾æ ‡                    nvarchar(500)  éžä¸»
 
-EDU_ELE_01_XQ  Ñ§ÆÚÊý¾Ý±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XNID          Ñ§Äê                    int            ·ÇÖ÷        Ñ§Äê±í
-  XQM           Ñ§ÆÚÂë                  nvarchar(1)    ·ÇÖ÷        Ñ§ÆÚ´úÂë±í
-  XQMC          Ñ§ÆÚÃû³Æ                nvarchar(10)   ·ÇÖ÷
-  XQKSRQ        Ñ§ÆÚ¿ªÊ¼ÈÕÆÚ            nvarchar(8)    ·ÇÖ÷
-  XQJSRQ        Ñ§ÆÚ½áÊøÈÕÆÚ            nvarchar(8)    ·ÇÖ÷
+EDU_ELE_01_XQ  å­¦æœŸæ•°æ®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XNID          å­¦å¹´                    int            éžä¸»        å­¦å¹´è¡¨
+  XQM           å­¦æœŸç                   nvarchar(1)    éžä¸»        å­¦æœŸä»£ç è¡¨
+  XQMC          å­¦æœŸåç§°                nvarchar(10)   éžä¸»
+  XQKSRQ        å­¦æœŸå¼€å§‹æ—¥æœŸ            nvarchar(8)    éžä¸»
+  XQJSRQ        å­¦æœŸç»“æŸæ—¥æœŸ            nvarchar(8)    éžä¸»
 
-EDU_ELE_01_ROLE  Ó¦ÓÃÏµÍ³½ÇÉ«±í
-  ID            ½ÇÉ«ID                  int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷
-  NAME          ½ÇÉ«Ãû                  nvarchar(20)   ·ÇÖ÷
-  PID           ½ÇÉ«ËùÊô¸¸ID            int            ·ÇÖ÷
-  ModIDLst      ½ÇÉ«ÄÜ·ÃÎÊµÄÄ£¿éÁÐ±í    text           ·ÇÖ÷
+EDU_ELE_01_ROLE  åº”ç”¨ç³»ç»Ÿè§’è‰²è¡¨
+  ID            è§’è‰²ID                  int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®
+  APPID         åº”ç”¨ID                  int            éžä¸»
+  NAME          è§’è‰²å                  nvarchar(20)   éžä¸»
+  PID           è§’è‰²æ‰€å±žçˆ¶ID            int            éžä¸»
+  ModIDLst      è§’è‰²èƒ½è®¿é—®çš„æ¨¡å—åˆ—è¡¨    text           éžä¸»
 
-EDU_ELE_01_CONFIG  Ó¦ÓÃÏµÍ³ÅäÖÃ±í
-  ID            ÅäÖÃID                  int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü
-  APPID         Ó¦ÓÃID                  int            Ö÷¼ü
-  VALUE         ÅäÖÃÖµ                  nvarchar(200)  ·ÇÖ÷
+EDU_ELE_01_CONFIG  åº”ç”¨ç³»ç»Ÿé…ç½®è¡¨
+  ID            é…ç½®ID                  int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®
+  APPID         åº”ç”¨ID                  int            ä¸»é”®
+  VALUE         é…ç½®å€¼                  nvarchar(200)  éžä¸»
 
-EDU_ELE_01_HASH  ÏµÍ³¹þÏ£±í
-  KEY           ¼ü                      nvarchar(200)  Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü
-  VALUE         Öµ                      text           ·ÇÖ÷
+EDU_ELE_01_HASH  ç³»ç»Ÿå“ˆå¸Œè¡¨
+  KEY           é”®                      nvarchar(200)  ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®
+  VALUE         å€¼                      text           éžä¸»
 
-EDU_ELE_01_APPUSER  µÚÈý·½Ó¦ÓÃÓÃ»§±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  YHID          ÓÃ»§ID                  nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷        Ó¦ÓÃ±í
-  YHMC          ÓÃ»§Ãû³Æ                nvarchar(36)   ·ÇÖ÷
-  YHZT          ÓÃ»§×´Ì¬                int            ·ÇÖ÷
+EDU_ELE_01_APPUSER  ç¬¬ä¸‰æ–¹åº”ç”¨ç”¨æˆ·è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  YHID          ç”¨æˆ·ID                  nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»        åº”ç”¨è¡¨
+  YHMC          ç”¨æˆ·åç§°                nvarchar(36)   éžä¸»
+  YHZT          ç”¨æˆ·çŠ¶æ€                int            éžä¸»
 
-EDU_ELE_01_APPDLCS  µÚÈý·½Ó¦ÓÃµÇÂ¼²ÎÊý±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  APPUSERID     Ó¦ÓÃÓÃ»§ID              int            ·ÇÖ÷        µÚÈý·½Ó¦ÓÃÓÃ»§±í
-  CSMC          ²ÎÊýÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  CSZ           ²ÎÊýÖµ                  text           ·ÇÖ÷
+EDU_ELE_01_APPDLCS  ç¬¬ä¸‰æ–¹åº”ç”¨ç™»å½•å‚æ•°è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  APPUSERID     åº”ç”¨ç”¨æˆ·ID              int            éžä¸»        ç¬¬ä¸‰æ–¹åº”ç”¨ç”¨æˆ·è¡¨
+  CSMC          å‚æ•°åç§°                nvarchar(50)   éžä¸»
+  CSZ           å‚æ•°å€¼                  text           éžä¸»
 
-EDU_ELE_03_APPRZ  Ó¦ÓÃÈÕÖ¾±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷
-  RZLX          ÈÕÖ¾ÀàÐÍ                int            ·ÇÖ÷
-  YHID          ²Ù×÷ÓÃ»§                nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  CZSJ          ²Ù×÷Ê±¼ä                datetime       ·ÇÖ÷
-  CZYY          ²Ù×÷Ó¦ÓÃ                nvarchar(30)   ·ÇÖ÷
-  CZLX          ²Ù×÷ÀàÐÍ                nvarchar(10)   ·ÇÖ÷
-  CZJTXX        ²Ù×÷¾ßÌåÐÅÏ¢            nvarchar(200)  ·ÇÖ÷
+EDU_ELE_03_APPRZ  åº”ç”¨æ—¥å¿—è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»
+  RZLX          æ—¥å¿—ç±»åž‹                int            éžä¸»
+  YHID          æ“ä½œç”¨æˆ·                nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  CZSJ          æ“ä½œæ—¶é—´                datetime       éžä¸»
+  CZYY          æ“ä½œåº”ç”¨                nvarchar(30)   éžä¸»
+  CZLX          æ“ä½œç±»åž‹                nvarchar(10)   éžä¸»
+  CZJTXX        æ“ä½œå…·ä½“ä¿¡æ¯            nvarchar(200)  éžä¸»
 
-EDU_ELE_03_APPLL  Ó¦ÓÃÂÄÀú±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷
-  YHID          ²Ù×÷ÓÃ»§                nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  CZSJ          ²Ù×÷Ê±¼ä                datetime       ·ÇÖ÷
-  CZYY          ²Ù×÷Ó¦ÓÃ                nvarchar(30)   ·ÇÖ÷
-  CZBM          ²Ù×÷±íÃû                nvarchar(100)  ·ÇÖ÷
-  CZXX          ²Ù×÷ÐÅÏ¢                text           ·ÇÖ÷
+EDU_ELE_03_APPLL  åº”ç”¨å±¥åŽ†è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»
+  YHID          æ“ä½œç”¨æˆ·                nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  CZSJ          æ“ä½œæ—¶é—´                datetime       éžä¸»
+  CZYY          æ“ä½œåº”ç”¨                nvarchar(30)   éžä¸»
+  CZBM          æ“ä½œè¡¨å                nvarchar(100)  éžä¸»
+  CZXX          æ“ä½œä¿¡æ¯                text           éžä¸»
 
-EDU_ELE_03_YHSYJL  ÓÃ»§Ê¹ÓÃ¼ÇÂ¼±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷        Ó¦ÓÃ±í
-  MODULEID      ¹¦ÄÜID                  int            ·ÇÖ÷        µ¼º½±í
-  YHID          ÓÃ»§ID                  nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  GNMC          ¹¦ÄÜÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  LJ            Á´½Ó                    nvarchar(100)  ·ÇÖ÷
-  SYSJ          Ê¹ÓÃÊ±¼ä                datetime       ·ÇÖ÷
-  XHHMS         ÏûºÄºÁÃëÊý              int            ·ÇÖ÷
+EDU_ELE_03_YHSYJL  ç”¨æˆ·ä½¿ç”¨è®°å½•è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»        åº”ç”¨è¡¨
+  MODULEID      åŠŸèƒ½ID                  int            éžä¸»        å¯¼èˆªè¡¨
+  YHID          ç”¨æˆ·ID                  nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  GNMC          åŠŸèƒ½åç§°                nvarchar(50)   éžä¸»
+  LJ            é“¾æŽ¥                    nvarchar(100)  éžä¸»
+  SYSJ          ä½¿ç”¨æ—¶é—´                datetime       éžä¸»
+  XHHMS         æ¶ˆè€—æ¯«ç§’æ•°              int            éžä¸»
 
-EDU_ELE_03_XNJS  ÐÔÄÜ¼àÊÓ±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  JLSJ          ¼ÇÂ¼Ê±¼ä                datetime       ·ÇÖ÷
-  CPUSYL        CPUÊ¹ÓÃÂÊ               float          ·ÇÖ÷
-  NCSYL         ÄÚ´æÊ¹ÓÃÂÊ              float          ·ÇÖ÷
-  CPDQSD        ´ÅÅÌ¶ÁÈ¡ËÙ¶È            float          ·ÇÖ÷
-  CPXRSD        ´ÅÅÌÐ´ÈëËÙ¶È            float          ·ÇÖ÷
-  ZXRS          ÔÚÏßÈËÊý                int            ·ÇÖ÷
+EDU_ELE_03_XNJS  æ€§èƒ½ç›‘è§†è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  JLSJ          è®°å½•æ—¶é—´                datetime       éžä¸»
+  CPUSYL        CPUä½¿ç”¨çŽ‡               float          éžä¸»
+  NCSYL         å†…å­˜ä½¿ç”¨çŽ‡              float          éžä¸»
+  CPDQSD        ç£ç›˜è¯»å–é€Ÿåº¦            float          éžä¸»
+  CPXRSD        ç£ç›˜å†™å…¥é€Ÿåº¦            float          éžä¸»
+  ZXRS          åœ¨çº¿äººæ•°                int            éžä¸»
 
-EDU_ELE_04_PKJGJL  ÅÅ¿Î½á¹û¼ÇÂ¼±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷
-  TEACHERID     ÀÏÊ¦                    int            ·ÇÖ÷
-  TEACHERNAME   ÀÏÊ¦                    nvarchar(100)  ·ÇÖ÷
-  COURSEID      ¿Î³Ì                    nvarchar(20)   ·ÇÖ÷
-  COURSENAME    ¿Î³Ì                    nvarchar(100)  ·ÇÖ÷
-  CLASSID       °à¼¶                    nvarchar(20)   ·ÇÖ÷
-  CLASSNAME     °à¼¶                    nvarchar(100)  ·ÇÖ÷
-  WEEKDAY       ¹¤×÷ÈÕ                  int            ·ÇÖ÷
-  WEEKDAYNAME   ¹¤×÷ÈÕÃû³Æ              nvarchar(20)   ·ÇÖ÷
-  PERIOD        Ê±¶Î                    int            ·ÇÖ÷
-  PERIODNAME    Ê±¶ÎÃû³Æ                nvarchar(20)   ·ÇÖ÷
-  SESSION       ½Ú´Î                    int            ·ÇÖ÷
-  SESSIONNAME   ½Ú´ÎÃû³Æ                nvarchar(20)   ·ÇÖ÷
+EDU_ELE_04_PKJGJL  æŽ’è¯¾ç»“æžœè®°å½•è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®
+  XQID          å­¦æœŸID                  int            éžä¸»
+  TEACHERID     è€å¸ˆ                    int            éžä¸»
+  TEACHERNAME   è€å¸ˆ                    nvarchar(100)  éžä¸»
+  COURSEID      è¯¾ç¨‹                    nvarchar(20)   éžä¸»
+  COURSENAME    è¯¾ç¨‹                    nvarchar(100)  éžä¸»
+  CLASSID       ç­çº§                    nvarchar(20)   éžä¸»
+  CLASSNAME     ç­çº§                    nvarchar(100)  éžä¸»
+  WEEKDAY       å·¥ä½œæ—¥                  int            éžä¸»
+  WEEKDAYNAME   å·¥ä½œæ—¥åç§°              nvarchar(20)   éžä¸»
+  PERIOD        æ—¶æ®µ                    int            éžä¸»
+  PERIODNAME    æ—¶æ®µåç§°                nvarchar(20)   éžä¸»
+  SESSION       èŠ‚æ¬¡                    int            éžä¸»
+  SESSIONNAME   èŠ‚æ¬¡åç§°                nvarchar(20)   éžä¸»
 
-EDU_ELE_05_XL  Ð£Àú±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  NAME          Ð£ÀúÃû³Æ                nvarchar(50)   ·ÇÖ÷
-  STARTDAY      ¿ªÊ¼ÈÕÆÚ                datetime       ·ÇÖ÷
-  ENDDAY        ½áÊøÈÕÆÚ                datetime       ·ÇÖ÷
-  XNID          Ñ§ÄêID                  int            ·ÇÖ÷        Ñ§Äê±í
-  XQID          Ñ§ÆÚID                  int            ·ÇÖ÷        Ñ§ÆÚÊý¾Ý±í
+EDU_ELE_05_XL  æ ¡åŽ†è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  NAME          æ ¡åŽ†åç§°                nvarchar(50)   éžä¸»
+  STARTDAY      å¼€å§‹æ—¥æœŸ                datetime       éžä¸»
+  ENDDAY        ç»“æŸæ—¥æœŸ                datetime       éžä¸»
+  XNID          å­¦å¹´ID                  int            éžä¸»        å­¦å¹´è¡¨
+  XQID          å­¦æœŸID                  int            éžä¸»        å­¦æœŸæ•°æ®è¡¨
 
-EDU_ELE_05_XLZ  Ð£ÀúÖÜ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  XLID          Ð£ÀúID                  int            ·ÇÖ÷        Ð£Àú±í
-  NAME          Ð£ÀúÖÜÃû³Æ              nvarchar(50)   ·ÇÖ÷
-  STARTDAY      ¿ªÊ¼ÈÕÆÚ                datetime       ·ÇÖ÷
-  ENDDAY        ½áÊøÈÕÆÚ                datetime       ·ÇÖ÷
-  ZJH           ÖÜ¼Æ»®                  text           ·ÇÖ÷
+EDU_ELE_05_XLZ  æ ¡åŽ†å‘¨è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  XLID          æ ¡åŽ†ID                  int            éžä¸»        æ ¡åŽ†è¡¨
+  NAME          æ ¡åŽ†å‘¨åç§°              nvarchar(50)   éžä¸»
+  STARTDAY      å¼€å§‹æ—¥æœŸ                datetime       éžä¸»
+  ENDDAY        ç»“æŸæ—¥æœŸ                datetime       éžä¸»
+  ZJH           å‘¨è®¡åˆ’                  text           éžä¸»
 
-EDU_ELE_05_WEEKDAY  ÐÇÆÚ
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  MC            Ãû³Æ                    nvarchar(8)    ·ÇÖ÷
+EDU_ELE_05_WEEKDAY  æ˜ŸæœŸ
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  MC            åç§°                    nvarchar(8)    éžä¸»
 
-EDU_ELE_05_SD  Ê±¶Î
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  MC            Ãû³Æ                    nvarchar(5)    ·ÇÖ÷
+EDU_ELE_05_SD  æ—¶æ®µ
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  MC            åç§°                    nvarchar(5)    éžä¸»
 
-EDU_ELE_05_JC  ½Ú´Î
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  SDID          ËùÊôÊ±¶ÎID              int            ·ÇÖ÷        Ê±¶Î
-  MC            Ãû³Æ                    nvarchar(5)    ·ÇÖ÷
+EDU_ELE_05_JC  èŠ‚æ¬¡
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  SDID          æ‰€å±žæ—¶æ®µID              int            éžä¸»        æ—¶æ®µ
+  MC            åç§°                    nvarchar(5)    éžä¸»
 
-EDU_ELE_06_CDSJ  ³¡µØÊý¾Ý±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£                    int            Ö÷¼ü        Ñ§Ð£ÅäÖÃ±í
-  CDMC          ³¡µØÃû³Æ                nvarchar(200)  ·ÇÖ÷
-  CDDZ          ³¡µØµØÖ·                nvarchar(200)  ·ÇÖ÷
-  CDLX          ³¡µØÀàÐÍ                int            ·ÇÖ÷
-  CDFZR         ³¡µØ¸ºÔðÈË              nvarchar(36)   ·ÇÖ÷
+EDU_ELE_06_CDSJ  åœºåœ°æ•°æ®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡                    int            ä¸»é”®        å­¦æ ¡é…ç½®è¡¨
+  CDMC          åœºåœ°åç§°                nvarchar(200)  éžä¸»
+  CDDZ          åœºåœ°åœ°å€                nvarchar(200)  éžä¸»
+  CDLX          åœºåœ°ç±»åž‹                int            éžä¸»
+  CDFZR         åœºåœ°è´Ÿè´£äºº              nvarchar(36)   éžä¸»
 
-EDU_ELE_07_JFBD  »ý·Ö±ä¶¯±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷        Ó¦ÓÃ±í
-  YHID          ÓÃ»§ID                  nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  BDSJ          ±ä¶¯Ê±¼ä                datetime       ·ÇÖ÷
-  BDTM          ±ä¶¯ÌõÄ¿                nvarchar(30)   ·ÇÖ÷
-  BDJF          ±ä¶¯»ý·Ö                int            ·ÇÖ÷
-  CZXX          ²Ù×÷ÐÅÏ¢                text           ·ÇÖ÷
+EDU_ELE_07_JFBD  ç§¯åˆ†å˜åŠ¨è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»        åº”ç”¨è¡¨
+  YHID          ç”¨æˆ·ID                  nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  BDSJ          å˜åŠ¨æ—¶é—´                datetime       éžä¸»
+  BDTM          å˜åŠ¨æ¡ç›®                nvarchar(30)   éžä¸»
+  BDJF          å˜åŠ¨ç§¯åˆ†                int            éžä¸»
+  CZXX          æ“ä½œä¿¡æ¯                text           éžä¸»
 
-EDU_ELE_07_RYBD  ÈÙÓþ±ä¶¯±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷        Ó¦ÓÃ±í
-  YHID          ÓÃ»§ID                  nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
-  BDSJ          ±ä¶¯Ê±¼ä                datetime       ·ÇÖ÷
-  BDTM          ±ä¶¯ÌõÄ¿                nvarchar(30)   ·ÇÖ÷
-  BDRY          ±ä¶¯ÈÙÓþ                int            ·ÇÖ÷
-  CZXX          ²Ù×÷ÐÅÏ¢                text           ·ÇÖ÷
+EDU_ELE_07_RYBD  è£èª‰å˜åŠ¨è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  APPID         åº”ç”¨ID                  int            éžä¸»        åº”ç”¨è¡¨
+  YHID          ç”¨æˆ·ID                  nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
+  BDSJ          å˜åŠ¨æ—¶é—´                datetime       éžä¸»
+  BDTM          å˜åŠ¨æ¡ç›®                nvarchar(30)   éžä¸»
+  BDRY          å˜åŠ¨è£èª‰                int            éžä¸»
+  CZXX          æ“ä½œä¿¡æ¯                text           éžä¸»
 
-EDU_ELE_08_JFCONFIG  »ý·ÖÅäÖÃ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü
-  GNMC          ¹¦ÄÜÃû³Æ                nvarchar(30)   ·ÇÖ÷
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷
-  JF            »ý·Ö                    int            ·ÇÖ÷
+EDU_ELE_08_JFCONFIG  ç§¯åˆ†é…ç½®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®
+  GNMC          åŠŸèƒ½åç§°                nvarchar(30)   éžä¸»
+  APPID         åº”ç”¨ID                  int            éžä¸»
+  JF            ç§¯åˆ†                    int            éžä¸»
 
-EDU_ELE_08_RYCONFIG  ÈÙÓþÅäÖÃ±í
-  ID            ±àºÅ                    int            Ö÷¼ü
-  SCHOOLID      Ñ§Ð£Ãû                  int            Ö÷¼ü
-  GNMC          ¹¦ÄÜÃû³Æ                nvarchar(30)   ·ÇÖ÷
-  APPID         Ó¦ÓÃID                  int            ·ÇÖ÷
-  RY            ÈÙÓþ                    int            ·ÇÖ÷
+EDU_ELE_08_RYCONFIG  è£èª‰é…ç½®è¡¨
+  ID            ç¼–å·                    int            ä¸»é”®
+  SCHOOLID      å­¦æ ¡å                  int            ä¸»é”®
+  GNMC          åŠŸèƒ½åç§°                nvarchar(30)   éžä¸»
+  APPID         åº”ç”¨ID                  int            éžä¸»
+  RY            è£èª‰                    int            éžä¸»
 
-EDU_ELE_09_JKXX  ½Ó¿ÚÐÅÏ¢±í
-  ID            ±àºÅ                    int            ×ÔÔöÖ÷¼ü
-  SCHOOLID      Ñ§Ð£ID                  int            ·ÇÖ÷        Ñ§Ð£ÅäÖÃ±í
-  JKLB          ½Ó¿ÚÀà±ð                nvarchar(30)   ·ÇÖ÷
-  JKSM          ½Ó¿ÚËµÃ÷                nvarchar(50)   ·ÇÖ÷
-  CRCS          ´«Èë²ÎÊý                nvarchar(50)   ·ÇÖ÷
-  TZWZ          Ìø×ªÍøÖ·                text           ·ÇÖ÷
-  KQZT          ¿ªÆô×´Ì¬                int            ·ÇÖ÷
-  FWCS          ·ÃÎÊ´ÎÊý                int            ·ÇÖ÷
-  TJSJ          Ìí¼ÓÊ±¼ä                datetime       ·ÇÖ÷
-  TJYH          Ìí¼ÓÓÃ»§                nvarchar(20)   ·ÇÖ÷        Ó¦ÓÃÏµÍ³ÓÃ»§±í
+EDU_ELE_09_JKXX  æŽ¥å£ä¿¡æ¯è¡¨
+  ID            ç¼–å·                    int            è‡ªå¢žä¸»é”®
+  SCHOOLID      å­¦æ ¡ID                  int            éžä¸»        å­¦æ ¡é…ç½®è¡¨
+  JKLB          æŽ¥å£ç±»åˆ«                nvarchar(30)   éžä¸»
+  JKSM          æŽ¥å£è¯´æ˜Ž                nvarchar(50)   éžä¸»
+  CRCS          ä¼ å…¥å‚æ•°                nvarchar(50)   éžä¸»
+  TZWZ          è·³è½¬ç½‘å€                text           éžä¸»
+  KQZT          å¼€å¯çŠ¶æ€                int            éžä¸»
+  FWCS          è®¿é—®æ¬¡æ•°                int            éžä¸»
+  TJSJ          æ·»åŠ æ—¶é—´                datetime       éžä¸»
+  TJYH          æ·»åŠ ç”¨æˆ·                nvarchar(20)   éžä¸»        åº”ç”¨ç³»ç»Ÿç”¨æˆ·è¡¨
 
-EDU_ELE_10_XZQH  ÐÐÕþÇø»®±í
-  DM            ´úÂë                    nvarchar(6)    Ö÷¼ü
-  MC            Ãû³Æ                    nvarchar(15)   ·ÇÖ÷
-  QH            ÇøºÅ                    nvarchar(4)    ·ÇÖ÷
+EDU_ELE_10_XZQH  è¡Œæ”¿åŒºåˆ’è¡¨
+  DM            ä»£ç                     nvarchar(6)    ä¸»é”®
+  MC            åç§°                    nvarchar(15)   éžä¸»
+  QH            åŒºå·                    nvarchar(4)    éžä¸»
 
