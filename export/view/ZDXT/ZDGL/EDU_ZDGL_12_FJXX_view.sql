@@ -21,5 +21,5 @@ SELECT a.[ID]--编号
       ,b.JG as b_SBXH_JG--设备型号表 价格
 
 FROM dbo.EDU_ZDGL_12_FJXX AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_5_SBXH AS b ON a.XHID = b.ID /*型号ID*/
+      dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/
 GO

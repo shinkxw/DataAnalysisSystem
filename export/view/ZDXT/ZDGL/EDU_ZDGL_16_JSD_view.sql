@@ -16,5 +16,5 @@ SELECT a.[ID]--编号
       ,b.DH as b_KH_DH--客户表 电话
 
 FROM dbo.EDU_ZDGL_16_JSD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_8_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/
+      dbo.EDU_ZDGL_08_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/
 GO

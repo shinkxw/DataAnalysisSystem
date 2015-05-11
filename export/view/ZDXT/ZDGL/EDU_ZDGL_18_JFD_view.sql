@@ -13,5 +13,5 @@ SELECT a.[ID]--±‡∫≈
       ,b.DZ as b_WXS_DZ--Œ¨–ﬁ…Ã±Ì µÿ÷∑
 
 FROM dbo.EDU_ZDGL_18_JFD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_9_WXS AS b ON a.WXSID = b.ID /*Œ¨–ﬁ…ÃID*/
+      dbo.EDU_ZDGL_09_WXS AS b ON a.WXSID = b.ID /*Œ¨–ﬁ…ÃID*/
 GO

@@ -4,16 +4,16 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_2_WXDM_metadata))]
-    public partial class EDU_ZDGL_2_WXDM
+    [MetadataType(typeof(EDU_ZDGL_06_XZQH_metadata))]
+    public partial class EDU_ZDGL_06_XZQH
     {
-        public EDU_ZDGL_2_WXDM()
+        public EDU_ZDGL_06_XZQH()
         {
-            WXDM = "";
-            WXNR = "";
-            WXJG = "";
+            QHM = "";
+            QHMC = "";
+            QH = "";
         }
-        public class EDU_ZDGL_2_WXDM_metadata
+        public class EDU_ZDGL_06_XZQH_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -21,24 +21,24 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "维修代码")]
+            [Display(Name = "区划码")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String WXDM { get; set; }
+            public String QHM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "维修内容")]
-            [StringLength(500)]
+            [Display(Name = "区划名称")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String WXNR { get; set; }
+            public String QHMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "维修结果")]
-            [StringLength(500)]
+            [Display(Name = "区号")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String WXJG { get; set; }
+            public String QH { get; set; }
 
 
         }

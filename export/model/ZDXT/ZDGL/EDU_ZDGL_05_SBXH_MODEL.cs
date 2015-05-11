@@ -4,16 +4,16 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_5_SBXH_metadata))]
-    public partial class EDU_ZDGL_5_SBXH
+    [MetadataType(typeof(EDU_ZDGL_05_SBXH_metadata))]
+    public partial class EDU_ZDGL_05_SBXH
     {
-        public EDU_ZDGL_5_SBXH()
+        public EDU_ZDGL_05_SBXH()
         {
             XX = "";
             PY = "";
             MS = "";
         }
-        public class EDU_ZDGL_5_SBXH_metadata
+        public class EDU_ZDGL_05_SBXH_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

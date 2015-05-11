@@ -1,6 +1,6 @@
 
 --设备型号表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_5_SBXH_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_05_SBXH_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[XX]--型号
@@ -16,7 +16,7 @@ SELECT a.[ID]--编号
       ,c.LXR as c_SCCJ_LXR--生产厂家表 联系人
       ,c.LXDH as c_SCCJ_LXDH--生产厂家表 联系电话
 
-FROM dbo.EDU_ZDGL_5_SBXH AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_3_SBXHLX AS b ON a.LXID = b.ID /*类型ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_4_SCCJ AS c ON a.SCCJID = c.ID /*生产厂家ID*/
+FROM dbo.EDU_ZDGL_05_SBXH AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_03_SBXHLX AS b ON a.LXID = b.ID /*类型ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_04_SCCJ AS c ON a.SCCJID = c.ID /*生产厂家ID*/
 GO

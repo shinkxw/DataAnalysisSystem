@@ -1,28 +1,28 @@
 encoding: UTF-8
-EDU_ZDGL_1_GZDM  故障代码表
+EDU_ZDGL_01_GZDM  故障代码表
   ID            编号                    int            主键
   GZDM          故障代码                nvarchar(200)  非主
   GZXX          故障现象                nvarchar(200)  非主
 
-EDU_ZDGL_2_WXDM  维修代码表
+EDU_ZDGL_02_WXDM  维修代码表
   ID            编号                    int            主键
   WXDM          维修代码                nvarchar(200)  非主
   WXNR          维修内容                nvarchar(500)  非主
   WXJG          维修结果                nvarchar(500)  非主
 
-EDU_ZDGL_3_SBXHLX  设备型号类型表
+EDU_ZDGL_03_SBXHLX  设备型号类型表
   ID            编号                    int            主键
   LXMC          类型名称                nvarchar(200)  非主
   LXJC          类型简称                nvarchar(200)  非主
 
-EDU_ZDGL_4_SCCJ  生产厂家表
+EDU_ZDGL_04_SCCJ  生产厂家表
   ID            编号                    int            主键
   CJM           厂家名                  nvarchar(200)  非主
   CJDZ          厂家地址                nvarchar(500)  非主
   LXR           联系人                  nvarchar(200)  非主
   LXDH          联系电话                nvarchar(200)  非主
 
-EDU_ZDGL_5_SBXH  设备型号表
+EDU_ZDGL_05_SBXH  设备型号表
   ID            编号                    int            主键
   XX            型号                    nvarchar(200)  非主
   LXID          类型ID                  int            非主        设备型号类型表
@@ -31,18 +31,18 @@ EDU_ZDGL_5_SBXH  设备型号表
   MS            描述                    nvarchar(200)  非主
   JG            价格                    float          非主
 
-EDU_ZDGL_6_XZQH  行政区划表
+EDU_ZDGL_06_XZQH  行政区划表
   ID            编号                    int            主键
   QHM           区划码                  nvarchar(200)  非主
   QHMC          区划名称                nvarchar(200)  非主
   QH            区号                    nvarchar(200)  非主
 
-EDU_ZDGL_7_SSGS  所属公司表
+EDU_ZDGL_07_SSGS  所属公司表
   ID            编号                    int            主键
   GSDM          公司代码                nvarchar(200)  非主
   GSM           公司名                  nvarchar(200)  非主
 
-EDU_ZDGL_8_KH  客户表
+EDU_ZDGL_08_KH  客户表
   ID            编号                    int            主键
   KHDM          客户代码                nvarchar(200)  非主
   SZQYID        所在区域ID              int            非主        行政区划表
@@ -53,7 +53,7 @@ EDU_ZDGL_8_KH  客户表
   LXR           联系人                  nvarchar(200)  非主
   DH            电话                    nvarchar(200)  非主
 
-EDU_ZDGL_9_WXS  维修商表
+EDU_ZDGL_09_WXS  维修商表
   ID            编号                    int            主键
   WXSDM         维修商代码              nvarchar(200)  非主
   WXSMC         维修商名称              nvarchar(200)  非主

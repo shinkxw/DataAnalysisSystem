@@ -259,13 +259,13 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_OAXT_36_A02
             and   type = 'V')
    drop view VIEW_EDU_OAXT_36_A02_BJGZJC_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_5_SBXH_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_05_SBXH_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_5_SBXH_DISP
+   drop view VIEW_EDU_ZDGL_05_SBXH_DISP
 GO
-if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_8_KH_DISP')
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_08_KH_DISP')
             and   type = 'V')
-   drop view VIEW_EDU_ZDGL_8_KH_DISP
+   drop view VIEW_EDU_ZDGL_08_KH_DISP
 GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZDGL_11_FJPC_DISP')
             and   type = 'V')
@@ -3480,7 +3480,7 @@ FROM dbo.EDU_OAXT_36_A02_BJGZJC AS a LEFT OUTER JOIN
 GO
 
 --设备型号表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_5_SBXH_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_05_SBXH_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[XX]--型号
@@ -3496,13 +3496,13 @@ SELECT a.[ID]--编号
       ,c.LXR as c_SCCJ_LXR--生产厂家表 联系人
       ,c.LXDH as c_SCCJ_LXDH--生产厂家表 联系电话
 
-FROM dbo.EDU_ZDGL_5_SBXH AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_3_SBXHLX AS b ON a.LXID = b.ID /*类型ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_4_SCCJ AS c ON a.SCCJID = c.ID /*生产厂家ID*/
+FROM dbo.EDU_ZDGL_05_SBXH AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_03_SBXHLX AS b ON a.LXID = b.ID /*类型ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_04_SCCJ AS c ON a.SCCJID = c.ID /*生产厂家ID*/
 GO
 
 --客户表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_8_KH_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_08_KH_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[KHDM]--客户代码
@@ -3519,9 +3519,9 @@ SELECT a.[ID]--编号
       ,c.GSDM as c_SSGS_GSDM--所属公司表 公司代码
       ,c.GSM as c_SSGS_GSM--所属公司表 公司名
 
-FROM dbo.EDU_ZDGL_8_KH AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_6_XZQH AS b ON a.SZQYID = b.ID /*所在区域ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_7_SSGS AS c ON a.SSGSID = c.ID /*所属公司ID*/
+FROM dbo.EDU_ZDGL_08_KH AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_06_XZQH AS b ON a.SZQYID = b.ID /*所在区域ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_07_SSGS AS c ON a.SSGSID = c.ID /*所属公司ID*/
 GO
 
 --分拣批次表
@@ -3548,7 +3548,7 @@ SELECT a.[ID]--编号
       ,b.DH as b_KH_DH--客户表 电话
 
 FROM dbo.EDU_ZDGL_11_FJPC AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_8_KH AS b ON a.KHID = b.ID /*客户ID*/
+      dbo.EDU_ZDGL_08_KH AS b ON a.KHID = b.ID /*客户ID*/
 GO
 
 --分拣详细表
@@ -3573,7 +3573,7 @@ SELECT a.[ID]--编号
       ,b.JG as b_SBXH_JG--设备型号表 价格
 
 FROM dbo.EDU_ZDGL_12_FJXX AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_5_SBXH AS b ON a.XHID = b.ID /*型号ID*/
+      dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/
 GO
 
 --发货批次表
@@ -3648,7 +3648,7 @@ SELECT a.[ID]--编号
       ,b.DH as b_KH_DH--客户表 电话
 
 FROM dbo.EDU_ZDGL_16_JSD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_8_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/
+      dbo.EDU_ZDGL_08_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/
 GO
 
 --接收单详细表
@@ -3689,11 +3689,11 @@ SELECT a.[ID]--编号
       ,g.LXDH as g_WXR_LXDH--维修人表 联系电话
 
 FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_5_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS c ON a.SFECFX = c.DM /*是否二次返修*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_8_KH AS d ON a.SXDWID = d.ID /*送修单位ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_1_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_2_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_08_KH AS d ON a.SXDWID = d.ID /*送修单位ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_01_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_02_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/
 GO
 
@@ -3711,7 +3711,7 @@ SELECT a.[ID]--编号
       ,b.DZ as b_WXS_DZ--维修商表 地址
 
 FROM dbo.EDU_ZDGL_18_JFD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_9_WXS AS b ON a.WXSID = b.ID /*维修商ID*/
+      dbo.EDU_ZDGL_09_WXS AS b ON a.WXSID = b.ID /*维修商ID*/
 GO
 
 --交付单详细表
@@ -3757,7 +3757,7 @@ SELECT a.[ID]--编号
       ,b.DH as b_KH_DH--客户表 电话
 
 FROM dbo.EDU_ZDGL_20_FHD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_8_KH AS b ON a.FHDWID = b.ID /*返回单位ID*/
+      dbo.EDU_ZDGL_08_KH AS b ON a.FHDWID = b.ID /*返回单位ID*/
 GO
 
 --返回单详细表

@@ -1,6 +1,6 @@
 
 --客户表
-CREATE VIEW [dbo].[VIEW_EDU_ZDGL_8_KH_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZDGL_08_KH_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[KHDM]--客户代码
@@ -17,7 +17,7 @@ SELECT a.[ID]--编号
       ,c.GSDM as c_SSGS_GSDM--所属公司表 公司代码
       ,c.GSM as c_SSGS_GSM--所属公司表 公司名
 
-FROM dbo.EDU_ZDGL_8_KH AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_6_XZQH AS b ON a.SZQYID = b.ID /*所在区域ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_7_SSGS AS c ON a.SSGSID = c.ID /*所属公司ID*/
+FROM dbo.EDU_ZDGL_08_KH AS a LEFT OUTER JOIN
+      dbo.EDU_ZDGL_06_XZQH AS b ON a.SZQYID = b.ID /*所在区域ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_07_SSGS AS c ON a.SSGSID = c.ID /*所属公司ID*/
 GO

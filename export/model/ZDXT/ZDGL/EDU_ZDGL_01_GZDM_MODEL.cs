@@ -4,15 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_1_GZDM_metadata))]
-    public partial class EDU_ZDGL_1_GZDM
+    [MetadataType(typeof(EDU_ZDGL_01_GZDM_metadata))]
+    public partial class EDU_ZDGL_01_GZDM
     {
-        public EDU_ZDGL_1_GZDM()
+        public EDU_ZDGL_01_GZDM()
         {
             GZDM = "";
             GZXX = "";
         }
-        public class EDU_ZDGL_1_GZDM_metadata
+        public class EDU_ZDGL_01_GZDM_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

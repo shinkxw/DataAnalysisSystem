@@ -4,10 +4,10 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_8_KH_metadata))]
-    public partial class EDU_ZDGL_8_KH
+    [MetadataType(typeof(EDU_ZDGL_08_KH_metadata))]
+    public partial class EDU_ZDGL_08_KH
     {
-        public EDU_ZDGL_8_KH()
+        public EDU_ZDGL_08_KH()
         {
             KHDM = "";
             DWMC = "";
@@ -16,7 +16,7 @@ namespace HanRuEdu.LDAL
             LXR = "";
             DH = "";
         }
-        public class EDU_ZDGL_8_KH_metadata
+        public class EDU_ZDGL_08_KH_metadata
         {
             [Required(ErrorMessage = "±ØÌî")]
             [Display(Name = "±àºÅ")]

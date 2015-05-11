@@ -37,10 +37,10 @@ SELECT a.[ID]--编号
       ,g.LXDH as g_WXR_LXDH--维修人表 联系电话
 
 FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_5_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS c ON a.SFECFX = c.DM /*是否二次返修*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_8_KH AS d ON a.SXDWID = d.ID /*送修单位ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_1_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_2_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_08_KH AS d ON a.SXDWID = d.ID /*送修单位ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_01_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_02_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/
 GO

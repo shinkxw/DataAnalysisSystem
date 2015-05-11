@@ -4,17 +4,18 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_4_SCCJ_metadata))]
-    public partial class EDU_ZDGL_4_SCCJ
+    [MetadataType(typeof(EDU_ZDGL_09_WXS_metadata))]
+    public partial class EDU_ZDGL_09_WXS
     {
-        public EDU_ZDGL_4_SCCJ()
+        public EDU_ZDGL_09_WXS()
         {
-            CJM = "";
-            CJDZ = "";
+            WXSDM = "";
+            WXSMC = "";
             LXR = "";
-            LXDH = "";
+            LXDM = "";
+            DZ = "";
         }
-        public class EDU_ZDGL_4_SCCJ_metadata
+        public class EDU_ZDGL_09_WXS_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -22,17 +23,17 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "厂家名")]
+            [Display(Name = "维修商代码")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CJM { get; set; }
+            public String WXSDM { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "厂家地址")]
-            [StringLength(500)]
+            [Display(Name = "维修商名称")]
+            [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CJDZ { get; set; }
+            public String WXSMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -43,10 +44,17 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "联系电话")]
+            [Display(Name = "联系代码")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String LXDH { get; set; }
+            public String LXDM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "地址")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DZ { get; set; }
 
 
         }

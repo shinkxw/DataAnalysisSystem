@@ -327,37 +327,37 @@
   GZLBID         EDU_OAXT_36_A01_BJGZLB             ID
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-<EDU_ZDGL_5_SBXH
-  LXID           EDU_ZDGL_3_SBXHLX                  ID
-  SCCJID         EDU_ZDGL_4_SCCJ                    ID
-<EDU_ZDGL_8_KH
-  SZQYID         EDU_ZDGL_6_XZQH                    ID
-  SSGSID         EDU_ZDGL_7_SSGS                    ID
+<EDU_ZDGL_05_SBXH
+  LXID           EDU_ZDGL_03_SBXHLX                 ID
+  SCCJID         EDU_ZDGL_04_SCCJ                   ID
+<EDU_ZDGL_08_KH
+  SZQYID         EDU_ZDGL_06_XZQH                   ID
+  SSGSID         EDU_ZDGL_07_SSGS                   ID
 <EDU_ZDGL_11_FJPC
-  KHID           EDU_ZDGL_8_KH                      ID
+  KHID           EDU_ZDGL_08_KH                     ID
 <EDU_ZDGL_12_FJXX
-  XHID           EDU_ZDGL_5_SBXH                    ID
+  XHID           EDU_ZDGL_05_SBXH                   ID
 <EDU_ZDGL_13_FHPC
   WLGSID         EDU_ZDGL_15_WLGS                   ID
 <EDU_ZDGL_14_FHXX
   FHPCID         EDU_ZDGL_13_FHPC                   ID
   FJXXID         EDU_ZDGL_12_FJXX                   ID
 <EDU_ZDGL_16_JSD
-  SXDWID         EDU_ZDGL_8_KH                      ID
+  SXDWID         EDU_ZDGL_08_KH                     ID
 <EDU_ZDGL_17_JSDXX
-  XHID           EDU_ZDGL_5_SBXH                    ID
+  XHID           EDU_ZDGL_05_SBXH                   ID
   SFECFX         EDU_JY_SFBZ                        DM
-  SXDWID         EDU_ZDGL_8_KH                      ID
-  GZXXID         EDU_ZDGL_1_GZDM                    ID
-  WXXXID         EDU_ZDGL_2_WXDM                    ID
+  SXDWID         EDU_ZDGL_08_KH                     ID
+  GZXXID         EDU_ZDGL_01_GZDM                   ID
+  WXXXID         EDU_ZDGL_02_WXDM                   ID
   WXRID          EDU_ZDGL_10_WXR                    ID
 <EDU_ZDGL_18_JFD
-  WXSID          EDU_ZDGL_9_WXS                     ID
+  WXSID          EDU_ZDGL_09_WXS                    ID
 <EDU_ZDGL_19_JFDXX
   JFDID          EDU_ZDGL_18_JFD                    ID
   JSDXXID        EDU_ZDGL_17_JSDXX                  ID
 <EDU_ZDGL_20_FHD
-  FHDWID         EDU_ZDGL_8_KH                      ID
+  FHDWID         EDU_ZDGL_08_KH                     ID
 <EDU_ZDGL_21_FHDXX
   FHDID          EDU_ZDGL_20_FHD                    ID
   JSDXXID        EDU_ZDGL_17_JSDXX                  ID

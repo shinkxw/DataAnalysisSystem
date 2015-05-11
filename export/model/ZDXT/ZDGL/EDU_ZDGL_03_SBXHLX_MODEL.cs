@@ -4,15 +4,15 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZDGL_7_SSGS_metadata))]
-    public partial class EDU_ZDGL_7_SSGS
+    [MetadataType(typeof(EDU_ZDGL_03_SBXHLX_metadata))]
+    public partial class EDU_ZDGL_03_SBXHLX
     {
-        public EDU_ZDGL_7_SSGS()
+        public EDU_ZDGL_03_SBXHLX()
         {
-            GSDM = "";
-            GSM = "";
+            LXMC = "";
+            LXJC = "";
         }
-        public class EDU_ZDGL_7_SSGS_metadata
+        public class EDU_ZDGL_03_SBXHLX_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -20,17 +20,17 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "公司代码")]
+            [Display(Name = "类型名称")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String GSDM { get; set; }
+            public String LXMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "公司名")]
+            [Display(Name = "类型简称")]
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String GSM { get; set; }
+            public String LXJC { get; set; }
 
 
         }

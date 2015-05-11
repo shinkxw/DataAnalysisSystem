@@ -1,13 +1,13 @@
 <?daf version="0.1" analyzer_name="0.1"?>
 <namespace name="EDU_ZDGL" provider="reallocate_namespace">
-    <table name="EDU_ZDGL_1_GZDM" exp="故障代码表">
+    <table name="EDU_ZDGL_01_GZDM" exp="故障代码表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="GZDM" exp="故障代码" type="nvarchar(200)" />
             <name="GZXX" exp="故障现象" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_2_WXDM" exp="维修代码表">
+    <table name="EDU_ZDGL_02_WXDM" exp="维修代码表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="WXDM" exp="维修代码" type="nvarchar(200)" />
@@ -15,14 +15,14 @@
             <name="WXJG" exp="维修结果" type="nvarchar(500)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_3_SBXHLX" exp="设备型号类型表">
+    <table name="EDU_ZDGL_03_SBXHLX" exp="设备型号类型表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="LXMC" exp="类型名称" type="nvarchar(200)" />
             <name="LXJC" exp="类型简称" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_4_SCCJ" exp="生产厂家表">
+    <table name="EDU_ZDGL_04_SCCJ" exp="生产厂家表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="CJM" exp="厂家名" type="nvarchar(200)" />
@@ -31,7 +31,7 @@
             <name="LXDH" exp="联系电话" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_5_SBXH" exp="设备型号表">
+    <table name="EDU_ZDGL_05_SBXH" exp="设备型号表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="XX" exp="型号" type="nvarchar(200)" />
@@ -42,7 +42,7 @@
             <name="JG" exp="价格" type="float" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_6_XZQH" exp="行政区划表">
+    <table name="EDU_ZDGL_06_XZQH" exp="行政区划表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="QHM" exp="区划码" type="nvarchar(200)" />
@@ -50,14 +50,14 @@
             <name="QH" exp="区号" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_7_SSGS" exp="所属公司表">
+    <table name="EDU_ZDGL_07_SSGS" exp="所属公司表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="GSDM" exp="公司代码" type="nvarchar(200)" />
             <name="GSM" exp="公司名" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_8_KH" exp="客户表">
+    <table name="EDU_ZDGL_08_KH" exp="客户表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="KHDM" exp="客户代码" type="nvarchar(200)" />
@@ -70,7 +70,7 @@
             <name="DH" exp="电话" type="nvarchar(200)" />
         </field_area>
     </table>
-    <table name="EDU_ZDGL_9_WXS" exp="维修商表">
+    <table name="EDU_ZDGL_09_WXS" exp="维修商表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="WXSDM" exp="维修商代码" type="nvarchar(200)" />
