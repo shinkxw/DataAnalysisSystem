@@ -15,14 +15,9 @@ namespace HanRuEdu.LDAL
         }
         public class EDU_ZDGL_06_XZQH_metadata
         {
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "编号")]
-            public Int32 ID { get; set; }
-
-
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "区划码")]
-            [StringLength(200)]
+            [StringLength(6)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String QHM { get; set; }
 

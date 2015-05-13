@@ -20,7 +20,7 @@ SELECT a.[ID]--编号
       ,b.WLGSID as b_FHPC_WLGSID--发货批次表 物流公司ID
       ,b.ZXS as b_FHPC_ZXS--发货批次表 总箱数
       ,b.FHSJ as b_FHPC_FHSJ--发货批次表 发货时间
-      ,c.PCH as c_FJXX_PCH--分拣详细表 批次号
+      ,c.PCID as c_FJXX_PCID--分拣详细表 批次ID
       ,c.XHID as c_FJXX_XHID--分拣详细表 型号ID
       ,c.SRSL as c_FJXX_SRSL--分拣详细表 收入数量
       ,c.LPSL as c_FJXX_LPSL--分拣详细表 良品数量

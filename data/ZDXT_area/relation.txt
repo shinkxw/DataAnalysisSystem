@@ -336,6 +336,7 @@
 <EDU_ZDGL_11_FJPC
   KHID           EDU_ZDGL_08_KH                     ID
 <EDU_ZDGL_12_FJXX
+  PCID           EDU_ZDGL_11_FJPC                   ID
   XHID           EDU_ZDGL_05_SBXH                   ID
 <EDU_ZDGL_13_FHPC
   WLGSID         EDU_ZDGL_15_WLGS                   ID

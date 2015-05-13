@@ -81,7 +81,7 @@ EDU_ZDGL_11_FJPC  分拣批次表
 
 EDU_ZDGL_12_FJXX  分拣详细表
   ID            编号                    int            主键
-  PCH           批次号                  nvarchar(200)  非主
+  PCID          批次ID                  int            非主        分拣批次表
   XHID          型号ID                  int            非主        设备型号表
   SRSL          收入数量                int            非主
   LPSL          良品数量                int            非主

@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZDGL_12_FJXX()
         {
-            PCH = "";
             BZ = "";
         }
         public class EDU_ZDGL_12_FJXX_metadata
@@ -19,11 +18,9 @@ namespace HanRuEdu.LDAL
             public Int32 ID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "批次号")]
-            [StringLength(200)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String PCH { get; set; }
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "批次")]
+            public Int32 PCID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

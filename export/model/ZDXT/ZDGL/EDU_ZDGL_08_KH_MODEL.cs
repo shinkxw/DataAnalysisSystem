@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZDGL_08_KH()
         {
             KHDM = "";
+            SZQYID = "";
             DWMC = "";
             PY = "";
             KHDZ = "";
@@ -30,9 +31,11 @@ namespace HanRuEdu.LDAL
             public String KHDM { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "所在区域")]
-            public Int32 SZQYID { get; set; }
+            [StringLength(6)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SZQYID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

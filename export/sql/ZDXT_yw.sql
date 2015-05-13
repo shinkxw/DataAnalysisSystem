@@ -5168,13 +5168,12 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZDGL_06_XZQH]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZDGL_06_XZQH](
-	[ID]  int  NOT NULL,--编号
-	[QHM]  nvarchar(200)  NOT NULL,--区划码
+	[QHM]  nvarchar(6)  NOT NULL,--区划码
 	[QHMC]  nvarchar(200)  NOT NULL,--区划名称
 	[QH]  nvarchar(200)  NOT NULL,--区号
 CONSTRAINT [PK_EDU_ZDGL_06_XZQH] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC
+	[QHM] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -5201,7 +5200,7 @@ BEGIN
 CREATE TABLE [dbo].[EDU_ZDGL_08_KH](
 	[ID]  int  NOT NULL,--编号
 	[KHDM]  nvarchar(200)  NOT NULL,--客户代码
-	[SZQYID]  int  NOT NULL,--所在区域ID
+	[SZQYID]  nvarchar(6)  NOT NULL,--所在区域ID
 	[SSGSID]  int  NOT NULL,--所属公司ID
 	[DWMC]  nvarchar(200)  NOT NULL,--单位名称
 	[PY]  nvarchar(200)  NOT NULL,--拼音
@@ -5278,7 +5277,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZDGL
 BEGIN
 CREATE TABLE [dbo].[EDU_ZDGL_12_FJXX](
 	[ID]  int  NOT NULL,--编号
-	[PCH]  nvarchar(200)  NOT NULL,--批次号
+	[PCID]  int  NOT NULL,--批次ID
 	[XHID]  int  NOT NULL,--型号ID
 	[SRSL]  int  NOT NULL,--收入数量
 	[LPSL]  int  NOT NULL,--良品数量
@@ -5513,8 +5512,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'价格' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'行政区划表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_XZQH'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_XZQH', @level2type=N'COLUMN',@level2name=N'ID'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'区划码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_XZQH', @level2type=N'COLUMN',@level2name=N'QHM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'区划名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_06_XZQH', @level2type=N'COLUMN',@level2name=N'QHMC'
@@ -5601,7 +5598,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分拣详细表' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_12_FJXX', @level2type=N'COLUMN',@level2name=N'ID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'批次号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_12_FJXX', @level2type=N'COLUMN',@level2name=N'PCH'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'批次ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_12_FJXX', @level2type=N'COLUMN',@level2name=N'PCID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'型号ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_12_FJXX', @level2type=N'COLUMN',@level2name=N'XHID'
 GO

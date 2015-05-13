@@ -105,7 +105,7 @@
     <table name="EDU_ZDGL_12_FJXX" exp="分拣详细表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
-            <name="PCH" exp="批次号" type="nvarchar(200)" />
+            <name="PCID" exp="批次ID" type="int" />
             <name="XHID" exp="型号ID" type="int" />
             <name="SRSL" exp="收入数量" type="int" />
             <name="LPSL" exp="良品数量" type="int" />
