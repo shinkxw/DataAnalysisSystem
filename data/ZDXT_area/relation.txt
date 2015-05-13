@@ -331,7 +331,7 @@
   LXID           EDU_ZDGL_03_SBXHLX                 ID
   SCCJID         EDU_ZDGL_04_SCCJ                   ID
 <EDU_ZDGL_08_KH
-  SZQYID         EDU_ZDGL_06_XZQH                   ID
+  SZQYID         EDU_ZDGL_06_XZQH                   QHM
   SSGSID         EDU_ZDGL_07_SSGS                   ID
 <EDU_ZDGL_11_FJPC
   KHID           EDU_ZDGL_08_KH                     ID
