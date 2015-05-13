@@ -340,4 +340,82 @@
             <name="TJYH" exp="添加用户" type="nvarchar(20)" />
         </field_area>
     </table>
+    <table name="EDU_ELE_10_DXZ" exp="对象组表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZMC" exp="对象组名称" type="nvarchar(50)" />
+            <name="DXIDLB" exp="对象ID列表" type="text" />
+            <name="DXMCLB" exp="对象名称列表" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_10_DXZHFFS" exp="对象组划分方式表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="HFFSMC" exp="划分方式名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_10_DXZHFCJ" exp="对象组划分层级表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="HFFSID" exp="划分方式ID" type="int" />
+            <name="CJMC" exp="层级名称" type="nvarchar(50)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_10_DXZJD" exp="对象组节点表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="HFFSID" exp="划分方式ID" type="int" />
+            <name="HFCJID" exp="划分层级ID" type="int" />
+            <name="FJDID" exp="父节点ID" type="int" />
+            <name="JDMC" exp="节点名称" type="nvarchar(50)" />
+            <name="DXIDLB" exp="对象ID列表" type="text" />
+            <name="DXMCLB" exp="对象名称列表" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_10_DX" exp="对象表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="DXMC" exp="对象名称" type="nvarchar(50)" />
+            <name="DXLX" exp="对象类型" type="int" />
+            <name="DXID" exp="对象ID" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_11_DXZJSLB" exp="对象组角色类别表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="JSLBMC" exp="角色类别名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_11_DXZJS" exp="对象组角色表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="JSLBID" exp="角色类别ID" type="int" />
+            <name="JSMC" exp="角色名称" type="nvarchar(50)" />
+            <name="DXZJDBMJH" exp="对象组节点编码集合" type="text" />
+            <name="DXZJDMCLB" exp="对象组节点名称列表" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ELE_11_YHJS" exp="用户角色表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="YHID" exp="用户ID" type="nvarchar(20)" />
+            <name="DXZID" exp="对象组ID" type="int" />
+            <name="JSID" exp="角色ID" type="int" />
+        </field_area>
+    </table>
 </namespace>

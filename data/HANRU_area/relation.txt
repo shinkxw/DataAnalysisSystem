@@ -83,6 +83,36 @@
 <EDU_ELE_09_JKXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   TJYH           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ELE_10_DXZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ELE_10_DXZHFFS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DXZID          EDU_ELE_10_DXZ                     ID
+<EDU_ELE_10_DXZHFCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DXZID          EDU_ELE_10_DXZ                     ID
+  HFFSID         EDU_ELE_10_DXZHFFS                 ID
+<EDU_ELE_10_DXZJD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DXZID          EDU_ELE_10_DXZ                     ID
+  HFFSID         EDU_ELE_10_DXZHFFS                 ID
+  HFCJID         EDU_ELE_10_DXZHFCJ                 ID
+  FJDID          EDU_ELE_10_DXZJD                   ID
+<EDU_ELE_10_DX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DXZID          EDU_ELE_10_DXZ                     ID
+<EDU_ELE_11_DXZJSLB
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DXZID          EDU_ELE_10_DXZ                     ID
+<EDU_ELE_11_DXZJS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DXZID          EDU_ELE_10_DXZ                     ID
+  JSLBID         EDU_ELE_11_DXZJSLB                 ID
+<EDU_ELE_11_YHJS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  YHID           EDU_ELE_01_USER                    LOGINNAME
+  DXZID          EDU_ELE_10_DXZ                     ID
+  JSID           EDU_ELE_11_DXZJS                   ID
 <EDU_JPXT_01_01_JLCSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   CLXHID         EDU_JPXT_05_01_CLXH                ID
