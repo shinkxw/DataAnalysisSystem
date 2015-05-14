@@ -115,6 +115,16 @@
             <name="QT" exp="其他" type="int" />
             <name="HJ" exp="合计" type="int" />
             <name="BZ" exp="备注" type="nvarchar(500)" />
+            <name="JCFW" exp="基础服务" type="int" />
+            <name="HK" exp="换壳" type="int" />
+            <name="WX" exp="维修" type="int" />
+            <name="XDY" exp="新电源" type="int" />
+            <name="JDY" exp="旧电源" type="int" />
+            <name="PJ" exp="配件" type="int" />
+            <name="TH" exp="退回" type="int" />
+            <name="QTE" exp="其他二" type="int" />
+            <name="WF" exp="未返" type="int" />
+            <name="FHRQ" exp="返回日期" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_13_FHPC" exp="发货批次表">
@@ -125,6 +135,7 @@
             <name="WLGSID" exp="物流公司ID" type="int" />
             <name="ZXS" exp="总箱数" type="int" />
             <name="FHSJ" exp="发货时间" type="datetime" />
+            <name="FJPCID" exp="分拣批次ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_14_FHXX" exp="发货详细表">

@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZDGL_12_FJXX()
         {
             BZ = "";
+            FHRQ = DateTime.Now;
         }
         public class EDU_ZDGL_12_FJXX_metadata
         {
@@ -68,6 +69,56 @@ namespace HanRuEdu.LDAL
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "基础服务")]
+            public Int32 JCFW { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "换壳")]
+            public Int32 HK { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "维修")]
+            public Int32 WX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "新电源")]
+            public Int32 XDY { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "旧电源")]
+            public Int32 JDY { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "配件")]
+            public Int32 PJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "退回")]
+            public Int32 TH { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "其他二")]
+            public Int32 QTE { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "未返")]
+            public Int32 WF { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "返回日期")]
+            public DateTime FHRQ { get; set; }
 
 
         }

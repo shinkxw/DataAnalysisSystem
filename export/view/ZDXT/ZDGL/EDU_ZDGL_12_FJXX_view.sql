@@ -13,6 +13,16 @@ SELECT a.[ID]--编号
       ,a.[QT]--其他
       ,a.[HJ]--合计
       ,a.[BZ]--备注
+      ,a.[JCFW]--基础服务
+      ,a.[HK]--换壳
+      ,a.[WX]--维修
+      ,a.[XDY]--新电源
+      ,a.[JDY]--旧电源
+      ,a.[PJ]--配件
+      ,a.[TH]--退回
+      ,a.[QTE]--其他二
+      ,a.[WF]--未返
+      ,a.[FHRQ]--返回日期
       ,b.PCH as b_FJPC_PCH--分拣批次表 批次号
       ,b.KHID as b_FJPC_KHID--分拣批次表 客户ID
       ,b.JSRQ as b_FJPC_JSRQ--分拣批次表 接受日期

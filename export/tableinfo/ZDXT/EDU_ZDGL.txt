@@ -91,6 +91,16 @@ EDU_ZDGL_12_FJXX  分拣详细表
   QT            其他                    int            非主
   HJ            合计                    int            非主
   BZ            备注                    nvarchar(500)  非主
+  JCFW          基础服务                int            非主
+  HK            换壳                    int            非主
+  WX            维修                    int            非主
+  XDY           新电源                  int            非主
+  JDY           旧电源                  int            非主
+  PJ            配件                    int            非主
+  TH            退回                    int            非主
+  QTE           其他二                  int            非主
+  WF            未返                    int            非主
+  FHRQ          返回日期                datetime       非主
 
 EDU_ZDGL_13_FHPC  发货批次表
   ID            编号                    int            主键
@@ -99,6 +109,7 @@ EDU_ZDGL_13_FHPC  发货批次表
   WLGSID        物流公司ID              int            非主        物流公司表
   ZXS           总箱数                  int            非主
   FHSJ          发货时间                datetime       非主
+  FJPCID        分拣批次ID              int            非主        分拣批次表
 
 EDU_ZDGL_14_FHXX  发货详细表
   ID            编号                    int            主键

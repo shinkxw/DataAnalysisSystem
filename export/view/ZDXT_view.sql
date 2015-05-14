@@ -3564,6 +3564,16 @@ SELECT a.[ID]--编号
       ,a.[QT]--其他
       ,a.[HJ]--合计
       ,a.[BZ]--备注
+      ,a.[JCFW]--基础服务
+      ,a.[HK]--换壳
+      ,a.[WX]--维修
+      ,a.[XDY]--新电源
+      ,a.[JDY]--旧电源
+      ,a.[PJ]--配件
+      ,a.[TH]--退回
+      ,a.[QTE]--其他二
+      ,a.[WF]--未返
+      ,a.[FHRQ]--返回日期
       ,b.PCH as b_FJPC_PCH--分拣批次表 批次号
       ,b.KHID as b_FJPC_KHID--分拣批次表 客户ID
       ,b.JSRQ as b_FJPC_JSRQ--分拣批次表 接受日期
@@ -3595,13 +3605,25 @@ SELECT a.[ID]--编号
       ,a.[WLGSID]--物流公司ID
       ,a.[ZXS]--总箱数
       ,a.[FHSJ]--发货时间
+      ,a.[FJPCID]--分拣批次ID
       ,b.GSDM as b_WLGS_GSDM--物流公司表 公司代码
       ,b.GSM as b_WLGS_GSM--物流公司表 公司名
       ,b.GSLXR as b_WLGS_GSLXR--物流公司表 公司联系人
       ,b.LXDH as b_WLGS_LXDH--物流公司表 联系电话
+      ,c.PCH as c_FJPC_PCH--分拣批次表 批次号
+      ,c.KHID as c_FJPC_KHID--分拣批次表 客户ID
+      ,c.JSRQ as c_FJPC_JSRQ--分拣批次表 接受日期
+      ,c.LRSJ as c_FJPC_LRSJ--分拣批次表 录入时间
+      ,c.FJWGSJ as c_FJPC_FJWGSJ--分拣批次表 分拣完工时间
+      ,c.FJFZR as c_FJPC_FJFZR--分拣批次表 分拣负责人
+      ,c.QRR as c_FJPC_QRR--分拣批次表 确认人
+      ,c.QRRLXDH as c_FJPC_QRRLXDH--分拣批次表 确认人联系电话
+      ,c.QRSJ as c_FJPC_QRSJ--分拣批次表 确认时间
+      ,c.CSJG as c_FJPC_CSJG--分拣批次表 测试结果
 
 FROM dbo.EDU_ZDGL_13_FHPC AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_15_WLGS AS b ON a.WLGSID = b.ID /*物流公司ID*/
+      dbo.EDU_ZDGL_15_WLGS AS b ON a.WLGSID = b.ID /*物流公司ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_11_FJPC AS c ON a.FJPCID = c.ID /*分拣批次ID*/
 GO
 
 --发货详细表
@@ -3625,6 +3647,7 @@ SELECT a.[ID]--编号
       ,b.WLGSID as b_FHPC_WLGSID--发货批次表 物流公司ID
       ,b.ZXS as b_FHPC_ZXS--发货批次表 总箱数
       ,b.FHSJ as b_FHPC_FHSJ--发货批次表 发货时间
+      ,b.FJPCID as b_FHPC_FJPCID--发货批次表 分拣批次ID
       ,c.PCID as c_FJXX_PCID--分拣详细表 批次ID
       ,c.XHID as c_FJXX_XHID--分拣详细表 型号ID
       ,c.SRSL as c_FJXX_SRSL--分拣详细表 收入数量
@@ -3635,6 +3658,16 @@ SELECT a.[ID]--编号
       ,c.QT as c_FJXX_QT--分拣详细表 其他
       ,c.HJ as c_FJXX_HJ--分拣详细表 合计
       ,c.BZ as c_FJXX_BZ--分拣详细表 备注
+      ,c.JCFW as c_FJXX_JCFW--分拣详细表 基础服务
+      ,c.HK as c_FJXX_HK--分拣详细表 换壳
+      ,c.WX as c_FJXX_WX--分拣详细表 维修
+      ,c.XDY as c_FJXX_XDY--分拣详细表 新电源
+      ,c.JDY as c_FJXX_JDY--分拣详细表 旧电源
+      ,c.PJ as c_FJXX_PJ--分拣详细表 配件
+      ,c.TH as c_FJXX_TH--分拣详细表 退回
+      ,c.QTE as c_FJXX_QTE--分拣详细表 其他二
+      ,c.WF as c_FJXX_WF--分拣详细表 未返
+      ,c.FHRQ as c_FJXX_FHRQ--分拣详细表 返回日期
 
 FROM dbo.EDU_ZDGL_14_FHXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_13_FHPC AS b ON a.FHPCID = b.ID /*发货批次ID*/ LEFT OUTER JOIN
