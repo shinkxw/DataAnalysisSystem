@@ -9,8 +9,6 @@ SELECT a.[ID]--编号
       ,a.[HFCJID]--划分层级ID
       ,a.[FJDID]--父节点ID
       ,a.[JDMC]--节点名称
-      ,a.[DXIDLB]--对象ID列表
-      ,a.[DXMCLB]--对象名称列表
       ,c.SCHOOLID as c_DXZ_SCHOOLID--对象组表 学校ID
       ,c.DXZMC as c_DXZ_DXZMC--对象组表 对象组名称
       ,c.DXIDLB as c_DXZ_DXIDLB--对象组表 对象ID列表
@@ -29,8 +27,6 @@ SELECT a.[ID]--编号
       ,f.HFCJID as f_DXZJD_HFCJID--对象组节点表 划分层级ID
       ,f.FJDID as f_DXZJD_FJDID--对象组节点表 父节点ID
       ,f.JDMC as f_DXZJD_JDMC--对象组节点表 节点名称
-      ,f.DXIDLB as f_DXZJD_DXIDLB--对象组节点表 对象ID列表
-      ,f.DXMCLB as f_DXZJD_DXMCLB--对象组节点表 对象名称列表
 
 FROM dbo.EDU_ELE_10_DXZJD AS a LEFT OUTER JOIN
       dbo.EDU_ELE_10_DXZ AS c ON a.DXZID = c.ID /*对象组ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

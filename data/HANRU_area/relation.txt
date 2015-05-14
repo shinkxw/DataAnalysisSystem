@@ -101,6 +101,8 @@
 <EDU_ELE_10_DX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   DXZID          EDU_ELE_10_DXZ                     ID
+  HFFSID         EDU_ELE_10_DXZHFFS                 ID
+  JDID           EDU_ELE_10_DXZJD                   ID
 <EDU_ELE_11_DXZJSLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   DXZID          EDU_ELE_10_DXZ                     ID

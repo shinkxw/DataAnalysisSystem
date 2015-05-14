@@ -29,6 +29,16 @@ namespace HanRuEdu.LDAL
             public Int32 DXZID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "划分方式")]
+            public Int32 HFFSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "节点")]
+            public Int32 JDID { get; set; }
+
+
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "对象名称")]
             [StringLength(50)]

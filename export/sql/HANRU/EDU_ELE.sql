@@ -842,8 +842,6 @@ CREATE TABLE [dbo].[EDU_ELE_10_DXZJD](
 	[HFCJID]  int  NOT NULL,--划分层级ID
 	[FJDID]  int  NOT NULL,--父节点ID
 	[JDMC]  nvarchar(50)  NOT NULL,--节点名称
-	[DXIDLB]  text  NOT NULL,--对象ID列表
-	[DXMCLB]  text  NOT NULL,--对象名称列表
 CONSTRAINT [PK_EDU_ELE_10_DXZJD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -860,6 +858,8 @@ CREATE TABLE [dbo].[EDU_ELE_10_DX](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[DXZID]  int  NOT NULL,--对象组ID
+	[HFFSID]  int  NOT NULL,--划分方式ID
+	[JDID]  int  NOT NULL,--节点ID
 	[DXMC]  nvarchar(50)  NOT NULL,--对象名称
 	[DXLX]  int  NOT NULL,--对象类型
 	[DXID]  nvarchar(200)  NOT NULL,--对象ID
@@ -1486,10 +1486,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'父节点ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'节点名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DXZJD', @level2type=N'COLUMN',@level2name=N'JDMC'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DXZJD', @level2type=N'COLUMN',@level2name=N'DXIDLB'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DXZJD', @level2type=N'COLUMN',@level2name=N'DXMCLB'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX', @level2type=N'COLUMN',@level2name=N'ID'
@@ -1497,6 +1493,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象组ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX', @level2type=N'COLUMN',@level2name=N'DXZID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'划分方式ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX', @level2type=N'COLUMN',@level2name=N'HFFSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'节点ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX', @level2type=N'COLUMN',@level2name=N'JDID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_10_DX', @level2type=N'COLUMN',@level2name=N'DXMC'
 GO

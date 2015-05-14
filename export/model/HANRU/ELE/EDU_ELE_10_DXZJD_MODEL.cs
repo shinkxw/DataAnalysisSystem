@@ -10,8 +10,6 @@ namespace HanRuEdu.LDAL
         public EDU_ELE_10_DXZJD()
         {
             JDMC = "";
-            DXIDLB = "";
-            DXMCLB = "";
         }
         public class EDU_ELE_10_DXZJD_metadata
         {
@@ -50,18 +48,6 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String JDMC { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "对象ID列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DXIDLB { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "对象名称列表")]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DXMCLB { get; set; }
 
 
         }

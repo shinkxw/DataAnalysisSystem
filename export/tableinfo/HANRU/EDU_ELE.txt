@@ -310,13 +310,13 @@ EDU_ELE_10_DXZJD  对象组节点表
   HFCJID        划分层级ID              int            非主        对象组划分层级表
   FJDID         父节点ID                int            非主        对象组节点表
   JDMC          节点名称                nvarchar(50)   非主
-  DXIDLB        对象ID列表              text           非主
-  DXMCLB        对象名称列表            text           非主
 
 EDU_ELE_10_DX  对象表
   ID            编号                    int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
   DXZID         对象组ID                int            非主        对象组表
+  HFFSID        划分方式ID              int            非主        对象组划分方式表
+  JDID          节点ID                  int            非主        对象组节点表
   DXMC          对象名称                nvarchar(50)   非主
   DXLX          对象类型                int            非主
   DXID          对象ID                  nvarchar(200)  非主

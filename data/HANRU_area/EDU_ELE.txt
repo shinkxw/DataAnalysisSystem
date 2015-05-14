@@ -376,8 +376,6 @@
             <name="HFCJID" exp="划分层级ID" type="int" />
             <name="FJDID" exp="父节点ID" type="int" />
             <name="JDMC" exp="节点名称" type="nvarchar(50)" />
-            <name="DXIDLB" exp="对象ID列表" type="text" />
-            <name="DXMCLB" exp="对象名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ELE_10_DX" exp="对象表">
@@ -385,6 +383,8 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="DXZID" exp="对象组ID" type="int" />
+            <name="HFFSID" exp="划分方式ID" type="int" />
+            <name="JDID" exp="节点ID" type="int" />
             <name="DXMC" exp="对象名称" type="nvarchar(50)" />
             <name="DXLX" exp="对象类型" type="int" />
             <name="DXID" exp="对象ID" type="nvarchar(200)" />
