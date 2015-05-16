@@ -15,6 +15,7 @@ SELECT a.[ID]--编号
       ,a.[WBZ]--文本值
       ,a.[FZ]--分值
       ,a.[DFYHID]--打分用户ID
+      ,a.[CKSJ]--参考时间
       ,a.[TJSJ]--添加时间
       ,a.[SHZT]--审核状态
       ,a.[SHJLID]--审核记录ID

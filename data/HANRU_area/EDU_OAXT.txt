@@ -1450,6 +1450,7 @@
             <name="WBZ" exp="文本值" type="nvarchar(50)" />
             <name="FZ" exp="分值" type="decimal(5, 1)" />
             <name="DFYHID" exp="打分用户ID" type="nvarchar(20)" />
+            <name="CKSJ" exp="参考时间" type="datetime" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="SHZT" exp="审核状态" type="int" />
             <name="SHJLID" exp="审核记录ID" type="int" />

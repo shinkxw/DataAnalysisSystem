@@ -51,6 +51,7 @@ SELECT a.[ID]--编号
       ,f.WBZ as f_DFJG_WBZ--打分结果表 文本值
       ,f.FZ as f_DFJG_FZ--打分结果表 分值
       ,f.DFYHID as f_DFJG_DFYHID--打分结果表 打分用户ID
+      ,f.CKSJ as f_DFJG_CKSJ--打分结果表 参考时间
       ,f.TJSJ as f_DFJG_TJSJ--打分结果表 添加时间
       ,f.SHZT as f_DFJG_SHZT--打分结果表 审核状态
       ,f.SHJLID as f_DFJG_SHJLID--打分结果表 审核记录ID

@@ -2958,6 +2958,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A15_DFJG](
 	[WBZ]  nvarchar(50)  NOT NULL,--文本值
 	[FZ]  decimal(5, 1)  NOT NULL,--分值
 	[DFYHID]  nvarchar(20)  NOT NULL,--打分用户ID
+	[CKSJ]  datetime  NOT NULL,--参考时间
 	[TJSJ]  datetime  NOT NULL,--添加时间
 	[SHZT]  int  NOT NULL,--审核状态
 	[SHJLID]  int  NOT NULL,--审核记录ID
@@ -5316,6 +5317,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'FZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'DFYHID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参考时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'CKSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'TJSJ'
 GO

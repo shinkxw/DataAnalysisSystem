@@ -6932,6 +6932,7 @@ SELECT a.[ID]--编号
       ,a.[WBZ]--文本值
       ,a.[FZ]--分值
       ,a.[DFYHID]--打分用户ID
+      ,a.[CKSJ]--参考时间
       ,a.[TJSJ]--添加时间
       ,a.[SHZT]--审核状态
       ,a.[SHJLID]--审核记录ID
@@ -7103,6 +7104,7 @@ SELECT a.[ID]--编号
       ,f.WBZ as f_DFJG_WBZ--打分结果表 文本值
       ,f.FZ as f_DFJG_FZ--打分结果表 分值
       ,f.DFYHID as f_DFJG_DFYHID--打分结果表 打分用户ID
+      ,f.CKSJ as f_DFJG_CKSJ--打分结果表 参考时间
       ,f.TJSJ as f_DFJG_TJSJ--打分结果表 添加时间
       ,f.SHZT as f_DFJG_SHZT--打分结果表 审核状态
       ,f.SHJLID as f_DFJG_SHJLID--打分结果表 审核记录ID
@@ -7166,6 +7168,7 @@ SELECT a.[ID]--编号
       ,e.WBZ as e_DFJG_WBZ--打分结果表 文本值
       ,e.FZ as e_DFJG_FZ--打分结果表 分值
       ,e.DFYHID as e_DFJG_DFYHID--打分结果表 打分用户ID
+      ,e.CKSJ as e_DFJG_CKSJ--打分结果表 参考时间
       ,e.TJSJ as e_DFJG_TJSJ--打分结果表 添加时间
       ,e.SHZT as e_DFJG_SHZT--打分结果表 审核状态
       ,e.SHJLID as e_DFJG_SHJLID--打分结果表 审核记录ID

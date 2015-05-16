@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             BDFDXMC = "";
             WBZ = "";
             DFYHID = "";
+            CKSJ = DateTime.Now;
             TJSJ = DateTime.Now;
         }
         public class EDU_OAXT_50_A15_DFJG_metadata
@@ -89,6 +90,11 @@ namespace HanRuEdu.LDAL
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String DFYHID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "参考时间")]
+            public DateTime CKSJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

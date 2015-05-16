@@ -1234,6 +1234,7 @@ EDU_OAXT_50_A15_DFJG  打分结果表
   WBZ           文本值                  nvarchar(50)   非主
   FZ            分值                    decimal(5, 1)  非主
   DFYHID        打分用户ID              nvarchar(20)   非主        应用系统用户表
+  CKSJ          参考时间                datetime       非主
   TJSJ          添加时间                datetime       非主
   SHZT          审核状态                int            非主
   SHJLID        审核记录ID              int            非主        审核记录表
