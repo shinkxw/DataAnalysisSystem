@@ -353,6 +353,7 @@
   GZXXID         EDU_ZDGL_01_GZDM                   ID
   WXXXID         EDU_ZDGL_02_WXDM                   ID
   WXRID          EDU_ZDGL_10_WXR                    ID
+  JSDID          EDU_ZDGL_16_JSD                    ID
 <EDU_ZDGL_18_JFD
   WXSID          EDU_ZDGL_09_WXS                    ID
 <EDU_ZDGL_19_JFDXX

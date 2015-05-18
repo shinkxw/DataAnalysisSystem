@@ -3708,6 +3708,7 @@ SELECT a.[ID]--编号
       ,a.[WXXXID]--维修信息ID
       ,a.[WXRID]--维修人ID
       ,a.[WXRQ]--维修日期
+      ,a.[JSDID]--接收单ID
       ,b.XX as b_SBXH_XX--设备型号表 型号
       ,b.LXID as b_SBXH_LXID--设备型号表 类型ID
       ,b.SCCJID as b_SBXH_SCCJID--设备型号表 生产厂家ID
@@ -3731,6 +3732,10 @@ SELECT a.[ID]--编号
       ,g.GH as g_WXR_GH--维修人表 工号
       ,g.XM as g_WXR_XM--维修人表 姓名
       ,g.LXDH as g_WXR_LXDH--维修人表 联系电话
+      ,h.JSDH as h_JSD_JSDH--接收单表 接收单号
+      ,h.SXDWID as h_JSD_SXDWID--接收单表 送修单位ID
+      ,h.SXRQ as h_JSD_SXRQ--接收单表 送修日期
+      ,h.BCZT as h_JSD_BCZT--接收单表 保存状态
 
 FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
@@ -3738,7 +3743,8 @@ FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_08_KH AS d ON a.SXDWID = d.ID /*送修单位ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_01_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_02_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/
+      dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_16_JSD AS h ON a.JSDID = h.ID /*接收单ID*/
 GO
 
 --交付单表
@@ -3777,6 +3783,7 @@ SELECT a.[ID]--编号
       ,c.WXXXID as c_JSDXX_WXXXID--接收单详细表 维修信息ID
       ,c.WXRID as c_JSDXX_WXRID--接收单详细表 维修人ID
       ,c.WXRQ as c_JSDXX_WXRQ--接收单详细表 维修日期
+      ,c.JSDID as c_JSDXX_JSDID--接收单详细表 接收单ID
 
 FROM dbo.EDU_ZDGL_19_JFDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_18_JFD AS b ON a.JFDID = b.ID /*交付单ID*/ LEFT OUTER JOIN
@@ -3823,6 +3830,7 @@ SELECT a.[ID]--编号
       ,c.WXXXID as c_JSDXX_WXXXID--接收单详细表 维修信息ID
       ,c.WXRID as c_JSDXX_WXRID--接收单详细表 维修人ID
       ,c.WXRQ as c_JSDXX_WXRQ--接收单详细表 维修日期
+      ,c.JSDID as c_JSDXX_JSDID--接收单详细表 接收单ID
 
 FROM dbo.EDU_ZDGL_21_FHDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_20_FHD AS b ON a.FHDID = b.ID /*返回单ID*/ LEFT OUTER JOIN

@@ -5397,6 +5397,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_17_JSDXX](
 	[WXXXID]  int  NOT NULL,--维修信息ID
 	[WXRID]  int  NOT NULL,--维修人ID
 	[WXRQ]  datetime  NOT NULL,--维修日期
+	[JSDID]  int  NOT NULL,--接收单ID
 CONSTRAINT [PK_EDU_ZDGL_17_JSDXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -5739,6 +5740,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'维修人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_17_JSDXX', @level2type=N'COLUMN',@level2name=N'WXRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'维修日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_17_JSDXX', @level2type=N'COLUMN',@level2name=N'WXRQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接收单ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_17_JSDXX', @level2type=N'COLUMN',@level2name=N'JSDID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'交付单表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_18_JFD'
 GO

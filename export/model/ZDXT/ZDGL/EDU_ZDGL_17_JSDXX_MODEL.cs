@@ -72,6 +72,11 @@ namespace HanRuEdu.LDAL
             public DateTime WXRQ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "接收单")]
+            public Int32 JSDID { get; set; }
+
+
         }
     }
 }

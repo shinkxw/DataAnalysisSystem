@@ -185,6 +185,7 @@
             <name="WXXXID" exp="维修信息ID" type="int" />
             <name="WXRID" exp="维修人ID" type="int" />
             <name="WXRQ" exp="维修日期" type="datetime" />
+            <name="JSDID" exp="接收单ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_18_JFD" exp="交付单表">

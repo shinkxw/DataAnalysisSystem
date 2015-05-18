@@ -151,6 +151,7 @@ EDU_ZDGL_17_JSDXX  接收单详细表
   WXXXID        维修信息ID              int            非主        维修代码表
   WXRID         维修人ID                int            非主        维修人表
   WXRQ          维修日期                datetime       非主
+  JSDID         接收单ID                int            非主        接收单表
 
 EDU_ZDGL_18_JFD  交付单表
   ID            编号                    int            主键

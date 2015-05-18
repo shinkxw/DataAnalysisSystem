@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.WXXXID as c_JSDXX_WXXXID--接收单详细表 维修信息ID
       ,c.WXRID as c_JSDXX_WXRID--接收单详细表 维修人ID
       ,c.WXRQ as c_JSDXX_WXRQ--接收单详细表 维修日期
+      ,c.JSDID as c_JSDXX_JSDID--接收单详细表 接收单ID
 
 FROM dbo.EDU_ZDGL_21_FHDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_20_FHD AS b ON a.FHDID = b.ID /*返回单ID*/ LEFT OUTER JOIN
