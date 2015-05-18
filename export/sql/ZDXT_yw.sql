@@ -5374,6 +5374,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_16_JSD](
 	[JSDH]  nvarchar(200)  NOT NULL,--接收单号
 	[SXDWID]  int  NOT NULL,--送修单位ID
 	[SXRQ]  datetime  NOT NULL,--送修日期
+	[BCZT]  int  NOT NULL,--保存状态
 CONSTRAINT [PK_EDU_ZDGL_16_JSD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -5714,6 +5715,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_16_JSD', @level2type=N'COLUMN',@level2name=N'SXDWID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_16_JSD', @level2type=N'COLUMN',@level2name=N'SXRQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'保存状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_16_JSD', @level2type=N'COLUMN',@level2name=N'BCZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接收单详细表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_17_JSDXX'
 GO

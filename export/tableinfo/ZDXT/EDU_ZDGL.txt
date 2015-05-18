@@ -138,6 +138,7 @@ EDU_ZDGL_16_JSD  接收单表
   JSDH          接收单号                nvarchar(200)  非主
   SXDWID        送修单位ID              int            非主        客户表
   SXRQ          送修日期                datetime       非主
+  BCZT          保存状态                int            非主
 
 EDU_ZDGL_17_JSDXX  接收单详细表
   ID            编号                    int            主键

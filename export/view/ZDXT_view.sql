@@ -3681,6 +3681,7 @@ SELECT a.[ID]--编号
       ,a.[JSDH]--接收单号
       ,a.[SXDWID]--送修单位ID
       ,a.[SXRQ]--送修日期
+      ,a.[BCZT]--保存状态
       ,b.KHDM as b_KH_KHDM--客户表 客户代码
       ,b.SZQYID as b_KH_SZQYID--客户表 所在区域ID
       ,b.SSGSID as b_KH_SSGSID--客户表 所属公司ID

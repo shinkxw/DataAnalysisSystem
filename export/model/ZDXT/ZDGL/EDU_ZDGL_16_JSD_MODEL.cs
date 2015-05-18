@@ -36,6 +36,11 @@ namespace HanRuEdu.LDAL
             public DateTime SXRQ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "±£´æ×´Ì¬")]
+            public Int32 BCZT { get; set; }
+
+
         }
     }
 }
