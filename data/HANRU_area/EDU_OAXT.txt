@@ -1410,6 +1410,8 @@
             <name="DFJSLBMCLB" exp="打分角色类别名称列表" type="text" />
             <name="SHJSLBMCLB" exp="审核角色类别名称列表" type="text" />
             <name="DFDXCJMC" exp="打分对象层级名称" type="nvarchar(50)" />
+            <name="CKJSLBIDLB" exp="查看角色类别ID列表" type="text" />
+            <name="CKJSLBMCLB" exp="查看角色类别名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A13_DFFS" exp="打分方式表">

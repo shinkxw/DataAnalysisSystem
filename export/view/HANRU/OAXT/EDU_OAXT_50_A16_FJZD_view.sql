@@ -30,6 +30,8 @@ SELECT a.[ID]--编号
       ,d.DFJSLBMCLB as d_DFJD_DFJSLBMCLB--打分节点表 打分角色类别名称列表
       ,d.SHJSLBMCLB as d_DFJD_SHJSLBMCLB--打分节点表 审核角色类别名称列表
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
+      ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
+      ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
 
 FROM dbo.EDU_OAXT_50_A16_FJZD AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

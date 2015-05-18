@@ -21,6 +21,8 @@ SELECT a.[ID]--编号
       ,a.[DFJSLBMCLB]--打分角色类别名称列表
       ,a.[SHJSLBMCLB]--审核角色类别名称列表
       ,a.[DFDXCJMC]--打分对象层级名称
+      ,a.[CKJSLBIDLB]--查看角色类别ID列表
+      ,a.[CKJSLBMCLB]--查看角色类别名称列表
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
@@ -50,6 +52,8 @@ SELECT a.[ID]--编号
       ,e.DFJSLBMCLB as e_DFJD_DFJSLBMCLB--打分节点表 打分角色类别名称列表
       ,e.SHJSLBMCLB as e_DFJD_SHJSLBMCLB--打分节点表 审核角色类别名称列表
       ,e.DFDXCJMC as e_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
+      ,e.CKJSLBIDLB as e_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
+      ,e.CKJSLBMCLB as e_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
       ,f.SCHOOLID as f_DFFS_SCHOOLID--打分方式表 学校ID
       ,f.XMID as f_DFFS_XMID--打分方式表 项目ID
       ,f.DFFSMC as f_DFFS_DFFSMC--打分方式表 打分方式名称

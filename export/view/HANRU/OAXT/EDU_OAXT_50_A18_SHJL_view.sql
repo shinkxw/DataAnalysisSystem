@@ -32,6 +32,8 @@ SELECT a.[ID]--编号
       ,d.DFJSLBMCLB as d_DFJD_DFJSLBMCLB--打分节点表 打分角色类别名称列表
       ,d.SHJSLBMCLB as d_DFJD_SHJSLBMCLB--打分节点表 审核角色类别名称列表
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
+      ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
+      ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
       ,e.SCHOOLID as e_DFJG_SCHOOLID--打分结果表 学校ID
       ,e.XMID as e_DFJG_XMID--打分结果表 项目ID
       ,e.DFDLID as e_DFJG_DFDLID--打分结果表 打分大类ID

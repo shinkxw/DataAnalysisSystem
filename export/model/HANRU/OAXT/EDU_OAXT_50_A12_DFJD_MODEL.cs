@@ -18,6 +18,8 @@ namespace HanRuEdu.LDAL
             DFJSLBMCLB = "";
             SHJSLBMCLB = "";
             DFDXCJMC = "";
+            CKJSLBIDLB = "";
+            CKJSLBMCLB = "";
         }
         public class EDU_OAXT_50_A12_DFJD_metadata
         {
@@ -125,6 +127,18 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String DFDXCJMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "查看角色类别ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CKJSLBIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "查看角色类别名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CKJSLBMCLB { get; set; }
 
 
         }

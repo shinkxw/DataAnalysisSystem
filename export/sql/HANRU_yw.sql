@@ -5634,6 +5634,8 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A12_DFJD](
 	[DFJSLBMCLB]  text  NOT NULL,--打分角色类别名称列表
 	[SHJSLBMCLB]  text  NOT NULL,--审核角色类别名称列表
 	[DFDXCJMC]  nvarchar(50)  NOT NULL,--打分对象层级名称
+	[CKJSLBIDLB]  text  NOT NULL,--查看角色类别ID列表
+	[CKJSLBMCLB]  text  NOT NULL,--查看角色类别名称列表
 CONSTRAINT [PK_EDU_OAXT_50_A12_DFJD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -8001,6 +8003,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核角色类别名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'SHJSLBMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分对象层级名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'DFDXCJMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'查看角色类别ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'CKJSLBIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'查看角色类别名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'CKJSLBMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A13_DFFS'
 GO
