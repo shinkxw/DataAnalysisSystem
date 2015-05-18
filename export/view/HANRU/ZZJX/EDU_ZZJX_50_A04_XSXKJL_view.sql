@@ -57,6 +57,7 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
       ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,c.NFCKH as c_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.SCHOOLID as d_JXBSJ_SCHOOLID--教学班数据表 学校
       ,d.XXKCLBID as d_JXBSJ_XXKCLBID--教学班数据表 选修课程类别ID
       ,d.KCMC as d_JXBSJ_KCMC--教学班数据表 课程名称

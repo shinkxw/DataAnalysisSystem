@@ -85,6 +85,7 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZJX_21_A01_SXBJGL AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

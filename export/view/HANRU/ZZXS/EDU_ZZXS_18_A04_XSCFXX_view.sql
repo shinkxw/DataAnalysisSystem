@@ -70,6 +70,7 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
       ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,c.NFCKH as c_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.SCHOOLID as d_WJLX_SCHOOLID--违纪类型表 学校
       ,d.WJLXMC as d_WJLX_WJLXMC--违纪类型表 违纪类型名称
       ,d.WJNRFW as d_WJLX_WJNRFW--违纪类型表 违纪内容范围
@@ -158,6 +159,7 @@ SELECT a.[ID]--编号
       ,g.DZXX as g_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.SCHOOLID as h_CFLX_SCHOOLID--处分类型表 学校
       ,h.CFLXMC as h_CFLX_CFLXMC--处分类型表 处分类型名称
       ,h.CFGLDW as h_CFLX_CFGLDW--处分类型表 处分管理单位
@@ -235,6 +237,7 @@ SELECT a.[ID]--编号
       ,i.DZXX as i_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,i.WLDZ as i_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,i.JSKQJS as i_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,j.SCHOOLID as j_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,j.GH as j_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,j.XM as j_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -303,6 +306,7 @@ SELECT a.[ID]--编号
       ,j.DZXX as j_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,j.WLDZ as j_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,j.JSTXH as j_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,j.JSKQJS as j_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZXS_18_A04_XSCFXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

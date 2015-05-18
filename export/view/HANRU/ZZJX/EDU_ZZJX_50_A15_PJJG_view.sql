@@ -84,6 +84,7 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生信息数据表 电子信箱
       ,e.ZP as e_XSXX_ZP--学生信息数据表 照片(路径)
       ,e.RXXQID as e_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,e.NFCKH as e_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,f.SCHOOLID as f_PJTM_SCHOOLID--评教题目表 学校
       ,f.PJID as f_PJTM_PJID--评教题目表 评教ID
       ,f.PFFSID as f_PJTM_PFFSID--评教题目表 评分方式ID

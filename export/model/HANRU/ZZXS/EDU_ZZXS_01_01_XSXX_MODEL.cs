@@ -224,6 +224,12 @@ namespace HanRuEdu.LDAL
             public Int32 RXXQID { get; set; }
 
 
+            [Display(Name = "NFC¿¨ºÅ")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NFCKH { get; set; }
+
+
         }
     }
 }

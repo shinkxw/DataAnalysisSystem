@@ -80,6 +80,7 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
       ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,d.NFCKH as d_XSXX_NFCKH--学生信息数据表 NFC卡号
 
 FROM dbo.EDU_ZZJX_50_A06_KTDMB AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_50_A03_JXBSJ AS c ON a.JXBID = c.ID /*教学班ID*/ LEFT OUTER JOIN

@@ -93,6 +93,7 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZJG_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_20_A03_XSPJTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

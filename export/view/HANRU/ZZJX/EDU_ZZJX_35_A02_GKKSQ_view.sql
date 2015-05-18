@@ -89,6 +89,7 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,'' as e_USER_PWD--应用系统用户表 密码

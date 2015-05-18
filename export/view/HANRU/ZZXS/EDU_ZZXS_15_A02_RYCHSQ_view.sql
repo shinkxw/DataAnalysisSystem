@@ -65,6 +65,7 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
       ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,c.NFCKH as c_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -145,6 +146,7 @@ SELECT a.[ID]--编号
       ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -213,6 +215,7 @@ SELECT a.[ID]--编号
       ,g.DZXX as g_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZXS_15_A02_RYCHSQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

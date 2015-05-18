@@ -74,6 +74,7 @@ SELECT a.[ID]--学籍异动表编号
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
       ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,b.NFCKH as b_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -144,6 +145,7 @@ SELECT a.[ID]--学籍异动表编号
       ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[gb].ZYMLLB as g_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别

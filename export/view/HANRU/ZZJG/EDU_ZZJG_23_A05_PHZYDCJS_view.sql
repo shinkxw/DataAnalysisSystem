@@ -90,6 +90,7 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,e.SCHOOLID as e_PHZYDCMC_SCHOOLID--平湖职业调查名称表 学校
       ,e.DCMC as e_PHZYDCMC_DCMC--平湖职业调查名称表 调查名称
       ,e.BZ as e_PHZYDCMC_BZ--平湖职业调查名称表 备注

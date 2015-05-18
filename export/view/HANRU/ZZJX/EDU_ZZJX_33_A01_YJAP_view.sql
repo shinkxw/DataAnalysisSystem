@@ -94,6 +94,7 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,e.SCHOOLID as e_EXAM_SCHOOLID--考试表 学校
       ,e.Name as e_EXAM_Name--考试表 考试名称
       ,e.CJKSKMLM as e_EXAM_CJKSKMLM--考试表 参加考试科目列表

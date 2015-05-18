@@ -73,6 +73,7 @@ SELECT a.[ID]--编号
       ,e.DZXX as e_XSXX_DZXX--学生信息数据表 电子信箱
       ,e.ZP as e_XSXX_ZP--学生信息数据表 照片(路径)
       ,e.RXXQID as e_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,e.NFCKH as e_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -141,6 +142,7 @@ SELECT a.[ID]--编号
       ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZJX_37_A03_JNJDCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_37_A01_JNJDXM AS c ON a.JDXMID = c.ID /*鉴定项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

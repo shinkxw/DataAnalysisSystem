@@ -64,6 +64,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
       ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,b.NFCKH as b_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.MC as d_JTLB_MC--家庭类别代码表 名称
       ,e.MC as e_KNYY_MC--困难原因代码表 名称
       ,f.MC as f_KNCD_MC--困难程度代码表 名称

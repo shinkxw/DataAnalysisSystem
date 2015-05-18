@@ -159,6 +159,7 @@ SELECT a.[ID]--编号
       ,j.DZXX as j_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,j.WLDZ as j_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,j.JSTXH as j_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,j.JSKQJS as j_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,k.SCHOOLID as k_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,k.GH as k_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,k.XM as k_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -227,6 +228,7 @@ SELECT a.[ID]--编号
       ,k.DZXX as k_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,k.WLDZ as k_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,k.JSTXH as k_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,k.JSKQJS as k_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_32_A01_EXAM AS c ON a.ExamID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

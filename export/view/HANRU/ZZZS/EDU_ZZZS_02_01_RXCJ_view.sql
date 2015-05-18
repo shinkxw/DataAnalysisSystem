@@ -59,6 +59,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
       ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,b.NFCKH as b_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.MC as d_FJFLB_MC--附加分类别代码表 名称
 
 FROM dbo.EDU_ZZZS_02_01_RXCJ AS a LEFT OUTER JOIN

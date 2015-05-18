@@ -150,6 +150,7 @@ SELECT a.[ID]--编号
       ,v.DZXX as v_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,v.WLDZ as v_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,v.JSTXH as v_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,v.JSKQJS as v_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,w.SCHOOLID as w_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,w.GH as w_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,w.XM as w_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -218,6 +219,7 @@ SELECT a.[ID]--编号
       ,w.DZXX as w_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,w.WLDZ as w_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,w.JSTXH as w_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,w.JSKQJS as w_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZJG_16_A02_YPJSSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_16_A01_ZPGWSJ AS c ON a.YPGWID = c.ID /*应聘岗位ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

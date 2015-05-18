@@ -120,6 +120,7 @@ SELECT a.[ID]--编号
       ,f.DZXX as f_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
 
 FROM dbo.EDU_ZZFC_10_A04_YDKHPB AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

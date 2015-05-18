@@ -44,6 +44,7 @@
             <name="DZXX" exp="电子信箱" type="nvarchar(40)" />
             <name="WLDZ" exp="网络地址" type="nvarchar(60)" null="T" />
             <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" />
+            <name="JSKQJS" exp="教师考勤角色" type="nvarchar(50)" null="T" default="教师" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A01_JZGKZ" exp="教职工扩展表">

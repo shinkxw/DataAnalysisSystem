@@ -314,6 +314,12 @@ namespace HanRuEdu.LDAL
             public String JSTXH { get; set; }
 
 
+            [Display(Name = "½ÌÊ¦¿¼ÇÚ½ÇÉ«")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSKQJS { get; set; }
+
+
         }
     }
 }

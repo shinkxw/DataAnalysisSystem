@@ -131,6 +131,7 @@ SELECT a.[ID]--编号
       ,g.DZXX as g_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,h.XM as h_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -199,6 +200,7 @@ SELECT a.[ID]--编号
       ,h.DZXX as h_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,i.SCHOOLID as i_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,i.JXJHID as i_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,i.KCH as i_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

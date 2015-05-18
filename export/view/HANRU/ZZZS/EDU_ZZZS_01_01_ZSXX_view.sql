@@ -78,6 +78,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.DZXX as b_XSXX_DZXX--学生信息数据表 电子信箱
       ,b.ZP as b_XSXX_ZP--学生信息数据表 照片(路径)
       ,b.RXXQID as b_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,b.NFCKH as b_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MC as e_YZMCEZM_MC--语种名称代码2字母代码 名称
       ,f.MC as f_KSFS_MC--考试方式代码表 名称

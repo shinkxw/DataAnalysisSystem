@@ -66,6 +66,7 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_XSXX_DZXX--学生信息数据表 电子信箱
       ,c.ZP as c_XSXX_ZP--学生信息数据表 照片(路径)
       ,c.RXXQID as c_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,c.NFCKH as c_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,d.SCHOOLID as d_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,d.JZWH as d_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,d.JZWMC as d_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称

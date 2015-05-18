@@ -68,6 +68,7 @@ SELECT a.[ID]--编号
       ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
       ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
       ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,d.NFCKH as d_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,e.SCHOOLID as e_TYXX_SCHOOLID--团员信息扩展表 学校
       ,e.BJID as e_TYXX_BJID--团员信息扩展表 班级ID
       ,e.XSXXID as e_TYXX_XSXXID--团员信息扩展表 学生ID

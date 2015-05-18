@@ -44,6 +44,7 @@ SELECT a.[ID]--编号
       ,a.[DZXX]--电子信箱
       ,a.[WLDZ]--网络地址
       ,a.[JSTXH]--即时通讯号
+      ,a.[JSKQJS]--教师考勤角色
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称

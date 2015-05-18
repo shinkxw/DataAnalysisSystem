@@ -400,6 +400,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_01_01_JZGJBSJ](
 	[DZXX]  nvarchar(40)  NOT NULL,--电子信箱
 	[WLDZ]  nvarchar(60)  NULL,--网络地址
 	[JSTXH]  nvarchar(40)  NULL,--即时通讯号
+	[JSKQJS]  nvarchar(50)  NULL,--教师考勤角色
 CONSTRAINT [PK_EDU_ZZJG_01_01_JZGJBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1956,6 +1957,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'网络地址' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'WLDZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'即时通讯号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'JSTXH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师考勤角色' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'JSKQJS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工扩展表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_A01_JZGKZ'
 GO

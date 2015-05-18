@@ -78,6 +78,7 @@ SELECT a.[ID]--编号
       ,c.DZXX as c_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
+      ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJG_19_A01_JJFFJL AS a LEFT OUTER JOIN

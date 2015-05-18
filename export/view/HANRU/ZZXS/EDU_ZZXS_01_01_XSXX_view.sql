@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,a.[DZXX]--电子信箱
       ,a.[ZP]--照片(路径)
       ,a.[RXXQID]--入学学期ID
+      ,a.[NFCKH]--NFC卡号
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MC as e_XX_MC--血型代码表 名称
