@@ -850,6 +850,8 @@ EDU_ZZJX_50_A03_JXBSJ  教学班数据表
   ZDKBRS        最低开班人数            int            非主
   BJIDLB        班级ID列表              text           非主
   BJMCLB        班级名称列表            text           非主
+  QTJSIDLB      其他教师ID列表          text           非主
+  QTJSMCLB      其他教师名称列表        text           非主
 
 EDU_ZZJX_50_A04_XSXKJL  学生选课记录表
   ID            编号                    int            自增主键

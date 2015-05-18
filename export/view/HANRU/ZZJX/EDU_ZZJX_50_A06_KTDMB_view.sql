@@ -27,6 +27,8 @@ SELECT a.[ID]--编号
       ,c.ZDKBRS as c_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
       ,c.BJIDLB as c_JXBSJ_BJIDLB--教学班数据表 班级ID列表
       ,c.BJMCLB as c_JXBSJ_BJMCLB--教学班数据表 班级名称列表
+      ,c.QTJSIDLB as c_JXBSJ_QTJSIDLB--教学班数据表 其他教师ID列表
+      ,c.QTJSMCLB as c_JXBSJ_QTJSMCLB--教学班数据表 其他教师名称列表
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名

@@ -2038,6 +2038,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A03_JXBSJ](
 	[ZDKBRS]  int  NOT NULL,--最低开班人数
 	[BJIDLB]  text  NOT NULL,--班级ID列表
 	[BJMCLB]  text  NOT NULL,--班级名称列表
+	[QTJSIDLB]  text  NOT NULL,--其他教师ID列表
+	[QTJSMCLB]  text  NOT NULL,--其他教师名称列表
 CONSTRAINT [PK_EDU_ZZJX_50_A03_JXBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -3857,6 +3859,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'BJIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'BJMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'其他教师ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'QTJSIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'其他教师名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'QTJSMCLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生选课记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A04_XSXKJL'
 GO

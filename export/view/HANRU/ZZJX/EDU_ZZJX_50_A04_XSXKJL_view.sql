@@ -75,6 +75,8 @@ SELECT a.[ID]--编号
       ,d.ZDKBRS as d_JXBSJ_ZDKBRS--教学班数据表 最低开班人数
       ,d.BJIDLB as d_JXBSJ_BJIDLB--教学班数据表 班级ID列表
       ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
+      ,d.QTJSIDLB as d_JXBSJ_QTJSIDLB--教学班数据表 其他教师ID列表
+      ,d.QTJSMCLB as d_JXBSJ_QTJSMCLB--教学班数据表 其他教师名称列表
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

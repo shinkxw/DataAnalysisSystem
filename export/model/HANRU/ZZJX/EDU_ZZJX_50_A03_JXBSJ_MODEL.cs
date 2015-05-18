@@ -17,6 +17,8 @@ namespace HanRuEdu.LDAL
             SKDD = "";
             BJIDLB = "";
             BJMCLB = "";
+            QTJSIDLB = "";
+            QTJSMCLB = "";
         }
         public class EDU_ZZJX_50_A03_JXBSJ_metadata
         {
@@ -124,6 +126,18 @@ namespace HanRuEdu.LDAL
             [Display(Name = "班级名称列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BJMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "其他教师ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String QTJSIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "其他教师名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String QTJSMCLB { get; set; }
 
 
         }
