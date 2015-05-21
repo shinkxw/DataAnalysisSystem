@@ -1514,6 +1514,7 @@
             <name="XMID" exp="项目ID" type="int" p="T" />
             <name="SJJMC" exp="数据集名称" type="nvarchar(50)" />
             <name="DFDXZID" exp="打分对象组ID" type="int" />
+            <name="DFDXZMC" exp="打分对象组名称" type="nvarchar(50)" />
             <name="TJDXJDBMJH" exp="统计对象节点编码集合" type="text" />
             <name="TJDXJDMCLB" exp="统计对象节点名称列表" type="text" />
             <name="QSSJ" exp="起始时间" type="datetime" />

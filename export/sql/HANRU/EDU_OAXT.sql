@@ -3092,6 +3092,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A50_DFTJSJJ](
 	[XMID]  int  NOT NULL,--项目ID
 	[SJJMC]  nvarchar(50)  NOT NULL,--数据集名称
 	[DFDXZID]  int  NOT NULL,--打分对象组ID
+	[DFDXZMC]  nvarchar(50)  NOT NULL,--打分对象组名称
 	[TJDXJDBMJH]  text  NOT NULL,--统计对象节点编码集合
 	[TJDXJDMCLB]  text  NOT NULL,--统计对象节点名称列表
 	[QSSJ]  datetime  NOT NULL,--起始时间
@@ -5545,6 +5546,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'SJJMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分对象组ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'DFDXZID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分对象组名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'DFDXZMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'统计对象节点编码集合' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'TJDXJDBMJH'
 GO

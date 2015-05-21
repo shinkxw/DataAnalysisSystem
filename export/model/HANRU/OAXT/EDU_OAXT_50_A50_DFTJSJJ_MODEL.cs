@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_50_A50_DFTJSJJ()
         {
             SJJMC = "";
+            DFDXZMC = "";
             TJDXJDBMJH = "";
             TJDXJDMCLB = "";
             QSSJ = DateTime.Now;
@@ -43,6 +44,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "打分对象组")]
             public Int32 DFDXZID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "打分对象组名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DFDXZMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

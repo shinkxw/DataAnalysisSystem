@@ -34,13 +34,8 @@ SELECT a.[ID]--编号
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
-      ,e.SCHOOLID as e_DXZ_SCHOOLID--对象组表 学校ID
-      ,e.DXZMC as e_DXZ_DXZMC--对象组表 对象组名称
-      ,e.DXIDLB as e_DXZ_DXIDLB--对象组表 对象ID列表
-      ,e.DXMCLB as e_DXZ_DXMCLB--对象组表 对象名称列表
 
 FROM dbo.EDU_OAXT_50_A11_DFDL AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_OAXT_50_A12_DFJD AS d ON a.GJDID = d.ID /*根节点ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.XMID = d.XMID /*项目ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_10_DXZ AS e ON a.DFDXZID = e.ID /*打分对象组ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/
+      dbo.EDU_OAXT_50_A12_DFJD AS d ON a.GJDID = d.ID /*根节点ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ AND a.XMID = d.XMID /*项目ID*/
 GO

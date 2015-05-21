@@ -542,7 +542,6 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XMID           EDU_OAXT_50_A01_DFXM               ID
   GJDID          EDU_OAXT_50_A12_DFJD               ID
-  DFDXZID        EDU_ELE_10_DXZ                     ID
 <EDU_OAXT_50_A12_DFJD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XMID           EDU_OAXT_50_A01_DFXM               ID
@@ -590,7 +589,6 @@
 <EDU_OAXT_50_A50_DFTJSJJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XMID           EDU_OAXT_50_A01_DFXM               ID
-  DFDXZID        EDU_ELE_10_DXZ                     ID
 <EDU_OAXT_50_A51_DFTJZD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XMID           EDU_OAXT_50_A01_DFXM               ID

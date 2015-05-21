@@ -1174,7 +1174,7 @@ EDU_OAXT_50_A11_DFDL  打分大类表
   SCHOOLID      学校ID                  int            主键        学校配置表
   XMID          项目ID                  int            主键        打分项目表
   GJDID         根节点ID                int            非主        打分节点表
-  DFDXZID       打分对象组ID            int            非主        对象组表
+  DFDXZID       打分对象组ID            int            非主
   SFXYSH        是否需要审核            int            非主
   SHFS          审核方式                int            非主
   SFKQ          是否开启                int            非主
@@ -1287,7 +1287,8 @@ EDU_OAXT_50_A50_DFTJSJJ  打分统计数据集表
   SCHOOLID      学校ID                  int            主键        学校配置表
   XMID          项目ID                  int            主键        打分项目表
   SJJMC         数据集名称              nvarchar(50)   非主
-  DFDXZID       打分对象组ID            int            非主        对象组表
+  DFDXZID       打分对象组ID            int            非主
+  DFDXZMC       打分对象组名称          nvarchar(50)   非主
   TJDXJDBMJH    统计对象节点编码集合    text           非主
   TJDXJDMCLB    统计对象节点名称列表    text           非主
   QSSJ          起始时间                datetime       非主

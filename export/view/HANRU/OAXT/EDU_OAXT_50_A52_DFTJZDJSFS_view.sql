@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,d.XMID as d_DFTJSJJ_XMID--打分统计数据集表 项目ID
       ,d.SJJMC as d_DFTJSJJ_SJJMC--打分统计数据集表 数据集名称
       ,d.DFDXZID as d_DFTJSJJ_DFDXZID--打分统计数据集表 打分对象组ID
+      ,d.DFDXZMC as d_DFTJSJJ_DFDXZMC--打分统计数据集表 打分对象组名称
       ,d.TJDXJDBMJH as d_DFTJSJJ_TJDXJDBMJH--打分统计数据集表 统计对象节点编码集合
       ,d.TJDXJDMCLB as d_DFTJSJJ_TJDXJDMCLB--打分统计数据集表 统计对象节点名称列表
       ,d.QSSJ as d_DFTJSJJ_QSSJ--打分统计数据集表 起始时间
