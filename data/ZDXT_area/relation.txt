@@ -358,6 +358,7 @@
   JSDID          EDU_ZDGL_16_JSD                    ID
 <EDU_ZDGL_18_JFD
   WXSID          EDU_ZDGL_09_WXS                    ID
+  SXDWID         EDU_ZDGL_08_KH                     ID
 <EDU_ZDGL_19_JFDXX
   JFDID          EDU_ZDGL_18_JFD                    ID
   JSDXXID        EDU_ZDGL_17_JSDXX                  ID

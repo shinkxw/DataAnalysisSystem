@@ -195,6 +195,7 @@
             <name="JFDH" exp="交付单号" type="nvarchar(200)" />
             <name="WXSID" exp="维修商ID" type="int" />
             <name="JFRQ" exp="交付日期" type="datetime" />
+            <name="SXDWID" exp="送修单位ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_19_JFDXX" exp="交付单详细表">

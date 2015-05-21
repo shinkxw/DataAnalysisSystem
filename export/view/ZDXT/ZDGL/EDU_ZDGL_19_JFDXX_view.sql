@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,b.JFDH as b_JFD_JFDH--交付单表 交付单号
       ,b.WXSID as b_JFD_WXSID--交付单表 维修商ID
       ,b.JFRQ as b_JFD_JFRQ--交付单表 交付日期
+      ,b.SXDWID as b_JFD_SXDWID--交付单表 送修单位ID
       ,c.XHID as c_JSDXX_XHID--接收单详细表 型号ID
       ,c.XH as c_JSDXX_XH--接收单详细表 序号
       ,c.SN as c_JSDXX_SN--接收单详细表 SN号

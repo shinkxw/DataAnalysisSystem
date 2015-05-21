@@ -437,6 +437,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_18_JFD](
 	[JFDH]  nvarchar(200)  NOT NULL,--交付单号
 	[WXSID]  int  NOT NULL,--维修商ID
 	[JFRQ]  datetime  NOT NULL,--交付日期
+	[SXDWID]  int  NOT NULL,--送修单位ID
 CONSTRAINT [PK_EDU_ZDGL_18_JFD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -777,6 +778,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'维修商ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_18_JFD', @level2type=N'COLUMN',@level2name=N'WXSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'交付日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_18_JFD', @level2type=N'COLUMN',@level2name=N'JFRQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送修单位ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_18_JFD', @level2type=N'COLUMN',@level2name=N'SXDWID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'交付单详细表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_19_JFDXX'
 GO

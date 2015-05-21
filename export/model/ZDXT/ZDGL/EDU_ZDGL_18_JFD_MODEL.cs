@@ -36,6 +36,11 @@ namespace HanRuEdu.LDAL
             public DateTime JFRQ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ËÍĞŞµ¥Î»")]
+            public Int32 SXDWID { get; set; }
+
+
         }
     }
 }
