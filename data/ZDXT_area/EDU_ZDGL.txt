@@ -171,6 +171,7 @@
             <name="SXDWID" exp="送修单位ID" type="int" />
             <name="SXRQ" exp="送修日期" type="datetime" />
             <name="BCZT" exp="保存状态" type="int" />
+            <name="SFQR" exp="是否确认" type="nvarchar(1)" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_17_JSDXX" exp="接收单详细表">

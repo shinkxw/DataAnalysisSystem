@@ -1,6 +1,7 @@
 <EDU_ELE_01_USER
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
+  BMID           EDU_ZDGL_07_SSGS                   ID
 <EDU_ELE_01_APP
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ELE_01_SCHOOL
@@ -346,6 +347,7 @@
   FJXXID         EDU_ZDGL_12_FJXX                   ID
 <EDU_ZDGL_16_JSD
   SXDWID         EDU_ZDGL_08_KH                     ID
+  SFQR           EDU_JY_SFBZ                        DM
 <EDU_ZDGL_17_JSDXX
   XHID           EDU_ZDGL_05_SBXH                   ID
   SFECFX         EDU_JY_SFBZ                        DM

@@ -342,9 +342,12 @@ SELECT a.[LOGINNAME]--用户名
       ,c.MNDLJS as c_APP_MNDLJS--应用表 模拟登录JS
       ,c.SYDX as c_APP_SYDX--应用表 使用对象
       ,c.KJDX as c_APP_KJDX--应用表 可见对象
+      ,d.GSDM as d_SSGS_GSDM--所属公司表 公司代码
+      ,d.GSM as d_SSGS_GSM--所属公司表 公司名
 
 FROM dbo.EDU_ELE_01_USER AS a LEFT OUTER JOIN
-      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/
+      dbo.EDU_ELE_01_APP AS c ON a.APPID = c.ID /*应用ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_07_SSGS AS d ON a.BMID = d.ID /*部门ID*/
 GO
 
 --学校配置表
@@ -3682,6 +3685,7 @@ SELECT a.[ID]--编号
       ,a.[SXDWID]--送修单位ID
       ,a.[SXRQ]--送修日期
       ,a.[BCZT]--保存状态
+      ,a.[SFQR]--是否确认
       ,b.KHDM as b_KH_KHDM--客户表 客户代码
       ,b.SZQYID as b_KH_SZQYID--客户表 所在区域ID
       ,b.SSGSID as b_KH_SSGSID--客户表 所属公司ID
@@ -3690,9 +3694,11 @@ SELECT a.[ID]--编号
       ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
       ,b.LXR as b_KH_LXR--客户表 联系人
       ,b.DH as b_KH_DH--客户表 电话
+      ,c.MC as c_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZDGL_16_JSD AS a LEFT OUTER JOIN
-      dbo.EDU_ZDGL_08_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/
+      dbo.EDU_ZDGL_08_KH AS b ON a.SXDWID = b.ID /*送修单位ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS c ON a.SFQR = c.DM /*是否确认*/
 GO
 
 --接收单详细表
@@ -3736,6 +3742,8 @@ SELECT a.[ID]--编号
       ,h.SXDWID as h_JSD_SXDWID--接收单表 送修单位ID
       ,h.SXRQ as h_JSD_SXRQ--接收单表 送修日期
       ,h.BCZT as h_JSD_BCZT--接收单表 保存状态
+      ,h.SFQR as h_JSD_SFQR--接收单表 是否确认
+      ,[hb].MC as h_JSD_SFQR_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
@@ -3744,7 +3752,8 @@ FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_01_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_02_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_16_JSD AS h ON a.JSDID = h.ID /*接收单ID*/
+      dbo.EDU_ZDGL_16_JSD AS h ON a.JSDID = h.ID /*接收单ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hb] ON h.SFQR = [hb].DM /*是否确认*/
 GO
 
 --交付单表

@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             JSDH = "";
             SXRQ = DateTime.Now;
+            SFQR = "";
         }
         public class EDU_ZDGL_16_JSD_metadata
         {
@@ -39,6 +40,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "保存状态")]
             public Int32 BCZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "是否确认")]
+            [StringLength(1)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SFQR { get; set; }
 
 
         }

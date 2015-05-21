@@ -40,6 +40,8 @@ SELECT a.[ID]--编号
       ,h.SXDWID as h_JSD_SXDWID--接收单表 送修单位ID
       ,h.SXRQ as h_JSD_SXRQ--接收单表 送修日期
       ,h.BCZT as h_JSD_BCZT--接收单表 保存状态
+      ,h.SFQR as h_JSD_SFQR--接收单表 是否确认
+      ,[hb].MC as h_JSD_SFQR_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_05_SBXH AS b ON a.XHID = b.ID /*型号ID*/ LEFT OUTER JOIN
@@ -48,5 +50,6 @@ FROM dbo.EDU_ZDGL_17_JSDXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_01_GZDM AS e ON a.GZXXID = e.ID /*故障信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_02_WXDM AS f ON a.WXXXID = f.ID /*维修信息ID*/ LEFT OUTER JOIN
       dbo.EDU_ZDGL_10_WXR AS g ON a.WXRID = g.ID /*维修人ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_16_JSD AS h ON a.JSDID = h.ID /*接收单ID*/
+      dbo.EDU_ZDGL_16_JSD AS h ON a.JSDID = h.ID /*接收单ID*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [hb] ON h.SFQR = [hb].DM /*是否确认*/
 GO
