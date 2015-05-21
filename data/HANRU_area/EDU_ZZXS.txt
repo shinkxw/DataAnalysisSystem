@@ -33,7 +33,7 @@
             <name="DZXX" exp="电子信箱" type="nvarchar(40)" null="T" />
             <name="ZP" exp="照片(路径)" type="nvarchar(100)" null="T" />
             <name="RXXQID" exp="入学学期ID" type="int" />
-            <name="NFCKH" exp="NFC卡号" type="nvarchar(50)" default="'0'" />
+            <name="NFCKH" exp="NFC卡号" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_01_A01_XSXX" exp="学生扩展数据表">

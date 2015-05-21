@@ -24,6 +24,7 @@ namespace HanRuEdu.LDAL
             HKSZDXZQHM = "";
             HKLBM = "";
             SFSLDRK = "";
+            NFCKH = "";
         }
         public class EDU_ZZXS_01_01_XSXX_metadata
         {
@@ -224,6 +225,7 @@ namespace HanRuEdu.LDAL
             public Int32 RXXQID { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
             [Display(Name = "NFC¿¨ºÅ")]
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]

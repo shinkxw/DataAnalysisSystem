@@ -35,6 +35,7 @@ namespace HanRuEdu.LDAL
             DQZTM = "";
             YDDH = "";
             DZXX = "";
+            JSKQJS = "";
         }
         public class EDU_ZZJG_01_01_JZGJBSJ_metadata
         {
@@ -314,6 +315,7 @@ namespace HanRuEdu.LDAL
             public String JSTXH { get; set; }
 
 
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "教师考勤角色")]
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]

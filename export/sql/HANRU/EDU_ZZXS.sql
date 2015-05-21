@@ -264,7 +264,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_01_01_XSXX](
 	[DZXX]  nvarchar(40)  NULL,--电子信箱
 	[ZP]  nvarchar(100)  NULL,--照片(路径)
 	[RXXQID]  int  NOT NULL,--入学学期ID
-	[NFCKH]  nvarchar(50)  NULL,--NFC卡号
+	[NFCKH]  nvarchar(50)  NOT NULL,--NFC卡号
 CONSTRAINT [PK_EDU_ZZXS_01_01_XSXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

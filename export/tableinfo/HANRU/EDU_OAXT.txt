@@ -1174,7 +1174,7 @@ EDU_OAXT_50_A11_DFDL  打分大类表
   SCHOOLID      学校ID                  int            主键        学校配置表
   XMID          项目ID                  int            主键        打分项目表
   GJDID         根节点ID                int            非主        打分节点表
-  DFDXZID       打分对象组ID            int            非主
+  DFDXZID       打分对象组ID            int            非主        对象组表
   SFXYSH        是否需要审核            int            非主
   SHFS          审核方式                int            非主
   SFKQ          是否开启                int            非主
@@ -1280,5 +1280,65 @@ EDU_OAXT_50_A19_DFPC  打分批次表
   XQID          学期ID                  int            非主
   DFPCMC        打分批次名称            nvarchar(50)   非主
   CKSJ          参考时间                datetime       非主
+  TJSJ          添加时间                datetime       非主
+
+EDU_OAXT_50_A50_DFTJSJJ  打分统计数据集表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  SJJMC         数据集名称              nvarchar(50)   非主
+  DFDXZID       打分对象组ID            int            非主        对象组表
+  TJDXJDBMJH    统计对象节点编码集合    text           非主
+  TJDXJDMCLB    统计对象节点名称列表    text           非主
+  QSSJ          起始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  SJSCZT        数据生成状态            int            非主
+  DQPCBH        当前批次编号            nvarchar(200)  非主
+
+EDU_OAXT_50_A51_DFTJZD  打分统计字段表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  SJJID         数据集ID                int            非主        打分统计数据集表
+  ZDMC          字段名称                nvarchar(50)   非主
+  ZDLX          字段类型                int            非主
+  SJLYLX        数据来源类型            int            非主
+  SJLYID        数据来源ID              int            非主
+  SJLYDXCJ      数据来源对象层级        int            非主
+  SJLYSJPC      数据来源时间频次        int            非主
+  ZDDXCJ        字段对象层级            int            非主
+  DXCJSFFS      对象层级缩放方式        int            非主
+  ZDSJPC        字段时间频次            int            非主
+  SJPCSFFS      时间频次缩放方式        int            非主
+  SZMRZ         数值默认值              decimal(14, 4) 非主
+  LJMRZ         逻辑默认值              int            非主
+  YXJ           优先级                  int            非主
+
+EDU_OAXT_50_A52_DFTJZDJSFS  打分统计字段计算方式表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  SJJID         数据集ID                int            非主        打分统计数据集表
+  ZDID          字段ID                  int            非主        打分统计字段表
+  JSLX          计算类型                int            非主
+  ZDYID         字段一ID                int            非主
+  ZDYSZ         字段一数值              decimal(14, 4) 非主
+  ZDEID         字段二ID                int            非主
+  ZDESZ         字段二数值              decimal(14, 4) 非主
+  JSCS          计算参数                text           非主
+
+EDU_OAXT_50_A53_DFTJSJ  打分统计数据表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  SJJID         数据集ID                int            非主        打分统计数据集表
+  ZDID          字段ID                  int            非主        打分统计字段表
+  PCBH          批次编号                nvarchar(200)  非主
+  SFSDXG        是否手动修改            int            非主
+  BDFDXBM       被打分对象编码          nvarchar(50)   非主
+  BDFDXMC       被打分对象名称          nvarchar(50)   非主
+  XQID          学期ID                  int            非主
+  CKSJ          参考时间                datetime       非主
+  FZ            分值                    decimal(14, 4) 非主
   TJSJ          添加时间                datetime       非主
 

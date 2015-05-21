@@ -400,7 +400,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_01_01_JZGJBSJ](
 	[DZXX]  nvarchar(40)  NOT NULL,--电子信箱
 	[WLDZ]  nvarchar(60)  NULL,--网络地址
 	[JSTXH]  nvarchar(40)  NULL,--即时通讯号
-	[JSKQJS]  nvarchar(50)  NULL,--教师考勤角色
+	[JSKQJS]  nvarchar(50)  NOT NULL,--教师考勤角色
 CONSTRAINT [PK_EDU_ZZJG_01_01_JZGJBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
