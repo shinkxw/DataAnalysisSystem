@@ -88,6 +88,8 @@ class MDWork_Area
   def export_template;TemplateBuilder.new.build(@area).export end
   #输出表信息
   def export_tableinfo;TableinfoBuilder.new.build(@area).export end
+  #输出Word版表信息
+  def export_wordinfo;WordinfoBuilder.build(@area).export end
   #输出自定义信息
   def auto_export(name,build_proc);Builder.build(name,@area,build_proc).export end
   #输出测试数据

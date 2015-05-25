@@ -19,6 +19,7 @@ data/db_out_area
 export/template
 export/migrate_config
 export/testdata
+export/wordinfo
 version
 QY
 

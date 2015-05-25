@@ -22,4 +22,5 @@ class DBEntityForQuery < DBEntity
     super
   end
   def each;@table_arr.each{|table| yield(table)} end
+  def view_each;@view_arr.each{|table| yield(table)} end
 end
