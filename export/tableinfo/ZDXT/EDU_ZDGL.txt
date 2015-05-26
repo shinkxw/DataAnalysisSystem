@@ -110,6 +110,7 @@ EDU_ZDGL_13_FHPC  发货批次表
   ZXS           总箱数                  int            非主
   FHSJ          发货时间                datetime       非主
   FJPCID        分拣批次ID              int            非主        分拣批次表
+  FHRID         发货人ID                int            非主        发货人表
 
 EDU_ZDGL_14_FHXX  发货详细表
   ID            编号                    int            主键
@@ -176,4 +177,10 @@ EDU_ZDGL_21_FHDXX  返回单详细表
   ID            编号                    int            主键
   FHDID         返回单ID                int            非主        返回单表
   JSDXXID       接收单详细ID            int            非主        接收单详细表
+
+EDU_ZDGL_22_FHR  发货人表
+  ID            编号                    int            主键
+  GH            工号                    nvarchar(200)  非主
+  XM            姓名                    nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
 

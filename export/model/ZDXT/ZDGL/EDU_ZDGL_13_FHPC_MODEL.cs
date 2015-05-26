@@ -54,6 +54,11 @@ namespace HanRuEdu.LDAL
             public Int32 FJPCID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "发货人")]
+            public Int32 FHRID { get; set; }
+
+
         }
     }
 }

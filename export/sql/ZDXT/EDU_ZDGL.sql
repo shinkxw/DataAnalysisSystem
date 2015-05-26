@@ -104,6 +104,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZDGL_21_FHDXX')
             and   type = 'U')
    drop table EDU_ZDGL_21_FHDXX
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZDGL_22_FHR')
+            and   type = 'U')
+   drop table EDU_ZDGL_22_FHR
+go
 --故障代码表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZDGL_01_GZDM]') AND type in (N'U'))
 BEGIN
@@ -338,6 +343,7 @@ CREATE TABLE [dbo].[EDU_ZDGL_13_FHPC](
 	[ZXS]  int  NOT NULL,--总箱数
 	[FHSJ]  datetime  NOT NULL,--发货时间
 	[FJPCID]  int  NOT NULL,--分拣批次ID
+	[FHRID]  int  NOT NULL,--发货人ID
 CONSTRAINT [PK_EDU_ZDGL_13_FHPC] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -485,6 +491,22 @@ CREATE TABLE [dbo].[EDU_ZDGL_21_FHDXX](
 	[FHDID]  int  NOT NULL,--返回单ID
 	[JSDXXID]  int  NOT NULL,--接收单详细ID
 CONSTRAINT [PK_EDU_ZDGL_21_FHDXX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--发货人表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZDGL_22_FHR]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZDGL_22_FHR](
+	[ID]  int  NOT NULL,--编号
+	[GH]  nvarchar(200)  NOT NULL,--工号
+	[XM]  nvarchar(200)  NOT NULL,--姓名
+	[LXDH]  nvarchar(200)  NOT NULL,--联系电话
+CONSTRAINT [PK_EDU_ZDGL_22_FHR] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -691,6 +713,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发货时间' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分拣批次ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_13_FHPC', @level2type=N'COLUMN',@level2name=N'FJPCID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发货人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_13_FHPC', @level2type=N'COLUMN',@level2name=N'FHRID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发货详细表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_14_FHXX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_14_FHXX', @level2type=N'COLUMN',@level2name=N'ID'
@@ -806,4 +830,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'返回单ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_21_FHDXX', @level2type=N'COLUMN',@level2name=N'FHDID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接收单详细ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_21_FHDXX', @level2type=N'COLUMN',@level2name=N'JSDXXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发货人表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_22_FHR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_22_FHR', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'工号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_22_FHR', @level2type=N'COLUMN',@level2name=N'GH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_22_FHR', @level2type=N'COLUMN',@level2name=N'XM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'联系电话' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZDGL_22_FHR', @level2type=N'COLUMN',@level2name=N'LXDH'
 GO

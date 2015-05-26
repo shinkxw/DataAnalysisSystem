@@ -136,6 +136,7 @@
             <name="ZXS" exp="总箱数" type="int" />
             <name="FHSJ" exp="发货时间" type="datetime" />
             <name="FJPCID" exp="分拣批次ID" type="int" />
+            <name="FHRID" exp="发货人ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_14_FHXX" exp="发货详细表">
@@ -218,6 +219,14 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="FHDID" exp="返回单ID" type="int" />
             <name="JSDXXID" exp="接收单详细ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_22_FHR" exp="发货人表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="GH" exp="工号" type="nvarchar(200)" />
+            <name="XM" exp="姓名" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
         </field_area>
     </table>
 </namespace>

@@ -3609,6 +3609,7 @@ SELECT a.[ID]--编号
       ,a.[ZXS]--总箱数
       ,a.[FHSJ]--发货时间
       ,a.[FJPCID]--分拣批次ID
+      ,a.[FHRID]--发货人ID
       ,b.GSDM as b_WLGS_GSDM--物流公司表 公司代码
       ,b.GSM as b_WLGS_GSM--物流公司表 公司名
       ,b.GSLXR as b_WLGS_GSLXR--物流公司表 公司联系人
@@ -3623,10 +3624,14 @@ SELECT a.[ID]--编号
       ,c.QRRLXDH as c_FJPC_QRRLXDH--分拣批次表 确认人联系电话
       ,c.QRSJ as c_FJPC_QRSJ--分拣批次表 确认时间
       ,c.CSJG as c_FJPC_CSJG--分拣批次表 测试结果
+      ,d.GH as d_FHR_GH--发货人表 工号
+      ,d.XM as d_FHR_XM--发货人表 姓名
+      ,d.LXDH as d_FHR_LXDH--发货人表 联系电话
 
 FROM dbo.EDU_ZDGL_13_FHPC AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_15_WLGS AS b ON a.WLGSID = b.ID /*物流公司ID*/ LEFT OUTER JOIN
-      dbo.EDU_ZDGL_11_FJPC AS c ON a.FJPCID = c.ID /*分拣批次ID*/
+      dbo.EDU_ZDGL_11_FJPC AS c ON a.FJPCID = c.ID /*分拣批次ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZDGL_22_FHR AS d ON a.FHRID = d.ID /*发货人ID*/
 GO
 
 --发货详细表
@@ -3651,6 +3656,7 @@ SELECT a.[ID]--编号
       ,b.ZXS as b_FHPC_ZXS--发货批次表 总箱数
       ,b.FHSJ as b_FHPC_FHSJ--发货批次表 发货时间
       ,b.FJPCID as b_FHPC_FJPCID--发货批次表 分拣批次ID
+      ,b.FHRID as b_FHPC_FHRID--发货批次表 发货人ID
       ,c.PCID as c_FJXX_PCID--分拣详细表 批次ID
       ,c.XHID as c_FJXX_XHID--分拣详细表 型号ID
       ,c.SRSL as c_FJXX_SRSL--分拣详细表 收入数量

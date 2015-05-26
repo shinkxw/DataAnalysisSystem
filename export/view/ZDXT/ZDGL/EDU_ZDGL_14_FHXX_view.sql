@@ -21,6 +21,7 @@ SELECT a.[ID]--编号
       ,b.ZXS as b_FHPC_ZXS--发货批次表 总箱数
       ,b.FHSJ as b_FHPC_FHSJ--发货批次表 发货时间
       ,b.FJPCID as b_FHPC_FJPCID--发货批次表 分拣批次ID
+      ,b.FHRID as b_FHPC_FHRID--发货批次表 发货人ID
       ,c.PCID as c_FJXX_PCID--分拣详细表 批次ID
       ,c.XHID as c_FJXX_XHID--分拣详细表 型号ID
       ,c.SRSL as c_FJXX_SRSL--分拣详细表 收入数量

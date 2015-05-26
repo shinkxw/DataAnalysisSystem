@@ -342,6 +342,7 @@
 <EDU_ZDGL_13_FHPC
   WLGSID         EDU_ZDGL_15_WLGS                   ID
   FJPCID         EDU_ZDGL_11_FJPC                   ID
+  FHRID          EDU_ZDGL_22_FHR                    ID
 <EDU_ZDGL_14_FHXX
   FHPCID         EDU_ZDGL_13_FHPC                   ID
   FJXXID         EDU_ZDGL_12_FJXX                   ID
