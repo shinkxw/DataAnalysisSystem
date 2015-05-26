@@ -1295,8 +1295,10 @@ EDU_OAXT_50_A50_DFTJSJJ  打分统计数据集表
   JSSJ          结束时间                datetime       非主
   SJSCZT        数据生成状态            int            非主
   DQPCBH        当前批次编号            nvarchar(200)  非主
-  SJJPC         数据集频次              int            非主
   SJJCJ         数据集层级              int            非主
+  SJJPC         数据集频次              int            非主
+  SJJCJMC       数据集层级名称          nvarchar(200)  非主
+  SJJPCMC       数据集频次名称          nvarchar(200)  非主
 
 EDU_OAXT_50_A51_DFTJZD  打分统计字段表
   ID            编号                    int            主键
@@ -1307,8 +1309,11 @@ EDU_OAXT_50_A51_DFTJZD  打分统计字段表
   ZDLX          字段类型                int            非主
   SJLYLX        数据来源类型            int            非主
   SJLYID        数据来源ID              int            非主
+  SJLYMC        数据来源名称            nvarchar(200)  非主
   SJLYDXCJ      数据来源对象层级        int            非主
   SJLYSJPC      数据来源时间频次        int            非主
+  SJLYDXCJMC    数据来源对象层级名称    nvarchar(200)  非主
+  SJLYSJPCMC    数据来源时间频次名称    nvarchar(200)  非主
   DXCJSFFS      对象层级缩放方式        int            非主
   SJPCSFFS      时间频次缩放方式        int            非主
   SZMRZ         数值默认值              decimal(14, 4) 非主
@@ -1323,10 +1328,10 @@ EDU_OAXT_50_A52_DFTJZDJSFS  打分统计字段计算方式表
   ZDID          字段ID                  int            非主        打分统计字段表
   JSLX          计算类型                int            非主
   ZDYID         字段一ID                int            非主
-  ZDYSZ         字段一数值              decimal(14, 4) 非主
   ZDEID         字段二ID                int            非主
   ZDESZ         字段二数值              decimal(14, 4) 非主
   JSCS          计算参数                text           非主
+  JSFSSM        计算方式说明            nvarchar(500)  非主
 
 EDU_OAXT_50_A53_DFTJSJ  打分统计数据表
   ID            编号                    int            主键

@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_50_A52_DFTJZDJSFS()
         {
             JSCS = "";
+            JSFSSM = "";
         }
         public class EDU_OAXT_50_A52_DFTJZDJSFS_metadata
         {
@@ -49,12 +50,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "字段一数值")]
-            [Range(typeof(decimal), "0", "9999999999")]
-            public decimal ZDYSZ { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "字段二")]
             public Int32 ZDEID { get; set; }
 
@@ -69,6 +64,13 @@ namespace HanRuEdu.LDAL
             [Display(Name = "计算参数")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String JSCS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "计算方式说明")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSFSSM { get; set; }
 
 
         }

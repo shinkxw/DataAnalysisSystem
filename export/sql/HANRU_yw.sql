@@ -5845,8 +5845,10 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A50_DFTJSJJ](
 	[JSSJ]  datetime  NOT NULL,--结束时间
 	[SJSCZT]  int  NOT NULL,--数据生成状态
 	[DQPCBH]  nvarchar(200)  NOT NULL,--当前批次编号
-	[SJJPC]  int  NOT NULL,--数据集频次
 	[SJJCJ]  int  NOT NULL,--数据集层级
+	[SJJPC]  int  NOT NULL,--数据集频次
+	[SJJCJMC]  nvarchar(200)  NOT NULL,--数据集层级名称
+	[SJJPCMC]  nvarchar(200)  NOT NULL,--数据集频次名称
 CONSTRAINT [PK_EDU_OAXT_50_A50_DFTJSJJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5869,8 +5871,11 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A51_DFTJZD](
 	[ZDLX]  int  NOT NULL,--字段类型
 	[SJLYLX]  int  NOT NULL,--数据来源类型
 	[SJLYID]  int  NOT NULL,--数据来源ID
+	[SJLYMC]  nvarchar(200)  NOT NULL,--数据来源名称
 	[SJLYDXCJ]  int  NOT NULL,--数据来源对象层级
 	[SJLYSJPC]  int  NOT NULL,--数据来源时间频次
+	[SJLYDXCJMC]  nvarchar(200)  NOT NULL,--数据来源对象层级名称
+	[SJLYSJPCMC]  nvarchar(200)  NOT NULL,--数据来源时间频次名称
 	[DXCJSFFS]  int  NOT NULL,--对象层级缩放方式
 	[SJPCSFFS]  int  NOT NULL,--时间频次缩放方式
 	[SZMRZ]  decimal(14, 4)  NOT NULL,--数值默认值
@@ -5897,10 +5902,10 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A52_DFTJZDJSFS](
 	[ZDID]  int  NOT NULL,--字段ID
 	[JSLX]  int  NOT NULL,--计算类型
 	[ZDYID]  int  NOT NULL,--字段一ID
-	[ZDYSZ]  decimal(14, 4)  NOT NULL,--字段一数值
 	[ZDEID]  int  NOT NULL,--字段二ID
 	[ZDESZ]  decimal(14, 4)  NOT NULL,--字段二数值
 	[JSCS]  text  NOT NULL,--计算参数
+	[JSFSSM]  nvarchar(500)  NOT NULL,--计算方式说明
 CONSTRAINT [PK_EDU_OAXT_50_A52_DFTJZDJSFS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -8307,9 +8312,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据生成状态' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'当前批次编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'DQPCBH'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集层级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'SJJCJ'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集频次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'SJJPC'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集层级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'SJJCJ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集层级名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'SJJCJMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集频次名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A50_DFTJSJJ', @level2type=N'COLUMN',@level2name=N'SJJPCMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分统计字段表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD'
 GO
@@ -8329,9 +8338,15 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源类型' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SJLYID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SJLYMC'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源对象层级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SJLYDXCJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源时间频次' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SJLYSJPC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源对象层级名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SJLYDXCJMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据来源时间频次名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SJLYSJPCMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象层级缩放方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'DXCJSFFS'
 GO
@@ -8359,13 +8374,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'计算类型' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段一ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'ZDYID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段一数值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'ZDYSZ'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段二ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'ZDEID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段二数值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'ZDESZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'计算参数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'JSCS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'计算方式说明' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'JSFSSM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分统计数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A53_DFTJSJ'
 GO

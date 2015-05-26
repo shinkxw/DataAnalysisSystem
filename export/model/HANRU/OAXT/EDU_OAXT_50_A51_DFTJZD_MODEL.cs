@@ -10,6 +10,9 @@ namespace HanRuEdu.LDAL
         public EDU_OAXT_50_A51_DFTJZD()
         {
             ZDMC = "";
+            SJLYMC = "";
+            SJLYDXCJMC = "";
+            SJLYSJPCMC = "";
         }
         public class EDU_OAXT_50_A51_DFTJZD_metadata
         {
@@ -55,6 +58,13 @@ namespace HanRuEdu.LDAL
             public Int32 SJLYID { get; set; }
 
 
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "数据来源名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SJLYMC { get; set; }
+
+
             [Required(ErrorMessage = "必填")]
             [Display(Name = "数据来源对象层级")]
             public Int32 SJLYDXCJ { get; set; }
@@ -63,6 +73,20 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "数据来源时间频次")]
             public Int32 SJLYSJPC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "数据来源对象层级名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SJLYDXCJMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "数据来源时间频次名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SJLYSJPCMC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

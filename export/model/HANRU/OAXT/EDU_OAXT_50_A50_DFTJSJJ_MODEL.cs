@@ -16,6 +16,8 @@ namespace HanRuEdu.LDAL
             QSSJ = DateTime.Now;
             JSSJ = DateTime.Now;
             DQPCBH = "";
+            SJJCJMC = "";
+            SJJPCMC = "";
         }
         public class EDU_OAXT_50_A50_DFTJSJJ_metadata
         {
@@ -88,13 +90,27 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "数据集层级")]
+            public Int32 SJJCJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "数据集频次")]
             public Int32 SJJPC { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "数据集层级")]
-            public Int32 SJJCJ { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "数据集层级名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SJJCJMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "数据集频次名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SJJPCMC { get; set; }
 
 
         }

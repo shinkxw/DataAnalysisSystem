@@ -1521,8 +1521,10 @@
             <name="JSSJ" exp="结束时间" type="datetime" />
             <name="SJSCZT" exp="数据生成状态" type="int" />
             <name="DQPCBH" exp="当前批次编号" type="nvarchar(200)" />
-            <name="SJJPC" exp="数据集频次" type="int" />
             <name="SJJCJ" exp="数据集层级" type="int" />
+            <name="SJJPC" exp="数据集频次" type="int" />
+            <name="SJJCJMC" exp="数据集层级名称" type="nvarchar(200)" />
+            <name="SJJPCMC" exp="数据集频次名称" type="nvarchar(200)" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A51_DFTJZD" exp="打分统计字段表">
@@ -1535,8 +1537,11 @@
             <name="ZDLX" exp="字段类型" type="int" />
             <name="SJLYLX" exp="数据来源类型" type="int" />
             <name="SJLYID" exp="数据来源ID" type="int" />
+            <name="SJLYMC" exp="数据来源名称" type="nvarchar(200)" />
             <name="SJLYDXCJ" exp="数据来源对象层级" type="int" />
             <name="SJLYSJPC" exp="数据来源时间频次" type="int" />
+            <name="SJLYDXCJMC" exp="数据来源对象层级名称" type="nvarchar(200)" />
+            <name="SJLYSJPCMC" exp="数据来源时间频次名称" type="nvarchar(200)" />
             <name="DXCJSFFS" exp="对象层级缩放方式" type="int" />
             <name="SJPCSFFS" exp="时间频次缩放方式" type="int" />
             <name="SZMRZ" exp="数值默认值" type="decimal(14, 4)" />
@@ -1553,10 +1558,10 @@
             <name="ZDID" exp="字段ID" type="int" />
             <name="JSLX" exp="计算类型" type="int" />
             <name="ZDYID" exp="字段一ID" type="int" />
-            <name="ZDYSZ" exp="字段一数值" type="decimal(14, 4)" />
             <name="ZDEID" exp="字段二ID" type="int" />
             <name="ZDESZ" exp="字段二数值" type="decimal(14, 4)" />
             <name="JSCS" exp="计算参数" type="text" />
+            <name="JSFSSM" exp="计算方式说明" type="nvarchar(500)" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A53_DFTJSJ" exp="打分统计数据表">
