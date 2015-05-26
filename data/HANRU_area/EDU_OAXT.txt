@@ -1559,7 +1559,8 @@
             <name="JSLX" exp="计算类型" type="int" />
             <name="ZDYID" exp="字段一ID" type="int" />
             <name="ZDEID" exp="字段二ID" type="int" />
-            <name="ZDESZ" exp="字段二数值" type="decimal(14, 4)" />
+            <name="SZY" exp="数值一" type="decimal(14, 4)" />
+            <name="SZE" exp="数值二" type="decimal(14, 4)" />
             <name="JSCS" exp="计算参数" type="text" />
             <name="JSFSSM" exp="计算方式说明" type="nvarchar(500)" />
         </field_area>

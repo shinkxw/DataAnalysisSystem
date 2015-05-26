@@ -1329,7 +1329,8 @@ EDU_OAXT_50_A52_DFTJZDJSFS  打分统计字段计算方式表
   JSLX          计算类型                int            非主
   ZDYID         字段一ID                int            非主
   ZDEID         字段二ID                int            非主
-  ZDESZ         字段二数值              decimal(14, 4) 非主
+  SZY           数值一                  decimal(14, 4) 非主
+  SZE           数值二                  decimal(14, 4) 非主
   JSCS          计算参数                text           非主
   JSFSSM        计算方式说明            nvarchar(500)  非主
 

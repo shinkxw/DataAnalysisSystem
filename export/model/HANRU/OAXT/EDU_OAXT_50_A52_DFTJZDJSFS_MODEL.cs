@@ -55,9 +55,15 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "字段二数值")]
+            [Display(Name = "数值一")]
             [Range(typeof(decimal), "0", "9999999999")]
-            public decimal ZDESZ { get; set; }
+            public decimal SZY { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "数值二")]
+            [Range(typeof(decimal), "0", "9999999999")]
+            public decimal SZE { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

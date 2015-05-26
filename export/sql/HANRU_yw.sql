@@ -5903,7 +5903,8 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A52_DFTJZDJSFS](
 	[JSLX]  int  NOT NULL,--计算类型
 	[ZDYID]  int  NOT NULL,--字段一ID
 	[ZDEID]  int  NOT NULL,--字段二ID
-	[ZDESZ]  decimal(14, 4)  NOT NULL,--字段二数值
+	[SZY]  decimal(14, 4)  NOT NULL,--数值一
+	[SZE]  decimal(14, 4)  NOT NULL,--数值二
 	[JSCS]  text  NOT NULL,--计算参数
 	[JSFSSM]  nvarchar(500)  NOT NULL,--计算方式说明
 CONSTRAINT [PK_EDU_OAXT_50_A52_DFTJZDJSFS] PRIMARY KEY CLUSTERED
@@ -8376,7 +8377,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段一ID' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段二ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'ZDEID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'字段二数值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'ZDESZ'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数值一' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'SZY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数值二' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'SZE'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'计算参数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A52_DFTJZDJSFS', @level2type=N'COLUMN',@level2name=N'JSCS'
 GO

@@ -10,7 +10,8 @@ SELECT a.[ID]--编号
       ,a.[JSLX]--计算类型
       ,a.[ZDYID]--字段一ID
       ,a.[ZDEID]--字段二ID
-      ,a.[ZDESZ]--字段二数值
+      ,a.[SZY]--数值一
+      ,a.[SZE]--数值二
       ,a.[JSCS]--计算参数
       ,a.[JSFSSM]--计算方式说明
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
