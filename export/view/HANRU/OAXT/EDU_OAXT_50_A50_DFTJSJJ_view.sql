@@ -14,6 +14,8 @@ SELECT a.[ID]--编号
       ,a.[JSSJ]--结束时间
       ,a.[SJSCZT]--数据生成状态
       ,a.[DQPCBH]--当前批次编号
+      ,a.[SJJPC]--数据集频次
+      ,a.[SJJCJ]--数据集层级
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID

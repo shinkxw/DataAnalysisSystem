@@ -87,6 +87,16 @@ namespace HanRuEdu.LDAL
             public String DQPCBH { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "数据集频次")]
+            public Int32 SJJPC { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "数据集层级")]
+            public Int32 SJJCJ { get; set; }
+
+
         }
     }
 }

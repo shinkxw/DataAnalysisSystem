@@ -66,18 +66,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "字段对象层级")]
-            public Int32 ZDDXCJ { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "对象层级缩放方式")]
             public Int32 DXCJSFFS { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "字段时间频次")]
-            public Int32 ZDSJPC { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

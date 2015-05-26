@@ -12,9 +12,7 @@ SELECT a.[ID]--编号
       ,a.[SJLYID]--数据来源ID
       ,a.[SJLYDXCJ]--数据来源对象层级
       ,a.[SJLYSJPC]--数据来源时间频次
-      ,a.[ZDDXCJ]--字段对象层级
       ,a.[DXCJSFFS]--对象层级缩放方式
-      ,a.[ZDSJPC]--字段时间频次
       ,a.[SJPCSFFS]--时间频次缩放方式
       ,a.[SZMRZ]--数值默认值
       ,a.[LJMRZ]--逻辑默认值
@@ -33,6 +31,8 @@ SELECT a.[ID]--编号
       ,d.JSSJ as d_DFTJSJJ_JSSJ--打分统计数据集表 结束时间
       ,d.SJSCZT as d_DFTJSJJ_SJSCZT--打分统计数据集表 数据生成状态
       ,d.DQPCBH as d_DFTJSJJ_DQPCBH--打分统计数据集表 当前批次编号
+      ,d.SJJPC as d_DFTJSJJ_SJJPC--打分统计数据集表 数据集频次
+      ,d.SJJCJ as d_DFTJSJJ_SJJCJ--打分统计数据集表 数据集层级
 
 FROM dbo.EDU_OAXT_50_A51_DFTJZD AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

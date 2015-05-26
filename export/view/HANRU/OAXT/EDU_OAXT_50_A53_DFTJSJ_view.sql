@@ -29,6 +29,8 @@ SELECT a.[ID]--编号
       ,d.JSSJ as d_DFTJSJJ_JSSJ--打分统计数据集表 结束时间
       ,d.SJSCZT as d_DFTJSJJ_SJSCZT--打分统计数据集表 数据生成状态
       ,d.DQPCBH as d_DFTJSJJ_DQPCBH--打分统计数据集表 当前批次编号
+      ,d.SJJPC as d_DFTJSJJ_SJJPC--打分统计数据集表 数据集频次
+      ,d.SJJCJ as d_DFTJSJJ_SJJCJ--打分统计数据集表 数据集层级
       ,e.SCHOOLID as e_DFTJZD_SCHOOLID--打分统计字段表 学校ID
       ,e.XMID as e_DFTJZD_XMID--打分统计字段表 项目ID
       ,e.SJJID as e_DFTJZD_SJJID--打分统计字段表 数据集ID
@@ -38,9 +40,7 @@ SELECT a.[ID]--编号
       ,e.SJLYID as e_DFTJZD_SJLYID--打分统计字段表 数据来源ID
       ,e.SJLYDXCJ as e_DFTJZD_SJLYDXCJ--打分统计字段表 数据来源对象层级
       ,e.SJLYSJPC as e_DFTJZD_SJLYSJPC--打分统计字段表 数据来源时间频次
-      ,e.ZDDXCJ as e_DFTJZD_ZDDXCJ--打分统计字段表 字段对象层级
       ,e.DXCJSFFS as e_DFTJZD_DXCJSFFS--打分统计字段表 对象层级缩放方式
-      ,e.ZDSJPC as e_DFTJZD_ZDSJPC--打分统计字段表 字段时间频次
       ,e.SJPCSFFS as e_DFTJZD_SJPCSFFS--打分统计字段表 时间频次缩放方式
       ,e.SZMRZ as e_DFTJZD_SZMRZ--打分统计字段表 数值默认值
       ,e.LJMRZ as e_DFTJZD_LJMRZ--打分统计字段表 逻辑默认值
