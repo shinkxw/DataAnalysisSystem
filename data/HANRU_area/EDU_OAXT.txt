@@ -1546,6 +1546,8 @@
             <name="SJPCSFFS" exp="时间频次缩放方式" type="int" />
             <name="SZMRZ" exp="数值默认值" type="decimal(14, 4)" />
             <name="LJMRZ" exp="逻辑默认值" type="int" />
+            <name="QZXX" exp="取值下限" type="decimal(14, 4)" />
+            <name="QZSX" exp="取值上限" type="decimal(14, 4)" />
             <name="YXJ" exp="优先级" type="int" />
         </field_area>
     </table>

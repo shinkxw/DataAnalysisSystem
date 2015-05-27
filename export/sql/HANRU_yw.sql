@@ -5880,6 +5880,8 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A51_DFTJZD](
 	[SJPCSFFS]  int  NOT NULL,--时间频次缩放方式
 	[SZMRZ]  decimal(14, 4)  NOT NULL,--数值默认值
 	[LJMRZ]  int  NOT NULL,--逻辑默认值
+	[QZXX]  decimal(14, 4)  NOT NULL,--取值下限
+	[QZSX]  decimal(14, 4)  NOT NULL,--取值上限
 	[YXJ]  int  NOT NULL,--优先级
 CONSTRAINT [PK_EDU_OAXT_50_A51_DFTJZD] PRIMARY KEY CLUSTERED
 (
@@ -8356,6 +8358,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数值默认值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'SZMRZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'逻辑默认值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'LJMRZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'取值下限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'QZXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'取值上限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'QZSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'优先级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A51_DFTJZD', @level2type=N'COLUMN',@level2name=N'YXJ'
 GO

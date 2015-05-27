@@ -111,6 +111,18 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "取值下限")]
+            [Range(typeof(decimal), "0", "9999999999")]
+            public decimal QZXX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "取值上限")]
+            [Range(typeof(decimal), "0", "9999999999")]
+            public decimal QZSX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "优先级")]
             public Int32 YXJ { get; set; }
 

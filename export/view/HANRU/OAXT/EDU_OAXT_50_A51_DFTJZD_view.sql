@@ -19,6 +19,8 @@ SELECT a.[ID]--编号
       ,a.[SJPCSFFS]--时间频次缩放方式
       ,a.[SZMRZ]--数值默认值
       ,a.[LJMRZ]--逻辑默认值
+      ,a.[QZXX]--取值下限
+      ,a.[QZSX]--取值上限
       ,a.[YXJ]--优先级
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称

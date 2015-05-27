@@ -7324,6 +7324,8 @@ SELECT a.[ID]--编号
       ,a.[SJPCSFFS]--时间频次缩放方式
       ,a.[SZMRZ]--数值默认值
       ,a.[LJMRZ]--逻辑默认值
+      ,a.[QZXX]--取值下限
+      ,a.[QZSX]--取值上限
       ,a.[YXJ]--优先级
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
@@ -7398,6 +7400,8 @@ SELECT a.[ID]--编号
       ,e.SJPCSFFS as e_DFTJZD_SJPCSFFS--打分统计字段表 时间频次缩放方式
       ,e.SZMRZ as e_DFTJZD_SZMRZ--打分统计字段表 数值默认值
       ,e.LJMRZ as e_DFTJZD_LJMRZ--打分统计字段表 逻辑默认值
+      ,e.QZXX as e_DFTJZD_QZXX--打分统计字段表 取值下限
+      ,e.QZSX as e_DFTJZD_QZSX--打分统计字段表 取值上限
       ,e.YXJ as e_DFTJZD_YXJ--打分统计字段表 优先级
 
 FROM dbo.EDU_OAXT_50_A52_DFTJZDJSFS AS a LEFT OUTER JOIN
@@ -7456,6 +7460,8 @@ SELECT a.[ID]--编号
       ,e.SJPCSFFS as e_DFTJZD_SJPCSFFS--打分统计字段表 时间频次缩放方式
       ,e.SZMRZ as e_DFTJZD_SZMRZ--打分统计字段表 数值默认值
       ,e.LJMRZ as e_DFTJZD_LJMRZ--打分统计字段表 逻辑默认值
+      ,e.QZXX as e_DFTJZD_QZXX--打分统计字段表 取值下限
+      ,e.QZSX as e_DFTJZD_QZSX--打分统计字段表 取值上限
       ,e.YXJ as e_DFTJZD_YXJ--打分统计字段表 优先级
 
 FROM dbo.EDU_OAXT_50_A53_DFTJSJ AS a LEFT OUTER JOIN

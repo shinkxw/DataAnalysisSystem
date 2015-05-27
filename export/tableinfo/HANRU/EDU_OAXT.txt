@@ -1318,6 +1318,8 @@ EDU_OAXT_50_A51_DFTJZD  打分统计字段表
   SJPCSFFS      时间频次缩放方式        int            非主
   SZMRZ         数值默认值              decimal(14, 4) 非主
   LJMRZ         逻辑默认值              int            非主
+  QZXX          取值下限                decimal(14, 4) 非主
+  QZSX          取值上限                decimal(14, 4) 非主
   YXJ           优先级                  int            非主
 
 EDU_OAXT_50_A52_DFTJZDJSFS  打分统计字段计算方式表
