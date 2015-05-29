@@ -15,7 +15,6 @@ namespace HanRuEdu.LDAL
             TJDXJDMCLB = "";
             QSSJ = DateTime.Now;
             JSSJ = DateTime.Now;
-            DQPCBH = "";
             SJJCJMC = "";
             SJJPCMC = "";
         }
@@ -78,18 +77,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "数据生成状态")]
-            public Int32 SJSCZT { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "当前批次编号")]
-            [StringLength(200)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DQPCBH { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "数据集层级")]
             public Int32 SJJCJ { get; set; }
 
@@ -111,6 +98,16 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SJJPCMC { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "数据生成状态")]
+            public Int32 SJSCZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "当前批次编号")]
+            public Int32 DQPCBH { get; set; }
 
 
         }

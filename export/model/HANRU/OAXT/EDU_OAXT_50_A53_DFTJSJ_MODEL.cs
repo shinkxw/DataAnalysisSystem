@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_OAXT_50_A53_DFTJSJ()
         {
-            PCBH = "";
             BDFDXBM = "";
             BDFDXMC = "";
             CKSJ = DateTime.Now;
@@ -42,11 +41,9 @@ namespace HanRuEdu.LDAL
             public Int32 ZDID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "批次编号")]
-            [StringLength(200)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String PCBH { get; set; }
+            public Int32 PCBH { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

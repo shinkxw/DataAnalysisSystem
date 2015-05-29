@@ -1519,12 +1519,12 @@
             <name="TJDXJDMCLB" exp="统计对象节点名称列表" type="text" />
             <name="QSSJ" exp="起始时间" type="datetime" />
             <name="JSSJ" exp="结束时间" type="datetime" />
-            <name="SJSCZT" exp="数据生成状态" type="int" />
-            <name="DQPCBH" exp="当前批次编号" type="nvarchar(200)" />
             <name="SJJCJ" exp="数据集层级" type="int" />
             <name="SJJPC" exp="数据集频次" type="int" />
             <name="SJJCJMC" exp="数据集层级名称" type="nvarchar(200)" />
             <name="SJJPCMC" exp="数据集频次名称" type="nvarchar(200)" />
+            <name="SJSCZT" exp="数据生成状态" type="int" />
+            <name="DQPCBH" exp="当前批次编号" type="int" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A51_DFTJZD" exp="打分统计字段表">
@@ -1574,7 +1574,7 @@
             <name="XMID" exp="项目ID" type="int" p="T" />
             <name="SJJID" exp="数据集ID" type="int" />
             <name="ZDID" exp="字段ID" type="int" />
-            <name="PCBH" exp="批次编号" type="nvarchar(200)" />
+            <name="PCBH" exp="批次编号" type="int" />
             <name="SFSDXG" exp="是否手动修改" type="int" />
             <name="BDFDXBM" exp="被打分对象编码" type="nvarchar(50)" />
             <name="BDFDXMC" exp="被打分对象名称" type="nvarchar(50)" />

@@ -1293,12 +1293,12 @@ EDU_OAXT_50_A50_DFTJSJJ  打分统计数据集表
   TJDXJDMCLB    统计对象节点名称列表    text           非主
   QSSJ          起始时间                datetime       非主
   JSSJ          结束时间                datetime       非主
-  SJSCZT        数据生成状态            int            非主
-  DQPCBH        当前批次编号            nvarchar(200)  非主
   SJJCJ         数据集层级              int            非主
   SJJPC         数据集频次              int            非主
   SJJCJMC       数据集层级名称          nvarchar(200)  非主
   SJJPCMC       数据集频次名称          nvarchar(200)  非主
+  SJSCZT        数据生成状态            int            非主
+  DQPCBH        当前批次编号            int            非主
 
 EDU_OAXT_50_A51_DFTJZD  打分统计字段表
   ID            编号                    int            主键
@@ -1342,7 +1342,7 @@ EDU_OAXT_50_A53_DFTJSJ  打分统计数据表
   XMID          项目ID                  int            主键        打分项目表
   SJJID         数据集ID                int            非主        打分统计数据集表
   ZDID          字段ID                  int            非主        打分统计字段表
-  PCBH          批次编号                nvarchar(200)  非主
+  PCBH          批次编号                int            非主
   SFSDXG        是否手动修改            int            非主
   BDFDXBM       被打分对象编码          nvarchar(50)   非主
   BDFDXMC       被打分对象名称          nvarchar(50)   非主
