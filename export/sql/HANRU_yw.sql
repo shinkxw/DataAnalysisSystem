@@ -5959,6 +5959,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A54_DFTJJGST](
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[XMID]  int  NOT NULL,--项目ID
 	[SJJID]  int  NOT NULL,--数据集ID
+	[STMC]  nvarchar(50)  NOT NULL,--视图名称
 	[ZSZDIDLB]  text  NOT NULL,--展示字段ID列表
 	[ZSZDMCLB]  text  NOT NULL,--展示字段名称列表
 	[ZSDXJDBMJH]  text  NOT NULL,--展示对象节点编码集合
@@ -8464,6 +8465,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'XMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'SJJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'视图名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'STMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示字段ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSZDIDLB'
 GO

@@ -1590,6 +1590,7 @@
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="XMID" exp="项目ID" type="int" p="T" />
             <name="SJJID" exp="数据集ID" type="int" />
+            <name="STMC" exp="视图名称" type="nvarchar(50)" />
             <name="ZSZDIDLB" exp="展示字段ID列表" type="text" />
             <name="ZSZDMCLB" exp="展示字段名称列表" type="text" />
             <name="ZSDXJDBMJH" exp="展示对象节点编码集合" type="text" />

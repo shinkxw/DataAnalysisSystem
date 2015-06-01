@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_OAXT_50_A54_DFTJJGST()
         {
+            STMC = "";
             ZSZDIDLB = "";
             ZSZDMCLB = "";
             ZSDXJDBMJH = "";
@@ -41,6 +42,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "数据集")]
             public Int32 SJJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "视图名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String STMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

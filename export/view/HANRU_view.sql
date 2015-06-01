@@ -7481,6 +7481,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XMID]--项目ID
       ,a.[SJJID]--数据集ID
+      ,a.[STMC]--视图名称
       ,a.[ZSZDIDLB]--展示字段ID列表
       ,a.[ZSZDMCLB]--展示字段名称列表
       ,a.[ZSDXJDBMJH]--展示对象节点编码集合

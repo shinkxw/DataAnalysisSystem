@@ -1356,6 +1356,7 @@ EDU_OAXT_50_A54_DFTJJGST  打分统计结果视图表
   SCHOOLID      学校ID                  int            主键        学校配置表
   XMID          项目ID                  int            主键        打分项目表
   SJJID         数据集ID                int            非主        打分统计数据集表
+  STMC          视图名称                nvarchar(50)   非主
   ZSZDIDLB      展示字段ID列表          text           非主
   ZSZDMCLB      展示字段名称列表        text           非主
   ZSDXJDBMJH    展示对象节点编码集合    text           非主
