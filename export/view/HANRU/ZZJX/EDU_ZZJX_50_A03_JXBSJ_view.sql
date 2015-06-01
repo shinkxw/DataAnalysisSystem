@@ -23,6 +23,9 @@ SELECT a.[ID]--编号
       ,a.[BJMCLB]--班级名称列表
       ,a.[QTJSIDLB]--其他教师ID列表
       ,a.[QTJSMCLB]--其他教师名称列表
+      ,a.[WEEKKS]--周课时
+      ,a.[SKZCIDLB]--上课周次ID列表
+      ,a.[SKZCMCLB]--上课周次名称列表
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介

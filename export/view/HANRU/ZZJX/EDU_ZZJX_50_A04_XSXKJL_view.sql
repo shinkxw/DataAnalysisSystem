@@ -78,6 +78,9 @@ SELECT a.[ID]--编号
       ,d.BJMCLB as d_JXBSJ_BJMCLB--教学班数据表 班级名称列表
       ,d.QTJSIDLB as d_JXBSJ_QTJSIDLB--教学班数据表 其他教师ID列表
       ,d.QTJSMCLB as d_JXBSJ_QTJSMCLB--教学班数据表 其他教师名称列表
+      ,d.WEEKKS as d_JXBSJ_WEEKKS--教学班数据表 周课时
+      ,d.SKZCIDLB as d_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
+      ,d.SKZCMCLB as d_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

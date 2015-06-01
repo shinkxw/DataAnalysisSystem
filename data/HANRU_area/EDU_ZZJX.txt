@@ -994,6 +994,9 @@
             <name="BJMCLB" exp="班级名称列表" type="text" />
             <name="QTJSIDLB" exp="其他教师ID列表" type="text" />
             <name="QTJSMCLB" exp="其他教师名称列表" type="text" />
+            <name="WEEKKS" exp="周课时" type="int" />
+            <name="SKZCIDLB" exp="上课周次ID列表" type="text" />
+            <name="SKZCMCLB" exp="上课周次名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A04_XSXKJL" exp="学生选课记录表">

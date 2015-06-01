@@ -29,6 +29,9 @@ SELECT a.[ID]--编号
       ,c.BJMCLB as c_JXBSJ_BJMCLB--教学班数据表 班级名称列表
       ,c.QTJSIDLB as c_JXBSJ_QTJSIDLB--教学班数据表 其他教师ID列表
       ,c.QTJSMCLB as c_JXBSJ_QTJSMCLB--教学班数据表 其他教师名称列表
+      ,c.WEEKKS as c_JXBSJ_WEEKKS--教学班数据表 周课时
+      ,c.SKZCIDLB as c_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
+      ,c.SKZCMCLB as c_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
