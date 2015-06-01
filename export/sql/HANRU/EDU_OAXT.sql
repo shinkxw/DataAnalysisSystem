@@ -579,6 +579,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_50_A53_DFTJ
             and   type = 'U')
    drop table EDU_OAXT_50_A53_DFTJSJ
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_50_A54_DFTJJGST')
+            and   type = 'U')
+   drop table EDU_OAXT_50_A54_DFTJJGST
+go
 --文件基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_01_01_WJJBSJ]') AND type in (N'U'))
 BEGIN
@@ -3200,6 +3205,37 @@ CONSTRAINT [PK_EDU_OAXT_50_A53_DFTJSJ] PRIMARY KEY CLUSTERED
 END
 GO
 
+--打分统计结果视图表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_50_A54_DFTJJGST]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_50_A54_DFTJJGST](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[XMID]  int  NOT NULL,--项目ID
+	[SJJID]  int  NOT NULL,--数据集ID
+	[ZSZDIDLB]  text  NOT NULL,--展示字段ID列表
+	[ZSZDMCLB]  text  NOT NULL,--展示字段名称列表
+	[ZSDXJDBMJH]  text  NOT NULL,--展示对象节点编码集合
+	[ZSDXJDMCLB]  text  NOT NULL,--展示对象节点名称列表
+	[ZSSJQSSJ]  datetime  NOT NULL,--展示数据起始时间
+	[ZSSJJSSJ]  datetime  NOT NULL,--展示数据结束时间
+	[SDWZ]  int  NOT NULL,--锁定维度
+	[SFKGXZ]  int  NOT NULL,--是否可供选择
+	[SDDX]  nvarchar(200)  NOT NULL,--锁定对象
+	[KCKYHIDLB]  text  NOT NULL,--可查看用户ID列表
+	[KCKYHXMLB]  text  NOT NULL,--可查看用户姓名列表
+	[ZSKQSJ]  datetime  NOT NULL,--展示开启时间
+	[ZSGBSJ]  datetime  NOT NULL,--展示关闭时间
+CONSTRAINT [PK_EDU_OAXT_50_A54_DFTJJGST] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC,
+	[XMID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件基本数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_01_01_WJJBSJ'
 GO
@@ -5672,4 +5708,40 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A53_DFTJSJ', @level2type=N'COLUMN',@level2name=N'FZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A53_DFTJSJ', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分统计结果视图表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'XMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据集ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'SJJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示字段ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSZDIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示字段名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSZDMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示对象节点编码集合' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSDXJDBMJH'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示对象节点名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSDXJDMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示数据起始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSSJQSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示数据结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSSJJSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'锁定维度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'SDWZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否可供选择' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'SFKGXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'锁定对象' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'SDDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可查看用户ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'KCKYHIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可查看用户姓名列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'KCKYHXMLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示开启时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSKQSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示关闭时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSGBSJ'
 GO

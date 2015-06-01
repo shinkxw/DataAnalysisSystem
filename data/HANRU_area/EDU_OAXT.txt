@@ -1584,4 +1584,25 @@
             <name="TJSJ" exp="添加时间" type="datetime" />
         </field_area>
     </table>
+    <table name="EDU_OAXT_50_A54_DFTJJGST" exp="打分统计结果视图表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="SJJID" exp="数据集ID" type="int" />
+            <name="ZSZDIDLB" exp="展示字段ID列表" type="text" />
+            <name="ZSZDMCLB" exp="展示字段名称列表" type="text" />
+            <name="ZSDXJDBMJH" exp="展示对象节点编码集合" type="text" />
+            <name="ZSDXJDMCLB" exp="展示对象节点名称列表" type="text" />
+            <name="ZSSJQSSJ" exp="展示数据起始时间" type="datetime" />
+            <name="ZSSJJSSJ" exp="展示数据结束时间" type="datetime" />
+            <name="SDWZ" exp="锁定维度" type="int" />
+            <name="SFKGXZ" exp="是否可供选择" type="int" />
+            <name="SDDX" exp="锁定对象" type="nvarchar(200)" />
+            <name="KCKYHIDLB" exp="可查看用户ID列表" type="text" />
+            <name="KCKYHXMLB" exp="可查看用户姓名列表" type="text" />
+            <name="ZSKQSJ" exp="展示开启时间" type="datetime" />
+            <name="ZSGBSJ" exp="展示关闭时间" type="datetime" />
+        </field_area>
+    </table>
 </namespace>

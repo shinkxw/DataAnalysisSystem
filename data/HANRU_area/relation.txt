@@ -603,6 +603,10 @@
   XMID           EDU_OAXT_50_A01_DFXM               ID
   SJJID          EDU_OAXT_50_A50_DFTJSJJ            ID
   ZDID           EDU_OAXT_50_A51_DFTJZD             ID
+<EDU_OAXT_50_A54_DFTJJGST
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XMID           EDU_OAXT_50_A01_DFXM               ID
+  SJJID          EDU_OAXT_50_A50_DFTJSJJ            ID
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_SYS_01_MICROMODULE
