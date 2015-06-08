@@ -670,4 +670,28 @@
             <name="XSID" exp="学生ID" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_21_A01_ZXBM" exp="在线报名表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XM" exp="姓名" type="nvarchar(200)" />
+            <name="XB" exp="性别" type="nvarchar(200)" />
+            <name="SG" exp="身高" type="nvarchar(200)" />
+            <name="TZ" exp="体重" type="nvarchar(200)" />
+            <name="BYXX" exp="毕业学校" type="nvarchar(200)" />
+            <name="BYBJ" exp="毕业班级" type="nvarchar(200)" />
+            <name="ZKCJ" exp="中考成绩" type="nvarchar(200)" />
+            <name="TBZYY" exp="填报志愿一" type="nvarchar(200)" />
+            <name="TBZYE" exp="填报志愿二" type="nvarchar(200)" />
+            <name="JZLXDH" exp="家长联系电话" type="nvarchar(200)" />
+            <name="XSLXDH" exp="学生联系电话" type="nvarchar(200)" />
+            <name="ZXTX" exp="住校/通校" type="nvarchar(200)" />
+            <name="ZKZH" exp="准考证号" type="nvarchar(200)" />
+            <name="SFFCTJ" exp="是否服从调剂" type="nvarchar(200)" />
+            <name="SFZHM" exp="身份证号码" type="nvarchar(200)" />
+            <name="DZ" exp="地址" type="nvarchar(200)" />
+            <name="JF" exp="交费" type="nvarchar(200)" />
+            <name="BMIP" exp="报名IP" type="nvarchar(200)" />
+        </field_area>
+    </table>
 </namespace>

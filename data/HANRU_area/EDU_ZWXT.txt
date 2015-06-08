@@ -79,4 +79,89 @@
             <name="ZT" exp="状态" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZWXT_05_A01_XCLX" exp="校产类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A02_XCML" exp="校产目录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="MLMC" exp="目录名称" type="nvarchar(50)" />
+            <name="FMLID" exp="父目录ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A03_XC" exp="校产表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XCLXID" exp="校产类型ID" type="int" />
+            <name="XCMLID" exp="校产目录ID" type="int" />
+            <name="DQBGYHID" exp="当前保管用户ID" type="nvarchar(20)" />
+            <name="MC" exp="名称" type="nvarchar(50)" />
+            <name="GG" exp="规格" type="nvarchar(50)" />
+            <name="DJ" exp="单价" type="nvarchar(50)" />
+            <name="SL" exp="数量" type="int" />
+            <name="DW" exp="单位" type="nvarchar(50)" />
+            <name="SCRQ" exp="生产日期" type="datetime" />
+            <name="RKSJ" exp="入库时间" type="datetime" />
+            <name="SCCJ" exp="生产厂家" type="nvarchar(200)" />
+            <name="DQZT" exp="当前状态" type="int" />
+            <name="BZ" exp="备注" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A04_BX" exp="报修表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XCMC" exp="校产名称" type="nvarchar(50)" />
+            <name="DYXCID" exp="对应校产ID" type="int" />
+            <name="BXDD" exp="报修地点" type="nvarchar(200)" />
+            <name="BXYHID" exp="报修用户ID" type="nvarchar(20)" />
+            <name="BXSJ" exp="报修时间" type="datetime" />
+            <name="GZTP" exp="故障图片" type="text" />
+            <name="GZXX" exp="故障现象" type="text" />
+            <name="WXZT" exp="维修状态" type="int" />
+            <name="BZ" exp="备注" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A05_YJ" exp="移交表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XCID" exp="校产ID" type="int" />
+            <name="SQYHID" exp="申请用户ID" type="nvarchar(20)" />
+            <name="JSYHID" exp="接收用户ID" type="nvarchar(20)" />
+            <name="SHYHID" exp="审核用户ID" type="nvarchar(20)" />
+            <name="SQSJ" exp="申请时间" type="datetime" />
+            <name="SHSJ" exp="审核时间" type="datetime" />
+            <name="JSSJ" exp="接收时间" type="datetime" />
+            <name="YJZT" exp="移交状态" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A06_PD" exp="盘点表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="PDMC" exp="盘点名称" type="nvarchar(50)" />
+            <name="KSSJ" exp="开始时间" type="datetime" />
+            <name="JSSJ" exp="结束时间" type="datetime" />
+            <name="BZ" exp="备注" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A07_PDXD" exp="盘点详单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="PDID" exp="盘点ID" type="int" />
+            <name="XCID" exp="校产ID" type="int" />
+            <name="XCSL" exp="校产数量" type="int" />
+            <name="PDSS" exp="盘点实数" type="int" />
+            <name="BZ" exp="备注" type="text" />
+            <name="BGYHID" exp="保管用户ID" type="nvarchar(20)" />
+        </field_area>
+    </table>
 </namespace>

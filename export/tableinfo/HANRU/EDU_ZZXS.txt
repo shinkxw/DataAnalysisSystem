@@ -577,3 +577,25 @@ EDU_ZZXS_20_A02_XSXZDSJL  学生选择导师记录表
   DSID          导师ID                  int            非主        导师数据表
   XSID          学生ID                  int            非主        学生信息数据表
 
+EDU_ZZXS_21_A01_ZXBM  在线报名表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XM            姓名                    nvarchar(200)  非主
+  XB            性别                    nvarchar(200)  非主
+  SG            身高                    nvarchar(200)  非主
+  TZ            体重                    nvarchar(200)  非主
+  BYXX          毕业学校                nvarchar(200)  非主
+  BYBJ          毕业班级                nvarchar(200)  非主
+  ZKCJ          中考成绩                nvarchar(200)  非主
+  TBZYY         填报志愿一              nvarchar(200)  非主
+  TBZYE         填报志愿二              nvarchar(200)  非主
+  JZLXDH        家长联系电话            nvarchar(200)  非主
+  XSLXDH        学生联系电话            nvarchar(200)  非主
+  ZXTX          住校/通校               nvarchar(200)  非主
+  ZKZH          准考证号                nvarchar(200)  非主
+  SFFCTJ        是否服从调剂            nvarchar(200)  非主
+  SFZHM         身份证号码              nvarchar(200)  非主
+  DZ            地址                    nvarchar(200)  非主
+  JF            交费                    nvarchar(200)  非主
+  BMIP          报名IP                  nvarchar(200)  非主
+

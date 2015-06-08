@@ -730,6 +730,33 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   YHID           EDU_ELE_01_USER                    LOGINNAME
   CPID           EDU_ZWXT_03_A02_CPGL               ID
+<EDU_ZWXT_05_A01_XCLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZWXT_05_A02_XCML
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  FMLID          EDU_ZWXT_05_A02_XCML               ID
+<EDU_ZWXT_05_A03_XC
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XCLXID         EDU_ZWXT_05_A01_XCLX               ID
+  XCMLID         EDU_ZWXT_05_A02_XCML               ID
+  DQBGYHID       EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZWXT_05_A04_BX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DYXCID         EDU_ZWXT_05_A03_XC                 ID
+  BXYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZWXT_05_A05_YJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XCID           EDU_ZWXT_05_A03_XC                 ID
+  SQYHID         EDU_ELE_01_USER                    LOGINNAME
+  JSYHID         EDU_ELE_01_USER                    LOGINNAME
+  SHYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZWXT_05_A06_PD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZWXT_05_A07_PDXD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  PDID           EDU_ZWXT_05_A06_PD                 ID
+  XCID           EDU_ZWXT_05_A03_XC                 ID
+  BGYHID         EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXDY_04_A01_ZZGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
@@ -2691,6 +2718,8 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   DSID           EDU_ZZXS_20_A01_DSSJ               ID
   XSID           EDU_ZZXS_01_01_XSXX                ID
+<EDU_ZZXS_21_A01_ZXBM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXX_01_01_ZZXX
   XXJBZM         EDU_JY_XXJYJGJBZ                   DM
   XXZGBMM        EDU_JY_XXJYJGJBZ                   DM
