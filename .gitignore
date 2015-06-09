@@ -17,6 +17,7 @@ data/temporary
 data/test_area
 data/db_out_area
 export/template
+export/bztemplate
 export/migrate_config
 export/testdata
 export/wordinfo

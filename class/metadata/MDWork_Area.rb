@@ -86,6 +86,8 @@ class MDWork_Area
   def export_model;ModelBuilder.new.build(@area).export end
   #输出模板数据
   def export_template;TemplateBuilder.new.build(@area).export end
+  #输出标准模板数据
+  def export_bztemplate;BzTemplateBuilder.new.build(@area).export end
   #输出表信息
   def export_tableinfo;TableinfoBuilder.new.build(@area).export end
   #输出Word版表信息

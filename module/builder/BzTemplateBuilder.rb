@@ -23,7 +23,7 @@ class BzTemplateBuilder
     @area.each do |name_space|
       build_name_space_template(name_space) if @ignore_name_space_arr.include?(name_space.name)
     end
-    MDDoc.new("template",@area.name,@file_hash)
+    MDDoc.new("bztemplate",@area.name,@file_hash)
   end
   #生成指定命名空间的模板
   def build_name_space_template(name_space)
@@ -302,7 +302,7 @@ class BzTemplateBuilder
     index_str << %(@Html.Partial("~/views/shared/indexToolBarPage.cshtml", this.ViewData)\n)
   end
   def make_table_info1(table,title)
-    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @*@Html.Partial("SingleZTree")*@\n)
+    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n)
     info_str << %(    <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
     info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
@@ -324,7 +324,7 @@ class BzTemplateBuilder
     info_str << %(    @Html.Partial("~/views/shared/CreateEditToolBarPage.cshtml", this.ViewData)\n}\n)
   end
   def make_table_info2(table,title)
-    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n    @*@Html.Partial("SingleZTree")*@\n)
+    info_str = %(@model HanRuEdu.LDAL.#{table.name}\n@using (Html.BeginForm())\n{\n)
     info_str << %(    <center>  <h1 ><span style="font-size:smaller;">#{title}</span></h1></center>\n\n)
     info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
