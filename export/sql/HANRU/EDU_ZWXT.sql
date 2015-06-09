@@ -252,7 +252,7 @@ CREATE TABLE [dbo].[EDU_ZWXT_05_A03_XC](
 	[DQBGYHID]  nvarchar(20)  NOT NULL,--当前保管用户ID
 	[MC]  nvarchar(50)  NOT NULL,--名称
 	[GG]  nvarchar(50)  NOT NULL,--规格
-	[DJ]  nvarchar(50)  NOT NULL,--单价
+	[DJ]  decimal(14, 4)  NOT NULL,--单价
 	[SL]  int  NOT NULL,--数量
 	[DW]  nvarchar(50)  NOT NULL,--单位
 	[SCRQ]  datetime  NOT NULL,--生产日期

@@ -83,7 +83,7 @@ EDU_ZWXT_05_A03_XC  校产表
   DQBGYHID      当前保管用户ID          nvarchar(20)   非主        应用系统用户表
   MC            名称                    nvarchar(50)   非主
   GG            规格                    nvarchar(50)   非主
-  DJ            单价                    nvarchar(50)   非主
+  DJ            单价                    decimal(14, 4) 非主
   SL            数量                    int            非主
   DW            单位                    nvarchar(50)   非主
   SCRQ          生产日期                datetime       非主

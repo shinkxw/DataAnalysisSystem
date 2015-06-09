@@ -12,7 +12,6 @@ namespace HanRuEdu.LDAL
             DQBGYHID = "";
             MC = "";
             GG = "";
-            DJ = "";
             DW = "";
             SCRQ = DateTime.Now;
             RKSJ = DateTime.Now;
@@ -62,11 +61,10 @@ namespace HanRuEdu.LDAL
             public String GG { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "单价")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DJ { get; set; }
+            [Range(typeof(decimal), "0", "9999999999")]
+            public decimal DJ { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

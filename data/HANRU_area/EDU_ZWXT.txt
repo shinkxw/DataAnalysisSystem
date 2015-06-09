@@ -103,7 +103,7 @@
             <name="DQBGYHID" exp="当前保管用户ID" type="nvarchar(20)" />
             <name="MC" exp="名称" type="nvarchar(50)" />
             <name="GG" exp="规格" type="nvarchar(50)" />
-            <name="DJ" exp="单价" type="nvarchar(50)" />
+            <name="DJ" exp="单价" type="decimal(14, 4)" />
             <name="SL" exp="数量" type="int" />
             <name="DW" exp="单位" type="nvarchar(50)" />
             <name="SCRQ" exp="生产日期" type="datetime" />
