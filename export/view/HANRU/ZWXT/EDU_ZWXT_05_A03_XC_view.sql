@@ -17,6 +17,9 @@ SELECT a.[ID]--编号
       ,a.[SCCJ]--生产厂家
       ,a.[DQZT]--当前状态
       ,a.[BZ]--备注
+      ,a.[XCBH]--校产编号
+      ,a.[CFDD]--存放地点
+      ,a.[ZXRQ]--注销日期
       ,c.SCHOOLID as c_XCLX_SCHOOLID--校产类型表 学校ID
       ,c.LXMC as c_XCLX_LXMC--校产类型表 类型名称
       ,d.SCHOOLID as d_XCML_SCHOOLID--校产目录表 学校ID

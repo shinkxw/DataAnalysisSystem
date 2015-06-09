@@ -27,6 +27,9 @@ SELECT a.[ID]--编号
       ,c.SCCJ as c_XC_SCCJ--校产表 生产厂家
       ,c.DQZT as c_XC_DQZT--校产表 当前状态
       ,c.BZ as c_XC_BZ--校产表 备注
+      ,c.XCBH as c_XC_XCBH--校产表 校产编号
+      ,c.CFDD as c_XC_CFDD--校产表 存放地点
+      ,c.ZXRQ as c_XC_ZXRQ--校产表 注销日期
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码

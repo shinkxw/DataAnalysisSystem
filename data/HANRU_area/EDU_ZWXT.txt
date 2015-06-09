@@ -111,6 +111,9 @@
             <name="SCCJ" exp="生产厂家" type="nvarchar(200)" />
             <name="DQZT" exp="当前状态" type="int" />
             <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="XCBH" exp="校产编号" type="nvarchar(200)" />
+            <name="CFDD" exp="存放地点" type="nvarchar(200)" />
+            <name="ZXRQ" exp="注销日期" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_05_A04_BX" exp="报修表">
@@ -162,6 +165,32 @@
             <name="PDSS" exp="盘点实数" type="int" />
             <name="BZ" exp="备注" type="text" />
             <name="BGYHID" exp="保管用户ID" type="nvarchar(20)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A08_XCBS" exp="校产报失表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XCID" exp="校产ID" type="int" />
+            <name="BSYHID" exp="报失用户ID" type="nvarchar(20)" />
+            <name="BSSJ" exp="报失时间" type="datetime" />
+            <name="SHYHID" exp="审核用户ID" type="nvarchar(20)" />
+            <name="SHSJ" exp="审核时间" type="datetime" />
+            <name="BSZT" exp="报失状态" type="int" />
+            <name="BSSM" exp="报失说明" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZWXT_05_A09_XCBF" exp="校产报废表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XCID" exp="校产ID" type="int" />
+            <name="BFYHID" exp="报废用户ID" type="nvarchar(20)" />
+            <name="BFSJ" exp="报废时间" type="datetime" />
+            <name="SHYHID" exp="审核用户ID" type="nvarchar(20)" />
+            <name="SHSJ" exp="审核时间" type="datetime" />
+            <name="BFZT" exp="报废状态" type="int" />
+            <name="BFSM" exp="报废说明" type="text" />
         </field_area>
     </table>
 </namespace>

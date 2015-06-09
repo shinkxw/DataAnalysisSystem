@@ -17,6 +17,9 @@ namespace HanRuEdu.LDAL
             RKSJ = DateTime.Now;
             SCCJ = "";
             BZ = "";
+            XCBH = "";
+            CFDD = "";
+            ZXRQ = DateTime.Now;
         }
         public class EDU_ZWXT_05_A03_XC_metadata
         {
@@ -106,6 +109,25 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "校产编号")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XCBH { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "存放地点")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CFDD { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "注销日期")]
+            public DateTime ZXRQ { get; set; }
 
 
         }

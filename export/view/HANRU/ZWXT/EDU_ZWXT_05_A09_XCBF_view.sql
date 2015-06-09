@@ -1,17 +1,16 @@
 
---移交表
-CREATE VIEW [dbo].[VIEW_EDU_ZWXT_05_A05_YJ_DISP]
+--校产报废表
+CREATE VIEW [dbo].[VIEW_EDU_ZWXT_05_A09_XCBF_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校ID
       ,a.[XCID]--校产ID
-      ,a.[SQYHID]--申请用户ID
-      ,a.[JSYHID]--接收用户ID
+      ,a.[BFYHID]--报废用户ID
+      ,a.[BFSJ]--报废时间
       ,a.[SHYHID]--审核用户ID
-      ,a.[SQSJ]--申请时间
       ,a.[SHSJ]--审核时间
-      ,a.[JSSJ]--接收时间
-      ,a.[YJZT]--移交状态
+      ,a.[BFZT]--报废状态
+      ,a.[BFSM]--报废说明
       ,c.SCHOOLID as c_XC_SCHOOLID--校产表 学校ID
       ,c.XCLXID as c_XC_XCLXID--校产表 校产类型ID
       ,c.XCMLID as c_XC_XCMLID--校产表 校产目录ID
@@ -63,27 +62,9 @@ SELECT a.[ID]--编号
       ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
       ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
       ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
-      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
-      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
-      ,'' as f_USER_PWD--应用系统用户表 密码
-      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
-      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
-      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
-      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
-      ,f.XM as f_USER_XM--应用系统用户表 姓名
-      ,f.XB as f_USER_XB--应用系统用户表 性别
-      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
-      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
-      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
-      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
-      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
-      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
-      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
-      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
 
-FROM dbo.EDU_ZWXT_05_A05_YJ AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZWXT_05_A09_XCBF AS a LEFT OUTER JOIN
       dbo.EDU_ZWXT_05_A03_XC AS c ON a.XCID = c.ID /*校产ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS d ON a.SQYHID = d.LOGINNAME /*申请用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS e ON a.JSYHID = e.LOGINNAME /*接收用户ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
-      dbo.EDU_ELE_01_USER AS f ON a.SHYHID = f.LOGINNAME /*审核用户ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校ID*/
+      dbo.EDU_ELE_01_USER AS d ON a.BFYHID = d.LOGINNAME /*报废用户ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.SHYHID = e.LOGINNAME /*审核用户ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校ID*/
 GO

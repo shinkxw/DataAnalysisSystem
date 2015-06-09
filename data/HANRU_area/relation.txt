@@ -611,6 +611,8 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_SYS_01_MICROMODULE
   MODULEID       EDU_SYS_01_MODULE                  ID
+<EDU_SYS_19_BZSJ
+  SJLXID         EDU_SYS_19_BZSJLX                  ID
 <EDU_WZXT_VIP
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   WEBID          EDU_WZXT_MHXT_WZPZ                 WEBID
@@ -757,6 +759,16 @@
   PDID           EDU_ZWXT_05_A06_PD                 ID
   XCID           EDU_ZWXT_05_A03_XC                 ID
   BGYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZWXT_05_A08_XCBS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XCID           EDU_ZWXT_05_A03_XC                 ID
+  BSYHID         EDU_ELE_01_USER                    LOGINNAME
+  SHYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZWXT_05_A09_XCBF
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XCID           EDU_ZWXT_05_A03_XC                 ID
+  BFYHID         EDU_ELE_01_USER                    LOGINNAME
+  SHYHID         EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXDY_04_A01_ZZGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

@@ -91,6 +91,9 @@ EDU_ZWXT_05_A03_XC  校产表
   SCCJ          生产厂家                nvarchar(200)  非主
   DQZT          当前状态                int            非主
   BZ            备注                    nvarchar(200)  非主
+  XCBH          校产编号                nvarchar(200)  非主
+  CFDD          存放地点                nvarchar(200)  非主
+  ZXRQ          注销日期                datetime       非主
 
 EDU_ZWXT_05_A04_BX  报修表
   ID            编号                    int            主键
@@ -134,4 +137,26 @@ EDU_ZWXT_05_A07_PDXD  盘点详单表
   PDSS          盘点实数                int            非主
   BZ            备注                    text           非主
   BGYHID        保管用户ID              nvarchar(20)   非主        应用系统用户表
+
+EDU_ZWXT_05_A08_XCBS  校产报失表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XCID          校产ID                  int            非主        校产表
+  BSYHID        报失用户ID              nvarchar(20)   非主        应用系统用户表
+  BSSJ          报失时间                datetime       非主
+  SHYHID        审核用户ID              nvarchar(20)   非主        应用系统用户表
+  SHSJ          审核时间                datetime       非主
+  BSZT          报失状态                int            非主
+  BSSM          报失说明                text           非主
+
+EDU_ZWXT_05_A09_XCBF  校产报废表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XCID          校产ID                  int            非主        校产表
+  BFYHID        报废用户ID              nvarchar(20)   非主        应用系统用户表
+  BFSJ          报废时间                datetime       非主
+  SHYHID        审核用户ID              nvarchar(20)   非主        应用系统用户表
+  SHSJ          审核时间                datetime       非主
+  BFZT          报废状态                int            非主
+  BFSM          报废说明                text           非主
 

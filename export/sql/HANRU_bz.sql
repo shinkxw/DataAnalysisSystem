@@ -26487,6 +26487,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_SYS_01_MICROMODU
             and   type = 'U')
    drop table EDU_SYS_01_MICROMODULE
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_SYS_19_BZSJLX')
+            and   type = 'U')
+   drop table EDU_SYS_19_BZSJLX
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_SYS_19_BZSJ')
+            and   type = 'U')
+   drop table EDU_SYS_19_BZSJ
+go
 --全局配置表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_SYS_01_CONFIG]') AND type in (N'U'))
 BEGIN
@@ -26571,6 +26581,39 @@ END
 GO
 
 
+--标准数据类型表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_SYS_19_BZSJLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_SYS_19_BZSJLX](
+	[ID]  int  NOT NULL,--编号
+	[SJLXMC]  nvarchar(50)  NOT NULL,--数据类型名称
+CONSTRAINT [PK_EDU_SYS_19_BZSJLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+INSERT INTO [EDU_SYS_19_BZSJLX]([ID] ,[SJLXMC]) VALUES('1', '标准数据')
+
+--标准数据表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_SYS_19_BZSJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_SYS_19_BZSJ](
+	[ID]  int  NOT NULL,--编号
+	[BZSJMC]  nvarchar(50)  NOT NULL,--标准数据名称
+	[SJLXID]  int  NOT NULL,--数据类型ID
+	[GLLJ]  nvarchar(200)  NOT NULL,--管理链接
+CONSTRAINT [PK_EDU_SYS_19_BZSJ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'全局配置表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_CONFIG'
 GO
@@ -26603,6 +26646,22 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片一' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'PIC1'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'图片二' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_01_MICROMODULE', @level2type=N'COLUMN',@level2name=N'PIC2'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标准数据类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJLX', @level2type=N'COLUMN',@level2name=N'SJLXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标准数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'标准数据名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJ', @level2type=N'COLUMN',@level2name=N'BZSJMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'数据类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJ', @level2type=N'COLUMN',@level2name=N'SJLXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'管理链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_SYS_19_BZSJ', @level2type=N'COLUMN',@level2name=N'GLLJ'
 GO
 --空间名：EDU_ZJ  生成器：SqlBuilder0.1
 

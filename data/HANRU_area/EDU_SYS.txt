@@ -49,4 +49,21 @@
             <name="PIC2" exp="图片二" type="nvarchar(300)" />
         </field_area>
     </table>
+    <table name="EDU_SYS_19_BZSJLX" exp="标准数据类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SJLXMC" exp="数据类型名称" type="nvarchar(50)" />
+        </field_area>
+        <data_area>
+            <ID="1" SJLXMC="标准数据" />
+        </data_area>
+    </table>
+    <table name="EDU_SYS_19_BZSJ" exp="标准数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="BZSJMC" exp="标准数据名称" type="nvarchar(50)" />
+            <name="SJLXID" exp="数据类型ID" type="int" />
+            <name="GLLJ" exp="管理链接" type="nvarchar(200)" />
+        </field_area>
+    </table>
 </namespace>
