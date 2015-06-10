@@ -55,7 +55,10 @@
             <name="SJLXMC" exp="数据类型名称" type="nvarchar(50)" />
         </field_area>
         <data_area>
-            <ID="1" SJLXMC="标准数据" />
+            <ID="1" SJLXMC="国家标准" />
+            <ID="2" SJLXMC="教育标准" />
+            <ID="3" SJLXMC="中职标准" />
+            <ID="4" SJLXMC="自建标准" />
         </data_area>
     </table>
     <table name="EDU_SYS_19_BZSJ" exp="标准数据表">
@@ -65,5 +68,98 @@
             <name="SJLXID" exp="数据类型ID" type="int" />
             <name="GLLJ" exp="管理链接" type="nvarchar(200)" />
         </field_area>
+        <data_area>
+            <ID="1" BZSJMC="政治面貌代码" SJLXID="1" GLLJ="/gb/zzmm/index" />
+            <ID="2" BZSJMC="专业技术职务代码" SJLXID="1" GLLJ="/gb/zyjszw/index" />
+            <ID="3" BZSJMC="职业分类与代码" SJLXID="1" GLLJ="/gb/zyfl/index" />
+            <ID="4" BZSJMC="职务级别代码" SJLXID="1" GLLJ="/gb/zwjbdm/index" />
+            <ID="5" BZSJMC="宗教信仰代码" SJLXID="1" GLLJ="/gb/zjxy/index" />
+            <ID="6" BZSJMC="中华人民共和国行政区划代码" SJLXID="1" GLLJ="/gb/zhrmghgxzqh/index" />
+            <ID="7" BZSJMC="中国语种代码" SJLXID="1" GLLJ="/gb/zgyz/index" />
+            <ID="8" BZSJMC="中国各民族名称的罗马字母拼写法和代码" SJLXID="1" GLLJ="/gb/zggmzmcdlmzmpxf/index" />
+            <ID="9" BZSJMC="语种名称代码2字母代码" SJLXID="1" GLLJ="/gb/yzmcezm/index" />
+            <ID="10" BZSJMC="学历代码" SJLXID="1" GLLJ="/gb/xl/index" />
+            <ID="11" BZSJMC="文献保密等级代码与标识" SJLXID="1" GLLJ="/gb/wxbmzj/index" />
+            <ID="12" BZSJMC="世界各国和地区名称代码" SJLXID="1" GLLJ="/gb/sjgghdqmc/index" />
+            <ID="13" BZSJMC="人的性别代码" SJLXID="1" GLLJ="/gb/rdxb/index" />
+            <ID="14" BZSJMC="教育培训结果代码" SJLXID="1" GLLJ="/gb/jypxjg/index" />
+            <ID="15" BZSJMC="家庭关系代码" SJLXID="1" GLLJ="/gb/jtgx/index" />
+            <ID="16" BZSJMC="健康状况1位数字代码" SJLXID="1" GLLJ="/gb/jkzkywsz/index" />
+            <ID="17" BZSJMC="婚姻状况代码" SJLXID="1" GLLJ="/gb/hyzz/index" />
+            <ID="18" BZSJMC="户口类别代码" SJLXID="1" GLLJ="/gb/hklb/index" />
+            <ID="19" BZSJMC="两位高等学校档案实体分类码" SJLXID="1" GLLJ="/gb/lwgdxxdastfl/index" />
+            <ID="20" BZSJMC="从业状况（个人身份）代码" SJLXID="1" GLLJ="/gb/cyzk/index" />
+            <ID="21" BZSJMC="中央专项投资补助名称代码" SJLXID="2" GLLJ="/jy/zyzxtzbzmc/index" />
+            <ID="22" BZSJMC="中小学课程等级代码" SJLXID="2" GLLJ="/jy/zxxkcdj/index" />
+            <ID="23" BZSJMC="中小学课程代码" SJLXID="2" GLLJ="/jy/zxxkc/index" />
+            <ID="24" BZSJMC="中小学编制类别代码" SJLXID="2" GLLJ="/jy/zxxbzlb/index" />
+            <ID="25" BZSJMC="中小学班级类型代码" SJLXID="2" GLLJ="/jy/zxxbjlx/index" />
+            <ID="26" BZSJMC="注册状况代码" SJLXID="2" GLLJ="/jy/zczk/index" />
+            <ID="27" BZSJMC="阅办类别代码" SJLXID="2" GLLJ="/jy/yblb/index" />
+            <ID="28" BZSJMC="学校（教育机构）举办者代码" SJLXID="2" GLLJ="/jy/xxjyjgjbz/index" />
+            <ID="29" BZSJMC="学校单位层次代码" SJLXID="2" GLLJ="/jy/xxdwcc/index" />
+            <ID="30" BZSJMC="学校办别代码" SJLXID="2" GLLJ="/jy/xxbb/index" />
+            <ID="31" BZSJMC="血型代码" SJLXID="2" GLLJ="/jy/xx/index" />
+            <ID="32" BZSJMC="学生类别代码" SJLXID="2" GLLJ="/jy/xslb/index" />
+            <ID="33" BZSJMC="学生当前状态代码" SJLXID="2" GLLJ="/jy/xsdqzt/index" />
+            <ID="34" BZSJMC="学期代码" SJLXID="2" GLLJ="/jy/xq/index" />
+            <ID="35" BZSJMC="学籍异动原因代码" SJLXID="2" GLLJ="/jy/xjydyy/index" />
+            <ID="36" BZSJMC="学籍异动类别代码" SJLXID="2" GLLJ="/jy/xjydlb/index" />
+            <ID="37" BZSJMC="文物建筑等级代码" SJLXID="2" GLLJ="/jy/wwjzdj/index" />
+            <ID="38" BZSJMC="文件分类代码" SJLXID="2" GLLJ="/jy/wjfl/index" />
+            <ID="39" BZSJMC="所在地区经济属性代码" SJLXID="2" GLLJ="/jy/szdqjjsx/index" />
+            <ID="40" BZSJMC="所在地城乡类型代码" SJLXID="2" GLLJ="/jy/szdcxlx/index" />
+            <ID="41" BZSJMC="使用状况代码" SJLXID="2" GLLJ="/jy/syzk/index" />
+            <ID="42" BZSJMC="少数民族双语教学模式代码" SJLXID="2" GLLJ="/jy/ssmzsyjxms/index" />
+            <ID="43" BZSJMC="授课方式代码" SJLXID="2" GLLJ="/jy/skfs/index" />
+            <ID="44" BZSJMC="身份证件类型代码" SJLXID="2" GLLJ="/jy/sfzjlx/index" />
+            <ID="45" BZSJMC="是否标志代码" SJLXID="2" GLLJ="/jy/sfbz/index" />
+            <ID="46" BZSJMC="任课学段代码" SJLXID="2" GLLJ="/jy/rkxd/index" />
+            <ID="47" BZSJMC="任课角色代码" SJLXID="2" GLLJ="/jy/rkjs/index" />
+            <ID="48" BZSJMC="抗震设防烈度代码" SJLXID="2" GLLJ="/jy/kzsfld/index" />
+            <ID="49" BZSJMC="抗震设防标准代码" SJLXID="2" GLLJ="/jy/kzsfbz/index" />
+            <ID="50" BZSJMC="考试性质代码" SJLXID="2" GLLJ="/jy/ksxz/index" />
+            <ID="51" BZSJMC="考试形式代码" SJLXID="2" GLLJ="/jy/ksxs/index" />
+            <ID="52" BZSJMC="考试方式代码" SJLXID="2" GLLJ="/jy/ksfs/index" />
+            <ID="53" BZSJMC="困难原因代码" SJLXID="2" GLLJ="/jy/knyy/index" />
+            <ID="54" BZSJMC="困难程度代码" SJLXID="2" GLLJ="/jy/kncd/index" />
+            <ID="55" BZSJMC="课程属性代码" SJLXID="2" GLLJ="/jy/kcsx/index" />
+            <ID="56" BZSJMC="建筑物状况代码" SJLXID="2" GLLJ="/jy/jzwzk/index" />
+            <ID="57" BZSJMC="建筑物用途代码" SJLXID="2" GLLJ="/jy/jzwyt/index" />
+            <ID="58" BZSJMC="建筑物平面形式代码" SJLXID="2" GLLJ="/jy/jzwpmxs/index" />
+            <ID="59" BZSJMC="建筑物楼板形式代码" SJLXID="2" GLLJ="/jy/jzwlbxs/index" />
+            <ID="60" BZSJMC="建筑物结构代码" SJLXID="2" GLLJ="/jy/jzwjg/index" />
+            <ID="61" BZSJMC="建筑物基础形式代码" SJLXID="2" GLLJ="/jy/jzwjcxs/index" />
+            <ID="62" BZSJMC="建筑物分类代码" SJLXID="2" GLLJ="/jy/jzwfl/index" />
+            <ID="63" BZSJMC="教职工类别代码" SJLXID="2" GLLJ="/jy/jzglb/index" />
+            <ID="64" BZSJMC="教职工当前状态代码" SJLXID="2" GLLJ="/jy/jzgdqzt/index" />
+            <ID="65" BZSJMC="奖学金类型代码" SJLXID="2" GLLJ="/jy/jxjlx/index" />
+            <ID="66" BZSJMC="家庭类别代码" SJLXID="2" GLLJ="/jy/jtlb/index" />
+            <ID="67" BZSJMC="奖励资助资金来源代码" SJLXID="2" GLLJ="/jy/jlzzzjly/index" />
+            <ID="68" BZSJMC="紧急程度代码" SJLXID="2" GLLJ="/jy/jjcd/index" />
+            <ID="69" BZSJMC="经费来源代码" SJLXID="2" GLLJ="/jy/jfly/index" />
+            <ID="70" BZSJMC="岗位职业代码" SJLXID="2" GLLJ="/jy/gwzy/index" />
+            <ID="71" BZSJMC="岗位类别代码" SJLXID="2" GLLJ="/jy/gwlb/index" />
+            <ID="72" BZSJMC="公文封装方式代码" SJLXID="2" GLLJ="/jy/gwfzfs/index" />
+            <ID="73" BZSJMC="供暖方式代码" SJLXID="2" GLLJ="/jy/gnfs/index" />
+            <ID="74" BZSJMC="港澳台侨外代码" SJLXID="2" GLLJ="/jy/gatqw/index" />
+            <ID="75" BZSJMC="发送方式代码" SJLXID="2" GLLJ="/jy/fsfs/index" />
+            <ID="76" BZSJMC="附加分类别代码" SJLXID="2" GLLJ="/jy/fjflb/index" />
+            <ID="77" BZSJMC="一位档案保管期限代码" SJLXID="2" GLLJ="/jy/ywdabgqx/index" />
+            <ID="78" BZSJMC="产权代码" SJLXID="2" GLLJ="/jy/cq/index" />
+            <ID="79" BZSJMC="编制类别代码" SJLXID="2" GLLJ="/jy/bzlb/index" />
+            <ID="80" BZSJMC="办学类型代码" SJLXID="2" GLLJ="/jy/bxlx/index" />
+            <ID="81" BZSJMC="考评主体代码" SJLXID="4" GLLJ="/zj/kpzt/index" />
+            <ID="82" BZSJMC="调课类型代码" SJLXID="4" GLLJ="/zj/tklx/index" />
+            <ID="83" BZSJMC="专业目录代码" SJLXID="4" GLLJ="/zj/zyml/index" />
+            <ID="84" BZSJMC="自建专业代码" SJLXID="4" GLLJ="/zj/zjzy/index" />
+            <ID="85" BZSJMC="户籍性质代码" SJLXID="4" GLLJ="/zj/hjxz/index" />
+            <ID="86" BZSJMC="毕业生类型代码" SJLXID="4" GLLJ="/zj/byslx/index" />
+            <ID="87" BZSJMC="加班类型代码" SJLXID="4" GLLJ="/zj/jblx/index" />
+            <ID="88" BZSJMC="助学金分类代码" SJLXID="3" GLLJ="/zz/zxjfl/index" />
+            <ID="89" BZSJMC="评估情况代码" SJLXID="3" GLLJ="/zz/pgqk/index" />
+            <ID="90" BZSJMC="课程分类代码" SJLXID="3" GLLJ="/zz/kcfl/index" />
+            <ID="91" BZSJMC="驾考科目代码" SJLXID="3" GLLJ="/zz/jkkm/index" />
+        </data_area>
     </table>
 </namespace>

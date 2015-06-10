@@ -14,6 +14,17 @@ class BzTemplateBuilder
     @app_name = $t_app_name || ' '
     @directory_name = $t_dir_name || ' '
     @ignore_name_space_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
+    @used_tn_arr = %w(EDU_GB_CYZK EDU_GB_HKLB EDU_GB_HYZZ EDU_GB_JKZKYWSZ EDU_GB_JTGX EDU_GB_JYPXJG EDU_GB_LWGDXXDASTFL 
+    EDU_GB_RDXB EDU_GB_SJGGHDQMC EDU_GB_WXBMZJ EDU_GB_XL EDU_GB_YZMCEZM EDU_GB_ZGGMZMCDLMZMPXF EDU_GB_ZGYZ 
+    EDU_GB_ZHRMGHGXZQH EDU_GB_ZJXY EDU_GB_ZWJBDM EDU_GB_ZYFL EDU_GB_ZYJSZW EDU_GB_ZZMM EDU_JY_BXLX EDU_JY_BZLB 
+    EDU_JY_CQ EDU_JY_FJFLB EDU_JY_FSFS EDU_JY_GATQW EDU_JY_GNFS EDU_JY_GWFZFS EDU_JY_GWLB EDU_JY_GWZY EDU_JY_JFLY 
+    EDU_JY_JJCD EDU_JY_JLZZZJLY EDU_JY_JTLB EDU_JY_JXJLX EDU_JY_JZGDQZT EDU_JY_JZGLB EDU_JY_JZWFL EDU_JY_JZWJCXS 
+    EDU_JY_JZWJG EDU_JY_JZWLBXS EDU_JY_JZWPMXS EDU_JY_JZWYT EDU_JY_JZWZK EDU_JY_KCSX EDU_JY_KNCD EDU_JY_KNYY 
+    EDU_JY_KSFS EDU_JY_KSXS EDU_JY_KSXZ EDU_JY_KZSFBZ EDU_JY_KZSFLD EDU_JY_RKJS EDU_JY_RKXD EDU_JY_SFBZ EDU_JY_SFZJLX 
+    EDU_JY_SKFS EDU_JY_SSMZSYJXMS EDU_JY_SYZK EDU_JY_SZDCXLX EDU_JY_SZDQJJSX EDU_JY_WJFL EDU_JY_WWJZDJ EDU_JY_XJYDLB 
+    EDU_JY_XJYDYY EDU_JY_XQ EDU_JY_XSDQZT EDU_JY_XSLB EDU_JY_XX EDU_JY_XXBB EDU_JY_XXDWCC EDU_JY_XXJYJGJBZ EDU_JY_YBLB 
+    EDU_JY_YWDABGQX EDU_JY_ZCZK EDU_JY_ZXXBJLX EDU_JY_ZXXBZLB EDU_JY_ZXXKC EDU_JY_ZXXKCDJ EDU_JY_ZYZXTZBZMC EDU_ZJ_BYSLX 
+    EDU_ZJ_HJXZ EDU_ZJ_JBLX EDU_ZJ_KPZT EDU_ZJ_TKLX EDU_ZJ_ZJZY EDU_ZJ_ZYML EDU_ZZ_JKKM EDU_ZZ_KCFL EDU_ZZ_PGQK EDU_ZZ_ZXJFL)
     @log = log
   end
   #生成模板数据
@@ -28,6 +39,7 @@ class BzTemplateBuilder
   #生成指定命名空间的模板
   def build_name_space_template(name_space)
     name_space.each do |table|
+      next unless @used_tn_arr.include?(table.name)
       @tab.to_0
       @file_hash["Controllers/#{table.library_name.upcase}/#{table.lname}Controller.cs"] = make_controller(table)
       @file_hash["Views/#{table.library_name.upcase}/#{table.lname}/Index.cshtml"] = make_index(table)
@@ -92,8 +104,8 @@ class BzTemplateBuilder
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Create(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     mc_field = get_mc_field(table)
-    str << "{\n#{@tab.l}if (#{table.lname_dc}.#{mc_field.name} == \"\") throw new Exception(\"#{mc_field.explanation}不能为空！\");\n#{@tab.t}"
-    str << "if (ModelState.IsValid)\n#{@tab.t}{\n#{@tab.long}"
+    str << "{\n#{@tab.l}if (#{table.lname_dc}.#{mc_field.name} == \"\") throw new Exception(\"#{mc_field.explanation}不能为空！\");\n"
+    #str << "if (ModelState.IsValid)\n#{@tab.t}{\n#{@tab.long}"
     #str << "#{table.lname_dc}.ID = GetMax_#{table.lname}_ID();\n#{@tab.t}" unless table.has_identity?
     #str << "#{table.lname_dc}.SCHOOLID = CurUser.ele01Usr.SCHOOLID;\n"
     table.each_field do |field|
@@ -102,10 +114,10 @@ class BzTemplateBuilder
     str << "#{@tab.t}#{table.db_name}.#{table.name}.Add(#{table.lname_dc});\n#{@tab.t}"
     str << "#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.t}return RedirectToAction(\"Index\");\n"
-    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
+    #str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
+    #str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
-    str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
+    str << "{\n#{@tab.l}SetTopCenter(get_DbException_Message(dbEx));\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(e.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.s}}\n\n"
@@ -118,9 +130,9 @@ class BzTemplateBuilder
     str << "#{@tab.t}[HttpPost]\n#{@tab.t}public ActionResult Edit(#{table.name} #{table.lname_dc})\n#{@tab.t}"
     str << "{\n#{@tab.l}InitViewBag();\n#{@tab.t}try\n#{@tab.t}"
     mc_field = get_mc_field(table)
-    str << "{\n#{@tab.l}if (#{table.lname_dc}.#{mc_field.name} == \"\") throw new Exception(\"#{mc_field.explanation}不能为空！\");\n#{@tab.t}"
-    str << "if (ModelState.IsValid)\n#{@tab.t}"
-    str << "{\n#{@tab.l}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}"
+    str << "{\n#{@tab.l}if (#{table.lname_dc}.#{mc_field.name} == \"\") throw new Exception(\"#{mc_field.explanation}不能为空！\");\n"
+    #str << "if (ModelState.IsValid)\n#{@tab.t}"
+    str << "#{@tab.t}#{table.name} #{table.lname_dc}_model = #{table.db_name}.#{table.name}.FirstOrDefault(e => e.#{table.get_first_field_name} == #{table.lname_dc}.#{table.get_first_field_name}"
     str << ");\n#{@tab.t}//if (#{table.lname_dc}_model == null) throw new Exception(\"记录不存在\");\n"
     table.each_field do |field|
       next if %w(DM).include? field.name
@@ -129,10 +141,8 @@ class BzTemplateBuilder
     str << "#{@tab.t}\n#{@tab.t}#{table.db_name}.Entry(#{table.lname_dc}_model).State = EntityState.Modified;\n"
     str << "#{@tab.t}#{table.db_name}.SaveChanges();\n"
     str << "#{@tab.t}return RedirectToAction(\"Index\");\n"
-    str << "#{@tab.s}}\n#{@tab.t}else\n#{@tab.t}"
-    str << "{\n#{@tab.l}return View(#{table.lname_dc});\n#{@tab.s}}\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (DbEntityValidationException dbEx)\n#{@tab.t}"
-    str << "{\n#{@tab.l}SetTopCenter(dbEx.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
+    str << "{\n#{@tab.l}SetTopCenter(get_DbException_Message(dbEx));\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.t}catch (Exception e)\n#{@tab.t}"
     str << "{\n#{@tab.l}SetTopCenter(e.Message);\n#{@tab.t}return View(#{table.lname_dc});\n"
     str << "#{@tab.s}}\n#{@tab.s}}\n\n"
@@ -286,8 +296,7 @@ class BzTemplateBuilder
     index_str << "    <thead>\n        <tr>\n            <!--<th data-options=\"field:'ck',checkbox:true\"></th>-->\n"
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}#{'sortable="true"' if field.type != 'text'}>@Html.LabelFor(m => m.#{field.name}))
-      index_str << "</th><!--#{field.explanation}-->\n"
+      index_str << %(            <th field="#{field.name}" width="50" #{'formatter="formatDatebox" ' if field.type == 'datetime'}#{'sortable="true"' if field.type != 'text'}>#{field.explanation}</th>\n)
     end
     path_pre_str = "#{@directory_name}/#{table.lname_dc}"
     index_str << "        </tr>\n    </thead>\n</table>\n"
@@ -307,7 +316,7 @@ class BzTemplateBuilder
     info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      info_str << "        <tr>\n            <th> @Html.LabelFor(m => m.#{field.name}) </th> <!--#{field.explanation}-->\n            <td>\n"
+      info_str << "        <tr>\n            <th>#{field.explanation}</th>\n            <td>\n"
       if field.relation && field.relation.table.bz_library_name
         info_str << "                @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
@@ -329,9 +338,10 @@ class BzTemplateBuilder
     info_str << %(    <table class="admintable">\n\n)
     table.each_field do |field|
       next if %w(ID SCHOOLID).include? field.name
-      info_str << "        <tr>\n            <th> @Html.LabelFor(m => m.#{field.name}) </th> <!--#{field.explanation}-->\n            <td>\n"
+      info_str << "        <tr>\n            <th>#{field.explanation}</th>\n            <td>\n"
       if field.name == 'DM'
         info_str << "                @Html.DisplayFor(m => m.#{field.name})\n"
+        info_str << "                @Html.HiddenFor(m => m.#{field.name})\n"
       elsif field.relation && field.relation.table.bz_library_name
         info_str << "                @Html.DropDownListFor(m => m.#{field.name}, ViewBag.#{field.relation.table.select_method_name}Lst as SelectList)\n"
       elsif field.type == 'datetime'
@@ -392,3 +402,28 @@ class BzTemplateBuilder
     field.relation ? '   ' << field.relation.table.explanation : ''
   end
 end
+  #~ used_bz_table_name = []
+  #~ ns_name_arr = %w(EDU_GB EDU_JY EDU_ZJ EDU_ZZ)
+  #~ work_area.area.each do |name_space|
+    #~ name_space.each do |table|
+      #~ table.get_relation.each do |field|
+        #~ rt = field.relation.table
+        #~ used_bz_table_name << rt.name if ns_name_arr.include?(rt.name_space_name)
+      #~ end
+    #~ end
+  #~ end
+  #~ used_bz_table_name.uniq!.sort
+  
+  #~ id = 1
+  #~ hash = {'gb' => 1,'jy' => 2,'zz' => 3,'zj' => 4}
+  #~ work_area.area.each do |name_space|
+    #~ name_space.each do |table|
+      #~ if used_tn_arr.include?(table.name)
+        #~ tn_arr = table.name.split('_').map{|s| s.downcase}
+        #~ exp = table.explanation
+        #~ exp.chop! if exp =~ /表$/
+        #~ puts "INSERT INTO [HANRUEDU].[dbo].[EDU_SYS_19_BZSJ] ([ID],[BZSJMC],[SJLXID],[GLLJ]) VALUES (#{id},'#{exp}',#{hash[tn_arr[1]]},'/#{tn_arr[1]}/#{tn_arr[2]}/index')\nGO"
+        #~ id += 1
+      #~ end
+    #~ end
+  #~ end
