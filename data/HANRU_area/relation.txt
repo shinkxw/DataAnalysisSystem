@@ -769,6 +769,10 @@
   XCID           EDU_ZWXT_05_A03_XC                 ID
   BFYHID         EDU_ELE_01_USER                    LOGINNAME
   SHYHID         EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZX_01_A01_HDGL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZX_01_A02_BMGL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXDY_04_A01_ZZGW
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

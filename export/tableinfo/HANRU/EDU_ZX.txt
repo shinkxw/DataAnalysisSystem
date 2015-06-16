@@ -1,0 +1,20 @@
+encoding: UTF-8
+EDU_ZX_01_A01_HDGL  活动管理
+  SCHOOLID      学校                    int            主键        学校配置表
+  HDBMBBT       活动报名表标题          nvarchar(200)  非主
+  HDBMTZ        活动报名通知            text           非主
+  HDQTZT        活动启停状态            nvarchar(200)  非主
+
+EDU_ZX_01_A02_BMGL  报名管理
+  BMM           报名码                  nvarchar(32)   主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XM            姓名                    nvarchar(200)  非主
+  XB            性别                    nvarchar(200)  非主
+  BXCZ          毕业初中                nvarchar(200)  非主
+  FQXM          父亲姓名                nvarchar(200)  非主
+  FQLXFS        父亲联系方式            nvarchar(200)  非主
+  MQXM          母亲姓名                nvarchar(200)  非主
+  MQLXFS        母亲联系方式            nvarchar(200)  非主
+  SFZX          是否住校                nvarchar(200)  非主
+  YLZD          预留字段1               nvarchar(200)  非主
+

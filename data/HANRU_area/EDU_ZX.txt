@@ -1,0 +1,26 @@
+<?daf version="0.1" analyzer_name="0.1"?>
+<namespace name="EDU_ZX" provider="reallocate_namespace">
+    <table name="EDU_ZX_01_A01_HDGL" exp="活动管理">
+        <field_area>
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="HDBMBBT" exp="活动报名表标题" type="nvarchar(200)" />
+            <name="HDBMTZ" exp="活动报名通知" type="text" />
+            <name="HDQTZT" exp="活动启停状态" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZX_01_A02_BMGL" exp="报名管理">
+        <field_area>
+            <name="BMM" exp="报名码" type="nvarchar(32)" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XM" exp="姓名" type="nvarchar(200)" />
+            <name="XB" exp="性别" type="nvarchar(200)" />
+            <name="BXCZ" exp="毕业初中" type="nvarchar(200)" />
+            <name="FQXM" exp="父亲姓名" type="nvarchar(200)" />
+            <name="FQLXFS" exp="父亲联系方式" type="nvarchar(200)" />
+            <name="MQXM" exp="母亲姓名" type="nvarchar(200)" />
+            <name="MQLXFS" exp="母亲联系方式" type="nvarchar(200)" />
+            <name="SFZX" exp="是否住校" type="nvarchar(200)" />
+            <name="YLZD" exp="预留字段1" type="nvarchar(200)" />
+        </field_area>
+    </table>
+</namespace>
