@@ -33,11 +33,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "评价教师")]
-            public Int32 PJJSID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "学生")]
             public Int32 XSID { get; set; }
 
@@ -50,6 +45,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "分值")]
             public Int32 FZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "评价教师")]
+            public Int32 PJJSID { get; set; }
 
 
         }

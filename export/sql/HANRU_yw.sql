@@ -26643,10 +26643,10 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A15_PJJG](
 	[SCHOOLID]  int  NOT NULL,--学校
 	[PJID]  int  NOT NULL,--评教ID
 	[JXBID]  int  NOT NULL,--教学班ID
-	[PJJSID]  int  NOT NULL,--评价教师ID
 	[XSID]  int  NOT NULL,--学生ID
 	[TMID]  int  NOT NULL,--题目ID
 	[FZ]  int  NOT NULL,--分值
+	[PJJSID]  int  NOT NULL,--评价教师ID
 CONSTRAINT [PK_EDU_ZZJX_50_A15_PJJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -28425,13 +28425,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教学班ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A15_PJJG', @level2type=N'COLUMN',@level2name=N'JXBID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A15_PJJG', @level2type=N'COLUMN',@level2name=N'PJJSID'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A15_PJJG', @level2type=N'COLUMN',@level2name=N'XSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'题目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A15_PJJG', @level2type=N'COLUMN',@level2name=N'TMID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A15_PJJG', @level2type=N'COLUMN',@level2name=N'FZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评价教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A15_PJJG', @level2type=N'COLUMN',@level2name=N'PJJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评教提交记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A16_PJTJJL'
 GO
