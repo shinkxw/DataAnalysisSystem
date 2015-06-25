@@ -2879,7 +2879,6 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A11_DFDL](
 	[SFXYSH]  int  NOT NULL,--是否需要审核
 	[SHFS]  int  NOT NULL,--审核方式
 	[SFKQ]  int  NOT NULL,--是否开启
-	[NFBDF]  int  NOT NULL,--能否补打分
 CONSTRAINT [PK_EDU_OAXT_50_A11_DFDL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2915,6 +2914,9 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A12_DFJD](
 	[DFDXCJMC]  nvarchar(50)  NOT NULL,--打分对象层级名称
 	[CKJSLBIDLB]  text  NOT NULL,--查看角色类别ID列表
 	[CKJSLBMCLB]  text  NOT NULL,--查看角色类别名称列表
+	[SFPLDF]  int  NOT NULL,--是否批量打分
+	[XQKBFDW]  int  NOT NULL,--向前可补分单位
+	[XHYDFDW]  int  NOT NULL,--向后预打分单位
 CONSTRAINT [PK_EDU_OAXT_50_A12_DFJD] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5390,8 +5392,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核方式' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否开启' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'SFKQ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'能否补打分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'NFBDF'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分节点表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'ID'
@@ -5435,6 +5435,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'查看角色类别ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'CKJSLBIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'查看角色类别名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'CKJSLBMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否批量打分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'SFPLDF'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'向前可补分单位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'XQKBFDW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'向后预打分单位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'XHYDFDW'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分方式表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A13_DFFS'
 GO

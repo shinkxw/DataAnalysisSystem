@@ -29,7 +29,6 @@ SELECT a.[ID]--编号
       ,d.SFXYSH as d_DFDL_SFXYSH--打分大类表 是否需要审核
       ,d.SHFS as d_DFDL_SHFS--打分大类表 审核方式
       ,d.SFKQ as d_DFDL_SFKQ--打分大类表 是否开启
-      ,d.NFBDF as d_DFDL_NFBDF--打分大类表 能否补打分
       ,e.SCHOOLID as e_DFJD_SCHOOLID--打分节点表 学校ID
       ,e.XMID as e_DFJD_XMID--打分节点表 项目ID
       ,e.DLID as e_DFJD_DLID--打分节点表 大类ID
@@ -50,6 +49,9 @@ SELECT a.[ID]--编号
       ,e.DFDXCJMC as e_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,e.CKJSLBIDLB as e_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,e.CKJSLBMCLB as e_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,e.SFPLDF as e_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,e.XQKBFDW as e_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,e.XHYDFDW as e_DFJD_XHYDFDW--打分节点表 向后预打分单位
       ,f.SCHOOLID as f_DFPC_SCHOOLID--打分批次表 学校ID
       ,f.XMID as f_DFPC_XMID--打分批次表 项目ID
       ,f.DFDLID as f_DFPC_DFDLID--打分批次表 打分大类ID

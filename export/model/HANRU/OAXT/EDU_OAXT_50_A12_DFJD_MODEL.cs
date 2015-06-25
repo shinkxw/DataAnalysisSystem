@@ -141,6 +141,21 @@ namespace HanRuEdu.LDAL
             public String CKJSLBMCLB { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否批量打分")]
+            public Int32 SFPLDF { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "向前可补分单位")]
+            public Int32 XQKBFDW { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "向后预打分单位")]
+            public Int32 XHYDFDW { get; set; }
+
+
         }
     }
 }

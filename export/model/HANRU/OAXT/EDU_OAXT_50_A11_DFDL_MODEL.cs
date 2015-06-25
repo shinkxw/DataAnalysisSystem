@@ -52,11 +52,6 @@ namespace HanRuEdu.LDAL
             public Int32 SFKQ { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "能否补打分")]
-            public Int32 NFBDF { get; set; }
-
-
         }
     }
 }

@@ -917,6 +917,7 @@ EDU_ZZJX_50_A15_PJJG  评教结果表
   SCHOOLID      学校                    int            非主        学校配置表
   PJID          评教ID                  int            非主        选课学生评教表
   JXBID         教学班ID                int            非主        教学班数据表
+  PJJSID        评价教师ID              int            非主
   XSID          学生ID                  int            非主        学生信息数据表
   TMID          题目ID                  int            非主        评教题目表
   FZ            分值                    int            非主

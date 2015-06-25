@@ -32,6 +32,9 @@ SELECT a.[ID]--编号
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,d.SFPLDF as d_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,d.XQKBFDW as d_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,d.XHYDFDW as d_DFJD_XHYDFDW--打分节点表 向后预打分单位
 
 FROM dbo.EDU_OAXT_50_A16_FJZD AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

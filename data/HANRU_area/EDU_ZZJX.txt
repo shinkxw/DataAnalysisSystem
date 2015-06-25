@@ -1077,6 +1077,7 @@
             <name="SCHOOLID" exp="学校" type="int" />
             <name="PJID" exp="评教ID" type="int" />
             <name="JXBID" exp="教学班ID" type="int" />
+            <name="PJJSID" exp="评价教师ID" type="int" default="-1" />
             <name="XSID" exp="学生ID" type="int" />
             <name="TMID" exp="题目ID" type="int" />
             <name="FZ" exp="分值" type="int" />

@@ -1178,7 +1178,6 @@ EDU_OAXT_50_A11_DFDL  打分大类表
   SFXYSH        是否需要审核            int            非主
   SHFS          审核方式                int            非主
   SFKQ          是否开启                int            非主
-  NFBDF         能否补打分              int            非主
 
 EDU_OAXT_50_A12_DFJD  打分节点表
   ID            编号                    int            主键
@@ -1202,6 +1201,9 @@ EDU_OAXT_50_A12_DFJD  打分节点表
   DFDXCJMC      打分对象层级名称        nvarchar(50)   非主
   CKJSLBIDLB    查看角色类别ID列表      text           非主
   CKJSLBMCLB    查看角色类别名称列表    text           非主
+  SFPLDF        是否批量打分            int            非主
+  XQKBFDW       向前可补分单位          int            非主
+  XHYDFDW       向后预打分单位          int            非主
 
 EDU_OAXT_50_A13_DFFS  打分方式表
   ID            编号                    int            主键

@@ -6,6 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[PJID]--评教ID
       ,a.[JXBID]--教学班ID
+      ,a.[PJJSID]--评价教师ID
       ,a.[XSID]--学生ID
       ,a.[TMID]--题目ID
       ,a.[FZ]--分值

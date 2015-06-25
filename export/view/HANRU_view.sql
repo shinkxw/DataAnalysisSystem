@@ -6829,7 +6829,6 @@ SELECT a.[ID]--编号
       ,a.[SFXYSH]--是否需要审核
       ,a.[SHFS]--审核方式
       ,a.[SFKQ]--是否开启
-      ,a.[NFBDF]--能否补打分
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
@@ -6853,6 +6852,9 @@ SELECT a.[ID]--编号
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,d.SFPLDF as d_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,d.XQKBFDW as d_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,d.XHYDFDW as d_DFJD_XHYDFDW--打分节点表 向后预打分单位
 
 FROM dbo.EDU_OAXT_50_A11_DFDL AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -6883,6 +6885,9 @@ SELECT a.[ID]--编号
       ,a.[DFDXCJMC]--打分对象层级名称
       ,a.[CKJSLBIDLB]--查看角色类别ID列表
       ,a.[CKJSLBMCLB]--查看角色类别名称列表
+      ,a.[SFPLDF]--是否批量打分
+      ,a.[XQKBFDW]--向前可补分单位
+      ,a.[XHYDFDW]--向后预打分单位
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
@@ -6893,7 +6898,6 @@ SELECT a.[ID]--编号
       ,d.SFXYSH as d_DFDL_SFXYSH--打分大类表 是否需要审核
       ,d.SHFS as d_DFDL_SHFS--打分大类表 审核方式
       ,d.SFKQ as d_DFDL_SFKQ--打分大类表 是否开启
-      ,d.NFBDF as d_DFDL_NFBDF--打分大类表 能否补打分
       ,e.SCHOOLID as e_DFJD_SCHOOLID--打分节点表 学校ID
       ,e.XMID as e_DFJD_XMID--打分节点表 项目ID
       ,e.DLID as e_DFJD_DLID--打分节点表 大类ID
@@ -6914,6 +6918,9 @@ SELECT a.[ID]--编号
       ,e.DFDXCJMC as e_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,e.CKJSLBIDLB as e_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,e.CKJSLBMCLB as e_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,e.SFPLDF as e_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,e.XQKBFDW as e_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,e.XHYDFDW as e_DFJD_XHYDFDW--打分节点表 向后预打分单位
       ,f.SCHOOLID as f_DFFS_SCHOOLID--打分方式表 学校ID
       ,f.XMID as f_DFFS_XMID--打分方式表 项目ID
       ,f.DFFSMC as f_DFFS_DFFSMC--打分方式表 打分方式名称
@@ -7004,7 +7011,6 @@ SELECT a.[ID]--编号
       ,d.SFXYSH as d_DFDL_SFXYSH--打分大类表 是否需要审核
       ,d.SHFS as d_DFDL_SHFS--打分大类表 审核方式
       ,d.SFKQ as d_DFDL_SFKQ--打分大类表 是否开启
-      ,d.NFBDF as d_DFDL_NFBDF--打分大类表 能否补打分
       ,e.SCHOOLID as e_DFJD_SCHOOLID--打分节点表 学校ID
       ,e.XMID as e_DFJD_XMID--打分节点表 项目ID
       ,e.DLID as e_DFJD_DLID--打分节点表 大类ID
@@ -7025,6 +7031,9 @@ SELECT a.[ID]--编号
       ,e.DFDXCJMC as e_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,e.CKJSLBIDLB as e_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,e.CKJSLBMCLB as e_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,e.SFPLDF as e_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,e.XQKBFDW as e_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,e.XHYDFDW as e_DFJD_XHYDFDW--打分节点表 向后预打分单位
       ,f.SCHOOLID as f_DFPC_SCHOOLID--打分批次表 学校ID
       ,f.XMID as f_DFPC_XMID--打分批次表 项目ID
       ,f.DFDLID as f_DFPC_DFDLID--打分批次表 打分大类ID
@@ -7108,6 +7117,9 @@ SELECT a.[ID]--编号
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,d.SFPLDF as d_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,d.XQKBFDW as d_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,d.XHYDFDW as d_DFJD_XHYDFDW--打分节点表 向后预打分单位
 
 FROM dbo.EDU_OAXT_50_A16_FJZD AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -7148,6 +7160,9 @@ SELECT a.[ID]--编号
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,d.SFPLDF as d_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,d.XQKBFDW as d_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,d.XHYDFDW as d_DFJD_XHYDFDW--打分节点表 向后预打分单位
       ,e.SCHOOLID as e_DFPC_SCHOOLID--打分批次表 学校ID
       ,e.XMID as e_DFPC_XMID--打分批次表 项目ID
       ,e.DFDLID as e_DFPC_DFDLID--打分批次表 打分大类ID
@@ -7222,6 +7237,9 @@ SELECT a.[ID]--编号
       ,d.DFDXCJMC as d_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,d.CKJSLBIDLB as d_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,d.CKJSLBMCLB as d_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,d.SFPLDF as d_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,d.XQKBFDW as d_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,d.XHYDFDW as d_DFJD_XHYDFDW--打分节点表 向后预打分单位
       ,e.SCHOOLID as e_DFJG_SCHOOLID--打分结果表 学校ID
       ,e.XMID as e_DFJG_XMID--打分结果表 项目ID
       ,e.DFDLID as e_DFJG_DFDLID--打分结果表 打分大类ID
@@ -7285,7 +7303,6 @@ SELECT a.[ID]--编号
       ,d.SFXYSH as d_DFDL_SFXYSH--打分大类表 是否需要审核
       ,d.SHFS as d_DFDL_SHFS--打分大类表 审核方式
       ,d.SFKQ as d_DFDL_SFKQ--打分大类表 是否开启
-      ,d.NFBDF as d_DFDL_NFBDF--打分大类表 能否补打分
       ,e.SCHOOLID as e_DFJD_SCHOOLID--打分节点表 学校ID
       ,e.XMID as e_DFJD_XMID--打分节点表 项目ID
       ,e.DLID as e_DFJD_DLID--打分节点表 大类ID
@@ -7306,6 +7323,9 @@ SELECT a.[ID]--编号
       ,e.DFDXCJMC as e_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,e.CKJSLBIDLB as e_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,e.CKJSLBMCLB as e_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,e.SFPLDF as e_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,e.XQKBFDW as e_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,e.XHYDFDW as e_DFJD_XHYDFDW--打分节点表 向后预打分单位
 
 FROM dbo.EDU_OAXT_50_A19_DFPC AS a LEFT OUTER JOIN
       dbo.EDU_OAXT_50_A01_DFXM AS c ON a.XMID = c.ID /*项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -35190,6 +35210,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[PJID]--评教ID
       ,a.[JXBID]--教学班ID
+      ,a.[PJJSID]--评价教师ID
       ,a.[XSID]--学生ID
       ,a.[TMID]--题目ID
       ,a.[FZ]--分值

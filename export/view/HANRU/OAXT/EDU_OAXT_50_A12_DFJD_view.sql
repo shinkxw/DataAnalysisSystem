@@ -23,6 +23,9 @@ SELECT a.[ID]--编号
       ,a.[DFDXCJMC]--打分对象层级名称
       ,a.[CKJSLBIDLB]--查看角色类别ID列表
       ,a.[CKJSLBMCLB]--查看角色类别名称列表
+      ,a.[SFPLDF]--是否批量打分
+      ,a.[XQKBFDW]--向前可补分单位
+      ,a.[XHYDFDW]--向后预打分单位
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
@@ -33,7 +36,6 @@ SELECT a.[ID]--编号
       ,d.SFXYSH as d_DFDL_SFXYSH--打分大类表 是否需要审核
       ,d.SHFS as d_DFDL_SHFS--打分大类表 审核方式
       ,d.SFKQ as d_DFDL_SFKQ--打分大类表 是否开启
-      ,d.NFBDF as d_DFDL_NFBDF--打分大类表 能否补打分
       ,e.SCHOOLID as e_DFJD_SCHOOLID--打分节点表 学校ID
       ,e.XMID as e_DFJD_XMID--打分节点表 项目ID
       ,e.DLID as e_DFJD_DLID--打分节点表 大类ID
@@ -54,6 +56,9 @@ SELECT a.[ID]--编号
       ,e.DFDXCJMC as e_DFJD_DFDXCJMC--打分节点表 打分对象层级名称
       ,e.CKJSLBIDLB as e_DFJD_CKJSLBIDLB--打分节点表 查看角色类别ID列表
       ,e.CKJSLBMCLB as e_DFJD_CKJSLBMCLB--打分节点表 查看角色类别名称列表
+      ,e.SFPLDF as e_DFJD_SFPLDF--打分节点表 是否批量打分
+      ,e.XQKBFDW as e_DFJD_XQKBFDW--打分节点表 向前可补分单位
+      ,e.XHYDFDW as e_DFJD_XHYDFDW--打分节点表 向后预打分单位
       ,f.SCHOOLID as f_DFFS_SCHOOLID--打分方式表 学校ID
       ,f.XMID as f_DFFS_XMID--打分方式表 项目ID
       ,f.DFFSMC as f_DFFS_DFFSMC--打分方式表 打分方式名称
