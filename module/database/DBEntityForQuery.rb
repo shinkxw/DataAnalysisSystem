@@ -17,8 +17,9 @@ class DBEntityForQuery < DBEntity
   end
   #返回表对象
   def method_missing(method_symbol, *pars)
-    table = @table_hash[method_symbol.to_s.upcase]
-    return table if table
+    name = method_symbol.to_s.upcase
+    return @table_hash[name] if @table_hash[name]
+    return @view_arr[name] if @view_arr[name]
     super
   end
   def each;@table_arr.each{|table| yield(table)} end

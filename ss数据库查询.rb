@@ -4,32 +4,29 @@ $root = Dir.pwd
 $:.unshift($root)
 require 'ScriptLoader'#脚本加载器
 
-DBEntityForQuery.open('HanruEdu', DBConnector.new('192.168.0.8')) do |db|
-  #p db.select{|table| table.name.length > 36}
-  #p db.EDU_ZZJG_01_01_JZGJBSJ.find{|d| d.schoolid == 1 && d.gh == '2'}
-  
-  #~ db.select{|t| t.fields.any?{|f| f.name.upcase == "SCHOOLID"}}.sort_by {|t| t.name}.each do |table|
-    #~ puts "DELETE FROM [HANRUEDU].[dbo].[#{table.name}] WHERE SCHOOLID!=@SCHOOLID"
-  #~ end
-  
-  p db.select{|t| %w(GB JY ZZ ZJ).include?(t.name.split('_')[1])}.length
-  
-  #~ school_hash = db.EDU_ZYZX_01_A01_ZYML.group_by{|d| d.SCHOOLID}
-  #~ school_hash.each do |schoolid, school_arr|
-    #~ ml_hash = school_arr.group_by{|d| d.FMLID}
-    #~ fml_arr = []
-    #~ lsml_arr = [DBDataForQuery.new([:ID,:FMLIDLB],[0,':0:'])]
-    #~ until lsml_arr.empty?
-      #~ fml_arr = lsml_arr
-      #~ lsml_arr = []
-      #~ fml_arr.each do |fml|
-        #~ ml_arr = ml_hash[fml.ID]
-        #~ next unless ml_arr
-        #~ ml_arr.each do |ml|
-          #~ ml.FMLIDLB = fml.FMLIDLB + ml.ID.to_s + ':'
-          #~ lsml_arr << ml
-        #~ end
-      #~ end
-    #~ end
-  #~ end
+def get_jsid(jsxm, db)
+  db.EDU_ZZJG_01_01_JZGJBSJ.find{|js| js.XM == jsxm}.ID
+end
+
+path = 'E:\经手项目\平湖职业学生选课评教\2014学年第二学期选修课目录.xls'
+DBEntityForQuery.open('kxw', DBConnector.new('192.168.0.8')) do |db|
+  jxbs = db.VIEW_EDU_ZZJX_50_A03_JXBSJ_DISP
+  ExcelLoader.open_sheet(path, '目录') do |sheet|
+    sheet.each_index do |i|
+      next if i < 2
+      new_jxb = sheet[i]#序号 任课教师 课程名称 上课时间 上课地点
+      if (new_jxb[1].include?('、'))
+        jsxm_arr = new_jxb[1].split('、')
+        old_jxbs = jxbs.find_all{|jxb| new_jxb[2] == jxb.KCMC && new_jxb[1].include?(jxb.e_JZGJBSJ_XM) && jxb.SKDD == new_jxb[4] && jxb.f_KKSJ_SKSJ == new_jxb[3]}
+        old_jxbs.each do |jxb|
+          dqxm_arr = jsxm_arr.find_all{|xm| xm != jxb.e_JZGJBSJ_XM}
+          jsxmlb = dqxm_arr.join(',')
+          jsidlb = ',' << dqxm_arr.map{|xm| get_jsid(xm, db)}.join(',') << ','
+          puts "UPDATE [kxw].[dbo].[EDU_ZZJX_50_A03_JXBSJ] SET [QTJSIDLB] = '#{jsidlb}',[QTJSMCLB] = '#{jsxmlb}' WHERE [ID] = #{jxb.ID} AND [SCHOOLID] = 1"
+        end
+        #puts "#{old_jxbs.map{|oj| oj.e_JZGJBSJ_XM}.join(' | ')} -> #{jsxmlb} #{jsidlb}"
+      end
+    end
+  end
+
 end
