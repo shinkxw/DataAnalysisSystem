@@ -1548,6 +1548,17 @@
   XSID           EDU_ZXXS_01_01_XSXX                ID
   XQID           EDU_ELE_01_XQ                      ID
   LMID           EDU_ZXXS_57_A31_DSZXSXXLM          ID
+<EDU_ZXXS_58_A01_DSJDSZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXXS_58_A02_DSJDDS
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JSID           EDU_ZXJZ_01_01_JZGJBSJ             ID
+<EDU_ZXXS_58_A03_DSJDXSXZJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+  JS1ID          EDU_ZXJZ_01_01_JZGJBSJ             ID
+  JS2ID          EDU_ZXJZ_01_01_JZGJBSJ             ID
 <EDU_ZXXX_01_01_ZXXX
   XZQHM          EDU_GB_ZHRMGHGXZQH                 DM
   XXBXLXM        EDU_JY_BXLX                        DM

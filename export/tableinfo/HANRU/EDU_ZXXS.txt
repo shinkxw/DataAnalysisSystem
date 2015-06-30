@@ -644,3 +644,32 @@ EDU_ZXXS_57_A34_DSZXSMYXX  导师制学生每月信息表
   LMID          栏目ID                  int            非主        导师制学生信息栏目表
   NR            内容                    text           非主
 
+EDU_ZXXS_58_A01_DSJDSZ  导师结对设置表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  KSSJ          开始时间                datetime       非主
+  JSSJ          结束时间                datetime       非主
+  KXXQIDLB      可选学期ID列表          text           非主
+  KXXQMCLB      可选学期名称列表        text           非主
+  KXDSIDLB      可选导师ID列表          text           非主
+  KXDSXMLB      可选导师姓名列表        text           非主
+
+EDU_ZXXS_58_A02_DSJDDS  导师结对导师表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  ZP            照片                    nvarchar(200)  非主
+  XK            学科                    nvarchar(200)  非主
+  GRRY          个人荣誉                text           非主
+  ZWJS          自我介绍                text           非主
+
+EDU_ZXXS_58_A03_DSJDXSXZJL  导师结对学生选择记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSID          学生ID                  int            非主        学生基本数据子类表
+  JS1ID         教师1ID                 int            非主        教职工基本数据子类表
+  JS2ID         教师2ID                 int            非主        教职工基本数据子类表
+  XZJG1         选择结果1               int            非主
+  XZJG2         选择结果2               int            非主
+

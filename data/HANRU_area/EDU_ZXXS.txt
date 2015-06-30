@@ -753,4 +753,39 @@
             <name="NR" exp="内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_58_A01_DSJDSZ" exp="导师结对设置表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="KSSJ" exp="开始时间" type="datetime" />
+            <name="JSSJ" exp="结束时间" type="datetime" />
+            <name="KXXQIDLB" exp="可选学期ID列表" type="text" />
+            <name="KXXQMCLB" exp="可选学期名称列表" type="text" />
+            <name="KXDSIDLB" exp="可选导师ID列表" type="text" />
+            <name="KXDSXMLB" exp="可选导师姓名列表" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_58_A02_DSJDDS" exp="导师结对导师表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JSID" exp="教师ID" type="int" />
+            <name="ZP" exp="照片" type="nvarchar(200)" />
+            <name="XK" exp="学科" type="nvarchar(200)" />
+            <name="GRRY" exp="个人荣誉" type="text" />
+            <name="ZWJS" exp="自我介绍" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_58_A03_DSJDXSXZJL" exp="导师结对学生选择记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="JS1ID" exp="教师1ID" type="int" />
+            <name="JS2ID" exp="教师2ID" type="int" />
+            <name="XZJG1" exp="选择结果1" type="int" />
+            <name="XZJG2" exp="选择结果2" type="int" />
+        </field_area>
+    </table>
 </namespace>
