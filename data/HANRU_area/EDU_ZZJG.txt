@@ -74,6 +74,12 @@
             <name="JSZGZZL" exp="教师资格证种类" type="nvarchar(200)" />
             <name="XPYGW" exp="现聘用岗位" type="nvarchar(200)" />
             <name="GWDJ" exp="岗位等级" type="nvarchar(200)" />
+            <name="ZWCC" exp="职务层次" type="nvarchar(200)" />
+            <name="KS" exp="科室" type="nvarchar(200)" />
+            <name="XB" exp="系部" type="nvarchar(200)" />
+            <name="BGS" exp="办公室" type="nvarchar(200)" />
+            <name="JYZ" exp="教研组" type="nvarchar(200)" />
+            <name="XRJXK" exp="现任教学科" type="nvarchar(500)" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A02_JZGNLZS" exp="教职工能力证书表">
@@ -182,6 +188,12 @@
             <name="JSZGZZL" exp="教师资格证种类" type="nvarchar(200)" />
             <name="XPYGW" exp="现聘用岗位" type="nvarchar(200)" />
             <name="GWDJ" exp="岗位等级" type="nvarchar(200)" />
+            <name="ZWCC" exp="职务层次" type="nvarchar(200)" />
+            <name="KS" exp="科室" type="nvarchar(200)" />
+            <name="XB" exp="系部" type="nvarchar(200)" />
+            <name="BGS" exp="办公室" type="nvarchar(200)" />
+            <name="JYZ" exp="教研组" type="nvarchar(200)" />
+            <name="XRJXK" exp="现任教学科" type="nvarchar(500)" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A07_JZGNLZSSH" exp="教职工能力证书数据类表(审核)">

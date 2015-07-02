@@ -24962,6 +24962,12 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,a.[JSZGZZL]--教师资格证种类
       ,a.[XPYGW]--现聘用岗位
       ,a.[GWDJ]--岗位等级
+      ,a.[ZWCC]--职务层次
+      ,a.[KS]--科室
+      ,a.[XB]--系部
+      ,a.[BGS]--办公室
+      ,a.[JYZ]--教研组
+      ,a.[XRJXK]--现任教学科
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -25307,6 +25313,12 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,a.[JSZGZZL]--教师资格证种类
       ,a.[XPYGW]--现聘用岗位
       ,a.[GWDJ]--岗位等级
+      ,a.[ZWCC]--职务层次
+      ,a.[KS]--科室
+      ,a.[XB]--系部
+      ,a.[BGS]--办公室
+      ,a.[JYZ]--教研组
+      ,a.[XRJXK]--现任教学科
       ,b.SCHOOLID as b_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,b.GH as b_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,b.XM as b_JZGJBSJ_XM--教职工基本数据子类表 姓名

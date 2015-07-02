@@ -70,6 +70,12 @@ EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   JSZGZZL       教师资格证种类          nvarchar(200)  非主
   XPYGW         现聘用岗位              nvarchar(200)  非主
   GWDJ          岗位等级                nvarchar(200)  非主
+  ZWCC          职务层次                nvarchar(200)  非主
+  KS            科室                    nvarchar(200)  非主
+  XB            系部                    nvarchar(200)  非主
+  BGS           办公室                  nvarchar(200)  非主
+  JYZ           教研组                  nvarchar(200)  非主
+  XRJXK         现任教学科              nvarchar(500)  非主
 
 EDU_ZZJG_01_A02_JZGNLZS  教职工能力证书表
   JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表
@@ -168,6 +174,12 @@ EDU_ZZJG_01_A06_JZGKZSH  教职工扩展表(审核)
   JSZGZZL       教师资格证种类          nvarchar(200)  非主
   XPYGW         现聘用岗位              nvarchar(200)  非主
   GWDJ          岗位等级                nvarchar(200)  非主
+  ZWCC          职务层次                nvarchar(200)  非主
+  KS            科室                    nvarchar(200)  非主
+  XB            系部                    nvarchar(200)  非主
+  BGS           办公室                  nvarchar(200)  非主
+  JYZ           教研组                  nvarchar(200)  非主
+  XRJXK         现任教学科              nvarchar(500)  非主
 
 EDU_ZZJG_01_A07_JZGNLZSSH  教职工能力证书数据类表(审核)
   JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表
