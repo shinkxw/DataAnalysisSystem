@@ -15,6 +15,8 @@ namespace HanRuEdu.LDAL
             KXXQMCLB = "";
             KXDSIDLB = "";
             KXDSXMLB = "";
+            FXKSSJ = DateTime.Now;
+            FXJSSJ = DateTime.Now;
         }
         public class EDU_ZXXS_58_A01_DSJDSZ_metadata
         {
@@ -60,6 +62,16 @@ namespace HanRuEdu.LDAL
             [Display(Name = "可选导师姓名列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String KXDSXMLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "复选开始时间")]
+            public DateTime FXKSSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "复选结束时间")]
+            public DateTime FXJSSJ { get; set; }
 
 
         }

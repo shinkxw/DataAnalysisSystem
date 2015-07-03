@@ -17553,6 +17553,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_58_A01_DSJDSZ](
 	[KXXQMCLB]  text  NOT NULL,--可选学期名称列表
 	[KXDSIDLB]  text  NOT NULL,--可选导师ID列表
 	[KXDSXMLB]  text  NOT NULL,--可选导师姓名列表
+	[FXKSSJ]  datetime  NOT NULL,--复选开始时间
+	[FXJSSJ]  datetime  NOT NULL,--复选结束时间
 CONSTRAINT [PK_EDU_ZXXS_58_A01_DSJDSZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -18821,6 +18823,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可选导师ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A01_DSJDSZ', @level2type=N'COLUMN',@level2name=N'KXDSIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可选导师姓名列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A01_DSJDSZ', @level2type=N'COLUMN',@level2name=N'KXDSXMLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'复选开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A01_DSJDSZ', @level2type=N'COLUMN',@level2name=N'FXKSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'复选结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A01_DSJDSZ', @level2type=N'COLUMN',@level2name=N'FXJSSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师结对导师表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A02_DSJDDS'
 GO

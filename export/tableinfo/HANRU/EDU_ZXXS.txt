@@ -653,6 +653,8 @@ EDU_ZXXS_58_A01_DSJDSZ  导师结对设置表
   KXXQMCLB      可选学期名称列表        text           非主
   KXDSIDLB      可选导师ID列表          text           非主
   KXDSXMLB      可选导师姓名列表        text           非主
+  FXKSSJ        复选开始时间            datetime       非主
+  FXJSSJ        复选结束时间            datetime       非主
 
 EDU_ZXXS_58_A02_DSJDDS  导师结对导师表
   ID            编号                    int            主键

@@ -763,6 +763,8 @@
             <name="KXXQMCLB" exp="可选学期名称列表" type="text" />
             <name="KXDSIDLB" exp="可选导师ID列表" type="text" />
             <name="KXDSXMLB" exp="可选导师姓名列表" type="text" />
+            <name="FXKSSJ" exp="复选开始时间" type="datetime" />
+            <name="FXJSSJ" exp="复选结束时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_58_A02_DSJDDS" exp="导师结对导师表">
