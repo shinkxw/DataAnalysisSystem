@@ -788,4 +788,13 @@
             <name="XZJG2" exp="选择结果2" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_58_A04_DSJDXSXX" exp="导师结对学生信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="ZP" exp="照片" type="nvarchar(200)" />
+            <name="ZWJS" exp="自我介绍" type="text" />
+        </field_area>
+    </table>
 </namespace>
