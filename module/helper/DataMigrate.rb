@@ -57,7 +57,7 @@ class DataMigrate
   #将str转换为时间字符串
   def self.str_to_datetime(str);datetime(Time.gm(str[0,4], str[4,2], str[6,2], str[8,2], str[10,2], str[12,2])) end
   #datetime转换为6位字符串
-  def self.time_to_6(time);time.to_s.split(" ")[0].delete("-")[0,5] end
+  def self.time_to_6(time);time.to_s.split(" ")[0].delete("-")[0,6] end
   #datetime转换为8位字符串
   def self.time_to_8(time);time.to_s.split(" ")[0].delete("-") end
   ###以下为常用数据分析方法

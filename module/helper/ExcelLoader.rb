@@ -7,8 +7,10 @@ class ExcelLoader
     excel.WorkBooks.Open(path)
     yield excel
     excel.WorkBooks.Close
+    excel.Quit
   end
   def self.open_sheet(path, sheet_name);open(path){|excel| yield load_sheet(excel, sheet_name)} end
+  def self.get_sheet_data(path, sheet_name);open(path){|excel| return load_sheet(excel, sheet_name)} end
   def self.load_sheet(excel, sheet_name)
     excel.WorkSheets(sheet_name).Activate
     cols = excel.WorkSheets(sheet_name).UsedRange.Columns.Count
