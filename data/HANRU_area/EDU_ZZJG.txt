@@ -912,4 +912,117 @@
             <name="KQSJ" exp="考勤时间" type="datetime" />
         </field_area>
     </table>
+    <table name="EDU_ZZJG_25_A01_CWYJFLKM" exp="财务一级分类科目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="YJKMDM" exp="一级科目代码" type="nvarchar(100)" />
+            <name="YJKMMC" exp="一级科目名称" type="nvarchar(100)" />
+            <name="SFFT" exp="是否分摊" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A02_CWEJFLKM" exp="财务二级分类科目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="YJKMID" exp="一级科目ID" type="int" />
+            <name="EJKMDM" exp="二级科目代码" type="nvarchar(100)" />
+            <name="EJKMMC" exp="二级科目名称" type="nvarchar(100)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A03_CWSJFLKM" exp="财务三级分类科目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="YJKMID" exp="一级科目ID" type="int" />
+            <name="EJKMID" exp="二级科目ID" type="int" />
+            <name="SJKMDM" exp="三级科目代码" type="nvarchar(100)" />
+            <name="SJKMMC" exp="三级科目名称" type="nvarchar(100)" />
+            <name="SFHJDY" exp="是否合计打印" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A04_CWZYDL" exp="财务专业大类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ZYDLDM" exp="专业大类代码" type="nvarchar(100)" />
+            <name="ZYDLMC" exp="专业大类名称" type="nvarchar(100)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A05_CWZYXL" exp="财务专业小类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ZYDLID" exp="专业大类ID" type="int" />
+            <name="ZYXLDM" exp="专业小类代码" type="nvarchar(100)" />
+            <name="ZYXLMC" exp="专业小类名称" type="nvarchar(100)" />
+            <name="JSS" exp="教师数" type="int" />
+            <name="XSS" exp="学生数" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A06_CWJSGZXS" exp="财务教师工资系数表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JSID" exp="教师ID" type="int" />
+            <name="JXGLBL" exp="教学管理比例" type="decimal(4, 3)" />
+            <name="XXJXBL" exp="学校教学比例" type="decimal(4, 3)" />
+            <name="ZCXBL" exp="支持性比例" type="decimal(4, 3)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A07_CWJSGZXM" exp="财务教师工资项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XMMC" exp="项目名称" type="nvarchar(50)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A08_CWJSGZXMFZ" exp="财务教师工资项目分组表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="FZMC" exp="分组名称" type="nvarchar(50)" />
+            <name="ZY" exp="摘要" type="nvarchar(200)" />
+            <name="XMIDLB" exp="项目ID列表" type="text" />
+            <name="XMMCLB" exp="项目名称列表" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A11_CWJBDTM" exp="财务结报单条目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="YJKMID" exp="一级科目ID" type="int" />
+            <name="EJKMID" exp="二级科目ID" type="int" />
+            <name="SJKMID" exp="三级科目ID" type="int" />
+            <name="ZYDLID" exp="专业大类ID" type="int" />
+            <name="ZYXLID" exp="专业小类ID" type="int" />
+            <name="JBDH" exp="结报单号" type="nvarchar(100)" />
+            <name="JBDW" exp="结报单位" type="nvarchar(100)" />
+            <name="BZY" exp="报账员" type="nvarchar(100)" />
+            <name="JBRQ" exp="结报日期" type="nvarchar(100)" />
+            <name="ZY" exp="摘要" type="nvarchar(200)" />
+            <name="JE" exp="金额" type="decimal(12, 2)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A12_CWJBDXX" exp="财务结报单信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JBDH" exp="结报单号" type="nvarchar(100)" />
+            <name="JBDLX" exp="结报单类型" type="nvarchar(50)" />
+            <name="JBDSJ" exp="结报单时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A13_CWJSGZXX" exp="财务教师工资详细表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JSID" exp="教师ID" type="int" />
+            <name="ZYDLID" exp="专业大类ID" type="int" />
+            <name="GZXMID" exp="工资项目ID" type="int" />
+            <name="YF" exp="月份" type="nvarchar(6)" />
+            <name="CSLB" exp="处室类别" type="nvarchar(50)" />
+            <name="JE" exp="金额" type="decimal(12, 2)" />
+        </field_area>
+    </table>
 </namespace>
