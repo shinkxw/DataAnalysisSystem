@@ -839,7 +839,7 @@ EDU_ZZJG_25_A11_CWJBDTM  财务结报单条目表
   JBDH          结报单号                nvarchar(100)  非主
   JBDW          结报单位                nvarchar(100)  非主
   BZY           报账员                  nvarchar(100)  非主
-  JBRQ          结报日期                nvarchar(100)  非主
+  JBRQ          结报日期                datetime       非主
   ZY            摘要                    nvarchar(200)  非主
   JE            金额                    decimal(12, 2) 非主
 

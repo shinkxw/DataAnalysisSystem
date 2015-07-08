@@ -999,7 +999,7 @@
             <name="JBDH" exp="结报单号" type="nvarchar(100)" />
             <name="JBDW" exp="结报单位" type="nvarchar(100)" />
             <name="BZY" exp="报账员" type="nvarchar(100)" />
-            <name="JBRQ" exp="结报日期" type="nvarchar(100)" />
+            <name="JBRQ" exp="结报日期" type="datetime" />
             <name="ZY" exp="摘要" type="nvarchar(200)" />
             <name="JE" exp="金额" type="decimal(12, 2)" />
         </field_area>

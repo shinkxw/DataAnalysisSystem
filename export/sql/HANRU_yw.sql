@@ -23466,7 +23466,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_25_A11_CWJBDTM](
 	[JBDH]  nvarchar(100)  NOT NULL,--结报单号
 	[JBDW]  nvarchar(100)  NOT NULL,--结报单位
 	[BZY]  nvarchar(100)  NOT NULL,--报账员
-	[JBRQ]  nvarchar(100)  NOT NULL,--结报日期
+	[JBRQ]  datetime  NOT NULL,--结报日期
 	[ZY]  nvarchar(200)  NOT NULL,--摘要
 	[JE]  decimal(12, 2)  NOT NULL,--金额
 CONSTRAINT [PK_EDU_ZZJG_25_A11_CWJBDTM] PRIMARY KEY CLUSTERED

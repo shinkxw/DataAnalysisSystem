@@ -12,7 +12,7 @@ namespace HanRuEdu.LDAL
             JBDH = "";
             JBDW = "";
             BZY = "";
-            JBRQ = "";
+            JBRQ = DateTime.Now;
             ZY = "";
         }
         public class EDU_ZZJG_25_A11_CWJBDTM_metadata
@@ -73,11 +73,9 @@ namespace HanRuEdu.LDAL
             public String BZY { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "结报日期")]
-            [StringLength(100)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String JBRQ { get; set; }
+            public DateTime JBRQ { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
