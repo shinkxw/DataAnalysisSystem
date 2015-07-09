@@ -23505,7 +23505,8 @@ CREATE TABLE [dbo].[EDU_ZZJG_25_A13_CWJSGZXX](
 	[JSID]  int  NOT NULL,--教师ID
 	[ZYDLID]  int  NOT NULL,--专业大类ID
 	[GZXMID]  int  NOT NULL,--工资项目ID
-	[YF]  nvarchar(6)  NOT NULL,--月份
+	[NF]  int  NOT NULL,--年份
+	[YF]  int  NOT NULL,--月份
 	[CSLB]  nvarchar(50)  NOT NULL,--处室类别
 	[JE]  decimal(12, 2)  NOT NULL,--金额
 CONSTRAINT [PK_EDU_ZZJG_25_A13_CWJSGZXX] PRIMARY KEY CLUSTERED
@@ -25069,6 +25070,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业大类ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_25_A13_CWJSGZXX', @level2type=N'COLUMN',@level2name=N'ZYDLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'工资项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_25_A13_CWJSGZXX', @level2type=N'COLUMN',@level2name=N'GZXMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年份' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_25_A13_CWJSGZXX', @level2type=N'COLUMN',@level2name=N'NF'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'月份' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_25_A13_CWJSGZXX', @level2type=N'COLUMN',@level2name=N'YF'
 GO

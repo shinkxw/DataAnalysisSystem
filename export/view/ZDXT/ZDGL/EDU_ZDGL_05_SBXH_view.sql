@@ -9,6 +9,7 @@ SELECT a.[ID]--编号
       ,a.[PY]--拼音
       ,a.[MS]--描述
       ,a.[JG]--价格
+      ,a.[XTLX]--系统类型
       ,b.LXMC as b_SBXHLX_LXMC--设备型号类型表 类型名称
       ,b.LXJC as b_SBXHLX_LXJC--设备型号类型表 类型简称
       ,c.CJM as c_SCCJ_CJM--生产厂家表 厂家名

@@ -30,6 +30,7 @@ EDU_ZDGL_05_SBXH  设备型号表
   PY            拼音                    nvarchar(200)  非主
   MS            描述                    nvarchar(200)  非主
   JG            价格                    float          非主
+  XTLX          系统类型                int            非主
 
 EDU_ZDGL_06_XZQH  行政区划表
   QHM           区划码                  nvarchar(6)    主键
@@ -51,6 +52,7 @@ EDU_ZDGL_08_KH  客户表
   KHDZ          客户地址                nvarchar(200)  非主
   LXR           联系人                  nvarchar(200)  非主
   DH            电话                    nvarchar(200)  非主
+  XTLX          系统类型                int            非主
 
 EDU_ZDGL_09_WXS  维修商表
   ID            编号                    int            主键
@@ -181,6 +183,12 @@ EDU_ZDGL_21_FHDXX  返回单详细表
 EDU_ZDGL_22_FHR  发货人表
   ID            编号                    int            主键
   GH            工号                    nvarchar(200)  非主
+  XM            姓名                    nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
+
+EDU_ZDGL_23_QRR  确认人表
+  ID            编号                    int            主键
+  GSMC          公司名称                nvarchar(200)  非主
   XM            姓名                    nvarchar(200)  非主
   LXDH          联系电话                nvarchar(200)  非主
 

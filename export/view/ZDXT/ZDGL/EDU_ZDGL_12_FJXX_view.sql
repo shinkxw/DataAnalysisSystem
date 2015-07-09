@@ -39,6 +39,7 @@ SELECT a.[ID]--编号
       ,c.PY as c_SBXH_PY--设备型号表 拼音
       ,c.MS as c_SBXH_MS--设备型号表 描述
       ,c.JG as c_SBXH_JG--设备型号表 价格
+      ,c.XTLX as c_SBXH_XTLX--设备型号表 系统类型
 
 FROM dbo.EDU_ZDGL_12_FJXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_11_FJPC AS b ON a.PCID = b.ID /*批次ID*/ LEFT OUTER JOIN

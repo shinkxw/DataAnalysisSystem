@@ -11,6 +11,7 @@ SELECT a.[ID]--编号
       ,a.[KHDZ]--客户地址
       ,a.[LXR]--联系人
       ,a.[DH]--电话
+      ,a.[XTLX]--系统类型
       ,b.QHMC as b_XZQH_QHMC--行政区划表 区划名称
       ,b.QH as b_XZQH_QH--行政区划表 区号
       ,c.GSDM as c_SSGS_GSDM--所属公司表 公司代码

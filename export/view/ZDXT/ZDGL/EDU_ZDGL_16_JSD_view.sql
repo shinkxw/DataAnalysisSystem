@@ -16,6 +16,7 @@ SELECT a.[ID]--编号
       ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
       ,b.LXR as b_KH_LXR--客户表 联系人
       ,b.DH as b_KH_DH--客户表 电话
+      ,b.XTLX as b_KH_XTLX--客户表 系统类型
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZDGL_16_JSD AS a LEFT OUTER JOIN

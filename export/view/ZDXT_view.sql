@@ -3492,6 +3492,7 @@ SELECT a.[ID]--编号
       ,a.[PY]--拼音
       ,a.[MS]--描述
       ,a.[JG]--价格
+      ,a.[XTLX]--系统类型
       ,b.LXMC as b_SBXHLX_LXMC--设备型号类型表 类型名称
       ,b.LXJC as b_SBXHLX_LXJC--设备型号类型表 类型简称
       ,c.CJM as c_SCCJ_CJM--生产厂家表 厂家名
@@ -3516,6 +3517,7 @@ SELECT a.[ID]--编号
       ,a.[KHDZ]--客户地址
       ,a.[LXR]--联系人
       ,a.[DH]--电话
+      ,a.[XTLX]--系统类型
       ,b.QHMC as b_XZQH_QHMC--行政区划表 区划名称
       ,b.QH as b_XZQH_QH--行政区划表 区号
       ,c.GSDM as c_SSGS_GSDM--所属公司表 公司代码
@@ -3548,6 +3550,7 @@ SELECT a.[ID]--编号
       ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
       ,b.LXR as b_KH_LXR--客户表 联系人
       ,b.DH as b_KH_DH--客户表 电话
+      ,b.XTLX as b_KH_XTLX--客户表 系统类型
 
 FROM dbo.EDU_ZDGL_11_FJPC AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_08_KH AS b ON a.KHID = b.ID /*客户ID*/
@@ -3593,6 +3596,7 @@ SELECT a.[ID]--编号
       ,c.PY as c_SBXH_PY--设备型号表 拼音
       ,c.MS as c_SBXH_MS--设备型号表 描述
       ,c.JG as c_SBXH_JG--设备型号表 价格
+      ,c.XTLX as c_SBXH_XTLX--设备型号表 系统类型
 
 FROM dbo.EDU_ZDGL_12_FJXX AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_11_FJPC AS b ON a.PCID = b.ID /*批次ID*/ LEFT OUTER JOIN
@@ -3700,6 +3704,7 @@ SELECT a.[ID]--编号
       ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
       ,b.LXR as b_KH_LXR--客户表 联系人
       ,b.DH as b_KH_DH--客户表 电话
+      ,b.XTLX as b_KH_XTLX--客户表 系统类型
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZDGL_16_JSD AS a LEFT OUTER JOIN
@@ -3727,6 +3732,7 @@ SELECT a.[ID]--编号
       ,b.PY as b_SBXH_PY--设备型号表 拼音
       ,b.MS as b_SBXH_MS--设备型号表 描述
       ,b.JG as b_SBXH_JG--设备型号表 价格
+      ,b.XTLX as b_SBXH_XTLX--设备型号表 系统类型
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
       ,d.KHDM as d_KH_KHDM--客户表 客户代码
       ,d.SZQYID as d_KH_SZQYID--客户表 所在区域ID
@@ -3736,6 +3742,7 @@ SELECT a.[ID]--编号
       ,d.KHDZ as d_KH_KHDZ--客户表 客户地址
       ,d.LXR as d_KH_LXR--客户表 联系人
       ,d.DH as d_KH_DH--客户表 电话
+      ,d.XTLX as d_KH_XTLX--客户表 系统类型
       ,e.GZDM as e_GZDM_GZDM--故障代码表 故障代码
       ,e.GZXX as e_GZDM_GZXX--故障代码表 故障现象
       ,f.WXDM as f_WXDM_WXDM--维修代码表 维修代码
@@ -3783,6 +3790,7 @@ SELECT a.[ID]--编号
       ,c.KHDZ as c_KH_KHDZ--客户表 客户地址
       ,c.LXR as c_KH_LXR--客户表 联系人
       ,c.DH as c_KH_DH--客户表 电话
+      ,c.XTLX as c_KH_XTLX--客户表 系统类型
 
 FROM dbo.EDU_ZDGL_18_JFD AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_09_WXS AS b ON a.WXSID = b.ID /*维修商ID*/ LEFT OUTER JOIN
@@ -3832,6 +3840,7 @@ SELECT a.[ID]--编号
       ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
       ,b.LXR as b_KH_LXR--客户表 联系人
       ,b.DH as b_KH_DH--客户表 电话
+      ,b.XTLX as b_KH_XTLX--客户表 系统类型
 
 FROM dbo.EDU_ZDGL_20_FHD AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_08_KH AS b ON a.FHDWID = b.ID /*返回单位ID*/

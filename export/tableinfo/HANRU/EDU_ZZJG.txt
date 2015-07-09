@@ -856,7 +856,8 @@ EDU_ZZJG_25_A13_CWJSGZXX  财务教师工资详细表
   JSID          教师ID                  int            非主        教职工基本数据子类表
   ZYDLID        专业大类ID              int            非主        财务专业大类表
   GZXMID        工资项目ID              int            非主        财务教师工资项目表
-  YF            月份                    nvarchar(6)    非主
+  NF            年份                    int            非主
+  YF            月份                    int            非主
   CSLB          处室类别                nvarchar(50)   非主
   JE            金额                    decimal(12, 2) 非主
 

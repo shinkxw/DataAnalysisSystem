@@ -40,6 +40,7 @@
             <name="PY" exp="拼音" type="nvarchar(200)" />
             <name="MS" exp="描述" type="nvarchar(200)" />
             <name="JG" exp="价格" type="float" />
+            <name="XTLX" exp="系统类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_06_XZQH" exp="行政区划表">
@@ -67,6 +68,7 @@
             <name="KHDZ" exp="客户地址" type="nvarchar(200)" />
             <name="LXR" exp="联系人" type="nvarchar(200)" />
             <name="DH" exp="电话" type="nvarchar(200)" />
+            <name="XTLX" exp="系统类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZDGL_09_WXS" exp="维修商表">
@@ -225,6 +227,14 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="GH" exp="工号" type="nvarchar(200)" />
+            <name="XM" exp="姓名" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZDGL_23_QRR" exp="确认人表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="GSMC" exp="公司名称" type="nvarchar(200)" />
             <name="XM" exp="姓名" type="nvarchar(200)" />
             <name="LXDH" exp="联系电话" type="nvarchar(200)" />
         </field_area>

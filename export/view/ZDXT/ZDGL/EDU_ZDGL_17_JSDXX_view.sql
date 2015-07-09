@@ -19,6 +19,7 @@ SELECT a.[ID]--编号
       ,b.PY as b_SBXH_PY--设备型号表 拼音
       ,b.MS as b_SBXH_MS--设备型号表 描述
       ,b.JG as b_SBXH_JG--设备型号表 价格
+      ,b.XTLX as b_SBXH_XTLX--设备型号表 系统类型
       ,c.MC as c_SFBZ_MC--是否标志代码表 名称
       ,d.KHDM as d_KH_KHDM--客户表 客户代码
       ,d.SZQYID as d_KH_SZQYID--客户表 所在区域ID
@@ -28,6 +29,7 @@ SELECT a.[ID]--编号
       ,d.KHDZ as d_KH_KHDZ--客户表 客户地址
       ,d.LXR as d_KH_LXR--客户表 联系人
       ,d.DH as d_KH_DH--客户表 电话
+      ,d.XTLX as d_KH_XTLX--客户表 系统类型
       ,e.GZDM as e_GZDM_GZDM--故障代码表 故障代码
       ,e.GZXX as e_GZDM_GZXX--故障代码表 故障现象
       ,f.WXDM as f_WXDM_WXDM--维修代码表 维修代码

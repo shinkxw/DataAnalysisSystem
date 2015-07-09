@@ -29415,6 +29415,7 @@ SELECT a.[ID]--编号
       ,a.[JSID]--教师ID
       ,a.[ZYDLID]--专业大类ID
       ,a.[GZXMID]--工资项目ID
+      ,a.[NF]--年份
       ,a.[YF]--月份
       ,a.[CSLB]--处室类别
       ,a.[JE]--金额

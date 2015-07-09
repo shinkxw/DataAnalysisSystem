@@ -78,6 +78,11 @@ namespace HanRuEdu.LDAL
             public String DH { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "系统类型")]
+            public Int32 XTLX { get; set; }
+
+
         }
     }
 }

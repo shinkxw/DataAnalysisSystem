@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,c.KHDZ as c_KH_KHDZ--客户表 客户地址
       ,c.LXR as c_KH_LXR--客户表 联系人
       ,c.DH as c_KH_DH--客户表 电话
+      ,c.XTLX as c_KH_XTLX--客户表 系统类型
 
 FROM dbo.EDU_ZDGL_18_JFD AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_09_WXS AS b ON a.WXSID = b.ID /*维修商ID*/ LEFT OUTER JOIN

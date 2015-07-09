@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_25_A13_CWJSGZXX()
         {
-            YF = "";
             CSLB = "";
         }
         public class EDU_ZZJG_25_A13_CWJSGZXX_metadata
@@ -39,11 +38,14 @@ namespace HanRuEdu.LDAL
             public Int32 GZXMID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "年份")]
+            public Int32 NF { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "月份")]
-            [StringLength(6)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String YF { get; set; }
+            public Int32 YF { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

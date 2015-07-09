@@ -21,6 +21,7 @@ SELECT a.[ID]--编号
       ,b.KHDZ as b_KH_KHDZ--客户表 客户地址
       ,b.LXR as b_KH_LXR--客户表 联系人
       ,b.DH as b_KH_DH--客户表 电话
+      ,b.XTLX as b_KH_XTLX--客户表 系统类型
 
 FROM dbo.EDU_ZDGL_11_FJPC AS a LEFT OUTER JOIN
       dbo.EDU_ZDGL_08_KH AS b ON a.KHID = b.ID /*客户ID*/
