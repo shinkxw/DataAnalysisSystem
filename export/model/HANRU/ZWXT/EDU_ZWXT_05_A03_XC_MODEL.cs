@@ -20,6 +20,7 @@ namespace HanRuEdu.LDAL
             XCBH = "";
             CFDD = "";
             ZXRQ = DateTime.Now;
+            BYL = "";
         }
         public class EDU_ZWXT_05_A03_XC_metadata
         {
@@ -128,6 +129,12 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "注销日期")]
             public DateTime ZXRQ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "备用列")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BYL { get; set; }
 
 
         }

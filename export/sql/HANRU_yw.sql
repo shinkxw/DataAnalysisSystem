@@ -10169,6 +10169,7 @@ CREATE TABLE [dbo].[EDU_ZWXT_05_A03_XC](
 	[XCBH]  nvarchar(200)  NOT NULL,--校产编号
 	[CFDD]  nvarchar(200)  NOT NULL,--存放地点
 	[ZXRQ]  datetime  NOT NULL,--注销日期
+	[BYL]  text  NOT NULL,--备用列
 CONSTRAINT [PK_EDU_ZWXT_05_A03_XC] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -10481,6 +10482,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'存放地点' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_05_A03_XC', @level2type=N'COLUMN',@level2name=N'CFDD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'注销日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_05_A03_XC', @level2type=N'COLUMN',@level2name=N'ZXRQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备用列' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_05_A03_XC', @level2type=N'COLUMN',@level2name=N'BYL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'报修表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZWXT_05_A04_BX'
 GO

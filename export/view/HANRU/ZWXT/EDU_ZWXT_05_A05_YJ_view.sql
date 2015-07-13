@@ -29,6 +29,7 @@ SELECT a.[ID]--编号
       ,c.XCBH as c_XC_XCBH--校产表 校产编号
       ,c.CFDD as c_XC_CFDD--校产表 存放地点
       ,c.ZXRQ as c_XC_ZXRQ--校产表 注销日期
+      ,c.BYL as c_XC_BYL--校产表 备用列
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码
