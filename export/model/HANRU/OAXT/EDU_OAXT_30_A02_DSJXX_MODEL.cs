@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             NR = "";
             FBRID = "";
             TJSJ = DateTime.Now;
+            ZZ = "";
         }
         public class EDU_OAXT_30_A02_DSJXX_metadata
         {
@@ -54,6 +55,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "审核状态")]
             public Int32 SHZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "作者")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZZ { get; set; }
 
 
         }

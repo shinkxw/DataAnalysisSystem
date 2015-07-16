@@ -922,6 +922,7 @@
             <name="FBRID" exp="发布人ID" type="nvarchar(20)" />
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="SHZT" exp="审核状态" type="int" />
+            <name="ZZ" exp="作者" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_OAXT_31_A01_GRTXL" exp="个人通讯录表">

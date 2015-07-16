@@ -794,6 +794,7 @@ EDU_OAXT_30_A02_DSJXX  大事记信息表
   FBRID         发布人ID                nvarchar(20)   非主        应用系统用户表
   TJSJ          添加时间                datetime       非主
   SHZT          审核状态                int            非主
+  ZZ            作者                    nvarchar(50)   非主
 
 EDU_OAXT_31_A01_GRTXL  个人通讯录表
   ID            编号                    int            主键

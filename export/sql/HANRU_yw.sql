@@ -4810,6 +4810,7 @@ CREATE TABLE [dbo].[EDU_OAXT_30_A02_DSJXX](
 	[FBRID]  nvarchar(20)  NOT NULL,--发布人ID
 	[TJSJ]  datetime  NOT NULL,--添加时间
 	[SHZT]  int  NOT NULL,--审核状态
+	[ZZ]  nvarchar(50)  NOT NULL,--作者
 CONSTRAINT [PK_EDU_OAXT_30_A02_DSJXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -7449,6 +7450,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_30_A02_DSJXX', @level2type=N'COLUMN',@level2name=N'TJSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_30_A02_DSJXX', @level2type=N'COLUMN',@level2name=N'SHZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'作者' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_30_A02_DSJXX', @level2type=N'COLUMN',@level2name=N'ZZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人通讯录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_31_A01_GRTXL'
 GO
