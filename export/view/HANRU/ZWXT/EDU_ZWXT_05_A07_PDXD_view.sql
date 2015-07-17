@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,d.CFDD as d_XC_CFDD--校产表 存放地点
       ,d.ZXRQ as d_XC_ZXRQ--校产表 注销日期
       ,d.BYL as d_XC_BYL--校产表 备用列
+      ,d.CFBH as d_XC_CFBH--校产表 拆分编号
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,'' as e_USER_PWD--应用系统用户表 密码

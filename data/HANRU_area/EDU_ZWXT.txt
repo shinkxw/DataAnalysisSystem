@@ -115,6 +115,7 @@
             <name="CFDD" exp="存放地点" type="nvarchar(200)" />
             <name="ZXRQ" exp="注销日期" type="datetime" />
             <name="BYL" exp="备用列" type="text" />
+            <name="CFBH" exp="拆分编号" type="nvarchar(200)" />
         </field_area>
     </table>
     <table name="EDU_ZWXT_05_A04_BX" exp="报修表">

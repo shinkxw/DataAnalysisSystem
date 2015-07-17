@@ -8729,6 +8729,7 @@ SELECT a.[ID]--编号
       ,a.[CFDD]--存放地点
       ,a.[ZXRQ]--注销日期
       ,a.[BYL]--备用列
+      ,a.[CFBH]--拆分编号
       ,c.SCHOOLID as c_XCLX_SCHOOLID--校产类型表 学校ID
       ,c.LXMC as c_XCLX_LXMC--校产类型表 类型名称
       ,d.SCHOOLID as d_XCML_SCHOOLID--校产目录表 学校ID
@@ -8790,6 +8791,7 @@ SELECT a.[ID]--编号
       ,c.CFDD as c_XC_CFDD--校产表 存放地点
       ,c.ZXRQ as c_XC_ZXRQ--校产表 注销日期
       ,c.BYL as c_XC_BYL--校产表 备用列
+      ,c.CFBH as c_XC_CFBH--校产表 拆分编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码
@@ -8844,6 +8846,7 @@ SELECT a.[ID]--编号
       ,c.CFDD as c_XC_CFDD--校产表 存放地点
       ,c.ZXRQ as c_XC_ZXRQ--校产表 注销日期
       ,c.BYL as c_XC_BYL--校产表 备用列
+      ,c.CFBH as c_XC_CFBH--校产表 拆分编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码
@@ -8937,6 +8940,7 @@ SELECT a.[ID]--编号
       ,d.CFDD as d_XC_CFDD--校产表 存放地点
       ,d.ZXRQ as d_XC_ZXRQ--校产表 注销日期
       ,d.BYL as d_XC_BYL--校产表 备用列
+      ,d.CFBH as d_XC_CFBH--校产表 拆分编号
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,'' as e_USER_PWD--应用系统用户表 密码
@@ -8991,6 +8995,7 @@ SELECT a.[ID]--编号
       ,c.CFDD as c_XC_CFDD--校产表 存放地点
       ,c.ZXRQ as c_XC_ZXRQ--校产表 注销日期
       ,c.BYL as c_XC_BYL--校产表 备用列
+      ,c.CFBH as c_XC_CFBH--校产表 拆分编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码
@@ -9062,6 +9067,7 @@ SELECT a.[ID]--编号
       ,c.CFDD as c_XC_CFDD--校产表 存放地点
       ,c.ZXRQ as c_XC_ZXRQ--校产表 注销日期
       ,c.BYL as c_XC_BYL--校产表 备用列
+      ,c.CFBH as c_XC_CFBH--校产表 拆分编号
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码

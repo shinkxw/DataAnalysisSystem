@@ -95,6 +95,7 @@ EDU_ZWXT_05_A03_XC  校产表
   CFDD          存放地点                nvarchar(200)  非主
   ZXRQ          注销日期                datetime       非主
   BYL           备用列                  text           非主
+  CFBH          拆分编号                nvarchar(200)  非主
 
 EDU_ZWXT_05_A04_BX  报修表
   ID            编号                    int            主键

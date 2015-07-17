@@ -21,6 +21,7 @@ namespace HanRuEdu.LDAL
             CFDD = "";
             ZXRQ = DateTime.Now;
             BYL = "";
+            CFBH = "";
         }
         public class EDU_ZWXT_05_A03_XC_metadata
         {
@@ -135,6 +136,13 @@ namespace HanRuEdu.LDAL
             [Display(Name = "备用列")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BYL { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "拆分编号")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CFBH { get; set; }
 
 
         }
