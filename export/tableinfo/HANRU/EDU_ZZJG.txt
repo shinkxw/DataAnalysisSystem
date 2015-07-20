@@ -820,13 +820,20 @@ EDU_ZZJG_25_A07_CWJSGZXM  财务教师工资项目表
   SCHOOLID      学校                    int            主键        学校配置表
   XMMC          项目名称                nvarchar(50)   非主
 
-EDU_ZZJG_25_A08_CWJSGZXMFZ  财务教师工资项目分组表
+EDU_ZZJG_25_A08_CWJSGZJBDXM  财务教师工资结报单项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XMMC          项目名称                nvarchar(50)   非主
+  XMIDLB        工资项目ID列表          text           非主
+  XMMCLB        工资项目名称列表        text           非主
+
+EDU_ZZJG_25_A09_CWJSGZJBDXMFZ  财务教师工资结报单项目分组表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   FZMC          分组名称                nvarchar(50)   非主
   ZY            摘要                    nvarchar(200)  非主
-  XMIDLB        项目ID列表              text           非主
-  XMMCLB        项目名称列表            text           非主
+  JBDXMIDLB     结报单项目ID列表        text           非主
+  JBDXMMCLB     结报单项目名称列表      text           非主
 
 EDU_ZZJG_25_A11_CWJBDTM  财务结报单条目表
   ID            编号                    int            主键

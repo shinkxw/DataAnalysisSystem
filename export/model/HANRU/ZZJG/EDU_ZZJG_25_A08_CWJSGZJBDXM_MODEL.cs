@@ -4,17 +4,16 @@ namespace HanRuEdu.LDAL
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    [MetadataType(typeof(EDU_ZZJG_25_A08_CWJSGZXMFZ_metadata))]
-    public partial class EDU_ZZJG_25_A08_CWJSGZXMFZ
+    [MetadataType(typeof(EDU_ZZJG_25_A08_CWJSGZJBDXM_metadata))]
+    public partial class EDU_ZZJG_25_A08_CWJSGZJBDXM
     {
-        public EDU_ZZJG_25_A08_CWJSGZXMFZ()
+        public EDU_ZZJG_25_A08_CWJSGZJBDXM()
         {
-            FZMC = "";
-            ZY = "";
+            XMMC = "";
             XMIDLB = "";
             XMMCLB = "";
         }
-        public class EDU_ZZJG_25_A08_CWJSGZXMFZ_metadata
+        public class EDU_ZZJG_25_A08_CWJSGZJBDXM_metadata
         {
             [Required(ErrorMessage = "必填")]
             [Display(Name = "编号")]
@@ -27,27 +26,20 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "分组名称")]
+            [Display(Name = "项目名称")]
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FZMC { get; set; }
+            public String XMMC { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "摘要")]
-            [StringLength(200)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String ZY { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "项目ID列表")]
+            [Display(Name = "工资项目ID列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XMIDLB { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "项目名称列表")]
+            [Display(Name = "工资项目名称列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XMMCLB { get; set; }
 

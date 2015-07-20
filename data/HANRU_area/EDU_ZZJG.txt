@@ -977,14 +977,23 @@
             <name="XMMC" exp="项目名称" type="nvarchar(50)" />
         </field_area>
     </table>
-    <table name="EDU_ZZJG_25_A08_CWJSGZXMFZ" exp="财务教师工资项目分组表">
+    <table name="EDU_ZZJG_25_A08_CWJSGZJBDXM" exp="财务教师工资结报单项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XMMC" exp="项目名称" type="nvarchar(50)" />
+            <name="XMIDLB" exp="工资项目ID列表" type="text" />
+            <name="XMMCLB" exp="工资项目名称列表" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJG_25_A09_CWJSGZJBDXMFZ" exp="财务教师工资结报单项目分组表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="FZMC" exp="分组名称" type="nvarchar(50)" />
             <name="ZY" exp="摘要" type="nvarchar(200)" />
-            <name="XMIDLB" exp="项目ID列表" type="text" />
-            <name="XMMCLB" exp="项目名称列表" type="text" />
+            <name="JBDXMIDLB" exp="结报单项目ID列表" type="text" />
+            <name="JBDXMMCLB" exp="结报单项目名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_25_A11_CWJBDTM" exp="财务结报单条目表">
