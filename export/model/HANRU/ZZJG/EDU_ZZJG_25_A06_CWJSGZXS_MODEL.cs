@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_25_A06_CWJSGZXS()
         {
+            CSLB = "";
         }
         public class EDU_ZZJG_25_A06_CWJSGZXS_metadata
         {
@@ -25,6 +26,23 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "教师")]
             public Int32 JSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业大类")]
+            public Int32 ZYDLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "专业小类")]
+            public Int32 ZYXLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "处室类别")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CSLB { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

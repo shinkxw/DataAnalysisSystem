@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJG_25_A13_CWJSGZXX()
         {
-            CSLB = "";
         }
         public class EDU_ZZJG_25_A13_CWJSGZXX_metadata
         {
@@ -29,11 +28,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "专业大类")]
-            public Int32 ZYDLID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "工资项目")]
             public Int32 GZXMID { get; set; }
 
@@ -46,13 +40,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "月份")]
             public Int32 YF { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "处室类别")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String CSLB { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

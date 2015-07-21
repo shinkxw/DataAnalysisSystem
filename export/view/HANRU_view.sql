@@ -29276,6 +29276,9 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[JSID]--教师ID
+      ,a.[ZYDLID]--专业大类ID
+      ,a.[ZYXLID]--专业小类ID
+      ,a.[CSLB]--处室类别
       ,a.[JXGLBL]--教学管理比例
       ,a.[XXJXBL]--学校教学比例
       ,a.[ZCXBL]--支持性比例
@@ -29348,9 +29351,20 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
+      ,d.SCHOOLID as d_CWZYDL_SCHOOLID--财务专业大类表 学校
+      ,d.ZYDLDM as d_CWZYDL_ZYDLDM--财务专业大类表 专业大类代码
+      ,d.ZYDLMC as d_CWZYDL_ZYDLMC--财务专业大类表 专业大类名称
+      ,e.SCHOOLID as e_CWZYXL_SCHOOLID--财务专业小类表 学校
+      ,e.ZYDLID as e_CWZYXL_ZYDLID--财务专业小类表 专业大类ID
+      ,e.ZYXLDM as e_CWZYXL_ZYXLDM--财务专业小类表 专业小类代码
+      ,e.ZYXLMC as e_CWZYXL_ZYXLMC--财务专业小类表 专业小类名称
+      ,e.JSS as e_CWZYXL_JSS--财务专业小类表 教师数
+      ,e.XSS as e_CWZYXL_XSS--财务专业小类表 学生数
 
 FROM dbo.EDU_ZZJG_25_A06_CWJSGZXS AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_25_A04_CWZYDL AS d ON a.ZYDLID = d.ID /*专业大类ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_25_A05_CWZYXL AS e ON a.ZYXLID = e.ID /*专业小类ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
@@ -29426,11 +29440,9 @@ AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[JSID]--教师ID
-      ,a.[ZYDLID]--专业大类ID
       ,a.[GZXMID]--工资项目ID
       ,a.[NF]--年份
       ,a.[YF]--月份
-      ,a.[CSLB]--处室类别
       ,a.[JE]--金额
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -29501,16 +29513,12 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.SCHOOLID as d_CWZYDL_SCHOOLID--财务专业大类表 学校
-      ,d.ZYDLDM as d_CWZYDL_ZYDLDM--财务专业大类表 专业大类代码
-      ,d.ZYDLMC as d_CWZYDL_ZYDLMC--财务专业大类表 专业大类名称
-      ,e.SCHOOLID as e_CWJSGZXM_SCHOOLID--财务教师工资项目表 学校
-      ,e.XMMC as e_CWJSGZXM_XMMC--财务教师工资项目表 项目名称
+      ,d.SCHOOLID as d_CWJSGZXM_SCHOOLID--财务教师工资项目表 学校
+      ,d.XMMC as d_CWJSGZXM_XMMC--财务教师工资项目表 项目名称
 
 FROM dbo.EDU_ZZJG_25_A13_CWJSGZXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_25_A04_CWZYDL AS d ON a.ZYDLID = d.ID /*专业大类ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJG_25_A07_CWJSGZXM AS e ON a.GZXMID = e.ID /*工资项目ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJG_25_A07_CWJSGZXM AS d ON a.GZXMID = d.ID /*工资项目ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN

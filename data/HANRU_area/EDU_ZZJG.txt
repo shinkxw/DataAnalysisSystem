@@ -965,6 +965,9 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="JSID" exp="教师ID" type="int" />
+            <name="ZYDLID" exp="专业大类ID" type="int" />
+            <name="ZYXLID" exp="专业小类ID" type="int" />
+            <name="CSLB" exp="处室类别" type="nvarchar(50)" />
             <name="JXGLBL" exp="教学管理比例" type="decimal(4, 3)" />
             <name="XXJXBL" exp="学校教学比例" type="decimal(4, 3)" />
             <name="ZCXBL" exp="支持性比例" type="decimal(4, 3)" />
@@ -1027,11 +1030,9 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="JSID" exp="教师ID" type="int" />
-            <name="ZYDLID" exp="专业大类ID" type="int" />
             <name="GZXMID" exp="工资项目ID" type="int" />
             <name="NF" exp="年份" type="int" />
             <name="YF" exp="月份" type="int" />
-            <name="CSLB" exp="处室类别" type="nvarchar(50)" />
             <name="JE" exp="金额" type="decimal(12, 2)" />
         </field_area>
     </table>
