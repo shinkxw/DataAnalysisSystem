@@ -694,4 +694,92 @@
             <name="BMIP" exp="报名IP" type="nvarchar(200)" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_22_A01_ZSGLCZXX" exp="招生管理初中学校表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XXMC" exp="学校名称" type="nvarchar(200)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_22_A02_ZSGLZSJH" exp="招生管理招生计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JHMC" exp="计划名称" type="nvarchar(200)" />
+            <name="XNID" exp="学年ID" type="int" />
+            <name="KG" exp="开关" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_22_A03_ZSGLZSJHXD" exp="招生管理招生计划详单表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JHID" exp="计划ID" type="int" />
+            <name="ZYMC" exp="专业名称" type="nvarchar(200)" />
+            <name="ZYID" exp="专业ID" type="int" />
+            <name="ZSRS" exp="招生人数" type="int" />
+            <name="ZYJS" exp="专业介绍" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_22_A04_ZSGLXSXX" exp="招生管理新生信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="XM" exp="姓名" type="nvarchar(200)" />
+            <name="XB" exp="性别" type="nvarchar(200)" />
+            <name="SFZX" exp="是否住校" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
+            <name="BYXXID" exp="毕业学校ID" type="int" />
+            <name="YW" exp="语文" type="decimal(5, 1)" />
+            <name="SX" exp="数学" type="decimal(5, 1)" />
+            <name="YY" exp="英语" type="decimal(5, 1)" />
+            <name="SZ" exp="社政" type="decimal(5, 1)" />
+            <name="KX" exp="科学" type="decimal(5, 1)" />
+            <name="TY" exp="体育" type="decimal(5, 1)" />
+            <name="SYJF" exp="实验加分" type="decimal(5, 1)" />
+            <name="ZF" exp="总分" type="decimal(5, 1)" />
+            <name="TC" exp="特长" type="nvarchar(200)" />
+            <name="BZ" exp="备注" type="text" />
+            <name="DYZYID" exp="第一志愿ID" type="int" />
+            <name="DEZYID" exp="第二志愿ID" type="int" />
+            <name="DSZYID" exp="第三志愿ID" type="int" />
+            <name="LSID" exp="临时ID" type="int" />
+            <name="LRSJ" exp="录入时间" type="datetime" />
+            <name="LRR" exp="录入人" type="nvarchar(200)" />
+            <name="LQSJ" exp="录取时间" type="datetime" />
+            <name="LQR" exp="录取人" type="nvarchar(200)" />
+            <name="LQZYID" exp="录取专业ID" type="int" />
+            <name="BH" exp="编号" type="nvarchar(200)" p="T" />
+            <name="JFJE" exp="缴费金额" type="decimal(8, 1)" p="T" />
+            <name="XNID" exp="学年ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_22_A05_ZSGLJYZM" exp="招生管理就业证明表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="XSXM" exp="学生姓名" type="nvarchar(200)" />
+            <name="XB" exp="性别" type="nvarchar(200)" />
+            <name="ZY" exp="专业" type="nvarchar(200)" />
+            <name="JTDZ" exp="家庭地址" type="nvarchar(200)" />
+            <name="LXDH" exp="联系电话" type="nvarchar(200)" />
+            <name="JYDW" exp="就业单位" type="nvarchar(200)" />
+            <name="DWDH" exp="单位电话" type="nvarchar(200)" />
+            <name="JYGW" exp="就业岗位" type="nvarchar(200)" />
+            <name="PJYSR" exp="平均月收入" type="nvarchar(200)" />
+            <name="JYSJ" exp="就业时间" type="nvarchar(200)" />
+            <name="ZYDM" exp="专业代码" type="nvarchar(200)" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="XJH" exp="学籍号" type="nvarchar(200)" />
+            <name="GZHZY" exp="工种或专业" type="nvarchar(200)" />
+            <name="SFDK" exp="是否对口" type="nvarchar(200)" />
+            <name="JYDD" exp="就业地点" type="nvarchar(200)" />
+            <name="JYQX" exp="就业去向" type="nvarchar(200)" />
+            <name="DD" exp="地点" type="nvarchar(200)" />
+            <name="JYHT" exp="就业合同" type="nvarchar(200)" />
+            <name="SB" exp="社保" type="nvarchar(200)" />
+        </field_area>
+    </table>
 </namespace>

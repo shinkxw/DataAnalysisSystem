@@ -2788,6 +2788,29 @@
   XSID           EDU_ZZXS_01_01_XSXX                ID
 <EDU_ZZXS_21_A01_ZXBM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZXS_22_A01_ZSGLCZXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZXS_22_A02_ZSGLZSJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XNID           EDU_SYS_01_XN                      ID
+<EDU_ZZXS_22_A03_ZSGLZSJHXD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  JHID           EDU_ZZXS_22_A02_ZSGLZSJH           ID
+  ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
+<EDU_ZZXS_22_A04_ZSGLXSXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  BYXXID         EDU_ZZXS_22_A01_ZSGLCZXX           ID
+  DYZYID         EDU_ZZXS_22_A03_ZSGLZSJHXD         ID
+  DEZYID         EDU_ZZXS_22_A03_ZSGLZSJHXD         ID
+  DSZYID         EDU_ZZXS_22_A03_ZSGLZSJHXD         ID
+  LSID           EDU_ZZXS_22_A03_ZSGLZSJHXD         ID
+  LQZYID         EDU_ZZJX_01_01_ZYXX                ZYBH
+  XNID           EDU_SYS_01_XN                      ID
+<EDU_ZZXS_22_A05_ZSGLJYZM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSID           EDU_ZZXS_01_01_XSXX                ID
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
 <EDU_ZZXX_01_01_ZZXX
   XXJBZM         EDU_JY_XXJYJGJBZ                   DM
   XXZGBMM        EDU_JY_XXJYJGJBZ                   DM

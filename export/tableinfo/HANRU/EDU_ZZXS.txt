@@ -599,3 +599,81 @@ EDU_ZZXS_21_A01_ZXBM  在线报名表
   JF            交费                    nvarchar(200)  非主
   BMIP          报名IP                  nvarchar(200)  非主
 
+EDU_ZZXS_22_A01_ZSGLCZXX  招生管理初中学校表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XXMC          学校名称                nvarchar(200)  非主
+
+EDU_ZZXS_22_A02_ZSGLZSJH  招生管理招生计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JHMC          计划名称                nvarchar(200)  非主
+  XNID          学年ID                  int            非主        学年表
+  KG            开关                    int            非主
+
+EDU_ZZXS_22_A03_ZSGLZSJHXD  招生管理招生计划详单表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JHID          计划ID                  int            非主        招生管理招生计划表
+  ZYMC          专业名称                nvarchar(200)  非主
+  ZYID          专业ID                  int            非主        专业基本信息数据表
+  ZSRS          招生人数                int            非主
+  ZYJS          专业介绍                text           非主
+
+EDU_ZZXS_22_A04_ZSGLXSXX  招生管理新生信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XM            姓名                    nvarchar(200)  非主
+  XB            性别                    nvarchar(200)  非主
+  SFZX          是否住校                nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
+  BYXXID        毕业学校ID              int            非主        招生管理初中学校表
+  YW            语文                    decimal(5, 1)  非主
+  SX            数学                    decimal(5, 1)  非主
+  YY            英语                    decimal(5, 1)  非主
+  SZ            社政                    decimal(5, 1)  非主
+  KX            科学                    decimal(5, 1)  非主
+  TY            体育                    decimal(5, 1)  非主
+  SYJF          实验加分                decimal(5, 1)  非主
+  ZF            总分                    decimal(5, 1)  非主
+  TC            特长                    nvarchar(200)  非主
+  BZ            备注                    text           非主
+  DYZYID        第一志愿ID              int            非主        招生管理招生计划详单表
+  DEZYID        第二志愿ID              int            非主        招生管理招生计划详单表
+  DSZYID        第三志愿ID              int            非主        招生管理招生计划详单表
+  LSID          临时ID                  int            非主        招生管理招生计划详单表
+  LRSJ          录入时间                datetime       非主
+  LRR           录入人                  nvarchar(200)  非主
+  LQSJ          录取时间                datetime       非主
+  LQR           录取人                  nvarchar(200)  非主
+  LQZYID        录取专业ID              int            非主        专业基本信息数据表
+  BH            编号                    nvarchar(200)  主键
+  JFJE          缴费金额                decimal(8, 1)  主键
+  XNID          学年ID                  int            非主        学年表
+
+EDU_ZZXS_22_A05_ZSGLJYZM  招生管理就业证明表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XSID          学生ID                  int            非主        学生信息数据表
+  XSXM          学生姓名                nvarchar(200)  非主
+  XB            性别                    nvarchar(200)  非主
+  ZY            专业                    nvarchar(200)  非主
+  JTDZ          家庭地址                nvarchar(200)  非主
+  LXDH          联系电话                nvarchar(200)  非主
+  JYDW          就业单位                nvarchar(200)  非主
+  DWDH          单位电话                nvarchar(200)  非主
+  JYGW          就业岗位                nvarchar(200)  非主
+  PJYSR         平均月收入              nvarchar(200)  非主
+  JYSJ          就业时间                nvarchar(200)  非主
+  ZYDM          专业代码                nvarchar(200)  非主
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
+  XJH           学籍号                  nvarchar(200)  非主
+  GZHZY         工种或专业              nvarchar(200)  非主
+  SFDK          是否对口                nvarchar(200)  非主
+  JYDD          就业地点                nvarchar(200)  非主
+  JYQX          就业去向                nvarchar(200)  非主
+  DD            地点                    nvarchar(200)  非主
+  JYHT          就业合同                nvarchar(200)  非主
+  SB            社保                    nvarchar(200)  非主
+
