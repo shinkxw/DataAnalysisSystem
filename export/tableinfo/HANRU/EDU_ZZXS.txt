@@ -655,7 +655,7 @@ EDU_ZZXS_22_A04_ZSGLXSXX  招生管理新生信息表
 EDU_ZZXS_22_A05_ZSGLJYZM  招生管理就业证明表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  XSID          学生ID                  int            非主        学生信息数据表
+  XSID          学生ID                  int            非主        学籍基本数据表
   XSXM          学生姓名                nvarchar(200)  非主
   XB            性别                    nvarchar(200)  非主
   ZY            专业                    nvarchar(200)  非主
