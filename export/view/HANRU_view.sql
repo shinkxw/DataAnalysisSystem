@@ -1875,6 +1875,14 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_51_A02
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_51_A02_XSYXKJL_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_55_A04_ZYJXJH_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_55_A04_ZYJXJH_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_55_A06_KCPFXM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_55_A06_KCPFXM_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_01_01_XSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_01_01_XSXX_DISP
@@ -29573,6 +29581,12 @@ SELECT a.[ZYBH]--专业编号
       ,a.[ZXF]--总学分
       ,a.[SSZYML]--所属专业目录
       ,a.[ZYLB]--专业类别名称
+      ,a.[XXZ]--新学制
+      ,a.[XZXF]--新总学分
+      ,a.[PYMB]--培养目标
+      ,a.[PYGG]--培养规格
+      ,a.[ZKS]--总课时
+      ,a.[SFSY]--是否使用
       ,c.ZYMLLB as c_ZJZY_ZYMLLB--自建专业代码 专业目录类别
       ,[cb].MC as c_ZJZY_ZYMLLB_MC--专业目录代码 名称
       ,c.MC as c_ZJZY_MC--自建专业代码 名称
@@ -29826,6 +29840,12 @@ SELECT a.[ID]--编号
       ,h.SSZYML as h_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[hc].MC as h_ZYXX_SSZYML_MC--专业目录代码 名称
       ,h.ZYLB as h_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,h.XXZ as h_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,h.XZXF as h_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,h.PYMB as h_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,h.PYGG as h_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,h.ZKS as h_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,h.SFSY as h_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -29939,6 +29959,12 @@ SELECT a.[XZBDM]--行政班代码
       ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
       ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,c.XXZ as c_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,c.XZXF as c_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,c.PYMB as c_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,c.PYGG as c_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,c.ZKS as c_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,c.SFSY as c_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,d.SCHOOLID as d_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,d.NJMC as d_ZZNJ_NJMC--学校年级数据表 年级名称
       ,d.SSNF as d_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -30099,6 +30125,12 @@ SELECT a.[ID]--编号
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,e.MC as e_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_03_01_ZTJXJH AS a LEFT OUTER JOIN
@@ -30322,6 +30354,12 @@ SELECT a.[ID]--编号
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,e.SCHOOLID as e_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,e.NJMC as e_ZZNJ_NJMC--学校年级数据表 年级名称
       ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -30598,6 +30636,12 @@ SELECT a.[ID]--编号
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,e.SCHOOLID as e_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,e.NJMC as e_ZZNJ_NJMC--学校年级数据表 年级名称
       ,e.SSNF as e_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -33439,6 +33483,12 @@ SELECT a.[ID]--编号
       ,g.SSZYML as g_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[gc].MC as g_ZYXX_SSZYML_MC--专业目录代码 名称
       ,g.ZYLB as g_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,g.XXZ as g_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,g.XZXF as g_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,g.PYMB as g_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,g.PYGG as g_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,g.ZKS as g_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,g.SFSY as g_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,h.SCHOOLID as h_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,h.NJMC as h_ZZNJ_NJMC--学校年级数据表 年级名称
       ,h.SSNF as h_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -33791,6 +33841,12 @@ SELECT a.[ID]--编号
       ,i.SSZYML as i_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[ic].MC as i_ZYXX_SSZYML_MC--专业目录代码 名称
       ,i.ZYLB as i_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,i.XXZ as i_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,i.XZXF as i_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,i.PYMB as i_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,i.PYGG as i_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,i.ZKS as i_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,i.SFSY as i_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,j.SCHOOLID as j_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,j.NJMC as j_ZZNJ_NJMC--学校年级数据表 年级名称
       ,j.SSNF as j_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -33980,6 +34036,12 @@ SELECT a.[ID]--编号
       ,h.SSZYML as h_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[hc].MC as h_ZYXX_SSZYML_MC--专业目录代码 名称
       ,h.ZYLB as h_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,h.XXZ as h_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,h.XZXF as h_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,h.PYMB as h_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,h.PYGG as h_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,h.ZKS as h_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,h.SFSY as h_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -34148,6 +34210,12 @@ SELECT a.[ID]--编号
       ,e.SSZYML as e_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[ec].MC as e_ZYXX_SSZYML_MC--专业目录代码 名称
       ,e.ZYLB as e_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.XXZ as e_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,e.XZXF as e_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,e.PYMB as e_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,e.PYGG as e_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,e.ZKS as e_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,e.SFSY as e_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -34944,6 +35012,12 @@ SELECT a.[ID]--编号
       ,e.SSZYML as e_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[ec].MC as e_ZYXX_SSZYML_MC--专业目录代码 名称
       ,e.ZYLB as e_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.XXZ as e_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,e.XZXF as e_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,e.PYMB as e_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,e.PYGG as e_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,e.ZKS as e_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,e.SFSY as e_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -35245,6 +35319,12 @@ SELECT a.[ID]--编号
       ,e.SSZYML as e_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[ec].MC as e_ZYXX_SSZYML_MC--专业目录代码 名称
       ,e.ZYLB as e_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.XXZ as e_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,e.XZXF as e_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,e.PYMB as e_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,e.PYGG as e_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,e.ZKS as e_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,e.SFSY as e_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -36569,6 +36649,98 @@ FROM dbo.EDU_ZZJX_51_A02_XSYXKJL AS a LEFT OUTER JOIN
       dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
 GO
 
+--专业教学计划表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_55_A04_ZYJXJH_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[ZYID]--专业ID
+      ,a.[FZXXID]--分制信息ID
+      ,a.[KCPFLXID]--课程评分类型ID
+      ,a.[KCBH]--课程名称
+      ,a.[ZXF]--总学分
+      ,a.[ZXS]--总学时
+      ,a.[KKDW]--开课单位
+      ,a.[KSXS]--考试形式
+      ,a.[SKFSM]--授课方式码
+      ,a.[JXDG]--教学大纲
+      ,a.[SFSY]--是否使用
+      ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
+      ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
+      ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
+      ,[cb].MC as c_ZYXX_ZYDM_MC--自建专业代码 名称
+      ,c.ZYMC as c_ZYXX_ZYMC--专业基本信息数据表 专业名称
+      ,c.ZYYWMC as c_ZYXX_ZYYWMC--专业基本信息数据表 专业英文名称
+      ,c.XZ as c_ZYXX_XZ--专业基本信息数据表 学制
+      ,c.ZYFXMC as c_ZYXX_ZYFXMC--专业基本信息数据表 专业方向名称
+      ,c.ZYJC as c_ZYXX_ZYJC--专业基本信息数据表 专业简称
+      ,c.JLNY as c_ZYXX_JLNY--专业基本信息数据表 建立年月
+      ,c.ZYJSS as c_ZYXX_ZYJSS--专业基本信息数据表 专业教师数
+      ,c.KSJGH as c_ZYXX_KSJGH--专业基本信息数据表 开设机构号
+      ,c.ZXF as c_ZYXX_ZXF--专业基本信息数据表 总学分
+      ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
+      ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
+      ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,c.XXZ as c_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,c.XZXF as c_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,c.PYMB as c_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,c.PYGG as c_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,c.ZKS as c_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,c.SFSY as c_ZYXX_SFSY--专业基本信息数据表 是否使用
+      ,d.SCHOOLID as d_FZXX_SCHOOLID--分制信息表 学校
+      ,d.FZMC as d_FZXX_FZMC--分制信息表 分制名称
+      ,d.ZDZ as d_FZXX_ZDZ--分制信息表 最大值
+      ,d.ZXZ as d_FZXX_ZXZ--分制信息表 最小值
+      ,d.JGX as d_FZXX_JGX--分制信息表 及格线
+      ,d.MXF as d_FZXX_MXF--分制信息表 免修对应分
+      ,d.MKF as d_FZXX_MKF--分制信息表 免考对应分
+      ,d.XFPDBIDLB as d_FZXX_XFPDBIDLB--分制信息表 学分评定表ID列表
+      ,d.JDPDBIDLB as d_FZXX_JDPDBIDLB--分制信息表 绩点评定表ID列表
+      ,e.SCHOOLID as e_KCPFLX_SCHOOLID--课程评分类型表 学校
+      ,e.LXMC as e_KCPFLX_LXMC--课程评分类型表 类型名称
+
+FROM dbo.EDU_ZZJX_55_A04_ZYJXJH AS a LEFT OUTER JOIN
+      dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYID = c.ZYBH /*专业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A01_FZXX AS d ON a.FZXXID = d.ID /*分制信息ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A05_KCPFLX AS e ON a.KCPFLXID = e.ID /*课程评分类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZJZY AS [cb] ON c.ZYDM = [cb].DM /*专业代码*/ AND c.SSZYML = [cb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
+      dbo.EDU_ZJ_ZYML AS [cc] ON c.SSZYML = [cc].DM /*所属专业目录*/
+GO
+
+--课程评分项目表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_55_A06_KCPFXM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[LXID]--类型ID
+      ,a.[FXMID]--父项目ID
+      ,a.[XMMC]--项目名称
+      ,a.[SFYZXM]--是否有子项目
+      ,a.[BL]--比例
+      ,a.[SFYXXG]--是否允许修改
+      ,a.[XGSX]--修改上限
+      ,a.[XGXX]--修改下限
+      ,a.[LY]--来源
+      ,a.[PLSX]--排列顺序
+      ,c.SCHOOLID as c_KCPFLX_SCHOOLID--课程评分类型表 学校
+      ,c.LXMC as c_KCPFLX_LXMC--课程评分类型表 类型名称
+      ,d.SCHOOLID as d_KCPFXM_SCHOOLID--课程评分项目表 学校
+      ,d.LXID as d_KCPFXM_LXID--课程评分项目表 类型ID
+      ,d.FXMID as d_KCPFXM_FXMID--课程评分项目表 父项目ID
+      ,d.XMMC as d_KCPFXM_XMMC--课程评分项目表 项目名称
+      ,d.SFYZXM as d_KCPFXM_SFYZXM--课程评分项目表 是否有子项目
+      ,d.BL as d_KCPFXM_BL--课程评分项目表 比例
+      ,d.SFYXXG as d_KCPFXM_SFYXXG--课程评分项目表 是否允许修改
+      ,d.XGSX as d_KCPFXM_XGSX--课程评分项目表 修改上限
+      ,d.XGXX as d_KCPFXM_XGXX--课程评分项目表 修改下限
+      ,d.LY as d_KCPFXM_LY--课程评分项目表 来源
+      ,d.PLSX as d_KCPFXM_PLSX--课程评分项目表 排列顺序
+
+FROM dbo.EDU_ZZJX_55_A06_KCPFXM AS a LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A05_KCPFLX AS c ON a.LXID = c.ID /*类型ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A06_KCPFXM AS d ON a.FXMID = d.ID /*父项目ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+GO
+
 --学生信息数据表
 CREATE VIEW [dbo].[VIEW_EDU_ZZXS_01_01_XSXX_DISP]
 AS
@@ -36743,6 +36915,12 @@ SELECT a.[XSXXID]--学生信息数据表
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
       ,e.XN as e_XN_XN--学年表 学年
       ,f.SCHOOLID as f_XQ_SCHOOLID--学期数据表 学校名
@@ -37463,6 +37641,12 @@ SELECT a.[ID]--编号
       ,k.SSZYML as k_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[kc].MC as k_ZYXX_SSZYML_MC--专业目录代码 名称
       ,k.ZYLB as k_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,k.XXZ as k_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,k.XZXF as k_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,k.PYMB as k_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,k.PYGG as k_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,k.ZKS as k_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,k.SFSY as k_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,l.SCHOOLID as l_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -37776,6 +37960,12 @@ SELECT a.[XSXXID]--学生信息数据表
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,e.SCHOOLID as e_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,e.ZYXXID as e_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,e.ZZNJID as e_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -37992,6 +38182,12 @@ SELECT a.[ID]--学籍异动表编号
       ,g.SSZYML as g_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[gc].MC as g_ZYXX_SSZYML_MC--专业目录代码 名称
       ,g.ZYLB as g_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,g.XXZ as g_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,g.XZXF as g_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,g.PYMB as g_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,g.PYGG as g_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,g.ZKS as g_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,g.SFSY as g_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,h.SCHOOLID as h_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,h.ZYXXID as h_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,h.ZZNJID as h_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -38030,6 +38226,12 @@ SELECT a.[ID]--学籍异动表编号
       ,j.SSZYML as j_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[jc].MC as j_ZYXX_SSZYML_MC--专业目录代码 名称
       ,j.ZYLB as j_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,j.XXZ as j_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,j.XZXF as j_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,j.PYMB as j_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,j.PYGG as j_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,j.ZKS as j_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,j.SFSY as j_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,k.ZZNJID as k_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -41832,6 +42034,12 @@ SELECT a.[ID]--编号
       ,f.SSZYML as f_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[fc].MC as f_ZYXX_SSZYML_MC--专业目录代码 名称
       ,f.ZYLB as f_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,f.XXZ as f_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,f.XZXF as f_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,f.PYMB as f_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,f.PYGG as f_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,f.ZKS as f_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,f.SFSY as f_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,g.SCHOOLID as g_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,g.NJMC as g_ZZNJ_NJMC--学校年级数据表 年级名称
       ,g.SSNF as g_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -42130,6 +42338,12 @@ SELECT a.[ID]--编号
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
 
 FROM dbo.EDU_ZZXS_22_A03_ZSGLZSJHXD AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_22_A02_ZSGLZSJH AS c ON a.JHID = c.ID /*计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -42220,6 +42434,12 @@ SELECT a.[ID]--编号
       ,i.SSZYML as i_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[ic].MC as i_ZYXX_SSZYML_MC--专业目录代码 名称
       ,i.ZYLB as i_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,i.XXZ as i_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,i.XZXF as i_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,i.PYMB as i_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,i.PYGG as i_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,i.ZKS as i_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,i.SFSY as i_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,j.SCHOOLID as j_XN_SCHOOLID--学年表 学校名
       ,j.XN as j_XN_XN--学年表 学年
 
@@ -42571,6 +42791,12 @@ SELECT a.[ID]--编号
       ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
       ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,c.XXZ as c_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,c.XZXF as c_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,c.PYMB as c_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,c.PYGG as c_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,c.ZKS as c_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,c.SFSY as c_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,d.SCHOOLID as d_XN_SCHOOLID--学年表 学校名
       ,d.XN as d_XN_XN--学年表 学年
 

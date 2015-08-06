@@ -2530,6 +2530,25 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   KCID           EDU_ZZJX_51_A01_YXKKC              ID
   XSID           EDU_ZZXS_01_01_XSXX                ID
+<EDU_ZZJX_55_A01_FZXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_55_A02_XFPD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_55_A03_JDPD
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_55_A04_ZYJXJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
+  FZXXID         EDU_ZZJX_55_A01_FZXX               ID
+  KCPFLXID       EDU_ZZJX_55_A05_KCPFLX             ID
+<EDU_ZZJX_55_A05_KCPFLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_55_A06_KCPFXM
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LXID           EDU_ZZJX_55_A05_KCPFLX             ID
+  FXMID          EDU_ZZJX_55_A06_KCPFXM             ID
+<EDU_ZZJX_55_A90_XFHASH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXS_01_01_XSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFZJLXM        EDU_JY_SFZJLX                      DM

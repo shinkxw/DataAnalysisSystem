@@ -80,6 +80,12 @@ SELECT a.[XSXXID]--学生信息数据表
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,e.SCHOOLID as e_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,e.ZYXXID as e_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,e.ZZNJID as e_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表

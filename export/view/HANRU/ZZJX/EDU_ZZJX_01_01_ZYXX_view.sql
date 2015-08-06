@@ -16,6 +16,12 @@ SELECT a.[ZYBH]--专业编号
       ,a.[ZXF]--总学分
       ,a.[SSZYML]--所属专业目录
       ,a.[ZYLB]--专业类别名称
+      ,a.[XXZ]--新学制
+      ,a.[XZXF]--新总学分
+      ,a.[PYMB]--培养目标
+      ,a.[PYGG]--培养规格
+      ,a.[ZKS]--总课时
+      ,a.[SFSY]--是否使用
       ,c.ZYMLLB as c_ZJZY_ZYMLLB--自建专业代码 专业目录类别
       ,[cb].MC as c_ZJZY_ZYMLLB_MC--专业目录代码 名称
       ,c.MC as c_ZJZY_MC--自建专业代码 名称

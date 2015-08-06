@@ -35,6 +35,12 @@ SELECT a.[XZBDM]--行政班代码
       ,c.SSZYML as c_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[cc].MC as c_ZYXX_SSZYML_MC--专业目录代码 名称
       ,c.ZYLB as c_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,c.XXZ as c_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,c.XZXF as c_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,c.PYMB as c_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,c.PYGG as c_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,c.ZKS as c_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,c.SFSY as c_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,d.SCHOOLID as d_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,d.NJMC as d_ZZNJ_NJMC--学校年级数据表 年级名称
       ,d.SSNF as d_ZZNJ_SSNF--学校年级数据表 所属年份

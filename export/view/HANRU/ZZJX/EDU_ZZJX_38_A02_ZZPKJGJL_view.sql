@@ -53,6 +53,12 @@ SELECT a.[ID]--编号
       ,e.SSZYML as e_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[ec].MC as e_ZYXX_SSZYML_MC--专业目录代码 名称
       ,e.ZYLB as e_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,e.XXZ as e_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,e.XZXF as e_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,e.PYMB as e_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,e.PYGG as e_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,e.ZKS as e_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,e.SFSY as e_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份

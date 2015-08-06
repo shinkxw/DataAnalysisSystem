@@ -146,6 +146,12 @@ SELECT a.[ID]--编号
       ,h.SSZYML as h_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[hc].MC as h_ZYXX_SSZYML_MC--专业目录代码 名称
       ,h.ZYLB as h_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,h.XXZ as h_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,h.XZXF as h_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,h.PYMB as h_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,h.PYGG as h_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,h.ZKS as h_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,h.SFSY as h_ZYXX_SFSY--专业基本信息数据表 是否使用
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份

@@ -29,6 +29,12 @@ SELECT a.[ID]--编号
       ,d.SSZYML as d_ZYXX_SSZYML--专业基本信息数据表 所属专业目录
       ,[dc].MC as d_ZYXX_SSZYML_MC--专业目录代码 名称
       ,d.ZYLB as d_ZYXX_ZYLB--专业基本信息数据表 专业类别名称
+      ,d.XXZ as d_ZYXX_XXZ--专业基本信息数据表 新学制
+      ,d.XZXF as d_ZYXX_XZXF--专业基本信息数据表 新总学分
+      ,d.PYMB as d_ZYXX_PYMB--专业基本信息数据表 培养目标
+      ,d.PYGG as d_ZYXX_PYGG--专业基本信息数据表 培养规格
+      ,d.ZKS as d_ZYXX_ZKS--专业基本信息数据表 总课时
+      ,d.SFSY as d_ZYXX_SFSY--专业基本信息数据表 是否使用
 
 FROM dbo.EDU_ZZXS_22_A03_ZSGLZSJHXD AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_22_A02_ZSGLZSJH AS c ON a.JHID = c.ID /*计划ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

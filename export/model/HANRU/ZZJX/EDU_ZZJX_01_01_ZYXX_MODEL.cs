@@ -17,6 +17,8 @@ namespace HanRuEdu.LDAL
             KSJGH = "";
             ZXF = "";
             ZYLB = "";
+            PYMB = "";
+            PYGG = "";
         }
         public class EDU_ZZJX_01_01_ZYXX_metadata
         {
@@ -107,6 +109,41 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String ZYLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "新学制")]
+            public Int32 XXZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "新总学分")]
+            [Range(typeof(decimal), "0", "9999")]
+            public decimal XZXF { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "培养目标")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PYMB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "培养规格")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PYGG { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "总课时")]
+            public Int32 ZKS { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否使用")]
+            public Int32 SFSY { get; set; }
 
 
         }
