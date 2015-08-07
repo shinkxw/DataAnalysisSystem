@@ -5738,6 +5738,7 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A15_DFJG](
 	[TJSJ]  datetime  NOT NULL,--添加时间
 	[SHZT]  int  NOT NULL,--审核状态
 	[SHJLID]  int  NOT NULL,--审核记录ID
+	[CKSJMC]  nvarchar(50)  NOT NULL,--参考时间名称
 CONSTRAINT [PK_EDU_OAXT_50_A15_DFJG] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -8260,6 +8261,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'SHZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核记录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'SHJLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参考时间名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A15_DFJG', @level2type=N'COLUMN',@level2name=N'CKSJMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'附加字段表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A16_FJZD'
 GO
@@ -25600,7 +25603,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_01_01_ZYXX](
 	[ZYFXMC]  nvarchar(100)  NOT NULL,--专业方向名称
 	[ZYJC]  nvarchar(100)  NOT NULL,--专业简称
 	[JLNY]  nvarchar(6)  NOT NULL,--建立年月
-	[ZYJSS]  decimal(2, 0)  NULL,--专业教师数
+	[ZYJSS]  decimal(3, 0)  NULL,--专业教师数
 	[KSJGH]  nvarchar(6)  NOT NULL,--开设机构号
 	[ZXF]  nvarchar(10)  NOT NULL,--总学分
 	[SSZYML]  nvarchar(1)  NULL,--所属专业目录

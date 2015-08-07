@@ -60,6 +60,7 @@ SELECT a.[ID]--编号
       ,f.TJSJ as f_DFJG_TJSJ--打分结果表 添加时间
       ,f.SHZT as f_DFJG_SHZT--打分结果表 审核状态
       ,f.SHJLID as f_DFJG_SHJLID--打分结果表 审核记录ID
+      ,f.CKSJMC as f_DFJG_CKSJMC--打分结果表 参考时间名称
       ,g.SCHOOLID as g_FJZD_SCHOOLID--附加字段表 学校ID
       ,g.XMID as g_FJZD_XMID--附加字段表 项目ID
       ,g.DFJDID as g_FJZD_DFJDID--附加字段表 打分节点ID

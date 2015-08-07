@@ -15,6 +15,7 @@ namespace HanRuEdu.LDAL
             DFYHID = "";
             CKSJ = DateTime.Now;
             TJSJ = DateTime.Now;
+            CKSJMC = "";
         }
         public class EDU_OAXT_50_A15_DFJG_metadata
         {
@@ -110,6 +111,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "审核记录")]
             public Int32 SHJLID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "参考时间名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CKSJMC { get; set; }
 
 
         }

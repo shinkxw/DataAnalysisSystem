@@ -53,6 +53,7 @@ SELECT a.[ID]--编号
       ,e.TJSJ as e_DFJG_TJSJ--打分结果表 添加时间
       ,e.SHZT as e_DFJG_SHZT--打分结果表 审核状态
       ,e.SHJLID as e_DFJG_SHJLID--打分结果表 审核记录ID
+      ,e.CKSJMC as e_DFJG_CKSJMC--打分结果表 参考时间名称
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,'' as f_USER_PWD--应用系统用户表 密码

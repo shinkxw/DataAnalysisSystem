@@ -19,6 +19,7 @@ SELECT a.[ID]--编号
       ,a.[TJSJ]--添加时间
       ,a.[SHZT]--审核状态
       ,a.[SHJLID]--审核记录ID
+      ,a.[CKSJMC]--参考时间名称
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID

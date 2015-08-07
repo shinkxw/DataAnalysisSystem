@@ -472,7 +472,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_01_01_ZYXX](
 	[ZYFXMC]  nvarchar(100)  NOT NULL,--专业方向名称
 	[ZYJC]  nvarchar(100)  NOT NULL,--专业简称
 	[JLNY]  nvarchar(6)  NOT NULL,--建立年月
-	[ZYJSS]  decimal(2, 0)  NULL,--专业教师数
+	[ZYJSS]  decimal(3, 0)  NULL,--专业教师数
 	[KSJGH]  nvarchar(6)  NOT NULL,--开设机构号
 	[ZXF]  nvarchar(10)  NOT NULL,--总学分
 	[SSZYML]  nvarchar(1)  NULL,--所属专业目录

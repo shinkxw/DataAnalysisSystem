@@ -80,7 +80,7 @@ namespace HanRuEdu.LDAL
 
 
             [Display(Name = "专业教师数")]
-            [Range(typeof(decimal), "0", "99")]
+            [Range(typeof(decimal), "0", "999")]
             public decimal ZYJSS { get; set; }
 
 

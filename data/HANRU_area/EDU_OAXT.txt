@@ -1459,6 +1459,7 @@
             <name="TJSJ" exp="添加时间" type="datetime" />
             <name="SHZT" exp="审核状态" type="int" />
             <name="SHJLID" exp="审核记录ID" type="int" />
+            <name="CKSJMC" exp="参考时间名称" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A16_FJZD" exp="附加字段表">

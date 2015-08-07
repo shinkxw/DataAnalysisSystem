@@ -9,7 +9,7 @@ EDU_ZZJX_01_01_ZYXX  专业基本信息数据表
   ZYFXMC        专业方向名称            nvarchar(100)  非主
   ZYJC          专业简称                nvarchar(100)  非主
   JLNY          建立年月                nvarchar(6)    非主
-  ZYJSS         专业教师数              decimal(2, 0)  非主
+  ZYJSS         专业教师数              decimal(3, 0)  非主
   KSJGH         开设机构号              nvarchar(6)    非主        校内机构数据类表
   ZXF           总学分                  nvarchar(10)   非主
   SSZYML        所属专业目录            nvarchar(1)    非主        专业目录代码
