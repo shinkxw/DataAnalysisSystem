@@ -63,6 +63,11 @@ namespace HanRuEdu.LDAL
             public Int32 PLSX { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "分制信息")]
+            public Int32 FZXXID { get; set; }
+
+
         }
     }
 }

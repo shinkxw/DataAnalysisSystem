@@ -1161,6 +1161,7 @@
             <name="FSXX" exp="分数下限" type="decimal(5, 2)" />
             <name="BL" exp="所占课程学分比例" type="decimal(5, 2)" />
             <name="PLSX" exp="排列顺序" type="int" />
+            <name="FZXXID" exp="分制信息ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A03_JDPD" exp="绩点评定表">
@@ -1174,6 +1175,7 @@
             <name="LX" exp="类型" type="int" remark="基础绩点/计算" />
             <name="JSGS" exp="计算公式" type="int" remark="预设" />
             <name="PLSX" exp="排列顺序" type="int" />
+            <name="FZXXID" exp="分制信息ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A04_ZYJXJH" exp="专业教学计划表">
