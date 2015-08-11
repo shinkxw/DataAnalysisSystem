@@ -9,8 +9,7 @@ class ScriptLoader
   #加载指定目录下的所有脚本文件
   def self.load_all(loading_path)
     load(loading_path)
-    directory_name_arr = get_directory(loading_path)
-    directory_name_arr.each do |directory_name|
+    each_directory(loading_path) do |directory_name|
       new_loading_path = loading_path + "/" + directory_name
       load_all(new_loading_path)
     end
@@ -18,8 +17,7 @@ class ScriptLoader
   #加载指定目录中的所有脚本文件
   def self.load(loading_path)
     $:.unshift(loading_path)
-    script_name_arr = get_script(loading_path)
-    script_name_arr.each do |script_name|
+    each_script(loading_path) do |script_name|
       load_script(script_name)
     end
   end
@@ -35,23 +33,17 @@ class ScriptLoader
     end
   end
   #返回指定目录中的所有目录名
-  def self.get_directory(path)
-    result = []
-    Dir.foreach(path) do |file|
-      result.push(file) if !file.include?(".")
-    end
-    result
+  def self.each_directory(path)
+    Dir.foreach(path){|file| yield file if !file.include?(".")}
   end
   #返回指定目录中的所有脚本文件名
-  def self.get_script(path)
-    result = []
+  def self.each_script(path)
     Dir.foreach(path) do |file|
       if File.extname(file) == ".rb"
         detect_script("#{path}/#{file}")
-        result.push(file)
+        yield file
       end
     end
-    result
   end
   #检测脚本文件
   def self.detect_script(file_path)
