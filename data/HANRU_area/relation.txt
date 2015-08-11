@@ -2538,7 +2538,7 @@
 <EDU_ZZJX_55_A03_JDPD
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   FZXXID         EDU_ZZJX_55_A01_FZXX               ID
-<EDU_ZZJX_55_A04_ZYJXJH
+<EDU_ZZJX_55_A04_ZYKCK
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
   FZXXID         EDU_ZZJX_55_A01_FZXX               ID
@@ -2549,6 +2549,16 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   LXID           EDU_ZZJX_55_A05_KCPFLX             ID
   FXMID          EDU_ZZJX_55_A06_KCPFXM             ID
+<EDU_ZZJX_55_A07_ZYJXJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
+  ZYKCKID        EDU_ZZJX_55_A04_ZYKCK              ID
+<EDU_ZZJX_55_A08_NJJXJH
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  ZYKCKID        EDU_ZZJX_55_A04_ZYKCK              ID
 <EDU_ZZJX_55_A90_XFHASH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXS_01_01_XSXX

@@ -1001,7 +1001,7 @@ EDU_ZZJX_55_A03_JDPD  绩点评定表
   PLSX          排列顺序                int            非主
   FZXXID        分制信息ID              int            非主        分制信息表
 
-EDU_ZZJX_55_A04_ZYJXJH  专业教学计划表
+EDU_ZZJX_55_A04_ZYKCK  专业课程库表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
   ZYID          专业ID                  int            非主        专业基本信息数据表
@@ -1034,6 +1034,25 @@ EDU_ZZJX_55_A06_KCPFXM  课程评分项目表
   XGXX          修改下限                decimal(5, 2)  非主
   LY            来源                    nvarchar(20)   非主
   PLSX          排列顺序                int            非主
+
+EDU_ZZJX_55_A07_ZYJXJH  专业教学计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  ZYID          专业ID                  int            非主        专业基本信息数据表
+  ZYKCKID       专业课程库ID            int            非主        专业课程库表
+  XQDH          学期代号                int            非主
+  XF            学分                    decimal(5, 2)  非主
+  KS            课时                    int            非主
+
+EDU_ZZJX_55_A08_NJJXJH  年级教学计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZYID          专业ID                  int            非主        专业基本信息数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  ZYKCKID       专业课程库ID            int            非主        专业课程库表
+  XF            学分                    decimal(5, 2)  非主
+  KS            课时                    int            非主
 
 EDU_ZZJX_55_A90_XFHASH  学分哈希表
   KEY           键                      int            主键

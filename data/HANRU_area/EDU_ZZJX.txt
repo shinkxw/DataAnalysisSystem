@@ -1178,7 +1178,7 @@
             <name="FZXXID" exp="分制信息ID" type="int" />
         </field_area>
     </table>
-    <table name="EDU_ZZJX_55_A04_ZYJXJH" exp="专业教学计划表">
+    <table name="EDU_ZZJX_55_A04_ZYKCK" exp="专业课程库表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
@@ -1216,6 +1216,29 @@
             <name="XGXX" exp="修改下限" type="decimal(5, 2)" />
             <name="LY" exp="来源" type="nvarchar(20)" />
             <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A07_ZYJXJH" exp="专业教学计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ZYID" exp="专业ID" type="int" />
+            <name="ZYKCKID" exp="专业课程库ID" type="int" />
+            <name="XQDH" exp="学期代号" type="int" />
+            <name="XF" exp="学分" type="decimal(5, 2)" />
+            <name="KS" exp="课时" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A08_NJJXJH" exp="年级教学计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZYID" exp="专业ID" type="int" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" />
+            <name="ZYKCKID" exp="专业课程库ID" type="int" />
+            <name="XF" exp="学分" type="decimal(5, 2)" />
+            <name="KS" exp="课时" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A90_XFHASH" exp="学分哈希表">
