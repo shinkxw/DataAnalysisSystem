@@ -416,6 +416,7 @@
             <name="YHID" exp="用户ID" type="nvarchar(20)" />
             <name="DXZID" exp="对象组ID" type="int" />
             <name="JSID" exp="角色ID" type="int" />
+            <name="DXZMC" exp="对象组名称" type="nvarchar(50)" />
         </field_area>
     </table>
 </namespace>

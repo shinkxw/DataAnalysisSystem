@@ -2885,6 +2885,7 @@ SELECT a.[ID]--编号
       ,a.[YHID]--用户ID
       ,a.[DXZID]--对象组ID
       ,a.[JSID]--角色ID
+      ,a.[DXZMC]--对象组名称
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
       ,'' as c_USER_PWD--应用系统用户表 密码

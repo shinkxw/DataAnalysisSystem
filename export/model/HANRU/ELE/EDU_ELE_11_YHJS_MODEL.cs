@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ELE_11_YHJS()
         {
             YHID = "";
+            DXZMC = "";
         }
         public class EDU_ELE_11_YHJS_metadata
         {
@@ -38,6 +39,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "角色")]
             public Int32 JSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "对象组名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DXZMC { get; set; }
 
 
         }

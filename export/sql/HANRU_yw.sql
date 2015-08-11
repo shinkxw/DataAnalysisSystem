@@ -1078,6 +1078,7 @@ CREATE TABLE [dbo].[EDU_ELE_11_YHJS](
 	[YHID]  nvarchar(20)  NOT NULL,--用户ID
 	[DXZID]  int  NOT NULL,--对象组ID
 	[JSID]  int  NOT NULL,--角色ID
+	[DXZMC]  nvarchar(50)  NOT NULL,--对象组名称
 CONSTRAINT [PK_EDU_ELE_11_YHJS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1701,6 +1702,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象组ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_11_YHJS', @level2type=N'COLUMN',@level2name=N'DXZID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'角色ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_11_YHJS', @level2type=N'COLUMN',@level2name=N'JSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'对象组名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_11_YHJS', @level2type=N'COLUMN',@level2name=N'DXZMC'
 GO
 --空间名：EDU_JPXT  生成器：SqlBuilder0.1
 

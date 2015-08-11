@@ -342,4 +342,5 @@ EDU_ELE_11_YHJS  用户角色表
   YHID          用户ID                  nvarchar(20)   非主        应用系统用户表
   DXZID         对象组ID                int            非主        对象组表
   JSID          角色ID                  int            非主        对象组角色表
+  DXZMC         对象组名称              nvarchar(50)   非主
 
