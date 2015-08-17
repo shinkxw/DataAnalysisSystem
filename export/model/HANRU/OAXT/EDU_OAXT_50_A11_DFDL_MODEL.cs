@@ -52,6 +52,16 @@ namespace HanRuEdu.LDAL
             public Int32 SFKQ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否记录短信")]
+            public Int32 SFJRDX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否自动发送短信")]
+            public Int32 SHZDFSDX { get; set; }
+
+
         }
     }
 }

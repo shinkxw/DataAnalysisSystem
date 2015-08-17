@@ -21,6 +21,8 @@ SELECT a.[ID]--编号
       ,d.SFXYSH as d_DFDL_SFXYSH--打分大类表 是否需要审核
       ,d.SHFS as d_DFDL_SHFS--打分大类表 审核方式
       ,d.SFKQ as d_DFDL_SFKQ--打分大类表 是否开启
+      ,d.SFJRDX as d_DFDL_SFJRDX--打分大类表 是否记录短信
+      ,d.SHZDFSDX as d_DFDL_SHZDFSDX--打分大类表 是否自动发送短信
       ,e.SCHOOLID as e_DFJD_SCHOOLID--打分节点表 学校ID
       ,e.XMID as e_DFJD_XMID--打分节点表 项目ID
       ,e.DLID as e_DFJD_DLID--打分节点表 大类ID

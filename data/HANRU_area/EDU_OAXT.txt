@@ -1387,6 +1387,8 @@
             <name="SFXYSH" exp="是否需要审核" type="int" />
             <name="SHFS" exp="审核方式" type="int" />
             <name="SFKQ" exp="是否开启" type="int" />
+            <name="SFJRDX" exp="是否记录短信" type="int" />
+            <name="SHZDFSDX" exp="是否自动发送短信" type="int" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A12_DFJD" exp="打分节点表">
@@ -1608,6 +1610,22 @@
             <name="KCKYHXMLB" exp="可查看用户姓名列表" type="text" />
             <name="ZSKQSJ" exp="展示开启时间" type="datetime" />
             <name="ZSGBSJ" exp="展示关闭时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_50_A60_DFDXJL" exp="打分短信记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="XMID" exp="项目ID" type="int" p="T" />
+            <name="DFDLID" exp="打分大类ID" type="int" />
+            <name="DFJDID" exp="打分节点ID" type="int" />
+            <name="BDFDXBM" exp="被打分对象编码" type="nvarchar(50)" />
+            <name="BDFDXMC" exp="被打分对象名称" type="nvarchar(50)" />
+            <name="DHHM" exp="电话号码" type="nvarchar(20)" />
+            <name="DXNR" exp="短信内容" type="text" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="FSSJ" exp="发送时间" type="datetime" />
+            <name="FSZT" exp="发送状态" type="int" />
         </field_area>
     </table>
 </namespace>

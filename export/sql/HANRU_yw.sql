@@ -3333,6 +3333,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_50_A54_DFTJ
             and   type = 'U')
    drop table EDU_OAXT_50_A54_DFTJJGST
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_50_A60_DFDXJL')
+            and   type = 'U')
+   drop table EDU_OAXT_50_A60_DFDXJL
+go
 --文件基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_01_01_WJJBSJ]') AND type in (N'U'))
 BEGIN
@@ -5629,6 +5634,8 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A11_DFDL](
 	[SFXYSH]  int  NOT NULL,--是否需要审核
 	[SHFS]  int  NOT NULL,--审核方式
 	[SFKQ]  int  NOT NULL,--是否开启
+	[SFJRDX]  int  NOT NULL,--是否记录短信
+	[SHZDFSDX]  int  NOT NULL,--是否自动发送短信
 CONSTRAINT [PK_EDU_OAXT_50_A11_DFDL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5981,6 +5988,32 @@ CREATE TABLE [dbo].[EDU_OAXT_50_A54_DFTJJGST](
 	[ZSKQSJ]  datetime  NOT NULL,--展示开启时间
 	[ZSGBSJ]  datetime  NOT NULL,--展示关闭时间
 CONSTRAINT [PK_EDU_OAXT_50_A54_DFTJJGST] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC,
+	[XMID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--打分短信记录表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_50_A60_DFDXJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_50_A60_DFDXJL](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[XMID]  int  NOT NULL,--项目ID
+	[DFDLID]  int  NOT NULL,--打分大类ID
+	[DFJDID]  int  NOT NULL,--打分节点ID
+	[BDFDXBM]  nvarchar(50)  NOT NULL,--被打分对象编码
+	[BDFDXMC]  nvarchar(50)  NOT NULL,--被打分对象名称
+	[DHHM]  nvarchar(20)  NOT NULL,--电话号码
+	[DXNR]  text  NOT NULL,--短信内容
+	[TJSJ]  datetime  NOT NULL,--添加时间
+	[FSSJ]  datetime  NOT NULL,--发送时间
+	[FSZT]  int  NOT NULL,--发送状态
+CONSTRAINT [PK_EDU_OAXT_50_A60_DFDXJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC,
@@ -8145,6 +8178,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核方式' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否开启' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'SFKQ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否记录短信' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'SFJRDX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否自动发送短信' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A11_DFDL', @level2type=N'COLUMN',@level2name=N'SHZDFSDX'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分节点表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A12_DFJD', @level2type=N'COLUMN',@level2name=N'ID'
@@ -8508,6 +8545,32 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示开启时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSKQSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'展示关闭时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A54_DFTJJGST', @level2type=N'COLUMN',@level2name=N'ZSGBSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分短信记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'项目ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'XMID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分大类ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'DFDLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'打分节点ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'DFJDID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被打分对象编码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'BDFDXBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'被打分对象名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'BDFDXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电话号码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'DHHM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'短信内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'DXNR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'FSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'FSZT'
 GO
 --空间名：EDU_WZXT  生成器：SqlBuilder0.1
 

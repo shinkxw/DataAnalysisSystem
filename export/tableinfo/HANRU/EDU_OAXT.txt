@@ -1179,6 +1179,8 @@ EDU_OAXT_50_A11_DFDL  打分大类表
   SFXYSH        是否需要审核            int            非主
   SHFS          审核方式                int            非主
   SFKQ          是否开启                int            非主
+  SFJRDX        是否记录短信            int            非主
+  SHZDFSDX      是否自动发送短信        int            非主
 
 EDU_OAXT_50_A12_DFJD  打分节点表
   ID            编号                    int            主键
@@ -1374,4 +1376,18 @@ EDU_OAXT_50_A54_DFTJJGST  打分统计结果视图表
   KCKYHXMLB     可查看用户姓名列表      text           非主
   ZSKQSJ        展示开启时间            datetime       非主
   ZSGBSJ        展示关闭时间            datetime       非主
+
+EDU_OAXT_50_A60_DFDXJL  打分短信记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  XMID          项目ID                  int            主键        打分项目表
+  DFDLID        打分大类ID              int            非主        打分大类表
+  DFJDID        打分节点ID              int            非主        打分节点表
+  BDFDXBM       被打分对象编码          nvarchar(50)   非主
+  BDFDXMC       被打分对象名称          nvarchar(50)   非主
+  DHHM          电话号码                nvarchar(20)   非主
+  DXNR          短信内容                text           非主
+  TJSJ          添加时间                datetime       非主
+  FSSJ          发送时间                datetime       非主
+  FSZT          发送状态                int            非主
 

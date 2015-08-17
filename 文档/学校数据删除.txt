@@ -1,0 +1,6 @@
+
+DBEntityForQuery.open('HanruEdu', DBConnector.new('192.168.0.8')) do |db|
+  db.select{|t| t.fields.any?{|f| f.name.upcase == "SCHOOLID"}}.sort_by {|t| t.name}.each do |table|
+    puts "DELETE FROM [HANRUEDU].[dbo].[#{table.name}] WHERE SCHOOLID!=@SCHOOLID"
+  end
+end

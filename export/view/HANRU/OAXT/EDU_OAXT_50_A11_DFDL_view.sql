@@ -10,6 +10,8 @@ SELECT a.[ID]--编号
       ,a.[SFXYSH]--是否需要审核
       ,a.[SHFS]--审核方式
       ,a.[SFKQ]--是否开启
+      ,a.[SFJRDX]--是否记录短信
+      ,a.[SHZDFSDX]--是否自动发送短信
       ,c.SCHOOLID as c_DFXM_SCHOOLID--打分项目表 学校ID
       ,c.XMMC as c_DFXM_XMMC--打分项目表 项目名称
       ,c.APPID as c_DFXM_APPID--打分项目表 所在应用ID
