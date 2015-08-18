@@ -88,6 +88,7 @@ SELECT a.[ID]--编号
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
+      ,e.XH as e_DSZDS_XH--导师制导师表 序号
       ,f.SCHOOLID as f_DSZXSDD_SCHOOLID--导师制学生等第表 学校
       ,f.DDMC as f_DSZXSDD_DDMC--导师制学生等第表 等第名称
       ,f.PLSX as f_DSZXSDD_PLSX--导师制学生等第表 排列顺序

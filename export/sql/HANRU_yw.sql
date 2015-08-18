@@ -17228,6 +17228,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A02_DSZJS](
 	[GNMCLB]  text  NOT NULL,--功能名称列表
 	[JSLX]  int  NOT NULL,--角色类型
 	[NJID]  nvarchar(10)  NOT NULL,--年级ID
+	[KXXSSX]  int  NOT NULL,--可选学生上限
 CONSTRAINT [PK_EDU_ZXXS_57_A02_DSZJS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -17247,6 +17248,7 @@ CREATE TABLE [dbo].[EDU_ZXXS_57_A03_DSZDS](
 	[JSID]  int  NOT NULL,--教师ID
 	[JUESEID]  int  NOT NULL,--角色ID
 	[TJSJ]  datetime  NOT NULL,--添加时间
+	[XH]  int  NOT NULL,--序号
 CONSTRAINT [PK_EDU_ZXXS_57_A03_DSZDS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -18538,6 +18540,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'角色类型' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A02_DSZJS', @level2type=N'COLUMN',@level2name=N'NJID'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'可选学生上限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A02_DSZJS', @level2type=N'COLUMN',@level2name=N'KXXSSX'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制导师表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A03_DSZDS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A03_DSZDS', @level2type=N'COLUMN',@level2name=N'ID'
@@ -18551,6 +18555,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'角色ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A03_DSZDS', @level2type=N'COLUMN',@level2name=N'JUESEID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A03_DSZDS', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'序号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A03_DSZDS', @level2type=N'COLUMN',@level2name=N'XH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师制导师学生结对表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_57_A04_DSZDSXSJD'
 GO

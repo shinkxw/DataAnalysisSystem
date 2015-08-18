@@ -524,6 +524,7 @@
             <name="GNMCLB" exp="功能名称列表" type="text" />
             <name="JSLX" exp="角色类型" type="int" />
             <name="NJID" exp="年级ID" type="nvarchar(10)" />
+            <name="KXXSSX" exp="可选学生上限" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A03_DSZDS" exp="导师制导师表">
@@ -534,6 +535,7 @@
             <name="JSID" exp="教师ID" type="int" />
             <name="JUESEID" exp="角色ID" type="int" />
             <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="XH" exp="序号" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_57_A04_DSZDSXSJD" exp="导师制导师学生结对表">

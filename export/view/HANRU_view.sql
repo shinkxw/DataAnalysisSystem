@@ -20349,6 +20349,7 @@ SELECT a.[ID]--编号
       ,a.[GNMCLB]--功能名称列表
       ,a.[JSLX]--角色类型
       ,a.[NJID]--年级ID
+      ,a.[KXXSSX]--可选学生上限
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -20376,6 +20377,7 @@ SELECT a.[ID]--编号
       ,a.[JSID]--教师ID
       ,a.[JUESEID]--角色ID
       ,a.[TJSJ]--添加时间
+      ,a.[XH]--序号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -20456,6 +20458,7 @@ SELECT a.[ID]--编号
       ,e.GNMCLB as e_DSZJS_GNMCLB--导师制角色表 功能名称列表
       ,e.JSLX as e_DSZJS_JSLX--导师制角色表 角色类型
       ,e.NJID as e_DSZJS_NJID--导师制角色表 年级ID
+      ,e.KXXSSX as e_DSZJS_KXXSSX--导师制角色表 可选学生上限
 
 FROM dbo.EDU_ZXXS_57_A03_DSZDS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -20501,6 +20504,7 @@ SELECT a.[ID]--编号
       ,d.JSID as d_DSZDS_JSID--导师制导师表 教师ID
       ,d.JUESEID as d_DSZDS_JUESEID--导师制导师表 角色ID
       ,d.TJSJ as d_DSZDS_TJSJ--导师制导师表 添加时间
+      ,d.XH as d_DSZDS_XH--导师制导师表 序号
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,e.XH as e_XSXX_XH--学生基本数据子类表 学号
       ,e.XM as e_XSXX_XM--学生基本数据子类表 姓名
@@ -20639,6 +20643,7 @@ SELECT a.[ID]--编号
       ,d.GNMCLB as d_DSZJS_GNMCLB--导师制角色表 功能名称列表
       ,d.JSLX as d_DSZJS_JSLX--导师制角色表 角色类型
       ,d.NJID as d_DSZJS_NJID--导师制角色表 年级ID
+      ,d.KXXSSX as d_DSZJS_KXXSSX--导师制角色表 可选学生上限
 
 FROM dbo.EDU_ZXXS_57_A06_DSZJSMB AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -20672,6 +20677,7 @@ SELECT a.[ID]--编号
       ,d.JSID as d_DSZDS_JSID--导师制导师表 教师ID
       ,d.JUESEID as d_DSZDS_JUESEID--导师制导师表 角色ID
       ,d.TJSJ as d_DSZDS_TJSJ--导师制导师表 添加时间
+      ,d.XH as d_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_57_A11_DSZHD AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -20778,6 +20784,7 @@ SELECT a.[ID]--编号
       ,f.JSID as f_DSZDS_JSID--导师制导师表 教师ID
       ,f.JUESEID as f_DSZDS_JUESEID--导师制导师表 角色ID
       ,f.TJSJ as f_DSZDS_TJSJ--导师制导师表 添加时间
+      ,f.XH as f_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_57_A12_DSZXSHDBXJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -20893,6 +20900,7 @@ SELECT a.[ID]--编号
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
+      ,e.XH as e_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_57_A14_DSZXSZWDR AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -21006,6 +21014,7 @@ SELECT a.[ID]--编号
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
+      ,e.XH as e_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_57_A15_DSZXSJCJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -21119,6 +21128,7 @@ SELECT a.[ID]--编号
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
+      ,e.XH as e_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_57_A16_DSZXSQJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -21232,6 +21242,7 @@ SELECT a.[ID]--编号
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
       ,e.JUESEID as e_DSZDS_JUESEID--导师制导师表 角色ID
       ,e.TJSJ as e_DSZDS_TJSJ--导师制导师表 添加时间
+      ,e.XH as e_DSZDS_XH--导师制导师表 序号
       ,f.SCHOOLID as f_DSZXSDD_SCHOOLID--导师制学生等第表 学校
       ,f.DDMC as f_DSZXSDD_DDMC--导师制学生等第表 等第名称
       ,f.PLSX as f_DSZXSDD_PLSX--导师制学生等第表 排列顺序

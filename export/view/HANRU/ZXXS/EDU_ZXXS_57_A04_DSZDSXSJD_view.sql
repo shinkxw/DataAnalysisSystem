@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,d.JSID as d_DSZDS_JSID--导师制导师表 教师ID
       ,d.JUESEID as d_DSZDS_JUESEID--导师制导师表 角色ID
       ,d.TJSJ as d_DSZDS_TJSJ--导师制导师表 添加时间
+      ,d.XH as d_DSZDS_XH--导师制导师表 序号
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,e.XH as e_XSXX_XH--学生基本数据子类表 学号
       ,e.XM as e_XSXX_XM--学生基本数据子类表 姓名

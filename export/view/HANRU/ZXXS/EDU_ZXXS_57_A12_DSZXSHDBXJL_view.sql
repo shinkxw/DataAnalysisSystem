@@ -98,6 +98,7 @@ SELECT a.[ID]--编号
       ,f.JSID as f_DSZDS_JSID--导师制导师表 教师ID
       ,f.JUESEID as f_DSZDS_JUESEID--导师制导师表 角色ID
       ,f.TJSJ as f_DSZDS_TJSJ--导师制导师表 添加时间
+      ,f.XH as f_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_57_A12_DSZXSHDBXJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

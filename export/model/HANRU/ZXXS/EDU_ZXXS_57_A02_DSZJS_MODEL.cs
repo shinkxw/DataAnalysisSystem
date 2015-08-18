@@ -62,6 +62,11 @@ namespace HanRuEdu.LDAL
             public String NJID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "可选学生上限")]
+            public Int32 KXXSSX { get; set; }
+
+
         }
     }
 }

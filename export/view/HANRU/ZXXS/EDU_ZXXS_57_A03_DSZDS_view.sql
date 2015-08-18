@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[JSID]--教师ID
       ,a.[JUESEID]--角色ID
       ,a.[TJSJ]--添加时间
+      ,a.[XH]--序号
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -88,6 +89,7 @@ SELECT a.[ID]--编号
       ,e.GNMCLB as e_DSZJS_GNMCLB--导师制角色表 功能名称列表
       ,e.JSLX as e_DSZJS_JSLX--导师制角色表 角色类型
       ,e.NJID as e_DSZJS_NJID--导师制角色表 年级ID
+      ,e.KXXSSX as e_DSZJS_KXXSSX--导师制角色表 可选学生上限
 
 FROM dbo.EDU_ZXXS_57_A03_DSZDS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
