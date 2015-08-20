@@ -101,6 +101,8 @@
             <name="XQDM" exp="校区代码" type="nvarchar(2)" />
             <name="BZRID" exp="班主任ID" type="int" null="T" />
             <name="PLSX" exp="排列顺序" type="int" default="100" />
+            <name="FullClassName" exp="完整班级名称" type="nvarchar(50)" />
+            <name="RecordID" exp="记录ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_03_01_ZTJXJH" exp="总体教学计划数据子类表">
@@ -702,6 +704,8 @@
             <name="Name" exp="教室名称" type="nvarchar(128)" />
             <name="Place" exp="地点" type="nvarchar(128)" />
             <name="Counts" exp="座位数" type="int" />
+            <name="FullPlaceName" exp="完整地点名称" type="nvarchar(50)" />
+            <name="RecordID" exp="记录ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_30_A02_EXAMROOM" exp="考场表">
@@ -1274,7 +1278,7 @@
             <name="ZYKCKID" exp="专业课程库ID" type="int" />
             <name="XSID" exp="学生ID" type="int" />
             <name="CJLX" exp="成绩类型" type="int" />
-            <name="PFXMID" exp="综合分" type="int" />
+            <name="ZHF" exp="综合分" type="decimal(5, 2)" />
             <name="XF" exp="学分" type="decimal(5, 2)" />
             <name="JD" exp="绩点" type="decimal(5, 2)" />
             <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
@@ -1300,6 +1304,18 @@
             <name="KEY" exp="键" type="int" p="T" />
             <name="SCHOOLID" exp="学校ID" type="int" p="T" />
             <name="VALUE" exp="值" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A01_Record" exp="记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="SerialNumber" exp="序列号" type="int" />
+            <name="Statu" exp="" type="int" />
+            <name="ShortTitle1" exp="短标题一" type="nvarchar(50)" />
+            <name="ShortTitle2" exp="短标题二" type="nvarchar(50)" />
+            <name="Comment" exp="评论" type="nvarchar(200)" />
+            <name="Code" exp="" type="int" />
         </field_area>
     </table>
 </namespace>

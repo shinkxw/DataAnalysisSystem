@@ -43,6 +43,8 @@ EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
   WLDZ          网络地址                nvarchar(60)   非主
   JSTXH         即时通讯号              nvarchar(40)   非主
   JSKQJS        教师考勤角色            nvarchar(50)   非主
+  FullTeacherName完整老师姓名            nvarchar(50)   非主
+  RecordID      记录ID                  int            非主
 
 EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表

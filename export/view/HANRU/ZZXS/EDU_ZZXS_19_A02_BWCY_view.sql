@@ -115,6 +115,8 @@ SELECT a.[ID]--编号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,h.FullClassName as h_ZZBJ_FullClassName--学校班级数据表 完整班级名称
+      ,h.RecordID as h_ZZBJ_RecordID--学校班级数据表 记录ID
 
 FROM dbo.EDU_ZZXS_19_A02_BWCY AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_19_A01_BWSJ AS c ON a.BWID = c.ID /*班委ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

@@ -12,6 +12,8 @@ SELECT a.[ID]--编号
       ,c.Name as c_CLASSROOM_Name--教室表 教室名称
       ,c.Place as c_CLASSROOM_Place--教室表 地点
       ,c.Counts as c_CLASSROOM_Counts--教室表 座位数
+      ,c.FullPlaceName as c_CLASSROOM_FullPlaceName--教室表 完整地点名称
+      ,c.RecordID as c_CLASSROOM_RecordID--教室表 记录ID
       ,d.SCHOOLID as d_EXAM_SCHOOLID--考试表 学校
       ,d.Name as d_EXAM_Name--考试表 考试名称
       ,d.CJKSKMLM as d_EXAM_CJKSKMLM--考试表 参加考试科目列表

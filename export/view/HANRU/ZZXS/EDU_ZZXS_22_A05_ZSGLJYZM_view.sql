@@ -54,6 +54,8 @@ SELECT a.[ID]--编号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
+      ,d.RecordID as d_ZZBJ_RecordID--学校班级数据表 记录ID
 
 FROM dbo.EDU_ZZXS_22_A05_ZSGLJYZM AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_07_01_XJSJ AS c ON a.XSID = c.XSXXID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

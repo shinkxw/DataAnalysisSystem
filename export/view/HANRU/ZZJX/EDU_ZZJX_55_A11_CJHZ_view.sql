@@ -9,7 +9,7 @@ SELECT a.[ID]--编号
       ,a.[ZYKCKID]--专业课程库ID
       ,a.[XSID]--学生ID
       ,a.[CJLX]--成绩类型
-      ,a.[PFXMID]--综合分
+      ,a.[ZHF]--综合分
       ,a.[XF]--学分
       ,a.[JD]--绩点
       ,a.[DJRID]--登记人ID

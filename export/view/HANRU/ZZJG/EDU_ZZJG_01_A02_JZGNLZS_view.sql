@@ -81,6 +81,8 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
+      ,b.FullTeacherName as b_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
+      ,b.RecordID as b_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
 
 FROM dbo.EDU_ZZJG_01_A02_JZGNLZS AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS b ON a.JZGJBSJID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

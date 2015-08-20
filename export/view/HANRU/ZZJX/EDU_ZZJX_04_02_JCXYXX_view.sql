@@ -156,6 +156,8 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
+      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
+      ,h.RecordID as h_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,i.GH as i_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,i.XM as i_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -225,6 +227,8 @@ SELECT a.[ID]--编号
       ,i.WLDZ as i_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,i.JSKQJS as i_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
+      ,i.FullTeacherName as i_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
+      ,i.RecordID as i_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,j.MC as j_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZZJX_04_02_JCXYXX AS a LEFT OUTER JOIN

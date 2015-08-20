@@ -124,6 +124,8 @@ SELECT a.[ID]--编号
       ,j.Name as j_CLASSROOM_Name--教室表 教室名称
       ,j.Place as j_CLASSROOM_Place--教室表 地点
       ,j.Counts as j_CLASSROOM_Counts--教室表 座位数
+      ,j.FullPlaceName as j_CLASSROOM_FullPlaceName--教室表 完整地点名称
+      ,j.RecordID as j_CLASSROOM_RecordID--教室表 记录ID
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,k.ZZNJID as k_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -140,6 +142,8 @@ SELECT a.[ID]--编号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
+      ,k.RecordID as k_ZZBJ_RecordID--学校班级数据表 记录ID
       ,l.SCHOOLID as l_WEEKDAY_SCHOOLID--星期 学校名
       ,l.MC as l_WEEKDAY_MC--星期 名称
       ,m.SCHOOLID as m_SD_SCHOOLID--时段 学校名

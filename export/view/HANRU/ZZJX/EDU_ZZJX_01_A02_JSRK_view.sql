@@ -84,6 +84,8 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
+      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
+      ,c.RecordID as c_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
       ,d.KCMC as d_KC_KCMC--课程数据子类表 课程名称
       ,d.KCYWM as d_KC_KCYWM--课程数据子类表 课程英文名
@@ -174,6 +176,8 @@ SELECT a.[ID]--编号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
       ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,j.FullClassName as j_ZZBJ_FullClassName--学校班级数据表 完整班级名称
+      ,j.RecordID as j_ZZBJ_RecordID--学校班级数据表 记录ID
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

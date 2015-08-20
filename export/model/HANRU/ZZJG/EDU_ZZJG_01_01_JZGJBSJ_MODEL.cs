@@ -36,6 +36,7 @@ namespace HanRuEdu.LDAL
             YDDH = "";
             DZXX = "";
             JSKQJS = "";
+            FullTeacherName = "";
         }
         public class EDU_ZZJG_01_01_JZGJBSJ_metadata
         {
@@ -320,6 +321,18 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String JSKQJS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "完整老师姓名")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FullTeacherName { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "记录")]
+            public Int32 RecordID { get; set; }
 
 
         }

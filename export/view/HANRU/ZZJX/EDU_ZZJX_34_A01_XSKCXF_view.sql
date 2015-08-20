@@ -114,6 +114,8 @@ SELECT a.[ID]--编号
       ,g.XQDM as g_ZZBJ_XQDM--学校班级数据表 校区代码
       ,g.BZRID as g_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,g.FullClassName as g_ZZBJ_FullClassName--学校班级数据表 完整班级名称
+      ,g.RecordID as g_ZZBJ_RecordID--学校班级数据表 记录ID
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

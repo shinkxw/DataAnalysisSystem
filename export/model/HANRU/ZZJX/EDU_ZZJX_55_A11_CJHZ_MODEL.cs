@@ -54,7 +54,8 @@ namespace HanRuEdu.LDAL
 
             [Required(ErrorMessage = "必填")]
             [Display(Name = "综合分")]
-            public Int32 PFXMID { get; set; }
+            [Range(typeof(decimal), "0", "999")]
+            public decimal ZHF { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
