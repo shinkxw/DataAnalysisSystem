@@ -1193,6 +1193,8 @@
             <name="SKFSM" exp="授课方式码" type="nvarchar(1)" />
             <name="JXDG" exp="教学大纲" type="text" />
             <name="SFSY" exp="是否使用" type="int" />
+            <name="FullCourseName" exp="完整课程名称" type="nvarchar(50)" />
+            <name="RecordID" exp="记录ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A05_KCPFLX" exp="课程评分类型表">
@@ -1239,6 +1241,58 @@
             <name="ZYKCKID" exp="专业课程库ID" type="int" />
             <name="XF" exp="学分" type="decimal(5, 2)" />
             <name="KS" exp="课时" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A09_XFLX" exp="学分类型表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="LXMC" exp="类型名称" type="nvarchar(20)" />
+            <name="XFLY" exp="学分来源" type="nvarchar(20)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A10_CJMX" exp="成绩明细表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" />
+            <name="ZYKCKID" exp="专业课程库ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="PFXMID" exp="评分项目ID" type="int" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" />
+            <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
+            <name="DJSJ" exp="登记时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A11_CJHZ" exp="成绩汇总表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" />
+            <name="ZYKCKID" exp="专业课程库ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="CJLX" exp="成绩类型" type="int" />
+            <name="PFXMID" exp="综合分" type="int" />
+            <name="XF" exp="学分" type="decimal(5, 2)" />
+            <name="JD" exp="绩点" type="decimal(5, 2)" />
+            <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
+            <name="DJSJ" exp="登记时间" type="datetime" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A12_BKCJ" exp="补考成绩表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="NJID" exp="年级ID" type="nvarchar(4)" />
+            <name="ZYKCKID" exp="专业课程库ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" />
+            <name="CJLX" exp="成绩类型" type="int" />
+            <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
+            <name="DJSJ" exp="登记时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A90_XFHASH" exp="学分哈希表">

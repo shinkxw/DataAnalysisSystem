@@ -2564,6 +2564,30 @@
   ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
   NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
   ZYKCKID        EDU_ZZJX_55_A04_ZYKCK              ID
+<EDU_ZZJX_55_A09_XFLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZZJX_55_A10_CJMX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  ZYKCKID        EDU_ZZJX_55_A04_ZYKCK              ID
+  XSID           EDU_ZZXS_01_01_XSXX                ID
+  PFXMID         EDU_ZZJX_55_A06_KCPFXM             ID
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZZJX_55_A11_CJHZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  ZYKCKID        EDU_ZZJX_55_A04_ZYKCK              ID
+  XSID           EDU_ZZXS_01_01_XSXX                ID
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZZJX_55_A12_BKCJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  NJID           EDU_ZZJX_02_01_ZZNJ                NJDM
+  ZYKCKID        EDU_ZZJX_55_A04_ZYKCK              ID
+  XSID           EDU_ZZXS_01_01_XSXX                ID
+  DJRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZZJX_55_A90_XFHASH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZXS_01_01_XSXX

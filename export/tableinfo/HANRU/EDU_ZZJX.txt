@@ -1015,6 +1015,8 @@ EDU_ZZJX_55_A04_ZYKCK  专业课程库表
   SKFSM         授课方式码              nvarchar(1)    非主
   JXDG          教学大纲                text           非主
   SFSY          是否使用                int            非主
+  FullCourseName完整课程名称            nvarchar(50)   非主
+  RecordID      记录ID                  int            非主
 
 EDU_ZZJX_55_A05_KCPFLX  课程评分类型表
   ID            编号                    int            主键
@@ -1053,6 +1055,50 @@ EDU_ZZJX_55_A08_NJJXJH  年级教学计划表
   ZYKCKID       专业课程库ID            int            非主        专业课程库表
   XF            学分                    decimal(5, 2)  非主
   KS            课时                    int            非主
+
+EDU_ZZJX_55_A09_XFLX  学分类型表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  LXMC          类型名称                nvarchar(20)   非主
+  XFLY          学分来源                nvarchar(20)   非主
+
+EDU_ZZJX_55_A10_CJMX  成绩明细表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  ZYKCKID       专业课程库ID            int            非主        专业课程库表
+  XSID          学生ID                  int            非主        学生信息数据表
+  PFXMID        评分项目ID              int            非主        课程评分项目表
+  FZ            分值                    decimal(5, 2)  非主
+  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+
+EDU_ZZJX_55_A11_CJHZ  成绩汇总表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  ZYKCKID       专业课程库ID            int            非主        专业课程库表
+  XSID          学生ID                  int            非主        学生信息数据表
+  CJLX          成绩类型                int            非主
+  PFXMID        综合分                  int            非主
+  XF            学分                    decimal(5, 2)  非主
+  JD            绩点                    decimal(5, 2)  非主
+  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+
+EDU_ZZJX_55_A12_BKCJ  补考成绩表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  NJID          年级ID                  nvarchar(4)    非主        学校年级数据表
+  ZYKCKID       专业课程库ID            int            非主        专业课程库表
+  XSID          学生ID                  int            非主        学生信息数据表
+  FZ            分值                    decimal(5, 2)  非主
+  CJLX          成绩类型                int            非主
+  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
 
 EDU_ZZJX_55_A90_XFHASH  学分哈希表
   KEY           键                      int            主键

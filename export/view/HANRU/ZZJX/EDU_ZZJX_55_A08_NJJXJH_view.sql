@@ -57,6 +57,8 @@ SELECT a.[ID]--编号
       ,f.SKFSM as f_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,f.JXDG as f_ZYKCK_JXDG--专业课程库表 教学大纲
       ,f.SFSY as f_ZYKCK_SFSY--专业课程库表 是否使用
+      ,f.FullCourseName as f_ZYKCK_FullCourseName--专业课程库表 完整课程名称
+      ,f.RecordID as f_ZYKCK_RecordID--专业课程库表 记录ID
 
 FROM dbo.EDU_ZZJX_55_A08_NJJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
