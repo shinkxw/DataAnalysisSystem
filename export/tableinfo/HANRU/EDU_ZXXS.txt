@@ -674,6 +674,8 @@ EDU_ZXXS_58_A03_DSJDXSXZJL  导师结对学生选择记录表
   XSID          学生ID                  int            非主        学生基本数据子类表
   JS1ID         教师1ID                 int            非主        教职工基本数据子类表
   JS2ID         教师2ID                 int            非主        教职工基本数据子类表
+  DS1ID         导师1ID                 int            非主        导师制导师表
+  DS2ID         导师2ID                 int            非主        导师制导师表
   XZJG1         选择结果1               int            非主
   XZJG2         选择结果2               int            非主
 

@@ -43,6 +43,16 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "导师1")]
+            public Int32 DS1ID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "导师2")]
+            public Int32 DS2ID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "选择结果1")]
             public Int32 XZJG1 { get; set; }
 

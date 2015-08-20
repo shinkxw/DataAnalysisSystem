@@ -1556,6 +1556,8 @@ CREATE TABLE [dbo].[EDU_ZXXS_58_A03_DSJDXSXZJL](
 	[XSID]  int  NOT NULL,--学生ID
 	[JS1ID]  int  NOT NULL,--教师1ID
 	[JS2ID]  int  NOT NULL,--教师2ID
+	[DS1ID]  int  NOT NULL,--导师1ID
+	[DS2ID]  int  NOT NULL,--导师2ID
 	[XZJG1]  int  NOT NULL,--选择结果1
 	[XZJG2]  int  NOT NULL,--选择结果2
 CONSTRAINT [PK_EDU_ZXXS_58_A03_DSJDXSXZJL] PRIMARY KEY CLUSTERED
@@ -2823,6 +2825,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师1ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A03_DSJDXSXZJL', @level2type=N'COLUMN',@level2name=N'JS1ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师2ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A03_DSJDXSXZJL', @level2type=N'COLUMN',@level2name=N'JS2ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师1ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A03_DSJDXSXZJL', @level2type=N'COLUMN',@level2name=N'DS1ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师2ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A03_DSJDXSXZJL', @level2type=N'COLUMN',@level2name=N'DS2ID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选择结果1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_58_A03_DSJDXSXZJL', @level2type=N'COLUMN',@level2name=N'XZJG1'
 GO

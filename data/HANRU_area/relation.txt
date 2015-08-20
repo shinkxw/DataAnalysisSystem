@@ -1564,6 +1564,8 @@
   XSID           EDU_ZXXS_01_01_XSXX                ID
   JS1ID          EDU_ZXJZ_01_01_JZGJBSJ             ID
   JS2ID          EDU_ZXJZ_01_01_JZGJBSJ             ID
+  DS1ID          EDU_ZXXS_57_A03_DSZDS              ID
+  DS2ID          EDU_ZXXS_57_A03_DSZDS              ID
 <EDU_ZXXS_58_A04_DSJDXSXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSID           EDU_ZXXS_01_01_XSXX                ID

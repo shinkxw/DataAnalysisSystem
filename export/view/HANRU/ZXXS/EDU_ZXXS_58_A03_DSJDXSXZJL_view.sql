@@ -8,6 +8,8 @@ SELECT a.[ID]--编号
       ,a.[XSID]--学生ID
       ,a.[JS1ID]--教师1ID
       ,a.[JS2ID]--教师2ID
+      ,a.[DS1ID]--导师1ID
+      ,a.[DS2ID]--导师2ID
       ,a.[XZJG1]--选择结果1
       ,a.[XZJG2]--选择结果2
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
@@ -213,12 +215,26 @@ SELECT a.[ID]--编号
       ,f.ZYRKXD as f_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[fq].MC as f_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,f.JZGLXID as f_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
+      ,g.SCHOOLID as g_DSZDS_SCHOOLID--导师制导师表 学校
+      ,g.XQID as g_DSZDS_XQID--导师制导师表 学期ID
+      ,g.JSID as g_DSZDS_JSID--导师制导师表 教师ID
+      ,g.JUESEID as g_DSZDS_JUESEID--导师制导师表 角色ID
+      ,g.TJSJ as g_DSZDS_TJSJ--导师制导师表 添加时间
+      ,g.XH as g_DSZDS_XH--导师制导师表 序号
+      ,h.SCHOOLID as h_DSZDS_SCHOOLID--导师制导师表 学校
+      ,h.XQID as h_DSZDS_XQID--导师制导师表 学期ID
+      ,h.JSID as h_DSZDS_JSID--导师制导师表 教师ID
+      ,h.JUESEID as h_DSZDS_JUESEID--导师制导师表 角色ID
+      ,h.TJSJ as h_DSZDS_TJSJ--导师制导师表 添加时间
+      ,h.XH as h_DSZDS_XH--导师制导师表 序号
 
 FROM dbo.EDU_ZXXS_58_A03_DSJDXSXZJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS e ON a.JS1ID = e.ID /*教师1ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS f ON a.JS2ID = f.ID /*教师2ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A03_DSZDS AS g ON a.DS1ID = g.ID /*导师1ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_57_A03_DSZDS AS h ON a.DS2ID = h.ID /*导师2ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN

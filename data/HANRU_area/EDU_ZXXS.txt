@@ -788,6 +788,8 @@
             <name="XSID" exp="学生ID" type="int" />
             <name="JS1ID" exp="教师1ID" type="int" />
             <name="JS2ID" exp="教师2ID" type="int" />
+            <name="DS1ID" exp="导师1ID" type="int" />
+            <name="DS2ID" exp="导师2ID" type="int" />
             <name="XZJG1" exp="选择结果1" type="int" />
             <name="XZJG2" exp="选择结果2" type="int" />
         </field_area>
