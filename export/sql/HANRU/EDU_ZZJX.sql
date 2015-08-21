@@ -2669,11 +2669,11 @@ CREATE TABLE [dbo].[EDU_ZZJX_56_A01_Record](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[SerialNumber]  int  NOT NULL,--序列号
-	[Statu]  int  NOT NULL,--
+	[Status]  int  NOT NULL,--状态
 	[ShortTitle1]  nvarchar(50)  NOT NULL,--短标题一
 	[ShortTitle2]  nvarchar(50)  NOT NULL,--短标题二
 	[Comment]  nvarchar(200)  NOT NULL,--评论
-	[Code]  int  NOT NULL,--
+	[Code]  int  NOT NULL,--代码
 CONSTRAINT [PK_EDU_ZZJX_56_A01_Record] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -4716,9 +4716,13 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'序列号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'SerialNumber'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'Status'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'短标题一' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'ShortTitle1'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'短标题二' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'ShortTitle2'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'Comment'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'Code'
 GO

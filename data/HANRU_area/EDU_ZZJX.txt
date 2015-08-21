@@ -1311,7 +1311,7 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="SerialNumber" exp="序列号" type="int" />
-            <name="Statu" exp="" type="int" />
+            <name="Status" exp="状态" type="int" />
             <name="ShortTitle1" exp="短标题一" type="nvarchar(50)" />
             <name="ShortTitle2" exp="短标题二" type="nvarchar(50)" />
             <name="Comment" exp="评论" type="nvarchar(200)" />

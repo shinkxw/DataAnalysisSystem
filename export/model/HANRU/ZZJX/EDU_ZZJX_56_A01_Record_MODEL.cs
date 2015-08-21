@@ -31,8 +31,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "")]
-            public Int32 Statu { get; set; }
+            [Display(Name = "状态")]
+            public Int32 Status { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -57,7 +57,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "")]
+            [Display(Name = "代码")]
             public Int32 Code { get; set; }
 
 

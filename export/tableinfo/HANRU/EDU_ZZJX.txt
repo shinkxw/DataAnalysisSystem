@@ -1113,9 +1113,9 @@ EDU_ZZJX_56_A01_Record  记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
   SerialNumber  序列号                  int            非主
-  Statu                                 int            非主
+  Status        状态                    int            非主
   ShortTitle1   短标题一                nvarchar(50)   非主
   ShortTitle2   短标题二                nvarchar(50)   非主
   Comment       评论                    nvarchar(200)  非主
-  Code                                  int            非主
+  Code          代码                    int            非主
 
