@@ -286,6 +286,7 @@ SELECT a.[ID]--考试成绩表
       ,n.ZT as n_BJ_ZT--班级数据类表 状态
       ,n.PLSX as n_BJ_PLSX--班级数据类表 排列顺序
       ,n.BJLBID as n_BJ_BJLBID--班级数据类表 班级类别ID
+      ,n.FBZRID as n_BJ_FBZRID--班级数据类表 副班主任ID
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期

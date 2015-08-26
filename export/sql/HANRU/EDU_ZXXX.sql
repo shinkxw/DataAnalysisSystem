@@ -136,6 +136,7 @@ CREATE TABLE [dbo].[EDU_ZXXX_03_01_BJ](
 	[ZT]  int  NOT NULL,--状态
 	[PLSX]  int  NOT NULL,--排列顺序
 	[BJLBID]  int  NOT NULL,--班级类别ID
+	[FBZRID]  int  NOT NULL,--副班主任ID
 CONSTRAINT [PK_EDU_ZXXX_03_01_BJ] PRIMARY KEY CLUSTERED
 (
 	[SCHOOLID] ASC,
@@ -400,6 +401,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_01_BJ', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级类别ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_01_BJ', @level2type=N'COLUMN',@level2name=N'BJLBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'副班主任ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_01_BJ', @level2type=N'COLUMN',@level2name=N'FBZRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级类别表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXX_03_A01_BJLB'
 GO

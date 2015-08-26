@@ -694,4 +694,62 @@
             <name="HJQK" exp="获奖情况" type="text" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_54_A01_SCNRMB" exp="手册内容模板表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="MC" exp="名称" type="nvarchar(100)" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_54_A02_SCXM" exp="手册项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XMMC" exp="项目名称" type="nvarchar(100)" />
+            <name="SFQFXQ" exp="是否区分学期" type="int" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_54_A03_SCNR" exp="手册内容表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="XMID" exp="项目ID" type="int" />
+            <name="XNID" exp="学年ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_54_A04_XSSXPD" exp="学生思想品德表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="XNID" exp="学年ID" type="int" />
+            <name="NR" exp="内容" type="text" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_55_A01_SFXM" exp="收费项目表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="FYMC" exp="费用名称" type="nvarchar(100)" />
+            <name="YSJE" exp="应收金额" type="decimal(10, 3)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXJX_55_A02_SFJG" exp="收费结果表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="SFXMID" exp="收费项目ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="SJJE" exp="实缴金额" type="decimal(10, 3)" />
+            <name="JFZT" exp="缴费状态" type="int" />
+        </field_area>
+    </table>
 </namespace>

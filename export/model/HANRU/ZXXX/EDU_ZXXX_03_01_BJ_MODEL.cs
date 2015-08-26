@@ -122,6 +122,11 @@ namespace HanRuEdu.LDAL
             public Int32 BJLBID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "副班主任")]
+            public Int32 FBZRID { get; set; }
+
+
         }
     }
 }

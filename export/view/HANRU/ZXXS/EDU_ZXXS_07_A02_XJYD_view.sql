@@ -172,6 +172,7 @@ SELECT a.[ID]--学籍异动表编号
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
       ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,g.BJLBID as g_BJ_BJLBID--班级数据类表 班级类别ID
+      ,g.FBZRID as g_BJ_FBZRID--班级数据类表 副班主任ID
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态
@@ -197,6 +198,7 @@ SELECT a.[ID]--学籍异动表编号
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
       ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,i.BJLBID as i_BJ_BJLBID--班级数据类表 班级类别ID
+      ,i.FBZRID as i_BJ_FBZRID--班级数据类表 副班主任ID
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
       ,j.ZT as j_NJ_ZT--年级数据类表 状态

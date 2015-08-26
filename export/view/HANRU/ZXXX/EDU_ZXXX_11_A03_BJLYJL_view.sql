@@ -32,6 +32,7 @@ SELECT a.[ID]--编号
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
       ,d.SCHOOLID as d_RKJL_SCHOOLID--入库记录表 学校
       ,d.ZCM as d_RKJL_ZCM--入库记录表 资产名
       ,d.SL as d_RKJL_SL--入库记录表 数量

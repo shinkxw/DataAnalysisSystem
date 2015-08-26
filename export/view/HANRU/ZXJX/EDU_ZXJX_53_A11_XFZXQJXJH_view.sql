@@ -43,6 +43,7 @@ SELECT a.[ID]--编号
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,f.BJLBID as f_BJ_BJLBID--班级数据类表 班级类别ID
+      ,f.FBZRID as f_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXJX_53_A11_XFZXQJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

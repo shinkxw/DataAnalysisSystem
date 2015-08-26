@@ -57,7 +57,7 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "±ØÌî")]
-            [Display(Name = "´úÂë")]
+            [Display(Name = "")]
             public Int32 Code { get; set; }
 
 

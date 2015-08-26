@@ -86,6 +86,7 @@ SELECT a.[ID]--编号
       ,p.ZT as p_BJ_ZT--班级数据类表 状态
       ,p.PLSX as p_BJ_PLSX--班级数据类表 排列顺序
       ,p.BJLBID as p_BJ_BJLBID--班级数据类表 班级类别ID
+      ,p.FBZRID as p_BJ_FBZRID--班级数据类表 副班主任ID
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称

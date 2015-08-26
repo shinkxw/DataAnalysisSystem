@@ -96,6 +96,7 @@ SELECT a.[ID]--编号
       ,d.ZT as d_BJ_ZT--班级数据类表 状态
       ,d.PLSX as d_BJ_PLSX--班级数据类表 排列顺序
       ,d.BJLBID as d_BJ_BJLBID--班级数据类表 班级类别ID
+      ,d.FBZRID as d_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

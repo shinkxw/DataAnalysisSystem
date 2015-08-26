@@ -9,6 +9,8 @@ SELECT a.[ID]--编号
       ,a.[NJID]--年级ID列表
       ,a.[NJMCLB]--年级名称列表
       ,a.[KCJS]--课程介绍
+      ,a.[BJIDLB]--班级ID列表
+      ,a.[BJMCLB]--班级名称列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名

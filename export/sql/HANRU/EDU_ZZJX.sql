@@ -2355,6 +2355,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_51_A01_YXKKC](
 	[NJID]  nvarchar(200)  NOT NULL,--年级ID列表
 	[NJMCLB]  nvarchar(200)  NOT NULL,--年级名称列表
 	[KCJS]  text  NOT NULL,--课程介绍
+	[BJIDLB]  text  NOT NULL,--班级ID列表
+	[BJMCLB]  text  NOT NULL,--班级名称列表
 CONSTRAINT [PK_EDU_ZZJX_51_A01_YXKKC] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2673,7 +2675,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_56_A01_Record](
 	[ShortTitle1]  nvarchar(50)  NOT NULL,--短标题一
 	[ShortTitle2]  nvarchar(50)  NOT NULL,--短标题二
 	[Comment]  nvarchar(200)  NOT NULL,--评论
-	[Code]  int  NOT NULL,--代码
+	[Code]  int  NOT NULL,--
 CONSTRAINT [PK_EDU_ZZJX_56_A01_Record] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -4446,6 +4448,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'年级名称列表' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程介绍' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A01_YXKKC', @level2type=N'COLUMN',@level2name=N'KCJS'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A01_YXKKC', @level2type=N'COLUMN',@level2name=N'BJIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A01_YXKKC', @level2type=N'COLUMN',@level2name=N'BJMCLB'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生预选课记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A02_XSYXKJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A02_XSYXKJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -4723,6 +4729,4 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'短标题二' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'ShortTitle2'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'Comment'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A01_Record', @level2type=N'COLUMN',@level2name=N'Code'
 GO

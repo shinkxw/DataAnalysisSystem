@@ -48,6 +48,7 @@ SELECT a.[ID]--值周打分单表ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
+      ,e.FBZRID as e_BJ_FBZRID--班级数据类表 副班主任ID
       ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--值周打分细则表 学校ID
       ,f.SSDLID as f_ZZDFXZ_SSDLID--值周打分细则表 所属大类ID
       ,f.XZNR as f_ZZDFXZ_XZNR--值周打分细则表 细则内容

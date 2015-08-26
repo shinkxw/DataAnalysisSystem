@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             NJID = "";
             NJMCLB = "";
             KCJS = "";
+            BJIDLB = "";
+            BJMCLB = "";
         }
         public class EDU_ZZJX_51_A01_YXKKC_metadata
         {
@@ -56,6 +58,18 @@ namespace HanRuEdu.LDAL
             [Display(Name = "课程介绍")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String KCJS { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级ID列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJIDLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级名称列表")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJMCLB { get; set; }
 
 
         }

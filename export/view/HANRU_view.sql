@@ -903,6 +903,22 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A46
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_53_A46_BXKXXTKCJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_54_A03_SCNR_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_54_A03_SCNR_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_54_A04_XSSXPD_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_54_A04_XSSXPD_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_55_A01_SFXM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_55_A01_SFXM_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_55_A02_SFJG_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_55_A02_SFJG_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP
@@ -9300,6 +9316,7 @@ SELECT a.[ID]--值周人员安排表ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
+      ,e.FBZRID as e_BJ_FBZRID--班级数据类表 副班主任ID
       ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
       ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
       ,'' as f_USER_PWD--应用系统用户表 密码
@@ -9546,6 +9563,7 @@ SELECT a.[ID]--值周打分单表ID
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
+      ,e.FBZRID as e_BJ_FBZRID--班级数据类表 副班主任ID
       ,f.SCHOOLID as f_ZZDFXZ_SCHOOLID--值周打分细则表 学校ID
       ,f.SSDLID as f_ZZDFXZ_SSDLID--值周打分细则表 所属大类ID
       ,f.XZNR as f_ZZDFXZ_XZNR--值周打分细则表 细则内容
@@ -9668,6 +9686,7 @@ SELECT a.[ID]--编号
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXDY_07_A01_DYHDKC AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJ = c.BH /*班级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -9727,6 +9746,7 @@ SELECT a.[ID]--编号
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXDY_07_A21_BJXSHDQKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.HDBJ = c.BH /*活动班级*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -10743,6 +10763,7 @@ SELECT a.[ID]--编号
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
+      ,e.FBZRID as e_BJ_FBZRID--班级数据类表 副班主任ID
       ,f.SCHOOLID as f_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,f.JCDM as f_JCJBXX_JCDM--教材基本信息表 教材代码
       ,f.JCMC as f_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -11407,6 +11428,7 @@ SELECT a.[ID]--编号
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
       ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,i.BJLBID as i_BJ_BJLBID--班级数据类表 班级类别ID
+      ,i.FBZRID as i_BJ_FBZRID--班级数据类表 副班主任ID
       ,j.SCHOOLID as j_XLZ_SCHOOLID--校历周表 学校ID
       ,j.XLID as j_XLZ_XLID--校历周表 校历ID
       ,j.NAME as j_XLZ_NAME--校历周表 校历周名称
@@ -13935,6 +13957,7 @@ SELECT a.[ID]--编号
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,f.BJLBID as f_BJ_BJLBID--班级数据类表 班级类别ID
+      ,f.FBZRID as f_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXJX_53_A11_XFZXQJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -14958,6 +14981,308 @@ FROM dbo.EDU_ZXJX_53_A46_BXKXXTKCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
 GO
 
+--手册内容表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_54_A03_SCNR_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[BJID]--班级ID
+      ,a.[XMID]--项目ID
+      ,a.[XNID]--学年ID
+      ,a.[XQID]--学期ID
+      ,a.[NR]--内容
+      ,c.SCHOOLID as c_BJ_SCHOOLID--班级数据类表 学校名
+      ,c.NJ as c_BJ_NJ--班级数据类表 年级号
+      ,c.BJ as c_BJ_BJ--班级数据类表 班级名称
+      ,c.JBNY as c_BJ_JBNY--班级数据类表 建班年月
+      ,c.BZRGH as c_BJ_BZRGH--班级数据类表 班主任工号
+      ,c.BZXH as c_BJ_BZXH--班级数据类表 班长学号
+      ,c.BJRYCH as c_BJ_BJRYCH--班级数据类表 班级荣誉称号
+      ,c.XZ as c_BJ_XZ--班级数据类表 学制
+      ,c.BJLXM as c_BJ_BJLXM--班级数据类表 班级类型码
+      ,[cb].MC as c_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,c.WLLX as c_BJ_WLLX--班级数据类表 文理类型
+      ,c.BYRQ as c_BJ_BYRQ--班级数据类表 毕业日期
+      ,c.SFSSMZSYJXB as c_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
+      ,[cc].MC as c_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,c.SYJXMSM as c_BJ_SYJXMSM--班级数据类表 双语教学模式码
+      ,[cd].MC as c_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
+      ,c.ZT as c_BJ_ZT--班级数据类表 状态
+      ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
+      ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
+      ,d.SCHOOLID as d_SCXM_SCHOOLID--手册项目表 学校
+      ,d.XMMC as d_SCXM_XMMC--手册项目表 项目名称
+      ,d.SFQFXQ as d_SCXM_SFQFXQ--手册项目表 是否区分学期
+      ,d.PLSX as d_SCXM_PLSX--手册项目表 排列顺序
+      ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
+      ,e.XN as e_XN_XN--学年表 学年
+      ,f.SCHOOLID as f_XQ_SCHOOLID--学期数据表 学校名
+      ,f.XNID as f_XQ_XNID--学期数据表 学年
+      ,f.XQM as f_XQ_XQM--学期数据表 学期码
+      ,[fb].MC as f_XQ_XQM_MC--学期代码表 名称
+      ,f.XQMC as f_XQ_XQMC--学期数据表 学期名称
+      ,f.XQKSRQ as f_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,f.XQJSRQ as f_XQ_XQJSRQ--学期数据表 学期结束日期
+
+FROM dbo.EDU_ZXJX_54_A03_SCNR AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_54_A02_SCXM AS d ON a.XMID = d.ID /*项目ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS e ON a.XNID = e.ID /*学年ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS f ON a.XQID = f.ID /*学期ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [cb] ON c.BJLXM = [cb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFSSMZSYJXB = [cc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [cd] ON c.SYJXMSM = [cd].DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [fb] ON f.XQM = [fb].DM /*学期码*/
+GO
+
+--学生思想品德表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_54_A04_XSSXPD_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[BJID]--班级ID
+      ,a.[XSID]--学生ID
+      ,a.[XNID]--学年ID
+      ,a.[NR]--内容
+      ,c.SCHOOLID as c_BJ_SCHOOLID--班级数据类表 学校名
+      ,c.NJ as c_BJ_NJ--班级数据类表 年级号
+      ,c.BJ as c_BJ_BJ--班级数据类表 班级名称
+      ,c.JBNY as c_BJ_JBNY--班级数据类表 建班年月
+      ,c.BZRGH as c_BJ_BZRGH--班级数据类表 班主任工号
+      ,c.BZXH as c_BJ_BZXH--班级数据类表 班长学号
+      ,c.BJRYCH as c_BJ_BJRYCH--班级数据类表 班级荣誉称号
+      ,c.XZ as c_BJ_XZ--班级数据类表 学制
+      ,c.BJLXM as c_BJ_BJLXM--班级数据类表 班级类型码
+      ,[cb].MC as c_BJ_BJLXM_MC--中小学班级类型代码表 名称
+      ,c.WLLX as c_BJ_WLLX--班级数据类表 文理类型
+      ,c.BYRQ as c_BJ_BYRQ--班级数据类表 毕业日期
+      ,c.SFSSMZSYJXB as c_BJ_SFSSMZSYJXB--班级数据类表 是否少数民族双语教学班
+      ,[cc].MC as c_BJ_SFSSMZSYJXB_MC--是否标志代码表 名称
+      ,c.SYJXMSM as c_BJ_SYJXMSM--班级数据类表 双语教学模式码
+      ,[cd].MC as c_BJ_SYJXMSM_MC--少数民族双语教学模式代码表 名称
+      ,[cd].SM as c_BJ_SYJXMSM_SM--少数民族双语教学模式代码表 说明
+      ,c.BZRID as c_BJ_BZRID--班级数据类表 班主任ID
+      ,c.ZT as c_BJ_ZT--班级数据类表 状态
+      ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
+      ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
+      ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
+      ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
+      ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
+      ,d.YWXM as d_XSXX_YWXM--学生基本数据子类表 英文姓名
+      ,d.XMPY as d_XSXX_XMPY--学生基本数据子类表 姓名拼音
+      ,d.CYM as d_XSXX_CYM--学生基本数据子类表 曾用名
+      ,d.XBM as d_XSXX_XBM--学生基本数据子类表 性别码
+      ,[db].MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,d.CSRQ as d_XSXX_CSRQ--学生基本数据子类表 出生日期
+      ,d.CSDM as d_XSXX_CSDM--学生基本数据子类表 出生地码
+      ,[dc].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,d.JG as d_XSXX_JG--学生基本数据子类表 籍贯
+      ,d.MZM as d_XSXX_MZM--学生基本数据子类表 民族码
+      ,[dd].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[dd].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,d.GJDQM as d_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
+      ,[de].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[de].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[de].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,d.SFZJLXM as d_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
+      ,[df].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,d.SFZJH as d_XSXX_SFZJH--学生基本数据子类表 身份证件号
+      ,d.HYZKM as d_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,d.GATQWM as d_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
+      ,[dh].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[dh].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,d.ZZMMM as d_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
+      ,[di].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[di].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,d.JKZKM as d_XSXX_JKZKM--学生基本数据子类表 健康状况码
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,d.XYZJM as d_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
+      ,[dk].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,d.XXM as d_XSXX_XXM--学生基本数据子类表 血型码
+      ,[dl].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dl].JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,d.ZP as d_XSXX_ZP--学生基本数据子类表 照片
+      ,d.SFZJYXQ as d_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
+      ,d.DSZYBZ as d_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
+      ,[dm].MC as d_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,d.RXNY as d_XSXX_RXNY--学生基本数据子类表 入学年月
+      ,d.NJ as d_XSXX_NJ--学生基本数据子类表 年级
+      ,d.BH as d_XSXX_BH--学生基本数据子类表 班号
+      ,d.XSLBM as d_XSXX_XSLBM--学生基本数据子类表 学生类别码
+      ,[dn].MC as d_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[dn].SM as d_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,d.XZZ as d_XSXX_XZZ--学生基本数据子类表 现住址
+      ,d.HKSZD as d_XSXX_HKSZD--学生基本数据子类表 户口所在地
+      ,d.HKXZM as d_XSXX_HKXZM--学生基本数据子类表 户口性质码
+      ,[do].MC as d_XSXX_HKXZM_MC--户口类别代码 名称
+      ,d.SFLDRK as d_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
+      ,[dp].MC as d_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,d.TC as d_XSXX_TC--学生基本数据子类表 特长
+      ,d.LXDH as d_XSXX_LXDH--学生基本数据子类表 联系电话
+      ,d.TXDZ as d_XSXX_TXDZ--学生基本数据子类表 通信地址
+      ,d.YZBM as d_XSXX_YZBM--学生基本数据子类表 邮政编码
+      ,d.DZXX as d_XSXX_DZXX--学生基本数据子类表 电子信箱
+      ,d.ZYDZ as d_XSXX_ZYDZ--学生基本数据子类表 主页地址
+      ,d.XJH as d_XSXX_XJH--学生基本数据子类表 学籍号
+      ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
+      ,e.XN as e_XN_XN--学年表 学年
+
+FROM dbo.EDU_ZXJX_54_A04_XSSXPD AS a LEFT OUTER JOIN
+      dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_SYS_01_XN AS e ON a.XNID = e.ID /*学年ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBJLX AS [cb] ON c.BJLXM = [cb].DM /*班级类型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [cc] ON c.SFSSMZSYJXB = [cc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SSMZSYJXMS AS [cd] ON c.SYJXMSM = [cd].DM /*双语教学模式码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [de] ON d.GJDQM = [de].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [df] ON d.SFZJLXM = [df].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [dh] ON d.GATQWM = [dh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [di] ON d.ZZMMM = [di].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dk] ON d.XYZJM = [dk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dl] ON d.XXM = [dl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dm] ON d.DSZYBZ = [dm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [dn] ON d.XSLBM = [dn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [do] ON d.HKXZM = [do].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dp] ON d.SFLDRK = [dp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
+GO
+
+--收费项目表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_55_A01_SFXM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[XQID]--学期ID
+      ,a.[FYMC]--费用名称
+      ,a.[YSJE]--应收金额
+      ,a.[PLSX]--排列顺序
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+
+FROM dbo.EDU_ZXJX_55_A01_SFXM AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/
+GO
+
+--收费结果表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_55_A02_SFJG_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[SFXMID]--收费项目ID
+      ,a.[XSID]--学生ID
+      ,a.[SJJE]--实缴金额
+      ,a.[JFZT]--缴费状态
+      ,c.SCHOOLID as c_SFXM_SCHOOLID--收费项目表 学校
+      ,c.XQID as c_SFXM_XQID--收费项目表 学期ID
+      ,c.FYMC as c_SFXM_FYMC--收费项目表 费用名称
+      ,c.YSJE as c_SFXM_YSJE--收费项目表 应收金额
+      ,c.PLSX as c_SFXM_PLSX--收费项目表 排列顺序
+      ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
+      ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
+      ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
+      ,d.YWXM as d_XSXX_YWXM--学生基本数据子类表 英文姓名
+      ,d.XMPY as d_XSXX_XMPY--学生基本数据子类表 姓名拼音
+      ,d.CYM as d_XSXX_CYM--学生基本数据子类表 曾用名
+      ,d.XBM as d_XSXX_XBM--学生基本数据子类表 性别码
+      ,[db].MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,d.CSRQ as d_XSXX_CSRQ--学生基本数据子类表 出生日期
+      ,d.CSDM as d_XSXX_CSDM--学生基本数据子类表 出生地码
+      ,[dc].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,d.JG as d_XSXX_JG--学生基本数据子类表 籍贯
+      ,d.MZM as d_XSXX_MZM--学生基本数据子类表 民族码
+      ,[dd].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[dd].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,d.GJDQM as d_XSXX_GJDQM--学生基本数据子类表 国籍/地区码
+      ,[de].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[de].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[de].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,d.SFZJLXM as d_XSXX_SFZJLXM--学生基本数据子类表 身份证件类型码
+      ,[df].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,d.SFZJH as d_XSXX_SFZJH--学生基本数据子类表 身份证件号
+      ,d.HYZKM as d_XSXX_HYZKM--学生基本数据子类表 婚姻状况码
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,d.GATQWM as d_XSXX_GATQWM--学生基本数据子类表 港澳台侨外码
+      ,[dh].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[dh].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,d.ZZMMM as d_XSXX_ZZMMM--学生基本数据子类表 政治面貌码
+      ,[di].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[di].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,d.JKZKM as d_XSXX_JKZKM--学生基本数据子类表 健康状况码
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,d.XYZJM as d_XSXX_XYZJM--学生基本数据子类表 信仰宗教码
+      ,[dk].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,d.XXM as d_XSXX_XXM--学生基本数据子类表 血型码
+      ,[dl].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dl].JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,d.ZP as d_XSXX_ZP--学生基本数据子类表 照片
+      ,d.SFZJYXQ as d_XSXX_SFZJYXQ--学生基本数据子类表 身份证件有效期
+      ,d.DSZYBZ as d_XSXX_DSZYBZ--学生基本数据子类表 独生子女标志
+      ,[dm].MC as d_XSXX_DSZYBZ_MC--是否标志代码表 名称
+      ,d.RXNY as d_XSXX_RXNY--学生基本数据子类表 入学年月
+      ,d.NJ as d_XSXX_NJ--学生基本数据子类表 年级
+      ,d.BH as d_XSXX_BH--学生基本数据子类表 班号
+      ,d.XSLBM as d_XSXX_XSLBM--学生基本数据子类表 学生类别码
+      ,[dn].MC as d_XSXX_XSLBM_MC--学生类别代码表 名称
+      ,[dn].SM as d_XSXX_XSLBM_SM--学生类别代码表 说明
+      ,d.XZZ as d_XSXX_XZZ--学生基本数据子类表 现住址
+      ,d.HKSZD as d_XSXX_HKSZD--学生基本数据子类表 户口所在地
+      ,d.HKXZM as d_XSXX_HKXZM--学生基本数据子类表 户口性质码
+      ,[do].MC as d_XSXX_HKXZM_MC--户口类别代码 名称
+      ,d.SFLDRK as d_XSXX_SFLDRK--学生基本数据子类表 是否流动人口
+      ,[dp].MC as d_XSXX_SFLDRK_MC--是否标志代码表 名称
+      ,d.TC as d_XSXX_TC--学生基本数据子类表 特长
+      ,d.LXDH as d_XSXX_LXDH--学生基本数据子类表 联系电话
+      ,d.TXDZ as d_XSXX_TXDZ--学生基本数据子类表 通信地址
+      ,d.YZBM as d_XSXX_YZBM--学生基本数据子类表 邮政编码
+      ,d.DZXX as d_XSXX_DZXX--学生基本数据子类表 电子信箱
+      ,d.ZYDZ as d_XSXX_ZYDZ--学生基本数据子类表 主页地址
+      ,d.XJH as d_XSXX_XJH--学生基本数据子类表 学籍号
+      ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
+      ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
+      ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+
+FROM dbo.EDU_ZXJX_55_A02_SFJG AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_55_A01_SFXM AS c ON a.SFXMID = c.ID /*收费项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [db] ON d.XBM = [db].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dc] ON d.CSDM = [dc].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [dd] ON d.MZM = [dd].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [de] ON d.GJDQM = [de].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [df] ON d.SFZJLXM = [df].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [dh] ON d.GATQWM = [dh].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [di] ON d.ZZMMM = [di].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dk] ON d.XYZJM = [dk].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dl] ON d.XXM = [dl].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dm] ON d.DSZYBZ = [dm].DM /*独生子女标志*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSLB AS [dn] ON d.XSLBM = [dn].DM /*学生类别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [do] ON d.HKXZM = [do].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dp] ON d.SFLDRK = [dp].DM /*是否流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
+GO
+
 --教职工基本数据子类表
 CREATE VIEW [dbo].[VIEW_EDU_ZXJZ_01_01_JZGJBSJ_DISP]
 AS
@@ -15904,6 +16229,7 @@ SELECT a.[ID]--编号
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
       ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,g.BJLBID as g_BJ_BJLBID--班级数据类表 班级类别ID
+      ,g.FBZRID as g_BJ_FBZRID--班级数据类表 副班主任ID
       ,h.MC as h_SFBZ_MC--是否标志代码表 名称
       ,i.SCHOOLID as i_NJ_SCHOOLID--年级数据类表 学校名
       ,i.NJMC as i_NJ_NJMC--年级数据类表 年级名称
@@ -17433,6 +17759,7 @@ SELECT a.[ID]--编号
       ,d.ZT as d_BJ_ZT--班级数据类表 状态
       ,d.PLSX as d_BJ_PLSX--班级数据类表 排列顺序
       ,d.BJLBID as d_BJ_BJLBID--班级数据类表 班级类别ID
+      ,d.FBZRID as d_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXTW_03_A01_XSMZJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSXXID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -17545,6 +17872,7 @@ SELECT a.[ID]--编号
       ,p.ZT as p_BJ_ZT--班级数据类表 状态
       ,p.PLSX as p_BJ_PLSX--班级数据类表 排列顺序
       ,p.BJLBID as p_BJ_BJLBID--班级数据类表 班级类别ID
+      ,p.FBZRID as p_BJ_FBZRID--班级数据类表 副班主任ID
       ,q.MC as q_XSLB_MC--学生类别代码表 名称
       ,q.SM as q_XSLB_SM--学生类别代码表 说明
       ,r.MC as r_HKLB_MC--户口类别代码 名称
@@ -18096,6 +18424,7 @@ SELECT a.[ID]--考试成绩表
       ,n.ZT as n_BJ_ZT--班级数据类表 状态
       ,n.PLSX as n_BJ_PLSX--班级数据类表 排列顺序
       ,n.BJLBID as n_BJ_BJLBID--班级数据类表 班级类别ID
+      ,n.FBZRID as n_BJ_FBZRID--班级数据类表 副班主任ID
       ,o.SCHOOLID as o_KS_SCHOOLID--考试数据表 学校名
       ,o.XNID as o_KS_XNID--考试数据表 学年
       ,o.XQID as o_KS_XQID--考试数据表 学期
@@ -18365,6 +18694,7 @@ SELECT a.[ID]--学籍异动表编号
       ,g.ZT as g_BJ_ZT--班级数据类表 状态
       ,g.PLSX as g_BJ_PLSX--班级数据类表 排列顺序
       ,g.BJLBID as g_BJ_BJLBID--班级数据类表 班级类别ID
+      ,g.FBZRID as g_BJ_FBZRID--班级数据类表 副班主任ID
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态
@@ -18390,6 +18720,7 @@ SELECT a.[ID]--学籍异动表编号
       ,i.ZT as i_BJ_ZT--班级数据类表 状态
       ,i.PLSX as i_BJ_PLSX--班级数据类表 排列顺序
       ,i.BJLBID as i_BJ_BJLBID--班级数据类表 班级类别ID
+      ,i.FBZRID as i_BJ_FBZRID--班级数据类表 副班主任ID
       ,j.SCHOOLID as j_NJ_SCHOOLID--年级数据类表 学校名
       ,j.NJMC as j_NJ_NJMC--年级数据类表 年级名称
       ,j.ZT as j_NJ_ZT--年级数据类表 状态
@@ -18547,6 +18878,7 @@ SELECT a.[ID]--编号
       ,e.ZT as e_BJ_ZT--班级数据类表 状态
       ,e.PLSX as e_BJ_PLSX--班级数据类表 排列顺序
       ,e.BJLBID as e_BJ_BJLBID--班级数据类表 班级类别ID
+      ,e.FBZRID as e_BJ_FBZRID--班级数据类表 副班主任ID
       ,f.SCHOOLID as f_BJ_SCHOOLID--班级数据类表 学校名
       ,f.NJ as f_BJ_NJ--班级数据类表 年级号
       ,f.BJ as f_BJ_BJ--班级数据类表 班级名称
@@ -18568,6 +18900,7 @@ SELECT a.[ID]--编号
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,f.BJLBID as f_BJ_BJLBID--班级数据类表 班级类别ID
+      ,f.FBZRID as f_BJ_FBZRID--班级数据类表 副班主任ID
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,'' as g_USER_PWD--应用系统用户表 密码
@@ -18647,6 +18980,7 @@ SELECT a.[ID]--编号
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
 
 FROM dbo.EDU_ZXXS_50_A02_BJSBJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -18692,6 +19026,7 @@ SELECT a.[ID]--编号
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -18940,6 +19275,7 @@ SELECT a.[ID]--编号
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,f.BJLBID as f_BJ_BJLBID--班级数据类表 班级类别ID
+      ,f.FBZRID as f_BJ_FBZRID--班级数据类表 副班主任ID
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,'' as g_USER_PWD--应用系统用户表 密码
@@ -20304,6 +20640,7 @@ SELECT a.[ID]--编号
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,f.BJLBID as f_BJ_BJLBID--班级数据类表 班级类别ID
+      ,f.FBZRID as f_BJ_FBZRID--班级数据类表 副班主任ID
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,'' as g_USER_PWD--应用系统用户表 密码
@@ -22512,6 +22849,7 @@ SELECT a.[SCHOOLID]--学校名
       ,a.[ZT]--状态
       ,a.[PLSX]--排列顺序
       ,a.[BJLBID]--班级类别ID
+      ,a.[FBZRID]--副班主任ID
       ,c.SCHOOLID as c_NJ_SCHOOLID--年级数据类表 学校名
       ,c.NJMC as c_NJ_NJMC--年级数据类表 年级名称
       ,c.ZT as c_NJ_ZT--年级数据类表 状态
@@ -22588,6 +22926,72 @@ SELECT a.[SCHOOLID]--学校名
       ,g.JZGLXID as g_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
       ,h.SCHOOLID as h_BJLB_SCHOOLID--班级类别表 学校
       ,h.LBMC as h_BJLB_LBMC--班级类别表 类别名称
+      ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
+      ,i.GH as i_JZGJBSJ_GH--教职工基本数据子类表 工号
+      ,i.XM as i_JZGJBSJ_XM--教职工基本数据子类表 姓名
+      ,i.YWXM as i_JZGJBSJ_YWXM--教职工基本数据子类表 英文姓名
+      ,i.XMPY as i_JZGJBSJ_XMPY--教职工基本数据子类表 姓名拼音
+      ,i.CYM as i_JZGJBSJ_CYM--教职工基本数据子类表 曾用名
+      ,i.XBM as i_JZGJBSJ_XBM--教职工基本数据子类表 性别码
+      ,[ib].MC as i_JZGJBSJ_XBM_MC--人的性别代码 名称
+      ,i.CSRQ as i_JZGJBSJ_CSRQ--教职工基本数据子类表 出生日期
+      ,i.CSDM as i_JZGJBSJ_CSDM--教职工基本数据子类表 出生地码
+      ,[ic].MC as i_JZGJBSJ_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,i.JG as i_JZGJBSJ_JG--教职工基本数据子类表 籍贯
+      ,i.MZM as i_JZGJBSJ_MZM--教职工基本数据子类表 民族码
+      ,[id].MZMC as i_JZGJBSJ_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[id].ZMDM as i_JZGJBSJ_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,i.GJDQM as i_JZGJBSJ_GJDQM--教职工基本数据子类表 国籍/地区码
+      ,[ie].GJDQMCJC as i_JZGJBSJ_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[ie].EZMDM as i_JZGJBSJ_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[ie].SZMDM as i_JZGJBSJ_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,i.SFZJLXM as i_JZGJBSJ_SFZJLXM--教职工基本数据子类表 身份证件类型码
+      ,[if].MC as i_JZGJBSJ_SFZJLXM_MC--身份证件类型代码表 名称
+      ,i.SFZJH as i_JZGJBSJ_SFZJH--教职工基本数据子类表 身份证件号
+      ,i.HYZKM as i_JZGJBSJ_HYZKM--教职工基本数据子类表 婚姻状况码
+      ,[ig].MC as i_JZGJBSJ_HYZKM_MC--婚姻状况代码 名称
+      ,i.GATQWM as i_JZGJBSJ_GATQWM--教职工基本数据子类表 港澳台侨外码
+      ,[ih].MC as i_JZGJBSJ_GATQWM_MC--港澳台侨外代码表 名称
+      ,[ih].SM as i_JZGJBSJ_GATQWM_SM--港澳台侨外代码表 说明
+      ,i.ZZMMM as i_JZGJBSJ_ZZMMM--教职工基本数据子类表 政治面貌码
+      ,[ii].MC as i_JZGJBSJ_ZZMMM_MC--政治面貌代码 名称
+      ,[ii].JC as i_JZGJBSJ_ZZMMM_JC--政治面貌代码 简称
+      ,i.JKZKM as i_JZGJBSJ_JKZKM--教职工基本数据子类表 健康状况码
+      ,[ij].MC as i_JZGJBSJ_JKZKM_MC--健康状况1位数字代码 名称
+      ,[ij].SM as i_JZGJBSJ_JKZKM_SM--健康状况1位数字代码 说明
+      ,i.XYZJM as i_JZGJBSJ_XYZJM--教职工基本数据子类表 信仰宗教码
+      ,[ik].MC as i_JZGJBSJ_XYZJM_MC--宗教信仰代码 名称
+      ,i.XXM as i_JZGJBSJ_XXM--教职工基本数据子类表 血型码
+      ,[il].MC as i_JZGJBSJ_XXM_MC--血型代码表 名称
+      ,[il].JC as i_JZGJBSJ_XXM_JC--血型代码表 简称
+      ,i.ZP as i_JZGJBSJ_ZP--教职工基本数据子类表 照片
+      ,i.SFZJYXQ as i_JZGJBSJ_SFZJYXQ--教职工基本数据子类表 身份证件有效期
+      ,i.JGH as i_JZGJBSJ_JGH--教职工基本数据子类表 机构号
+      ,i.JTZZ as i_JZGJBSJ_JTZZ--教职工基本数据子类表 家庭住址
+      ,i.XZZ as i_JZGJBSJ_XZZ--教职工基本数据子类表 现住址
+      ,i.HKSZD as i_JZGJBSJ_HKSZD--教职工基本数据子类表 户口所在地
+      ,i.HKXZM as i_JZGJBSJ_HKXZM--教职工基本数据子类表 户口性质码
+      ,[im].MC as i_JZGJBSJ_HKXZM_MC--户口类别代码 名称
+      ,i.XLM as i_JZGJBSJ_XLM--教职工基本数据子类表 学历码
+      ,[in].MC as i_JZGJBSJ_XLM_MC--学历代码 名称
+      ,i.GZNY as i_JZGJBSJ_GZNY--教职工基本数据子类表 参加工作年月
+      ,i.LXNY as i_JZGJBSJ_LXNY--教职工基本数据子类表 来校年月
+      ,i.CJNY as i_JZGJBSJ_CJNY--教职工基本数据子类表 从教年月
+      ,i.BZLBM as i_JZGJBSJ_BZLBM--教职工基本数据子类表 编制类别码
+      ,[io].MC as i_JZGJBSJ_BZLBM_MC--中小学编制类别代码表 名称
+      ,i.DABH as i_JZGJBSJ_DABH--教职工基本数据子类表 档案编号
+      ,i.DAWB as i_JZGJBSJ_DAWB--教职工基本数据子类表 档案文本
+      ,i.TXDZ as i_JZGJBSJ_TXDZ--教职工基本数据子类表 通信地址
+      ,i.LXDH as i_JZGJBSJ_LXDH--教职工基本数据子类表 联系电话
+      ,i.YZBM as i_JZGJBSJ_YZBM--教职工基本数据子类表 邮政编码
+      ,i.DZXX as i_JZGJBSJ_DZXX--教职工基本数据子类表 电子信箱
+      ,i.ZYDZ as i_JZGJBSJ_ZYDZ--教职工基本数据子类表 主页地址
+      ,i.TC as i_JZGJBSJ_TC--教职工基本数据子类表 特长
+      ,i.GWZYM as i_JZGJBSJ_GWZYM--教职工基本数据子类表 岗位职业码
+      ,[ip].MC as i_JZGJBSJ_GWZYM_MC--岗位职业代码表 名称
+      ,i.ZYRKXD as i_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
+      ,[iq].MC as i_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
+      ,i.JZGLXID as i_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
 
 FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -22596,6 +23000,7 @@ FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS f ON a.SYJXMSM = f.DM /*双语教学模式码*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS g ON a.BZRID = g.ID /*班主任ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_A01_BJLB AS h ON a.BJLBID = h.ID /*班级类别ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校名*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJZ_01_01_JZGJBSJ AS i ON a.FBZRID = i.ID /*副班主任ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校名*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [gb] ON g.XBM = [gb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [gc] ON g.CSDM = [gc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [gd] ON g.MZM = [gd].DM /*民族码*/ LEFT OUTER JOIN
@@ -22611,7 +23016,23 @@ FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_XL AS [gn] ON g.XLM = [gn].DM /*学历码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBZLB AS [go] ON g.BZLBM = [go].DM /*编制类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWZY AS [gp] ON g.GWZYM = [gp].DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS [gq] ON g.ZYRKXD = [gq].DM /*主要任课学段*/
+      dbo.EDU_JY_RKXD AS [gq] ON g.ZYRKXD = [gq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [ib] ON i.XBM = [ib].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [ic] ON i.CSDM = [ic].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [id] ON i.MZM = [id].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [ie] ON i.GJDQM = [ie].DM /*国籍/地区码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [if] ON i.SFZJLXM = [if].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [ig] ON i.HYZKM = [ig].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [ih] ON i.GATQWM = [ih].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [ii] ON i.ZZMMM = [ii].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [ij] ON i.JKZKM = [ij].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [ik] ON i.XYZJM = [ik].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [il] ON i.XXM = [il].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [im] ON i.HKXZM = [im].DM /*户口性质码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_XL AS [in] ON i.XLM = [in].DM /*学历码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_ZXXBZLB AS [io] ON i.BZLBM = [io].DM /*编制类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GWZY AS [ip] ON i.GWZYM = [ip].DM /*岗位职业码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_RKXD AS [iq] ON i.ZYRKXD = [iq].DM /*主要任课学段*/
 GO
 
 --机构数据类表
@@ -22888,6 +23309,7 @@ SELECT a.[ID]--编号
       ,c.ZT as c_BJ_ZT--班级数据类表 状态
       ,c.PLSX as c_BJ_PLSX--班级数据类表 排列顺序
       ,c.BJLBID as c_BJ_BJLBID--班级数据类表 班级类别ID
+      ,c.FBZRID as c_BJ_FBZRID--班级数据类表 副班主任ID
       ,d.SCHOOLID as d_RKJL_SCHOOLID--入库记录表 学校
       ,d.ZCM as d_RKJL_ZCM--入库记录表 资产名
       ,d.SL as d_RKJL_SL--入库记录表 数量
@@ -36758,6 +37180,8 @@ SELECT a.[ID]--编号
       ,a.[NJID]--年级ID列表
       ,a.[NJMCLB]--年级名称列表
       ,a.[KCJS]--课程介绍
+      ,a.[BJIDLB]--班级ID列表
+      ,a.[BJMCLB]--班级名称列表
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -36867,6 +37291,8 @@ SELECT a.[ID]--编号
       ,c.NJID as c_YXKKC_NJID--预选课课程表 年级ID列表
       ,c.NJMCLB as c_YXKKC_NJMCLB--预选课课程表 年级名称列表
       ,c.KCJS as c_YXKKC_KCJS--预选课课程表 课程介绍
+      ,c.BJIDLB as c_YXKKC_BJIDLB--预选课课程表 班级ID列表
+      ,c.BJMCLB as c_YXKKC_BJMCLB--预选课课程表 班级名称列表
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名

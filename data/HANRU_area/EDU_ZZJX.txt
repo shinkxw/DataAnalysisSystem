@@ -1131,6 +1131,8 @@
             <name="NJID" exp="年级ID列表" type="nvarchar(200)" />
             <name="NJMCLB" exp="年级名称列表" type="nvarchar(200)" />
             <name="KCJS" exp="课程介绍" type="text" />
+            <name="BJIDLB" exp="班级ID列表" type="text" />
+            <name="BJMCLB" exp="班级名称列表" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_51_A02_XSYXKJL" exp="学生预选课记录表">

@@ -13,6 +13,8 @@ SELECT a.[ID]--编号
       ,c.NJID as c_YXKKC_NJID--预选课课程表 年级ID列表
       ,c.NJMCLB as c_YXKKC_NJMCLB--预选课课程表 年级名称列表
       ,c.KCJS as c_YXKKC_KCJS--预选课课程表 课程介绍
+      ,c.BJIDLB as c_YXKKC_BJIDLB--预选课课程表 班级ID列表
+      ,c.BJMCLB as c_YXKKC_BJMCLB--预选课课程表 班级名称列表
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名

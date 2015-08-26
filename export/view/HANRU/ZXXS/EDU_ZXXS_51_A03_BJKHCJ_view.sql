@@ -48,6 +48,7 @@ SELECT a.[ID]--编号
       ,f.ZT as f_BJ_ZT--班级数据类表 状态
       ,f.PLSX as f_BJ_PLSX--班级数据类表 排列顺序
       ,f.BJLBID as f_BJ_BJLBID--班级数据类表 班级类别ID
+      ,f.FBZRID as f_BJ_FBZRID--班级数据类表 副班主任ID
       ,g.SCHOOLID as g_USER_SCHOOLID--应用系统用户表 学校ID
       ,g.APPID as g_USER_APPID--应用系统用户表 应用ID
       ,'' as g_USER_PWD--应用系统用户表 密码

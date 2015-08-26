@@ -68,6 +68,7 @@
             <name="ZT" exp="状态" type="int" />
             <name="PLSX" exp="排列顺序" type="int" default="100" />
             <name="BJLBID" exp="班级类别ID" type="int" default="1" />
+            <name="FBZRID" exp="副班主任ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXXX_03_A01_BJLB" exp="班级类别表">
