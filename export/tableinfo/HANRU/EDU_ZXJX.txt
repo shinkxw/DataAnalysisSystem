@@ -589,6 +589,7 @@ EDU_ZXJX_54_A02_SCXM  手册项目表
   XMMC          项目名称                nvarchar(100)  非主
   SFQFXQ        是否区分学期            int            非主
   PLSX          排列顺序                int            非主
+  SCNRMBID      手册内容模板ID          int            非主        手册内容模板表
 
 EDU_ZXJX_54_A03_SCNR  手册内容表
   ID            编号                    int            主键

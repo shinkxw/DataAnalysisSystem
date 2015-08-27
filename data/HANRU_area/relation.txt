@@ -1138,6 +1138,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJX_54_A02_SCXM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  SCNRMBID       EDU_ZXJX_54_A01_SCNRMB             ID
 <EDU_ZXJX_54_A03_SCNR
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   BJID           EDU_ZXXX_03_01_BJ                  BH

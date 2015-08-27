@@ -35,6 +35,7 @@ SELECT a.[ID]--编号
       ,d.XMMC as d_SCXM_XMMC--手册项目表 项目名称
       ,d.SFQFXQ as d_SCXM_SFQFXQ--手册项目表 是否区分学期
       ,d.PLSX as d_SCXM_PLSX--手册项目表 排列顺序
+      ,d.SCNRMBID as d_SCXM_SCNRMBID--手册项目表 手册内容模板ID
       ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
       ,e.XN as e_XN_XN--学年表 学年
       ,f.SCHOOLID as f_XQ_SCHOOLID--学期数据表 学校名

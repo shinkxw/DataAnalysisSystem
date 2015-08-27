@@ -1542,6 +1542,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_54_A02_SCXM](
 	[XMMC]  nvarchar(100)  NOT NULL,--项目名称
 	[SFQFXQ]  int  NOT NULL,--是否区分学期
 	[PLSX]  int  NOT NULL,--排列顺序
+	[SCNRMBID]  int  NOT NULL,--手册内容模板ID
 CONSTRAINT [PK_EDU_ZXJX_54_A02_SCXM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2690,6 +2691,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否区分学期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A02_SCXM', @level2type=N'COLUMN',@level2name=N'SFQFXQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A02_SCXM', @level2type=N'COLUMN',@level2name=N'PLSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'手册内容模板ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A02_SCXM', @level2type=N'COLUMN',@level2name=N'SCNRMBID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'手册内容表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A03_SCNR'
 GO

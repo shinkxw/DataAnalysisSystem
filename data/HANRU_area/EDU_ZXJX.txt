@@ -709,6 +709,7 @@
             <name="XMMC" exp="项目名称" type="nvarchar(100)" />
             <name="SFQFXQ" exp="是否区分学期" type="int" />
             <name="PLSX" exp="排列顺序" type="int" />
+            <name="SCNRMBID" exp="手册内容模板ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_54_A03_SCNR" exp="手册内容表">

@@ -903,6 +903,10 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_53_A46
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_53_A46_BXKXXTKCJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_54_A02_SCXM_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZXJX_54_A02_SCXM_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZXJX_54_A03_SCNR_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZXJX_54_A03_SCNR_DISP
@@ -14981,6 +14985,23 @@ FROM dbo.EDU_ZXJX_53_A46_BXKXXTKCJ AS a LEFT OUTER JOIN
       dbo.EDU_JY_XSDQZT AS [dq] ON d.XSDQZTM = [dq].DM /*学生当前状态码*/
 GO
 
+--手册项目表
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_54_A02_SCXM_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[XMMC]--项目名称
+      ,a.[SFQFXQ]--是否区分学期
+      ,a.[PLSX]--排列顺序
+      ,a.[SCNRMBID]--手册内容模板ID
+      ,c.SCHOOLID as c_SCNRMB_SCHOOLID--手册内容模板表 学校
+      ,c.MC as c_SCNRMB_MC--手册内容模板表 名称
+      ,c.NR as c_SCNRMB_NR--手册内容模板表 内容
+
+FROM dbo.EDU_ZXJX_54_A02_SCXM AS a LEFT OUTER JOIN
+      dbo.EDU_ZXJX_54_A01_SCNRMB AS c ON a.SCNRMBID = c.ID /*手册内容模板ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
+GO
+
 --手册内容表
 CREATE VIEW [dbo].[VIEW_EDU_ZXJX_54_A03_SCNR_DISP]
 AS
@@ -15017,6 +15038,7 @@ SELECT a.[ID]--编号
       ,d.XMMC as d_SCXM_XMMC--手册项目表 项目名称
       ,d.SFQFXQ as d_SCXM_SFQFXQ--手册项目表 是否区分学期
       ,d.PLSX as d_SCXM_PLSX--手册项目表 排列顺序
+      ,d.SCNRMBID as d_SCXM_SCNRMBID--手册项目表 手册内容模板ID
       ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
       ,e.XN as e_XN_XN--学年表 学年
       ,f.SCHOOLID as f_XQ_SCHOOLID--学期数据表 学校名
