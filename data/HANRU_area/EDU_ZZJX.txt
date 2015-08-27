@@ -1320,4 +1320,109 @@
             <name="Code" exp="" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_56_A02_BaseProjectInfo" exp="基本项目信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ProjectID" exp="课表ID" type="nvarchar(20)" />
+            <name="ProjectName" exp="课表名称" type="nvarchar(100)" />
+            <name="GreatorID" exp="创建教师ID" type="nvarchar(20)" />
+            <name="GreatorName" exp="创建教师" type="nvarchar(20)" />
+            <name="GreatDate" exp="创建日期" type="nvarchar(20)" />
+            <name="TheLastReFlashDay" exp="最后更新日期" type="nvarchar(20)" />
+            <name="TheLastReFlashTeacherID" exp="最后更新教师ID" type="nvarchar(20)" />
+            <name="TheLastReFlashTeacherName" exp="最后更新教师" type="nvarchar(20)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A03_Class" exp="班级表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="WeekCategory" exp="单(双)周" type="int" />
+            <name="DayOfWeek" exp="星期几" type="int" />
+            <name="TimeInterval" exp="时段" type="int" />
+            <name="Period" exp="节次" type="int" />
+            <name="Tabling" exp="是否被排课" type="int" />
+            <name="RecordID" exp="记录ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A04_ClassRule" exp="班级规则表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ClassRuleName" exp="班级名称" type="nvarchar(50)" />
+            <name="ClassCategory" exp="班级类别" type="nvarchar(50)" />
+            <name="HeadMaster" exp="班主任" type="nvarchar(20)" />
+            <name="StudentAcount" exp="学生数目" type="int" />
+            <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(50)" />
+            <name="Priority" exp="优先级" type="int" />
+            <name="Related" exp="关联班级" type="int" />
+            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
+            <name="RecordID" exp="表Record外键" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A05_CourseRule" exp="课程规则表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="CourseRuleName" exp="课程" type="nvarchar(50)" />
+            <name="CourseCategory" exp="课程类别" type="nvarchar(50)" />
+            <name="TimeIntervalCategory" exp="排课时段" type="nvarchar(20)" />
+            <name="MajorCourse" exp="主课" type="nvarchar(20)" />
+            <name="TimeAllocation" exp="课时分配" type="nvarchar(20)" />
+            <name="MorningAndEveningAllocation" exp="早晚安排" type="nvarchar(20)" />
+            <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(20)" />
+            <name="Priority" exp="优先级" type="int" />
+            <name="Related" exp="相关课程" type="int" />
+            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
+            <name="RecordID" exp="表Record外键" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A06_TeacherRule" exp="教师规则表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="TeacherName" exp="教师名称" type="nvarchar(20)" />
+            <name="TeacherCategory" exp="教师类别" type="nvarchar(50)" />
+            <name="MutexTeacher" exp="互斥教师" type="nvarchar(20)" />
+            <name="PhoneNumber" exp="电话号码" type="nvarchar(50)" />
+            <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(20)" />
+            <name="Priority" exp="优先级" type="int" />
+            <name="Related" exp="相关教师" type="int" />
+            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
+            <name="RecordID" exp="表Record外键" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A07_PlaceRule" exp="场地规则表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="PlaceName" exp="场地名称" type="nvarchar(50)" />
+            <name="PlaceCategory" exp="场地类别" type="nvarchar(50)" />
+            <name="TheCapacityOfClass" exp="班级容量" type="int" />
+            <name="TheCapacityOfStudent" exp="学生容量" type="int" />
+            <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(20)" />
+            <name="Priority" exp="优先级" type="int" />
+            <name="Related" exp="相关场地" type="int" />
+            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
+            <name="RecordID" exp="表Record外键" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_56_A08_TeachSchedule" exp="教学计划表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="CourseID" exp="外键引用表EDU_ZZJX_55_A04_ZYKCK的ID列" type="int" />
+            <name="ClassID" exp="外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列" type="nvarchar(10)" />
+            <name="TeacherID" exp="外键引用表EDU_ZZJG_01_01_JZGJBSJ的ID列" type="int" />
+            <name="Times" exp="次数" type="nvarchar(20)" />
+            <name="TimesInMorning" exp="上午次数" type="nvarchar(20)" />
+            <name="ClassGroupName" exp="合班名" type="nvarchar(50)" />
+            <name="ClassGroup" exp="合班组" type="nvarchar(20)" />
+            <name="RateOfProgress" exp="进度组" type="nvarchar(20)" />
+            <name="PairClass" exp="双次课" type="nvarchar(20)" />
+            <name="PairClassCategory" exp="双次方式" type="nvarchar(20)" />
+            <name="RecordID" exp="表Record外键" type="int" />
+        </field_area>
+    </table>
 </namespace>

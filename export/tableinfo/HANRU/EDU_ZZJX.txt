@@ -1121,3 +1121,94 @@ EDU_ZZJX_56_A01_Record  记录表
   Comment       评论                    nvarchar(200)  非主
   Code                                  int            非主
 
+EDU_ZZJX_56_A02_BaseProjectInfo  基本项目信息表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  ProjectID     课表ID                  nvarchar(20)   非主
+  ProjectName   课表名称                nvarchar(100)  非主
+  GreatorID     创建教师ID              nvarchar(20)   非主
+  GreatorName   创建教师                nvarchar(20)   非主
+  GreatDate     创建日期                nvarchar(20)   非主
+  TheLastReFlashDay最后更新日期            nvarchar(20)   非主
+  TheLastReFlashTeacherID最后更新教师ID          nvarchar(20)   非主
+  TheLastReFlashTeacherName最后更新教师            nvarchar(20)   非主
+
+EDU_ZZJX_56_A03_Class  班级表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  WeekCategory  单(双)周                int            非主
+  DayOfWeek     星期几                  int            非主
+  TimeInterval  时段                    int            非主
+  Period        节次                    int            非主
+  Tabling       是否被排课              int            非主
+  RecordID      记录ID                  int            非主
+
+EDU_ZZJX_56_A04_ClassRule  班级规则表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  ClassRuleName 班级名称                nvarchar(50)   非主
+  ClassCategory 班级类别                nvarchar(50)   非主
+  HeadMaster    班主任                  nvarchar(20)   非主
+  StudentAcount 学生数目                int            非主
+  TimeLimitCount时间限制次数            nvarchar(50)   非主
+  Priority      优先级                  int            非主
+  Related       关联班级                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
+  RecordID      表Record外键            int            非主
+
+EDU_ZZJX_56_A05_CourseRule  课程规则表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  CourseRuleName课程                    nvarchar(50)   非主
+  CourseCategory课程类别                nvarchar(50)   非主
+  TimeIntervalCategory排课时段                nvarchar(20)   非主
+  MajorCourse   主课                    nvarchar(20)   非主
+  TimeAllocation课时分配                nvarchar(20)   非主
+  MorningAndEveningAllocation早晚安排                nvarchar(20)   非主
+  TimeLimitCount时间限制次数            nvarchar(20)   非主
+  Priority      优先级                  int            非主
+  Related       相关课程                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
+  RecordID      表Record外键            int            非主
+
+EDU_ZZJX_56_A06_TeacherRule  教师规则表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  TeacherName   教师名称                nvarchar(20)   非主
+  TeacherCategory教师类别                nvarchar(50)   非主
+  MutexTeacher  互斥教师                nvarchar(20)   非主
+  PhoneNumber   电话号码                nvarchar(50)   非主
+  TimeLimitCount时间限制次数            nvarchar(20)   非主
+  Priority      优先级                  int            非主
+  Related       相关教师                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
+  RecordID      表Record外键            int            非主
+
+EDU_ZZJX_56_A07_PlaceRule  场地规则表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  PlaceName     场地名称                nvarchar(50)   非主
+  PlaceCategory 场地类别                nvarchar(50)   非主
+  TheCapacityOfClass班级容量                int            非主
+  TheCapacityOfStudent学生容量                int            非主
+  TimeLimitCount时间限制次数            nvarchar(20)   非主
+  Priority      优先级                  int            非主
+  Related       相关场地                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
+  RecordID      表Record外键            int            非主
+
+EDU_ZZJX_56_A08_TeachSchedule  教学计划表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键
+  CourseID      外键引用表EDU_ZZJX_55_A04_ZYKCK的ID列int            非主
+  ClassID       外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列nvarchar(10)   非主
+  TeacherID     外键引用表EDU_ZZJG_01_01_JZGJBSJ的ID列int            非主
+  Times         次数                    nvarchar(20)   非主
+  TimesInMorning上午次数                nvarchar(20)   非主
+  ClassGroupName合班名                  nvarchar(50)   非主
+  ClassGroup    合班组                  nvarchar(20)   非主
+  RateOfProgress进度组                  nvarchar(20)   非主
+  PairClass     双次课                  nvarchar(20)   非主
+  PairClassCategory双次方式                nvarchar(20)   非主
+  RecordID      表Record外键            int            非主
+
