@@ -13,6 +13,7 @@ SELECT a.[ID]--编号
       ,c.FYMC as c_SFXM_FYMC--收费项目表 费用名称
       ,c.YSJE as c_SFXM_YSJE--收费项目表 应收金额
       ,c.PLSX as c_SFXM_PLSX--收费项目表 排列顺序
+      ,c.BZ as c_SFXM_BZ--收费项目表 备注
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名

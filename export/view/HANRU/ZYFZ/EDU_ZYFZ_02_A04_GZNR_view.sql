@@ -53,6 +53,7 @@ SELECT a.[ID]--编号
       ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
       ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
       ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,g.BaseProjectInfoID as g_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
 
 FROM dbo.EDU_ZYFZ_02_A04_GZNR AS a LEFT OUTER JOIN
       dbo.EDU_ZYFZ_02_A07_XQGRLM AS c ON a.SSLMID = c.ID /*所属栏目ID*/ LEFT OUTER JOIN

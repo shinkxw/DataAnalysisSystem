@@ -79,6 +79,7 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.BaseProjectInfoID as d_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,e.SCHOOLID as e_DSZXSMB_SCHOOLID--导师制显示模板表 学校
       ,e.MBLX as e_DSZXSMB_MBLX--导师制显示模板表 模板类型
       ,e.NRLX as e_DSZXSMB_NRLX--导师制显示模板表 内容类型

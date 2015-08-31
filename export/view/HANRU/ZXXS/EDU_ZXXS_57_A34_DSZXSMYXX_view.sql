@@ -80,6 +80,7 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.BaseProjectInfoID as d_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,e.SCHOOLID as e_DSZXSXXLM_SCHOOLID--导师制学生信息栏目表 学校
       ,e.FLMID as e_DSZXSXXLM_FLMID--导师制学生信息栏目表 父栏目ID
       ,e.LMMC as e_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称

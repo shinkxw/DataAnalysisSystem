@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[FYMC]--费用名称
       ,a.[YSJE]--应收金额
       ,a.[PLSX]--排列顺序
+      ,a.[BZ]--备注
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -15,6 +16,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
 
 FROM dbo.EDU_ZXJX_55_A01_SFXM AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

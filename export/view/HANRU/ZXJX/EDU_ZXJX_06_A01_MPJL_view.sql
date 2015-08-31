@@ -177,6 +177,7 @@ SELECT a.[ID]--编号
       ,g.XQMC as g_XQ_XQMC--学期数据表 学期名称
       ,g.XQKSRQ as g_XQ_XQKSRQ--学期数据表 学期开始日期
       ,g.XQJSRQ as g_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,g.BaseProjectInfoID as g_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,h.SCHOOLID as h_NJ_SCHOOLID--年级数据类表 学校名
       ,h.NJMC as h_NJ_NJMC--年级数据类表 年级名称
       ,h.ZT as h_NJ_ZT--年级数据类表 状态

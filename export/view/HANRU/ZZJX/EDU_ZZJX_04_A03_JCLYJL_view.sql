@@ -20,6 +20,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,d.ZYDM as d_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[db].ZYMLLB as d_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -66,6 +67,7 @@ SELECT a.[ID]--编号
       ,f.PLSX as f_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,f.FullClassName as f_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,f.RecordID as f_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,f.ClassGroupId as f_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,g.SCHOOLID as g_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,g.JCDM as g_JCJBXX_JCDM--教材基本信息表 教材代码
       ,g.JCMC as g_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -156,6 +158,7 @@ SELECT a.[ID]--编号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.RecordID as h_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_04_A03_JCLYJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

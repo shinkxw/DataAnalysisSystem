@@ -19,6 +19,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_DSZHD_SCHOOLID--导师制活动表 学校
       ,d.XQID as d_DSZHD_XQID--导师制活动表 学期ID
       ,d.DSID as d_DSZHD_DSID--导师制活动表 导师ID

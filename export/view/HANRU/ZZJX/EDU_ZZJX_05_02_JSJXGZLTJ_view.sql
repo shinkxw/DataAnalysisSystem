@@ -84,6 +84,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.RecordID as c_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -91,6 +92,7 @@ SELECT a.[SCHOOLID]--学校ID
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.BaseProjectInfoID as d_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
 
 FROM dbo.EDU_ZZJX_05_02_JSJXGZLTJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

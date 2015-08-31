@@ -153,6 +153,7 @@ SELECT a.[ID]--编号
       ,v.JSKQJS as v_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,v.FullTeacherName as v_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,v.RecordID as v_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,v.TeacherGroupId as v_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,w.SCHOOLID as w_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,w.GH as w_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,w.XM as w_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -224,6 +225,7 @@ SELECT a.[ID]--编号
       ,w.JSKQJS as w_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,w.FullTeacherName as w_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,w.RecordID as w_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,w.TeacherGroupId as w_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_16_A02_YPJSSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_16_A01_ZPGWSJ AS c ON a.YPGWID = c.ID /*应聘岗位ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

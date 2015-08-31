@@ -259,6 +259,7 @@ SELECT a.[ID]--考试成绩表
       ,k.XQMC as k_XQ_XQMC--学期数据表 学期名称
       ,k.XQKSRQ as k_XQ_XQKSRQ--学期数据表 学期开始日期
       ,k.XQJSRQ as k_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,k.BaseProjectInfoID as k_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,l.SCHOOLID as l_XN_SCHOOLID--学年表 学校名
       ,l.XN as l_XN_XN--学年表 学年
       ,m.SCHOOLID as m_NJ_SCHOOLID--年级数据类表 学校名

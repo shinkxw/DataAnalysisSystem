@@ -14,6 +14,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_PHZYKPJS_SCHOOLID--平湖职业考评教师表 学校
       ,d.XQID as d_PHZYKPJS_XQID--平湖职业考评教师表 学期ID
       ,d.JSID as d_PHZYKPJS_JSID--平湖职业考评教师表 教师ID

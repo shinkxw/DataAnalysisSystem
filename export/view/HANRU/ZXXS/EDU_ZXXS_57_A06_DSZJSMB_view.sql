@@ -17,6 +17,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_DSZJS_SCHOOLID--导师制角色表 学校
       ,d.XQID as d_DSZJS_XQID--导师制角色表 学期ID
       ,d.JSMC as d_DSZJS_JSMC--导师制角色表 角色名称

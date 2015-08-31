@@ -164,6 +164,7 @@ SELECT a.[ID]--编号
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,k.RecordID as k_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,k.ClassGroupId as k_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,l.SCHOOLID as l_KSSDLX_SCHOOLID--考试时段类型表 学校
       ,l.TypeName as l_KSSDLX_TypeName--考试时段类型表 类型名
       ,l.StartTime as l_KSSDLX_StartTime--考试时段类型表 开始时间

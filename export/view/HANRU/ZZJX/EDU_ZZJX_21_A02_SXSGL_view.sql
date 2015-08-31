@@ -76,6 +76,7 @@ SELECT a.[ID]--编号
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,e.BaseProjectInfoID as e_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,f.SCHOOLID as f_SXGW_SCHOOLID--实习岗位表 学校
       ,f.SXSID as f_SXGW_SXSID--实习岗位表 实习生ID
       ,f.JobID as f_SXGW_JobID--实习岗位表 岗位ID

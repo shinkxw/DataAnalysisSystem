@@ -45,6 +45,7 @@ SELECT a.[ID]--编号
       ,f.XQMC as f_XQ_XQMC--学期数据表 学期名称
       ,f.XQKSRQ as f_XQ_XQKSRQ--学期数据表 学期开始日期
       ,f.XQJSRQ as f_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,f.BaseProjectInfoID as f_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
 
 FROM dbo.EDU_ZXJX_54_A03_SCNR AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

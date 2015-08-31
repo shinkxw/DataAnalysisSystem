@@ -57,6 +57,7 @@ SELECT a.[ID]--编号
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,e.BaseProjectInfoID as e_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
       ,g.MC as g_KCFL_MC--课程分类代码 名称
       ,h.MC as h_KCSX_MC--课程属性代码表 名称

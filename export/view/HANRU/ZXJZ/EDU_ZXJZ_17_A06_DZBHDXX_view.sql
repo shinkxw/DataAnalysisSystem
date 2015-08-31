@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_DZBSJ_SCHOOLID--党支部数据表 学校
       ,d.DZBMC as d_DZBSJ_DZBMC--党支部数据表 党支部名称
       ,d.SS as d_DZBSJ_SS--党支部数据表 所属

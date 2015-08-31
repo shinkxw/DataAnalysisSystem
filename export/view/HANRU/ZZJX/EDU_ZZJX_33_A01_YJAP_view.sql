@@ -97,6 +97,7 @@ SELECT a.[ID]--编号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.RecordID as d_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,e.SCHOOLID as e_EXAM_SCHOOLID--考试表 学校
       ,e.Name as e_EXAM_Name--考试表 考试名称
       ,e.CJKSKMLM as e_EXAM_CJKSKMLM--考试表 参加考试科目列表
@@ -160,6 +161,7 @@ SELECT a.[ID]--编号
       ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,j.FullClassName as j_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,j.RecordID as j_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,j.ClassGroupId as j_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,k.SCHOOLID as k_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,k.JXJHID as k_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,k.KCH as k_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

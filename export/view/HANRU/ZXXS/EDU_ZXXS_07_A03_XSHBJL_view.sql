@@ -81,6 +81,7 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.BaseProjectInfoID as d_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,e.SCHOOLID as e_BJ_SCHOOLID--班级数据类表 学校名
       ,e.NJ as e_BJ_NJ--班级数据类表 年级号
       ,e.BJ as e_BJ_BJ--班级数据类表 班级名称

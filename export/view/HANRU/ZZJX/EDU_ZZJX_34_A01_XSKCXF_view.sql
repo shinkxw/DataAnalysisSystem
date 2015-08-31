@@ -70,6 +70,7 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.BaseProjectInfoID as d_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,e.SCHOOLID as e_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,e.ZYDM as e_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[eb].ZYMLLB as e_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -116,6 +117,7 @@ SELECT a.[ID]--编号
       ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,g.FullClassName as g_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,g.RecordID as g_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,g.ClassGroupId as g_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号

@@ -99,6 +99,7 @@ SELECT a.[ID]--编号
       ,i.PLSX as i_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,i.FullClassName as i_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,i.RecordID as i_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,i.ClassGroupId as i_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,j.SCHOOLID as j_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,j.GH as j_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,j.XM as j_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -170,6 +171,7 @@ SELECT a.[ID]--编号
       ,j.JSKQJS as j_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,j.FullTeacherName as j_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,j.RecordID as j_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,j.TeacherGroupId as j_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,k.SCHOOLID as k_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,k.GH as k_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,k.XM as k_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -241,6 +243,7 @@ SELECT a.[ID]--编号
       ,k.JSKQJS as k_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,k.FullTeacherName as k_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,k.RecordID as k_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,k.TeacherGroupId as k_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_32_A01_EXAM AS c ON a.ExamID = c.ID /*考试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

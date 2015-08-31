@@ -79,6 +79,7 @@ SELECT a.[ID]--编号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.RecordID as c_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,d.ZYXXID as d_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,d.ZZNJID as d_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -97,6 +98,7 @@ SELECT a.[ID]--编号
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,d.RecordID as d_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,d.ClassGroupId as d_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZFC_10_A03_BZRXQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.BZRID = c.ID /*班主任ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
