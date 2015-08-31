@@ -741,6 +741,7 @@
             <name="FYMC" exp="费用名称" type="nvarchar(100)" />
             <name="YSJE" exp="应收金额" type="decimal(10, 3)" />
             <name="PLSX" exp="排列顺序" type="int" />
+            <name="BZ" exp="备注" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_55_A02_SFJG" exp="收费结果表">

@@ -81,6 +81,7 @@
             <name="XQMC" exp="学期名称" type="nvarchar(10)" />
             <name="XQKSRQ" exp="学期开始日期" type="nvarchar(8)" null="T" />
             <name="XQJSRQ" exp="学期结束日期" type="nvarchar(8)" null="T" />
+            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ELE_01_ROLE" exp="应用系统角色表">

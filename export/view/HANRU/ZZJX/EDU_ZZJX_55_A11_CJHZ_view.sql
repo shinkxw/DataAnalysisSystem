@@ -21,6 +21,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,d.NJMC as d_ZZNJ_NJMC--学校年级数据表 年级名称
       ,d.SSNF as d_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -41,6 +42,7 @@ SELECT a.[ID]--编号
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
       ,e.FullCourseName as e_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,e.RecordID as e_ZYKCK_RecordID--专业课程库表 记录ID
+      ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
       ,f.XM as f_XSXX_XM--学生信息数据表 姓名

@@ -105,6 +105,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,f.XQMC as f_XQ_XQMC--学期数据表 学期名称
       ,f.XQKSRQ as f_XQ_XQKSRQ--学期数据表 学期开始日期
       ,f.XQJSRQ as f_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,f.BaseProjectInfoID as f_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,g.MC as g_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,h.MC as h_HJXZ_MC--户籍性质代码 名称
       ,i.MC as i_SFBZ_MC--是否标志代码表 名称
@@ -136,6 +137,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,n.PLSX as n_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,n.FullClassName as n_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,n.RecordID as n_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,n.ClassGroupId as n_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

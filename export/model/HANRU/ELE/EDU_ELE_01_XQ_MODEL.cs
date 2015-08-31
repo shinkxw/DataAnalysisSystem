@@ -55,6 +55,11 @@ namespace HanRuEdu.LDAL
             public String XQJSRQ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "±íBaseProjectInfoÍâ¼ü")]
+            public Int32 BaseProjectInfoID { get; set; }
+
+
         }
     }
 }

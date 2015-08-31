@@ -37,6 +37,7 @@ SELECT a.[ID]--编号
       ,d.XQMC as d_XQ_XQMC--学期数据表 学期名称
       ,d.XQKSRQ as d_XQ_XQKSRQ--学期数据表 学期开始日期
       ,d.XQJSRQ as d_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,d.BaseProjectInfoID as d_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,e.SCHOOLID as e_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,e.ZYDM as e_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[eb].ZYMLLB as e_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -126,6 +127,7 @@ SELECT a.[ID]--编号
       ,j.Counts as j_CLASSROOM_Counts--教室表 座位数
       ,j.FullPlaceName as j_CLASSROOM_FullPlaceName--教室表 完整地点名称
       ,j.RecordID as j_CLASSROOM_RecordID--教室表 记录ID
+      ,j.PlaceGroupId as j_CLASSROOM_PlaceGroupId--教室表 表PlaceGroup的外键
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,k.ZZNJID as k_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -144,6 +146,7 @@ SELECT a.[ID]--编号
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,k.RecordID as k_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,k.ClassGroupId as k_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,l.SCHOOLID as l_WEEKDAY_SCHOOLID--星期 学校名
       ,l.MC as l_WEEKDAY_MC--星期 名称
       ,m.SCHOOLID as m_SD_SCHOOLID--时段 学校名

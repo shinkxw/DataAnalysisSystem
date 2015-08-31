@@ -97,6 +97,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "表BaseProjectInfo外键")]
+            public Int32 BaseProjectInfoID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "表Record外键")]
             public Int32 RecordID { get; set; }
 

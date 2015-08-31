@@ -301,6 +301,7 @@ CREATE TABLE [dbo].[EDU_ELE_01_XQ](
 	[XQMC]  nvarchar(10)  NOT NULL,--学期名称
 	[XQKSRQ]  nvarchar(8)  NULL,--学期开始日期
 	[XQJSRQ]  nvarchar(8)  NULL,--学期结束日期
+	[BaseProjectInfoID]  int  NOT NULL,--表BaseProjectInfo外键
 CONSTRAINT [PK_EDU_ELE_01_XQ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1064,6 +1065,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期开始日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_XQ', @level2type=N'COLUMN',@level2name=N'XQKSRQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期结束日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_XQ', @level2type=N'COLUMN',@level2name=N'XQJSRQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'表BaseProjectInfo外键' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_XQ', @level2type=N'COLUMN',@level2name=N'BaseProjectInfoID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应用系统角色表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_ROLE'
 GO

@@ -28,6 +28,7 @@ SELECT a.[ID]--编号
       ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,c.FullClassName as c_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,c.RecordID as c_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,c.ClassGroupId as c_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,d.SCHOOLID as d_XSKHBSJ_SCHOOLID--学生考核表数据表 学校
       ,d.KHBMC as d_XSKHBSJ_KHBMC--学生考核表数据表 考核表名称
       ,d.KHBJDMLB as d_XSKHBSJ_KHBJDMLB--学生考核表数据表 考核班级代码列表
@@ -107,6 +108,7 @@ SELECT a.[ID]--编号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.RecordID as f_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_14_A03_XSRCXWGFKHSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_02_02_ZZBJ AS c ON a.KHBJDM = c.XZBDM /*考核班级代码*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

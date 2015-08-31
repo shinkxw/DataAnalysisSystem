@@ -104,6 +104,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,e.FullClassName as e_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,e.RecordID as e_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,e.ClassGroupId as e_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份

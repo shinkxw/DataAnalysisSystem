@@ -39,6 +39,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_ZSGLCZXX_SCHOOLID--招生管理初中学校表 学校
       ,d.XXMC as d_ZSGLCZXX_XXMC--招生管理初中学校表 学校名称
       ,e.SCHOOLID as e_ZSGLZSJHXD_SCHOOLID--招生管理招生计划详单表 学校

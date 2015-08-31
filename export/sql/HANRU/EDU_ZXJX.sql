@@ -1601,6 +1601,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_55_A01_SFXM](
 	[FYMC]  nvarchar(100)  NOT NULL,--费用名称
 	[YSJE]  decimal(10, 3)  NOT NULL,--应收金额
 	[PLSX]  int  NOT NULL,--排列顺序
+	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_ZXJX_55_A01_SFXM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2737,6 +2738,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'应收金额' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_55_A01_SFXM', @level2type=N'COLUMN',@level2name=N'YSJE'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_55_A01_SFXM', @level2type=N'COLUMN',@level2name=N'PLSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_55_A01_SFXM', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收费结果表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_55_A02_SFJG'
 GO

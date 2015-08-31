@@ -71,6 +71,7 @@ EDU_ELE_01_XQ  学期数据表
   XQMC          学期名称                nvarchar(10)   非主
   XQKSRQ        学期开始日期            nvarchar(8)    非主
   XQJSRQ        学期结束日期            nvarchar(8)    非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ELE_01_ROLE  应用系统角色表
   ID            角色ID                  int            主键

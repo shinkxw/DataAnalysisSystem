@@ -105,6 +105,11 @@ namespace HanRuEdu.LDAL
             public Int32 RecordID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "表CourseGroup的外键")]
+            public Int32 CourseGroupId { get; set; }
+
+
         }
     }
 }

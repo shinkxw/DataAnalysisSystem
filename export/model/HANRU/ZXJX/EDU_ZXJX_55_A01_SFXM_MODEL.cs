@@ -10,6 +10,7 @@ namespace HanRuEdu.LDAL
         public EDU_ZXJX_55_A01_SFXM()
         {
             FYMC = "";
+            BZ = "";
         }
         public class EDU_ZXJX_55_A01_SFXM_metadata
         {
@@ -44,6 +45,12 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "排列顺序")]
             public Int32 PLSX { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "备注")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZ { get; set; }
 
 
         }

@@ -335,6 +335,11 @@ namespace HanRuEdu.LDAL
             public Int32 RecordID { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "表TeacherGroup的外键")]
+            public Int32 TeacherGroupId { get; set; }
+
+
         }
     }
 }

@@ -62,6 +62,7 @@ SELECT a.[ID]--编号
       ,q.XQMC as q_XQ_XQMC--学期数据表 学期名称
       ,q.XQKSRQ as q_XQ_XQKSRQ--学期数据表 学期开始日期
       ,q.XQJSRQ as q_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,q.BaseProjectInfoID as q_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
 
 FROM dbo.EDU_ZZXS_01_01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS c ON a.SFZJLXM = c.DM /*身份证件类型码*/ LEFT OUTER JOIN

@@ -9,6 +9,7 @@ SELECT a.[ID]--编号
       ,a.[XQMC]--学期名称
       ,a.[XQKSRQ]--学期开始日期
       ,a.[XQJSRQ]--学期结束日期
+      ,a.[BaseProjectInfoID]--表BaseProjectInfo外键
       ,c.SCHOOLID as c_XN_SCHOOLID--学年表 学校名
       ,c.XN as c_XN_XN--学年表 学年
       ,d.MC as d_XQ_MC--学期代码表 名称

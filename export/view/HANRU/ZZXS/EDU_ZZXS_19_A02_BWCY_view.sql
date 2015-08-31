@@ -71,6 +71,7 @@ SELECT a.[ID]--编号
       ,e.XQMC as e_XQ_XQMC--学期数据表 学期名称
       ,e.XQKSRQ as e_XQ_XQKSRQ--学期数据表 学期开始日期
       ,e.XQJSRQ as e_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,e.BaseProjectInfoID as e_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,f.SCHOOLID as f_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,f.ZYDM as f_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[fb].ZYMLLB as f_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -117,6 +118,7 @@ SELECT a.[ID]--编号
       ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,h.FullClassName as h_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,h.RecordID as h_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,h.ClassGroupId as h_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_19_A02_BWCY AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_19_A01_BWSJ AS c ON a.BWID = c.ID /*班委ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

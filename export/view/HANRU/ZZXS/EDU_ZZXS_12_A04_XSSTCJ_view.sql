@@ -18,6 +18,7 @@ SELECT a.[ID]--编号
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_STCY_SCHOOLID--社团成员表 学校
       ,d.STID as d_STCY_STID--社团成员表 社团ID
       ,d.STBH as d_STCY_STBH--社团成员表 社团编号
@@ -107,6 +108,7 @@ SELECT a.[ID]--编号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.RecordID as f_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
+      ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_STJBSJ_SCHOOLID--社团基本数据子类表 学校
       ,g.STMC as g_STJBSJ_STMC--社团基本数据子类表 社团名称
       ,g.STBH as g_STJBSJ_STBH--社团基本数据子类表 社团编号

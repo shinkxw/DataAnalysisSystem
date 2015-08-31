@@ -16,6 +16,7 @@ SELECT a.[ID]--值周岗位分配表ID
       ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
       ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
       ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
       ,d.SCHOOLID as d_ZZZC_SCHOOLID--值周周次表 学校ID
       ,d.XQID as d_ZZZC_XQID--值周周次表 学期ID
       ,d.ZCM as d_ZZZC_ZCM--值周周次表 周次名
