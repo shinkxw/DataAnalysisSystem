@@ -1008,20 +1008,21 @@
   TKXZID         EDU_ZXJX_35_A01_TKXZ               ID
   SQRID          EDU_ZXJZ_01_01_JZGJBSJ             ID
   SHRID          EDU_ELE_01_USER                    LOGINNAME
-<EDU_ZXJX_36_A01_JSQJXX
+<EDU_ZXJX_36_A01_JSQJLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXJX_36_A02_DKLX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+<EDU_ZXJX_36_A03_JSQJXX
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   QJJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
-<EDU_ZXJX_36_A02_XPKLB
+  JSQJLXID       EDU_ZXJX_36_A01_JSQJLX             ID
+<EDU_ZXJX_36_A04_XPKLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  JSQJXXID       EDU_ZXJX_36_A01_JSQJXX             ID
-  PKJGJLID       EDU_ELE_04_PKJGJL                  ID
-<EDU_ZXJX_36_A03_DKXX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  XDKJSID        EDU_ZXJZ_01_01_JZGJBSJ             ID
-  XDKSDID        EDU_ELE_05_SD                      ID
-  XDKJCID        EDU_ELE_05_JC                      ID
-  XDKKCID        EDU_ZXJX_01_01_KC                  KCH
+  JSQJXXID       EDU_ZXJX_36_A03_JSQJXX             ID
+  XPKJSID        EDU_ZXJZ_01_01_JZGJBSJ             ID
+  TJJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
   DKJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
+  DKLXID         EDU_ZXJX_36_A02_DKLX               ID
 <EDU_ZXJX_50_A01_XXKCLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJX_50_A02_KKSJ
@@ -1157,6 +1158,10 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   SFXMID         EDU_ZXJX_55_A01_SFXM               ID
   XSID           EDU_ZXXS_01_01_XSXX                ID
+<EDU_ZXJX_55_A03_XSSFXMBZ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZXJZ_01_01_JZGJBSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XBM            EDU_GB_RDXB                        DM

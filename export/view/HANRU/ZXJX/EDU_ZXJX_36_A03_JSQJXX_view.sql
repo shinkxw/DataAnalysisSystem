@@ -1,13 +1,18 @@
 
 --教师请假信息表
-CREATE VIEW [dbo].[VIEW_EDU_ZXJX_36_A01_JSQJXX_DISP]
+CREATE VIEW [dbo].[VIEW_EDU_ZXJX_36_A03_JSQJXX_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[QJJSID]--请假教师ID
+      ,a.[JSQJLXID]--教师请假类型ID
       ,a.[QJKSSJ]--请假开始时间
       ,a.[QJJSSJ]--请假结束时间
       ,a.[CLZT]--处理状态
+      ,a.[KCCLFS]--课程处理方式
+      ,a.[QJYY]--请假原因
+      ,a.[SQSJ]--申请时间
+      ,a.[BZ]--备注
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -74,9 +79,14 @@ SELECT a.[ID]--编号
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
+      ,d.SCHOOLID as d_JSQJLX_SCHOOLID--教师请假类型表 学校
+      ,d.LXMC as d_JSQJLX_LXMC--教师请假类型表 类型名称
+      ,d.BZ as d_JSQJLX_BZ--教师请假类型表 备注
+      ,d.SFCC as d_JSQJLX_SFCC--教师请假类型表 是否出差
 
-FROM dbo.EDU_ZXJX_36_A01_JSQJXX AS a LEFT OUTER JOIN
+FROM dbo.EDU_ZXJX_36_A03_JSQJXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.QJJSID = c.ID /*请假教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZXJX_36_A01_JSQJLX AS d ON a.JSQJLXID = d.ID /*教师请假类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
