@@ -1151,6 +1151,10 @@
   BJID           EDU_ZXXX_03_01_BJ                  BH
   XSID           EDU_ZXXS_01_01_XSXX                ID
   XNID           EDU_SYS_01_XN                      ID
+<EDU_ZXJX_54_A05_XSCJXX
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
 <EDU_ZXJX_55_A01_SFXM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID

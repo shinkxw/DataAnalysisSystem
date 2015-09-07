@@ -36,7 +36,7 @@ SELECT a.[ID]--编号
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
-      ,d.RecordID as d_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,d.ID as d_ZZBJ_ID--学校班级数据表 表Record外键
       ,d.ClassGroupId as d_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -108,7 +108,6 @@ SELECT a.[ID]--编号
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,e.RecordID as e_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,f.SCHOOLID as f_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,f.JZWH as f_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号

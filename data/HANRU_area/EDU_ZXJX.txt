@@ -749,6 +749,30 @@
             <name="NR" exp="内容" type="text" />
         </field_area>
     </table>
+    <table name="EDU_ZXJX_54_A05_XSCJXX" exp="学生晨检信息表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="RQ" exp="日期" type="datetime" />
+            <name="FR" exp="发热" type="nvarchar(200)" />
+            <name="KS" exp="咳嗽" type="nvarchar(200)" />
+            <name="PZ" exp="皮疹" type="nvarchar(200)" />
+            <name="FX" exp="腹泻" type="nvarchar(200)" />
+            <name="OT" exp="呕吐" type="nvarchar(200)" />
+            <name="HD" exp="黄疸" type="nvarchar(200)" />
+            <name="JMCX" exp="结膜充血" type="nvarchar(200)" />
+            <name="QT" exp="其它" type="nvarchar(200)" />
+            <name="SFJZ" exp="是否就诊" type="nvarchar(200)" />
+            <name="JBMC" exp="疾病名称" type="nvarchar(200)" />
+            <name="LG" exp="留观" type="nvarchar(200)" />
+            <name="HJ" exp="回家" type="nvarchar(200)" />
+            <name="LXSJ" exp="离校时间" type="nvarchar(200)" />
+            <name="FXSJ" exp="复学时间" type="nvarchar(200)" />
+            <name="QKTS" exp="缺课天数" type="nvarchar(200)" />
+        </field_area>
+    </table>
     <table name="EDU_ZXJX_55_A01_SFXM" exp="收费项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />

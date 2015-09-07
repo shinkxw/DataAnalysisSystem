@@ -38,11 +38,6 @@ namespace HanRuEdu.LDAL
             public String FullClassGroupName { get; set; }
 
 
-            [Required(ErrorMessage = "±ØÌî")]
-            [Display(Name = "±íRecordÍâ¼ü")]
-            public Int32 RecordID { get; set; }
-
-
         }
     }
 }

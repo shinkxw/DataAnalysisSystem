@@ -46,7 +46,6 @@
             <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" />
             <name="JSKQJS" exp="教师考勤角色" type="nvarchar(50)" default="'教师'" />
             <name="FullTeacherName" exp="完整老师姓名" type="nvarchar(50)" />
-            <name="RecordID" exp="记录ID" type="int" />
             <name="TeacherGroupId" exp="表TeacherGroup的外键" type="int" />
         </field_area>
     </table>

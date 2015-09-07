@@ -117,7 +117,7 @@ SELECT a.[ID]--编号
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,h.FullClassName as h_ZZBJ_FullClassName--学校班级数据表 完整班级名称
-      ,h.RecordID as h_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,h.ID as h_ZZBJ_ID--学校班级数据表 表Record外键
       ,h.ClassGroupId as h_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_19_A02_BWCY AS a LEFT OUTER JOIN

@@ -102,7 +102,7 @@
             <name="BZRID" exp="班主任ID" type="int" null="T" />
             <name="PLSX" exp="排列顺序" type="int" default="100" />
             <name="FullClassName" exp="完整班级名称" type="nvarchar(50)" />
-            <name="RecordID" exp="记录ID" type="int" />
+            <name="ID" exp="表Record外键" type="int" />
             <name="ClassGroupId" exp="表ClassGroup的外键" type="int" />
         </field_area>
     </table>
@@ -706,7 +706,6 @@
             <name="Place" exp="地点" type="nvarchar(128)" />
             <name="Counts" exp="座位数" type="int" />
             <name="FullPlaceName" exp="完整地点名称" type="nvarchar(50)" />
-            <name="RecordID" exp="记录ID" type="int" />
             <name="PlaceGroupId" exp="表PlaceGroup的外键" type="int" />
         </field_area>
     </table>
@@ -1202,7 +1201,6 @@
             <name="JXDG" exp="教学大纲" type="text" />
             <name="SFSY" exp="是否使用" type="int" />
             <name="FullCourseName" exp="完整课程名称" type="nvarchar(50)" />
-            <name="RecordID" exp="记录ID" type="int" />
             <name="CourseGroupId" exp="表CourseGroup的外键" type="int" />
         </field_area>
     </table>
@@ -1321,6 +1319,7 @@
             <name="ShortTitle2" exp="短标题二" type="nvarchar(50)" />
             <name="Comment" exp="评论" type="nvarchar(200)" />
             <name="Code" exp="" type="int" />
+            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A02_BaseProjectInfo" exp="基本项目信息表">
@@ -1335,6 +1334,17 @@
             <name="TheLastReFlashDay" exp="最后更新日期" type="nvarchar(20)" />
             <name="TheLastReFlashTeacherID" exp="最后更新教师ID" type="nvarchar(20)" />
             <name="TheLastReFlashTeacherName" exp="最后更新教师" type="nvarchar(20)" />
+            <name="DaysOfWeek" exp="" type="int" />
+            <name="PeriodOfPeriod" exp="" type="int" />
+            <name="WeeksOFTerm" exp="" type="int" />
+            <name="PeriodOfMatinal" exp="" type="int" />
+            <name="PeriodOfMorning" exp="" type="int" />
+            <name="PeriodOfAfternoon" exp="" type="int" />
+            <name="PeriodOfEvening" exp="" type="int" />
+            <name="UsingSetting" exp="" type="nvarchar(10)" />
+            <name="Priority" exp="" type="int" />
+            <name="StartDate" exp="" type="datetime" />
+            <name="EndDate" exp="" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A03_Class" exp="班级表">
@@ -1360,8 +1370,6 @@
             <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(50)" />
             <name="Priority" exp="优先级" type="int" />
             <name="Related" exp="关联班级" type="int" />
-            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A05_CourseRule" exp="课程规则表">
@@ -1377,8 +1385,6 @@
             <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(20)" />
             <name="Priority" exp="优先级" type="int" />
             <name="Related" exp="相关课程" type="int" />
-            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A06_TeacherRule" exp="教师规则表">
@@ -1392,8 +1398,6 @@
             <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(20)" />
             <name="Priority" exp="优先级" type="int" />
             <name="Related" exp="相关教师" type="int" />
-            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A07_PlaceRule" exp="场地规则表">
@@ -1407,8 +1411,6 @@
             <name="TimeLimitCount" exp="时间限制次数" type="nvarchar(20)" />
             <name="Priority" exp="优先级" type="int" />
             <name="Related" exp="相关场地" type="int" />
-            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A08_TeachSchedule" exp="教学计划表">
@@ -1425,8 +1427,6 @@
             <name="RateOfProgress" exp="进度组" type="nvarchar(20)" />
             <name="PairClass" exp="双次课" type="nvarchar(20)" />
             <name="PairClassCategory" exp="双次方式" type="nvarchar(20)" />
-            <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A09_TeacherGroup" exp="教师组表">
@@ -1435,7 +1435,6 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="TeacherGroupName" exp="教师组名称" type="nvarchar(50)" />
             <name="FullTeacherGroupName" exp="完整教师组名称" type="nvarchar(50)" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A10_ClassGroup" exp="教师组表">
@@ -1444,7 +1443,6 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="ClassGroupName" exp="班级组名称" type="nvarchar(50)" />
             <name="FullClassGroupName" exp="完整班级组名称" type="nvarchar(50)" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A11_CourseGroup" exp="课程组表">
@@ -1453,7 +1451,6 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="CourseGroupName" exp="课程组名称" type="nvarchar(50)" />
             <name="FullCourseGroupName" exp="完整课程组名称" type="nvarchar(50)" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A12_PlaceGroup" exp="场地组表">
@@ -1462,7 +1459,6 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="PlaceGroupName" exp="场地组名称" type="nvarchar(50)" />
             <name="FullPlaceGroupName" exp="完整场地组名称" type="nvarchar(50)" />
-            <name="RecordID" exp="表Record外键" type="int" />
         </field_area>
     </table>
 </namespace>

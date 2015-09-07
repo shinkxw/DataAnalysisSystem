@@ -81,7 +81,6 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,c.RecordID as c_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_CWZYDL_SCHOOLID--财务专业大类表 学校
       ,d.ZYDLDM as d_CWZYDL_ZYDLDM--财务专业大类表 专业大类代码

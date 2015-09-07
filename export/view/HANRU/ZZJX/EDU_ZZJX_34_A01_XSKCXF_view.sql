@@ -116,7 +116,7 @@ SELECT a.[ID]--编号
       ,g.BZRID as g_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,g.FullClassName as g_ZZBJ_FullClassName--学校班级数据表 完整班级名称
-      ,g.RecordID as g_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,g.ID as g_ZZBJ_ID--学校班级数据表 表Record外键
       ,g.ClassGroupId as g_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID

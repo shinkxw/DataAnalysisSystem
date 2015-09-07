@@ -147,7 +147,6 @@ SELECT a.[ID]--学籍异动表编号
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,f.RecordID as f_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业基本信息数据表 专业代码
@@ -188,7 +187,7 @@ SELECT a.[ID]--学籍异动表编号
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,h.FullClassName as h_ZZBJ_FullClassName--学校班级数据表 完整班级名称
-      ,h.RecordID as h_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,h.ID as h_ZZBJ_ID--学校班级数据表 表Record外键
       ,h.ClassGroupId as h_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
@@ -235,7 +234,7 @@ SELECT a.[ID]--学籍异动表编号
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
       ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
-      ,k.RecordID as k_ZZBJ_RecordID--学校班级数据表 记录ID
+      ,k.ID as k_ZZBJ_ID--学校班级数据表 表Record外键
       ,k.ClassGroupId as k_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,l.SCHOOLID as l_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称

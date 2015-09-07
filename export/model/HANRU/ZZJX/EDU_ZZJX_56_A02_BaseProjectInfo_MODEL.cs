@@ -17,6 +17,9 @@ namespace HanRuEdu.LDAL
             TheLastReFlashDay = "";
             TheLastReFlashTeacherID = "";
             TheLastReFlashTeacherName = "";
+            UsingSetting = "";
+            StartDate = DateTime.Now;
+            EndDate = DateTime.Now;
         }
         public class EDU_ZZJX_56_A02_BaseProjectInfo_metadata
         {
@@ -84,6 +87,63 @@ namespace HanRuEdu.LDAL
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String TheLastReFlashTeacherName { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 DaysOfWeek { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 PeriodOfPeriod { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 WeeksOFTerm { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 PeriodOfMatinal { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 PeriodOfMorning { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 PeriodOfAfternoon { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 PeriodOfEvening { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String UsingSetting { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 Priority { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public DateTime StartDate { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public DateTime EndDate { get; set; }
 
 
         }

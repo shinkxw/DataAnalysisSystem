@@ -158,7 +158,6 @@ SELECT a.[ID]--编号
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,h.RecordID as h_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,i.GH as i_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -230,7 +229,6 @@ SELECT a.[ID]--编号
       ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,i.JSKQJS as i_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,i.FullTeacherName as i_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,i.RecordID as i_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,i.TeacherGroupId as i_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,j.MC as j_SFBZ_MC--是否标志代码表 名称
 

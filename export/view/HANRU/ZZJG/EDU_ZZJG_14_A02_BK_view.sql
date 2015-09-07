@@ -80,7 +80,6 @@ SELECT a.[ID]--编号
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,c.RecordID as c_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_BKLX_SCHOOLID--备课类型表 学校
       ,d.BKLXMC as d_BKLX_BKLXMC--备课类型表 类型名称

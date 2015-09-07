@@ -59,7 +59,6 @@ SELECT a.[ID]--编号
       ,f.JXDG as f_ZYKCK_JXDG--专业课程库表 教学大纲
       ,f.SFSY as f_ZYKCK_SFSY--专业课程库表 是否使用
       ,f.FullCourseName as f_ZYKCK_FullCourseName--专业课程库表 完整课程名称
-      ,f.RecordID as f_ZYKCK_RecordID--专业课程库表 记录ID
       ,f.CourseGroupId as f_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
 
 FROM dbo.EDU_ZZJX_55_A08_NJJXJH AS a LEFT OUTER JOIN

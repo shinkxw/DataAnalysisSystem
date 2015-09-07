@@ -140,7 +140,6 @@ SELECT a.[ID]--编号
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,g.RecordID as g_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -212,7 +211,6 @@ SELECT a.[ID]--编号
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
-      ,h.RecordID as h_JZGJBSJ_RecordID--教职工基本数据子类表 记录ID
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,i.SCHOOLID as i_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,i.JXJHID as i_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
@@ -257,7 +255,6 @@ SELECT a.[ID]--编号
       ,k.Place as k_CLASSROOM_Place--教室表 地点
       ,k.Counts as k_CLASSROOM_Counts--教室表 座位数
       ,k.FullPlaceName as k_CLASSROOM_FullPlaceName--教室表 完整地点名称
-      ,k.RecordID as k_CLASSROOM_RecordID--教室表 记录ID
       ,k.PlaceGroupId as k_CLASSROOM_PlaceGroupId--教室表 表PlaceGroup的外键
 
 FROM dbo.EDU_ZZJX_38_A01_ZZJXB AS a LEFT OUTER JOIN
