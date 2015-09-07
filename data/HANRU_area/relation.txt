@@ -1019,6 +1019,7 @@
 <EDU_ZXJX_36_A04_XPKLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JSQJXXID       EDU_ZXJX_36_A03_JSQJXX             ID
+  PKJGJLID       EDU_ELE_04_PKJGJL                  ID
   XPKJSID        EDU_ZXJZ_01_01_JZGJBSJ             ID
   TJJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
   DKJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
