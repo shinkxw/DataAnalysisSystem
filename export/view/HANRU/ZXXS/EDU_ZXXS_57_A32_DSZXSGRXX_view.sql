@@ -71,6 +71,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_DSZXSXXLM_SCHOOLID--导师制学生信息栏目表 学校
       ,d.FLMID as d_DSZXSXXLM_FLMID--导师制学生信息栏目表 父栏目ID
       ,d.LMMC as d_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称

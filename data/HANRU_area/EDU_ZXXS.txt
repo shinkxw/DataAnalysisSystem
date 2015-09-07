@@ -42,6 +42,8 @@
             <name="ZYDZ" exp="主页地址" type="nvarchar(60)" null="T" />
             <name="XJH" exp="学籍号" type="nvarchar(30)" null="T" />
             <name="XSDQZTM" exp="学生当前状态码" type="nvarchar(2)" default="'01'" />
+            <name="JHRY" exp="监护人一" type="nvarchar(200)" null="T" />
+            <name="JHRE" exp="监护人二" type="nvarchar(200)" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXXS_01_06_XSJTCY" exp="学生家庭成员数据表">

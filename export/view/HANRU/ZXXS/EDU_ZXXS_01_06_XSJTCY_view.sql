@@ -86,6 +86,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.MC as d_JTGX_MC--家庭关系代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
       ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码

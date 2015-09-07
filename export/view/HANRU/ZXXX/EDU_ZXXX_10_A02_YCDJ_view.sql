@@ -72,6 +72,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_SCSZ_SCHOOLID--三餐设置表 学校
       ,d.MC as d_SCSZ_MC--三餐设置表 名称
       ,d.JG as d_SCSZ_JG--三餐设置表 价格

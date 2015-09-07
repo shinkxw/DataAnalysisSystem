@@ -40,6 +40,8 @@ EDU_ZXXS_01_01_XSXX  学生基本数据子类表
   ZYDZ          主页地址                nvarchar(60)   非主
   XJH           学籍号                  nvarchar(30)   非主
   XSDQZTM       学生当前状态码          nvarchar(2)    非主        学生当前状态代码表
+  JHRY          监护人一                nvarchar(200)  非主
+  JHRE          监护人二                nvarchar(200)  非主
 
 EDU_ZXXS_01_06_XSJTCY  学生家庭成员数据表
   ID            编号                    int            主键

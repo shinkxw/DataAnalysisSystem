@@ -76,6 +76,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_XFZKTJLXM_SCHOOLID--学分制课堂记录项目表 学校
       ,e.XMMC as e_XFZKTJLXM_XMMC--学分制课堂记录项目表 项目名称
       ,e.SRLX as e_XFZKTJLXM_SRLX--学分制课堂记录项目表 输入类型

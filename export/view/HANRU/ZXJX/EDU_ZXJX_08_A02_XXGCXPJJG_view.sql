@@ -84,6 +84,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
       ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
       ,f.KCM as f_KC_KCM--课程数据类 课程码

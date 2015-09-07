@@ -70,6 +70,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
       ,d.XQID as d_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
       ,d.ZRKJSID as d_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID

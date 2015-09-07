@@ -74,6 +74,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -138,6 +140,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_JXLXPJXM_SCHOOLID--家校联系评价项目表 学校
       ,e.PJXMMC as e_JXLXPJXM_PJXMMC--家校联系评价项目表 评价项目名称
       ,e.PLSX as e_JXLXPJXM_PLSX--家校联系评价项目表 排列顺序

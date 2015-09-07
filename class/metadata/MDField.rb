@@ -20,7 +20,7 @@ class MDField
     @type = format(type)
     @null = (null == nil ? "F" : pro_input(null))
     @p = (p == nil ? "F" : pro_input(p))
-    @explanation = explanation
+    @explanation = (explanation ? explanation : '')
     @remark = remark
     @identity = (identity == nil ? "F" : pro_input(identity))
     @default = default

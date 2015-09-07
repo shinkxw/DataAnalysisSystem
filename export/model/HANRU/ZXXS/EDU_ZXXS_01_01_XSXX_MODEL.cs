@@ -277,6 +277,18 @@ namespace HanRuEdu.LDAL
             public String XSDQZTM { get; set; }
 
 
+            [Display(Name = "监护人一")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JHRY { get; set; }
+
+
+            [Display(Name = "监护人二")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JHRE { get; set; }
+
+
         }
     }
 }

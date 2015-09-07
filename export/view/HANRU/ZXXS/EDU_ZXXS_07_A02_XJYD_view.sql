@@ -83,6 +83,8 @@ SELECT a.[ID]--学籍异动表编号
       ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,b.JHRY as b_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,b.JHRE as b_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名

@@ -42,6 +42,8 @@ SELECT a.[ID]--编号
       ,a.[ZYDZ]--主页地址
       ,a.[XJH]--学籍号
       ,a.[XSDQZTM]--学生当前状态码
+      ,a.[JHRY]--监护人一
+      ,a.[JHRE]--监护人二
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称

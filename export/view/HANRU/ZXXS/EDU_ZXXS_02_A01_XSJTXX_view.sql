@@ -78,6 +78,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,b.JHRY as b_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,b.JHRE as b_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

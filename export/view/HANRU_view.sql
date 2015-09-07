@@ -10262,6 +10262,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,d.JZWH as d_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
       ,d.JZWMC as d_JZWJBSJ_JZWMC--建筑物基本数据类表 建筑物名称
@@ -11419,6 +11421,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
       ,f.SCHOOLID as f_XN_SCHOOLID--学年表 学校名
       ,f.XN as f_XN_XN--学年表 学年
       ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
@@ -11598,6 +11602,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
       ,f.SCHOOLID as f_KC_SCHOOLID--课程数据类 学校名
       ,f.KCMC as f_KC_KCMC--课程数据类 课程名称
       ,f.KCM as f_KC_KCM--课程数据类 课程码
@@ -13411,6 +13417,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_JXBSJ_SCHOOLID--教学班数据表 学校
       ,d.XXKCLBID as d_JXBSJ_XXKCLBID--教学班数据表 选修课程类别ID
       ,d.KCMC as d_JXBSJ_KCMC--教学班数据表 课程名称
@@ -13520,6 +13528,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_JXBSJ_SCHOOLID--教学班数据表 学校
       ,d.XXKCLBID as d_JXBSJ_XXKCLBID--教学班数据表 选修课程类别ID
       ,d.KCMC as d_JXBSJ_KCMC--教学班数据表 课程名称
@@ -13646,6 +13656,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXJX_50_A06_KTDMB AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_50_A03_JXBSJ AS c ON a.JXBID = c.ID /*教学班ID*/ LEFT OUTER JOIN
@@ -13846,6 +13858,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_KSDD_SCHOOLID--考试地点表 学校
       ,e.KCMC as e_KSDD_KCMC--考试地点表 考场名称
       ,e.ZDRNRS as e_KSDD_ZDRNRS--考试地点表 最大容纳人数
@@ -14422,6 +14436,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XFZJXBSJ_SCHOOLID--学分制教学班数据表 学校
       ,d.XQID as d_XFZJXBSJ_XQID--学分制教学班数据表 学期ID
       ,d.ZRKJSID as d_XFZJXBSJ_ZRKJSID--学分制教学班数据表 主任课教师ID
@@ -14544,6 +14560,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXJX_53_A23_XFZECXKXS AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_53_A20_XFZXK AS c ON a.XKID = c.ID /*选课ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -14672,6 +14690,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_XFZKTJLXM_SCHOOLID--学分制课堂记录项目表 学校
       ,e.XMMC as e_XFZKTJLXM_XMMC--学分制课堂记录项目表 项目名称
       ,e.SRLX as e_XFZKTJLXM_SRLX--学分制课堂记录项目表 输入类型
@@ -14806,6 +14826,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_XFZZYJLXM_SCHOOLID--学分制作业记录项目表 学校
       ,e.XMMC as e_XFZZYJLXM_XMMC--学分制作业记录项目表 项目名称
       ,e.SRLX as e_XFZZYJLXM_SRLX--学分制作业记录项目表 输入类型
@@ -14939,6 +14961,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXJX_53_A42_XFZDYCSCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_53_A41_XFZDYCS AS c ON a.DYCSID = c.ID /*单元测试ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -15050,6 +15074,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXJX_53_A46_BXKXXTKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_53_A21_XFZJXBSJ AS c ON a.XFZJXBID = c.ID /*学分制教学班ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -15243,6 +15269,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_XN_SCHOOLID--学年表 学校名
       ,e.XN as e_XN_XN--学年表 学年
 
@@ -15366,6 +15394,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXJX_54_A05_XSCJXX AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -15492,6 +15522,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXJX_55_A02_SFJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_55_A01_SFXM AS c ON a.SFXMID = c.ID /*收费项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -15586,6 +15618,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -18075,6 +18109,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_BJ_SCHOOLID--班级数据类表 学校名
       ,d.NJ as d_BJ_NJ--班级数据类表 年级号
       ,d.BJ as d_BJ_BJ--班级数据类表 班级名称
@@ -18165,6 +18201,8 @@ SELECT a.[ID]--编号
       ,a.[ZYDZ]--主页地址
       ,a.[XJH]--学籍号
       ,a.[XSDQZTM]--学生当前状态码
+      ,a.[JHRY]--监护人一
+      ,a.[JHRE]--监护人二
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -18328,6 +18366,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.MC as d_JTGX_MC--家庭关系代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
       ,e.ZMDM as e_ZGGMZMCDLMZMPXF_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
@@ -18453,6 +18493,8 @@ SELECT a.[XSXXID]--学生信息数据表
       ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,b.JHRY as b_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,b.JHRE as b_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_02_A01_XSJTXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -18568,6 +18610,8 @@ SELECT a.[ID]--考试成绩表
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.MC as d_XQ_MC--学期代码表 名称
       ,e.SCHOOLID as e_KC_SCHOOLID--课程数据类 学校名
       ,e.KCMC as e_KC_KCMC--课程数据类 课程名称
@@ -18943,6 +18987,8 @@ SELECT a.[ID]--学籍异动表编号
       ,b.XSDQZTM as b_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[bq].MC as b_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[bq].SM as b_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,b.JHRY as b_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,b.JHRE as b_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.MC as d_XJYDLB_MC--学籍异动类别代码表 名称
       ,e.MC as e_XJYDYY_MC--学籍异动原因代码表 名称
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -19188,6 +19234,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -19430,6 +19478,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_QQYY_SCHOOLID--缺勤原因表 学校
       ,e.MC as e_QQYY_MC--缺勤原因表 名称
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
@@ -20059,6 +20109,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_52_A03_XSZL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_52_A02_PXMC AS c ON a.PXMCID = c.ID /*评选名称ID*/ LEFT OUTER JOIN
@@ -20226,6 +20278,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_56_A01_XSXQDS AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -20324,6 +20378,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_56_A11_JXLXMRJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -20420,6 +20476,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生基本数据子类表 学校名
       ,d.XH as d_XSXX_XH--学生基本数据子类表 学号
       ,d.XM as d_XSXX_XM--学生基本数据子类表 姓名
@@ -20484,6 +20542,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_JXLXPJXM_SCHOOLID--家校联系评价项目表 学校
       ,e.PJXMMC as e_JXLXPJXM_PJXMMC--家校联系评价项目表 评价项目名称
       ,e.PLSX as e_JXLXPJXM_PLSX--家校联系评价项目表 排列顺序
@@ -20636,6 +20696,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_XSWHSZPJXM_SCHOOLID--学生文化素质评价项目表 学校
       ,e.KCMC as e_XSWHSZPJXM_KCMC--学生文化素质评价项目表 课程名称
       ,e.PJXM as e_XSWHSZPJXM_PJXM--学生文化素质评价项目表 评价项目
@@ -20796,6 +20858,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_XSZHSZPJXM_SCHOOLID--学生综合素质评价项目表 学校
       ,e.XMMC as e_XSZHSZPJXM_XMMC--学生综合素质评价项目表 项目名称
       ,e.YS as e_XSZHSZPJXM_YS--学生综合素质评价项目表 要素
@@ -20958,6 +21022,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_NJ_SCHOOLID--年级数据类表 学校名
       ,e.NJMC as e_NJ_NJMC--年级数据类表 年级名称
       ,e.ZT as e_NJ_ZT--年级数据类表 状态
@@ -21264,6 +21330,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_57_A04_DSZDSXSJD AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -21477,6 +21545,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
       ,f.SCHOOLID as f_DSZDS_SCHOOLID--导师制导师表 学校
       ,f.XQID as f_DSZDS_XQID--导师制导师表 学期ID
       ,f.JSID as f_DSZDS_JSID--导师制导师表 教师ID
@@ -21594,6 +21664,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_DSZDS_SCHOOLID--导师制导师表 学校
       ,e.XQID as e_DSZDS_XQID--导师制导师表 学期ID
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
@@ -21709,6 +21781,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_DSZDS_SCHOOLID--导师制导师表 学校
       ,e.XQID as e_DSZDS_XQID--导师制导师表 学期ID
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
@@ -21824,6 +21898,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_DSZDS_SCHOOLID--导师制导师表 学校
       ,e.XQID as e_DSZDS_XQID--导师制导师表 学期ID
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
@@ -21939,6 +22015,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_DSZDS_SCHOOLID--导师制导师表 学校
       ,e.XQID as e_DSZDS_XQID--导师制导师表 学期ID
       ,e.JSID as e_DSZDS_JSID--导师制导师表 教师ID
@@ -22048,6 +22126,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_57_A21_DSZXSZWGH AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22157,6 +22237,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_57_A22_DSZXSXQGHZJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22267,6 +22349,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_57_A23_DSZXSXQMYGH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22385,6 +22469,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_DSZXSXXLM_SCHOOLID--导师制学生信息栏目表 学校
       ,d.FLMID as d_DSZXSXXLM_FLMID--导师制学生信息栏目表 父栏目ID
       ,d.LMMC as d_DSZXSXXLM_LMMC--导师制学生信息栏目表 栏目名称
@@ -22487,6 +22573,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -22602,6 +22690,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
       ,d.XQM as d_XQ_XQM--学期数据表 学期码
@@ -22823,6 +22913,8 @@ SELECT a.[ID]--编号
       ,d.XSDQZTM as d_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[dq].MC as d_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[dq].SM as d_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,d.JHRY as d_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,d.JHRE as d_XSXX_JHRE--学生基本数据子类表 监护人二
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -23098,6 +23190,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
 
 FROM dbo.EDU_ZXXS_58_A04_DSJDXSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -23485,6 +23579,8 @@ SELECT a.[ID]--编号
       ,c.XSDQZTM as c_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[cq].MC as c_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[cq].SM as c_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,c.JHRY as c_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,c.JHRE as c_XSXX_JHRE--学生基本数据子类表 监护人二
       ,d.SCHOOLID as d_SCSZ_SCHOOLID--三餐设置表 学校
       ,d.MC as d_SCSZ_MC--三餐设置表 名称
       ,d.JG as d_SCSZ_JG--三餐设置表 价格

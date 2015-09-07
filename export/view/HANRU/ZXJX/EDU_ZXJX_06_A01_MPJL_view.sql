@@ -168,6 +168,8 @@ SELECT a.[ID]--编号
       ,e.XSDQZTM as e_XSXX_XSDQZTM--学生基本数据子类表 学生当前状态码
       ,[eq].MC as e_XSXX_XSDQZTM_MC--学生当前状态代码表 名称
       ,[eq].SM as e_XSXX_XSDQZTM_SM--学生当前状态代码表 说明
+      ,e.JHRY as e_XSXX_JHRY--学生基本数据子类表 监护人一
+      ,e.JHRE as e_XSXX_JHRE--学生基本数据子类表 监护人二
       ,f.SCHOOLID as f_XN_SCHOOLID--学年表 学校名
       ,f.XN as f_XN_XN--学年表 学年
       ,g.SCHOOLID as g_XQ_SCHOOLID--学期数据表 学校名
