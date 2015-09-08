@@ -643,6 +643,7 @@ EDU_ZXJX_54_A05_XSCJXX  学生晨检信息表
   LXSJ          离校时间                nvarchar(200)  非主
   FXSJ          复学时间                nvarchar(200)  非主
   QKTS          缺课天数                nvarchar(200)  非主
+  BZ            备注                    text           非主
 
 EDU_ZXJX_55_A01_SFXM  收费项目表
   ID            编号                    int            主键

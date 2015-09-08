@@ -1655,6 +1655,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_54_A05_XSCJXX](
 	[LXSJ]  nvarchar(200)  NOT NULL,--离校时间
 	[FXSJ]  nvarchar(200)  NOT NULL,--复学时间
 	[QKTS]  nvarchar(200)  NOT NULL,--缺课天数
+	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_ZXJX_54_A05_XSCJXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2883,6 +2884,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'复学时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A05_XSCJXX', @level2type=N'COLUMN',@level2name=N'FXSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'缺课天数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A05_XSCJXX', @level2type=N'COLUMN',@level2name=N'QKTS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_54_A05_XSCJXX', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收费项目表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_55_A01_SFXM'
 GO

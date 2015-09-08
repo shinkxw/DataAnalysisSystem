@@ -25,6 +25,7 @@ namespace HanRuEdu.LDAL
             LXSJ = "";
             FXSJ = "";
             QKTS = "";
+            BZ = "";
         }
         public class EDU_ZXJX_54_A05_XSCJXX_metadata
         {
@@ -156,6 +157,12 @@ namespace HanRuEdu.LDAL
             [StringLength(200)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String QKTS { get; set; }
+
+
+            [Required(ErrorMessage = "±ØÌî",AllowEmptyStrings = true)]
+            [Display(Name = "±¸×¢")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZ { get; set; }
 
 
         }

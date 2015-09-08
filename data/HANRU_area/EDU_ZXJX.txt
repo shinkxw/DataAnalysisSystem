@@ -771,6 +771,7 @@
             <name="LXSJ" exp="离校时间" type="nvarchar(200)" />
             <name="FXSJ" exp="复学时间" type="nvarchar(200)" />
             <name="QKTS" exp="缺课天数" type="nvarchar(200)" />
+            <name="BZ" exp="备注" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_55_A01_SFXM" exp="收费项目表">
