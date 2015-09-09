@@ -16614,6 +16614,29 @@ SELECT a.[ID]--编号
       ,a.[GWZYM]--岗位职业码
       ,a.[ZYRKXD]--主要任课学段
       ,a.[JZGLXID]--教职工类型ID
+      ,a.[XQ]--校区
+      ,a.[ZGZC]--最高职称
+      ,a.[PDSJ]--评定时间
+      ,a.[XPZC]--现品职称
+      ,a.[PDESJ]--聘得时间
+      ,a.[RBXQDW]--入本校前单位
+      ,a.[ZZZT]--在职状态
+      ,a.[SZBM]--所在部门
+      ,a.[XZZW]--行政职务
+      ,a.[DH]--短号
+      ,a.[PTHDJ]--普通话等级
+      ,a.[JSZH]--教师证号
+      ,a.[JSJDJ]--计算机等级
+      ,a.[GGJSDJ]--骨干教师等级
+      ,a.[RJXK]--任教学科
+      ,a.[SFRSDL]--是否人事代理
+      ,a.[NDKH]--年度考核
+      ,a.[XXJL]--学习经历
+      ,a.[GZJL]--工作经历
+      ,a.[JYQK]--教研情况
+      ,a.[GZYLJCQK]--工作以来奖惩情况
+      ,a.[JTZYCY]--家庭主要成员
+      ,a.[BZ]--备注
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称

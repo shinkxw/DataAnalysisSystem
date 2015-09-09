@@ -160,6 +160,29 @@
             <name="GWZYM" exp="岗位职业码" type="nvarchar(2)" />
             <name="ZYRKXD" exp="主要任课学段" type="nvarchar(1)" />
             <name="JZGLXID" exp="教职工类型ID" type="int" default="1" />
+            <name="XQ" exp="校区" type="nvarchar(200)" null="T" />
+            <name="ZGZC" exp="最高职称" type="nvarchar(200)" null="T" />
+            <name="PDSJ" exp="评定时间" type="nvarchar(200)" null="T" />
+            <name="XPZC" exp="现品职称" type="nvarchar(200)" null="T" />
+            <name="PDESJ" exp="聘得时间" type="nvarchar(200)" null="T" />
+            <name="RBXQDW" exp="入本校前单位" type="nvarchar(200)" null="T" />
+            <name="ZZZT" exp="在职状态" type="nvarchar(200)" null="T" />
+            <name="SZBM" exp="所在部门" type="nvarchar(200)" null="T" />
+            <name="XZZW" exp="行政职务" type="nvarchar(200)" null="T" />
+            <name="DH" exp="短号" type="nvarchar(200)" null="T" />
+            <name="PTHDJ" exp="普通话等级" type="nvarchar(200)" null="T" />
+            <name="JSZH" exp="教师证号" type="nvarchar(200)" null="T" />
+            <name="JSJDJ" exp="计算机等级" type="nvarchar(200)" null="T" />
+            <name="GGJSDJ" exp="骨干教师等级" type="nvarchar(200)" null="T" />
+            <name="RJXK" exp="任教学科" type="nvarchar(200)" null="T" />
+            <name="SFRSDL" exp="是否人事代理" type="nvarchar(200)" null="T" />
+            <name="NDKH" exp="年度考核" type="text" null="T" />
+            <name="XXJL" exp="学习经历" type="text" null="T" />
+            <name="GZJL" exp="工作经历" type="text" null="T" />
+            <name="JYQK" exp="教研情况" type="text" null="T" />
+            <name="GZYLJCQK" exp="工作以来奖惩情况" type="text" null="T" />
+            <name="JTZYCY" exp="家庭主要成员" type="text" null="T" />
+            <name="BZ" exp="备注" type="text" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_01_A05_JZGKZSH" exp="教职工扩展表(审核)">
