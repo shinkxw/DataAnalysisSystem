@@ -301,6 +301,137 @@ namespace HanRuEdu.LDAL
             public Int32 JZGLXID { get; set; }
 
 
+            [Display(Name = "校区")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XQ { get; set; }
+
+
+            [Display(Name = "最高职称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGZC { get; set; }
+
+
+            [Display(Name = "评定时间")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PDSJ { get; set; }
+
+
+            [Display(Name = "现品职称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XPZC { get; set; }
+
+
+            [Display(Name = "聘得时间")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PDESJ { get; set; }
+
+
+            [Display(Name = "入本校前单位")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String RBXQDW { get; set; }
+
+
+            [Display(Name = "在职状态")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZZZT { get; set; }
+
+
+            [Display(Name = "所在部门")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SZBM { get; set; }
+
+
+            [Display(Name = "行政职务")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XZZW { get; set; }
+
+
+            [Display(Name = "短号")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DH { get; set; }
+
+
+            [Display(Name = "普通话等级")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PTHDJ { get; set; }
+
+
+            [Display(Name = "教师证号")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSZH { get; set; }
+
+
+            [Display(Name = "计算机等级")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JSJDJ { get; set; }
+
+
+            [Display(Name = "骨干教师等级")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GGJSDJ { get; set; }
+
+
+            [Display(Name = "任教学科")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String RJXK { get; set; }
+
+
+            [Display(Name = "是否人事代理")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SFRSDL { get; set; }
+
+
+            [Display(Name = "年度考核")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String NDKH { get; set; }
+
+
+            [Display(Name = "学习经历")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XXJL { get; set; }
+
+
+            [Display(Name = "工作经历")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GZJL { get; set; }
+
+
+            [Display(Name = "教研情况")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JYQK { get; set; }
+
+
+            [Display(Name = "工作以来奖惩情况")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String GZYLJCQK { get; set; }
+
+
+            [Display(Name = "家庭主要成员")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String JTZYCY { get; set; }
+
+
+            [Display(Name = "备注")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZ { get; set; }
+
+
         }
     }
 }

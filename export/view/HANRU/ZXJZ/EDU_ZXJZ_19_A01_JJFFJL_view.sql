@@ -76,6 +76,29 @@ SELECT a.[ID]--编号
       ,c.ZYRKXD as c_JZGJBSJ_ZYRKXD--教职工基本数据子类表 主要任课学段
       ,[cq].MC as c_JZGJBSJ_ZYRKXD_MC--任课学段代码表 名称
       ,c.JZGLXID as c_JZGJBSJ_JZGLXID--教职工基本数据子类表 教职工类型ID
+      ,c.XQ as c_JZGJBSJ_XQ--教职工基本数据子类表 校区
+      ,c.ZGZC as c_JZGJBSJ_ZGZC--教职工基本数据子类表 最高职称
+      ,c.PDSJ as c_JZGJBSJ_PDSJ--教职工基本数据子类表 评定时间
+      ,c.XPZC as c_JZGJBSJ_XPZC--教职工基本数据子类表 现品职称
+      ,c.PDESJ as c_JZGJBSJ_PDESJ--教职工基本数据子类表 聘得时间
+      ,c.RBXQDW as c_JZGJBSJ_RBXQDW--教职工基本数据子类表 入本校前单位
+      ,c.ZZZT as c_JZGJBSJ_ZZZT--教职工基本数据子类表 在职状态
+      ,c.SZBM as c_JZGJBSJ_SZBM--教职工基本数据子类表 所在部门
+      ,c.XZZW as c_JZGJBSJ_XZZW--教职工基本数据子类表 行政职务
+      ,c.DH as c_JZGJBSJ_DH--教职工基本数据子类表 短号
+      ,c.PTHDJ as c_JZGJBSJ_PTHDJ--教职工基本数据子类表 普通话等级
+      ,c.JSZH as c_JZGJBSJ_JSZH--教职工基本数据子类表 教师证号
+      ,c.JSJDJ as c_JZGJBSJ_JSJDJ--教职工基本数据子类表 计算机等级
+      ,c.GGJSDJ as c_JZGJBSJ_GGJSDJ--教职工基本数据子类表 骨干教师等级
+      ,c.RJXK as c_JZGJBSJ_RJXK--教职工基本数据子类表 任教学科
+      ,c.SFRSDL as c_JZGJBSJ_SFRSDL--教职工基本数据子类表 是否人事代理
+      ,c.NDKH as c_JZGJBSJ_NDKH--教职工基本数据子类表 年度考核
+      ,c.XXJL as c_JZGJBSJ_XXJL--教职工基本数据子类表 学习经历
+      ,c.GZJL as c_JZGJBSJ_GZJL--教职工基本数据子类表 工作经历
+      ,c.JYQK as c_JZGJBSJ_JYQK--教职工基本数据子类表 教研情况
+      ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
+      ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
+      ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJZ_19_A01_JJFFJL AS a LEFT OUTER JOIN

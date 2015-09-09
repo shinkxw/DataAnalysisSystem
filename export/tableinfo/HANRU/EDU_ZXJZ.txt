@@ -44,6 +44,29 @@ EDU_ZXJZ_01_01_JZGJBSJ  教职工基本数据子类表
   GWZYM         岗位职业码              nvarchar(2)    非主        岗位职业代码表
   ZYRKXD        主要任课学段            nvarchar(1)    非主        任课学段代码表
   JZGLXID       教职工类型ID            int            非主        教职工类型表
+  XQ            校区                    nvarchar(200)  非主
+  ZGZC          最高职称                nvarchar(200)  非主
+  PDSJ          评定时间                nvarchar(200)  非主
+  XPZC          现品职称                nvarchar(200)  非主
+  PDESJ         聘得时间                nvarchar(200)  非主
+  RBXQDW        入本校前单位            nvarchar(200)  非主
+  ZZZT          在职状态                nvarchar(200)  非主
+  SZBM          所在部门                nvarchar(200)  非主
+  XZZW          行政职务                nvarchar(200)  非主
+  DH            短号                    nvarchar(200)  非主
+  PTHDJ         普通话等级              nvarchar(200)  非主
+  JSZH          教师证号                nvarchar(200)  非主
+  JSJDJ         计算机等级              nvarchar(200)  非主
+  GGJSDJ        骨干教师等级            nvarchar(200)  非主
+  RJXK          任教学科                nvarchar(200)  非主
+  SFRSDL        是否人事代理            nvarchar(200)  非主
+  NDKH          年度考核                text           非主
+  XXJL          学习经历                text           非主
+  GZJL          工作经历                text           非主
+  JYQK          教研情况                text           非主
+  GZYLJCQK      工作以来奖惩情况        text           非主
+  JTZYCY        家庭主要成员            text           非主
+  BZ            备注                    text           非主
 
 EDU_ZXJZ_01_A01_JZGKZ  教职工扩展表
   JZGID         教工基本信息ID          int            主键        教职工基本数据子类表
