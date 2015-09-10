@@ -12,7 +12,6 @@ SELECT a.[ID]--编号
       ,c.Name as c_CLASSROOM_Name--教室表 教室名称
       ,c.Place as c_CLASSROOM_Place--教室表 地点
       ,c.Counts as c_CLASSROOM_Counts--教室表 座位数
-      ,c.FullPlaceName as c_CLASSROOM_FullPlaceName--教室表 完整地点名称
       ,c.PlaceGroupId as c_CLASSROOM_PlaceGroupId--教室表 表PlaceGroup的外键
       ,d.SCHOOLID as d_EXAM_SCHOOLID--考试表 学校
       ,d.Name as d_EXAM_Name--考试表 考试名称

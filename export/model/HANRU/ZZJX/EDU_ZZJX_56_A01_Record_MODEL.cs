@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_56_A01_Record()
         {
+            FullName = "";
             ShortTitle1 = "";
             ShortTitle2 = "";
             Comment = "";
@@ -26,13 +27,25 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "外键")]
+            public Int32 BaseInfoID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "标识")]
+            public Int32 BaseInfoType { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "序列号")]
             public Int32 SerialNumber { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "状态")]
-            public Int32 Status { get; set; }
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "完整名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FullName { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]

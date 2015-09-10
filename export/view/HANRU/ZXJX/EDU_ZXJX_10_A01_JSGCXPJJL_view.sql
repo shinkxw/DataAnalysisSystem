@@ -114,6 +114,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_JSGCXPJXM_SCHOOLID--教师过程性评价考核项目表 学校ID
       ,f.XMMC as f_JSGCXPJXM_XMMC--教师过程性评价考核项目表 项目名称
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位

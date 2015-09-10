@@ -14,7 +14,6 @@ namespace HanRuEdu.LDAL
             KSXS = "";
             SKFSM = "";
             JXDG = "";
-            FullCourseName = "";
         }
         public class EDU_ZZJX_55_A04_ZYKCK_metadata
         {
@@ -91,13 +90,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "是否使用")]
             public Int32 SFSY { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "完整课程名称")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FullCourseName { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

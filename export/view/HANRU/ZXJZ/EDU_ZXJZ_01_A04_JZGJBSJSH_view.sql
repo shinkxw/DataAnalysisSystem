@@ -69,6 +69,20 @@ SELECT a.[ID]--编号
       ,a.[GZYLJCQK]--工作以来奖惩情况
       ,a.[JTZYCY]--家庭主要成员
       ,a.[BZ]--备注
+      ,a.[DYXLCD]--第一学历程度
+      ,a.[DYXLFS]--第一学历方式
+      ,a.[DYXLXZ]--第一学历学制
+      ,a.[DYXLXW]--第一学历学位
+      ,a.[DYXLBYSJ]--第一学历毕业时间
+      ,a.[DYXLBYXX]--第一学历毕业学校
+      ,a.[DYXLZY]--第一学历专业
+      ,a.[ZGXLCD]--最高学历程度
+      ,a.[ZGXLFS]--最高学历方式
+      ,a.[ZGXLXZ]--最高学历学制
+      ,a.[ZGXLXW]--最高学历学位
+      ,a.[ZGXLBYSJ]--最高学历毕业时间
+      ,a.[ZGXLBYXX]--最高学历毕业学校
+      ,a.[ZGXLZY]--最高学历专业
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称

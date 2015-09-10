@@ -11,7 +11,6 @@ namespace HanRuEdu.LDAL
         {
             Name = "";
             Place = "";
-            FullPlaceName = "";
         }
         public class EDU_ZZJX_30_A01_CLASSROOM_metadata
         {
@@ -42,13 +41,6 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "座位数")]
             public Int32 Counts { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "完整地点名称")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FullPlaceName { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

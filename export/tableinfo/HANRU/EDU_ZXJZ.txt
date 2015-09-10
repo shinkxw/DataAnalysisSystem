@@ -67,6 +67,20 @@ EDU_ZXJZ_01_01_JZGJBSJ  教职工基本数据子类表
   GZYLJCQK      工作以来奖惩情况        text           非主
   JTZYCY        家庭主要成员            text           非主
   BZ            备注                    text           非主
+  DYXLCD        第一学历程度            nvarchar(200)  非主
+  DYXLFS        第一学历方式            nvarchar(200)  非主
+  DYXLXZ        第一学历学制            nvarchar(200)  非主
+  DYXLXW        第一学历学位            nvarchar(200)  非主
+  DYXLBYSJ      第一学历毕业时间        nvarchar(200)  非主
+  DYXLBYXX      第一学历毕业学校        nvarchar(200)  非主
+  DYXLZY        第一学历专业            nvarchar(200)  非主
+  ZGXLCD        最高学历程度            nvarchar(200)  非主
+  ZGXLFS        最高学历方式            nvarchar(200)  非主
+  ZGXLXZ        最高学历学制            nvarchar(200)  非主
+  ZGXLXW        最高学历学位            nvarchar(200)  非主
+  ZGXLBYSJ      最高学历毕业时间        nvarchar(200)  非主
+  ZGXLBYXX      最高学历毕业学校        nvarchar(200)  非主
+  ZGXLZY        最高学历专业            nvarchar(200)  非主
 
 EDU_ZXJZ_01_A01_JZGKZ  教职工扩展表
   JZGID         教工基本信息ID          int            主键        教职工基本数据子类表
@@ -173,6 +187,20 @@ EDU_ZXJZ_01_A04_JZGJBSJSH  教职工基本数据子类表(审核)
   GZYLJCQK      工作以来奖惩情况        text           非主
   JTZYCY        家庭主要成员            text           非主
   BZ            备注                    text           非主
+  DYXLCD        第一学历程度            nvarchar(200)  非主
+  DYXLFS        第一学历方式            nvarchar(200)  非主
+  DYXLXZ        第一学历学制            nvarchar(200)  非主
+  DYXLXW        第一学历学位            nvarchar(200)  非主
+  DYXLBYSJ      第一学历毕业时间        nvarchar(200)  非主
+  DYXLBYXX      第一学历毕业学校        nvarchar(200)  非主
+  DYXLZY        第一学历专业            nvarchar(200)  非主
+  ZGXLCD        最高学历程度            nvarchar(200)  非主
+  ZGXLFS        最高学历方式            nvarchar(200)  非主
+  ZGXLXZ        最高学历学制            nvarchar(200)  非主
+  ZGXLXW        最高学历学位            nvarchar(200)  非主
+  ZGXLBYSJ      最高学历毕业时间        nvarchar(200)  非主
+  ZGXLBYXX      最高学历毕业学校        nvarchar(200)  非主
+  ZGXLZY        最高学历专业            nvarchar(200)  非主
 
 EDU_ZXJZ_01_A05_JZGKZSH  教职工扩展表(审核)
   JZGID         教工基本信息ID          int            主键        教职工基本数据子类表

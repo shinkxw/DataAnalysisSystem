@@ -19,9 +19,7 @@ SELECT a.[XZBDM]--行政班代码
       ,a.[XQDM]--校区代码
       ,a.[BZRID]--班主任ID
       ,a.[PLSX]--排列顺序
-      ,a.[FullClassName]--完整班级名称
       ,a.[ID]--表Record外键
-      ,a.[ClassGroupId]--表ClassGroup的外键
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -134,7 +132,6 @@ SELECT a.[XZBDM]--行政班代码
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_02_02_ZZBJ AS a LEFT OUTER JOIN

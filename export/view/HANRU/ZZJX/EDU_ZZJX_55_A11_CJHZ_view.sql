@@ -40,7 +40,6 @@ SELECT a.[ID]--编号
       ,e.SKFSM as e_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
-      ,e.FullCourseName as e_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号

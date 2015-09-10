@@ -26,9 +26,7 @@ SELECT a.[ID]--编号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,c.FullClassName as c_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,c.ID as c_ZZBJ_ID--学校班级数据表 表Record外键
-      ,c.ClassGroupId as c_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,d.SCHOOLID as d_XSKHBSJ_SCHOOLID--学生考核表数据表 学校
       ,d.KHBMC as d_XSKHBSJ_KHBMC--学生考核表数据表 考核表名称
       ,d.KHBJDMLB as d_XSKHBSJ_KHBJDMLB--学生考核表数据表 考核班级代码列表
@@ -106,7 +104,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_14_A03_XSRCXWGFKHSJ AS a LEFT OUTER JOIN

@@ -69,6 +69,20 @@
             <name="GZYLJCQK" exp="工作以来奖惩情况" type="text" null="T" />
             <name="JTZYCY" exp="家庭主要成员" type="text" null="T" />
             <name="BZ" exp="备注" type="text" null="T" />
+            <name="DYXLCD" exp="第一学历程度" type="nvarchar(200)" null="T" />
+            <name="DYXLFS" exp="第一学历方式" type="nvarchar(200)" null="T" />
+            <name="DYXLXZ" exp="第一学历学制" type="nvarchar(200)" null="T" />
+            <name="DYXLXW" exp="第一学历学位" type="nvarchar(200)" null="T" />
+            <name="DYXLBYSJ" exp="第一学历毕业时间" type="nvarchar(200)" null="T" />
+            <name="DYXLBYXX" exp="第一学历毕业学校" type="nvarchar(200)" null="T" />
+            <name="DYXLZY" exp="第一学历专业" type="nvarchar(200)" null="T" />
+            <name="ZGXLCD" exp="最高学历程度" type="nvarchar(200)" null="T" />
+            <name="ZGXLFS" exp="最高学历方式" type="nvarchar(200)" null="T" />
+            <name="ZGXLXZ" exp="最高学历学制" type="nvarchar(200)" null="T" />
+            <name="ZGXLXW" exp="最高学历学位" type="nvarchar(200)" null="T" />
+            <name="ZGXLBYSJ" exp="最高学历毕业时间" type="nvarchar(200)" null="T" />
+            <name="ZGXLBYXX" exp="最高学历毕业学校" type="nvarchar(200)" null="T" />
+            <name="ZGXLZY" exp="最高学历专业" type="nvarchar(200)" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_01_A01_JZGKZ" exp="教职工扩展表">
@@ -183,6 +197,20 @@
             <name="GZYLJCQK" exp="工作以来奖惩情况" type="text" null="T" />
             <name="JTZYCY" exp="家庭主要成员" type="text" null="T" />
             <name="BZ" exp="备注" type="text" null="T" />
+            <name="DYXLCD" exp="第一学历程度" type="nvarchar(200)" null="T" />
+            <name="DYXLFS" exp="第一学历方式" type="nvarchar(200)" null="T" />
+            <name="DYXLXZ" exp="第一学历学制" type="nvarchar(200)" null="T" />
+            <name="DYXLXW" exp="第一学历学位" type="nvarchar(200)" null="T" />
+            <name="DYXLBYSJ" exp="第一学历毕业时间" type="nvarchar(200)" null="T" />
+            <name="DYXLBYXX" exp="第一学历毕业学校" type="nvarchar(200)" null="T" />
+            <name="DYXLZY" exp="第一学历专业" type="nvarchar(200)" null="T" />
+            <name="ZGXLCD" exp="最高学历程度" type="nvarchar(200)" null="T" />
+            <name="ZGXLFS" exp="最高学历方式" type="nvarchar(200)" null="T" />
+            <name="ZGXLXZ" exp="最高学历学制" type="nvarchar(200)" null="T" />
+            <name="ZGXLXW" exp="最高学历学位" type="nvarchar(200)" null="T" />
+            <name="ZGXLBYSJ" exp="最高学历毕业时间" type="nvarchar(200)" null="T" />
+            <name="ZGXLBYXX" exp="最高学历毕业学校" type="nvarchar(200)" null="T" />
+            <name="ZGXLZY" exp="最高学历专业" type="nvarchar(200)" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_01_A05_JZGKZSH" exp="教职工扩展表(审核)">

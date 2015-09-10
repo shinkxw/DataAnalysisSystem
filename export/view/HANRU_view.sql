@@ -1939,6 +1939,18 @@ if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_55_A12
             and   type = 'V')
    drop view VIEW_EDU_ZZJX_55_A12_BKCJ_DISP
 GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_55_A13_XF_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_55_A13_XF_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_55_A14_XFLL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_55_A14_XFLL_DISP
+GO
+if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZJX_55_A15_JXBPFBL_DISP')
+            and   type = 'V')
+   drop view VIEW_EDU_ZZJX_55_A15_JXBPFBL_DISP
+GO
 if exists (select 1 from  sysobjects where  id = object_id('VIEW_EDU_ZZXS_01_01_XSXX_DISP')
             and   type = 'V')
    drop view VIEW_EDU_ZZXS_01_01_XSXX_DISP
@@ -10647,6 +10659,20 @@ SELECT a.[ID]--编号
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,h.XM as h_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -10736,6 +10762,20 @@ SELECT a.[ID]--编号
       ,h.GZYLJCQK as h_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,h.JTZYCY as h_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,h.BZ as h_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,h.DYXLCD as h_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,h.DYXLFS as h_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,h.DYXLXZ as h_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,h.DYXLXW as h_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,h.DYXLBYSJ as h_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,h.DYXLBYXX as h_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,h.DYXLZY as h_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,h.ZGXLCD as h_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,h.ZGXLFS as h_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,h.ZGXLXZ as h_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,h.ZGXLXW as h_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,h.ZGXLBYSJ as h_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,h.ZGXLBYXX as h_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,h.ZGXLZY as h_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,i.MC as i_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJX_04_02_JCXYXX AS a LEFT OUTER JOIN
@@ -10942,6 +10982,20 @@ SELECT a.[ID]--编号
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_04_A03_JCLYJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -11099,6 +11153,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_04_A05_JCFK AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -11252,6 +11320,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_04_A06_JCBF AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -11474,6 +11556,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
@@ -11901,6 +11997,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
@@ -12121,6 +12231,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_JSGCXPJXM_SCHOOLID--教师过程性评价考核项目表 学校ID
       ,f.XMMC as f_JSGCXPJXM_XMMC--教师过程性评价考核项目表 项目名称
       ,f.DWMC as f_JSGCXPJXM_DWMC--教师过程性评价考核项目表 单位
@@ -12252,6 +12376,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_XLZ_SCHOOLID--校历周表 学校ID
       ,d.XLID as d_XLZ_XLID--校历周表 校历ID
       ,d.NAME as d_XLZ_NAME--校历周表 校历周名称
@@ -12439,6 +12577,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_11_A01_LWSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -12575,6 +12727,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_11_A02_KYHDSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -12712,6 +12878,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_11_A03_CPXXSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -12853,6 +13033,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -12942,6 +13136,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJX_11_A04_KTSJ AS a LEFT OUTER JOIN
       dbo.EDU_SYS_01_XN AS c ON a.XNID = c.ID /*学年ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -13117,6 +13325,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
       ,'' as e_USER_PWD--应用系统用户表 密码
@@ -13260,6 +13482,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_JSQJLX_SCHOOLID--教师请假类型表 学校
       ,d.LXMC as d_JSQJLX_LXMC--教师请假类型表 类型名称
       ,d.BZ as d_JSQJLX_BZ--教师请假类型表 备注
@@ -13414,6 +13650,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -13503,6 +13753,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -13592,6 +13856,20 @@ SELECT a.[ID]--编号
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,h.SCHOOLID as h_DKLX_SCHOOLID--代课类型表 学校
       ,h.LXMC as h_DKLX_LXMC--代课类型表 类型名称
       ,h.BZ as h_DKLX_BZ--代课类型表 备注
@@ -13776,6 +14054,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,g.SCHOOLID as g_KKSJ_SCHOOLID--开课时间表 学校
       ,g.SKSJ as g_KKSJ_SKSJ--开课时间表 上课时间
       ,g.SDIDLB as g_KKSJ_SDIDLB--开课时间表 时段ID列表
@@ -14467,6 +14759,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_KSDD_SCHOOLID--考试地点表 学校
       ,f.KCMC as f_KSDD_KCMC--考试地点表 考场名称
       ,f.ZDRNRS as f_KSDD_ZDRNRS--考试地点表 最大容纳人数
@@ -14752,6 +15058,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -14841,6 +15161,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_XFZKC_SCHOOLID--学分制课程表 学校ID
       ,f.KCH as f_XFZKC_KCH--学分制课程表 课程号
       ,f.KCLB as f_XFZKC_KCLB--学分制课程表 课程类别
@@ -16251,6 +16585,20 @@ SELECT a.[ID]--编号
       ,a.[GZYLJCQK]--工作以来奖惩情况
       ,a.[JTZYCY]--家庭主要成员
       ,a.[BZ]--备注
+      ,a.[DYXLCD]--第一学历程度
+      ,a.[DYXLFS]--第一学历方式
+      ,a.[DYXLXZ]--第一学历学制
+      ,a.[DYXLXW]--第一学历学位
+      ,a.[DYXLBYSJ]--第一学历毕业时间
+      ,a.[DYXLBYXX]--第一学历毕业学校
+      ,a.[DYXLZY]--第一学历专业
+      ,a.[ZGXLCD]--最高学历程度
+      ,a.[ZGXLFS]--最高学历方式
+      ,a.[ZGXLXZ]--最高学历学制
+      ,a.[ZGXLXW]--最高学历学位
+      ,a.[ZGXLBYSJ]--最高学历毕业时间
+      ,a.[ZGXLBYXX]--最高学历毕业学校
+      ,a.[ZGXLZY]--最高学历专业
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -16406,6 +16754,20 @@ SELECT a.[JZGID]--教工基本信息ID
       ,b.GZYLJCQK as b_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,b.JTZYCY as b_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,b.BZ as b_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,b.DYXLCD as b_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,b.DYXLFS as b_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,b.DYXLXZ as b_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,b.DYXLXW as b_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,b.DYXLBYSJ as b_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,b.DYXLBYXX as b_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,b.DYXLZY as b_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,b.ZGXLCD as b_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,b.ZGXLFS as b_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,b.ZGXLXZ as b_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,b.ZGXLXW as b_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,b.ZGXLBYSJ as b_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,b.ZGXLBYXX as b_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,b.ZGXLZY as b_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_01_A01_JZGKZ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS b ON a.JZGID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -16528,6 +16890,20 @@ SELECT a.[SCHOOLID]--学校名
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJZ_01_A02_JZGNLZS AS a LEFT OUTER JOIN
@@ -16637,6 +17013,20 @@ SELECT a.[ID]--编号
       ,a.[GZYLJCQK]--工作以来奖惩情况
       ,a.[JTZYCY]--家庭主要成员
       ,a.[BZ]--备注
+      ,a.[DYXLCD]--第一学历程度
+      ,a.[DYXLFS]--第一学历方式
+      ,a.[DYXLXZ]--第一学历学制
+      ,a.[DYXLXW]--第一学历学位
+      ,a.[DYXLBYSJ]--第一学历毕业时间
+      ,a.[DYXLBYXX]--第一学历毕业学校
+      ,a.[DYXLZY]--第一学历专业
+      ,a.[ZGXLCD]--最高学历程度
+      ,a.[ZGXLFS]--最高学历方式
+      ,a.[ZGXLXZ]--最高学历学制
+      ,a.[ZGXLXW]--最高学历学位
+      ,a.[ZGXLBYSJ]--最高学历毕业时间
+      ,a.[ZGXLBYXX]--最高学历毕业学校
+      ,a.[ZGXLZY]--最高学历专业
       ,c.MC as c_RDXB_MC--人的性别代码 名称
       ,d.MC as d_ZHRMGHGXZQH_MC--中华人民共和国行政区划代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
@@ -16792,6 +17182,20 @@ SELECT a.[JZGID]--教工基本信息ID
       ,b.GZYLJCQK as b_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,b.JTZYCY as b_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,b.BZ as b_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,b.DYXLCD as b_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,b.DYXLFS as b_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,b.DYXLXZ as b_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,b.DYXLXW as b_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,b.DYXLBYSJ as b_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,b.DYXLBYXX as b_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,b.DYXLZY as b_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,b.ZGXLCD as b_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,b.ZGXLFS as b_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,b.ZGXLXZ as b_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,b.ZGXLXW as b_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,b.ZGXLBYSJ as b_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,b.ZGXLBYXX as b_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,b.ZGXLZY as b_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_01_A05_JZGKZSH AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS b ON a.JZGID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -16915,6 +17319,20 @@ SELECT a.[SCHOOLID]--学校名
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJZ_01_A06_JZGNLZSSH AS a LEFT OUTER JOIN
@@ -17040,6 +17458,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_02_A01_XNGWSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_04_01_JG AS c ON a.JGH = c.JGH /*机构号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -17161,6 +17593,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_02_A02_RGJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -17290,6 +17736,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据类 学校名
       ,d.KCMC as d_KC_KCMC--课程数据类 课程名称
       ,d.KCM as d_KC_KCM--课程数据类 课程码
@@ -17502,6 +17962,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
       ,d.JZGLXID as d_XCLX_JZGLXID--薪酬类型表 教职工类型ID
@@ -17632,6 +18106,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,d.XM as d_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -17721,6 +18209,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_17_A01_DYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教工基本信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -17876,6 +18378,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -17965,6 +18481,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_17_A02_DFSJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -18133,6 +18663,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,e.SCHOOLID as e_DZBSJ_SCHOOLID--党支部数据表 学校
       ,e.DZBMC as e_DZBSJ_DZBMC--党支部数据表 党支部名称
       ,e.SS as e_DZBSJ_SS--党支部数据表 所属
@@ -18231,6 +18775,20 @@ SELECT a.[ID]--编号
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_17_A05_DZBCYXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_17_A01_DYXX AS c ON a.DYXXID = c.ID /*党员信息ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -18385,6 +18943,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_17_A06_DZBHDXX AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -18507,6 +19079,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_18_A03_JSDRBZRJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JZGJBSJID = c.ID /*教职工ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -18628,6 +19214,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
 FROM dbo.EDU_ZXJZ_19_A01_JJFFJL AS a LEFT OUTER JOIN
@@ -18849,6 +19449,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_20_A03_XSPJTM AS c ON a.KPTMID = c.ID /*考评题目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -19005,6 +19619,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXJZ_20_A09_XSPJPJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_20_A06_XSPJKPBJ AS c ON a.KPBJID = c.ID /*考评班级ID*/ LEFT OUTER JOIN
@@ -19736,6 +20364,20 @@ SELECT a.[ID]--考试成绩表
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,g.XM as g_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -19825,6 +20467,20 @@ SELECT a.[ID]--考试成绩表
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,h.MC as h_KSFS_MC--考试方式代码表 名称
       ,h.SM as h_KSFS_SM--考试方式代码表 说明
       ,i.MC as i_KSXZ_MC--考试性质代码表 名称
@@ -20139,6 +20795,20 @@ SELECT a.[ID]--学籍异动表编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,g.SCHOOLID as g_BJ_SCHOOLID--班级数据类表 学校名
       ,g.NJ as g_BJ_NJ--班级数据类表 年级号
       ,g.BJ as g_BJ_BJ--班级数据类表 班级名称
@@ -20655,6 +21325,20 @@ SELECT a.[ID]--编号
       ,h.GZYLJCQK as h_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,h.JTZYCY as h_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,h.BZ as h_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,h.DYXLCD as h_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,h.DYXLFS as h_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,h.DYXLXZ as h_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,h.DYXLXW as h_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,h.DYXLBYSJ as h_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,h.DYXLBYXX as h_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,h.DYXLZY as h_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,h.ZGXLCD as h_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,h.ZGXLFS as h_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,h.ZGXLXZ as h_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,h.ZGXLXW as h_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,h.ZGXLBYSJ as h_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,h.ZGXLBYXX as h_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,h.ZGXLZY as h_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXXS_50_A03_XSSBJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -22339,6 +23023,20 @@ SELECT a.[ID]--编号
       ,d.GZYLJCQK as d_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,d.JTZYCY as d_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,d.BZ as d_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,d.DYXLCD as d_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,d.DYXLFS as d_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,d.DYXLXZ as d_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,d.DYXLXW as d_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,d.DYXLBYSJ as d_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,d.DYXLBYXX as d_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,d.DYXLZY as d_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,d.ZGXLCD as d_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,d.ZGXLFS as d_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,d.ZGXLXZ as d_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,d.ZGXLXW as d_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,d.ZGXLBYSJ as d_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,d.ZGXLBYXX as d_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,d.ZGXLZY as d_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,e.SCHOOLID as e_DSZJS_SCHOOLID--导师制角色表 学校
       ,e.XQID as e_DSZJS_XQID--导师制角色表 学期ID
       ,e.JSMC as e_DSZJS_JSMC--导师制角色表 角色名称
@@ -23958,6 +24656,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXXS_58_A02_DSJDDS AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -24155,6 +24867,20 @@ SELECT a.[ID]--编号
       ,e.GZYLJCQK as e_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,e.JTZYCY as e_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,e.BZ as e_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,e.DYXLCD as e_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,e.DYXLFS as e_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,e.DYXLXZ as e_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,e.DYXLXW as e_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,e.DYXLBYSJ as e_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,e.DYXLBYXX as e_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,e.DYXLZY as e_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,e.ZGXLCD as e_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,e.ZGXLFS as e_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,e.ZGXLXZ as e_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,e.ZGXLXW as e_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,e.ZGXLBYSJ as e_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,e.ZGXLBYXX as e_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,e.ZGXLZY as e_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -24244,6 +24970,20 @@ SELECT a.[ID]--编号
       ,f.GZYLJCQK as f_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,f.JTZYCY as f_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,f.BZ as f_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,f.DYXLCD as f_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,f.DYXLFS as f_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,f.DYXLXZ as f_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,f.DYXLXW as f_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,f.DYXLBYSJ as f_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,f.DYXLBYXX as f_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,f.DYXLZY as f_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,f.ZGXLCD as f_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,f.ZGXLFS as f_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,f.ZGXLXZ as f_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,f.ZGXLXW as f_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,f.ZGXLBYSJ as f_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,f.ZGXLBYXX as f_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,f.ZGXLZY as f_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,g.SCHOOLID as g_DSZDS_SCHOOLID--导师制导师表 学校
       ,g.XQID as g_DSZDS_XQID--导师制导师表 学期ID
       ,g.JSID as g_DSZDS_JSID--导师制导师表 教师ID
@@ -24596,6 +25336,20 @@ SELECT a.[SCHOOLID]--学校名
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,h.SCHOOLID as h_BJLB_SCHOOLID--班级类别表 学校
       ,h.LBMC as h_BJLB_LBMC--班级类别表 类别名称
       ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -24687,6 +25441,20 @@ SELECT a.[SCHOOLID]--学校名
       ,i.GZYLJCQK as i_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,i.JTZYCY as i_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,i.BZ as i_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,i.DYXLCD as i_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,i.DYXLFS as i_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,i.DYXLXZ as i_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,i.DYXLXW as i_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,i.DYXLBYSJ as i_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,i.DYXLBYXX as i_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,i.DYXLZY as i_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,i.ZGXLCD as i_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,i.ZGXLFS as i_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,i.ZGXLXZ as i_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,i.ZGXLXW as i_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,i.ZGXLBYSJ as i_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,i.ZGXLBYXX as i_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,i.ZGXLZY as i_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -24951,6 +25719,20 @@ SELECT a.[ID]--编号
       ,c.GZYLJCQK as c_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,c.JTZYCY as c_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,c.BZ as c_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,c.DYXLCD as c_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,c.DYXLFS as c_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,c.DYXLXZ as c_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,c.DYXLXW as c_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,c.DYXLBYSJ as c_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,c.DYXLBYXX as c_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,c.DYXLZY as c_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,c.ZGXLCD as c_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,c.ZGXLFS as c_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,c.ZGXLXZ as c_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,c.ZGXLXW as c_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,c.ZGXLBYSJ as c_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,c.ZGXLBYXX as c_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,c.ZGXLZY as c_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,d.SCHOOLID as d_RKJL_SCHOOLID--入库记录表 学校
       ,d.ZCM as d_RKJL_ZCM--入库记录表 资产名
       ,d.SL as d_RKJL_SL--入库记录表 数量
@@ -26633,9 +27415,7 @@ SELECT a.[ID]--编号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,c.FullClassName as c_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,c.ID as c_ZZBJ_ID--学校班级数据表 表Record外键
-      ,c.ClassGroupId as c_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,d.SCHOOLID as d_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,d.SSLID as d_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,d.SSLBM as d_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
@@ -26728,7 +27508,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZFC_10_A02_SSKHJG AS a LEFT OUTER JOIN
@@ -26838,7 +27617,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,d.ZYXXID as d_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
@@ -26856,9 +27634,7 @@ SELECT a.[ID]--编号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,d.ID as d_ZZBJ_ID--学校班级数据表 表Record外键
-      ,d.ClassGroupId as d_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZFC_10_A03_BZRXQ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.BZRID = c.ID /*班主任ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -26919,9 +27695,7 @@ SELECT a.[ID]--编号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,d.ID as d_ZZBJ_ID--学校班级数据表 表Record外键
-      ,d.ClassGroupId as d_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,e.SCHOOLID as e_XSSS_SCHOOLID--学生宿舍数据类表 学校名
       ,e.SSLID as e_XSSS_SSLID--学生宿舍数据类表 宿舍楼ID
       ,e.SSLBM as e_XSSS_SSLBM--学生宿舍数据类表 宿舍楼编号
@@ -27010,7 +27784,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZFC_10_A04_YDKHPB AS a LEFT OUTER JOIN
@@ -27079,9 +27852,7 @@ SELECT a.[ID]--编号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,d.ID as d_ZZBJ_ID--学校班级数据表 表Record外键
-      ,d.ClassGroupId as d_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,e.SCHOOLID as e_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,e.GH as e_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,e.XM as e_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -27151,7 +27922,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,f.SCHOOLID as f_JZWJBSJ_SCHOOLID--建筑物基本数据类表 学校名
       ,f.JZWH as f_JZWJBSJ_JZWH--建筑物基本数据类表 建筑物号
@@ -27337,7 +28107,6 @@ SELECT a.[ID]--编号
       ,a.[WLDZ]--网络地址
       ,a.[JSTXH]--即时通讯号
       ,a.[JSKQJS]--教师考勤角色
-      ,a.[FullTeacherName]--完整老师姓名
       ,a.[TeacherGroupId]--表TeacherGroup的外键
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
       ,d.MC as d_RDXB_MC--人的性别代码 名称
@@ -27492,7 +28261,6 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,b.FullTeacherName as b_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,b.TeacherGroupId as b_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_01_A01_JZGKZ AS a LEFT OUTER JOIN
@@ -27600,7 +28368,6 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,b.FullTeacherName as b_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,b.TeacherGroupId as b_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_01_A02_JZGNLZS AS a LEFT OUTER JOIN
@@ -27847,7 +28614,6 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,b.FullTeacherName as b_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,b.TeacherGroupId as b_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_01_A06_JZGKZSH AS a LEFT OUTER JOIN
@@ -27955,7 +28721,6 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,b.FullTeacherName as b_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,b.TeacherGroupId as b_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_01_A07_JZGNLZSSH AS a LEFT OUTER JOIN
@@ -28064,7 +28829,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
       ,e.SCHOOLID as e_ZSDJ_SCHOOLID--证书等级表 学校
@@ -28187,7 +28951,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_02_02_XNGWSJ AS a LEFT OUTER JOIN
@@ -28295,7 +29058,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_02_A02_RGJL AS a LEFT OUTER JOIN
@@ -28399,7 +29161,6 @@ SELECT a.[ID]--加班登记表ID
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.MC as d_JBLX_MC--加班类型代码 名称
 
@@ -28509,7 +29270,6 @@ SELECT a.[SCHOOLID]--学校名
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
       ,e.SCHOOLID as e_ZSDJ_SCHOOLID--证书等级表 学校
@@ -28787,7 +29547,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
@@ -28899,7 +29658,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_KSLX_SCHOOLID--课时类型表 学校
       ,d.KSLXMC as d_KSLX_KSLXMC--课时类型表 类型名称
@@ -29008,7 +29766,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_BKLX_SCHOOLID--备课类型表 学校
       ,d.BKLXMC as d_BKLX_BKLXMC--备课类型表 类型名称
@@ -29117,7 +29874,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_ZYPGLX_SCHOOLID--作业批改类型表 学校
       ,d.PGLXMC as d_ZYPGLX_PGLXMC--作业批改类型表 类型名称
@@ -29315,7 +30071,6 @@ SELECT a.[ID]--编号
       ,v.WLDZ as v_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,v.JSTXH as v_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,v.JSKQJS as v_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,v.FullTeacherName as v_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,v.TeacherGroupId as v_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,w.SCHOOLID as w_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,w.GH as w_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -29386,7 +30141,6 @@ SELECT a.[ID]--编号
       ,w.WLDZ as w_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,w.JSTXH as w_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,w.JSKQJS as w_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,w.FullTeacherName as w_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,w.TeacherGroupId as w_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_16_A02_YPJSSJ AS a LEFT OUTER JOIN
@@ -29534,7 +30288,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,d.GH as d_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -29605,7 +30358,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_17_A01_DYXX AS a LEFT OUTER JOIN
@@ -29748,7 +30500,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -29819,7 +30570,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_17_A02_DFSJJL AS a LEFT OUTER JOIN
@@ -29975,7 +30725,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,e.SCHOOLID as e_DZBSJ_SCHOOLID--党支部数据表 学校
       ,e.DZBMC as e_DZBSJ_DZBMC--党支部数据表 党支部名称
@@ -30055,7 +30804,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_17_A05_DZBCYXX AS a LEFT OUTER JOIN
@@ -30197,7 +30945,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_17_A06_DZBHDXX AS a LEFT OUTER JOIN
@@ -30303,7 +31050,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_18_A02_JSNDKH AS a LEFT OUTER JOIN
@@ -30407,7 +31153,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_18_A03_JSDRBZRJL AS a LEFT OUTER JOIN
@@ -30513,7 +31258,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
 
@@ -30717,7 +31461,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_20_A07_XSPJKPJG AS a LEFT OUTER JOIN
@@ -30858,7 +31601,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_20_A09_XSPJTJJG AS a LEFT OUTER JOIN
@@ -31047,7 +31789,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_22_A05_PHZYKPJS AS a LEFT OUTER JOIN
@@ -31304,7 +32045,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,e.SCHOOLID as e_PHZYDCMC_SCHOOLID--平湖职业调查名称表 学校
       ,e.DCMC as e_PHZYDCMC_DCMC--平湖职业调查名称表 调查名称
@@ -31575,7 +32315,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_24_A03_KQJL AS a LEFT OUTER JOIN
@@ -31741,7 +32480,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_CWZYDL_SCHOOLID--财务专业大类表 学校
       ,d.ZYDLDM as d_CWZYDL_ZYDLDM--财务专业大类表 专业大类代码
@@ -31905,7 +32643,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_CWJSGZXM_SCHOOLID--财务教师工资项目表 学校
       ,d.XMMC as d_CWJSGZXM_XMMC--财务教师工资项目表 项目名称
@@ -32148,7 +32885,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
       ,d.KCMC as d_KC_KCMC--课程数据子类表 课程名称
@@ -32241,9 +32977,7 @@ SELECT a.[ID]--编号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
       ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,j.FullClassName as j_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,j.ID as j_ZZBJ_ID--学校班级数据表 表Record外键
-      ,j.ClassGroupId as j_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZJX_01_A02_JSRK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -32319,9 +33053,7 @@ SELECT a.[XZBDM]--行政班代码
       ,a.[XQDM]--校区代码
       ,a.[BZRID]--班主任ID
       ,a.[PLSX]--排列顺序
-      ,a.[FullClassName]--完整班级名称
       ,a.[ID]--表Record外键
-      ,a.[ClassGroupId]--表ClassGroup的外键
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -32434,7 +33166,6 @@ SELECT a.[XZBDM]--行政班代码
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_02_02_ZZBJ AS a LEFT OUTER JOIN
@@ -32855,7 +33586,6 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,i.GH as i_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -32926,7 +33656,6 @@ SELECT a.[ID]--编号
       ,i.WLDZ as i_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,i.JSKQJS as i_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,i.FullTeacherName as i_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,i.TeacherGroupId as i_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,j.MC as j_SFBZ_MC--是否标志代码表 名称
 
@@ -33053,9 +33782,7 @@ SELECT a.[ID]--编号
       ,f.XQDM as f_ZZBJ_XQDM--学校班级数据表 校区代码
       ,f.BZRID as f_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,f.PLSX as f_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,f.FullClassName as f_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,f.ID as f_ZZBJ_ID--学校班级数据表 表Record外键
-      ,f.ClassGroupId as f_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,g.SCHOOLID as g_JCJBXX_SCHOOLID--教材基本信息表 学校ID
       ,g.JCDM as g_JCJBXX_JCDM--教材基本信息表 教材代码
       ,g.JCMC as g_JCJBXX_JCMC--教材基本信息表 教材名称
@@ -33144,7 +33871,6 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_04_A03_JCLYJL AS a LEFT OUTER JOIN
@@ -33287,7 +34013,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_04_A05_JCFK AS a LEFT OUTER JOIN
@@ -33425,7 +34150,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_04_A06_JCBF AS a LEFT OUTER JOIN
@@ -33539,7 +34263,6 @@ SELECT a.[SCHOOLID]--学校ID
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_XQ_SCHOOLID--学期数据表 学校名
       ,d.XNID as d_XQ_XNID--学期数据表 学年
@@ -33718,7 +34441,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_08_A01_DGFSQ AS a LEFT OUTER JOIN
@@ -33852,7 +34574,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_KC_SCHOOLID--课程数据子类表 学校ID
       ,d.KCMC as d_KC_KCMC--课程数据子类表 课程名称
@@ -34048,7 +34769,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,f.SCHOOLID as f_LWLX_SCHOOLID--论文类型表 学校
       ,f.LXMC as f_LWLX_LXMC--论文类型表 类型名称
@@ -34172,7 +34892,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_10_A02_KYHDSJ AS a LEFT OUTER JOIN
@@ -34294,7 +35013,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_10_A03_CPXXSJ AS a LEFT OUTER JOIN
@@ -34420,7 +35138,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -34491,7 +35208,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_10_A04_KTSJ AS a LEFT OUTER JOIN
@@ -34754,7 +35470,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_21_A01_SXBJGL AS a LEFT OUTER JOIN
@@ -35120,7 +35835,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_22_A04_SXJD AS a LEFT OUTER JOIN
@@ -35310,7 +36024,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_22_A07_ZFJL AS a LEFT OUTER JOIN
@@ -35652,7 +36365,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_22_A14_YDPDJL AS a LEFT OUTER JOIN
@@ -35782,7 +36494,6 @@ SELECT a.[ID]--编号
       ,c.Name as c_CLASSROOM_Name--教室表 教室名称
       ,c.Place as c_CLASSROOM_Place--教室表 地点
       ,c.Counts as c_CLASSROOM_Counts--教室表 座位数
-      ,c.FullPlaceName as c_CLASSROOM_FullPlaceName--教室表 完整地点名称
       ,c.PlaceGroupId as c_CLASSROOM_PlaceGroupId--教室表 表PlaceGroup的外键
       ,d.SCHOOLID as d_EXAM_SCHOOLID--考试表 学校
       ,d.Name as d_EXAM_Name--考试表 考试名称
@@ -35946,9 +36657,7 @@ SELECT a.[ID]--编号
       ,i.XQDM as i_ZZBJ_XQDM--学校班级数据表 校区代码
       ,i.BZRID as i_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,i.PLSX as i_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,i.FullClassName as i_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,i.ID as i_ZZBJ_ID--学校班级数据表 表Record外键
-      ,i.ClassGroupId as i_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,j.SCHOOLID as j_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,j.GH as j_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,j.XM as j_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -36018,7 +36727,6 @@ SELECT a.[ID]--编号
       ,j.WLDZ as j_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,j.JSTXH as j_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,j.JSKQJS as j_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,j.FullTeacherName as j_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,j.TeacherGroupId as j_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,k.SCHOOLID as k_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,k.GH as k_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -36089,7 +36797,6 @@ SELECT a.[ID]--编号
       ,k.WLDZ as k_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,k.JSTXH as k_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,k.JSKQJS as k_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,k.FullTeacherName as k_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,k.TeacherGroupId as k_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_32_A02_ZYKCPKJG AS a LEFT OUTER JOIN
@@ -36311,9 +37018,7 @@ SELECT a.[ID]--编号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,k.ID as k_ZZBJ_ID--学校班级数据表 表Record外键
-      ,k.ClassGroupId as k_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,l.SCHOOLID as l_KSSDLX_SCHOOLID--考试时段类型表 学校
       ,l.TypeName as l_KSSDLX_TypeName--考试时段类型表 类型名
       ,l.StartTime as l_KSSDLX_StartTime--考试时段类型表 开始时间
@@ -36448,7 +37153,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,e.SCHOOLID as e_EXAM_SCHOOLID--考试表 学校
       ,e.Name as e_EXAM_Name--考试表 考试名称
@@ -36511,9 +37215,7 @@ SELECT a.[ID]--编号
       ,j.XQDM as j_ZZBJ_XQDM--学校班级数据表 校区代码
       ,j.BZRID as j_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,j.PLSX as j_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,j.FullClassName as j_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,j.ID as j_ZZBJ_ID--学校班级数据表 表Record外键
-      ,j.ClassGroupId as j_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,k.SCHOOLID as k_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,k.JXJHID as k_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,k.KCH as k_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
@@ -36689,9 +37391,7 @@ SELECT a.[ID]--编号
       ,g.XQDM as g_ZZBJ_XQDM--学校班级数据表 校区代码
       ,g.BZRID as g_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,g.FullClassName as g_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,g.ID as g_ZZBJ_ID--学校班级数据表 表Record外键
-      ,g.ClassGroupId as g_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,h.SCHOOLID as h_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,h.JXJHID as h_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,h.KCH as h_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
@@ -36835,7 +37535,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
       ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
@@ -37165,7 +37864,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_36_A03_JXPJ AS a LEFT OUTER JOIN
@@ -37372,7 +38070,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_37_A03_JNJDCJ AS a LEFT OUTER JOIN
@@ -37555,7 +38252,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -37626,7 +38322,6 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,i.SCHOOLID as i_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,i.JXJHID as i_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
@@ -37670,7 +38365,6 @@ SELECT a.[ID]--编号
       ,k.Name as k_CLASSROOM_Name--教室表 教室名称
       ,k.Place as k_CLASSROOM_Place--教室表 地点
       ,k.Counts as k_CLASSROOM_Counts--教室表 座位数
-      ,k.FullPlaceName as k_CLASSROOM_FullPlaceName--教室表 完整地点名称
       ,k.PlaceGroupId as k_CLASSROOM_PlaceGroupId--教室表 表PlaceGroup的外键
 
 FROM dbo.EDU_ZZJX_38_A01_ZZJXB AS a LEFT OUTER JOIN
@@ -37859,7 +38553,6 @@ SELECT a.[ID]--编号
       ,j.Name as j_CLASSROOM_Name--教室表 教室名称
       ,j.Place as j_CLASSROOM_Place--教室表 地点
       ,j.Counts as j_CLASSROOM_Counts--教室表 座位数
-      ,j.FullPlaceName as j_CLASSROOM_FullPlaceName--教室表 完整地点名称
       ,j.PlaceGroupId as j_CLASSROOM_PlaceGroupId--教室表 表PlaceGroup的外键
       ,k.SCHOOLID as k_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,k.ZYXXID as k_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
@@ -37877,9 +38570,7 @@ SELECT a.[ID]--编号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,k.ID as k_ZZBJ_ID--学校班级数据表 表Record外键
-      ,k.ClassGroupId as k_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,l.SCHOOLID as l_WEEKDAY_SCHOOLID--星期 学校名
       ,l.MC as l_WEEKDAY_MC--星期 名称
       ,m.SCHOOLID as m_SD_SCHOOLID--时段 学校名
@@ -38160,7 +38851,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,f.SCHOOLID as f_KKSJ_SCHOOLID--开课时间表 学校
       ,f.SKSJ as f_KKSJ_SKSJ--开课时间表 上课时间
@@ -39020,7 +39710,6 @@ SELECT a.[ID]--编号
       ,c.WLDZ as c_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,c.FullTeacherName as c_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJX_51_A01_YXKKC AS a LEFT OUTER JOIN
@@ -39202,7 +39891,6 @@ SELECT a.[ID]--编号
       ,a.[SKFSM]--授课方式码
       ,a.[JXDG]--教学大纲
       ,a.[SFSY]--是否使用
-      ,a.[FullCourseName]--完整课程名称
       ,a.[CourseGroupId]--表CourseGroup的外键
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
@@ -39324,7 +40012,6 @@ SELECT a.[ID]--编号
       ,d.SKFSM as d_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,d.JXDG as d_ZYKCK_JXDG--专业课程库表 教学大纲
       ,d.SFSY as d_ZYKCK_SFSY--专业课程库表 是否使用
-      ,d.FullCourseName as d_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,d.CourseGroupId as d_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
 
 FROM dbo.EDU_ZZJX_55_A07_ZYJXJH AS a LEFT OUTER JOIN
@@ -39393,7 +40080,6 @@ SELECT a.[ID]--编号
       ,f.SKFSM as f_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,f.JXDG as f_ZYKCK_JXDG--专业课程库表 教学大纲
       ,f.SFSY as f_ZYKCK_SFSY--专业课程库表 是否使用
-      ,f.FullCourseName as f_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,f.CourseGroupId as f_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
 
 FROM dbo.EDU_ZZJX_55_A08_NJJXJH AS a LEFT OUTER JOIN
@@ -39446,7 +40132,6 @@ SELECT a.[ID]--编号
       ,e.SKFSM as e_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
-      ,e.FullCourseName as e_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
@@ -39595,7 +40280,6 @@ SELECT a.[ID]--编号
       ,e.SKFSM as e_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
-      ,e.FullCourseName as e_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
@@ -39730,7 +40414,6 @@ SELECT a.[ID]--编号
       ,e.SKFSM as e_ZYKCK_SKFSM--专业课程库表 授课方式码
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
-      ,e.FullCourseName as e_ZYKCK_FullCourseName--专业课程库表 完整课程名称
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
@@ -39824,6 +40507,258 @@ FROM dbo.EDU_ZZJX_55_A12_BKCJ AS a LEFT OUTER JOIN
       dbo.EDU_GB_HKLB AS [fm] ON f.HKLBM = [fm].DM /*户口类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [fn] ON f.SFSLDRK = [fn].DM /*是否是流动人口*/ LEFT OUTER JOIN
       dbo.EDU_GB_SJGGHDQMC AS [fo] ON f.GJDQM = [fo].DM /*国籍/地区*/
+GO
+
+--学分表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_55_A13_XF_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[XQID]--学期ID
+      ,a.[XSID]--学生ID
+      ,a.[XFLXID]--学分类型ID
+      ,a.[FZ]--分值
+      ,a.[DJRID]--登记人ID
+      ,a.[DJSJ]--登记时间
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
+      ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
+      ,d.XH as d_XSXX_XH--学生信息数据表 学号
+      ,d.XM as d_XSXX_XM--学生信息数据表 姓名
+      ,d.YWXM as d_XSXX_YWXM--学生信息数据表 英文姓名
+      ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
+      ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
+      ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
+      ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
+      ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
+      ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,d.TC as d_XSXX_TC--学生信息数据表 特长
+      ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
+      ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
+      ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
+      ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
+      ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,d.NFCKH as d_XSXX_NFCKH--学生信息数据表 NFC卡号
+      ,e.SCHOOLID as e_XFLX_SCHOOLID--学分类型表 学校
+      ,e.LXMC as e_XFLX_LXMC--学分类型表 类型名称
+      ,e.XFLY as e_XFLX_XFLY--学分类型表 学分来源
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,'' as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZZJX_55_A13_XF AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A09_XFLX AS e ON a.XFLXID = e.ID /*学分类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.DJRID = f.LOGINNAME /*登记人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
+GO
+
+--学分履历表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_55_A14_XFLL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[XQID]--学期ID
+      ,a.[XSID]--学生ID
+      ,a.[XFLXID]--学分类型ID
+      ,a.[FZ]--分值
+      ,a.[DJRID]--登记人ID
+      ,a.[DJSJ]--登记时间
+      ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
+      ,c.XNID as c_XQ_XNID--学期数据表 学年
+      ,c.XQM as c_XQ_XQM--学期数据表 学期码
+      ,[cb].MC as c_XQ_XQM_MC--学期代码表 名称
+      ,c.XQMC as c_XQ_XQMC--学期数据表 学期名称
+      ,c.XQKSRQ as c_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,c.XQJSRQ as c_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,c.BaseProjectInfoID as c_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
+      ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
+      ,d.XH as d_XSXX_XH--学生信息数据表 学号
+      ,d.XM as d_XSXX_XM--学生信息数据表 姓名
+      ,d.YWXM as d_XSXX_YWXM--学生信息数据表 英文姓名
+      ,d.XMPY as d_XSXX_XMPY--学生信息数据表 姓名拼音
+      ,d.CYM as d_XSXX_CYM--学生信息数据表 曾用名
+      ,d.SFZJLXM as d_XSXX_SFZJLXM--学生信息数据表 身份证件类型码
+      ,[db].MC as d_XSXX_SFZJLXM_MC--身份证件类型代码表 名称
+      ,d.SFZJH as d_XSXX_SFZJH--学生信息数据表 身份证件号
+      ,d.XBM as d_XSXX_XBM--学生信息数据表 性别码
+      ,[dc].MC as d_XSXX_XBM_MC--人的性别代码 名称
+      ,d.XXM as d_XSXX_XXM--学生信息数据表 血型码
+      ,[dd].MC as d_XSXX_XXM_MC--血型代码表 名称
+      ,[dd].JC as d_XSXX_XXM_JC--血型代码表 简称
+      ,d.CSRQ as d_XSXX_CSRQ--学生信息数据表 出生日期
+      ,d.CSDM as d_XSXX_CSDM--学生信息数据表 出生地码
+      ,[de].MC as d_XSXX_CSDM_MC--中华人民共和国行政区划代码 名称
+      ,d.JG as d_XSXX_JG--学生信息数据表 籍贯
+      ,d.MZM as d_XSXX_MZM--学生信息数据表 民族码
+      ,[df].MZMC as d_XSXX_MZM_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称
+      ,[df].ZMDM as d_XSXX_MZM_ZMDM--中国各民族名称的罗马字母拼写法和代码 字母代码
+      ,d.HYZKM as d_XSXX_HYZKM--学生信息数据表 婚姻状况码
+      ,[dg].MC as d_XSXX_HYZKM_MC--婚姻状况代码 名称
+      ,d.XYZJM as d_XSXX_XYZJM--学生信息数据表 信仰宗教码
+      ,[dh].MC as d_XSXX_XYZJM_MC--宗教信仰代码 名称
+      ,d.GATQWM as d_XSXX_GATQWM--学生信息数据表 港澳台侨外码
+      ,[di].MC as d_XSXX_GATQWM_MC--港澳台侨外代码表 名称
+      ,[di].SM as d_XSXX_GATQWM_SM--港澳台侨外代码表 说明
+      ,d.JKZKM as d_XSXX_JKZKM--学生信息数据表 健康状况码
+      ,[dj].MC as d_XSXX_JKZKM_MC--健康状况1位数字代码 名称
+      ,[dj].SM as d_XSXX_JKZKM_SM--健康状况1位数字代码 说明
+      ,d.ZZMMM as d_XSXX_ZZMMM--学生信息数据表 政治面貌码
+      ,[dk].MC as d_XSXX_ZZMMM_MC--政治面貌代码 名称
+      ,[dk].JC as d_XSXX_ZZMMM_JC--政治面貌代码 简称
+      ,d.HKSZDXZQHM as d_XSXX_HKSZDXZQHM--学生信息数据表 户口所在地行政区划码
+      ,[dl].MC as d_XSXX_HKSZDXZQHM_MC--中华人民共和国行政区划代码 名称
+      ,d.HKLBM as d_XSXX_HKLBM--学生信息数据表 户口类别码
+      ,[dm].MC as d_XSXX_HKLBM_MC--户口类别代码 名称
+      ,d.SFSLDRK as d_XSXX_SFSLDRK--学生信息数据表 是否是流动人口
+      ,[dn].MC as d_XSXX_SFSLDRK_MC--是否标志代码表 名称
+      ,d.GJDQM as d_XSXX_GJDQM--学生信息数据表 国籍/地区
+      ,[do].GJDQMCJC as d_XSXX_GJDQM_GJDQMCJC--世界各国和地区名称代码 国家/地区名称简称
+      ,[do].EZMDM as d_XSXX_GJDQM_EZMDM--世界各国和地区名称代码 二字母代码
+      ,[do].SZMDM as d_XSXX_GJDQM_SZMDM--世界各国和地区名称代码 三字母代码
+      ,d.TC as d_XSXX_TC--学生信息数据表 特长
+      ,d.XSLXDH as d_XSXX_XSLXDH--学生信息数据表 学生联系电话
+      ,d.WLDZ as d_XSXX_WLDZ--学生信息数据表 网络地址
+      ,d.JSTXH as d_XSXX_JSTXH--学生信息数据表 即时通讯号
+      ,d.DZXX as d_XSXX_DZXX--学生信息数据表 电子信箱
+      ,d.ZP as d_XSXX_ZP--学生信息数据表 照片(路径)
+      ,d.RXXQID as d_XSXX_RXXQID--学生信息数据表 入学学期ID
+      ,d.NFCKH as d_XSXX_NFCKH--学生信息数据表 NFC卡号
+      ,e.SCHOOLID as e_XFLX_SCHOOLID--学分类型表 学校
+      ,e.LXMC as e_XFLX_LXMC--学分类型表 类型名称
+      ,e.XFLY as e_XFLX_XFLY--学分类型表 学分来源
+      ,f.SCHOOLID as f_USER_SCHOOLID--应用系统用户表 学校ID
+      ,f.APPID as f_USER_APPID--应用系统用户表 应用ID
+      ,'' as f_USER_PWD--应用系统用户表 密码
+      ,f.STATUS as f_USER_STATUS--应用系统用户表 用户状态
+      ,f.USERTYPE as f_USER_USERTYPE--应用系统用户表 用户类别
+      ,f.USERID as f_USER_USERID--应用系统用户表 用户ID
+      ,f.ROLEIDLst as f_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,f.XM as f_USER_XM--应用系统用户表 姓名
+      ,f.XB as f_USER_XB--应用系统用户表 性别
+      ,f.QQ as f_USER_QQ--应用系统用户表 QQ
+      ,f.DZYJ as f_USER_DZYJ--应用系统用户表 电子邮件
+      ,f.LXDH as f_USER_LXDH--应用系统用户表 联系电话
+      ,f.ZJDLSJ as f_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,f.DLCGCS as f_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,f.YHCJSJ as f_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,f.YHRY as f_USER_YHRY--应用系统用户表 用户荣誉
+      ,f.YHJF as f_USER_YHJF--应用系统用户表 用户积分
+
+FROM dbo.EDU_ZZJX_55_A14_XFLL AS a LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_01_01_XSXX AS d ON a.XSID = d.ID /*学生ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A09_XFLX AS e ON a.XFLXID = e.ID /*学分类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS f ON a.DJRID = f.LOGINNAME /*登记人ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFZJLX AS [db] ON d.SFZJLXM = [db].DM /*身份证件类型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_RDXB AS [dc] ON d.XBM = [dc].DM /*性别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XX AS [dd] ON d.XXM = [dd].DM /*血型码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [de] ON d.CSDM = [de].DM /*出生地码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [df] ON d.MZM = [df].DM /*民族码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HYZZ AS [dg] ON d.HYZKM = [dg].DM /*婚姻状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZJXY AS [dh] ON d.XYZJM = [dh].DM /*信仰宗教码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_GATQW AS [di] ON d.GATQWM = [di].DM /*港澳台侨外码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_JKZKYWSZ AS [dj] ON d.JKZKM = [dj].DM /*健康状况码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZZMM AS [dk] ON d.ZZMMM = [dk].DM /*政治面貌码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_ZHRMGHGXZQH AS [dl] ON d.HKSZDXZQHM = [dl].DM /*户口所在地行政区划码*/ LEFT OUTER JOIN
+      dbo.EDU_GB_HKLB AS [dm] ON d.HKLBM = [dm].DM /*户口类别码*/ LEFT OUTER JOIN
+      dbo.EDU_JY_SFBZ AS [dn] ON d.SFSLDRK = [dn].DM /*是否是流动人口*/ LEFT OUTER JOIN
+      dbo.EDU_GB_SJGGHDQMC AS [do] ON d.GJDQM = [do].DM /*国籍/地区*/
+GO
+
+--教学班评分比例表
+CREATE VIEW [dbo].[VIEW_EDU_ZZJX_55_A15_JXBPFBL_DISP]
+AS
+SELECT a.[ID]--编号
+      ,a.[SCHOOLID]--学校
+      ,a.[JXJHID]--教学计划表ID
+      ,a.[KCPFXMID]--课程评分项目表ID
+      ,a.[BL]--比例
+      ,c.SCHOOLID as c_KCPFXM_SCHOOLID--课程评分项目表 学校
+      ,c.LXID as c_KCPFXM_LXID--课程评分项目表 类型ID
+      ,c.FXMID as c_KCPFXM_FXMID--课程评分项目表 父项目ID
+      ,c.XMMC as c_KCPFXM_XMMC--课程评分项目表 项目名称
+      ,c.SFYZXM as c_KCPFXM_SFYZXM--课程评分项目表 是否有子项目
+      ,c.BL as c_KCPFXM_BL--课程评分项目表 比例
+      ,c.SFYXXG as c_KCPFXM_SFYXXG--课程评分项目表 是否允许修改
+      ,c.XGSX as c_KCPFXM_XGSX--课程评分项目表 修改上限
+      ,c.XGXX as c_KCPFXM_XGXX--课程评分项目表 修改下限
+      ,c.LY as c_KCPFXM_LY--课程评分项目表 来源
+      ,c.PLSX as c_KCPFXM_PLSX--课程评分项目表 排列顺序
+
+FROM dbo.EDU_ZZJX_55_A15_JXBPFBL AS a LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A06_KCPFXM AS c ON a.KCPFXMID = c.ID /*课程评分项目表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --学生信息数据表
@@ -40046,9 +40981,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,n.XQDM as n_ZZBJ_XQDM--学校班级数据表 校区代码
       ,n.BZRID as n_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,n.PLSX as n_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,n.FullClassName as n_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,n.ID as n_ZZBJ_ID--学校班级数据表 表Record外键
-      ,n.ClassGroupId as n_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN
@@ -40622,7 +41555,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -40693,7 +41625,6 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,i.SCHOOLID as i_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,i.JXJHID as i_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
@@ -40764,9 +41695,7 @@ SELECT a.[ID]--编号
       ,m.XQDM as m_ZZBJ_XQDM--学校班级数据表 校区代码
       ,m.BZRID as m_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,m.PLSX as m_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,m.FullClassName as m_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,m.ID as m_ZZBJ_ID--学校班级数据表 表Record外键
-      ,m.ClassGroupId as m_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,n.SCHOOLID as n_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,n.GH as n_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,n.XM as n_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -40836,7 +41765,6 @@ SELECT a.[ID]--编号
       ,n.WLDZ as n_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,n.JSTXH as n_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,n.JSKQJS as n_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,n.FullTeacherName as n_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,n.TeacherGroupId as n_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,o.SCHOOLID as o_EXAM_SCHOOLID--考试表 学校
       ,o.Name as o_EXAM_Name--考试表 考试名称
@@ -41082,9 +42010,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
       ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,e.FullClassName as e_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,e.ID as e_ZZBJ_ID--学校班级数据表 表Record外键
-      ,e.ClassGroupId as e_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,f.SCHOOLID as f_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,f.NJMC as f_ZZNJ_NJMC--学校年级数据表 年级名称
       ,f.SSNF as f_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -41269,7 +42195,6 @@ SELECT a.[ID]--学籍异动表编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,g.ZYDM as g_ZYXX_ZYDM--专业基本信息数据表 专业代码
@@ -41309,9 +42234,7 @@ SELECT a.[ID]--学籍异动表编号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,h.FullClassName as h_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,h.ID as h_ZZBJ_ID--学校班级数据表 表Record外键
-      ,h.ClassGroupId as h_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,i.SCHOOLID as i_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,i.NJMC as i_ZZNJ_NJMC--学校年级数据表 年级名称
       ,i.SSNF as i_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -41356,9 +42279,7 @@ SELECT a.[ID]--学籍异动表编号
       ,k.XQDM as k_ZZBJ_XQDM--学校班级数据表 校区代码
       ,k.BZRID as k_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,k.PLSX as k_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,k.FullClassName as k_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,k.ID as k_ZZBJ_ID--学校班级数据表 表Record外键
-      ,k.ClassGroupId as k_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,l.SCHOOLID as l_ZZNJ_SCHOOLID--学校年级数据表 学校名
       ,l.NJMC as l_ZZNJ_NJMC--学校年级数据表 年级名称
       ,l.SSNF as l_ZZNJ_SSNF--学校年级数据表 所属年份
@@ -41718,7 +42639,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -41789,7 +42709,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_10_A12_XSHJXJ AS a LEFT OUTER JOIN
@@ -42014,7 +42933,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -42085,7 +43003,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_10_A13_XSHZXJ AS a LEFT OUTER JOIN
@@ -42298,7 +43215,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -42369,7 +43285,6 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_11_01_BYSJ AS a LEFT OUTER JOIN
@@ -42535,9 +43450,7 @@ SELECT a.[ID]--编号
       ,e.XQDM as e_ZZBJ_XQDM--学校班级数据表 校区代码
       ,e.BZRID as e_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,e.PLSX as e_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,e.FullClassName as e_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,e.ID as e_ZZBJ_ID--学校班级数据表 表Record外键
-      ,e.ClassGroupId as e_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,f.MC as f_SFBZ_MC--是否标志代码表 名称
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -42608,7 +43521,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -42679,7 +43591,6 @@ SELECT a.[ID]--编号
       ,h.WLDZ as h_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,h.FullTeacherName as h_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_12_A02_STCY AS a LEFT OUTER JOIN
@@ -42850,7 +43761,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_STJBSJ_SCHOOLID--社团基本数据子类表 学校
       ,g.STMC as g_STJBSJ_STMC--社团基本数据子类表 社团名称
@@ -42923,9 +43833,7 @@ SELECT a.[ID]--编号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,c.FullClassName as c_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,c.ID as c_ZZBJ_ID--学校班级数据表 表Record外键
-      ,c.ClassGroupId as c_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,d.SCHOOLID as d_XSKHBSJ_SCHOOLID--学生考核表数据表 学校
       ,d.KHBMC as d_XSKHBSJ_KHBMC--学生考核表数据表 考核表名称
       ,d.KHBJDMLB as d_XSKHBSJ_KHBJDMLB--学生考核表数据表 考核班级代码列表
@@ -43003,7 +43911,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_14_A03_XSRCXWGFKHSJ AS a LEFT OUTER JOIN
@@ -43217,7 +44124,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -43288,7 +44194,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_15_A02_RYCHSQ AS a LEFT OUTER JOIN
@@ -43501,7 +44406,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,g.SCHOOLID as g_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,g.GH as g_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -43572,7 +44476,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_16_A02_PKSXX AS a LEFT OUTER JOIN
@@ -43666,9 +44569,7 @@ SELECT a.[ID]--编号
       ,c.XQDM as c_ZZBJ_XQDM--学校班级数据表 校区代码
       ,c.BZRID as c_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,c.PLSX as c_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,c.FullClassName as c_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,c.ID as c_ZZBJ_ID--学校班级数据表 表Record外键
-      ,c.ClassGroupId as c_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -43790,7 +44691,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_17_A01_TYXX AS a LEFT OUTER JOIN
@@ -44076,7 +44976,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_17_A03_RDJJTY AS a LEFT OUTER JOIN
@@ -44260,7 +45159,6 @@ SELECT a.[ID]--编号
       ,e.WLDZ as e_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,e.FullTeacherName as e_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_17_A04_TYSXHB AS a LEFT OUTER JOIN
@@ -44530,7 +45428,6 @@ SELECT a.[ID]--编号
       ,g.WLDZ as g_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,g.FullTeacherName as g_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,h.SCHOOLID as h_CFLX_SCHOOLID--处分类型表 学校
       ,h.CFLXMC as h_CFLX_CFLXMC--处分类型表 处分类型名称
@@ -44610,7 +45507,6 @@ SELECT a.[ID]--编号
       ,i.WLDZ as i_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,i.JSKQJS as i_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,i.FullTeacherName as i_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,i.TeacherGroupId as i_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,j.SCHOOLID as j_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,j.GH as j_JZGJBSJ_GH--教职工基本数据子类表 工号
@@ -44681,7 +45577,6 @@ SELECT a.[ID]--编号
       ,j.WLDZ as j_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,j.JSTXH as j_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,j.JSKQJS as j_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,j.FullTeacherName as j_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,j.TeacherGroupId as j_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_18_A04_XSCFXX AS a LEFT OUTER JOIN
@@ -44932,7 +45827,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_18_A05_JCCFSQ AS a LEFT OUTER JOIN
@@ -45092,7 +45986,6 @@ SELECT a.[ID]--编号
       ,f.WLDZ as f_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,f.FullTeacherName as f_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_18_A06_JCCFSQSHJL AS a LEFT OUTER JOIN
@@ -45238,9 +46131,7 @@ SELECT a.[ID]--编号
       ,h.XQDM as h_ZZBJ_XQDM--学校班级数据表 校区代码
       ,h.BZRID as h_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,h.PLSX as h_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,h.FullClassName as h_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,h.ID as h_ZZBJ_ID--学校班级数据表 表Record外键
-      ,h.ClassGroupId as h_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_19_A02_BWCY AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_19_A01_BWSJ AS c ON a.BWID = c.ID /*班委ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -45359,7 +46250,6 @@ SELECT a.[ID]--编号
       ,d.WLDZ as d_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,d.FullTeacherName as d_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZXS_20_A01_DSSJ AS a LEFT OUTER JOIN
@@ -45695,9 +46585,7 @@ SELECT a.[ID]--编号
       ,d.XQDM as d_ZZBJ_XQDM--学校班级数据表 校区代码
       ,d.BZRID as d_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,d.PLSX as d_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,d.FullClassName as d_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,d.ID as d_ZZBJ_ID--学校班级数据表 表Record外键
-      ,d.ClassGroupId as d_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_22_A05_ZSGLJYZM AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_07_01_XJSJ AS c ON a.XSID = c.XSXXID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

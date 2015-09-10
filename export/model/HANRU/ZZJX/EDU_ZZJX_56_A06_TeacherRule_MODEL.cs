@@ -72,6 +72,11 @@ namespace HanRuEdu.LDAL
             public Int32 Related { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "±íBaseProjectInfoÍâ¼ü")]
+            public Int32 BaseProjectInfoID { get; set; }
+
+
         }
     }
 }

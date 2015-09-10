@@ -432,6 +432,90 @@ namespace HanRuEdu.LDAL
             public String BZ { get; set; }
 
 
+            [Display(Name = "第一学历程度")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLCD { get; set; }
+
+
+            [Display(Name = "第一学历方式")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLFS { get; set; }
+
+
+            [Display(Name = "第一学历学制")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLXZ { get; set; }
+
+
+            [Display(Name = "第一学历学位")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLXW { get; set; }
+
+
+            [Display(Name = "第一学历毕业时间")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLBYSJ { get; set; }
+
+
+            [Display(Name = "第一学历毕业学校")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLBYXX { get; set; }
+
+
+            [Display(Name = "第一学历专业")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String DYXLZY { get; set; }
+
+
+            [Display(Name = "最高学历程度")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLCD { get; set; }
+
+
+            [Display(Name = "最高学历方式")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLFS { get; set; }
+
+
+            [Display(Name = "最高学历学制")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLXZ { get; set; }
+
+
+            [Display(Name = "最高学历学位")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLXW { get; set; }
+
+
+            [Display(Name = "最高学历毕业时间")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLBYSJ { get; set; }
+
+
+            [Display(Name = "最高学历毕业学校")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLBYXX { get; set; }
+
+
+            [Display(Name = "最高学历专业")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ZGXLZY { get; set; }
+
+
         }
     }
 }

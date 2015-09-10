@@ -16,7 +16,6 @@ namespace HanRuEdu.LDAL
             JXJH = "";
             JGH = "";
             XQDM = "";
-            FullClassName = "";
         }
         public class EDU_ZZJX_02_02_ZZBJ_metadata
         {
@@ -120,21 +119,9 @@ namespace HanRuEdu.LDAL
             public Int32 PLSX { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "完整班级名称")]
-            [StringLength(50)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FullClassName { get; set; }
-
-
             [Required(ErrorMessage = "必填")]
             [Display(Name = "表Record外键")]
             public Int32 ID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "表ClassGroup的外键")]
-            public Int32 ClassGroupId { get; set; }
 
 
         }

@@ -118,6 +118,20 @@ SELECT a.[SCHOOLID]--学校名
       ,g.GZYLJCQK as g_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,g.JTZYCY as g_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,g.BZ as g_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,g.DYXLCD as g_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,g.DYXLFS as g_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,g.DYXLXZ as g_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,g.DYXLXW as g_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,g.DYXLBYSJ as g_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,g.DYXLBYXX as g_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,g.DYXLZY as g_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,g.ZGXLCD as g_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,g.ZGXLFS as g_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,g.ZGXLXZ as g_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,g.ZGXLXW as g_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,g.ZGXLBYSJ as g_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,g.ZGXLBYXX as g_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,g.ZGXLZY as g_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
       ,h.SCHOOLID as h_BJLB_SCHOOLID--班级类别表 学校
       ,h.LBMC as h_BJLB_LBMC--班级类别表 类别名称
       ,i.SCHOOLID as i_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
@@ -209,6 +223,20 @@ SELECT a.[SCHOOLID]--学校名
       ,i.GZYLJCQK as i_JZGJBSJ_GZYLJCQK--教职工基本数据子类表 工作以来奖惩情况
       ,i.JTZYCY as i_JZGJBSJ_JTZYCY--教职工基本数据子类表 家庭主要成员
       ,i.BZ as i_JZGJBSJ_BZ--教职工基本数据子类表 备注
+      ,i.DYXLCD as i_JZGJBSJ_DYXLCD--教职工基本数据子类表 第一学历程度
+      ,i.DYXLFS as i_JZGJBSJ_DYXLFS--教职工基本数据子类表 第一学历方式
+      ,i.DYXLXZ as i_JZGJBSJ_DYXLXZ--教职工基本数据子类表 第一学历学制
+      ,i.DYXLXW as i_JZGJBSJ_DYXLXW--教职工基本数据子类表 第一学历学位
+      ,i.DYXLBYSJ as i_JZGJBSJ_DYXLBYSJ--教职工基本数据子类表 第一学历毕业时间
+      ,i.DYXLBYXX as i_JZGJBSJ_DYXLBYXX--教职工基本数据子类表 第一学历毕业学校
+      ,i.DYXLZY as i_JZGJBSJ_DYXLZY--教职工基本数据子类表 第一学历专业
+      ,i.ZGXLCD as i_JZGJBSJ_ZGXLCD--教职工基本数据子类表 最高学历程度
+      ,i.ZGXLFS as i_JZGJBSJ_ZGXLFS--教职工基本数据子类表 最高学历方式
+      ,i.ZGXLXZ as i_JZGJBSJ_ZGXLXZ--教职工基本数据子类表 最高学历学制
+      ,i.ZGXLXW as i_JZGJBSJ_ZGXLXW--教职工基本数据子类表 最高学历学位
+      ,i.ZGXLBYSJ as i_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
+      ,i.ZGXLBYXX as i_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
+      ,i.ZGXLZY as i_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
 
 FROM dbo.EDU_ZXXX_03_01_BJ AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_02_01_NJ AS c ON a.NJ = c.NJ /*年级号*/ AND a.SCHOOLID = c.SCHOOLID /*学校名*/ LEFT OUTER JOIN

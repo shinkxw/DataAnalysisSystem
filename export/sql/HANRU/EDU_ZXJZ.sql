@@ -235,6 +235,20 @@ CREATE TABLE [dbo].[EDU_ZXJZ_01_01_JZGJBSJ](
 	[GZYLJCQK]  text  NULL,--工作以来奖惩情况
 	[JTZYCY]  text  NULL,--家庭主要成员
 	[BZ]  text  NULL,--备注
+	[DYXLCD]  nvarchar(200)  NULL,--第一学历程度
+	[DYXLFS]  nvarchar(200)  NULL,--第一学历方式
+	[DYXLXZ]  nvarchar(200)  NULL,--第一学历学制
+	[DYXLXW]  nvarchar(200)  NULL,--第一学历学位
+	[DYXLBYSJ]  nvarchar(200)  NULL,--第一学历毕业时间
+	[DYXLBYXX]  nvarchar(200)  NULL,--第一学历毕业学校
+	[DYXLZY]  nvarchar(200)  NULL,--第一学历专业
+	[ZGXLCD]  nvarchar(200)  NULL,--最高学历程度
+	[ZGXLFS]  nvarchar(200)  NULL,--最高学历方式
+	[ZGXLXZ]  nvarchar(200)  NULL,--最高学历学制
+	[ZGXLXW]  nvarchar(200)  NULL,--最高学历学位
+	[ZGXLBYSJ]  nvarchar(200)  NULL,--最高学历毕业时间
+	[ZGXLBYXX]  nvarchar(200)  NULL,--最高学历毕业学校
+	[ZGXLZY]  nvarchar(200)  NULL,--最高学历专业
 CONSTRAINT [PK_EDU_ZXJZ_01_01_JZGJBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -385,6 +399,20 @@ CREATE TABLE [dbo].[EDU_ZXJZ_01_A04_JZGJBSJSH](
 	[GZYLJCQK]  text  NULL,--工作以来奖惩情况
 	[JTZYCY]  text  NULL,--家庭主要成员
 	[BZ]  text  NULL,--备注
+	[DYXLCD]  nvarchar(200)  NULL,--第一学历程度
+	[DYXLFS]  nvarchar(200)  NULL,--第一学历方式
+	[DYXLXZ]  nvarchar(200)  NULL,--第一学历学制
+	[DYXLXW]  nvarchar(200)  NULL,--第一学历学位
+	[DYXLBYSJ]  nvarchar(200)  NULL,--第一学历毕业时间
+	[DYXLBYXX]  nvarchar(200)  NULL,--第一学历毕业学校
+	[DYXLZY]  nvarchar(200)  NULL,--第一学历专业
+	[ZGXLCD]  nvarchar(200)  NULL,--最高学历程度
+	[ZGXLFS]  nvarchar(200)  NULL,--最高学历方式
+	[ZGXLXZ]  nvarchar(200)  NULL,--最高学历学制
+	[ZGXLXW]  nvarchar(200)  NULL,--最高学历学位
+	[ZGXLBYSJ]  nvarchar(200)  NULL,--最高学历毕业时间
+	[ZGXLBYXX]  nvarchar(200)  NULL,--最高学历毕业学校
+	[ZGXLZY]  nvarchar(200)  NULL,--最高学历专业
 CONSTRAINT [PK_EDU_ZXJZ_01_A04_JZGJBSJSH] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1089,6 +1117,34 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'家庭主要成员' 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历程度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLCD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLFS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历学制' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历学位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLXW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历毕业时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLBYSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历毕业学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLBYXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历专业' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'DYXLZY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历程度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLCD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLFS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历学制' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历学位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLXW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历毕业时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLBYSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历毕业学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLBYXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历专业' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'ZGXLZY'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工扩展表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A01_JZGKZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教工基本信息ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A01_JZGKZ', @level2type=N'COLUMN',@level2name=N'JZGID'
@@ -1292,6 +1348,34 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'家庭主要成员' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'JTZYCY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历程度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLCD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLFS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历学制' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历学位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLXW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历毕业时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLBYSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历毕业学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLBYXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'第一学历专业' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'DYXLZY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历程度' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLCD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLFS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历学制' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLXZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历学位' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLXW'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历毕业时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLBYSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历毕业学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLBYXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最高学历专业' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A04_JZGJBSJSH', @level2type=N'COLUMN',@level2name=N'ZGXLZY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工扩展表(审核)' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJZ_01_A05_JZGKZSH'
 GO

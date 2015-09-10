@@ -89,9 +89,7 @@ EDU_ZZJX_02_02_ZZBJ  学校班级数据表
   XQDM          校区代码                nvarchar(2)    非主
   BZRID         班主任ID                int            非主        教职工基本数据子类表
   PLSX          排列顺序                int            非主
-  FullClassName 完整班级名称            nvarchar(50)   非主
   ID            表Record外键            int            非主
-  ClassGroupId  表ClassGroup的外键      int            非主
 
 EDU_ZZJX_03_01_ZTJXJH  总体教学计划数据子类表
   ID            编号                    int            主键
@@ -607,7 +605,6 @@ EDU_ZZJX_30_A01_CLASSROOM  教室表
   Name          教室名称                nvarchar(128)  非主
   Place         地点                    nvarchar(128)  非主
   Counts        座位数                  int            非主
-  FullPlaceName 完整地点名称            nvarchar(50)   非主
   PlaceGroupId  表PlaceGroup的外键      int            非主
 
 EDU_ZZJX_30_A02_EXAMROOM  考场表
@@ -1022,7 +1019,6 @@ EDU_ZZJX_55_A04_ZYKCK  专业课程库表
   SKFSM         授课方式码              nvarchar(1)    非主
   JXDG          教学大纲                text           非主
   SFSY          是否使用                int            非主
-  FullCourseName完整课程名称            nvarchar(50)   非主
   CourseGroupId 表CourseGroup的外键     int            非主
 
 EDU_ZZJX_55_A05_KCPFLX  课程评分类型表
@@ -1107,6 +1103,33 @@ EDU_ZZJX_55_A12_BKCJ  补考成绩表
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主
 
+EDU_ZZJX_55_A13_XF  学分表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSID          学生ID                  int            非主        学生信息数据表
+  XFLXID        学分类型ID              int            非主        学分类型表
+  FZ            分值                    decimal(5, 2)  非主
+  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+
+EDU_ZZJX_55_A14_XFLL  学分履历表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  XSID          学生ID                  int            非主        学生信息数据表
+  XFLXID        学分类型ID              int            非主        学分类型表
+  FZ            分值                    decimal(5, 2)  非主
+  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
+  DJSJ          登记时间                datetime       非主
+
+EDU_ZZJX_55_A15_JXBPFBL  教学班评分比例表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JXJHID        教学计划表ID            int            非主
+  KCPFXMID      课程评分项目表ID        int            非主        课程评分项目表
+  BL            比例                    decimal(5, 2)  非主
+
 EDU_ZZJX_55_A90_XFHASH  学分哈希表
   KEY           键                      int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表
@@ -1115,8 +1138,10 @@ EDU_ZZJX_55_A90_XFHASH  学分哈希表
 EDU_ZZJX_56_A01_Record  记录表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
+  BaseInfoID    外键                    int            非主
+  BaseInfoType  标识                    int            非主
   SerialNumber  序列号                  int            非主
-  Status        状态                    int            非主
+  FullName      完整名称                nvarchar(50)   非主
   ShortTitle1   短标题一                nvarchar(50)   非主
   ShortTitle2   短标题二                nvarchar(50)   非主
   Comment       评论                    nvarchar(200)  非主
@@ -1155,6 +1180,7 @@ EDU_ZZJX_56_A03_Class  班级表
   Period        节次                    int            非主
   Tabling       是否被排课              int            非主
   RecordID      记录ID                  int            非主
+  ParentTable   用于标识主表            int            非主
 
 EDU_ZZJX_56_A04_ClassRule  班级规则表
   ID            编号                    int            主键
@@ -1166,6 +1192,7 @@ EDU_ZZJX_56_A04_ClassRule  班级规则表
   TimeLimitCount时间限制次数            nvarchar(50)   非主
   Priority      优先级                  int            非主
   Related       关联班级                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A05_CourseRule  课程规则表
   ID            编号                    int            主键
@@ -1179,6 +1206,7 @@ EDU_ZZJX_56_A05_CourseRule  课程规则表
   TimeLimitCount时间限制次数            nvarchar(20)   非主
   Priority      优先级                  int            非主
   Related       相关课程                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A06_TeacherRule  教师规则表
   ID            编号                    int            主键
@@ -1190,6 +1218,7 @@ EDU_ZZJX_56_A06_TeacherRule  教师规则表
   TimeLimitCount时间限制次数            nvarchar(20)   非主
   Priority      优先级                  int            非主
   Related       相关教师                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A07_PlaceRule  场地规则表
   ID            编号                    int            主键
@@ -1201,6 +1230,7 @@ EDU_ZZJX_56_A07_PlaceRule  场地规则表
   TimeLimitCount时间限制次数            nvarchar(20)   非主
   Priority      优先级                  int            非主
   Related       相关场地                int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A08_TeachSchedule  教学计划表
   ID            编号                    int            主键
@@ -1215,28 +1245,53 @@ EDU_ZZJX_56_A08_TeachSchedule  教学计划表
   RateOfProgress进度组                  nvarchar(20)   非主
   PairClass     双次课                  nvarchar(20)   非主
   PairClassCategory双次方式                nvarchar(20)   非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A09_TeacherGroup  教师组表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
   TeacherGroupName教师组名称              nvarchar(50)   非主
   FullTeacherGroupName完整教师组名称          nvarchar(50)   非主
+  SerialNumber  序列号                  int            非主
+  ShortTitle1   短标题一                nvarchar(50)   非主
+  ShortTitle2   短标题二                nvarchar(50)   非主
+  Comment       评论                    nvarchar(200)  非主
+  Code                                  int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A10_ClassGroup  教师组表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
   ClassGroupName班级组名称              nvarchar(50)   非主
   FullClassGroupName完整班级组名称          nvarchar(50)   非主
+  SerialNumber  序列号                  int            非主
+  ShortTitle1   短标题一                nvarchar(50)   非主
+  ShortTitle2   短标题二                nvarchar(50)   非主
+  Comment       评论                    nvarchar(200)  非主
+  Code                                  int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A11_CourseGroup  课程组表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
   CourseGroupName课程组名称              nvarchar(50)   非主
   FullCourseGroupName完整课程组名称          nvarchar(50)   非主
+  SerialNumber  序列号                  int            非主
+  ShortTitle1   短标题一                nvarchar(50)   非主
+  ShortTitle2   短标题二                nvarchar(50)   非主
+  Comment       评论                    nvarchar(200)  非主
+  Code                                  int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 
 EDU_ZZJX_56_A12_PlaceGroup  场地组表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
   PlaceGroupName场地组名称              nvarchar(50)   非主
   FullPlaceGroupName完整场地组名称          nvarchar(50)   非主
+  SerialNumber  序列号                  int            非主
+  ShortTitle1   短标题一                nvarchar(50)   非主
+  ShortTitle2   短标题二                nvarchar(50)   非主
+  Comment       评论                    nvarchar(200)  非主
+  Code                                  int            非主
+  BaseProjectInfoID表BaseProjectInfo外键   int            非主
 

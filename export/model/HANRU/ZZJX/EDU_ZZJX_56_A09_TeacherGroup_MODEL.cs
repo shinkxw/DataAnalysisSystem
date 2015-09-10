@@ -11,6 +11,9 @@ namespace HanRuEdu.LDAL
         {
             TeacherGroupName = "";
             FullTeacherGroupName = "";
+            ShortTitle1 = "";
+            ShortTitle2 = "";
+            Comment = "";
         }
         public class EDU_ZZJX_56_A09_TeacherGroup_metadata
         {
@@ -36,6 +39,42 @@ namespace HanRuEdu.LDAL
             [StringLength(50)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String FullTeacherGroupName { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "序列号")]
+            public Int32 SerialNumber { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "短标题一")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ShortTitle1 { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "短标题二")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String ShortTitle2 { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "评论")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String Comment { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "")]
+            public Int32 Code { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "表BaseProjectInfo外键")]
+            public Int32 BaseProjectInfoID { get; set; }
 
 
         }

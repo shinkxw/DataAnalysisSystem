@@ -135,9 +135,7 @@ SELECT a.[XSXXID]--学生信息数据表
       ,n.XQDM as n_ZZBJ_XQDM--学校班级数据表 校区代码
       ,n.BZRID as n_ZZBJ_BZRID--学校班级数据表 班主任ID
       ,n.PLSX as n_ZZBJ_PLSX--学校班级数据表 排列顺序
-      ,n.FullClassName as n_ZZBJ_FullClassName--学校班级数据表 完整班级名称
       ,n.ID as n_ZZBJ_ID--学校班级数据表 表Record外键
-      ,n.ClassGroupId as n_ZZBJ_ClassGroupId--学校班级数据表 表ClassGroup的外键
 
 FROM dbo.EDU_ZZXS_01_A01_XSXX AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS b ON a.XSXXID = b.ID /*学生信息数据表*/ AND a.SCHOOLID = b.SCHOOLID /*学校名*/ LEFT OUTER JOIN

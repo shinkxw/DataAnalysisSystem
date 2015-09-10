@@ -102,7 +102,6 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.WLDZ as b_JZGJBSJ_WLDZ--教职工基本数据子类表 网络地址
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
-      ,b.FullTeacherName as b_JZGJBSJ_FullTeacherName--教职工基本数据子类表 完整老师姓名
       ,b.TeacherGroupId as b_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
 
 FROM dbo.EDU_ZZJG_01_A06_JZGKZSH AS a LEFT OUTER JOIN

@@ -15,7 +15,6 @@ SELECT a.[ID]--编号
       ,a.[SKFSM]--授课方式码
       ,a.[JXDG]--教学大纲
       ,a.[SFSY]--是否使用
-      ,a.[FullCourseName]--完整课程名称
       ,a.[CourseGroupId]--表CourseGroup的外键
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
