@@ -1236,7 +1236,7 @@ EDU_ZZJX_56_A08_TeachSchedule  教学计划表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键
   CourseID      外键引用表EDU_ZZJX_55_A04_ZYKCK的ID列int            非主
-  ClassID       外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列nvarchar(10)   非主
+  ClassID       外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列int            非主
   TeacherID     外键引用表EDU_ZZJG_01_01_JZGJBSJ的ID列int            非主
   Times         次数                    nvarchar(20)   非主
   TimesInMorning上午次数                nvarchar(20)   非主

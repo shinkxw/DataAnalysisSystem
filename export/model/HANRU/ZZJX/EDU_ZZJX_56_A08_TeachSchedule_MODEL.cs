@@ -9,7 +9,6 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_56_A08_TeachSchedule()
         {
-            ClassID = "";
             Times = "";
             TimesInMorning = "";
             ClassGroupName = "";
@@ -35,11 +34,9 @@ namespace HanRuEdu.LDAL
             public Int32 CourseID { get; set; }
 
 
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列")]
-            [StringLength(10)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String ClassID { get; set; }
+            public Int32 ClassID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

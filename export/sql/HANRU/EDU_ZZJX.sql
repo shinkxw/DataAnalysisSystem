@@ -2972,7 +2972,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_56_A08_TeachSchedule](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[CourseID]  int  NOT NULL,--外键引用表EDU_ZZJX_55_A04_ZYKCK的ID列
-	[ClassID]  nvarchar(10)  NOT NULL,--外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列
+	[ClassID]  int  NOT NULL,--外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列
 	[TeacherID]  int  NOT NULL,--外键引用表EDU_ZZJG_01_01_JZGJBSJ的ID列
 	[Times]  nvarchar(20)  NOT NULL,--次数
 	[TimesInMorning]  nvarchar(20)  NOT NULL,--上午次数

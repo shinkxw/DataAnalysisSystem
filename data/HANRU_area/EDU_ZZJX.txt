@@ -1454,7 +1454,7 @@
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="CourseID" exp="外键引用表EDU_ZZJX_55_A04_ZYKCK的ID列" type="int" />
-            <name="ClassID" exp="外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列" type="nvarchar(10)" />
+            <name="ClassID" exp="外键引用表EDU_ZZJX_02_02_ZZBJ的XZBDM列" type="int" />
             <name="TeacherID" exp="外键引用表EDU_ZZJG_01_01_JZGJBSJ的ID列" type="int" />
             <name="Times" exp="次数" type="nvarchar(20)" />
             <name="TimesInMorning" exp="上午次数" type="nvarchar(20)" />
