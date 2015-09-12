@@ -2128,7 +2128,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_25_A11_CWJBDTM](
 	[BZY]  nvarchar(100)  NOT NULL,--报账员
 	[JBRQ]  datetime  NOT NULL,--结报日期
 	[ZY]  nvarchar(200)  NOT NULL,--摘要
-	[JE]  decimal(12, 2)  NOT NULL,--金额
+	[JE]  decimal(14, 4)  NOT NULL,--金额
 CONSTRAINT [PK_EDU_ZZJG_25_A11_CWJBDTM] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

@@ -1112,6 +1112,7 @@ EDU_ZZJX_55_A13_XF  学分表
   FZ            分值                    decimal(5, 2)  非主
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主
+  MC            名称                    nvarchar(20)   非主
 
 EDU_ZZJX_55_A14_XFLL  学分履历表
   ID            编号                    int            主键
@@ -1122,6 +1123,7 @@ EDU_ZZJX_55_A14_XFLL  学分履历表
   FZ            分值                    decimal(5, 2)  非主
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主
+  MC            名称                    nvarchar(20)   非主
 
 EDU_ZZJX_55_A15_JXBPFBL  教学班评分比例表
   ID            编号                    int            主键

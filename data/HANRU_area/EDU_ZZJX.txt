@@ -1308,6 +1308,7 @@
             <name="FZ" exp="分值" type="decimal(5, 2)" />
             <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
             <name="DJSJ" exp="登记时间" type="datetime" />
+            <name="MC" exp="名称" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A14_XFLL" exp="学分履历表">
@@ -1320,6 +1321,7 @@
             <name="FZ" exp="分值" type="decimal(5, 2)" />
             <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
             <name="DJSJ" exp="登记时间" type="datetime" />
+            <name="MC" exp="名称" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A15_JXBPFBL" exp="教学班评分比例表">

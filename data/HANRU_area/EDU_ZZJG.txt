@@ -1014,7 +1014,7 @@
             <name="BZY" exp="报账员" type="nvarchar(100)" />
             <name="JBRQ" exp="结报日期" type="datetime" />
             <name="ZY" exp="摘要" type="nvarchar(200)" />
-            <name="JE" exp="金额" type="decimal(12, 2)" />
+            <name="JE" exp="金额" type="decimal(14, 4)" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_25_A12_CWJBDXX" exp="财务结报单信息表">

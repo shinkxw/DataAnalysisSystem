@@ -852,7 +852,7 @@ EDU_ZZJG_25_A11_CWJBDTM  财务结报单条目表
   BZY           报账员                  nvarchar(100)  非主
   JBRQ          结报日期                datetime       非主
   ZY            摘要                    nvarchar(200)  非主
-  JE            金额                    decimal(12, 2) 非主
+  JE            金额                    decimal(14, 4) 非主
 
 EDU_ZZJG_25_A12_CWJBDXX  财务结报单信息表
   ID            编号                    int            主键

@@ -11,6 +11,7 @@ namespace HanRuEdu.LDAL
         {
             DJRID = "";
             DJSJ = DateTime.Now;
+            MC = "";
         }
         public class EDU_ZZJX_55_A14_XFLL_metadata
         {
@@ -55,6 +56,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "登记时间")]
             public DateTime DJSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "名称")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String MC { get; set; }
 
 
         }
