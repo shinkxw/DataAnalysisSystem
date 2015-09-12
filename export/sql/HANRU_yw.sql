@@ -34507,6 +34507,8 @@ CREATE TABLE [dbo].[IM_Msg](
 	[AddTime]  datetime  NOT NULL,--添加时间
 	[SendTime]  datetime  NOT NULL,--送出时间
 	[Statu]  int  NOT NULL,--状态
+	[golink]  text  NOT NULL,--链接
+	[showtext]  text  NOT NULL,--显示内容
 CONSTRAINT [PK_IM_Msg] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -34537,4 +34539,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'送出时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'SendTime'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'Statu'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'链接' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'golink'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'显示内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'IM_Msg', @level2type=N'COLUMN',@level2name=N'showtext'
 GO

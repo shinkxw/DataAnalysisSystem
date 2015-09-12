@@ -12,6 +12,8 @@
             <name="AddTime" exp="添加时间" type="datetime" />
             <name="SendTime" exp="送出时间" type="datetime" />
             <name="Statu" exp="状态" type="int" />
+            <name="golink" exp="链接" type="text" />
+            <name="showtext" exp="显示内容" type="text" />
         </field_area>
     </table>
 </namespace>

@@ -13,6 +13,8 @@ namespace HanRuEdu.LDAL
             Title = "";
             AddTime = DateTime.Now;
             SendTime = DateTime.Now;
+            golink = "";
+            showtext = "";
         }
         public class IM_Msg_metadata
         {
@@ -69,6 +71,18 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "状态")]
             public Int32 Statu { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "链接")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String golink { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "显示内容")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String showtext { get; set; }
 
 
         }

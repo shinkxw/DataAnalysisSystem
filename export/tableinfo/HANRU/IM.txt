@@ -10,4 +10,6 @@ IM_Msg  IM消息
   AddTime       添加时间                datetime       非主
   SendTime      送出时间                datetime       非主
   Statu         状态                    int            非主
+  golink        链接                    text           非主
+  showtext      显示内容                text           非主
 
