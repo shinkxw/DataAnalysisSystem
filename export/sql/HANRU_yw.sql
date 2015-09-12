@@ -26560,7 +26560,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_02_02_ZZBJ](
 	[XQDM]  nvarchar(2)  NOT NULL,--校区代码
 	[BZRID]  int  NULL,--班主任ID
 	[PLSX]  int  NOT NULL,--排列顺序
-	[ID]  int  NOT NULL,--表Record外键
+	[ID]  int  identity,--表Record外键
 CONSTRAINT [PK_EDU_ZZJX_02_02_ZZBJ] PRIMARY KEY CLUSTERED
 (
 	[XZBDM] ASC,

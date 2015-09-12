@@ -101,7 +101,7 @@
             <name="XQDM" exp="校区代码" type="nvarchar(2)" />
             <name="BZRID" exp="班主任ID" type="int" null="T" />
             <name="PLSX" exp="排列顺序" type="int" default="100" />
-            <name="ID" exp="表Record外键" type="int" />
+            <name="ID" exp="表Record外键" type="int" identity="T" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_03_01_ZTJXJH" exp="总体教学计划数据子类表">
