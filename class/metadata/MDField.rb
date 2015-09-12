@@ -102,7 +102,7 @@ class MDField
   def db_type;@type[/([^(]+?)(?:\((.+?)\)|$)/, 1] end
   #判断字段数据是否有效
   def is_valid?
-    puts "MDField: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == 'T' && @p == 'F'
+    #puts "MDField: 表#{@table.name}中字段#{@name}不是主键却有自增属性" if @identity == 'T' && @p == 'F'
     puts "MDField: 表#{@table.name}中字段#{@name}为主键不能为空" if @p == 'T' && @null == 'T'
     #~ if /nvarchar\((?<char_num>[^\)]*)\)/ =~ @type
       #~ ignore_namespace_arr = %w(GB JY ZJ)
@@ -121,7 +121,14 @@ class MDField
   #判断默认值是否存在
   def has_default?;@default != '' && @default != nil end
   #返回只有类型的自己，用于数据库比较
-  def ef;MDField.new(@table,@name,@type,'T','F','','','F') end
+  #(table,name,type,null,p,explanation,remark,identity = "F",default = nil,cover = nil)
+  def ef
+    if (@identity != "T")
+      MDField.new(@table,@name,@type,'T','F','','','F')
+    else
+      MDField.new(@table,@name,@type,'F','F','','','T')
+    end
+  end
   #处理输入数据
   def pro_input(str)
     if str == 'T' || str == 'F'

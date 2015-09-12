@@ -59,7 +59,7 @@ class Sql
   end
   #Ìí¼Ó×Ö¶Î
   def self.add_field(field)
-    "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}"
+    "ALTER TABLE #{field.table.name} ADD #{field.name} #{field.type}#{" IDENTITY(1,1) NOT NULL" if field.identity == "T"}"
   end
   #É¾³ý×Ö¶Î
   def self.delete_field(field)
