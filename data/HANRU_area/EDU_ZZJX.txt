@@ -1315,22 +1315,26 @@
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="XQID" exp="学期ID" type="int" />
-            <name="XSID" exp="学生ID" type="int" />
-            <name="XFLXID" exp="学分类型ID" type="int" />
-            <name="FZ" exp="分值" type="decimal(5, 2)" />
-            <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
-            <name="DJSJ" exp="登记时间" type="datetime" />
-            <name="MC" exp="名称" type="nvarchar(20)" />
+            <name="JL" exp="记录" type="text" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A15_JXBPFBL" exp="教学班评分比例表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="JXJHID" exp="教学计划表ID" type="int" />
+            <name="JXJHID" exp="教学计划表ID" type="int" remark="TeachSchedule" />
             <name="KCPFXMID" exp="课程评分项目表ID" type="int" />
             <name="BL" exp="比例" type="decimal(5, 2)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZJX_55_A16_CJSB" exp="成绩上报表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="JXJHID" exp="教学计划表ID" type="int" remark="TeachSchedule" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="SBRID" exp="上报人ID" type="nvarchar(20)" />
+            <name="SBSJ" exp="上报时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A90_XFHASH" exp="学分哈希表">

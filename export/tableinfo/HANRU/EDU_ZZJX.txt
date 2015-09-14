@@ -1117,13 +1117,7 @@ EDU_ZZJX_55_A13_XF  学分表
 EDU_ZZJX_55_A14_XFLL  学分履历表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  XQID          学期ID                  int            非主        学期数据表
-  XSID          学生ID                  int            非主        学生信息数据表
-  XFLXID        学分类型ID              int            非主        学分类型表
-  FZ            分值                    decimal(5, 2)  非主
-  DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
-  DJSJ          登记时间                datetime       非主
-  MC            名称                    nvarchar(20)   非主
+  JL            记录                    text           非主
 
 EDU_ZZJX_55_A15_JXBPFBL  教学班评分比例表
   ID            编号                    int            主键
@@ -1131,6 +1125,14 @@ EDU_ZZJX_55_A15_JXBPFBL  教学班评分比例表
   JXJHID        教学计划表ID            int            非主
   KCPFXMID      课程评分项目表ID        int            非主        课程评分项目表
   BL            比例                    decimal(5, 2)  非主
+
+EDU_ZZJX_55_A16_CJSB  成绩上报表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  JXJHID        教学计划表ID            int            非主
+  XQID          学期ID                  int            非主        学期数据表
+  SBRID         上报人ID                nvarchar(20)   非主        应用系统用户表
+  SBSJ          上报时间                datetime       非主
 
 EDU_ZZJX_55_A90_XFHASH  学分哈希表
   KEY           键                      int            主键

@@ -9,9 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZJX_55_A14_XFLL()
         {
-            DJRID = "";
-            DJSJ = DateTime.Now;
-            MC = "";
+            JL = "";
         }
         public class EDU_ZZJX_55_A14_XFLL_metadata
         {
@@ -25,44 +23,10 @@ namespace HanRuEdu.LDAL
             public Int32 SCHOOLID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学期")]
-            public Int32 XQID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学生")]
-            public Int32 XSID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "学分类型")]
-            public Int32 XFLXID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "分值")]
-            [Range(typeof(decimal), "0", "999")]
-            public decimal FZ { get; set; }
-
-
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "登记人")]
-            [StringLength(20)]
+            [Display(Name = "记录")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String DJRID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "登记时间")]
-            public DateTime DJSJ { get; set; }
-
-
-            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "名称")]
-            [StringLength(20)]
-            [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String MC { get; set; }
+            public String JL { get; set; }
 
 
         }
