@@ -29550,6 +29550,7 @@ SELECT a.[ID]--编号
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
+      ,d.PLSX as d_XCLX_PLSX--薪酬类型表 排列顺序
       ,e.SCHOOLID as e_XCMYFFPC_SCHOOLID--薪酬每月发放批次表 学校
       ,e.PCMC as e_XCMYFFPC_PCMC--薪酬每月发放批次表 批次名称
 
