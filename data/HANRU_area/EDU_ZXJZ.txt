@@ -301,6 +301,7 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="XCLXMC" exp="类型名称" type="nvarchar(30)" />
             <name="JZGLXID" exp="教职工类型ID" type="int" default="1" />
+            <name="PLSX" exp="排列顺序" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXJZ_12_A02_XC" exp="薪酬表">

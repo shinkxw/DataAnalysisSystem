@@ -6,6 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XCLXMC]--类型名称
       ,a.[JZGLXID]--教职工类型ID
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_JZGLX_SCHOOLID--教职工类型表 学校
       ,c.LXMC as c_JZGLX_LXMC--教职工类型表 类型名称
 

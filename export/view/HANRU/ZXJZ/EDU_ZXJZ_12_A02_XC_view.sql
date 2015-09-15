@@ -117,6 +117,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
       ,d.JZGLXID as d_XCLX_JZGLXID--薪酬类型表 教职工类型ID
+      ,d.PLSX as d_XCLX_PLSX--薪酬类型表 排列顺序
       ,e.SCHOOLID as e_XCMYFFPC_SCHOOLID--薪酬每月发放批次表 学校
       ,e.PCMC as e_XCMYFFPC_PCMC--薪酬每月发放批次表 批次名称
 

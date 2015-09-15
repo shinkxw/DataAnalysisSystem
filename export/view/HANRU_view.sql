@@ -17854,6 +17854,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[XCLXMC]--类型名称
       ,a.[JZGLXID]--教职工类型ID
+      ,a.[PLSX]--排列顺序
       ,c.SCHOOLID as c_JZGLX_SCHOOLID--教职工类型表 学校
       ,c.LXMC as c_JZGLX_LXMC--教职工类型表 类型名称
 
@@ -17979,6 +17980,7 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
       ,d.JZGLXID as d_XCLX_JZGLXID--薪酬类型表 教职工类型ID
+      ,d.PLSX as d_XCLX_PLSX--薪酬类型表 排列顺序
       ,e.SCHOOLID as e_XCMYFFPC_SCHOOLID--薪酬每月发放批次表 学校
       ,e.PCMC as e_XCMYFFPC_PCMC--薪酬每月发放批次表 批次名称
 
@@ -29550,7 +29552,6 @@ SELECT a.[ID]--编号
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
       ,d.SCHOOLID as d_XCLX_SCHOOLID--薪酬类型表 学校
       ,d.XCLXMC as d_XCLX_XCLXMC--薪酬类型表 类型名称
-      ,d.PLSX as d_XCLX_PLSX--薪酬类型表 排列顺序
       ,e.SCHOOLID as e_XCMYFFPC_SCHOOLID--薪酬每月发放批次表 学校
       ,e.PCMC as e_XCMYFFPC_PCMC--薪酬每月发放批次表 批次名称
 

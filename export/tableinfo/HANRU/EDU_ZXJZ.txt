@@ -277,6 +277,7 @@ EDU_ZXJZ_12_A01_XCLX  薪酬类型表
   SCHOOLID      学校                    int            主键        学校配置表
   XCLXMC        类型名称                nvarchar(30)   非主
   JZGLXID       教职工类型ID            int            非主        教职工类型表
+  PLSX          排列顺序                int            非主
 
 EDU_ZXJZ_12_A02_XC  薪酬表
   ID            编号                    int            主键
