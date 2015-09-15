@@ -14,6 +14,7 @@ SELECT a.[ID]--编号
       ,a.[DKLXID]--代课类型ID
       ,a.[PKSJ]--排课时间
       ,a.[QRSJ]--确认时间
+      ,a.[PKRID]--排课人ID
       ,c.SCHOOLID as c_JSQJXX_SCHOOLID--教师请假信息表 学校
       ,c.QJJSID as c_JSQJXX_QJJSID--教师请假信息表 请假教师ID
       ,c.JSQJLXID as c_JSQJXX_JSQJLXID--教师请假信息表 教师请假类型ID
@@ -24,6 +25,7 @@ SELECT a.[ID]--编号
       ,c.QJYY as c_JSQJXX_QJYY--教师请假信息表 请假原因
       ,c.SQSJ as c_JSQJXX_SQSJ--教师请假信息表 申请时间
       ,c.BZ as c_JSQJXX_BZ--教师请假信息表 备注
+      ,c.SHRID as c_JSQJXX_SHRID--教师请假信息表 审核人ID
       ,d.SCHOOLID as d_PKJGJL_SCHOOLID--排课结果记录表 学校名
       ,d.XQID as d_PKJGJL_XQID--排课结果记录表 学期ID
       ,d.TEACHERID as d_PKJGJL_TEACHERID--排课结果记录表 老师
@@ -350,6 +352,23 @@ SELECT a.[ID]--编号
       ,h.SCHOOLID as h_DKLX_SCHOOLID--代课类型表 学校
       ,h.LXMC as h_DKLX_LXMC--代课类型表 类型名称
       ,h.BZ as h_DKLX_BZ--代课类型表 备注
+      ,i.SCHOOLID as i_USER_SCHOOLID--应用系统用户表 学校ID
+      ,i.APPID as i_USER_APPID--应用系统用户表 应用ID
+      ,'' as i_USER_PWD--应用系统用户表 密码
+      ,i.STATUS as i_USER_STATUS--应用系统用户表 用户状态
+      ,i.USERTYPE as i_USER_USERTYPE--应用系统用户表 用户类别
+      ,i.USERID as i_USER_USERID--应用系统用户表 用户ID
+      ,i.ROLEIDLst as i_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,i.XM as i_USER_XM--应用系统用户表 姓名
+      ,i.XB as i_USER_XB--应用系统用户表 性别
+      ,i.QQ as i_USER_QQ--应用系统用户表 QQ
+      ,i.DZYJ as i_USER_DZYJ--应用系统用户表 电子邮件
+      ,i.LXDH as i_USER_LXDH--应用系统用户表 联系电话
+      ,i.ZJDLSJ as i_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,i.DLCGCS as i_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,i.YHCJSJ as i_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,i.YHRY as i_USER_YHRY--应用系统用户表 用户荣誉
+      ,i.YHJF as i_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXJX_36_A04_XPKLB AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_36_A03_JSQJXX AS c ON a.JSQJXXID = c.ID /*教师请假信息表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -358,6 +377,7 @@ FROM dbo.EDU_ZXJX_36_A04_XPKLB AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS f ON a.TJJSID = f.ID /*推荐教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS g ON a.DKJSID = g.ID /*代课教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_36_A02_DKLX AS h ON a.DKLXID = h.ID /*代课类型ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS i ON a.PKRID = i.LOGINNAME /*排课人ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [ec] ON e.CSDM = [ec].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN

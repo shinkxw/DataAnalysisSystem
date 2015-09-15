@@ -1016,6 +1016,7 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   QJJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
   JSQJLXID       EDU_ZXJX_36_A01_JSQJLX             ID
+  SHRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXJX_36_A04_XPKLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   JSQJXXID       EDU_ZXJX_36_A03_JSQJXX             ID
@@ -1024,6 +1025,7 @@
   TJJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
   DKJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
   DKLXID         EDU_ZXJX_36_A02_DKLX               ID
+  PKRID          EDU_ELE_01_USER                    LOGINNAME
 <EDU_ZXJX_50_A01_XXKCLB
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXJX_50_A02_KKSJ

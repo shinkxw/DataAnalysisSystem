@@ -13393,6 +13393,7 @@ SELECT a.[ID]--编号
       ,a.[QJYY]--请假原因
       ,a.[SQSJ]--申请时间
       ,a.[BZ]--备注
+      ,a.[SHRID]--审核人ID
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -13500,10 +13501,28 @@ SELECT a.[ID]--编号
       ,d.LXMC as d_JSQJLX_LXMC--教师请假类型表 类型名称
       ,d.BZ as d_JSQJLX_BZ--教师请假类型表 备注
       ,d.SFCC as d_JSQJLX_SFCC--教师请假类型表 是否出差
+      ,e.SCHOOLID as e_USER_SCHOOLID--应用系统用户表 学校ID
+      ,e.APPID as e_USER_APPID--应用系统用户表 应用ID
+      ,'' as e_USER_PWD--应用系统用户表 密码
+      ,e.STATUS as e_USER_STATUS--应用系统用户表 用户状态
+      ,e.USERTYPE as e_USER_USERTYPE--应用系统用户表 用户类别
+      ,e.USERID as e_USER_USERID--应用系统用户表 用户ID
+      ,e.ROLEIDLst as e_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,e.XM as e_USER_XM--应用系统用户表 姓名
+      ,e.XB as e_USER_XB--应用系统用户表 性别
+      ,e.QQ as e_USER_QQ--应用系统用户表 QQ
+      ,e.DZYJ as e_USER_DZYJ--应用系统用户表 电子邮件
+      ,e.LXDH as e_USER_LXDH--应用系统用户表 联系电话
+      ,e.ZJDLSJ as e_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,e.DLCGCS as e_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,e.YHCJSJ as e_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,e.YHRY as e_USER_YHRY--应用系统用户表 用户荣誉
+      ,e.YHJF as e_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXJX_36_A03_JSQJXX AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS c ON a.QJJSID = c.ID /*请假教师ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_36_A01_JSQJLX AS d ON a.JSQJLXID = d.ID /*教师请假类型ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS e ON a.SHRID = e.LOGINNAME /*审核人ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cb] ON c.XBM = [cb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [cc] ON c.CSDM = [cc].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
@@ -13537,6 +13556,7 @@ SELECT a.[ID]--编号
       ,a.[DKLXID]--代课类型ID
       ,a.[PKSJ]--排课时间
       ,a.[QRSJ]--确认时间
+      ,a.[PKRID]--排课人ID
       ,c.SCHOOLID as c_JSQJXX_SCHOOLID--教师请假信息表 学校
       ,c.QJJSID as c_JSQJXX_QJJSID--教师请假信息表 请假教师ID
       ,c.JSQJLXID as c_JSQJXX_JSQJLXID--教师请假信息表 教师请假类型ID
@@ -13547,6 +13567,7 @@ SELECT a.[ID]--编号
       ,c.QJYY as c_JSQJXX_QJYY--教师请假信息表 请假原因
       ,c.SQSJ as c_JSQJXX_SQSJ--教师请假信息表 申请时间
       ,c.BZ as c_JSQJXX_BZ--教师请假信息表 备注
+      ,c.SHRID as c_JSQJXX_SHRID--教师请假信息表 审核人ID
       ,d.SCHOOLID as d_PKJGJL_SCHOOLID--排课结果记录表 学校名
       ,d.XQID as d_PKJGJL_XQID--排课结果记录表 学期ID
       ,d.TEACHERID as d_PKJGJL_TEACHERID--排课结果记录表 老师
@@ -13873,6 +13894,23 @@ SELECT a.[ID]--编号
       ,h.SCHOOLID as h_DKLX_SCHOOLID--代课类型表 学校
       ,h.LXMC as h_DKLX_LXMC--代课类型表 类型名称
       ,h.BZ as h_DKLX_BZ--代课类型表 备注
+      ,i.SCHOOLID as i_USER_SCHOOLID--应用系统用户表 学校ID
+      ,i.APPID as i_USER_APPID--应用系统用户表 应用ID
+      ,'' as i_USER_PWD--应用系统用户表 密码
+      ,i.STATUS as i_USER_STATUS--应用系统用户表 用户状态
+      ,i.USERTYPE as i_USER_USERTYPE--应用系统用户表 用户类别
+      ,i.USERID as i_USER_USERID--应用系统用户表 用户ID
+      ,i.ROLEIDLst as i_USER_ROLEIDLst--应用系统用户表 用户角色
+      ,i.XM as i_USER_XM--应用系统用户表 姓名
+      ,i.XB as i_USER_XB--应用系统用户表 性别
+      ,i.QQ as i_USER_QQ--应用系统用户表 QQ
+      ,i.DZYJ as i_USER_DZYJ--应用系统用户表 电子邮件
+      ,i.LXDH as i_USER_LXDH--应用系统用户表 联系电话
+      ,i.ZJDLSJ as i_USER_ZJDLSJ--应用系统用户表 最近一次登录时间
+      ,i.DLCGCS as i_USER_DLCGCS--应用系统用户表 登录成功次数
+      ,i.YHCJSJ as i_USER_YHCJSJ--应用系统用户表 用户创建时间
+      ,i.YHRY as i_USER_YHRY--应用系统用户表 用户荣誉
+      ,i.YHJF as i_USER_YHJF--应用系统用户表 用户积分
 
 FROM dbo.EDU_ZXJX_36_A04_XPKLB AS a LEFT OUTER JOIN
       dbo.EDU_ZXJX_36_A03_JSQJXX AS c ON a.JSQJXXID = c.ID /*教师请假信息表ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -13881,6 +13919,7 @@ FROM dbo.EDU_ZXJX_36_A04_XPKLB AS a LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS f ON a.TJJSID = f.ID /*推荐教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS g ON a.DKJSID = g.ID /*代课教师ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZXJX_36_A02_DKLX AS h ON a.DKLXID = h.ID /*代课类型ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_USER AS i ON a.PKRID = i.LOGINNAME /*排课人ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [eb] ON e.XBM = [eb].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZHRMGHGXZQH AS [ec] ON e.CSDM = [ec].DM /*出生地码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [ed] ON e.MZM = [ed].DM /*民族码*/ LEFT OUTER JOIN
@@ -38771,6 +38810,7 @@ SELECT a.[ID]--编号
       ,a.[WEEKKS]--周课时
       ,a.[SKZCIDLB]--上课周次ID列表
       ,a.[SKZCMCLB]--上课周次名称列表
+      ,a.[KCSLT]--课程缩略图
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介
@@ -38968,6 +39008,7 @@ SELECT a.[ID]--编号
       ,d.WEEKKS as d_JXBSJ_WEEKKS--教学班数据表 周课时
       ,d.SKZCIDLB as d_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
       ,d.SKZCMCLB as d_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
+      ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39072,6 +39113,7 @@ SELECT a.[ID]--编号
       ,d.WEEKKS as d_JXBSJ_WEEKKS--教学班数据表 周课时
       ,d.SKZCIDLB as d_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
       ,d.SKZCMCLB as d_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
+      ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
 
 FROM dbo.EDU_ZZJX_50_A05_XSXXKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39125,6 +39167,7 @@ SELECT a.[ID]--编号
       ,c.WEEKKS as c_JXBSJ_WEEKKS--教学班数据表 周课时
       ,c.SKZCIDLB as c_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
       ,c.SKZCMCLB as c_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
+      ,c.KCSLT as c_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -39359,6 +39402,7 @@ SELECT a.[ID]--编号
       ,d.WEEKKS as d_JXBSJ_WEEKKS--教学班数据表 周课时
       ,d.SKZCIDLB as d_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
       ,d.SKZCMCLB as d_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
+      ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
@@ -39558,6 +39602,7 @@ SELECT a.[ID]--编号
       ,d.WEEKKS as d_JXBSJ_WEEKKS--教学班数据表 周课时
       ,d.SKZCIDLB as d_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
       ,d.SKZCMCLB as d_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
+      ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名

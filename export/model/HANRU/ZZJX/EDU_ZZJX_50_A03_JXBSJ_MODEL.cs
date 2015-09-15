@@ -21,6 +21,7 @@ namespace HanRuEdu.LDAL
             QTJSMCLB = "";
             SKZCIDLB = "";
             SKZCMCLB = "";
+            KCSLT = "";
         }
         public class EDU_ZZJX_50_A03_JXBSJ_metadata
         {
@@ -157,6 +158,13 @@ namespace HanRuEdu.LDAL
             [Display(Name = "上课周次名称列表")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String SKZCMCLB { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "课程缩略图")]
+            [StringLength(500)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCSLT { get; set; }
 
 
         }

@@ -12,6 +12,7 @@ namespace HanRuEdu.LDAL
             RQ = DateTime.Now;
             PKSJ = DateTime.Now;
             QRSJ = DateTime.Now;
+            PKRID = "";
         }
         public class EDU_ZXJX_36_A04_XPKLB_metadata
         {
@@ -73,6 +74,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "确认时间")]
             public DateTime QRSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "排课人")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PKRID { get; set; }
 
 
         }

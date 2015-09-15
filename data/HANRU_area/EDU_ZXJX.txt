@@ -373,6 +373,7 @@
             <name="QJYY" exp="请假原因" type="text" />
             <name="SQSJ" exp="申请时间" type="datetime" />
             <name="BZ" exp="备注" type="text" />
+            <name="SHRID" exp="审核人ID" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_36_A04_XPKLB" exp="需排课列表">
@@ -389,6 +390,7 @@
             <name="DKLXID" exp="代课类型ID" type="int" />
             <name="PKSJ" exp="排课时间" type="datetime" />
             <name="QRSJ" exp="确认时间" type="datetime" />
+            <name="PKRID" exp="排课人ID" type="nvarchar(20)" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_50_A01_XXKCLB" exp="选修课程类别表">

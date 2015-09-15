@@ -2196,6 +2196,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A03_JXBSJ](
 	[WEEKKS]  int  NOT NULL,--周课时
 	[SKZCIDLB]  text  NOT NULL,--上课周次ID列表
 	[SKZCMCLB]  text  NOT NULL,--上课周次名称列表
+	[KCSLT]  nvarchar(500)  NOT NULL,--课程缩略图
 CONSTRAINT [PK_EDU_ZZJX_50_A03_JXBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -4691,6 +4692,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上课周次ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'SKZCIDLB'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上课周次名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'SKZCMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程缩略图' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'KCSLT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生选课记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A04_XSXKJL'
 GO

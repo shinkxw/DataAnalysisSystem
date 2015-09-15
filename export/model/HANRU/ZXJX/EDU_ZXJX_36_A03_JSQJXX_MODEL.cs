@@ -14,6 +14,7 @@ namespace HanRuEdu.LDAL
             QJYY = "";
             SQSJ = DateTime.Now;
             BZ = "";
+            SHRID = "";
         }
         public class EDU_ZXJX_36_A03_JSQJXX_metadata
         {
@@ -72,6 +73,13 @@ namespace HanRuEdu.LDAL
             [Display(Name = "±∏◊¢")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "±ÿÃÓ",AllowEmptyStrings = true)]
+            [Display(Name = "…Û∫À»À")]
+            [StringLength(20)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String SHRID { get; set; }
 
 
         }
