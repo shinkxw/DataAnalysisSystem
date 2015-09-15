@@ -33,6 +33,7 @@ SELECT a.[ID]--编号
       ,c.SKZCIDLB as c_JXBSJ_SKZCIDLB--教学班数据表 上课周次ID列表
       ,c.SKZCMCLB as c_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
       ,c.KCSLT as c_JXBSJ_KCSLT--教学班数据表 课程缩略图
+      ,c.DJL as c_JXBSJ_DJL--教学班数据表 点击量
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名

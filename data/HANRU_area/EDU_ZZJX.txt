@@ -1006,6 +1006,7 @@
             <name="SKZCIDLB" exp="上课周次ID列表" type="text" />
             <name="SKZCMCLB" exp="上课周次名称列表" type="text" />
             <name="KCSLT" exp="课程缩略图" type="nvarchar(500)" />
+            <name="DJL" exp="点击量" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A04_XSXKJL" exp="学生选课记录表">

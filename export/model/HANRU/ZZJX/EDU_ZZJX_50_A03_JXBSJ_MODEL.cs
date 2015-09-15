@@ -167,6 +167,11 @@ namespace HanRuEdu.LDAL
             public String KCSLT { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "µã»÷Á¿")]
+            public Int32 DJL { get; set; }
+
+
         }
     }
 }
