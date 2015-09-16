@@ -1367,6 +1367,14 @@
             <name="FBSJ" exp="发布时间" type="datetime" />
             <name="BT" exp="标题" type="nvarchar(200)" />
             <name="NR" exp="内容" type="text" />
+            <name="FBBM" exp="发布部门" type="nvarchar(100)" />
+        </field_area>
+    </table>
+    <table name="EDU_OAXT_41_A43_XXGGFBBM" exp="学校公告发布部门表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" p="T" />
+            <name="FBBM" exp="发布部门" type="nvarchar(100)" />
         </field_area>
     </table>
     <table name="EDU_OAXT_50_A01_DFXM" exp="打分项目表">

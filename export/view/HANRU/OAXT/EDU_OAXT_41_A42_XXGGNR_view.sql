@@ -9,6 +9,7 @@ SELECT a.[ID]--编号
       ,a.[FBSJ]--发布时间
       ,a.[BT]--标题
       ,a.[NR]--内容
+      ,a.[FBBM]--发布部门
       ,c.SCHOOLID as c_XXGGLB_SCHOOLID--学校公告类别表 学校ID
       ,c.LBMC as c_XXGGLB_LBMC--学校公告类别表 类别名称
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID

@@ -13,6 +13,7 @@ namespace HanRuEdu.LDAL
             FBSJ = DateTime.Now;
             BT = "";
             NR = "";
+            FBBM = "";
         }
         public class EDU_OAXT_41_A42_XXGGNR_metadata
         {
@@ -54,6 +55,13 @@ namespace HanRuEdu.LDAL
             [Display(Name = "内容")]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String NR { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "发布部门")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FBBM { get; set; }
 
 
         }

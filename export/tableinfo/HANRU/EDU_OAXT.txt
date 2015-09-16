@@ -1163,6 +1163,12 @@ EDU_OAXT_41_A42_XXGGNR  学校公告内容表
   FBSJ          发布时间                datetime       非主
   BT            标题                    nvarchar(200)  非主
   NR            内容                    text           非主
+  FBBM          发布部门                nvarchar(100)  非主
+
+EDU_OAXT_41_A43_XXGGFBBM  学校公告发布部门表
+  ID            编号                    int            主键
+  SCHOOLID      学校ID                  int            主键        学校配置表
+  FBBM          发布部门                nvarchar(100)  非主
 
 EDU_OAXT_50_A01_DFXM  打分项目表
   ID            编号                    int            主键
