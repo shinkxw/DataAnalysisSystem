@@ -85,6 +85,7 @@ SELECT a.[ID]--编号
       ,d.SKZCMCLB as d_JXBSJ_SKZCMCLB--教学班数据表 上课周次名称列表
       ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
+      ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
 
 FROM dbo.EDU_ZZJX_50_A05_XSXXKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

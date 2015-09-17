@@ -172,6 +172,11 @@ namespace HanRuEdu.LDAL
             public Int32 DJL { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "ÉÏ±¨×´Ì¬")]
+            public Int32 SBZT { get; set; }
+
+
         }
     }
 }
