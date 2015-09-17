@@ -26304,6 +26304,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_50_A21_XKJG
    drop table EDU_ZZJX_50_A21_XKJGFXPZ
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_50_A31_SBXFHSGZ')
+            and   type = 'U')
+   drop table EDU_ZZJX_50_A31_SBXFHSGZ
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_51_A01_YXKKC')
             and   type = 'U')
    drop table EDU_ZZJX_51_A01_YXKKC
@@ -28304,6 +28309,25 @@ CONSTRAINT [PK_EDU_ZZJX_50_A21_XKJGFXPZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--上报学分换算规则表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_50_A31_SBXFHSGZ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_50_A31_SBXFHSGZ](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[XXKCLBID]  int  NOT NULL,--选修课程类别ID
+	[CJSX]  decimal(5, 2)  NOT NULL,--成绩上限
+	[CJXX]  decimal(5, 2)  NOT NULL,--成绩下限
+	[XFHSBL]  decimal(5, 2)  NOT NULL,--学分换算比例
+	[YXJ]  int  NOT NULL,--优先级
+CONSTRAINT [PK_EDU_ZZJX_50_A31_SBXFHSGZ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -30745,6 +30769,22 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课数量上限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'XKSLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选课数量下限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A21_XKJGFXPZ', @level2type=N'COLUMN',@level2name=N'XKSLXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上报学分换算规则表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'选修课程类别ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'XXKCLBID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩上限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'CJSX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'成绩下限' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'CJXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分换算比例' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'XFHSBL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'优先级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A31_SBXFHSGZ', @level2type=N'COLUMN',@level2name=N'YXJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'预选课课程表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_51_A01_YXKKC'
 GO

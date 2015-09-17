@@ -1123,6 +1123,17 @@
             <name="XKSLXX" exp="选课数量下限" type="int" />
         </field_area>
     </table>
+    <table name="EDU_ZZJX_50_A31_SBXFHSGZ" exp="上报学分换算规则表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="XXKCLBID" exp="选修课程类别ID" type="int" />
+            <name="CJSX" exp="成绩上限" type="decimal(5, 2)" />
+            <name="CJXX" exp="成绩下限" type="decimal(5, 2)" />
+            <name="XFHSBL" exp="学分换算比例" type="decimal(5, 2)" />
+            <name="YXJ" exp="优先级" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZZJX_51_A01_YXKKC" exp="预选课课程表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />

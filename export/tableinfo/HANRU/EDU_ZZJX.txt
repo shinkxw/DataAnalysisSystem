@@ -956,6 +956,15 @@ EDU_ZZJX_50_A21_XKJGFXPZ  选课结果分析配置表
   XKSLSX        选课数量上限            int            非主
   XKSLXX        选课数量下限            int            非主
 
+EDU_ZZJX_50_A31_SBXFHSGZ  上报学分换算规则表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  XXKCLBID      选修课程类别ID          int            非主        选修课程类别表
+  CJSX          成绩上限                decimal(5, 2)  非主
+  CJXX          成绩下限                decimal(5, 2)  非主
+  XFHSBL        学分换算比例            decimal(5, 2)  非主
+  YXJ           优先级                  int            非主
+
 EDU_ZZJX_51_A01_YXKKC  预选课课程表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
