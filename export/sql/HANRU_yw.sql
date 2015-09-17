@@ -28624,6 +28624,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_55_A13_XF](
 	[DJRID]  nvarchar(20)  NOT NULL,--登记人ID
 	[DJSJ]  datetime  NOT NULL,--登记时间
 	[MC]  nvarchar(20)  NOT NULL,--名称
+	[BZ]  nvarchar(200)  NOT NULL,--备注
+	[PFR]  nvarchar(50)  NOT NULL,--评分人
 CONSTRAINT [PK_EDU_ZZJX_55_A13_XF] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -31032,6 +31034,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A13_XF', @level2type=N'COLUMN',@level2name=N'DJSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A13_XF', @level2type=N'COLUMN',@level2name=N'MC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A13_XF', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A13_XF', @level2type=N'COLUMN',@level2name=N'PFR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学分履历表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A14_XFLL'
 GO

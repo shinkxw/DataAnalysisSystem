@@ -40575,6 +40575,8 @@ SELECT a.[ID]--编号
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间
       ,a.[MC]--名称
+      ,a.[BZ]--备注
+      ,a.[PFR]--评分人
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

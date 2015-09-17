@@ -1311,6 +1311,8 @@
             <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
             <name="DJSJ" exp="登记时间" type="datetime" />
             <name="MC" exp="名称" type="nvarchar(20)" />
+            <name="BZ" exp="备注" type="nvarchar(200)" />
+            <name="PFR" exp="评分人" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A14_XFLL" exp="学分履历表">

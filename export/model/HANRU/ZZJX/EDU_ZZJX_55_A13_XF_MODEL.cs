@@ -12,6 +12,8 @@ namespace HanRuEdu.LDAL
             DJRID = "";
             DJSJ = DateTime.Now;
             MC = "";
+            BZ = "";
+            PFR = "";
         }
         public class EDU_ZZJX_55_A13_XF_metadata
         {
@@ -63,6 +65,20 @@ namespace HanRuEdu.LDAL
             [StringLength(20)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String MC { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "备注")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BZ { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "评分人")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PFR { get; set; }
 
 
         }
