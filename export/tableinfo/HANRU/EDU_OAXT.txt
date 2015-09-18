@@ -156,6 +156,7 @@ EDU_OAXT_10_A01_TZ  通知数据表
   YYDRIDLB      已阅读人ID列表          text           非主
   YYDRMZLB      已阅读人名字列表        text           非主
   FSZT          发送状态                int            非主
+  FBBM          发布部门                nvarchar(100)  非主
 
 EDU_OAXT_10_A02_TZYDJL  通知阅读记录
   ID            通知阅读记录ID          int            主键

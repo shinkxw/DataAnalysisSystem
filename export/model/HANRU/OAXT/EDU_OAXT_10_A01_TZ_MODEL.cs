@@ -16,6 +16,7 @@ namespace HanRuEdu.LDAL
             JSRIDLB = "";
             JSRMZLB = "";
             YYDRMZLB = "";
+            FBBM = "";
         }
         public class EDU_OAXT_10_A01_TZ_metadata
         {
@@ -96,6 +97,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "发送状态")]
             public Int32 FSZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "发布部门")]
+            [StringLength(100)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String FBBM { get; set; }
 
 
         }

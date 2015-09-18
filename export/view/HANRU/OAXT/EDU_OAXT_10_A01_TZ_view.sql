@@ -16,6 +16,7 @@ SELECT a.[ID]--通知ID
       ,a.[YYDRIDLB]--已阅读人ID列表
       ,a.[YYDRMZLB]--已阅读人名字列表
       ,a.[FSZT]--发送状态
+      ,a.[FBBM]--发布部门
       ,c.SCHOOLID as c_USER_SCHOOLID--应用系统用户表 学校ID
       ,c.APPID as c_USER_APPID--应用系统用户表 应用ID
       ,'' as c_USER_PWD--应用系统用户表 密码

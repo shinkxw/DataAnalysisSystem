@@ -22,6 +22,7 @@ SELECT a.[ID]--通知阅读记录ID
       ,c.YYDRIDLB as c_TZ_YYDRIDLB--通知数据表 已阅读人ID列表
       ,c.YYDRMZLB as c_TZ_YYDRMZLB--通知数据表 已阅读人名字列表
       ,c.FSZT as c_TZ_FSZT--通知数据表 发送状态
+      ,c.FBBM as c_TZ_FBBM--通知数据表 发布部门
       ,d.SCHOOLID as d_USER_SCHOOLID--应用系统用户表 学校ID
       ,d.APPID as d_USER_APPID--应用系统用户表 应用ID
       ,'' as d_USER_PWD--应用系统用户表 密码

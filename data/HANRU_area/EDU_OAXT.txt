@@ -180,6 +180,7 @@
             <name="YYDRIDLB" exp="已阅读人ID列表" type="text" null="T" />
             <name="YYDRMZLB" exp="已阅读人名字列表" type="text" />
             <name="FSZT" exp="发送状态" type="int" />
+            <name="FBBM" exp="发布部门" type="nvarchar(100)" />
         </field_area>
     </table>
     <table name="EDU_OAXT_10_A02_TZYDJL" exp="通知阅读记录">
