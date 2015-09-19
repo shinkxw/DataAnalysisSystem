@@ -57,6 +57,17 @@ namespace HanRuEdu.LDAL
             public Int32 ParentTable { get; set; }
 
 
+            [Display(Name = "ÆÀÂÛ")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String Comment { get; set; }
+
+
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "")]
+            public Int32 BaseProjectInfoID { get; set; }
+
+
         }
     }
 }

@@ -28803,6 +28803,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_56_A03_Class](
 	[Tabling]  int  NOT NULL,--是否被排课
 	[RecordID]  int  NOT NULL,--记录ID
 	[ParentTable]  int  NOT NULL,--用于标识主表
+	[Comment]  nvarchar(50)  NULL,--评论
+	[BaseProjectInfoID]  int  NOT NULL,--
 CONSTRAINT [PK_EDU_ZZJX_56_A03_Class] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -31190,6 +31192,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'记录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A03_Class', @level2type=N'COLUMN',@level2name=N'RecordID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用于标识主表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A03_Class', @level2type=N'COLUMN',@level2name=N'ParentTable'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A03_Class', @level2type=N'COLUMN',@level2name=N'Comment'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级规则表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A04_ClassRule'
 GO

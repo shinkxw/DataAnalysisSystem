@@ -1199,6 +1199,8 @@ EDU_ZZJX_56_A03_Class  班级表
   Tabling       是否被排课              int            非主
   RecordID      记录ID                  int            非主
   ParentTable   用于标识主表            int            非主
+  Comment       评论                    nvarchar(50)   非主
+  BaseProjectInfoID                        int            非主
 
 EDU_ZZJX_56_A04_ClassRule  班级规则表
   ID            编号                    int            主键

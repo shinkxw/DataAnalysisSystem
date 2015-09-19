@@ -1411,6 +1411,8 @@
             <name="Tabling" exp="是否被排课" type="int" />
             <name="RecordID" exp="记录ID" type="int" />
             <name="ParentTable" exp="用于标识主表" type="int" />
+            <name="Comment" exp="评论" type="nvarchar(50)" null="T" />
+            <name="BaseProjectInfoID" exp="" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A04_ClassRule" exp="班级规则表">
