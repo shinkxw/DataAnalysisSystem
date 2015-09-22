@@ -2204,6 +2204,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A03_JXBSJ](
 	[KCSLT]  nvarchar(500)  NOT NULL,--课程缩略图
 	[DJL]  int  NOT NULL,--点击量
 	[SBZT]  int  NOT NULL,--上报状态
+	[KGZT]  int  NOT NULL,--开关状态
 CONSTRAINT [PK_EDU_ZZJX_50_A03_JXBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -4728,6 +4729,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'点击量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'DJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上报状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'SBZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开关状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'KGZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生选课记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A04_XSXKJL'
 GO

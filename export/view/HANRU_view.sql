@@ -38820,6 +38820,7 @@ SELECT a.[ID]--编号
       ,a.[KCSLT]--课程缩略图
       ,a.[DJL]--点击量
       ,a.[SBZT]--上报状态
+      ,a.[KGZT]--开关状态
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介
@@ -39020,6 +39021,7 @@ SELECT a.[ID]--编号
       ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
+      ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39127,6 +39129,7 @@ SELECT a.[ID]--编号
       ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
+      ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
 
 FROM dbo.EDU_ZZJX_50_A05_XSXXKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39183,6 +39186,7 @@ SELECT a.[ID]--编号
       ,c.KCSLT as c_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,c.DJL as c_JXBSJ_DJL--教学班数据表 点击量
       ,c.SBZT as c_JXBSJ_SBZT--教学班数据表 上报状态
+      ,c.KGZT as c_JXBSJ_KGZT--教学班数据表 开关状态
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -39420,6 +39424,7 @@ SELECT a.[ID]--编号
       ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
+      ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
@@ -39622,6 +39627,7 @@ SELECT a.[ID]--编号
       ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
+      ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名

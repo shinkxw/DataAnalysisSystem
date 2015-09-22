@@ -40,6 +40,7 @@ SELECT a.[ID]--编号
       ,d.KCSLT as d_JXBSJ_KCSLT--教学班数据表 课程缩略图
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
+      ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名

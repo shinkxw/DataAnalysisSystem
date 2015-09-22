@@ -1008,6 +1008,7 @@
             <name="KCSLT" exp="课程缩略图" type="nvarchar(500)" />
             <name="DJL" exp="点击量" type="int" />
             <name="SBZT" exp="上报状态" type="int" />
+            <name="KGZT" exp="开关状态" type="int" default="1" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A04_XSXKJL" exp="学生选课记录表">
