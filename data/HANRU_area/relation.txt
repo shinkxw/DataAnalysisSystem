@@ -2283,6 +2283,7 @@
   TKHXQ          EDU_ELE_05_WEEKDAY                 ID
   TKHSD          EDU_ELE_05_SD                      ID
   TKHJC          EDU_ELE_05_JC                      ID
+  JSJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZJX_10_A01_LWSJ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XNID           EDU_SYS_01_XN                      ID

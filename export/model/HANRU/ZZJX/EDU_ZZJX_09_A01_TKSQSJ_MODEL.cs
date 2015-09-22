@@ -108,6 +108,11 @@ namespace HanRuEdu.LDAL
             public DateTime SQSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "接收教师")]
+            public Int32 JSJSID { get; set; }
+
+
         }
     }
 }
