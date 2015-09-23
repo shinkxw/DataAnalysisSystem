@@ -985,6 +985,42 @@ EDU_ZZJX_51_A02_XSYXKJL  学生预选课记录表
   XSID          学生ID                  int            非主        学生信息数据表
   XKSJ          选课时间                datetime       非主
 
+EDU_ZZJX_52_A01_XYPJYJPFXM  学业评价一级评分项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XMMC          项目名称                nvarchar(200)  非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZZJX_52_A02_XYPJEJPFXM  学业评价二级评分项目表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  YJXMID        一级项目ID              int            非主        学业评价一级评分项目表
+  XMMC          项目名称                nvarchar(200)  非主
+  MRFZ          默认分值                decimal(5, 2)  非主
+  NFXGFZ        能否修改分值            int            非主
+  FZSX          分值上限                decimal(5, 2)  非主
+  FZXX          分值下限                decimal(5, 2)  非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZZJX_52_A03_XYPJPFJL  学业评价评分记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  XSID          学生ID                  int            非主        学生信息数据表
+  XQID          学期ID                  int            非主        学期数据表
+  YJXMID        一级项目ID              int            非主        学业评价一级评分项目表
+  EJXMID        二级项目ID              int            非主        学业评价二级评分项目表
+  SJ            时间                    datetime       非主
+  FZ            分值                    decimal(5, 2)  非主
+  BZ            备注                    nvarchar(500)  非主
+  ZT            状态                    int            非主
+  TJSJ          添加时间                datetime       非主
+  XFSQJSID      销分申请教师ID          int            非主        教职工基本数据子类表
+  XFSQSJ        销分申请时间            datetime       非主
+  XFLY          销分理由                nvarchar(500)  非主
+  XFSPJSID      销分审批教师ID          int            非主        教职工基本数据子类表
+  XFSPSJ        销分审批时间            datetime       非主
+
 EDU_ZZJX_55_A01_FZXX  分制信息表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
