@@ -614,6 +614,8 @@
   XMID           EDU_OAXT_50_A01_DFXM               ID
   DFDLID         EDU_OAXT_50_A11_DFDL               ID
   DFJDID         EDU_OAXT_50_A12_DFJD               ID
+<EDU_OAXT_51_A01_DXJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_SYS_01_XN
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_SYS_01_MICROMODULE

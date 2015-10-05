@@ -1398,3 +1398,12 @@ EDU_OAXT_50_A60_DFDXJL  打分短信记录表
   FSSJ          发送时间                datetime       非主
   FSZT          发送状态                int            非主
 
+EDU_OAXT_51_A01_DXJL  短信记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  Sender        发送人                  nvarchar(200)  非主
+  Recipien      收件人                  text           非主
+  RecipienNumber收件人号码              text           非主
+  Date          发送时间                datetime       非主
+  Content       信息内容                text           非主
+

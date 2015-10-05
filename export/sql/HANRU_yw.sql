@@ -3346,6 +3346,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_50_A60_DFDX
             and   type = 'U')
    drop table EDU_OAXT_50_A60_DFDXJL
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_OAXT_51_A01_DXJL')
+            and   type = 'U')
+   drop table EDU_OAXT_51_A01_DXJL
+go
 --文件基本数据类表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_01_01_WJJBSJ]') AND type in (N'U'))
 BEGIN
@@ -6049,6 +6054,25 @@ CONSTRAINT [PK_EDU_OAXT_50_A60_DFDXJL] PRIMARY KEY CLUSTERED
 END
 GO
 
+--短信记录表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_OAXT_51_A01_DXJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_OAXT_51_A01_DXJL](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[Sender]  nvarchar(200)  NOT NULL,--发送人
+	[Recipien]  text  NOT NULL,--收件人
+	[RecipienNumber]  text  NOT NULL,--收件人号码
+	[Date]  datetime  NOT NULL,--发送时间
+	[Content]  text  NOT NULL,--信息内容
+CONSTRAINT [PK_EDU_OAXT_51_A01_DXJL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'文件基本数据类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_01_01_WJJBSJ'
 GO
@@ -8609,6 +8633,22 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'FSSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_50_A60_DFDXJL', @level2type=N'COLUMN',@level2name=N'FSZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'短信记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'Sender'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收件人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'Recipien'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'收件人号码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'RecipienNumber'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'Date'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'信息内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_51_A01_DXJL', @level2type=N'COLUMN',@level2name=N'Content'
 GO
 --空间名：EDU_WZXT  生成器：SqlBuilder0.1
 
