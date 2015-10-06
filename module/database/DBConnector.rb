@@ -41,7 +41,10 @@ class DBConnector
     connect_string
   end
   #获得access连接字符串
-  def get_ac_connect_string(); "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=#{@host};" end
+  def get_ac_connect_string
+    #"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=#{@host};"
+    "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=#{@host};"
+  end
   def get_mysql_connect_string(db_name)
     connect_string = "Provider=MSDASQL.1;"
     connect_string << "Persist Security Info=True;" if is_remote?
