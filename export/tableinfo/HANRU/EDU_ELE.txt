@@ -345,3 +345,14 @@ EDU_ELE_11_YHJS  用户角色表
   JSID          角色ID                  int            非主        对象组角色表
   DXZMC         对象组名称              nvarchar(50)   非主
 
+EDU_ELE_12_TYSJ  通用数据表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主
+  LXID          类型ID                  int            非主
+  TJ1           条件一                  nvarchar(200)  非主
+  TJ2           条件二                  nvarchar(200)  非主
+  TJ3           条件三                  nvarchar(200)  非主
+  TJ4           条件四                  nvarchar(200)  非主
+  TJ5           条件五                  nvarchar(200)  非主
+  JG            结果                    text           非主
+

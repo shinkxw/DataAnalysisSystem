@@ -420,4 +420,17 @@
             <name="DXZMC" exp="对象组名称" type="nvarchar(50)" />
         </field_area>
     </table>
+    <table name="EDU_ELE_12_TYSJ" exp="通用数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="LXID" exp="类型ID" type="int" />
+            <name="TJ1" exp="条件一" type="nvarchar(200)" />
+            <name="TJ2" exp="条件二" type="nvarchar(200)" />
+            <name="TJ3" exp="条件三" type="nvarchar(200)" />
+            <name="TJ4" exp="条件四" type="nvarchar(200)" />
+            <name="TJ5" exp="条件五" type="nvarchar(200)" />
+            <name="JG" exp="结果" type="text" />
+        </field_area>
+    </table>
 </namespace>
