@@ -23184,6 +23184,7 @@ CREATE TABLE [dbo].[EDU_ZZJG_12_A01_XCLX](
 	[ID]  int  NOT NULL,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[XCLXMC]  nvarchar(30)  NOT NULL,--类型名称
+	[PLSX]  int  NOT NULL,--排列顺序
 CONSTRAINT [PK_EDU_ZZJG_12_A01_XCLX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -24985,6 +24986,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_12_A01_XCLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_12_A01_XCLX', @level2type=N'COLUMN',@level2name=N'XCLXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排列顺序' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_12_A01_XCLX', @level2type=N'COLUMN',@level2name=N'PLSX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'薪酬表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_12_A02_XC'
 GO
