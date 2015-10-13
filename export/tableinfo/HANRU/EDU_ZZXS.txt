@@ -677,3 +677,77 @@ EDU_ZZXS_22_A05_ZSGLJYZM  招生管理就业证明表
   JYHT          就业合同                nvarchar(200)  非主
   SB            社保                    nvarchar(200)  非主
 
+EDU_ZZXS_25_A01_DYPJDL  德育评价大类表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  PFDXLX        评分对象类型            int            非主
+  MC            名称                    nvarchar(200)  非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZZXS_25_A02_DYPJXL  德育评价小类表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  PFDXLX        评分对象类型            int            非主
+  DLID          大类ID                  int            非主        德育评价大类表
+  MC            名称                    nvarchar(200)  非主
+  MRFZ          默认分值                decimal(5, 2)  非主
+  NFXGFZ        能否修改分值            int            非主
+  FZSX          分值上限                decimal(5, 2)  非主
+  FZXX          分值下限                decimal(5, 2)  非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZZXS_25_A03_DYPJBJPFJL  德育评价班级评分记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        校历周表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
+  DLID          大类ID                  int            非主        德育评价大类表
+  XLID          小类ID                  int            非主        德育评价小类表
+  SJ            时间                    datetime       非主
+  FZ            分值                    decimal(5, 2)  非主
+  BZ            备注                    nvarchar(500)  非主
+  ZT            状态                    int            非主
+  TJSJ          添加时间                datetime       非主
+  XFSQJSID      销分申请教师ID          int            非主        教职工基本数据子类表
+  XFSQSJ        销分申请时间            datetime       非主
+  XFLY          销分理由                nvarchar(500)  非主
+  XFCLJSID      销分处理教师ID          int            非主        教职工基本数据子类表
+  XFCLSJ        销分处理时间            datetime       非主
+  CLYJ          处理意见                nvarchar(500)  非主
+
+EDU_ZZXS_25_A04_DYPJXSPFJL  德育评价学生评分记录表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        校历周表
+  JSID          教师ID                  int            非主        教职工基本数据子类表
+  XSID          学生ID                  int            非主        学生信息数据表
+  DLID          大类ID                  int            非主        德育评价大类表
+  XLID          小类ID                  int            非主        德育评价小类表
+  SJ            时间                    datetime       非主
+  FZ            分值                    decimal(5, 2)  非主
+  BZ            备注                    nvarchar(500)  非主
+  ZT            状态                    int            非主
+  TJSJ          添加时间                datetime       非主
+  XFSQJSID      销分申请教师ID          int            非主        教职工基本数据子类表
+  XFSQSJ        销分申请时间            datetime       非主
+  XFLY          销分理由                nvarchar(500)  非主
+  XFCLJSID      销分处理教师ID          int            非主        教职工基本数据子类表
+  XFCLSJ        销分处理时间            datetime       非主
+  CLYJ          处理意见                nvarchar(500)  非主
+  GLBJPFJLID    关联班级评分记录ID      int            非主        德育评价班级评分记录表
+
+EDU_ZZXS_25_A11_DYPJDXJL  德育评价短信记录表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  GLXSPFJLID    关联学生评分记录ID      int            非主        德育评价学生评分记录表
+  FSDXMC        发送对象名称            nvarchar(50)   非主
+  DHHM          电话号码                nvarchar(20)   非主
+  DXNR          短信内容                text           非主
+  TJSJ          添加时间                datetime       非主
+  FSSJ          发送时间                datetime       非主
+  FSZT          发送状态                int            非主
+

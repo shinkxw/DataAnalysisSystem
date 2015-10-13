@@ -782,4 +782,88 @@
             <name="SB" exp="社保" type="nvarchar(200)" />
         </field_area>
     </table>
+    <table name="EDU_ZZXS_25_A01_DYPJDL" exp="德育评价大类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="PFDXLX" exp="评分对象类型" type="int" />
+            <name="MC" exp="名称" type="nvarchar(200)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_25_A02_DYPJXL" exp="德育评价小类表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="PFDXLX" exp="评分对象类型" type="int" />
+            <name="DLID" exp="大类ID" type="int" />
+            <name="MC" exp="名称" type="nvarchar(200)" />
+            <name="MRFZ" exp="默认分值" type="decimal(5, 2)" />
+            <name="NFXGFZ" exp="能否修改分值" type="int" />
+            <name="FZSX" exp="分值上限" type="decimal(5, 2)" />
+            <name="FZXX" exp="分值下限" type="decimal(5, 2)" />
+            <name="PLSX" exp="排列顺序" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_25_A03_DYPJBJPFJL" exp="德育评价班级评分记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="JSID" exp="教师ID" type="int" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="DLID" exp="大类ID" type="int" />
+            <name="XLID" exp="小类ID" type="int" />
+            <name="SJ" exp="时间" type="datetime" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" />
+            <name="BZ" exp="备注" type="nvarchar(500)" />
+            <name="ZT" exp="状态" type="int" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="XFSQJSID" exp="销分申请教师ID" type="int" />
+            <name="XFSQSJ" exp="销分申请时间" type="datetime" />
+            <name="XFLY" exp="销分理由" type="nvarchar(500)" />
+            <name="XFCLJSID" exp="销分处理教师ID" type="int" />
+            <name="XFCLSJ" exp="销分处理时间" type="datetime" />
+            <name="CLYJ" exp="处理意见" type="nvarchar(500)" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_25_A04_DYPJXSPFJL" exp="德育评价学生评分记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="ZCID" exp="周次ID" type="int" />
+            <name="JSID" exp="教师ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+            <name="DLID" exp="大类ID" type="int" />
+            <name="XLID" exp="小类ID" type="int" />
+            <name="SJ" exp="时间" type="datetime" />
+            <name="FZ" exp="分值" type="decimal(5, 2)" />
+            <name="BZ" exp="备注" type="nvarchar(500)" />
+            <name="ZT" exp="状态" type="int" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="XFSQJSID" exp="销分申请教师ID" type="int" />
+            <name="XFSQSJ" exp="销分申请时间" type="datetime" />
+            <name="XFLY" exp="销分理由" type="nvarchar(500)" />
+            <name="XFCLJSID" exp="销分处理教师ID" type="int" />
+            <name="XFCLSJ" exp="销分处理时间" type="datetime" />
+            <name="CLYJ" exp="处理意见" type="nvarchar(500)" />
+            <name="GLBJPFJLID" exp="关联班级评分记录ID" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZZXS_25_A11_DYPJDXJL" exp="德育评价短信记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校ID" type="int" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="GLXSPFJLID" exp="关联学生评分记录ID" type="int" />
+            <name="FSDXMC" exp="发送对象名称" type="nvarchar(50)" />
+            <name="DHHM" exp="电话号码" type="nvarchar(20)" />
+            <name="DXNR" exp="短信内容" type="text" />
+            <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="FSSJ" exp="发送时间" type="datetime" />
+            <name="FSZT" exp="发送状态" type="int" />
+        </field_area>
+    </table>
 </namespace>
