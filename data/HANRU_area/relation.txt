@@ -1412,6 +1412,7 @@
   SFJY           EDU_JY_SFBZ                        DM
   SFTZJZ         EDU_JY_SFBZ                        DM
   SBJSID         EDU_ZXJZ_01_01_JZGJBSJ             ID
+  XQID           EDU_ELE_01_XQ                      ID
 <EDU_ZXXS_51_A01_KHDL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXXS_51_A02_KHDLXM

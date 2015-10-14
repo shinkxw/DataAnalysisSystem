@@ -15,6 +15,23 @@ SELECT a.[ID]--编号
       ,a.[JZLXFS]--家长联系方式
       ,a.[RQ]--日期
       ,a.[SBJSID]--上报教师ID
+      ,a.[XQID]--学期ID
+      ,a.[FR]--发热
+      ,a.[KS]--咳嗽
+      ,a.[PZ]--皮疹
+      ,a.[FX]--腹泻
+      ,a.[OT]--呕吐
+      ,a.[HD]--黄疸
+      ,a.[JMCX]--结膜充血
+      ,a.[QT]--其它
+      ,a.[SFJZ]--是否就诊
+      ,a.[JBMC]--疾病名称
+      ,a.[LG]--留观
+      ,a.[HJ]--回家
+      ,a.[LXSJ]--离校时间
+      ,a.[FXSJ]--复学时间
+      ,a.[QKTS]--缺课天数
+      ,a.[BZ]--备注
       ,c.SCHOOLID as c_BJ_SCHOOLID--班级数据类表 学校名
       ,c.NJ as c_BJ_NJ--班级数据类表 年级号
       ,c.BJ as c_BJ_BJ--班级数据类表 班级名称
@@ -210,6 +227,14 @@ SELECT a.[ID]--编号
       ,h.ZGXLBYSJ as h_JZGJBSJ_ZGXLBYSJ--教职工基本数据子类表 最高学历毕业时间
       ,h.ZGXLBYXX as h_JZGJBSJ_ZGXLBYXX--教职工基本数据子类表 最高学历毕业学校
       ,h.ZGXLZY as h_JZGJBSJ_ZGXLZY--教职工基本数据子类表 最高学历专业
+      ,i.SCHOOLID as i_XQ_SCHOOLID--学期数据表 学校名
+      ,i.XNID as i_XQ_XNID--学期数据表 学年
+      ,i.XQM as i_XQ_XQM--学期数据表 学期码
+      ,[ib].MC as i_XQ_XQM_MC--学期代码表 名称
+      ,i.XQMC as i_XQ_XQMC--学期数据表 学期名称
+      ,i.XQKSRQ as i_XQ_XQKSRQ--学期数据表 学期开始日期
+      ,i.XQJSRQ as i_XQ_XQJSRQ--学期数据表 学期结束日期
+      ,i.BaseProjectInfoID as i_XQ_BaseProjectInfoID--学期数据表 表BaseProjectInfo外键
 
 FROM dbo.EDU_ZXXS_50_A03_XSSBJL AS a LEFT OUTER JOIN
       dbo.EDU_ZXXX_03_01_BJ AS c ON a.BJID = c.BH /*班级ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -218,6 +243,7 @@ FROM dbo.EDU_ZXXS_50_A03_XSSBJL AS a LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS f ON a.SFJY = f.DM /*是否就医*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS g ON a.SFTZJZ = g.DM /*是否通知家长*/ LEFT OUTER JOIN
       dbo.EDU_ZXJZ_01_01_JZGJBSJ AS h ON a.SBJSID = h.ID /*上报教师ID*/ AND a.SCHOOLID = h.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ELE_01_XQ AS i ON a.XQID = i.ID /*学期ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBJLX AS [cb] ON c.BJLXM = [cb].DM /*班级类型码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFBZ AS [cc] ON c.SFSSMZSYJXB = [cc].DM /*是否少数民族双语教学班*/ LEFT OUTER JOIN
       dbo.EDU_JY_SSMZSYJXMS AS [cd] ON c.SYJXMSM = [cd].DM /*双语教学模式码*/ LEFT OUTER JOIN
@@ -252,5 +278,6 @@ FROM dbo.EDU_ZXXS_50_A03_XSSBJL AS a LEFT OUTER JOIN
       dbo.EDU_GB_XL AS [hn] ON h.XLM = [hn].DM /*学历码*/ LEFT OUTER JOIN
       dbo.EDU_JY_ZXXBZLB AS [ho] ON h.BZLBM = [ho].DM /*编制类别码*/ LEFT OUTER JOIN
       dbo.EDU_JY_GWZY AS [hp] ON h.GWZYM = [hp].DM /*岗位职业码*/ LEFT OUTER JOIN
-      dbo.EDU_JY_RKXD AS [hq] ON h.ZYRKXD = [hq].DM /*主要任课学段*/
+      dbo.EDU_JY_RKXD AS [hq] ON h.ZYRKXD = [hq].DM /*主要任课学段*/ LEFT OUTER JOIN
+      dbo.EDU_JY_XQ AS [ib] ON i.XQM = [ib].DM /*学期码*/
 GO

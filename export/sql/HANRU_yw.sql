@@ -17417,6 +17417,23 @@ CREATE TABLE [dbo].[EDU_ZXXS_50_A03_XSSBJL](
 	[JZLXFS]  nvarchar(20)  NULL,--家长联系方式
 	[RQ]  datetime  NOT NULL,--日期
 	[SBJSID]  int  NOT NULL,--上报教师ID
+	[XQID]  int  NOT NULL,--学期ID
+	[FR]  nvarchar(200)  NOT NULL,--发热
+	[KS]  nvarchar(200)  NOT NULL,--咳嗽
+	[PZ]  nvarchar(200)  NOT NULL,--皮疹
+	[FX]  nvarchar(200)  NOT NULL,--腹泻
+	[OT]  nvarchar(200)  NOT NULL,--呕吐
+	[HD]  nvarchar(200)  NOT NULL,--黄疸
+	[JMCX]  nvarchar(200)  NOT NULL,--结膜充血
+	[QT]  nvarchar(200)  NOT NULL,--其它
+	[SFJZ]  nvarchar(200)  NOT NULL,--是否就诊
+	[JBMC]  nvarchar(200)  NOT NULL,--疾病名称
+	[LG]  nvarchar(200)  NOT NULL,--留观
+	[HJ]  nvarchar(200)  NOT NULL,--回家
+	[LXSJ]  nvarchar(200)  NOT NULL,--离校时间
+	[FXSJ]  nvarchar(200)  NOT NULL,--复学时间
+	[QKTS]  nvarchar(200)  NOT NULL,--缺课天数
+	[BZ]  text  NOT NULL,--备注
 CONSTRAINT [PK_EDU_ZXXS_50_A03_XSSBJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -18778,6 +18795,40 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'RQ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'上报教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'SBJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'XQID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发热' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'FR'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'咳嗽' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'KS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'皮疹' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'PZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'腹泻' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'FX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'呕吐' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'OT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'黄疸' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'HD'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'结膜充血' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'JMCX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'其它' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'QT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否就诊' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'SFJZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'疾病名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'JBMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'留观' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'LG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'回家' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'HJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'离校时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'LXSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'复学时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'FXSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'缺课天数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'QKTS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A03_XSSBJL', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'考核大类表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_51_A01_KHDL'
 GO
