@@ -1402,6 +1402,14 @@
   YBJID          EDU_ZXXX_03_01_BJ                  BH
   XBJID          EDU_ZXXX_03_01_BJ                  BH
   CZRY           EDU_ELE_01_USER                    LOGINNAME
+<EDU_ZXXS_20_A01_DSSJ
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  XQID           EDU_ELE_01_XQ                      ID
+  JSID           EDU_ZXJZ_01_01_JZGJBSJ             ID
+<EDU_ZXXS_20_A02_XSXZDSJL
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  DSID           EDU_ZXXS_20_A01_DSSJ               ID
+  XSID           EDU_ZXXS_01_01_XSXX                ID
 <EDU_ZXXS_50_A01_QQYY
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZXXS_50_A02_BJSBJL

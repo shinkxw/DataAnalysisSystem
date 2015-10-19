@@ -150,6 +150,28 @@
             <name="HBSJ" exp="换班时间" type="datetime" />
         </field_area>
     </table>
+    <table name="EDU_ZXXS_20_A01_DSSJ" exp="导师数据表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" />
+            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="XQID" exp="学期ID" type="int" />
+            <name="JSID" exp="教师ID" type="int" />
+            <name="DSXM" exp="导师姓名" type="nvarchar(36)" />
+            <name="DSJS" exp="导师介绍" type="text" />
+            <name="BJIDLB" exp="班级ID列表" type="text" />
+            <name="BJMCLB" exp="班级名称列表" type="text" />
+            <name="ZDKXZRS" exp="最多可选择人数" type="int" />
+            <name="ZDXXZRS" exp="最低需选择人数" type="int" />
+        </field_area>
+    </table>
+    <table name="EDU_ZXXS_20_A02_XSXZDSJL" exp="学生选择导师记录表">
+        <field_area>
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
+            <name="DSID" exp="导师ID" type="int" />
+            <name="XSID" exp="学生ID" type="int" />
+        </field_area>
+    </table>
     <table name="EDU_ZXXS_50_A01_QQYY" exp="缺勤原因表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" identity="T" />

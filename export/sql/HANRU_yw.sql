@@ -16954,6 +16954,16 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXXS_07_A03_XSHB
    drop table EDU_ZXXS_07_A03_XSHBJL
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXXS_20_A01_DSSJ')
+            and   type = 'U')
+   drop table EDU_ZXXS_20_A01_DSSJ
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXXS_20_A02_XSXZDSJL')
+            and   type = 'U')
+   drop table EDU_ZXXS_20_A02_XSXZDSJL
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ZXXS_50_A01_QQYY')
             and   type = 'U')
    drop table EDU_ZXXS_50_A01_QQYY
@@ -17409,6 +17419,45 @@ CREATE TABLE [dbo].[EDU_ZXXS_07_A03_XSHBJL](
 	[CZRY]  nvarchar(20)  NOT NULL,--操作人员
 	[HBSJ]  datetime  NOT NULL,--换班时间
 CONSTRAINT [PK_EDU_ZXXS_07_A03_XSHBJL] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--导师数据表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXXS_20_A01_DSSJ]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZXXS_20_A01_DSSJ](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[XQID]  int  NOT NULL,--学期ID
+	[JSID]  int  NOT NULL,--教师ID
+	[DSXM]  nvarchar(36)  NOT NULL,--导师姓名
+	[DSJS]  text  NOT NULL,--导师介绍
+	[BJIDLB]  text  NOT NULL,--班级ID列表
+	[BJMCLB]  text  NOT NULL,--班级名称列表
+	[ZDKXZRS]  int  NOT NULL,--最多可选择人数
+	[ZDXXZRS]  int  NOT NULL,--最低需选择人数
+CONSTRAINT [PK_EDU_ZXXS_20_A01_DSSJ] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--学生选择导师记录表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZXXS_20_A02_XSXZDSJL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZXXS_20_A02_XSXZDSJL](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[DSID]  int  NOT NULL,--导师ID
+	[XSID]  int  NOT NULL,--学生ID
+CONSTRAINT [PK_EDU_ZXXS_20_A02_XSXZDSJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
@@ -18794,6 +18843,38 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'操作人员' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_07_A03_XSHBJL', @level2type=N'COLUMN',@level2name=N'CZRY'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'换班时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_07_A03_XSHBJL', @level2type=N'COLUMN',@level2name=N'HBSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'XQID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'JSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师姓名' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'DSXM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师介绍' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'DSJS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'BJIDLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级名称列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'BJMCLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最多可选择人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'ZDKXZRS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最低需选择人数' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A01_DSSJ', @level2type=N'COLUMN',@level2name=N'ZDXXZRS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生选择导师记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A02_XSXZDSJL'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A02_XSXZDSJL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A02_XSXZDSJL', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'导师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A02_XSXZDSJL', @level2type=N'COLUMN',@level2name=N'DSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_20_A02_XSXZDSJL', @level2type=N'COLUMN',@level2name=N'XSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'缺勤原因表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXXS_50_A01_QQYY'
 GO

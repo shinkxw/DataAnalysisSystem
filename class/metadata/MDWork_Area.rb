@@ -30,7 +30,7 @@ class MDWork_Area
     export_model;export_template
     export_tableinfo;
     MDDoc.set_fsc(nil) if need_commit
-    SVN.commit($fs_root) if need_commit
+    #SVN.commit($fs_root) if need_commit
   end
   #固化元数据并关闭工作环境
   def save_and_close_work_area
