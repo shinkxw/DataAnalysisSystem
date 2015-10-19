@@ -114,6 +114,18 @@ EDU_ELE_01_APPDLCS  第三方应用登录参数表
   CSMC          参数名称                nvarchar(50)   非主
   CSZ           参数值                  text           非主
 
+EDU_ELE_01_UserDetails  系统用户详情表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校ID                  int            非主        学校配置表
+  LoginName     用户ID                  nvarchar(20)   非主        应用系统用户表
+  Detail1       用户信息一              nvarchar(MAX)  非主
+  Detail2       用户信息二              nvarchar(MAX)  非主
+  Detail3       用户信息三              nvarchar(MAX)  非主
+  Detail4       用户信息四              nvarchar(MAX)  非主
+  Detail5       用户信息五              nvarchar(MAX)  非主
+  Detail6       用户信息六              nvarchar(MAX)  非主
+  IsDataRow     是否是数据行            int            非主
+
 EDU_ELE_02_YHFZ  用户分组表
   ID            分组ID                  int            主键
   SCHOOLID      学校ID                  int            主键        学校配置表

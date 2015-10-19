@@ -67,7 +67,9 @@ class DBAnalyzer
     type = info['DATA_TYPE']
     case type
     when 'int','text','datetime','money','bit','float'; type
-    when 'nchar','nvarchar'; "#{type}(#{info['CHARACTER_MAXIMUM_LENGTH']})"
+    when 'nchar','nvarchar'
+      length = info['CHARACTER_MAXIMUM_LENGTH']
+      "#{type}(#{length != -1 ? length : 'MAX'})"
     when 'decimal'
       prec = info['NUMERIC_PRECISION']
       scale = info['NUMERIC_SCALE']

@@ -55,6 +55,11 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_APPDLCS')
    drop table EDU_ELE_01_APPDLCS
 go
 
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_01_UserDetails')
+            and   type = 'U')
+   drop table EDU_ELE_01_UserDetails
+go
+
 if exists (select 1 from  sysobjects where  id = object_id('EDU_ELE_02_YHFZ')
             and   type = 'U')
    drop table EDU_ELE_02_YHFZ
@@ -418,6 +423,28 @@ CONSTRAINT [PK_EDU_ELE_01_APPDLCS] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
 	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--系统用户详情表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ELE_01_UserDetails]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ELE_01_UserDetails](
+	[ID]  int  identity,--编号
+	[SCHOOLID]  int  NOT NULL,--学校ID
+	[LoginName]  nvarchar(20)  NOT NULL,--用户ID
+	[Detail1]  nvarchar(MAX)  NULL,--用户信息一
+	[Detail2]  nvarchar(MAX)  NULL,--用户信息二
+	[Detail3]  nvarchar(MAX)  NULL,--用户信息三
+	[Detail4]  nvarchar(MAX)  NULL,--用户信息四
+	[Detail5]  nvarchar(MAX)  NULL,--用户信息五
+	[Detail6]  nvarchar(MAX)  NULL,--用户信息六
+	[IsDataRow]  int  NOT NULL,--是否是数据行
+CONSTRAINT [PK_EDU_ELE_01_UserDetails] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -1163,6 +1190,28 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参数名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APPDLCS', @level2type=N'COLUMN',@level2name=N'CSMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'参数值' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_APPDLCS', @level2type=N'COLUMN',@level2name=N'CSZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'系统用户详情表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'LoginName'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户信息一' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'Detail1'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户信息二' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'Detail2'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户信息三' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'Detail3'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户信息四' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'Detail4'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户信息五' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'Detail5'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户信息六' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'Detail6'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否是数据行' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_01_UserDetails', @level2type=N'COLUMN',@level2name=N'IsDataRow'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用户分组表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ELE_02_YHFZ'
 GO

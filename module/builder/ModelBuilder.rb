@@ -52,7 +52,7 @@ class ModelBuilder
         @model_str << %(            [Display(Name = "#{field.display_name}")]\n)
         #×Ö¶ÎÀàÐÍ½âÎö
         if type[0] == "String" && type.size > 1
-          @model_str << "            [StringLength(#{type[1]})]\n"
+          @model_str << "            [StringLength(#{type[1]})]\n" if type[1].upcase != 'MAX'
         elsif type[0] == "decimal"
           @model_str << %(            [Range(typeof(decimal), "#{type[1]}", "#{type[2]}")]\n)
         elsif type[0] == "float"

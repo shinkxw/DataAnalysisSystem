@@ -34,6 +34,9 @@
 <EDU_ELE_01_APPDLCS
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPUSERID      EDU_ELE_01_APPUSER                 ID
+<EDU_ELE_01_UserDetails
+  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
+  LoginName      EDU_ELE_01_USER                    LOGINNAME
 <EDU_ELE_02_YHFZ
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   APPID          EDU_ELE_01_APP                     ID
