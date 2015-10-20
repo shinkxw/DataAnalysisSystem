@@ -1165,6 +1165,7 @@ EDU_OAXT_41_A42_XXGGNR  学校公告内容表
   BT            标题                    nvarchar(200)  非主
   NR            内容                    text           非主
   FBBM          发布部门                nvarchar(100)  非主
+  CKYH          已查看用户              text           非主
 
 EDU_OAXT_41_A43_XXGGFBBM  学校公告发布部门表
   ID            编号                    int            主键

@@ -1369,6 +1369,7 @@
             <name="BT" exp="标题" type="nvarchar(200)" />
             <name="NR" exp="内容" type="text" />
             <name="FBBM" exp="发布部门" type="nvarchar(100)" />
+            <name="CKYH" exp="已查看用户" type="text" />
         </field_area>
     </table>
     <table name="EDU_OAXT_41_A43_XXGGFBBM" exp="学校公告发布部门表">

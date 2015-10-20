@@ -32,13 +32,10 @@ SELECT a.[ID]--编号
       ,d.BZ as d_DYPJXSPFJL_BZ--德育评价学生评分记录表 备注
       ,d.ZT as d_DYPJXSPFJL_ZT--德育评价学生评分记录表 状态
       ,d.TJSJ as d_DYPJXSPFJL_TJSJ--德育评价学生评分记录表 添加时间
-      ,d.XFSQJSID as d_DYPJXSPFJL_XFSQJSID--德育评价学生评分记录表 销分申请教师ID
-      ,d.XFSQSJ as d_DYPJXSPFJL_XFSQSJ--德育评价学生评分记录表 销分申请时间
-      ,d.XFLY as d_DYPJXSPFJL_XFLY--德育评价学生评分记录表 销分理由
-      ,d.XFCLJSID as d_DYPJXSPFJL_XFCLJSID--德育评价学生评分记录表 销分处理教师ID
-      ,d.XFCLSJ as d_DYPJXSPFJL_XFCLSJ--德育评价学生评分记录表 销分处理时间
-      ,d.CLYJ as d_DYPJXSPFJL_CLYJ--德育评价学生评分记录表 处理意见
       ,d.GLBJPFJLID as d_DYPJXSPFJL_GLBJPFJLID--德育评价学生评分记录表 关联班级评分记录ID
+      ,d.SCZT as d_DYPJXSPFJL_SCZT--德育评价学生评分记录表 删除状态
+      ,d.SCJSID as d_DYPJXSPFJL_SCJSID--德育评价学生评分记录表 删除教师ID
+      ,d.SCSJ as d_DYPJXSPFJL_SCSJ--德育评价学生评分记录表 删除时间
 
 FROM dbo.EDU_ZZXS_25_A11_DYPJDXJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

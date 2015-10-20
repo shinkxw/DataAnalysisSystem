@@ -2859,6 +2859,7 @@ CREATE TABLE [dbo].[EDU_OAXT_41_A42_XXGGNR](
 	[BT]  nvarchar(200)  NOT NULL,--标题
 	[NR]  text  NOT NULL,--内容
 	[FBBM]  nvarchar(100)  NOT NULL,--发布部门
+	[CKYH]  text  NOT NULL,--已查看用户
 CONSTRAINT [PK_EDU_OAXT_41_A42_XXGGNR] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -5451,6 +5452,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_41_A42_XXGGNR', @level2type=N'COLUMN',@level2name=N'NR'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发布部门' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_41_A42_XXGGNR', @level2type=N'COLUMN',@level2name=N'FBBM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'已查看用户' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_41_A42_XXGGNR', @level2type=N'COLUMN',@level2name=N'CKYH'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校公告发布部门表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_OAXT_41_A43_XXGGFBBM'
 GO

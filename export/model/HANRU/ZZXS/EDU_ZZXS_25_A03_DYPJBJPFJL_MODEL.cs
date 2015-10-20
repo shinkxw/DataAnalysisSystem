@@ -17,6 +17,7 @@ namespace HanRuEdu.LDAL
             XFLY = "";
             XFCLSJ = DateTime.Now;
             CLYJ = "";
+            SCSJ = DateTime.Now;
         }
         public class EDU_ZZXS_25_A03_DYPJBJPFJL_metadata
         {
@@ -122,6 +123,21 @@ namespace HanRuEdu.LDAL
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String CLYJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "删除状态")]
+            public Int32 SCZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "删除教师")]
+            public Int32 SCJSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "删除时间")]
+            public DateTime SCSJ { get; set; }
 
 
         }

@@ -14,6 +14,7 @@ namespace HanRuEdu.LDAL
             BT = "";
             NR = "";
             FBBM = "";
+            CKYH = "";
         }
         public class EDU_OAXT_41_A42_XXGGNR_metadata
         {
@@ -62,6 +63,12 @@ namespace HanRuEdu.LDAL
             [StringLength(100)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String FBBM { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "已查看用户")]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String CKYH { get; set; }
 
 
         }

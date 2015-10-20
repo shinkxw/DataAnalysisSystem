@@ -716,6 +716,9 @@ EDU_ZZXS_25_A03_DYPJBJPFJL  德育评价班级评分记录表
   XFCLJSID      销分处理教师ID          int            非主        教职工基本数据子类表
   XFCLSJ        销分处理时间            datetime       非主
   CLYJ          处理意见                nvarchar(500)  非主
+  SCZT          删除状态                int            非主
+  SCJSID        删除教师ID              int            非主        教职工基本数据子类表
+  SCSJ          删除时间                datetime       非主
 
 EDU_ZZXS_25_A04_DYPJXSPFJL  德育评价学生评分记录表
   ID            编号                    int            主键
@@ -731,13 +734,46 @@ EDU_ZZXS_25_A04_DYPJXSPFJL  德育评价学生评分记录表
   BZ            备注                    nvarchar(500)  非主
   ZT            状态                    int            非主
   TJSJ          添加时间                datetime       非主
-  XFSQJSID      销分申请教师ID          int            非主        教职工基本数据子类表
-  XFSQSJ        销分申请时间            datetime       非主
-  XFLY          销分理由                nvarchar(500)  非主
-  XFCLJSID      销分处理教师ID          int            非主        教职工基本数据子类表
-  XFCLSJ        销分处理时间            datetime       非主
-  CLYJ          处理意见                nvarchar(500)  非主
   GLBJPFJLID    关联班级评分记录ID      int            非主        德育评价班级评分记录表
+  SCZT          删除状态                int            非主
+  SCJSID        删除教师ID              int            非主        教职工基本数据子类表
+  SCSJ          删除时间                datetime       非主
+
+EDU_ZZXS_25_A05_DYPJBJDD  德育评价班级等第表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  MC            等第名称                nvarchar(50)   非主
+  PLSX          排列顺序                int            非主
+
+EDU_ZZXS_25_A06_DYPJBJMZHZ  德育评价班级每周汇总表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        校历周表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
+  ZZF           周总分                  decimal(8, 2)  非主
+  ZF            总分                    decimal(8, 2)  非主
+  DDID          等第ID                  int            非主        德育评价班级等第表
+  DDPJJSID      等第评定教师ID          int            非主        教职工基本数据子类表
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  TJSJ          添加时间                datetime       非主
+
+EDU_ZZXS_25_A07_DYPJBJMZDLZF  德育评价班级每周大类总分表
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主        学校配置表
+  MZHZID        每周汇总ID              int            非主        德育评价班级每周汇总表
+  DLID          大类ID                  int            非主        德育评价大类表
+  ZF            总分                    decimal(8, 2)  非主
+
+EDU_ZZXS_25_A08_DYPJXSMZHZ  德育评价学生每周汇总表
+  ID            编号                    int            主键
+  SCHOOLID      学校                    int            主键        学校配置表
+  XQID          学期ID                  int            非主        学期数据表
+  ZCID          周次ID                  int            非主        校历周表
+  XSID          学生ID                  int            非主        学生信息数据表
+  ZZF           周总分                  decimal(8, 2)  非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
+  TJSJ          添加时间                datetime       非主
 
 EDU_ZZXS_25_A11_DYPJDXJL  德育评价短信记录表
   ID            编号                    int            自增主键
