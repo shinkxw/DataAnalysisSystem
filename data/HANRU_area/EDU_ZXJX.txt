@@ -214,6 +214,7 @@
             <name="ZT" exp="当前状态" type="int" />
             <name="BZ" exp="备注" type="text" />
             <name="SQSJ" exp="申请时间" type="datetime" />
+            <name="JSJSID" exp="接收教师ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_10_A01_JSGCXPJJL" exp="教师过程性评价记录表">
