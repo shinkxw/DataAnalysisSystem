@@ -1446,8 +1446,8 @@
     </table>
     <table name="EDU_ZZJX_56_A03_Class" exp="班级表">
         <field_area>
-            <name="ID" exp="编号" type="int" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" p="T" />
+            <name="ID" exp="编号" type="int" p="T" identity="T" />
+            <name="SCHOOLID" exp="学校" type="int" />
             <name="WeekCategory" exp="单(双)周" type="int" />
             <name="DayOfWeek" exp="星期几" type="int" />
             <name="TimeInterval" exp="时段" type="int" />
@@ -1532,6 +1532,7 @@
             <name="PairClass" exp="双次课" type="nvarchar(20)" />
             <name="PairClassCategory" exp="双次方式" type="nvarchar(20)" />
             <name="BaseProjectInfoID" exp="表BaseProjectInfo外键" type="int" />
+            <name="PlaceID" exp="" type="int" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_56_A09_TeacherGroup" exp="教师组表">

@@ -1609,9 +1609,11 @@ CREATE TABLE [dbo].[EDU_ZZXS_25_A03_DYPJBJPFJL](
 	[BZ]  nvarchar(500)  NOT NULL,--备注
 	[ZT]  int  NOT NULL,--状态
 	[TJSJ]  datetime  NOT NULL,--添加时间
+	[XFZT]  int  NOT NULL,--销分状态
 	[XFSQJSID]  int  NOT NULL,--销分申请教师ID
 	[XFSQSJ]  datetime  NOT NULL,--销分申请时间
 	[XFLY]  nvarchar(500)  NOT NULL,--销分理由
+	[XFCLJG]  int  NOT NULL,--销分处理结果
 	[XFCLJSID]  int  NOT NULL,--销分处理教师ID
 	[XFCLSJ]  datetime  NOT NULL,--销分处理时间
 	[CLYJ]  nvarchar(500)  NOT NULL,--处理意见
@@ -1636,6 +1638,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_25_A04_DYPJXSPFJL](
 	[XQID]  int  NOT NULL,--学期ID
 	[ZCID]  int  NOT NULL,--周次ID
 	[JSID]  int  NOT NULL,--教师ID
+	[BJID]  nvarchar(10)  NOT NULL,--班级ID
 	[XSID]  int  NOT NULL,--学生ID
 	[DLID]  int  NOT NULL,--大类ID
 	[XLID]  int  NOT NULL,--小类ID
@@ -3073,11 +3076,15 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'TJSJ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'XFZT'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分申请教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'XFSQJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分申请时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'XFSQSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分理由' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'XFLY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分处理结果' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'XFCLJG'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分处理教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'XFCLJSID'
 GO
@@ -3102,6 +3109,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'周次ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'ZCID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'JSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'BJID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'XSID'
 GO

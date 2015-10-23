@@ -108,6 +108,8 @@ EDU_WZXT_MHXT_WZWZ  网站文章
   INDEXSHOW     能否显示在主页上        int            非主
   SFZD          是否置顶                int            非主
   ZDYXJ         置顶优先级              int            非主
+  XCLM          小虫栏目                nvarchar(50)   非主
+  XCID          小虫ID                  int            非主
 
 EDU_WZXT_MHXT_XZYX  校长邮箱
   ID            编号                    int            自增主键

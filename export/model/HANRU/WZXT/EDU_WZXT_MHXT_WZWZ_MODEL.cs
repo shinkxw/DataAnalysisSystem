@@ -172,6 +172,16 @@ namespace HanRuEdu.LDAL
             public Int32 ZDYXJ { get; set; }
 
 
+            [Display(Name = "Ð¡³æÀ¸Ä¿")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String XCLM { get; set; }
+
+
+            [Display(Name = "Ð¡³æ")]
+            public Int32 XCID { get; set; }
+
+
         }
     }
 }

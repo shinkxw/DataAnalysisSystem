@@ -710,9 +710,11 @@ EDU_ZZXS_25_A03_DYPJBJPFJL  德育评价班级评分记录表
   BZ            备注                    nvarchar(500)  非主
   ZT            状态                    int            非主
   TJSJ          添加时间                datetime       非主
+  XFZT          销分状态                int            非主
   XFSQJSID      销分申请教师ID          int            非主        教职工基本数据子类表
   XFSQSJ        销分申请时间            datetime       非主
   XFLY          销分理由                nvarchar(500)  非主
+  XFCLJG        销分处理结果            int            非主
   XFCLJSID      销分处理教师ID          int            非主        教职工基本数据子类表
   XFCLSJ        销分处理时间            datetime       非主
   CLYJ          处理意见                nvarchar(500)  非主
@@ -726,6 +728,7 @@ EDU_ZZXS_25_A04_DYPJXSPFJL  德育评价学生评分记录表
   XQID          学期ID                  int            非主        学期数据表
   ZCID          周次ID                  int            非主        校历周表
   JSID          教师ID                  int            非主        教职工基本数据子类表
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
   XSID          学生ID                  int            非主        学生信息数据表
   DLID          大类ID                  int            非主        德育评价大类表
   XLID          小类ID                  int            非主        德育评价小类表

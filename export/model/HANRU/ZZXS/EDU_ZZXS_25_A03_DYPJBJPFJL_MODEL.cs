@@ -92,6 +92,11 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "销分状态")]
+            public Int32 XFZT { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "销分申请教师")]
             public Int32 XFSQJSID { get; set; }
 
@@ -106,6 +111,11 @@ namespace HanRuEdu.LDAL
             [StringLength(500)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
             public String XFLY { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "销分处理结果")]
+            public Int32 XFCLJG { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

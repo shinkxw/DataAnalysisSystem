@@ -1228,8 +1228,8 @@ EDU_ZZJX_56_A02_BaseProjectInfo  基本项目信息表
   EndDate                               datetime       非主
 
 EDU_ZZJX_56_A03_Class  班级表
-  ID            编号                    int            主键
-  SCHOOLID      学校                    int            主键
+  ID            编号                    int            自增主键
+  SCHOOLID      学校                    int            非主
   WeekCategory  单(双)周                int            非主
   DayOfWeek     星期几                  int            非主
   TimeInterval  时段                    int            非主
@@ -1304,6 +1304,7 @@ EDU_ZZJX_56_A08_TeachSchedule  教学计划表
   PairClass     双次课                  nvarchar(20)   非主
   PairClassCategory双次方式                nvarchar(20)   非主
   BaseProjectInfoID表BaseProjectInfo外键   int            非主
+  PlaceID                               int            非主
 
 EDU_ZZJX_56_A09_TeacherGroup  教师组表
   ID            编号                    int            主键

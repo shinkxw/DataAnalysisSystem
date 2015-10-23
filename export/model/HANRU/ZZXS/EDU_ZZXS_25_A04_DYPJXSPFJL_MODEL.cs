@@ -9,6 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_25_A04_DYPJXSPFJL()
         {
+            BJID = "";
             SJ = DateTime.Now;
             BZ = "";
             TJSJ = DateTime.Now;
@@ -39,6 +40,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "教师")]
             public Int32 JSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String BJID { get; set; }
 
 
             [Required(ErrorMessage = "必填")]

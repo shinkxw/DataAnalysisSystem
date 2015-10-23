@@ -98,6 +98,10 @@ namespace HanRuEdu.LDAL
             public Int32 BaseProjectInfoID { get; set; }
 
 
+            [Display(Name = "")]
+            public Int32 PlaceID { get; set; }
+
+
         }
     }
 }

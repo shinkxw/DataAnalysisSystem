@@ -24,6 +24,7 @@ SELECT a.[ID]--编号
       ,d.XQID as d_DYPJXSPFJL_XQID--德育评价学生评分记录表 学期ID
       ,d.ZCID as d_DYPJXSPFJL_ZCID--德育评价学生评分记录表 周次ID
       ,d.JSID as d_DYPJXSPFJL_JSID--德育评价学生评分记录表 教师ID
+      ,d.BJID as d_DYPJXSPFJL_BJID--德育评价学生评分记录表 班级ID
       ,d.XSID as d_DYPJXSPFJL_XSID--德育评价学生评分记录表 学生ID
       ,d.DLID as d_DYPJXSPFJL_DLID--德育评价学生评分记录表 大类ID
       ,d.XLID as d_DYPJXSPFJL_XLID--德育评价学生评分记录表 小类ID

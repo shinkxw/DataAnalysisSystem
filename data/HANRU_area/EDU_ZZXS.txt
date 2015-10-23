@@ -820,9 +820,11 @@
             <name="BZ" exp="备注" type="nvarchar(500)" />
             <name="ZT" exp="状态" type="int" />
             <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="XFZT" exp="销分状态" type="int" />
             <name="XFSQJSID" exp="销分申请教师ID" type="int" />
             <name="XFSQSJ" exp="销分申请时间" type="datetime" />
             <name="XFLY" exp="销分理由" type="nvarchar(500)" />
+            <name="XFCLJG" exp="销分处理结果" type="int" />
             <name="XFCLJSID" exp="销分处理教师ID" type="int" />
             <name="XFCLSJ" exp="销分处理时间" type="datetime" />
             <name="CLYJ" exp="处理意见" type="nvarchar(500)" />
@@ -838,6 +840,7 @@
             <name="XQID" exp="学期ID" type="int" />
             <name="ZCID" exp="周次ID" type="int" />
             <name="JSID" exp="教师ID" type="int" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
             <name="XSID" exp="学生ID" type="int" />
             <name="DLID" exp="大类ID" type="int" />
             <name="XLID" exp="小类ID" type="int" />

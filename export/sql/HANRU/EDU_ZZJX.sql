@@ -2987,7 +2987,7 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_56_A03_Class]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[EDU_ZZJX_56_A03_Class](
-	[ID]  int  NOT NULL,--编号
+	[ID]  int  identity,--编号
 	[SCHOOLID]  int  NOT NULL,--学校
 	[WeekCategory]  int  NOT NULL,--单(双)周
 	[DayOfWeek]  int  NOT NULL,--星期几
@@ -3000,8 +3000,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_56_A03_Class](
 	[BaseProjectInfoID]  int  NOT NULL,--
 CONSTRAINT [PK_EDU_ZZJX_56_A03_Class] PRIMARY KEY CLUSTERED
 (
-	[ID] ASC,
-	[SCHOOLID] ASC
+	[ID] ASC
 )WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
@@ -3118,6 +3117,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_56_A08_TeachSchedule](
 	[PairClass]  nvarchar(20)  NOT NULL,--双次课
 	[PairClassCategory]  nvarchar(20)  NOT NULL,--双次方式
 	[BaseProjectInfoID]  int  NOT NULL,--表BaseProjectInfo外键
+	[PlaceID]  int  NULL,--
 CONSTRAINT [PK_EDU_ZZJX_56_A08_TeachSchedule] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,

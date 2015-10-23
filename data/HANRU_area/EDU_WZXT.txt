@@ -128,6 +128,8 @@
             <name="INDEXSHOW" exp="能否显示在主页上" type="int" />
             <name="SFZD" exp="是否置顶" type="int" />
             <name="ZDYXJ" exp="置顶优先级" type="int" />
+            <name="XCLM" exp="小虫栏目" type="nvarchar(50)" null="T" />
+            <name="XCID" exp="小虫ID" type="int" null="T" />
         </field_area>
     </table>
     <table name="EDU_WZXT_MHXT_XZYX" exp="校长邮箱">

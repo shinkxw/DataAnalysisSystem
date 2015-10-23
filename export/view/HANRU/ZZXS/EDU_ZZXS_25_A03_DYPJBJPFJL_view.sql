@@ -15,9 +15,11 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,a.[ZT]--状态
       ,a.[TJSJ]--添加时间
+      ,a.[XFZT]--销分状态
       ,a.[XFSQJSID]--销分申请教师ID
       ,a.[XFSQSJ]--销分申请时间
       ,a.[XFLY]--销分理由
+      ,a.[XFCLJG]--销分处理结果
       ,a.[XFCLJSID]--销分处理教师ID
       ,a.[XFCLSJ]--销分处理时间
       ,a.[CLYJ]--处理意见

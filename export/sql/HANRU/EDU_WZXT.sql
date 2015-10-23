@@ -329,6 +329,8 @@ CREATE TABLE [dbo].[EDU_WZXT_MHXT_WZWZ](
 	[INDEXSHOW]  int  NOT NULL,--能否显示在主页上
 	[SFZD]  int  NOT NULL,--是否置顶
 	[ZDYXJ]  int  NOT NULL,--置顶优先级
+	[XCLM]  nvarchar(50)  NULL,--小虫栏目
+	[XCID]  int  NULL,--小虫ID
 CONSTRAINT [PK_EDU_WZXT_MHXT_WZWZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -807,6 +809,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否置顶' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'SFZD'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'置顶优先级' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'ZDYXJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'小虫栏目' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'XCLM'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'小虫ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_WZWZ', @level2type=N'COLUMN',@level2name=N'XCID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'校长邮箱' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_WZXT_MHXT_XZYX'
 GO

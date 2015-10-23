@@ -48,6 +48,8 @@ SELECT a.[ID]--评价ID
       ,d.INDEXSHOW as d_WZWZ_INDEXSHOW--网站文章 能否显示在主页上
       ,d.SFZD as d_WZWZ_SFZD--网站文章 是否置顶
       ,d.ZDYXJ as d_WZWZ_ZDYXJ--网站文章 置顶优先级
+      ,d.XCLM as d_WZWZ_XCLM--网站文章 小虫栏目
+      ,d.XCID as d_WZWZ_XCID--网站文章 小虫ID
 
 FROM dbo.EDU_WZXT_MHXT_WZPJ AS a LEFT OUTER JOIN
       dbo.EDU_WZXT_MHXT_WZPZ AS c ON a.WEBID = c.WEBID /*网站ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
