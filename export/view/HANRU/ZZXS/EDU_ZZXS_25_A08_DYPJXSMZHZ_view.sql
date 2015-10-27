@@ -10,6 +10,7 @@ SELECT a.[ID]--编号
       ,a.[ZZF]--周总分
       ,a.[TJJSID]--添加教师ID
       ,a.[TJSJ]--添加时间
+      ,a.[BJID]--班级ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -146,12 +147,30 @@ SELECT a.[ID]--编号
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,g.SCHOOLID as g_ZZBJ_SCHOOLID--学校班级数据表 学校名
+      ,g.ZYXXID as g_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
+      ,g.ZZNJID as g_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
+      ,g.XZBMC as g_ZZBJ_XZBMC--学校班级数据表 行政班名称
+      ,g.JBNY as g_ZZBJ_JBNY--学校班级数据表 建班年月
+      ,g.BZRGH as g_ZZBJ_BZRGH--学校班级数据表 班主任工号
+      ,g.JSBH as g_ZZBJ_JSBH--学校班级数据表 教室编号
+      ,g.NANSRS as g_ZZBJ_NANSRS--学校班级数据表 男生人数
+      ,g.NVSRS as g_ZZBJ_NVSRS--学校班级数据表 女生人数
+      ,g.ZRS as g_ZZBJ_ZRS--学校班级数据表 总人数
+      ,g.BZXH as g_ZZBJ_BZXH--学校班级数据表 班长学号
+      ,g.JXJH as g_ZZBJ_JXJH--学校班级数据表 教学计划
+      ,g.JGH as g_ZZBJ_JGH--学校班级数据表 机构号
+      ,g.XQDM as g_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,g.BZRID as g_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,g.PLSX as g_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,g.ID as g_ZZBJ_ID--学校班级数据表 表Record外键
 
 FROM dbo.EDU_ZZXS_25_A08_DYPJXSMZHZ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_XLZ AS d ON a.ZCID = d.ID /*周次ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS e ON a.XSID = e.ID /*学生ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS f ON a.TJJSID = f.ID /*添加教师ID*/ AND a.SCHOOLID = f.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_02_ZZBJ AS g ON a.BJID = g.XZBDM /*班级ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN

@@ -897,6 +897,7 @@
             <name="ZZF" exp="周总分" type="decimal(8, 2)" />
             <name="TJJSID" exp="添加教师ID" type="int" />
             <name="TJSJ" exp="添加时间" type="datetime" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_25_A11_DYPJDXJL" exp="德育评价短信记录表">

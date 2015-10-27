@@ -1730,6 +1730,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_25_A08_DYPJXSMZHZ](
 	[ZZF]  decimal(8, 2)  NOT NULL,--周总分
 	[TJJSID]  int  NOT NULL,--添加教师ID
 	[TJSJ]  datetime  NOT NULL,--添加时间
+	[BJID]  nvarchar(10)  NOT NULL,--班级ID
 CONSTRAINT [PK_EDU_ZZXS_25_A08_DYPJXSMZHZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3199,6 +3200,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A08_DYPJXSMZHZ', @level2type=N'COLUMN',@level2name=N'TJJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A08_DYPJXSMZHZ', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A08_DYPJXSMZHZ', @level2type=N'COLUMN',@level2name=N'BJID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'德育评价短信记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL'
 GO

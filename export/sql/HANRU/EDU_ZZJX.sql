@@ -589,6 +589,26 @@ if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_56_A12_Plac
             and   type = 'U')
    drop table EDU_ZZJX_56_A12_PlaceGroup
 go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_60_A01_JSQJLX')
+            and   type = 'U')
+   drop table EDU_ZZJX_60_A01_JSQJLX
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_60_A02_DKLX')
+            and   type = 'U')
+   drop table EDU_ZZJX_60_A02_DKLX
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_60_A03_JSQJXX')
+            and   type = 'U')
+   drop table EDU_ZZJX_60_A03_JSQJXX
+go
+
+if exists (select 1 from  sysobjects where  id = object_id('EDU_ZZJX_60_A04_XPKLB')
+            and   type = 'U')
+   drop table EDU_ZZJX_60_A04_XPKLB
+go
 --专业基本信息数据表
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_01_01_ZYXX]') AND type in (N'U'))
 BEGIN
@@ -3219,6 +3239,92 @@ CONSTRAINT [PK_EDU_ZZJX_56_A12_PlaceGroup] PRIMARY KEY CLUSTERED
 END
 GO
 
+--教师请假类型表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_60_A01_JSQJLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_60_A01_JSQJLX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[LXMC]  nvarchar(50)  NOT NULL,--类型名称
+	[BZ]  text  NOT NULL,--备注
+	[SFCC]  int  NOT NULL,--是否出差
+CONSTRAINT [PK_EDU_ZZJX_60_A01_JSQJLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--代课类型表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_60_A02_DKLX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_60_A02_DKLX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[LXMC]  nvarchar(50)  NOT NULL,--类型名称
+	[BZ]  text  NOT NULL,--备注
+CONSTRAINT [PK_EDU_ZZJX_60_A02_DKLX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--教师请假信息表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_60_A03_JSQJXX]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_60_A03_JSQJXX](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[QJJSID]  int  NOT NULL,--请假教师ID
+	[JSQJLXID]  int  NOT NULL,--教师请假类型ID
+	[QJKSSJ]  datetime  NOT NULL,--请假开始时间
+	[QJJSSJ]  datetime  NOT NULL,--请假结束时间
+	[CLZT]  int  NOT NULL,--处理状态
+	[KCCLFS]  int  NOT NULL,--课程处理方式
+	[QJYY]  text  NOT NULL,--请假原因
+	[SQSJ]  datetime  NOT NULL,--申请时间
+	[BZ]  text  NOT NULL,--备注
+	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
+CONSTRAINT [PK_EDU_ZZJX_60_A03_JSQJXX] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+--需排课列表
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[EDU_ZZJX_60_A04_XPKLB]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDU_ZZJX_60_A04_XPKLB](
+	[ID]  int  NOT NULL,--编号
+	[SCHOOLID]  int  NOT NULL,--学校
+	[JSQJXXID]  int  NOT NULL,--教师请假信息表ID
+	[PKJGJLID]  int  NOT NULL,--排课结果记录表ID
+	[RQ]  datetime  NOT NULL,--日期
+	[CLZT]  int  NOT NULL,--处理状态
+	[XPKJSID]  int  NOT NULL,--需排课教师ID
+	[TJJSID]  int  NOT NULL,--推荐教师ID
+	[DKJSID]  int  NOT NULL,--代课教师ID
+	[DKLXID]  int  NOT NULL,--代课类型ID
+	[PKSJ]  datetime  NOT NULL,--排课时间
+	[QRSJ]  datetime  NOT NULL,--确认时间
+	[PKRID]  nvarchar(20)  NOT NULL,--排课人ID
+CONSTRAINT [PK_EDU_ZZJX_60_A04_XPKLB] PRIMARY KEY CLUSTERED
+(
+	[ID] ASC,
+	[SCHOOLID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
 --以下为添加注释语句
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'专业基本信息数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_01_01_ZYXX'
 GO
@@ -5657,4 +5763,80 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评论' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A12_PlaceGroup', @level2type=N'COLUMN',@level2name=N'Comment'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'表BaseProjectInfo外键' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_56_A12_PlaceGroup', @level2type=N'COLUMN',@level2name=N'BaseProjectInfoID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师请假类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A01_JSQJLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A01_JSQJLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A01_JSQJLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A01_JSQJLX', @level2type=N'COLUMN',@level2name=N'LXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A01_JSQJLX', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否出差' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A01_JSQJLX', @level2type=N'COLUMN',@level2name=N'SFCC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代课类型表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A02_DKLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A02_DKLX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A02_DKLX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'类型名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A02_DKLX', @level2type=N'COLUMN',@level2name=N'LXMC'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A02_DKLX', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师请假信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'请假教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'QJJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师请假类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'JSQJLXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'请假开始时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'QJKSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'请假结束时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'QJJSSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'处理状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'CLZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程处理方式' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'KCCLFS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'请假原因' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'QJYY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'SQSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'BZ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'SHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'需排课列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学校' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'SCHOOLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师请假信息表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'JSQJXXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排课结果记录表ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'PKJGJLID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'RQ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'处理状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'CLZT'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'需排课教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'XPKJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'推荐教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'TJJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代课教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'DKJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'代课类型ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'DKLXID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排课时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'PKSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'确认时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'QRSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'排课人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_60_A04_XPKLB', @level2type=N'COLUMN',@level2name=N'PKRID'
 GO
