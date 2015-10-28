@@ -150,6 +150,11 @@ namespace HanRuEdu.LDAL
             public DateTime SCSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "关联学生评分记录")]
+            public Int32 GLXSPFJLID { get; set; }
+
+
         }
     }
 }

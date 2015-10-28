@@ -33,7 +33,6 @@ SELECT a.[ID]--编号
       ,d.BZ as d_DYPJXSPFJL_BZ--德育评价学生评分记录表 备注
       ,d.ZT as d_DYPJXSPFJL_ZT--德育评价学生评分记录表 状态
       ,d.TJSJ as d_DYPJXSPFJL_TJSJ--德育评价学生评分记录表 添加时间
-      ,d.GLBJPFJLID as d_DYPJXSPFJL_GLBJPFJLID--德育评价学生评分记录表 关联班级评分记录ID
       ,d.SCZT as d_DYPJXSPFJL_SCZT--德育评价学生评分记录表 删除状态
       ,d.SCJSID as d_DYPJXSPFJL_SCJSID--德育评价学生评分记录表 删除教师ID
       ,d.SCSJ as d_DYPJXSPFJL_SCSJ--德育评价学生评分记录表 删除时间

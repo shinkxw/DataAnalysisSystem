@@ -26,6 +26,7 @@ SELECT a.[ID]--编号
       ,a.[SCZT]--删除状态
       ,a.[SCJSID]--删除教师ID
       ,a.[SCSJ]--删除时间
+      ,a.[GLXSPFJLID]--关联学生评分记录ID
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -350,6 +351,22 @@ SELECT a.[ID]--编号
       ,k.JSTXH as k_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,k.JSKQJS as k_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,k.TeacherGroupId as k_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,l.SCHOOLID as l_DYPJXSPFJL_SCHOOLID--德育评价学生评分记录表 学校
+      ,l.XQID as l_DYPJXSPFJL_XQID--德育评价学生评分记录表 学期ID
+      ,l.ZCID as l_DYPJXSPFJL_ZCID--德育评价学生评分记录表 周次ID
+      ,l.JSID as l_DYPJXSPFJL_JSID--德育评价学生评分记录表 教师ID
+      ,l.BJID as l_DYPJXSPFJL_BJID--德育评价学生评分记录表 班级ID
+      ,l.XSID as l_DYPJXSPFJL_XSID--德育评价学生评分记录表 学生ID
+      ,l.DLID as l_DYPJXSPFJL_DLID--德育评价学生评分记录表 大类ID
+      ,l.XLID as l_DYPJXSPFJL_XLID--德育评价学生评分记录表 小类ID
+      ,l.SJ as l_DYPJXSPFJL_SJ--德育评价学生评分记录表 时间
+      ,l.FZ as l_DYPJXSPFJL_FZ--德育评价学生评分记录表 分值
+      ,l.BZ as l_DYPJXSPFJL_BZ--德育评价学生评分记录表 备注
+      ,l.ZT as l_DYPJXSPFJL_ZT--德育评价学生评分记录表 状态
+      ,l.TJSJ as l_DYPJXSPFJL_TJSJ--德育评价学生评分记录表 添加时间
+      ,l.SCZT as l_DYPJXSPFJL_SCZT--德育评价学生评分记录表 删除状态
+      ,l.SCJSID as l_DYPJXSPFJL_SCJSID--德育评价学生评分记录表 删除教师ID
+      ,l.SCSJ as l_DYPJXSPFJL_SCSJ--德育评价学生评分记录表 删除时间
 
 FROM dbo.EDU_ZZXS_25_A03_DYPJBJPFJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -361,6 +378,7 @@ FROM dbo.EDU_ZZXS_25_A03_DYPJBJPFJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS i ON a.XFSQJSID = i.ID /*销分申请教师ID*/ AND a.SCHOOLID = i.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS j ON a.XFCLJSID = j.ID /*销分处理教师ID*/ AND a.SCHOOLID = j.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS k ON a.SCJSID = k.ID /*删除教师ID*/ AND a.SCHOOLID = k.SCHOOLID /*学校*/ LEFT OUTER JOIN
+      dbo.EDU_ZZXS_25_A04_DYPJXSPFJL AS l ON a.GLXSPFJLID = l.ID /*关联学生评分记录ID*/ AND a.SCHOOLID = l.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [cb] ON c.XQM = [cb].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN

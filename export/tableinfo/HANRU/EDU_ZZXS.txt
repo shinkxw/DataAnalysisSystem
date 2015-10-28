@@ -721,6 +721,7 @@ EDU_ZZXS_25_A03_DYPJBJPFJL  德育评价班级评分记录表
   SCZT          删除状态                int            非主
   SCJSID        删除教师ID              int            非主        教职工基本数据子类表
   SCSJ          删除时间                datetime       非主
+  GLXSPFJLID    关联学生评分记录ID      int            非主        德育评价学生评分记录表
 
 EDU_ZZXS_25_A04_DYPJXSPFJL  德育评价学生评分记录表
   ID            编号                    int            主键
@@ -737,7 +738,6 @@ EDU_ZZXS_25_A04_DYPJXSPFJL  德育评价学生评分记录表
   BZ            备注                    nvarchar(500)  非主
   ZT            状态                    int            非主
   TJSJ          添加时间                datetime       非主
-  GLBJPFJLID    关联班级评分记录ID      int            非主        德育评价班级评分记录表
   SCZT          删除状态                int            非主
   SCJSID        删除教师ID              int            非主        教职工基本数据子类表
   SCSJ          删除时间                datetime       非主

@@ -1620,6 +1620,7 @@ CREATE TABLE [dbo].[EDU_ZZXS_25_A03_DYPJBJPFJL](
 	[SCZT]  int  NOT NULL,--删除状态
 	[SCJSID]  int  NOT NULL,--删除教师ID
 	[SCSJ]  datetime  NOT NULL,--删除时间
+	[GLXSPFJLID]  int  NOT NULL,--关联学生评分记录ID
 CONSTRAINT [PK_EDU_ZZXS_25_A03_DYPJBJPFJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -1647,7 +1648,6 @@ CREATE TABLE [dbo].[EDU_ZZXS_25_A04_DYPJXSPFJL](
 	[BZ]  nvarchar(500)  NOT NULL,--备注
 	[ZT]  int  NOT NULL,--状态
 	[TJSJ]  datetime  NOT NULL,--添加时间
-	[GLBJPFJLID]  int  NOT NULL,--关联班级评分记录ID
 	[SCZT]  int  NOT NULL,--删除状态
 	[SCJSID]  int  NOT NULL,--删除教师ID
 	[SCSJ]  datetime  NOT NULL,--删除时间
@@ -3099,6 +3099,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'删除教师ID' , 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'删除时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'SCSJ'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'关联学生评分记录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A03_DYPJBJPFJL', @level2type=N'COLUMN',@level2name=N'GLXSPFJLID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'德育评价学生评分记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -3128,8 +3130,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'ZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'TJSJ'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'关联班级评分记录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'GLBJPFJLID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'删除状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A04_DYPJXSPFJL', @level2type=N'COLUMN',@level2name=N'SCZT'
 GO

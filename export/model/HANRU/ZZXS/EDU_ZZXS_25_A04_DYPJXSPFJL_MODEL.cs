@@ -93,11 +93,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "关联班级评分记录")]
-            public Int32 GLBJPFJLID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "删除状态")]
             public Int32 SCZT { get; set; }
 

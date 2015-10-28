@@ -831,6 +831,7 @@
             <name="SCZT" exp="删除状态" type="int" />
             <name="SCJSID" exp="删除教师ID" type="int" />
             <name="SCSJ" exp="删除时间" type="datetime" />
+            <name="GLXSPFJLID" exp="关联学生评分记录ID" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZXS_25_A04_DYPJXSPFJL" exp="德育评价学生评分记录表">
@@ -849,7 +850,6 @@
             <name="BZ" exp="备注" type="nvarchar(500)" />
             <name="ZT" exp="状态" type="int" />
             <name="TJSJ" exp="添加时间" type="datetime" />
-            <name="GLBJPFJLID" exp="关联班级评分记录ID" type="int" />
             <name="SCZT" exp="删除状态" type="int" />
             <name="SCJSID" exp="删除教师ID" type="int" />
             <name="SCSJ" exp="删除时间" type="datetime" />
