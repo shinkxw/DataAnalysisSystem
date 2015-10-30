@@ -80,8 +80,10 @@ class DBEntity
   #判断表中是否有数据
   def has_data?(tn);query(Sql.get_tdata_num(tn))[''][0] > 0 end
   #删除所有视图
-  def delete_all_view
-    get_view_name_arr.each{|view_name| execute(Sql.delete_view(view_name))}
+  def delete_all_view(only_auto = true)
+    view_name_arr = get_view_name_arr
+    view_name_arr = view_name_arr.find_all{|vname| vname =~ /^VIEW_.+_DISP$/} if only_auto
+    view_name_arr.each{|view_name| execute(Sql.delete_view(view_name))}
   end
   #根据元数据建表
   def create_table(table);execute(Sql.create_table(table)) end
