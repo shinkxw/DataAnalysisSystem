@@ -3028,6 +3028,11 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XQID           EDU_ELE_01_XQ                      ID
   GLXSPFJLID     EDU_ZZXS_25_A04_DYPJXSPFJL         ID
+  BJID           EDU_ZZJX_02_02_ZZBJ                XZBDM
+  XSID           EDU_ZZXS_01_01_XSXX                ID
+  PFJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  TJJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
+  FSJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
 <EDU_ZZXX_01_01_ZZXX
   XXJBZM         EDU_JY_XXJYJGJBZ                   DM
   XXZGBMM        EDU_JY_XXJYJGJBZ                   DM

@@ -33773,12 +33773,16 @@ CREATE TABLE [dbo].[EDU_ZZXS_25_A11_DYPJDXJL](
 	[SCHOOLID]  int  NOT NULL,--学校ID
 	[XQID]  int  NOT NULL,--学期ID
 	[GLXSPFJLID]  int  NOT NULL,--关联学生评分记录ID
-	[FSDXMC]  nvarchar(50)  NOT NULL,--发送对象名称
+	[BJID]  nvarchar(10)  NOT NULL,--班级ID
+	[XSID]  int  NOT NULL,--学生ID
 	[DHHM]  nvarchar(20)  NOT NULL,--电话号码
 	[DXNR]  text  NOT NULL,--短信内容
+	[PFJSID]  int  NOT NULL,--评分教师ID
 	[TJSJ]  datetime  NOT NULL,--添加时间
-	[FSSJ]  datetime  NOT NULL,--发送时间
+	[TJJSID]  int  NOT NULL,--添加教师ID
 	[FSZT]  int  NOT NULL,--发送状态
+	[FSSJ]  datetime  NOT NULL,--发送时间
+	[FSJSID]  int  NOT NULL,--发送教师ID
 CONSTRAINT [PK_EDU_ZZXS_25_A11_DYPJDXJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -35238,17 +35242,25 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学期ID' , @lev
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'关联学生评分记录ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'GLXSPFJLID'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送对象名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'FSDXMC'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'BJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'XSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'电话号码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'DHHM'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'短信内容' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'DXNR'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'评分教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'PFJSID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'TJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'添加教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'TJJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'FSZT'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'FSSJ'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送状态' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'FSZT'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'发送教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZXS_25_A11_DYPJDXJL', @level2type=N'COLUMN',@level2name=N'FSJSID'
 GO
 --空间名：EDU_ZZXX  生成器：SqlBuilder0.1
 

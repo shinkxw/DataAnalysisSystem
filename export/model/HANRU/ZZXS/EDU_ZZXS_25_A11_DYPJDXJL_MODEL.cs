@@ -9,7 +9,7 @@ namespace HanRuEdu.LDAL
     {
         public EDU_ZZXS_25_A11_DYPJDXJL()
         {
-            FSDXMC = "";
+            BJID = "";
             DHHM = "";
             DXNR = "";
             TJSJ = DateTime.Now;
@@ -38,10 +38,15 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
-            [Display(Name = "发送对象名称")]
-            [StringLength(50)]
+            [Display(Name = "班级")]
+            [StringLength(10)]
             [DisplayFormat(ConvertEmptyStringToNull = false)]
-            public String FSDXMC { get; set; }
+            public String BJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "学生")]
+            public Int32 XSID { get; set; }
 
 
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
@@ -58,8 +63,23 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
+            [Display(Name = "评分教师")]
+            public Int32 PFJSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
             [Display(Name = "添加时间")]
             public DateTime TJSJ { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "添加教师")]
+            public Int32 TJJSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "发送状态")]
+            public Int32 FSZT { get; set; }
 
 
             [Required(ErrorMessage = "必填")]
@@ -68,8 +88,8 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "发送状态")]
-            public Int32 FSZT { get; set; }
+            [Display(Name = "发送教师")]
+            public Int32 FSJSID { get; set; }
 
 
         }

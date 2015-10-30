@@ -784,10 +784,14 @@ EDU_ZZXS_25_A11_DYPJDXJL  德育评价短信记录表
   SCHOOLID      学校ID                  int            非主        学校配置表
   XQID          学期ID                  int            非主        学期数据表
   GLXSPFJLID    关联学生评分记录ID      int            非主        德育评价学生评分记录表
-  FSDXMC        发送对象名称            nvarchar(50)   非主
+  BJID          班级ID                  nvarchar(10)   非主        学校班级数据表
+  XSID          学生ID                  int            非主        学生信息数据表
   DHHM          电话号码                nvarchar(20)   非主
   DXNR          短信内容                text           非主
+  PFJSID        评分教师ID              int            非主        教职工基本数据子类表
   TJSJ          添加时间                datetime       非主
-  FSSJ          发送时间                datetime       非主
+  TJJSID        添加教师ID              int            非主        教职工基本数据子类表
   FSZT          发送状态                int            非主
+  FSSJ          发送时间                datetime       非主
+  FSJSID        发送教师ID              int            非主        教职工基本数据子类表
 

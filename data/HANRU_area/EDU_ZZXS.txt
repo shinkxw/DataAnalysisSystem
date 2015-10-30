@@ -906,12 +906,16 @@
             <name="SCHOOLID" exp="学校ID" type="int" />
             <name="XQID" exp="学期ID" type="int" />
             <name="GLXSPFJLID" exp="关联学生评分记录ID" type="int" />
-            <name="FSDXMC" exp="发送对象名称" type="nvarchar(50)" />
+            <name="BJID" exp="班级ID" type="nvarchar(10)" />
+            <name="XSID" exp="学生ID" type="int" />
             <name="DHHM" exp="电话号码" type="nvarchar(20)" />
             <name="DXNR" exp="短信内容" type="text" />
+            <name="PFJSID" exp="评分教师ID" type="int" />
             <name="TJSJ" exp="添加时间" type="datetime" />
-            <name="FSSJ" exp="发送时间" type="datetime" />
+            <name="TJJSID" exp="添加教师ID" type="int" />
             <name="FSZT" exp="发送状态" type="int" />
+            <name="FSSJ" exp="发送时间" type="datetime" />
+            <name="FSJSID" exp="发送教师ID" type="int" />
         </field_area>
     </table>
 </namespace>
