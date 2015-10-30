@@ -155,6 +155,9 @@ SELECT a.[ID]--编号
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,h.PersonalCard1 as h_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,h.PersonalCard2 as h_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,h.PersonalCard3 as h_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
 
 FROM dbo.EDU_ZZJX_04_A03_JCLYJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

@@ -46,6 +46,9 @@ SELECT a.[ID]--编号
       ,a.[JSTXH]--即时通讯号
       ,a.[JSKQJS]--教师考勤角色
       ,a.[TeacherGroupId]--表TeacherGroup的外键
+      ,a.[PersonalCard1]--个人卡1
+      ,a.[PersonalCard2]--个人卡2
+      ,a.[PersonalCard3]--个人卡3
       ,c.MC as c_SFZJLX_MC--身份证件类型代码表 名称
       ,d.MC as d_RDXB_MC--人的性别代码 名称
       ,e.MZMC as e_ZGGMZMCDLMZMPXF_MZMC--中国各民族名称的罗马字母拼写法和代码 民族名称

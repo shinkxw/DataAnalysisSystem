@@ -111,6 +111,9 @@ SELECT a.[ID]--编号
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,e.PersonalCard1 as e_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,e.PersonalCard2 as e_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,e.PersonalCard3 as e_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,f.SCHOOLID as f_ZZBJ_SCHOOLID--学校班级数据表 学校名
       ,f.ZYXXID as f_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
       ,f.ZZNJID as f_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
@@ -211,6 +214,9 @@ SELECT a.[ID]--编号
       ,i.JSTXH as i_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,i.JSKQJS as i_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,i.TeacherGroupId as i_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,i.PersonalCard1 as i_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,i.PersonalCard2 as i_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,i.PersonalCard3 as i_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,j.SCHOOLID as j_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,j.GH as j_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,j.XM as j_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -281,6 +287,9 @@ SELECT a.[ID]--编号
       ,j.JSTXH as j_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,j.JSKQJS as j_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,j.TeacherGroupId as j_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,j.PersonalCard1 as j_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,j.PersonalCard2 as j_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,j.PersonalCard3 as j_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,k.SCHOOLID as k_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,k.GH as k_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,k.XM as k_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -351,6 +360,9 @@ SELECT a.[ID]--编号
       ,k.JSTXH as k_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,k.JSKQJS as k_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,k.TeacherGroupId as k_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,k.PersonalCard1 as k_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,k.PersonalCard2 as k_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,k.PersonalCard3 as k_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,l.SCHOOLID as l_DYPJXSPFJL_SCHOOLID--德育评价学生评分记录表 学校
       ,l.XQID as l_DYPJXSPFJL_XQID--德育评价学生评分记录表 学期ID
       ,l.ZCID as l_DYPJXSPFJL_ZCID--德育评价学生评分记录表 周次ID

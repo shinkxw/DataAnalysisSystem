@@ -97,6 +97,9 @@ SELECT a.[ID]--编号
       ,e.JSTXH as e_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,e.JSKQJS as e_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,e.TeacherGroupId as e_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,e.PersonalCard1 as e_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,e.PersonalCard2 as e_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,e.PersonalCard3 as e_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,f.SCHOOLID as f_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,f.GH as f_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,f.XM as f_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -167,6 +170,9 @@ SELECT a.[ID]--编号
       ,f.JSTXH as f_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,f.JSKQJS as f_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,f.TeacherGroupId as f_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,f.PersonalCard1 as f_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,f.PersonalCard2 as f_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,f.PersonalCard3 as f_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
 
 FROM dbo.EDU_ZZJG_17_A02_DFSJJL AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

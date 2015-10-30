@@ -177,6 +177,9 @@ SELECT a.[ID]--编号
       ,g.JSTXH as g_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,g.JSKQJS as g_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,g.TeacherGroupId as g_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,g.PersonalCard1 as g_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,g.PersonalCard2 as g_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,g.PersonalCard3 as g_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,h.SCHOOLID as h_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,h.GH as h_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,h.XM as h_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -247,6 +250,9 @@ SELECT a.[ID]--编号
       ,h.JSTXH as h_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,h.JSKQJS as h_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,h.TeacherGroupId as h_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,h.PersonalCard1 as h_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,h.PersonalCard2 as h_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,h.PersonalCard3 as h_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,i.SCHOOLID as i_JXJHKCQD_SCHOOLID--教学计划课程清单数据子类表 学校ID
       ,i.JXJHID as i_JXJHKCQD_JXJHID--教学计划课程清单数据子类表 教学计划ID
       ,i.KCH as i_JXJHKCQD_KCH--教学计划课程清单数据子类表 课程号
@@ -387,6 +393,9 @@ SELECT a.[ID]--编号
       ,n.JSTXH as n_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,n.JSKQJS as n_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,n.TeacherGroupId as n_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,n.PersonalCard1 as n_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,n.PersonalCard2 as n_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,n.PersonalCard3 as n_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,o.SCHOOLID as o_EXAM_SCHOOLID--考试表 学校
       ,o.Name as o_EXAM_Name--考试表 考试名称
       ,o.CJKSKMLM as o_EXAM_CJKSKMLM--考试表 参加考试科目列表

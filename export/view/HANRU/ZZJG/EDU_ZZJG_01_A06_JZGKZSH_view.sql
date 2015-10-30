@@ -103,6 +103,9 @@ SELECT a.[JZGJBSJID]--教工基本信息ID
       ,b.JSTXH as b_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,b.JSKQJS as b_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,b.TeacherGroupId as b_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,b.PersonalCard1 as b_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,b.PersonalCard2 as b_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,b.PersonalCard3 as b_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
 
 FROM dbo.EDU_ZZJG_01_A06_JZGKZSH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS b ON a.JZGJBSJID = b.ID /*教工基本信息ID*/ AND a.SCHOOLID = b.SCHOOLID /*学校ID*/ LEFT OUTER JOIN

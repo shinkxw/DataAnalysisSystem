@@ -462,6 +462,9 @@ CREATE TABLE [dbo].[EDU_ZZJG_01_01_JZGJBSJ](
 	[JSTXH]  nvarchar(40)  NULL,--即时通讯号
 	[JSKQJS]  nvarchar(50)  NOT NULL,--教师考勤角色
 	[TeacherGroupId]  int  NOT NULL,--表TeacherGroup的外键
+	[PersonalCard1]  nvarchar(50)  NULL,--个人卡1
+	[PersonalCard2]  nvarchar(50)  NULL,--个人卡2
+	[PersonalCard3]  nvarchar(50)  NULL,--个人卡3
 CONSTRAINT [PK_EDU_ZZJG_01_01_JZGJBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2267,6 +2270,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教师考勤角色' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'JSKQJS'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'表TeacherGroup的外键' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'TeacherGroupId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人卡1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'PersonalCard1'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人卡2' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'PersonalCard2'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'个人卡3' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_01_JZGJBSJ', @level2type=N'COLUMN',@level2name=N'PersonalCard3'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'教职工扩展表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJG_01_A01_JZGKZ'
 GO

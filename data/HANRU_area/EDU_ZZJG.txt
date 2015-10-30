@@ -46,6 +46,9 @@
             <name="JSTXH" exp="即时通讯号" type="nvarchar(40)" null="T" />
             <name="JSKQJS" exp="教师考勤角色" type="nvarchar(50)" default="'教师'" />
             <name="TeacherGroupId" exp="表TeacherGroup的外键" type="int" />
+            <name="PersonalCard1" exp="个人卡1" type="nvarchar(50)" null="T" />
+            <name="PersonalCard2" exp="个人卡2" type="nvarchar(50)" null="T" />
+            <name="PersonalCard3" exp="个人卡3" type="nvarchar(50)" null="T" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_01_A01_JZGKZ" exp="教职工扩展表">

@@ -82,6 +82,9 @@ SELECT a.[SCHOOLID]--学校名
       ,c.JSTXH as c_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,c.JSKQJS as c_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,c.TeacherGroupId as c_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,c.PersonalCard1 as c_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,c.PersonalCard2 as c_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,c.PersonalCard3 as c_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,d.MC as d_SFBZ_MC--是否标志代码表 名称
       ,e.SCHOOLID as e_ZSDJ_SCHOOLID--证书等级表 学校
       ,e.DJMC as e_ZSDJ_DJMC--证书等级表 等级名称

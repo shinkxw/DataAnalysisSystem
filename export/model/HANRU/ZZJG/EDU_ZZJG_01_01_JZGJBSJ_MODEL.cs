@@ -327,6 +327,24 @@ namespace HanRuEdu.LDAL
             public Int32 TeacherGroupId { get; set; }
 
 
+            [Display(Name = "个人卡1")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PersonalCard1 { get; set; }
+
+
+            [Display(Name = "个人卡2")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PersonalCard2 { get; set; }
+
+
+            [Display(Name = "个人卡3")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String PersonalCard3 { get; set; }
+
+
         }
     }
 }

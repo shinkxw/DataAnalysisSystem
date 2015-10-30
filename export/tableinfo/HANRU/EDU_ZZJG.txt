@@ -44,6 +44,9 @@ EDU_ZZJG_01_01_JZGJBSJ  教职工基本数据子类表
   JSTXH         即时通讯号              nvarchar(40)   非主
   JSKQJS        教师考勤角色            nvarchar(50)   非主
   TeacherGroupId表TeacherGroup的外键    int            非主
+  PersonalCard1 个人卡1                 nvarchar(50)   非主
+  PersonalCard2 个人卡2                 nvarchar(50)   非主
+  PersonalCard3 个人卡3                 nvarchar(50)   非主
 
 EDU_ZZJG_01_A01_JZGKZ  教职工扩展表
   JZGJBSJID     教工基本信息ID          int            主键        教职工基本数据子类表

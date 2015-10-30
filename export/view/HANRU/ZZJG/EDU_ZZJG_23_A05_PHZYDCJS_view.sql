@@ -93,6 +93,9 @@ SELECT a.[ID]--编号
       ,d.JSTXH as d_JZGJBSJ_JSTXH--教职工基本数据子类表 即时通讯号
       ,d.JSKQJS as d_JZGJBSJ_JSKQJS--教职工基本数据子类表 教师考勤角色
       ,d.TeacherGroupId as d_JZGJBSJ_TeacherGroupId--教职工基本数据子类表 表TeacherGroup的外键
+      ,d.PersonalCard1 as d_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
+      ,d.PersonalCard2 as d_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
+      ,d.PersonalCard3 as d_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
       ,e.SCHOOLID as e_PHZYDCMC_SCHOOLID--平湖职业调查名称表 学校
       ,e.DCMC as e_PHZYDCMC_DCMC--平湖职业调查名称表 调查名称
       ,e.BZ as e_PHZYDCMC_BZ--平湖职业调查名称表 备注
