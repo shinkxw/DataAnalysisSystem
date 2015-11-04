@@ -951,6 +951,7 @@ CREATE TABLE [dbo].[EDU_ZXJX_36_A03_JSQJXX](
 	[SQSJ]  datetime  NOT NULL,--申请时间
 	[BZ]  text  NOT NULL,--备注
 	[SHRID]  nvarchar(20)  NOT NULL,--审核人ID
+	[SHSJ]  datetime  NOT NULL,--审核时间
 CONSTRAINT [PK_EDU_ZXJX_36_A03_JSQJXX] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -2311,6 +2312,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'备注' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_36_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'BZ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_36_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'SHRID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'审核时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_36_A03_JSQJXX', @level2type=N'COLUMN',@level2name=N'SHSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'需排课列表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZXJX_36_A04_XPKLB'
 GO

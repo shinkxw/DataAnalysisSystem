@@ -375,6 +375,7 @@
             <name="SQSJ" exp="申请时间" type="datetime" />
             <name="BZ" exp="备注" type="text" />
             <name="SHRID" exp="审核人ID" type="nvarchar(20)" />
+            <name="SHSJ" exp="审核时间" type="datetime" />
         </field_area>
     </table>
     <table name="EDU_ZXJX_36_A04_XPKLB" exp="需排课列表">

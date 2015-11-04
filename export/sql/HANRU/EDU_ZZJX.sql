@@ -1056,6 +1056,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_09_A01_TKSQSJ](
 	[BZ]  text  NOT NULL,--备注
 	[SQSJ]  datetime  NOT NULL,--申请时间
 	[JSJSID]  int  NOT NULL,--接收教师ID
+	[TKBJID]  nvarchar(10)  NOT NULL,--调课班级ID
+	[KCMC]  nvarchar(200)  NOT NULL,--课程名称
 CONSTRAINT [PK_EDU_ZZJX_09_A01_TKSQSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -3801,6 +3803,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'申请时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_09_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'SQSJ'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'接收教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_09_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'JSJSID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'调课班级ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_09_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'TKBJID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_09_A01_TKSQSJ', @level2type=N'COLUMN',@level2name=N'KCMC'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'论文数据表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_10_A01_LWSJ'
 GO

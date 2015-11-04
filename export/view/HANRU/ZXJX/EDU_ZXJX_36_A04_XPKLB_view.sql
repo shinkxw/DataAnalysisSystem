@@ -26,6 +26,7 @@ SELECT a.[ID]--编号
       ,c.SQSJ as c_JSQJXX_SQSJ--教师请假信息表 申请时间
       ,c.BZ as c_JSQJXX_BZ--教师请假信息表 备注
       ,c.SHRID as c_JSQJXX_SHRID--教师请假信息表 审核人ID
+      ,c.SHSJ as c_JSQJXX_SHSJ--教师请假信息表 审核时间
       ,d.SCHOOLID as d_PKJGJL_SCHOOLID--排课结果记录表 学校名
       ,d.XQID as d_PKJGJL_XQID--排课结果记录表 学期ID
       ,d.TEACHERID as d_PKJGJL_TEACHERID--排课结果记录表 老师

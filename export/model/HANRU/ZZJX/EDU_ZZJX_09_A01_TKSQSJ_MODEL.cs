@@ -12,6 +12,8 @@ namespace HanRuEdu.LDAL
             KCID = "";
             BZ = "";
             SQSJ = DateTime.Now;
+            TKBJID = "";
+            KCMC = "";
         }
         public class EDU_ZZJX_09_A01_TKSQSJ_metadata
         {
@@ -111,6 +113,20 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "接收教师")]
             public Int32 JSJSID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "调课班级")]
+            [StringLength(10)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String TKBJID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "课程名称")]
+            [StringLength(200)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCMC { get; set; }
 
 
         }

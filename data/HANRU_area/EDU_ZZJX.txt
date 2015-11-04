@@ -290,6 +290,8 @@
             <name="BZ" exp="备注" type="text" />
             <name="SQSJ" exp="申请时间" type="datetime" />
             <name="JSJSID" exp="接收教师ID" type="int" />
+            <name="TKBJID" exp="调课班级ID" type="nvarchar(10)" />
+            <name="KCMC" exp="课程名称" type="nvarchar(200)" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_10_A01_LWSJ" exp="论文数据表">

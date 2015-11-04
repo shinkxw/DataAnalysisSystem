@@ -13498,6 +13498,7 @@ SELECT a.[ID]--编号
       ,a.[SQSJ]--申请时间
       ,a.[BZ]--备注
       ,a.[SHRID]--审核人ID
+      ,a.[SHSJ]--审核时间
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -13672,6 +13673,7 @@ SELECT a.[ID]--编号
       ,c.SQSJ as c_JSQJXX_SQSJ--教师请假信息表 申请时间
       ,c.BZ as c_JSQJXX_BZ--教师请假信息表 备注
       ,c.SHRID as c_JSQJXX_SHRID--教师请假信息表 审核人ID
+      ,c.SHSJ as c_JSQJXX_SHSJ--教师请假信息表 审核时间
       ,d.SCHOOLID as d_PKJGJL_SCHOOLID--排课结果记录表 学校名
       ,d.XQID as d_PKJGJL_XQID--排课结果记录表 学期ID
       ,d.TEACHERID as d_PKJGJL_TEACHERID--排课结果记录表 老师
@@ -35068,6 +35070,8 @@ SELECT a.[ID]--编号
       ,a.[BZ]--备注
       ,a.[SQSJ]--申请时间
       ,a.[JSJSID]--接收教师ID
+      ,a.[TKBJID]--调课班级ID
+      ,a.[KCMC]--课程名称
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -35278,6 +35282,23 @@ SELECT a.[ID]--编号
       ,p.PersonalCard1 as p_JZGJBSJ_PersonalCard1--教职工基本数据子类表 个人卡1
       ,p.PersonalCard2 as p_JZGJBSJ_PersonalCard2--教职工基本数据子类表 个人卡2
       ,p.PersonalCard3 as p_JZGJBSJ_PersonalCard3--教职工基本数据子类表 个人卡3
+      ,q.SCHOOLID as q_ZZBJ_SCHOOLID--学校班级数据表 学校名
+      ,q.ZYXXID as q_ZZBJ_ZYXXID--学校班级数据表 专业基本信息
+      ,q.ZZNJID as q_ZZBJ_ZZNJID--学校班级数据表 学校年级数据表
+      ,q.XZBMC as q_ZZBJ_XZBMC--学校班级数据表 行政班名称
+      ,q.JBNY as q_ZZBJ_JBNY--学校班级数据表 建班年月
+      ,q.BZRGH as q_ZZBJ_BZRGH--学校班级数据表 班主任工号
+      ,q.JSBH as q_ZZBJ_JSBH--学校班级数据表 教室编号
+      ,q.NANSRS as q_ZZBJ_NANSRS--学校班级数据表 男生人数
+      ,q.NVSRS as q_ZZBJ_NVSRS--学校班级数据表 女生人数
+      ,q.ZRS as q_ZZBJ_ZRS--学校班级数据表 总人数
+      ,q.BZXH as q_ZZBJ_BZXH--学校班级数据表 班长学号
+      ,q.JXJH as q_ZZBJ_JXJH--学校班级数据表 教学计划
+      ,q.JGH as q_ZZBJ_JGH--学校班级数据表 机构号
+      ,q.XQDM as q_ZZBJ_XQDM--学校班级数据表 校区代码
+      ,q.BZRID as q_ZZBJ_BZRID--学校班级数据表 班主任ID
+      ,q.PLSX as q_ZZBJ_PLSX--学校班级数据表 排列顺序
+      ,q.ID as q_ZZBJ_ID--学校班级数据表 表Record外键
 
 FROM dbo.EDU_ZZJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS c ON a.JSID = c.ID /*教师*/ AND a.SCHOOLID = c.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
@@ -35294,6 +35315,7 @@ FROM dbo.EDU_ZZJX_09_A01_TKSQSJ AS a LEFT OUTER JOIN
       dbo.EDU_ELE_05_SD AS n ON a.TKHSD = n.ID /*调课后时段*/ AND a.SCHOOLID = n.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_05_JC AS o ON a.TKHJC = o.ID /*调课后节次*/ AND a.SCHOOLID = o.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS p ON a.JSJSID = p.ID /*接收教师ID*/ AND a.SCHOOLID = p.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_02_02_ZZBJ AS q ON a.TKBJID = q.XZBDM /*调课班级ID*/ AND a.SCHOOLID = q.SCHOOLID /*学校ID*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [cb] ON c.SFZJLXM = [cb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [cc] ON c.XBM = [cc].DM /*性别码*/ LEFT OUTER JOIN
       dbo.EDU_GB_ZGGMZMCDLMZMPXF AS [cd] ON c.MZM = [cd].DM /*民族码*/ LEFT OUTER JOIN
