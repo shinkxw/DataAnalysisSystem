@@ -40645,6 +40645,8 @@ SELECT a.[ID]--编号
       ,a.[XFLY]--销分理由
       ,a.[XFSPJSID]--销分审批教师ID
       ,a.[XFSPSJ]--销分审批时间
+      ,a.[KCLX]--课程类型
+      ,a.[KCID]--课程ID
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名

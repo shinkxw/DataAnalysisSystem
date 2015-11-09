@@ -28768,6 +28768,8 @@ CREATE TABLE [dbo].[EDU_ZZJX_52_A03_XYPJPFJL](
 	[XFLY]  nvarchar(500)  NOT NULL,--销分理由
 	[XFSPJSID]  int  NOT NULL,--销分审批教师ID
 	[XFSPSJ]  datetime  NOT NULL,--销分审批时间
+	[KCLX]  int  NOT NULL,--课程类型
+	[KCID]  int  NOT NULL,--课程ID
 CONSTRAINT [PK_EDU_ZZJX_52_A03_XYPJPFJL] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -31383,6 +31385,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分审批教师ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_52_A03_XYPJPFJL', @level2type=N'COLUMN',@level2name=N'XFSPJSID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'销分审批时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_52_A03_XYPJPFJL', @level2type=N'COLUMN',@level2name=N'XFSPSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_52_A03_XYPJPFJL', @level2type=N'COLUMN',@level2name=N'KCLX'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_52_A03_XYPJPFJL', @level2type=N'COLUMN',@level2name=N'KCID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分制信息表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A01_FZXX'
 GO

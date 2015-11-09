@@ -108,6 +108,16 @@ namespace HanRuEdu.LDAL
             public DateTime XFSPSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程类型")]
+            public Int32 KCLX { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程")]
+            public Int32 KCID { get; set; }
+
+
         }
     }
 }
