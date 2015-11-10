@@ -15,6 +15,7 @@ namespace HanRuEdu.LDAL
             XFSQSJ = DateTime.Now;
             XFLY = "";
             XFSPSJ = DateTime.Now;
+            KCMC = "";
         }
         public class EDU_ZZJX_52_A03_XYPJPFJL_metadata
         {
@@ -116,6 +117,13 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "课程")]
             public Int32 KCID { get; set; }
+
+
+            [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
+            [Display(Name = "课程名称")]
+            [StringLength(50)]
+            [DisplayFormat(ConvertEmptyStringToNull = false)]
+            public String KCMC { get; set; }
 
 
         }

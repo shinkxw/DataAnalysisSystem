@@ -1202,6 +1202,7 @@
             <name="XFSPSJ" exp="销分审批时间" type="datetime" />
             <name="KCLX" exp="课程类型" type="int" />
             <name="KCID" exp="课程ID" type="int" />
+            <name="KCMC" exp="课程名称" type="nvarchar(50)" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A01_FZXX" exp="分制信息表">
