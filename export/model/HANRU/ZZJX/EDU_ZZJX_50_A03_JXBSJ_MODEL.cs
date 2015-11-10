@@ -182,6 +182,11 @@ namespace HanRuEdu.LDAL
             public Int32 KGZT { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "是否限选课")]
+            public Int32 SFXXK { get; set; }
+
+
         }
     }
 }

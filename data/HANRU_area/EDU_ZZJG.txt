@@ -915,6 +915,7 @@
             <name="SCHOOLID" exp="学校" type="int" />
             <name="JGID" exp="教工ID" type="int" />
             <name="KQSJ" exp="考勤时间" type="datetime" />
+            <name="JCH" exp="进出号" type="int" default="1" />
         </field_area>
     </table>
     <table name="EDU_ZZJG_25_A01_CWYJFLKM" exp="财务一级分类科目表">

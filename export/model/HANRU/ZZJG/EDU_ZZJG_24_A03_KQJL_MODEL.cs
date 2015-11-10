@@ -33,6 +33,11 @@ namespace HanRuEdu.LDAL
             public DateTime KQSJ { get; set; }
 
 
+            [Required(ErrorMessage = "±ØÌî")]
+            [Display(Name = "½ø³öºÅ")]
+            public Int32 JCH { get; set; }
+
+
         }
     }
 }

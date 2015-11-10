@@ -30,6 +30,7 @@ SELECT a.[ID]--编号
       ,a.[DJL]--点击量
       ,a.[SBZT]--上报状态
       ,a.[KGZT]--开关状态
+      ,a.[SFXXK]--是否限选课
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介

@@ -85,6 +85,7 @@ SELECT a.[ID]--编号
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
+      ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

@@ -6,6 +6,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[JGID]--教工ID
       ,a.[KQSJ]--考勤时间
+      ,a.[JCH]--进出号
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名

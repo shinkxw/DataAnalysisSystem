@@ -32774,6 +32774,7 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[JGID]--教工ID
       ,a.[KQSJ]--考勤时间
+      ,a.[JCH]--进出号
       ,c.SCHOOLID as c_JZGJBSJ_SCHOOLID--教职工基本数据子类表 学校名
       ,c.GH as c_JZGJBSJ_GH--教职工基本数据子类表 工号
       ,c.XM as c_JZGJBSJ_XM--教职工基本数据子类表 姓名
@@ -39505,6 +39506,7 @@ SELECT a.[ID]--编号
       ,a.[DJL]--点击量
       ,a.[SBZT]--上报状态
       ,a.[KGZT]--开关状态
+      ,a.[SFXXK]--是否限选课
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介
@@ -39709,6 +39711,7 @@ SELECT a.[ID]--编号
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
+      ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39817,6 +39820,7 @@ SELECT a.[ID]--编号
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
+      ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
 
 FROM dbo.EDU_ZZJX_50_A05_XSXXKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39874,6 +39878,7 @@ SELECT a.[ID]--编号
       ,c.DJL as c_JXBSJ_DJL--教学班数据表 点击量
       ,c.SBZT as c_JXBSJ_SBZT--教学班数据表 上报状态
       ,c.KGZT as c_JXBSJ_KGZT--教学班数据表 开关状态
+      ,c.SFXXK as c_JXBSJ_SFXXK--教学班数据表 是否限选课
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -40112,6 +40117,7 @@ SELECT a.[ID]--编号
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
+      ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
@@ -40315,6 +40321,7 @@ SELECT a.[ID]--编号
       ,d.DJL as d_JXBSJ_DJL--教学班数据表 点击量
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
+      ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
