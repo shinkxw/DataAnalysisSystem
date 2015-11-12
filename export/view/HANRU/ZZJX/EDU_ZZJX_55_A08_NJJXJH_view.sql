@@ -49,7 +49,6 @@ SELECT a.[ID]--编号
       ,f.SCHOOLID as f_ZYKCK_SCHOOLID--专业课程库表 学校
       ,f.ZYID as f_ZYKCK_ZYID--专业课程库表 专业ID
       ,f.FZXXID as f_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,f.KCPFLXID as f_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,f.KCBH as f_ZYKCK_KCBH--专业课程库表 课程名称
       ,f.ZXF as f_ZYKCK_ZXF--专业课程库表 总学分
       ,f.ZXS as f_ZYKCK_ZXS--专业课程库表 总学时
@@ -59,6 +58,7 @@ SELECT a.[ID]--编号
       ,f.JXDG as f_ZYKCK_JXDG--专业课程库表 教学大纲
       ,f.SFSY as f_ZYKCK_SFSY--专业课程库表 是否使用
       ,f.CourseGroupId as f_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,f.KCLX as f_ZYKCK_KCLX--专业课程库表 课程类型
 
 FROM dbo.EDU_ZZJX_55_A08_NJJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN

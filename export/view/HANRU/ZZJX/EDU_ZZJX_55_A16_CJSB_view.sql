@@ -8,6 +8,7 @@ SELECT a.[ID]--编号
       ,a.[XQID]--学期ID
       ,a.[SBRID]--上报人ID
       ,a.[SBSJ]--上报时间
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

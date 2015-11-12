@@ -2620,12 +2620,8 @@
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   ZYID           EDU_ZZJX_01_01_ZYXX                ZYBH
   FZXXID         EDU_ZZJX_55_A01_FZXX               ID
-  KCPFLXID       EDU_ZZJX_55_A05_KCPFLX             ID
-<EDU_ZZJX_55_A05_KCPFLX
-  SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
 <EDU_ZZJX_55_A06_KCPFXM
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
-  LXID           EDU_ZZJX_55_A05_KCPFLX             ID
   FXMID          EDU_ZZJX_55_A06_KCPFXM             ID
 <EDU_ZZJX_55_A07_ZYJXJH
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID

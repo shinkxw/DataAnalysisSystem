@@ -37,11 +37,6 @@ namespace HanRuEdu.LDAL
             public Int32 FZXXID { get; set; }
 
 
-            [Required(ErrorMessage = "必填")]
-            [Display(Name = "课程评分类型")]
-            public Int32 KCPFLXID { get; set; }
-
-
             [Required(ErrorMessage = "必填",AllowEmptyStrings = true)]
             [Display(Name = "课程名称")]
             [StringLength(20)]
@@ -95,6 +90,11 @@ namespace HanRuEdu.LDAL
             [Required(ErrorMessage = "必填")]
             [Display(Name = "表CourseGroup的外键")]
             public Int32 CourseGroupId { get; set; }
+
+
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程类型")]
+            public Int32 KCLX { get; set; }
 
 
         }

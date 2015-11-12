@@ -7,8 +7,8 @@ SELECT a.[ID]--编号
       ,a.[JXJHID]--教学计划表ID
       ,a.[KCPFXMID]--课程评分项目表ID
       ,a.[BL]--比例
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_KCPFXM_SCHOOLID--课程评分项目表 学校
-      ,c.LXID as c_KCPFXM_LXID--课程评分项目表 类型ID
       ,c.FXMID as c_KCPFXM_FXMID--课程评分项目表 父项目ID
       ,c.XMMC as c_KCPFXM_XMMC--课程评分项目表 项目名称
       ,c.SFYZXM as c_KCPFXM_SFYZXM--课程评分项目表 是否有子项目

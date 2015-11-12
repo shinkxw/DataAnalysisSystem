@@ -41087,7 +41087,6 @@ SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
       ,a.[ZYID]--专业ID
       ,a.[FZXXID]--分制信息ID
-      ,a.[KCPFLXID]--课程评分类型ID
       ,a.[KCBH]--课程名称
       ,a.[ZXF]--总学分
       ,a.[ZXS]--总学时
@@ -41097,6 +41096,7 @@ SELECT a.[ID]--编号
       ,a.[JXDG]--教学大纲
       ,a.[SFSY]--是否使用
       ,a.[CourseGroupId]--表CourseGroup的外键
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_ZYXX_SCHOOLID--专业基本信息数据表 学校名
       ,c.ZYDM as c_ZYXX_ZYDM--专业基本信息数据表 专业代码
       ,[cb].ZYMLLB as c_ZYXX_ZYDM_ZYMLLB--自建专业代码 专业目录类别
@@ -41128,13 +41128,10 @@ SELECT a.[ID]--编号
       ,d.MKF as d_FZXX_MKF--分制信息表 免考对应分
       ,d.XFPDBIDLB as d_FZXX_XFPDBIDLB--分制信息表 学分评定表ID列表
       ,d.JDPDBIDLB as d_FZXX_JDPDBIDLB--分制信息表 绩点评定表ID列表
-      ,e.SCHOOLID as e_KCPFLX_SCHOOLID--课程评分类型表 学校
-      ,e.LXMC as e_KCPFLX_LXMC--课程评分类型表 类型名称
 
 FROM dbo.EDU_ZZJX_55_A04_ZYKCK AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYID = c.ZYBH /*专业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_55_A01_FZXX AS d ON a.FZXXID = d.ID /*分制信息ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_55_A05_KCPFLX AS e ON a.KCPFLXID = e.ID /*课程评分类型ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZJZY AS [cb] ON c.ZYDM = [cb].DM /*专业代码*/ AND c.SSZYML = [cb].ZYMLLB /*所属专业目录*/ LEFT OUTER JOIN
       dbo.EDU_ZJ_ZYML AS [cc] ON c.SSZYML = [cc].DM /*所属专业目录*/
 GO
@@ -41144,7 +41141,6 @@ CREATE VIEW [dbo].[VIEW_EDU_ZZJX_55_A06_KCPFXM_DISP]
 AS
 SELECT a.[ID]--编号
       ,a.[SCHOOLID]--学校
-      ,a.[LXID]--类型ID
       ,a.[FXMID]--父项目ID
       ,a.[XMMC]--项目名称
       ,a.[SFYZXM]--是否有子项目
@@ -41154,23 +41150,19 @@ SELECT a.[ID]--编号
       ,a.[XGXX]--修改下限
       ,a.[LY]--来源
       ,a.[PLSX]--排列顺序
-      ,c.SCHOOLID as c_KCPFLX_SCHOOLID--课程评分类型表 学校
-      ,c.LXMC as c_KCPFLX_LXMC--课程评分类型表 类型名称
-      ,d.SCHOOLID as d_KCPFXM_SCHOOLID--课程评分项目表 学校
-      ,d.LXID as d_KCPFXM_LXID--课程评分项目表 类型ID
-      ,d.FXMID as d_KCPFXM_FXMID--课程评分项目表 父项目ID
-      ,d.XMMC as d_KCPFXM_XMMC--课程评分项目表 项目名称
-      ,d.SFYZXM as d_KCPFXM_SFYZXM--课程评分项目表 是否有子项目
-      ,d.BL as d_KCPFXM_BL--课程评分项目表 比例
-      ,d.SFYXXG as d_KCPFXM_SFYXXG--课程评分项目表 是否允许修改
-      ,d.XGSX as d_KCPFXM_XGSX--课程评分项目表 修改上限
-      ,d.XGXX as d_KCPFXM_XGXX--课程评分项目表 修改下限
-      ,d.LY as d_KCPFXM_LY--课程评分项目表 来源
-      ,d.PLSX as d_KCPFXM_PLSX--课程评分项目表 排列顺序
+      ,c.SCHOOLID as c_KCPFXM_SCHOOLID--课程评分项目表 学校
+      ,c.FXMID as c_KCPFXM_FXMID--课程评分项目表 父项目ID
+      ,c.XMMC as c_KCPFXM_XMMC--课程评分项目表 项目名称
+      ,c.SFYZXM as c_KCPFXM_SFYZXM--课程评分项目表 是否有子项目
+      ,c.BL as c_KCPFXM_BL--课程评分项目表 比例
+      ,c.SFYXXG as c_KCPFXM_SFYXXG--课程评分项目表 是否允许修改
+      ,c.XGSX as c_KCPFXM_XGSX--课程评分项目表 修改上限
+      ,c.XGXX as c_KCPFXM_XGXX--课程评分项目表 修改下限
+      ,c.LY as c_KCPFXM_LY--课程评分项目表 来源
+      ,c.PLSX as c_KCPFXM_PLSX--课程评分项目表 排列顺序
 
 FROM dbo.EDU_ZZJX_55_A06_KCPFXM AS a LEFT OUTER JOIN
-      dbo.EDU_ZZJX_55_A05_KCPFLX AS c ON a.LXID = c.ID /*类型ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
-      dbo.EDU_ZZJX_55_A06_KCPFXM AS d ON a.FXMID = d.ID /*父项目ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/
+      dbo.EDU_ZZJX_55_A06_KCPFXM AS c ON a.FXMID = c.ID /*父项目ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/
 GO
 
 --专业教学计划表
@@ -41208,7 +41200,6 @@ SELECT a.[ID]--编号
       ,d.SCHOOLID as d_ZYKCK_SCHOOLID--专业课程库表 学校
       ,d.ZYID as d_ZYKCK_ZYID--专业课程库表 专业ID
       ,d.FZXXID as d_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,d.KCPFLXID as d_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,d.KCBH as d_ZYKCK_KCBH--专业课程库表 课程名称
       ,d.ZXF as d_ZYKCK_ZXF--专业课程库表 总学分
       ,d.ZXS as d_ZYKCK_ZXS--专业课程库表 总学时
@@ -41218,6 +41209,7 @@ SELECT a.[ID]--编号
       ,d.JXDG as d_ZYKCK_JXDG--专业课程库表 教学大纲
       ,d.SFSY as d_ZYKCK_SFSY--专业课程库表 是否使用
       ,d.CourseGroupId as d_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,d.KCLX as d_ZYKCK_KCLX--专业课程库表 课程类型
 
 FROM dbo.EDU_ZZJX_55_A07_ZYJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_01_01_ZYXX AS c ON a.ZYID = c.ZYBH /*专业ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -41276,7 +41268,6 @@ SELECT a.[ID]--编号
       ,f.SCHOOLID as f_ZYKCK_SCHOOLID--专业课程库表 学校
       ,f.ZYID as f_ZYKCK_ZYID--专业课程库表 专业ID
       ,f.FZXXID as f_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,f.KCPFLXID as f_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,f.KCBH as f_ZYKCK_KCBH--专业课程库表 课程名称
       ,f.ZXF as f_ZYKCK_ZXF--专业课程库表 总学分
       ,f.ZXS as f_ZYKCK_ZXS--专业课程库表 总学时
@@ -41286,6 +41277,7 @@ SELECT a.[ID]--编号
       ,f.JXDG as f_ZYKCK_JXDG--专业课程库表 教学大纲
       ,f.SFSY as f_ZYKCK_SFSY--专业课程库表 是否使用
       ,f.CourseGroupId as f_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,f.KCLX as f_ZYKCK_KCLX--专业课程库表 课程类型
 
 FROM dbo.EDU_ZZJX_55_A08_NJJXJH AS a LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS c ON a.XQID = c.ID /*学期ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -41311,6 +41303,7 @@ SELECT a.[ID]--编号
       ,a.[FZ]--分值
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -41328,7 +41321,6 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_ZYKCK_SCHOOLID--专业课程库表 学校
       ,e.ZYID as e_ZYKCK_ZYID--专业课程库表 专业ID
       ,e.FZXXID as e_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,e.KCPFLXID as e_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,e.KCBH as e_ZYKCK_KCBH--专业课程库表 课程名称
       ,e.ZXF as e_ZYKCK_ZXF--专业课程库表 总学分
       ,e.ZXS as e_ZYKCK_ZXS--专业课程库表 总学时
@@ -41338,6 +41330,7 @@ SELECT a.[ID]--编号
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,e.KCLX as e_ZYKCK_KCLX--专业课程库表 课程类型
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
       ,f.XM as f_XSXX_XM--学生信息数据表 姓名
@@ -41391,7 +41384,6 @@ SELECT a.[ID]--编号
       ,f.RXXQID as f_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,f.NFCKH as f_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,g.SCHOOLID as g_KCPFXM_SCHOOLID--课程评分项目表 学校
-      ,g.LXID as g_KCPFXM_LXID--课程评分项目表 类型ID
       ,g.FXMID as g_KCPFXM_FXMID--课程评分项目表 父项目ID
       ,g.XMMC as g_KCPFXM_XMMC--课程评分项目表 项目名称
       ,g.SFYZXM as g_KCPFXM_SFYZXM--课程评分项目表 是否有子项目
@@ -41476,7 +41468,6 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_ZYKCK_SCHOOLID--专业课程库表 学校
       ,e.ZYID as e_ZYKCK_ZYID--专业课程库表 专业ID
       ,e.FZXXID as e_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,e.KCPFLXID as e_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,e.KCBH as e_ZYKCK_KCBH--专业课程库表 课程名称
       ,e.ZXF as e_ZYKCK_ZXF--专业课程库表 总学分
       ,e.ZXS as e_ZYKCK_ZXS--专业课程库表 总学时
@@ -41486,6 +41477,7 @@ SELECT a.[ID]--编号
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,e.KCLX as e_ZYKCK_KCLX--专业课程库表 课程类型
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
       ,f.XM as f_XSXX_XM--学生信息数据表 姓名
@@ -41610,7 +41602,6 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_ZYKCK_SCHOOLID--专业课程库表 学校
       ,e.ZYID as e_ZYKCK_ZYID--专业课程库表 专业ID
       ,e.FZXXID as e_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,e.KCPFLXID as e_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,e.KCBH as e_ZYKCK_KCBH--专业课程库表 课程名称
       ,e.ZXF as e_ZYKCK_ZXF--专业课程库表 总学分
       ,e.ZXS as e_ZYKCK_ZXS--专业课程库表 总学时
@@ -41620,6 +41611,7 @@ SELECT a.[ID]--编号
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,e.KCLX as e_ZYKCK_KCLX--专业课程库表 课程类型
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
       ,f.XM as f_XSXX_XM--学生信息数据表 姓名
@@ -41839,8 +41831,8 @@ SELECT a.[ID]--编号
       ,a.[JXJHID]--教学计划表ID
       ,a.[KCPFXMID]--课程评分项目表ID
       ,a.[BL]--比例
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_KCPFXM_SCHOOLID--课程评分项目表 学校
-      ,c.LXID as c_KCPFXM_LXID--课程评分项目表 类型ID
       ,c.FXMID as c_KCPFXM_FXMID--课程评分项目表 父项目ID
       ,c.XMMC as c_KCPFXM_XMMC--课程评分项目表 项目名称
       ,c.SFYZXM as c_KCPFXM_SFYZXM--课程评分项目表 是否有子项目
@@ -41864,6 +41856,7 @@ SELECT a.[ID]--编号
       ,a.[XQID]--学期ID
       ,a.[SBRID]--上报人ID
       ,a.[SBSJ]--上报时间
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

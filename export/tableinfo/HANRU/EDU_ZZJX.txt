@@ -1066,7 +1066,6 @@ EDU_ZZJX_55_A04_ZYKCK  专业课程库表
   SCHOOLID      学校                    int            主键        学校配置表
   ZYID          专业ID                  int            非主        专业基本信息数据表
   FZXXID        分制信息ID              int            非主        分制信息表
-  KCPFLXID      课程评分类型ID          int            非主        课程评分类型表
   KCBH          课程名称                nvarchar(20)   非主
   ZXF           总学分                  decimal(5, 2)  非主
   ZXS           总学时                  int            非主
@@ -1076,16 +1075,11 @@ EDU_ZZJX_55_A04_ZYKCK  专业课程库表
   JXDG          教学大纲                text           非主
   SFSY          是否使用                int            非主
   CourseGroupId 表CourseGroup的外键     int            非主
-
-EDU_ZZJX_55_A05_KCPFLX  课程评分类型表
-  ID            编号                    int            主键
-  SCHOOLID      学校                    int            主键        学校配置表
-  LXMC          类型名称                nvarchar(20)   非主
+  KCLX          课程类型                int            非主
 
 EDU_ZZJX_55_A06_KCPFXM  课程评分项目表
   ID            编号                    int            主键
   SCHOOLID      学校                    int            主键        学校配置表
-  LXID          类型ID                  int            非主        课程评分类型表
   FXMID         父项目ID                int            非主        课程评分项目表
   XMMC          项目名称                nvarchar(20)   非主
   SFYZXM        是否有子项目            int            非主
@@ -1132,6 +1126,7 @@ EDU_ZZJX_55_A10_CJMX  成绩明细表
   FZ            分值                    decimal(5, 2)  非主
   DJRID         登记人ID                nvarchar(20)   非主        应用系统用户表
   DJSJ          登记时间                datetime       非主
+  KCLX          课程类型                int            非主
 
 EDU_ZZJX_55_A11_CJHZ  成绩汇总表
   ID            编号                    int            主键
@@ -1183,6 +1178,7 @@ EDU_ZZJX_55_A15_JXBPFBL  教学班评分比例表
   JXJHID        教学计划表ID            int            非主
   KCPFXMID      课程评分项目表ID        int            非主        课程评分项目表
   BL            比例                    decimal(5, 2)  非主
+  KCLX          课程类型                int            非主
 
 EDU_ZZJX_55_A16_CJSB  成绩上报表
   ID            编号                    int            主键
@@ -1191,6 +1187,7 @@ EDU_ZZJX_55_A16_CJSB  成绩上报表
   XQID          学期ID                  int            非主        学期数据表
   SBRID         上报人ID                nvarchar(20)   非主        应用系统用户表
   SBSJ          上报时间                datetime       非主
+  KCLX          课程类型                int            非主
 
 EDU_ZZJX_55_A90_XFHASH  学分哈希表
   KEY           键                      int            主键

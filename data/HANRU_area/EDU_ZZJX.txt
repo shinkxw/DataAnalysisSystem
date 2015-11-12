@@ -1252,7 +1252,6 @@
             <name="SCHOOLID" exp="学校" type="int" p="T" />
             <name="ZYID" exp="专业ID" type="int" />
             <name="FZXXID" exp="分制信息ID" type="int" />
-            <name="KCPFLXID" exp="课程评分类型ID" type="int" />
             <name="KCBH" exp="课程名称" type="nvarchar(20)" />
             <name="ZXF" exp="总学分" type="decimal(5, 2)" />
             <name="ZXS" exp="总学时" type="int" />
@@ -1262,20 +1261,13 @@
             <name="JXDG" exp="教学大纲" type="text" />
             <name="SFSY" exp="是否使用" type="int" />
             <name="CourseGroupId" exp="表CourseGroup的外键" type="int" />
-        </field_area>
-    </table>
-    <table name="EDU_ZZJX_55_A05_KCPFLX" exp="课程评分类型表">
-        <field_area>
-            <name="ID" exp="编号" type="int" p="T" />
-            <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="LXMC" exp="类型名称" type="nvarchar(20)" />
+            <name="KCLX" exp="课程类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A06_KCPFXM" exp="课程评分项目表">
         <field_area>
             <name="ID" exp="编号" type="int" p="T" />
             <name="SCHOOLID" exp="学校" type="int" p="T" />
-            <name="LXID" exp="类型ID" type="int" />
             <name="FXMID" exp="父项目ID" type="int" />
             <name="XMMC" exp="项目名称" type="nvarchar(20)" />
             <name="SFYZXM" exp="是否有子项目" type="int" />
@@ -1330,6 +1322,7 @@
             <name="FZ" exp="分值" type="decimal(5, 2)" />
             <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
             <name="DJSJ" exp="登记时间" type="datetime" />
+            <name="KCLX" exp="课程类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A11_CJHZ" exp="成绩汇总表">
@@ -1391,6 +1384,7 @@
             <name="JXJHID" exp="教学计划表ID" type="int" remark="TeachSchedule" />
             <name="KCPFXMID" exp="课程评分项目表ID" type="int" />
             <name="BL" exp="比例" type="decimal(5, 2)" />
+            <name="KCLX" exp="课程类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A16_CJSB" exp="成绩上报表">
@@ -1401,6 +1395,7 @@
             <name="XQID" exp="学期ID" type="int" />
             <name="SBRID" exp="上报人ID" type="nvarchar(20)" />
             <name="SBSJ" exp="上报时间" type="datetime" />
+            <name="KCLX" exp="课程类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A90_XFHASH" exp="学分哈希表">

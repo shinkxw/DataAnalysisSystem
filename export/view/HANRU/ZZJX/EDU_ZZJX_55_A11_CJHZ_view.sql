@@ -31,7 +31,6 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_ZYKCK_SCHOOLID--专业课程库表 学校
       ,e.ZYID as e_ZYKCK_ZYID--专业课程库表 专业ID
       ,e.FZXXID as e_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,e.KCPFLXID as e_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,e.KCBH as e_ZYKCK_KCBH--专业课程库表 课程名称
       ,e.ZXF as e_ZYKCK_ZXF--专业课程库表 总学分
       ,e.ZXS as e_ZYKCK_ZXS--专业课程库表 总学时
@@ -41,6 +40,7 @@ SELECT a.[ID]--编号
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,e.KCLX as e_ZYKCK_KCLX--专业课程库表 课程类型
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
       ,f.XM as f_XSXX_XM--学生信息数据表 姓名

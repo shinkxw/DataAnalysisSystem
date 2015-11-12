@@ -12,6 +12,7 @@ SELECT a.[ID]--编号
       ,a.[FZ]--分值
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码
@@ -29,7 +30,6 @@ SELECT a.[ID]--编号
       ,e.SCHOOLID as e_ZYKCK_SCHOOLID--专业课程库表 学校
       ,e.ZYID as e_ZYKCK_ZYID--专业课程库表 专业ID
       ,e.FZXXID as e_ZYKCK_FZXXID--专业课程库表 分制信息ID
-      ,e.KCPFLXID as e_ZYKCK_KCPFLXID--专业课程库表 课程评分类型ID
       ,e.KCBH as e_ZYKCK_KCBH--专业课程库表 课程名称
       ,e.ZXF as e_ZYKCK_ZXF--专业课程库表 总学分
       ,e.ZXS as e_ZYKCK_ZXS--专业课程库表 总学时
@@ -39,6 +39,7 @@ SELECT a.[ID]--编号
       ,e.JXDG as e_ZYKCK_JXDG--专业课程库表 教学大纲
       ,e.SFSY as e_ZYKCK_SFSY--专业课程库表 是否使用
       ,e.CourseGroupId as e_ZYKCK_CourseGroupId--专业课程库表 表CourseGroup的外键
+      ,e.KCLX as e_ZYKCK_KCLX--专业课程库表 课程类型
       ,f.SCHOOLID as f_XSXX_SCHOOLID--学生信息数据表 学校名
       ,f.XH as f_XSXX_XH--学生信息数据表 学号
       ,f.XM as f_XSXX_XM--学生信息数据表 姓名
@@ -92,7 +93,6 @@ SELECT a.[ID]--编号
       ,f.RXXQID as f_XSXX_RXXQID--学生信息数据表 入学学期ID
       ,f.NFCKH as f_XSXX_NFCKH--学生信息数据表 NFC卡号
       ,g.SCHOOLID as g_KCPFXM_SCHOOLID--课程评分项目表 学校
-      ,g.LXID as g_KCPFXM_LXID--课程评分项目表 类型ID
       ,g.FXMID as g_KCPFXM_FXMID--课程评分项目表 父项目ID
       ,g.XMMC as g_KCPFXM_XMMC--课程评分项目表 项目名称
       ,g.SFYZXM as g_KCPFXM_SFYZXM--课程评分项目表 是否有子项目

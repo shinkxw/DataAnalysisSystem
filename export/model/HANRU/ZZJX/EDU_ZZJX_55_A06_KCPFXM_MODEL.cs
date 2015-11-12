@@ -25,11 +25,6 @@ namespace HanRuEdu.LDAL
 
 
             [Required(ErrorMessage = "必填")]
-            [Display(Name = "类型")]
-            public Int32 LXID { get; set; }
-
-
-            [Required(ErrorMessage = "必填")]
             [Display(Name = "父项目")]
             public Int32 FXMID { get; set; }
 

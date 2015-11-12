@@ -70,6 +70,11 @@ namespace HanRuEdu.LDAL
             public DateTime DJSJ { get; set; }
 
 
+            [Required(ErrorMessage = "必填")]
+            [Display(Name = "课程类型")]
+            public Int32 KCLX { get; set; }
+
+
         }
     }
 }
