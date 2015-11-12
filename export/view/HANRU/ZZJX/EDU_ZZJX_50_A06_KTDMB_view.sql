@@ -37,6 +37,7 @@ SELECT a.[ID]--编号
       ,c.SBZT as c_JXBSJ_SBZT--教学班数据表 上报状态
       ,c.KGZT as c_JXBSJ_KGZT--教学班数据表 开关状态
       ,c.SFXXK as c_JXBSJ_SFXXK--教学班数据表 是否限选课
+      ,c.FZXXID as c_JXBSJ_FZXXID--教学班数据表 分制信息ID
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名

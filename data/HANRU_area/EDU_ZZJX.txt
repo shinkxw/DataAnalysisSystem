@@ -1013,6 +1013,7 @@
             <name="SBZT" exp="上报状态" type="int" />
             <name="KGZT" exp="开关状态" type="int" default="1" />
             <name="SFXXK" exp="是否限选课" type="int" />
+            <name="FZXXID" exp="分制信息ID" type="int" default="-1" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_50_A04_XSXKJL" exp="学生选课记录表">
@@ -1339,6 +1340,7 @@
             <name="JD" exp="绩点" type="decimal(5, 2)" />
             <name="DJRID" exp="登记人ID" type="nvarchar(20)" />
             <name="DJSJ" exp="登记时间" type="datetime" />
+            <name="KCLX" exp="课程类型" type="int" />
         </field_area>
     </table>
     <table name="EDU_ZZJX_55_A12_BKCJ" exp="补考成绩表">

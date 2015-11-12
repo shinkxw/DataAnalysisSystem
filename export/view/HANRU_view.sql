@@ -39507,6 +39507,7 @@ SELECT a.[ID]--编号
       ,a.[SBZT]--上报状态
       ,a.[KGZT]--开关状态
       ,a.[SFXXK]--是否限选课
+      ,a.[FZXXID]--分制信息ID
       ,c.SCHOOLID as c_XXKCLB_SCHOOLID--选修课程类别表 学校
       ,c.LBMC as c_XXKCLB_LBMC--选修课程类别表 类别名称
       ,c.JJ as c_XXKCLB_JJ--选修课程类别表 简介
@@ -39597,12 +39598,22 @@ SELECT a.[ID]--编号
       ,f.SKSJ as f_KKSJ_SKSJ--开课时间表 上课时间
       ,f.SDIDLB as f_KKSJ_SDIDLB--开课时间表 时段ID列表
       ,f.SDMCLB as f_KKSJ_SDMCLB--开课时间表 时段名称列表
+      ,g.SCHOOLID as g_FZXX_SCHOOLID--分制信息表 学校
+      ,g.FZMC as g_FZXX_FZMC--分制信息表 分制名称
+      ,g.ZDZ as g_FZXX_ZDZ--分制信息表 最大值
+      ,g.ZXZ as g_FZXX_ZXZ--分制信息表 最小值
+      ,g.JGX as g_FZXX_JGX--分制信息表 及格线
+      ,g.MXF as g_FZXX_MXF--分制信息表 免修对应分
+      ,g.MKF as g_FZXX_MKF--分制信息表 免考对应分
+      ,g.XFPDBIDLB as g_FZXX_XFPDBIDLB--分制信息表 学分评定表ID列表
+      ,g.JDPDBIDLB as g_FZXX_JDPDBIDLB--分制信息表 绩点评定表ID列表
 
 FROM dbo.EDU_ZZJX_50_A03_JXBSJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZJX_50_A01_XXKCLB AS c ON a.XXKCLBID = c.ID /*选修课程类别ID*/ LEFT OUTER JOIN
       dbo.EDU_ELE_01_XQ AS d ON a.XQID = d.ID /*学期ID*/ AND a.SCHOOLID = d.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJG_01_01_JZGJBSJ AS e ON a.KKJSID = e.ID /*开课教师ID*/ AND a.SCHOOLID = e.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_ZZJX_50_A02_KKSJ AS f ON a.SKSJID = f.ID /*上课时间ID*/ LEFT OUTER JOIN
+      dbo.EDU_ZZJX_55_A01_FZXX AS g ON a.FZXXID = g.ID /*分制信息ID*/ AND a.SCHOOLID = g.SCHOOLID /*学校*/ LEFT OUTER JOIN
       dbo.EDU_JY_XQ AS [db] ON d.XQM = [db].DM /*学期码*/ LEFT OUTER JOIN
       dbo.EDU_JY_SFZJLX AS [eb] ON e.SFZJLXM = [eb].DM /*身份证件类型码*/ LEFT OUTER JOIN
       dbo.EDU_GB_RDXB AS [ec] ON e.XBM = [ec].DM /*性别码*/ LEFT OUTER JOIN
@@ -39712,6 +39723,7 @@ SELECT a.[ID]--编号
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
+      ,d.FZXXID as d_JXBSJ_FZXXID--教学班数据表 分制信息ID
 
 FROM dbo.EDU_ZZJX_50_A04_XSXKJL AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39821,6 +39833,7 @@ SELECT a.[ID]--编号
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
+      ,d.FZXXID as d_JXBSJ_FZXXID--教学班数据表 分制信息ID
 
 FROM dbo.EDU_ZZJX_50_A05_XSXXKCJ AS a LEFT OUTER JOIN
       dbo.EDU_ZZXS_01_01_XSXX AS c ON a.XSID = c.ID /*学生ID*/ AND a.SCHOOLID = c.SCHOOLID /*学校*/ LEFT OUTER JOIN
@@ -39879,6 +39892,7 @@ SELECT a.[ID]--编号
       ,c.SBZT as c_JXBSJ_SBZT--教学班数据表 上报状态
       ,c.KGZT as c_JXBSJ_KGZT--教学班数据表 开关状态
       ,c.SFXXK as c_JXBSJ_SFXXK--教学班数据表 是否限选课
+      ,c.FZXXID as c_JXBSJ_FZXXID--教学班数据表 分制信息ID
       ,d.SCHOOLID as d_XSXX_SCHOOLID--学生信息数据表 学校名
       ,d.XH as d_XSXX_XH--学生信息数据表 学号
       ,d.XM as d_XSXX_XM--学生信息数据表 姓名
@@ -40118,6 +40132,7 @@ SELECT a.[ID]--编号
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
+      ,d.FZXXID as d_JXBSJ_FZXXID--教学班数据表 分制信息ID
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
@@ -40322,6 +40337,7 @@ SELECT a.[ID]--编号
       ,d.SBZT as d_JXBSJ_SBZT--教学班数据表 上报状态
       ,d.KGZT as d_JXBSJ_KGZT--教学班数据表 开关状态
       ,d.SFXXK as d_JXBSJ_SFXXK--教学班数据表 是否限选课
+      ,d.FZXXID as d_JXBSJ_FZXXID--教学班数据表 分制信息ID
       ,e.SCHOOLID as e_XSXX_SCHOOLID--学生信息数据表 学校名
       ,e.XH as e_XSXX_XH--学生信息数据表 学号
       ,e.XM as e_XSXX_XM--学生信息数据表 姓名
@@ -41451,6 +41467,7 @@ SELECT a.[ID]--编号
       ,a.[JD]--绩点
       ,a.[DJRID]--登记人ID
       ,a.[DJSJ]--登记时间
+      ,a.[KCLX]--课程类型
       ,c.SCHOOLID as c_XQ_SCHOOLID--学期数据表 学校名
       ,c.XNID as c_XQ_XNID--学期数据表 学年
       ,c.XQM as c_XQ_XQM--学期数据表 学期码

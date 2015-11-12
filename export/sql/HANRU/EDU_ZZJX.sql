@@ -2239,6 +2239,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_50_A03_JXBSJ](
 	[SBZT]  int  NOT NULL,--上报状态
 	[KGZT]  int  NOT NULL,--开关状态
 	[SFXXK]  int  NOT NULL,--是否限选课
+	[FZXXID]  int  NOT NULL,--分制信息ID
 CONSTRAINT [PK_EDU_ZZJX_50_A03_JXBSJ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC
@@ -2805,6 +2806,7 @@ CREATE TABLE [dbo].[EDU_ZZJX_55_A11_CJHZ](
 	[JD]  decimal(5, 2)  NOT NULL,--绩点
 	[DJRID]  nvarchar(20)  NOT NULL,--登记人ID
 	[DJSJ]  datetime  NOT NULL,--登记时间
+	[KCLX]  int  NOT NULL,--课程类型
 CONSTRAINT [PK_EDU_ZZJX_55_A11_CJHZ] PRIMARY KEY CLUSTERED
 (
 	[ID] ASC,
@@ -4917,6 +4919,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'开关状态' , @l
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'是否限选课' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'SFXXK'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'分制信息ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A03_JXBSJ', @level2type=N'COLUMN',@level2name=N'FZXXID'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'学生选课记录表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A04_XSXKJL'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'编号' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_50_A04_XSXKJL', @level2type=N'COLUMN',@level2name=N'ID'
@@ -5400,6 +5404,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记人ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A11_CJHZ', @level2type=N'COLUMN',@level2name=N'DJRID'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'登记时间' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A11_CJHZ', @level2type=N'COLUMN',@level2name=N'DJSJ'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'课程类型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A11_CJHZ', @level2type=N'COLUMN',@level2name=N'KCLX'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'补考成绩表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EDU_ZZJX_55_A12_BKCJ'
 GO

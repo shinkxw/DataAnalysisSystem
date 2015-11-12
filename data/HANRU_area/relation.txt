@@ -2540,6 +2540,7 @@
   XQID           EDU_ELE_01_XQ                      ID
   KKJSID         EDU_ZZJG_01_01_JZGJBSJ             ID
   SKSJID         EDU_ZZJX_50_A02_KKSJ               ID
+  FZXXID         EDU_ZZJX_55_A01_FZXX               ID
 <EDU_ZZJX_50_A04_XSXKJL
   SCHOOLID       EDU_ELE_01_SCHOOL                  SCHOOLID
   XSID           EDU_ZZXS_01_01_XSXX                ID
