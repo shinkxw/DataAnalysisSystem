@@ -1,7 +1,7 @@
 ﻿DataAnalysisSystem
 ==================
 
-# SQL sever数据库管理工具
+SQL sever数据库管理工具
 
 1.使用文本格式管理表结构与表关联信息
 
